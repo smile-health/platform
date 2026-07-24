@@ -1,0 +1,93 @@
+{
+  "title": {
+    "page": "Aktivitas Pengguna",
+    "tab": {
+      "overview": "Tinjauan",
+      "entity": "Per Entitas"
+    },
+    "type": {
+      "active": "Aktif",
+      "inactive": "Tidak Aktif"
+    }
+  },
+  "export": "Ekspor sebagai {{type}}",
+  "empty": "Tidak ada data untuk di tampilkan",
+  "percentage": "{b}: {d}% ({c} dari {{total}} entitas)",
+  "form": {
+    "period": {
+      "label": "Periode",
+      "placeholder": "Pilih periode bulan dan tahun"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "name": {
+        "label": "Material",
+        "placeholder": "Pilih material"
+      }
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "show_customer_activity": {
+      "label": "Tampilkan Kegiatan Pelanggan"
+    },
+    "customer_tag": {
+      "label": "Tag Pelanggan",
+      "placeholder": "Pilih tag pelanggan"
+    }
+  },
+  "information": {
+    "title": "Laporan Aktivitas Pengguna",
+    "description": "Laporan Aktivitas Pengguna merupakan Laporan yang menjelaskan tingkat keaktifan entitas pada sebuah material. Tingkat kegiatan dilihat dari transaksi pengeluaran yang dilakukan oleh entitas pada satu bulan tertentu.",
+    "item": {
+      "chart": {
+        "title": "Data Diagram Lingkaran",
+        "description": "Keaktifan dihitung dari transaksi pengeluaran oleh material yang dipilih pada filter. Satu kali melakukan transaksi pengeluaran pada bulan tersebut maka entitas sudah terhitung sebagai entitas aktif. Grafik berwarna hijau menunjukkan entitas yang aktif dan warna merah tidak aktif."
+      },
+      "table": {
+        "title": "Tabel Data",
+        "description": [
+          "Baris menunjukkan entitas yang memiliki material sesuai pilihan filter.",
+          "Kolom bulan menunjukkan tanggal dalam satu bulan tersebut, nilai yang tampil adalah jumlah transaksi pengeluaran pada hari tersebut.",
+          "Total hari aktif adalah total hari yang terjadi transaksi pengeluaran.",
+          "Total hari tidak aktif adalah total hari yang tidak ada transaksi pengeluaran.",
+          "Total frekuensi adalah total kumulatif transaksi pengeluaran dalam satu bulan.",
+          "Rata-rata frekuensi adalah total frekuensi dibagi dengan total hari aktif, menunjukkan jumlah frekuensi setiap hari nya (dalam rata-rata)."
+        ]
+      }
+    }
+  },
+  "column": {
+    "entity": "Entitas",
+    "customer": "Entitas Pelanggan",
+    "active": "Jumlah Hari Aktif",
+    "inactive": "Jumlah Hari Tidak Aktif",
+    "frequency": {
+      "total": "Jumlah Frekuensi",
+      "average": "Rata-rata Frekuensi"
+    }
+  },
+  "yes": "Ya",
+  "no": "Tidak",
+  "community_health_post": "Posyandu"
+}

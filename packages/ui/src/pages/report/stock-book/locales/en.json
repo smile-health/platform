@@ -1,0 +1,33 @@
+{
+  "title": {
+    "page": "Stock Book Report"
+  },
+  "action": {
+    "export": "Export",
+    "export_all": "Export All"
+  },
+  "form": {
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity",
+      "required": "Activity is required"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province",
+      "required": "Province is required"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "period": {
+      "label": "Period",
+      "placeholder": "Select month and year period"
+    }
+  }
+}

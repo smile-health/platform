@@ -1,0 +1,112 @@
+{
+  "title": {
+    "abnormal": "Abnormal Stock",
+    "availability": "Stock Availability",
+    "count": "Add/Remove Stock",
+    "filling": "Filling Stock",
+    "tabs": {
+      "all": "Overall",
+      "entity": "Entity",
+      "entity-material": "Entity Material",
+      "location": "Region"
+    }
+  },
+  "description": {
+    "abnormal": "The Abnormal Stock report is a report that shows abnormal stock conditions. The condition Abnormal conditions or Abnormal Types consist of three, namely:<br/>\"<lt/> min\" a condition where the amount of stock available is below the minimum stock limit for that entity.<br/>\"<gt/> max\" a condition where the amount of stock available is above the maximum stock limit for that entity.<br/>\"out of stock\" condition of 0 or out of stock for that entity.",
+    "availability": "Stock Availability Report is a report that describes the percentage of materials available in an entity during a specific period.",
+    "count": "The Stock Count Report is a report that explains the transactions of Stock Count, Add Stock and Reduce Stock. The Stock Count transaction is no longer used, its features are replaced with Add Stock and Reduce Stock. Reduce Stock.\nThe Count Stock transaction is still displayed in the report to show transactions that have already occurred. occurred.",
+    "filling": "Filling Stock Report a report that shows the duration of stock replenishment from out-of-stock to normal stock levels. Normal stock levels are stock levels above the minimum limit and below the maximum limit in the current month."
+  },
+  "information": {
+    "abnormal": [
+      "<b>Frequency:</b> The number of abnormal events of each transaction.",
+      "<b>Duration:</b> The total time of abnormal events is accumulated for a certain period. counted until the transaction that changes the abnormal status is encountered."
+    ],
+    "count": [
+      "<b>Transaction Type:</b> There are 3 transactions: Count Stock, Add Stock, and Decrease Stock (mandatory).",
+      "<b>Reason:</b> Choice of reasons to be displayed/calculated, if not selected then all reasons will appear. selected, all reasons will appear."
+    ]
+  },
+  "form": {
+    "period": {
+      "label": "Period"
+    },
+    "range": {
+      "label": "Date Range"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Select level KFA material"
+      },
+      "name": {
+        "label": "Material",
+        "placeholder": "Select material"
+      }
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "transaction_type": {
+      "label": "Transaction Type",
+      "placeholder": "Select transaction type"
+    },
+    "reason": {
+      "label": "Reason",
+      "placeholder": "Select reason"
+    },
+    "information_type": {
+      "label": "Information Type",
+      "placeholder": "Select information type"
+    }
+  },
+  "columns": {
+    "type": "Type",
+    "period": "Period",
+    "entity": "Entity",
+    "location": "Location"
+  },
+  "data": {
+    "dayly": "Daily",
+    "weekly": "Weekly",
+    "montly": "Monthly",
+    "frequency": "Frequency",
+    "duration": "Duration (Day)",
+    "material_level": {
+      "active_subtance": "Product Template"
+    },
+    "stock": {
+      "add": "Add Stock",
+      "empty": "Stock Out"
+    },
+    "percent": {
+      "availability": "Availability Percentage",
+      "entity": "Material Availability Percentage",
+      "material": "Entity Availability Percentage"
+    }
+  },
+  "stock": "Stock",
+  "from_to": "From {{from}} to {{to}}",
+  "last_updated_at": "Last updated at"
+}

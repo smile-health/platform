@@ -1,0 +1,136 @@
+{
+  "title": {
+    "reconciliation": "Rekonsiliasi",
+    "tab": {
+      "list": "Daftar",
+      "report": "Laporan"
+    },
+    "list": "Daftar Rekonsiliasi",
+    "report": {
+      "reconciliation_activity": "Laporan Rekonsiliasi"
+    },
+    "create": {
+      "reconciliation": "Tambah Rekonsiliasi"
+    },
+    "history": {
+      "reconciliation": "Lihat Riwayat"
+    }
+  },
+  "filter": {
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "label": "Material",
+      "placeholder": "Pilih material"
+    },
+    "material_type": {
+      "label": "Jenis Material",
+      "placeholder": "Pilih material"
+    },
+    "period": {
+      "label": "Periode"
+    },
+    "created_date": {
+      "label": "Tanggal Pembuatan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "city": {
+      "label": "Kota/Kabupaten",
+      "placeholder": "Pilih kota/kabupaten"
+    },
+    "primary_health_care": {
+      "label": "Puskesmas",
+      "placeholder": "Pilih puskesmas"
+    },
+    "material_kfa_level": {
+      "label": "Level KFA Material",
+      "placeholder": "Pilih level KFA material"
+    },
+    "search": "Cari",
+    "export": "Ekspor"
+  },
+  "list": {
+    "table": {
+      "column": {
+        "no": "No",
+        "entity": "Entitas",
+        "entity_name": "Nama Entitas",
+        "material_info": "Informasi Material",
+        "activity": "Kegiatan",
+        "period": "Periode",
+        "remaining_stock": "Stok yang Tersisa",
+        "created_by": "Dibuat oleh",
+        "action": "Aksi"
+      },
+      "view_history": "Lihat Riwayat",
+      "from": "Dari",
+      "to": "Sampai",
+      "real": "Riil",
+      "at": "pada",
+      "close": "Tutup",
+      "description": "Deskripsi",
+      "reason_action": "Alasan & Aksi",
+      "reason": "Alasan",
+      "action": "Aksi",
+      "add_reconciliation": "Tambah Rekonsiliasi"
+    }
+  },
+  "create": {
+    "title_material_select": "Material di {{entity_name}}",
+    "caption_choose_material": "Klik pada tombol radio untuk memilih materi. Materi yang dipilih akan muncul pada tabel rekonsiliasi di bawah ini",
+    "search_material": "Cari material",
+    "material_name": "Nama Material",
+    "selection": "Seleksi",
+    "reconciliation_detail": "Detil Rekonsiliasi",
+    "entity": {
+      "label": "Entitas",
+      "placeholder": "Pilih entitas"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "table": {
+      "title": "Tabel Rekonsiliasi",
+      "material_selected": "Material Terpilih"
+    },
+    "reset": "Reset",
+    "send": "Kirim",
+    "real_placeholder": "Masukkan kuantitas",
+    "add": "Tambah",
+    "reason": {
+      "label": "Alasan",
+      "placeholder": "Pilih alasan"
+    },
+    "action": {
+      "label": "Aksi",
+      "placeholder": "Pilih aksi"
+    },
+    "add_new_reason": "Tambah Alasan Baru",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "validation": {
+      "required": "Wajib diisi",
+      "error_combination": "Alasan Aksi tidak boleh diduplikasi",
+      "numeric_only": "Hanya angka"
+    },
+    "reset_dialog": {
+      "title": "Konfirmasi",
+      "description": "Apakah kamu yakin untuk menghapus data yang telah diisi?"
+    },
+    "change_dialog": {
+      "question_material": "Apakah Anda yakin ingin mengubah material?",
+      "question_detail": "Apakah Anda yakin ingin mengubahnya?",
+      "description": "Semua informasi yang telah Anda masukkan dalam material ini akan hilang."
+    }
+  }
+}

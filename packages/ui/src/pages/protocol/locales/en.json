@@ -1,0 +1,62 @@
+{
+  "title": {
+    "settings": "Protocol",
+    "search": "Search Protocol"
+  },
+  "column": {
+    "name": "Protocol Name"
+  },
+  "action": {
+    "configure": {
+      "button": "Detail & Configure"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "success": "Protocol deactivated successfully"
+    },
+    "activate": {
+      "button": "Activate",
+      "success": "Protocol activated successfully"
+    }
+  },
+  "detail": {
+    "title": "Protocol Detail",
+    "material_activity": {
+      "title": "Material Activity Management",
+      "search": "Material Name",
+      "relation": {
+        "add": {
+          "button": "Add Relation",
+          "success": "Relation added successfully"
+        },
+        "material": {
+          "label": "Material",
+          "placeholder": "Select material"
+        },
+        "activity": {
+          "label": "Activity",
+          "placeholder": "Select activity"
+        },
+        "confirmation": {
+          "cancel": {
+            "title": "Are you sure want to cancel this material?",
+            "description": "Changes you made will be lost if you cancel. Do you want to continue?"
+          },
+          "delete": {
+            "title": "Confirmation?",
+            "description": "Are you sure want to delete this material?",
+            "success": "Material deleted successfully"
+          },
+          "deactivate": {
+            "title": "Confirmation?",
+            "description": "Are you sure want to deactivate this protocol?"
+          },
+          "activate": {
+            "title": "Confirmation?",
+            "description": "Are you sure want to activate this protocol?"
+          }
+        }
+      }
+    }
+  }
+}

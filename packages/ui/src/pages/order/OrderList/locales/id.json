@@ -1,0 +1,76 @@
+{
+  "title": "Daftar Pesanan",
+  "tab": {
+    "all": "Semua",
+    "vendor": "Pengirim",
+    "customer": "Penerima"
+  },
+  "create": {
+    "title": "Buat Baru",
+    "order": "Pesanan",
+    "distribution": "Distribusi",
+    "return": "Retur",
+    "central": "Distribusi Pusat",
+    "relocation": "Relokasi"
+  },
+  "form": {
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "date_range": {
+      "label": "Tanggal"
+    },
+    "order_number": {
+      "label": "Nomor Pesanan",
+      "placeholder": "Ketik nomor pesanan"
+    },
+    "status": {
+      "label": "Status",
+      "placeholder": "Pilih status"
+    },
+    "delivery": {
+      "label": "Tipe Pengiriman",
+      "placeholder": "Pilih tipe pengiriman"
+    },
+    "type": {
+      "label": "Tipe Pesanan",
+      "placeholder": "Pilih tipe pesanan"
+    },
+    "integration_type": {
+      "label": "Tipe Integrasi",
+      "placeholder": "Pilih tipe integrasi"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "district": {
+      "label": "Kota/Kabupaten",
+      "placeholder": "Pilih kota/kabupaten"
+    },
+    "primary": {
+      "vendor": {
+        "label": "Penyedia Utama",
+        "placeholder": "Pilih penyedia utama"
+      },
+      "health_care": {
+        "label": "Puskesmas",
+        "placeholder": "Pilih puskesmas"
+      }
+    }
+  },
+  "column": {
+    "order_number": "Nomor Pesanan",
+    "activity": "Kegiatan",
+    "vendor": "Pengirim",
+    "created": "Dibuat Oleh",
+    "customer": "Penerima",
+    "device": "Tipe Perangkat",
+    "action": "Aksi"
+  }
+}

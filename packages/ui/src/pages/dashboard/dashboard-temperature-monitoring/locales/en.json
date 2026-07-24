@@ -1,0 +1,139 @@
+{
+  "title": {
+    "page": "Temperature Monitoring Dashboard",
+    "sub_title": "The maximum duration of data displayed on the Temperature Monitoring Dashboard is 1 month.",
+    "number_of_cold_storages": "Number of Cold Storages",
+    "number_of_rtmds": "Number of RTMDs"
+  },
+  "form": {
+    "date": {
+      "label": "Date",
+      "placeholder": "Select date range"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "city": {
+      "label": "City/District",
+      "placeholder": "Select city/district"
+    },
+    "entity": {
+      "label": "Health Facility",
+      "placeholder": "Select health facility"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "asset_model": {
+      "label": "Asset Model",
+      "placeholder": "Select asset model"
+    }
+  },
+  "summary": {
+    "total": "Total",
+    "relation_to_rtmd": "RTMD Installed",
+    "online": "Online",
+    "last_updated_at": "Last updated at {{time}}",
+    "cold_storages_info": {
+      "total": "Number of cold storages registered in the SMILE application. This number does not reflect passive cold storages (cold box and vaccine carrier).",
+      "relation_to_rtmd": "Number of active cold storages (Refrigerator, Refrigerator & Freezer, Refrigerator/Freezer, Freezer, dan Freezer Room) registered in the SMILE application and connected to Remote Temperature Monitoring Devices (RTMD) according to settings updated by users."
+    },
+    "rtmds_info": {
+      "total": "Number of RTMDs registered in the SMILE application.",
+      "online": "Number of RTMDs with temperature records successfully sent to the SMILE application."
+    }
+  },
+  "filter": {
+    "active": {
+      "start_date": "Start Date",
+      "end_date": "End Date"
+    }
+  },
+  "rtmd_status": {
+    "title": "RTMD Status",
+    "info": "Status of RTMDs that classified into online/offline based on the existence of temperature records sent to the SMILE application within the period selected. If a RTMD does not have any temperature record within that period, then the status is considered as offline.",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "offline_duration": {
+    "title": "Average Daily Offline Duration",
+    "info": "Average offline duration (without temperature records) from online RTMD.",
+    "less_than_one_hour": "< 1 hour",
+    "one_to_ten_hours": "1-10 hour(s)",
+    "more_than_ten_hours": "> 10 hours",
+    "x_axis": "Date of Data Sent",
+    "y_axis": "Average Daily Offline Duration (Hour)",
+    "number_of_rtmd": "Number of RTMD",
+    "hours_unit": "hour(s)"
+  },
+  "temperature_excursion": {
+    "title": "Temperature Excursion",
+    "info": "An episode in which the temperature deviates from the specified recommended ranges of temperature to store vaccines, which divided into 2°C to 8°C and -25°C to -15°C. A temperature excursion is defined based on records from temperature readings sent by RTMDs compared to the ideal/recommended temperature for each type of storages.\n\nAn excursion is categorized into:\nTemperature above the range: when the temperature is above 8°C OR above -15°C for freezing temperature. For freezing temperature, it further classified into:\n• Above -15°C to -0.5°C, and\n• Above -0.5°C.\nTemperature below the range: when the temperature is below 2°C OR below -15°C. For temperature ranges 2°C to 8°C, it further classified into:\n• -0.5°C to below 2°C, and\n• Below -0.5°C",
+    "filter": {
+      "duration": {
+        "label": "Temperature Excursion Duration",
+        "less_than_one_hour": "< 1 hour",
+        "one_to_ten_hours": "1-10 hours",
+        "more_than_ten_hours": "> 10 hours"
+      },
+      "temperature_range": {
+        "label": "Temperature Range",
+        "placeholder": "Select temperature range",
+        "2_to_8": "2°C to 8°C",
+        "minus_25_to_minus_15": "-25°C to -15°C"
+      },
+      "certification_status": {
+        "label": "Certification Status of Cold Storage"
+      },
+      "who_pqs": {
+        "who_pqs": "WHO PQS",
+        "non_who_pqs": "Non WHO PQS"
+      },
+      "reset": "Reset",
+      "hint": "Click on any of the chart color categories below to view the detailed data."
+    },
+    "charts": {
+      "excursion_episodes": {
+        "title": "Number of Excursion Episodes",
+        "subtitle": "By Category of Excursion and Week Year",
+        "info": "Number of episodes or frequency of temperature excursion by category and week year period.",
+        "y_axis": "Number of Episodes"
+      },
+      "cold_storages_excursion": {
+        "title": "Number of Cold Storages Experienced Temperature Excursion",
+        "subtitle": "By Category of Excursion and Week Year",
+        "info": "Quantities of cold storages that experienced temperature excursion by category and week year period.",
+        "y_axis": "Number of Cold Storages"
+      },
+      "excursion_by_type": {
+        "title": "Number of Episodes of Temperature Excursion",
+        "subtitle": "By Cold Storage Types",
+        "info": "Number of episodes or frequency of temperature excursion for each category of excursion by cold storage types. "
+      },
+      "entities_excursion": {
+        "title": "Number of Entities",
+        "subtitle": "With the Cold Storages Experienced Temperature Excursion",
+        "info": "Number of entities in which the cold storages experienced temperature excursion specified for each category of temperature excursion."
+      },
+      "readings_distribution": {
+        "title": "Distribution of Temperature Readings Status",
+        "subtitle": "By Province",
+        "info": "Distribution of average duration of temperature readings status sent by RTMD. From the records of temperature readings, the status is grouped into: normal and excursion (specific for each category of temperature excursion for each recommended temperature ranges). Offline status is duration when RTMD have no records of temperature readings. ",
+        "tooltip": {
+          "cold_storages_count": "Number of Cold Storages: {{count}}",
+          "facilities_count": "Number of Facilities: {{count}}"
+        }
+      },
+      "legend": {
+        "below": "Below -0.5°C",
+        "between": "-0.5°C to 2°C",
+        "above": "Above 8°C",
+        "above_minus_half": "Above -0.5°C",
+        "normal": "Normal (2°C to 8°C)",
+        "offline": "Offline"
+      }
+    }
+  }
+}

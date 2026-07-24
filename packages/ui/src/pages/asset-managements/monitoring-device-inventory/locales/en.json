@@ -1,0 +1,44 @@
+{
+  "monitoring_device": "monitoring device",
+  "text": {
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "data": {
+    "asset_type": "Asset Type",
+    "temperature_threshold": "Temperature Threshold",
+    "asset_model_name": "Asset Model Name",
+    "capacity": "Capacity",
+    "manufacturer": "Manufacturer",
+    "vendor": "Vendor",
+    "serial_number": "Serial Number",
+    "production_year": "Production Year",
+    "operational_status": "Operational Status",
+    "entity": "Entity",
+    "person_in_charge": "Person in Charge",
+    "budget_year": "Budget Year",
+    "budget_source": "Budget Source",
+    "communication_provider": "Communication Provider",
+    "device_status": "Device Status"
+  },
+  "table": {
+    "column": {
+      "no": "No.",
+      "asset_name": "Asset Name",
+      "device_status": "Device Status",
+      "operational_status": "Operational Status",
+      "updated_by": "Updated by",
+      "action": "Action",
+      "operational_asset_name": "Operational Asset Name",
+      "sensor": "Sensors",
+      "asset_temperature": "Asset Temperature"
+    }
+  },
+  "field": {
+    "serial_number": {
+      "label": "Serial Number",
+      "placeholder": "Enter serial number",
+      "maxLength": 255
+    }
+  }
+}

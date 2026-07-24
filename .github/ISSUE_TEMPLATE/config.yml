@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: SMILE Platform Backend Community
+    url: mailto:arya@badr-interactive.com
+    about: Please email us for general questions about the project
+  - name: Security Issues
+    url: mailto:arya@badr-interactive.com
+    about: Please report security vulnerabilities via email

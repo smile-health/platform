@@ -1,0 +1,70 @@
+{
+  "title": {
+    "settings": "Parameter Category",
+    "list": "Parameter Category List",
+    "create": "Create Parameter Category",
+    "edit": "Edit Parameter Category",
+    "detail": "Parameter Category Detail",
+    "information": "Parameter Category Information"
+  },
+  "table": {
+    "name": "Category Name",
+    "analysis_parameters": "Analysis Parameters"
+  },
+  "form": {
+    "detail_title": "Parameter Category Detail",
+    "analysis_parameters_min": "At least 1 analysis parameter is required",
+    "name": {
+      "label": "Category Name",
+      "placeholder": "Enter category name"
+    },
+    "analysis_parameter": {
+      "label": "Analysis Parameter",
+      "placeholder": "Select analysis parameter",
+      "no_options": "All analysis parameters have been selected"
+    },
+    "test_method": {
+      "label": "Test Method",
+      "placeholder": "Select test method"
+    },
+    "validation_type": {
+      "none": "Free Text",
+      "options": "Options"
+    },
+    "fields": {
+      "title": "Fields",
+      "key": {
+        "label": "Key",
+        "placeholder": "Enter key",
+        "note": "Only lowercase letters and underscores are allowed. Spaces will be converted to underscores automatically.",
+        "validation_format": "Key can only contain lowercase letters and underscores"
+      },
+      "type_data": {
+        "label": "Data Type",
+        "placeholder": "Select data type"
+      },
+      "label": {
+        "label": "Label",
+        "placeholder": "Enter label"
+      },
+      "hint": {
+        "label": "Hint",
+        "placeholder": "Enter hint"
+      },
+      "mandatory": {
+        "label": "Mandatory"
+      },
+      "options": {
+        "label": "Dropdown Options"
+      }
+    },
+    "unit": "Unit",
+    "quality_standard": "Quality Standard"
+  },
+  "message": {
+    "create_success": "Parameter category created successfully",
+    "update_success": "Parameter category updated successfully",
+    "delete_success": "Parameter category deleted successfully",
+    "duplicate_analysis_parameter": "Analysis parameters must be unique"
+  }
+}

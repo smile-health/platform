@@ -1,0 +1,232 @@
+{
+  "global": {
+    "title": "Pengaturan Entitas"
+  },
+  "list": {
+    "list": "Pengaturan Entitas",
+    "tab": {
+      "list": "Daftar Entitas",
+      "create": "Tambah Entitas"
+    },
+    "filter": {
+      "search": {
+        "label": "Cari Dengan",
+        "placeholder": "Ketik nama entitas"
+      },
+      "type": {
+        "label": "Tipe",
+        "placeholder": "Pilih tipe"
+      },
+      "tag": {
+        "placeholder": "Pilih tag"
+      },
+      "button": {
+        "search": "Cari"
+      },
+      "program": {
+        "placeholder": "Pilih program"
+      },
+      "without_program": "Tidak ada program"
+    },
+    "column": {
+      "name": "Nama Entitas",
+      "location": "Lokasi",
+      "tag": "Tag Entitas",
+      "code": "Kode Entitas",
+      "update": "Perubahan Terakhir",
+      "action": "Aksi",
+      "configuration": "Detail & Konfigurasi"
+    },
+    "options": {
+      "tag": "Pilih Tag",
+      "type": "Pilih Tipe"
+    },
+    "action": {
+      "activate": {
+        "title": "Aktifkan"
+      },
+      "deactivate": {
+        "title": "Non Aktifkan"
+      }
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Tambah Entitas",
+      "detail": "Detail Entitas",
+      "edit": "Ubah Entitas"
+    },
+    "information": {
+      "title": "Informasi Entitas",
+      "label": {
+        "code": "Kode Entitas",
+        "name": "Nama Entitas",
+        "type": "Tipe",
+        "vendor": "Apakah Pengirim?",
+        "hc": "Apakah Puskesmas?",
+        "asik": "Integrasi ASIK?"
+      },
+      "placeholder": {
+        "code": "Kode entitas",
+        "name": "Nama entitas",
+        "type": "Pilih tipe",
+        "tag": "Pilih tag"
+      }
+    },
+    "location": {
+      "title": "Lokasi",
+      "label": {
+        "province": "Provinsi",
+        "city": "Kabupaten/Kota",
+        "district": "Kecamatan",
+        "subdistrict": "Kelurahan/Desa",
+        "postal": "Kode Pos",
+        "address": "Alamat"
+      },
+      "placeholder": {
+        "select": "Pilih"
+      }
+    },
+    "time": {
+      "title": "Waktu Implementasi Kegiatan",
+      "label": {
+        "start": "Tanggal Dimulai",
+        "end": "Tanggal Selesai"
+      },
+      "setup_data": "Atur Data"
+    },
+    "programs": {
+      "description": "Program yang dipilih tidak dapat dibatalkan (tidak dicentang) setelah data disimpan",
+      "search": "Cari nama program",
+      "selected": "Terpilih",
+      "logistics": "Logistik",
+      "beneficiary": "Penerima Manfaat"
+    },
+    "users": {
+      "search": "Nama Penerima"
+    },
+    "errors": {
+      "at_least_one_required": "Tidak dapat menyimpan data. Silakan masukkan setidaknya satu Tanggal Dimulai",
+      "invalid_date_format": "Format tanggal tidak valid",
+      "invalid_only_end_date": "Tanggal Dimulai harus diisi jika Tanggal Selesai diisi",
+      "invalid_end_date": "Tanggal Selesai harus lebih besar dari Tanggal Dimulai",
+      "invalid_start_date": "Tanggal Dimulai harus lebih kecil dari Tanggal Selesai",
+      "invalid_current_start_date": "Tanggal Dimulai harus lebih besar dari Tanggal Selesai sebelumnya",
+      "prev_end_date_required": "Jika Anda memiliki Tanggal Dimulai berikutnya, maka Tanggal Selesai sebelumnya harus diisi",
+      "max_greater_than_min": "Nilai Maksimum harus lebih besar dari Nilai Minimum",
+      "min_less_than_max": "Nilai Minimum harus lebih kecil dari Nilai Maksimum",
+      "insert_with_number": "Mohon diisi dengan angka",
+      "error_fetching_data": "Error mengambil data"
+    },
+    "success": {
+      "activity_implementation_time": "Data Waktu Implementasi Kegiatan berhasil diperbarui",
+      "success_update_customer": "Data {{customerType}} berhasil diperbarui",
+      "success_import_customer": "Data Penerima berhasil diimpor",
+      "success_delete_customer": "Data Penerima berhasil dihapus",
+      "success_update_material_entity": "Edit relasi data material entitas berhasil",
+      "success_add_material_entity": "Tambah relasi data material entitas berhasil",
+      "success_delete_material_entity": "Hapus relasi data material entitas berhasil",
+      "save": "Entitas berhasil disimpan",
+      "update": "Entitas berhasil diubah",
+      "import": "Entitas berhasil diimpor"
+    }
+  },
+  "detail": {
+    "title": "Detail Entitas",
+    "details": {
+      "title": "Detail",
+      "tag": "Tag Entitas",
+      "last_update": "Perubahan Terakhir"
+    },
+    "users": {
+      "title": "Pengguna",
+      "placeholder": "Cari username"
+    },
+    "tabs_title": {
+      "detail": "Rincian",
+      "activity_implementation_time": "Waktu Implementasi Kegiatan",
+      "customer_vendor": "Penerima & Pengirim",
+      "entity_material_activity_relation": "Manajemen Material Entitas"
+    },
+    "information": {
+      "table_title": {
+        "distribution_customer": "Penerima Distribusi",
+        "consumption_customer": "Penerima Distribusi Akhir",
+        "vendor": "Pengirim"
+      },
+      "entity_type": "Tipe Entitas"
+    },
+    "additional": {
+      "title": "Detail Tambahan",
+      "vendor": "Apakah Pengirim",
+      "is_primary_health_care": "Apakah Puskesmas",
+      "asik": "Integrasi ASIK",
+      "relocation": "Akses Relokasi",
+      "active_transaction": "Entitas Aktif Transaksi"
+    },
+    "customer_vendor": {
+      "customer_add": "Tambah {{type}}",
+      "activity": "Kegiatan",
+      "customer": "Penerima",
+      "add_customer": "Tambah Penerima",
+      "customer_name": "Nama Penerima",
+      "edit_activity": "Ubah Kegiatan",
+      "delete_confirmation": "Apakah Anda yakin ingin menghapus penerima ini?",
+      "delete_description": "Item yang dihapus tidak dapat dikembalikan",
+      "edit_activity_on_customer": "Ubah Kegiatan pada {{type}}",
+      "are_you_sure_discard_customer": "Apakah Anda yakin akan membatalkan pengaturan penerima?",
+      "your_change_will_not_saved": "Perubahan yang Anda buat akan hilang jika dibatalkan. Apakah Anda ingin melanjutkan pembatalan?",
+      "import_data_customer": "Impor Data Penerima",
+      "vendor_name": "Nama Pengirim",
+      "customer_cannot_same": "Penerima tidak boleh sama",
+      "select_customer": "Pilih penerima",
+      "select_activity": "Pilih kegiatan"
+    },
+    "material_entity": {
+      "title": "Manajemen Material Entitas",
+      "add_relation": "Tambah Relasi",
+      "temp_min": "Temperatur Min",
+      "temp_max": "Temperatur Maks",
+      "view_details": "Lihat Detail",
+      "confirmation_ensure_save": "Apakah Anda yakin ingin menyimpan ini?",
+      "edit_material_entity": "Ubah Material Entitas",
+      "detail_of_material_on_activities": " Detail Entitas Material",
+      "consumption_rate": "Tingkat Konsumsi",
+      "retailer_price": "Harga Ritel",
+      "tax": "Pajak",
+      "min": "Minimum",
+      "max": "Maksimum",
+      "edit_data": "Ubah Data",
+      "delete_confirmation": "Apakah Anda yakin ingin menghapus data entitas & material ini?",
+      "delete_material_activity_warning": "Material [{{materialName}}] pada kegiatan [{{activityName}}] tidak akan muncul di sini",
+      "edit_relation": "Ubah Relasi",
+      "go_to_material_bulk": "Pergi ke Material Entitas Bulk Action",
+      "select_material": "Pilih material"
+    }
+  },
+  "action": {
+    "activate": {
+      "button": "Aktifkan",
+      "confirmation": "Apakah anda yakin akan mengaktifkan ini ?"
+    },
+    "deactivate": {
+      "button": "Non Aktifkan",
+      "confirmation": "Apakah anda yakin akan menonaktifkan ini ?"
+    },
+    "description": "Deskripsi atau Risiko Tindakan"
+  },
+  "message": {
+    "data_currently_empty": "Data ini saat ini kosong. Silakan atur untuk melengkapi data ini."
+  },
+  "import": {
+    "description": "Unggah file .xls atau .xlsx (maks 10MB)"
+  },
+  "modal_relocation": {
+    "title": "Apakah Anda Yakin Nonaktifkan Vendor?",
+    "description": "Tindakan ini juga akan menonaktifkan <strong>akses relokasi</strong> material.<br />Karena entitas tidak lagi menjadi vendor, izin relokasi akan dinonaktifkan secara otomatis.",
+    "submit": "Ya, Nonaktifkan Vendor"
+  },
+  "satu_sehat_code": "Kode SATUSEHAT",
+  "placeholder_satu_sehat_code": "Kode SATUSEHAT",
+  "filter_placeholder_satu_sehat_code": "Ketik kode SATUSEHAT"
+}

@@ -1,0 +1,246 @@
+{
+  "title": "Perhitungan Kebutuhan Tahunan",
+  "meta": "SMILE | Perhitungan Kebutuhan Tahunan",
+  "list": {
+    "title": "Daftar Perhitungan Kebutuhan Tahunan",
+    "create": "Buat Perhitungan Kebutuhan",
+    "min_max": {
+      "status_activation": "Status Aktivasi Min Max",
+      "status_min_max": "Status Min Max",
+      "activated": "Diaktifkan",
+      "not_yet_activated": "Belum Diaktifkan",
+      "district_min_max_activation": "Aktivasi Min Max Kota/Kabupaten",
+      "item_selected": "{{value}} item dipilih",
+      "activate_selected_item": "Aktifkan Item yang Dipilih",
+      "already_activated": "Sudah Diaktifkan",
+      "toast": {
+        "description": "Apakah anda yakin ingin mengaktifkan min max provinsi untuk {{province}} ?",
+        "success": "Min Max Berhasil Diaktifkan"
+      }
+    },
+    "min_max_level": {
+      "province": "Tingkat Provinsi:",
+      "district": "Tingkat Kota/Kabupaten:"
+    },
+    "activate": "Aktifkan",
+    "filter": {
+      "program_plan": {
+        "label": "Rencana Program",
+        "placeholder": "Pilih rencana program"
+      },
+      "status": {
+        "placeholder": "Pilih status"
+      }
+    },
+    "column": {
+      "program_plan": "Rencana Program",
+      "city_district": "Kota/Kabupaten",
+      "approval_status": "Status Persetujuan",
+      "min_max_status": "Status Minimum dan Maksimum"
+    },
+    "action": {
+      "review_entry": "Tinjau Entri",
+      "continue_calculation": "Lanjut Perhitungan",
+      "correct_data": "Penyesuaian Data"
+    },
+    "empty": {
+      "title": "Tidak ada filter yang dipilih",
+      "description": "Data saat ini kosong. Silakan terapkan filter untuk melihat hasilnya."
+    },
+    "status": {
+      "approved": "Disetujui",
+      "desk": "Didesk",
+      "draft": "Draf",
+      "revision": "Direvisi"
+    }
+  },
+  "detail": {
+    "title": "Detil Perhitungan Kebutuhan Tahunan",
+    "meta": "SMILE | Detil Perhitungan Kebutuhan Tahunan",
+    "section": {
+      "area_program_plan": "Area & Rencana Program",
+      "population_adjustment": "Penyesuaian Populasi",
+      "define_ip": "Tentukan IP Kota/Kabupaten",
+      "result": "Hasil Perhitungan Kebutuhan"
+    },
+    "export": {
+      "toast": {
+        "success": "Hasil Perhitungan Kebutuhan berhasil diekspor"
+      }
+    }
+  },
+  "table_title": {
+    "needs_calculation": "Tabel Perhitungan Kebutuhan",
+    "material_list": "Daftar Material",
+    "health_care_list": "Dafter Fasilitas Kesehatan"
+  },
+  "status": {
+    "draft": "Draf",
+    "desk": "Didesk",
+    "revision": "Direvisi",
+    "approved": "Disetujui"
+  },
+  "create": {
+    "title": "Tambah Perhitungan Kebutuhan Tahunan",
+    "meta": "SMILE | Tambah Perhitungan Kebutuhan Tahunan",
+    "step": "Langkah",
+    "stepper": {
+      "step_3": [
+        "Penyesuaian Populasi",
+        "Tentukan IP Kota/Kabupaten",
+        "Hasil Perhitungan Kebutuhan"
+      ],
+      "step_4": [
+        "Area & Rencana Program",
+        "Penyesuaian Populasi",
+        "Tentukan IP Kota/Kabupaten",
+        "Hasil Perhitungan Kebutuhan"
+      ]
+    },
+    "form": {
+      "area_program_plan": {
+        "program_plan": {
+          "label": "Rencana Program",
+          "placeholder": "Pilih rencana program"
+        }
+      },
+      "column": [
+        "Nama Puskesmas",
+        "Penyesuaian Populasi",
+        "Terakhir diperbarui oleh",
+        "Persentase",
+        "Kuantitas (Pusdatin)",
+        "Penyesuaian Kuantitas"
+      ],
+      "info_correction": "{{filled}} dari {{total}} Kelompok Sasaran Disimpan",
+      "adjustment": "Penyesuaian",
+      "info_data_column": {
+        "all_approved": "Semua disetujui",
+        "approved": "Disetujui: {{value}}",
+        "revision": "Direvisi: {{value}}",
+        "revised": "{{revised}} dari {{revision}} Target Grup Diperbaiki"
+      },
+      "button": {
+        "process": "Proses",
+        "correction": "Tambah Penyesuaian",
+        "update_correction": "Perbarui Penyesuaian",
+        "fix": "Perbaiki",
+        "update": "Perbarui"
+      },
+      "status": {
+        "placeholder": "Pilih status"
+      },
+      "drawer_correction_data": {
+        "title": "Tambahkan Data Penyesuaian",
+        "preview_title": "Lihat Penyesuaian Populasi",
+        "health_care_name": "Nama Puskesmas",
+        "health_care_list": "Daftar Puskesmas",
+        "column": [
+          "Kelompok Sasaran",
+          "Persentase",
+          "Kuantitas (Pusdatin)",
+          "Penyesuaian Kuantitas"
+        ],
+        "qty_correction": {
+          "placeholder": "Masukkan kuantitas"
+        },
+        "button": {
+          "preview": "Lihat",
+          "save_and_next": "Simpan & Lanjut"
+        },
+        "revision": "Revisi"
+      },
+      "district_ip": {
+        "column": {
+          "material_name": "Nama Material",
+          "activity": "Kegiatan",
+          "target_group": "Kelompok Sasaran",
+          "national_ip": "IP Nasional",
+          "district_ip": "IP Kota/Kabupaten",
+          "data_status": "Status Data",
+          "latest_updated_by": "Terakhir diperbarui oleh"
+        },
+        "drawer": {
+          "title": "Ubah IP Kota/Kabupaten",
+          "approve_all": "Semua setujui",
+          "revise_all": "Semua revisi",
+          "see_calculation_result": "Lihat Hasil Perhitungan"
+        },
+        "validation": {
+          "district_ip": "IP Kota/Kabupaten tidak boleh melebihi SKU"
+        }
+      },
+      "calculation_result": {
+        "column": {
+          "health_care_name": "Nama Puskesmas",
+          "one_year": "1 Tahun",
+          "one_month": "1 Bulan",
+          "one_week": "1 Minggu",
+          "monthly_distribution": "Distribusi Bulanan",
+          "latest_updated_by": "Terakhir diperbarui oleh",
+          "month": "Bulan",
+          "quantity": "Kuantitas",
+          "updated_by": "Diperbarui oleh",
+          "needs": "Kebutuhan {{material}} - {{activity}}",
+          "needs_empty": "Kebutuhan"
+        },
+        "dose": "dosis",
+        "dose_distribution": "{{dose}} (dosis) per bulan",
+        "activity": {
+          "label": "Kegiatan",
+          "placeholder": "Pilih kegiatan"
+        },
+        "material": {
+          "label": "Nama Material",
+          "placeholder": "Pilih nama material"
+        },
+        "health_care": {
+          "label": "Nama Puskesmas",
+          "placeholder": "Pilih nama puskesmas"
+        },
+        "drawer": {
+          "title": "Detil Distribusi Bulanan"
+        },
+        "confirmation": {
+          "description": {
+            "submit": "Apakah Anda yakin ingin menyelesaikan proses perhitungan ini?",
+            "review": {
+              "approved": "Apakah Anda yakin ingin menyelesaikan proses peninjauan ini dan menyetujui semua data?",
+              "revised": "Apakah Anda yakin ingin menyelesaikan proses peninjauan ini dan ingin beberapa data direvisi?"
+            },
+            "revision": "Apakah Anda yakin ingin menyelesaikan proses revisi ini?"
+          }
+        },
+        "information": {
+          "title": "Perhitungan Kebutuhan"
+        }
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Perhitungan Kebutuhan Tahunan berhasil dibuat",
+        "update": "Perhitungan Kebutuhan Tahunan berhasil diperbarui",
+        "create_population": "Penyesuaian populasi berhasil dibuat",
+        "update_population": "Penyesuaian populasi berhasil diperbarui",
+        "create_district_ip": "City/District IP berhasil dibuat",
+        "update_district_ip": "City/District IP berhasil diperbarui",
+        "update_status": "Status berhasil diperbarui"
+      }
+    }
+  },
+  "review": {
+    "title": "Tinjau Perhitungan Kebutuhan Tahunan",
+    "meta": "SMILE | Tinjau Perhitungan Kebutuhan Tahunan"
+  },
+  "revision": {
+    "title": "Penyesuaian Perhitungan Kebutuhan Tahunan",
+    "meta": "SMILE | Penyesuaian Perhitungan Kebutuhan Tahunan"
+  },
+  "information": {
+    "description": {
+      "column": "<h6 class=\"ui-text-base ui-font-bold\">Penjelasan Kolom</h6><ul class=\"ui-list-disc ui-ml-4\"><li><b>1 Tahun:</b><div>Menunjukkan total kebutuhan material selama satu tahun yang dihitung berdasarkan akumulasi kebutuhan seluruh kelompok sasaran.</div></li><li><b>1 Bulan:</b><div>Menunjukkan kebutuhan rata-rata material per bulan. Nilai ini bersifat informatif dan tidak digunakan sebagai dasar perhitungan balik untuk menentukan kebutuhan tahunan.</div></li><li><b>1 Minggu:</b><div>Menunjukkan kebutuhan rata-rata material per minggu. Nilai ini bersifat informatif dan tidak digunakan sebagai dasar perhitungan balik untuk menentukan kebutuhan tahunan.</div></li><li><b>Min:</b><div>Menunjukkan stok minimum yang wajib tersedia pada setiap level entitas sesuai dengan kebijakan pengelolaan logistik agar tidak terjadi kekosongan stok.</div></li><li><b>Max:</b><div>Menunjukkan maksimum stok yang wajib tersedia pada setiap level entitas sesuai dengan kebijakan pengelolaan logistik.</div></li><li><b>Distribusi Bulanan:</b><div>Menampilkan rincian kebutuhan material per bulan. Informasi detail dapat diakses melalui tombol “Detail”.</div></li></ul>",
+      "formula": "<h6 class=\"ui-text-base ui-font-bold ui-mt-4\">Rumus Kebutuhan Tahunan per Jenis Material</h6><ol style=\"list-style: decimal\" class=\"ui-ml-4\"><li class=\"ui-font-bold\"><b>Vaksin</b><ol style=\"list-style: lower-alpha\" class=\"ui-font-normal ui-ml-4\"><li>Kebutuhan Vial<div>Kebutuhan vial dihitung dengan rumus: (Populasi × Target Sasaran × Jumlah Pemberian) ÷ Indeks Vaksinasi</div></li><li>Kebutuhan Dosis<div>Kebutuhan dosis dihitung dengan rumus: Kebutuhan vial × jumlah dosis per vial</div></li></ol></div></li><li class=\"ui-font-bold\"><b>Pelarut</b><div class=\"ui-font-normal\">Kebutuhan pelarut dihitung dengan rumus: Kebutuhan vial vaksin × rasio × jumlah dosis per vial</div></li><li class=\"ui-font-bold\"><b>Set Vial Vaksin (Dropper)</b><div class=\"ui-font-normal\">Kebutuhan set vial vaksin dihitung dengan rumus: Kebutuhan vial vaksin × rasio</div></li><li class=\"ui-font-bold\"><b>Alat Injeksi</b><div class=\"ui-font-normal\">Kebutuhan alat injeksi dihitung dengan rumus: Kebutuhan vial vaksin × rasio × indeks pemakaian</div></li><li class=\"ui-font-bold\"><b>Safety Box</b><div class=\"ui-font-normal\">Kebutuhan kotak penyimpanan dihitung dengan rumus: Kebutuhan alat suntik × rasio</div></li></ol>",
+      "note": "<h6 class=\"ui-text-base ui-font-bold ui-mt-4\">Catatan</h6><ul class=\"ui-list-disc ui-ml-4\"><li>Nilai Min–Max hanya relevan untuk material subprogram yang digunakan sepanjang tahun.</li></ul>"
+    }
+  }
+}

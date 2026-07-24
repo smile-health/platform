@@ -1,0 +1,104 @@
+{
+  "meta": "SMILE | Total Discard",
+  "title": "Total Discard",
+  "filter": {
+    "label": {
+      "activity": "Activity",
+      "material_type": "Material Type",
+      "material_hirearchy": "Product Template",
+      "expired_date": "Expired Date",
+      "expired_from": "Expired From",
+      "expired_to": "Expired To",
+      "entity": "Entity",
+      "entity_tag": "Entity Tag",
+      "province": "Province",
+      "city": "City/District",
+      "primary_health_care": "Primary Health Care",
+      "primary_vendor": "Primary Vendor"
+    },
+    "placeholder": {
+      "activity": "Search activity",
+      "material_type": "Select material type",
+      "material": "Select material",
+      "expired_date": "dd/mm/yyyy - dd/mm/yyyy",
+      "expired_from": "dd/mm/yyyy",
+      "expired_to": "dd/mm/yyyy",
+      "entity": "Search entity name",
+      "entity_tag": "Select entity tag",
+      "province": "Select province",
+      "city": "Select District",
+      "primary_health_care": "Select primary health care",
+      "primary_vendor": "Select primary vendor",
+      "batch": "Select batch"
+    },
+    "button": {
+      "close_all_filters": "Close All Filters"
+    },
+    "value": {
+      "material_type": [
+        "Vaccine",
+        "BHP Logistic"
+      ]
+    }
+  },
+  "table": {
+    "column": {
+      "si_no": "No.",
+      "enitity_name": "Entity Name",
+      "stock_from_discard": "Discard from Internal",
+      "stock_from_received": "Discard from External",
+      "action": "Action",
+      "updated_at": "Last Update",
+      "activity_name": "Activity",
+      "production_date": "Production Date",
+      "expired_date": "Expired Date",
+      "manufacture_name": "Manufacture Name"
+    },
+    "action": {
+      "detail": "Detail",
+      "reason": "View Reason"
+    }
+  },
+  "modal": {
+    "batch_detail_title": "View Batch Detail",
+    "batch_disposal_history": "Discard History",
+    "batch_total_shipment": "Total Disposal Shipment",
+    "batch_total_self_disposal": "Total Self Disposal"
+  },
+  "detail": {
+    "title": "Discard Details",
+    "meta": "SMILE | Discard Details",
+    "entity": {
+      "title": "Entity",
+      "name": "Entity Name",
+      "address": "Address",
+      "updated_at": "Updated At"
+    },
+    "material": {
+      "title": "Material",
+      "active_ingredient": "Product Template Material",
+      "total_stock_disposal": "Total Discard",
+      "stock_from_discard_transaction": "Discard from Internal",
+      "stock_from_received_disposal": "Discard from External",
+      "stock_from_discard": "Discard from Internal",
+      "stock_from_received": "Discard from External"
+    },
+    "trademark": {
+      "title": "Product Variant Material",
+      "table": {
+        "column": {
+          "sl_no": "Sl.No",
+          "material": "Material",
+          "stock_from_discard": "Discard from Internal",
+          "stock_from_received": "Discard from External",
+          "updated_at": "Updated at",
+          "action": "Action",
+          "batch_info": "Batch Info"
+        },
+        "action": {
+          "view_detail": "View Detail"
+        }
+      }
+    }
+  }
+}

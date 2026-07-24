@@ -1,0 +1,95 @@
+{
+  "title": {
+    "page": "Dasbor Stok Opname"
+  },
+  "tab": {
+    "entity": "Kepatuhan Entitas",
+    "result": "Hasil Stok Opname",
+    "material": "Hasil SO Per Material Produk Template"
+  },
+  "information": {
+    "title": "Dasbor Stok Opname",
+    "description": "Laporan dasbor stok opname menjelaskan informasi tentang kepatuhan entitas dan hasil stok dalam melakukan stok opname selama periode tertentu.",
+    "item": {
+      "title": "Tabel",
+      "description": [
+        "<bold>Stok di SMILE yang sudah stok opname:</bold> jumlah stok yang tercatat pada sistem SMILE.",
+        "<bold>Stok kedaluwarsa di SMILE:</bold> jumlah stok yang sudah kadaluwarsa saat dilakukan stok opname.",
+        "<bold>Stok belum diterima:</bold> jumlah stok distribusi yang belum diterima saat stok opname + jumlah stok retur yang belum diterima saat stok opname.",
+        "<bold>Stok riil stok opname:</bold> jumlah stok riil material yang ada saat stok opname.",
+        "<bold>Selisih:</bold> perbedaan jumlah stok antara stok di SMILE dengan stok riil saat stok opname."
+      ]
+    }
+  },
+  "form": {
+    "period": {
+      "label": "Periode Stok Opname",
+      "placeholder": "Pilih periode stok opname"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Pilih level KFA material"
+      },
+      "name": {
+        "label": "Nama Material",
+        "placeholder": "Pilih nama material"
+      }
+    },
+    "expired": {
+      "label": "Tanggal Kedaluwarsa"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "information_type": {
+      "label": "Jenis Informasi"
+    }
+  },
+  "column": {
+    "entity": {
+      "main": "Entitas",
+      "condition": "Kondisi Entitas",
+      "have_transaction": "Punya Transaksi",
+      "not_yet": "Belum Melakukan Stok Opname",
+      "done": "Sudah Melakukan Stok Opname",
+      "total": "Jumlah Entitas"
+    },
+    "result": {
+      "difference": "Selisih",
+      "stock": {
+        "taking": "Stok di SMILE yang Sudah Stok Opname",
+        "expired": "Stok Kedaluwarsa di SMILE",
+        "in_transit": "Stok yang Belum Diterima",
+        "real": "Stok Riil Hasil Stok Opname"
+      }
+    },
+    "material": {
+      "real": "Riil"
+    },
+    "opname_recap": "Progres Material Wajib",
+    "display_in_dashboard": "Tampilan di Dasbor"
+  },
+  "last_updated_at": "Terakhir diperbarui pada"
+}

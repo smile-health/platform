@@ -1,0 +1,80 @@
+{
+    "stock_opname": "Stock Taking",
+    "stock_opname_list": "Stock Taking List",
+    "stock_opname_create": "Create Stock Taking",
+    "form": {
+        "activity": {
+            "label": "Activity",
+            "placeholder": "Select activity"
+        },
+        "material_type": {
+            "label": "Material Type",
+            "placeholder": "Select material type"
+        },
+        "material": {
+            "label": "Material",
+            "placeholder": "Select material"
+        },
+        "batch": {
+            "label": "Batch",
+            "placeholder": "Search by batch"
+        },
+        "entity_tag": {
+            "label": "Entity Tag",
+            "placeholder": "Select entity tag"
+        },
+        "stock_taking_period": {
+            "label": "Stock Taking Period",
+            "placeholder": "Select stock taking period",
+            "required": "Stock Taking Period is required"
+        },
+        "expired_date": {
+            "label": "Expired Date",
+            "start": "Expired from",
+            "end": "Expired to"
+        },
+        "do_from": {
+            "label": "Do From",
+            "start": "Do from",
+            "end": "Do to"
+        },
+        "show_stock_zero": {
+            "label": "Show Zero Stock"
+        },
+        "integrated_healthcare": {
+            "label": "Integrated Health Care",
+            "placeholder": "Select integrated health care"
+        },
+        "material_kfa_level": {
+            "label": "Material KFA Level",
+            "placeholder": "Select material KFA level",
+            "required": "Material KFA Level is required"
+        },
+        "created_at": {
+            "label": "Created Date"
+        }
+    },
+    "columns": {
+        "entity_name": "Entity Name",
+        "material_name": "Material Name",
+        "material_info": "Material Info",
+        "activity": "Activity",
+        "batch": "Batch",
+        "expired_date": "Expired Date",
+        "remaining_stock_in_smile": "Remaining stock at SMILE",
+        "stock_in_transit": "Stock In Transit",
+        "remaining_stock_real": "Real Stock Remaining",
+        "stock_taking_period": "Period",
+        "compliance": "Compliance",
+        "stock_opname_new_has_opnamed": "Done SO",
+        "stock_opname_new_has_not_opnamed": "Not Yet",
+        "do_at": "Do At",
+        "created_by": "Created By",
+        "last_stocktaken_by": "Last Stock Taken By"
+    },
+    "others": {
+        "active_substance_and_strength": "Product Template",
+        "trademark": "Product Variant"
+    },
+    "cut_off_time": "Stock Cut-off Time"
+}

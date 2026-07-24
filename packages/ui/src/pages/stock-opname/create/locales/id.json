@@ -1,0 +1,168 @@
+{
+  "meta": "SMILE | Tambah Stok Opname",
+  "title": "Tambah Stok Opname",
+  "form": {
+    "detail": {
+      "title": "Stok Opname Detail",
+      "label": {
+        "entity": "Entitas",
+        "periode": "Periode"
+      },
+      "placeholder": {
+        "entity": "Pilih entitas",
+        "periode": "Pilih periode"
+      },
+      "cold_storage": [
+        "Total Volume Stok :",
+        "Kapasitas Neto Aset :",
+        "Persentase Terpakai :"
+      ],
+      "warning_changes": [
+        "Apakah Anda yakin ingin menghapus ini?",
+        "Semua informasi yang Anda masukkan dalam material ini akan hilang."
+      ]
+    },
+    "material": {
+      "title": "Produk Template",
+      "table": {
+        "search": [
+          "Cari produk template",
+          "Cari material"
+        ],
+        "description": [
+          "Silakan pilih entitas dan periode opname stok terlebih dahulu",
+          "Klik kotak centang untuk memilih material. Material yang dipilih akan muncul pada tabel transaksi di bawah ini"
+        ],
+        "column": {
+          "name": "Nama Material",
+          "available_stock": "Stok Tersedia",
+          "last_update": "Terakhir diperbarui Stok Opname {{date}}",
+          "selection": "Seleksi",
+          "total_on_hand_stock": "Total Sisa Stok",
+          "remaining_stock": "Sisa Stok",
+          "mandatory": "Wajib SO"
+        }
+      },
+      "yes": "Ya",
+      "no": "Tidak"
+    },
+    "trademark": {
+      "title": "Produk Varian",
+      "table": {
+        "search": "Cari produk varian",
+        "column": {
+          "name": "Nama Material",
+          "so_info": "Info SO",
+          "selection": "Seleksi",
+          "remaining_stock": "Sisa Stok"
+        }
+      }
+    },
+    "transaction": {
+      "title": "Tabel Stok Opname",
+      "action": {
+        "add_batch_quantity": "Kuantitas Batch",
+        "update_batch_quantity": "Ubah Kuantitas Batch",
+        "add_detail_quantity": "Detail",
+        "update_detail_quantity": "Ubah Detail"
+      },
+      "columns": {
+        "material_info": "Info Material",
+        "activity": "Kegiatan",
+        "expired_date": "Tanggal Kedaluwarsa",
+        "remaining_stock": "Sisa Stok di SMILE",
+        "stock_in_transit": "Stok Dalam Perjalanan",
+        "real_stock": "Sisa Stok Riil",
+        "action": "Aksi",
+        "batch": "Info Batch"
+      },
+      "description": {
+        "batch": {
+          "production_date": "Tanggal Produksi: {{value}}",
+          "manufacturer": "Pabrik: {{value}}",
+          "expired_date": "Tanggal Kedaluwarsa: {{value}}",
+          "code": "Kode Batch: {{value}}"
+        },
+        "stock": {
+          "remaining_stock": "Sisa Stok di Smile: {{value}}",
+          "real_stock": "Sisa Stok Riil: {{value}}"
+        }
+      },
+      "placeholder": {
+        "add_material": "Tambah material",
+        "activity": "Pilih kegiatan",
+        "batch": "Masukkan kode batch",
+        "qty": "Masukkan kuantitas"
+      },
+      "detail": {
+        "title": [
+          "Batch dari Material {{name}}",
+          "Detail dari Material {{name}}"
+        ]
+      },
+      "validation": {
+        "qty_unit": "Kuantitas harus kelipatan {{amount}}",
+        "material": "Tidak ada material yang terpilih"
+      },
+      "drawer": {
+        "title": [
+          "Daftar Batch",
+          "Daftar Detail"
+        ],
+        "description": [
+          "Produk Template",
+          "Produk Varian",
+          "Stok Tersedia"
+        ]
+      }
+    },
+    "new_batch": {
+      "title": [
+        "Tambah Batch Baru",
+        "Tambah Detail Baru"
+      ],
+      "label": {
+        "activity": "Kegiatan",
+        "batch_code": "Kode Batch",
+        "manufacturer": "Pabrik",
+        "production_date": "Tanggal Produksi",
+        "expired_date": "Tanggal Kedaluwarsa"
+      },
+      "placeholder": {
+        "activity": "Pilih kegiatan",
+        "batch_code": "Masukkan kode batch",
+        "manufacturer": "Pilih pabrik"
+      },
+      "validation": {
+        "production_date": "Tanggal produksi tidak boleh lebih dari hari ini",
+        "expired_date": "Tanggal kadaluwarsa tidak boleh kurang dari hari ini",
+        "batch_code_alread_exist": "Kode batch sudah tersedia",
+        "activity_alread_exist": "Tidak bisa menambah batch baru dengan kegiatan yang sama"
+      }
+    },
+    "reset": {
+      "description": "Apakah kamu yakin untuk menghapus data yang telah diisi?"
+    },
+    "submit": {
+      "error": {
+        "no_material": "Tidak ada item yang akan disimpan, Periksa kembali material yang di tambahkan dan tekan tombol simpan pada batch untuk menyimpan perubahan"
+      },
+      "warning": {
+        "warning_item": "Tidak ada item yang akan disimpan, Periksa kembali material yang di tambahkan dan tekan tombol simpan pada batch untuk menyimpan perubahan",
+        "out_date": [
+          "Apakah Anda yakin ingin memperbarui ini?",
+          "Data telah diambil stoknya selama periode ini."
+        ]
+      },
+      "success": {
+        "out_date": "Anda melakukan Stok Opname diluar tanggal SO yang ditentukan kemenkes",
+        "today": "Stok Opname berhasil disimpan"
+      }
+    }
+  },
+  "modal_confirmation_stock" : {
+    "desc_one" : "Beberapa item belum diisi",
+    "desc_two" : "Beberapa item belum diisi. Sistem akan menganggap stok item tersebut bernilai 0. Apakah Anda yakin ingin melanjutkan?"
+  },
+  "cut_off_time": "Cut-off Time Stok"
+}

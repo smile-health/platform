@@ -1,0 +1,232 @@
+{
+  "global": {
+    "title": "Entity Settings"
+  },
+  "list": {
+    "list": "Entity Settings",
+    "tab": {
+      "list": "Entity List",
+      "create": "Add Entity"
+    },
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Type entity name"
+      },
+      "type": {
+        "label": "Type",
+        "placeholder": "Select type"
+      },
+      "tag": {
+        "placeholder": "Select tag"
+      },
+      "button": {
+        "search": "Search"
+      },
+      "program": {
+        "placeholder": "Select program"
+      },
+      "without_program": "No program applied"
+    },
+    "column": {
+      "name": "Entity Name",
+      "location": "Location",
+      "tag": "Entity Tags",
+      "code": "Entity Code",
+      "update": "Last Update",
+      "action": "Action",
+      "configuration": "Detail & Configure"
+    },
+    "options": {
+      "tag": "Select Tag",
+      "type": "Select Type"
+    },
+    "action": {
+      "activate": {
+        "title": "Activate"
+      },
+      "deactivate": {
+        "title": "Deactivate"
+      }
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Add Entity",
+      "detail": "Entity Detail",
+      "edit": "Edit Entity"
+    },
+    "information": {
+      "title": "Entity Information",
+      "label": {
+        "code": "Entity Code",
+        "name": "Entity Name",
+        "type": "Type",
+        "vendor": "Is Sender?",
+        "hc": "Is Primary Health Care?",
+        "asik": "ASIK Integration?"
+      },
+      "placeholder": {
+        "code": "Entity code",
+        "name": "Entity name",
+        "type": "Select tipe",
+        "tag": "Select tag"
+      }
+    },
+    "location": {
+      "title": "Location",
+      "label": {
+        "province": "Province",
+        "city": "City/District",
+        "district": "Sub District",
+        "subdistrict": "Village",
+        "postal": "Postal code",
+        "address": "Address"
+      },
+      "placeholder": {
+        "select": "Select"
+      }
+    },
+    "time": {
+      "title": "Activity Implementation Time",
+      "label": {
+        "start": "Start Date",
+        "end": "End Date"
+      },
+      "setup_data": "Setup Data"
+    },
+    "programs": {
+      "description": "The selected programs cannot be undone (unchecked) once data has been saved",
+      "search": "Search program name",
+      "selected": "Selected",
+      "logistics": "Logistics",
+      "beneficiary": "Beneficiaries"
+    },
+    "users": {
+      "search": "User Name"
+    },
+    "errors": {
+      "at_least_one_required": "Unable to save data. Please enter at least one Start Date",
+      "invalid_date_format": "Date format is invalid",
+      "invalid_only_end_date": "Start Date must be filled if End Date is filled",
+      "invalid_end_date": "End Date must be greater than Start Date",
+      "invalid_start_date": "Start Date must be less than End Date",
+      "invalid_current_start_date": "Start Date must be greater than previous End Date",
+      "prev_end_date_required": "If you have next Start Date, so previous End Date is required",
+      "max_greater_than_min": "Max value must be greater than Min value",
+      "min_less_than_max": "Min value must be less than Max value",
+      "insert_with_number": "Please insert number",
+      "error_fetching_data": "Error fetching data"
+    },
+    "success": {
+      "activity_implementation_time": "Activity Implementation Time data has been successfully updated",
+      "success_update_customer": "{{customerType}} data has been successfully updated",
+      "success_import_customer": "Import receiver data successful",
+      "success_delete_customer": "The receiver data has been successfully deleted",
+      "success_update_material_entity": "Edit relation of material entity data successful",
+      "success_add_material_entity": "Add relation of material entity data successful",
+      "success_delete_material_entity": "Delete relation of material entity data successful",
+      "save": "Entity successfully saved",
+      "update": "Entity successfully updated",
+      "import": "Import entity data successful"
+    }
+  },
+  "detail": {
+    "title": "Entity Detail",
+    "details": {
+      "title": "Detail",
+      "tag": "Entity Tags",
+      "last_update": "Last Update"
+    },
+    "users": {
+      "title": "Users",
+      "placeholder": "Search username"
+    },
+    "tabs_title": {
+      "detail": "Details",
+      "activity_implementation_time": "Activity Implementation Time",
+      "customer_vendor": "Receiver & Sender",
+      "entity_material_activity_relation": "Material Entity Management"
+    },
+    "information": {
+      "table_title": {
+        "distribution_customer": "Distribution Receiver",
+        "consumption_customer": "Last Mile Receiver",
+        "vendor": "Sender"
+      },
+      "entity_type": "Entity Type"
+    },
+    "additional": {
+      "title": "Additional Details",
+      "vendor": "Is Sender",
+      "is_primary_health_care": "Is Primary Health Care",
+      "asik": "ASIK Integration",
+      "relocation": "Relocation Access",
+      "active_transaction": "Active Transaction Entity"
+    },
+    "customer_vendor": {
+      "customer_add": "Add {{type}}",
+      "activity": "Activity",
+      "customer": "Receiver",
+      "add_customer": "Add Receiver",
+      "customer_name": "Receiver Name",
+      "edit_activity": "Edit Activity",
+      "delete_confirmation": "Are you sure want to delete this receiver ?",
+      "delete_description": "Deleted item can not turn back",
+      "edit_activity_on_customer": "Edit Activity on {{type}}",
+      "are_you_sure_discard_customer": "Are you sure want to discard receiver setting?",
+      "your_change_will_not_saved": "Your change will be discarded if you cancel. Do you want to continue cancel?",
+      "import_data_customer": "Import Data Receiver",
+      "vendor_name": "Sender Name",
+      "customer_cannot_same": "Receiver cannot be the same",
+      "select_customer": "Select receiver",
+      "select_activity": "Select activity"
+    },
+    "material_entity": {
+      "title": "Material Entity Management",
+      "add_relation": "Add Relation",
+      "temp_min": "Min Temperature",
+      "temp_max": "Max Temperature",
+      "view_details": "View Details",
+      "confirmation_ensure_save": "Are you sure want to save this?",
+      "edit_material_entity": "Edit Material Entity",
+      "detail_of_material_on_activities": "Detail Material Entity",
+      "consumption_rate": "Consumption Rate",
+      "retailer_price": "Retailer Price",
+      "tax": "Tax",
+      "min": "Min",
+      "max": "Max",
+      "edit_data": "Edit Data",
+      "delete_confirmation": "Are you sure want to delete this entity material?",
+      "delete_material_activity_warning": "The material [{{materialName}}] on activity [{{activityName}}] will not appear here",
+      "edit_relation": "Edit Relation",
+      "go_to_material_bulk": "Go to Entity Material Bulk Action",
+      "select_material": "Select material"
+    }
+  },
+  "action": {
+    "activate": {
+      "button": "Activate",
+      "confirmation": "Are you sure you want to activate this?"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "confirmation": "Are you sure you want to deactivate this?"
+    },
+    "description": "Description or Risk of Action"
+  },
+  "message": {
+    "data_currently_empty": "This data is currently empty. Please set up to complete this data."
+  },
+  "import": {
+    "description": "Upload .xls or .xlsx file (max 10MB)"
+  },
+  "modal_relocation": {
+    "title": "Are you Sure Deactivate Is Vendor?",
+    "description": "This action will also disable material <strong>relocation access.</strong><br />Since the entity will no longer be a vendor, relocation permissions will be deactivated automatically.",
+    "submit": "Yes, Deactivate Vendor"
+  },
+  "satu_sehat_code": "SATUSEHAT Code",
+  "placeholder_satu_sehat_code": "SATUSEHAT code",
+  "filter_placeholder_satu_sehat_code": "Type SATUSEHAT code"
+}

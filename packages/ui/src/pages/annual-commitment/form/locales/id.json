@@ -1,0 +1,75 @@
+{
+  "page": {
+    "title": {
+      "label": "Komitmen Tahunan",
+      "create": "Tambah Komitmen Tahunan",
+      "edit": "Edit Komitmen Tahunan"
+    }
+  },
+  "section": {
+    "detail": {
+      "title": "Detail Komitmen Tahunan"
+    },
+    "centralAllocation": {
+      "title": "Alokasi Pusat"
+    },
+    "buffer": {
+      "title": "Buffer"
+    }
+  },
+  "field": {
+    "contract_number": {
+      "label": "Nomor Kontrak",
+      "placeholder": "Pilih Nomor Kontrak"
+    },
+    "year": {
+      "label": "Tahun",
+      "placeholder": "Pilih Tahun"
+    },
+    "contract_start_date": {
+      "label": "Tanggal Mulai Kontrak",
+      "placeholder": "Pilih Tanggal"
+    },
+    "contract_end_date": {
+      "label": "Tanggal Akhir Kontrak",
+      "placeholder": "Pilih Tanggal"
+    },
+    "supplier": {
+      "label": "Penyedia",
+      "placeholder": "Pilih Penyedia"
+    },
+    "description": {
+      "label": "Deskripsi",
+      "placeholder": "Masukkan deskripsi"
+    }
+  },
+  "table": {
+    "column": {
+      "no": "No.",
+      "materialName": "Nama Material",
+      "provinceReceiver": "Provinsi Penerima",
+      "numberVial": "Jumlah (Vial/Unit)",
+      "numberDose": "Jumlah (Dosis/Unit)",
+      "action": "Aksi"
+    },
+    "addMaterial": "Tambah Material"
+  },
+  "button": {
+    "back": "Kembali",
+    "save": "Simpan",
+    "remove": "Hapus"
+  },
+  "validation": {
+    "provinces": "Provinsi tidak boleh sama dengan provinsi material lain dengan nama yang sama",
+    "atLeastOneRequired": "Minimal satu Alokasi Pusat atau Buffer harus diisi"
+  },
+  "option": {
+    "create": "Tambah {{value}}"
+  },
+  "modal": {
+    "confirmNoMaterial": {
+      "title": "Konfirmasi",
+      "description": "Apakah Anda yakin ingin menyimpan tanpa memasukkan material?"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Annual Commitment",
+  "table": {
+    "title": "Annual Commitment List",
+    "column": {
+      "no": "No",
+      "contract_number": "Contract Number",
+      "year": "Year",
+      "material": "Material",
+      "supplier": "Supplier",
+      "lastUpdatedAt": "Last Updated at",
+      "action": "Action"
+    }
+  },
+  "button": {
+    "create": "Add Annual Commitment",
+    "import": "Import",
+    "export": "Export",
+    "downloadTemplate": "Download Template"
+  },
+  "field": {
+    "contract_number": {
+      "label": "Contract Number",
+      "placeholder": "Select contract number"
+    },
+    "year": {
+      "label": "Year",
+      "placeholder": "Type to search"
+    },
+    "materialName": {
+      "label": "Material Name",
+      "placeholder": "Select material name"
+    },
+    "supplier": {
+      "label": "Supplier",
+      "placeholder": "Select supplier"
+    },
+    "provinceReceiver": {
+      "label": "Province Receiver",
+      "placeholder": "Select province receiver"
+    }
+  }
+}

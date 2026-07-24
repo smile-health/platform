@@ -1,0 +1,128 @@
+{
+  "title": {
+    "page": "Dasbor Imunisasi Rabies",
+    "program_coverage": "Cakupan Program",
+    "rabies_vaccination": "Vaksinasi Rabies",
+    "care_cascade": "Alur Perawatan Rabies",
+    "patient_dose": "Vaksin Berdasarkan Pasien dan Penyuntikan",
+    "vaccine_sequence": "Konsumsi Bulanan VAR",
+    "injection_by_location_and_treatment": "Penyuntikan Berdasarkan Lokasi dan Pengobatan",
+    "location": "Vaksinasi Dalam Wilayah",
+    "detail": "Data Detail",
+    "subtitle_detail": "Vaksinasi Rabies berdasarkan ID Pasien dan Urutan",
+    "cascade": "Kaskade",
+    "vaccination_detail": "Detail Vaksinasi",
+    "gender_with_method": "Metode {{method}} untuk {{gender}}"
+  },
+  "label": {
+    "location": "Lokasi",
+    "province": "Provinsi",
+    "total_province": "Jumlah Provinsi",
+    "regency": "Kabupaten/Kota",
+    "phc": "dari <span>{{total}}</span> Entitas Puskesmas",
+    "hospital": "dari <span>{{total}}</span> Rumah Sakit",
+    "last_updated": "Perubahan Terakhir:",
+    "total_var_sar_case": "Jumlah Kasus GHPR diberi VAR dan SAR",
+    "total_var_case": "Jumlah Kasus Penerima VAR",
+    "total_var_dose": "Total Dosis VAR",
+    "total_sar_case": "Jumlah Kasus Penerima SAR",
+    "total_sar_dose": "Total Dosis SAR",
+    "method": "Metode",
+    "gender": "Jenis Kelamin",
+    "all": "Semua",
+    "all_gender": "Semua jenis kelamin",
+    "all_methods": "Semua metode",
+    "all_entity_levels": "Semua Tingkat Entitas",
+    "intra_muscular": "Intra Muskular",
+    "male": "Laki-Laki",
+    "female": "Perempuan",
+    "nik": "NIK",
+    "non_nik": "Non NIK",
+    "prevention_on_schedule": "Pra-Pajanan Sesuai Jadwal",
+    "not_on_schedule": "Tidak Sesuai Jadwal",
+    "post_on_schedule": "Sesuai Jadwal",
+    "confirmed": "Terkonfirmasi",
+    "loss_to_follow_up": "Putus tindak lanjut",
+    "total_patient": "Total Pasien",
+    "total_dose": "Jumlah Dosis",
+    "total_injection": "Jumlah Penyuntikan",
+    "prep": "PrEP Hari {{day}}",
+    "pep": "PEP Hari {{day}}",
+    "booster": "Booster {{day}}",
+    "grand_total": "Jumlah Keseluruhan",
+    "view_detail": "Lihat Detail",
+    "list_regency": "Daftar Kabupaten/Kota",
+    "entity_name": "Nama Entitas",
+    "patient_id": "ID Pasien",
+    "material_info": "Informasi Material",
+    "material_name": "Nama Material",
+    "material_unit": "Unit Material",
+    "material_category": "Kategori Material",
+    "injection_info": "Informasi Penyuntikan",
+    "vaccine_type": "Tipe Vaksinasi",
+    "vaccination_schedule": "Urutan Vaksin",
+    "quantity": "Kuantitas",
+    "injection_qty": "Kuantitas Penyuntikan",
+    "created_at": "Dibuat Pada",
+    "graph_rabies_vaccine_recipient": "Grafik Penerima Vaksin Rabies berdasarkan Urutan dan Bulan",
+    "injection": "Penyuntikan",
+    "var": "Vaksin Anti-Rabies (VAR)",
+    "sar": "Serum Anti-Rabies (SAR)"
+  },
+  "tabs": {
+    "var": {
+      "label": "VAR",
+      "value": "var"
+    },
+    "sar": {
+      "label": "SAR",
+      "value": "sar"
+    }
+  },
+  "description": {
+    "program_coverage": "Cakupan wilayah (provinsi dan kabupaten/kota) dan jumlah fasilitas layanan kesehatan berbasis masyarakat tingkat 1 (Puskesmas) dan rumah sakit rujukan yang memberikan pelayanan kasus rabies dan melakukan kegiatan transaksi logistik untuk program rabies.",
+    "rabies_vaccination": "Informasi ringkasan mengenai jumlah kasus dan logistic terkait Vaksin Anti Rabies (VAR) dan Serum Anti Rabies (SAR). Informasi yang ditampilkan meliputi jumlah kasus gigitan hewan penular rabies (GHPR) penerima VAR dan SAR, jumlah kasus penerima VAR, total dosis VAR yang telah dikeluarkan, total penerima SAR, total dosis SAR yang telah dikeluarkan. <br/><br/> <b>Judul di scorecard:</b>",
+    "patient_dose": "Perbandingan jumlah vaksin (VAR) atau serum (SAR) yang dikeluarkan dengan jumlah orang yang menerima VAR dan SAR.",
+    "vaccine_sequence": "Jumlah penyuntikan vaksin anti rabies untuk pelayanan kasus rabies berdasarkan bulan.",
+    "location": "Jumlah dosis yang dikeluarkan untuk pelayanan kasus rabies berdasarkan wilayah (provinsi dan kabupaten/kota) dan kategori pengobatan (PrEP, PEP dosis primer, PEP Booster). PrEP dibagi menjadi PrEP I dan PrEP II; PEP dosis primer terdiri dari PEP VAR I, VAR II, dan VAR III; PEP Booster terdiri dari Booster I dan Booster II.",
+    "detail": "Informasi rinci terkait individu dan nama material vaksin, dosis vaksin, lokasi pemberian (wilayah provinsi, kabupaten/kota, nama fasilitas kesehatan) dan tanggal pemberian."
+  },
+  "details": {
+    "care_cascade": [
+      "Memperlihatkan hasil dari kepatuhan penerima imunisasi rabies di sepanjang tahapan tata laksana kasus rabies di sistem layanan Kesehatan. Cascade dinilai dari tahapan pra-pajanan atau Pre-exposure Prophylaxis (PrEP) dan pasca-pajanan atau Post-exposure Prophylaxis (PEP). PrEP dibedakan dalam dua tahap: PrEP I dan PrEP II dengan jarak ideal pemberian 7 hari. Pemberian jumlah dosis dan jarak antar pemberian untuk PrEP dengan metode Zagreb dibedakan berdasarkan jalur pemberian yaitu intramuscular (IM) dan intradermal (ID) yaitu 2-0-1-0 (IM) atau 2-2-0-0 (ID). <br/><br/>",
+      "Pemberian jumlah dosis dan jarak antar pemberian untuk PEP dengan metode Zagreb dibedakan berdasarkan jalur pemberian, yaitu intramuscular (IM) atau intradermal (ID). Contoh jalur IM adalah 2-0-1-0 (IM) atau 2-2-0-0 (ID). <br/><br/>",
+      "Jalur pemberian IM: Hari ke-0 (2 dosis), Hari ke-3 (0 dosis), Hari ke-7 (1 dosis), Hari ke-14 (0 dosis), dan Hari ke-21/28 (1 dosis). <br/><br/>",
+      "Jalur pemberian ID: Hari ke-0 (2 dosis), Hari ke-3 (2 dosis), Hari ke-7 (2 dosis), Hari ke-14 (0 dosis), dan Hari ke-21/28 (0 dosis). <br/><br/>",
+      "Jika hasil observasi selama 14 hari HPR sehat dan pemeriksaan sampel otak HPR negatif, maka pemberian dosis ke-3 tidak dilanjutkan atau terkonfirmasi bukan kasus rabies. <br/><br/>",
+      "VAR booster diberikan bila gigitan > 3 bulan setelah PEP atau PEP minimal 3 dosis VAR. Pemberian booster ini dilakukan hari ke-3 setelah booster I. Jika pemberian PrEP, PEP, dan Booster tidak mengikuti jadwal yang seharusnya (waktu pemberian standar/idéal) maka dikelompokkan ke dalam PrEP/PEP/Booster tidak sesuai jadwal. Jika tidak melanjutkan sequence PrEP/PEP/Booster, dihitung sebagai lost-to-follow up (LTFU)."
+    ]
+  },
+  "form": {
+    "period": {
+      "label": "Periode"
+    },
+    "date_range": {
+      "label": "Rentang Tanggal"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "primary_health_care": {
+      "label": "Puskesmas",
+      "placeholder": "Pilih puskesmas"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    }
+  }
+}

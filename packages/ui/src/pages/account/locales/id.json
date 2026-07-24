@@ -1,0 +1,96 @@
+{
+  "last_login_info": "Login terakhir pada {{info}}",
+  "via": "melalui {{device}}",
+  "information_updated": "Informasi Diperbarui",
+  "see_changes": "Lihat Perubahan",
+  "title": {
+    "edit_profile": "Ubah Profil",
+    "edit_password": "Ubah Password",
+    "profile_detail": "Info Pengguna",
+    "info_login_device": "Info Keaktifan Pengguna",
+    "entity": "Entitas",
+    "history_change_data": "Riwayat Perubahan",
+    "workspace_entity_info": "Info Program & Entitas",
+    "profile_title": "Akun Saya",
+    "main_info": "Info Utama",
+    "additional_info": "Info Tambahan"
+  },
+  "button": {
+    "edit_profile": "Ubah Profil",
+    "edit_password": "Ubah Password"
+  },
+  "change_history": {
+    "firstname": "Nama Depan",
+    "lastname": "Nama Belakang",
+    "gender": "Jenis Kelamin",
+    "phone_number": "Nomor Handphone",
+    "password": {
+      "label": "Kata Sandi",
+      "changed": "Kata Sandi anda telah diperbarui pada {{date}}"
+    }
+  },
+  "form": {
+    "label": {
+      "mobile_phone": "Nomor Handphone",
+      "email": "Email",
+      "password": "Kata sandi lama",
+      "new_password": "Kata sandi baru",
+      "password_confirmation": "Konfirmasi kata sandi baru",
+      "firstname": "Nama Depan",
+      "lastname": "Nama Belakang",
+      "gender": "Jenis Kelamin",
+      "date_of_birth": "Tanggal Lahir",
+      "address": "Alamat"
+    },
+    "placeholder": {
+      "mobile_phone": "Nomor Handphone",
+      "email": "Email",
+      "password": "Kata sandi lama",
+      "new_password": "Kata sandi baru",
+      "password_confirmation": "Konfirmasi kata sandi baru",
+      "firstname": "Nama depan",
+      "lastname": "Nama belakang",
+      "gender": "Jenis kelamin",
+      "address": "Masukkan alamat"
+    },
+    "validation": {
+      "empty_field": "Semua kolom harus diisi. Isi kata sandi Anda saat ini, kata sandi baru, dan kata sandi konfirmasi",
+      "empty_old_password": "Kata sandi lama harus diisi",
+      "empty_new_password": "Kata sandi baru harus diisi",
+      "empty_confirmation_password": "Konfirmasi kata sandi baru harus diisi",
+      "password_validation_text": "Kata sandi: 8+ karakter, A-Z, a-z, 0-9, simbol, tanpa spasi.",
+      "password_confirmation_validation": "Kata sandi baru dan konfirmasi kata sandi baru tidak cocok.",
+      "old_password_same_with_new": "Kata sandi baru harus berbeda dari kata sandi saat ini",
+      "first_name_required": "Nama Depan wajib diisi",
+      "email_required": "Email wajib diisi",
+      "email": "Email tidak valid",
+      "phone_number": "Nomor telepon minimal 10 karakter dan harus dimulai dengan 08 atau 628"
+    },
+    "message": {
+      "change_profile_success": "Berhasil mengubah Data Profil"
+    }
+  },
+  "field": {
+    "firstname": "Nama Depan",
+    "lastname": "Nama Belakang",
+    "username": "Username",
+    "name": "Nama",
+    "role": "Role",
+    "gender": "Jenis Kelamin",
+    "birth_date": "Tanggal Lahir",
+    "phone_number": "Nomor Handphone",
+    "address": "Alamat",
+    "last_login": "Login Terakhir",
+    "last_device_access": "Device Terakhir Login",
+    "entity": {
+      "name": "Nama",
+      "address": "Alamat",
+      "type": "Tipe"
+    },
+    "workspace": {
+      "entity_name": "Entitas",
+      "entity_address": "Alamat Entitas",
+      "entity_type": "Tipe"
+    }
+  }
+}

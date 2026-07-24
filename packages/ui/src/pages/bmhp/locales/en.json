@@ -1,0 +1,193 @@
+{
+  "common": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "product_template": "Product Template",
+    "product_variant": "Product Variant",
+    "yes": "Yes",
+    "no": "No",
+    "box": "Box",
+    "package": "Package",
+    "save_data": "{{type}} Data",
+    "save": "Save",
+    "update": "Update"
+  },
+  "label": {
+    "name": "Name",
+    "reagent": "Reagent",
+    "description": "Description",
+    "materials": "Materials",
+    "material": "Material",
+    "material_variants": "Material Variants",
+    "level_material": "Material Level",
+    "search": "Search",
+    "code": "Code",
+    "age_range": "Age Range",
+    "delete": "Delete Data",
+    "status": "Status",
+    "created_at": "Created At",
+    "updated_at": "Updated At",
+    "updated_by": "Updated By",
+    "examination": "Examination",
+    "examination_name": "Examination Name",
+    "examination_type": "Examination Type",
+    "examination_type_name": "Examination Type Name",
+    "edit": "Edit",
+    "create": "Create",
+    "unit": "Unit",
+    "method": "Method",
+    "parameter": "Parameter",
+    "target_group": "Target Group",
+    "brand_name": "Brand Name",
+    "is_variant": "Does it have variants?",
+    "variants": "Variants",
+    "variant_name": "Variant Name",
+    "test_qty": "Test Quantity/Unit",
+    "action": "Action",
+    "year": "Year",
+    "entity": "Entity",
+    "address": "Address",
+    "examination_method": "Examination Method",
+    "submitted_at": "Submitted At",
+    "approved_at": "Approved At",
+    "total_sample": "Total Sample",
+    "total_test": "Total Test",
+    "target_count": "Target Count",
+    "material_count": "Material Count",
+    "sample_count": "Sample Count",
+    "test_count": "Test Count",
+    "material_name": "Material Name",
+    "history_previous_year": "Previous Year History",
+    "estimated_need": "Estimated Need",
+    "product_template": "Product Template",
+    "product_variant": "Product Variant",
+    "tag": "Tag",
+    "quantity": "Quantity"
+  },
+  "title": {
+    "bmhp_history": "Annual Planning",
+    "bmhp_material": "Materials",
+    "bmhp_material_detail": "Material Detail",
+    "bmhp_material_target_group": "Target Groups",
+    "bmhp_material_target_group_detail": "Target Group Detail",
+    "bmhp_method": "Method",
+    "bmhp_method_detail": "Method Detail",
+    "bmhp_parameter": "Parameter",
+    "bmhp_parameter_detail": "Parameter Detail",
+    "bmhp_examination_type": "Examination Type",
+    "bmhp_examination_type_detail": "Examination Type Detail",
+    "bmhp_pemeriksaan": "Examination",
+    "bmhp_pemeriksaan_detail": "Examination Detail",
+    "bmhp_variant": "Product Variant",
+    "bmhp_variant_detail": "Product Variant Detail",
+    "bmhp_history_detail": "Annual Planning Detail"
+  },
+  "section": {
+    "detail_info": "Detail Information",
+    "log_info": "Log Information",
+    "variants": "Variants",
+    "summary": "Summary",
+    "targets": "Targets"
+  },
+  "placeholder": {
+    "name": "Enter name",
+    "description": "Enter description",
+    "materials": "Enter materials",
+    "material": "Select material",
+    "target_group": "Select Target Group",
+    "material_variants": "Enter material variants",
+    "search": "Enter search",
+    "code": "Enter code",
+    "age_range": "Enter age range",
+    "unit": "Select unit",
+    "brand_name": "Enter brand name",
+    "variant_name": "Enter variant name",
+    "year": "Select year",
+    "status": "Select status",
+    "examination": "Select examination"
+  },
+  "message": {
+    "delete": "Are you sure you want to delete this data?",
+    "examination": "No examination data available",
+    "material": "No material data available",
+    "loading_variant": "Loading variants...",
+    "please_select_a_material": "Please select a material to see available variants",
+    "no_variant_found_for_selected": "No variants found for the selected material",
+    "no_materials": "No material data available for this target",
+    "are_you_sure": "Are you sure you want to {{type}} this data?"
+  },
+  "error": {
+    "submit_failed": "Failed to submit the form. Please try again."
+  },
+  "button": {
+    "apply": "Apply",
+    "reset": "Reset",
+    "detail": "Detail",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add_variant": "Add Variant"
+  },
+  "table": {
+    "column": {
+      "no": "No",
+      "actions": "Actions"
+    }
+  },
+  "validation": {
+    "name": {
+      "required": "Name is required",
+      "min": "Name must be at least 3 characters",
+      "max": "Name must be at most 100 characters"
+    },
+    "is_active": {
+      "required": "Please select if this is a reagent or not"
+    },
+    "material_details": {
+      "min": "At least one material must be selected"
+    },
+    "unit": {
+      "required": "Unit is required"
+    },
+    "examination_type": {
+      "required": "Examination type is required"
+    },
+    "parameter": {
+      "min": "At least one parameter must be selected",
+      "required": "Parameter is required"
+    },
+    "method": {
+      "min": "At least one method must be selected",
+      "required": "Method is required"
+    },
+    "material": {
+      "min": "At least one material must be selected",
+      "required": "Material is required"
+    },
+    "material_target_group": {
+      "min": "At least one target group must be selected for each material",
+      "required": "Target group is required for each material"
+    },
+    "is_variant": {
+      "required": "Please select whether this product has variants or not",
+      "invalid": "The value given for variant is invalid"
+    },
+    "variant": {
+      "min": "At least one variant must be added if the product has variants",
+      "required": "Variant is required if the product has variants",
+      "test_qty": {
+        "required": "Test quantity is required for each variant",
+        "min": "Test quantity must be greater than 0 for each variant"
+      },
+      "unit": {
+        "required": "Unit is required for each variant"
+      }
+    }
+  },
+  "status": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "final": "Final"
+  }
+}

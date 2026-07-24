@@ -1,0 +1,72 @@
+{
+  "title": "Dasbor Pembuangan",
+  "description": "Dasbor Pembuangan adalah Laporan yang menunjukkan transaksi Pembuangan yang dibedakan berdasarkan alasan pembuangan tersebut. Nilai yang ditampilkan adalah akumulasi kuantitas/ jumlah dosis setiap alasan pada periode tertentu.",
+  "information": [
+    "<b>Alasan:</b> alasan dilakukan pembuangan, tidak perlu dipilih jika ingin melihat semua alasan."
+  ],
+  "tabs": {
+    "all": "Tinjauan",
+    "entity": "Entitas",
+    "location": "Wilayah"
+  },
+  "form": {
+    "period": {
+      "label": "Periode"
+    },
+    "range": {
+      "label": "Rentang Tanggal"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Pilih level KFA material"
+      },
+      "name": {
+        "label": "Material",
+        "placeholder": "Pilih material"
+      }
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "reason": {
+      "label": "Alasan",
+      "placeholder": "Pilih alasan"
+    }
+  },
+  "columns": {
+    "type": "Jenis",
+    "entity": "Entitas",
+    "location": "Lokasi"
+  },
+  "data": {
+    "dayly": "Harian",
+    "montly": "Bulanan",
+    "material_level": {
+      "active_subtance": "Produk Template"
+    }
+  },
+  "from_to": "Dari {{from}} Sampai {{to}}",
+  "last_updated_at": "Terakhir diperbarui pada"
+}

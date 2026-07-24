@@ -1,0 +1,129 @@
+{
+  "title": {
+    "material_volume": "Pengaturan Volume Kemasan Material",
+    "list": "Daftar Volume Kemasan Material",
+    "add": "Tambah Volume Kemasan Material",
+    "detail": "Detail Volume Kemasan Material",
+    "edit": "Edit Volume Kemasan Material"
+  },
+  "column": {
+    "material_name": "Nama Volume Kemasan Material",
+    "dimension": "Dimensi Box Sekunder",
+    "last_updated_at": "Terakhir Diubah Pada",
+    "action": "Aksi"
+  },
+  "detail": {
+    "title": "Detail Volume Kemasan Material",
+    "section": {
+      "detail": {
+        "header": "Detail",
+        "label": {
+          "material_name": "Nama Material",
+          "manufacturer": "Pabrik",
+          "dose_per_unit": "Jumlah Dosis per Vial/Unit",
+          "unit_per_box": "Jumlah Unit per Box",
+          "last_updated_at": "Terakhir Diubah Pada",
+          "last_updated_by": "Terakhir Diubah Oleh"
+        }
+      },
+      "box_dimension": {
+        "header": "Dimensi Box Sekunder",
+        "label": {
+          "length": "Panjang (cm)",
+          "width": "Lebar (cm)",
+          "height": "Tinggi (cm)"
+        }
+      }
+    }
+  },
+  "list": {
+    "filter": {
+      "label": {
+        "material": "Material",
+        "manufacturer": "Pabrik",
+        "material_type": "Tipe Material"
+      },
+      "placeholder": {
+        "material": "Pilih material",
+        "manufacturer": "Pilih pabrik",
+        "material_type": "Pilih tipe material"
+      }
+    },
+    "column": {
+      "material_name": "Nama Material",
+      "manufacturer_name": "Pabrik",
+      "material_type": "Tipe Material",
+      "box_dimension": {
+        "label": "Dimensi Box Sekunder",
+        "length": "Panjang",
+        "width": "Lebar",
+        "height": "Tinggi",
+        "cm": " {{value}} cm",
+        "unit": " {{value}} unit",
+        "doses": " {{value}} dosis"
+      },
+      "last_updated_at": "Terakhir Diubah Pada",
+      "action": "Aksi"
+    }
+  },
+  "action": {
+    "delete": {
+      "button": "Hapus Volume Kemasan Material",
+      "confirmation": "Apakah anda yakin akan menghapus volume kemasan material ini ?"
+    }
+  },
+  "form": {
+    "material": {
+      "label": "Nama Material",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    },
+    "unit_per_box": {
+      "label": "Jumlah unit per box",
+      "placeholder": "Contoh : 10",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    },
+    "pieces_per_unit": {
+      "label": "Dosis per Vial/Unit",
+      "placeholder": "Pilih Material"
+    },
+    "dimension": {
+      "label": "Dimensi Box (P x L x T)"
+    },
+    "dose_per_vial_unit": {
+      "label": "Jumlah dosis dalam 1 vial/unit"
+    },
+    "manufacturer": {
+      "label": "Pabrik",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    },
+    "box_length": {
+      "label": "Panjang (cm)",
+      "placeholder": "Contoh : 10.5cm",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    },
+    "box_width": {
+      "label": "Lebar (cm)",
+      "placeholder": "Contoh : 10.5cm",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    },
+    "box_height": {
+      "label": "Tinggi (cm)",
+      "placeholder": "Contoh : 10.5cm",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    }
+  }
+}

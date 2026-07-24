@@ -1,0 +1,109 @@
+{
+  "title": {
+    "page": "Microplanning Dashboard",
+    "tabs": {
+      "province": "Province",
+      "regency": "City",
+      "subdistrict": "Subdistrict",
+      "village": "Village"
+    },
+    "dashboard": {
+      "chart": {
+        "chart": "Chart",
+        "target": "Target",
+        "consumption": "Consumption"
+      },
+      "table": "Table",
+      "appearance": "Appearance",
+      "target-consumption-age": "Target vs Consumption",
+      "target-consumption-vaccination": "Target vs Actual",
+      "distribution-coverage-achievement": "Distribution of Coverage Achievement",
+      "proportion-of-aefi": "Proportion of AEFI",
+      "total-target": "Total Target"
+    }
+  },
+  "subtitle": {
+    "dashboard": {
+      "target-consumption-age": "Data frequency displayed is accumulated based on age",
+      "target-consumption-vaccination": "Data frequency displayed is accumulated based on vaccination",
+      "distribution-coverage-achievement": "Percentage of Consumption divided by Target",
+      "proportion-of-aefi": "Data frequency displayed is accumulated based on gender",
+      "total-target": "Data displayed is accumulated based on target group and vaccine material"
+    }
+  },
+  "data": {
+    "region": "Region",
+    "receipts": "Receipts",
+    "target": "Target",
+    "consumption": "Consumption"
+  },
+  "column": {
+    "age": "Age",
+    "vaccine": "Vaccine",
+    "region": "Region",
+    "Bayi Baru Lahir": "Newborn Baby",
+    "Bayi Baru Lahir/Surviving Infant": "Newborn Baby/Surviving Infant",
+    "Surviving Infant": "Surviving Infant",
+    "Baduta": "Baduta",
+    "BIAS": "BIAS",
+    "group": {
+      "< 24 hours": "< 24 hours",
+      "1 month old": "1 month old",
+      "0-1 month old": "0-1 month old",
+      "2 months old": "2 months old",
+      "3 months old": "3 months old",
+      "4 months old": "4 months old",
+      "9 months old": "9 months old",
+      "10 months old": "10 months old",
+      "12 months old": "12 months old",
+      "18 months old": "18 months old",
+      "Usia 7 tahun (Kelas 1)": "Age 7 (Grade 1)",
+      "Usia 8 tahun (Kelas 2)": "Age 8 (Grade 2)",
+      "Usia 11 tahun (Kelas 5)": "Age 11 (Grade 5)"
+    }
+  },
+  "form": {
+    "period": {
+      "label": "Period"
+    },
+    "target": {
+      "group": {
+        "label": "Target Group",
+        "placeholder": "Select target group"
+      }
+    },
+    "gender": {
+      "label": "Gender",
+      "placeholder": "Select gender",
+      "options": {
+        "male": "Male",
+        "female": "Female"
+      }
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "city": {
+      "label": "City",
+      "placeholder": "Select city"
+    },
+    "sub-district": {
+      "label": "Subdistrict",
+      "placeholder": "Select subdistrict"
+    },
+    "village": {
+      "label": "Village",
+      "placeholder": "Select village"
+    },
+    "material": {
+      "label": "Material",
+      "placeholder": "Select material"
+    },
+    "batch": {
+      "label": "Batch",
+      "placeholder": "Select batch"
+    }
+  },
+  "close": "Close"
+}

@@ -1,0 +1,96 @@
+{
+  "last_login_info": "Last Login On {{info}}",
+  "via": "via {{device}}",
+  "information_updated": "Information Updated",
+  "see_changes": "See Changes",
+  "title": {
+    "edit_profile": "Edit Profile",
+    "edit_password": "Edit Password",
+    "profile_detail": "User Info",
+    "info_login_device": "User Activity Info",
+    "entity": "Entity",
+    "history_change_data": "Change History",
+    "workspace_entity_info": "Program & Entity Info",
+    "profile_title": "My Account",
+    "main_info": "Main Info",
+    "additional_info": "Additional Info"
+  },
+  "button": {
+    "edit_profile": "Edit Profile",
+    "edit_password": "Edit Password"
+  },
+  "change_history": {
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "gender": "Gender",
+    "phone_number": "Phone Number",
+    "password": {
+      "label": "Password",
+      "changed": "Your password was updated on {{date}}"
+    }
+  },
+  "form": {
+    "label": {
+      "mobile_phone": "Phone Number",
+      "email": "Email",
+      "password": "Old password",
+      "new_password": "New password",
+      "password_confirmation": "New password confirmation",
+      "firstname": "First Name",
+      "lastname": "Last Name",
+      "gender": "Gender",
+      "date_of_birth": "Birth Date",
+      "address": "Address"
+    },
+    "placeholder": {
+      "mobile_phone": "Phone Number",
+      "email": "Email",
+      "password": "Old password",
+      "new_password": "New password",
+      "password_confirmation": "New password confirmation",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "gender": "Gender",
+      "address": "Input address"
+    },
+    "validation": {
+      "empty_field": "All fields are required. Please fill in your current password, new password, and confirmation password",
+      "empty_old_password": "Old password is required",
+      "empty_new_password": "New password is required",
+      "empty_confirmation_password": "Confirmation password is required",
+      "password_validation_text": "Password: 8+ chars, A-Z, a-z, 0-9, symbol, no spaces.",
+      "password_confirmation_validation": "The new password and confirmation password do not match.",
+      "old_password_same_with_new": "The new password must be different from the current password",
+      "first_name_required": "First Name is required",
+      "email_required": "Email is required",
+      "email": "Email is not valid",
+      "phone_number": "Phone number minimum 10 character and must start with 08 or 628"
+    },
+    "message": {
+      "change_profile_success": "Profile data successfully updated"
+    }
+  },
+  "field": {
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "username": "Username",
+    "name": "Name",
+    "role": "Role",
+    "gender": "Gender",
+    "birth_date": "Birth Date",
+    "phone_number": "Phone Number",
+    "address": "Address",
+    "last_login": "Last Login",
+    "last_device_access": "Last Device Access",
+    "entity": {
+      "name": "Name",
+      "address": "Address",
+      "type": "Type"
+    },
+    "workspace": {
+      "entity_name": "Entity",
+      "entity_address": "Entity Address",
+      "entity_type": "Type"
+    }
+  }
+}

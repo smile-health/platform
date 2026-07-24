@@ -1,0 +1,313 @@
+{
+  "title": "Transaksi",
+  "transaction_form": "Form Transaksi",
+  "transaction_detail": "Detail Transaksi",
+  "select_activity": "Pilih Kegiatan",
+  "placeholder_select_activity": "Pilih Kegiatan",
+  "caption_activity": "Kegiatan yang ditampilkan hanya Kegiatan yang masih aktif di Entitas ini",
+  "entity_name": "Nama Entitas",
+  "select_entity": "Pilih nama entitas",
+  "transaction_type": "Tipe Transaksi",
+  "select_transaction_type": "Pilih tipe transaksi",
+  "transaction_table": "Tabel Transaksi",
+  "send": "Kirim",
+  "reset": "Reset",
+  "select_reason": "Pilih alasan",
+  "enter_reason": "Silakan masukkan alasan",
+  "batch": "Batch",
+  "detail": "Detail",
+  "add_material": "Tambah Material",
+  "cancel": "Batal",
+  "save": "Simpan",
+  "from": "Dari",
+  "select_status": "Pilih status",
+  "delete": "Hapus",
+  "max": "maks",
+  "close": "Tutup",
+  "enter_qty": "Masukkan kuantitas",
+  "caption_detail_batch": "Daftar {{type}}",
+  "table": {
+    "column": {
+      "activity": "Kegiatan",
+      "stock_on_hand": "Sisa Stok",
+      "available_stock": "Stok Tersedia",
+      "quantity": "Kuantitas",
+      "reason": "Alasan",
+      "action": "Aksi",
+      "batch_code": "Kode Batch",
+      "production_date": "Tanggal Produksi",
+      "manufacturer": "Pabrik",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "allocated": "Alokasi",
+      "material_status": "Status Material",
+      "unit": "Satuan",
+      "budget_source": "Sumber Anggaran",
+      "budget_year": "Tahun Anggaran",
+      "total_price": "Total Harga",
+      "purchase_per_unit": "Harga Pembelian",
+      "material_info": "Info Material",
+      "stock_info": "Info Stok",
+      "batch_info": "Info {{type}}",
+      "budget_info": "Info Anggaran",
+      "edit": "Ubah",
+      "vaccine_type": {
+        "label": "Tipe Vaksinasi",
+        "placeholder": "Pilih Tipe"
+      },
+      "method": {
+        "label": "Metode",
+        "placeholder": "Pilih Metode"
+      },
+      "type": "Tipe",
+      "transactions": "Transaksi"
+    },
+    "button": {
+      "vaccination_patient": "Vaksinasi & Pasien"
+    },
+    "content": {
+      "dengue": {
+        "gender": "Jenis kelamin",
+        "birthdate": "Tanggal lahir",
+        "had_dengue_fever_before": "Pernah menderita DBD sebelumnya",
+        "history": "Riwayat Penyakit",
+        "reaction": [
+          "Reaksi",
+          "Reaksi (lainnya)"
+        ]
+      }
+    }
+  },
+  "patient_identity": {
+    "label": "Vaksinasi & Data Pasien",
+    "description": "Harap lengkapi semua formulir pasien",
+    "tab": [
+      "Vaksinasi",
+      "Identitas",
+      "Riwayat Penyakit"
+    ],
+    "form_completion": "Penyelesaian Formulir",
+    "patient": "Pasien {{counter}}",
+    "add_new_patient": "Tambah Pasien Baru",
+    "identity_type": {
+      "label": "Tipe Identitas",
+      "placeholder": "Pilih Tipe Identitas"
+    },
+    "patient_id": {
+      "label": "Nomor Identitas",
+      "placeholder": "Masukkan nomor identitas"
+    },
+    "phone_number": "Nomor Handphone",
+    "vaccination_sequence": {
+      "label": "Urutan Vaksinasi",
+      "placeholder": "Pilih Urutan"
+    },
+    "sequence": "Urutan",
+    "warning_exist": "Data pasien tersedia di SMILE.",
+    "warning_unmatch_method": "Tambah pasien lain dengan {{type}} dan Metode Intra Dermal",
+    "warning_unmatch_method_new_patient": "Jenis dan Metode Vaksinasi Tidak Sesuai",
+    "reaction_id": {
+      "label": "Reaksi Setelah Vaksinasi",
+      "placeholder": "Pilih reaksi setelah vaksinasi"
+    },
+    "other_reaction": {
+      "label": "Reaksi Lainnya",
+      "placeholder": "Masukkan reaksi lainnya"
+    },
+    "dengue_sequence": [
+      "Dosis 1",
+      "Dosis 2"
+    ],
+    "dose": [
+      "dosis",
+      "Dosis"
+    ],
+    "identity": {
+      "generate_from_nik": "Identitas Pasien Berdasarkan NIK",
+      "full_name": {
+        "label": "Nama Lengkap",
+        "placeholder": "Masukkan nama lengkap"
+      },
+      "gender": {
+        "label": "Jenis Kelamin",
+        "placeholder": "Pilih jenis kelamin",
+        "options": [
+          "Laki-Laki",
+          "Perempuan"
+        ]
+      },
+      "birth_date": {
+        "label": "Tanggal Lahir",
+        "placeholder": "Pilih tanggal lahir"
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Pilih status"
+      },
+      "last_education": {
+        "label": "Pendidikan Terakhir",
+        "placeholder": "Pilih pendidikan terakhir"
+      },
+      "work": {
+        "label": "Pekerjaan",
+        "placeholder": "Pilih pekerjaan"
+      },
+      "religion": {
+        "label": "Agama",
+        "placeholder": "Pilih agama"
+      },
+      "ethnic": {
+        "label": "Suku",
+        "placeholder": "Pilih suku"
+      },
+      "phone_number": {
+        "label": "Nomor Handphone",
+        "placeholder": "Masukkan nomor handphone"
+      },
+      "province": {
+        "label": "Provinsi",
+        "placeholder": "Pilih provinsi"
+      },
+      "district": {
+        "label": "Kota/Kabupaten",
+        "placeholder": "Pilih kota/kabupaten"
+      },
+      "registered_address": {
+        "label": "Alamat Lengkap Terdaftar",
+        "placeholder": "Masukkan alamat lengkap terdaftar"
+      },
+      "is_matched_address": {
+        "label": "Alamat Domisili sesuai Alamat Terdaftar",
+        "placeholder": "Masukkan alamat domisili sesuai alamat terdaftar"
+      },
+      "residential_address_description": {
+        "label": "Alamat Lengkap Tempat Tinggal",
+        "placeholder": "Masukkan alamat lengkap tempat tinggal"
+      },
+      "marital_status": [
+        "Belum Kawin",
+        "Kawin",
+        "Cerai Hidup",
+        "Cerai Mati"
+      ]
+    },
+    "history_medical": {
+      "is_dengue_before": {
+        "label": "Apakah pasien pernah menderita penyakit DBD sebelumnya?",
+        "options": [
+          "Ya",
+          "Tidak"
+        ]
+      },
+      "dengue_received_vaccine": {
+        "label": "Apakah pasien pernah menerima vaksinasi untuk penyakit DBD secara mandiri",
+        "options": [
+          "Ya",
+          "Tidak"
+        ]
+      },
+      "month": [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember"
+      ],
+      "last_dengue_diagnosis": {
+        "label": "Kapan terkahir kali menderita penyakit DBD",
+        "placeholder": [
+          "Bulan",
+          "Tahun"
+        ]
+      }
+    },
+    "patient_has_record": {
+      "vaccination": "Pasien dengan NIK {{patient_no}} telah tercatat memiliki data vaksinasi:"
+    },
+    "warning_skip_sequence": {
+      "description": "Pasien dengan {{identity_type}} <strong>{{patient_id}}</strong> belum tercatat memiliki data vaksinasi {{next_sequence}}. Apakah Anda yakin untuk memilih urutan vaksinasi {{skip_sequence}}?"
+    },
+    "warning_duplicate_sequence": {
+      "description": "Pasien dengan NIK <strong>{{patient_id}}</strong> telah tercatat untuk data vaksinasi {{sequence}}. Apakah Anda yakin untuk melakukan penyisipan transaksi {{sequence}}?"
+    },
+    "at": "di"
+  },
+  "validation": {
+    "quantity_must_multiply": "Kuantitas harus merupakan kelipatan dari {{number}}",
+    "required_materials": "Belum ada materi yang ditambahkan",
+    "max_qty": "Kuantitas tidak dapat melebihi dari stok yang tersedia",
+    "min_qty": "Kuantitas harus lebih dari 0",
+    "max_qty_rabies": "Kuantitas tidak dapat melebihi dari {{number}}",
+    "min_qty_rabies": "Kuantitas tidak dapat kurang dari {{number}}",
+    "patient_id": "Id pasien harus berupa angka 16 digit",
+    "required": "Wajib diisi",
+    "phone_min": "Nomor handphone minimal 8 karakter",
+    "phone_max": "Nomor handphone maksimal 15 karakter",
+    "uniq_patient_id": "ID Pasien sudah digunakan",
+    "max_open_vial_qty": "Kuantitas tidak dapat melebihi dari stok yang tersedia vial terbuka",
+    "max_close_vial_qty": "Kuantitas tidak dapat melebihi dari stok yang tersedia vial tertutup",
+    "generate_nik": {
+      "month_not_valid": "Bulan tidak valid dalam NIK",
+      "date_not_valid": "Tanggal tidak valid dalam NIK",
+      "birth_date_not_valid": "Tanggal lahir tidak valid dalam NIK"
+    },
+    "close_qty_supporting_text": "Gunakan vial tertutup setelah semua vial terbuka sepenuhnya digunakan",
+    "open_vial_still_available": "Masih ada vial terbuka yang tersisa. Harap gunakan sebelum menambahkan vial tertutup",
+    "history_medical": "Tanggal riwayat penyakit tidak boleh lebih dari tanggal saat ini"
+  },
+  "currency": {
+    "IDR": "Rp"
+  },
+  "error_actual_date": "Tanggal distribusi akhir tidak boleh kurang dari hari ini",
+  "take_stock_from_others_activities": "Mengambil Stok dari Kegiatan Lain:",
+  "error_message_complete_data": "Lengkapi seluruh data",
+  "toast": {
+    "success": {
+      "create": "Berhasil menyimpan transaksi distribusi akhir"
+    }
+  },
+  "nik": "NIK",
+  "non_nik": "Non-NIK",
+  "add": "Tambah",
+  "completed_sequence": {
+    "confirmation": "Konfirmasi",
+    "second_title": {
+      "dengue": "Pasien {{patient_no}} belum tercatat memiliki data vaksinasi {{dose}}. Mohon lengkapi data di bawah ini."
+    },
+    "description": {
+      "rabies": "Nomor Identitas yang anda input salah urutan. Tambah data tanggal vaksinasi jika urutan vaksinasi yang diinput sudah sesuai"
+    },
+    "validation": {
+      "date_sequence_not_valid": "Urutan tanggal tidak valid",
+      "date_not_valid": "Tanggal tidak valid",
+      "more_than_actual_date": "Tanggal pertama tidak boleh lebih besar dari tanggal aktual distribusi akhir",
+      "less_then_previous_date": "Tanggal tidak boleh lebih kecil dari tanggal sebelumnya"
+    },
+    "error": {
+      "date_sequence_empty": "Harap lengkapi tanggal vaksinasi sebelumnya untuk melanjutkan."
+    },
+    "information": {
+      "label": {
+        "entity": "Lokasi Vaksinasi"
+      },
+      "placeholder": {
+        "date": "Tanggal Vaksinasi {{dose}}",
+        "entity": "Lokasi Vaksinasi untuk {{dose}}"
+      },
+      "current": "Transaksi saat ini",
+      "missing": "Konfirmasikan tanggal vaksinasi yang tercatat",
+      "dose": [
+        "Dosis Pertama",
+        "Dosis Kedua"
+      ]
+    }
+  },
+  "open_vial": "Vial Terbuka",
+  "close_vial": "Vial Tertutup"
+}

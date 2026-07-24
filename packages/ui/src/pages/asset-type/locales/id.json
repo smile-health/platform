@@ -1,0 +1,132 @@
+{
+  "list": {
+    "title": "Tipe Aset",
+    "list": "Pengaturan Tipe Aset",
+    "add": "Tambah Tipe Aset",
+    "status": "Status Tipe Aset",
+    "tab": {
+      "list": "Daftar Tipe Aset",
+      "create": "Tambah Tipe Aset"
+    },
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari tipe aset"
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Pilih program"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "name": "Nama Tipe Aset",
+      "workspace": "Program",
+      "update_at": "Diperbarui pada",
+      "update_by": "Diperbarui oleh",
+      "action": "Aksi"
+    },
+    "import": {
+      "asset_type_cce": "Cold Chain Equipment",
+      "asset_type_warehouse": "Gudang"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Tambah Tipe Aset",
+      "detail": "Detail Tipe Aset",
+      "edit": "Ubah Tipe Aset"
+    },
+    "detail": {
+      "header": {
+        "asset_utilization": "Penggunaan Aset",
+        "warning": "Perubahan tidak diizinkan. Tipe Aset ini sudah memiliki hubungan dengan Aset Model.",
+        "detail": "Detail"
+      },
+      "label": {
+        "name": "Nama Tipe Aset",
+        "description": "Deskripsi",
+        "last_updated_at": "Diperbarui pada",
+        "last_updated_by": "Diperbarui oleh",
+        "is_cce_equipment": "Apakah tipe aset ini adalah CCE (Cold Chain Equipment)?",
+        "is_warehouse": "Apakah tipe aset ini adalah gudang?",
+        "temperature_threshold": "Ambang Batas Temperatur",
+        "humidity_threshold": {
+          "label": "Ambang Batas Kelembaban",
+          "min_humidity": "Kelembaban Min",
+          "max_humidity": "Kelembaban Maks"
+        },
+        "is_adjustable": "Apakah ambang batas suhu ini dapat diubah?"
+      },
+      "placeholder": {
+        "name": "Nama Tipe Aset",
+        "description": "Deskripsi",
+        "temp_treshold_min": "ex: 10",
+        "temp_treshold_max": "ex: 20"
+      },
+      "validation": {
+        "max_greater_min": "Maksimum temperatur harus lebih kecil atau sama dengan minimum temperatur",
+        "min_greater_max": "Minimum temperatur harus lebih kecil atau sama dengan maksimum temperatur"
+      },
+      "is_warehouse": {
+        "label": "Apakah tipe aset ini adalah gudang?",
+        "radio": {
+          "yes": "Ya",
+          "no": "Tidak"
+        }
+      },
+      "is_cce_equipment": {
+        "label": "Apakah tipe aset ini adalah CCE (Cold Chain Equipment)?",
+        "radio": {
+          "yes": "Ya",
+          "no": "Tidak"
+        }
+      },
+      "temperature_threshold": {
+        "label": "Ambang Batas Temperatur",
+        "warning": "Ambang batas suhu yang dipilih tidak dapat dibatalkan (diubah) setelah dikirim",
+        "column": {
+          "min_temperature": "Temperatur Min",
+          "max_temperature": "Temperatur Maks"
+        }
+      },
+      "humidity_threshold": {
+        "label": "Ambang Batas Kelembaban",
+        "warning": "Ambang batas kelembaban yang dipilih tidak dapat dibatalkan (diubah) setelah dikirim",
+        "column": {
+          "min_humidity": "Kelembaban Min",
+          "max_humidity": "Kelembaban Maks"
+        }
+      },
+      "is_adjustable": {
+        "label": "Apakah ambang batas suhu ini dapat diubah?",
+        "radio": {
+          "yes": "Ya",
+          "no": "Tidak"
+        }
+      }
+    },
+    "program": {
+      "title": "Program",
+      "without_program": "Tidak ada program"
+    }
+  },
+  "detail": {
+    "title": "Detail Tipe Aset"
+  },
+  "action": {
+    "delete": {
+      "button": "Hapus",
+      "confirmation": "Apakah Anda yakin ingin menghapus tipe aset ini?",
+      "description": "Item yang dihapus tidak dapat dikembalikan"
+    },
+    "activate": {
+      "confirmation": "Apakah anda yakin akan mengaktifkan tipe aset ini?"
+    },
+    "deactivate": {
+      "confirmation": "Apakah anda yakin akan menonaktifkan tipe aset ini?"
+    }
+  }
+}

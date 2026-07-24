@@ -1,0 +1,136 @@
+{
+  "meta": "Stock",
+  "title": "View Stock",
+  "filter": {
+    "label": {
+      "activity": "Activity",
+      "material_type": "Material Type",
+      "material_hirearchy": "Product Template",
+      "expired_date": "Expired Date",
+      "entity": "Entity",
+      "entity_tag": "Entity Tag",
+      "province": "Province",
+      "city": "City/District",
+      "primary_health_care": "Primary Health Care",
+      "primary_vendor": "Primary Vendor"
+    },
+    "placeholder": {
+      "activity": "Search activity",
+      "material_type": "Search material type",
+      "material": "Search material name",
+      "expired_date": "dd/mm/yyyy - dd/mm/yyyy",
+      "entity": "Search entity name",
+      "entity_tag": "Select entity tag",
+      "province": "Select province",
+      "city": "Select city/district",
+      "primary_health_care": "Select primary health care",
+      "primary_vendor": "Select primary vendor",
+      "batch": "Select batch"
+    }
+  },
+  "table": {
+    "title": {
+      "trademark": "Product Variant",
+      "activity": "Activity",
+      "budget_source": "Budget Source of batch {{name}}"
+    },
+    "column": {
+      "material": {
+        "material_hirearchy": "Product Template",
+        "enitity_name": "Entity Name",
+        "stock_on_hand": "Stock on Hand",
+        "allocated": "Allocated",
+        "available_stock": "Available Stock",
+        "in_transit": "In-transit",
+        "action": "Action",
+        "updated_at": "Updated At",
+        "vial": [
+          "{{value}} (open vial)",
+          "{{value}} (closed vial)",
+          "{{value}} (Open Vial)",
+          "{{value}} (Closed Vial)"
+        ],
+        "open_vial": "Open Vial",
+        "close_vial": "Closed Vial"
+      },
+      "activity": {
+        "name": "Activity"
+      },
+      "batch": {
+        "info": "Batch Info",
+        "stock_info": "Stock Info",
+        "budget_info": "Budget Info",
+        "production_date": "Production Date: {{value}}",
+        "expired_date": "Expired Date: {{value}}",
+        "manufacturer": "Manufacturer: {{value}}",
+        "stock": {
+          "on_hand": "Stock on Hand: {{value}}",
+          "allocated": "Allocated: {{value}}",
+          "available": "Available Stock: {{value}}",
+          "in_transit": "In-Transit: {{value}}"
+        }
+      },
+      "budget_source": {
+        "name": "Budget Source: {{value}}",
+        "price": "Price ({{currency}}): {{value}}",
+        "total_price": "Total Price ({{currency}}): {{value}}"
+      }
+    },
+    "action": {
+      "trademark": "View Product Variant",
+      "batch": "View Batch",
+      "activity": "View Activity",
+      "budget_source": "View Budget Source",
+      "detail": "Detail"
+    }
+  },
+  "popup_batch": {
+    "title": "Batch Detail",
+    "hierarchy": [
+      "Material - Product Template : {{material}}",
+      "Batch of Product Variant - {{batch}}"
+    ],
+    "non_hierarchy": "Activity {{activity}} & Material {{material}}"
+  },
+  "detail": {
+    "title": "Stock Details",
+    "entity": {
+      "title": "Entity",
+      "name": "Entity Name",
+      "address": "Address",
+      "updated_at": "Updated At"
+    },
+    "material": {
+      "name": [
+        "Material Name (Product Template)",
+        "Material Name"
+      ],
+      "stock": {
+        "on_hand": "Stock on Hand",
+        "allocated": "Allocated",
+        "available": "Available Stock",
+        "in_transit": "In-transit"
+      }
+    },
+    "title_table": [
+      "Product Variant Material",
+      "Activity"
+    ],
+    "drawer": {
+      "title": [
+        "Activity List",
+        "Batch List"
+      ],
+      "description": {
+        "hiearchy": [
+          "Product Template",
+          "Product Variant"
+        ],
+        "non_hiearchy": [
+          "Activity",
+          "Material"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "title": {
+    "page": "Dashboard Pemantauan Suhu",
+    "sub_title": "Durasi maksimum data yang ditampilkan pada Dashboard Pemantauan Suhu adalah 1 bulan.",
+    "number_of_cold_storages": "Jumlah Cold Storage",
+    "number_of_rtmds": "Jumlah RTMD"
+  },
+  "form": {
+    "date": {
+      "label": "Tanggal",
+      "placeholder": "Pilih rentang tanggal"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "city": {
+      "label": "Kota/Kabupaten",
+      "placeholder": "Pilih kota/kabupaten"
+    },
+    "entity": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "asset_model": {
+      "label": "Model Aset",
+      "placeholder": "Pilih model aset"
+    }
+  },
+  "summary": {
+    "total": "Total",
+    "relation_to_rtmd": "Relasi ke RTMD",
+    "online": "Online",
+    "last_updated_at": "Terakhir diperbarui pada {{time}}",
+    "cold_storages_info": {
+      "total": "Jumlah cold storage yang terdaftar di aplikasi SMILE. Angka ini tidak mencerminkan cold storage pasif (cold box dan vaccine carrier).",
+      "relation_to_rtmd": "Jumlah cold storage aktif (Refrigerator, Refrigerator & Freezer, Refrigerator/Freezer, Freezer, dan Freezer Room) yang terdaftar di aplikasi SMILE dan terhubung ke Remote Temperature Monitoring Devices (RTMD) sesuai pengaturan yang diperbarui oleh pengguna."
+    },
+    "rtmds_info": {
+      "total": "Jumlah RTMD yang terdaftar di aplikasi SMILE.",
+      "online": "Jumlah RTMD dengan catatan suhu yang berhasil dikirim ke aplikasi SMILE."
+    }
+  },
+  "filter": {
+    "active": {
+      "start_date": "Tanggal Mulai",
+      "end_date": "Tanggal Selesai"
+    }
+  },
+  "rtmd_status": {
+    "title": "Status RTMD",
+    "info": "Status RTMD yang diklasifikasikan menjadi online/offline berdasarkan keberadaan catatan suhu yang dikirim ke aplikasi SMILE dalam periode yang dipilih. Jika RTMD tidak memiliki catatan suhu dalam periode tersebut, maka statusnya dianggap offline.",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "offline_duration": {
+    "title": "Rata-rata Durasi Offline Harian",
+    "info": "Rata-rata durasi offline (tanpa catatan suhu) dari RTMD yang online.",
+    "less_than_one_hour": "< 1 jam",
+    "one_to_ten_hours": "1-10 jam",
+    "more_than_ten_hours": "> 10 jam",
+    "x_axis": "Tanggal Data Terkirim",
+    "y_axis": "Rata-rata Durasi Offline Harian (Jam)",
+    "number_of_rtmd": "Jumlah RTMD",
+    "hours_unit": "jam"
+  },
+  "temperature_excursion": {
+    "title": "Ekskursi Suhu",
+    "info": "Suatu episode di mana suhu menyimpang dari rentang suhu yang direkomendasikan untuk menyimpan vaksin, yang dibagi menjadi 2°C hingga 8°C dan -25°C hingga -15°C. Ekskursi suhu didefinisikan berdasarkan catatan pembacaan suhu yang dikirim oleh RTMD dibandingkan dengan suhu ideal/yang direkomendasikan untuk setiap jenis penyimpanan.\n\nEkskursi dikategorikan menjadi:\nSuhu di atas rentang: ketika suhu di atas 8°C ATAU di atas -15°C untuk suhu beku. Untuk suhu beku, selanjutnya diklasifikasikan menjadi:\n• Di atas -15°C hingga -0,5°C, dan\n• Di atas -0,5°C.\nSuhu di bawah rentang: ketika suhu di bawah 2°C ATAU di bawah -15°C. Untuk rentang suhu 2°C hingga 8°C, selanjutnya diklasifikasikan menjadi:\n• -0,5°C hingga di bawah 2°C, dan\n• Di bawah -0,5°C",
+    "filter": {
+      "duration": {
+        "label": "Durasi Ekskursi Suhu",
+        "less_than_one_hour": "< 1 jam",
+        "one_to_ten_hours": "1-10 jam",
+        "more_than_ten_hours": "> 10 jam"
+      },
+      "temperature_range": {
+        "label": "Rentang Suhu",
+        "placeholder": "Pilih rentang suhu",
+        "2_to_8": "2°C hingga 8°C",
+        "minus_25_to_minus_15": "-25°C hingga -15°C"
+      },
+      "certification_status": {
+        "label": "Status Sertifikasi Cold Storage"
+      },
+      "who_pqs": {
+        "who_pqs": "WHO PQS",
+        "non_who_pqs": "Non WHO PQS"
+      },
+      "reset": "Reset",
+      "hint": "Klik pada salah satu kategori warna grafik di bawah untuk melihat data detail."
+    },
+    "charts": {
+      "excursion_episodes": {
+        "title": "Jumlah Episode Ekskursi\nBerdasarkan Kategori Ekskursi dan Minggu Tahun",
+        "subtitle": "Berdasarkan Kategori Ekskursi dan Minggu Tahun",
+        "info": "Jumlah episode atau frekuensi ekskursi suhu berdasarkan kategori dan periode minggu tahun.",
+        "y_axis": "Jumlah Episode"
+      },
+      "cold_storages_excursion": {
+        "title": "Jumlah Cold Storage yang Mengalami Ekskursi Suhu\nBerdasarkan Kategori Ekskursi dan Minggu Tahun",
+        "subtitle": "Berdasarkan Kategori Ekskursi dan Minggu Tahun",
+        "info": "Jumlah cold storage yang mengalami ekskursi suhu berdasarkan kategori dan periode minggu tahun.",
+        "y_axis": "Jumlah Cold Storage"
+      },
+      "excursion_by_type": {
+        "title": "Jumlah Episode Ekskursi Suhu",
+        "subtitle": "Berdasarkan Tipe Cold Storage",
+        "info": "Jumlah episode ekskursi suhu berdasarkan tipe cold storage."
+      },
+      "entities_excursion": {
+        "title": "Jumlah Entitas",
+        "subtitle": "Dengan Cold Storage yang Mengalami Ekskursi Suhu",
+        "info": "Jumlah entitas dengan cold storage yang mengalami ekskursi suhu."
+      },
+      "readings_distribution": {
+        "title": "Distribusi Status Pembacaan Suhu",
+        "subtitle": "Berdasarkan Provinsi",
+        "info": "Distribusi status pembacaan suhu berdasarkan provinsi, menunjukkan persentase pembacaan di setiap kategori.",
+        "tooltip": {
+          "cold_storages_count": "Jumlah Cold Storage: {{count}}",
+          "facilities_count": "Jumlah Fasilitas: {{count}}"
+        }
+      },
+      "legend": {
+        "below": "Di bawah -0,5°C",
+        "between": "-0,5°C hingga 2°C",
+        "above": "Di atas 8°C",
+        "above_minus_half": "Di atas -0,5°C",
+        "normal": "Normal (2°C hingga 8°C)",
+        "offline": "Offline"
+      }
+    }
+  }
+}

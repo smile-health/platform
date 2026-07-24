@@ -1,0 +1,44 @@
+{
+  "page": {
+    "title": "Daftar Alat Pemantau Suhu"
+  },
+  "filter": {
+    "serial_number": {
+      "label": "Nomor Seri",
+      "placeholder": "Cari nomor seri"
+    },
+    "manufacturer": {
+      "label": "Pabrik",
+      "placeholder": "Pilih pabrik"
+    },
+    "operational_status": {
+      "label": "Status Operasional Perangkat",
+      "placeholder": "Pilih status operasional perangkat"
+    },
+    "asset_relation": {
+      "label": "Relasi Aset",
+      "placeholder": "Pilih relasi aset"
+    },
+    "device_status": {
+      "label": "Status Perangkat",
+      "placeholder": "Pilih status perangkat"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "asset_model": {
+      "label": "Model Aset",
+      "placeholder": "Pilih model aset"
+    }
+  },
+  "table": {
+    "title": "Daftar Alat Pemantau Suhu"
+  },
+  "button": {
+    "create": "Tambah Alat Pemantau Suhu"
+  },
+  "message": {
+    "import_success": "Impor data alat pemantau suhu berhasil"
+  }
+}

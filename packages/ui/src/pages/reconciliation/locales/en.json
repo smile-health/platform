@@ -1,0 +1,136 @@
+{
+  "title": {
+    "reconciliation": "Reconciliation",
+    "tab": {
+      "list": "List",
+      "report": "Report"
+    },
+    "list": "Reconciliation List",
+    "report": {
+      "reconciliation_activity": "Reconciliation Report"
+    },
+    "create": {
+      "reconciliation": "Add Reconciliation"
+    },
+    "history": {
+      "reconciliation": "View History"
+    }
+  },
+  "filter": {
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "label": "Material",
+      "placeholder": "Select material"
+    },
+    "material_type": {
+      "label": "Material Type",
+      "placeholder": "Select material type"
+    },
+    "period": {
+      "label": "Period"
+    },
+    "created_date": {
+      "label": "Created Date"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "city": {
+      "label": "City/District",
+      "placeholder": "Select city/district"
+    },
+    "primary_health_care": {
+      "label": "Primary Health Care",
+      "placeholder": "Select primary health care"
+    },
+    "material_kfa_level": {
+      "label": "Material KFA Level",
+      "placeholder": "Select material KFA level"
+    },
+    "search": "Search",
+    "export": "Export"
+  },
+  "list": {
+    "table": {
+      "column": {
+        "no": "No",
+        "entity": "Entity",
+        "entity_name": "Entity Name",
+        "material_info": "Material Info",
+        "activity": "Activity",
+        "period": "Period",
+        "remaining_stock": "Remaining Stock",
+        "created_by": "Created By",
+        "action": "Action"
+      },
+      "view_history": "View History",
+      "from": "From",
+      "to": "To",
+      "real": "Real",
+      "at": "at",
+      "close": "Close",
+      "description": "Description",
+      "reason_action": "Reason & Action",
+      "reason": "Reason",
+      "action": "Action",
+      "add_reconciliation": "Add Reconciliation"
+    }
+  },
+  "create": {
+    "title_material_select": "Material in {{entity_name}}",
+    "caption_choose_material": "Click on the radio button to select the material. Selected material will appear on reconciliation table below",
+    "search_material": "Search material",
+    "material_name": "Material Name",
+    "selection": "Selection",
+    "reconciliation_detail": "Reconciliation Detail",
+    "entity": {
+      "label": "Entity",
+      "placeholder": "Select entity"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "table": {
+      "title": "Reconciliation Table",
+      "material_selected": "Material Selected"
+    },
+    "reset": "Reset",
+    "send": "Send",
+    "real_placeholder": "Please enter qty",
+    "add": "Add",
+    "reason": {
+      "label": "Reason",
+      "placeholder": "Select reason"
+    },
+    "action": {
+      "label": "Action",
+      "placeholder": "Select action"
+    },
+    "add_new_reason": "Add New Reason",
+    "cancel": "Cancel",
+    "save": "Save",
+    "validation": {
+      "required": "Required",
+      "error_combination": "Reason Action must not be duplicated",
+      "numeric_only": "Numeric only"
+    },
+    "reset_dialog": {
+      "title": "Confirmation",
+      "description": "Are you sure you want to delete all filled data?"
+    },
+    "change_dialog": {
+      "question_material": "Are you sure you want to change the material?",
+      "question_detail": "Are you sure want to change this ?",
+      "description": "All the information you’ve entered in this material will be lost."
+    }
+  }
+}

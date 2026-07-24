@@ -1,0 +1,127 @@
+{
+  "title": {
+    "ticketing_system": "Laporan Kejadian",
+    "order_detail": {
+      "drawer": "Detail Pesanan di SMILE"
+    },
+    "detail": {
+      "ticket": "Detail Info Laporan Kejadian",
+      "order": "Detail Pesanan",
+      "reported_item": "Detail Item yang Dilaporkan",
+      "comment": "Komentar"
+    }
+  },
+  "tab": {
+    "list": "Daftar Laporan Kejadian",
+    "create": "Membuat Laporan Kejadian"
+  },
+  "form": {
+    "commemnt": {
+      "label": "Komentar"
+    }
+  },
+  "table": {
+    "columns": {
+      "no": "No",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "batch_name": "Nama Batch",
+      "batch_number": "Nomor batch",
+      "quantity": "Kuantitas",
+      "transaction_reason": "Alasan Transaksi",
+      "transaction_reason_detail": "Detail Alasan Transaksi",
+      "total_quantity": "Total Kuantitas",
+      "batch_detail": "Detail Batch",
+      "reason": "Alasan",
+      "detail_reason": "Detail Alasan"
+    },
+    "form": {
+      "transaction_reason": {
+        "placeholder": "Pilih alasan"
+      },
+      "transaction_reason_detail": {
+        "placeholder": "Pilih detail alasan"
+      }
+    },
+    "rule_1": "Tulis sesuai dengan data Riil data fisik atau packing slip",
+    "rule_2": "Pilih <strong>Material Baru</strong> jika kejadian penerimaan fisik material tidak terdapat didaftar material"
+  },
+  "send": "Kirimkan",
+  "detail": {
+    "service": "Jenis Layanan",
+    "released": "Tanggal Rilis",
+    "notes": "Keterangan",
+    "empty_link": "Link packing slip masih kosong",
+    "update_status": "Ubah Status",
+    "cancel_report": "Batalkan Laporan",
+    "number": {
+      "ticket": "No. Laporan",
+      "order": "No. Pesanan yang Dilaporkan",
+      "do": "Nomor DO",
+      "document": "No. Surat Alokasi"
+    },
+    "customer": {
+      "name": "Nama Penerima",
+      "inquires_cancel": "Dinkes Meminta Pembatalan Pesanan"
+    },
+    "link": {
+      "add": "Tambah Link Packing Slip",
+      "edit": "Ubah Link Packing Slip",
+      "view": "Lihat Link Packing Slip"
+    },
+    "form": {
+      "link": {
+        "placeholder": "Input packing slip link",
+        "validation": {
+          "required": "Link packing slip harus diisi",
+          "start_with": "Harus diawali dengan http"
+        }
+      },
+      "comment": {
+        "label": "Komentar",
+        "placeholder": "Tulis komentar"
+      }
+    }
+  },
+  "status": {
+    "review_by_smile_helpdesk": "Dicek VCCM",
+    "report_cancelled": "Laporan Dibatalkan",
+    "ticket_submitted_to_biofarma": "Dilaporkan ke Biofarma",
+    "hit_manually": "Hit Manual",
+    "reviewed_by_biofarma": "Dalam Pemeriksaan",
+    "revised": "Sudah Direvisi",
+    "check_revision": "Cek Revisi",
+    "complete": "Selesai",
+    "reported_to_province": "Dilaporkan ke Provinsi",
+    "reported_to_pfizer": "Dilaporkan ke Pfizer"
+  },
+  "show_detail_order": "Tampilkan Pesanan Detail",
+  "detail_order": {
+    "title": "Detail Pesanan di SMILE",
+    "order_number": "Nomor Pesanan",
+    "created_at": "Dibuat Pada {{date}} Oleh {{username}}",
+    "letter_number": "No. Surat Alokasi",
+    "type_service": "Jenis Layanan",
+    "release_date": "Tanggal Rilis",
+    "description": "Keterangan",
+    "table_item": {
+      "label": "Tabel Item",
+      "si_no": "Si.No",
+      "shipped": "Dikirim",
+      "detail_batch": "Detail Batch",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "quantity": "Kuantitas"
+    }
+  },
+  "order_confirmation": {
+    "title": "Konfirmasi Laporan Pesanan",
+    "label": "Mohon pesanan ini dibatalkan jika sudah tercatat di SMILE. Klik Cek untuk konfirmasi"
+  },
+  "modal_confirmation": {
+    "title": "Konfirmasi",
+    "description": "Anda yakin laporan kejadian ini akan diteruskan ke KEMENTERIAN KESEHATAN RI ?"
+  },
+  "material_has_been_selected": "Material sudah dipilih",
+  "button": {
+    "view_detail_order": "Lihat Detail Pesanan"
+  }
+}

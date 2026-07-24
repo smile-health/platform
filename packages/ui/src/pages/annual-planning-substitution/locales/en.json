@@ -1,0 +1,30 @@
+{
+    "title": "Substitution List",
+    "material": "Material",
+    "select_material": "Select material",
+    "add_substitution": "Add Substitution",
+    "edit_substitution": "Edit Substitution",
+    "substitute_material": "Substitute Material",
+    "add_material": "Add Material",
+    "actual_distribution_material": "Actual Distribution Material",
+    "select_actual_distribution_material": "Select Actual Distribution Material",
+    "select_planned_material": "Select Planned Material",
+    "table": {
+        "planned_material": "Planned Material",
+        "substitute_material": "Substitute Material"
+    },
+    "deletion": {
+        "description": "Are you sure you want to delete this annual planning substitution?",
+        "subdescription": "Deleted annual planning substitutions cannot be recovered."
+    },
+    "toast": {
+        "create_success": "Annual planning substitution created successfully.",
+        "update_success": "Annual planning substitution updated successfully.",
+        "delete_success": "Annual planning substitution deleted successfully.",
+        "download_template_success": "Annual planning substitution template downloaded successfully.",
+        "download_template_error": "Failed to download annual planning substitution template.",
+        "import_success": "Annual planning substitution imported successfully.",
+        "import_error": "Failed to import annual planning substitution.",
+        "validation_error": "There are validation errors in the imported file."
+    }
+}

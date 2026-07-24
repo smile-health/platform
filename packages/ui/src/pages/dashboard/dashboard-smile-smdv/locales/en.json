@@ -1,0 +1,93 @@
+{
+  "title": {
+    "page": "SMILE vs SMDV Dashboard",
+    "tab": {
+      "material": "By Material",
+      "entity": "By Entity"
+    },
+    "chart": "Reconciliation Activity Report",
+    "yLabel": "Total Activity",
+    "xLabel": "Month"
+  },
+  "information": {
+    "title": "SMILE vs SMDV Dashboard",
+    "description": "This dashboard compares vaccine distribution data (SMILE) with shipment reporting data (SMDV). Significant differences may indicate overstocking, reporting delays, or data errors."
+  },
+  "summary": {
+    "qty_smdv": "Quantity in SMDV",
+    "qty_smile": "Quantity in SMILE",
+    "qty_deviation": {
+      "label": {
+        "smile_vs_smdv": "Difference (SMILE - SMDV)",
+        "smdv_vs_smile": "Difference (SMDV - SMILE)"
+      },
+      "message": "Distributed {{ symbol }} Reported. Indicates potential overstock or reporting lags.",
+      "negative_values": "Negative values : "
+    }
+  },
+  "export": "Export",
+  "export_as": "Export as {{type}}",
+  "form": {
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material_type": {
+      "label": "Material Type",
+      "placeholder": "Select material type"
+    },
+    "material_name": {
+      "smile": {
+        "label": "Material Name (SMILE)",
+        "placeholder": "Select SMILE material name"
+      },
+      "smdv": {
+        "label": "Material Name (SMDV)",
+        "placeholder": "Select SMDV material name"
+      }
+    },
+    "default_dashboard": {
+      "label": "Default Dashboard",
+      "options": {
+        "smile_vs_smdv": "SMILE vs SMDV",
+        "smdv_vs_smile": "SMDV vs SMILE"
+      }
+    },
+    "period": {
+      "label": "Period",
+      "placeholder": "Select month and year period"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "entity": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "order_status": {
+      "label": "Order Status",
+      "placeholder": "Select order status"
+    }
+  },
+  "columns": {
+    "material_name": "SMILE Material",
+    "material_biofarma": "SMDV Material",
+    "entity_name": "Entity Name",
+    "total_smdv": "Total Number of SMDV Doses",
+    "total_smile": "Total Number of SMILE Doses",
+    "difference": {
+      "smile_vs_smdv": "Difference (SMILE - SMDV)",
+      "smdv_vs_smile": "Difference (SMDV - SMILE)"
+    },
+    "difference_percentage": "Difference (%)"
+  }
+}

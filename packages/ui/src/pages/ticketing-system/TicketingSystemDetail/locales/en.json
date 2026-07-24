@@ -1,0 +1,42 @@
+{
+    "ticket_details": "Ticket Details - {{code}}",
+    "ticket_status": "Ticket Status",
+    "customer": "Sender",
+    "customer_name": "Sender Name",
+    "address": "Address",
+    "detail": {
+        "title": "Details",
+        "do_number": "DO Number",
+        "reported_order_number": "Reported Order Number",
+        "toal_lead_time": "Total Lead Time",
+        "customer_inquiries_to_cancel_the_order": "Sender inquiries to cancel the order?"
+    },
+    "reported": {
+        "material_selected": "Material Selected",
+        "quantity": "Quantity",
+        "expired_date": "Expired Date",
+        "reason": "Reason",
+        "reason_detail": "Reason Detail",
+        "new_material": "New Material"
+    },
+    "order_detail": {
+        "show_order_detail": "Show Order Detail",
+        "detail_order_in_smile": "Order Detail in SMILE ({{code}})",
+        "do_number": "DO Number",
+        "order_number": "Order Number",
+        "service_type": "Service Type",
+        "created_at": "Created At",
+        "release_date": "Release Date"
+    },
+    "float_bar": {
+        "button_packing_slip": "{{addEdit}} Packing Slip",
+        "panging_slip_link": "Packing Slip Link",
+        "input_link_of_packing_slip": "Input link of packing slip",
+        "reported_to_province": "Reported to Province",
+        "reported_to_supplier": "Reported to Supplier",
+        "manual_input": "Manual Input",
+        "cancel_ticket": "Cancel Ticket",
+        "change_status_confirm": "Are you sure you want to update status to <BoldText>{{newStatus}}</BoldText>?",
+        "successfully_updated": "Successfully updated"
+    }
+}

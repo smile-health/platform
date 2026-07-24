@@ -1,0 +1,37 @@
+{
+  "title": "Laporan Kejadian",
+  "table": {
+    "title": "Daftar Laporan Kejadian"
+  },
+  "text": {
+    "action": "Aksi"
+  },
+  "data": {
+    "ticket_number": "No. Laporan Kejadian",
+    "reporter_entity": "Entitas Pelapor",
+    "order_number": "Nomor Pesanan",
+    "packing_slip": "Nomor DO",
+    "arrival_date": "Tanggal Kedatangan",
+    "updated_at": "Diperbarui pada"
+  },
+  "field": {
+    "order_number": {
+      "label": "Nomor Pesanan",
+      "placeholder": "Cari dengan nomor pesanan"
+    },
+    "do_number": {
+      "label": "Nomor DO",
+      "placeholder": "Cari dengan nomor DO"
+    },
+    "arrival_date": {
+      "label": "Tanggal Kejadian"
+    },
+    "status": {
+      "label": "Status Laporan Kejadian",
+      "placeholder": "Pilih status laporan kejadian"
+    }
+  },
+  "button": {
+    "create": "Buat Laporan Kejadian"
+  }
+}

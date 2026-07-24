@@ -1,0 +1,30 @@
+{
+    "title": "Daftar Substitusi",
+    "material": "Material",
+    "select_material": "Pilih material",
+    "add_substitution": "Tambah Substitusi",
+    "edit_substitution": "Edit Substitusi",
+    "substitute_material": "Material Substitusi",
+    "add_material": "Tambah Material",
+    "actual_distribution_material": "Material Distribusi Aktual",
+    "select_actual_distribution_material": "Pilih Material Distribusi Aktual",
+    "select_planned_material": "Pilih Material yang Direncanakan",
+    "table": {
+        "planned_material": "Material yang Direncanakan",
+        "substitute_material": "Material Substitusi"
+    },
+    "deletion": {
+        "description": "Apakah Anda yakin ingin menghapus substitusi perencanaan tahunan ini?",
+        "subdescription": "Substitusi perencanaan tahunan yang dihapus tidak dapat dikembalikan."
+    },
+    "toast": {
+        "create_success": "Substitusi perencanaan tahunan berhasil dibuat.",
+        "update_success": "Substitusi perencanaan tahunan berhasil diperbarui.",
+        "delete_success": "Substitusi perencanaan tahunan berhasil dihapus.",
+        "download_template_success": "Template substitusi perencanaan tahunan berhasil diunduh.",
+        "download_template_error": "Gagal mengunduh template substitusi perencanaan tahunan.",
+        "import_success": "Substitusi perencanaan tahunan berhasil diimpor.",
+        "import_error": "Gagal mengimpor substitusi perencanaan tahunan.",
+        "validation_error": "Ada kesalahan validasi dalam file yang diimpor."
+    }
+}

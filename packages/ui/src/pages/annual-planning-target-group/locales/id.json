@@ -1,0 +1,57 @@
+{
+  "title": "Kelompok Sasaran",
+  "add": "Tambah Kelompok Sasaran",
+  "edit": "Ubah Kelompok Sasaran",
+  "target_group": "Kelompok Sasaran",
+  "search_by_keyword": "Cari berdasarkan kata kunci",
+  "message": {
+    "import_success": "Impor data kelompok sasaran berhasil"
+  },
+  "toast": {
+    "create_and_activate_success": "Kelompok sasaran telah dibuat dan diaktifkan dengan sukses",
+    "create_success": "Kelompok sasaran telah dibuat dengan sukses",
+    "update_and_activate_success": "Kelompok sasaran telah diperbarui dan diaktifkan dengan sukses",
+    "update_success": "Kelompok sasaran telah diperbarui dengan sukses",
+    "activate_success": "Kelompok sasaran diaktifkan dengan sukses",
+    "deactivate_success": "Kelompok sasaran dinonaktifkan dengan sukses",
+    "change_status_failed": "Gagal mengubah status kelompok sasaran",
+    "delete_success": "Kelompok sasaran berhasil dihapus"
+  },
+  "table": {
+    "target_group_name": "Nama Kelompok Sasaran",
+    "group_name": "Nama Kelompok",
+    "year": "Tahun",
+    "type": "Jenis",
+    "age": "Umur",
+    "status": "Status Data",
+    "active": "Aktif",
+    "inactive": "Tidak Aktif",
+    "activate": "Aktifkan",
+    "deactivate": "Nonaktifkan"
+  },
+  "add_target_group": "Tambah Kelompok Sasaran",
+  "select_target_group": "Pilih Kelompok Sasaran",
+  "age": "Umur",
+  "years": "Tahun",
+  "months": "Bulan",
+  "days": "Hari",
+  "from": "Dari",
+  "to": "Hingga",
+  "from_to_age": "{{fromYear}} Tahun {{fromMonth}} Bulan {{fromDay}} Hari - {{toYear}} Tahun {{toMonth}} Bulan {{toDay}} Hari",
+  "from_to_forever_age": "{{fromYear}} Tahun {{fromMonth}} Bulan {{fromDay}} Hari - Selamanya",
+  "validation": {
+    "month_max": "Bulan tidak boleh lebih dari 11, jika ingin mengisi 12, isi saja dengan 1 tahun.",
+    "day_max": "Hari tidak boleh lebih dari 29, jika ingin mengisi 30 atau 31, isi saja dengan 1 bulan.",
+    "cannot_greater_than_to": "Umur Dari tidak boleh lebih besar dari Umur Hingga"
+  },
+  "confirmation_activation": {
+    "description": "Apakah Anda yakin ingin {{status}} ini?",
+    "subdescription_activate": "Kelompok sasaran ini akan muncul dan dapat digunakan.",
+    "description_deactivate": "Kelompok sasaran ini tidak akan muncul dan dapat digunakan."
+  },
+  "confirmation_deletion": {
+    "description": "Apakah Anda yakin ingin menghapus kelompok sasaran ini?",
+    "subdescription": "Tindakan ini tidak dapat dibatalkan."
+  },
+  "programs": "Program"
+}

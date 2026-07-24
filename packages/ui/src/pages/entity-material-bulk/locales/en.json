@@ -1,0 +1,61 @@
+{
+  "title": "Import Material Entity Settings",
+  "list": {
+    "column": {
+      "import": "Imported By",
+      "entities": "Entities",
+      "file": "File Name",
+      "date": "Date Time",
+      "notes": "Notes"
+    },
+    "filter": {
+      "label": {
+        "date": "Imported Date"
+      }
+    }
+  },
+  "export": {
+    "title": "Download Template for Import Material Entity Preparation",
+    "description": "The template will filter data based on your selections to optimize downloads. Please ensure your filter selections are correct.",
+    "form": {
+      "title": {
+        "entity": "Filter for Entity",
+        "material": "Filter for Material"
+      },
+      "label": {
+        "entity": "Search Entity Name",
+        "entity_type": "Type",
+        "entity_tag": "Tag",
+        "material": "Search Material Name",
+        "material_type": "Material Type",
+        "activity": "Activity",
+        "level_material": "Level Material",
+        "option_level_material": [
+          "Product Template",
+          "Product Variant"
+        ],
+        "city": "Regency"
+      },
+      "placeholder": {
+        "entity": "Entity name",
+        "entity_type": "All type",
+        "entity_tag": "All tag",
+        "province": "All province",
+        "regency": "All regency",
+        "subdistrict": "All subdistrict",
+        "village": "All village",
+        "material": "Material name",
+        "material_type": "All material type",
+        "activity": "All activity"
+      },
+      "result": {
+        "entity": "Result of Entity Data:",
+        "material": "Result of Material Data:"
+      }
+    },
+    "toast": {
+      "success": "Template Material Entity has been successfully exported",
+      "import": "Import material entity data successful"
+    }
+  }
+}

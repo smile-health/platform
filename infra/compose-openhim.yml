@@ -1,0 +1,214 @@
+services:
+  # ============================================
+  # OpenHIM MongoDB Database
+  # ============================================
+  openhim-mongo:
+    image: mongo:7.0
+    container_name: openhim-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ${OPENHIM_MONGO_PASSWORD}
+      MONGO_INITDB_DATABASE: openhim
+    # NOTE: MongoDB port NOT exposed - Internal to OpenHIM only
+    # OpenHIM connects using the root user created automatically by MongoDB
+    volumes:
+      - openhim_mongo_data:/data/db
+      - openhim_mongo_config:/data/configdb
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETUID
+      - SETGID
+      - SETFCAP
+      - DAC_OVERRIDE
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
+        labels: "service=openhim-mongo"
+    healthcheck:
+      test:
+        - CMD
+        - mongosh
+        - --eval
+        - "db.adminCommand('ping')"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ============================================
+  # OpenHIM Core Service
+  # ============================================
+  openhim-core:
+    container_name: openhim-core
+    build:
+      context: ..
+      dockerfile: infra/openhim/Dockerfile
+      args:
+        OPENHIM_VERSION: ${OPENHIM_VERSION:-v8.5.0}
+    restart: unless-stopped
+    environment:
+      # Node Environment
+      NODE_ENV: development
+
+      # MongoDB Configuration
+      mongo_url: mongodb://root:${OPENHIM_MONGO_PASSWORD}@openhim-mongo:27017/openhim?authSource=admin
+      mongo_atnaUrl: mongodb://root:${OPENHIM_MONGO_PASSWORD}@openhim-mongo:27017/openhim?authSource=admin
+
+      # API Configuration
+      api_authWindowSeconds: 3600
+      api_httpsPort: 8080
+
+      # Router Configuration (Mediator ports)
+      router_httpPort: 5001
+      router_httpsPort: 5000
+      router_timeout: 60000
+
+      # Logging
+      logger_level: ${OPENHIM_LOG_LEVEL:-info}
+
+      # Certificate Management
+      certificateManagement_watchFSForCert: "false"
+
+      # Caching
+      caching_enabled: "true"
+      caching_refreshMillis: 1000
+      caching_maxAge: 10000
+
+      # Alerts
+      alerts_enableAlerts: "false"
+
+      # Features
+      rerun_processor_enabled: "false"
+      bodyCull_enabled: "false"
+      polling_enabled: "false"
+
+      # Keycloak / OpenID Connect (SSO)
+      api_authenticationTypes: '["openid","local","basic"]'
+      api_openid_url: "${OPENHIM_KC_URL}/realms/${KC_REALM_NAME:-smile}"
+      api_openid_callbackUrl: "${OPENHIM_CONSOLE_URL:-http://localhost:9000}"
+      api_openid_clientId: "${KC_OPENHIM_CLIENT_ID:-openhim-oauth}"
+      api_openid_clientSecret: "${OPENHIM_KC_CLIENT_SECRET}"
+      api_openid_scope: "openid email profile offline_access roles"
+
+      # Initialization Configuration (for admin user creation script)
+      OPENHIM_ROOT_USER: ${OPENHIM_ROOT_USER}
+      OPENHIM_ROOT_PASSWORD: ${OPENHIM_ROOT_PASSWORD}
+      OPENHIM_ADMIN_USERNAME: ${OPENHIM_ADMIN_USERNAME:-admin@openhim.local}
+      OPENHIM_ADMIN_PASSWORD: ${OPENHIM_ADMIN_PASSWORD}
+      OPENHIM_ADMIN_EMAIL: ${OPENHIM_ADMIN_EMAIL:-admin@openhim.local}
+
+      # Configuration Import Script Variables (optional - for config import)
+      OPENHIM_CONFIG_FILE: /etc/openhim/config/openhim-insert.json
+      OPENHIM_LOG_DIR: /var/log/openhim
+
+    ports:
+      - "127.0.0.1:${OPENHIM_CORE_PORT:-8080}:8080" # Core API (HTTP)
+      - "127.0.0.1:${OPENHIM_CORE_HTTPS_PORT:-8443}:8443" # Core API (HTTPS)
+      - "127.0.0.1:${OPENHIM_API_PORT:-5000}:5000" # API endpoint
+      - "127.0.0.1:${OPENHIM_HTTP_PORT:-5001}:5001" # HTTP mediator
+      - "127.0.0.1:${OPENHIM_HTTPS_PORT:-5002}:5002" # HTTPS mediator
+
+    volumes:
+      # Configuration files (for importing)
+      - ./openhim/config:/etc/openhim/config:ro
+
+      # TLS/SSL Certificates (for production cert injection)
+      - ./openhim/certs:/etc/openhim/certs:ro
+
+      # Logs (persistent)
+      - openhim_logs:/var/log/openhim
+
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
+        labels: "service=openhim-core"
+
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --no-verbose
+        - --tries=1
+        - --spider
+        - --no-check-certificate
+        - https://127.0.0.1:8080/heartbeat
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+
+    depends_on:
+      openhim-mongo:
+        condition: service_healthy
+
+  # ============================================
+  # OpenHIM Console (UI - Optional for Development)
+  # ============================================
+  openhim-console:
+    image: jembi/openhim-console:${OPENHIM_CONSOLE_VERSION:-v1.18.2}
+    container_name: openhim-console
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${OPENHIM_CONSOLE_PORT:-9000}:80"
+    environment:
+      # Use HTTPS for Core API communication (insecure: true for self-signed certs in development)
+      OPENHIM_CORE_URL: https://openhim-core:8443
+      OPENHIM_MEDIATOR_HOST: https://localhost:5002
+      # Disable SSL verification for self-signed certificates in development
+      NODE_TLS_REJECT_UNAUTHORIZED: "0"
+      # Keycloak SSO
+      KC_OPENHIM_SSO_ENABLED: "true"
+      OPENHIM_CONSOLE_SHOW_LOGIN: "true"
+      KC_FRONTEND_URL: "${OPENHIM_KC_URL}"
+      KC_REALM_NAME: "${KC_REALM_NAME:-smile}"
+      KC_OPENHIM_CLIENT_ID: "${KC_OPENHIM_CLIENT_ID:-openhim-oauth}"
+    volumes:
+      - openhim_console_cache:/var/cache/nginx
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+        labels: "service=openhim-console"
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --no-verbose
+        - --tries=1
+        - --spider
+        - http://localhost/
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    depends_on:
+      openhim-core:
+        condition: service_healthy
+
+# ============================================
+# Named Volumes for Persistence
+# ============================================
+volumes:
+  openhim_mongo_data:
+    driver: local
+  openhim_mongo_config:
+    driver: local
+  openhim_logs:
+    driver: local
+  openhim_console_cache:
+    driver: local

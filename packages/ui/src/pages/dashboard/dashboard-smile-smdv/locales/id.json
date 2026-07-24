@@ -1,0 +1,93 @@
+{
+  "title": {
+    "page": "Dasbor SMILE vs SMDV",
+    "tab": {
+      "material": "Per Material",
+      "entity": "Per Entitas"
+    },
+    "chart": "Laporan Aktivitas Rekonsiliasi",
+    "yLabel": "Jumlah Aktivitas",
+    "xLabel": "Bulan"
+  },
+  "information": {
+    "title": "Dasbor SMILE vs SMDV",
+    "description": "Dasbor ini membandingkan data distribusi vaksin (SMILE) dengan data pelaporan pengiriman (SMDV). Selisih besar bisa mengindikasikan kelebihan stok, tertunda dalam pelaporan, atau eror data."
+  },
+  "summary": {
+    "qty_smdv": "Jumlah di SMDV",
+    "qty_smile": "Jumlah di SMILE",
+    "qty_deviation": {
+      "label": {
+        "smile_vs_smdv": "Selisih Jumlah (SMILE - SMDV)",
+        "smdv_vs_smile": "Selisih Jumlah (SMDV - SMILE)"
+      },
+      "message": "Distribusi {{ symbol }} Pelaporan. Mengindikasikan adanya potensi kelebihan stok (overstock) atau keterlambatan pelaporan",
+      "negative_values": "Nilai negatif : "
+    }
+  },
+  "export": "Ekspor",
+  "export_as": "Ekspor sebagai {{type}}",
+  "form": {
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material_type": {
+      "label": "Jenis Material",
+      "placeholder": "Pilih jenis material"
+    },
+    "material_name": {
+      "smile": {
+        "label": "Nama Material (SMILE)",
+        "placeholder": "Pilih nama material SMILE"
+      },
+      "smdv": {
+        "label": "Nama Material (SMDV)",
+        "placeholder": "Pilih nama material SMDV"
+      }
+    },
+    "default_dashboard": {
+      "label": "Dasbor Default",
+      "options": {
+        "smile_vs_smdv": "SMILE vs SMDV",
+        "smdv_vs_smile": "SMDV vs SMILE"
+      }
+    },
+    "period": {
+      "label": "Periode",
+      "placeholder": "Pilih periode bulan dan tahun"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "entity": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "order_status": {
+      "label": "Status Pesanan",
+      "placeholder": "Pilih status pesanan"
+    }
+  },
+  "columns": {
+    "material_name": "Material SMILE",
+    "material_biofarma": "Material SMDV",
+    "entity_name": "Nama Entitas",
+    "total_smdv": "Jumlah SMDV Dosis",
+    "total_smile": "Jumlah SMILE Dosis",
+    "difference": {
+      "smile_vs_smdv": "Selisih Jumlah (SMILE - SMDV)",
+      "smdv_vs_smile": "Selisih Jumlah (SMDV - SMILE)"
+    },
+    "difference_percentage": "Selisih Jumlah (%)"
+  }
+}

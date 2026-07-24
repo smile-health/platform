@@ -1,0 +1,40 @@
+{
+  "title": "Population",
+  "import": {
+    "form": {
+      "year": {
+        "label": "Year Plan",
+        "placeholder": "Select year plan",
+        "error": "Year plan is required"
+      },
+      "file": {
+        "error": "File is required"
+      }
+    }
+  },
+  "toast": {
+    "download": {
+      "success": "Template population has been successfully downloaded"
+    },
+    "import": {
+      "success": "Import population data successfully",
+      "error": "Import population data failed"
+    },
+    "export": {
+      "success": "Export population data successfully",
+      "error": "Export population data failed"
+    }
+  },
+  "empty": {
+    "no_filter": {
+      "title": "No filter selected",
+      "description": "The data is currently empty. Please apply a filter to see the results."
+    }
+  },
+  "active": {
+    "confirmation": {
+      "description": "Are you sure want to activate this?",
+      "success": "Population successfully activated"
+    }
+  }
+}

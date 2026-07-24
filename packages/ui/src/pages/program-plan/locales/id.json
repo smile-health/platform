@@ -1,0 +1,70 @@
+{
+  "title": "Rencana Program",
+  "list_program_plan": "Daftar Rencana Program",
+  "add_program_plan": "Tambah Rencana Program",
+  "edit_program_plan": "Ubah Rencana Program",
+  "delete_program_plan": "Hapus Rencana Program",
+  "program_plan_name": "Nama Rencana Program",
+  "confirm": "Konfirmasi",
+  "optional": "Opsional",
+  "message": {
+    "import_success": "Rencana Program berhasil diimpor",
+    "successfully_created": "Rencana Program berhasil dibuat"
+  },
+  "table": {
+    "year": "Tahun",
+    "year_plan": "Rencana Tahun",
+    "previous_year": "Rencana Program",
+    "select_data_to_be_copied": "Pilih Data yang Akan Disalin",
+    "type": "Tipe",
+    "status": "Status",
+    "approach": "Pendekatan"
+  },
+  "placeholder": {
+    "select_year": "Pilih tahun",
+    "select_year_plan": "Pilih rencana tahun",
+    "select_previous_year": "Pilih rencana program"
+  },
+  "tabs": {
+    "target_group": "Kelompok Sasaran",
+    "population": "Populasi",
+    "task": "Tugas",
+    "ratio": "Rasio",
+    "substitution": "Substitusi",
+    "needs_calculation": "Tugas",
+    "material_ratio": "Rasio",
+    "material_substitution": "Substitusi Material"
+  },
+  "status": {
+    "activate": "Aktifkan",
+    "deactivate": "Nonaktifkan",
+    "target_group": "Kelompok Sasaran",
+    "population": "Populasi",
+    "need_calculation": "Tugas",
+    "material_ratio": "Rasio",
+    "final": "Final",
+    "draft": "Draf",
+    "mark_as_final": {
+      "label": "Tandai Sebagai Final",
+      "confirmation": "Apakah Anda yakin ingin tandai ini sebagai final?"
+    }
+  },
+  "mark_as_final": "Tandai sebagai Final",
+  "deactivate": "Nonaktifkan",
+  "activate": "Aktifkan",
+  "detail_and_configure": "Detail & Konfigurasi",
+  "cannot_modify_final_plan": "Anda tidak dapat mengubah rencana yang telah difinalisasi.",
+  "confirmation_activation": {
+    "description": "Apakah Anda akan memfinalkan ini?",
+    "subdescription_top": "Pastikan semua data yang diperlukan di bawah ini telah lengkap sebelum melanjutkan.",
+    "subdescription_bottom": "Anda tidak dapat menekan `Ya` sampai semua data yang diperlukan telah lengkap."
+  },
+  "use_data_from_prev_year": "Gunakan Data Dari Rencana Program Lain",
+  "required_when_using_data_from_prev_year": "Wajib diisi saat menggunakan data dari rencana program lain",
+  "toast": {
+    "activate_success": "Rencana program berhasil diaktifkan",
+    "deactivate_success": "Rencana program berhasil dinonaktifkan",
+    "create": "Rencana program berhasil dibuat",
+    "mark_as_final_success": "Rencana program berhasil ditandai sebagai final"
+  }
+}

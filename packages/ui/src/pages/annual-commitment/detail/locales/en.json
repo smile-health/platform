@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "Annual Commitment Details"
+  },
+  "section": {
+    "detail": {
+      "title": "Annual Commitment Detail"
+    },
+    "centralAllocation": {
+      "title": "Central Allocation"
+    },
+    "buffer": {
+      "title": "Buffer"
+    }
+  },
+  "field": {
+    "contract_number": "Contract Number",
+    "contractDate": "Contract Date",
+    "contract_end_date": "Contract End Date",
+    "year": "Year",
+    "supplier": "Supplier",
+    "information": "Information"
+  },
+  "table": {
+    "column": {
+      "no": "No.",
+      "material": "Material",
+      "materialName": "Material Name",
+      "provinceReceiver": "Province Receiver",
+      "numberVial": "Number (Vial/Unit)",
+      "numberDose": "Number (Dose/Unit)",
+      "action": "Action"
+    }
+  },
+  "button": {
+    "edit": "Edit"
+  }
+}

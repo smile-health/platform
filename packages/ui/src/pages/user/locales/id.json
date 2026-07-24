@@ -1,0 +1,161 @@
+{
+  "title": {
+    "index": "Pengaturan Pengguna",
+    "add": "Tambah Pengguna",
+    "edit": "Ubah Pengguna",
+    "list": {
+      "index": "Daftar Penguna",
+      "management": "Pengaturan Pengguna"
+    },
+    "user": "Pengguna",
+    "detail": "Detail Pengguna",
+    "main": "Info Utama",
+    "additional": "Info Tambahan",
+    "status": "Status Pengguna",
+    "change_history": "Riwayat Perubahan",
+    "log": "Informasi Kegiatan Pengguna",
+    "entity": "Informasi Entitas"
+  },
+  "column": {
+    "username": "Username",
+    "fullname": "Nama Lengkap",
+    "role": "Role",
+    "firstname": "Nama Depan",
+    "lastname": "Nama Belakang",
+    "location": "Lokasi",
+    "entity": {
+      "index": "Entitas",
+      "name": "Nama Entitas",
+      "address": "Alamat Entitas"
+    },
+    "mobile_phone": "Nomor Handphone",
+    "birthdate": "Tanggal Lahir",
+    "gender": "Jenis Kelamin",
+    "last": {
+      "login": "Login Terakhir",
+      "device": "Perangkat Login Terakhir"
+    },
+    "status": "Status",
+    "action": "Aksi"
+  },
+  "form": {
+    "name": {
+      "placeholder": "Cari username, nama depan, nama belakang",
+      "label": "Cari"
+    },
+    "role": {
+      "label": "Role",
+      "placeholder": "Pilih role",
+      "validation": {
+        "required": "Role wajib diisi"
+      }
+    },
+    "primary_vendor": {
+      "label": "Penyedia Utama",
+      "placeholder": "Pilih penyedia utama"
+    },
+    "date": {
+      "label": "Tanggal"
+    },
+    "username": {
+      "label": "Username",
+      "placeholder": "Masukkan username",
+      "validation": {
+        "required": "Username wajib diisi",
+        "invalid": "Username hanya boleh terdiri dari huruf, angka, titik, dan garis bawah (underscore)"
+      }
+    },
+    "firstname": {
+      "label": "Nama Depan",
+      "placeholder": "Masukkan nama depan",
+      "validation": {
+        "required": "Nama depan wajib diisi"
+      }
+    },
+    "lastname": {
+      "label": "Nama Belakang",
+      "placeholder": "Masukkan nama belakang"
+    },
+    "email": {
+      "placeholder": "Masukkan email",
+      "validation": {
+        "required": "Email wajib diisi",
+        "invalid": "Email tidak valid"
+      },
+      "daily_recap_email": "Terima email rekap harian"
+    },
+    "password": {
+      "label": "Kata Sandi",
+      "placeholder": "Masukkan kata sandi",
+      "validation": {
+        "required": "Kata sandi wajib diisi",
+        "invalid": "Kata sandi harus terdiri huruf besar, huruf kecil, angka, dan simbol"
+      }
+    },
+    "password_confirmation": {
+      "label": "Konfirmasi Kata Sandi",
+      "placeholder": "Masukkan konfirmasi kata sandi",
+      "validation": {
+        "required": "Konfirmasi kata sandi wajib diisi",
+        "match": "Kata Sandi tidak sama"
+      }
+    },
+    "manufacturer": {
+      "label": "Pabrik/Vendor IoT",
+      "placeholder": "Pilih manufacturer/vendor IoT",
+      "validation": {
+        "required": "Pabrik/vendor IoT wajib diisi"
+      }
+    },
+    "address": {
+      "label": "Alamat",
+      "placeholder": "Masukkan alamat",
+      "other_label": "Lokasi"
+    },
+    "mobile_phone": {
+      "label": "Nomor Handphone",
+      "placeholder": "Masukkan nomor handphone"
+    },
+    "birthdate": {
+      "label": "Tanggal Lahir",
+      "placeholder": "Masukkan tanggal lahir"
+    },
+    "gender": {
+      "label": "Jenis Kelamin",
+      "male": "Laki-laki",
+      "female": "Perempuan",
+      "validation": {
+        "required": "Gender wajib diisi"
+      }
+    },
+    "view_only": {
+      "label": "Hanya View",
+      "disabled_information": "view only tidak tersedia untuk Superadmin"
+    },
+    "entity": {
+      "program": "Workspace tersedia setelah memilih entitas",
+      "validation": {
+        "required": "Entitas wajib diisi"
+      }
+    }
+  },
+  "confirmation": {
+    "activate": {
+      "question": "Apakah anda yakin akan mengaktifkan ini ?"
+    },
+    "deactivate": {
+      "question": "Apakah anda yakin akan menonaktifkan ini?",
+      "description": "Pengguna ini akan kehilangan akses SMILE"
+    }
+  },
+  "action": {
+    "see_changes": "Lihat Perubahan"
+  },
+  "history": {
+    "information": "Informasi perubahan",
+    "add": "Menambahkan",
+    "changed": "Diubah menjadi",
+    "removed": "Menghapus",
+    "password": "Kata Sandi anda telah diperbarui pada {{date}}"
+  }
+}

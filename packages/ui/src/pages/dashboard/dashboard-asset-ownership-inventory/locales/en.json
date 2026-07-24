@@ -1,0 +1,158 @@
+{
+  "title": {
+    "page": "Asset Ownership Inventory Dashboard",
+    "sub_title": "Efficient monitoring of assets owned by the relevant entity concerning their quantity, functionality, etc.",
+    "expired_date": "Expired Date",
+    "month": "Month",
+    "province": "Province",
+    "regency": "City",
+    "sort_by": "Sort by {{type}} ID",
+    "total_asset": "Total Asset",
+    "asset_ownership_by_entity": {
+      "total": "Total Asset Ownership by {{type}}",
+      "detail": "Detail of Asset Ownership by {{type}}"
+    },
+    "entity": {
+      "level": "Entity Level",
+      "tag": "Entity Tag"
+    },
+    "tabs": {
+      "all": "All",
+      "kemenkes": "Kemenkes",
+      "warehouse": "Warehouse",
+      "province": "Province",
+      "regency": "Regency",
+      "entity": "Primary Healthcare",
+      "hospital": "RS/KKP/TNI/Polri"
+    }
+  },
+  "description": {
+    "stock": {
+      "remaining": "The remaining stock data displayed is accumulated based on {{title}}",
+      "in_transit": "The in transit stock data displayed is accumulated based on {{title}}"
+    },
+    "information_month": "Displays the closing stock quantity of each material batch based on the batch's last transaction month. Each point on the chart represents the batch’s closing stock in the month when it was last transacted within the selected period range."
+  },
+  "form": {
+    "status": {
+      "label": "Already Removed?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "ownership_status": {
+      "label": "Ownership Status",
+      "placeholder": "Select ownership status",
+      "option": {
+        "owned": "Owned",
+        "borrowed": "Borrowed"
+      }
+    },
+    "power_availability": {
+      "label": "Electricity Availability (Per-day)",
+      "placeholder": "Select electricity availability (per-day)"
+    },
+    "communication_provider": {
+      "label": "Communication Provider",
+      "placeholder": "Select communication provider"
+    },
+    "vendor": {
+      "label": "Vendor",
+      "placeholder": "Select vendor"
+    },
+    "capacity_data": {
+      "label": "Capacity Data",
+      "placeholder": "Select capacity data",
+      "option": {
+        "exist": "Exist",
+        "not_exist": "Not Exist",
+        "need_clarification": "Need Clarification"
+      }
+    },
+    "budget_year": {
+      "label": "Budget Year",
+      "placeholder": "Select budget year"
+    },
+    "asset_model": {
+      "label": "Asset Model",
+      "placeholder": "Select asset model"
+    },
+    "asset_type": {
+      "label": "Asset Type",
+      "placeholder": "Select asset type"
+    },
+    "working_status": {
+      "label": "Operational Status",
+      "placeholder": "Select operational status"
+    },
+    "manufacture": {
+      "label": "Manufacture",
+      "placeholder": "Select manufacture"
+    },
+    "production_year": {
+      "label": "Production Year",
+      "placeholder": "Select production year"
+    },
+    "date": {
+      "periode": {
+        "start": {
+          "label": "Start Input Date"
+        },
+        "end": {
+          "label": "End Input Date"
+        }
+      },
+      "expired": {
+        "label": "Expired Date"
+      }
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "City/District",
+      "placeholder": "Select city/district"
+    },
+    "health_facilities": {
+      "label": "Primary Health Care",
+      "placeholder": "Select primary health care"
+    },
+    "information_type": {
+      "label": "Kind of Information"
+    }
+  },
+  "data": {
+    "material_level": {
+      "trademark": "Product Variant"
+    },
+    "information_type": {
+      "remaining_stock": "Remaining Stock",
+      "in_transit_stock": "In Transit Stock"
+    }
+  },
+  "column": {
+    "province": "Province",
+    "regency": "City",
+    "activity": "Activity",
+    "material": "Material Name",
+    "unit": "Unit",
+    "entity": {
+      "name": "Entity Name",
+      "tag": "Entity Tag"
+    },
+    "batch": {
+      "code": "Batch Code",
+      "expired": "Batch Expired Date"
+    },
+    "stock": {
+      "remaining": "Total of Remaining Stock",
+      "in_transit": "Total of In Transit",
+      "min": "Min Stock",
+      "max": "Max Stock"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "title": {
+    "form": "Detail Transaksi",
+    "list": "Tabel Pesanan",
+    "material_in": "Material di",
+    "meta": "Form Transaksi",
+    "create": "Buat Pesanan Baru",
+    "new_order": "Pesanan Baru"
+  },
+  "form": {
+    "customer_id": {
+      "label": "Penerima",
+      "placeholder": "Pilih penerima"
+    },
+    "activity_id": {
+      "label": "Pilih Kegiatan",
+      "placeholder": "Pilih Kegiatan",
+      "activity_entity_relation_info": "Kegiatan yang ditampilkan hanya Kegiatan yang masih aktif di Entitas ini"
+    },
+    "vendor_id": {
+      "label": "Pengirim",
+      "placeholder": "Pilih pengirim"
+    },
+    "required_date": {
+      "label": "Dibutuhkan Tanggal",
+      "placeholder": "Pilih tanggal"
+    },
+    "order_comment": {
+      "label": "Komentar",
+      "placeholder": "Masukkan komentar"
+    },
+    "search": {
+      "placeholder": "Cari material"
+    }
+  },
+  "material_table": {
+    "click_to_select": "Klik pada kotak centang untuk memilih bahan. Material yang dipilih akan muncul pada tabel pesanan di bawah ini",
+    "complete_detail_transaction": "Lengkapi detail transaksi terlebih dahulu"
+  },
+  "list": {
+    "selected": {
+      "column": {
+        "activity": "Kegiatan",
+        "material_info": {
+          "label": "Material",
+          "activity": "Kegiatan : {{activity}}"
+        },
+        "stock_available": {
+          "label": "Stok Tersedia"
+        },
+        "stock_on_hand": "Sisa Stok",
+        "quantity": {
+          "label": "Kuantitas",
+          "recommendation": "Direkomendasikan {{value}}",
+          "input": "Masukkan jumlah sesuai rekomendasi",
+          "error": {
+            "zero": "Kuantitas harus lebih besar dari 0",
+            "multiply": "Kuantitas harus kelipatan dari {{value}}",
+            "required": "Kuantitas wajib diisi"
+          },
+          "detail": {
+            "material_name": "Material : {{name}}",
+            "qty": "Jumlah : {{value}}"
+          }
+        },
+        "add_material": "Tambah Material",
+        "reason": {
+          "label": "Alasan",
+          "placeholder": "Pilih alasan"
+        },
+        "other_reason": {
+          "placeholder": "Masukkan alasan"
+        },
+        "action": "Aksi"
+      }
+    },
+    "material": {
+      "column": {
+        "material_name": "Nama Material",
+        "available_stock": "Total Stok Tersedia",
+        "stock_on_activity": "Stock di {{activity_name}}",
+        "selection": "Seleksi"
+      }
+    }
+  },
+  "button": {
+    "send": "Kirimkan",
+    "reset": "Reset",
+    "trademark": {
+      "add": "Material Produk Varian",
+      "update": "Ubah Material Produk Varian"
+    }
+  },
+  "modal": {
+    "reset": {
+      "title": "Konfirmasi",
+      "description": "Apakah kamu yakin untuk menghapus data yang telah diisi?"
+    },
+    "save": {
+      "title": "Konfirmasi",
+      "description": "Apakah kamu yakin untuk menyimpan data ini?"
+    }
+  },
+  "drawer": {
+    "header": "Material Produk Varian",
+    "stock_on_hand": "Sisa Stok",
+    "available_stock": "Stok Tersedia",
+    "min": "Min",
+    "max": "Max"
+  }
+}

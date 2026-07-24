@@ -1,0 +1,56 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["typescript", "javascript"],
+  "editor.tabSize": 2,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "codium.codeCompletion.enable": false,
+  "snyk.advanced.organization": "1ebe1478-32da-4e9a-81c9-7bb2213c8bc8",
+  "snyk.advanced.autoSelectOrganization": true,
+
+  // Exclude folders from file explorer and Ctrl+P
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/coverage": true,
+    "**/.nyc_output": true,
+    "**/tmp": true,
+    "**/temp": true
+  },
+
+  // Exclude folders from search results
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/coverage": true,
+    "**/.nyc_output": true,
+    "**/tmp": true,
+    "**/temp": true,
+    "**/*.lock": true,
+    "**/package-lock.json": true,
+    "**/3.0/*": true
+  },
+
+  // Additional exclude for Ctrl+P (quick open)
+  "quickOpen.exclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.git/**": true
+  }
+}

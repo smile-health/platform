@@ -1,0 +1,37 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@9.8.1",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start --port 7500",
+    "format": "echo 0"
+  },
+  "dependencies": {
+    "@repo/ui": "workspace:*",
+    "dotenv": "^8.2.0",
+    "eslint-config-next": "^14.2.5",
+    "next": "14.2.35",
+    "nprogress": "^0.2.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^8.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^1.9.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unused-imports": "^1.1.5",
+    "prettier": "2.2.1",
+    "prettier-plugin-tailwind-css": "^1.4.0",
+    "prettier-standard": "^16.4.1"
+  }
+}

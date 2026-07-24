@@ -1,0 +1,119 @@
+{
+  "page": {
+    "title": "Create New Ticket"
+  },
+  "section": {
+    "ticket_form": {
+      "title": "Ticket Form"
+    },
+    "select_material": {
+      "title": "Material",
+      "title_in_entity": "Material in {{entity}}",
+      "description": "Click on the checkbox to select the material. Selected material will appear on the ticketing table below"
+    },
+    "ticketing_table": {
+      "title": "Ticketing Table",
+      "instructions": {
+        "instruction_1": "Write according to real data, physical data or packing slip",
+        "instruction_2": "Select \"New Material\"if the event of physical receipt of material is not in the material list"
+      }
+    },
+    "order_ticketing_confirmation": {
+      "title": "Order Ticketing Confirmation"
+    }
+  },
+  "drawer": {
+    "quantity": {
+      "title": "Quantity"
+    }
+  },
+  "table": {
+    "columns": {
+      "no": "No",
+      "si_no": "SI.No",
+      "selected_material": "Selected Material",
+      "quantity": "Quantity",
+      "reason": "Reason",
+      "action": "Action",
+      "material": "Material",
+      "batch_name": "Batch Name",
+      "expired_date": "Expired Date",
+      "reason_detail": "Reason Detail"
+    },
+    "message": {
+      "edit_material_name": "Edit name by input quantity!"
+    }
+  },
+  "text": {
+    "add_other_material": "+ Add Other Material",
+    "new_material": "New Material"
+  },
+  "field": {
+    "search_material": {
+      "label": "Search Material",
+      "placeholder": "Search Material"
+    },
+    "is_submitted_on_smile": {
+      "label": "Is submitted into SMILE ?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "order_number": {
+      "label": "Order Number",
+      "placeholder": "Select Order Number"
+    },
+    "arrival_date": {
+      "label": "Arrival Date"
+    },
+    "do_number": {
+      "label": "DO Number",
+      "placeholder": "DO Number"
+    },
+    "select_material": {
+      "placeholder": "Select Material"
+    },
+    "batch_code": {
+      "label": "Batch Name",
+      "placeholder": "Input Batch ID"
+    },
+    "quantity": {
+      "label": "Quantity",
+      "placeholder": "Input qty"
+    },
+    "reason": {
+      "label": "Reason",
+      "placeholder": "Select reason"
+    },
+    "reason_detail": {
+      "label": "Reason Detail",
+      "placeholder": "Select reason detail"
+    },
+    "custom_material": {
+      "label": "Custom Material",
+      "placeholder": "Please enter custom material name"
+    },
+    "accept_terms": {
+      "label": "Please cancel this order if already recorded in SMILE. By check the box to confirm."
+    },
+    "comment": {
+      "label": "Comment",
+      "placeholder": "Please enter comment"
+    }
+  },
+  "modal": {
+    "reset": {
+      "title": "Confirmation",
+      "description": "Are you sure you want to delete all filled data?"
+    },
+    "submission": {
+      "title": "Proceed to Send Ticket?",
+      "description": "By clicking <strong>Yes</strong>, you acknowledge that this ticket will be forwarded to the Ministry of Health of the Republic of Indonesia."
+    }
+  },
+  "button": {
+    "input_quantity": "Input Quantity",
+    "edit_quantity": "Edit Quantity",
+    "add_new_material": "+ New Material",
+    "add_other_batch": "Add Other Batch"
+  }
+}

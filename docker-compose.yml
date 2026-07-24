@@ -1,0 +1,435 @@
+include:
+  - path:
+      - infra/compose-database.yml
+      - infra/compose-message.yml
+      - infra/compose-storage.yml
+      - infra/compose-keycloak.yml
+      - infra/compose-openhim.yml
+
+services:
+  proxy:
+    container_name: proxy
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./infra/proxy.conf:/etc/nginx/conf.d/default.conf
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8080",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  interop-service:
+    container_name: interop-service
+    build:
+      context: ./
+      dockerfile: ./apps/interop-service/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./apps/interop-service/.env
+    environment:
+      # Docker-specific overrides — everything else comes from env_file
+      NODE_ENV: production
+      OPENHIM_API_ENDPOINT: https://openhim-core:8080
+      OPENHIM_HTTP_PROTOCOL: http
+      OPENHIM_HTTP_HOST: openhim-core
+      OPENHIM_HTTP_PORT: "5001"
+      OPENHIM_REJECT_UNAUTHORIZED: "false"
+
+    ports:
+      - "127.0.0.1:4004:4004"
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://localhost:4004/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+    depends_on:
+      openhim-core:
+        condition: service_healthy
+
+    networks:
+      - default
+      - infra_default
+
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+
+  openhim-rule-router-mediator:
+    container_name: openhim-rule-router-mediator
+    build:
+      context: ./
+      dockerfile: ./apps/openhim-mediators/rule-router/Dockerfile
+      args:
+        - NODE_ENV=development
+    restart: unless-stopped
+    # Load base config from service .env; explicit environment block below overrides
+    # The environment block below only overrides values that must differ inside Docker.
+    env_file:
+      - ./apps/openhim-mediators/rule-router/.env
+    environment:
+      # Run as production inside Docker (uses JSON stdout logging, not pino-pretty)
+      NODE_ENV: production
+
+      # OpenHIM admin API — HTTPS on port 8080 (api_httpsPort in compose-openhim.yml)
+      OPENHIM_API_ENDPOINT: https://openhim-core:8080
+
+      # OpenHIM channel router — HTTP port 5001 on the internal Docker network
+      OPENHIM_HTTP_PROTOCOL: http
+      OPENHIM_HTTP_HOST: openhim-core
+      OPENHIM_HTTP_PORT: "5001"
+      OPENHIM_REJECT_UNAUTHORIZED: "false"
+
+      # Hostname OpenHIM uses to reach this container on the internal Docker network
+      SERVICE_HOST: openhim-rule-router-mediator
+
+    ports:
+      - "127.0.0.1:4005:4005"
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://localhost:4005/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+    depends_on:
+      openhim-core:
+        condition: service_healthy
+
+    networks:
+      - default
+      - infra_default
+
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+
+  service-core:
+    container_name: service-core
+    build: ./apps/core
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - ./apps/core/.env
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  service-immunization:
+    container_name: service-immunization
+    build: ./apps/platform
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3001:3000"
+    env_file:
+      - ./apps/platform/.env
+    environment:
+      FALLBACK_SERVER_URL: http://dev.badr.co.id:8005
+      WORKSPACE_ID: 1
+      DB_NAME: smile_imun
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  service-medicine:
+    container_name: service-medicine
+    build: ./apps/platform
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3002:3000"
+    env_file:
+      - ./apps/platform/.env
+    environment:
+      FALLBACK_SERVER_URL: http://dev.badr.co.id:6012
+      WORKSPACE_ID: 2
+      DB_NAME: smile_logistic
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  service-auth:
+    container_name: service-auth
+    build: ./apps/auth-service
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3003:3000"
+    env_file:
+      - ./apps/auth-service/.env
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  service-main:
+    container_name: service-main
+    build: ./apps/main
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3004:3000"
+    env_file:
+      - ./apps/main/.env
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  service-sync:
+    container_name: service-sync
+    build: ./apps/sync-service
+    restart: unless-stopped
+    env_file:
+      - ./apps/sync-service/.env
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  service-warehouse:
+    container_name: service-warehouse
+    build: ./apps/warehouse-service
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3006:3008"
+    env_file:
+      - ./apps/warehouse-service/.env
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3008/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  service-main-api:
+    container_name: service-main-api
+    build:
+      context: ./apps/3.0/main-api
+      args:
+        - PORT=3000
+    environment:
+      - PORT=3000
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3007:3000"
+    env_file:
+      - ./apps/3.0/main-api/.env
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  service-warehouse-api:
+    container_name: service-warehouse-api
+    build:
+      context: ./apps/3.0/warehouse-api
+      args:
+        - PORT=3000
+    environment:
+      - PORT=3000
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3009:3000"
+    env_file:
+      - ./apps/3.0/warehouse-api/.env
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  service-notification:
+    container_name: service-notification
+    build: ./apps/3.0/notification
+    restart: unless-stopped
+    env_file:
+      - ./apps/3.0/notification/.env
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+      - apparmor:unconfined
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# The infra services (openhim-core, etc.) run in their own Docker Compose project
+# join that network so they can resolve 'openhim-core' by name.
+networks:
+  infra_default:
+    external: true
+    name: infra_default

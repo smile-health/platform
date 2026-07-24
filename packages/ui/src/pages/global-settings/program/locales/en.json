@@ -1,0 +1,79 @@
+{
+  "title": {
+    "list": "Program Settings",
+    "create": "Add Program",
+    "edit": "Edit Program",
+    "detail": "Program Detail"
+  },
+  "create": "Add Program",
+  "column": {
+    "name": "Name",
+    "classification_material": "Material Classification",
+    "updated_by": "Updated By",
+    "updated_at": "Updated At",
+    "activity_name": "Activity Name",
+    "activity_process": "Activity Process",
+    "protocol": "Protocol"
+  },
+  "filter": {
+    "search": {
+      "label": "Search",
+      "placeholder": "Type program name"
+    },
+    "classification_material": {
+      "label": "Material Classification",
+      "placeholder": "Select material classification"
+    }
+  },
+  "form": {
+    "success": {
+      "create": "Program created successfully",
+      "update": "Program updated successfully"
+    },
+    "label": {
+      "key": "Key Program",
+      "name": "Program Name",
+      "description": "Description",
+      "classification_material": "Material Classification",
+      "color": "Program Color",
+      "protocol": "Protocol"
+    },
+    "placeholder": {
+      "classification_material": "Select material classification",
+      "description": "Enter a description...",
+      "protocol": "Search protocol"
+    },
+    "error": {
+      "protocol": "At least one protocol is selected"
+    },
+    "options": {
+      "classification_material": {
+        "hierarchy": "Classification KFA (hierarchy)",
+        "non_hierarchy": "Non-Classification (non-hierarchy)"
+      },
+      "activity_process": {
+        "bottom_up": "Bottom Up",
+        "top_down": "Top Down"
+      },
+      "protocol": {
+        "default": "Default",
+        "custom": "Rabies",
+        "dengue": "Dengue"
+      }
+    }
+  },
+  "details": {
+    "title": {
+      "detail": "Details",
+      "activity": "Activity List"
+    },
+    "button": {
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "tabs_title": {
+      "detail": "Details",
+      "activity": "Activity"
+    }
+  }
+}

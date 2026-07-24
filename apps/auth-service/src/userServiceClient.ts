@@ -1,0 +1,109 @@
+import { HTTPError } from "@smile/lib/error";
+import axios from "axios";
+import userServiceConfig from "./config/userServiceConfig";
+import logger from "./utils/logger";
+
+class UserServiceClient {
+  private readonly userUrl: string;
+
+  constructor() {
+    this.userUrl = userServiceConfig.serverUrl;
+  }
+
+  public async updateUserLastLogin(
+    token: string,
+    data: any,
+    isExecutive: boolean = false,
+  ): Promise<void> {
+    try {
+      const url = `${this.userUrl}${isExecutive ? "/executive/users" : "/users"}`;
+      await axios.post(`${url}/update-last-login`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+          "device-type": data.last_device,
+          "Accept-Language": data.language,
+        },
+      });
+      logger.info(
+        `UserServiceClient.updateUserLastLogin: update user last login successfully`,
+      );
+    } catch (error: any) {
+      logger.error(
+        `UserServiceClient.updateUserLastLogin: Failed to update user last login: ${error}, ${JSON.stringify(error?.response?.data)}`,
+      );
+    }
+  }
+
+  public async validateUserExists(
+    username: string,
+    isExecutive: boolean = false,
+  ): Promise<{ exists: boolean; user?: any; inactive?: boolean }> {
+    try {
+      const url = `${this.userUrl}${isExecutive ? "/executive/users" : "/users"}`;
+      const response = await axios.post(
+        `${url}/validate-exists`,
+        { username },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          timeout: 5000,
+        },
+      );
+
+      logger.info(
+        `UserServiceClient.validateUserExists: User validation successful for: '${username}'`,
+      );
+
+      return {
+        exists: true,
+        user: response.data.data,
+      };
+    } catch (error: any) {
+      if (error.response?.status === 404) {
+        logger.warn(
+          `UserServiceClient.validateUserExists: User not found in SMILE DB: '${username}'`,
+        );
+        return { exists: false };
+      }
+
+      if (error.response?.status === 400) {
+        logger.warn(
+          `UserServiceClient.validateUserExists: User is inactive: '${username}'`,
+        );
+        return { exists: true, inactive: true };
+      }
+
+      logger.error(
+        `UserServiceClient.validateUserExists: Failed to validate user existence: ${error}, ${JSON.stringify(error?.response?.data)}`,
+      );
+      throw new Error(`Failed to validate user existence: ${error.message}`);
+    }
+  }
+
+  public async login(
+    username: string,
+    password: string,
+    isExecutive: boolean = false,
+  ): Promise<any> {
+    try {
+      const url = `${this.userUrl}${isExecutive ? "/executive/account" : "/account"}`;
+      const response = await axios.post(`${url}/login`, {
+        username,
+        password,
+        create: true,
+      });
+
+      return response.data;
+    } catch (error: any) {
+      logger.error(`UserServiceClient.login: Login failed: ${error}`);
+      throw new HTTPError(
+        error?.response?.data?.message,
+        error?.response?.status,
+      );
+    }
+  }
+}
+
+export default new UserServiceClient();

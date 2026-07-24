@@ -1,0 +1,479 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Page renders Login unchanged with translation en 1`] = `
+<div>
+  <div
+    class="ui-flex ui-flex-col ui-justify-center ui-py-6 ui-px-10"
+  >
+    <div
+      class="ui-flex ui-justify-between"
+    >
+      <div
+        class="ui-mt-4 ui-p-0 ui-text-black"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="ui-bg-[#F5F5F4] ui-flex ui-gap-2 ui-items-center ui-p-[6px] ui-w-[80px] ui-cursor-pointer"
+          data-state="closed"
+          id="trigger-language-changer"
+          type="button"
+        >
+          <svg
+            class="ui-rounded-full"
+            height="1em"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h512v512H0"
+              fill="#bd3d44"
+            />
+            <path
+              d="M0 58h512M0 137h512M0 216h512M0 295h512M0 374h512M0 453h512"
+              stroke="#fff"
+              stroke-width="40"
+            />
+            <path
+              d="M0 0h390v275H0z"
+              fill="#192f5d"
+            />
+            <marker
+              id="flagUs1x10"
+              markerHeight="30"
+              markerWidth="30"
+            >
+              <path
+                d="m15 0l9.3 28.6L0 11h30L5.7 28.6"
+                fill="#fff"
+              />
+            </marker>
+            <path
+              d="m0 0l18 11h65h65h65h65h66L51 39h65h65h65h65L18 66h65h65h65h65h66L51 94h65h65h65h65L18 121h65h65h65h65h66L51 149h65h65h65h65L18 177h65h65h65h65h66L51 205h65h65h65h65L18 232h65h65h65h65h66z"
+              fill="none"
+              marker-mid="url(#flagUs1x10)"
+            />
+          </svg>
+          EN
+          <svg
+            aria-hidden="true"
+            class="ui-w-3"
+            data-slot="icon"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ui-flex ui-mt-6 ui-space-x-3"
+      >
+        <div
+          class="ui-font-semibold ui-text-gray-500"
+        >
+          <a
+            href="/en/v5/login"
+            id="redirect-login"
+          >
+            Login
+          </a>
+        </div>
+        <div
+          class="text-gray-700"
+        >
+          |
+        </div>
+        <a
+          class="ui-font-semibold ui-text-gray-500 ui-cursor-pointer"
+        >
+          Disclaimer
+        </a>
+        <div
+          class="ui-text-gray-700"
+        >
+          |
+        </div>
+        <a
+          class="ui-font-semibold ui-text-gray-500 ui-cursor-pointer"
+        >
+          Privacy Policy
+        </a>
+      </div>
+    </div>
+    <div
+      class="md:ui-min-w-[542px] ui-relative ui-flex ui-flex-col ui-overflow-auto ui-py-0 md:ui-mx-auto md:ui-mt-[68px]"
+    >
+      <div
+        class="ui-flex-grow md:ui-px-[79px]"
+      >
+        <div
+          class="ui-my-[40px] ui-mx-auto"
+        >
+          <img
+            alt="smile=logo"
+            class="ui-m-auto"
+            src="/images/logo-smile.svg"
+            width="180"
+          />
+        </div>
+        <form>
+          <div
+            class="ui-relative ui-space-y-2 ui-mb-6"
+          >
+            <label
+              class="ui-block ui-text-sm ui-font-medium ui-leading-none ui-text-gray-500"
+            >
+              Username
+              <span
+                class="ui-ml-1 ui-text-danger-500"
+              >
+                *
+              </span>
+            </label>
+            <div
+              class="ui-relative ui-flex ui-w-full"
+            >
+              <input
+                class="ui-form-input ui-w-full ui-rounded ui-text-gray-800 focus:ui-border-primary-500 focus:ui-outline-none focus:ui-ring-primary-500 focus:ui-ring-opacity-25 !ui-py-0 file:-ui-ml-3 file:ui-mr-3 file:ui-h-full file:ui-px-4 file:ui-py-2 file:ui-font-medium file:ui-text-gray-700 file:ui-border-0 file:ui-bg-gray-100 file:ui-ring-1 file:ui-ring-gray-300 ui-bg-white-100 ui-border ui-border-gray-300 focus:ui-ring-2 data-[error=true]:ui-border data-[error=true]:ui-border-danger-500 data-[error=true]:focus:ui-ring-danger-500 data-[error=true]:focus:ui-ring-opacity-25 ui-h-10 ui-text-base file:ui-text-base ui-pl-3 ui-pr-3 group-[.is-group]:focus:ui-z-10 group-[.is-group]:first:!ui-rounded-r-none group-[.is-group]:[&:not(:first-child):not(:last-child)]:!ui-rounded-none group-[.is-group]:last:!ui-rounded-l-none"
+                id="username"
+                name="username"
+                placeholder="Username"
+              />
+            </div>
+          </div>
+          <div
+            class="ui-relative ui-space-y-2 ui-mb-6"
+          >
+            <label
+              class="ui-block ui-text-sm ui-font-medium ui-leading-none ui-text-gray-500"
+            >
+              Password
+              <span
+                class="ui-ml-1 ui-text-danger-500"
+              >
+                *
+              </span>
+            </label>
+            <div
+              class="ui-relative ui-flex ui-w-full"
+            >
+              <input
+                class="ui-form-input ui-w-full ui-rounded ui-text-gray-800 focus:ui-border-primary-500 focus:ui-outline-none focus:ui-ring-primary-500 focus:ui-ring-opacity-25 !ui-py-0 file:-ui-ml-3 file:ui-mr-3 file:ui-h-full file:ui-px-4 file:ui-py-2 file:ui-font-medium file:ui-text-gray-700 file:ui-border-0 file:ui-bg-gray-100 file:ui-ring-1 file:ui-ring-gray-300 ui-bg-white-100 ui-border ui-border-gray-300 focus:ui-ring-2 data-[error=true]:ui-border data-[error=true]:ui-border-danger-500 data-[error=true]:focus:ui-ring-danger-500 data-[error=true]:focus:ui-ring-opacity-25 ui-h-10 ui-text-base file:ui-text-base ui-pl-3 ui-pr-9 group-[.is-group]:focus:ui-z-10 group-[.is-group]:first:!ui-rounded-r-none group-[.is-group]:[&:not(:first-child):not(:last-child)]:!ui-rounded-none group-[.is-group]:last:!ui-rounded-l-none"
+                id="password"
+                name="password"
+                placeholder="Password"
+                type="password"
+              />
+              <div
+                class="ui-leading-1 ui-absolute ui-right-0 ui-top-0 ui-z-10 ui-flex ui-h-full ui-items-center ui-justify-center ui-px-2 ui-text-gray-600"
+              >
+                <button
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="ui-h-4 ui-w-4"
+                    data-slot="icon"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            class="ui-inline-flex ui-items-center ui-justify-center ui-px-3 ui-font-medium focus:ui-outline-none ui-cursor-not-allowed ui-opacity-50 focus:ui-ring ui-text-primary-contrast focus:ui-ring-opacity-40 ui-bg-primary-500 [&:not(disabled)]:hover:ui-bg-primary-600 enabled:active:ui-bg-primary-700 focus:ui-ring-primary-400 ui-h-10 ui-text-sm group-[.is-group]:focus:ui-z-10 group-[.is-group]:first:!ui-rounded-r-none group-[.is-group]:[&:not(:first-child):not(:last-child)]:!ui-rounded-none group-[.is-group]:last:!ui-rounded-l-none group-[.is-group]:[&:not(:first-child):not(:last-child)]:!-ui-mr-[1px] group-[.is-group]:last:!-ui-ml-[1px] group-[.is-group]:first:!-ui-mr-[1px] ui-mb-10 ui-rounded-lg ui-mt-2 ui-w-full"
+            disabled=""
+            id="btnLogin"
+            type="submit"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+      <div
+        class="ui-w-full ui-mb-[40px]"
+      >
+        <div
+          class="ui-flex ui-items-center ui-justify-center"
+        >
+          <img
+            alt="kemenkes-logo"
+            src="/images/logo-kemenkes.png"
+          />
+          <img
+            alt="undp-logo"
+            class="ui-ml-[56px]"
+            src="/images/logo-undp.png"
+          />
+        </div>
+        <div
+          class="ui-clear-both"
+        >
+           
+        </div>
+        <div
+          class="ui-my-8 ui-flex ui-items-center ui-gap-4 before:ui-h-px before:ui-flex-1 before:ui-bg-gray-300 before:content-[""] after:ui-h-px after:ui-flex-1 after:ui-bg-gray-300 after:content-[""]"
+        >
+          <button
+            class="ui-bg-white ui-p-[0 10px] ui-cursor-pointer ui-text-[#fa6400] ui-font-bold"
+            id="show-help-center"
+          >
+            Help Center
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Login Page renders Login unchanged with translation id 1`] = `
+<div>
+  <div
+    class="ui-flex ui-flex-col ui-justify-center ui-py-6 ui-px-10"
+  >
+    <div
+      class="ui-flex ui-justify-between"
+    >
+      <div
+        class="ui-mt-4 ui-p-0 ui-text-black"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="ui-bg-[#F5F5F4] ui-flex ui-gap-2 ui-items-center ui-p-[6px] ui-w-[80px] ui-cursor-pointer"
+          data-state="closed"
+          id="trigger-language-changer"
+          type="button"
+        >
+          <svg
+            class="ui-rounded-full"
+            height="1em"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h512v256H0Z"
+              fill="#e70011"
+            />
+            <path
+              d="M0 256h512v256H0Z"
+              fill="#fff"
+            />
+          </svg>
+          ID
+          <svg
+            aria-hidden="true"
+            class="ui-w-3"
+            data-slot="icon"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="ui-flex ui-mt-6 ui-space-x-3"
+      >
+        <div
+          class="ui-font-semibold ui-text-gray-500"
+        >
+          <a
+            href="/id/v5/login"
+            id="redirect-login"
+          >
+            Login
+          </a>
+        </div>
+        <div
+          class="text-gray-700"
+        >
+          |
+        </div>
+        <a
+          class="ui-font-semibold ui-text-gray-500 ui-cursor-pointer"
+        >
+          Disclaimer
+        </a>
+        <div
+          class="ui-text-gray-700"
+        >
+          |
+        </div>
+        <a
+          class="ui-font-semibold ui-text-gray-500 ui-cursor-pointer"
+        >
+          Kebijakan Privasi
+        </a>
+      </div>
+    </div>
+    <div
+      class="md:ui-min-w-[542px] ui-relative ui-flex ui-flex-col ui-overflow-auto ui-py-0 md:ui-mx-auto md:ui-mt-[68px]"
+    >
+      <div
+        class="ui-flex-grow md:ui-px-[79px]"
+      >
+        <div
+          class="ui-my-[40px] ui-mx-auto"
+        >
+          <img
+            alt="smile=logo"
+            class="ui-m-auto"
+            src="/images/logo-smile.svg"
+            width="180"
+          />
+        </div>
+        <form>
+          <div
+            class="ui-relative ui-space-y-2 ui-mb-6"
+          >
+            <label
+              class="ui-block ui-text-sm ui-font-medium ui-leading-none ui-text-gray-500"
+            >
+              Username
+              <span
+                class="ui-ml-1 ui-text-danger-500"
+              >
+                *
+              </span>
+            </label>
+            <div
+              class="ui-relative ui-flex ui-w-full"
+            >
+              <input
+                class="ui-form-input ui-w-full ui-rounded ui-text-gray-800 focus:ui-border-primary-500 focus:ui-outline-none focus:ui-ring-primary-500 focus:ui-ring-opacity-25 !ui-py-0 file:-ui-ml-3 file:ui-mr-3 file:ui-h-full file:ui-px-4 file:ui-py-2 file:ui-font-medium file:ui-text-gray-700 file:ui-border-0 file:ui-bg-gray-100 file:ui-ring-1 file:ui-ring-gray-300 ui-bg-white-100 ui-border ui-border-gray-300 focus:ui-ring-2 data-[error=true]:ui-border data-[error=true]:ui-border-danger-500 data-[error=true]:focus:ui-ring-danger-500 data-[error=true]:focus:ui-ring-opacity-25 ui-h-10 ui-text-base file:ui-text-base ui-pl-3 ui-pr-3 group-[.is-group]:focus:ui-z-10 group-[.is-group]:first:!ui-rounded-r-none group-[.is-group]:[&:not(:first-child):not(:last-child)]:!ui-rounded-none group-[.is-group]:last:!ui-rounded-l-none"
+                id="username"
+                name="username"
+                placeholder="Username"
+              />
+            </div>
+          </div>
+          <div
+            class="ui-relative ui-space-y-2 ui-mb-6"
+          >
+            <label
+              class="ui-block ui-text-sm ui-font-medium ui-leading-none ui-text-gray-500"
+            >
+              Kata Sandi
+              <span
+                class="ui-ml-1 ui-text-danger-500"
+              >
+                *
+              </span>
+            </label>
+            <div
+              class="ui-relative ui-flex ui-w-full"
+            >
+              <input
+                class="ui-form-input ui-w-full ui-rounded ui-text-gray-800 focus:ui-border-primary-500 focus:ui-outline-none focus:ui-ring-primary-500 focus:ui-ring-opacity-25 !ui-py-0 file:-ui-ml-3 file:ui-mr-3 file:ui-h-full file:ui-px-4 file:ui-py-2 file:ui-font-medium file:ui-text-gray-700 file:ui-border-0 file:ui-bg-gray-100 file:ui-ring-1 file:ui-ring-gray-300 ui-bg-white-100 ui-border ui-border-gray-300 focus:ui-ring-2 data-[error=true]:ui-border data-[error=true]:ui-border-danger-500 data-[error=true]:focus:ui-ring-danger-500 data-[error=true]:focus:ui-ring-opacity-25 ui-h-10 ui-text-base file:ui-text-base ui-pl-3 ui-pr-9 group-[.is-group]:focus:ui-z-10 group-[.is-group]:first:!ui-rounded-r-none group-[.is-group]:[&:not(:first-child):not(:last-child)]:!ui-rounded-none group-[.is-group]:last:!ui-rounded-l-none"
+                id="password"
+                name="password"
+                placeholder="Kata Sandi"
+                type="password"
+              />
+              <div
+                class="ui-leading-1 ui-absolute ui-right-0 ui-top-0 ui-z-10 ui-flex ui-h-full ui-items-center ui-justify-center ui-px-2 ui-text-gray-600"
+              >
+                <button
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="ui-h-4 ui-w-4"
+                    data-slot="icon"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            class="ui-inline-flex ui-items-center ui-justify-center ui-px-3 ui-font-medium focus:ui-outline-none ui-cursor-not-allowed ui-opacity-50 focus:ui-ring ui-text-primary-contrast focus:ui-ring-opacity-40 ui-bg-primary-500 [&:not(disabled)]:hover:ui-bg-primary-600 enabled:active:ui-bg-primary-700 focus:ui-ring-primary-400 ui-h-10 ui-text-sm group-[.is-group]:focus:ui-z-10 group-[.is-group]:first:!ui-rounded-r-none group-[.is-group]:[&:not(:first-child):not(:last-child)]:!ui-rounded-none group-[.is-group]:last:!ui-rounded-l-none group-[.is-group]:[&:not(:first-child):not(:last-child)]:!-ui-mr-[1px] group-[.is-group]:last:!-ui-ml-[1px] group-[.is-group]:first:!-ui-mr-[1px] ui-mb-10 ui-rounded-lg ui-mt-2 ui-w-full"
+            disabled=""
+            id="btnLogin"
+            type="submit"
+          >
+            Masuk
+          </button>
+        </form>
+      </div>
+      <div
+        class="ui-w-full ui-mb-[40px]"
+      >
+        <div
+          class="ui-flex ui-items-center ui-justify-center"
+        >
+          <img
+            alt="kemenkes-logo"
+            src="/images/logo-kemenkes.png"
+          />
+          <img
+            alt="undp-logo"
+            class="ui-ml-[56px]"
+            src="/images/logo-undp.png"
+          />
+        </div>
+        <div
+          class="ui-clear-both"
+        >
+           
+        </div>
+        <div
+          class="ui-my-8 ui-flex ui-items-center ui-gap-4 before:ui-h-px before:ui-flex-1 before:ui-bg-gray-300 before:content-[""] after:ui-h-px after:ui-flex-1 after:ui-bg-gray-300 after:content-[""]"
+        >
+          <button
+            class="ui-bg-white ui-p-[0 10px] ui-cursor-pointer ui-text-[#fa6400] ui-font-bold"
+            id="show-help-center"
+          >
+            Pusat Bantuan
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

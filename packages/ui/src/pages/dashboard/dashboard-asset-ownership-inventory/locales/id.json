@@ -1,0 +1,158 @@
+{
+  "title": {
+    "page": "Dasbor Inventori Kepemilikan Aset",
+    "sub_title": "Pemantauan yang efisien terhadap aset yang dimiliki oleh entitas terkait mengenai jumlah, fungsi, dan sebagainya.",
+    "expired_date": "Tanggal Kedaluwarsa",
+    "month": "Bulan",
+    "province": "Provinsi",
+    "regency": "Kabupaten/Kota",
+    "sort_by": "Urutkan berdasarkan ID {{type}}",
+    "total_asset": "Total Aset",
+    "asset_ownership_by_entity": {
+      "total": "Total Kepemilikan Aset per {{type}}",
+      "detail": "Detail Kepemilikan Aset per {{type}}"
+    },
+    "entity": {
+      "level": "Level Entitas",
+      "tag": "Tag Entitas"
+    },
+    "tabs": {
+      "all": "Semua",
+      "kemenkes": "Kemenkes",
+      "warehouse": "Gudang Vaksin",
+      "province": "Dinkes Provinsi",
+      "regency": "Dinkes Kab/Kota",
+      "entity": "Puskesmas",
+      "hospital": "RS/KKP/TNI/Polri"
+    }
+  },
+  "description": {
+    "stock": {
+      "remaining": "Data sisa stok yang ditampilkan diakumulasi berdasarkan {{title}}",
+      "in_transit": "Data stok belum diterima yang ditampilkan diakumulasi berdasarkan {{title}}"
+    },
+    "information_month": "Menampilkan kuantitas stok akhir (closing stock) dari setiap batch material berdasarkan bulan transaksi terakhir batch tersebut. Setiap titik pada grafik merepresentasikan stok akhir batch pada bulan dimana batch tersebut terakhir kali ditransaksikan dalam rentang periode yang dipilih."
+  },
+  "form": {
+    "status": {
+      "label": "Sudah Dihapus?",
+      "yes": "Ya",
+      "no": "Tidak"
+    },
+    "ownership_status": {
+      "label": "Status Kepemilikan",
+      "placeholder": "Pilih status kepemilikan",
+      "option": {
+        "owned": "Milik Sendiri",
+        "borrowed": "Pinjaman"
+      }
+    },
+    "power_availability": {
+      "label": "Ketersediaan Listrik (Per-hari)",
+      "placeholder": "Pilih ketersediaan listrik (per-hari)"
+    },
+    "communication_provider": {
+      "label": "Penyedia Komunikasi",
+      "placeholder": "Pilih penyedia komunikasi"
+    },
+    "vendor": {
+      "label": "Penyedia",
+      "placeholder": "Pilih penyedia"
+    },
+    "capacity_data": {
+      "label": "Data Kapasitas",
+      "placeholder": "Pilih data kapasitas",
+      "option": {
+        "exist": "Ada",
+        "not_exist": "Tidak Ada",
+        "need_clarification": "Butuh klarifikasi"
+      }
+    },
+    "budget_year": {
+      "label": "Tahun Anggaran",
+      "placeholder": "Pilih tahun anggaran"
+    },
+    "asset_model": {
+      "label": "Model Aset",
+      "placeholder": "Pilih model aset"
+    },
+    "asset_type": {
+      "label": "Tipe Aset",
+      "placeholder": "Pilih tipe aset"
+    },
+    "working_status": {
+      "label": "Status Operasional",
+      "placeholder": "Pilih status operasional"
+    },
+    "manufacture": {
+      "label": "Pabrik",
+      "placeholder": "Pilih pabrik"
+    },
+    "production_year": {
+      "label": "Tahun Pembuatan",
+      "placeholder": "Pilih tahun pembuatan"
+    },
+    "date": {
+      "periode": {
+        "start": {
+          "label": "Tanggal Input Awal"
+        },
+        "end": {
+          "label": "Tanggal Input Akhir"
+        }
+      },
+      "expired": {
+        "label": "Tanggal Kedaluwarsa"
+      }
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Puskesmas",
+      "placeholder": "Pilih puskesmas"
+    },
+    "information_type": {
+      "label": "Jenis Informasi"
+    }
+  },
+  "data": {
+    "material_level": {
+      "trademark": "Produk Varian"
+    },
+    "information_type": {
+      "remaining_stock": "Sisa Stok",
+      "in_transit_stock": "Stok Belum Diterima"
+    }
+  },
+  "column": {
+    "province": "Provinsi",
+    "regency": "Kabupaten/Kota",
+    "activity": "Kegiatan",
+    "material": "Nama Material",
+    "unit": "Satuan",
+    "entity": {
+      "name": "Nama Entitas",
+      "tag": "Tag Entitas"
+    },
+    "batch": {
+      "code": "Kode Batch",
+      "expired": "Tanggal Batch Kedaluwarsa"
+    },
+    "stock": {
+      "remaining": "Jumlah Sisa Stok",
+      "in_transit": "Jumlah Stok Belum Diterima",
+      "min": "Min Stok",
+      "max": "Max Stok"
+    }
+  }
+}

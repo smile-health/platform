@@ -1,0 +1,130 @@
+{
+  "list": {
+    "title": "Asset Model Settings",
+    "list": "Asset Model Settings",
+    "add": "Add Asset Model",
+    "status": "Asset Model Status",
+    "tab": {
+      "list": "Asset Model List",
+      "create": "Add Asset Model"
+    },
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search model asset"
+      },
+      "asset_type": {
+        "label": "Asset Type",
+        "placeholder": "Select asset type"
+      },
+      "manufacturer": {
+        "label": "Manufacturer",
+        "placeholder": "Select manufacturer"
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Select program"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "name": "Asset Model Name",
+      "type": "Type: {{ type }}",
+      "manufacturer": "Manufacturer: {{ manufacturer }}",
+      "workspace": "Program",
+      "update_at": "Updated At",
+      "update_by": "Updated By",
+      "action": "Action",
+      "asset_gross_capacity": "Gross Capacity Asset (litre)",
+      "asset_netto_capacity": "Net Capacity Asset (litre)",
+      "capacity": "{{ 1st_value }} Capacity {{ 2nd_value }} "
+    },
+    "import": {
+      "model_asset_cce_with_pqs": "Asset Model with PQS",
+      "model_asset_cce_without_pqs": "Asset Model without PQS",
+      "model_asset_non_cce": "Asset Model without CCE",
+      "model_asset_warehouse": "Asset Model Warehouse"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Add Asset Model",
+      "detail": "Asset Model Detail",
+      "edit": "Edit Asset Model",
+      "capacity": "Asset Model Capacity"
+    },
+    "detail": {
+      "capacity": {
+        "header": "Capacity",
+        "warning": "Changes not allowed. This Asset Model already has relation with Asset.",
+        "header_pqs": "WHO PQS Capacity",
+        "column": {
+          "gross_capacity": "Gross Capacity",
+          "net_capacity": "Net Capacity",
+          "category": "Category"
+        }
+      },
+      "label": {
+        "name": "Asset Model Name",
+        "type": "Asset Type",
+        "manufacturer": "Manufacturer",
+        "gross_capacity": "Gross Capacity (litre)",
+        "netto_capacity": "Net Capacity (litre)",
+        "last_updated_at": "Last Updated At",
+        "last_updated_by": "Last Updated By",
+        "pqs_code": "PQS Code",
+        "is_capacity_required": "Capacity data required?",
+        "add_more": "Add more capacity",
+        "asset_utilization": {
+          "label": "Asset Utilization",
+          "is_warehouse": "Warehouse",
+          "is_cce": "Cold Chain Equipment",
+          "other": "General Asset"
+        }
+      },
+      "placeholder": {
+        "name": "ex: Test Machine",
+        "type": "Select type",
+        "manufacturer": "Select manufacturer",
+        "gross_capacity": "ex: 3.14",
+        "netto_capacity": "ex: 3.14",
+        "pqs_code": "Select PQS code"
+      },
+      "validation": {
+        "gross_capacity": {
+          "greater_than": "Gross capacity must be greater than net capacity",
+          "min": "Gross capacity must be greater than {{ min }}"
+        },
+        "net_capacity": {
+          "less_than": "Net capacity must be lesser than gross capacity",
+          "min": "Net capacity must be greater than {{ min }}"
+        },
+        "name": {
+          "duplicate": "Asset model name already exists. To continue saving, select different Asset Type and Manufacturer."
+        }
+      }
+    },
+    "program": {
+      "title": "Programs",
+      "without_program": "No program applied"
+    }
+  },
+  "detail": {
+    "title": "Asset Model Detail"
+  },
+  "action": {
+    "delete": {
+      "button": "Delete",
+      "confirmation": "Are you sure want to delete this asset model?",
+      "description": "Deleted item can not turn back"
+    },
+    "activate": {
+      "confirmation": "Are you sure you want to activate this asset model?"
+    },
+    "deactivate": {
+      "confirmation": "Are you sure you want to deactivate this asset model?"
+    }
+  }
+}

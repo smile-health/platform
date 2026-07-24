@@ -1,0 +1,63 @@
+{
+  "title": {
+    "notification": "Notification"
+  },
+  "button": {
+    "mark_all_as_read": "Tandai Semua Sudah Dibaca",
+    "contact_patient": "Hubungi Pasien",
+    "mark_as_finished": "Tandai Selesai",
+    "action": "Aksi",
+    "download": "Unduh"
+  },
+  "filter": {
+    "notification_type": {
+      "label": "Jenis Notifikasi",
+      "placeholder": "Pilih jenis notifikasi"
+    },
+    "program": {
+      "label": "Program",
+      "placeholder": "Pilih program",
+      "without_program": "Tidak Ada Program"
+    },
+    "health_center": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "receive_date": {
+      "label": "Tanggal Notifikasi Diterima"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    }
+  },
+  "modal": {
+    "title": {
+      "mark_all": "Tandai semua sudah dibaca?"
+    },
+    "description": {
+      "mark_all": "Dengan mengklik “Ya,” Anda setuju bahwa semua pemberitahuan akan ditandai sebagai sudah dibaca."
+    }
+  },
+  "information": {
+    "title": "Informasi",
+    "description": "Memblokir notifikasi akan mencegah Anda menerima notifikasi push secara real-time. Jika Anda ingin mengaktifkan notifikasi, silakan atur secara manual melalui pengaturan browser Anda.",
+    "button": {
+      "understand": "Ya, Saya Mengerti"
+    }
+  },
+  "finishedVaccine": {
+    "description": "Pengingat vaksinasi untuk pasien {{identityNumber}} akan ditandai sebagai selesai pada jadwal selanjutnya. Aksi ini akan menghentikan notifikasi pengingat.",
+    "description_with_next_schedule": "Pengingat vaksinasi untuk pasien {{identityNumber}} akan ditandai sebagai selesai pada jadwal berikutnya <strong>({{nextSchedule}})</strong>. Harap pertimbangkan bahwa tindakan ini akan menghentikan pengingat.",
+    "form": {
+      "reason": {
+        "label": "Alasan",
+        "placeholder": "Pilih alasan",
+        "error": "Alasan wajib diisi"
+      }
+    },
+    "success": "Vaksinasi pasien ini telah selesai",
+    "error": "Terjadi kesalahan saat menandai pasien sebagai telah selesai vaksinasi",
+    "finished": "Selesai"
+  }
+}

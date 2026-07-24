@@ -1,0 +1,141 @@
+{
+  "title": {
+    "page": "Coldchain Capacity Dashboard Analysis"
+  },
+  "filter": {
+    "period": {
+      "label": "Period",
+      "placeholder": "Select period"
+    },
+    "entity": {
+      "label": "Health Facility",
+      "placeholder": "Select health facility"
+    }
+  },
+  "section": {
+    "last_updated_at": "Last Updated At",
+    "capacity_status": {
+      "title": "Cold Storage Capacity Status",
+      "info": "The capacity status of cold storages used to store vaccine based on volume occupied by materials.",
+      "legend_label": "Capacity"
+    },
+    "number_of_entity": {
+      "title": "Number of Entity",
+      "title_by": "by Cold Storage Capacity Status",
+      "info": "Distribution of entities based on the volume of cold storage occupied by materials. Divided into three categories: 0%-15%, >15%-85%, >85%-100%.",
+      "entities": "entities",
+      "category": {
+        "low": "Capacity Filled 0% - 15%",
+        "medium": "Capacity Filled >15% - 85%",
+        "high": "Capacity Filled >85% - 100%"
+      }
+    },
+    "avg_order_lead_time": {
+      "title": "Average Order Lead Time",
+      "subtitle": "Data from the Last 12 Months",
+      "info": "Order lead time is duration required to process an order placed by customer entity until it is shipped by the vendor entity and received by the customer entity.<br/><br/>The average order lead time is average lead time duration from all orders.<br/><br/>Maximum duration is the longest time recorded to complete an order process.",
+      "ideal_time": "Ideal Time",
+      "actual_time": "Actual Time",
+      "longest_time": "Longest Time",
+      "days": "days"
+    },
+    "avg_monthly_consumption": {
+      "title": "Average Monthly Consumption",
+      "subtitle": "Data from the Last 12 Months",
+      "info": "The quantities of stocks used or distributed on average over the period of 12 months.",
+      "unit": "doses"
+    },
+    "day_of_supply": {
+      "title": "Day of Supply",
+      "subtitle": "Data for Today",
+      "info": "Estimation of how long the supplies will last based on the calculated rate of consumption (issue/dispense).",
+      "unit": "day"
+    },
+    "details": {
+      "title": "Details of Cold Storage",
+      "subtitle": "Click on one of the graph color categories or table data rows below to see detailed data.",
+      "reset": "Reset",
+      "certification_status": {
+        "label": "Cold Storage Certification Status",
+        "who_pqs": "WHO PQS",
+        "non_who_pqs": "Non WHO PQS"
+      }
+    },
+    "functional_status": {
+      "title": "Functional Status",
+      "info": "Distribution of cold storage units by their current functional status.",
+      "category": {
+        "standby": "Standby",
+        "well_functioning": "Well Functioning",
+        "need_repair": "Need Repair",
+        "broken": "Broken",
+        "under_repair": "Under Repair"
+      },
+      "entities": "entities",
+      "assets": "assets",
+      "temp_not_set_info": "The '–' sign indicates that the active temperature has not been selected. Please select the active temperature in the Temperature Monitoring Detail menu."
+    },
+    "remaining_capacity": {
+      "title": "Remaining Capacity by Temperature Threshold",
+      "subtitle": "Functional Status: Well Functioning",
+      "info": "Distribution of capacity status of cold storages based on the type of cold storages and categories of volume occupied by materials. Remaining volume is volume of cold storages that is not used to store vaccines.",
+      "category": {
+        "volume_used": "Volume Used",
+        "remaining_volume": "Remaining Volume"
+      },
+      "entities": "entities",
+      "to": "to"
+    },
+    "stored_materials": {
+      "title": "Stored Materials",
+      "info": "Type of materials stored in cold storages of volume occupied by the materials. The information is presented in volumes in litre (L) and percentages (%).",
+      "has_volume": "Material that already has volume information",
+      "no_volume": "Material that does not yet have volume information"
+    },
+    "stock_of_materials": {
+      "title": "Stock of Materials",
+      "info": "Information of quantities of stocks stored in cold storages presented in number of doses and volumes.",
+      "column": {
+        "no": "No",
+        "material_name": "Material Name",
+        "stock_doses": "Stock (Doses)",
+        "volume_litre": "Volume (Litre)"
+      },
+      "total": "Total"
+    },
+    "annual_capacity": {
+      "title": "Annual Capacity of Cold Storage",
+      "subtitle": "Year: {{year}}"
+    },
+    "facilities_by_capacity_status_dist_interval": {
+      "title": "Number of Facilities by Capacity Status",
+      "subtitle": "By Distribution Interval",
+      "info": "The capacity of cold storages in each facility compared to standard distribution interval specified for facility levels.<br/><br/>Based on calculation, facilities are categorized into: below interval, ideal, and above interval.",
+      "entities": "entities",
+      "category": {
+        "below_interval": "Sufficient",
+        "above_interval": "Insufficient"
+      }
+    },
+    "facilities_by_capacity_status_temp": {
+      "title": "Number of Facilities by Capacity Status",
+      "subtitle": "By Distribution Interval and Storage Temperature",
+      "info": "Remaining capacity by temperature threshold shows the total capacity used in the cold storage, calculated based on the temperature threshold. The volume used is calculated based on the materials that has the defined temperature threshold, without breaking it down by cold storage types",
+      "entities": "entities",
+      "to": "to",
+      "category": {
+        "below_interval": "Sufficient",
+        "above_interval": "Insufficient"
+      }
+    },
+    "annual_target_coverage": {
+      "title": "Annual Target Coverage",
+      "info": "Number of targets that has been converted into volume capacity (in Liter). <br/><br/>Coverage is accumulation of used capacities from the beginning of the year up to now.",
+      "unit": "L",
+      "category": {
+        "achievement": "Achievement",
+        "annual_target": "Annual Target"
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "title": "Order List",
+  "tab": {
+    "all": "All",
+    "vendor": "Sender",
+    "customer": "Receiver"
+  },
+  "create": {
+    "title": "Create New",
+    "order": "Order",
+    "distribution": "Distribution",
+    "return": "Return",
+    "central": "Central Distribution",
+    "relocation": "Relocation"
+  },
+  "form": {
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "date_range": {
+      "label": "Date Range"
+    },
+    "order_number": {
+      "label": "Order Number",
+      "placeholder": "Type Order number"
+    },
+    "status": {
+      "label": "Status",
+      "placeholder": "Select status"
+    },
+    "delivery": {
+      "label": "Delivery Type",
+      "placeholder": "Select delivery type"
+    },
+    "type": {
+      "label": "Order Type",
+      "placeholder": "Select order type"
+    },
+    "integration_type": {
+      "label": "Integration Type",
+      "placeholder": "Select integration type"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "district": {
+      "label": "City/District",
+      "placeholder": "Select city/district"
+    },
+    "primary": {
+      "vendor": {
+        "label": "Primary Vendor",
+        "placeholder": "Select primary vendor"
+      },
+      "health_care": {
+        "label": "Primary Health Care",
+        "placeholder": "Select primary health care"
+      }
+    }
+  },
+  "column": {
+    "order_number": "Order Number",
+    "activity": "Activity",
+    "vendor": "Sender",
+    "created": "Created By",
+    "customer": "Receiver",
+    "device": "Device Type",
+    "action": "Action"
+  }
+}

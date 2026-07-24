@@ -1,0 +1,78 @@
+{
+  "title": "Transaction",
+  "transaction_form": "Transaction Form",
+  "transaction_detail": "Transaction Detail",
+  "select_activity": "Select Activity",
+  "placeholder_select_activity": "Select activity",
+  "caption_activity": "The activities displayed are only activities that are still active on this Entity",
+  "entity_name": "Entity Name",
+  "select_entity": "Select entity name",
+  "transaction_type": "Transaction Type",
+  "select_transaction_type": "Select transaction type",
+  "transaction_table": "Transaction Table",
+  "send": "Send",
+  "reset": "Reset",
+  "select_reason": "Select reason",
+  "enter_reason": "Please enter reason",
+  "batch": "Batch",
+  "detail": "Detail",
+  "add_material": "Add Material",
+  "cancel": "Cancel",
+  "save": "Save",
+  "from": "From",
+  "select_status": "Select status",
+  "delete": "Remove",
+  "max": "max",
+  "close": "Close",
+  "enter_qty": "Please enter qty",
+  "choose_manufacture": "Select manufacturer",
+  "enter_batch_code": "Plase enter batch code",
+  "choose_budget_source": "Select budget source",
+  "choose_budget_year": "Select budget year",
+  "enter_total_price": "Please enter total price",
+  "caption_detail_batch": "{{type}} List",
+  "info_purchase_price": "Info: Enter quantity and total price to calculate price (total price ÷ quantity).",
+  "error_message_complete_data": "Complete all the data",
+  "table": {
+    "column": {
+      "activity": "Activity",
+      "stock_on_hand": "Stock On Hand",
+      "available_stock": "Available Stock",
+      "quantity": "Quantity",
+      "reason": "Reason",
+      "action": "Action",
+      "batch_code": "Batch Code",
+      "production_date": "Production Date",
+      "manufacturer": "Manufacturer",
+      "expired_date": "Expired Date",
+      "allocated": "Allocated",
+      "material_status": "Material Status",
+      "unit": "Unit",
+      "budget_source": "Budget Source",
+      "budget_year": "Budget Year",
+      "total_price": "Total Price",
+      "purchase_per_unit": "Price",
+      "material_info": "Material Info",
+      "stock_info": "Stock Info",
+      "batch_info": "{{type}} Info",
+      "budget_info": "Budget Info",
+      "edit": "Edit"
+    }
+  },
+  "validation": {
+    "quantity_must_multiply": "Quantity must be a multiple of {{number}}",
+    "required_materials": "No materials have been added yet"
+  },
+  "currency": {
+    "IDR": "IDR"
+  },
+  "add_new_batch": "Add New Batch",
+  "error_production_date": "Production date cannot be later than today",
+  "error_expired_date": "Expiration date cannot be less than today",
+  "toast": {
+    "success": {
+      "create": "Successfully saved the add stock transaction"
+    }
+  },
+  "restricted": "Restricted"
+}

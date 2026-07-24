@@ -1,0 +1,73 @@
+{
+  "list": {
+    "title": "Sumber Anggaran",
+    "list": "Pengaturan Sumber Anggaran",
+    "add": "Tambah Sumber Anggaran",
+    "status": "Status Sumber Anggaran",
+    "tab": {
+      "list": "Daftar Sumber Anggaran",
+      "create": "Tambah Sumber Anggaran"
+    },
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari sumber anggaran"
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Pilih program"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "name": "Nama Sumber Anggaran",
+      "workspace": "Program",
+      "update_at": "Diperbarui pada",
+      "update_by": "Diperbarui oleh",
+      "action": "Aksi"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Tambah Sumber Anggaran",
+      "detail": "Detail Sumber Anggaran",
+      "edit": "Ubah Sumber Anggaran"
+    },
+    "detail": {
+      "label": {
+        "name": "Nama Sumber Anggaran",
+        "description": "Deskripsi",
+        "restricted_usage": "Penggunaan Terbatas"
+      },
+      "placeholder": {
+        "name": "Nama Sumber Anggaran",
+        "description": "Deskripsi",
+        "restricted_usage": "Batch terkait tidak dapat menambah stok atau mengurangi stok"
+      }
+    },
+    "program": {
+      "title": "Program",
+      "without_program": "Tidak ada program"
+    }
+  },
+  "detail": {
+    "title": "Detail Sumber Anggaran"
+  },
+  "action": {
+    "delete": {
+      "button": "Hapus",
+      "confirmation": "Apakah Anda yakin ingin menghapus sumber anggaran ini?",
+      "description": "Item yang dihapus tidak dapat dikembalikan"
+    },
+    "activate": {
+      "confirmation": "Apakah anda yakin akan mengaktifkan sumber anggaran ini ?"
+    },
+    "deactivate": {
+      "confirmation": "Apakah anda yakin akan menonaktifkan sumber anggaran ini ?"
+    }
+  },
+  "yes": "Ya",
+  "no": "Tidak"
+}

@@ -1,0 +1,85 @@
+{
+  "page": {
+    "title": "Detail Instruksi Pemusnahan"
+  },
+  "section": {
+    "handover_info": {
+      "title": "Info Serah Terima"
+    },
+    "sender": {
+      "title": "Pengirim"
+    },
+    "receiver": {
+      "title": "Penerima"
+    },
+    "details": {
+      "title": "Detail"
+    },
+    "comment": {
+      "title": "Komentar"
+    },
+    "view_qty_detail": {
+      "title": "Lihat Detail Qty"
+    },
+    "view_wms_detail": {
+      "title": "Lihat Detail WMS"
+    },
+    "opening_and_closing_of_total_discard": {
+      "title": "Pembukaan & Penutupan dari Jumlah Pembuangan"
+    },
+    "view_wms_status_history": {
+      "title": "Lihat Riwayat Status WMS"
+    }
+  },
+  "data": {
+    "name": "Nama",
+    "unit": "Unit",
+    "entity": "Entitas",
+    "address": "Alamat",
+    "bast_no": "Nomor Laporan Serah Terima",
+    "instruction_type": "Tipe Instruksi Pemusnahan",
+    "activity": "Kegiatan",
+    "created_at": "Dibuat Pada",
+    "created_by": "Dibuat Oleh",
+    "batch_info": "Info Batch",
+    "disposal_instruction_from_internal": "Pengiriman Pemusnahan dari Internal",
+    "disposal_instruction_from_external": "Pengiriman Pemusnahan dari Pihak Eksternal",
+    "opening_of_total_discard": "Pembukaan dari Total Pembuangan",
+    "closing_of_total_discard": "Penutupan dari Total Pembuangan",
+    "total_weight": "Berat Total (kg)",
+    "waste_bag_code": "Kode Kantong Limbah",
+    "waste_type": "Jenis Limbah",
+    "weight_per_bag": "Berat per Kantong (kg)",
+    "landfilled": "Timbunan sampah",
+    "ready_for_treatment": "Siap untuk Perawatan",
+    "in_transit": "Dalam Transit",
+    "incinerated": "Dibakar",
+    "in_temporary_storage": "Dalam Penyimpanan Sementara",
+    "wms_status_history": "Riwayat Status WMS"
+  },
+  "form": {
+    "field": {
+      "comment": {
+        "label": "Komentar",
+        "placeholder": "Silakan masukkan komentar...",
+        "validation": {
+          "required": "Komentar harus diisi"
+        }
+      }
+    }
+  },
+  "info": {
+    "wms_not_available": "Data WMS belum tersedia"
+  },
+  "button": {
+    "submit_comment": "Kirim Komentar",
+    "view_qty_detail": "Lihat Detail Qty",
+    "view_wms_detail": "Lihat Detail WMS",
+    "download_handover_report_letter": "Laporan Serah Terima",
+    "view_history": "Lihat Riwayat"
+  },
+  "api_response": {
+    "comment_success": "Komentar berhasil dikirim",
+    "comment_failed": "Terjadi kesalahan saat mengirim komentar"
+  }
+}

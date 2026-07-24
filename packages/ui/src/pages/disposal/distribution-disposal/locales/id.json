@@ -1,0 +1,209 @@
+{
+  "meta": "SMILE | Pengiriman Pemusnahan",
+  "title": "Pengiriman Pemusnahan",
+  "sectionTitle": "Daftar Pengiriman Pemusnahan",
+  "create": "Buat Baru",
+  "tab": {
+    "all": "Semua",
+    "vendor": "Pengirim",
+    "customer": "Penerima"
+  },
+  "filter": {
+    "label": {
+      "activity": "Kegiatan",
+      "shipment_date": "Tanggal Pengiriman",
+      "primary_vendor": "Penyedia Utama",
+      "primary_health_care": "Puskesmas",
+      "entity_tag": "Tag Entitas",
+      "province": "Provinsi",
+      "city": "Kota/Kabupaten",
+      "search": "No. Pengiriman Pemusnahan"
+    },
+    "placeholder": {
+      "activity": "Pilih kegiatan",
+      "shipment_date": "dd/mm/yyyy - dd/mm/yyyy",
+      "primary_vendor": "Pilih penyedia utama",
+      "primary_health_care": "Pilih puskesmas",
+      "entity_tag": "Pilih tag entitas",
+      "province": "Pilih provinsi",
+      "city": "Pilih nama kota/kabupaten",
+      "search": "Cari no. pengiriman pemusnahan",
+      "status": "Semua"
+    },
+    "value": {
+      "status": ["Dikirim", "Diterima", "Dibatalkan"]
+    },
+    "status": {
+      "shipped": "Dikirim",
+      "fulfilled": "Diterima",
+      "cancelled": "Dibatalkan"
+    }
+  },
+  "table": {
+    "column": {
+      "no": "No. Pengiriman",
+      "activity": "Kegiatan",
+      "total": "Item",
+      "sender": "Pengirim",
+      "created_by": "Dibuat Oleh",
+      "receiver": "Penerima",
+      "device_user": "Perangkat Pengguna",
+      "device_type": "Jenis Perangkat",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "production_date": "Tanggal Produksi",
+      "distribution_discard": "Pengiriman dari Stok Pembuangan",
+      "distribution_received": "Pengiiman dari Stok Penerimaan",
+      "shipped": "Dikirim",
+      "received": "Diterima",
+      "quantity": "Kuantitas",
+      "material": "Nama Material",
+      "stock_disposal": "Total Pembuangan",
+      "selection": "Seleksi",
+      "material_info": "Info Material",
+      "batch_info": "Info Batch",
+      "batch": {
+        "batch_code": "Kode batch: {{value}}",
+        "stock_from_activity": "Stok dari Kegiatan: {{value}}",
+        "production_date": "Tanggal Produksi: {{value}}",
+        "manufacturer": "Pabrik: {{value}}",
+        "expired_date": "Tanggal Kedaluwarsa: {{value}}",
+        "qty": "Kuantitas: {{value}}"
+      },
+      "stock_discard": "Pembuangan dari Internal",
+      "stock_received": "Pembuangan dari Eksternal",
+      "quantity_from_discard": "Pembuangan dari Internal",
+      "quantity_from_received": "Pembuangan dari Eksternal",
+      "total_discard": "Total Pembuangan"
+    }
+  },
+  "detail": {
+    "title": "Detail Pengiriman Pemusnahan",
+    "meta": "SMILE | Detail Pengiriman Pemusnahan",
+    "disposal_shipment_status": "Status Pengiriman Pemusnahan",
+    "action": {
+      "download_memorandum": "Unduh Berita Acara",
+      "received": "Diterima",
+      "cancel": "Batalkan Pesanan",
+      "receive_shipment": "Terima Pengiriman",
+      "cancel_shipment": "Batalkan Pengiriman",
+      "proceed_shipment": "Lanjutkan Proses Pengiriman",
+      "submit_comment": "Kirim Komentar",
+      "back_to_detail": "Kembali ke Detail",
+      "batch_quantity": "Kuantitas Batch",
+      "quantity": "Kuantitas",
+      "update_batch_quantity": "Perbarui Kuantitas Batch",
+      "update_quantity": "Perbarui Kuantitas"
+    },
+    "info": {
+      "no": "No. Pengiriman Pemusnahan {{no}}",
+      "created": "Dibuat Pada {{date}} oleh {{name}}",
+      "created_at": "Dibuat Pada",
+      "no_memorandum": "No. Berita Acara"
+    },
+    "status_confirmation": {
+      "title": "Batalkan Pengiriman Pemusnahan?",
+      "subtitle": "Apakah Anda yakin ingin membatalkan pengiriman pemusnahan ini? Pengiriman ini nantinya tidak bisa dilanjutkan untuk diproses.",
+      "submit": "Kirimkan",
+      "success_cancel": "Pengiriman Pemusnahan berhasil dibatalkan"
+    },
+    "status_confirmation_receive": {
+      "title": "Terima Pengiriman Pemusnahan?",
+      "subtitle": "Dengan menandai pengiriman pemusnahan ini sebagai Diterima, Anda mengakui bahwa jumlah barang dan nomor batch yang diterima sesuai dengan catatan dalam aplikasi.",
+      "submit": "Kirimkan",
+      "success_receive": "Penerimaan Pengiriman Pemusnahan berhasil diselesaikan"
+    },
+    "customer_vendor": {
+      "customer": {
+        "title": "Penerima",
+        "name": "Nama Penerima"
+      },
+      "vendor": {
+        "title": "Pengirim",
+        "name": "Nama Pengirim"
+      }
+    },
+    "material": {
+      "title_detail": "Detail Material",
+      "view_detail": "Lihat Detail"
+    },
+    "comment": {
+      "title": "Komentar",
+      "placeholder": "Silakan masukkan komentar...",
+      "success_submit": "Komentar berhasil dikirim",
+      "status_at_posting": "Status pada saat posting"
+    },
+    "receive_placeholder": "Silakan masukkan kuantitas yang diterima",
+    "address": "Alamat",
+    "process_warning": "Apabila jumlah barang dan nomor batch tidak sesuai, jangan klik Terima Pengiriman dan silakan laporkan ke helpdesk",
+    "proceed_shipment": "Lanjutkan Pengiriman",
+    "cancel_shipment": "Batalkan Pengiriman",
+    "receive_shipment": "Terima Pengiriman",
+    "back_to_detail": "Kembali ke Detail"
+  },
+  "receive": {
+    "title": "Konfirmasi Penerimaan",
+    "meta": "SMILE | Konfirmasi Penerimaan",
+    "description": "Apabila jumlah barang dan no batch tidak sesuai, jangan klik terima dan Silakan laporkan ke helpdesk",
+    "validation": {
+      "not_same": "Kuantitas harus sama dengan kuantitas yang dikirim"
+    },
+    "success": "Pengiriman Pemusnahan berhasil diterima"
+  },
+  "form": {
+    "meta": "SMILE | Buat Pengiriman Pemusnahan",
+    "title": {
+      "detail": "Detail Pengiriman",
+      "create": "Buat Pengiriman Pemusnahan",
+      "batch_from": "Batch dari {{activity}}",
+      "detail_from": "Detail dari {{activity}}"
+    },
+    "label": {
+      "entity_receiver": "Penerima",
+      "entity_sender": "Pengirim",
+      "activity": "Pilih Kegiatan",
+      "no_document": "Nomor Laporan Pemusnahan"
+    },
+    "placeholder": {
+      "entity_receiver": "Pilih penerima",
+      "entity_sender": "Pilih pengirim",
+      "activity": "Pilih kegiatan",
+      "no_document": "Masukan Nomor Laporan Pemusnahan"
+    },
+    "material": {
+      "title": "Material di {{sender}}",
+      "description": "Klik pada kotak centang untuk memilih material. Bahan yang dipilih akan muncul pada Tabel Pengiriman di bawah ini",
+      "table_title": "Table Pengiriman",
+      "empty_detail": "Lengkapi detil pengiriman terlebih dahulu",
+      "search": "Cari material"
+    },
+    "validation": {
+      "qty": {
+        "unit": "Kuantitas harus kelipatan {{amount}}",
+        "amount": "Kuantitas harus lebih dari 0",
+        "max": "Kuantitas tidak boleh lebih dari max retur",
+        "cannot_more_than": "Kuantitas tidak boleh lebih dari {{amount}}",
+        "has_to_be_equal": "Kuantitas harus sama dengan {{amount}}"
+      }
+    },
+    "add_other_activities": "Tambah dari Kegiatan Lain:",
+    "modal": {
+      "warning_item": "Tidak ada item yang akan disimpan. Periksa kembali material yang di tambahkan dan tekan tombol simpan pada batch untuk menyimpan perubahan."
+    },
+    "success": "Pengiriman Pemusnahan berhasil dibuat",
+    "table": {
+      "column": {
+        "stock_discard": "Pembuangan dari Internal",
+        "quantity_from_discard": "Jumlah Pengiriman Pemusnahan dari Internal",
+        "stock_received": "Pembuangan dari Eksternal",
+        "quantity_from_received": "Jumlah Pengiriman Pemusnahan dari Pihak Eksternal"
+      }
+    }
+  },
+  "table_material": {
+    "column": {
+      "material": "Nama Material",
+      "stock_disposal": "Stok di {{activity}}",
+      "selection": "Seleksi"
+    }
+  }
+}

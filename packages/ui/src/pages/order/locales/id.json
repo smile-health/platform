@@ -1,0 +1,34 @@
+{
+  "back": "Kembali ke Daftar",
+  "close": "Tutup",
+  "status": {
+    "draft": "Draf",
+    "pending": "Ditunda",
+    "confirmed": "Dikonfirmasi",
+    "allocated": "Dialokasikan",
+    "shipped": "Dikirim",
+    "fulfilled": "Diterima",
+    "cancelled": "Dibatalkan"
+  },
+  "reason": {
+    "dwindling_supplies": "Persedian Menipis",
+    "population_increase": "Pertambahan Penduduk",
+    "plague": "Wabah",
+    "supplies_sufficient": "Persedian Mencukupi",
+    "others": "Lainnya"
+  },
+  "batch_warning": {
+    "title": "Konfirmasi",
+    "description": "Tidak ada item yang akan disimpan. Periksa kembali material yang di tambahkan dan tekan tombol simpan pada batch untuk menyimpan perubahan."
+  },
+  "modal_companion": {
+    "title": "Lanjut tanpa Material Pendamping?",
+    "description": "Dengan mengklik <bold>Ya</bold>, Anda menyetujui bahwa Anda memproses materi ini tanpa material pendamping berikut?",
+    "button": {
+      "order": "Ya, lanjutkan"
+    }
+  },
+  "placeholder": {
+    "search_material": "Cari material"
+  }
+}

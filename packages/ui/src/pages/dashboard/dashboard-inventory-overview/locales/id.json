@@ -1,0 +1,97 @@
+{
+  "title": {
+    "page": "Dasbor Tinjauan Inventaris",
+    "ema": "Material-Entitas-Kegiatan berdasarkan Status Stok",
+    "temperature": "Persentase Kulkas Vaksin berdasarkan Status Suhu",
+    "activity": "Entitas berdasarkan Status Keaktifan Pengguna",
+    "location": "Lokasi",
+    "material": "Material Kegiatan"
+  },
+  "information": {
+    "ema": {
+      "description": "Sebuah <b>pie chart</b> yang menampilkan kondisi material pada berbagai entitas dan aktivitas berdasarkan status stok saat ini:",
+      "detail": [
+        "<b>Normal</b>: Tingkat stok berada di antara batas minimum dan maksimum",
+        "<b>Di Bawah Minimum</b>: Tingkat stok berada di bawah batas minimum namun masih di atas nol",
+        "<b>Di Atas Maksimum</b>: Tingkat stok melebihi batas maksimum",
+        "<b>Stok Habis</b>: Tingkat stok bernilai nol"
+      ]
+    },
+    "temperature": {
+      "description": "Sebuah <b>pie chart</b> yang menampilkan kondisi kulkas vaksin berdasarkan status suhu terbaru:",
+      "detail": [
+        "<b>Normal</b>: Suhu berada dalam batas bawah dan atas yang telah ditentukan",
+        "<b>Rendah</b>: Suhu berada di bawah batas bawah",
+        "<b>Tinggi</b>: Suhu berada di atas batas atas",
+        "<b>Tidak Diketahui</b>: Tidak ada data suhu yang diterima dari pencatat (logger)"
+      ]
+    },
+    "activity": {
+      "description": "Sebuah <b>horizontal stacked bar chart</b> yang menampilkan distribusi entitas berdasarkan status aktivitas pengguna dalam 7 hari terakhir sejak tanggal “As of Date” yang dipilih:",
+      "detail": [
+        "<b>Hijau</b>: Jumlah entitas yang aktif",
+        "<b>Merah</b>: Jumlah entitas yang tidak aktif"
+      ]
+    }
+  },
+  "form": {
+    "date": {
+      "period": {
+        "start": {
+          "label": "Tanggal Dari"
+        },
+        "end": {
+          "label": "Tanggal Ke"
+        }
+      }
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "name": {
+        "label": "Nama Material",
+        "placeholder": "Pilih nama material"
+      }
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "operational_status": {
+      "label": "Status Operasional",
+      "placeholder": "Pilih status operasional"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatans"
+    },
+    "information_type": {
+      "label": "Jenis Informasi"
+    }
+  },
+  "all": "Semua",
+  "last_updated": "Terakhir Diperbarui",
+  "last_updated_at": "Terakhir diperbarui pada",
+  "entity_tooltip": "{{value}}, {{count}} dari 1",
+  "functional": "Berfungsi",
+  "with_relation": "Ada Hubungan",
+  "no_access_asset_management": "Anda tidak punya akses ke halaman tersebut",
+  "temperature": {
+    "above": "Di Atas Batas",
+    "below": "Di Bawah Batas"
+  }
+}

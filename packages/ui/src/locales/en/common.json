@@ -1,0 +1,617 @@
+{
+  "item": "Item(s)",
+  "action": "Action",
+  "all": "All",
+  "name": "Name",
+  "address": "Address",
+  "at": "At",
+  "on_for_date": "on",
+  "at_for_time": "at",
+  "attach_file": "Attach File",
+  "back": "Back",
+  "back_to_list": "Back to List",
+  "by": "By",
+  "cancel": "Cancel",
+  "confirmation": "Confirmation",
+  "contact_name": "Contact Name",
+  "delete": "Delete",
+  "remove": "Remove",
+  "description": "Description",
+  "detail": "Detail",
+  "details": "Details",
+  "download_template": "Download Template",
+  "edit": "Edit",
+  "update": "Update",
+  "add": "Add",
+  "view": "View",
+  "empty": "Empty",
+  "delete_all_selected": "Delete All Selected",
+  "data_has_been_selected": "{{selectedRows}} data has been selected",
+  "created_at": "Created At",
+  "updated_at": "Updated At",
+  "created_by": "Created By",
+  "updated_by": "Updated By",
+  "see_detail": "See Detail",
+  "see_more": "See More",
+  "see_less": "See Less",
+  "submit": "Submit",
+  "example": "Example",
+  "send": "Send",
+  "add_item": "Add Item",
+  "view_detail": "View Detail",
+  "finish": "Finish",
+  "form": {
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "city": {
+      "label": "City/District",
+      "placeholder": "Select city/district"
+    },
+    "subdistrict": {
+      "label": "Subdistrict",
+      "placeholder": "Select subdistrict"
+    },
+    "primary_health_care": {
+      "label": "Primary Health Care",
+      "placeholder": "Select primary health care"
+    },
+    "village": {
+      "label": "Village",
+      "placeholder": "Select village"
+    },
+    "entity": {
+      "label": "Entity",
+      "placeholder": "Select entity"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "label": "Material",
+      "placeholder": "Select material"
+    },
+    "material_type": {
+      "label": "Material Type",
+      "placeholder": "Select material type"
+    },
+    "entity_type": {
+      "label": "Entity Type",
+      "placeholder": "Select entity type"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "integrated_healthcare": {
+      "label": "Integrated Healthcare",
+      "placeholder": "Select Integrated Healthcare"
+    },
+    "program": {
+      "title": "Programs",
+      "information": "The selected programs cannot be undone (unchecked) once data has been related",
+      "no_program": "No program applied",
+      "placeholder": {
+        "name": "Search program name",
+        "select": "Select programs"
+      },
+      "logistics": "Logistics",
+      "beneficiary": "Beneficiaries"
+    },
+    "date_range": {
+      "label": "Date Range",
+      "placeholder": "Select date range"
+    },
+    "color": {
+      "placeholder": "Choose a color"
+    }
+  },
+  "validation": {
+    "min": "Minimum {{value}} ",
+    "max": "Maximum {{value}} ",
+    "char": {
+      "min": "Minimum {{char}} characters",
+      "max": "Maximum {{char}} characters"
+    },
+    "phone_start_with": "Must start with {{local}} or {{international}}",
+    "numeric_only": "Numeric only",
+    "required": "Required",
+    "numeric_cannot_negative": "Values cannot be negative",
+    "message_invalid_date": "Invalid date format, please enter a valid date",
+    "satu_sehat": "The SATUSEHAT code must consist of 10 digits.",
+    "greater_or_equal_than": "{{first_value}} must be greater than or equal to {{second_value}}",
+    "lesser_or_equal_than": "{{first_value}} must be less than or equal to {{second_value}}",
+    "greater_than_zero": "{{ value }} must be greater than zero"
+  },
+  "export": "Export",
+  "export_all": "Export All",
+  "gender": {
+    "male": "Male",
+    "female": "Female"
+  },
+  "import": "Import",
+  "litre": "Litre",
+  "logistic": "Logistic",
+  "message": {
+    "common": {
+      "error": "Sorry there was an error. Please try again in a few moments"
+    },
+    "empty": {
+      "title": "No data available",
+      "description": "This list is currently empty. Please contact the helpdesk to request new entries.",
+      "description_empty_list_only": "This list is currently empty."
+    },
+    "success": {
+      "add": "Add {{type}} successful",
+      "create": "Create {{type}} successful",
+      "update": "Update {{type}} successful",
+      "update_status": "Update {{type}} status successful",
+      "delete": "Delete {{type}} successful"
+    },
+    "failed": {
+      "add": "Add {{type}} failed",
+      "create": "Create {{type}} failed",
+      "update": "Update {{type}} failed",
+      "update_status": "Update {{type}} status failed",
+      "delete": "Delete {{type}} failed"
+    },
+    "confirm": {
+      "delete": "Are you sure you want to delete this data?"
+    }
+  },
+  "phone_number": "Phone Number",
+  "reference": "Reference",
+  "refrigerator": "Refrigerator",
+  "to": "To",
+  "from": "From",
+  "other": "Other",
+  "save": "Save",
+  "reset": "Reset",
+  "search": "Search",
+  "search_by": "Search by",
+  "search_by_keyword": "Search by keyword",
+  "select_activity": "Select activity",
+  "select_type": "Select type",
+  "status": {
+    "label": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "success": "Success",
+    "failed": "Failed"
+  },
+  "temperature": {
+    "min": "Min Temperature",
+    "max": "Max Temperature"
+  },
+  "type": "Type",
+  "vaccine": "Vaccine",
+  "yes": "Yes",
+  "no": "No",
+  "close": "Close",
+  "selected": "Selected",
+  "updated": {
+    "by": "Updated By",
+    "at": "Updated At"
+  },
+  "expand_filter": {
+    "hide": "Close All Filters",
+    "show": "See All Filters"
+  },
+  "expand_active_filter": {
+    "less": "Show Less",
+    "show": "Show All"
+  },
+  "active_filter": "Active Filter",
+  "filtered_at": "Filtered At",
+  "pagination": {
+    "empty": "showing 0 of 0 result",
+    "data": "showing {{start}} to {{end}} of {{result}} results",
+    "previous": "Prev",
+    "next": "Next",
+    "first": "First",
+    "showing": "Showing",
+    "items_per_page": "items per page"
+  },
+  "show_report": "Show Report",
+  "tab": {
+    "assets": {
+      "label": "Assets",
+      "tabs": {
+        "asset_type": "Asset Type",
+        "asset_model": "Asset Model",
+        "asset_vendor": "Asset Vendor",
+        "pqs_code": "PQS Code"
+      }
+    },
+    "material": {
+      "tabs": {
+        "material_data": "Material Data",
+        "material_volume": "Material Packaging Volume"
+      }
+    },
+    "entity": "Entity",
+    "user": "User",
+    "budget_source": "Budget Source",
+    "manufacturer": "Manufacturer",
+    "model_asset_management": "Asset Model",
+    "asset_vendor": "Asset Vendor",
+    "global_asset_managements": {
+      "managements": {
+        "label": "Management",
+        "tabs": {
+          "asset_inventory": "Operational Asset Inventory",
+          "remote_temperature_monitoring_device": "Monitoring Device Inventory",
+          "storage_temperature_monitoring": {
+            "label": "Storage Temperature Monitoring",
+            "tabs": {
+              "cold_chain_equipment": "Cold Chain Equipment",
+              "warehouse": "Warehouse"
+            }
+          }
+        }
+      },
+      "dashboards": {
+        "label": "Dashboard",
+        "tabs": {
+          "asset_ownership_inventory": "Asset Ownership Inventory Dashboard",
+          "cold_storage_capacity": "Cold Storage Capacity Dashboard",
+          "temperature_monitoring": "Temperature Monitoring Dashboard"
+        }
+      }
+    },
+    "patient": "Patient",
+    "annual_planning_target_group": "Target Group",
+    "population": "Population"
+  },
+  "dropdown_setting": {
+    "view_profile": "View Profile",
+    "global_settings": "Global Settings",
+    "global_asset_managements": "Asset Management",
+    "logout": "Logout"
+  },
+  "file": {
+    "title": "Choose File",
+    "placeholder": "No file chosen",
+    "file_size": "File size must be less than or equals {{size}} MB",
+    "cannot_file_type": "File type not allowed"
+  },
+  "error": {
+    "403": {
+      "title": "Access to this page is forbidden",
+      "description": "You do not have permission to access this page <strong>(403 Error).</strong>",
+      "list": {
+        "title": "Please try the following:",
+        "description": "",
+        "content": [
+          "Ensure you've entered the correct URL.",
+          "Contact your system administrator if you believe this is a mistake."
+        ]
+      },
+      "button": "Back To Home"
+    },
+    "404_pages": {
+      "title": "This page doesn’t exist",
+      "description": "The page you're looking for may have been removed, renamed, or is temporarily unavailable <strong>(404 Error).</strong>",
+      "list": {
+        "title": "Please try the following:",
+        "description": "",
+        "content": [
+          "Ensure you've entered the correct URL.",
+          "Use the navigation menu to return to a familiar location."
+        ]
+      },
+      "button": "Back To Home"
+    },
+    "404_data": {
+      "title": "This data doesn’t exist",
+      "description": "The data you're looking for may have been removed or is temporarily unavailable <strong>(404 Error).</strong>",
+      "list": {
+        "title": "Please try the following:",
+        "description": "",
+        "content": [
+          "Ensure you've entered the correct URL.",
+          "Use the navigation menu to return to a familiar location."
+        ]
+      },
+      "button": "Back To Home"
+    },
+    "500": {
+      "title": "The system is encountering an internal server error",
+      "description": "Currently, the system is not working properly <strong>(500 Error).</strong> Our team is actively working to fix it.",
+      "list": {
+        "title": "In the meantime, you can try:",
+        "description": "Thank you for your understanding and patience.",
+        "content": [
+          "<strong>Reload the page</strong> several times.",
+          "<strong>Try again</strong> in a few moments."
+        ]
+      },
+      "button": "Reload"
+    },
+    "502": {
+      "title": "The system is experiencing a bad gateway error",
+      "description": "Currently, there is an issue with server-to-server communication <strong>(502 Error).</strong> Our team is actively working to fix it.",
+      "list": {
+        "title": "In the meantime, you can try:",
+        "description": "Thank you for your understanding and patience.",
+        "content": [
+          "<strong>Reload the page</strong> several times.",
+          "<strong>Try again</strong> in a few moments."
+        ]
+      },
+      "button": "Reload"
+    },
+    "504": {
+      "title": "The system is at capacity",
+      "description": "Currently, the system is experiencing a surge in demand, causing data retrieval to take longer than usual <strong>(504 Error).</strong> Our team is actively working to fix it.",
+      "list": {
+        "title": "In the meantime, you can try:",
+        "description": "Thank you for your understanding and patience.",
+        "content": [
+          "<strong>Reload the page</strong> several times.",
+          "<strong>Try again</strong> in a few moments.",
+          "Access other features."
+        ]
+      },
+      "button": "Reload"
+    },
+    "connection": {
+      "title": "No internet connection found",
+      "description": "It appears you're currently offline.",
+      "list": {
+        "title": "Please try the following:",
+        "description": "",
+        "content": [
+          "Check your internet connection and try again.",
+          "Check your device's network settings."
+        ]
+      },
+      "button": "Reload"
+    }
+  },
+  "modal_import_error": {
+    "title": "{{total}} rows failed to import",
+    "description": "After you fix the error, try importing the file again.",
+    "list": {
+      "title": "Row {{row}}"
+    }
+  },
+  "loading_popup": {
+    "title": "Hang tight!",
+    "description": "Your request is being processed"
+  },
+  "download_async_popup": {
+    "title": "Your request is being processed",
+    "description": "Check the notification bell regularly",
+    "action": "View Export History"
+  },
+  "modal_export_async_popup": {
+    "title": "Your request is being processed",
+    "description": "Check the export history regularly",
+    "action": "View Export History"
+  },
+  "up_to_abbr": "to",
+  "programs": "Programs",
+  "item_selected": "item(s) selected",
+  "order": {
+    "type": {
+      "order": "Order",
+      "distribution": "Distribution",
+      "return": "Return",
+      "central_distribution": "Central Distribution",
+      "relocation": "Relocation"
+    }
+  },
+  "date": {
+    "year": "Year",
+    "preset": {
+      "today": "Today",
+      "this": {
+        "week": "This Week",
+        "month": "This Month",
+        "year": "This Year"
+      },
+      "last": {
+        "days": "Last {{day}} Days",
+        "month": "Last Month",
+        "months": "Last {{month}} Months",
+        "year": "Last Year"
+      }
+    }
+  },
+  "menu": {
+    "dashboard": {
+      "title": "Dashboard",
+      "item": {
+        "inventory_overview": "Inventory Overview",
+        "in_transit": "In Transit",
+        "stock_taking": "Stock Taking",
+        "asset_ownership": "Asset Ownership",
+        "download": "Download Report",
+        "storage_capacity": "Storage Capacity",
+        "monitoring": "Transaction Monitoring",
+        "planning": "Planning",
+        "stock": "Stock",
+        "compliance_transaction_input": "Compliance of Transaction Input",
+        "transaction": {
+          "title": "Transaction",
+          "item": {
+            "general": "General Transaction",
+            "detail": "Detail Transaction"
+          }
+        },
+        "consumed": {
+          "item": {
+            "asik": "Dashboard Smile vs ASIK"
+          }
+        }
+      }
+    },
+    "inventory": {
+      "title": "Inventory",
+      "item": {
+        "transaction": "Transaction List",
+        "reconciliation": "Reconciliation",
+        "stock": {
+          "view": "View Stock",
+          "opname": "Stock Taking"
+        }
+      }
+    },
+    "order": {
+      "title": "Order",
+      "item": {
+        "list": "Order List",
+        "ticketing": "Ticketing System"
+      }
+    },
+    "disposal": {
+      "title": "Disposal",
+      "item": {
+        "view": "View Total Discard",
+        "distribution": "Disposal Shipment",
+        "self": "Self Disposal"
+      }
+    },
+    "report": {
+      "title": "Report",
+      "item": {
+        "monthly": "Monthly Report",
+        "yearly": "Yearly Report",
+        "stock_book": "Stock Book Report",
+        "activity": {
+          "title": "Activity",
+          "item": {
+            "user": "User Activity",
+            "immunization": "Immunization Pos Activity",
+            "count_transaction": "Count Transaction",
+            "adjust_stock": "Add/Remove Stock",
+            "reconciliation": "Reconciliation Activity"
+          }
+        },
+        "inventory": {
+          "title": "Inventory",
+          "item": {
+            "supply_consumption": "Reception & Distribution",
+            "discard": "Discard",
+            "stock": {
+              "abnormal": "Abnormal Stock",
+              "zero": "Zero Stock",
+              "filling": "Filling Stock",
+              "availability": "Stock Availability"
+            }
+          }
+        },
+        "order": {
+          "title": "Pesanan",
+          "item": {
+            "time": "Order Response Time",
+            "difference": "Order Difference"
+          }
+        },
+        "asset": {
+          "title": "Asset",
+          "item": {
+            "excursion": "Asset Excursion"
+          }
+        },
+        "planning": {
+          "title": "Planning",
+          "item": {
+            "annual": "Annual Planning"
+          }
+        }
+      }
+    },
+    "asset": {
+      "title": "Asset",
+      "item": {
+        "temperature": "Temperature",
+        "inventory": "Asset Inventory",
+        "storage_capacity_dashboard": "View Vaccine Storage Capacity Dashboard",
+        "capacity_annual_planning": "Capacity for Annual Planning"
+      }
+    },
+    "setting": {
+      "title": "Setting",
+      "item": {
+        "account": "My Account",
+        "user": "User",
+        "activity": "Activity",
+        "entity": "Entity",
+        "material_volume": "Material Volume",
+        "manufacturer": "Manufacturer",
+        "communication_provider": "Communication Provider",
+        "temperature_device": "Remote Temperature Monitoring Device",
+        "budget_source": "Budget Source",
+        "stocktacking_period": "Stock Taking Period",
+        "freeze_transaction": "Freeze Transaction",
+        "import_material_entity": "Import Material Entity",
+        "protocol": "Protocol",
+        "parameter_category": "Parameter Category",
+        "parameter_analysis": "Parameter Analysis",
+        "test_method": "Test Method",
+        "environmental_health_history": "Screening History",
+        "asset": {
+          "model": "Asset Model",
+          "vendor": "Asset Vendor",
+          "type": "Asset Type"
+        },
+        "annual_planning": {
+          "title": "Annual Planning",
+          "item": {
+            "pusdatin_target": "Master Data Pusdatin Target",
+            "national_ip": "Master Data National IP",
+            "group_target": "Master Data Target Group",
+            "amount_of_giving": "Master Data Amount of Giving"
+          }
+        }
+      }
+    },
+    "bmhp": {
+      "title": "BMHP",
+      "description": "Medical Consumables Management",
+      "item": {
+        "master_pemeriksaan": "Inspection Master"
+      }
+    },
+    "immunization": {
+      "title": "Planning",
+      "description": "Medical Consumables Management",
+      "item": {
+        "master_pemeriksaan_label": "Program Plan",
+        "bmhp_history": "Annual Planning",
+        "master_pemeriksaan": "Master Examination",
+        "sub_kategori": "Examination Type",
+        "master_method": "Master Method",
+        "master_parameter": "Master Parameter",
+        "master_material": "Master Material",
+        "master_target_group": "Master Target Groups",
+        "master_variant": "Master Variants",
+        "annual_needs_calculation": "Annual Needs Calculation"
+      }
+    },
+    "annual": {
+      "title": "Planning"
+    },
+    "analysis": {
+      "title": "Analysis",
+      "lplpo": "Drug Usage Report and Request Form"
+    }
+  },
+  "no_filter_selected": "No filter selected",
+  "please_apply_filter": "The data is currently empty. Please apply a filter to see the results.",
+  "notification": {
+    "title": "Notification",
+    "no_data": "No Data",
+    "more": "View More",
+    "mark_all_as_read": "Mark All as Read",
+    "loading": "Loading...",
+    "error": "There was an error",
+    "refreshing": "Refreshing..."
+  }
+}

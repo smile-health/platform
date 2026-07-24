@@ -1,0 +1,46 @@
+{
+  "title": "Laporan Pemakaian dan Lembar Permintaan Obat (LPLPO)",
+  "form": {
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "subdistrict": {
+      "label": "Kecamatan",
+      "placeholder": "Pilih kecamatan"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "entity": {
+      "label": "Entitas",
+      "placeholder": "Pilih entitas"
+    },
+    "month-year": {
+      "label": "Periode",
+      "placeholder": "Pilih periode"
+    },
+    "year": {
+      "label": "Tahun",
+      "placeholder": "Pilih tahun"
+    }
+  },
+  "column": {
+    "material": "Info Material",
+    "unit": "Satuan",
+    "opening_stock": "Stok Awal",
+    "closing_stock": "Stok Akhir",
+    "receive": "Penerimaan",
+    "usage": "Pemakaian",
+    "budget_source": "Sumber Anggaran",
+    "description": "Keterangan"
+  },
+  "export_all_entities": "Ekspor Semua Entitas",
+  "export_with_filter": "Ekspor dengan Filter",
+  "yes" : "Ya"
+}

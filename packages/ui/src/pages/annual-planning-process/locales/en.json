@@ -1,0 +1,246 @@
+{
+  "title": "Annual Needs Calculation",
+  "meta": "SMILE | Annual Needs Calculation",
+  "list": {
+    "title": "Annual Needs Calculation",
+    "create": "Create Needs Calculation",
+    "min_max": {
+      "status_activation": "Min Max Activation Status",
+      "status_min_max": "Status Min Max",
+      "activated": "Activated",
+      "not_yet_activated": "Not yet activated",
+      "district_min_max_activation": "District Min Max Activation",
+      "item_selected": "{{value}} item selected",
+      "activate_selected_item": "Activate Selected Item",
+      "already_activated": "Activated",
+      "toast": {
+        "description": "Are you sure want to activate min max provnice for {{province}} ?",
+        "success": "Min Max Activated Successfully"
+      }
+    },
+    "min_max_level": {
+      "province": "Province Level:",
+      "district": "City/District Level:"
+    },
+    "activate": "Activate",
+    "filter": {
+      "program_plan": {
+        "label": "Program Plan",
+        "placeholder": "Select program plan"
+      },
+      "status": {
+        "placeholder": "Select status"
+      }
+    },
+    "column": {
+      "program_plan": "Program Plan",
+      "city_district": "City/District",
+      "approval_status": "Approval Status",
+      "min_max_status": "Min Max Status"
+    },
+    "action": {
+      "review_entry": "Review Entry",
+      "continue_calculation": "Continue Calculation",
+      "correct_data": "Correct Data"
+    },
+    "empty": {
+      "title": "No filter selected",
+      "description": "The data is currently empty. Please apply a filter to see the results."
+    },
+    "status": {
+      "approved": "Approved",
+      "desk": "On Desk",
+      "draft": "Draft",
+      "revision": "Revision"
+    }
+  },
+  "detail": {
+    "title": "Detail Annual Needs Calculation",
+    "meta": "SMILE | Detail Annual Needs Calculation",
+    "section": {
+      "area_program_plan": "Area & Program Plan",
+      "population_adjustment": "Population Adjustment",
+      "define_ip": "Define City/District IP",
+      "result": "Needs Calculation Results"
+    },
+    "export": {
+      "toast": {
+        "success": "Needs Calculation Results exported successfully"
+      }
+    }
+  },
+  "table_title": {
+    "needs_calculation": "Needs Calculation Table",
+    "material_list": "Material List",
+    "health_care_list": "Health Care List"
+  },
+  "status": {
+    "draft": "Draft",
+    "desk": "On Desk",
+    "revision": "Revision",
+    "approved": "Approved"
+  },
+  "create": {
+    "title": "Create Annual Needs Calculation",
+    "meta": "SMILE | Create Annual Needs Calculation",
+    "step": "Step",
+    "stepper": {
+      "step_3": [
+        "Population Adjustment",
+        "Define City/District IP",
+        "Needs Calculation Results"
+      ],
+      "step_4": [
+        "Area & Program Plan",
+        "Population Adjustment",
+        "Define City/District IP",
+        "Needs Calculation Results"
+      ]
+    },
+    "form": {
+      "area_program_plan": {
+        "program_plan": {
+          "label": "Program Plan",
+          "placeholder": "Select program plan"
+        }
+      },
+      "adjustment": "Adjusment",
+      "column": [
+        "Health Care Name",
+        "Population Adjustment",
+        "Latest updated by",
+        "Percentage",
+        "Quantity (Pusdatin)",
+        "Quantity Adjustment"
+      ],
+      "info_correction": "{{filled}} of {{total}} Target Group Saved",
+      "info_data_column": {
+        "all_approved": "All Approved",
+        "approved": "Approved: {{value}}",
+        "revision": "Revision: {{value}}",
+        "revised": "{{revised}} of {{revision}} Target Group Fixed"
+      },
+      "button": {
+        "process": "Process",
+        "correction": "Add Adjustment",
+        "update_correction": "Update Adjustment",
+        "fix": "Fix",
+        "update": "Update"
+      },
+      "status": {
+        "placeholder": "Select status"
+      },
+      "drawer_correction_data": {
+        "title": "Add Adjustment Data",
+        "preview_title": "Preview Population Adjustment",
+        "health_care_list": "Health Care List",
+        "health_care_name": "Health Care Name",
+        "column": [
+          "Target Group",
+          "Percentage",
+          "Quantity (Pusdatin)",
+          "Qty Adjustment"
+        ],
+        "qty_correction": {
+          "placeholder": "Please enter qty"
+        },
+        "button": {
+          "preview": "Preview",
+          "save_and_next": "Save & Next"
+        },
+        "revision": "Revision"
+      },
+      "district_ip": {
+        "column": {
+          "material_name": "Material Name",
+          "activity": "Activity",
+          "target_group": "Target Group",
+          "national_ip": "National IP",
+          "district_ip": "City/District IP",
+          "data_status": "Data Status",
+          "latest_updated_by": "Latest updated by"
+        },
+        "drawer": {
+          "title": "Change City/District IP",
+          "approve_all": "Approve All",
+          "revise_all": "Revise All",
+          "see_calculation_result": "See Calculation Result"
+        },
+        "validation": {
+          "district_ip": "City/District IP cannot exceed SKU"
+        }
+      },
+      "calculation_result": {
+        "column": {
+          "health_care_name": "Health Care Name",
+          "one_year": "1 Year",
+          "one_month": "1 Month",
+          "one_week": "1 Week",
+          "monthly_distribution": "Monthly Distribution",
+          "latest_updated_by": "Latest updated by",
+          "month": "Month",
+          "quantity": "Quantity",
+          "updated_by": "Updated by",
+          "needs": "{{material}} - {{activity}} needs",
+          "needs_empty": "needs"
+        },
+        "dose": "dose",
+        "dose_distribution": "{{dose}} (dose) per month",
+        "activity": {
+          "label": "Activity",
+          "placeholder": "Select Activity"
+        },
+        "material": {
+          "label": "Material",
+          "placeholder": "Select material"
+        },
+        "health_care": {
+          "label": "Primary Health Care",
+          "placeholder": "Select primary health care"
+        },
+        "drawer": {
+          "title": "Detail Monthly Distribution"
+        },
+        "confirmation": {
+          "description": {
+            "submit": "Are you sure you want to complete this calculation process?",
+            "review": {
+              "approved": "Are you sure you want to complete this review process and agree with all the data?",
+              "revised": "Are you sure you want to complete this review process and would like some data revised?"
+            },
+            "revision": "Are you sure you want to complete this revision process?"
+          }
+        },
+        "information": {
+          "title": "Needs Calculation"
+        }
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Annual Needs Calculation created successfully",
+        "update": "Annual Needs Calculation updated successfully",
+        "create_population": "Population Adjustment created successfully",
+        "update_population": "Population Adjustment updated successfully",
+        "create_district_ip": "City/District IP created successfully",
+        "update_district_ip": "City/District IP updated successfully",
+        "update_status": "Annual Needs Calculation updated status successfully"
+      }
+    }
+  },
+  "review": {
+    "title": "Annual Needs Calculation Review",
+    "meta": "SMILE | Annual Needs Calculation Review"
+  },
+  "revision": {
+    "title": "Needs Calculation Data Adjustment",
+    "meta": "SMILE | Needs Calculation Data Adjustment"
+  },
+  "information": {
+    "description": {
+      "column": "<h6 class=\"ui-text-base ui-font-bold\">Column Descriptions</h6><ul class=\"ui-list-disc ui-ml-4\"><li><b>1 Year:</b><div>Shows the total material requirement for one year, calculated as the aggregate of needs from all target groups population.</div></li><li><b>1 Month:</b><div>Shows the average monthly material requirement. This value is for informational purposes only and must not be used as a basis for reverse calculation to determine annual needs.</div></li><li><b>1 Week:</b><div>Shows the average weekly material requirement. This value is for informational purposes only and must not be used as a basis for reverse calculation to determine annual needs.</div></li><li><b>Min:</b><div>Shows the minimum stock level that must be available at each entity level, in accordance with logistics management policies, to prevent stock-outs.</div></li><li><b>Max:</b><div>Shows the maximum stock level that must be available at each entity level, in accordance with logistics management policies.</div></li><li><b>Monthly Distribution:</b><div>Displays the breakdown of material requirements by month. Detailed information can be accessed by clicking the “Detail” button.</div></li></ul>",
+      "formula": "<h6 class=\"ui-text-base ui-font-bold ui-mt-4\">Annual Requirement Formula per Material Type</h6><ol style=\"list-style: decimal\" class=\"ui-ml-4\"><li class=\"ui-font-bold\"><b>Vaccine</b><ol style=\"list-style: lower-alpha\" class=\"ui-font-normal ui-ml-4\"><li>Vial Requirement<div>The required number of vials is calculated using the following formula: (Population × Target Coverage × Number of Doses) ÷ Vaccination Index</div></li><li>Dose Requirement<div>The required number of doses is calculated as: Required vials × doses per vial</div></li></ol></div></li><li class=\"ui-font-bold\"><b>Diluent</b><div class=\"ui-font-normal\">The required diluent is calculated as: Required vaccine vials × ratio × doses per vial</div></li><li class=\"ui-font-bold\"><b>Vaccine Vial Set (Dropper)</b><div class=\"ui-font-normal\">The required vaccine vial set is calculated as: Required vaccine vials × ratio</div></li><li class=\"ui-font-bold\"><b>Injection Device</b><div class=\"ui-font-normal\">The required injection devices are calculated as: Required vaccine vials × ratio × usage index</div></li><li class=\"ui-font-bold\"><b>Safety Box</b><div class=\"ui-font-normal\">The required safety boxes are calculated as: Required syringes × ratio</div></li></ol>",
+      "note": "<h6 class=\"ui-text-base ui-font-bold ui-mt-4\">Notes</h6><ul class=\"ui-list-disc ui-ml-4\"><li>Min–Max values are only relevant for materials subprogram used throughout the year.</li></ul>"
+    }
+  }
+}

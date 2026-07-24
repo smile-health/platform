@@ -1,0 +1,55 @@
+{
+  "title": {
+    "manufacturer": "Manufacturer Settings",
+    "list": "Manufacturer List",
+    "create": "Add Manufacturer",
+    "edit": "Edit Manufacturer",
+    "detail": "Manufacturer Detail",
+    "status": "Manufacturer Status"
+  },
+  "column": {
+    "name": "Manufacturer Name"
+  },
+  "action": {
+    "activate": {
+      "confirmation": "Are you sure you want to activate this manufacturer?"
+    },
+    "deactivate": {
+      "confirmation": "Are you sure you want to deactivate this manufacturer?"
+    }
+  },
+  "form": {
+    "search": {
+      "placeholder": "Search manufacturer"
+    },
+    "name": {
+      "label": "Manufacturer name",
+      "placeholder": "Manufacturer name",
+      "validation": {
+        "required": "Manufacturer name is required"
+      }
+    },
+    "type": {
+      "validation": {
+        "required": "Type is required"
+      }
+    },
+    "phone": {
+      "validation": {
+        "match": "Phone number must contain only numbers",
+        "min": "Phone number must be at least 10 digits",
+        "max": "Phone number must not exceed 14 digits"
+      }
+    },
+    "email": {
+      "validation": {
+        "invalid": "Invalid email format"
+      }
+    },
+    "reference_id": {
+      "validation": {
+        "required": "Reference ID is required"
+      }
+    }
+  }
+}

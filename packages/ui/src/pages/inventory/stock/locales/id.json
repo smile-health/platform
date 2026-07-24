@@ -1,0 +1,136 @@
+{
+  "meta": "Stok",
+  "title": "Lihat Stok",
+  "filter": {
+    "label": {
+      "activity": "Kegiatan",
+      "material_type": "Tipe Material",
+      "material_hirearchy": "Material - Produk Template",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "entity": "Entitas",
+      "entity_tag": "Tag Entitas",
+      "province": "Provinsi",
+      "city": "Kota/Kabupaten",
+      "primary_health_care": "Puskesmas",
+      "primary_vendor": "Penyedia Utama"
+    },
+    "placeholder": {
+      "activity": "Cari kegiatan",
+      "material_type": "Cari tipe material",
+      "material": "Cari nama material",
+      "expired_date": "dd/mm/yyyy - dd/mm/yyyy",
+      "entity": "Cari nama entitas",
+      "entity_tag": "Pilih tag entitas",
+      "province": "Pilih provinsi",
+      "city": "Pilih nama kota/kabupaten",
+      "primary_health_care": "Pilih puskesmas",
+      "primary_vendor": "Pilih penyedia utama",
+      "batch": "Pilih batch"
+    }
+  },
+  "table": {
+    "title": {
+      "trademark": "Produk Varian",
+      "activity": "Kegiatan",
+      "budget_source": "Sumber Anggaran dari batch {{name}}"
+    },
+    "column": {
+      "material": {
+        "material_hirearchy": "Produk Template",
+        "enitity_name": "Nama Entitas",
+        "stock_on_hand": "Sisa Stok",
+        "allocated": "Dialokasikan",
+        "available_stock": "Stok Tersedia",
+        "in_transit": "Dalam Perjalanan",
+        "action": "Aksi",
+        "updated_at": "Diperbarui Pada",
+        "vial": [
+          "{{value}} (vial terbuka)",
+          "{{value}} (vial tertutup)",
+          "{{value}} (Vial Terbuka)",
+          "{{value}} (Vial Tertutup)"
+        ],
+        "open_vial": "Vial Terbuka",
+        "close_vial": "Vial Tertutup"
+      },
+      "activity": {
+        "name": "Kegiatan"
+      },
+      "batch": {
+        "info": "Info Batch",
+        "stock_info": "Info Stok",
+        "budget_info": "Info Anggaran",
+        "production_date": "Tanggal Produksi: {{value}}",
+        "expired_date": "Tanggal Kedaluwarsa: {{value}}",
+        "manufacturer": "Pabrik: {{value}}",
+        "stock": {
+          "on_hand": "Sisa Stok: {{value}}",
+          "allocated": "Dialokasikan: {{value}}",
+          "available": "Stok Tersedia: {{value}}",
+          "in_transit": "Dalam Perjalanan: {{value}}"
+        }
+      },
+      "budget_source": {
+        "name": "Sumber Anggaran: {{value}}",
+        "price": "Harga ({{currency}}): {{value}}",
+        "total_price": "Total Harga ({{currency}}): {{value}}"
+      }
+    },
+    "action": {
+      "trademark": "Lihat Produk Varian",
+      "batch": "Lihat Batch",
+      "activity": "Lihat Kegiatan",
+      "budget_source": "Lihat Sumber Anggaran",
+      "detail": "Detail"
+    }
+  },
+  "popup_batch": {
+    "title": "Detail Batch",
+    "hierarchy": [
+      "Produk Template : {{material}}",
+      "Batch Produk Varian - {{batch}}"
+    ],
+    "non_hierarchy": "Kegiatan {{activity}} & Material {{material}}"
+  },
+  "detail": {
+    "title": "Detail Stok",
+    "entity": {
+      "title": "Entitas",
+      "name": "Nama Entitas",
+      "address": "Alamat",
+      "updated_at": "Diperbarui Pada"
+    },
+    "material": {
+      "name": [
+        "Nama Material (Produk Template)",
+        "Nama Material"
+      ],
+      "stock": {
+        "on_hand": "Sisa Stok",
+        "allocated": "Dialokasikan",
+        "available": "Stok Tersedia",
+        "in_transit": "Dalam Perjalanan"
+      }
+    },
+    "title_table": [
+      "Bahan Produk Varian",
+      "Kegiatan"
+    ],
+    "drawer": {
+      "title": [
+        "Daftar Kegiatan",
+        "Daftar Batch"
+      ],
+      "description": {
+        "hiearchy": [
+          "Produk Template",
+          "Produk Varian"
+        ],
+        "non_hiearchy": [
+          "Kegiatan",
+          "Material"
+        ]
+      }
+    }
+  }
+}

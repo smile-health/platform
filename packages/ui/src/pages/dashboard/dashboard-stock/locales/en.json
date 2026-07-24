@@ -1,0 +1,114 @@
+{
+  "title": {
+    "page": "Stock Dashboard",
+    "expired_date": "Expired Date",
+    "month": "Month",
+    "province": "Province",
+    "regency": "City",
+    "sort_by": "Sort by {{type}} ID",
+    "stock": {
+      "number": "Stock By Number",
+      "by": "Stock By {{title}}",
+      "month": "Closing Stock per Batch"
+    },
+    "entity": {
+      "main": "Entity",
+      "tag": "Entity Tag",
+      "material": "Material Entity",
+      "stock": "Stock Entity"
+    }
+  },
+  "description": {
+    "stock": {
+      "remaining": "The remaining stock data displayed is accumulated based on {{title}}",
+      "in_transit": "The in transit stock data displayed is accumulated based on {{title}}"
+    },
+    "information_month": "Displays the closing stock quantity of each material batch based on the batch's last transaction month. Each point on the chart represents the batch’s closing stock in the month when it was last transacted within the selected period range."
+  },
+  "form": {
+    "date": {
+      "periode": {
+        "start": {
+          "label": "Periode Start"
+        },
+        "end": {
+          "label": "Periode End"
+        }
+      },
+      "expired": {
+        "label": "Expired Date"
+      }
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Select level KFA material"
+      },
+      "name": {
+        "label": "Material Name",
+        "placeholder": "Select material name"
+      }
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "information_type": {
+      "label": "Kind of Information"
+    }
+  },
+  "data": {
+    "material_level": {
+      "trademark": "Product Variant"
+    },
+    "information_type": {
+      "remaining_stock": "Remaining Stock",
+      "in_transit_stock": "In Transit Stock"
+    },
+    "default_activity": {
+      "routine": "Routine",
+      "ori": "ORI"
+    }
+  },
+  "column": {
+    "province": "Province",
+    "regency": "City",
+    "activity": "Activity",
+    "material": "Material Name",
+    "unit": "Unit",
+    "entity": {
+      "name": "Entity Name",
+      "tag": "Entity Tag"
+    },
+    "batch": {
+      "code": "Batch Code",
+      "expired": "Batch Expired Date"
+    },
+    "stock": {
+      "remaining": "Total of Remaining Stock",
+      "in_transit": "Total of In Transit",
+      "min": "Min Stock",
+      "max": "Max Stock"
+    }
+  }
+}

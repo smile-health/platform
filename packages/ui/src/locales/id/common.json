@@ -1,0 +1,617 @@
+{
+  "item": "Item",
+  "action": "Aksi",
+  "all": "Semua",
+  "name": "Nama",
+  "address": "Alamat",
+  "at": "Pada",
+  "on_for_date": "pada",
+  "at_for_time": "pukul",
+  "attach_file": "Lampirkan File",
+  "back": "Kembali",
+  "back_to_list": "Kembali ke Daftar",
+  "by": "Oleh",
+  "cancel": "Batal",
+  "confirmation": "Konfirmasi",
+  "contact_name": "Nama Kontak",
+  "delete": "Hapus",
+  "remove": "Hapus",
+  "description": "Deskripsi",
+  "detail": "Detail",
+  "details": "Detail",
+  "download_template": "Unduh Template",
+  "edit": "Ubah",
+  "update": "Perbarui",
+  "add": "Tambah",
+  "view": "Lihat",
+  "empty": "Kosong",
+  "delete_all_selected": "Hapus Semua yang Dipilih",
+  "data_has_been_selected": "{{selectedRows}} data telah dipilih",
+  "created_at": "Dibuat Pada",
+  "updated_at": "Diperbarui Pada",
+  "created_by": "Dibuat Oleh",
+  "updated_by": "Diperbarui Oleh",
+  "see_detail": "Lihat Detail",
+  "see_more": "Tampilkan Semua",
+  "see_less": "Tampilkan Sebagian",
+  "submit": "Kirim",
+  "example": "Contoh",
+  "send": "Kirim",
+  "add_item": "Tambah Item",
+  "view_detail": "Lihat Detail",
+  "finish": "Selesai",
+  "form": {
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "city": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "subdistrict": {
+      "label": "Kecamatan",
+      "placeholder": "Pilih kecamatan"
+    },
+    "primary_health_care": {
+      "label": "Puskesmas",
+      "placeholder": "Pilih puskesmas"
+    },
+    "village": {
+      "label": "Desa/Kelurahan",
+      "placeholder": "Pilih desa/kelurahan"
+    },
+    "entity": {
+      "label": "Entitas",
+      "placeholder": "Pilih entitas"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "label": "Material",
+      "placeholder": "Pilih material"
+    },
+    "material_type": {
+      "label": "Tipe Material",
+      "placeholder": "Pilih tipe material"
+    },
+    "entity_type": {
+      "label": "Tipe Entitas",
+      "placeholder": "Pilih tipe entitas"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "integrated_healthcare": {
+      "label": "Puskesmas",
+      "placeholder": "Pilih puskesmas"
+    },
+    "program": {
+      "title": "Program",
+      "information": "Program yang dipilih tidak dapat dibatalkan (tidak dicentang) setelah data direlasikan",
+      "no_program": "Tidak ada program",
+      "placeholder": {
+        "name": "Cari program",
+        "select": "Pilih program"
+      },
+      "logistics": "Logistik",
+      "beneficiary": "Penerima Manfaat"
+    },
+    "date_range": {
+      "label": "Rentang Tanggal",
+      "placeholder": "Pilih rentang tanggal"
+    },
+    "color": {
+      "placeholder": "Pilih warna"
+    }
+  },
+  "validation": {
+    "min": "Minimal {{value}} ",
+    "max": "Maksimal {{value}} ",
+    "char": {
+      "min": "Minimal {{char}} karakter",
+      "max": "Maksimal {{char}} karakter"
+    },
+    "phone_start_with": "Harus diawali {{local}} atau {{international}}",
+    "numeric_only": "Hanya angka",
+    "required": "Wajib diisi",
+    "numeric_cannot_negative": "Nilai tidak boleh bernilai negatif",
+    "message_invalid_date": "Format tanggal tidak valid, harap masukkan tanggal yang valid",
+    "satu_sehat": "Kode SATUSEHAT harus terdiri dari 10 digit",
+    "greater_or_equal_than": "{{first_value}} harus lebih besar dari atau sama dengan {{second_value}}",
+    "lesser_or_equal_than": "{{first_value}} harus lebih kecil dari atau sama dengan {{second_value}}",
+    "greater_than_zero": "{{value}} harus lebih besar dari nol"
+  },
+  "export": "Ekspor",
+  "export_all": "Ekspor Semua",
+  "gender": {
+    "male": "Laki-laki",
+    "female": "Perempuan"
+  },
+  "import": "Impor",
+  "logistic": "Logistik BHP",
+  "message": {
+    "common": {
+      "error": "Maaf ada kesalahan. Silakan coba lagi dalam beberapa saat"
+    },
+    "empty": {
+      "title": "Data tidak tersedia",
+      "description": "Daftar ini saat ini kosong. Silakan hubungi layanan bantuan untuk meminta entri baru.",
+      "description_empty_list_only": "Daftar ini saat ini kosong."
+    },
+    "success": {
+      "add": "Berhasil menambah {{type}}",
+      "create": "Berhasil membuat {{type}}",
+      "update": "Berhasil mengubah {{type}}",
+      "update_status": "Berhasil mengubah status {{type}}",
+      "delete": "Berhasil menghapus {{type}}"
+    },
+    "failed": {
+      "add": "Gagal menambah {{type}}",
+      "create": "Gagal membuat {{type}}",
+      "update": "Gagal mengubah {{type}}",
+      "update_status": "Gagal mengubah status {{type}}",
+      "delete": "Gagal menghapus {{type}}"
+    },
+    "confirm": {
+      "delete": "Apakah Anda yakin ingin menghapus data ini?"
+    }
+  },
+  "litre": "Liter",
+  "phone_number": "Nomor Handphone",
+  "reference": "Referensi",
+  "refrigerator": "Kulkas",
+  "to": "Ke",
+  "from": "Dari",
+  "other": "Lainnya",
+  "save": "Simpan",
+  "reset": "Reset",
+  "search": "Cari",
+  "search_by": "Cari dengan",
+  "search_by_keyword": "Cari dengan kata kunci",
+  "select_activity": "Pilih kegiatan",
+  "select_type": "Pilih tipe",
+  "status": {
+    "label": "Status",
+    "active": "Aktif",
+    "inactive": "Tidak Aktif",
+    "activate": "Aktifkan",
+    "deactivate": "Nonaktifkan",
+    "success": "Berhasil",
+    "failed": "Gagal"
+  },
+  "temperature": {
+    "min": "Temperatur Min",
+    "max": "Temperatur Max"
+  },
+  "type": "Tipe",
+  "vaccine": "Vaksin",
+  "yes": "Ya",
+  "no": "Tidak",
+  "close": "Tutup",
+  "selected": "Terpilih",
+  "updated": {
+    "by": "Diperbarui Oleh",
+    "at": "Diperbarui Pada"
+  },
+  "expand_filter": {
+    "hide": "Tutup Semua Filter",
+    "show": "Lihat Semua Filter"
+  },
+  "expand_active_filter": {
+    "less": "Lihat Lebih Sedikit",
+    "show": "Lihat Semua"
+  },
+  "active_filter": "Filter Aktif",
+  "filtered_at": "Difilter pada",
+  "pagination": {
+    "empty": "menampilkan 0 dari 0 hasil",
+    "data": "menampilkan {{start}} hingga {{end}} dari {{result}} hasil",
+    "previous": "Sebelumnya",
+    "next": "Selanjutnya",
+    "first": "Pertama",
+    "showing": "Menampilkan",
+    "items_per_page": "item per halaman"
+  },
+  "show_report": "Tampilkan Laporan",
+  "tab": {
+    "assets": {
+      "label": "Aset",
+      "tabs": {
+        "asset_type": "Tipe Aset",
+        "asset_model": "Model Aset",
+        "asset_vendor": "Vendor Aset",
+        "pqs_code": "Kode PQS"
+      }
+    },
+    "material": {
+      "tabs": {
+        "material_data": "Data Material",
+        "material_volume": "Volume Kemasan Material"
+      }
+    },
+    "entity": "Entitas",
+    "user": "Pengguna",
+    "budget_source": "Sumber Anggaran",
+    "manufacturer": "Pabrik",
+    "model_asset_management": "Model Aset",
+    "asset_vendor": "Vendor Aset",
+    "global_asset_managements": {
+      "managements": {
+        "label": "Manajemen",
+        "tabs": {
+          "asset_inventory": "Inventarisasi Aset Operasional",
+          "remote_temperature_monitoring_device": "Inventarisasi Alat Pemantau Suhu",
+          "storage_temperature_monitoring": {
+            "label": "Pemantauan Penyimpanan Suhu",
+            "tabs": {
+              "cold_chain_equipment": "Cold Chain Equipment",
+              "warehouse": "Gudang"
+            }
+          }
+        }
+      },
+      "dashboards": {
+        "label": "Dasbor",
+        "tabs": {
+          "asset_ownership_inventory": "Dasbor Inventarisasi Kepemilikan Aset",
+          "cold_storage_capacity": "Dasbor Penyimpanan Suhu Dingin",
+          "temperature_monitoring": "Dasbor Pemantauan Suhu"
+        }
+      }
+    },
+    "patient": "Pasien",
+    "annual_planning_target_group": "Kelompok Sasaran",
+    "population": "Populasi"
+  },
+  "dropdown_setting": {
+    "view_profile": "Lihat Profil",
+    "global_settings": "Pengaturan Global",
+    "global_asset_managements": "Manajemen Aset",
+    "logout": "Keluar"
+  },
+  "file": {
+    "title": "Pilih File",
+    "placeholder": "Tidak ada file yang dipilih",
+    "file_size": "Ukuran file harus kurang dari atau sama dengan {{size}} MB",
+    "cannot_file_type": "Tipe file yang diunggah tidak diizinkan"
+  },
+  "error": {
+    "403": {
+      "title": "Dilarang akses ke halaman ini",
+      "description": "Anda tidak memiliki izin untuk mengakses halaman ini <strong>(403 Error).</strong>",
+      "list": {
+        "title": "Silakan coba yang berikut ini:",
+        "description": "",
+        "content": [
+          "Pastikan Anda telah memasukkan URL yang benar.",
+          "Hubungi administrator sistem Anda jika Anda yakin ini adalah kesalahan."
+        ]
+      },
+      "button": "Kembali ke halaman awal"
+    },
+    "404_pages": {
+      "title": "Halaman ini tidak ada",
+      "description": "Halaman yang Anda cari mungkin telah dihapus, diganti namanya, atau untuk sementara tidak tersedia <strong>(404 Error).</strong>",
+      "list": {
+        "title": "Silakan coba yang berikut ini:",
+        "description": "",
+        "content": [
+          "Pastikan Anda telah memasukkan URL yang benar.",
+          "Gunakan menu navigasi untuk kembali ke lokasi yang sudah dikenal."
+        ]
+      },
+      "button": "Kembali ke halaman awal"
+    },
+    "404_data": {
+      "title": "Data ini tidak ada",
+      "description": "Data yang Anda cari mungkin telah dihapus atau untuk sementara tidak tersedia <strong>(404 Error).</strong>",
+      "list": {
+        "title": "Silakan coba yang berikut ini:",
+        "description": "",
+        "content": [
+          "Pastikan Anda telah memasukkan URL yang benar.",
+          "Gunakan menu navigasi untuk kembali ke lokasi yang sudah dikenal."
+        ]
+      },
+      "button": "Kembali ke halaman awal"
+    },
+    "500": {
+      "title": "Sistem mengalami kesalahan server internal",
+      "description": "Saat ini, sistem tidak berfungsi dengan benar <strong>(500 Error).</strong> Tim kami secara aktif berupaya memperbaikinya.",
+      "list": {
+        "title": "Sementara ini, Anda dapat mencoba:",
+        "description": "Terima kasih atas pengertian dan kesabaran Anda.",
+        "content": [
+          "<strong>Muat ulang laman</strong> beberapa kali.",
+          "<strong>Coba lagi</strong> dalam beberapa saat."
+        ]
+      },
+      "button": "Muat ulang"
+    },
+    "502": {
+      "title": "Sistem mengalami kesalahan gateway yang buruk",
+      "description": "Saat ini, ada masalah dengan komunikasi server-ke-server <strong>(Kesalahan 502).</strong> Tim kami secara aktif berupaya memperbaikinya.",
+      "list": {
+        "title": "Sementara ini, Anda dapat mencoba:",
+        "description": "Terima kasih atas pengertian dan kesabaran Anda.",
+        "content": [
+          "<strong>Muat ulang laman</strong> beberapa kali.",
+          "<strong>Coba lagi</strong> dalam beberapa saat."
+        ]
+      },
+      "button": "Muat ulang"
+    },
+    "504": {
+      "title": "Sistem sudah mencapai kapasitasnya",
+      "description": "Saat ini, sistem mengalami lonjakan permintaan, menyebabkan pengambilan data memakan waktu lebih lama dari biasanya <strong>(Kesalahan 504).</strong> Tim kami secara aktif berupaya memperbaikinya.",
+      "list": {
+        "title": "Sementara ini, Anda dapat mencoba:",
+        "description": "Terima kasih atas pengertian dan kesabaran Anda.",
+        "content": [
+          "<strong>Muat ulang laman</strong> beberapa kali.",
+          "<strong>Coba lagi</strong> dalam beberapa saat.",
+          "Akses fitur lainnya."
+        ]
+      },
+      "button": "Muat ulang"
+    },
+    "connection": {
+      "title": "Tidak ada koneksi internet yang ditemukan",
+      "description": "Tampaknya Anda sedang offline.",
+      "list": {
+        "title": "Silakan coba yang berikut ini:",
+        "description": "",
+        "content": [
+          "Periksa koneksi internet Anda dan coba lagi.",
+          "Periksa pengaturan jaringan perangkat Anda."
+        ]
+      },
+      "button": "Muat ulang"
+    }
+  },
+  "modal_import_error": {
+    "title": "{{total}} baris gagal diimpor",
+    "description": "Setelah Anda memperbaiki kesalahan, coba impor kembali file tersebut.",
+    "list": {
+      "title": "Baris {{row}}"
+    }
+  },
+  "loading_popup": {
+    "title": "Tunggu sebentar!",
+    "description": "Permintaan Anda sedang diproses"
+  },
+  "download_async_popup": {
+    "title": "Permintaan Anda sedang diproses",
+    "description": "Periksa bel notifikasi secara teratur",
+    "action": "Lihat Riwayat Ekspor"
+  },
+  "modal_export_async_popup": {
+    "title": "Permintaan Anda sedang diproses",
+    "description": "Periksa riwayat ekspor secara teratur",
+    "action": "Lihat Riwayat Ekspor"
+  },
+  "up_to_abbr": "s.d.",
+  "programs": "Program",
+  "item_selected": "item terpilih",
+  "order": {
+    "type": {
+      "order": "Pesanan",
+      "distribution": "Distribusi",
+      "return": "Retur",
+      "central_distribution": "Distribusi Pusat",
+      "relocation": "Relokasi"
+    }
+  },
+  "date": {
+    "year": "Tahun",
+    "preset": {
+      "today": "Hari Ini",
+      "this": {
+        "week": "Minggu Ini",
+        "month": "Bulan Ini",
+        "year": "Tahun Ini"
+      },
+      "last": {
+        "days": "{{day}} Hari Terakhir",
+        "month": "Bulan Lalu",
+        "months": "{{month}} Bulan Terakhir",
+        "year": "Tahun lalu"
+      }
+    }
+  },
+  "menu": {
+    "dashboard": {
+      "title": "Dasbor",
+      "item": {
+        "inventory_overview": "Tinjauan Inventori",
+        "in_transit": "Dalam Perjalanan",
+        "stock_taking": "Stok Opname",
+        "asset_ownership": "Inventarisasi Aset",
+        "download": "Unduh Laporan",
+        "storage_capacity": "Kapasitas Simpan",
+        "monitoring": "Monitoring Transaksi",
+        "planning": "Perencanaan",
+        "stock": "Stok",
+        "compliance_transaction_input": "Kepatuhan Input Transaksi",
+        "transaction": {
+          "title": "Transaksi",
+          "item": {
+            "general": "Transaksi Umum",
+            "detail": "Transaksi Detail"
+          }
+        },
+        "consumed": {
+          "item": {
+            "asik": "Dasbor Smile vs ASIK"
+          }
+        }
+      }
+    },
+    "inventory": {
+      "title": "Inventori",
+      "item": {
+        "transaction": "Daftar Transaksi",
+        "reconciliation": "Rekonsiliasi",
+        "stock": {
+          "view": "Lihat Stok",
+          "opname": "Stock Opname"
+        }
+      }
+    },
+    "order": {
+      "title": "Pesanan",
+      "item": {
+        "list": "Daftar Pesanan",
+        "ticketing": "Laporan Kejadian"
+      }
+    },
+    "disposal": {
+      "title": "Pemusnahan",
+      "item": {
+        "view": "Lihat Total Pembuangan",
+        "distribution": "Pengiriman Pemusnahan",
+        "self": "Pemusnahan Mandiri"
+      }
+    },
+    "report": {
+      "title": "Laporan",
+      "item": {
+        "monthly": "Laporan Bulanan",
+        "yearly": "Laporan Tahunan",
+        "stock_book": "Laporan Buku Stok",
+        "activity": {
+          "title": "Kegiatan",
+          "item": {
+            "user": "Aktivitas Pengguna",
+            "immunization": "Kegiatan Pos Imunisasi",
+            "count_transaction": "Hitung Transaksi",
+            "adjust_stock": "Tambah/Kurangi Stok",
+            "reconciliation": "Aktivitas Rekonsiliasi"
+          }
+        },
+        "inventory": {
+          "title": "Inventori",
+          "item": {
+            "supply_consumption": "Penerimaan & Distribusi",
+            "discard": "Pembuangan",
+            "stock": {
+              "abnormal": "Abnormal Stok",
+              "zero": "Pengisian Dari Habis Stok",
+              "filling": "Pengisian Sampai Batas Normal",
+              "availability": "Ketersediaan Stok"
+            }
+          }
+        },
+        "order": {
+          "title": "Pesanan",
+          "item": {
+            "time": "Waktu Respon Pesanan",
+            "difference": "Perbedaan Pesanan"
+          }
+        },
+        "asset": {
+          "title": "Aset",
+          "item": {
+            "excursion": "Ekskursi Suhu"
+          }
+        },
+        "planning": {
+          "title": "Rencana",
+          "item": {
+            "annual": "Perencanaan Tahunan"
+          }
+        }
+      }
+    },
+    "asset": {
+      "title": "Aset",
+      "item": {
+        "temperature": "Suhu",
+        "inventory": "Inventarisasi Aset",
+        "storage_capacity_dashboard": "Lihat Dasbor Kapasitas Alat Pendingin Penyimpan Vaksin",
+        "capacity_annual_planning": "Kapasitas untuk Perencanaan Tahunan"
+      }
+    },
+    "setting": {
+      "title": "Pengaturan",
+      "item": {
+        "account": "Akun Saya",
+        "user": "Pengguna",
+        "activity": "Kegiatan",
+        "entity": "Entitas",
+        "material_volume": "Volume Material",
+        "manufacturer": "Pabrik",
+        "communication_provider": "Provider Komunikasi",
+        "temperature_device": "Alat Pemantau Suhu",
+        "budget_source": "Sumber Anggaran",
+        "stocktacking_period": "Periode Stok Opname",
+        "freeze_transaction": "Bekukan Transaksi",
+        "import_material_entity": "Impor Material Entitas",
+        "protocol": "Protokol",
+        "parameter_category": "Parameter Kategori",
+        "parameter_analysis": "Parameter Analisa",
+        "test_method": "Metode Pengujian",
+        "environmental_health_history": "Riwayat Pengujian",
+        "asset": {
+          "model": "Model Aset",
+          "vendor": "Vendor Aset",
+          "type": "Tipe Asset"
+        },
+        "annual_planning": {
+          "title": "Perencanaan Tahunan",
+          "item": {
+            "pusdatin_target": "Master Data Sasaran Pusdatin",
+            "national_ip": "Master Data IP Nasional",
+            "group_target": "Master Data Kelompok Sasaran",
+            "amount_of_giving": "Master Data Jumlah Pemberian"
+          }
+        }
+      }
+    },
+    "bmhp": {
+      "title": "BMHP",
+      "description": "Manajemen Bahan Medis Habis Pakai",
+      "item": {
+        "master_pemeriksaan": "Master Pemeriksaan"
+      }
+    },
+    "immunization": {
+      "title": "Perencanaan",
+      "description": "Manajemen Bahan Medis Habis Pakai",
+      "item": {
+        "master_pemeriksaan_label": "Rencana Program",
+        "bmhp_history": "Perencanaan Tahunan",
+        "master_pemeriksaan": "Master Pemeriksaan",
+        "sub_kategori": "Jenis Pemeriksaan",
+        "master_method": "Master Method",
+        "master_parameter": "Master Parameter",
+        "master_material": "Master Material",
+        "master_target_group": "Master Sasaran Target",
+        "master_variant": "Master Varian",
+        "annual_needs_calculation": "Perhitungan Kebutuhan Tahunan"
+      }
+    },
+    "annual": {
+      "title": "Perencanaan"
+    },
+    "analysis": {
+      "title": "Analisis",
+      "lplpo": "LPLPO"
+    }
+  },
+  "no_filter_selected": "Tidak ada filter yang dipilih",
+  "please_apply_filter": "Data saat ini kosong. Silakan terapkan filter untuk melihat hasilnya.",
+  "notification": {
+    "title": "Notifikasi",
+    "no_data": "Tidak ada notifikasi",
+    "more": "Lihat Selengkapnya",
+    "mark_all_as_read": "Tandai semua dibaca",
+    "loading": "Memuat...",
+    "error": "Ada kesalahan",
+    "refreshing": "Menyegarkan..."
+  }
+}

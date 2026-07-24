@@ -1,0 +1,70 @@
+{
+  "title": "Program Plan",
+  "list_program_plan": "Program Plan List",
+  "add_program_plan": "Add Program Plan",
+  "edit_program_plan": "Edit Program Plan",
+  "delete_program_plan": "Delete Program Plan",
+  "program_plan_name": "Program Plan Name",
+  "confirm": "Confirm",
+  "optional": "Optional",
+  "message": {
+    "import_success": "Program Plans imported successfully",
+    "successfully_created": "Program Plan created successfully"
+  },
+  "table": {
+    "year": "Year",
+    "year_plan": "Year Plan",
+    "previous_year": "Program Plan",
+    "select_data_to_be_copied": "Select Data To Be Copied",
+    "type": "Type",
+    "status": "Status",
+    "approach": "Approach"
+  },
+  "placeholder": {
+    "select_year": "Select year",
+    "select_year_plan": "Select year plan",
+    "select_previous_year": "Select program plan"
+  },
+  "tabs": {
+    "target_group": "Target Group",
+    "population": "Population",
+    "task": "Task",
+    "ratio": "Ratio",
+    "substitution": "Substitution",
+    "needs_calculation": "Task",
+    "material_ratio": "Ratio",
+    "material_substitution": "Material Substitution"
+  },
+  "status": {
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "target_group": "Target Group",
+    "population": "Population",
+    "need_calculation": "Task",
+    "material_ratio": "Ratio",
+    "final": "Final",
+    "draft": "Draft",
+    "mark_as_final": {
+      "label": "Mark as Final",
+      "confirmation": "Are you sure want to mark as final this?"
+    }
+  },
+  "mark_as_final": "Mark as Final",
+  "deactivate": "Deactivate",
+  "activate": "Activate",
+  "detail_and_configure": "Detail & Configure",
+  "cannot_modify_final_plan": "You cannot modify a finalized plan.",
+  "confirmation_activation": {
+    "description": "Are you sure want to mark as final this?",
+    "subdescription_top": "Please make sure all required data below are completed before continuing.",
+    "subdescription_bottom": "You can't press `Yes` until all required data are completed."
+  },
+  "use_data_from_prev_year": "Use Data From Another Program Plan",
+  "required_when_using_data_from_prev_year": "Required when using data from another program plan",
+  "toast": {
+    "activate_success": "Program plan activated successfully",
+    "deactivate_success": "Program plan deactivated successfully",
+    "create": "Program plan created successfully",
+    "mark_as_final_success": "Program plan marked as final successfully"
+  }
+}

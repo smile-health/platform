@@ -1,0 +1,48 @@
+{
+  "title": {
+    "monthly": "Laporan Bulanan",
+    "yearly": "Laporan Tahunan"
+  },
+  "form": {
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "subdistrict": {
+      "label": "Kecamatan",
+      "placeholder": "Pilih kecamatan"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "entity": {
+      "label": "Entitas",
+      "placeholder": "Pilih entitas"
+    },
+    "month-year": {
+      "label": " Bulan dan Tahun",
+      "placeholder": "Pilih bulan dan tahun"
+    },
+    "year": {
+      "label": "Tahun",
+      "placeholder": "Pilih tahun"
+    }
+  },
+  "column": {
+    "vaccine": "Vaksin/Logistik",
+    "opening": "Stok Awal Bulan",
+    "acceptance": "Penerimaan",
+    "stock": "Jumlah Stock + Penerimaan",
+    "usage": "Pemakaian",
+    "disposal": "Pembuangan",
+    "closing": "Sisa Logistik",
+    "total": "Jumlah Cakupan",
+    "vaccine_ip": "IP Vaksin"
+  },
+  "export_all_entities": "Ekspor Semua Entitas"
+}

@@ -1,0 +1,72 @@
+{
+  "policy": "Kebijakan Privasi",
+  "password": "Kata Sandi",
+  "forgot": "Lupa kata sandi",
+  "login": "Masuk",
+  "help": "Pusat Bantuan",
+  "processing": "Memproses",
+  "about": "Tentang",
+  "success_login": "Login berhasil. Mengalihkan ke beranda",
+  "invalid_login": "Nama pengguna atau kata sandi tidak valid",
+  "success_logout": "Logout berhasil. Terima kasih telah berkunjung",
+  "disclaimer": {
+    "title": "Disclaimer",
+    "desc": "SMILE (Sistem Monitoring Inventaris Logistik Kesehatan secara Elektronik) adalah aplikasi terpadu yang dirancang oleh Kementerian Kesehatan RI untuk mengelola rantai pasok logistik kesehatan dan rantai dingin serta limbah medis secara real-time. SMILE digunakan oleh tenaga kesehatan dan kesehatan lingkungan, pengelola logistik, dan para pihak penentu kebijakan dan program kesehatan di Indonesia untuk mendukung pelayanan kesehatan yang efisien, transparan dan terjangkau. <br /> UNDP Indonesia memberikan dukungan dalam membangun digital solusi SMILE yang inklusif, beretika dan berkelanjutan."
+  },
+  "close": "Tutup",
+  "privacy_policy": {
+    "title": "Kebijakan Privasi",
+    "sub_title_one": "Kebijakan Privasi untuk SMILE",
+    "effective_date": "Tanggal Efektif: 12-09-2023",
+    "desc_one": "Kebijakan Privasi ini menjelaskan bagaimana kami mengoperasikan aplikasi seluler SMILE (Aplikasi), data apa yang kami akses dan kumpulkan, bagaimana data tersebut digunakan, disimpan, dan dihapus.",
+
+    "sub_title_two": "Data yang Kami Kumpulkan",
+    "desc_two": "Dalam rangka menjalankan layanan kesehatan melalui Aplikasi, kami mengakses dan mengumpulkan data berikut:",
+    "desc_two_list": [
+      "Data Kesehatan: termasuk namun tidak terbatas pada rekam medis, data diagnosa, riwayat kunjungan, hasil pemeriksaan, dan informasi kesehatan lainnya yang Anda atau tenaga medis masukkan ke dalam Aplikasi.",
+      "Data Identitas: nama, tanggal lahir, nomor identitas pasien, dan informasi demografis lainnya.",
+      "Data Penggunaan Aplikasi: informasi non-pribadi seperti tipe perangkat, versi sistem operasi, dan log penggunaan fitur yang digunakan semata-mata untuk meningkatkan performa Aplikasi."
+    ],
+
+    "sub_title_three": "Tujuan Penggunaan Data",
+    "desc_three": "Data yang dikumpulkan digunakan untuk tujuan berikut:",
+    "desc_three_list": [
+      "Menyediakan layanan manajemen kesehatan melalui Aplikasi.",
+      "Mendukung tenaga medis dalam memberikan pelayanan kepada pasien.",
+      "Meningkatkan fungsi dan pengalaman penggunaan Aplikasi.",
+      "Memenuhi kewajiban hukum dan regulasi yang berlaku di bidang kesehatan."
+    ],
+
+    "sub_title_four": "Penyimpanan Data",
+    "desc_four": "Data pengguna disimpan pada server yang aman selama akun Anda aktif dan selama diperlukan untuk memenuhi tujuan layanan. Data kesehatan disimpan sesuai dengan ketentuan peraturan perundang-undangan yang berlaku di Indonesia, termasuk ketentuan rekam medis yang mewajibkan penyimpanan minimal 5 (lima) tahun sejak tanggal terakhir pasien berobat. Data penggunaan non-pribadi disimpan maksimal selama 2 (dua) tahun.",
+
+    "sub_title_five": "Penghapusan Data",
+    "desc_five": "Anda berhak meminta penghapusan data pribadi Anda dari Aplikasi. Untuk mengajukan permintaan penghapusan data, silakan hubungi kami melalui informasi kontak yang tersedia di bawah ini. Kami akan memproses permintaan Anda dalam waktu 30 (tiga puluh) hari kerja, kecuali terdapat kewajiban hukum yang mengharuskan kami menyimpan data tersebut lebih lama. Penghapusan data kesehatan tunduk pada ketentuan peraturan perundang-undangan rekam medis yang berlaku.",
+
+    "sub_title_six": "Layanan Pihak Ketiga",
+    "desc_six": "Aplikasi dapat menggunakan layanan atau pustaka pihak ketiga yang memiliki kebijakan privasi tersendiri. Kami memastikan setiap pihak ketiga yang bekerja sama dengan kami berkomitmen untuk menjaga keamanan dan kerahasiaan data pengguna. Silakan tinjau kebijakan privasi pihak ketiga terkait jika diperlukan.",
+
+    "sub_title_seven": "Privasi Anak-Anak",
+    "desc_seven": "Aplikasi ini tidak dimaksudkan untuk digunakan oleh anak-anak di bawah usia 13 tahun. Kami tidak dengan sengaja mengumpulkan atau meminta informasi pribadi dari anak-anak. Jika Anda percaya bahwa kami telah mengumpulkan informasi pribadi dari anak di bawah usia 13 tahun, harap hubungi kami segera.",
+
+    "sub_title_eight": "Perubahan pada Kebijakan Privasi Ini",
+    "desc_eight": "Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Kami akan memberi tahu Anda tentang perubahan penting dengan memposting Kebijakan Privasi yang diperbarui di dalam Aplikasi. Perubahan berlaku efektif sejak tanggal pembaruan yang tertera.",
+
+    "sub_title_nine": "Hubungi Kami",
+    "desc_nine": "Jika Anda memiliki pertanyaan, kekhawatiran, atau ingin mengajukan permintaan penghapusan data terkait Kebijakan Privasi ini, silakan hubungi kami di"
+  },
+  "help_center": {
+    "title": "Pusat Bantuan",
+    "send_email": "Kirim Email",
+    "no_handphone": "No. Handphone",
+    "whatsapp": "Whatsapp",
+    "smile_help_desk": "SMILE Help Desk",
+    "desc": "Pindai Barcode ini untuk menghubungkan kontak Helpdesk"
+  },
+  "username": {
+    "validation": {
+      "invalid": "Username hanya boleh terdiri dari huruf, angka, titik, dan garis bawah (underscore)"
+    }
+  },
+  "required": "Wajib diisi"
+}

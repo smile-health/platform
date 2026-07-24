@@ -1,0 +1,10 @@
+{
+  "title": "Lupa kata sandi",
+  "success": {
+    "description": [
+      "Permintaan perubahan password telah dikirim ke email anda",
+      "Silakan periksa email anda untuk perubahan kata sandi",
+      "Tidak menerima email?"
+    ]
+  }
+}

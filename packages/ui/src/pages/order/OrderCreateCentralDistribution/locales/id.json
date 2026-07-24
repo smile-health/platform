@@ -1,0 +1,220 @@
+{
+  "title": "Buat Distribusi Pusat Baru",
+  "section": {
+    "detail": "Detail Pesanan",
+    "material": "Material di {{form}}",
+    "distribution_table": "Tabel Distribusi Pusat",
+    "batch": {
+      "list": "Daftar Batch",
+      "add": "Buat Batch Baru",
+      "edit": "Ubah Batch"
+    }
+  },
+  "info": {
+    "confirmation": {
+      "reset": "Apakah kamu yakin untuk menghapus data yang telah diisi?",
+      "submit": "Apakah Anda yakin ingin menyimpan data ini?"
+    },
+    "material": {
+      "empty": "Lengkapi detail pesanan terlebih dahulu",
+      "available": "Klik pada kotak centang untuk memilih material. Material yang dipilih akan muncul pada tabel distribusi pusat di bawah"
+    },
+    "empty": {
+      "title": "Tidak ada data tersedia",
+      "description": {
+        "material": "Daftar ini sedang kosong. Silakan pilih material.",
+        "batch": "Daftar ini sedang kosong. Silakan tambahkan batch baru."
+      }
+    },
+    "message": {
+      "new_distribution": "distribusi pusat baru"
+    }
+  },
+  "action": {
+    "save": "Simpan",
+    "remove": "Hapus",
+    "cancel": "Batal",
+    "edit": "Ubah",
+    "new_batch": "Batch Baru",
+    "quantity": {
+      "batch": {
+        "add": "Batch",
+        "update": "Perbarui Batch"
+      },
+      "non_batch": {
+        "add": "Kuantitas",
+        "update": "Perbarui Kuantitas"
+      }
+    }
+  },
+  "form": {
+    "vendor": {
+      "label": "Pengirim",
+      "placeholder": "Pilih pengirim",
+      "validation": {
+        "required": "Pengirim wajib diisi"
+      }
+    },
+    "customer": {
+      "label": "Penerima",
+      "placeholder": "Pilih penerima",
+      "validation": {
+        "required": "Penerima wajib diisi"
+      }
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan",
+      "info": "Kegiatan yang ditampilkan hanya kegiatan yang masih aktif pada Entitas ini",
+      "validation": {
+        "required": "Kegiatan wajib diisi"
+      }
+    },
+    "delivery": {
+      "label": "Tipe Pengiriman",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Tipe pengiriman wajib diisi"
+      }
+    },
+    "date": {
+      "required": {
+        "label": "Tanggal Dibutuhkan",
+        "validation": {
+          "invalid": "Tanggal tidak boleh sebelum hari ini"
+        }
+      },
+      "expired": {
+        "label": "Tanggal Kedaluwarsa",
+        "validation": {
+          "required": "Tanggal kedaluwarsa wajib diisi",
+          "expired_date_can_not_be_in_past": "Tanggal kedaluwarsa tidak boleh kurang dari hari ini"
+        }
+      },
+      "production": {
+        "label": "Tanggal Produksi",
+        "validation": {
+          "required": "Tanggal produksi wajib diisi"
+        }
+      }
+    },
+    "do": {
+      "label": "Nomor DO",
+      "placeholder": "Masukkan nomor DO",
+      "validation": {
+        "required": "Nomor DO wajib diisi"
+      }
+    },
+    "po": {
+      "label": "Nomor Kontrak",
+      "placeholder": "Ketik atau pilih dari daftar",
+      "validation": {
+        "required": "Nomor kontrak wajib diisi"
+      }
+    },
+    "comment": {
+      "label": "Komentar",
+      "placeholder": "Masukkan komentar"
+    },
+    "material": {
+      "search": {
+        "placeholder": "Cari material"
+      },
+      "add": {
+        "placeholder": "Tambah material"
+      }
+    },
+    "order_items": {
+      "validation": {
+        "required": "Anda belum memilih material"
+      }
+    },
+    "batch": {
+      "validation": {
+        "required": "Data batch tidak boleh kosong"
+      },
+      "id": {
+        "label": "Batch ID",
+        "placeholder": "Masukkan batch ID",
+        "validation": {
+          "required": "Batch ID harus diisi"
+        }
+      }
+    },
+    "ordered_qty": {
+      "placeholder": "Masukkan kuantitas",
+      "validation": {
+        "required": "Kuantitas wajib diisi",
+        "min": "Kuantitas minimum harus setidaknya 0",
+        "pieces": "Kuantitas harus merupakan kelipatan dari {{value}}"
+      }
+    },
+    "price": {
+      "total": {
+        "placeholder": "Masukkan total harga"
+      },
+      "unit": {
+        "placeholder": "Harga/{{unit}}"
+      }
+    },
+    "manufacturer": {
+      "label": "Pabrik",
+      "placeholder": "Pilih pabrik",
+      "validation": {
+        "required": "Pabrik wajib diisi"
+      }
+    },
+    "plan": {
+      "year": {
+        "label": "Tahun Anggaran",
+        "placeholder": "Pilih tahun",
+        "validation": {
+          "required": "Tahun anggaran wajib diisi"
+        }
+      },
+      "source": {
+        "label": "Sumber Anggaran",
+        "placeholder": "Pilih sumber anggaran",
+        "validation": {
+          "required": "Sumber anggaran wajib diisi"
+        }
+      }
+    }
+  },
+  "column": {
+    "material_name": "Nama Material",
+    "selection": "Pilihan",
+    "batch_info": "Info Batch",
+    "quantity": "Kuantitas",
+    "quantity_unit": "Kuantitas (Unit: {{unit}})",
+    "plan": {
+      "year": "Tahun Anggaran",
+      "source": "Sumber Anggaran"
+    },
+    "price": {
+      "total": "Total Harga",
+      "unit": "Harga/{{unit}}"
+    },
+    "action": "Aksi"
+  },
+  "label": {
+    "batch_code": "Kode Batch",
+    "manufacturer": "Pabrik",
+    "allocated": "Alokasi",
+    "plan": {
+      "year": "Tahun Anggaran",
+      "source": "Sumber Anggaran"
+    },
+    "date": {
+      "expired": "Tanggal Kedaluwarsa",
+      "production": "Tanggal Produksi"
+    },
+    "option": {
+      "create": "Tambah {{ value }}"
+    }
+  },
+  "validation" : {
+    "batch_code_alread_exist": "Batch ID sudah tersedia dengan pabrik yang sama",
+    "manufacturer_alread_exist": "Tidak bisa menambah batch baru dengan pabrik yang sama"
+  }
+}

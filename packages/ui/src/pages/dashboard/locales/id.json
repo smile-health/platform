@@ -1,0 +1,23 @@
+{
+  "show_report": "Tampilkan Laporan",
+  "all_regions": "Semua Wilayah",
+  "export_as": "Ekspor sebagai {{format}}",
+  "empty": "Tidak ada data untuk ditampilkan",
+  "close": "Tutup",
+  "last_updated_at": "Terakhir diperbarui pada",
+  "sort": {
+    "asc": "Urutan Menaik",
+    "desc": "Urutan Menurun"
+  },
+  "data": {
+    "entity_tag": {
+      "province": "Dinas Kesehatan Provinsi",
+      "regency": "Dinas Kesehatan KabKota",
+      "primary_health_care": "Puskesmas",
+      "hospital": "Rumah Sakit"
+    },
+    "activity": {
+      "routine": "Rutin"
+    }
+  }
+}

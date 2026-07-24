@@ -1,0 +1,268 @@
+{
+  "asset_inventory": "Inventarisasi Alat Pemantau Suhu",
+  "asset_inventory_list": "Daftar Alat Pemantau Suhu",
+  "disable": "Nonaktifkan",
+  "enable": "Aktifkan",
+  "create_inventory_asset": "Buat Alat Pemantau Suhu",
+  "create": "Buat",
+  "working_status": {
+    "unsubscribed": "Unsubscribed",
+    "not_used": "Belum digunakan",
+    "defrosting": "Defrosting",
+    "unrepairable": "Tidak mungkin diperbaiki",
+    "damaged": "Rusak total",
+    "repair": "Dalam perbaikan",
+    "standby": "Berfungsi, tidak digunakan/standby",
+    "function": "Berfungsi dan digunakan",
+    "need_repair": "Butuh perbaikan"
+  },
+  "form": {
+    "title": {
+      "asset_specifications": "Spesifikasi Aset",
+      "working_status": "Status Logger",
+      "entity": "Entitas",
+      "ownership": "Kepemilikan",
+      "budget": "Anggaran",
+      "electricity": "Ketersediaan Listrik",
+      "warranty": "Garansi",
+      "calibration": "Kalibrasi",
+      "maintenance": "Pemeliharaan"
+    },
+    "validation": {
+      "group_validation": "lengkapi semua kolom pada bagian ini",
+      "not_same": "{{ field_1 }} tidak boleh sama dengan {{ field_2 }}.",
+      "must_be_higher_or_same": "{{ field_1 }} harus lebih besar atau sama dengan {{ field_2 }}.",
+      "must_be_lower_or_same": "{{ field_1 }} harus lebih kecil atau sama dengan {{ field_2 }}."
+    }
+  },
+  "columns": {
+    "other_option": "({{ option }} Lainnya)",
+    "asset_name": "Nama Aset",
+    "asset_type": { "label": "Tipe Aset", "placeholder": "Pilih tipe aset" },
+    "temperature_threshold": "Batas Suhu",
+    "other_asset_type": "Jenis Aset Lainnya",
+    "other_temperature_threshold": "Batas Suhu Lainnya",
+    "production_year": "Tahun Produksi",
+    "manufacture": {
+      "label": "Pabrik",
+      "placeholder": "Pilih pabrik"
+    },
+    "other_manufacture": "Pabrik Lainnya",
+    "relation": "Relasi",
+    "working_status": {
+      "label": "Status Aset",
+      "placeholder": "Pilih status aset"
+    },
+    "entity_tag": "Tag Entitas",
+    "entity": "Entitas",
+    "contact_person": {
+      "label": "Penanggung Jawab {{ number }}",
+      "placeholder": "Contoh: John Doe"
+    },
+    "phone_number": {
+      "label": "Nomor Telepon {{ number }}",
+      "placeholder": "Contoh: 081234567890"
+    },
+    "temperature_filter": "Filter Suhu",
+    "vendor": "Penyedia",
+    "communication_provider": "Provider Komunikasi",
+    "asset_model": "Model Aset",
+    "asset_model_name": "Nama Model Aset",
+    "temperature": "Suhu",
+    "view_temperature": "Lihat Suhu",
+    "device_status": "Status Perangkat",
+    "online": "Online",
+    "offline": "Offline",
+    "connected": "Terkoneksi",
+    "disconnected": "Terputus",
+    "done": "Sudah",
+    "not_yet": "Belum",
+    "verified": "Terverifikasi",
+    "other_asset_model": "Model Aset Lainnya",
+    "capacity": "Kapasitas",
+    "pqs_code": "Kode PQS",
+    "netto_capacity": "Kapasitas Neto {{temperature}}",
+    "serial_number": "Nomor Seri",
+    "owned_amount": {
+      "label": "Jumlah yang {{ type }}",
+      "placeholder": "contoh: 10",
+      "type": {
+        "owned": "dimiliki",
+        "borrowed": "dipinjam"
+      }
+    },
+    "electricity": "Waktu Ketersediaan Listrik (Per-hari)",
+    "own_status": "Status Kepemilikan",
+    "borrowed_from": "Dipinjam Dari",
+    "borrowed_from_others": "Dipinjam Dari (Lainnya)",
+    "maintainers": "Pemelihara",
+    "budget_year": "Tahun Anggaran",
+    "budget_source": "Sumber Anggaran",
+    "other_budget_source": "Sumber Anggaran Lainnya",
+    "asset_temperature": "Suhu Aset",
+    "asset_status": "Status Logger",
+    "ownership_qty": "Kuantitas Kepemilikan",
+    "electricity_available": "Ketersediaan Listrik",
+    "status": {
+      "label": "Status",
+      "placeholder": "Pilih status"
+    },
+    "warranty": {
+      "start_date": "Tanggal Garansi Mulai",
+      "end_date": "Tanggal Garansi Selesai"
+    },
+    "calibration": {
+      "last_calibration_date": "Tanggal Kalibrasi Terakhir",
+      "schedule": {
+        "label": "Jadwal Kalibrasi",
+        "placeholder": "Pilih jadwal kalibrasi"
+      }
+    },
+    "maintenance": {
+      "last_maintenance_date": "Tanggal Pemeliharaan Terakhir",
+      "schedule": {
+        "label": "Jadwal Pemeliharaan",
+        "placeholder": "Pilih jadwal pemeliharaan"
+      }
+    }
+  },
+  "asset_type_default": {
+    "vaccine_refrigerator": "Kulkas Vaksin",
+    "cold_room": "Ruang Dingin",
+    "freezer": "Freezer"
+  },
+  "relationship": {
+    "with_relation": "Ada Hubungan",
+    "without_relation": "Tanpa Hubungan"
+  },
+  "ownership": {
+    "owned": "Milik Sendiri",
+    "borrowed": "Pinjaman",
+    "status": "Status"
+  },
+  "temperature_logger": {
+    "normal": "Normal",
+    "above_maximum": "Di Atas Maksimum",
+    "below_minimum": "Di Bawah Minimum",
+    "maximum": "Maksimum",
+    "minimum": "Minimum"
+  },
+  "capacity": {
+    "netto_capacity": "Kapasitas Net",
+    "gross_capacity": "Kapasitas Bruto",
+    "litres": "Liter"
+  },
+  "deletion": {
+    "delete_confirmation": "Apakah anda yakin akan menghapus aset ini?",
+    "send_it": "Kirimkan",
+    "reason": "Alasan",
+    "reason_placeholder": "Tuliskan alasan di sini"
+  },
+  "asset_inventory_detail": "Detail Alat Pemantau Suhu",
+  "detail": {
+    "asset_type": "Tipe Aset",
+    "production_year": "Tahun Produksi",
+    "maintainer": "Pemelihara",
+    "asset_status": "Status Aset",
+    "temperature_threshold": "Batas Suhu",
+    "asset_inventory": "Suhu Aset",
+    "change_status": "Ubah Status",
+    "asset_logger_name": "Nama Aset/Logger",
+    "asset_logger_relation": "Relasi Aset dan Logger",
+    "sensor": "Sensor",
+    "logger": "Logger",
+    "from_date": "Tanggal Dari",
+    "to_date": "Tanggal Ke",
+    "date": "Tanggal",
+    "status": "Status",
+    "cold_chain_equipment_status": "Status Peralatan Rantai Dingin",
+    "pqs_code": "Kode PQS",
+    "net_capacity": "Kapasitas Net {{ temperature }}",
+    "more_details": "Lihat Detail Lainnya"
+  },
+  "disable_confirmation": "Apakah anda yakin akan menonaktifkan aset ini?",
+  "toast": {
+    "change_status_success": "Status asset berhasil diubah",
+    "change_status_failed": "Status asset gagal diubah",
+    "create_success": "Alat Pemantau Suhu berhasil dibuat",
+    "create_failed": "Alat Pemantau Suhu gagal dibuat",
+    "update_success": "Alat Pemantau Suhu berhasil diperbarui",
+    "update_failed": "Alat Pemantau Suhu gagal diperbarui",
+    "delete_success": "Alat Pemantau Suhu berhasil dihapus",
+    "delete_failed": "Alat Pemantau Suhu gagal dihapus"
+  },
+  "type_to_search": "Ketik untuk mencari",
+  "input_qty": "Masukkan kuantitas",
+  "back_to_detail": "Kembali ke detail inventarisasi aset",
+  "add_another_option": "Tambah opsi lainnya",
+  "other_inputs": {
+    "other_asset_type": "Tipe Aset Lainnya",
+    "other_manufacture": "Pabrik Lainnya",
+    "other_asset_model": "Model Aset Lainnya",
+    "other_budget_source": "Sumber Anggaran Lainnya",
+    "asset_type_name": "Nama Tipe Aset",
+    "minimum_temperature": "Ambang Batas Suhu Minimum",
+    "maximum_temperature": "Ambang Batas Suhu Maksimum",
+    "manufacture_name": "Nama Pabrik",
+    "asset_model_name": "Nama Model Aset",
+    "gross_capacity": "Kapasitas Bruto",
+    "netto_capacity": "Kapasitas Neto",
+    "budget_source_name": "Nama Sumber Anggaran",
+    "cannot_more_than": "Tidak bisa lebih dari {{max}}",
+    "cannot_less_than": "Tidak boleh kurang dari {{min}}",
+    "must_more_than": "Harus lebih dari {{min}}",
+    "borrowed_from_entity_name": "Nama Entitas"
+  },
+  "add_relation_asset_logger": "Tambah Relasi Aset dan Logger",
+  "input_sensor": "Masukkan jumlah sensor (1 s/d 10)",
+  "relation": {
+    "delete_relation_confirmation": "Are you sure wanna delete this relation?",
+    "yes_sure": "Yes, I'm sure",
+    "toast": {
+      "success_delete": "Relation deletion is success",
+      "failed_delete": "Relation deletion is failed",
+      "success_create": "Relation creation is success",
+      "create_failed": "Relation creation is failed"
+    },
+    "sensor_1_10": "Hanya bisa diisi angka 1 hingga 10"
+  },
+  "filter": {
+    "primary_health_care": {
+      "label": "Puskesmas",
+      "placeholder": "Pilih puskesmas"
+    }
+  },
+  "device_relation": {
+    "title": {
+      "table": "Relasi Aset Operasional & Alat Pemantau Suhu",
+      "form": "Tambah Relasi"
+    },
+    "form": {
+      "asset_type": {
+        "label": "Tipe Aset",
+        "placeholder": "Pilih tipe aset"
+      },
+      "sensor": {
+        "label": "Sensor",
+        "placeholder": "Pilih sensor"
+      },
+      "monitoring_device_name": {
+        "label": "Nama Alat Pemantau Suhu",
+        "placeholder": "Pilih Alat Pemantau Suhu"
+      }
+    },
+    "table": {
+      "no": "No",
+      "name": "Nama",
+      "sensor": "Sensor",
+      "asset_type": "Tipe Aset",
+      "asset_temperature": "Suhu Aset",
+      "action": "Aksi"
+    },
+    "button": {
+      "add": "Tambah Relasi",
+      "delete": "Hapus",
+      "save_relation": "Simpan Relasi"
+    }
+  }
+}

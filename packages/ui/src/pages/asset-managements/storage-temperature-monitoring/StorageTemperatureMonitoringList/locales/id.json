@@ -1,0 +1,63 @@
+{
+  "page": {
+    "title": "Daftar Pemantauan Penyimpanan Suhu"
+  },
+  "filter": {
+    "search": {
+      "label": "Cari",
+      "placeholder": "Cari nomor seri"
+    },
+    "asset_type": {
+      "label": "Tipe Aset",
+      "placeholder": "Pilih tipe aset"
+    },
+    "manufacturer": {
+      "label": "Pabrik",
+      "placeholder": "Pilih pabrik"
+    },
+    "asset_relation": {
+      "label": "Relasi",
+      "placeholder": "Pilih relasi"
+    },
+    "operational_status": {
+      "label": "Status Operasional",
+      "placeholder": "Pilih status operasional"
+    },
+    "device_status": {
+      "label": "Status Perangkat",
+      "placeholder": "Pilih status perangkat"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "temperature_filter": {
+      "label": "Filter Suhu",
+      "placeholder": "Pilih filter suhu"
+    },
+    "asset_model": {
+      "label": "Model Aset",
+      "placeholder": "Pilih model aset"
+    }
+  },
+  "table": {
+    "title": "Daftar Pemantauan Penyimpanan Suhu",
+    "column": {
+      "no": "No.",
+      "asset_name": "Nama Aset",
+      "asset_type": "Tipe Aset",
+      "temperature_humidity": "Suhu & Kelembapan",
+      "temperature": "Suhu",
+      "connection_power": "Koneksi & Daya",
+      "operational_status": "Status Operasional",
+      "not_related": "Belum direlasikan",
+      "not_detected": "Tidak terdeteksi",
+      "device_status": "Status Perangkat"
+    }
+  },
+  "temperature_status": {
+    "normal": "Normal",
+    "above_threshold": "Di Atas Batas",
+    "below_threshold": "Di Bawah Batas"
+  }
+}

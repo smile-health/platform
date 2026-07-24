@@ -1,0 +1,97 @@
+{
+  "title": {
+    "page": "Inventory Overview Dashboard",
+    "ema": "Material-Entity-Activity by Stock Status",
+    "temperature": "Vaccine Fridge by Temperature Status",
+    "activity": "Entity by User Activity Status",
+    "location": "Location",
+    "material": "Material Activity"
+  },
+  "information": {
+    "ema": {
+      "description": "A <b>pie chart</b> that shows the condition of materials across entities and activities based on the current stock status:",
+      "detail": [
+        "<b>Normal</b>: Stock level is between minimum and maximum thresholds",
+        "<b>Below Min</b>: Stock level is below the minimum threshold but above zero",
+        "<b>Above Max</b>: Stock level exceeds the maximum threshold",
+        "<b>Out of Stock</b>: Stock level is zero"
+      ]
+    },
+    "temperature": {
+      "description": "A <b>pie chart</b> that displays the condition of vaccine refrigerators based on the latest temperature status:",
+      "detail": [
+        "<b>Normal</b>: Temperature is within the defined lower and upper limits",
+        "<b>Low</b>: Temperature is below the lower limit",
+        "<b>High</b>: Temperature is above the upper limit",
+        "<b>Unknown</b>: No temperature data received from the logger"
+      ]
+    },
+    "activity": {
+      "description": "A <b>horizontal stacked bar chart</b> that shows the distribution of entities based on user activity status  within the last 7 days from the selected “As of Date”:",
+      "detail": [
+        "<b>Green</b>: Number of active entities",
+        "<b>Red</b>: Number of inactive entities"
+      ]
+    }
+  },
+  "form": {
+    "date": {
+      "period": {
+        "start": {
+          "label": "Periode Start"
+        },
+        "end": {
+          "label": "Periode End"
+        }
+      }
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "name": {
+        "label": "Material Name",
+        "placeholder": "Select material name"
+      }
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "operational_status": {
+      "label": "Operational Status",
+      "placeholder": "Select operational status"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "information_type": {
+      "label": "Kind of Information"
+    }
+  },
+  "all": "All",
+  "last_updated": "Last Updated",
+  "last_updated_at": "Last updated at",
+  "entity_tooltip": "{{value}}, {{count}} from 1",
+  "functional": "Function",
+  "with_relation": "With Relation",
+  "no_access_asset_management": "You do not have access to that page",
+  "temperature": {
+    "above": "Above Threshold",
+    "below": "Below Threshold"
+  }
+}

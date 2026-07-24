@@ -1,0 +1,17 @@
+{
+  "reconciliation_period": {
+    "title": "Periode Rekonsiliasi",
+    "from": "Dari",
+    "to": "Ke"
+  },
+  "list": {
+    "title": "Detail Rekonsiliasi",
+    "column": {
+      "description": "Deskripsi",
+      "smile_qty": "SMILE",
+      "real_qty": "Riil",
+      "reason": "Alasan Transaksi",
+      "action": "Aksi"
+    }
+  }
+}

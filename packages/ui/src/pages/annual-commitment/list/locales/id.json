@@ -1,0 +1,43 @@
+{
+  "title": "Komitmen Tahunan",
+  "table": {
+    "title": "Daftar Komitmen Tahunan",
+    "column": {
+      "no": "No",
+      "contract_number": "Nomor Kontrak",
+      "year": "Tahun",
+      "material": "Material",
+      "supplier": "Penyedia",
+      "lastUpdatedAt": "Terakhir Diperbarui",
+      "action": "Aksi"
+    }
+  },
+  "button": {
+    "create": "Tambah Komitmen Tahunan",
+    "import": "Impor",
+    "export": "Ekspor",
+    "downloadTemplate": "Unduh Template"
+  },
+  "field": {
+    "contract_number": {
+      "label": "Nomor Kontrak",
+      "placeholder": "Pilih nomor kontrak"
+    },
+    "year": {
+      "label": "Tahun",
+      "placeholder": "Ketik untuk mencari"
+    },
+    "materialName": {
+      "label": "Nama Material",
+      "placeholder": "Pilih nama material"
+    },
+    "supplier": {
+      "label": "Penyedia",
+      "placeholder": "Pilih penyedia"
+    },
+    "provinceReceiver": {
+      "label": "Provinsi Penerima",
+      "placeholder": "Pilih provinsi penerima"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "title": {
+    "abnormal": "Stok Abnormal",
+    "availability": "Ketersediaan Stok",
+    "count": "Tambah/Kurangi Stok",
+    "filling": "Pengisian Sampai Batas Normal",
+    "tabs": {
+      "all": "Tinjauan",
+      "entity": "Entitas",
+      "entity-material": "Entitas Material",
+      "location": "Wilayah"
+    }
+  },
+  "description": {
+    "abnormal": "Laporan Abnormal Stok merupakan laporan yang menunjukkan kondisi stok material yang tidak normal. Kondisi yang tidak normal atau Jenis Abnormal terdiri dari tiga yaitu:<br/>\"<lt/> min\" kondisi jumlah stok yang tersedia dibawah dari batas minimal stok pada entitas tersebut.<br/>\"<gt/> max\" kondisi jumlah stok yang tersedia diatas dari batas maksimal stok pada entitas tersebut.<br/>\"habis stok\" kondisi jumlah stok 0 atau habis pada entitas tersebut.",
+    "availability": "Laporan Ketersediaan Stok merupakan Laporan yang menjelaskan presentase jumlah material yang tersedia pada suatu entitas dalam periode tertentu.",
+    "count": "Laporan Hitung Stok merupakan Laporan yang menjelaskan tentang transaksi Hitung Stok, Tambah Stok dan Kurangi Stok. Transaksi Hitung Stok sudah tidak digunakan lagi fiturnya digantikan dengan Tambah Stok dan Kurangi Stok.\nTransaksi Hitung Stok masih dimunculkan dalam laporan untuk menunjukkan transaksi yang sudah pernah terjadi.",
+    "filling": "Laporan Pengisian sampai batas normal merupakan laporan yang menampilkan durasi pengisian stok dari kondisi habis stok sampai terisi stok normal. Stok normal adalah kondisi stok diatas batas minimal dan dibawah batas maksimal dalam bulan berjalan."
+  },
+  "information": {
+    "abnormal": [
+      "<b>Frekuensi:</b> Jumlah kejadian abnormal dari setiap transaksi.",
+      "<b>Durasi:</b> Total waktu kejadian abnormal diakumulasikan pada periode tertentu. dihitung sampai bertemu transaksi yang merubah status abnormal tersebut."
+    ],
+    "count": [
+      "<b>Jenis Transaksi:</b> Terdapat 3 transaksi: Hitung Stok, Tambah Stok, dan Kurangi Stok (bersifat mandatory).",
+      "<b>Alasan:</b> Pilihan alasan yang akan ditampilkan/diperhitungkan, jika tidak dipilih maka akan muncul semua alasan."
+    ]
+  },
+  "form": {
+    "period": {
+      "label": "Periode"
+    },
+    "range": {
+      "label": "Rentang Tanggal"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Pilih level KFA material"
+      },
+      "name": {
+        "label": "Material",
+        "placeholder": "Pilih material"
+      }
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "transaction_type": {
+      "label": "Jenis Transaksi",
+      "placeholder": "Pilih jenis transaksi"
+    },
+    "reason": {
+      "label": "Alasan",
+      "placeholder": "Pilih alasan"
+    },
+    "information_type": {
+      "label": "Jenis Informasi",
+      "placeholder": "Pilih jenis informasi"
+    }
+  },
+  "columns": {
+    "type": "Jenis",
+    "period": "Periode",
+    "entity": "Entitas",
+    "location": "Lokasi"
+  },
+  "data": {
+    "dayly": "Harian",
+    "weekly": "Mingguan",
+    "montly": "Bulanan",
+    "frequency": "Frekuensi",
+    "duration": "Durasi (Hari)",
+    "material_level": {
+      "active_subtance": "Produk Template"
+    },
+    "stock": {
+      "add": "Tambak Stok",
+      "empty": "Stok Habis"
+    },
+    "percent": {
+      "availability": "Persen Ketersedian",
+      "entity": "Persen Ketersedian Entitas",
+      "material": "Persen Ketersedian Material"
+    }
+  },
+  "stock": "Stok",
+  "from_to": "Dari {{from}} Sampai {{to}}",
+  "last_updated_at": "Terakhir diperbarui pada"
+}

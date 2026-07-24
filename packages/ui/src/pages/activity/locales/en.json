@@ -1,0 +1,60 @@
+{
+  "title": {
+    "activity": "Activity",
+    "settings": "Activity Settings",
+    "list": "Activity List",
+    "create": "Add Activity",
+    "edit": "Edit Activity",
+    "information": "Activity Detail",
+    "search": "Search activity"
+  },
+  "column": {
+    "name": "Activity Name",
+    "activity_process": "Activity Process",
+    "protocol": "Protocol"
+  },
+  "action": {
+    "delete": {
+      "button": "Delete Activity",
+      "confirmation": "Are you sure you want to delete this activity ?",
+      "description": "Deleted item can not turn back"
+    },
+    "status": {
+      "confirmation": [
+        "Are you sure you want to activate this ?",
+        "Are you sure you want to deactivate this ?"
+      ],
+      "description": "You will not be able to use this activity as transaction or inventory",
+      "success": {
+        "activate": "Activity successfully activated",
+        "deactivate": "Activity successfully deactivated"
+      }
+    }
+  },
+  "form": {
+    "name": {
+      "label": "Activity Name",
+      "placeholder": "Activity name",
+      "validation": {
+        "required": "Activity name is required"
+      }
+    },
+    "process": {
+      "label": "Activity Process",
+      "validation": {
+        "required": "Activity process is required"
+      }
+    },
+    "protocol": {
+      "label": "Protocol",
+      "placeholder": "Select protocol"
+    },
+    "environmental_parameter_categories": {
+      "label": "Environmental Parameter Categories",
+      "placeholder": "Select categories"
+    },
+    "is_final_distribution": {
+      "label": "Final Distribution"
+    }
+  }
+}

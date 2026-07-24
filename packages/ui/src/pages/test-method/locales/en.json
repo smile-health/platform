@@ -1,0 +1,73 @@
+{
+  "title": {
+    "settings": "Test Method",
+    "list": "Test Method List",
+    "create": "Create Test Method",
+    "edit": "Edit Test Method",
+    "detail": "Test Method Detail",
+    "information": "Test Method Information",
+    "validation": "Validation"
+  },
+  "table": {
+    "name": "Test Method Name",
+    "search": "Search test method name",
+    "quality_standard": "Quality Standard",
+    "deskripsi": "Description"
+  },
+  "form": {
+    "name": {
+      "label": "Test Method Name",
+      "placeholder": "Enter test method name"
+    },
+    "quality_standard": {
+      "label": "Quality Standard",
+      "placeholder": "Enter quality standard"
+    },
+    "deskripsi": {
+      "label": "Description",
+      "placeholder": "Enter description (optional)"
+    },
+    "result_format_type": {
+      "label": "Result Format",
+      "placeholder": "Select result format"
+    },
+    "validation_type": {
+      "label": "Validation Type",
+      "placeholder": "Select validation type",
+      "none": "Free Text",
+      "options": "Options"
+    },
+    "min_value": {
+      "label": "Minimum Value",
+      "placeholder": "0",
+      "errorMax": "Minimum value must be less than maximum value"
+    },
+    "max_value": {
+      "label": "Maximum Value",
+      "placeholder": "0",
+      "errorMin": "Maximum value must be greater than minimum value"
+    },
+    "operator": {
+      "label": "Operator",
+      "placeholder": "Select operator"
+    },
+    "comparison_value": {
+      "label": "Value",
+      "placeholder": "0"
+    },
+    "allow_decimal": {
+      "label": "Allow Decimal",
+      "error": "Decimal values are not allowed"
+    },
+    "options": {
+      "label": "Available Options",
+      "placeholder": "Enter option",
+      "add": "+ Add Option"
+    }
+  },
+  "message": {
+    "create_success": "Test method created successfully",
+    "update_success": "Test method updated successfully",
+    "delete_success": "Test method deleted successfully"
+  }
+}

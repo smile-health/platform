@@ -1,0 +1,73 @@
+{
+  "title": {
+    "settings": "Metode Pengujian",
+    "list": "Daftar Metode Pengujian",
+    "create": "Tambah Metode Pengujian",
+    "edit": "Ubah Metode Pengujian",
+    "detail": "Detail Metode Pengujian",
+    "information": "Informasi Metode Pengujian",
+    "validation": "Validasi"
+  },
+  "table": {
+    "name": "Nama Metode Pengujian",
+    "search": "Cari nama metode pengujian",
+    "quality_standard": "Standar Baku Mutu",
+    "deskripsi": "Deskripsi"
+  },
+  "form": {
+    "name": {
+      "label": "Nama Metode Pengujian",
+      "placeholder": "Masukkan nama metode pengujian"
+    },
+    "quality_standard": {
+      "label": "Standar Baku Mutu",
+      "placeholder": "Masukkan standar baku mutu"
+    },
+    "deskripsi": {
+      "label": "Deskripsi",
+      "placeholder": "Masukkan deskripsi (opsional)"
+    },
+    "result_format_type": {
+      "label": "Format Hasil",
+      "placeholder": "Pilih format hasil"
+    },
+    "validation_type": {
+      "label": "Tipe Validasi",
+      "placeholder": "Pilih tipe validasi",
+      "none": "Free Text",
+      "options": "Opsi"
+    },
+    "min_value": {
+      "label": "Nilai Minimum",
+      "placeholder": "0",
+      "errorMax": "Nilai minimum tidak boleh lebih dari atau sama dengan nilai maksimum"
+    },
+    "max_value": {
+      "label": "Nilai Maximum",
+      "placeholder": "0",
+      "errorMin": "Nilai maksimum tidak boleh kurang dari atau sama dengan nilai minimum"
+    },
+    "operator": {
+      "label": "Operator",
+      "placeholder": "Pilih operator"
+    },
+    "comparison_value": {
+      "label": "Nilai",
+      "placeholder": "0"
+    },
+    "allow_decimal": {
+      "label": "Izinkan Desimal",
+      "error": "Nilai desimal tidak diizinkan"
+    },
+    "options": {
+      "label": "Pilihan yang tersedia",
+      "placeholder": "Masukkan pilihan",
+      "add": "+ Tambah Pilihan"
+    }
+  },
+  "message": {
+    "create_success": "Metode pengujian berhasil ditambahkan",
+    "update_success": "Metode pengujian berhasil diubah",
+    "delete_success": "Metode pengujian berhasil dihapus"
+  }
+}

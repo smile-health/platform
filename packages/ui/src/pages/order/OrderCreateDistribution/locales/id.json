@@ -1,0 +1,154 @@
+{
+  "title": "Buat Distribusi Baru",
+  "section": {
+    "detail": "Detail Pesanan",
+    "material": "Material di {{form}}",
+    "distribution_table": "Tabel Distribusi",
+    "batch": "Daftar Batch"
+  },
+  "info": {
+    "confirmation": {
+      "reset": "Apakah kamu yakin untuk menghapus data yang telah diisi?",
+      "submit": "Apakah Anda yakin ingin menyimpan data ini?"
+    },
+    "material": {
+      "empty": "Lengkapi detail pesanan terlebih dahulu",
+      "available": "Klik pada kotak centang untuk memilih material. Material yang dipilih akan muncul pada tabel distribusi di bawah"
+    },
+    "empty": {
+      "title": "Tidak ada data tersedia",
+      "description": {
+        "material": "Daftar ini sedang kosong. Silakan pilih material.",
+        "stock": "Daftar ini sedang kosong. Silakan ambil stok dari Kegiatan lain."
+      }
+    },
+    "message": {
+      "new_distribution": "distribusi baru"
+    }
+  },
+  "action": {
+    "save": "Simpan",
+    "remove": "Hapus",
+    "quantity": {
+      "batch": {
+        "add": "Kuantitas Batch",
+        "update": "Perbarui Kuantitas Batch"
+      },
+      "non_batch": {
+        "add": "Kuantitas",
+        "update": "Perbarui Kuantitas"
+      }
+    }
+  },
+  "form": {
+    "vendor": {
+      "label": "Pengirim",
+      "placeholder": "Pilih pengirim",
+      "validation": {
+        "required": "Pengirim wajib diisi"
+      }
+    },
+    "customer": {
+      "label": "Penerima",
+      "placeholder": "Pilih penerima",
+      "validation": {
+        "required": "Penerima wajib diisi"
+      }
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan",
+      "info": "Kegiatan yang ditampilkan hanya kegiatan yang masih aktif pada Entitas ini",
+      "other": "Ambil Stok dari Kegiatan Lain",
+      "validation": {
+        "required": "Kegiatan wajib diisi"
+      }
+    },
+    "date": {
+      "label": "Tanggal Dibutuhkan",
+      "validation": {
+        "invalid": "Tanggal tidak boleh sebelum hari ini"
+      }
+    },
+    "comment": {
+      "label": "Komentar",
+      "placeholder": "Masukkan komentar"
+    },
+    "material": {
+      "search": {
+        "placeholder": "Cari material"
+      },
+      "add": {
+        "placeholder": "Tambah material"
+      }
+    },
+    "status": {
+      "placeholder": "Pilih status"
+    },
+    "order_items": {
+      "validation": {
+        "required": "Anda belum memilih material"
+      }
+    },
+    "batch": {
+      "validation": {
+        "required": "Data batch tidak boleh kosong",
+        "empty": "Kuantitas tidak boleh kosong"
+      }
+    },
+    "ordered_qty": {
+      "placeholder": "Masukkan kuantitas",
+      "validation": {
+        "required": "Kuantitas wajib diisi",
+        "min": "Kuantitas minimum harus setidaknya 0",
+        "multiple": "Kuantitas harus kelipatan dari {{value}}",
+        "max": "Kuantitas tidak boleh lebih dari stok tersedia"
+      }
+    },
+    "order_stock_status": {
+      "validation": {
+        "required": "Status material wajib diisi"
+      }
+    }
+  },
+  "column": {
+    "material": {
+      "name": "Nama Material",
+      "info": "Info Material",
+      "status": "Status Material"
+    },
+    "selection": "Pilihan",
+    "stock": {
+      "activity": "Stok pada {{activity}}",
+      "available": "Total Stok Tersedia",
+      "info": "Info Stok"
+    },
+    "batch_info": "Info Batch",
+    "activity": "Kegiatan",
+    "quantity": "Kuantitas",
+    "action": "Aksi"
+  },
+  "label": {
+    "activity": "Kegiatan",
+    "stock": {
+      "on_hand": "Sisa Stok",
+      "available": "Stok Tersedia",
+      "from_activity": "Stok dari Kegiatan"
+    },
+    "plan": {
+      "year": "Tahun Anggaran",
+      "source": "Sumber Anggaran"
+    },
+    "batch_code": "Kode Batch",
+    "manufacturer": "Pabrik",
+    "allocated": "Alokasi",
+    "date": {
+      "expired": "Tanggal Kedaluwarsa",
+      "production": "Tanggal Produksi"
+    },
+    "material_batch": {
+      "valid": "Batch Material",
+      "expired": "Batch Material Kedaluwarsa"
+    }
+  }
+}

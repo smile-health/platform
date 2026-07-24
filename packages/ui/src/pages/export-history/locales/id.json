@@ -1,0 +1,24 @@
+{
+  "title": "Riwayat Ekspor",
+  "filter": {
+    "search": {
+      "label": "Cari dengan",
+      "placeholder": "Cari nama file"
+    },
+    "request_date": {
+      "label": "Tanggal Permintaan"
+    },
+    "program": {
+      "label": "Program",
+      "placeholder": "Pilih program",
+      "without_program": "Tanpa Program"
+    },
+    "reset": "Reset"
+  },
+  "empty": {
+    "title": "Data tidak tersedia",
+    "description": "Tidak ada file ekspor yang ditemukan. File ekspor muncul di sini selama 7 hari. Untuk melihatnya, ekspor data dari fitur terkait."
+  },
+  "note": "Item dalam daftar ini akan dihapus selamanya setelah 7 hari",
+  "download": "Unduh"
+}

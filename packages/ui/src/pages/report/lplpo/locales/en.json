@@ -1,0 +1,46 @@
+{
+  "title": "Drug Usage Report and Request Form",
+  "form": {
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "subdistrict": {
+      "label": "Subdistrict",
+      "placeholder": "Select subdistrict"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "entity": {
+      "label": "Entity",
+      "placeholder": "Select entity"
+    },
+    "month-year": {
+      "label": "Period",
+      "placeholder": "Select period"
+    },
+    "year": {
+      "label": "Year",
+      "placeholder": "Select year"
+    }
+  },
+  "export_all_entities": "Export All Entities",
+  "export_with_filter": "Export with Filter",
+  "column": {
+    "material": "Material Info",
+    "unit": "Unit",
+    "opening_stock": "Opening Stock",
+    "closing_stock": "Closing Stock",
+    "receive": "Receive",
+    "usage": "Usage",
+    "budget_source": "Budget Source",
+    "description": "Description"
+  },
+  "yes" : "Yes"
+}

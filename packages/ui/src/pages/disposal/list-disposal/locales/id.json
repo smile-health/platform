@@ -1,0 +1,108 @@
+{
+  "meta": "SMILE | Total Pembuangan",
+  "title": "Total Pembuangan",
+  "filter": {
+    "label": {
+      "activity": "Kegiatan",
+      "material_type": "Tipe Material",
+      "material_hirearchy": "Material - Produk Template",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "expired_from": "Kedaluwarsa Dari",
+      "expired_to": "Kedaluwarsa Sampai",
+      "entity": "Entitas",
+      "entity_tag": "Tag Entitas",
+      "province": "Provinsi",
+      "city": "Kota/Kabupaten",
+      "primary_health_care": "Puskesmas",
+      "primary_vendor": "Penyedia Utama"
+    },
+    "placeholder": {
+      "activity": "Cari Kegiatan",
+      "material_type": "Pilih tipe material",
+      "material": "Pilih material",
+      "expired_date": "dd/mm/yyyy - dd/mm/yyyy",
+      "expired_from": "dd/mm/yyyy",
+      "expired_to": "dd/mm/yyyy",
+      "entity": "Cari nama entitas",
+      "entity_tag": "Pilih tag entitas",
+      "province": "Pilih provinsi",
+      "city": "Pilih Kabupaten/Kota",
+      "primary_health_care": "Pilih puskesmas",
+      "primary_vendor": "Pilih penyedia utama",
+      "batch": "Pilih batch"
+    },
+    "button": {
+      "close_all_filters": "Tutup Semua Filter"
+    },
+    "value": {
+      "material_type": [
+        "Vaksin",
+        "Logistik BHP"
+      ]
+    }
+  },
+  "table": {
+    "column": {
+      "si_no": "No.",
+      "enitity_name": "Nama Entitas",
+      "stock_from_discard": "Pembuangan dari Internal",
+      "stock_from_received": "Pembuangan dari Eksternal",
+      "action": "Aksi",
+      "updated_at": "Terakhir Diperbarui",
+      "activity_name": "Kegiatan",
+      "production_date": "Tanggal Produksi",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "manufacture_name": "Nama Pabrik"
+    },
+    "action": {
+      "detail": "Detail",
+      "reason": "Lihat Alasan"
+    }
+  },
+  "detail": {
+    "title": "Detail Pembuangan",
+    "meta": "SMILE | Detail Pembuangan",
+    "entity": {
+      "title": "Entitas",
+      "name": "Nama Entitas",
+      "address": "Alamat",
+      "updated_at": "Diperbarui Pada"
+    },
+    "material": {
+      "name": "Nama Material",
+      "title": "Material",
+      "active_ingredient": "Material Produk Template",
+      "total_stock_disposal": "Total Pembuangan",
+      "stock_from_discard_transaction": "Pembuangan dari Internal",
+      "stock_from_received_disposal": "Pembuangan dari Eksternal",
+      "stock_from_discard": "Pembuangan dari Internal",
+      "stock_from_received": "Pembuangan dari Eksternal"
+    },
+    "activity": {
+      "title": "Kegiatan"
+    },
+    "trademark": {
+      "title": "Produk Varian",
+      "table": {
+        "column": {
+          "sl_no": "No. Urut",
+          "material": "Material",
+          "stock_from_discard": "Pembuangan dari Internal",
+          "stock_from_received": "Pembuangan dari Eksternal",
+          "updated_at": "Diperbarui pada",
+          "action": "Aksi",
+          "batch_info": "Info Batch"
+        },
+        "action": {
+          "view_detail": "Lihat Detail"
+        }
+      }
+    }
+  },
+  "modal": {
+    "batch_detail_title": "Lihat Detail Batch",
+    "batch_disposal_history": "Riwayat Pembuangan",
+    "batch_total_shipment": "Total Pengiriman Pemusnahan",
+    "batch_total_self_disposal": "Total Pemusnahan Mandiri"
+  }
+}

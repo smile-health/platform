@@ -1,0 +1,130 @@
+{
+  "list": {
+    "title": "Pengaturan Model Aset",
+    "list": "Pengaturan Model Aset",
+    "add": "Tambah Model Aset",
+    "status": "Status Model Aset",
+    "tab": {
+      "list": "Daftar Model Aset",
+      "create": "Tambah Model Aset"
+    },
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari model aset"
+      },
+      "asset_type": {
+        "label": "Tipe Asset",
+        "placeholder": "Pilih tipe asset"
+      },
+      "manufacturer": {
+        "label": "Pabrik",
+        "placeholder": "Pilih pabrik"
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Pilih program"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "name": "Nama Model Aset",
+      "type": "Tipe: {{ type }}",
+      "manufacturer": "Pabrik: {{ manufacturer }}",
+      "workspace": "Program",
+      "update_at": "Diperbarui pada",
+      "update_by": "Diperbarui oleh",
+      "action": "Aksi",
+      "asset_gross_capacity": "Kapasitas Gross Aset (liter)",
+      "asset_netto_capacity": "Kapasitas Net Aset (liter)",
+      "capacity": "{{ 1st_value }} Kapasitas {{ 2nd_value }} "
+    },
+    "import": {
+      "model_asset_cce_with_pqs": "Model Aset dengan PQS",
+      "model_asset_cce_without_pqs": "Model Aset tanpa PQS",
+      "model_asset_non_cce": "Model Aset tanpa CCE",
+      "model_asset_warehouse": "Model Aset Gudang"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Tambah Model Aset",
+      "detail": "Detail Model Aset",
+      "edit": "Ubah Model Aset",
+      "capacity": "Kapasitas Model Aset"
+    },
+    "detail": {
+      "capacity": {
+        "header": "Kapasitas",
+        "warning": "Perubahan tidak diizinkan. Model Aset ini sudah memiliki hubungan dengan Aset.",
+        "header_pqs": "Kapasitas WHO PQS",
+        "column": {
+          "gross_capacity": "Kapasitas Gross",
+          "net_capacity": "Kapasitas Net",
+          "category": "Kategori"
+        }
+      },
+      "label": {
+        "name": "Nama Model Aset",
+        "type": "Tipe Asset",
+        "manufacturer": "Pabrik",
+        "gross_capacity": "Kapasitas Gross",
+        "netto_capacity": "Kapasitas Net",
+        "last_updated_at": "Terakhir Diupdate Pada",
+        "last_updated_by": "Terakhir Diupdate Oleh",
+        "pqs_code": "Kode PQS",
+        "is_capacity_required": "Apakah data kapasitas diperlukan?",
+        "add_more": "Tambah kapasitas",
+        "asset_utilization": {
+          "label": "Penggunaan Aset",
+          "is_warehouse": "Gudang",
+          "is_cce": "Cold Chain Equipment",
+          "other": "Aset General"
+        }
+      },
+      "placeholder": {
+        "name": "contoh: Mesin Test",
+        "type": "Pilih tipe",
+        "manufacturer": "Pilih pabrik",
+        "gross_capacity": "contoh: 3.14",
+        "netto_capacity": "contoh: 3.14",
+        "pqs_code": "Pilih kode PQS"
+      },
+      "validation": {
+        "gross_capacity": {
+          "greater_than": "Kapasitas gross harus lebih besar dari kapasitas net",
+          "min": "Kapasitas gross harus lebih besar dari {{ min }}"
+        },
+        "net_capacity": {
+          "less_than": "Kapasitas net harus lebih kecil dari kapasitas gross",
+          "min": "Kapasitas net harus lebih besar dari {{ min }}"
+        },
+        "name": {
+          "duplicate": "Nama model aset sudah ada. Silahkan pilih Tipe Asset dan Pabrik yang berbeda."
+        }
+      }
+    },
+    "program": {
+      "title": "Program",
+      "without_program": "Tidak ada program"
+    }
+  },
+  "detail": {
+    "title": "Detail Model Aset"
+  },
+  "action": {
+    "delete": {
+      "button": "Hapus",
+      "confirmation": "Apakah Anda yakin ingin menghapus model aset ini?",
+      "description": "Item yang dihapus tidak dapat dikembalikan"
+    },
+    "activate": {
+      "confirmation": "Apakah anda yakin akan mengaktifkan model aset ini?"
+    },
+    "deactivate": {
+      "confirmation": "Apakah anda yakin akan menonaktifkan model aset ini?"
+    }
+  }
+}

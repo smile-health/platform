@@ -1,0 +1,78 @@
+{
+  "list": {
+    "title": "Asset Vendor Settings",
+    "list": "Asset Vendor Settings",
+    "add": "Add Asset Vendor",
+    "status": "Asset Vendor Status",
+    "tab": {
+      "list": "Asset Vendor List",
+      "create": "Add Asset Vendor"
+    },
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search asset vendor"
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Select program"
+      },
+      "type": {
+        "label": "Asset Vendor Type",
+        "placeholder": "Select type"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "name": "Asset Vendor Name",
+      "type": "Asset Vendor Type",
+      "workspace": "Program",
+      "last_updated_at": "Last Updated At",
+      "last_updated_by": "Last Updated By",
+      "action": "Action"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Add Asset Vendor",
+      "detail": "Asset Vendor Detail",
+      "edit": "Edit Asset Vendor"
+    },
+    "detail": {
+      "label": {
+        "name": "Asset Vendor Name",
+        "type": "Asset Vendor Type",
+        "description": "Description",
+        "last_updated_at": "Last Updated At",
+        "last_updated_by": "Last Updated By"
+      },
+      "placeholder": {
+        "name": "Asset vendor name",
+        "type": "Type to search",
+        "description": "Description"
+      }
+    },
+    "program": {
+      "title": "Programs",
+      "without_program": "No program applied"
+    }
+  },
+  "detail": {
+    "title": "Asset Vendor Detail"
+  },
+  "action": {
+    "delete": {
+      "button": "Delete",
+      "confirmation": "Are you sure want to delete this asset vendor?",
+      "description": "Deleted item can not turn back"
+    },
+    "activate": {
+      "confirmation": "Are you sure you want to activate this asset vendor?"
+    },
+    "deactivate": {
+      "confirmation": "Are you sure you want to deactivate this asset vendor?"
+    }
+  }
+}

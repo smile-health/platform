@@ -1,0 +1,198 @@
+{
+  "title": "Transaction",
+  "transaction_list": "Transaction List",
+  "transaction_detail": "Transaction Detail",
+  "transaction_create": "Create New Transaction",
+  "filter": {
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Choose activity"
+    },
+    "material_type": {
+      "label": "Material Type",
+      "placeholder": "Choose material type"
+    },
+    "material": {
+      "label": "Material",
+      "placeholder": "Choose material"
+    },
+    "transaction_type": {
+      "label": "Transaction Type",
+      "placeholder": "Choose transaction type"
+    },
+    "reason": {
+      "label": "Reason",
+      "placeholder": "Choose reason"
+    },
+    "has_order": {
+      "label": "Has Order",
+      "placeholder": "Choose has order"
+    },
+    "order_type": {
+      "label": "Order Type",
+      "placeholder": "Choose order type"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Choose entity tag"
+    },
+    "primary_vendor": {
+      "label": "Primary Vendor",
+      "placeholder": "Choose primary vendor"
+    },
+    "integrated_healthcare": {
+      "label": "Primary Health Care",
+      "placeholder": "Choose primary health care"
+    },
+    "consumption_customer_tag": {
+      "label": "Last Mile Receiver Tag",
+      "placeholder": "Choose last mile receiver tag"
+    },
+    "consumption_customer": {
+      "label": "Last Mile Receiver",
+      "placeholder": "Choose last mile receiver"
+    },
+    "material_kfa_level": {
+      "label": "Level KFA Material",
+      "placeholder": "Choose KFA Material Level"
+    }
+  },
+  "order_number": "Order Number",
+  "others": {
+    "active_substance_and_strength": "Product Template"
+  },
+  "has_order_options": {
+    "yes": "Has Order",
+    "no": "Has No Order"
+  },
+  "order_type_options": {
+    "order": "Order",
+    "allocation": "Allocation",
+    "return": "Return",
+    "routine_allocation": "Routine Allocation"
+  },
+  "columns": {
+    "si_no": "SI No.",
+    "entity_name": "Entity Name",
+    "material": "Material Info",
+    "activity": "Activity",
+    "opening_stock": "Opening (dosage/pcs)",
+    "transaction_type": "Transaction Type",
+    "order_number": "Order Number",
+    "quantity": "Quantity (dosage/pcs)",
+    "closing_stock": "Closing (dosage/pcs)",
+    "action": "Action",
+    "device_type": "Device",
+    "mobile_phone": "Mobile Phone",
+    "web": "Web",
+    "created_by": "Created by",
+    "view_batch": "View Batch",
+    "open_vial": "Open Vial",
+    "close_vial": "Closed Vial",
+    "stock_history": "Stock History",
+    "created_at": "Created At"
+  },
+  "batch_columns": {
+    "material_name": "Material Name",
+    "batch_from": "Batch From",
+    "patient": "Patient",
+    "taken_from_activity_stock": "Taken From Activity Stock",
+    "batch_code": "Batch Code",
+    "expired_date": "Expired Date",
+    "production_date": "Production Date",
+    "manufacturer": "Manufacturer",
+    "actual_tranasction_date": "Actual Transaction Date",
+    "source_of_fund": "Budget Source",
+    "budget_year": "Budget Year",
+    "price": "Price",
+    "total_price": "Total Price",
+    "view_patient": "View Patient"
+  },
+  "patient_columns": {
+    "patient_from": "Patient From Batch Code",
+    "identity_type": "Identity Type",
+    "patient_id": "Patient ID",
+    "nik": "NIK",
+    "passport": "Passport",
+    "vaccination_method": "Vaccination Method",
+    "vaccination_sequence": "Vaccination Sequence"
+  },
+  "list_transaction_create": {
+    "dispatching": "Dispatching",
+    "discard": "Discard",
+    "return_health_facilities": "Return",
+    "add_stock": "Add Stock",
+    "reduce_stock": "Reduce Stock",
+    "cancellation_of_discard": "Cancellation of Discard",
+    "general_transaction": "General Transaction"
+  },
+  "detail": {
+    "vaccination": {
+      "title": "Vaccination",
+      "alert_updated_by": "This transaction was updated by {{entityName}} on {{transactionDate}}",
+      "sequence": "Sequence",
+      "age_at_vaccination": "Age At Vaccination",
+      "material_status": "Material Status",
+      "disease_history": "Disease History",
+      "type": "Type",
+      "method": "Method"
+    },
+    "side_effect": {
+      "title": "KIPI History",
+      "reaction": "Reaction",
+      "at": "at",
+      "add": {
+        "title": "Add KIPI Report",
+        "button_add": "Add KIPI",
+        "reaction_type": {
+          "label": "Reaction After Vaccination",
+          "placeholder": "Select reaction",
+          "error": "Reaction after vaccination is required"
+        },
+        "other_reaction": {
+          "label": "Other Reaction",
+          "placeholder": "Input other reaction",
+          "error": "Other reaction is required"
+        },
+        "actual_reaction_date": {
+          "label": "Actual Reaction Date",
+          "placeholder": "Select date",
+          "error": {
+            "required": "Actual reaction date is required",
+            "invalid": "The actual reaction date must be between the date of vaccination and 30 days after the date of vaccination"
+          }
+        },
+        "success": "Successfully add KIPI Report"
+      }
+    },
+    "patient_identity": {
+      "title": "Patient Identity",
+      "number": "Identity Number",
+      "nik": "NIK",
+      "passport": "Passport",
+      "fullname": "Full Name",
+      "gender": "Gender",
+      "date_of_birth": "Date of Birth",
+      "current_age": "Current Age",
+      "status": "Marital",
+      "province": "Province",
+      "regency": "Regency",
+      "district": "Village/District",
+      "last_education": "Last Education",
+      "occupation": "Occupation",
+      "religion": "Religion",
+      "ethnicity": "Ethnicity",
+      "phone_number": "Phone Number",
+      "residential_address": "Residential Address",
+      "registered_address": "Registered Address"
+    },
+    "disease_history": {
+      "title": "Disease History & Prevention",
+      "dengue": {
+        "has_dengue_question": "Has the patient ever suffered from dengue before?",
+        "last_time_dengue_question": "When was the last time the patient suffered from dengue?",
+        "has_vaccination_question": "Has the patient ever received vaccination for this disease voluntarily?"
+      }
+    }
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "title": "Transaksi {{type}}",
+  "transaction_form": "Form Transaksi",
+  "transaction_detail": "Detail Transaksi",
+  "select_activity": "Pilih Kegiatan",
+  "placeholder_select_activity": "Pilih kegiatan",
+  "caption_activity": "Kegiatan yang ditampilkan hanya kegiatan yang masih aktif di entitas ini",
+  "entity_name": "Nama Entitas",
+  "select_entity": "Pilih nama entitas",
+  "transaction_type": "Tipe Transaksi",
+  "select_transaction_type": "Pilih tipe transaksi",
+  "transaction_table": "Tabel Transaksi",
+  "send": "Kirim",
+  "reset": "Reset",
+  "search_material": "Cari material",
+  "caption_choose_material": "Klik pada kotak centang untuk memilih material. Material yang dipilih akan muncul pada tabel transaksi di bawah ini",
+  "table": {
+    "column": {
+      "material_name": "Nama Material",
+      "activity": "Kegiatan",
+      "stock_on_hand": "Sisa Stok",
+      "available_stock": "Stok Tersedia",
+      "quantity": "Kuantitas",
+      "action": "Aksi",
+      "stock_on_acitvity": "Stok di {{activity_name}}",
+      "total_available_stock": "Total Stok Tersedia",
+      "selection": "Seleksi"
+    },
+    "placeholder": {
+      "reason": "Pilih alasan",
+      "material_status": "Pilih status material",
+      "add_material": "Tambah material"
+    }
+  },
+  "transaction_remove_stock": {
+    "title": "Transaksi Kurangi Stok",
+    "batch_list": "Daftar Batch",
+    "material_detail": "Detail Material",
+    "input_table": {
+      "column": {
+        "activity": "Kegiatan",
+        "material": "Material",
+        "material_info": "Informasi Material",
+        "stock_info": "Informasi Stok",
+        "stock_on_hand": "Sisa Stok",
+        "available_stock": "Stok Tersedia",
+        "quantity": "Kuantitas",
+        "reason": "Alasan",
+        "action": "Aksi",
+        "batch": "Batch",
+        "other": "Lainnya",
+        "placeholder": {
+          "reason": "Pilih alasan",
+          "other": "Masukkan Lainnya"
+        },
+        "validation": {
+          "min_qty": "Minimal 1 Kuantitas harus diisi",
+          "max_input_qty": "Tidak Bisa Input Kuantitas lebih dari Stok Tersedia",
+          "quantity_must_multiply": "Kuantitas harus kelipatan dari {{number}}"
+        },
+        "toast": {
+          "success": {
+            "create": "Berhasil menyimpan transaksi hapus stok"
+          }
+        },
+        "reset": "Reset",
+        "budget_source": "Sumber Anggaran",
+        "restricted_budget_source": "Sumber Anggaran Terbatas"
+      },
+      "detail_column": {
+        "batch_detail_from": "{{batchOrDetil}} Dari {{source}}",
+        "batch_code": "Kode Batch",
+        "batch_info": "Informasi Batch",
+        "stock_info": "Informasi Stok",
+        "production_date": "Tanggal Produksi",
+        "manufacturer": "Pabrik",
+        "expired_date": "Tanggal Kedaluwarsa",
+        "allocated": "Dialokasikan",
+        "material_status": "Status Material",
+        "placeholder": {
+          "status": "Pilih Status",
+          "qty": "Masukkan kuantitas"
+        }
+      }
+    }
+  },
+  "transaction_return_from_facility": {
+    "title_table": "Tabel Transaksi Retur Distribusi Akhir",
+    "batch_list": "Daftar Batch",
+    "material_detail": "Detail Material",
+    "take_stock_from_ohter_activities": "Ambil Stok dari Kegiatan Lain",
+    "taken_from": "Diambil dari",
+    "taken_from_activity": "Diambil dari Kegiatan",
+    "description_select_transaction": "Pilih filter untuk menampilkan transaksi yang ingin Anda kembalikan",
+    "description_consumption_table": "Klik pada baris tabel untuk memilih transaksi yang ingin Anda kembalikan",
+    "patient_part": {
+      "patient_id": "ID Pasien",
+      "vaccination_sequence": "Urutan Vaksinasi",
+      "identity_type": "Jenis Identitas",
+      "phone_number": "Nomor Handphone",
+      "nik": "NIK",
+      "passport": "Paspor",
+      "vaccination_info": "Informasi Vaksinasi",
+      "type": "Jenis",
+      "method": "Metode"
+    },
+    "transaction_date": "Tanggal Transaksi",
+    "input_table": {
+      "column": {
+        "activity": "Kegiatan",
+        "material": "Material",
+        "material_info": "Informasi Material",
+        "stock_info": "Informasi Stok",
+        "stock_on_hand": "Sisa Stok",
+        "available_stock": "Stok Tersedia",
+        "quantity": "Kuantitas",
+        "quantity_info": "Informasi Kuantitas",
+        "max_return_qty": "Kuantitas Retur Maksimal",
+        "max_consumption_qty": "Kuantitas Distribusi Akhir Maksimal",
+        "returned_amount": "Jumlah yang Dikembalikan",
+        "discarded_amount": "Jumlah yang Dibuang",
+        "discard_reason": "Alasan Dibuang",
+        "number_or_returns_in_stock": "Jumlah Retur di Stok",
+        "reason": "Alasan",
+        "action": "Aksi",
+        "batch": "Batch",
+        "patient_info": "Info Pasien",
+        "stock_from_activity": "Stok Dari Kegiatan",
+        "other": "Lainnya",
+        "open_vial": "Vial Terbuka",
+        "close_vial": "Vial Tertutup",
+        "placeholder": {
+          "reason": "Pilih alasan dibuang",
+          "other": "Masukkan Lainnya"
+        },
+        "validation": {
+          "max_input_qty": "{{input}} tidak boleh lebih dari {{target}}",
+          "quantity_must_multiply": "{{target}} harus kelipatan dari {{number}}",
+          "error_actual_date": "Tanggal Aktual tidak boleh kurang dari hari ini",
+          "minimum_1": "Kuantitas harus lebih dari 0",
+          "cannot_more_than": "Kuantitas tidak boleh lebih dari {{max}}",
+          "must_less_than": "Kuantitas harus kurang dari {{max}}",
+          "must_equal_open_vial": "Vial terbuka yang dibuang harus sama dengan jumlah vial terbuka yang dikembalikan"
+        },
+        "toast": {
+          "success": {
+            "create": "Berhasil menyimpan transaksi retur"
+          }
+        },
+        "reset": "Reset"
+      },
+      "detail_column": {
+        "batch_detail_from": "{{batchOrDetil}} dari {{source}}",
+        "batch_code": "Kode Batch",
+        "batch_info": "Informasi Batch",
+        "max_return": "Retur Maksimal",
+        "return_amount": "Jumlah Retur",
+        "close_vial": "Vial Tertutup",
+        "open_vial": "Vial Terbuka",
+        "is_anything_discarded": "Apakah ada yang dibuang?",
+        "qty_discarded": "Kuantitas yang dibuang",
+        "close_vial_discarded": "Vial Tertutup yang dibuang",
+        "discard_reason": "Alasan Dibuang",
+        "number_of_returns_in_stock": "Jumlah retur di stok",
+        "production_date": "Tanggal Produksi",
+        "manufacturer": "Pabrik",
+        "expired_date": "Tanggal Kedaluwarsa",
+        "allocated": "Dialokasikan",
+        "material_status": "Status Material",
+        "placeholder": {
+          "status": "Pilih Status",
+          "qty": "Masukkan kuantitas"
+        }
+      }
+    }
+  },
+  "transaction_discard": {
+    "detail": {
+      "title": "Batch dari aktifitas {{activity}} & {{material}}"
+    },
+    "form": {
+      "validation": {
+        "qty": {
+          "unit": "Kuantitas harus kelipatan {{amount}}",
+          "amount": "Kuantitas harus lebih dari 0",
+          "max": "Kuantitas tidak boleh lebih dari max retur"
+        },
+        "open_vial": "Vial terbuka harus sama dengan jumlah stok vial terbuka",
+        "close_vial": "Vial Tertutup harus kelipatan {{value}}",
+        "qty_cannot_more_than": "Kuantitas tidak boleh lebih dari {{value}}",
+        "close_vial_cannot_more_than": "Vial Tertutup tidak boleh lebih dari {{value}}"
+      },
+      "table": {
+        "title": {
+          "detail": "Daftar Detail",
+          "batch": "Daftar Batch"
+        },
+        "column": {
+          "material": "Info Material",
+          "batch": "Info Batch",
+          "stock": "Info Stok",
+          "activity": "Kegiatan",
+          "quantity": "Kuantitas",
+          "material_status": "Status Material",
+          "reason": "Alasan",
+          "action": "Aksi",
+          "open_vial": "Vial Terbuka",
+          "close_vial": "Vial Tertutup",
+          "open_close_vial": "{{open}} (vial terbuka) {{close}} (vial tertutup)"
+        },
+        "description": {
+          "stock": {
+            "on_hand": [
+              "Sisa Stok: {{value}}",
+              "Sisa Stok"
+            ],
+            "available": [
+              "Stok Tersedia: {{value}}",
+              "Stok Tersedia"
+            ],
+            "allocated": "Dialokasikan: {{value}}"
+          },
+          "batch": {
+            "production_date": "Tanggal Produksi: {{value}}",
+            "manufacturer": "Pabrik: {{value}}",
+            "expired_date": "Tanggal Kedaluwarsa: {{value}}",
+            "code": "Kode Batch: {{value}}",
+            "reason": "Alasan: {{value}}"
+          }
+        },
+        "placeholder": {
+          "qty": "Masukkan kuantitas",
+          "status": "Pilih status",
+          "reason": "Pilih alasan"
+        }
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Berhasil menyimpan Transaksi Pembuangan"
+      }
+    }
+  },
+  "transaction_type_list": {
+    "stock_count": "Stock Count",
+    "last_mile": "Distribusi Akhir",
+    "receive": "Penerimaan",
+    "discard": "Pembuangan",
+    "return_of_health_facilities": "Retur Distribusi Akhir",
+    "open_vial_acceptance": "Penerimaan Vial Terbuka",
+    "add_stock": "Tambah Stok",
+    "remove_stock": "Kurangi Stok",
+    "cancellation_of_discard": "Pembatalan Pembuangan",
+    "transfer_stock": "Relokasi Antar Program"
+  },
+  "cancel_transaction_discard": {
+    "description": "Pilih filter untuk menampilkan transaksi yang ingin Anda batalkan",
+    "table": {
+      "discard": {
+        "title": "Tabel Transaksi Pembuangan",
+        "description": "Klik pada baris tabel untuk memilih transaksi yang ingin Anda batalkan",
+        "column": {
+          "transaction_date": "Tanggal Transaksi",
+          "activity": "Kegiatan",
+          "reason": "Alasan",
+          "quantity": "Kuantitas",
+          "batch": "Info Batch",
+          "selection": "Seleksi",
+          "taken": "Diambil dari: {{value}}",
+          "taken_activity": "Diambil dari Kegiatan",
+          "manufacture": "Pabrik: {{value}}",
+          "expired_date": "Tanggal kedaluwarsa: {{value}}",
+          "quantity_accumulation": "Akumulasi Kuantitas",
+          "action": "Aksi",
+          "detail": "Detail",
+          "remove": "Hapus"
+        }
+      },
+      "cancel": {
+        "title": "Tabel Transaksi Pembatalan Buang"
+      },
+      "detail": {
+        "title": [
+          "Kode Batch",
+          "Pabrik",
+          "Tanggal Kedaluwarsa",
+          "Akumulasi Kuantitas"
+        ]
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Berhasil menyimpan Transaksi Pembatalan Pembuangan"
+      }
+    }
+  },
+  "label_back": "Kembali ke Daftar Transaksi",
+  "title_material_select": "Material di {{entity_name}}",
+  "customer": "Penerima",
+  "select_customer": "Pilih penerima",
+  "actual_last_mile_date": "Tanggal Aktual Distribusi Akhir",
+  "actual_return_date": "Tanggal Aktual Retur",
+  "remove_dialog": {
+    "question_one": "Apakah Anda yakin ingin menghapus ini?",
+    "question_two": "Semua informasi yang telah Anda masukkan dalam materi ini akan hilang."
+  },
+  "reset_dialog": {
+    "title": "Konfirmasi",
+    "description": "Apakah kamu yakin untuk menghapus data yang telah diisi?"
+  },
+  "alert_save_batch": "Tidak ada item yang dipilih. Silakan tinjau material yang ditambahkan dan tekan tombol simpan pada batch untuk menyimpan perubahan.",
+  "transaction_transfer_stock": {
+    "destination_program": {
+      "label": "Program Tujuan",
+      "placeholder": "Cari nama program"
+    },
+    "table_material": {
+      "caption_table_material": "Pilih entitas dan program tujuan terlebih dahulu",
+      "warning": "Hanya materi yang tersedia di kedua program yang dipilih yang akan muncul dalam daftar",
+      "material_name": "Nama Material",
+      "total_available_stock": "Total Stok Tersedia",
+      "selection": "Seleksi"
+    },
+    "validation": {
+      "quantity_must_multiply": "Kuantitas harus merupakan kelipatan dari {{number}}",
+      "required_materials": "Belum ada materi yang ditambahkan",
+      "max_qty": "Kuantitas tidak dapat melebihi dari stok yang tersedia",
+      "min_qty": "Kuantitas harus lebih dari 0"
+    },
+    "table": {
+      "material_info": "Informasi Material",
+      "available_stock": "Stok Tersedia",
+      "quantity": "Kuantitas",
+      "destination_activity": "Kegiatan Tujuan",
+      "action": "Aksi"
+    },
+    "table_batch": {
+      "batch_info": "Informasi {{type}}",
+      "activity": "Kegiatan",
+      "total_available_stock": "Total Stok Tersedia",
+      "budget_info": "Informasi Anggaran",
+      "quantity": "Kuantitas",
+      "production_date": "Tanggal Produksi",
+      "manufacturer": "Pabrik",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "budget_source": "Sumber Anggaran",
+      "price": "Harga",
+      "total_price": "Total Harga"
+    },
+    "caption_detail_batch": "Daftar {{type}}",
+    "enter_qty": "Masukkan kuantitas",
+    "stock_from_activity": "Stok dari kegiatan",
+    "batch_code": "Kode batch",
+    "toast": {
+      "success": {
+        "create": "Berhasil menyimpan transaksi relokasi antar program"
+      }
+    },
+    "empty_material": "Daftar ini saat ini kosong. Tidak ada materi yang memenuhi syarat.",
+    "empty_program": "Daftar ini saat ini kosong. Silakan pilih entitas.",
+    "empty_transaction_table": "Daftar ini saat ini kosong. Silakan pilih material.",
+    "empty_program_already_requested": "Daftar ini saat ini kosong. Silakan hubungi layanan bantuan untuk meminta entri baru.",
+    "no_data_found": "Data tidak ditemukan",
+    "desc_acknowledge_one": "Harap pastikan bahwa pemindahan ini telah diketahui oleh program tujuan",
+    "desc_acknowledge_two": "Relokasi ini sudah diketahui oleh semua program tujuan"
+  },
+  "save": "Simpan"
+}

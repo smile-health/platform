@@ -1,0 +1,40 @@
+{
+  "title": "Populasi",
+  "import": {
+    "form": {
+      "year": {
+        "label": "Tahun Rencana",
+        "placeholder": "Pilih tahun rencana",
+        "error": "Tahun rencana wajib diisi"
+      },
+      "file": {
+        "error": "File wajib diisi"
+      }
+    }
+  },
+  "toast": {
+    "download": {
+      "success": "Template populasi telah berhasil diunduh"
+    },
+    "import": {
+      "success": "Data populasi berhasil diimpor",
+      "error": "Data populasi gagal diimpor"
+    },
+    "export": {
+      "success": "Data populasi berhasil diekspor",
+      "error": "Data populasi gagal diekspor"
+    }
+  },
+  "empty": {
+    "no_filter": {
+      "title": "Tidak ada filter yang dipilih",
+      "description": "Silakan pilih filter untuk menampilkan data populasi."
+    }
+  },
+  "active": {
+    "confirmation": {
+      "description": "Apakah kamu yakin untuk mengaktifkan populasi ini?",
+      "success": "Populasi berhasil diaktifkan"
+    }
+  }
+}

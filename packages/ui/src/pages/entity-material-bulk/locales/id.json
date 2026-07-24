@@ -1,0 +1,61 @@
+{
+  "title": "Pengaturan Impor Entitas Material",
+  "list": {
+    "column": {
+      "import": "Diimpor Oleh",
+      "entities": "Entitas",
+      "file": "Nama File",
+      "date": "Tanggal & Waktu",
+      "notes": "Catatan"
+    },
+    "filter": {
+      "label": {
+        "date": "Tanggal Impor"
+      }
+    }
+  },
+  "export": {
+    "title": "Unduh template untuk Persiapan Impor Entitas Material",
+    "description": "Template akan memfilter data berdasarkan pilihan anda untuk mengoptimalkan unduhan. Harap pastikan pilihan filter anda sudah benar.",
+    "form": {
+      "title": {
+        "entity": "Filter untuk Entitas",
+        "material": "Filter untuk Material"
+      },
+      "label": {
+        "entity": "Cari Nama Entitas",
+        "entity_type": "Tipe",
+        "entity_tag": "Tag",
+        "material": "Cari Nama Material",
+        "material_type": "Tipe Material",
+        "activity": "Kegiatan",
+        "level_material": "Level Material",
+        "option_level_material": [
+          "Produk Template",
+          "Produk Varian"
+        ],
+        "city": "Kabupaten/Kota"
+      },
+      "placeholder": {
+        "entity": "Nama entitas",
+        "entity_type": "Semua tipe",
+        "entity_tag": "Semua tag",
+        "province": "Semua provinsi",
+        "regency": "Semua kabupaten/kota",
+        "subdistrict": "Semua kecamatan",
+        "village": "Semua desa/kelurahan",
+        "material": "Nama material",
+        "material_type": "Semua tipe material",
+        "activity": "Semua aktifitas"
+      },
+      "result": {
+        "entity": "Hasil Data Entitas:",
+        "material": "Hasil Data Material:"
+      }
+    },
+    "toast": {
+      "success": "Template Material Entity Berhasil diekspor",
+      "import": "Impor data entitas material berhasil"
+    }
+  }
+}

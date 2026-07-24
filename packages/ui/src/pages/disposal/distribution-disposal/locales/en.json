@@ -1,0 +1,209 @@
+{
+  "meta": "SMILE | Disposal Shipment",
+  "title": "Disposal Shipment",
+  "sectionTitle": "Disposal Shipment List",
+  "create": "Create New",
+  "tab": {
+    "all": "All",
+    "vendor": "Sender",
+    "customer": "Receiver"
+  },
+  "filter": {
+    "label": {
+      "activity": "Activity",
+      "shipment_date": "Shipment Date",
+      "primary_vendor": "Primary Vendor",
+      "primary_health_care": "Primary Health Care",
+      "entity_tag": "Entity Tag",
+      "province": "Province",
+      "city": "City/District",
+      "search": "No. Disposal Shipment"
+    },
+    "placeholder": {
+      "activity": "Select activity",
+      "shipment_date": "dd/mm/yyyy - dd/mm/yyyy",
+      "primary_vendor": "Select primary vendor",
+      "primary_health_care": "Select primary health care",
+      "entity_tag": "Select entity tag",
+      "province": "Select province",
+      "city": "Select city/district",
+      "search": "Search no. disposal shipment",
+      "status": "All"
+    },
+    "value": {
+      "status": ["Shipped", "Fulfilled", "Cancelled"]
+    },
+    "status": {
+      "shipped": "Shipped",
+      "fulfilled": "Fulfilled",
+      "cancelled": "Cancelled"
+    }
+  },
+  "table": {
+    "column": {
+      "no": "No. Disposal Shipment",
+      "activity": "Activity",
+      "total": "Item",
+      "sender": "Sender",
+      "created_by": "Created By",
+      "receiver": "Receiver",
+      "device_user": "Device User",
+      "device_type": "Device Type",
+      "expired_date": "Expired Date",
+      "production_date": "Production Date",
+      "distribution_discard": "Distribution from Discard",
+      "distribution_received": "Distribution from Received",
+      "shipped": "Shipped",
+      "received": "Received",
+      "quantity": "Quantity",
+      "material": "Material Name",
+      "stock_disposal": "Total Discard",
+      "selection": "Selection",
+      "material_info": "Material Info",
+      "batch_info": "Batch Info",
+      "batch": {
+        "batch_code": "Batch code: {{value}}",
+        "stock_from_activity": "Stock from Activity: {{value}}",
+        "production_date": "Manufactured Date: {{value}}",
+        "manufacturer": "Manufacturer: {{value}}",
+        "expired_date": "Expired Date: {{value}}",
+        "qty": "Qty: {{value}}"
+      },
+      "stock_discard": "Discard from Internal",
+      "stock_received": "Discard from External",
+      "quantity_from_discard": "Discard from Internal",
+      "quantity_from_received": "Discard from External",
+      "total_discard": "Total Discard"
+    }
+  },
+  "detail": {
+    "title": "Disposal Shipment Details",
+    "meta": "SMILE | Disposal Shipment Details",
+    "disposal_shipment_status": "Disposal Shipment Status",
+    "action": {
+      "download_memorandum": "Download Memorandum",
+      "received": "Accept",
+      "cancel": "Cancel Order",
+      "receive_shipment": "Receive Shipment",
+      "cancel_shipment": "Cancel Shipment",
+      "proceed_shipment": "Proceed Shipment",
+      "submit_comment": "Submit Comment",
+      "back_to_detail": "Back to Detail",
+      "batch_quantity": "Batch Quantity",
+      "quantity": "Quantity",
+      "update_batch_quantity": "Update Batch Quantity",
+      "update_quantity": "Update Quantity"
+    },
+    "info": {
+      "no": "Disposal Shipment No. {{no}}",
+      "created": "Created At {{date}} by {{name}}",
+      "created_at": "Created At",
+      "no_memorandum": "Number of Memorandum"
+    },
+    "status_confirmation": {
+      "title": "Cancel Disposal Shipment?",
+      "subtitle": "Would you like to mark this disposal shipment as Canceled? The shipment will not be able to be further processed.",
+      "submit": "Send",
+      "success_cancel": "Cancel Disposal Shipment successfully canceled"
+    },
+    "status_confirmation_receive": {
+      "title": "Receive Disposal Shipment?",
+      "subtitle": "By marking this disposal shipment as Received, you acknowledge that the items and batch number physically match the records in the application.",
+      "submit": "Send",
+      "success_receive": "Receive Disposal Shipment successfully completed"
+    },
+    "customer_vendor": {
+      "customer": {
+        "title": "Receiver",
+        "name": "Receiver Name"
+      },
+      "vendor": {
+        "title": "Sender",
+        "name": "Sender Name"
+      }
+    },
+    "material": {
+      "title_detail": "Material Detail",
+      "view_detail": "View Detail"
+    },
+    "comment": {
+      "title": "Comment",
+      "placeholder": "Please enter comment...",
+      "success_submit": "Comment successfully submitted",
+      "status_at_posting": "Status at posting"
+    },
+    "receive_placeholder": "Please enter the quantity received",
+    "address": "Address",
+    "process_warning": "If the number of items and the batch number don't match, don't click Receive Shipment and please report it to the helpdesk",
+    "proceed_shipment": "Proceed Shipment",
+    "cancel_shipment": "Cancel Shipment",
+    "receive_shipment": "Receive Shipment",
+    "back_to_detail": "Back to Detail"
+  },
+  "receive": {
+    "title": "Receive Confirmation",
+    "meta": "SMILE | Receive Confirmation",
+    "description": "If the number of items and the batch number don't match, don't click receive and please report it to the helpdesk",
+    "validation": {
+      "not_same": "Quantity must be the same as the quantity sent"
+    },
+    "success": "Receive Disposal Shipment successfully"
+  },
+  "form": {
+    "meta": "SMILE | Create Disposal Shipment",
+    "title": {
+      "detail": "Shipment Detail",
+      "create": "Create Disposal Shipment",
+      "batch_from": "Batch from {{activity}}",
+      "detail_from": "Detail from {{activity}}"
+    },
+    "label": {
+      "entity_receiver": "Receiver",
+      "entity_sender": "Sender",
+      "activity": "Select Activity",
+      "no_document": "Disposal Report Number"
+    },
+    "placeholder": {
+      "entity_receiver": "Select receiver",
+      "entity_sender": "Select sender",
+      "activity": "Select activity",
+      "no_document": "Input Disposal Report Number"
+    },
+    "material": {
+      "title": "Material in {{sender}}",
+      "description": "Click on the checkbox to select the material. Selected material will appear on Shipment Table below",
+      "table_title": "Shipment Table",
+      "empty_detail": "Complete the Shipment Detail first",
+      "search": "Search material"
+    },
+    "validation": {
+      "qty": {
+        "unit": "Quantity must be a multiple of {{amount}}",
+        "amount": "Qty must be more than 0",
+        "max": "Qty can't be more than max return",
+        "cannot_more_than": "Qty cannot be more than {{amount}}",
+        "has_to_be_equal": "Qty must equals to {{amount}}"
+      }
+    },
+    "add_other_activities": "Add from Another Activity:",
+    "modal": {
+      "warning_item": "There is no item selected. Please review the added material and press the save button on the batch to save the changes."
+    },
+    "success": "Disposal Shipment successfully created",
+    "table": {
+      "column": {
+        "stock_discard": "Discard from Internal",
+        "quantity_from_discard": "Disposal Shipment Qty from Internal",
+        "stock_received": "Discard from Extarnal",
+        "quantity_from_received": "Disposal Shipment Qty from External"
+      }
+    }
+  },
+  "table_material": {
+    "column": {
+      "material": "Material Name",
+      "stock_disposal": "Stock on {{activity}}",
+      "selection": "Selection"
+    }
+  }
+}

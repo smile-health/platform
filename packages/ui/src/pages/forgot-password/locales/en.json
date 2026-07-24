@@ -1,0 +1,10 @@
+{
+  "title": "Forgot password",
+  "success": {
+    "description": [
+      "Password change request has been sent to your email",
+      "Please check your email to reset your password",
+      "Didn't receive email?"
+    ]
+  }
+}

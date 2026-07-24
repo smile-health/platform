@@ -1,0 +1,1 @@
+export type AssetInventory = 'asset-inventory-view' | 'asset-inventory-mutate'

@@ -1,0 +1,1 @@
+export { default } from '@repo/ui/pages/bmhp/bmhp-target-group/detail/Detail'

@@ -1,0 +1,63 @@
+{
+  "title": {
+    "notification": "Notification"
+  },
+  "button": {
+    "mark_all_as_read": "Mark All as Read",
+    "contact_patient": "Contact Patient",
+    "mark_as_finished": "Mark as Finished",
+    "action": "Action",
+    "download": "Download"
+  },
+  "filter": {
+    "notification_type": {
+      "label": "Notification Type",
+      "placeholder": "Select Notification Type"
+    },
+    "program": {
+      "label": "Program",
+      "placeholder": "Select Program",
+      "without_program": "Without Program"
+    },
+    "health_center": {
+      "label": "Primary Health Center",
+      "placeholder": "Select primary health center"
+    },
+    "receive_date": {
+      "label": "Notification Date Received"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    }
+  },
+  "modal": {
+    "title": {
+      "mark_all": "Mark all as read?"
+    },
+    "description": {
+      "mark_all": "By clicking yes, you acknowledge that all notifications will be marked as read."
+    }
+  },
+  "information": {
+    "title": "Information",
+    "description": "Block notification will not allowed you to receive real-time push notification. If you have consider to activate notification, please set up that manually by your browser setting.",
+    "button": {
+      "understand": "Yes, I'm Understand"
+    }
+  },
+  "finishedVaccine": {
+    "description": "The vaccination reminder for patient {{identityNumber}} will be marked as finished on the next scheduled date.  Please consider this action will stop the reminder.",
+    "description_with_next_schedule": "The vaccination reminder for patient {{identityNumber}} will be marked as finished on the next schedule <strong>({{nextSchedule}})</strong>. Please consider this action will stop the reminder.",
+    "form": {
+      "reason": {
+        "label": "Reason",
+        "placeholder": "Select reason",
+        "error": "Reason is required"
+      }
+    },
+    "success": "The vaccination of this patient has finished",
+    "error": "There was an error when marking patient as having finished vaccination",
+    "finished": "Finished"
+  }
+}

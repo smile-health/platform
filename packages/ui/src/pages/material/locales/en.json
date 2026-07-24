@@ -1,0 +1,349 @@
+{
+  "list": {
+    "title": "Material Settings",
+    "tab": {
+      "list": "Entity List",
+      "create": "Add Entity"
+    },
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search material"
+      },
+      "activity": {
+        "label": "Activity",
+        "placeholder": "Select activity"
+      },
+      "hierarchical": {
+        "label": "Hierarchical"
+      },
+      "material_type": {
+        "label": "Material type",
+        "placeholder": "Select material type"
+      },
+      "material_level": {
+        "label": "Material Level",
+        "placeholder": "Select material level",
+        "radio": {
+          "all": "All",
+          "active_substance": "Product Template",
+          "trademark": "Product Variant",
+          "non_hierarchy": "Non Hirarki"
+        }
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Select program"
+      },
+      "without_program": "No program applied",
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "material_name": "Material Name",
+      "material_type": "Material Type",
+      "material_subtype": "Material Subtype",
+      "updated_by": "Updated By",
+      "managed_by_batch": "Manage By Batch?",
+      "activity_name": "Activity Name",
+      "min_temperature": "Min Temperature",
+      "max_temperature": "Max Temperature",
+      "action": "Action",
+      "material_level": {
+        "label": "Material Level",
+        "kfa_93": "Product Variant",
+        "kfa_92": "Product Template",
+        "non_hierarchy": "Non Hierarchical"
+      }
+    },
+    "options": {
+      "tag": "Select Tag",
+      "type": "Select Type"
+    },
+    "action": {
+      "activate": {
+        "title": "Activate"
+      },
+      "deactivate": {
+        "title": "Deactivate"
+      }
+    },
+    "button": {
+      "add": "Add Material"
+    }
+  },
+  "title": {
+    "material": "Material",
+    "list": "Material List",
+    "create": "Add Material",
+    "edit": "Edit Material"
+  },
+  "detail": {
+    "title": "Material Detail",
+    "active_substance": "Product Template",
+    "active_substance_and_strength": "Product Template",
+    "trademark": "Product Variant",
+    "packaging": "Packaging",
+    "name": "Material Name",
+    "level": "Material Level",
+    "description": "Description",
+    "code": "Material Code",
+    "kfa_92_code": " Product Template Code",
+    "kfa_93_code": " Material Product Variant Code",
+    "unit": {
+      "consumption": "Unit of Consumption",
+      "distribution": "Unit of Distribution",
+      "distribution_pieces": "Number of Units Consumption per Unit Distribution"
+    },
+    "retail": {
+      "price_min": "Minimum Retail Price",
+      "price_max": "Maximum Retail Price",
+      "validation": {
+        "max_greater_min": "Max Retail Price cannot be less than Min Retail Price",
+        "min_greater_max": "Min Retail Price cannot be greater than Max Retail Price"
+      }
+    },
+    "temperature": {
+      "sensitive": "Temperature Sensitive",
+      "min": "Min Temperature",
+      "max": "Max Temperature",
+      "validation": {
+        "max_greater_min": "Max Temperature cannot be less than Min Temperature",
+        "min_greater_max": "Min Temperature cannot be greater than Max Temperature"
+      }
+    },
+    "batch": "Managed by Batch",
+    "manufacture": "Manufacture",
+    "manufactured": "Manufactured by",
+    "activity": "Activity",
+    "material": {
+      "type": "Material Type",
+      "subtype": "Material Subtype",
+      "companion": "Companion Material",
+      "vaccine": "Vaccine Material",
+      "sequence": "Need Sequence"
+    },
+    "patient": "Patient",
+    "stock": {
+      "adjust": "Can Add/Less Stock",
+      "entity": "Add/Less Stock Entities",
+      "role": "Add/Less Stock Roles"
+    },
+    "so_required": "Required to Stock Opname"
+  },
+  "action": {
+    "activate": {
+      "button": "Activate",
+      "confirmation": "Are you sure you want to activate this product?"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "confirmation": "Are you sure you want to deactivate this product?"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "Product Template",
+    "trademark": "Product Variant",
+    "non_hierarchy": "Non Hierarchy"
+  },
+  "form": {
+    "title": "Material Info",
+    "global_info": "Global Info",
+    "material_name": {
+      "label": "Material Name",
+      "placeholder": "Material name",
+      "validation": {
+        "required": "Material name is required"
+      }
+    },
+    "hierarchical": {
+      "label": "Classification Method",
+      "placeholder": "Classification Method",
+      "option": {
+        "yes": "KFA",
+        "no": "Non Classification"
+      },
+      "validation": {
+        "required": "Classification method is required"
+      }
+    },
+    "material_level": {
+      "label": "Material Level",
+      "placeholder": "Material Level",
+      "validation": {
+        "required": "Material Level is required"
+      },
+      "radio": {
+        "active_substance": "Product Template",
+        "trademark": "Product Variant"
+      }
+    },
+    "material_active_substance": {
+      "label": "Material Product Template",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Material product template is required"
+      }
+    },
+    "kfa_93_code": {
+      "label": "Material Product Variant Code",
+      "placeholder": "Example: 93766587",
+      "validation": {
+        "required": "Material trademark code is required"
+      }
+    },
+    "kfa_92_code": {
+      "label": "Material Product Template Code",
+      "placeholder": "Example: 92766587",
+      "validation": {
+        "required": "Material product template code is required"
+      }
+    },
+    "material_code": {
+      "label": "Material Code",
+      "placeholder": "Example: 123ABC",
+      "validation": {
+        "required": "Material code is required"
+      }
+    },
+    "unit_of_consumption": {
+      "label": "Unit of Consumption",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Unit of consumption is required"
+      }
+    },
+    "unit_of_distribution": {
+      "label": "Unit of Distribution",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Unit of distribution is required"
+      }
+    },
+    "number_of_unit_consumption_per_unit_distribution": {
+      "label": "Number of Units, Consumption per Unit Distribution",
+      "placeholder": "Example: 1",
+      "validation": {
+        "required": "Number of units, consumption per unit distribution is required"
+      }
+    },
+    "minimum_retail_price": {
+      "label": "Minimum Retail Price",
+      "placeholder": "Example: 1000",
+      "validation": {
+        "required": "Minimum retail price is required"
+      }
+    },
+    "maximum_retail_price": {
+      "label": "Maximum Retail Price",
+      "placeholder": "Example: 5000",
+      "validation": {
+        "required": "Maximum retail price is required"
+      }
+    },
+    "temperature_sensitive": {
+      "label": "Temperature Sensitive",
+      "placeholder": "Temperature sensitive",
+      "validation": {
+        "required": "Temperature sensitive is required"
+      }
+    },
+    "minimum_temperature": {
+      "label": "Min. Temperature",
+      "placeholder": "Example: 5",
+      "validation": {
+        "numeric": "Min. temperature is only number"
+      }
+    },
+    "maximum_temperature": {
+      "label": "Max. Temperature",
+      "placeholder": "Example: 15",
+      "validation": {
+        "numeric": "Max. temperature is only number",
+        "diff": "Max. temperature must be greater than min temperature"
+      }
+    },
+    "material_type": {
+      "label": "Material Type",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Material type is required"
+      }
+    },
+    "material_subtype": {
+      "label": "Material Subtype",
+      "placeholder": "Select material subtype"
+    },
+    "managed_by_batch": {
+      "label": "Managed by Batch?",
+      "placeholder": "Managed by Batch"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Description",
+      "validation": {
+        "required": "Material description is required"
+      }
+    },
+    "manufacture": {
+      "label": "Produced By",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Manufacture is required"
+      }
+    },
+    "activity": {
+      "label": "Activity",
+      "description": "Activities requiring patient data will display the 'sequence' option",
+      "placeholder": "Search Activity",
+      "is_sequence": "Sequence",
+      "requires_patient_data": "Requires Patient Data",
+      "validation": {
+        "required": "Activity is required"
+      },
+      "error": {
+        "not_found": "Activity not found"
+      }
+    },
+    "companion_material": {
+      "label": "Companion Material",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Companion material is required"
+      }
+    },
+    "add_remove_stock": {
+      "label": "Add/remove stock",
+      "validation": {
+        "required": "Add/remove stock is required"
+      }
+    },
+    "entity_type": {
+      "label": "Entity Type",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Entity type is required"
+      }
+    },
+    "role": {
+      "label": "Select Role",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Role is required"
+      }
+    },
+    "so_required": {
+      "label": "Required to Stock Opname"
+    }
+  },
+  "scroll_list": {
+    "title": "Material",
+    "description": "Please choose entity and transaction type first",
+    "column": {
+      "material_name": "Material Name",
+      "available_stock": "Available Stock",
+      "current_stock": "Current Stock"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "page": {
+    "title": "Membuat Laporan Kejadian"
+  },
+  "section": {
+    "ticket_form": {
+      "title": "Formulir Laporan Kejadian"
+    },
+    "select_material": {
+      "title": "Material",
+      "title_in_entity": "Material di {{entity}}",
+      "description": "Klik pada kotak centang untuk memilih material. Material yang dipilih akan muncul pada tabel formulir laporan kejadian di bawah"
+    },
+    "ticketing_table": {
+      "title": "Tabel Formulir Laporan Kejadian",
+      "instructions": {
+        "instruction_1": "Tulis sesuai dengan data yang sebenarnya, data fisik atau slip kemasan",
+        "instruction_2": "Pilih \"Material Baru\" jika kejadian penerimaan fisik material tidak ada dalam daftar material"
+      }
+    },
+    "order_ticketing_confirmation": {
+      "title": "Konfirmasi Formulir Laporan Kejadian"
+    }
+  },
+  "drawer": {
+    "quantity": {
+      "title": "Kuantitas"
+    }
+  },
+  "text": {
+    "add_other_material": "+ Tambah Material Lain",
+    "new_material": "Material Baru"
+  },
+  "table": {
+    "columns": {
+      "no": "No",
+      "si_no": "SI.No",
+      "selected_material": "Material Terpilih",
+      "quantity": "Kuantitas",
+      "reason": "Alasan",
+      "action": "Aksi",
+      "material": "Material",
+      "batch_name": "Nama Batch",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "reason_detail": "Detail Alasan"
+    },
+    "message": {
+      "edit_material_name": "Edit name by input quantity!"
+    }
+  },
+  "field": {
+    "search_material": {
+      "label": "Cari Material",
+      "placeholder": "Cari Material"
+    },
+    "is_submitted_on_smile": {
+      "label": "Apakah sudah masuk di SMILE ?",
+      "yes": "Sudah",
+      "no": "Belum"
+    },
+    "order_number": {
+      "label": "Masukan Nomor Pesanan",
+      "placeholder": "Pilih nomor pesanan"
+    },
+    "arrival_date": {
+      "label": "Tanggal Kedatangan"
+    },
+    "do_number": {
+      "label": "Masukan Nomor DO",
+      "placeholder": "Nomor DO"
+    },
+    "select_material": {
+      "placeholder": "Pilih Material"
+    },
+    "batch_code": {
+      "label": "Kode Batch",
+      "placeholder": "Masukan kode batch"
+    },
+    "quantity": {
+      "label": "Kuantitas",
+      "placeholder": "Masukan kuantitas"
+    },
+    "reason": {
+      "label": "Alasan",
+      "placeholder": "Pilih alasan"
+    },
+    "reason_detail": {
+      "label": "Detail Alasan",
+      "placeholder": "Pilih detail alasan"
+    },
+    "custom_material": {
+      "label": "Material Baru",
+      "placeholder": "Masukan nama material baru"
+    },
+    "accept_terms": {
+      "label": "Mohon batalkan pesanan ini jika sudah tercatat di SMILE. Dengan mencentang kotak ini untuk mengonfirmasi."
+    },
+    "comment": {
+      "label": "Komentar",
+      "placeholder": "Masukan komentar"
+    }
+  },
+  "modal": {
+    "reset": {
+      "title": "Konfirmasi",
+      "description": "Apakah kamu yakin untuk menghapus data yang telah diisi?"
+    },
+    "submission": {
+      "title": "Lanjutkan untuk Mengirim Tiket?",
+      "description": "Dengan mengklik <strong>Ya</strong>, Anda mengakui bahwa tiket ini akan diteruskan ke Kementerian Kesehatan Republik Indonesia."
+    }
+  },
+  "button": {
+    "input_quantity": "Masukan Kuantitas",
+    "edit_quantity": "Ubah Kuantitas",
+    "add_new_material": "+ Material Baru",
+    "add_other_batch": "Tambah Batch Lain"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Dashboard Annual Commitment vs Realization",
+  "information": {
+    "title": "Annual Commitment vs Realization",
+    "description": "Commitment and Realization monitor the quantitative achievement of material allocation commitments and buffer stocks set by the Ministry of Health for each Province throughout the fiscal year."
+  },
+  "filter": {
+    "label": {
+      "year": "Year",
+      "material_type": "Material Type",
+      "material": "Material",
+      "contract_number": "Contract Number"
+    },
+    "placeholder": {
+      "year": "Select Year",
+      "material_type": "Select Material Type",
+      "material": "Select Material",
+      "contract_number": "Select Contract Number"
+    },
+    "default_value": {
+      "vaccine": "Vaccine"
+    }
+  },
+  "box_title": {
+    "total_annual_needs": "Total Yearly Need",
+    "total_annual_commitment": "Total Annual Commitment",
+    "annual_requirements_and_remaining_stock": "Annual Needs and Remaining Stock",
+    "annual_commitment_vs_realization_national": "Annual Commitment vs Realization - National Level",
+    "realization_and_target": "Realization and Target",
+    "annual_commitment_vs_realization_province": "Annual Commitment vs Realization - Provincial Level"
+  },
+  "box_description": {
+    "total_annual_needs": "Total material requirement derived from annual planning data considering target population, doses per target, coverage target, and Usage Index.",
+    "total_annual_commitment": "Total commitment from all contracts with materials providers for selected year. Commitment amount is accumulation of allocation and buffer specified in contracts.",
+    "annual_requirements_and_remaining_stock": "Displays overall fulfillment progress of materials based on total needs, current stock and consumption expenditure.",
+    "annual_commitment_vs_realization_national": "Displays overall material procurement realization progress shown for allocation and buffer based on commitment values stated in contracts. Commitment values for material procurement based on approved annual contracts. Contract commitment values are shown for allocation and buffer. Fulfillment/realization is the commitment value in contracts that has been delivered. Not yet delivered value is the difference between commitment value stated in contract and commitment value that has been realized.",
+    "realization_and_target": "Displays overall material procurement realization progress shown for allocation already delivered and buffer already delivered. Commitment not yet delivered refers to procurement referring to allocation in contract not yet delivered.",
+    "annual_commitment_vs_realization_province": "Displays material procurement realization progress shown for allocation and buffer based on commitment values stated in contracts for each province."
+  },
+  "label": {
+    "last_updated": "Last Updated",
+    "regency_city": "Regency City",
+    "stage": "Stage"
+  },
+  "columns": {
+    "province": "Province",
+    "total_commitment": "Total Commitment",
+    "central_buffer_receipt": "Central Buffer Receipt",
+    "allocation_shipped": "Allocation Shipped",
+    "allocation_not_shipped_yet": "Allocation Not Shipped Yet",
+    "total_needs": "Total Needs"
+  }
+}

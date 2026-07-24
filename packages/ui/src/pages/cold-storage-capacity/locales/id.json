@@ -1,0 +1,130 @@
+{
+  "title": "Kapasitas Alat Penyimpanan Dingin",
+  "info": {
+    "colorCoding": "Utilisasi kapasitas alat Penyimpanan Dingin ditampilkan dengan warna: kuning untuk <20%, hijau untuk 20%-80%, dan merah untuk >80%."
+  },
+  "detail": {
+    "title": "Detail Kapasitas Alat Penyimpanan Dingin",
+    "program": {
+      "label": "Program",
+      "placeholder": "Pilih program"
+    },
+    "headerInfo": {
+      "entityName": "Nama Entitas",
+      "program": "Program"
+    },
+    "realCapacity": {
+      "title": "Kapasitas Total Riil",
+      "totalVolumeStock": "Total Volume Stok (Liter)",
+      "assetNetoCapacity": "Kapasitas Neto Aset (Liter)",
+      "usedPercentage": "Persentase Terpakai"
+    },
+    "projectedCapacity": {
+      "title": "Proyeksi Kapasitas Total Berdasarkan Nilai Maksimum",
+      "totalStockVolume": "Proyeksi Total Volume Stok (Liter)",
+      "assetNettoCapacity": "Proyeksi Kapasitas Netto Aset (Liter)",
+      "percentageUsed": "Proyeksi Persentase Terpakai (Liter)"
+    },
+    "warning": {
+      "message": "Jika persentase penggunaan lebih dari 100%, harap validasi dengan entitas terkait."
+    },
+    "material": {
+      "title": "Material",
+      "subtitle": "Disimpan di Kulkas"
+    },
+    "temperatureStorage": {
+      "assetName": "Nama Aset",
+      "capacity": "Kapasitas",
+      "temperature": "Suhu",
+      "totalVolumeStock": "Total Volume Stok (Liter)",
+      "assetNetoCapacity": "Kapasitas Neto Aset (Liter)",
+      "usedPercentage": "Persentase Terpakai",
+      "table": {
+        "no": "No",
+        "material": "Material",
+        "stockDose": "Stok (Dosis)",
+        "stockVial": "Stok (Vial)",
+        "stockBox": "Stok (Box)",
+        "stockVolume": "Volume Stok (L)",
+        "maxFillBox": "Dapat diisi dengan maksimal satu dari material (Box)",
+        "maxDose": "Dosis Maksimum",
+        "orderRecommendation": "Rekomendasi Pemesanan berdasarkan Maks (Dosis)",
+        "stockQuantityProjection": "Proyeksi Kuantitas Stok",
+        "tooltip": "Material ini disuplai oleh lebih dari satu pabrikan. Setiap pabrikan mungkin menggunakan tipe pengemasan yang berbeda, volume dosis, dan perhitungan kapasitas. Sistem menerapkan perhitungan berdasarkan batch yang saat ini tercatat di inventaris."
+      },
+      "emptyState": {
+        "title": "Tidak ada alat penyimpanan dengan suhu",
+        "description": "Tidak ada alat penyimpanan dengan suhu yang tersedia untuk entitas ini."
+      }
+    }
+  },
+  "table": {
+    "title": "Daftar Kapasitas Cold Storage",
+    "column": {
+      "no": "No",
+      "entityName": "Nama Entitas",
+      "totalUtilizationVolume": "Total Volume Utilisasi (Liter)",
+      "coldStorageNetCapacity": "Kapasitas Bersih Cold Storage (Liter)",
+      "capacityUtilization": "Utilisasi Kapasitas (%)",
+      "action": "Aksi"
+    }
+  },
+  "field": {
+    "capacityStatus": {
+      "label": "Status Kapasitas",
+      "placeholder": "Pilih status kapasitas"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "cityDistrict": {
+      "label": "Kota/Kabupaten",
+      "placeholder": "Pilih kota/kabupaten"
+    },
+    "healthFacility": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entityTag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "period": {
+      "label": "Periode",
+      "placeholder": "Pilih periode"
+    },
+    "activity": {
+      "label": "Aktivitas",
+      "placeholder": "Pilih aktivitas"
+    },
+    "materialType": {
+      "label": "Tipe Material",
+      "placeholder": "Pilih tipe material"
+    },
+    "materialName": {
+      "label": "Nama Material",
+      "placeholder": "Pilih nama material"
+    },
+    "batch": {
+      "label": "Batch",
+      "placeholder": "Pilih batch"
+    },
+    "expiredDate": {
+      "label": "Tanggal Kadaluarsa",
+      "placeholder": "Pilih tanggal kadaluarsa"
+    }
+  },
+  "button": {
+    "export": "Ekspor",
+    "reset": "Reset",
+    "showReport": "Tampilkan Laporan",
+    "detail": "Detail"
+  },
+  "tooltip": {
+    "capacityWarning": "Jika persentase penggunaan lebih dari 100%, harap validasi dengan entitas terkait."
+  },
+  "activeFilter": {
+    "filteredAt": "Difilter Pada"
+  }
+}

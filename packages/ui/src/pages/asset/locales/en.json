@@ -1,0 +1,55 @@
+{
+    "asset_temperature": "Asset Temperature",
+    "asset_temperature_list": "List of Asset Temperature",
+    "columns": {
+        "asset_name": "Asset Name",
+        "asset_type": "Asset Type",
+        "show_logger_temperature": "Show Logger Temperature",
+        "manufacture": "Manufacture",
+        "relation": "Relation",
+        "working_status": "Working Status",
+        "entity_tag": "Entity Tag",
+        "temperature_filter": "Temperature Filter",
+        "asset_model": "Asset Model",
+        "temperature": "Temperature",
+        "view_temperature": "View Temperature",
+        "device_status": "Device Status",
+        "online": "Online",
+        "offline": "Offline",
+        "connected": "Connected",
+        "disconnected": "Disconnected"
+    },
+    "asset_type_default": {
+        "vaccine_refrigerator": "Vaccine Refrigerator",
+        "cold_room": "Cold Room",
+        "freezer": "Freezer"
+    },
+    "relationship": {
+        "with_relation": "With Relation",
+        "without_relation": "Without Relation"
+    },
+    "temperature_logger": {
+        "normal": "Normal",
+        "above_maximum": "Above Maximum",
+        "below_minimum": "Below Minimum"
+    },
+    "asset_temperature_detail": "Asset Temperature Detail",
+    "detail": {
+        "asset_type": "Asset Type",
+        "production_year": "Production Year",
+        "maintainer": "Maintainer",
+        "asset_status": "Asset Status",
+        "temperature_threshold": "Temperature Threshold",
+        "asset_temperature": "Asset Temperature",
+        "change_status": "Change Status",
+        "asset_logger_name": "Asset/Logger Name",
+        "asset_logger_relation": "Asset and Logger Relation",
+        "sensor": "Sensor",
+        "logger": "Logger",
+        "from_date": "From Date",
+        "to_date": "To Date",
+        "date": "Date",
+        "status": "Status",
+        "cold_chain_equipment_status": "Cold Chain Equipment Status"
+    }
+}

@@ -1,0 +1,51 @@
+export enum ASSET_CLASSIFICATION {
+  CCE = 1,
+  LOGISTIC = 2,
+  ELECTRICITY = 3,
+  SELECTION = 4,
+  WAREHOUSE = 5,
+  CCE_WAREHOUSE = 6,
+}
+
+export enum ASSET_MONITORING_DEVICE {
+  COMMUNICATION_PROVIDER_TYPE_ID = 4,
+  COMMUNICATION_PROVIDER_TYPE_NAME = "asset_vendor_type.label.communication_provider",
+}
+
+export enum CONTACT_PERSON_SOURCE_TYPE {
+  RTMD = "rtmd",
+  ASSET_INVENTORY = "asset_inventory",
+  OTHER = "other",
+}
+
+export enum TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL {
+  IS_CCE_WITH_PQS = 1,
+  IS_CCE_WITHOUT_PQS = 2,
+  NON_CCE = 3,
+  WAREHOUSE = 4,
+}
+
+export enum STATUS_CAPACITY_COLDSTORAGE {
+  ACTIVE = 1,
+  INACTIVE = 0,
+}
+
+export enum ASSET_WORKING_STATUS {
+  FUNCTIONING = 1,
+  STANDBY = 2,
+  IN_REPAIR = 3,
+  DAMAGED = 4,
+  NEEDS_REPAIR = 5,
+  DISPOSED = 6,
+  DEFROSTING = 7,
+  DAMAGED_BY_DISASTER = 10,
+}
+
+export enum TYPE_DOWNLOAD_TEMPLATE_ASSET_TYPE {
+  IS_CCE = 1,
+  IS_WAREHOUSE = 2,
+}
+
+export enum MANUFACTURE_WAREHOUSE {
+  IN_HOUSE = "In House",
+}

@@ -1,0 +1,109 @@
+{
+  "title": {
+    "page": "Dasbor Perencanaan Mikro",
+    "tabs": {
+      "province": "Provinsi",
+      "regency": "Kabupaten/Kota",
+      "subdistrict": "Kecamatan",
+      "village": "Desa/Kelurahan"
+    },
+    "dashboard": {
+      "chart": {
+        "chart": "Grafik",
+        "target": "Target",
+        "consumption": "Konsumsi"
+      },
+      "table": "Tabel",
+      "appearance": "Tampilan",
+      "target-consumption-age": "Target vs Konsumsi",
+      "target-consumption-vaccination": "Target vs Realisasi",
+      "distribution-coverage-achievement": "Distribusi Pencapaian Cakupan",
+      "proportion-of-aefi": "Proporsi AEFI",
+      "total-target": "Total Target"
+    }
+  },
+  "subtitle": {
+    "dashboard": {
+      "target-consumption-age": "Frekuensi data yang ditampilkan diakumulasikan berdasarkan usia",
+      "target-consumption-vaccination": "Frekuensi data yang ditampilkan diakumulasikan berdasarkan vaksinasi",
+      "distribution-coverage-achievement": "Persentase Konsumsi dibagi dengan Target",
+      "proportion-of-aefi": "Frekuensi data yang ditampilkan diakumulasikan berdasarkan jenis kelamin",
+      "total-target": "Data yang ditampilkan diakumulasikan berdasarkan kelompok target dan bahan vaksin"
+    }
+  },
+  "data": {
+    "receipts": "Receipts",
+    "region": "Wilayah",
+    "target": "Target",
+    "consumption": "Konsumsi"
+  },
+  "column": {
+    "age": "Usia",
+    "vaccine": "Vaksin",
+    "region": "Wilayah",
+    "Bayi Baru Lahir": "Bayi Baru Lahir",
+    "Bayi Baru Lahir/Surviving Infant": "Bayi Baru Lahir/Bayi Bertahan Hidup",
+    "Surviving Infant": "Bayi Bertahan Hidup",
+    "Baduta": "Baduta",
+    "BIAS": "BIAS",
+    "group": {
+      "< 24 hours": "< 24 jam",
+      "1 month old": "1 bulan lalu",
+      "0-1 month old": "0-1 bulan lalu",
+      "2 months old": "2 bulan lalu",
+      "3 months old": "3 bulan lalu",
+      "4 months old": "4 bulan lalu",
+      "9 months old": "9 bulan lalu",
+      "10 months old": "10 bulan lalu",
+      "12 months old": "12 bulan lalu",
+      "18 months old": "18 bulan lalu",
+      "Usia 7 tahun (Kelas 1)": "Usia 7 tahun (Kelas 1)",
+      "Usia 8 tahun (Kelas 2)": "Usia 8 tahun (Kelas 2)",
+      "Usia 11 tahun (Kelas 5)": "Usia 11 tahun (Kelas 5)"
+    }
+  },
+  "form": {
+    "period": {
+      "label": "Periode"
+    },
+    "target": {
+      "group": {
+        "label": "Kelompok Sasaran",
+        "placeholder": "Pilih kelompok sasaran"
+      }
+    },
+    "gender": {
+      "label": "Jenis Kelamin",
+      "placeholder": "Pilih jenis kelamin",
+      "options": {
+        "male": "Laki - laki",
+        "female": "Perempuan"
+      }
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "city": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "sub-district": {
+      "label": "Kecamatan",
+      "placeholder": "Pilih kecamatan"
+    },
+    "village": {
+      "label": "Desa/Kelurahan",
+      "placeholder": "Pilih desa/kelurahan"
+    },
+    "material": {
+      "label": "Material",
+      "placeholder": "Pilih material"
+    },
+    "batch": {
+      "label": "Kelompok",
+      "placeholder": "Pilih kelompok"
+    }
+  },
+  "close": "Tutup"
+}

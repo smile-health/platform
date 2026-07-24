@@ -1,0 +1,91 @@
+{
+  "title": {
+    "page": "Stock Taking Dashboard"
+  },
+  "tab": {
+    "entity": "Entity Compliance",
+    "result": "Stock Taking Result",
+    "material": "Stock Taking Material Product Template"
+  },
+  "information": {
+    "title": "Stock Taking Dashboard",
+    "description": "The stocktaking dashboard Report explains information about entity compliance and stock results in conducting stocktaking during a specific period.",
+    "item": {
+      "title": "Table",
+      "description": [
+        "<bold>Stock in SMILE already stocktaked:</bold> total stock recorded in the SMILE system.",
+        "<bold>Expired stock in SMILE:</bold> total stock that has expired at the time of stocktaking.",
+        "<bold>Stock in transit:</bold> total distribution stock not yet received during stocktaking + total return stock not yet received during stocktaking.",
+        "<bold>Real stock in stocktaking:</bold> total real material stock available during stocktaking.",
+        "<bold>Difference:</bold> the difference in stock quantity between stock in SMILE and real stock during stocktaking."
+      ]
+    }
+  },
+  "form": {
+    "period": {
+      "label": "Stock Taking Period",
+      "placeholder": "Select stock taking period"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "name": {
+        "label": "Material Name",
+        "placeholder": "Select material name"
+      }
+    },
+    "expired": {
+      "label": "Expired Date"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "information_type": {
+      "label": "Kind of Information"
+    }
+  },
+  "column": {
+    "entity": {
+      "main": "Entity",
+      "condition": "Entity Condition",
+      "have_transaction": "Have Transaction",
+      "not_yet": "Haven't completed Stock Taking",
+      "done": "Have Done Stock Taking",
+      "total": "Total Entity"
+    },
+    "result": {
+      "difference": "Difference",
+      "stock": {
+        "taking": "Stock in SMILE Already Stocktaked",
+        "expired": "Expired Stock in SMILE",
+        "in_transit": "Stock in Transit",
+        "real": "Real Stock in Stocktaking"
+      }
+    },
+    "material": {
+      "real": "Real"
+    },
+    "opname_recap": "Mandatory Material Progress",
+    "display_in_dashboard": "Display in Dashboard"
+  },
+  "last_updated_at": "Last updated at"
+}

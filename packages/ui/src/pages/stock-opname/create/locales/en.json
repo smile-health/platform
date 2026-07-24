@@ -1,0 +1,168 @@
+{
+  "meta": "SMILE | Add Stock Taking",
+  "title": "Add Stock Taking",
+  "form": {
+    "detail": {
+      "title": "Stock Taking Detail",
+      "label": {
+        "entity": "Entity",
+        "periode": "Period"
+      },
+      "placeholder": {
+        "entity": "Select entity",
+        "periode": "Select period"
+      },
+      "cold_storage": [
+        "Total Volume Stock :",
+        "Asset Neto Capacity :",
+        "Used Percentage :"
+      ],
+      "warning_changes": [
+        "Are you sure want to remove this ?",
+        "All the information you’ve entered in this material will be lost."
+      ]
+    },
+    "material": {
+      "title": "Product Template Material",
+      "table": {
+        "search": [
+          "Search product template",
+          "Search material"
+        ],
+        "description": [
+          "Please select entity and stock taking period first",
+          "Click on the checkbox to select the material. Selected material will appear on transaction table below"
+        ],
+        "column": {
+          "name": "Material Name",
+          "available_stock": "Available Stock",
+          "last_update": "Last Update Stock Taking {{date}}",
+          "selection": "Selection",
+          "total_on_hand_stock": "Total On Hand Stock",
+          "remaining_stock": "Remaining Stock",
+          "mandatory": "Mandatory"
+        }
+      },
+      "yes": "Yes",
+      "no": "No"
+    },
+    "trademark": {
+      "title": "Product Variant Material",
+      "table": {
+        "search": "Search product variant material",
+        "column": {
+          "name": "Material Name",
+          "so_info": "SO Info",
+          "selection": "Selection",
+          "remaining_stock": "Remaining Stock"
+        }
+      }
+    },
+    "transaction": {
+      "title": "Stock Taking Table",
+      "action": {
+        "add_batch_quantity": "Batch Quantity",
+        "update_batch_quantity": "Update Batch Quantity",
+        "add_detail_quantity": "Detail",
+        "update_detail_quantity": "Update Detail"
+      },
+      "columns": {
+        "material_info": "Material Info",
+        "activity": "Activity",
+        "expired_date": "Expired Date",
+        "remaining_stock": "Remaining Stock at SMILE",
+        "stock_in_transit": "Stock In Transit",
+        "real_stock": "Real Stock Remaining",
+        "action": "Action",
+        "batch": "Batch Info"
+      },
+      "description": {
+        "batch": {
+          "production_date": "Production Date: {{value}}",
+          "manufacturer": "Manufacturer: {{value}}",
+          "expired_date": "Expired Date: {{value}}",
+          "code": "Batch Code: {{value}}"
+        },
+        "stock": {
+          "remaining_stock": "Remaining Stock at Smile: {{value}}",
+          "real_stock": "Real Stock Remaining: {{value}}"
+        }
+      },
+      "placeholder": {
+        "add_material": "Add material",
+        "activity": "Select activity",
+        "batch": "Please enter batch code",
+        "qty": "Please enter qty"
+      },
+      "detail": {
+        "title": [
+          "Batch of Material {{name}}",
+          "Detail of Material {{name}}"
+        ]
+      },
+      "validation": {
+        "qty_unit": "Quantity must be a multiple of {{amount}}",
+        "material": "No materials selected"
+      },
+      "drawer": {
+        "title": [
+          "Batch List",
+          "Detail List"
+        ],
+        "description": [
+          "Product Template Material",
+          "Product Variant Material",
+          "Available Stock"
+        ]
+      }
+    },
+    "new_batch": {
+      "title": [
+        "Add New Batch",
+        "Add New Detail"
+      ],
+      "label": {
+        "activity": "Activity",
+        "batch_code": "Batch Code",
+        "manufacturer": "Manufacturer",
+        "production_date": "Production Date",
+        "expired_date": "Expired Date"
+      },
+      "placeholder": {
+        "activity": "Select activity",
+        "batch_code": "Enter batch code",
+        "manufacturer": "Select manufacturer"
+      },
+      "validation": {
+        "production_date": "Production date cannot be later than today",
+        "expired_date": "Expiration date cannot be less than today",
+        "batch_code_alread_exist": "Batch code alread exist",
+        "activity_alread_exist": "Can not add new batch with same activity"
+      }
+    },
+    "reset": {
+      "description": "Are you sure you want to delete all filled data?"
+    },
+    "submit": {
+      "error": {
+        "no_material": "There is no item selected"
+      },
+      "warning": {
+        "warning_item": "There is no item selected, Please check the added materials again and press the save button on the batch to save the changes",
+        "out_date": [
+          "Are you sure want to update this ?",
+          "Data has been stock taken during this period."
+        ]
+      },
+      "success": {
+        "out_date": "You are conducting Stock Taking outside the SO date determined by the Ministry of Health",
+        "today": "Stock Taking successfully saved"
+      }
+    }
+  },
+  "modal_confirmation_stock" : {
+    "desc_one" : "Some items are not filled in yet",
+    "desc_two" : "The system will assume the stock of these items is 0. Are you sure you want to continue?"
+  },
+  "cut_off_time": "Stock Cut-off Time"
+}

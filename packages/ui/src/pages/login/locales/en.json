@@ -1,0 +1,72 @@
+{
+  "policy": "Privacy Policy",
+  "password": "Password",
+  "forgot": "Forgot password",
+  "login": "Login",
+  "help": "Need Help ?",
+  "processing": "Processing",
+  "about": "About",
+  "success_login": "Login successful. Redirecting to the homepage",
+  "invalid_login": "Invalid username or password",
+  "success_logout": "Logout successful. Thank you for visiting",
+  "disclaimer": {
+    "title": "Disclaimer",
+    "desc": "SMILE (Electronic Health Logistics Inventory Monitoring System) is an integrated application designed by the Ministry of Health as a real-time medical supply chain and cold-chain management tool. SMILE has been utilized by health and environmental health workers, logistics managers, and decision makers for health policy and programs in Indonesia to provide more efficient, transparent, and affordable healthcare services.<br /> UNDP Indonesia supports the country in building a more inclusive, ethical and sustainable digital solution, SMILE."
+  },
+  "close": "Close",
+  "privacy_policy": {
+    "title": "Privacy Policy",
+    "sub_title_one": "Privacy Policy for SMILE",
+    "effective_date": "Effective Date: 12-09-2023",
+    "desc_one": "This Privacy Policy describes how we operate the SMILE mobile application (the \"App\"), what data we access and collect, how it is used, retained, and deleted.",
+
+    "sub_title_two": "Data We Collect",
+    "desc_two": "To provide healthcare management services through the App, we access and collect the following data:",
+    "desc_two_list": [
+      "Health Data: including but not limited to medical records, diagnoses, visit history, examination results, and other health-related information entered by you or medical personnel into the App.",
+      "Identity Data: name, date of birth, patient ID number, and other demographic information.",
+      "App Usage Data: non-personal information such as device type, operating system version, and feature usage logs, used solely to improve App performance."
+    ],
+
+    "sub_title_three": "Purpose of Data Use",
+    "desc_three": "The data we collect is used for the following purposes:",
+    "desc_three_list": [
+      "To provide healthcare management services through the App.",
+      "To support medical personnel in delivering care to patients.",
+      "To improve the App's functionality and user experience.",
+      "To comply with applicable legal and regulatory obligations in the healthcare sector."
+    ],
+
+    "sub_title_four": "Data Retention",
+    "desc_four": "User data is stored on secure servers for as long as your account remains active and as long as necessary to fulfill the purposes of the service. Health data is retained in accordance with applicable Indonesian laws and regulations, including medical record requirements that mandate a minimum retention period of 5 (five) years from the date of the patient's last visit. Non-personal usage data is retained for a maximum of 2 (two) years.",
+
+    "sub_title_five": "Data Deletion",
+    "desc_five": "You have the right to request deletion of your personal data from the App. To submit a data deletion request, please contact us using the information provided below. We will process your request within 30 (thirty) business days, unless a legal obligation requires us to retain the data for a longer period. Deletion of health data is subject to applicable medical record regulations.",
+
+    "sub_title_six": "Third-Party Services",
+    "desc_six": "The App may use third-party services or libraries that have their own privacy policies. We ensure that any third parties we work with are committed to maintaining the security and confidentiality of user data. Please review the relevant third-party privacy policies if applicable.",
+
+    "sub_title_seven": "Children's Privacy",
+    "desc_seven": "The App is not intended for use by children under the age of 13. We do not knowingly collect or solicit personal information from children. If you believe that we have collected personal information from a child under 13, please contact us immediately.",
+
+    "sub_title_eight": "Changes to this Privacy Policy",
+    "desc_eight": "We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the updated Privacy Policy within the App. Changes take effect from the date of the update indicated.",
+
+    "sub_title_nine": "Contact Us",
+    "desc_nine": "If you have any questions, concerns, or wish to submit a data deletion request regarding this Privacy Policy, please contact us at"
+  },
+  "help_center": {
+    "title": "Help Center",
+    "send_email": "Send Email",
+    "no_handphone": "No. Handphone",
+    "whatsapp": "Whatsapp",
+    "smile_help_desk": "SMILE Help Desk",
+    "desc": "Scan this Barcode to connect Helpdesk contact"
+  },
+  "username": {
+    "validation": {
+      "invalid": "Username can only consist of letters, numbers, dots, and underscores."
+    }
+  },
+  "required":"Required"
+}

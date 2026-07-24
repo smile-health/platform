@@ -1,0 +1,72 @@
+{
+  "title": "Discard Dashboard",
+  "description": "Discard Dashboard is a report that shows disposal transactions that are differentiated based on the reason for the of the disposal. The value displayed is the accumulated quantity/amount of doses for each reason in a certain period.",
+  "information": [
+    "<b>Reason:</b> reason for disposal, does not need to be selected if you want to see all reasons."
+  ],
+  "tabs": {
+    "all": "Overall",
+    "entity": "Entity",
+    "location": "Region"
+  },
+  "form": {
+    "period": {
+      "label": "Period"
+    },
+    "range": {
+      "label": "Date Range"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Select level KFA material"
+      },
+      "name": {
+        "label": "Material",
+        "placeholder": "Select material"
+      }
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "reason": {
+      "label": "Reason",
+      "placeholder": "Select reason"
+    }
+  },
+  "columns": {
+    "type": "Type",
+    "entity": "Entity",
+    "location": "Location"
+  },
+  "data": {
+    "dayly": "Daily",
+    "montly": "Monthly",
+    "material_level": {
+      "active_subtance": "Product Template"
+    }
+  },
+  "from_to": "From {{from}} to {{to}}",
+  "last_updated_at": "Last updated at"
+}

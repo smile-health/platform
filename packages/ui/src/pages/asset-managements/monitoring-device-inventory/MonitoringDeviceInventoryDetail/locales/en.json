@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "Monitoring Device Detail"
+  },
+  "section": {
+    "device_info": {
+      "title": "Device Information"
+    },
+    "operational_details": {
+      "title": "Operational Details"
+    },
+    "entity": {
+      "title": "Entity"
+    },
+    "budget": {
+      "title": "Budget"
+    },
+    "operational_asset_monitoring_device_relation": {
+      "title": "Operational Asset & Monitoring Device Relation"
+    }
+  },
+  "button": {
+    "more_details": "More Details"
+  },
+  "modal": {
+    "delete_confirmation": "Are you sure you want to delete this device?"
+  },
+  "data": {
+    "asset_name": "Asset Name",
+    "serial_number": "Serial Number",
+    "device_status": "Device Status",
+    "operational_status": "Operational Status",
+    "updated_by": "Updated By",
+    "updated_at": "Updated At",
+    "created_by": "Created By",
+    "created_at": "Created At"
+  }
+}

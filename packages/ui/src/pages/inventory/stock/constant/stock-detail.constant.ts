@@ -1,0 +1,4 @@
+export enum DETAIL_STOCK_INDEX {
+    API_FIRST_INDEX = 0,
+    API_SECOND_INDEX = 1,
+}

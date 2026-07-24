@@ -1,0 +1,55 @@
+  {
+  "title": {
+    "page": "Aktivitas Rekonsiliasi",
+    "tab": {
+      "all": "Keseluruhan",
+      "entity": "Per Entitas"
+    },
+    "chart": "Laporan Aktivitas Rekonsiliasi",
+    "yLabel": "Jumlah Aktivitas",
+    "xLabel": "Bulan"
+  },
+  "export": "Ekspor",
+  "export_as": "Ekspor sebagai {{type}}",
+  "form": {
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "period": {
+      "label": "Periode",
+      "placeholder": "Pilih periode bulan dan tahun"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entity": {
+      "label": "Entitas",
+      "placeholder": "Pilih entitas"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "created_data": {
+      "label": "Tanggal Pembuatan",
+      "placeholder": "Pilih tanggal pembuatan"
+    }
+  },
+  "columns": {
+    "entity": "Entitas",
+    "frequency": {
+      "total": "Jumlah Frekuensi",
+      "average": "Rata-rata Frekuensi"
+    }
+  }
+}

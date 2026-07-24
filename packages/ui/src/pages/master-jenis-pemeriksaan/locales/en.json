@@ -1,0 +1,30 @@
+{
+  "title": {
+    "list": "Sub Category",
+    "create": "Add Sub Category",
+    "edit": "Edit Sub Category",
+    "detail": "Sub Category Detail"
+  },
+  "form": {
+    "section_title": "Sub Category Details",
+    "name": {
+      "label": "Sub Category Name",
+      "placeholder": "Enter sub category name"
+    },
+    "description": {
+      "label": "Sub Category Description",
+      "placeholder": "Enter sub category description"
+    }
+  },
+  "list": {
+    "filter": {
+      "name": "Sub Category Name",
+      "name_placeholder": "Search by sub category name..."
+    }
+  },
+  "table": {
+    "name": "Sub Category Name",
+    "description": "Description",
+    "actions": "Actions"
+  }
+}

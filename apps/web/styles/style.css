@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* UNDP GLOBAL VARIABLE */
+:root {
+  --success: #06d6a0;
+}
+
+.maps-height {
+  height: calc(100vh - 4rem);
+}
+
+/* fix radio button tidak tampil di chrome */
+input[type='radio'] {
+  -webkit-appearance: radio !important;
+}
+
+/* unselectable */
+.unselectable {
+  user-select: none;
+}
+
+/* to remove fusioncharts credit label */
+[pointer-events='bounding-box'] {
+  display: none;
+}

@@ -1,0 +1,220 @@
+{
+  "title": "Create New Central Distribution",
+  "section": {
+    "detail": "Order Detail",
+    "material": "Material in {{form}}",
+    "distribution_table": "Central Distribution Table",
+    "batch": {
+      "list": "Batch List",
+      "add": "Add New Batch",
+      "edit": "Edit Batch"
+    }
+  },
+  "info": {
+    "confirmation": {
+      "reset": "Are you sure you want to delete the filled data?",
+      "submit": "Are you sure you want to save this data?"
+    },
+    "material": {
+      "empty": "Complete the order detail first",
+      "available": "Click on the checkbox to select the material. Selected material will appear on central distribution table below"
+    },
+    "empty": {
+      "title": "No data available",
+      "description": {
+        "material": "This list is currently empty. Please select the materials.",
+        "batch": "This list is currently empty. Please add new batch"
+      }
+    },
+    "message": {
+      "new_distribution": "new central distribution"
+    }
+  },
+  "action": {
+    "save": "Save",
+    "remove": "Remove",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "new_batch": "New Batch",
+    "quantity": {
+      "batch": {
+        "add": "Batch",
+        "update": "Update Batch"
+      },
+      "non_batch": {
+        "add": "Quantity",
+        "update": "Update Quantity"
+      }
+    }
+  },
+  "form": {
+    "vendor": {
+      "label": "Sender",
+      "placeholder": "Select sender",
+      "validation": {
+        "required": "Sender is required"
+      }
+    },
+    "customer": {
+      "label": "Receiver",
+      "placeholder": "Select receiver",
+      "validation": {
+        "required": "Receiver is required"
+      }
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity",
+      "info": "The activities displayed are only activities that are still active on this Entity",
+      "validation": {
+        "required": "Activity is required"
+      }
+    },
+    "delivery": {
+      "label": "Delivery Type",
+      "placeholder": "Type to search",
+      "validation": {
+        "required": "Delivery type is required"
+      }
+    },
+    "date": {
+      "required": {
+        "label": "Required by Date",
+        "validation": {
+          "invalid": "The date must be today or later"
+        }
+      },
+      "expired": {
+        "label": "Expired Date",
+        "validation": {
+          "required": "Expired date is required",
+          "expired_date_can_not_be_in_past": "Expired date cannot be less than today"
+        }
+      },
+      "production": {
+        "label": "Production Date",
+        "validation": {
+          "required": "Production date is required"
+        }
+      }
+    },
+    "do": {
+      "label": "DO Number",
+      "placeholder": "Enter DO number",
+      "validation": {
+        "required": "DO number is required"
+      }
+    },
+    "po": {
+      "label": "Contract Number",
+      "placeholder": "Type or choose from the list",
+      "validation": {
+        "required": "Contract number is required"
+      }
+    },
+    "comment": {
+      "label": "Comment",
+      "placeholder": "Please enter comment"
+    },
+    "material": {
+      "search": {
+        "placeholder": "Search material"
+      },
+      "add": {
+        "placeholder": "Add material"
+      }
+    },
+    "order_items": {
+      "validation": {
+        "required": "You haven't selected any material"
+      }
+    },
+    "batch": {
+      "validation": {
+        "required": "Batch data cannot be empty"
+      },
+      "id": {
+        "label": "Batch ID",
+        "placeholder": "Enter batch ID",
+        "validation": {
+          "required": "Batch ID is required"
+        }
+      }
+    },
+    "ordered_qty": {
+      "placeholder": "Please enter quantity",
+      "validation": {
+        "required": "Quantity is required",
+        "min": "The minimum quantity must be at least 0",
+        "pieces": "Quantity must be a multiple of {{value}}"
+      }
+    },
+    "price": {
+      "total": {
+        "placeholder": "Enter total price"
+      },
+      "unit": {
+        "placeholder": "Price/{{unit}}"
+      }
+    },
+    "manufacturer": {
+      "label": "Manufacturer",
+      "placeholder": "Select manufacturer",
+      "validation": {
+        "required": "Manufacturer is required"
+      }
+    },
+    "plan": {
+      "year": {
+        "label": "Budget year",
+        "placeholder": "Select budget year",
+        "validation": {
+          "required": "Budget year is required"
+        }
+      },
+      "source": {
+        "label": "Budget source",
+        "placeholder": "Select budget source",
+        "validation": {
+          "required": "Budget source is required"
+        }
+      }
+    }
+  },
+  "column": {
+    "material_name": "Material Name",
+    "selection": "Selection",
+    "batch_info": "Batch Info",
+    "quantity": "Quantity",
+    "quantity_unit": "Quantity (Unit: {{unit}})",
+    "plan": {
+      "year": "Budget Year",
+      "source": "Budget Source"
+    },
+    "price": {
+      "total": "Total Price",
+      "unit": "Price/{{unit}}"
+    },
+    "action": "Action"
+  },
+  "label": {
+    "batch_code": "Batch Code",
+    "manufacturer": "Manufacturer",
+    "allocated": "Allocated",
+    "plan": {
+      "year": "Budget Year",
+      "source": "Budget Source"
+    },
+    "date": {
+      "expired": "Expired Date",
+      "production": "Production Date"
+    },
+    "option": {
+      "create": "Create {{ value }}"
+    }
+  },
+  "validation": {
+    "batch_code_alread_exist": "Batch ID is already available with the same manufacturer",
+    "manufacturer_alread_exist": "Can not add new batch with same manufacturer"
+  }
+}

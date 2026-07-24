@@ -1,0 +1,12 @@
+{
+  "smile_vs_asik": {
+    "smile_consumed": "SMILE's Last Mile (Dose)",
+    "asik_coverage": "ASIK Coverage",
+    "percentage": "Percentage",
+    "dose_per_vial": "Number of Doses per Vial",
+    "vial": "Vial",
+    "usage_index": "Usage Index (ASIK Coverage / Vial)",
+    "target": "Target Amount",
+    "scope": "Scope (ASIK / Target) * 100%"
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "title": {
+    "request": "Order Details",
+    "distribution": "Distribution Details",
+    "return": "Return Details",
+    "central_distribution": "Central Distribution Details",
+    "relocation": "Order Relocation Details",
+    "allocate_request": "Allocate Order",
+    "allocate_relocation": "Allocate Relocation",
+    "receive_order": "Receive Order",
+    "receive_distribution": "Receive Distribution",
+    "receive_return": "Receive Return",
+    "receive_central_distribution": "Receive Central Distribution",
+    "receive_relocation": "Receive Relocation"
+  },
+  "order_status": {
+    "title": "Order Status"
+  },
+  "customer": {
+    "title": "Receiver"
+  },
+  "vendor": {
+    "title": "Sender"
+  },
+  "details": {
+    "title": "Details"
+  },
+  "comment": {
+    "title": "Comment"
+  },
+  "history": {
+    "title": "Order History"
+  },
+  "modal": {
+    "hierarchy": {
+      "button": {
+        "show": "Show Batch Quantity",
+        "hide": "Hide Batch Quantity"
+      }
+    },
+    "add_item": {
+      "title": "Add Item",
+      "empty_data_title": "No data available",
+      "empty_data_desc": "This list is currently empty. Please select material first."
+    },
+    "edit_item": {
+      "title": "Edit Item"
+    },
+    "cancel_order": {
+      "title": "Cancel Order"
+    },
+    "validate_order": {
+      "title": "Cancel Order"
+    },
+    "confirm_order": {
+      "title": "Confirm Order",
+      "trademark_popup": {
+        "title": "Product Variant Material",
+        "button": {
+          "save": "Save"
+        }
+      },
+      "product_template": "Product Template"
+    },
+    "cancel_confirmation": {
+      "title": "Cancel Confirmation",
+      "description": "Continue to cancel the confirmation, and make the order pending.",
+      "submit_button": "Yes, Continue Cancel Confirmation"
+    },
+    "allocate": {
+      "title_batch": "Add Batch Quantity",
+      "title_non_batch": "Add Quantity",
+      "add_stock_from_other_activity": "Take Stock from Other Activities"
+    },
+    "quantity_detail": {
+      "title": "Quantity Detail",
+      "title_hierarchy": "Quantity Detail of Product Variant Material"
+    },
+    "ship_order": {
+      "title": "Shipping Order"
+    },
+    "order_history_detail": {
+      "title": "Order History Detail"
+    },
+    "input_qty": "Input Quantity"
+  },
+  "drawer": {
+    "hierarchy": {
+      "allocate": {
+        "button": {
+          "add_trademark": "Product Variant Material"
+        }
+      }
+    },
+    "validate_order": {
+      "title": "Validated Order"
+    },
+    "confirm_order": {
+      "title": "Confirm Order"
+    },
+    "allocate": {
+      "title": "Allocate Order"
+    },
+    "batch_list": {
+      "title": "Product Variant"
+    }
+  },
+  "info": {
+    "receive": "If the number of items and the batch number don't match, don't click receive and please report it to the helpdesk"
+  },
+  "data": {
+    "customer_name": "Receiver Name",
+    "address": "Address",
+    "required_by_date": "Required By Date",
+    "vendor_name": "Sender Name",
+    "delivery_number": "DO Number",
+    "do_number": "DO Number",
+    "request_number": "Order Number",
+    "distribution_number": "Distribution Number",
+    "return_number": "Return Number",
+    "central_distribution_number": "Central Deliver Number",
+    "relocation_number": "Order Relocation Number",
+    "activity": "Activity",
+    "stock_from_activity": "Stock From Activity",
+    "delivery_type": "Delivery Type",
+    "contract_number": "Contract Number",
+    "created_by": "Created By",
+    "created_at": "Created At",
+    "release_date": "Release Date",
+    "actual_shipment_date": "Actual Shipment Date",
+    "actual_receipt_date": "Actual Receipt Date",
+    "submit_comment": "Submit Comment",
+    "status_at_posting": "Status at Posting",
+    "batch_code": "Batch Code",
+    "expired_date": "Expired Date",
+    "service_type": "Service Type",
+    "quantity": "Quantity"
+  },
+  "button": {
+    "letter_report": "Order Letter",
+    "var_report": "Goods Receipt Report",
+    "batch_note": "Allocation Note",
+    "sbbk": "Delivery Note",
+    "confirmation_note": "Confirmation Note",
+    "view_shipment_detail": "View Shipment Details",
+    "cancel_order": "Cancel Order",
+    "cancel_confirmation": "Cancel Confirmation",
+    "allocate": "Allocate",
+    "ship_order": "Ship Order",
+    "confirm_order": "Confirm Order",
+    "receive": "Submit Receive",
+    "receive_order": "Receive Order",
+    "submit_comment": "Submit Comment",
+    "submit_validation": "Submit Validation",
+    "submit_confirmation": "Submit Confirmation",
+    "submit_allocation": "Submit Allocation",
+    "quantity": "Quantity",
+    "batch_quantity": "Batch Quantity",
+    "update_quantity": "Update Quantity",
+    "update_batch_quantity": "Update Batch Quantity",
+    "validate": "Validate",
+    "copy_history": "Copy History",
+    "update_product_variant": "Update Product Variant"
+  },
+  "table": {
+    "title": {
+      "item": "Table Item"
+    },
+    "column": {
+      "si_number": "SI.No",
+      "material_name": "Material",
+      "product_variant": "Product Variant",
+      "ordered": "Ordered",
+      "validated": "Validated",
+      "confirmed": "Confirmed",
+      "allocated": "Allocated",
+      "shipped": "Shipped",
+      "received": "Received",
+      "total_available_stock": "Total Available Stock",
+      "available_stock": "Available Stock",
+      "available_stock_at": "Available Stock at {{ name }}",
+      "stock_on_hand": "Stock on Hand",
+      "allocation": "Allocation",
+      "batch_info": "Batch Info",
+      "batch_detail": "Batch Detail",
+      "activity": "Activity",
+      "quantity": "Quantity",
+      "total_quantity": "Total Quantity",
+      "material_status": "Material Status",
+      "reason": "Reason",
+      "trademark_material": "Product Variant Material"
+    },
+    "trademark": {
+      "batch": {
+        "production_date": "Production Date : {{ date }}",
+        "expired_date": "Expired Date : {{ date }}",
+        "manufacturer": "Manufacturer : {{ name }}"
+      },
+      "column": {
+        "received_qty": {
+          "placeholder": "Ex: 100",
+          "validation": {
+            "multiply": "Quantity must be a multiple of {{value}}"
+          }
+        },
+        "allocated_qty": {
+          "placeholder": "Ex: 100",
+          "validation": {
+            "multiply": "Quantity must be a multiple of {{value}}",
+            "less_than": "Quantity must be less than {{value}}"
+          }
+        },
+        "batch_from": "Batch from",
+        "non_batch": "Non batch from",
+        "material_active_substance": "Product Template Material",
+        "stock_on_hand_at": "Stok On Hand at {{ name }}",
+        "available_stock_at": "Available Stock at {{ name }}",
+        "activity_name": "Activity {{ activity_name }}",
+        "material_name": "Material {{ material_name }} "
+      },
+      "validation": {
+        "min_qty": "Minimum 1 Quantity must be filled",
+        "required": "Quantity is required"
+      },
+      "button": {
+        "close": "Close",
+        "save": "Save"
+      }
+    },
+    "view_product_variant": "View Product Variant",
+    "product_variant": "Product Variant",
+    "enter_product_variant_qty": "Enter Product Variant Qty"
+  },
+  "form": {
+    "allocated_qty": {
+      "validation": {
+        "less_than": "Quantity must be less than {{value}}",
+        "multiply": "Quantity must be a multiple of {{value}}",
+        "total_must_same_as_confirmed_qty": "Total allocated quantity must be same as confirmed quantity ({{value}})"
+      }
+    },
+    "received_qty": {
+      "placeholder": "ex: 100",
+      "validation": {
+        "multiply": "Quantity must be a multiple of {{value}}"
+      }
+    },
+    "material": {
+      "label": "Add Material",
+      "placeholder": "Select material",
+      "validation": {
+        "required": "Material is required"
+      }
+    },
+    "letter_number": {
+      "label": "Letter Number",
+      "placeholder": "Enter letter number",
+      "validation": {
+        "required": "Letter number cannot be empty"
+      }
+    },
+    "comment": {
+      "label": "Comment",
+      "placeholder": "Please enter comment",
+      "validation": {
+        "required": "Comment cannot be empty"
+      }
+    },
+    "ordered_qty": {
+      "label": "Order Quantity",
+      "placeholder": "Please enter order quantity",
+      "helper": "Quantity recommended",
+      "validation": {
+        "zero": "Quantity must be greater than 0",
+        "required": "Quantity is required",
+        "multiply": "Quantity must be a multiple of {{value}}",
+        "must_lesser_than_vendor_stock": "Quantity must be lesser than vendor stock {{value}}"
+      },
+      "button": {
+        "update_trademark_material": "Update Product Variant Material",
+        "add_trademark_material": "Product Variant Material"
+      }
+    },
+    "reason": {
+      "label": "Reason",
+      "placeholder": "Select reason",
+      "validation": {
+        "required": "Reason is required"
+      }
+    },
+    "other_reason": {
+      "label": "Other Reason",
+      "placeholder": "Please enter other reason",
+      "validation": {
+        "required": "Other reason is required"
+      }
+    },
+    "validated_qty": {
+      "placeholder": "Please enter quantity",
+      "validation": {
+        "required": "Quantity is required",
+        "multiply": "Quantity must be a multiple of {{value}}",
+        "max": "Cannot input quantity more than available stock"
+      }
+    },
+    "confirmed_qty": {
+      "placeholder": "Please enter quantity",
+      "validation": {
+        "required": "Quantity is required",
+        "multiply": "Quantity must be a multiple of {{value}}",
+        "max": "Cannot input quantity more than available stock"
+      }
+    },
+    "receive_qty": {
+      "placeholder": "Please enter quantity",
+      "validation": {
+        "required": "Quantity is required",
+        "equal": "Quantity must be equal to shipped quantity, ({{ value }})"
+      }
+    },
+    "material_status": {
+      "label": "Material Status",
+      "placeholder": "Select status"
+    },
+    "allocations": {
+      "validation": {
+        "at_least_one": "At least one allocation is required",
+        "is_match_with_confirmed_qty": "Allocations doesn't match"
+      }
+    },
+    "sales_ref": {
+      "label": "Reference Number",
+      "placeholder": "Reference number",
+      "validation": {
+        "required": "Reference number is required"
+      }
+    },
+    "estimated_date": {
+      "label": "Estimated Arrival Date",
+      "placeholder": "Estimated Arrival Date",
+      "validation": {
+        "required": "Estimated arrival date is required"
+      }
+    },
+    "taken_by_customer": {
+      "label": "Customer picked up?",
+      "validation": {
+        "required": "Taken by customer is required"
+      }
+    },
+    "actual_shipment_date": {
+      "label": "Actual Shipping Date",
+      "placeholder": "Actual Shipping Date",
+      "validation": {
+        "required": "Actual shipping date is required",
+        "max": "Actual shipping date must be less than or equal to today"
+      }
+    },
+    "received_date": {
+      "label": "Received Date",
+      "placeholder": "Received Date",
+      "validation": {
+        "required": "Received date is required",
+        "format": "Received date format is invalid.",
+        "future_date": "Received date must be less than or equal to today",
+        "past_date": "The selected date is too far from actual shipment date."
+      }
+    }
+  },
+  "text": {
+    "zero_stock": "Zero stock"
+  },
+  "message": {
+    "add_item_success": "Add order successful",
+    "add_item_failed": "Add order failed",
+    "edit_item_success": "Edit order successful",
+    "edit_item_failed": "Edit order failed",
+    "comment_success": "Comment submitted successfully",
+    "comment_failed": "Error submitting comment",
+    "cancel_order_success": "Cancel order successful",
+    "cancel_order_failed": "Cancel order failed",
+    "validate_order_success": "Validate order successful",
+    "validate_order_failed": "Validate order failed",
+    "confirm_order_success": "Confirm order successful",
+    "confirm_order_failed": "Confirm order failed",
+    "cancel_confirmation_success": "Cancel confirmation successful",
+    "cancel_confirmation_failed": "Cancel confirmation failed",
+    "allocate_order_success": "Allocate order successful",
+    "allocate_order_failed": "Allocate order failed",
+    "ship_order_success": "Ship order successful",
+    "ship_order_failed": "Ship order failed",
+    "receive_order_success": "Receive order successful",
+    "receive_order_failed": "Receive order failed",
+    "status_not_eligible": "Status not eligible",
+    "status_already_fulfilled": "Status already fulfilled",
+    "status_already_allocated": "Status already allocated"
+  },
+  "capacity_projection": {
+    "title": "Projection of Cold Storage Capacity",
+    "projection_of_total_stock_volume": "Projection of Total Order Volume (Litre)",
+    "storage_net_capacity": "Cold Storage Net Capacity (Litre)",
+    "projection_of_percentage_used": "Projection of Capacity Utilization (%)",
+    "based_on_ordered_qty": "Based on Ordered Qty",
+    "based_on_confirmed_qty": "Based on Confirmed Qty",
+    "based_on_allocated_qty": "Based on Allocated Qty"
+  }
+}

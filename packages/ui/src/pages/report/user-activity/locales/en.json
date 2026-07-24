@@ -1,0 +1,93 @@
+{
+  "title": {
+    "page": "User Activity",
+    "tab": {
+      "overview": "Overview",
+      "entity": "Per Entity"
+    },
+    "type": {
+      "active": "Active",
+      "inactive": "Inactive"
+    }
+  },
+  "export": "Export as {{type}}",
+  "empty": "No data to display",
+  "percentage": "{b}: {d}% ({c} of {{total}} entity)",
+  "form": {
+    "period": {
+      "label": "Period",
+      "placeholder": "Select month and year period"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "name": {
+        "label": "Material",
+        "placeholder": "Select material"
+      }
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "show_customer_activity": {
+      "label": "Show Customer Activity"
+    },
+    "customer_tag": {
+      "label": "Customer Tag",
+      "placeholder": "Select customer tag"
+    }
+  },
+  "information": {
+    "title": "User Activity Report",
+    "description": "The User Activity Report explains the activity level of entities on a specific material. The level of activity is based on outgoing transactions made by the entity during a specific month.",
+    "item": {
+      "chart": {
+        "title": "Pie Chart Data",
+        "description": "Activity is measured based on outgoing transactions involving the material selected in the filter. If an entity makes at least one outgoing transaction during the month, it is counted as an active entity. The green section in the chart shows active entities, while the red section shows inactive ones."
+      },
+      "table": {
+        "title": "Data Table",
+        "description": [
+          "Each row shows an entity that has the selected material based on the filter.",
+          "Each month column shows the date in that month, and the displayed value is the number of outgoing transactions on that day.",
+          "Total active days refer to the number of days with at least one outgoing transaction.",
+          "Total inactive days refer to the number of days with no outgoing transactions.",
+          "Total frequency is the overall number of outgoing transactions during the month.",
+          "Average frequency is the total frequency divided by the number of active days, showing how often transactions happened on average each active day."
+        ]
+      }
+    }
+  },
+  "column": {
+    "entity": "Entity",
+    "customer": "Customer Entity",
+    "active": "Total Active Days",
+    "inactive": "Total Inactive Days",
+    "frequency": {
+      "total": "Total Frequency",
+      "average": "Average Frequency"
+    }
+  },
+  "yes": "Yes",
+  "no": "No",
+  "community_health_post": "Community Health Post (Posyandu)"
+}

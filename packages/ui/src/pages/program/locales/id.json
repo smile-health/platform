@@ -1,0 +1,13 @@
+{
+  "no_data": {
+    "title": "Tidak Ada Program yang Tersedia",
+    "description": [
+      "Belum ada program yang terpasang. Tambahkan satu untuk memulai.",
+      "Butuh bantuan? Hubungi pengembang kami"
+    ]
+  },
+  "column": {
+    "name": "Nama Program"
+  },
+  "search": "Cari nama program"
+}

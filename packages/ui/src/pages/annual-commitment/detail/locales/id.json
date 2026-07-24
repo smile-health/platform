@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "Detail Komitmen Tahunan"
+  },
+  "section": {
+    "detail": {
+      "title": "Detail Komitmen Tahunan"
+    },
+    "centralAllocation": {
+      "title": "Alokasi Pusat"
+    },
+    "buffer": {
+      "title": "Buffer"
+    }
+  },
+  "field": {
+    "contract_number": "Nomor Kontrak",
+    "contractDate": "Tanggal Kontrak",
+    "contract_end_date": "Tanggal Akhir Kontrak",
+    "year": "Tahun",
+    "supplier": "Supplier",
+    "information": "Informasi"
+  },
+  "table": {
+    "column": {
+      "no": "No.",
+      "material": "Material",
+      "materialName": "Nama Material",
+      "provinceReceiver": "Provinsi Penerima",
+      "numberVial": "Jumlah (Vial/Unit)",
+      "numberDose": "Jumlah (Dosis/Unit)",
+      "action": "Aksi"
+    }
+  },
+  "button": {
+    "edit": "Edit"
+  }
+}

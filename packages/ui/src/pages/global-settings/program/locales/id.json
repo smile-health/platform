@@ -1,0 +1,79 @@
+{
+  "title": {
+    "list": "Pengaturan Program",
+    "create": "Tambah Program",
+    "edit": "Ubah Program",
+    "detail": "Detail Program"
+  },
+  "create": "Tambah Program",
+  "column": {
+    "name": "Nama",
+    "classification_material": "Klasifikasi Material",
+    "updated_by": "Diperbarui Oleh",
+    "updated_at": "Diperbarui Pada",
+    "activity_name": "Nama Kegiatan",
+    "activity_process": "Proses Kegiatan",
+    "protocol": "Protokol"
+  },
+  "filter": {
+    "search": {
+      "label": "Cari Dengan",
+      "placeholder": "Ketik nama program"
+    },
+    "classification_material": {
+      "label": "Klasifikasi Material",
+      "placeholder": "Pilih klasifikasi material"
+    }
+  },
+  "form": {
+    "success": {
+      "create": "Program berhasil dibuat",
+      "update": "Program berhasil diperbarui"
+    },
+    "label": {
+      "key": "Key Program",
+      "name": "Nama Program",
+      "description": "Deskripsi",
+      "classification_material": "Klasifikasi Material",
+      "color": "Warna Program",
+      "protocol": "Protokol"
+    },
+    "placeholder": {
+      "classification_material": "Pilih klasifikasi material",
+      "description": "Masukkan deskripsi...",
+      "protocol": "Cari protokol"
+    },
+    "error": {
+      "protocol": "Pilih minimal satu protokol"
+    },
+    "options": {
+      "classification_material": {
+        "hierarchy": "Klasifikasi KFA (hierarki)",
+        "non_hierarchy": "Non-Klasifikasi (non-hierarki)"
+      },
+      "activity_process": {
+        "bottom_up": "Bottom Up",
+        "top_down": "Top Down"
+      },
+      "protocol": {
+        "default": "Default",
+        "custom": "Rabies",
+        "dengue": "Dengue"
+      }
+    }
+  },
+  "details": {
+    "title": {
+      "detail": "Detail",
+      "activity": "Daftar Kegiatan"
+    },
+    "button": {
+      "activate": "Aktifkan",
+      "deactivate": "Non Aktifkan"
+    },
+    "tabs_title": {
+      "detail": "Rincian",
+      "activity": "Kegiatan"
+    }
+  }
+}

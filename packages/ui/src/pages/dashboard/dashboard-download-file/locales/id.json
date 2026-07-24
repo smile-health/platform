@@ -1,0 +1,9 @@
+{
+  "title": "Unduh Laporan",
+  "last_updated": "Pembaruan Terakhir",
+  "download": "Unduh File",
+  "empty": {
+    "title": "File tidak tersedia",
+    "description": "Tidak ada file yang dapat diunduh pada saat ini. Jika Anda merasa ini adalah kesalahan, silakan hubungi admin."
+  }
+}

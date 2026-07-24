@@ -1,0 +1,48 @@
+{
+  "title": {
+    "monthly": "Monthly Report",
+    "yearly": "Yearly Report"
+  },
+  "form": {
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "subdistrict": {
+      "label": "Subdistrict",
+      "placeholder": "Select subdistrict"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "entity": {
+      "label": "Entity",
+      "placeholder": "Select entity"
+    },
+    "month-year": {
+      "label": "Month and Year",
+      "placeholder": "Select month and year"
+    },
+    "year": {
+      "label": "Year",
+      "placeholder": "Select year"
+    }
+  },
+  "export_all_entities": "Export All Entities",
+  "column": {
+    "vaccine": "Vaccines/Logistics",
+    "opening": "Early Month Stock",
+    "acceptance": "Acceptance",
+    "stock": "Number of Stock + Receipt",
+    "usage": "Usage",
+    "disposal": "Disposal",
+    "closing": "Rest of Logistics",
+    "total": "Total Coverage",
+    "vaccine_ip": "IP Vaccines"
+  }
+}

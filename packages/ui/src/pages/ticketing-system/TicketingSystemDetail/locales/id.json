@@ -1,0 +1,42 @@
+{
+    "ticket_details": "Detail Tiket - {{code}}",
+    "ticket_status": "Status Tiket",
+    "customer": "Penerima",
+    "customer_name": "Nama Penerima",
+    "address": "Alamat",
+    "detail": {
+        "title": "Detail",
+        "do_number": "Nomor DO",
+        "reported_order_number": "Nomor Pesanan Tercatat",
+        "toal_lead_time": "Waktu Pengerjaan Total",
+        "customer_inquiries_to_cancel_the_order": "Penerima ingin membatalkan pesanan?"
+    },
+    "reported": {
+        "material_selected": "Material Terpilih",
+        "quantity": "Kuantitas",
+        "expired_date": "Tanggal Kedaluwarsa",
+        "reason": "Alasan",
+        "reason_detail": "Detail Alasan",
+        "new_material": "Material Baru"
+    },
+    "order_detail": {
+        "show_order_detail": "Tampilkan Detail Pesanan",
+        "detail_order_in_smile": "Detail Pesanan di SMILE ({{code}})",
+        "do_number": "Nomor DO",
+        "order_number": "Nomor Pesanan",
+        "service_type": "Jenis Layanan",
+        "created_at": "Dibuat Pada",
+        "release_date": "Tanggal Rilis"
+    },
+    "float_bar": {
+        "button_packing_slip": "{{addEdit}} Nota Pengemasan",
+        "panging_slip_link": "Tautan Nota Pengemasan",
+        "input_link_of_packing_slip": "Masukkan tautan nota pengemasan",
+        "reported_to_province": "Dilaporkan ke Provinsi",
+        "reported_to_supplier": "Dilaporkan ke Pemasok",
+        "manual_input": "Input Secara Manual",
+        "cancel_ticket": "Batalkan Laporan",
+        "change_status_confirm": "Anda yakin ingin memperbarui status menjadi <BoldText>{{newStatus}}</BoldText>?",
+        "successfully_updated": "Berhasil diperbarui"
+    }
+}

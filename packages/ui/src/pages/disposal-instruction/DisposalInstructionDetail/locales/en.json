@@ -1,0 +1,85 @@
+{
+  "page": {
+    "title": "Disposal Instruction Details"
+  },
+  "section": {
+    "handover_info": {
+      "title": "Handover Info"
+    },
+    "sender": {
+      "title": "Sender"
+    },
+    "receiver": {
+      "title": "Receiver"
+    },
+    "details": {
+      "title": "Details"
+    },
+    "comment": {
+      "title": "Comment"
+    },
+    "view_qty_detail": {
+      "title": "View Qty Detail"
+    },
+    "view_wms_detail": {
+      "title": "View WMS Detail"
+    },
+    "opening_and_closing_of_total_discard": {
+      "title": "Opening & Closing of Total Discard"
+    },
+    "view_wms_status_history": {
+      "title": "View WMS Status History"
+    }
+  },
+  "data": {
+    "name": "Name",
+    "unit": "Unit",
+    "entity": "Entity",
+    "address": "Address",
+    "bast_no": "Handover Report Number",
+    "instruction_type": "Disposal Instruction Type",
+    "activity": "Activitiy",
+    "created_at": "Created At",
+    "created_by": "Created By",
+    "batch_info": "Batch Info",
+    "disposal_instruction_from_internal": "Disposal Instruction from Internal",
+    "disposal_instruction_from_external": "Disposal Instruction from External",
+    "opening_of_total_discard": "Opening of Total Discard",
+    "closing_of_total_discard": "Closing of Total Discard",
+    "total_weight": "Total Weight (kg)",
+    "waste_bag_code": "Waste Bag Code",
+    "waste_type": "Waste Type",
+    "weight_per_bag": "Weight per Bag (kg)",
+    "landfilled": "Landfilled",
+    "ready_for_treatment": "Ready for Treatment",
+    "in_transit": "In Transit",
+    "incinerated": "Incinerated",
+    "in_temporary_storage": "In Temporary Storage",
+    "wms_status_history": "WMS Status History"
+  },
+  "form": {
+    "field": {
+      "comment": {
+        "label": "Comment",
+        "placeholder": "Please enter comment...",
+        "validation": {
+          "required": "Comment cannot be empty"
+        }
+      }
+    }
+  },
+  "info": {
+    "wms_not_available": "WMS data not available yet"
+  },
+  "button": {
+    "submit_comment": "Submit Comment",
+    "view_qty_detail": "View Qty Detail",
+    "view_wms_detail": "View WMS Detail",
+    "download_handover_report_letter": "Handover Report Letter",
+    "view_history": "View History"
+  },
+  "api_response": {
+    "comment_success": "Comment submitted successfully",
+    "comment_failed": "Error submitting comment"
+  }
+}

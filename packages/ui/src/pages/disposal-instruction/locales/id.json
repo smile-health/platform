@@ -1,0 +1,31 @@
+{
+  "data": {
+    "bast_no": "No. Laporan Pemusnahan",
+    "item": "Item",
+    "activity": "Kegiatan",
+    "type": "Tipe",
+    "created_by": "Dibuat Oleh",
+    "device_type": "Jenis Perangkat"
+  },
+  "field": {
+    "disposal_report_number": {
+      "label": "No. Laporan Pemusnahan",
+      "placeholder": "Cari no. laporan pemusnahan"
+    },
+    "disposal_instruction_type": {
+      "label": "Tipe Instruksi Pemusnahan",
+      "placeholder": "Pilih tipe instruksi"
+    },
+    "created_date": {
+      "label": "Tanggal Pembuatan"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Cari kegiatan"
+    },
+    "search_material": {
+      "label": "Cari Material",
+      "placeholder": "Cari Material"
+    }
+  }
+}

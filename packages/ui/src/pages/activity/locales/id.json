@@ -1,0 +1,60 @@
+{
+  "title": {
+    "activity": "Kegiatan",
+    "settings": "Pengaturan Kegiatan",
+    "list": "Daftar Kegiatan",
+    "create": "Tambah Kegiatan",
+    "information": "Detail Kegiatan",
+    "edit": "Ubah Kegiatan",
+    "search": "Cari Kegiatan"
+  },
+  "column": {
+    "name": "Nama Kegiatan",
+    "activity_process": "Proses Kegiatan",
+    "protocol": "Protokol"
+  },
+  "action": {
+    "delete": {
+      "button": "Hapus Kegiatan",
+      "confirmation": "Apakah anda yakin akan menghapus kegiatan ini ?",
+      "description": "Item yang dihapus tidak dapat dikembalikan"
+    },
+    "status": {
+      "confirmation": [
+        "Apakah anda yakin akan mengaktifkan ini ?",
+        "Apakah anda yakin akan menonaktifkan ini ?"
+      ],
+      "description": "Anda tidak akan dapat menggunakan kegiatan ini sebagai transaksi atau inventaris",
+      "success": {
+        "activate": "Kegiatan berhasil aktifkan",
+        "deactivate": "Kegiatan berhasil nonaktifkan"
+      }
+    }
+  },
+  "form": {
+    "name": {
+      "label": "Nama Kegiatan",
+      "placeholder": "Nama kegiatan",
+      "validation": {
+        "required": "Nama kegiatan wajib diisi"
+      }
+    },
+    "process": {
+      "label": "Proses Kegiatan",
+      "validation": {
+        "required": "Proses kegiatan wajib diisi"
+      }
+    },
+    "protocol": {
+      "label": "Protokol",
+      "placeholder": "Pilih protokol"
+    },
+    "environmental_parameter_categories": {
+      "label": "Parameter Kategori",
+      "placeholder": "Pilih kategori"
+    },
+    "is_final_distribution": {
+      "label": "Distribusi Akhir"
+    }
+  }
+}

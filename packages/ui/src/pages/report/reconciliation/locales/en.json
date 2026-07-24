@@ -1,0 +1,51 @@
+{
+  "title": {
+    "page": "Reconciliation Activity",
+    "tab": {
+      "all": "All",
+      "entity": "Per Entity"
+    },
+    "chart": "Reconciliation Activity Report",
+    "yLabel": "Total Activity",
+    "xLabel": "Month"
+  },
+  "export": "Export",
+  "export_as": "Export as {{type}}",
+  "form": {
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "period": {
+      "label": "Period",
+      "placeholder": "Select month and year period"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "created_data": {
+      "label": "Created Date",
+      "placeholder": "Select created date"
+    }
+  },
+  "columns": {
+    "entity": "Entity",
+    "frequency": {
+      "total": "Total Frequency",
+      "average": "Average Frequency"
+    }
+  }
+}

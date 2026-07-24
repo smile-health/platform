@@ -1,0 +1,13 @@
+{
+  "no_data": {
+    "title": "No Programs Available",
+    "description": [
+      "There are no programs installed yet. Add one to get started.",
+      "Need help? Contact our developer"
+    ]
+  },
+  "column": {
+    "name": "Program Name"
+  },
+  "search": "Search program name"
+}

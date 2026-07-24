@@ -1,0 +1,73 @@
+{
+  "list": {
+    "title": "Budget Source",
+    "list": "Budget Source Settings",
+    "add": "Add Budget Source",
+    "status": "Budget Source Status",
+    "tab": {
+      "list": "Budget Source List",
+      "create": "Add Budget Source"
+    },
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search budget source"
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Select program"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "name": "Budget Source Name",
+      "workspace": "Program",
+      "update_at": "Updated At",
+      "update_by": "Updated By",
+      "action": "Action"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Add Budget Source",
+      "detail": "Budget Source Detail",
+      "edit": "Edit Budget Source"
+    },
+    "detail": {
+      "label": {
+        "name": "Budget Source Name",
+        "description": "Description",
+        "restricted_usage": "Restricted Usage"
+      },
+      "placeholder": {
+        "name": "Budget Source Name",
+        "description": "Description",
+        "restricted_usage": "Related batch won’t able add stock or reduce stock"
+      }
+    },
+    "program": {
+      "title": "Programs",
+      "without_program": "No program applied"
+    }
+  },
+  "detail": {
+    "title": "Budget Source Detail"
+  },
+  "action": {
+    "delete": {
+      "button": "Delete",
+      "confirmation": "Are you sure want to delete this budget source ?",
+      "description": "Deleted item can not turn back"
+    },
+    "activate": {
+      "confirmation": "Are you sure you want to activate this budget source?"
+    },
+    "deactivate": {
+      "confirmation": "Are you sure you want to deactivate this budget source?"
+    }
+  },
+  "yes": "Yes",
+  "no": "No"
+}

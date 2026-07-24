@@ -1,0 +1,55 @@
+{
+    "asset_temperature": "Suhu Aset",
+    "asset_temperature_list": "Daftar Suhu Aset",
+    "columns": {
+        "asset_name": "Nama Aset",
+        "asset_type": "Tipe Aset",
+        "show_logger_temperature": "Menampilkan Themperature Logger",
+        "manufacture": "Pabrik",
+        "relation": "Relasi",
+        "working_status": "Working Status",
+        "entity_tag": "Tag Entitas",
+        "temperature_filter": "Filter Suhu",
+        "asset_model": "Model Aset",
+        "temperature": "Suhu",
+        "view_temperature": "Lihat Suhu",
+        "device_status": "Status Perangkat",
+        "online": "Online",
+        "offline": "Offline",
+        "connected": "Terkoneksi",
+        "disconnected": "Terputus"
+    },
+    "asset_type_default": {
+        "vaccine_refrigerator": "Kulkas Vaksin",
+        "cold_room": "Ruang Dingin",
+        "freezer": "Freezer"
+    },
+    "relationship": {
+        "with_relation": "Ada Hubungan",
+        "without_relation": "Tanpa Hubungan"
+    },
+    "temperature_logger": {
+        "normal": "Normal",
+        "above_maximum": "Di Atas Maksimum",
+        "below_minimum": "Di Bawah Minimum"
+    },
+    "asset_temperature_detail": "Detil Suhu Aset",
+    "detail": {
+        "asset_type": "Tipe Aset",
+        "production_year": "Tahun Produksi",
+        "maintainer": "Pemelihara",
+        "asset_status": "Status Aset",
+        "temperature_threshold": "Batas Suhu",
+        "asset_temperature": "Suhu Aset",
+        "change_status": "Ubah Status",
+        "asset_logger_name": "Nama Aset/Logger",
+        "asset_logger_relation": "Relasi Aset dan Logger",
+        "sensor": "Sensor",
+        "logger": "Logger",
+        "from_date": "Tanggal Dari",
+        "to_date": "Tanggal Ke",
+        "date": "Tanggal",
+        "status": "Status",
+        "cold_chain_equipment_status": "Status Peralatan Rantai Dingin"
+    }
+}

@@ -1,0 +1,546 @@
+{
+  "back_to_regency_list": "Kembali ke Daftar Kabupaten/Kota",
+  "status": {
+    "approved": "Disetujui",
+    "revision": "Revisi",
+    "ondesk": "Didesk"
+  },
+  "label": {
+    "title": "Perhitungan Kebutuhan Tahunan",
+    "list": "Daftar Perhitungan Kebutuhan Tahunan",
+    "review": "Perhitungan Kebutuhan Tahunan Review",
+    "approval_status": "Status Persetujuan",
+    "year": "Tahun Perencanaan",
+    "details": "Detail",
+    "kako": "Perhitungan Kebutuhan Tahunan",
+    "kako_detail": "Detail Perhitungan Kebutuhan Tahunan"
+  },
+  "tabs": {
+    "verify": "Verifikasi",
+    "completeness_monitoring": "Monitoring Kelengkapan",
+    "target_adjustment": "Target & Penyesuaian",
+    "need_calculation_result": "Hasil Perhitungan Kebutuhan",
+    "procurement_recapitulation": "Rekapitulasi Pengadaan",
+    "needs_aggregate": "Agregasi Kebutuhan"
+  },
+  "detail_tabs": {
+    "area_program_plan": "Area & Program Plan",
+    "completeness_monitoring": "Monitoring Kelengkapan",
+    "target_adjustment": "Target & Penyesuaian",
+    "need_calculation_result": "Hasil Perhitungan Kebutuhan",
+    "needs_aggregate": "Agregasi Kebutuhan",
+    "procurement_recapitulation": "Rekapitulasi Pengadaan"
+  },
+  "area_program_plan": {
+    "title": "Area & Program Plan",
+    "empty": "Tidak ada data"
+  },
+  "completeness": {
+    "banner_header": "Harap pastikan semua layanan kesehatan telah menginput data rencana untuk semua jenis pemeriksaan",
+    "banner_desc": "Tombol verifikasi target hanya aktif setelah tidak ada layanan kesehatan yang berstatus 'Belum Disubmit'",
+    "banner_desc_province": "Pilih kota/kabupaten dari tabel di bawah untuk melihat detail monitoring kelengkapan",
+    "filter_examination": "Jenis Pemeriksaan",
+    "filter_faskes": "Puskesmas",
+    "filter_show_not_submitted": "Tampilkan Hanya Belum Kirim",
+    "health_care_list": "Daftar Layanan Kesehatan",
+    "verify_target": "Isi Target Puskesmas",
+    "province": "Provinsi",
+    "city": "Kota / Kabupaten",
+    "program_plan": "Rencana Program",
+    "no": "No.",
+    "health_care_name": "Nama Puskesmas",
+    "progress": "Progres",
+    "legend_status": "Status",
+    "legend_done": "Selesai/Lengkap",
+    "legend_not_submitted": "Belum Dikirim",
+    "legend_na": "Tidak Tersedia",
+    "status_complete": "Lengkap",
+    "status_incomplete": "Tidak Lengkap",
+    "page_title": "Monitoring Kelengkapan",
+    "target_subtitle": "Target Penyerapan Anggaran"
+  },
+  "calculation_result": {
+    "banner_header": "Silakan tinjau perhitungan kebutuhan",
+    "banner_desc": "Pastikan estimasi kebutuhan total berdasarkan perencanaan target yang terverifikasi sudah benar sebelum melanjutkan ke langkah rekapitulasi pengadaan"
+  },
+  "province_status": {
+    "complete": "Lengkap",
+    "incomplete": "Tidak Lengkap",
+    "not_submitted": "Belum Dikirim",
+    "submitted": "Dikirim"
+  },
+  "province_table": {
+    "title": "Tabel Provinsi",
+    "no": "No.",
+    "city_name": "Nama Kota/Kabupaten",
+    "status": "Status",
+    "progress": "Progres",
+    "updated_by": "Terakhir Update",
+    "view_detail": "Lihat Detail"
+  },
+  "button": {
+    "review_entry": "Tinjau Entri",
+    "detail": "Detail",
+    "see_procurement": "Lihat Rekapitulasi Pengadaan",
+    "view_recap": "Lihat Rekap",
+    "submit_to_moh": "Kirim ke Kemenkes",
+    "statement_letter": "Berita Acara",
+    "add_signature_link": "Tambah Tautan Tanda Tangan"
+  },
+  "statement_letter": {
+    "name_label": "Nama",
+    "name_placeholder": "Masukkan Nama",
+    "program_label": "Program",
+    "program_placeholder": "Masukkan Program",
+    "position_label": "Jabatan",
+    "position_placeholder": "Masukkan Jabatan",
+    "signature_link_label": "Tautan Tanda Tangan",
+    "signature_link_placeholder": "Masukkan Tautan Tanda Tangan",
+    "signature_link_image_error": "Tautan tanda tangan harus berupa URL gambar yang valid (jpg, jpeg, png, webp)",
+    "add_signature_success": "Berhasil menambahkan tanda tangan."
+  },
+  "need_calculation": {
+    "banner_header": "Harap pastikan semua Puskesmas telah memasukkan data perencanaan untuk 19 jenis skrining",
+    "banner_desc": "Tombol untuk verifikasi target akan aktif setelah tidak ada Puskesmas dengan status 'Belum Dikirim'",
+    "filter_material": "Nama Material",
+    "filter_material_placeholder": "Pilih material",
+    "filter_entity": "Puskesmas",
+    "filter_entity_placeholder": "Pilih puskesmas",
+    "table_title": "Tabel Hasil Perhitungan Kebutuhan",
+    "col_no": "No",
+    "col_health_care": "Nama Puskesmas",
+    "col_type": "Tipe",
+    "col_product_template": "Template Produk",
+    "col_product_variant": "Varian Produk",
+    "col_needs_quantity": "Jumlah Kebutuhan",
+    "col_unit": "Satuan",
+    "col_material_needs": "Kebutuhan Material",
+    "no_data": "Tidak ada data",
+    "province": "Provinsi",
+    "city": "Kota / Kabupaten",
+    "program_plan": "RencanaProgram",
+    "showing": "menampilkan {{from}} dari {{total}} hasil"
+  },
+  "target_adjustment": {
+    "banner_header": "Silakan input semua sasaran dan setujui semua penyesuaian target",
+    "banner_desc": "Tombol untuk melihat hasil kalkulasi akan aktif setelah data untuk semua Puskesmas selesai dan disetujui",
+    "add_target_drawer": {
+      "title": "Input Kuantitas Target",
+      "col_no": "No",
+      "col_target_group": "Kelompok Target",
+      "col_target_adjustment": "Penyesuaian Target",
+      "col_target": "Target (Dinkes Kota/Kabupaten)",
+      "col_examination": "Pemeriksaan",
+      "label_province": "Provinsi",
+      "label_regency": "Kabupaten/Kota",
+      "label_puskesmas": "Nama Puskesmas",
+      "label_program_plan": "Rencana Program",
+      "btn_saving": "Menyimpan...",
+      "btn_save": "Simpan"
+    },
+    "preview_drawer": {
+      "title": "Preview Data Target & Penyesuaian",
+      "col_health_care_name": "Nama Puskesmas",
+      "col_updated_by": "Diperbarui Oleh",
+      "col_target_dinkes": "Target (Dinkes)",
+      "col_adj_target": "Target Penyesuaian",
+      "btn_close": "Tutup"
+    },
+    "need_calculation": {
+      "banner_header": "Harap tinjau hasil perhitungan kebutuhan",
+      "banner_desc": "Pastikan total estimasi kebutuhan berdasarkan rencana target yang telah diverifikasi sudah benar sebelum melanjutkan ke langkah rekapitulasi pengadaan.",
+      "filter_material": "Nama Material",
+      "filter_material_placeholder": "Pilih material",
+      "filter_entity": "Puskesmas",
+      "filter_entity_placeholder": "Pilih puskesmas",
+      "table_title": "Tabel Hasil Perhitungan Kebutuhan",
+      "col_no": "No",
+      "col_health_care": "Nama Puskesmas",
+      "col_type": "Tipe",
+      "col_product_template": "Template Produk",
+      "col_product_variant": "Varian Produk",
+      "col_needs_quantity": "Jumlah Kebutuhan",
+      "col_unit": "Satuan",
+      "col_material_needs": "Kebutuhan Material",
+      "no_data": "Tidak ada data",
+      "province": "Provinsi",
+      "city": "Kota / Kabupaten",
+      "program_plan": "Rencana Program",
+      "showing": "menampilkan {{from}} dari {{total}} hasil"
+    },
+    "table": {
+      "col_no": "No",
+      "col_health_care_name": "Nama Puskesmas",
+      "col_target_input": "Input Target",
+      "col_target": "Target (Dinkes Kota/Kabupaten)",
+      "col_target_adjustment": "Penyesuaian Target",
+      "col_updated_by": "Diperbarui Oleh",
+      "col_target_dinkes": "Target (Dinkes)",
+      "health_care_list": "Daftar Layanan Kesehatan",
+      "btn_revise_all": "Revisi Semua",
+      "btn_approve_all": "Setujui Semua",
+      "btn_send_revision": "Kirim Revisi",
+      "btn_preview": "Pratinjau",
+      "btn_see_calculation": "Lihat Hasil Perhitungan",
+      "btn_add_target": "Tambah Target"
+    },
+    "page": {
+      "import": "Unggah file .xls atau .xlsx (maks 10MB)",
+      "select_filter_prompt": "Pilih Tahun dan Kabupaten/Kota untuk menampilkan data",
+      "btn_send_revision": "Kirim Revisi",
+      "btn_preview": "Pratinjau",
+      "btn_see_calculation": "Lihat Hasil Perhitungan",
+      "confirm_send_revision_title": "Konfirmasi Kirim Revisi",
+      "confirm_send_revision_desc": "Apakah Anda yakin ingin menyelesaikan proses target & penyesuaian ini dan ingin beberapa data direvisi oleh layanan kesehatan tertentu?",
+      "btn_kirim_revisi": "Kirim Revisi"
+    },
+    "mutations": {
+      "save_success_title": "Berhasil",
+      "save_success_desc": "Data berhasil disimpan",
+      "revision_success_title": "Berhasil",
+      "revision_success_desc": "Status perencanaan telah diubah ke REVISION",
+      "revision_error": "Gagal mengirim revisi",
+      "approve_success_title": "Berhasil",
+      "approve_success_desc": "Status perencanaan telah diubah ke APPROVED",
+      "approve_error": "Gagal menyetujui data",
+      "target_input_success_title": "Berhasil",
+      "target_input_success_desc": "Target input berhasil disimpan",
+      "target_input_error": "Gagal menyimpan target input",
+      "import_success_title": "Berhasil",
+      "import_success_desc": "Data berhasil diimpor",
+      "import_error": "Gagal mengimpor data"
+    },
+    "filter": {
+      "keyword_placeholder": "Cari berdasarkan nama puskesmas...",
+      "year_label": "Tahun",
+      "year_placeholder": "Pilih Tahun",
+      "examination_label": "Pemeriksaan",
+      "examination_placeholder": "Pilih Pemeriksaan"
+    }
+  },
+  "procurement_recapitulation": {
+    "banner_header": "Silakan tinjau rekapitulasi pengadaan",
+    "banner_desc": "Pastikan semua data benar sebelum dikirim ke provinsi",
+    "table": {
+      "title": "Tabel Rekapitulasi Pengadaan",
+      "col_no": "No",
+      "col_material": "Nama Material",
+      "col_unit": "Satuan",
+      "col_total_needs": "Total Kebutuhan",
+      "col_remaining_stock": "Sisa Stok",
+      "col_procurement_proposal": "Usulan Pengadaan",
+      "col_proposal_buffer": "Usulan + Buffer (10%)",
+      "col_desk_result": "Hasil Desk",
+      "btn_edit_remaining_stock": "Ubah Sisa Stok",
+      "btn_submit_to_province": "Kirim ke Provinsi",
+      "btn_export": "Ekspor",
+      "search_placeholder": "Cari nama material...",
+      "stock_date_subtitle": "Tanggal sisa stok: {{date}} (berdasarkan input dari Dinkes Kabupaten/Kota)"
+    },
+    "filter": {
+      "stock_date_label": "Tanggal Sisa Stok",
+      "confirm_title": "Konfirmasi",
+      "confirm_desc": "Apakah Anda yakin ingin mengubah tanggal sisa stok dan memperbarui data sisa stok, termasuk nilai yang telah Anda edit?",
+      "btn_confirm_date": "Ya, Ubah Tanggal"
+    },
+    "drawer": {
+      "title": "Ubah Sisa Stok",
+      "label_province": "Provinsi",
+      "label_city": "Kabupaten/Kota",
+      "label_program_plan": "Rencana Program",
+      "col_no": "No",
+      "col_material": "Nama Material",
+      "col_unit": "Satuan",
+      "col_total_needs": "Total Kebutuhan",
+      "col_remaining_stock": "Sisa Stok",
+      "btn_cancel": "Batal",
+      "btn_save": "Simpan",
+      "btn_saving": "Menyimpan..."
+    },
+    "mutations": {
+      "save_success_title": "Berhasil",
+      "save_success_desc": "Sisa stok berhasil disimpan",
+      "save_error": "Gagal menyimpan sisa stok"
+    },
+    "submit": {
+      "confirm_title": "Konfirmasi Submit ke Provinsi",
+      "confirm_desc": "Apakah Anda yakin ingin submit rekapitulasi pengadaan ini ke provinsi?",
+      "btn_confirm": "Submit ke Provinsi"
+    }
+  },
+  "kako": {
+    "status": {
+      "ondesk": "Di desk",
+      "not_submitted": "Belum Dikirim",
+      "submitted": "Dikirim"
+    },
+    "table": {
+      "no": "No",
+      "regency_name": "Nama Kab/Kota",
+      "approval_status": "Status Persetujuan",
+      "updated_by": "Terakhir Diperbarui",
+      "action": "Aksi",
+      "title": "Daftar Perhitungan Kebutuhan Tahunan"
+    },
+    "monitoring": {
+      "title": "Silahkan tinjau monitoring kelengkapan",
+      "description": "Tombol untuk melihat kebutuhan agregat akan aktif setelah data untuk semua Dinkes Kabupaten/Kota telah ditandai sebagai ditinjau"
+    }
+  },
+  "kako_detail": {
+    "table": {
+      "title": "Tabel Rekapitulasi Pengadaan",
+      "col_no": "No",
+      "col_material": "Nama Material Alkes",
+      "col_unit": "Satuan",
+      "col_total_needs": "Total Kebutuhan",
+      "col_remaining_stock": "Sisa Stok",
+      "col_procurement_proposal": "Usulan Pengadaan",
+      "col_proposal_buffer": "Usulan + Buffer (10%)",
+      "col_desk_result": "Hasil Desk"
+    },
+    "button": {
+      "add_desk_result": "Tambah Hasil Desk",
+      "complete_review": "Selesaikan Tinjauan"
+    },
+    "bottom_sheet": {
+      "title": "Tambah Hasil Desk",
+      "table": {
+        "no": "No",
+        "material": "Nama Bahan Material Alkes",
+        "unit": "Satuan",
+        "proposal_buffer": "Usulan + Buffer (10%)",
+        "desk_result": "Hasil Desk"
+      },
+      "input": {
+        "placeholder": "Silahkan masukkan hasil desk"
+      }
+    },
+    "alert": {
+      "complete_review": {
+        "title": "Konfirmasi",
+        "description": "Apakah anda yakin ingin menyelesaikan proses peninjauan ini dan menyetujui semua data?",
+        "confirm_button": "Ya, Kirim"
+      }
+    },
+    "toast": {
+      "save_success_title": "Berhasil",
+      "save_success_description": "Hasil desk berhasil disimpan",
+      "save_error_description": "Terjadi kesalahan saat menyimpan hasil desk",
+      "complete_review_success_title": "Berhasil",
+      "complete_review_success_description": "Tinjauan berhasil diselesaikan",
+      "complete_review_error_description": "Terjadi kesalahan saat menyelesaikan tinjauan"
+    }
+  },
+  "ministry": {
+    "filter": {
+      "program_plan_placeholder": "Pilih rencana program",
+      "province": "Provinsi",
+      "province_placeholder": "Pilih provinsi",
+      "status": "Status",
+      "status_placeholder": "Pilih status"
+    },
+    "table": {
+      "no": "No",
+      "province_name": "Nama Provinsi",
+      "submission_status": "Status Kirim",
+      "submission_date": "Tanggal Kirim",
+      "action": "Aksi"
+    },
+    "summary": {
+      "total_provinces": "Total Provinsi",
+      "national_target": "Target Nasional",
+      "submitted": "Dikirim",
+      "not_submitted": "Belum Dikirim",
+      "needs_followup": "Butuh tindak lanjut segera",
+      "approved": "Disetujui",
+      "verified": "Terverifikasi",
+      "in_review": "Didesk",
+      "awaiting_verification": "Menunggu verifikasi",
+      "percentage_solution": "Persentase Penyelesaian"
+    },
+    "status": {
+      "approved": "Disetujui",
+      "in_review": "Didesk",
+      "submitted": "Dikirim",
+      "not_submitted": "Belum Dikirim",
+      "canceled": "Batal dikirim"
+    },
+    "action": {
+      "review_entry": "Tinjau Entri"
+    },
+    "empty": {
+      "no_filter_title": "Tidak ada filter yang dipilih",
+      "no_filter_desc": "Data saat ini kosong. Silakan terapkan filter untuk melihat hasilnya."
+    }
+  },
+  "review_needs": {
+    "title": "Review Needs",
+    "province": "Provinsi",
+    "city": "Kab/Kota",
+    "program_plan": "Program Plan",
+    "no": "No.",
+    "name": "Nama",
+    "target": "Target",
+    "target_adjustment": "Target Adjustment",
+    "cancel_reviewed_status": "Batal Status Reviewed",
+    "mark_as_reviewed": "Tandai sebagai Reviewed"
+  },
+  "review_target": {
+    "title": "Review Target",
+    "province": "Provinsi",
+    "city": "Kab/Kota",
+    "program_plan": "Program Plan",
+    "no": "No.",
+    "name": "Nama",
+    "target": "Target",
+    "target_adjustment": "Target Adjustment",
+    "cancel_reviewed_status": "Batal Status Reviewed",
+    "mark_as_reviewed": "Tandai sebagai Reviewed"
+  },
+  "monitoring_card": {
+    "screening_summary_table": {
+      "label": "Label"
+    }
+  },
+  "procurement_filter": {
+    "remaining_stock_date": "Tanggal Sisa Stok",
+    "clear": "Bersihkan",
+    "export": "Ekspor",
+    "reset": "Atur Ulang",
+    "search": "Cari"
+  },
+  "needs_aggregate": {
+    "table_title": "Tabel Needs Aggregate",
+    "buttons": {
+      "export": "Ekspor",
+      "preview": "Pratinjau",
+      "see_procurement": "Lihat Rekapitulasi Pengadaan"
+    },
+    "screening_summary": {
+      "total_province": "Total (Provinsi)",
+      "unit": "Satuan",
+      "label": "Label"
+    },
+    "page": {
+      "card_title": "Tabel Needs Aggregate",
+      "row_total_province": "Total (Provinsi)",
+      "row_unit": "Satuan",
+      "btn_export": "Ekspor",
+      "btn_preview": "Pratinjau",
+      "btn_see_procurement": "Lihat Rekapitulasi Pengadaan"
+    },
+    "table": {
+      "col_no": "No.",
+      "col_city_name": "Nama Dinkes Kota/Kabupaten",
+      "col_action": "Aksi",
+      "col_review_status": "Status Tinjauan",
+      "col_updated_by": "Terakhir Diperbarui",
+      "btn_review_needs": "Tinjau Kebutuhan"
+    },
+    "status": {
+      "pending": "Menunggu",
+      "approved": "Disetujui",
+      "rejected": "Ditolak"
+    },
+    "drawer": {
+      "title": "Tinjau Kebutuhan",
+      "label_province": "Provinsi",
+      "label_city": "Kab/Kota",
+      "label_program_plan": "Rencana Program",
+      "col_no": "No",
+      "col_examination": "Pemeriksaan",
+      "col_target_group": "Kelompok Target",
+      "col_total_needs": "Total Kebutuhan",
+      "col_unit": "Satuan",
+      "col_name": "Nama",
+      "col_target": "Target",
+      "col_target_adjustment": "Penyesuaian Target",
+      "btn_cancel_review": "Batalkan Status Ditinjau",
+      "btn_mark_reviewed": "Tandai Sudah Ditinjau"
+    },
+    "preview": {
+      "title": "Pratinjau Data",
+      "col_no": "No.",
+      "col_city": "Kab/Kota",
+      "col_review_status": "Status Tinjauan",
+      "col_updated_by": "Terakhir Diperbarui",
+      "btn_close": "Tutup"
+    }
+  },
+  "province_completeness": {
+    "screening_summary": {
+      "total_province": "Total (Provinsi)"
+    },
+    "monitoring_table": {
+      "title": "Tabel Monitoring Kelengkapan"
+    },
+    "buttons": {
+      "export": "Ekspor",
+      "preview": "Pratinjau",
+      "see_needs_aggregate": "Lihat Kebutuhan Agregat"
+    },
+    "page": {
+      "card_title": "Tabel Monitoring Kelengkapan",
+      "btn_export": "Ekspor",
+      "btn_preview": "Pratinjau",
+      "btn_see_needs_aggregate": "Lihat Kebutuhan Agregat"
+    },
+    "table": {
+      "col_no": "No.",
+      "col_city_name": "Nama Dinkes Kota/Kabupaten",
+      "col_action": "Aksi",
+      "col_review_status": "Status Tinjauan",
+      "col_updated_by": "Terakhir Diperbarui",
+      "btn_review_target": "Tinjau Target"
+    },
+    "status": {
+      "complete": "Ditinjau",
+      "incomplete": "Belum Ditinjau",
+      "not_submitted": "Belum Dikirim"
+    },
+    "drawer": {
+      "title": "Tinjau Target",
+      "label_province": "Provinsi",
+      "label_city": "Kab/Kota",
+      "label_program_plan": "Rencana Program",
+      "col_no": "No",
+      "col_name": "Nama",
+      "col_target": "Target",
+      "col_target_adjustment": "Penyesuaian Target",
+      "btn_cancel_review": "Batalkan Status Ditinjau",
+      "btn_mark_reviewed": "Tandai Sudah Ditinjau"
+    }
+  },
+  "province_approval": {
+    "table": {
+      "title": "Tabel Persetujuan BMHP Provinsi",
+      "col_no": "No.",
+      "col_regency_name": "Nama Kab/Kota",
+      "col_report_status": "Status Laporan",
+      "col_review_status": "Status Tinjauan",
+      "col_updated_by_at": "Terakhir Diperbarui",
+      "col_action": "Aksi"
+    },
+    "status": {
+      "not_submitted": "Belum Dikirim",
+      "submitted": "Dikirim",
+      "not_reviewed": "Belum Ditinjau",
+      "reviewed": "Ditinjau"
+    },
+    "action": {
+      "mark_reviewed": "Tandai Sudah Ditinjau",
+      "change_status": "Ubah Status",
+      "awaiting_submission": "Menunggu Submit"
+    },
+    "mutations": {
+      "update_status_success": "Status berhasil diperbarui",
+      "update_status_error": "Gagal memperbarui status",
+      "submit_to_moh_success": "Berhasil mengirim data ke Kemenkes",
+      "submit_to_moh_error": "Gagal mengirim data ke Kemenkes"
+    },
+    "filter": {
+      "keyword_placeholder": "Cari nama kab/kota..."
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "title": {
+    "ticketing_system": "Ticketing System",
+    "order_detail": {
+      "drawer": "Order Detail in SMILE"
+    },
+    "detail": {
+      "ticket": "Detail of Ticket",
+      "order": "Order Detail",
+      "reported_item": "Reported Item Detail",
+      "comment": "Comment"
+    }
+  },
+  "tab": {
+    "list": "List of Tickets",
+    "create": "Create Ticket"
+  },
+  "form": {
+    "commemnt": {
+      "label": "Comment"
+    }
+  },
+  "table": {
+    "columns": {
+      "no": "No",
+      "expired_date": "Expired Date",
+      "batch_name": "Batch Name",
+      "batch_number": "Batch number",
+      "quantity": "Quantity",
+      "transaction_reason": "Reason",
+      "transaction_reason_detail": "Detail Reason",
+      "total_quantity": "Total Quantity",
+      "batch_detail": "Batch Detail",
+      "reason": "Reason",
+      "detail_reason": "Detail Reason"
+    },
+    "form": {
+      "transaction_reason": {
+        "placeholder": "Select reason"
+      },
+      "transaction_reason_detail": {
+        "placeholder": "Select detail reason"
+      }
+    },
+    "rule_1": "Write according to real data, physical data or packing slip",
+    "rule_2": "Select  <strong>New Material</strong> if the event of physical receipt of material is not in the material list"
+  },
+  "send": "Send",
+  "detail": {
+    "service": "Service Type",
+    "released": "Released Date",
+    "notes": "Notes",
+    "empty_link": "Packing slip link still empty",
+    "update_status": "Update Status",
+    "cancel_report": "Cancel Report",
+    "number": {
+      "ticket": "Ticket Number",
+      "order": "Reported Order Number",
+      "do": "DO Number",
+      "document": "Document Number"
+    },
+    "customer": {
+      "name": "Receiver Name",
+      "inquires_cancel": "Receiver Inquires to Cancel the Order"
+    },
+    "link": {
+      "add": "Add Packing Slip Link",
+      "edit": "Edit Packing Slip Link",
+      "view": "View Packing Slip Link"
+    },
+    "form": {
+      "link": {
+        "placeholder": "Masukkan link packing slip",
+        "validation": {
+          "required": "Packing slip link is required",
+          "start_with": "Must start with http"
+        }
+      },
+      "comment": {
+        "label": "Comment",
+        "placeholder": "Type comment"
+      }
+    }
+  },
+  "status": {
+    "review_by_smile_helpdesk": "Reviewed by SMILE HelpDesk",
+    "report_cancelled": "Report Cancelled",
+    "ticket_submitted_to_biofarma": "Ticket submitted to Biofarma",
+    "hit_manually": "Hit Manually",
+    "reviewed_by_biofarma": "Reviewed by Biofarma",
+    "revised": "Revised",
+    "check_revision": "Check Revision",
+    "complete": "Completed",
+    "reported_to_province": "Reported to Province",
+    "reported_to_pfizer": "Reported to Pfizer"
+  },
+  "show_detail_order": "Show Order Detail",
+  "detail_order": {
+    "title": "Order Details at SMILE",
+    "order_number": "Order Number",
+    "created_at": "Created On {{date}} By {{username}}",
+    "letter_number": "No. Allocation Letter",
+    "type_service": "Service Type",
+    "release_date": "Release Date",
+    "description": "Description",
+    "table_item": {
+      "label": "Tabel Item",
+      "si_no": "Si.No",
+      "shipped": "Shipped",
+      "detail_batch": "Detail Batch",
+      "expired_date": "Expired Date",
+      "quantity": "Quantity"
+    }
+  },
+  "order_confirmation": {
+    "title": "Order Report Confirmation",
+    "label": "Please cancel this order if it has been recorded on SMILE. Click Check to confirm"
+  },
+  "modal_confirmation": {
+    "title": "Confirmation",
+    "description": "Are you sure that this incident report will be forwarded to the Indonesian Ministry of Health ?"
+  },
+  "material_has_been_selected": "Material has been selected",
+  "button": {
+    "view_detail_order": "View Detail Order"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "title": "Task List",
+  "add": "Add Task",
+  "list": {
+    "columns": {
+      "task_id": "Task ID",
+      "material_name": "Material Name",
+      "activity": "Activity",
+      "national_ip": "National IP",
+      "monthly_distribution": "Monthly Distribution",
+      "group_target": "Group Target",
+      "number_of_doses": "Number of Doses",
+      "target_coverage": "Target Coverage"
+    },
+    "all_province": "All Province",
+    "all_month": "All Month"
+  },
+  "import": {
+    "description": "Upload .xls or .xlsx file (max 10MB)",
+    "success": "Task successfully imported",
+    "error": "Failed to import task"
+  },
+  "delete": {
+    "description": "Are you sure you want to delete this task?",
+    "success": "Task successfully deleted",
+    "error": "Failed to delete task"
+  },
+  "create": {
+    "success": "Task successfully added",
+    "error": "Failed to add task"
+  },
+  "edit": {
+    "title": "Edit Task",
+    "success": "Task successfully edited",
+    "error": "Failed to edit task"
+  },
+  "coverage": {
+    "title": "Detail Coverage",
+    "province": {
+      "list": "Province List",
+      "placeholder": "Search Province",
+      "name": "Province Name"
+    }
+  },
+  "form": {
+    "material_util_index": "Material Utilization Index",
+    "amount_of_giving": {
+      "title": "Amount of Giving",
+      "add": "Add Amount of Giving",
+      "edit": "Edit Amount of Giving",
+      "invalid": "Amount of giving must be at least 1",
+      "confirmation": {
+        "cancel": {
+          "title": "Are you sure you want to cancel the amount of giving?",
+          "description": "The amount of giving will not be saved"
+        }
+      }
+    },
+    "national_ip": {
+      "label": "National IP",
+      "placeholder": "Example: 1.00",
+      "invalid": "National IP must be a decimal number with maximum 3 decimal places",
+      "should_not_exceed_sku": "National IP should not exceed SKU",
+      "not_negative": "National IP must not be negative"
+    },
+    "monthly_distribution": {
+      "invalid": "Monthly Distribution must be at least 1"
+    },
+    "select_all_month": "Select All Month",
+    "group_target": {
+      "add": "Add Group Target",
+      "placeholder": "Select Group Target",
+      "edit": "Edit Group Target"
+    },
+    "number_of_doses": {
+      "placeholder": "Enter Doses",
+      "edit": "Edit Number of Doses"
+    },
+    "coverage": {
+      "label": "Coverage",
+      "update": "Update Coverage",
+      "add": "Add Coverage",
+      "edit": "Edit Coverage",
+      "placeholder": "Please enter qty",
+      "saved": "{{coverage}} of {{total}} Provinces Saved",
+      "target": {
+        "invalid": "Input a percentage from 1 to 100"
+      }
+    }
+  }
+}

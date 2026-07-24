@@ -1,0 +1,90 @@
+{
+  "title": {
+    "pqs": "Pengaturan Kode WHO PQS",
+    "list": "Kode WHO PQS",
+    "add": "Tambah Kode PQS",
+    "detail": "Detail Kode PQS",
+    "edit": "Edit Kode PQS"
+  },
+  "detail": {
+    "title": "Detail Kode PQS",
+    "section": {
+      "detail": {
+        "header": "Detail",
+        "warning": "Perubahan tidak diizinkan. Kode PQS ini sudah memiliki hubungan dengan Model Aset.",
+        "label": {
+          "pqs_code": "Kode PQS",
+          "pqs_type": "Tipe PQS",
+          "cceigat_desc": "Deskripsi CCEIGAT",
+          "last_updated_at": "Terakhir Diubah Pada",
+          "last_updated_by": "Terakhir Diubah Oleh"
+        }
+      },
+      "capacity": {
+        "header": "Kapasitas Berdasarkan Treshold Suhu",
+        "label": {
+          "net_capacity": "Kapasitas Net {{ temperature }}"
+        },
+        "column": {
+          "category": "Kategori",
+          "net_capacity": "Kapasitas Net",
+          "litre": "{{ value }} Liter"
+        }
+      }
+    }
+  },
+  "list": {
+    "filter": {
+      "label": {
+        "search": "Cari"
+      },
+      "placeholder": {
+        "search": "Cari kode PQS"
+      }
+    },
+    "column": {
+      "pqs_code": "Kode PQS",
+      "net_capacity": {
+        "label": "Kapasitas Net {{ temperature }}"
+      },
+      "last_updated_at": "Terakhir Diubah Pada",
+      "action": "Aksi"
+    }
+  },
+  "action": {
+    "delete": {
+      "button": "Hapus Kode PQS",
+      "confirmation": "Apakah anda yakin akan menghapus kode PQS ini ?"
+    }
+  },
+  "form": {
+    "pqs_code": {
+      "label": "Kode PQS",
+      "placeholder": "Ketik kode PQS",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    },
+    "pqs_type": {
+      "label": "Tipe PQS",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    },
+    "cceigat_desc": {
+      "label": "CCEIGAT Description",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Wajib diisi"
+      }
+    },
+    "capacity": {
+      "label": "Kapasitas Net {{ temperature }}",
+      "placeholder": "Contoh: 3,14",
+      "validation": {
+        "at_least_one_capacity_required": "Isi minimal satu kapasitas"
+      }
+    }
+  }
+}

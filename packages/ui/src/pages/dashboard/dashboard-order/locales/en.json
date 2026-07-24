@@ -1,0 +1,117 @@
+{
+  "title": {
+    "response_time": "Order Response Time",
+    "order_difference": "Order Difference",
+    "consumption_supply": "Reception & Distribution",
+    "tabs": {
+      "all": "Overall",
+      "entity": "Entity",
+      "location": "Region"
+    }
+  },
+  "description": {
+    "response_time": "Order Response Time Report shows the time required [duration] from when an order is received until it is processed, shipped, and received. The time required is calculated as the average <b>from one stage to the next in a single order</b>.",
+    "order_difference": "Order Difference Report <b>compares</b> the quantity/number of doses at each stage of the ordering process. The stages in the ordering process are: <b>order, recommend, allocate, ship, and receive</b>.",
+    "consumption_supply": "<b>Receiption and Distribution compare</b> the quantities <b>received by the entity [receipt] and the doses issued [distribution]</b>."
+  },
+  "information": {
+    "response_time": [
+      "Average time from order to recommendation: Average duration from when an order is <b>created</b> by a customer to when it is recommended by a provider.",
+      "Average time from recommended to allocated: Average duration from when the order is <b>recommended</b> to when it is allocated by the provider.",
+      "Average time from allocated to shipped: Average duration <b>from when the order</b> is allocated to when it is shipped by the provider.",
+      "Average time from shipped to received: Average duration <b>from when the order</b> is shipped by the provider until it is received by the customer."
+    ],
+    "order_difference": [
+      "New Order: <b>comparing</b> the quantity/number of doses ordered by the customer with the quantity recommended by the system [to restore the stock to its maximum level].",
+      "<b>Recommendation: comparing the quantity ordered by the customer with the quantity recommended by the provider.</b>",
+      "Shipping: <b>comparing</b> the quantity ordered by the customer with the quantity shipped by the provider.",
+      "Receiption: <b>comparing</b> the quantity shipped by the provider with the quantity received by the customer."
+    ],
+    "consumption_supply": [
+      "<b>Receiption</b> includes all types of receipts such as receipts from distribution, <b>transfers from other entities</b>, and <b>returns from customers</b>.",
+      "<b>Distribution</b> includes all types of issuances such as distribution, <b>transfers to other entities, returns to providers,</b> and consumption."
+    ]
+  },
+  "form": {
+    "period": {
+      "label": "Period"
+    },
+    "range": {
+      "label": "Date Range"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Select level KFA material"
+      },
+      "name": {
+        "label": "Material",
+        "placeholder": "Select material"
+      }
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "information_type": {
+      "label": "Information Type",
+      "placeholder": "Select information type"
+    },
+    "reason": {
+      "label": "Reason",
+      "placeholder": "Select reason"
+    }
+  },
+  "columns": {
+    "type": "Type",
+    "period": "Period",
+    "entity": "Entity",
+    "location": "Location"
+  },
+  "data": {
+    "dayly": "Daily",
+    "weekly": "Weekly",
+    "montly": "Monthly",
+    "material_level": {
+      "active_subtance": "Product Template"
+    },
+    "information_type": {
+      "shipping": "Shipping",
+      "receptions": "Receptions",
+      "new_order": "New Order",
+      "supply": "Supply",
+      "issue": "Issue"
+    },
+    "reason": {
+      "population_growth": "Population Growth",
+      "plague": "Plague",
+      "others": "Others",
+      "stock": {
+        "low": "Low Stock",
+        "sufficient": "Sufficient Stock"
+      }
+    }
+  },
+  "from_to": "From {{from}} to {{to}}",
+  "last_updated_at": "Last updated at"
+}

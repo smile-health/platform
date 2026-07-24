@@ -1,0 +1,24 @@
+{
+  "title": "Export History",
+  "filter": {
+    "search": {
+      "label": "Search",
+      "placeholder": "Search file name"
+    },
+    "request_date": {
+      "label": "Request Date"
+    },
+    "program": {
+      "label": "Program",
+      "placeholder": "Select program",
+      "without_program": "Without Program"
+    },
+    "reset": "Reset"
+  },
+  "empty": {
+    "title": "No data available",
+    "description": "No export files found. Export files appear here for 7 days. To see them, export data from the related feature."
+  },
+  "note": "Items in this list will be deleted forever after 7 days",
+  "download": "Download"
+}

@@ -1,0 +1,15 @@
+{
+  "page": {
+    "title": "Instruksi Pemusnahan"
+  },
+  "table": {
+    "title": "Instruksi Pemusnahan",
+    "column": {
+      "no": "No",
+      "action": "Aksi"
+    }
+  },
+  "button": {
+    "create": "Buat Baru"
+  }
+}

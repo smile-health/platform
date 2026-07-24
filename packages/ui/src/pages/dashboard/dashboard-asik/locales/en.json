@@ -1,0 +1,67 @@
+{
+  "title": {
+    "page": "Dashboard SMILE vs ASIK",
+    "tabs": {
+      "vendor": "Location Based on Vendor",
+      "customer": "Location Cased on Customer"
+    },
+    "chart": "Percentage Chart"
+  },
+  "form": {
+    "period": {
+      "label": "Period"
+    },
+    "year": {
+      "label": "Planned Year (Target)"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Select level KFA material"
+      },
+      "name": {
+        "label": "Material Name",
+        "placeholder": "Select material name"
+      }
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    }
+  },
+  "column": {
+    "region": "Region",
+    "dose": "SMILE's Last Mile (Dose)",
+    "coverage": "ASIK Coverage",
+    "dose_vial": "Number of Doses per Vial",
+    "usage": "Usage Index (ASIK Coverage / Vial)",
+    "target": "Target Amount",
+    "scope": "Scope (ASIK / Target) * 100%"
+  },
+  "data": {
+    "vaccine": "Vaccine",
+    "material_level": {
+      "trademark": "Product Variant"
+    }
+  }
+}

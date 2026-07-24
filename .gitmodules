@@ -1,0 +1,4 @@
+[submodule "apps/3.0/notification"]
+	path = apps/3.0/notification
+	url = git@gitlab.badr.co.id:undp/smile-notification.git
+	branch = platform

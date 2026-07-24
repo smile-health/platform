@@ -1,0 +1,159 @@
+{
+  "title": {
+    "page": "Transaction Monitoring Dashboard",
+    "month": "Month",
+    "province": "Province",
+    "regency": "City",
+    "receipts_by": "Acceptance By {{title}}",
+    "accept_return_by": "Return Acceptance By {{title}}",
+    "issues_by": "Distribution By {{title}}",
+    "return_by": "Return By {{title}}",
+    "consumption_by": "Consumption By {{title}}",
+    "discards_by": "Discard By {{title}}",
+    "number": "{{type}} By Number",
+    "by": "{{type}} By {{title}}",
+    "reason": "Reason",
+    "transaction_reason": "Transaction Reason",
+    "transaction_by": "Transaction by {{section}}",
+    "transaction_by_type": "{{type}} Transaction by {{section}}",
+    "endpoint_transactions": "End-Point Transactions",
+    "order_transactions": "Order Related Transactions",
+    "total_transactions": "Total Transaction {{type}}",
+    "sort": {
+      "id": "Sort by {{type}} ID",
+      "name": "Sort by {{type}} name",
+      "title": "Sort by {{type}} title"
+    },
+    "entity": {
+      "main": "Entity",
+      "tag": "Entity Tag",
+      "complete": "Entity Complete"
+    }
+  },
+  "description": {
+    "page": [
+      {
+        "title": "Distribution",
+        "description": "Shipment of materials from higher-level entities to lower-level entities based on order code."
+      },
+      {
+        "title": "Acceptance of Distribution",
+        "description": "Confirmation of received materials from distribution process based on order code."
+      },
+      {
+        "title": "Return",
+        "description": "Return shipment of materials from lower-level entities to higher-level entities based on order code."
+      },
+      {
+        "title": "Acceptance of Return",
+        "description": "Confirmation of received returned materials based on order code."
+      },
+      {
+        "title": "Last Mile",
+        "description": "Net distribution of materials to receiver entities for service purposes (total final distribution minus return)."
+      },
+      {
+        "title": "Disposal",
+        "description": "Disposal is a transaction to separate unusable materials, such as expired, damaged, or broken items, so that they are removed from active stock."
+      },
+      {
+        "title": "Add Stock",
+        "description": "Add Stock is a transaction to add materials to stock outside of distribution from the center (APBN), so that stock is recorded according to actual conditions, such as those originating from APBD or independent purchases."
+      },
+      {
+        "title": "Reduce Stock",
+        "description": "Reduce Stock is a transaction to reduce the amount of material in stock due to recording corrections. This transaction can only be done by showing valid evidence."
+      }
+    ],
+    "information": "Data {{type}} displayed is accumulated based on {{title}}"
+  },
+  "form": {
+    "period": {
+      "label": "Period"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "material": {
+      "type": {
+        "label": "Material Type",
+        "placeholder": "Select material type"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Select level KFA material"
+      },
+      "name": {
+        "label": "Material Name",
+        "placeholder": "Select material name"
+      }
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "transaction_type": {
+      "label": "Transaction Type",
+      "placeholder": "Select transaction type"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "information_type": {
+      "label": "Kind of Information"
+    }
+  },
+  "data": {
+    "material_level": {
+      "active_subtance": "Product Template"
+    },
+    "information_type": {
+      "frequency": "Frequency",
+      "quantity": "Quantity"
+    },
+    "transaction_type": {
+      "receipts": "Acceptance",
+      "accept_return": "Return Acceptance",
+      "issues": "Distribution",
+      "return": "Return",
+      "consumption": "Last Mile",
+      "discards": "Discard",
+      "stock": {
+        "add": "Add Stock",
+        "reduce": "Reduce Stock"
+      }
+    }
+  },
+  "column": {
+    "province": "Province",
+    "regency": "City",
+    "activity": "Activity",
+    "material": "Material Name",
+    "manufacturer": "Manufacturer Name",
+    "vendor": "Sender",
+    "customer": "Receiver",
+    "created_at": "Created At",
+    "transaction_type": "Transaction Type",
+    "unit": "Unit",
+    "total": "Total {{type}}",
+    "entity": {
+      "tag": "Entity Tag",
+      "id": "Entity ID",
+      "name": "Entity Name"
+    },
+    "batch": {
+      "code": "Batch Code",
+      "expired": "Batch Expired Date"
+    }
+  }
+}

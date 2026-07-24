@@ -1,0 +1,132 @@
+{
+  "list": {
+    "title": "Asset Type",
+    "list": "Asset Type Settings",
+    "add": "Add Asset Type",
+    "status": "Asset Type Status",
+    "tab": {
+      "list": "Asset Type List",
+      "create": "Add Asset Type"
+    },
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search asset type"
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Select program"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "name": "Asset Type Name",
+      "workspace": "Program",
+      "update_at": "Updated At",
+      "update_by": "Updated By",
+      "action": "Action"
+    },
+    "import": {
+      "asset_type_cce": "Cold Chain Equipment",
+      "asset_type_warehouse": "Warehouse"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Add Asset Type",
+      "detail": "Asset Type Detail",
+      "edit": "Edit Asset Type"
+    },
+    "detail": {
+      "header": {
+        "asset_utilization": "Asset Utilization",
+        "warning": "Changes not allowed. This Asset Type already has relation with Asset Model.",
+        "detail": "Detail"
+      },
+      "label": {
+        "name": "Asset Type Name",
+        "description": "Description",
+        "last_updated_at": "Last Updated At",
+        "last_updated_by": "Last Updated By",
+        "is_cce_equipment": "Is CCE (Cold Chain Equipment)?",
+        "is_warehouse": "Is Warehouse?",
+        "temperature_threshold": "Temperature Threshold",
+        "is_adjustable": "Is temperature threshold adjustable?",
+        "humidity_threshold": {
+          "label": "Humidity Threshold",
+          "min_humidity": "Min Humidity",
+          "max_humidity": "Max Humidity"
+        }
+      },
+      "placeholder": {
+        "name": "Asset Type Name",
+        "description": "Description",
+        "temp_treshold_min": "ex: 10",
+        "temp_treshold_max": "ex: 20"
+      },
+      "validation": {
+        "max_greater_min": "Maximum temperature must be less than or equal to minimum temperature",
+        "min_greater_max": "Minimum temperature must be less than or equal to maximum temperature"
+      },
+      "is_warehouse": {
+        "label": "Is Warehouse?",
+        "radio": {
+          "yes": "Yes",
+          "no": "No"
+        }
+      },
+      "is_cce_equipment": {
+        "label": "Is CCE (Cold Chain Equipment)?",
+        "radio": {
+          "yes": "Yes",
+          "no": "No"
+        }
+      },
+      "temperature_threshold": {
+        "label": "Temperature Threshold",
+        "warning": "Selected temperature threshold cannot be undone (unchecked) once submitted",
+        "column": {
+          "min_temperature": "Min Temperature",
+          "max_temperature": "Max Temperature"
+        }
+      },
+      "humidity_threshold": {
+        "label": "Humidity Threshold",
+        "warning": "Selected humidity threshold cannot be undone (unchecked) once submitted",
+        "column": {
+          "min_humidity": "Min Humidity",
+          "max_humidity": "Max Humidity"
+        }
+      },
+      "is_adjustable": {
+        "label": "Is temperature threshold adjustable?",
+        "radio": {
+          "yes": "Yes",
+          "no": "No"
+        }
+      }
+    },
+    "program": {
+      "title": "Programs",
+      "without_program": "No program applied"
+    }
+  },
+  "detail": {
+    "title": "Asset Type Detail"
+  },
+  "action": {
+    "delete": {
+      "button": "Delete",
+      "confirmation": "Are you sure want to delete this asset type?",
+      "description": "Deleted item can not turn back"
+    },
+    "activate": {
+      "confirmation": "Are you sure you want to activate this asset type?"
+    },
+    "deactivate": {
+      "confirmation": "Are you sure you want to deactivate this asset type?"
+    }
+  }
+}

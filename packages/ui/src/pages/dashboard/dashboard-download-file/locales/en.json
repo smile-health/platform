@@ -1,0 +1,9 @@
+{
+  "title": "Download Report",
+  "last_updated": "Last Updated",
+  "download": "Download File",
+  "empty": {
+    "title": "File not available",
+    "description": "There are no files available for download at this time. If you feel this is an error, please contact the admin."
+  }
+}

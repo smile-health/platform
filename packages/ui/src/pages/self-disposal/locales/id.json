@@ -1,0 +1,161 @@
+{
+  "title": "Pemusnahan Mandiri",
+  "create_title": "Buat Pemusnahan Mandiri",
+  "tab": {
+    "list": "Daftar Pemusnahan Mandiri",
+    "create": "Buat Baru"
+  },
+  "filter": {
+    "all_placeholder": "Semua",
+    "activity": "Kegiatan",
+    "material_type": "Jenis Material",
+    "material_hirearchy": "Material - Produk Template",
+    "transaction_type": "Tipe Transaksi",
+    "transaction_reason": "Alasan Transaksi",
+    "created_from": "Dibuat dari",
+    "created_to": "Dibuat hingga",
+    "created_at": "Dibuat Pada",
+    "entity_tag": "Tag Entitas",
+    "primary_vendor": "Penyedia Utama",
+    "province": "Provinsi",
+    "city": "Kabupaten/Kota",
+    "primary_health_care": "Puskesmas",
+    "flow": "Metode Pemusnahan",
+    "search": "Cari",
+    "reason": "Alasan"
+  },
+  "placeholder": {
+    "activity": "Cari kegiatan",
+    "material_type": "Cari tipe material",
+    "material": "Cari nama material",
+    "entity": "Cari nama entitas",
+    "entity_tag": "Pilih tag entitas",
+    "province": "Pilih provinsi",
+    "city": "Pilih nama kota/kabupaten",
+    "primary_health_care": "Pilih puskesmas",
+    "primary_vendor": "Pilih penyedia utama",
+    "reason": "Pilih alasan",
+    "flow": "Pilih metode pemusnahan"
+  },
+  "table": {
+    "entity": "Entitas",
+    "activity": "Kegiatan",
+    "material_info": "Info Material",
+    "transaction_reason": "Alasan Transaksi",
+    "opening_stock": "Stok Awal (dosis/pcs/buah)",
+    "operation": "Operasi",
+    "self_disposal_info": "Info Pemusnahan Mandiri",
+    "disposal_number": "Nomor Pemusnahan",
+    "quantity": "Kuantitas (dosis/pcs/buah)",
+    "self_disposal_qty": "Kuantitas Pemusnahan Mandiri (dosis/pcs)",
+    "disposal_method": "Metode Pemusnahan",
+    "closing_stock": "Stok Akhir (dosis/pcs/buah)",
+    "created_at": "Dibuat pada",
+    "created_by": "Dibuat oleh",
+    "device_type": "Perangkat Pengguna",
+    "batch_of": "Batch dari",
+    "detail_of": "Detail dari",
+    "take_activity_from": "Diambil dari kegiatan",
+    "batch_id": "ID Batch",
+    "production_date": "Tanggal Produksi (dd/mm/yyyy)",
+    "manufacturer": "Produsen",
+    "expired_date": "Tanggal Kedaluwarsa (dd/mm/yyyy)",
+    "description": "Keterangan",
+    "disposal_report_number": "Nomor Berita Acara",
+    "comment": "Komentar",
+    "see_batch": "Lihat Batch",
+    "close": "Tutup"
+  },
+  "material_type": {
+    "vaccine": "Vaksin",
+    "logistic_bhp": "Logistik BHP"
+  },
+  "order_status": {
+    "shipped": "Dikirim",
+    "fulfilled": "Diterima",
+    "cancelled": "Dibatalkan",
+    "not_yet_received": "Belum diterima"
+  },
+  "to": "Ke",
+  "from": "Dari",
+  "mobile_phone": "Telepon Genggam",
+  "web": "Web",
+  "create": {
+    "disposal_detail": "Detail Pemusnahan",
+    "entity": {
+      "label": "Entitas",
+      "placeholder": "Pilih entitas"
+    },
+    "activity": {
+      "label": "Pilih Kegiatan",
+      "placeholder": "Pilih kegiatan",
+      "note": "Kegiatan yang ditampilkan hanya kegiatan yang masih aktif pada Entitas ini"
+    },
+    "flow": {
+      "label": "Metode Pemusnahan",
+      "placeholder": "Pilih metode pemusnahan"
+    },
+    "title_material_select": "Material di {{entity_name}}",
+    "caption_choose_material": "Klik pada kolom tabel untuk memilih material",
+    "search_material": "Cari material",
+    "material_table": {
+      "material_name": "Nama Material",
+      "stock_of_disposal": "Stok di {{value}}"
+    },
+    "disposal_table": {
+      "material_info": "Info Material",
+      "title": "Tabel Pemusnahan",
+      "activity": "Kegiatan",
+      "stock_of_disposal": "Total Pembuangan",
+      "quantity": "Kuantitas",
+      "action": "Aksi"
+    },
+    "disposal_batch_table": {
+      "title": "Kuantitas",
+      "title_batch": "Kuantitas Batch",
+      "batch_info": "Info Batch",
+      "batch_id": "ID Batch",
+      "production_date": "Tanggal Produksi",
+      "manufacturer": "Produsen",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "stock_from_discard": "Pembuangan dari Internal",
+      "qty_stock_from_discard": "Kuantitas Pemusnahan Mandiri dari Internal",
+      "quantity": "Kuantitas",
+      "stock_from_received": "Pembuangan dari Eksternal",
+      "qty_stock_from_received": "Kuantitas Pemusnahan Mandiri dari Eksternal",
+      "take_from_another_activity": "Tambah dari Kegiatan Lain",
+      "enter_qty": "Masukkan Kuantitas"
+    },
+    "validation": {
+      "material_items": "Tidak ada item yang dipilih. Silakan tinjau material yang ditambahkan dan tekan tombol simpan pada batch untuk menyimpan perubahan.",
+      "quantity_must_multiply": "Kuantitas harus merupakan kelipatan dari {{number}}",
+      "required_materials": "Belum ada materi yang ditambahkan",
+      "max_qty": "Kuantitas tidak dapat melebihi dari stok yang tersedia",
+      "min_qty": "Kuantitas harus lebih dari 0"
+    },
+    "warning_changes": [
+      "Apakah Anda yakin ingin menghapus ini?",
+      "Semua informasi yang Anda masukkan dalam material ini akan hilang."
+    ],
+    "comment": "Komentar",
+    "placeholder_comment": "Silakan masukkan komentar...",
+    "disposal_report_number": "Nomor Berita Acara Pemusnahan",
+    "placeholder_disposal_report_number": "Masukkan Nomor Berita Acara Pemusnahan",
+    "send": "Kirimkan",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "add": "Tambah",
+    "action": {
+      "add_batch_quantity": "Kuantitas Batch",
+      "update_batch_quantity": "Ubah Kuantitas Batch",
+      "add_detail_quantity": "Detail",
+      "update_detail_quantity": "Ubah Detail"
+    }
+  },
+  "reset": {
+    "description": "Apakah kamu yakin untuk menghapus data yang telah diisi?"
+  },
+  "toast": {
+    "create_success": "Pemusnahan Mandiri berhasil dibuat"
+  }
+}

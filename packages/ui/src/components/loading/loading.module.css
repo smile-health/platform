@@ -1,0 +1,19 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.7);
+  z-index: 999;
+
+  color: #fff;
+}
+
+.overlayBody {
+  margin: 20% auto;
+  width: 200px;
+  text-align: center;
+  padding: 20px 10px;
+  background-color: rgba(19, 19, 19, 0.8);
+}

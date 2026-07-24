@@ -1,0 +1,17 @@
+{
+  "reconciliation_period": {
+    "title": "Reconciliation Period",
+    "from": "From",
+    "to": "To"
+  },
+  "list": {
+    "title": "Reconciliation Detail",
+    "column": {
+      "description": "Description",
+      "smile_qty": "SMILE",
+      "real_qty": "Real",
+      "reason": "Reason",
+      "action": "Action"
+    }
+  }
+}

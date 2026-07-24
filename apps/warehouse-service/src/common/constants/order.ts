@@ -1,0 +1,8 @@
+export const ORDER_STATUS = {
+  PENDING: 1,
+  CONFIRMED: 2,
+  ALLOCATED: 3,
+  SHIPPED: 4,
+  FULFILLED: 5,
+  CANCELED: 6,
+}

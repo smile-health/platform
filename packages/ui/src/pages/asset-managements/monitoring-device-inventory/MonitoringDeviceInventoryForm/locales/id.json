@@ -1,0 +1,122 @@
+{
+  "page": {
+    "title_create": "Buat Alat Pemantau Suhu",
+    "title_edit": "Edit Alat Pemantau Suhu"
+  },
+  "section": {
+    "asset_specification": {
+      "title": "Spesifikasi Aset"
+    },
+    "operational_status": {
+      "title": "Status Operasional"
+    },
+    "entity": {
+      "title": "Entitas"
+    },
+    "budget": {
+      "title": "Anggaran"
+    }
+  },
+  "field": {
+    "asset_type": {
+      "label": "Tipe Aset",
+      "placeholder": "Remote Temperature Monitoring",
+      "validation": {
+        "required": "Tipe aset wajib diisi"
+      }
+    },
+    "asset_model": {
+      "label": "Model Aset",
+      "placeholder": "Pilih model aset",
+      "validation": {
+        "required": "Model aset wajib diisi"
+      }
+    },
+    "manufacturer": {
+      "label": "Manufaktur",
+      "placeholder": "Pilih manufaktur",
+      "validation": {
+        "required": "Manufaktur wajib diisi"
+      }
+    },
+    "vendor": {
+      "label": "Vendor",
+      "placeholder": "Pilih vendor",
+      "validation": {
+        "required": "Vendor wajib diisi"
+      }
+    },
+    "communication_provider": {
+      "label": "Penyedia Komunikasi",
+      "placeholder": "Pilih penyedia komunikasi",
+      "validation": {
+        "required": "Penyedia komunikasi wajib diisi"
+      }
+    },
+    "serial_number": {
+      "label": "Nomor Seri",
+      "placeholder": "Nomor seri",
+      "validation": {
+        "required": "Nomor seri wajib diisi",
+        "max": "Nomor seri tidak boleh lebih dari 255 karakter"
+      }
+    },
+    "production_year": {
+      "label": "Tahun Produksi",
+      "placeholder": "Pilih tahun produksi",
+      "validation": {
+        "required": "Tahun produksi wajib diisi",
+        "production_year_must_be_less_than_budget_year": "Tahun produksi harus lebih kecil dari tahun anggaran"
+      }
+    },
+    "operational_status": {
+      "label": "Status Operasional",
+      "placeholder": "Pilih status operasional",
+      "validation": {
+        "required": "Status operasional wajib diisi"
+      }
+    },
+    "entity": {
+      "label": "Entitas",
+      "placeholder": "Pilih entitas",
+      "validation": {
+        "required": "Entitas wajib diisi"
+      }
+    },
+    "contact_person": {
+      "label": "Penanggung Jawab {{number}}",
+      "placeholder": "Pilih Penanggung Jawab",
+      "validation": {
+        "required": "Penanggung jawab wajib diisi"
+      }
+    },
+    "phone_number": {
+      "label": "Nomor Telepon {{number}}",
+      "placeholder": "Masukkan nomor telepon",
+      "validation": {
+        "required": "Nomor telepon wajib diisi"
+      }
+    },
+    "budget_year": {
+      "label": "Tahun Anggaran",
+      "placeholder": "Pilih tahun anggaran",
+      "validation": {
+        "required": "Tahun anggaran wajib diisi",
+        "budget_year_must_be_greater_than_production_year": "Tahun anggaran harus lebih besar dari tahun produksi"
+      }
+    },
+    "budget_source": {
+      "label": "Sumber Anggaran",
+      "placeholder": "Pilih sumber anggaran",
+      "validation": {
+        "required": "Sumber anggaran wajib diisi"
+      }
+    }
+  },
+  "api": {
+    "create_success": "Alat pemantau suhu berhasil dibuat",
+    "update_success": "Alat pemantau suhu berhasil diperbarui",
+    "create_failed": "Gagal membuat alat pemantau suhu",
+    "update_failed": "Gagal memperbarui alat pemantau suhu"
+  }
+}

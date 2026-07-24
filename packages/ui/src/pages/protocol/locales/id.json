@@ -1,0 +1,62 @@
+{
+  "title": {
+    "settings": "Protokol",
+    "search": "Cari Protokol"
+  },
+  "column": {
+    "name": "Nama Protokol"
+  },
+  "action": {
+    "configure": {
+      "button": "Detail & Konfigurasi"
+    },
+    "deactivate": {
+      "button": "Non Aktifkan",
+      "success": "Protokol berhasil dinonaktifkan"
+    },
+    "activate": {
+      "button": "Aktifkan",
+      "success": "Protokol berhasil diaktifkan"
+    }
+  },
+  "detail": {
+    "title": "Detail Protokol",
+    "material_activity": {
+      "title": "Manajemen Kegiatan Material",
+      "search": "Nama Material",
+      "relation": {
+        "add": {
+          "button": "Tambah Relasi",
+          "success": "Relasi berhasil ditambahkan"
+        },
+        "material": {
+          "label": "Material",
+          "placeholder": "Pilih material"
+        },
+        "activity": {
+          "label": "Kegiatan",
+          "placeholder": "Pilih kegiatan"
+        },
+        "confirmation": {
+          "cancel": {
+            "title": "Apakah Anda yakin akan membatalkan relasi kegiatan material?",
+            "description": "Perubahan yang Anda buat akan hilang jika dibatalkan. Apakah Anda ingin melanjutkan pembatalan?"
+          },
+          "delete": {
+            "title": "Konfirmasi?",
+            "description": "Apa kamu yakin ingin menghapus material ini?",
+            "success": "Material berhasil dihapus"
+          },
+          "deactivate": {
+            "title": "Konfirmasi?",
+            "description": "Apa kamu yakin ingin menonaktifkan protokol ini?"
+          },
+          "activate": {
+            "title": "Konfirmasi?",
+            "description": "Apa kamu yakin ingin mengaktifkan protokol ini?"
+          }
+        }
+      }
+    }
+  }
+}

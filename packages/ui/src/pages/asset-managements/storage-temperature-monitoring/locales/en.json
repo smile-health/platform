@@ -1,0 +1,268 @@
+{
+  "asset_inventory": "Storage Temperature Monitoring",
+  "asset_inventory_list": "Monitoring Device List",
+  "disable": "Disable",
+  "enable": "Enable",
+  "create_inventory_asset": "Add Monitoring Device",
+  "create": "Create",
+  "working_status": {
+    "unsubscribed": "Unsubscribed",
+    "not_used": "Not Used",
+    "defrosting": "Defrosting",
+    "unrepairable": "Unrepairable",
+    "damaged": "Damaged",
+    "repair": "Repair",
+    "standby": "Standby",
+    "function": "Function",
+    "need_repair": "Need Repair"
+  },
+  "form": {
+    "title": {
+      "asset_specifications": "Asset Specifications",
+      "working_status": "Logger Status",
+      "entity": "Entity",
+      "ownership": "Ownership",
+      "budget": "Budget",
+      "electricity": "Electricity",
+      "warranty": "Warranty",
+      "calibration": "Calibration",
+      "maintenance": "Maintenance"
+    },
+    "validation": {
+      "group_validation": "Please complete all fields in this section",
+      "not_same": "{{ field_1 }} must not be the same as the {{ field_2 }}.",
+      "must_be_higher_or_same": "{{ field_1 }} must be higher than or same as {{ field_2 }}.",
+      "must_be_lower_or_same": "{{ field_1 }} must be lower than or same as {{ field_2 }}."
+    }
+  },
+  "columns": {
+    "other_option": "(Other {{ option }})",
+    "asset_name": "Asset Name",
+    "asset_type": { "label": "Asset Type", "placeholder": "Select asset type" },
+    "temperature_threshold": "Temperature Threshold",
+    "other_asset_type": "Other Asset Type",
+    "other_temperature_threshold": "Other Temperature Threshold",
+    "production_year": "Production Year",
+    "manufacture": {
+      "label": "Manufacture",
+      "placeholder": "Select manufacture"
+    },
+    "other_manufacture": "Other Manufacture",
+    "relation": "Relation",
+    "working_status": {
+      "label": "Logger Status",
+      "placeholder": "Select logger status"
+    },
+    "entity_tag": "Entity Tag",
+    "entity": "Entity",
+    "contact_person": {
+      "label": "Person In Charge {{ number }}",
+      "placeholder": "Ex: John Doe"
+    },
+    "phone_number": {
+      "label": "Phone Number {{ number }}",
+      "placeholder": "Ex: 081234567890"
+    },
+    "temperature_filter": "Temperature Filter",
+    "vendor": "Vendor",
+    "communication_provider": "Communication Provider",
+    "asset_model": "Asset Model",
+    "asset_model_name": "Asset Model Name",
+    "other_asset_model": "Other Asset Model",
+    "temperature": "Temperature",
+    "view_temperature": "View Temperature",
+    "device_status": "Device Status",
+    "online": "Online",
+    "offline": "Offline",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "done": "Done",
+    "not_yet": "Not yet",
+    "verified": "Verified",
+    "capacity": "Capacity",
+    "pqs_code": "PQS Code",
+    "netto_capacity": "Neto Capacity {{temperature}}",
+    "serial_number": "Serial Number",
+    "owned_amount": {
+      "label": "{{ type }} Amount",
+      "placeholder": "ex: 10",
+      "type": {
+        "owned": "Owned",
+        "borrowed": "Borrowed"
+      }
+    },
+    "electricity": "Electricity Available Time (Per-day)",
+    "own_status": "Own Status",
+    "borrowed_from": "Borrowed From",
+    "borrowed_from_others": "Borrowed From Others",
+    "maintainers": "Maintainers",
+    "budget_year": "Budget Year",
+    "budget_source": "Budget Source",
+    "other_budget_source": "Other Budget Source",
+    "asset_temperature": "Asset Temperature",
+    "asset_status": "Working Status",
+    "ownership_qty": "Ownership Quantity",
+    "electricity_available": "Electricity Available",
+    "status": {
+      "label": "Status",
+      "placeholder": "Select status"
+    },
+    "warranty": {
+      "start_date": "Warranty Start Date",
+      "end_date": "Warranty End Date"
+    },
+    "calibration": {
+      "last_calibration_date": "Last Calibration Date",
+      "schedule": {
+        "label": "Calibration Schedule",
+        "placeholder": "Select calibration schedule"
+      }
+    },
+    "maintenance": {
+      "last_maintenance_date": "Last Maintenance Date",
+      "schedule": {
+        "label": "Maintenance Schedule",
+        "placeholder": "Select maintenance schedule"
+      }
+    }
+  },
+  "asset_type_default": {
+    "vaccine_refrigerator": "Vaccine Refrigerator",
+    "cold_room": "Cold Room",
+    "freezer": "Freezer"
+  },
+  "relationship": {
+    "with_relation": "With Relation",
+    "without_relation": "Without Relation"
+  },
+  "ownership": {
+    "owned": "Owned",
+    "borrowed": "Borrowed",
+    "status": "Status"
+  },
+  "temperature_logger": {
+    "normal": "Normal",
+    "above_maximum": "Above Maximum",
+    "below_minimum": "Below Minimum",
+    "maximum": "Maximum",
+    "minimum": "Minimum"
+  },
+  "capacity": {
+    "netto_capacity": "Net Capacity",
+    "gross_capacity": "Gross Capacity",
+    "litres": "Liters"
+  },
+  "deletion": {
+    "delete_confirmation": "Are you sure you want to delete this asset?",
+    "send_it": "Send it",
+    "reason": "Reason",
+    "reason_placeholder": "Write the reason here"
+  },
+  "asset_inventory_detail": "Monitoring Device Detail",
+  "detail": {
+    "asset_type": "Asset Type",
+    "production_year": "Production Year",
+    "maintainer": "Maintainer",
+    "asset_status": "Logger Status",
+    "temperature_threshold": "Temperature Threshold",
+    "asset_inventory": "Asset Temperature",
+    "change_status": "Change Status",
+    "asset_logger_name": "Asset/Logger Name",
+    "asset_logger_relation": "Asset and Logger Relation",
+    "sensor": "Sensor",
+    "logger": "Logger",
+    "from_date": "From Date",
+    "to_date": "To Date",
+    "date": "Date",
+    "status": "Status",
+    "cold_chain_equipment_status": "Cold Chain Equipment Status",
+    "pqs_code": "PQS Code",
+    "net_capacity": "Nett Capacity {{ temperature }}",
+    "more_details": "More Details"
+  },
+  "disable_confirmation": "Are you sure you want to disable this asset?",
+  "toast": {
+    "change_status_success": "Asset status successfully changed",
+    "change_status_failed": "Asset status failed to change",
+    "create_success": "Monitoring device successfully created",
+    "create_failed": "Monitoring device creation failed",
+    "update_success": "Monitoring device successfully updated",
+    "update_failed": "Monitoring device update failed",
+    "delete_success": "Monitoring device successfully deleted",
+    "delete_failed": "Monitoring device deletion failed"
+  },
+  "type_to_search": "Type to search",
+  "input_qty": "Please input qty",
+  "back_to_detail": "Back to asset inventory detail",
+  "add_another_option": "Add another option",
+  "other_inputs": {
+    "other_asset_type": "Other Asset Type",
+    "other_manufacture": "Other Manufacture",
+    "other_asset_model": "Other Asset Model",
+    "other_budget_source": "Other Budget Source",
+    "asset_type_name": "Asset Type Name",
+    "minimum_temperature": "Temperature Treshold Min",
+    "maximum_temperature": "Temperature Treshold Max",
+    "manufacture_name": "Manufacture Name",
+    "asset_model_name": "Asset Model Name",
+    "gross_capacity": "Gross Capacity",
+    "netto_capacity": "Neto Capacity",
+    "budget_source_name": "Budget Source Name",
+    "cannot_more_than": "Cannot more than {{max}}",
+    "cannot_less_than": "Cannot less than {{min}}",
+    "must_more_than": "Must more than {{min}}",
+    "borrowed_from_entity_name": "Entity Name"
+  },
+  "add_relation_asset_logger": "Add Asset Logger Relation",
+  "input_sensor": "Input Number of Sensors (1 to 10)",
+  "relation": {
+    "delete_relation_confirmation": "Apakah Anda yakin mau menghapus relasi ini?",
+    "yes_sure": "Ya, saya yakin",
+    "toast": {
+      "success_delete": "Penghapusan relasi berhasil",
+      "failed_delete": "Penghapusan relasi gagal",
+      "success_create": "Relasi berhasil dibuat",
+      "create_failed": "Relasi gagal dibuat"
+    },
+    "sensor_1_10": "Can only be filled with numbers 1 to 10"
+  },
+  "filter": {
+    "primary_health_care": {
+      "label": "Primary Health Care",
+      "placeholder": "Select primary healthcare"
+    }
+  },
+  "device_relation": {
+    "title": {
+      "table": "Operational Asset & Monitoring Device Relation",
+      "form": "Add Relation"
+    },
+    "form": {
+      "asset_type": {
+        "label": "Asset Type",
+        "placeholder": "Select asset type"
+      },
+      "sensor": {
+        "label": "Sensor",
+        "placeholder": "Select sensor"
+      },
+      "monitoring_device_name": {
+        "label": "Monitoring Device Name",
+        "placeholder": "Select monitoring device"
+      }
+    },
+    "table": {
+      "no": "No",
+      "name": "Name",
+      "sensor": "Sensor",
+      "asset_type": "Asset Type",
+      "asset_temperature": "Asset Temperature",
+      "action": "Action"
+    },
+    "button": {
+      "add": "Add Relation",
+      "delete": "Delete",
+      "save_relation": "Save Relation"
+    }
+  }
+}

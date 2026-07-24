@@ -1,0 +1,24 @@
+{
+  "title": "Import Patient Data",
+  "list": {
+    "column": {
+      "import": "Imported By",
+      "file": "File Name",
+      "date": "Date Time",
+      "notes": "Notes"
+    },
+    "filter": {
+      "label": {
+        "date": "Imported Date"
+      }
+    }
+  },
+  "toast": {
+    "download": {
+      "success": "Template patient has been successfully downloaded"
+    },
+    "import": {
+      "success": "Import patient data successfully"
+    }
+  }
+}

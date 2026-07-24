@@ -1,0 +1,1 @@
+export { default } from '@repo/ui/pages/bmhp/bmhp-variant/form/Form.tsx'

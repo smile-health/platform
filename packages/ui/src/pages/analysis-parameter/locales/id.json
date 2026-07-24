@@ -1,0 +1,60 @@
+{
+  "title": {
+    "settings": "Pengaturan Parameter Analisa",
+    "list": "Daftar Parameter Analisa",
+    "create": "Tambah Parameter Analisa",
+    "edit": "Ubah Parameter Analisa",
+    "detail": "Detail Parameter Analisa"
+  },
+  "table": {
+    "category": "Parameter Kategori",
+    "name": "Nama Parameter Analisa",
+    "quality_standard": "Standar Baku Mutu",
+    "unit": "Satuan",
+    "result_type": "Format Hasil"
+  },
+  "form": {
+    "detail_title": "Detail Parameter Analisa",
+    "category": {
+      "label": "Parameter Kategori",
+      "placeholder": "Pilih parameter kategori"
+    },
+    "name": {
+      "label": "Nama Parameter",
+      "placeholder": "Masukkan nama parameter",
+      "required": "Nama parameter wajib diisi"
+    },
+    "quality_standard": {
+      "label": "Standar Baku Mutu",
+      "placeholder": "Contoh: 6.5 - 8.5"
+    },
+    "unit": {
+      "label": "Satuan",
+      "placeholder": "Contoh: mg/L, ppm"
+    },
+    "custom_unit": {
+      "label": "Nama Satuan",
+      "placeholder": "Masukkan nama satuan"
+    },
+    "condition": {
+      "label": "Kondisional",
+      "placeholder": "Pilih kondisi"
+    },
+    "result_type": {
+      "label": "Format Hasil",
+      "placeholder": "Masukkan hasil",
+      "validation": {
+        "numeric": "Hasil harus berupa angka (integer atau desimal) jika kondisi <, >, atau ="
+      }
+    }
+  },
+  "filter": {
+    "search": "Masukkan nama parameter, unit",
+    "result_format": "Pilih format hasil"
+  },
+  "message": {
+    "create_success": "Parameter analisa berhasil ditambahkan",
+    "update_success": "Parameter analisa berhasil diubah",
+    "delete_success": "Parameter analisa berhasil dihapus"
+  }
+}

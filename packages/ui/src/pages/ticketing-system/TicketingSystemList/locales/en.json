@@ -1,0 +1,37 @@
+{
+  "title": "Ticketing System",
+  "table": {
+    "title": "Ticketing System List"
+  },
+  "text": {
+    "action": "Action"
+  },
+  "data": {
+    "ticket_number": "Ticket Number",
+    "reporter_entity": "Reporter Entity",
+    "order_number": "Order Number",
+    "packing_slip": "DO Number",
+    "arrival_date": "Arrival Date",
+    "updated_at": "Updated at"
+  },
+  "field": {
+    "order_number": {
+      "label": "Order Number",
+      "placeholder": "Search by order number"
+    },
+    "do_number": {
+      "label": "DO Number",
+      "placeholder": "Search by DO number"
+    },
+    "arrival_date": {
+      "label": "Arrival Date"
+    },
+    "status": {
+      "label": "Ticket Status",
+      "placeholder": "Select status"
+    }
+  },
+  "button": {
+    "create": "Create New Ticket"
+  }
+}

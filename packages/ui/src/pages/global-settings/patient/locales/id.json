@@ -1,0 +1,24 @@
+{
+  "title": "Impor Data Pasien",
+  "list": {
+    "column": {
+      "import": "Diimpor Oleh",
+      "file": "Nama File",
+      "date": "Tanggal & Waktu",
+      "notes": "Catatan"
+    },
+    "filter": {
+      "label": {
+        "date": "Tanggal Impor"
+      }
+    }
+  },
+  "toast": {
+    "download": {
+      "success": "Template pasien telah berhasil diunduh"
+    },
+    "import": {
+      "success": "Data pasien berhasil diimpor"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "title": {
+    "form": "Order Detail",
+    "list": "Order Table",
+    "material_in": "Material in",
+    "meta": "Order Form",
+    "create": "Create New Order",
+    "new_order": "New Order"
+  },
+  "form": {
+    "customer_id": {
+      "label": "Receiver",
+      "placeholder": "Select receiver"
+    },
+    "activity_id": {
+      "label": "Select Activity",
+      "placeholder": "Select activity",
+      "activity_entity_relation_info": "The activities displayed are only activities that are still active on this Entity"
+    },
+    "vendor_id": {
+      "label": "Sender",
+      "placeholder": "Select sender"
+    },
+    "required_date": {
+      "label": "Required By Date",
+      "placeholder": "Select date"
+    },
+    "order_comment": {
+      "label": "Comment",
+      "placeholder": "Please enter comment"
+    },
+    "search": {
+      "placeholder": "Search material"
+    }
+  },
+  "material_table": {
+    "click_to_select": "Click on the checkbox to select the material. Selected material will appear on order table below",
+    "complete_detail_transaction": "Complete the transaction details first"
+  },
+  "list": {
+    "selected": {
+      "column": {
+        "activity": "Activity",
+        "material_info": {
+          "label": "Material",
+          "activity": "Activity : {{activity}}"
+        },
+        "stock_on_hand": "Stock on Hand",
+        "stock_available": {
+          "label": "Stock Available"
+        },
+        "quantity": {
+          "label": "Quantity",
+          "recommendation": "Recommended {{value}}",
+          "input": "Enter quantity as recommended",
+          "error": {
+            "zero": "Quantity must be greater than 0",
+            "multiply": "Quantity must be a multiple of {{value}}",
+            "required": "Quantity is required"
+          },
+          "detail": {
+            "material_name": "Material : {{name}}",
+            "qty": "Qty : {{value}}"
+          }
+        },
+        "add_material": "Add Material",
+        "reason": {
+          "label": "Reason",
+          "placeholder": "Select Reason"
+        },
+        "other_reason": {
+          "placeholder": "Input Reason"
+        },
+        "action": "Action"
+      }
+    },
+    "material": {
+      "column": {
+        "material_name": "Material Name",
+        "available_stock": "Total Available Stock",
+        "stock_on_activity": "Stock on {{activity_name}}",
+        "selection": "Selection"
+      }
+    }
+  },
+  "button": {
+    "send": "Send",
+    "reset": "Reset",
+    "trademark": {
+      "add": "Product Variant Material",
+      "update": "Update Product Variant Material"
+    }
+  },
+  "modal": {
+    "reset": {
+      "title": "Confirmation",
+      "description": "Are you sure you want to delete all filled data?"
+    },
+    "save": {
+      "title": "Confirmation",
+      "description": "Are you sure you want to save this data ?"
+    }
+  },
+  "drawer": {
+    "header": "Product Variant Material",
+    "stock_on_hand": "Stock on Hand",
+    "available_stock": "Available Stock",
+    "min": "Min",
+    "max": "Max"
+  }
+}

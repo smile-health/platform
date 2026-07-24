@@ -1,0 +1,32 @@
+{
+  "title": "Rasio",
+  "add": "Tambah Rasio",
+  "add_material_ratio": "Tambah Rasio Material",
+  "edit_material_ratio": "Edit Rasio Material",
+  "material_a": "Material A",
+  "material_b": "Material B",
+  "source_material": "Material Sumber",
+  "affected_material": "Material Terpengaruh",
+  "subtype": "Subtipe",
+  "select_subtype": "Pilih Subtipe",
+  "select_material": "Pilih Material",
+  "material": "Material",
+  "ratio_number": "Nomor Rasio",
+  "example_1": "Contoh: 1",
+  "toast": {
+    "create_success": "Rasio material berhasil dibuat",
+    "update_success": "Rasio material berhasil diperbarui",
+    "delete_success": "Rasio material berhasil dihapus"
+  },
+  "material_ratio": "Rasio Material",
+  "import": {
+    "description": "Unggah file .xls atau .xlsx (max 10MB)",
+    "success": "Rasio material berhasil diimpor",
+    "error": "Rasio material gagal diimpor"
+  },
+  "delete": {
+    "description": "Apakah anda yakin akan menghapus rasio material ini?",
+    "success": "Data rasio material berhasil dihapus",
+    "error": "Data rasio material gagal dihapus"
+  }
+}

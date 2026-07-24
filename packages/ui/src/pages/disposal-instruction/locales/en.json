@@ -1,0 +1,31 @@
+{
+  "data": {
+    "bast_no": "Disposal Report No.",
+    "item": "Item",
+    "activity": "Activity",
+    "type": "Type",
+    "created_by": "Created By",
+    "device_type": "Device Type"
+  },
+  "field": {
+    "disposal_report_number": {
+      "label": "Disposal Report No.",
+      "placeholder": "Search by Handover Report Number"
+    },
+    "disposal_instruction_type": {
+      "label": "Disposal Instruction Type",
+      "placeholder": "Select instruction type"
+    },
+    "created_date": {
+      "label": "Created Date"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Search activity"
+    },
+    "search_material": {
+      "label": "Search Material",
+      "placeholder": "Search Material"
+    }
+  }
+}

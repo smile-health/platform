@@ -1,0 +1,159 @@
+{
+  "title": {
+    "page": "Dasbor Monitoring Transaksi",
+    "month": "Bulan",
+    "province": "Provinsi",
+    "regency": "Kabupaten/Kota",
+    "receipts_by": "Penerimaan Per {{title}}",
+    "accept_return_by": "Penerimaan Retur Per {{title}}",
+    "issues_by": "Distribusi Per {{title}}",
+    "return_by": "Retur Per {{title}}",
+    "consumption_by": "Konsumsi Per {{title}}",
+    "discards_by": "Pembuangan Per {{title}}",
+    "number": "Jumlah {{type}}",
+    "by": "{{type}} Per {{title}}",
+    "reason": "Alasan",
+    "transaction_reason": "Alasan Transaksi",
+    "transaction_by": "Transaksi berdasarkan {{section}}",
+    "transaction_by_type": "Transaksi {{type}} berdasarkan {{section}}",
+    "endpoint_transactions": "Transaksi di Titik Akhir Distribusi",
+    "order_transactions": "Transaksi Terkait Pesanan",
+    "total_transactions": "Total {{type}} Transaksi",
+    "sort": {
+      "id": "Urutkan berdasarkan {{type}} ID",
+      "name": "Urutkan berdasarkan {{type}} name",
+      "title": "Urutkan berdasarkan judul {{type}}"
+    },
+    "entity": {
+      "main": "Entitas",
+      "tag": "Tag Entitas",
+      "complete": "Entitas Lengkap"
+    }
+  },
+  "description": {
+    "page": [
+      {
+        "title": "Distribusi",
+        "description": "Pengiriman material dari entitas level atas ke entitas level bawah berdasarkan kode pesanan."
+      },
+      {
+        "title": "Penerimaan",
+        "description": "Konfirmasi diterimanya material dari proses distribusi berdasarkan kode pesanan."
+      },
+      {
+        "title": "Retur",
+        "description": "Pengiriman kembali material dari entitas level bawah ke entitas level atas berdasarkan kode pesanan."
+      },
+      {
+        "title": "Penerimaan Retur",
+        "description": "Konfirmasi diterimanya material yang dikembalikan berdasarkan kode pesanan."
+      },
+      {
+        "title": "Distribusi Akhir",
+        "description": "Penyaluran bersih material kepada entitas penerima untuk pelayanan (total distribusi akhir dikurangi retur)."
+      },
+      {
+        "title": "Pembuangan",
+        "description": "Pembuangan adalah transaksi untuk memisahkan material yang tidak layak digunakan, seperti kedaluwarsa, rusak, atau pecah, agar dikeluarkan dari stok aktif."
+      },
+      {
+        "title": "Tambah Stok",
+        "description": "Tambah Stok adalah transaksi untuk menambahkan material ke dalam stok di luar distribusi dari pusat (APBN), sehingga stok tercatat sesuai kondisi aktual, seperti yang berasal dari APBD atau pembelian mandiri."
+      },
+      {
+        "title": "Kurangi Stok",
+        "description": "Kurangi Stok adalah transaksi untuk mengurangi jumlah material dalam stok akibat koreksi pencatatan. Transaksi ini hanya dapat dilakukan dengan menunjukkan bukti (evidence) yang valid."
+      }
+    ],
+    "information": "Data {{type}} yang ditampilkan diakumulasi berdasarkan {{title}}"
+  },
+  "form": {
+    "period": {
+      "label": "Periode"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Pilih level KFA material"
+      },
+      "name": {
+        "label": "Nama Material",
+        "placeholder": "Pilih nama material"
+      }
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "transaction_type": {
+      "label": "Tipe Transaksi",
+      "placeholder": "Pilih tipe transaksi"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "information_type": {
+      "label": "Jenis Informasi"
+    }
+  },
+  "data": {
+    "material_level": {
+      "active_subtance": "Produk Template"
+    },
+    "information_type": {
+      "frequency": "Frekuensi",
+      "quantity": "Kuantitas"
+    },
+    "transaction_type": {
+      "receipts": "Penerimaan",
+      "accept_return": "Penerimaan Retur",
+      "issues": "Distribusi",
+      "return": "Retur",
+      "consumption": "Distribusi Akhir",
+      "discards": "Pembuangan",
+      "stock": {
+        "add": "Tambah Stok",
+        "reduce": "Kurang Stok"
+      }
+    }
+  },
+  "column": {
+    "province": "Provinsi",
+    "regency": "Kabupaten/Kota",
+    "activity": "Kegiatan",
+    "material": "Nama Material",
+    "manufacturer": "Nama Pabrik",
+    "vendor": "Pengirim",
+    "customer": "Penerima",
+    "created_at": "Dibuat Pada",
+    "transaction_type": "Tipe Transaksi",
+    "unit": "Satuan",
+    "total": "Jumlah {{type}}",
+    "entity": {
+      "tag": "Tag Entitas",
+      "id": "ID Entitas",
+      "name": "Nama Entitas"
+    },
+    "batch": {
+      "code": "Kode Batch",
+      "expired": "Tanggal Batch Kedaluwarsa"
+    }
+  }
+}

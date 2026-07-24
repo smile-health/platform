@@ -1,0 +1,53 @@
+{
+  "title": "Dashboard Komitmen Tahunan vs Realisasi",
+  "information": {
+    "title": "Komitmen Tahunan vs Realisasi",
+    "description": "Komitmen dan Realisasi memantau pencapaian secara kuantitas atas komitmen alokasi dan penyangga (Buffer) material yang telah ditetapkan Kemenkes RI ke tiap Provinsi selama satu tahun anggaran."
+  },
+  "filter": {
+    "label": {
+      "year": "Tahun",
+      "material_type": "Jenis Material",
+      "material": "Material",
+      "contract_number": "Nomor Kontrak"
+    },
+    "placeholder": {
+      "year": "Pilih Tahun",
+      "material_type": "Pilih Jenis Material",
+      "material": "Pilih Material",
+      "contract_number": "Pilih Nomor Kontrak"
+    },
+    "default_value": {
+      "vaccine": "Vaksin"
+    }
+  },
+  "box_title": {
+    "total_annual_needs": "Total Kebutuhan Tahunan",
+    "total_annual_commitment": "Total Komitmen Tahunan",
+    "annual_requirements_and_remaining_stock": "Kebutuhan Tahunan dan Sisa Stok",
+    "annual_commitment_vs_realization_national": "Komitmen vs Realisasi Tahunan - Level Nasional",
+    "realization_and_target": "Realisasi dan Target",
+    "annual_commitment_vs_realization_province": "Komitmen vs Realisasi Tahunan - Level Provinsi"
+  },
+  "box_description": {
+    "total_annual_needs": "Jumlah kebutuhan material yang berasal dari perencanaan tahunan dengan mempertimbangkan jumlah sasaran, jumlah pemberian, target sasaran dan Indeks Pemakaian (IP).",
+    "total_annual_commitment": "Jumlah komitmen material dari seluruh kontrak dengan Penyedia sesuai tahun yang dipilih. Jumlah komitmen adalah akumulasi dari alokasi dan buffer yang sudah ditentukan dalam kontrak.",
+    "annual_requirements_and_remaining_stock": "Menampilkan keseluruhan perkembangan pemenuhan material berdasarkan total kebutuhan, stok yang dimiliki saat ini dan pengeluaran konsumsi.",
+    "annual_commitment_vs_realization_national": "Menampilkan keseluruhan perkembangan realisasi pengadaan material yang ditunjukkan untuk alokasi dan buffer berdasarkan nilai komitmen yang tertera dalam kontrak. Nilai komitmen untuk pengadaan material berdasarkan kontrak tahunan yang sudah disetujui. Nilai komitmen dalam kontrak ditunjukkan untuk alokasi dan buffer. Pemenuhan/realisasi merupakan nilai komitmen dalam kontrak yang sudah dikirimkan. Nilai yang belum dikirimkan merupakan selisih antara nilai komitmen yang tertera dalam kontrak dan nilai komitmen yang sudah direalisasikan.",
+    "realization_and_target": "Menampilkan keseluruhan perkembangan realisasi pengadaan material yang ditunjukkan untuk alokasi sudah dikirim dan buffer sudah dikirim. Komitmen yang belum dikirim adalah pengadaan yang merujuk pada alokasi dalam kontrak yang belum dikirim.",
+    "annual_commitment_vs_realization_province": "Menampilkan perkembangan realisasi pengadaan material yang ditunjukkan untuk alokasi dan buffer berdasarkan nilai komitmen yang tertera dalam kontrak untuk masing-masing provinsi."
+  },
+  "label": {
+    "last_updated": "Terakhir Diperbarui",
+    "regency_city": "Kabupaten Kota",
+    "stage": "Tahap"
+  },
+  "columns": {
+    "province": "Provinsi",
+    "total_commitment": "Total Komitmen",
+    "central_buffer_receipt": "Penerimaan Buffer Pusat",
+    "allocation_shipped": "Alokasi Terkirim",
+    "allocation_not_shipped_yet": "Alokasi Belum Terkirim",
+    "total_needs": "Total Kebutuhan"
+  }
+}

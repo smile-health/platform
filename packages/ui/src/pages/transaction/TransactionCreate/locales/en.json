@@ -1,0 +1,368 @@
+{
+  "title": "{{type}} Transaction",
+  "transaction_form": "Transaction Form",
+  "transaction_detail": "Transaction Detail",
+  "select_activity": "Select Activity",
+  "placeholder_select_activity": "Select activity",
+  "caption_activity": "The activities displayed are only activities that are still active on this entity",
+  "entity_name": "Entity Name",
+  "select_entity": "Select entity name",
+  "transaction_type": "Transaction Type",
+  "select_transaction_type": "Select transaction type",
+  "transaction_table": "Transaction Table",
+  "send": "Send",
+  "reset": "Reset",
+  "search_material": "Search material",
+  "caption_choose_material": "Click on the checkbox to select the material. Selected material will appear on transaction table below",
+  "table": {
+    "column": {
+      "material_name": "Material Name",
+      "activity": "Activity",
+      "stock_on_hand": "Stock On Hand",
+      "available_stock": "Available Stock",
+      "quantity": "Quantity",
+      "action": "Action",
+      "stock_on_acitvity": "Stock in {{activity_name}}",
+      "total_available_stock": "Total Available Stock",
+      "selection": "Selection"
+    },
+    "placeholder": {
+      "reason": "Select reason",
+      "material_status": "Select material status",
+      "add_material": "Add material"
+    }
+  },
+  "transaction_remove_stock": {
+    "title": "Reduce Stock Transaction",
+    "batch_list": "Batch List",
+    "material_detail": "Material Detail",
+    "input_table": {
+      "column": {
+        "activity": "Activity",
+        "material": "Material",
+        "material_info": "Material Info",
+        "stock_info": "Stock Info",
+        "stock_on_hand": "Stock On Hand",
+        "available_stock": "Available Stock",
+        "quantity": "Quantity",
+        "reason": "Reason",
+        "action": "Action",
+        "batch": "Batch",
+        "other": "Other",
+        "placeholder": {
+          "reason": "Select reason",
+          "other": "Input Other"
+        },
+        "validation": {
+          "min_qty": "Minimum 1 Quantity must be filled",
+          "max_input_qty": "Cannot Input Quantity more than Available Stock",
+          "quantity_must_multiply": "Quantity must be a multiple of {{number}}"
+        },
+        "toast": {
+          "success": {
+            "create": "Successfully saved the remove stock transaction"
+          }
+        },
+        "reset": "Reset",
+        "budget_source": "Budget Source",
+        "restricted_budget_source": "Restricted Budget Source"
+      },
+      "detail_column": {
+        "batch_detail_from": "{{batchOrDetail}} From {{source}}",
+        "batch_code": "Batch Code",
+        "batch_info": "Batch Info",
+        "stock_info": "Stock Info",
+        "production_date": "Production Date",
+        "manufacturer": "Manufacturer",
+        "expired_date": "Expired Date",
+        "allocated": "Allocated",
+        "material_status": "Material Status",
+        "placeholder": {
+          "status": "Select Status",
+          "qty": "Please enter qty"
+        }
+      }
+    }
+  },
+  "transaction_return_from_facility": {
+    "title_table": "Return from Last Mile",
+    "batch_list": "Batch List",
+    "material_detail": "Material Detail",
+    "take_stock_from_ohter_activities": "Take Stock from Other Activities",
+    "taken_from": "Taken from",
+    "transaction_date": "Transaction Date",
+    "taken_from_activity": "Taken from Activity",
+    "description_select_transaction": "Choose a filter to display the transactions you want to return",
+    "description_consumption_table": "Click on the table row to select the transactions you want to return",
+    "patient_part": {
+      "patient_id": "Patient ID",
+      "vaccination_sequence": "Vaccination Sequence",
+      "identity_type": "Identity Type",
+      "phone_number": "Phone Number",
+      "nik": "NIK",
+      "passport": "Passport",
+      "vaccination_info": "Vaccination Info",
+      "type": "Type",
+      "method": "Method"
+    },
+    "input_table": {
+      "column": {
+        "activity": "Activity",
+        "material": "Material",
+        "material_info": "Material Info",
+        "stock_info": "Stock Info",
+        "stock_on_hand": "Stock On Hand",
+        "available_stock": "Available Stock",
+        "quantity": "Quantity",
+        "quantity_info": "Quantity Info",
+        "max_return_qty": "Max Return Qty",
+        "max_consumption_qty": "Max Last Mile Qty",
+        "returned_amount": "Returned Amount",
+        "discarded_amount": "Discarded Amount",
+        "discard_reason": "Discard Reason",
+        "number_or_returns_in_stock": "Number of returns in stock",
+        "reason": "Reason",
+        "action": "Action",
+        "batch": "Batch",
+        "patient_info": "Patient Info",
+        "stock_from_activity": "Stock from Activity",
+        "other": "Other",
+        "open_vial": "Open Vial",
+        "close_vial": "Close Vial",
+        "placeholder": {
+          "reason": "Select discard reason",
+          "other": "Input Other"
+        },
+        "validation": {
+          "max_input_qty": "{{input}} cannot be more than {{target}}",
+          "quantity_must_multiply": "{{target}} must be a multiple of {{number}}",
+          "error_actual_date": "Actual date cannot be less than today",
+          "minimum_1": "Qty must be more than 0",
+          "cannot_more_than": "Qty can't be more than {{max}}",
+          "must_less_than": "Qty must be less than {{max}}",
+          "must_equal_open_vial": "Open vials must be equal to the number of returned open vials"
+        },
+        "toast": {
+          "success": {
+            "create": "Successfully saved the return"
+          }
+        },
+        "reset": "Reset"
+      },
+      "detail_column": {
+        "batch_detail_from": "{{batchOrDetail}} from {{source}}",
+        "batch_code": "Batch Code",
+        "batch_info": "Batch Info",
+        "max_return": "Max Return",
+        "return_amount": "Return Amount",
+        "close_vial": "Close Vial",
+        "open_vial": "Open Vial",
+        "is_anything_discarded": "Is anything discarded?",
+        "qty_discarded": "Qty Discarded",
+        "close_vial_discarded": "Close Vial Discarded",
+        "discard_reason": "Discard Reason",
+        "number_of_returns_in_stock": "Number of returns in stock",
+        "production_date": "Production Date",
+        "manufacturer": "Manufacturer",
+        "expired_date": "Expired Date",
+        "allocated": "Allocated",
+        "material_status": "Material Status",
+        "placeholder": {
+          "status": "Select Status",
+          "qty": "Please enter qty"
+        }
+      }
+    }
+  },
+  "transaction_discard": {
+    "detail": {
+      "title": "Batch from activity {{activity}} & {{material}}"
+    },
+    "form": {
+      "validation": {
+        "qty": {
+          "unit": "Quantity must be a multiple of {{amount}}",
+          "amount": "Qty must be more than 0",
+          "max": "Qty can't be more than max return"
+        },
+        "open_vial": "Open vials must be equal to the number of open vials in stock",
+        "close_vial": "Close Vial must be a multiple of {{value}}",
+        "qty_cannot_more_than": "Qty can't be more than on {{value}}",
+        "close_vial_cannot_more_than": "Close Vial can't be more than on {{value}}"
+      },
+      "table": {
+        "title": {
+          "detail": "Detail List",
+          "batch": "Batch List"
+        },
+        "column": {
+          "material": "Material Info",
+          "batch": "Batch Info",
+          "stock": "Stock Info",
+          "activity": "Activity",
+          "quantity": "Quantity",
+          "material_status": "Material Status",
+          "reason": "Reason",
+          "action": "Action",
+          "open_vial": "Open Vial",
+          "close_vial": "Close Vial",
+          "open_close_vial": "{{open}} (open vial) {{close}} (close vial)"
+        },
+        "description": {
+          "stock": {
+            "on_hand": [
+              "Stock On Hand: {{value}}",
+              "Stock on Hand"
+            ],
+            "available": [
+              "Available Stock: {{value}}",
+              "Available Stock"
+            ],
+            "allocated": "Allocated: {{value}}"
+          },
+          "batch": {
+            "production_date": "Production Date: {{value}}",
+            "manufacturer": "Manufacturer: {{value}}",
+            "expired_date": "Expired Date: {{value}}",
+            "code": "Batch Code: {{value}}",
+            "reason": "Reason: {{value}}"
+          }
+        },
+        "placeholder": {
+          "qty": "Please enter qty",
+          "status": "Select Status",
+          "reason": "Select reason"
+        }
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Successfully saved the Discard Transaction"
+      }
+    }
+  },
+  "transaction_type_list": {
+    "stock_count": "Stock Count",
+    "last_mile": "Last Mile",
+    "receive": "Receive",
+    "discard": "Discard",
+    "return_of_health_facilities": "Return from Last Mile",
+    "open_vial_acceptance": "Open Vial Acceptance",
+    "add_stock": "Add Stock",
+    "remove_stock": "Reduce Stock",
+    "cancellation_of_discard": "Cancellation of Discard",
+    "transfer_stock": "Relocation Between Program"
+  },
+  "cancel_transaction_discard": {
+    "description": "Choose a filter to display the transactions you want to cancel",
+    "table": {
+      "discard": {
+        "title": "Discard Transaction Table",
+        "description": "Click on the table row to select the transactions you want to cancel",
+        "column": {
+          "transaction_date": "Transaction Date",
+          "activity": "Activity",
+          "reason": "Reason",
+          "quantity": "Quantity",
+          "batch": "Batch Info",
+          "selection": "Selection",
+          "taken": "Taken from: {{value}}",
+          "taken_activity": "Taken from Activity",
+          "manufacture": "Manufacturer: {{value}}",
+          "expired_date": "Expired Date: {{value}}",
+          "quantity_accumulation": "Quantity Accumulation",
+          "action": "Action",
+          "detail": "Detail",
+          "remove": "Remove"
+        }
+      },
+      "cancel": {
+        "title": "Discard Cancellation Transaction Table"
+      },
+      "detail": {
+        "title": [
+          "Batch Code",
+          "Manufacturer",
+          "Expired Date",
+          "Quantity Accumulation"
+        ]
+      }
+    },
+    "toast": {
+      "success": {
+        "create": "Successfully saved the Cancel Discard Transaction"
+      }
+    }
+  },
+  "label_back": "Back to List",
+  "title_material_select": "Material in {{entity_name}}",
+  "customer": "Receiver",
+  "select_customer": "Select receiver",
+  "actual_last_mile_date": "Actual Last Mile Date",
+  "actual_return_date": "Actual Return Date",
+  "remove_dialog": {
+    "question_one": "Are you sure want to remove this ?",
+    "question_two": "All the information you’ve entered in this material will be lost."
+  },
+  "reset_dialog": {
+    "title": "Confirmation",
+    "description": "Are you sure you want to delete all filled data?"
+  },
+  "alert_save_batch": "There is no item selected. Please review the added material and press the save button on the batch to save the changes.",
+  "transaction_transfer_stock": {
+    "destination_program": {
+      "label": "Destination Program",
+      "placeholder": "Search program name"
+    },
+    "table_material": {
+      "caption_table_material": "Please choose entity and destination program first",
+      "warning": "Only materials available in both selected programs will appear in the list",
+      "material_name": "Material Name",
+      "total_available_stock": "Total Available Stock",
+      "selection": "Selection"
+    },
+    "validation": {
+      "quantity_must_multiply": "Quantity must be a multiple of {{number}}",
+      "required_materials": "No materials have been added yet",
+      "max_qty": "Quantity cannot exceed the available stock",
+      "min_qty": "Quantity must be greater than 0"
+    },
+    "table": {
+      "material_info": "Material Info",
+      "available_stock": "Available Stock",
+      "quantity": "Quantity",
+      "destination_activity": "Destination Activity",
+      "action": "Action"
+    },
+    "table_batch": {
+      "batch_info": "{{type}} Info",
+      "activity": "Activity",
+      "total_available_stock": "Total Available Stock",
+      "budget_info": "Budget Info",
+      "quantity": "Quantity",
+      "production_date": "Production Date",
+      "manufacturer": "Manufacturer",
+      "expired_date": "Expired Date",
+      "budget_source": "Budget Source",
+      "price": "Price",
+      "total_price": "Total Price"
+    },
+    "caption_detail_batch": "{{type}} List",
+    "enter_qty": "Please enter qty",
+    "stock_from_activity": "Stock from activity",
+    "batch_code": "Batch code",
+    "toast": {
+      "success": {
+        "create": "Successfully saved relocation between program transactions"
+      }
+    },
+    "empty_material": "This list is currently empty. There is no eligible material.",
+    "empty_program": "This list is currently empty. Please select the entity.",
+    "empty_transaction_table": "This list is currently empty. Please select the material.",
+    "empty_program_already_requested": "This list is currently empty. Please contact the helpdesk to request new entries.",
+    "no_data_found": "No data found",
+    "desc_acknowledge_one": "Please make sure this relocation has been acknowledged by destination program",
+    "desc_acknowledge_two": "This relocation is already known by all destination program"
+  },
+  "save": "Save"
+}

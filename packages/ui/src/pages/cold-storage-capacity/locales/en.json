@@ -1,0 +1,130 @@
+{
+  "title": "Cold Storage Capacity",
+  "info": {
+    "colorCoding": "Cold storage capacity utilization is represented with colors: yellow for <20%, green for 20%-80%, and red for >80%."
+  },
+  "detail": {
+    "title": "Cold Storage Capacity Detail",
+    "program": {
+      "label": "Program",
+      "placeholder": "Select program"
+    },
+    "headerInfo": {
+      "entityName": "Entity Name",
+      "program": "Program"
+    },
+    "realCapacity": {
+      "title": "Real Total Capacity",
+      "totalVolumeStock": "Total Volume Stock (Litre)",
+      "assetNetoCapacity": "Asset Neto Capacity (Litre)",
+      "usedPercentage": "Used Percentage"
+    },
+    "projectedCapacity": {
+      "title": "Projected Total Capacity Based on Max Value",
+      "totalStockVolume": "Projection of Total Stock Volume (Litre)",
+      "assetNettoCapacity": "Projection of Asset Netto Capacity (Litre)",
+      "percentageUsed": "Projection of Percentage Used (Liter)"
+    },
+    "warning": {
+      "message": "If the percentage used more than 100%, please validate it with the relevant entity."
+    },
+    "material": {
+      "title": "Material",
+      "subtitle": "Stored in the Refrigerator"
+    },
+    "temperatureStorage": {
+      "assetName": "Asset Name",
+      "capacity": "Capacity",
+      "temperature": "Temperature",
+      "totalVolumeStock": "Total Volume Stock (Litre)",
+      "assetNetoCapacity": "Asset Neto Capacity (Litre)",
+      "usedPercentage": "Used Percentage",
+      "table": {
+        "no": "No",
+        "material": "Material",
+        "stockDose": "Stock (Dose)",
+        "stockVial": "Stock (Vial)",
+        "stockBox": "Stock (Box)",
+        "stockVolume": "Stock Volume (L)",
+        "maxFillBox": "Can be filled with a maximum of one of the materials (Box)",
+        "maxDose": "Max Dose",
+        "orderRecommendation": "Order Recommendations based on Max (Dose)",
+        "stockQuantityProjection": "Stock Quantity Projection",
+        "tooltip": "This material is supplied by more than one manufacturer. Each manufacturer may use different packaging types, dose volumes, and capacity calculations. The system applies the calculation based on the batch currently recorded in the inventory."
+      },
+      "emptyState": {
+        "title": "No temperature storages found",
+        "description": "There are no temperature storages available for this entity."
+      }
+    }
+  },
+  "table": {
+    "title": "Cold Storage Capacity List",
+    "column": {
+      "no": "No",
+      "entityName": "Entity Name",
+      "totalUtilizationVolume": "Total Utilization Volume (Litre)",
+      "coldStorageNetCapacity": "Cold Storage Net Capacity (Litre)",
+      "capacityUtilization": "Capacity Utilization (%)",
+      "action": "Action"
+    }
+  },
+  "field": {
+    "capacityStatus": {
+      "label": "Capacity Status",
+      "placeholder": "Select capacity status"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "cityDistrict": {
+      "label": "City/District",
+      "placeholder": "Select city/district"
+    },
+    "healthFacility": {
+      "label": "Health Facility",
+      "placeholder": "Select health facility"
+    },
+    "entityTag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "period": {
+      "label": "Period",
+      "placeholder": "Select period"
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity"
+    },
+    "materialType": {
+      "label": "Material Type",
+      "placeholder": "Select material type"
+    },
+    "materialName": {
+      "label": "Material Name",
+      "placeholder": "Select material name"
+    },
+    "batch": {
+      "label": "Batch",
+      "placeholder": "Select batch"
+    },
+    "expiredDate": {
+      "label": "Expired Date",
+      "placeholder": "Select expired date"
+    }
+  },
+  "button": {
+    "export": "Export",
+    "reset": "Reset",
+    "showReport": "Show Report",
+    "detail": "Detail"
+  },
+  "tooltip": {
+    "capacityWarning": "If the percentage used more than 100%, please validate it with the relevant entity."
+  },
+  "activeFilter": {
+    "filteredAt": "Filtered At"
+  }
+}

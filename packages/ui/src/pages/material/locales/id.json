@@ -1,0 +1,352 @@
+{
+  "list": {
+    "title": "Pengaturan Material",
+    "tab": {
+      "list": "Daftar Entitas",
+      "create": "Tambah Entitas"
+    },
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari material"
+      },
+      "activity": {
+        "label": "Kegiatan",
+        "placeholder": "Pilih Kegiatan"
+      },
+      "hierarchical": {
+        "label": "Hirarki"
+      },
+      "material_type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "material_level": {
+        "label": "Level Material",
+        "placeholder": "Pilih level material",
+        "radio": {
+          "all": "Semua",
+          "active_substance": "Produk Template",
+          "trademark": "Produk Varian",
+          "non_hierarchy": "Non Hirarki"
+        }
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Pilih program"
+      },
+      "without_program": "Tidak ada program",
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "material_name": "Nama Material",
+      "material_type": "Tipe Material",
+      "material_subtype": "Subtipe Material",
+      "updated_by": "Diupdate Oleh",
+      "managed_by_batch": "Dikelola Berdasarkan Batch?",
+      "activity_name": "Nama Kegiatan",
+      "min_temperature": "Temperatur Min",
+      "max_temperature": "Temperatur Maks",
+      "action": "Aksi",
+      "material_level": {
+        "label": "Level Material",
+        "kfa_93": "Produk Varian",
+        "kfa_92": "Produk Template",
+        "non_hierarchy": "Non Hirarki"
+      }
+    },
+    "options": {
+      "tag": "Pilih Tag",
+      "type": "Pilih Tipe"
+    },
+    "action": {
+      "activate": {
+        "title": "Aktifkan"
+      },
+      "deactivate": {
+        "title": "Non Aktifkan"
+      }
+    },
+    "button": {
+      "add": "Tambah Material"
+    }
+  },
+  "title": {
+    "material": "Material",
+    "list": "Daftar Material",
+    "create": "Tambah Material",
+    "edit": "Ubah Material"
+  },
+  "detail": {
+    "title": "Detail Material",
+    "active_substance": "Produk Template",
+    "active_substance_and_strength": "Produk Template",
+    "trademark": "Produk Varian",
+    "packaging": "Kemasan",
+    "name": "Nama Material",
+    "level": "Level Material",
+    "description": "Deskripsi",
+    "code": "Kode Material",
+    "kfa_92_code": "Kode KFA Produk Template",
+    "kfa_93_code": "Kode KFA Produk Varian",
+    "unit": {
+      "consumption": "Unit Konsumsi",
+      "distribution": "Unit Distribusi",
+      "distribution_pieces": "Jumlah Unit Konsumsi per Unit Distribusi"
+    },
+    "retail": {
+      "price_min": "Harga Eceran Minimum",
+      "price_max": "Harga Eceran Maksimum",
+      "validation": {
+        "max_greater_min": "Harga Eceran Maksimum tidak boleh lebih kecil dari Harga Eceran Minimum",
+        "min_greater_max": "Harga Eceran Minimum tidak boleh lebih besar dari Harga Eceran Maksimum"
+      }
+    },
+    "temperature": {
+      "sensitive": "Sensitif Terhadap Temperatur",
+      "min": "Temperatur Min",
+      "max": "Temperatur Maks",
+      "validation": {
+        "max_greater_min": "Temperatur Maks tidak boleh lebih kecil dari Temperatur Min",
+        "min_greater_max": "Temperatur Min tidak boleh lebih besar dari Temperatur Maks"
+      }
+    },
+    "batch": "Dikelola oleh Batch",
+    "manufacture": "Pabrik",
+    "manufactured": "Diproduksi oleh",
+    "activity": "Kegiatan",
+    "material": {
+      "type": "Tipe Material",
+      "subtype": "Subtipe Material",
+      "companion": "Material Pendamping",
+      "vaccine": "Material Vaksin",
+      "sequence": "Butuh Urutan Pemberian"
+    },
+    "patient": "Pasien",
+    "stock": {
+      "adjust": "Bisa Tambah/Kurang Stok",
+      "entity": "Entitas Tambah/Kurangi Stok",
+      "role": "Role Tambah/Kurangi Stok"
+    },
+    "so_required": "Wajib Stok Opname"
+  },
+  "column": {
+    "name": "Nama Material"
+  },
+  "action": {
+    "activate": {
+      "button": "Aktifkan",
+      "confirmation": "Apakah anda yakin akan mengaktifkan produk ini ?"
+    },
+    "deactivate": {
+      "button": "Non Aktifkan",
+      "confirmation": "Apakah anda yakin akan menonaktifkan produk ini ?"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "Produk Template",
+    "trademark": "Produk Varian",
+    "non_hierarchy": "Non Hirarki"
+  },
+  "form": {
+    "title": "Info Material",
+    "global_info": "Info Global",
+    "material_name": {
+      "label": "Nama Material",
+      "placeholder": "Nama material",
+      "validation": {
+        "required": "Nama material wajib diisi"
+      }
+    },
+    "hierarchical": {
+      "label": "Metode Klasifikasi",
+      "placeholder": "Metode Klasifikasi",
+      "option": {
+        "yes": "KFA",
+        "no": "Tanpa Klasifikasi"
+      },
+      "validation": {
+        "required": "Metode klasifikasi wajib dipilih"
+      }
+    },
+    "material_level": {
+      "label": "Level Material",
+      "placeholder": "Level material",
+      "validation": {
+        "required": "Level Material wajib dipilih"
+      },
+      "radio": {
+        "active_substance": "Produk Template",
+        "trademark": "Produk Varian"
+      }
+    },
+    "material_active_substance": {
+      "label": "Produk Template Material",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Produk Template material wajib dipilih"
+      }
+    },
+    "kfa_93_code": {
+      "label": "Kode KFA Produk Varian",
+      "placeholder": "Contoh: 93766587",
+      "validation": {
+        "required": "Kode KFA produk varian wajib dipilih"
+      }
+    },
+    "kfa_92_code": {
+      "label": "Kode KFA Produk Template",
+      "placeholder": "Contoh: 92766587",
+      "validation": {
+        "required": "Kode KFA Produk Template wajib dipilih"
+      }
+    },
+    "material_code": {
+      "label": "Kode Material",
+      "placeholder": "Example: 123ABC",
+      "validation": {
+        "required": "Kode material wajib diisi"
+      }
+    },
+    "unit_of_consumption": {
+      "label": "Satuan Unit Konsumsi",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Satuan unit konsumsi wajib diisi"
+      }
+    },
+    "unit_of_distribution": {
+      "label": "Satuan Unit Distribusi",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Satuan unit distribusi wajib diisi"
+      }
+    },
+    "number_of_unit_consumption_per_unit_distribution": {
+      "label": "Jumlah Unit Konsumsi per Unit Distribusi",
+      "placeholder": "Contoh : 1",
+      "validation": {
+        "required": "Jumlah unit konsumsi per unit distribusi wajib diisi"
+      }
+    },
+    "minimum_retail_price": {
+      "label": "Harga Retail Minimum",
+      "placeholder": "Contoh: 1000",
+      "validation": {
+        "required": "Harga retail minimum wajib diisi"
+      }
+    },
+    "maximum_retail_price": {
+      "label": "Harga Retail Maksimal",
+      "placeholder": "Contoh: 5000",
+      "validation": {
+        "required": "Harga retail maksimal wajib diisi"
+      }
+    },
+    "temperature_sensitive": {
+      "label": "Sensitif Terhadap Temperatur",
+      "placeholder": "Sensitif terhadap temperatur",
+      "validation": {
+        "required": "Sensitif terhadap temperatur wajib diisi"
+      }
+    },
+    "minimum_temperature": {
+      "label": "Temperatur Min",
+      "placeholder": "Contoh: 5",
+      "validation": {
+        "numeric": "Temperatur min hanya angka"
+      }
+    },
+    "maximum_temperature": {
+      "label": "Temperatur Max",
+      "placeholder": "Contoh: 15",
+      "validation": {
+        "numeric": "Temperatur max hanya angka",
+        "diff": "Temperatur max harus lebih besar dari temperature min"
+      }
+    },
+    "material_type": {
+      "label": "Tipe Material",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Tipe material wajib diisi"
+      }
+    },
+    "material_subtype": {
+      "label": "Subtipe Material",
+      "placeholder": "Pilih subtipe material"
+    },
+    "managed_by_batch": {
+      "label": "Dikelola oleh Batch?",
+      "placeholder": "Dikelola oleh Batch"
+    },
+    "description": {
+      "label": "Deskripsi",
+      "placeholder": "Deskripsi",
+      "validation": {
+        "required": "Deskripsi material wajib diisi"
+      }
+    },
+    "manufacture": {
+      "label": "Diproduksi oleh",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Diproduksi oleh Wajib diisi"
+      }
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "description": "Kegiatan yang membutuhkan data pasien akan menampilkan opsi urutan pemberian",
+      "placeholder": "Cari Kegiatan",
+      "is_sequence": "Sequence",
+      "requires_patient_data": "Perlu Data Pasien",
+      "validation": {
+        "required": "Kegiatan is wajib diisi"
+      },
+      "error": {
+        "not_found": "Kegiatan tidak ditemukan"
+      }
+    },
+    "companion_material": {
+      "label": "Material Pendamping",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Material pendamping wajib diisi"
+      }
+    },
+    "add_remove_stock": {
+      "label": "Bisa tambah/kurang stok",
+      "validation": {
+        "required": "Bisa tambah/kurang stok wajib dipilih"
+      }
+    },
+    "entity_type": {
+      "label": "Tipe Entitas",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Tipe entitas wajib diisi"
+      }
+    },
+    "role": {
+      "label": "Pilih Role",
+      "placeholder": "Ketik untuk mencari",
+      "validation": {
+        "required": "Role wajib diisi"
+      }
+    },
+    "so_required": {
+      "label": "Wajib Stok Opname"
+    }
+  },
+  "scroll_list": {
+    "title": "Material",
+    "description": "Pilih entitas dan tipe transaksi terlebih dahulu",
+    "column": {
+      "material_name": "Nama Material",
+      "available_stock": "Stok Tersedia",
+      "current_stock": "Stock Saat Ini"
+    }
+  }
+}

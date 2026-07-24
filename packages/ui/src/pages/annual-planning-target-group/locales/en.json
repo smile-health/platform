@@ -1,0 +1,57 @@
+{
+  "title": "Target Group",
+  "add": "Add Target Group",
+  "edit": "Edit Target Group",
+  "target_group": "Target Group",
+  "search_by_keyword": "Search by keyword",
+  "message": {
+    "import_success": "Import target group data successfully"
+  },
+  "toast": {
+    "create_and_activate_success": "Target group created and activated successfully",
+    "create_success": "Target group created successfully",
+    "update_and_activate_success": "Target group updated and activated successfully",
+    "update_success": "Target group updated successfully",
+    "activate_success": "Target group activated successfully",
+    "deactivate_success": "Target group deactivated successfully",
+    "change_status_failed": "Failed to change target group status",
+    "delete_success": "Target group deleted successfully"
+  },
+  "table": {
+    "target_group_name": "Target Group Name",
+    "group_name": "Group Name",
+    "year": "Year",
+    "type": "Type",
+    "age": "Age",
+    "status": "Data Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "activate": "Activate",
+    "deactivate": "Deactivate"
+  },
+  "add_target_group": "Add Target Group",
+  "select_target_group": "Select Target Group",
+  "age": "Age",
+  "years": "Year(s)",
+  "months": "Month(s)",
+  "days": "Day(s)",
+  "from": "From",
+  "to": "To",
+  "from_to_age": "{{fromYear}} Year(s) {{fromMonth}} Month(s) {{fromDay}} Day(s) - {{toYear}} Year(s) {{toMonth}} Month(s) {{toDay}} Day(s)",
+  "from_to_forever_age": "{{fromYear}} Year(s) {{fromMonth}} Month(s) {{fromDay}} Day(s) - Forever",
+  "validation": {
+    "month_max": "Month cannot be more than 11, if you want to enter 12, just enter 1 year.",
+    "day_max": "Day cannot be more than 29, if you want to enter 30 or 31, just enter 1 month.",
+    "cannot_greater_than_to": "Age From cannot be greater than Age To"
+  },
+  "confirmation_activation": {
+    "description": "Are you sure you want to {{status}} this?",
+    "subdescription_activate": "This target group will appear and be able to use.",
+    "description_deactivate": "This target group will not appear and be able to use."
+  },
+  "confirmation_deletion": {
+    "description": "Are you sure you want to delete this target group?",
+    "subdescription": "This action cannot be undone."
+  },
+  "programs": "Programs"
+}

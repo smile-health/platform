@@ -1,0 +1,1491 @@
+{
+  "Users": [
+    {
+      "firstname": "Super",
+      "surname": "User",
+      "email": "root@openhim.org",
+      "provider": "local",
+      "groups": [
+        "admin"
+      ],
+      "passwordAlgorithm": null,
+      "passwordHash": null,
+      "passwordSalt": null,
+      "expiry": null,
+      "locked": false,
+      "token": null,
+      "tokenType": null
+    },
+    {
+      "firstname": "OpenHIM",
+      "surname": "Administrator",
+      "email": "admin@openhim.local",
+      "provider": "local",
+      "groups": [
+        "admin"
+      ],
+      "token": null,
+      "tokenType": null,
+      "expiry": null,
+      "locked": false
+    },
+    {
+      "firstname": "Test",
+      "surname": "User 1",
+      "email": "testuser1@openhim.local",
+      "provider": "local",
+      "groups": [
+        "users"
+      ],
+      "settings": {
+        "filter": {
+          "limit": 100
+        }
+      },
+      "token": "fbec94c99e99e7fe06086ecccc01e2a2",
+      "tokenType": "newUser",
+      "expiry": "2025-12-10T17:03:11.000Z",
+      "locked": true
+    },
+    {
+      "firstname": "Test",
+      "surname": "User 2",
+      "email": "testuser2@openhim.local",
+      "provider": "local",
+      "groups": [
+        "users"
+      ],
+      "msisdn": "",
+      "dailyReport": true,
+      "weeklyReport": true,
+      "settings": {
+        "list": {
+          "tabview": "new",
+          "autoupdate": true
+        },
+        "filter": {
+          "limit": 100
+        },
+        "general": {
+          "showTooltips": true
+        }
+      },
+      "token": "06a5c815988f95742931e8b8877b8177",
+      "tokenType": "newUser",
+      "expiry": "2025-12-10T17:03:11.000Z",
+      "locked": true
+    }
+  ],
+  "Clients": [
+    {
+      "clientID": "smile-app",
+      "name": "SMILE Application",
+      "roles": [
+        "smile-admin"
+      ],
+      "passwordAlgorithm": "sha512",
+      "passwordHash": "ababca002126147595a33fea851c47f19e542b1b6e841273a3f5e0d809b880af85c30e9ade21fefdaf2596a03ab2db34a5b4820e34db2bf2d3105040006f3d83",
+      "passwordSalt": "c513e4c3dcd818e4f42ec6df1f5f469a",
+      "organization": "UNDP Indo",
+      "location": "Indonesia",
+      "softwareName": "SMILE",
+      "description": "SMILE logistics application",
+      "contactPerson": "SMILE ADMIN",
+      "contactPersonEmail": "admin@smile.com"
+    },
+    {
+      "clientID": "wms-app",
+      "name": "WMS Application",
+      "roles": [
+        "wms-admin"
+      ],
+      "passwordAlgorithm": "sha512",
+      "passwordHash": "9f3000d90b1a94778a4a06867927565245d90b3a5648f902c9c4eba4ea52f934c1d75a1740d0188aecda3e8920ca0fd1b65f5209151ab1f11ec1ec4dc4b89e6c",
+      "passwordSalt": "c0aa2ed7018ec1064e285eb8ec185f18",
+      "organization": "UNDP",
+      "location": "Indonesia",
+      "softwareName": "Waste Management System",
+      "description": "Application to manage Waste products in health institutes",
+      "contactPerson": "WMS Admin",
+      "contactPersonEmail": "admin@wms.com"
+    }
+  ],
+  "Channels": [
+    {
+      "name": "SMILE Order Created Channel",
+      "description": "Channel for routing Order created events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-created$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT",
+        "PATCH"
+      ],
+      "type": "http",
+      "priority": 1,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "tender-wind-91.webhook.cool",
+          "port": 443,
+          "path": "/",
+          "pathTransform": "",
+          "primary": false,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        },
+        {
+          "name": "Webhook 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "play.svix.com",
+          "port": 443,
+          "path": "/in/e_aLYCL1Au35Miep5CE8T6AMOkfa6/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        },
+        {
+          "name": "Routing Endpoint",
+          "type": "http",
+          "status": "enabled",
+          "secured": false,
+          "host": "openhim-rule-router-mediator",
+          "port": 4005,
+          "path": "/route",
+          "pathTransform": "",
+          "primary": false,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4072a55040ab4a6027",
+        "name": "Super User"
+      }
+    },
+    {
+      "name": "WMS Transactions Channel",
+      "urlPattern": "^/wms-transactions$",
+      "isAsynchronousProcess": false,
+      "methods": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "type": "http",
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "wms-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "WMS Client 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "wms-client1",
+          "port": 8443,
+          "path": "wms-transactions",
+          "pathTransform": "",
+          "primary": true,
+          "username": "username",
+          "password": "password",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4072a55040ab4a6027",
+        "name": "Super User"
+      }
+    },
+    {
+      "name": "SMILE Orders",
+      "urlPattern": "^/smile/orders/$",
+      "isAsynchronousProcess": false,
+      "methods": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "type": "http",
+      "priority": 2,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [],
+      "whitelist": [],
+      "authType": "public",
+      "routes": [
+        {
+          "name": "SMILE Orders Mediator",
+          "type": "http",
+          "status": "enabled",
+          "secured": false,
+          "host": "localhost",
+          "port": 4005,
+          "path": "smile-orders",
+          "pathTransform": "",
+          "primary": true,
+          "username": "smile-user",
+          "password": "password",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Order Cancelled Channel",
+      "description": "Channel for routing Order cancelled events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-cancelled$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "play.svix.com",
+          "port": 443,
+          "path": "/in/e_aLYCL1Au35Miep5CE8T6AMOkfa6/",
+          "pathTransform": "",
+          "primary": false,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        },
+        {
+          "name": "Webhook 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "tender-wind-91.webhook.cool",
+          "port": 443,
+          "path": "/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        },
+        {
+          "name": "Routing Endpoint",
+          "type": "http",
+          "status": "enabled",
+          "secured": false,
+          "host": "openhim-rule-router-mediator",
+          "port": 4005,
+          "path": "/route",
+          "pathTransform": "",
+          "primary": false,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Order Confirmed Channel",
+      "description": "Channel for routing Order confirmed events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-confirmed$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "tender-wind-91.webhook.cool",
+          "port": 443,
+          "path": "/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        },
+        {
+          "name": "Routing Endpoint",
+          "type": "http",
+          "status": "enabled",
+          "secured": false,
+          "host": "openhim-rule-router-mediator",
+          "port": 4005,
+          "path": "/route",
+          "pathTransform": "",
+          "primary": false,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Transaction Created Channel",
+      "description": "Channel for routing Transaction created events from SMILE application",
+      "urlPattern": "^/pub/smile/transactions/transaction-created$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT",
+        "PATCH"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Transaction Exported Channel",
+      "description": "Channel for routing Transaction exported events from SMILE application",
+      "urlPattern": "^/pub/smile/transactions/transaction-exported$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT",
+        "PATCH"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Disposal Created Channel",
+      "description": "Channel for routing Disposal created events from SMILE application",
+      "urlPattern": "^/pub/smile/disposals/disposal-created$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT",
+        "PATCH"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Orders Channel",
+      "description": "Channel for routing Orders events from SMILE application",
+      "urlPattern": "^/smile-orders$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT",
+        "OPTIONS",
+        "PATCH"
+      ],
+      "type": "http",
+      "priority": 1,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook.site",
+          "port": 443,
+          "path": "876957bf-f5ad-416c-b5d1-9940f492ab6a",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        },
+        {
+          "name": "Mediator Service 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": false,
+          "host": "localhost",
+          "port": 4003,
+          "path": "/clients",
+          "pathTransform": "",
+          "primary": false,
+          "username": "username",
+          "password": "password",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4072a55040ab4a6027",
+        "name": "Super User"
+      }
+    },
+    {
+      "name": "SMILE Order Dropping Created Channel",
+      "description": "Channel for routing Order dropping created events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-dropping-created$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Order Comment Created Channel",
+      "description": "Channel for routing Order comment created events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-comment-created$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Order Item Updated Channel",
+      "description": "Channel for routing Order item updated events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-item-updated$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Order Allocated Channel",
+      "description": "Channel for routing Order allocated events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-allocated$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "play.svix.com",
+          "port": 443,
+          "path": "/in/e_aLYCL1Au35Miep5CE8T6AMOkfa6/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Order Shipped Channel",
+      "description": "Channel for routing Order shipped events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-shipped$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "tender-wind-91.webhook.cool",
+          "port": 443,
+          "path": "/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Order Fulfilled Channel",
+      "description": "Channel for routing Order fulfilled events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-fulfilled$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "tender-wind-91.webhook.cool",
+          "port": 443,
+          "path": "/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Order Validated Channel",
+      "description": "Channel for routing Order validated events from SMILE application",
+      "urlPattern": "^/pub/smile/orders/order-validated$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 1",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "play.svix.com",
+          "port": 443,
+          "path": "/in/e_aLYCL1Au35Miep5CE8T6AMOkfa6/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Stock Exported Channel",
+      "description": "Channel for routing Stock exported events from SMILE application",
+      "urlPattern": "^/pub/smile/exports/stock-exported$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Stock Opname Exported Channel",
+      "description": "Channel for routing Stock opname exported events from SMILE application",
+      "urlPattern": "^/pub/smile/exports/stock-opname-exported$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SMILE Reconciliation Exported Channel",
+      "description": "Channel for routing reconciliation exported events from SMILE application",
+      "urlPattern": "^/pub/smile/exports/reconciliation-exported$",
+      "isAsynchronousProcess": false,
+      "timeout": 3000,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "priority": null,
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Webhook 2",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "webhook-test.com",
+          "port": 443,
+          "path": "/ce846eb22b9ab3786474f38018d7d669",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "alerts": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4d72a55040ab4a607a",
+        "name": "OpenHIM Administrator"
+      }
+    },
+    {
+      "name": "SITB Orders Adapter",
+      "description": "Channel for clients interested in SMILE Order updates for TB Program.",
+      "urlPattern": "^/adapter/sitb/orders$",
+      "isAsynchronousProcess": false,
+      "methods": [
+        "POST"
+      ],
+      "type": "http",
+      "tcpPort": null,
+      "tcpHost": null,
+      "pollingSchedule": null,
+      "requestBody": true,
+      "responseBody": true,
+      "allow": [
+        "smile-app"
+      ],
+      "whitelist": [],
+      "authType": "private",
+      "routes": [
+        {
+          "name": "Client SITB Mock",
+          "type": "http",
+          "status": "enabled",
+          "secured": true,
+          "host": "cool-bear-53.webhook.cool",
+          "port": 443,
+          "path": "/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "forwardAuthHeader": false,
+          "waitPrimaryResponse": false,
+          "statusCodesCheck": "",
+          "kafkaClientId": "",
+          "kafkaTopic": ""
+        }
+      ],
+      "matchContentTypes": [],
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "properties": [],
+      "txViewAcl": [],
+      "txViewFullAcl": [],
+      "txRerunAcl": [],
+      "status": "enabled",
+      "rewriteUrls": false,
+      "addAutoRewriteRules": true,
+      "rewriteUrlsConfig": [],
+      "autoRetryEnabled": false,
+      "autoRetryPeriodMinutes": 60,
+      "updatedBy": {
+        "id": "69306d4072a55040ab4a6027",
+        "name": "Super User"
+      },
+      "alerts": []
+    }
+  ],
+  "Mediators": [
+    {
+      "urn": "urn:mediator:smile-rule-router",
+      "version": "1.0.0",
+      "name": "SMILE Rule Router",
+      "description": "Rule-based routing mediator for SMILE order events",
+      "endpoints": [
+        {
+          "name": "Routing Endpoint",
+          "type": "http",
+          "status": "enabled",
+          "host": "openhim-rule-router-mediator",
+          "port": 4005,
+          "path": "/route",
+          "forwardAuthHeader": false
+        }
+      ],
+      "defaultChannelConfig": [],
+      "configDefs": [],
+      "_lastHeartbeat": "2026-03-02T20:25:49.952Z",
+      "_uptime": 1022.222989139
+    }
+  ],
+  "ContactGroups": []
+}

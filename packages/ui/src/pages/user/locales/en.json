@@ -1,0 +1,161 @@
+{
+  "title": {
+    "index": "User Settings",
+    "add": "Add User",
+    "edit": "Edit User",
+    "list": {
+      "index": "User List",
+      "management": "User Settings"
+    },
+    "user": "User",
+    "detail": "User Detail",
+    "main": "Main Info",
+    "additional": "Additional Info",
+    "status": "User Status",
+    "change_history": "Change History",
+    "log": "User Activity Information",
+    "entity": "Entity Information"
+  },
+  "column": {
+    "username": "Username",
+    "fullname": "Full Name",
+    "role": "Role",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "location": "Location",
+    "entity": {
+      "index": "Entity",
+      "name": "Entity Name",
+      "address": "Entity Address"
+    },
+    "mobile_phone": "Phone Number",
+    "birthdate": "Birth Date",
+    "gender": "Gender",
+    "last": {
+      "login": "Last Login",
+      "device": "Last Device Access"
+    },
+    "status": "Status",
+    "action": "Action"
+  },
+  "form": {
+    "name": {
+      "placeholder": "Search username, firstname, lastname",
+      "label": "Search"
+    },
+    "role": {
+      "label": "Role",
+      "placeholder": "Select role",
+      "validation": {
+        "required": "Role is required"
+      }
+    },
+    "primary_vendor": {
+      "label": "Primary Vendor",
+      "placeholder": "Select primary vendor"
+    },
+    "date": {
+      "label": "Date"
+    },
+    "username": {
+      "label": "Username",
+      "placeholder": "Enter username",
+      "validation": {
+        "required": "Username is required",
+        "invalid": "Username can only consist of letters, numbers, dots, and underscores."
+      }
+    },
+    "firstname": {
+      "label": "First Name",
+      "placeholder": "Enter first name",
+      "validation": {
+        "required": "First name is required"
+      }
+    },
+    "lastname": {
+      "label": "Last Name",
+      "placeholder": "Enter last name"
+    },
+    "email": {
+      "placeholder": "Enter email",
+      "validation": {
+        "required": "Email is required",
+        "invalid": "Email is not valid"
+      },
+      "daily_recap_email": "Receive daily recap email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter password",
+      "validation": {
+        "required": "Password is required",
+        "invalid": "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character"
+      }
+    },
+    "password_confirmation": {
+      "label": "Password Confirmation",
+      "placeholder": "Enter password confirmation",
+      "validation": {
+        "required": "Password confirmation is required",
+        "match": "Password not match"
+      }
+    },
+    "manufacturer": {
+      "label": "Manufacturer/Vendor IoT",
+      "placeholder": "Select manufacturer/vendor IoT",
+      "validation": {
+        "required": "Manufacturer/vendor IoT is required"
+      }
+    },
+    "address": {
+      "label": "Address",
+      "placeholder": "Enter address",
+      "other_label": "Location"
+    },
+    "mobile_phone": {
+      "label": "Mobile Phone Number",
+      "placeholder": "Enter mobile phone number"
+    },
+    "birthdate": {
+      "label": "Birth Date",
+      "placeholder": "Enter date of birth"
+    },
+    "gender": {
+      "label": "Gender",
+      "male": "Male",
+      "female": "Female",
+      "validation": {
+        "required": "Gender is required"
+      }
+    },
+    "view_only": {
+      "label": "View Only",
+      "disabled_information": "view only is not available for Superadmin"
+    },
+    "entity": {
+      "program": "The workspace is available after selecting an entity.",
+      "validation": {
+        "required": "Entity is required"
+      }
+    }
+  },
+  "confirmation": {
+    "activate": {
+      "question": "Are you sure you want to activate this??"
+    },
+    "deactivate": {
+      "question": "Are you sure you want to deactivate this?",
+      "description": "This user will lose access to SMILE."
+    }
+  },
+  "action": {
+    "see_changes": "See Changes"
+  },
+  "history": {
+    "information": "Information updated",
+    "add": "Add",
+    "changed": "Changed into",
+    "removed": "Removed",
+    "password": "Your password was updated on {{date}}"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Ratio",
+  "add": "Add Ratio",
+  "add_material_ratio": "Add Material Ratio",
+  "edit_material_ratio": "Edit Material Ratio",
+  "material_a": "Material A",
+  "material_b": "Material B",
+  "source_material": "Source Material",
+  "affected_material": "Affected Material",
+  "subtype": "Subtype",
+  "select_subtype": "Select Subtype",
+  "select_material": "Select Material",
+  "material": "Material",
+  "ratio_number": "Ratio Number",
+  "example_1": "Example: 1",
+  "toast": {
+    "create_success": "Material ratio created successfully",
+    "update_success": "Material ratio updated successfully",
+    "delete_success": "Material ratio deleted successfully"
+  },
+  "material_ratio": "Material Ratio",
+  "import": {
+    "description": "Upload .xls or .xlsx file (max 10MB)",
+    "success": "Material ratio successfully imported",
+    "error": "Failed to import material ratio"
+  },
+  "delete": {
+    "description": "Are you sure you want to delete this material ratio?",
+    "success": "Material ratio successfully deleted",
+    "error": "Failed to delete material ratio"
+  }
+}

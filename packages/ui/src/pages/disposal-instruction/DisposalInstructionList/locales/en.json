@@ -1,0 +1,15 @@
+{
+  "page": {
+    "title": "Disposal Instruction"
+  },
+  "table": {
+    "title": "Disposal Instruction",
+    "column": {
+      "no": "No",
+      "action": "Action"
+    }
+  },
+  "button": {
+    "create": "Create New"
+  }
+}

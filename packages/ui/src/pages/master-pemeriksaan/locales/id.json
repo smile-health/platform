@@ -1,0 +1,55 @@
+{
+  "title": {
+    "list": "Master Pemeriksaan",
+    "create": "Tambah Master Pemeriksaan",
+    "edit": "Edit Master Pemeriksaan",
+    "detail": "Detail Master Pemeriksaan"
+  },
+  "form": {
+    "name": {
+      "label": "Nama Pemeriksaan",
+      "placeholder": "Masukkan nama pemeriksaan"
+    },
+    "pilihan_material": {
+      "label": "Pilihan Material",
+      "placeholder": "Pilih material"
+    },
+    "jenis_pemeriksaan": {
+      "label": "Jenis Pemeriksaan",
+      "placeholder": "Pilih jenis pemeriksaan"
+    },
+    "parameter": {
+      "label": "Parameter",
+      "placeholder": "Pilih parameter"
+    },
+    "sasaran": {
+      "label": "Sasaran",
+      "placeholder": "Pilih sasaran"
+    },
+    "metode": {
+      "label": "Metode",
+      "placeholder": "Pilih metode"
+    },
+    "description": {
+      "label": "Deskripsi",
+      "placeholder": "Masukkan deskripsi pemeriksaan"
+    },
+    "is_active": {
+      "label": "Status",
+      "active": "Aktif",
+      "inactive": "Tidak Aktif"
+    }
+  },
+  "list": {
+    "filter": {
+      "name": "Nama Pemeriksaan",
+      "name_placeholder": "Cari nama pemeriksaan..."
+    }
+  },
+  "table": {
+    "name": "Nama Pemeriksaan",
+    "examination_type": "Jenis Pemeriksaan",
+    "description": "Deskripsi",
+    "actions": "Aksi"
+  }
+}

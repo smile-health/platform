@@ -1,0 +1,161 @@
+{
+  "title": "Self Disposal",
+  "create_title": "Create Self Disposal",
+  "tab": {
+    "list": "Self Disposal List",
+    "create": "Create New"
+  },
+  "filter": {
+    "all_placeholder": "All",
+    "activity": "Activity",
+    "material_type": "Material Type",
+    "material_hirearchy": "Product Template",
+    "transaction_type": "Transaction Type",
+    "transaction_reason": "Reason",
+    "created_from": "Created from",
+    "created_to": "Created to",
+    "created_at": "Created at",
+    "entity_tag": "Entity Tag",
+    "primary_vendor": "Primary Vendor",
+    "province": "Province",
+    "city": "City/District",
+    "primary_health_care": "Primary Health Care",
+    "flow": "Disposal Method",
+    "search": "Search",
+    "reason": "Reason"
+  },
+  "placeholder": {
+    "activity": "Search activity",
+    "material_type": "Search material type",
+    "material": "Search material name",
+    "entity": "Search entity name",
+    "entity_tag": "Select entity tag",
+    "province": "Select province",
+    "city": "Select city/district",
+    "primary_health_care": "Select primary health care",
+    "primary_vendor": "Select primary vendor",
+    "reason": "Select reason",
+    "flow": "Select disposal method"
+  },
+  "table": {
+    "entity": "Entity",
+    "activity": "Activity",
+    "material_info": "Material Info",
+    "transaction_reason": "Reason",
+    "opening_stock": "Opening Stock (dose/pcs)",
+    "operation": "Operation",
+    "self_disposal_info": "Self Disposal Info",
+    "disposal_number": "Disposal Number",
+    "quantity": "Quantity (dose/pcs)",
+    "self_disposal_qty": "Self Disposal Qty (dose/pcs)",
+    "disposal_method": "Disposal Method",
+    "closing_stock": "Closing Stock (dose/pcs)",
+    "created_at": "Created at",
+    "created_by": "Created by",
+    "device_type": "Device Type",
+    "batch_of": "Batch from",
+    "detail_of": "Detail from",
+    "take_activity_from": "Taken from activity",
+    "batch_id": "Batch ID",
+    "production_date": "Manufactured Date (dd/mm/yyyy)",
+    "manufacturer": "Manufacture",
+    "expired_date": "Expired Date (dd/mm/yyyy)",
+    "description": "Notes",
+    "disposal_report_number": "Disposal Report Number",
+    "comment": "Comment",
+    "see_batch": "View Batch",
+    "close": "Close"
+  },
+  "material_type": {
+    "vaccine": "Vaccine",
+    "logistic_bhp": "BHP Logistic"
+  },
+  "order_status": {
+    "shipped": "Shipped",
+    "fulfilled": "Fulfilled",
+    "cancelled": "Cancelled",
+    "not_yet_received": "Not Yet Received"
+  },
+  "to": "To",
+  "from": "From",
+  "mobile_phone": "Mobile Phone",
+  "web": "Web",
+  "create": {
+    "disposal_detail": "Disposal Detail",
+    "entity": {
+      "label": "Entity",
+      "placeholder": "Select entity"
+    },
+    "activity": {
+      "label": "Select Activity",
+      "placeholder": "Select activity",
+      "note": "Activities displayed are only activities that are still active in this Entity"
+    },
+    "flow": {
+      "label": "Disposal Method",
+      "placeholder": "Select disposal method"
+    },
+    "title_material_select": "Material at {{entity_name}}",
+    "caption_choose_material": "Click on the table column to select the material",
+    "search_material": "Search material",
+    "material_table": {
+      "material_name": "Material Name",
+      "stock_of_disposal": "Stock on {{value}}"
+    },
+    "disposal_table": {
+      "material_info": "Material Info",
+      "title": "Disposal Table",
+      "activity": "Activity",
+      "stock_of_disposal": "Total Discard",
+      "quantity": "Quantity",
+      "action": "Action"
+    },
+    "disposal_batch_table": {
+      "title": "Quantity",
+      "title_batch": "Batch Quantity",
+      "batch_info": "Batch Info",
+      "batch_id": "Batch ID",
+      "production_date": "Manufactured Date",
+      "manufacturer": "Manufacture",
+      "expired_date": "Expired Date",
+      "stock_from_discard": "Discard from Internal",
+      "qty_stock_from_discard": "Self Disposal Qty from Internal",
+      "quantity": "Quantity",
+      "stock_from_received": "Discard from External",
+      "qty_stock_from_received": "Self Disposal Qty from External",
+      "take_from_another_activity": "Take from Another Activity",
+      "enter_qty": "Enter Quantity"
+    },
+    "validation": {
+      "material_items": "There is no item selected. Please review the added material and press the save button on the batch to save the changes.",
+      "quantity_must_multiply": "Quantity must be a multiple of {{number}}",
+      "required_materials": "No materials have been added yet",
+      "max_qty": "Quantity cannot exceed the available stock",
+      "min_qty": "Quantity must be greater than 0"
+    },
+    "warning_changes": [
+      "Are you sure want to remove this ?",
+      "All the information you’ve entered in this material will be lost."
+    ],
+    "comment": "Comment",
+    "placeholder_comment": "Please enter a comment...",
+    "disposal_report_number": "Disposal Report Number",
+    "placeholder_disposal_report_number": "Input Disposal Report Number",
+    "send": "Send",
+    "cancel": "Cancel",
+    "save": "Save",
+    "add": "Add",
+    "action": {
+      "add_batch_quantity": "Batch Quantity",
+      "update_batch_quantity": "Update Batch Quantity",
+      "add_detail_quantity": "Detail",
+      "update_detail_quantity": "Update Detail"
+    }
+  },
+  "reset": {
+    "description": "Are you sure you want to delete all filled data?"
+  },
+  "toast": {
+    "create_success": "Self Disposal successfully created"
+  }
+}

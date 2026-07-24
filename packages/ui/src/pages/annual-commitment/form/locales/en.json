@@ -1,0 +1,75 @@
+{
+  "page": {
+    "title": {
+      "label": "Annual Commitment",
+      "create": "Add Annual Commitment",
+      "edit": "Edit Annual Commitment"
+    }
+  },
+  "section": {
+    "detail": {
+      "title": "Annual Commitment Details"
+    },
+    "centralAllocation": {
+      "title": "Central Allocation"
+    },
+    "buffer": {
+      "title": "Buffer"
+    }
+  },
+  "field": {
+    "contract_number": {
+      "label": "Contract Number",
+      "placeholder": "Select Contract Number"
+    },
+    "year": {
+      "label": "Year",
+      "placeholder": "Select Year"
+    },
+    "contract_start_date": {
+      "label": "Contract Start Date",
+      "placeholder": "Select Date"
+    },
+    "contract_end_date": {
+      "label": "Contract End Date",
+      "placeholder": "Select Date"
+    },
+    "supplier": {
+      "label": "Supplier",
+      "placeholder": "Select Supplier"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Enter description"
+    }
+  },
+  "table": {
+    "column": {
+      "no": "No.",
+      "materialName": "Material Name",
+      "provinceReceiver": "Province Receiver",
+      "numberVial": "Number (Vial/Unit)",
+      "numberDose": "Number (Dose/Unit)",
+      "action": "Action"
+    },
+    "addMaterial": "Add Material"
+  },
+  "button": {
+    "back": "Back",
+    "save": "Save",
+    "remove": "Remove"
+  },
+  "validation": {
+    "provinces": "Province can't be same with other material with same name",
+    "atLeastOneRequired": "At least one Central Allocation or Buffer must be filled"
+  },
+  "option": {
+    "create": "Create {{value}}"
+  },
+  "modal": {
+    "confirmNoMaterial": {
+      "title": "Confirmation",
+      "description": "Are you sure want to save without input material?"
+    }
+  }
+}

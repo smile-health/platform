@@ -1,0 +1,33 @@
+{
+  "title": {
+    "page": "Laporan Buku Stok"
+  },
+  "action": {
+    "export": "Ekspor",
+    "export_all": "Ekspor Semua"
+  },
+  "form": {
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan",
+      "required": "Kegiatan wajib diisi"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi",
+      "required": "Provinsi wajib diisi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "period": {
+      "label": "Periode",
+      "placeholder": "Pilih periode bulan dan tahun"
+    }
+  }
+}

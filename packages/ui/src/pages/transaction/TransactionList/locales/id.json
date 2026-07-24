@@ -1,0 +1,198 @@
+{
+  "title": "Transaksi",
+  "transaction_list": "Daftar Transaksi",
+  "transaction_detail": "Detail Transaksi",
+  "transaction_create": "Buat Transaksi Baru",
+  "filter": {
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material_type": {
+      "label": "Jenis Material",
+      "placeholder": "Pilih jenis material"
+    },
+    "material": {
+      "label": "Material",
+      "placeholder": "Pilih material"
+    },
+    "transaction_type": {
+      "label": "Tipe Transaksi",
+      "placeholder": "Pilih tipe transaksi"
+    },
+    "reason": {
+      "label": "Alasan",
+      "placeholder": "Pilih alasan"
+    },
+    "has_order": {
+      "label": "Memiliki Pesanan",
+      "placeholder": "Pilih memiliki pesanan"
+    },
+    "order_type": {
+      "label": "Tipe Pesanan",
+      "placeholder": "Pilih tipe pesanan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "primary_vendor": {
+      "label": "Penyedia Utama",
+      "placeholder": "Pilih penyedia utama"
+    },
+    "integrated_healthcare": {
+      "label": "Puskesmas",
+      "placeholder": "Pilih puskesmas"
+    },
+    "consumption_customer_tag": {
+      "label": "Tag Penerima Distribusi Akhir",
+      "placeholder": "Pilih tag penerima distribusi akhir"
+    },
+    "consumption_customer": {
+      "label": "Penerima Distribusi Akhir",
+      "placeholder": "Pilih penerima distribusi akhir"
+    },
+    "material_kfa_level": {
+      "label": "Tingkat Material KFA",
+      "placeholder": "Pilih tingkat material KFA"
+    }
+  },
+  "order_number": "Nomor Pesanan",
+  "others": {
+    "active_substance_and_strength": "Produk Template"
+  },
+  "has_order_options": {
+    "yes": "Memiliki Pesanan",
+    "no": "Tidak Memiliki Pesanan"
+  },
+  "order_type_options": {
+    "order": "Pesanan",
+    "allocation": "Alokasi",
+    "return": "Retur",
+    "routine_allocation": "Alokasi Rutin"
+  },
+  "columns": {
+    "si_no": "No.",
+    "entity_name": "Nama Entitas",
+    "material": "Informasi Material",
+    "activity": "Kegiatan",
+    "opening_stock": "Awal (dosis/pcs)",
+    "transaction_type": "Tipe Transaksi",
+    "order_number": "Nomor Pesanan",
+    "quantity": "Kuantitas (dosis/pcs)",
+    "closing_stock": "Akhir (dosis/pcs)",
+    "action": "Aksi",
+    "device_type": "Perangkat",
+    "mobile_phone": "Telepon Genggam",
+    "web": "Web",
+    "created_by": "Dibuat oleh",
+    "view_batch": "Lihat Batch",
+    "open_vial": "Vial Terbuka",
+    "close_vial": "Vial Tertutup",
+    "stock_history": "Riwayat Stok",
+    "created_at": "Dibuat Pada"
+  },
+  "batch_columns": {
+    "material_name": "Nama Material",
+    "batch_from": "Batch Dari",
+    "patient": "Pasien",
+    "taken_from_activity_stock": "Diambil Dari Stok Kegiatan",
+    "batch_code": "Kode Batch",
+    "expired_date": "Tanggal Kedaluwarsa",
+    "production_date": "Tanggal Produksi",
+    "manufacturer": "Pabrik",
+    "actual_tranasction_date": "Tanggal Transaksi Aktual",
+    "source_of_fund": "Sumber Dana",
+    "budget_year": "Tahun Anggaran",
+    "price": "Harga",
+    "total_price": "Harga Total",
+    "view_patient": "Lihat Pasien"
+  },
+  "patient_columns": {
+    "patient_from": "Pasien Dari Kode Batch",
+    "identity_type": "Tipe Identitas",
+    "patient_id": "ID Pasien",
+    "nik": "NIK",
+    "passport": "Paspor",
+    "vaccination_method": "Metode Vaksinasi",
+    "vaccination_sequence": "Urutan Vaksinasi"
+  },
+  "list_transaction_create": {
+    "dispatching": "Pengeluaran",
+    "discard": "Pembuangan",
+    "return_health_facilities": "Retur",
+    "add_stock": "Tambah Stok",
+    "reduce_stock": "Kurangi Stok",
+    "cancellation_of_discard": "Pembatalan Pembuangan",
+    "general_transaction": "Transaksi Umum"
+  },
+  "detail": {
+    "vaccination": {
+      "title": "Vaksinasi",
+      "alert_updated_by": "Transaksi ini telah diperbarui oleh {{entityName}} pada {{transactionDate}}",
+      "sequence": "Urutan Vaksinasi",
+      "age_at_vaccination": "Usia Saat Vaksinasi",
+      "material_status": "Status Material",
+      "disease_history": "Riwayat Penyakit",
+      "type": "Tipe",
+      "method": "Metode"
+    },
+    "side_effect": {
+      "title": "Riwayat KIPI",
+      "reaction": "Reaksi",
+      "at": "pukul",
+      "add": {
+        "title": "Tambah Laporan KIPI",
+        "button_add": "Tambah KIPI",
+        "reaction_type": {
+          "label": "Reaksi Setelah Vaksinasi",
+          "placeholder": "Pilih reaksi",
+          "error": "Reaksi setelah vaksinasi wajib diisi"
+        },
+        "other_reaction": {
+          "label": "Reaksi Lain",
+          "placeholder": "Isikan reaksi lain",
+          "error": "Reaksi lain wajib diisi"
+        },
+        "actual_reaction_date": {
+          "label": "Tanggal Reaksi Aktual",
+          "placeholder": "Isikan tanggal reaksi aktual",
+          "error": {
+            "required": "Tanggal reaksi aktual wajib diisi",
+            "invalid": "Tanggal reaksi aktual harus diantara tanggal vaksinasi sampai 30 hari setelah tanggal vaksinasi"
+          }
+        },
+        "success": "Berhasil menambahkan laporan KIPI"
+      }
+    },
+    "patient_identity": {
+      "title": "Identitas Pasien",
+      "number": "Nomor Identitas",
+      "passport": "Paspor",
+      "nik": "NIK",
+      "fullname": "Nama Lengkap",
+      "gender": "Jenis Kelamin",
+      "date_of_birth": "Tanggal Lahir",
+      "current_age": "Usia Saat Ini",
+      "status": "Status",
+      "province": "Provinsi",
+      "regency": "Kota/Kabupaten",
+      "district": "Desa/Kecamatan",
+      "last_education": "Pendidikan Terakhir",
+      "occupation": "Pekerjaan",
+      "religion": "Agama",
+      "ethnicity": "Suku",
+      "phone_number": "Nomor Telepon",
+      "residential_address": "Alamat Domisili",
+      "registered_address": "Alamat Terdaftar"
+    },
+    "disease_history": {
+      "title": "Riwayat Penyakit & Pencegahan",
+      "dengue": {
+        "has_dengue_question": "Apakah pasien pernah menderita demam berdarah sebelumnya?",
+        "last_time_dengue_question": "Kapan terakhir kali pasien menderita demam berdarah?",
+        "has_vaccination_question": "Apakah pasien pernah menerima vaksinasi untuk penyakit ini secara sukarela?"
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "page": {
+    "title": "Storage Temperature Monitoring List"
+  },
+  "filter": {
+    "search": {
+      "label": "Search",
+      "placeholder": "Search by serial number"
+    },
+    "asset_type": {
+      "label": "Asset Type",
+      "placeholder": "Select asset type"
+    },
+    "manufacturer": {
+      "label": "Manufacturer",
+      "placeholder": "Select manufacturer"
+    },
+    "asset_relation": {
+      "label": "Relation",
+      "placeholder": "Select relation"
+    },
+    "operational_status": {
+      "label": "Operational Status",
+      "placeholder": "Select operational status"
+    },
+    "device_status": {
+      "label": "Device Status",
+      "placeholder": "Select device status"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "temperature_filter": {
+      "label": "Temperature Filter",
+      "placeholder": "Select temperature filter"
+    },
+    "asset_model": {
+      "label": "Asset Model",
+      "placeholder": "Select asset model"
+    }
+  },
+  "table": {
+    "title": "Storage Temperature Monitoring List",
+    "column": {
+      "no": "No.",
+      "asset_name": "Asset Name",
+      "asset_type": "Asset Type",
+      "temperature_humidity": "Temperature & Humidity",
+      "temperature": "Temperature",
+      "connection_power": "Connection & Power",
+      "operational_status": "Operational Status",
+      "not_related": "Not yet related",
+      "not_detected": "Not detected",
+      "device_status": "Device Status"
+    }
+  },
+  "temperature_status": {
+    "normal": "Normal",
+    "above_threshold": "Above Threshold",
+    "below_threshold": "Below Threshold"
+  }
+}

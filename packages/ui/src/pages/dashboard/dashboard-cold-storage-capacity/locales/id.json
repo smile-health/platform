@@ -1,0 +1,141 @@
+{
+  "title": {
+    "page": "Analisis Dashboard Kapasitas Coldchain"
+  },
+  "filter": {
+    "period": {
+      "label": "Periode",
+      "placeholder": "Pilih periode"
+    },
+    "entity": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    }
+  },
+  "section": {
+    "last_updated_at": "Terakhir diperbarui pada",
+    "capacity_status": {
+      "title": "Status Kapasitas Penyimpanan Dingin",
+      "info": "Status kapasitas penyimpanan dingin yang digunakan untuk menyimpan vaksin berdasarkan volume yang ditempati oleh material.",
+      "legend_label": "Kapasitas"
+    },
+    "number_of_entity": {
+      "title": "Jumlah Entitas",
+      "title_by": "berdasarkan Status Kapasitas Penyimpanan Dingin",
+      "info": "Distribusi entitas berdasarkan volume alat pendingin yang terisi oleh material. Dibedakan menjadi tiga kategori: 0%-15%, >15%-85%, >85%-100%.",
+      "entities": "entitas",
+      "category": {
+        "low": "Kapasitas Terisi 0% - 15%",
+        "medium": "Kapasitas Terisi >15% - 85%",
+        "high": "Kapasitas Terisi >85% - 100%"
+      }
+    },
+    "avg_order_lead_time": {
+      "title": "Rata-rata Waktu Tunggu Pesanan",
+      "subtitle": "Data dari 12 Bulan Terakhir",
+      "info": "Waktu tunggu pesanan adalah durasi yang diperlukan untuk memproses pesanan yang dilakukan oleh entitas pelanggan hingga dikirim oleh entitas vendor dan diterima oleh entitas pelanggan.<br/><br/>Rata-rata waktu tunggu pesanan adalah rata-rata durasi waktu tunggu dari semua pesanan.<br/><br/>Durasi maksimum adalah waktu terlama yang tercatat untuk menyelesaikan proses pesanan.",
+      "ideal_time": "Waktu Ideal",
+      "actual_time": "Waktu Aktual",
+      "longest_time": "Waktu Terlama",
+      "days": "hari"
+    },
+    "avg_monthly_consumption": {
+      "title": "Rata-rata Konsumsi Bulanan",
+      "subtitle": "Data dari 12 Bulan Terakhir",
+      "info": "Jumlah stok yang digunakan atau didistribusikan rata-rata selama periode 12 bulan.",
+      "unit": "dosis"
+    },
+    "day_of_supply": {
+      "title": "Hari Persediaan",
+      "subtitle": "Data untuk Hari Ini",
+      "info": "Estimasi berapa lama stok akan bertahan berdasarkan tingkat konsumsi (pengeluaran/distribusi) yang dihitung.",
+      "unit": "hari"
+    },
+    "details": {
+      "title": "Detail Penyimpanan Dingin",
+      "subtitle": "Klik pada salah satu kategori warna grafik atau baris data tabel di bawah untuk melihat data terperinci.",
+      "reset": "Atur Ulang",
+      "certification_status": {
+        "label": "Status Sertifikasi Penyimpanan Dingin",
+        "who_pqs": "WHO PQS",
+        "non_who_pqs": "Non WHO PQS"
+      }
+    },
+    "functional_status": {
+      "title": "Status Fungsional",
+      "info": "Distribusi unit penyimpanan dingin berdasarkan status fungsional saat ini.",
+      "category": {
+        "standby": "Stand By",
+        "well_functioning": "Berfungsi",
+        "need_repair": "Perlu Perbaikan",
+        "broken": "Rusak",
+        "under_repair": "Dalam Perbaikan"
+      },
+      "entities": "entitas",
+      "assets": "aset",
+      "temp_not_set_info": "Tanda '–' menandakan suhu aktif belum dipilih. Silakan pilih suhu aktif di menu Detail Pemantauan Suhu."
+    },
+    "remaining_capacity": {
+      "title": "Sisa Kapasitas Berdasarkan Ambang Batas Suhu",
+      "subtitle": "Status Fungsional: Berfungsi Baik",
+      "info": "Distribusi status kapasitas penyimpanan berdasarkan ambang batas suhu penyimpanan dingin dan kategori volume yang digunakan.",
+      "category": {
+        "volume_used": "Volume Terpakai",
+        "remaining_volume": "Volume Tersisa"
+      },
+      "entities": "entitas",
+      "to": "hingga"
+    },
+    "stored_materials": {
+      "title": "Material Tersimpan",
+      "info": "Jenis material yang disimpan dalam penyimpanan dingin berdasarkan volume yang ditempati oleh material. Informasi disajikan dalam volume dalam liter (L) dan persentase (%).",
+      "has_volume": "Material yang sudah memiliki informasi volume",
+      "no_volume": "Material yang belum memiliki informasi volume"
+    },
+    "stock_of_materials": {
+      "title": "Stok Material",
+      "info": "Informasi jumlah stok yang disimpan dalam penyimpanan dingin yang disajikan dalam jumlah dosis dan volume.",
+      "column": {
+        "no": "No",
+        "material_name": "Nama Material",
+        "stock_doses": "Stok (Dosis)",
+        "volume_litre": "Volume (Liter)"
+      },
+      "total": "Total"
+    },
+    "annual_capacity": {
+      "title": "Kapasitas Tahunan Penyimpanan Dingin",
+      "subtitle": "Tahun: {{year}}"
+    },
+    "facilities_by_capacity_status_dist_interval": {
+      "title": "Jumlah Fasilitas berdasarkan Status Kapasitas",
+      "subtitle": "Berdasarkan Interval Distribusi",
+      "info": "Kapasitas penyimpanan dingin di setiap fasilitas dibandingkan dengan interval distribusi standar yang ditetapkan untuk tingkat fasilitas.<br/><br/>Berdasarkan perhitungan, fasilitas dikategorikan menjadi: di bawah interval, ideal, dan di atas interval.",
+      "entities": "entitas",
+      "category": {
+        "below_interval": "Cukup",
+        "above_interval": "Tidak Cukup"
+      }
+    },
+    "facilities_by_capacity_status_temp": {
+      "title": "Jumlah Fasilitas berdasarkan Status Kapasitas",
+      "subtitle": "Berdasarkan Interval Distribusi dan Suhu Penyimpanan",
+      "info": "Sisa kapasitas berdasarkan ambang batas suhu menunjukkan total kapasitas terpakai pada alat pendingin, yang dihitung berdasarkan ambang batas suhu. Volume yang digunakan dihitung berdasarkan material yang sesuai dengan ambang batas suhu yang ditetapkan, tanpa memecahnya berdasarkan tipe alat pendingin.",
+      "entities": "entitas",
+      "to": "hingga",
+      "category": {
+        "below_interval": "Cukup",
+        "above_interval": "Tidak Cukup"
+      }
+    },
+    "annual_target_coverage": {
+      "title": "Cakupan Target Tahunan",
+      "info": "Jumlah target yang telah dikonversi menjadi kapasitas volume (dalam Liter). <br/><br/>Cakupan adalah akumulasi kapasitas yang digunakan dari awal tahun hingga saat ini.",
+      "unit": "L",
+      "category": {
+        "achievement": "Pencapaian",
+        "annual_target": "Target Tahunan"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "smile_vs_asik": {
+    "smile_consumed": "Distribusi Akhir SMILE (Dosis)",
+    "asik_coverage": "Cakupan ASIK",
+    "percentage": "Persentase",
+    "dose_per_vial": "Jumlah Dosis per Vial",
+    "vial": "Vial",
+    "usage_index": "Indeks Pemakaian (Cakupan ASIK / Vial)",
+    "target": "Jumlah Sasaran",
+    "scope": "Cakupan (ASIK / Sasaran) * 100%"
+  }
+}

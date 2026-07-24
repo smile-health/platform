@@ -1,0 +1,78 @@
+{
+  "list": {
+    "title": "Pengaturan Vendor Aset",
+    "list": "Pengaturan Vendor Aset",
+    "add": "Tambah Vendor Aset",
+    "status": "Status Vendor Aset",
+    "tab": {
+      "list": "Daftar Vendor Aset",
+      "create": "Tambah Vendor Aset"
+    },
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari vendor aset"
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Pilih program"
+      },
+      "type": {
+        "label": "Tipe Vendor Aset",
+        "placeholder": "Pilih tipe"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "name": "Nama Vendor Aset",
+      "type": "Tipe Vendor Aset",
+      "workspace": "Program",
+      "last_updated_at": "Diperbarui pada",
+      "last_updated_by": "Diperbarui oleh",
+      "action": "Aksi"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "Tambah Vendor Aset",
+      "detail": "Detail Vendor Aset",
+      "edit": "Ubah Vendor Aset"
+    },
+    "detail": {
+      "label": {
+        "name": "Nama Vendor Aset",
+        "type": "Tipe Vendor Aset",
+        "description": "Deskripsi",
+        "last_updated_at": "Diperbarui pada",
+        "last_updated_by": "Diperbarui oleh"
+      },
+      "placeholder": {
+        "name": "Nama vendor aset",
+        "type": "Ketik untuk mencari",
+        "description": "Deskripsi"
+      }
+    },
+    "program": {
+      "title": "Program",
+      "without_program": "Tidak ada program"
+    }
+  },
+  "detail": {
+    "title": "Detail Vendor Aset"
+  },
+  "action": {
+    "delete": {
+      "button": "Hapus",
+      "confirmation": "Apakah Anda yakin ingin menghapus vendor aset ini?",
+      "description": "Item yang dihapus tidak dapat dikembalikan"
+    },
+    "activate": {
+      "confirmation": "Apakah anda yakin akan mengaktifkan vendor aset ini?"
+    },
+    "deactivate": {
+      "confirmation": "Apakah anda yakin akan menonaktifkan vendor aset ini?"
+    }
+  }
+}

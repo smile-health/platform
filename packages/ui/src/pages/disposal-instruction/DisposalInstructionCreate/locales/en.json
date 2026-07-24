@@ -1,0 +1,85 @@
+{
+  "page": {
+    "title": "Create Disposal Instruction"
+  },
+  "section": {
+    "detail_form": {
+      "title": "Disposal Detail"
+    },
+    "select_material": {
+      "title": "Material",
+      "title_in_entity": "Material in {{entity}}",
+      "instruction": "Complete the Disposal Detail first",
+      "description": "Click on the checkbox to select the material. Selected material will appear on the disposal table below"
+    },
+    "disposal_table": {
+      "title": "Disposal Table"
+    },
+    "batch_qty_drawer": {
+      "title": "Batch Quantity"
+    },
+    "add_batch_qty": {
+      "title": "Add Batch Quantity"
+    }
+  },
+  "table": {
+    "column": {
+      "activity": "Activity",
+      "si_no": "SI.No.",
+      "material_name": "Material Name",
+      "material_info": "Material Info",
+      "stock_qty_on": "Stock on {{activity}}",
+      "selection": "Selection",
+      "total_discard": "Total Discard",
+      "quantity": "Quantity",
+      "action": "Action",
+      "batch_info": "Batch Info",
+      "production_date": "Production Date",
+      "manufacturer": "Manufacturer",
+      "expired_date": "Expired Date",
+      "discard_from_internal": "Discard from Internal",
+      "disposal_instruction_qty_from_internal": "Disposal Instruction Qty from Internal",
+      "discard_from_external": "Discard from External",
+      "disposal_instruction_qty_from_external": "Disposal Instruction Qty from External"
+    }
+  },
+  "field": {
+    "discard_qty": {
+      "validation": {
+        "max_qty": "Qty can't be more than max return"
+      }
+    },
+    "received_qty": {
+      "validation": {
+        "max_qty": "Qty can't be more than max return"
+      }
+    },
+    "bast_no": {
+      "label": "Handover Report Number",
+      "placeholder": "Input Handover Report Number"
+    },
+    "comment": {
+      "label": "Comment",
+      "placeholder": "Please enter comment..."
+    }
+  },
+  "form": {
+    "activity": {
+      "info": "The activities displayed are only activities that are still active on this Entity"
+    },
+    "validation": {
+      "stock_at_least_one_qty": "There is no item selected. Please review the added material and press the save button on the batch to save the changes.",
+      "qty_unit": "Quantity must be a multiple of {{amount}}"
+    }
+  },
+  "button": {
+    "add_batch_quantity": "Batch Quantity",
+    "add_quantity": "Quantity",
+    "update_batch_quantity": "Update Batch Quantity",
+    "update_quantity": "Update Quantity",
+    "submit_confirmation": "Submit"
+  },
+  "api": {
+    "create_success": "Disposal Instruction successfully created"
+  }
+}

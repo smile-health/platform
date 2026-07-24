@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "Detail Alat Pemantau Suhu"
+  },
+  "section": {
+    "device_info": {
+      "title": "Informasi Perangkat"
+    },
+    "operational_details": {
+      "title": "Detail Operasional"
+    },
+    "entity": {
+      "title": "Entitas"
+    },
+    "budget": {
+      "title": "Anggaran"
+    },
+    "operational_asset_monitoring_device_relation": {
+      "title": "Relasi Aset Operasional & Alat Pemantau Suhu"
+    }
+  },
+  "button": {
+    "more_details": "Detail Lainnya"
+  },
+  "modal": {
+    "delete_confirmation": "Apakah Anda yakin ingin menghapus perangkat ini?"
+  },
+  "data": {
+    "asset_name": "Nama Aset",
+    "serial_number": "Nomor Seri",
+    "device_status": "Status Perangkat",
+    "operational_status": "Status Operasional",
+    "updated_by": "Diperbarui Oleh",
+    "updated_at": "Diperbarui Pada",
+    "created_by": "Dibuat Oleh",
+    "created_at": "Dibuat Pada"
+  }
+}

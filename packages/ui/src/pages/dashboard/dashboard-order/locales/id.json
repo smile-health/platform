@@ -1,0 +1,117 @@
+{
+  "title": {
+    "response_time": "Waktu Respon Pesanan",
+    "order_difference": "Perbedaan Pesanan",
+    "consumption_supply": "Penerimaan & Distribusi",
+    "tabs": {
+      "all": "Tinjauan",
+      "entity": "Entitas",
+      "location": "Wilayah"
+    }
+  },
+  "description": {
+    "response_time": "Laporan Waktu Respon Pesanan menunjukkan waktu yang dibutuhkan [durasi] sejak pesanan diterima hingga pesanan tersebut selesai diproses, dikirim hingga diterima. Waktu yang dibutuhkan dalam bentuk rata-rata <b>dari satu tahap ke tahap berikutnya dalam satu pesanan</b>.",
+    "order_difference": "Laporan Perbedaan Pesanan <b>menyandingkan</b> kuantitas/jumlah dosis pada setiap tahap dalam proses pesanan. Tahap dalam proses pesanan adalah: <b>pesan, rekomendasi, alokasi, kirim dan terima</b>.",
+    "consumption_supply": "<b>Penerimaan dan Distribusi menyandingkan jumlah yang</b> diterima oleh entitas <b>[penerimaan] dan dosis yang dikeluarkan [distribusi]</b>."
+  },
+  "information": {
+    "response_time": [
+      "Rata-rata waktu dari dipesan sampai direkomendasikan: Rata - rata durasi sejak pesanan <b>dibuat</b> oleh pelanggan sampai direkomendasikan oleh penyedia.",
+      "Rata-rata waktu dari direkomendasikan sampai dialokasikan: Rata - rata durasi sejak pesanan <b>direkomendasikan</b> sampai dialokasikan oleh penyedia.",
+      "Rata-rata waktu dari dialokasikan sampai dikirim: Rata-rata durasi <b>sejak pesanan</b> dialokasikan sampai dikirim oleh penyedia.",
+      "Rata-rata waktu dari dikirim sampai diterima: Rata-rata durasi <b>sejak pesanan</b> dikirim oleh penyedia sampai diterima oleh pelanggan."
+    ],
+    "order_difference": [
+      "Pesanan Baru: <b>menyandingkan</b> kuantitas/jumlah dosis yang dipesan oleh pelanggan dengan kuantitas yang direkomendasikan sistem [untuk mencapai kembali batas stok maksimumnya].",
+      "<b>Rekomendasi: menyandingkan kuantitas yang dipesan oleh pelanggan dengan kuantitas yang direkomendasi oleh penyedia.</b>",
+      "Pengiriman: <b>menyandingkan</b> kuantitas yang dipesan oleh pelanggan dengan kuantitas yang dikirim oleh penyedia.",
+      "Penerimaan: <b>menyandingkan</b> kuantitas yang dikirim oleh penyedia dengan kuantitas yang diterima oleh pelanggan."
+    ],
+    "consumption_supply": [
+      "<b>Penerimaan</b> melingkupi semua jenis penerimaan seperti penerimaan dari distribusi, <b>transfer dari entitas lain</b>, dan <b>retur dari pelanggan</b>.",
+      "<b>Distribusi </b> melingkupi semua jenis pengeluaran seperti distribusi, <b>transfer ke entitas lain, retur ke penyedia,</b> dan konsumsi."
+    ]
+  },
+  "form": {
+    "period": {
+      "label": "Periode"
+    },
+    "range": {
+      "label": "Rentang Tanggal"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Pilih level KFA material"
+      },
+      "name": {
+        "label": "Material",
+        "placeholder": "Pilih material"
+      }
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "information_type": {
+      "label": "Jenis Informasi",
+      "placeholder": "Pilih jenis informasi"
+    },
+    "reason": {
+      "label": "Alasan",
+      "placeholder": "Pilih alasan"
+    }
+  },
+  "columns": {
+    "type": "Jenis",
+    "period": "Periode",
+    "entity": "Entitas",
+    "location": "Lokasi"
+  },
+  "data": {
+    "dayly": "Harian",
+    "weekly": "Mingguan",
+    "montly": "Bulanan",
+    "material_level": {
+      "active_subtance": "Produk Template"
+    },
+    "information_type": {
+      "shipping": "Pengiriman",
+      "receptions": "Penerimaan",
+      "new_order": "Pesanan Baru",
+      "supply": "Penerimaan",
+      "issue": "Pengeluaran"
+    },
+    "reason": {
+      "population_growth": "Pertambahan Penduduk",
+      "plague": "Wabah",
+      "others": "Lainnya",
+      "stock": {
+        "low": "Stok Menipis",
+        "sufficient": "Stok Mencukupi"
+      }
+    }
+  },
+  "from_to": "Dari {{from}} Sampai {{to}}",
+  "last_updated_at": "Terakhir diperbarui pada"
+}

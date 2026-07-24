@@ -1,0 +1,67 @@
+{
+  "title": {
+    "page": "Dasbor SMILE vs ASIK",
+    "tabs": {
+      "vendor": "Wilayah Penyedia",
+      "customer": "Wilayah Pelanggan"
+    },
+    "chart": "Grafik Persentase"
+  },
+  "form": {
+    "period": {
+      "label": "Periode"
+    },
+    "year": {
+      "label": "Tahun Perencanaan (Sasaran)"
+    },
+    "activity": {
+      "label": "Kegiatan",
+      "placeholder": "Pilih kegiatan"
+    },
+    "material": {
+      "type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih tipe material"
+      },
+      "level": {
+        "label": "Level KFA Material",
+        "placeholder": "Pilih level KFA material"
+      },
+      "name": {
+        "label": "Nama Material",
+        "placeholder": "Pilih nama material"
+      }
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    }
+  },
+  "column": {
+    "region": "Wilayah",
+    "dose": "Distribusi Akhir SMILE (Dosis)",
+    "coverage": "Cakupan ASIK",
+    "dose_vial": "Jumlah Dosis per Vial",
+    "usage": "Indeks Pemakaian (Cakupan ASIK / Vial)",
+    "target": "Jumlah Sasaran",
+    "scope": "Cakupan (ASIK / Sasaran) * 100%"
+  },
+  "data": {
+    "vaccine": "Vaksin",
+    "material_level": {
+      "trademark": "Produk Varian"
+    }
+  }
+}

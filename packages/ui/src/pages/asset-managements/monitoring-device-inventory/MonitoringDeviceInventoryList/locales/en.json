@@ -1,0 +1,44 @@
+{
+  "page": {
+    "title": "Monitoring Device List"
+  },
+  "filter": {
+    "serial_number": {
+      "label": "Serial Number",
+      "placeholder": "Search by serial number"
+    },
+    "manufacturer": {
+      "label": "Manufacturer",
+      "placeholder": "Select manufacturer"
+    },
+    "operational_status": {
+      "label": "Device Operational Status",
+      "placeholder": "Select device operational status"
+    },
+    "asset_relation": {
+      "label": "Asset Relation",
+      "placeholder": "Select asset relation"
+    },
+    "device_status": {
+      "label": "Device Status",
+      "placeholder": "Select device status"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "asset_model": {
+      "label": "Asset Model",
+      "placeholder": "Select asset model"
+    }
+  },
+  "table": {
+    "title": "Monitoring Device List"
+  },
+  "button": {
+    "create": "Add Monitoring Device"
+  },
+  "message": {
+    "import_success": "Import monitoring device data successfully"
+  }
+}

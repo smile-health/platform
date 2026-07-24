@@ -1,0 +1,414 @@
+{
+  "title": {
+    "request": "Detail Pesanan",
+    "distribution": "Detail Distribusi",
+    "return": "Detail Retur",
+    "central_distribution": "Detail Distribusi Pusat",
+    "relocation": "Detail Pesanan Relokasi",
+    "allocate_request": "Alokasi Pesanan",
+    "allocate_relocation": "Alokasi Relokasi",
+    "receive_order": "Terima Pesanan",
+    "receive_distribution": "Terima Distribusi",
+    "receive_return": "Terima Retur",
+    "receive_central_distribution": "Terima Distribusi Pusat",
+    "receive_relocation": "Terima Relokasi"
+  },
+  "order_status": {
+    "title": "Status Pesanan"
+  },
+  "customer": {
+    "title": "Penerima"
+  },
+  "vendor": {
+    "title": "Pengirim"
+  },
+  "details": {
+    "title": "Detail"
+  },
+  "comment": {
+    "title": "Komentar"
+  },
+  "history": {
+    "title": "Riwayat Pesanan"
+  },
+  "modal": {
+    "hierarchy": {
+      "button": {
+        "show": "Tampilkan Kuantitas Batch",
+        "hide": "Sembunyikan Kuantitas Batch"
+      }
+    },
+    "add_item": {
+      "title": "Tambah Item",
+      "empty_data_title": "Tidak ada data yang tersedia",
+      "empty_data_desc": "Daftar ini saat ini kosong. Silakan pilih material terlebih dahulu."
+    },
+    "edit_item": {
+      "title": "Ubah Item"
+    },
+    "cancel_order": {
+      "title": "Batalkan Pesanan"
+    },
+    "validate_order": {
+      "title": "Validasi Pesanan"
+    },
+    "confirm_order": {
+      "title": "Konfirmasi Pesanan",
+      "trademark_popup": {
+        "title": "Material Produk Varian",
+        "button": {
+          "save": "Simpan"
+        }
+      },
+      "product_template": "Template Produk"
+    },
+    "cancel_confirmation": {
+      "title": "Batalkan Konfirmasi",
+      "description": "Lanjutkan untuk membatalkan konfirmasi, dan buat pesanan menjadi tertunda.",
+      "submit_button": "Ya, Lanjut Batalkan Konfirmasi"
+    },
+    "allocate": {
+      "title_batch": "Alokasikan Batch",
+      "title_non_batch": "Alokasikan Non-Batch",
+      "add_stock_from_other_activity": "Ambil Stok dari Kegiatan Lain"
+    },
+    "quantity_detail": {
+      "title": "Detail Kuantitas",
+      "title_hierarchy": "Detail Kuantitas Material Merek Dagang"
+    },
+    "ship_order": {
+      "title": "Kirim Pesanan"
+    },
+    "order_history_detail": {
+      "title": "Detail Riwayat Pesanan"
+    },
+    "input_qty": "Masukkan Jumlah"
+  },
+  "drawer": {
+    "hierarchy": {
+      "allocate": {
+        "button": {
+          "add_trademark": "Material Produk Varian"
+        }
+      }
+    },
+    "validate_order": {
+      "title": "Validasi Pesanan"
+    },
+    "confirm_order": {
+      "title": "Konfirmasi Pesanan"
+    },
+    "allocate": {
+      "title": "Alokasikan Pesanan"
+    },
+    "batch_list": {
+      "title": "Varian Produk"
+    }
+  },
+  "info": {
+    "receive": "Jika jumlah barang dan nomor batch tidak cocok, jangan klik terima dan harap laporkan ke helpdesk"
+  },
+  "data": {
+    "customer_name": "Nama Penerima",
+    "address": "Alamat",
+    "required_by_date": "Tanggal Dibutuhkan",
+    "vendor_name": "Nama Pengirim",
+    "delivery_number": "Nomor DO",
+    "do_number": "Nomor DO",
+    "request_number": "Nomor Pesanan",
+    "distribution_number": "Nomor Distribusi",
+    "return_number": "Nomor Retur",
+    "central_distribution_number": "Nomor Pengiriman Pusat",
+    "relocation_number": "Nomor Pesanan Relokasi",
+    "activity": "Kegiatan",
+    "stock_from_activity": "Stok dari Kegiatan",
+    "delivery_type": "Tipe Pengiriman",
+    "contract_number": "Nomor Kontrak",
+    "created_by": "Dibuat Oleh",
+    "created_at": "Dibuat Pada",
+    "release_date": "Tanggal Rilis",
+    "actual_shipment_date": "Tanggal Pengiriman Aktual",
+    "actual_receipt_date": "Tanggal Penerimaan Aktual",
+    "status_at_posting": "Status saat Diposting",
+    "batch_code": "Kode Batch",
+    "expired_date": "Tanggal Kedaluwarsa",
+    "service_type": "Jenis Layanan",
+    "quantity": "Kuantitas"
+  },
+  "button": {
+    "letter_report": "Surat Permintaan",
+    "var_report": "Laporan Penerimaan",
+    "batch_note": "Nota Alokasi",
+    "sbbk": "SBBK",
+    "confirmation_note": "Nota Konfirmasi",
+    "view_shipment_detail": "Lihat Detail Pengiriman",
+    "cancel_order": "Batalkan Pesanan",
+    "cancel_confirmation": "Batalkan Konfirmasi",
+    "allocate": "Alokasikan",
+    "ship_order": "Kirim Pesanan",
+    "confirm_order": "Konfirmasi Pesanan",
+    "receive": "Kirim Terima",
+    "receive_order": "Terima Pesanan",
+    "submit_comment": "Kirim Komentar",
+    "submit_validation": "Kirim Validasi",
+    "submit_confirmation": "Kirim Konfirmasi",
+    "submit_allocation": "Kirim Alokasi",
+    "quantity": "Kuantitas",
+    "batch_quantity": "Kuantitas Batch",
+    "update_quantity": "Perbarui Kuantitas",
+    "update_batch_quantity": "Perbarui Kuantitas Batch",
+    "validate": "Validasi",
+    "copy_history": "Salin Riwayat",
+    "update_product_variant": "Perbarui Varian Produk"
+  },
+  "table": {
+    "title": {
+      "item": "Item Pesanan"
+    },
+    "column": {
+      "si_number": "SI.No",
+      "material_code": "Kode Material",
+      "material_name": "Material",
+      "product_variant": "Varian Produk",
+      "ordered": "Pesanan",
+      "validated": "Divalidasi",
+      "confirmed": "Dikonfirmasi",
+      "allocated": "Dialokasikan",
+      "shipped": "Dikirim",
+      "received": "Diterima",
+      "total_available_stock": "Total Stok Tersedia",
+      "available_stock": "Stok Tersedia",
+      "available_stock_at": "Stok Tersedia di {{ name }}",
+      "stock_on_hand": "Sisa Stok",
+      "available_stock": "Stok Tersedia",
+      "allocation": "Alokasi",
+      "batch_info": "Info Batch",
+      "batch_detail": "Detail Batch",
+      "activity": "Kegiatan",
+      "quantity": "Kuantitas",
+      "total_quantity": "Total Kuantitas",
+      "material_status": "Status Material",
+      "reason": "Alasan",
+      "trademark_material": "Material Produk Varian"
+    },
+    "trademark": {
+      "batch": {
+        "production_date": "Tanggal Produksi : {{ date }}",
+        "expired_date": "Tanggal Kedaluwarsa : {{ date }}",
+        "manufacturer": "Pabrik : {{ name }}"
+      },
+      "column": {
+        "received_qty": {
+          "placeholder": "Contoh: 100",
+          "validation": {
+            "multiply": "Kuantitas harus kelipatan dari {{value}}"
+          }
+        },
+        "allocated_qty": {
+          "placeholder": "Contoh: 100",
+          "validation": {
+            "multiply": "Kuantitas harus kelipatan dari {{value}}",
+            "less_than": "Kuantitas harus lebih kecil dari {{value}}"
+          }
+        },
+        "validation": {
+          "min_qty": "Minimal 1 Kuantitas harus diisi",
+          "required": "Kuantitas harus diisi"
+        },
+        "batch_from": "Batch dari",
+        "non_batch": "Non batch dari",
+        "material_active_substance": "Material Produk Template",
+        "stock_on_hand_at": "Sisa Stok di {{ name }}",
+        "available_stock_at": "Stok Tersedia di {{ name }}",
+        "activity_name": "Aktivitas {{ activity_name }}",
+        "material_name": "Material {{ material_name }} "
+      },
+      "validation": {
+        "min_qty": "Minimal 1 Kuantitas harus diisi",
+        "required": "Kuantitas harus diisi"
+      },
+      "button": {
+        "close": "Tutup",
+        "save": "Simpan"
+      }
+    },
+    "view_product_variant": "Lihat Varian Produk",
+    "product_variant": "Varian Produk",
+    "enter_product_variant_qty": "Masukkan Jumlah Varian Produk"
+  },
+  "form": {
+    "allocated_qty": {
+      "validation": {
+        "less_than": "Kuantitas harus lebih kecil dari {{value}}",
+        "multiply": "Kuantitas harus kelipatan dari {{value}}",
+        "total_must_same_as_confirmed_qty": "Total kuantitas yang dialokasikan harus sama dengan kuantitas yang dikonfirmasi ({{value}})"
+      }
+    },
+    "received_qty": {
+      "placeholder": "contoh: 100",
+      "validation": {
+        "multiply": "Kuantitas harus kelipatan dari {{value}}"
+      }
+    },
+    "material": {
+      "label": "Tambah Material",
+      "placeholder": "Pilih material",
+      "validation": {
+        "required": "Material harus diisi"
+      }
+    },
+    "letter_number": {
+      "label": "Nomor",
+      "placeholder": "Masukkan nomor surat",
+      "validation": {
+        "required": "Nomor surat harus diisi"
+      }
+    },
+    "comment": {
+      "label": "Komentar",
+      "placeholder": "Silakan masukkan komentar",
+      "required": "Komentar harus diisi",
+      "validation": {
+        "required": "Komentar harus diisi"
+      }
+    },
+    "ordered_qty": {
+      "label": "Kuantitas Pesanan",
+      "placeholder": "Silakan masukkan kuantitas pesanan",
+      "helper": "Qty yang direkomendasikan",
+      "validation": {
+        "zero": "Kuantitas harus lebih besar dari 0",
+        "required": "Kuantitas pesanan harus diisi",
+        "max": "Tidak dapat memasukkan kuantitas lebih dari stok yang tersedia",
+        "multiply": "Kuantitas harus kelipatan dari {{value}}",
+        "must_lesser_than_vendor_stock": "Kuantitas tidak boleh melebihi stok vendor {{value}}"
+      },
+      "button": {
+        "update_trademark_material": "Update Material Merek Dagang",
+        "add_trademark_material": "Material Merek Dagang"
+      }
+    },
+    "reason": {
+      "label": "Alasan",
+      "placeholder": "Pilih alasan",
+      "validation": {
+        "required": "Alasan harus diisi"
+      }
+    },
+    "other_reason": {
+      "label": "Alasan Lain",
+      "placeholder": "Silakan masukkan alasan lain",
+      "validation": {
+        "required": "Alasan lain harus diisi"
+      }
+    },
+    "validated_qty": {
+      "placeholder": "Silakan masukkan kuantitas",
+      "validation": {
+        "required": "Kuantitas harus diisi",
+        "multiply": "Kuantitas harus kelipatan dari {{value}}",
+        "max": "Tidak dapat memasukkan kuantitas lebih dari stok tersedia"
+      }
+    },
+    "confirmed_qty": {
+      "placeholder": "Silakan masukkan kuantitas",
+      "validation": {
+        "required": "Kuantitas harus diisi",
+        "multiply": "Kuantitas harus kelipatan dari {{value}}",
+        "max": "Tidak dapat memasukkan kuantitas lebih dari stok tersedia"
+      }
+    },
+    "receive_qty": {
+      "placeholder": "Silakan masukkan kuantitas",
+      "validation": {
+        "required": "Kuantitas harus diisi",
+        "equal": "Kuantitas harus sama dengan kuantitas yang dikirim ({{ value }})"
+      }
+    },
+    "material_status": {
+      "label": "Status Material",
+      "placeholder": "Pilih status"
+    },
+    "allocations": {
+      "validation": {
+        "at_least_one": "Setidaknya satu alokasi harus diisi",
+        "is_match_with_confirmed_qty": "Alokasi tidak sesuai"
+      }
+    },
+    "sales_ref": {
+      "label": "Nomor Referensi",
+      "placeholder": "Silakan masukkan nomor referensi",
+      "validation": {
+        "required": "Nomor referensi harus diisi"
+      }
+    },
+    "estimated_date": {
+      "label": "Tanggal Estimasi",
+      "placeholder": "Silakan masukkan tanggal estimasi",
+      "validation": {
+        "required": "Tanggal estimasi harus diisi"
+      }
+    },
+    "taken_by_customer": {
+      "label": "Diambil oleh Penerima?",
+      "validation": {
+        "required": "Diambil oleh penerima harus diisi"
+      }
+    },
+    "actual_shipment_date": {
+      "label": "Tanggal Aktual Pengiriman",
+      "placeholder": "Silakan masukkan tanggal aktual pengiriman",
+      "validation": {
+        "required": "Tanggal pengiriman aktual harus diisi",
+        "max": "Tanggal Aktual Pengiriman harus kurang atau sama dengan hari ini"
+      }
+    },
+    "received_date": {
+      "label": "Tanggal Diterima",
+      "placeholder": "Silakan masukkan tanggal diterima",
+      "validation": {
+        "required": "Tanggal diterima harus diisi",
+        "format": "Format tanggal diterima tidak valid",
+        "future_date": "Tanggal diterima harus kurang atau sama dengan hari ini",
+        "past_date": "Tanggal yang dipilih terlalu jauh dari tanggal aktual pengiriman."
+      }
+    }
+  },
+  "text": {
+    "zero_stock": "Stok Kosong"
+  },
+  "message": {
+    "add_item_success": "Item berhasil ditambahkan",
+    "add_item_failed": "Item gagal ditambahkan",
+    "edit_item_success": "Edit pesanan berhasil",
+    "edit_item_failed": "Edit pesanan gagal",
+    "comment_success": "Komentar berhasil dikirim",
+    "comment_failed": "Terjadi kesalahan saat mengirim komentar",
+    "cancel_order_success": "Pesanan berhasil dibatalkan",
+    "cancel_order_failed": "Pesanan gagal dibatalkan",
+    "validate_order_success": "Pesanan berhasil divalidasi",
+    "validate_order_failed": "Pesanan gagal divalidasi",
+    "confirm_order_success": "Pesanan berhasil dikonfirmasi",
+    "confirm_order_failed": "Pesanan gagal dikonfirmasi",
+    "cancel_confirmation_success": "Pembatalan konfirmasi berhasil",
+    "cancel_confirmation_failed": "Pembatalan konfirmasi gagal",
+    "allocate_order_success": "Pesanan berhasil dialokasikan",
+    "allocate_order_failed": "Pesanan gagal dialokasikan",
+    "ship_order_success": "Pesanan berhasil dikirim",
+    "ship_order_failed": "Pesanan gagal dikirim",
+    "receive_order_success": "Pesanan berhasil diterima",
+    "receive_order_failed": "Pesanan gagal diterima",
+    "status_not_eligible": "Selesaikan status sebelumnya sebelum mengonfirmasi status ini",
+    "status_already_fulfilled": "Status sudah terpenuhi",
+    "status_already_allocated": "Status sudah teralokasi"
+  },
+  "capacity_projection": {
+    "title": "Proyeksi Kapasitas Alat Penyimpanan Dingin",
+    "projection_of_total_stock_volume": "Proyeksi Total Volume Pesanan (Liter)",
+    "storage_net_capacity": "Kapasitas Neto Alat Penyimpanan Dingin (Liter)",
+    "projection_of_percentage_used": "Proyeksi Kapasitas Terpakai (%)",
+    "based_on_ordered_qty": "Berdasarkan Jumlah yang Dipesan",
+    "based_on_confirmed_qty": "Berdasarkan Jumlah yang Dikonfirmasi",
+    "based_on_allocated_qty": "Berdasarkan Jumlah yang Dialokasikan"
+  }
+}

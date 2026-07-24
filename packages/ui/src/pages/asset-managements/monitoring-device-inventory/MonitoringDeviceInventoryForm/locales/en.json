@@ -1,0 +1,123 @@
+{
+  "page": {
+    "title_create": "Create Device Monitoring",
+    "title_edit": "Edit Device Monitoring"
+  },
+  "section": {
+    "asset_specification": {
+      "title": "Asset Specification"
+    },
+    "operational_status": {
+      "title": "Operational Status"
+    },
+    "entity": {
+      "title": "Entity"
+    },
+    "budget": {
+      "title": "Budget"
+    }
+  },
+  "field": {
+    "asset_type": {
+      "label": "Asset Type",
+      "placeholder": "Remote Temperature Monitoring",
+      "validation": {
+        "required": "Asset type is required"
+      }
+    },
+    "asset_model": {
+      "label": "Asset Model",
+      "placeholder": "Select asset model",
+      "validation": {
+        "required": "Asset model is required"
+      }
+    },
+    "manufacturer": {
+      "label": "Manufacturer",
+      "placeholder": "Select manufacturer",
+      "validation": {
+        "required": "Manufacturer is required"
+      }
+    },
+    "vendor": {
+      "label": "Vendor",
+      "placeholder": "Select vendor",
+      "validation": {
+        "required": "Vendor is required"
+      }
+    },
+    "communication_provider": {
+      "label": "Communication Provider",
+      "placeholder": "Select communication provider",
+      "validation": {
+        "required": "Communication provider is required"
+      }
+    },
+    "serial_number": {
+      "label": "Serial Number",
+      "placeholder": "Serial number",
+      "validation": {
+        "required": "Serial number is required",
+        "max": "Serial number cannot exceed 255 characters"
+      }
+    },
+    "production_year": {
+      "label": "Production Year",
+      "placeholder": "Select production year",
+      "validation": {
+        "required": "Production year is required",
+        "max": "Production year cannot be in the future",
+        "production_year_must_be_less_than_budget_year": "Production year must be less than budget year"
+      }
+    },
+    "operational_status": {
+      "label": "Operational Status",
+      "placeholder": "Select operational status",
+      "validation": {
+        "required": "Operational status is required"
+      }
+    },
+    "entity": {
+      "label": "Entity",
+      "placeholder": "Select entity",
+      "validation": {
+        "required": "Entity is required"
+      }
+    },
+    "contact_person": {
+      "label": "Person in Charge {{number}}",
+      "placeholder": "Select Person in Charge",
+      "validation": {
+        "required": "Person in charge is required"
+      }
+    },
+    "phone_number": {
+      "label": "Phone Number {{number}}",
+      "placeholder": "Enter phone number",
+      "validation": {
+        "required": "Phone number is required"
+      }
+    },
+    "budget_year": {
+      "label": "Budget Year",
+      "placeholder": "Select budget year",
+      "validation": {
+        "required": "Budget year is required",
+        "budget_year_must_be_greater_than_production_year": "Budget year must be greater than production year"
+      }
+    },
+    "budget_source": {
+      "label": "Budget Source",
+      "placeholder": "Select budget source",
+      "validation": {
+        "required": "Budget source is required"
+      }
+    }
+  },
+  "api": {
+    "create_success": "Device monitoring successfully created",
+    "update_success": "Device monitoring successfully updated",
+    "create_failed": "Failed to create device monitoring",
+    "update_failed": "Failed to update device monitoring"
+  }
+}

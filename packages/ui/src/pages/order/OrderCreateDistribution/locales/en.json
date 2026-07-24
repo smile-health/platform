@@ -1,0 +1,150 @@
+{
+  "title": "Create New Distribution",
+  "section": {
+    "detail": "Order Detail",
+    "material": "Material in {{form}}",
+    "distribution_table": "Distribution Table",
+    "batch": "Batch List"
+  },
+  "info": {
+    "confirmation": {
+      "reset": "Are you sure you want to delete the filled data?",
+      "submit": "Are you sure you want to save this data?"
+    },
+    "material": {
+      "empty": "Complete the order detail first",
+      "available": "Click on the checkbox to select the material. Selected material will appear on distribution table below"
+    },
+    "empty": {
+      "title": "No data available",
+      "description": {
+        "material": "This list is currently empty. Please select the materials.",
+        "stock": "This list is currently empty. Please take stock from other activities"
+      }
+    },
+    "message": {
+      "new_distribution": "new distribution"
+    }
+  },
+  "action": {
+    "save": "Save",
+    "remove": "Remove",
+    "quantity": {
+      "batch": {
+        "add": "Batch Quantity",
+        "update": "Update Batch Quantity"
+      },
+      "non_batch": {
+        "add": "Quantity",
+        "update": "Update Quantity"
+      }
+    }
+  },
+  "form": {
+    "vendor": {
+      "label": "Sender",
+      "placeholder": "Select sender",
+      "validation": {
+        "required": "Sender is required"
+      }
+    },
+    "customer": {
+      "label": "Receiver",
+      "placeholder": "Select receiver",
+      "validation": {
+        "required": "Receiver is required"
+      }
+    },
+    "activity": {
+      "label": "Activity",
+      "placeholder": "Select activity",
+      "info": "The activities displayed are only activities that are still active on this Entity",
+      "other": "Take Stock from Other Activities",
+      "validation": {
+        "required": "Activity is required"
+      }
+    },
+    "date": {
+      "label": "Required by Date",
+      "validation": {
+        "invalid": "The date must be today or later"
+      }
+    },
+    "comment": {
+      "label": "Comment",
+      "placeholder": "Please enter comment"
+    },
+    "material": {
+      "search": {
+        "placeholder": "Search material"
+      },
+      "add": {
+        "placeholder": "Add material"
+      }
+    },
+    "status": {
+      "placeholder": "Select status"
+    },
+    "order_items": {
+      "validation": {
+        "required": "You haven't selected any material"
+      }
+    },
+    "batch": {
+      "validation": {
+        "required": "Batch data cannot be empty",
+        "empty": "Quantity cannot be empty"
+      }
+    },
+    "ordered_qty": {
+      "placeholder": "Input quantity",
+      "validation": {
+        "required": "Quantity is required",
+        "min": "The minimum quantity must be at least 0",
+        "multiple": "Quantity must be a multiple of {{value}}",
+        "max": "Cannot input quantity more than available stock"
+      }
+    },
+    "order_stock_status": {
+      "validation": {
+        "required": "Material status is required"
+      }
+    }
+  },
+  "column": {
+    "material": {
+      "name": "Material Name",
+      "info": "Material Info",
+      "status": "Material Status"
+    },
+    "selection": "Selection",
+    "stock": {
+      "activity": "Stock on {{activity}}",
+      "available": "Total Available Stock",
+      "info": "Stock Info"
+    },
+    "batch_info": "Batch Info",
+    "activity": "Activity",
+    "quantity": "Quantity",
+    "action": "Action"
+  },
+  "label": {
+    "activity": "Activity",
+    "stock": {
+      "on_hand": "Stock on Hand",
+      "available": "Available Stock",
+      "from_activity": "Stock from Activity"
+    },
+    "batch_code": "Batch Code",
+    "manufacturer": "Manufacturer",
+    "allocated": "Allocated",
+    "date": {
+      "expired": "Expired Date",
+      "production": "Production Date"
+    },
+    "material_batch": {
+      "valid": "Material Batch",
+      "expired": "Expired Material Batch"
+    }
+  }
+}

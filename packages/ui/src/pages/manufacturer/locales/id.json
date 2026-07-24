@@ -1,0 +1,55 @@
+{
+  "title": {
+    "manufacturer": "Pengaturan Pabrik",
+    "list": "Daftar Pabrik",
+    "create": "Tambah Pabrik",
+    "edit": "Ubah Pabrik",
+    "detail": "Detail Pabrik",
+    "status": "Status Pabrik"
+  },
+  "column": {
+    "name": "Nama Pabrik"
+  },
+  "action": {
+    "activate": {
+      "confirmation": "Apakah anda yakin akan mengaktifkan pabrik ini ?"
+    },
+    "deactivate": {
+      "confirmation": "Apakah anda yakin akan menonaktifkan pabrik ini ?"
+    }
+  },
+  "form": {
+    "search": {
+      "placeholder": "Cari pabrik"
+    },
+    "name": {
+      "label": "Nama Pabrik",
+      "placeholder": "Nama pabrik",
+      "validation": {
+        "required": "Nama pabrik wajib diisi"
+      }
+    },
+    "type": {
+      "validation": {
+        "required": "Tipe wajib diisi"
+      }
+    },
+    "phone": {
+      "validation": {
+        "match": "Nomor handphone hanya mengandung angka",
+        "min": "Nomor handphone minimal 10 digit",
+        "max": "Nomor handphone tidak boleh lebih dari 14 digit"
+      }
+    },
+    "email": {
+      "validation": {
+        "invalid": "Format email tidak valid"
+      }
+    },
+    "reference_id": {
+      "validation": {
+        "required": "ID referensi wajib diisi"
+      }
+    }
+  }
+}

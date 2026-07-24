@@ -1,0 +1,44 @@
+{
+  "monitoring_device": "alat pemantau suhu",
+  "text": {
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "data": {
+    "asset_type": "Tipe Aset",
+    "temperature_threshold": "Ambang Batas Suhu",
+    "asset_model_name": "Nama Model Aset",
+    "capacity": "Kapasitas",
+    "manufacturer": "Manufaktur",
+    "vendor": "Vendor",
+    "serial_number": "Nomor Seri",
+    "production_year": "Tahun Produksi",
+    "operational_status": "Status Operasional",
+    "entity": "Entitas",
+    "person_in_charge": "Penanggung Jawab",
+    "budget_year": "Tahun Anggaran",
+    "budget_source": "Sumber Anggaran",
+    "communication_provider": "Provider Komunikasi",
+    "device_status": "Status Perangkat"
+  },
+  "table": {
+    "column": {
+      "no": "No.",
+      "asset_name": "Nama Aset",
+      "device_status": "Status Perangkat",
+      "operational_status": "Status Operasional",
+      "updated_by": "Diperbarui oleh",
+      "action": "Aksi",
+      "operational_asset_name": "Nama Aset Operasional",
+      "sensor": "Sensor",
+      "asset_temperature": "Suhu Aset"
+    }
+  },
+  "field": {
+    "serial_number": {
+      "label": "Nomor Seri",
+      "placeholder": "Masukkan nomor seri",
+      "maxLength": 255
+    }
+  }
+}

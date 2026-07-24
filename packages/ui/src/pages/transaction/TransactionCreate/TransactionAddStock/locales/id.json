@@ -1,0 +1,78 @@
+{
+  "title": "Transaksi",
+  "transaction_form": "Form Transaksi",
+  "transaction_detail": "Detail Transaksi",
+  "select_activity": "Pilih Kegiatan",
+  "placeholder_select_activity": "Pilih Kegiatan",
+  "caption_activity": "Kegiatan yang ditampilkan hanya Kegiatan yang masih aktif di Entitas ini",
+  "entity_name": "Nama Entitas",
+  "select_entity": "Pilih nama entitas",
+  "transaction_type": "Tipe Transaksi",
+  "select_transaction_type": "Pilih tipe transaksi",
+  "transaction_table": "Tabel Transaksi",
+  "send": "Kirim",
+  "reset": "Reset",
+  "select_reason": "Pilih alasan",
+  "enter_reason": "Silakan masukkan alasan",
+  "batch": "Batch",
+  "detail": "Detail",
+  "add_material": "Tambah Material",
+  "cancel": "Batal",
+  "save": "Simpan",
+  "from": "Dari",
+  "select_status": "Pilih status",
+  "delete": "Hapus",
+  "max": "maks",
+  "close": "Tutup",
+  "enter_qty": "Masukkan kuantitas",
+  "choose_manufacture": "Pilih pabrik",
+  "enter_batch_code": "Silakan masukkan kode batch",
+  "choose_budget_source": "Pilih sumber anggaran",
+  "choose_budget_year": "Pilih tahun anggaran",
+  "enter_total_price": "Silakan masukkan total harga",
+  "caption_detail_batch": "List {{type}}",
+  "info_purchase_price": "Info: Masukkan kuantitas dan harga total untuk menghitung harga (harga total ÷ kuantitas).",
+  "error_message_complete_data": "Lengkapi seluruh data",
+  "table": {
+    "column": {
+      "activity": "Kegiatan",
+      "stock_on_hand": "Sisa Stok",
+      "available_stock": "Stok Tersedia",
+      "quantity": "Kuantitas",
+      "reason": "Alasan",
+      "action": "Aksi",
+      "batch_code": "Kode Batch",
+      "production_date": "Tanggal Produksi",
+      "manufacturer": "Pabrik",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "allocated": "Alokasi",
+      "material_status": "Status Material",
+      "unit": "Satuan",
+      "budget_source": "Sumber Anggaran",
+      "budget_year": "Tahun Anggaran",
+      "total_price": "Total Harga",
+      "purchase_per_unit": "Harga",
+      "material_info": "Info Material",
+      "stock_info": "Info Stok",
+      "batch_info": "Info {{type}}",
+      "budget_info": "Info Anggaran",
+      "edit": "Ubah"
+    }
+  },
+  "validation": {
+    "quantity_must_multiply": "Kuantitas harus merupakan kelipatan dari {{number}}",
+    "required_materials": "Belum ada materi yang ditambahkan"
+  },
+  "currency": {
+    "IDR": "Rp"
+  },
+  "add_new_batch": "Tambah Batch Baru",
+  "error_production_date": "Tanggal produksi tidak boleh lebih dari hari ini",
+  "error_expired_date": "Tanggal kadaluwarsa tidak boleh kurang dari hari ini",
+  "toast": {
+    "success": {
+      "create": "Berhasil menyimpan transaksi tambah stok"
+    }
+  },
+  "restricted" : "Dibatasi"
+}

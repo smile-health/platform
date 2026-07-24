@@ -1,0 +1,156 @@
+{
+  "page": {
+    "title": "Detail Suhu CCE",
+    "title_warehouse": "Detail Suhu Gudang"
+  },
+  "section": {
+    "device_info": {
+      "title": "Informasi Perangkat"
+    },
+    "operational_details": {
+      "title": "Detail Operasional"
+    },
+    "entity": {
+      "title": "Entitas"
+    },
+    "budget": {
+      "title": "Anggaran"
+    },
+    "operational_asset_monitoring_device_relation": {
+      "title": "Relasi Aset Operasional & Alat Pemantau Suhu"
+    }
+  },
+  "button": {
+    "more_details": "Detail Lainnya",
+    "change_status": "Ubah Status Operasional"
+  },
+  "modal": {
+    "change_status": {
+      "title": "Ubah Status Operasional",
+      "fields": {
+        "operational_status": {
+          "label": "Status Operasional",
+          "placeholder": "Pilih status operasional"
+        }
+      },
+      "button": {
+        "cancel": "Batal",
+        "save": "Ubah"
+      }
+    },
+    "change_threshold": {
+      "title": "Konfirmasi Peringatan",
+      "description": "Apakah anda yakin ingin mengubah suhu ambang batas ini?",
+      "warning": "Jika anda mengubah suhu ambang batas, itu akan mempengaruhi perhitungan dashboard proyeksi kapasitas",
+      "button": {
+        "cancel": "Batal",
+        "yes": "Ya, saya yakin"
+      }
+    }
+  },
+  "message": {
+    "storage_temperature_monitoring": "pemantauan penyimpanan suhu",
+    "temperature_threshold": "ambang batas suhu"
+  },
+  "data": {
+    "asset_type": "Jenis Aset",
+    "budget_source": "Sumber Anggaran",
+    "budget_year": "Tahun Anggaran",
+    "temperature_threshold": {
+      "label": "Ambang Batas Suhu",
+      "minimum": "Min",
+      "maximum": "Max",
+      "button": {
+        "change_threshold": "Ubah Ambang Batas Suhu",
+        "cancel": "Batal",
+        "save": "Simpan Perubahan"
+      }
+    },
+    "humidity_threshold": {
+      "label": "Ambang Batas Kelembapan",
+      "minimum": "Min",
+      "maximum": "Max"
+    },
+    "operational_status": "Status Operasional",
+    "contact_person": "Penanggungjawab {{ number }}",
+    "production_year": "Tahun Produksi"
+  },
+  "relation_table": {
+    "title_cce": "Suhu Aset",
+    "title_warehouse": "Suhu & Kelembapan Aset",
+    "columns": {
+      "sensor": {
+        "label": "Sensor"
+      },
+      "description": {
+        "label": "Deskripsi"
+      },
+      "asset_temperature": {
+        "label": "Suhu",
+        "label_warehouse": "Suhu & Kelembapan",
+        "temperature": "Suhu",
+        "humidity": "Kelembapan",
+        "description": "Deskripsi"
+      },
+      "connection_and_power": {
+        "label": "Status Perangkat",
+        "connection_status": {
+          "online": "Online",
+          "offline": "Offline"
+        },
+        "power_status": {
+          "connected": "Terhubung",
+          "disconnected": "Tidak Terhubung",
+          "on": "Daya Terhubung",
+          "off": "Daya Terputus"
+        }
+      }
+    }
+  },
+  "logger_activity": {
+    "title": "Aktivitas Logger Suhu",
+    "tabs": {
+      "temperature": "Pemantauan Suhu",
+      "humidity": "Pemantauan Kelembapan"
+    },
+    "export": {
+      "title": "Aktivitas {{ type }} Logger - {{ device_information }}",
+      "type": {
+        "temperature": "Suhu",
+        "humidity": "Kelembapan"
+      }
+    },
+    "chart": {
+      "temperature": "Suhu",
+      "humidity": "Kelembapan",
+      "threshold": "Ambang Batas {{ type }} ({{ metric }})",
+      "lower_threshold": "Ambang Batas Minimum  ({{ metric }})",
+      "upper_threshold": "Ambang Batas Maksimum  ({{ metric }})"
+    },
+    "filters": {
+      "logger": {
+        "label": "Logger",
+        "placeholder": "Select logger"
+      },
+      "date_range": {
+        "label": "Periode Tanggal",
+        "placeholder": "Select date range"
+      }
+    },
+    "button": {
+      "search": "Cari",
+      "export": "Ekspor"
+    },
+    "activity_table": {
+      "columns": {
+        "date": "Tanggal",
+        "temperature": "Suhu (°C)",
+        "humidity": "Kelembapan (%)",
+        "cold_chain_status": "Status Peralatan Cold Chain",
+        "room_status": "Status Ruangan",
+        "temperature_threshold": "Ambang Batas Suhu",
+        "humidity_threshold": "Ambang Batas Kelembapan"
+      }
+    }
+  }
+}

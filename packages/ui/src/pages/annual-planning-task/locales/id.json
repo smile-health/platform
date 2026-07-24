@@ -1,0 +1,91 @@
+{
+  "title": "Daftar Tugas",
+  "add": "Tambah Tugas",
+  "list": {
+    "columns": {
+      "task_id": "ID Tugas",
+      "material_name": "Nama Material",
+      "activity": "Kegiatan",
+      "national_ip": "IP Nasional",
+      "monthly_distribution": "Distribusi Bulanan",
+      "group_target": "Kelompok Sasaran",
+      "number_of_doses": "Jumlah Pemberian",
+      "target_coverage": "Target Sasaran"
+    },
+    "all_province": "Seluruh Provinsi",
+    "all_month": "Seluruh Bulan"
+  },
+  "import": {
+    "description": "Unggah file .xls atau .xlsx (max 10MB)",
+    "success": "Data tugas berhasil diimpor",
+    "error": "Data tugas gagal diimpor"
+  },
+  "delete": {
+    "description": "Apakah anda yakin akan menghapus tugas ini?",
+    "success": "Data tugas berhasil dihapus",
+    "error": "Data tugas gagal dihapus"
+  },
+  "create": {
+    "success": "Data tugas berhasil ditambahkan",
+    "error": "Data tugas gagal ditambahkan"
+  },
+  "edit": {
+    "title": "Ubah Tugas",
+    "success": "Data Tugas berhasil diubah",
+    "error": "Data Tugas gagal diubah"
+  },
+  "coverage": {
+    "title": "Detail Sasaran",
+    "province": {
+      "list": "Daftar Provinsi",
+      "placeholder": "Cari Provinsi",
+      "name": "Nama Provinsi"
+    }
+  },
+  "form": {
+    "material_util_index": "Indeks Pemakaian",
+    "amount_of_giving": {
+      "title": "Jumlah Pemberian",
+      "add": "Tambah Jumlah Pemberian",
+      "edit": "Ubah Jumlah Pemberian",
+      "invalid": "Jumlah pemberian harus diisi minimal 1",
+      "confirmation": {
+        "cancel": {
+          "title": "Apakah Anda yakin akan membatalkan jumlah pemberian ini?",
+          "description": "Jumlah pemberian yang dibatalkan tidak dapat dikembalikan"
+        }
+      }
+    },
+    "national_ip": {
+      "label": "IP Nasional",
+      "placeholder": "Contoh: 1.00",
+      "invalid": "IP Nasional harus berupa angka desimal dengan maksimal 3 angka di belakang koma",
+      "should_not_exceed_sku": "IP Nasional tidak boleh melebihi SKU",
+      "not_negative": "IP Nasional tidak boleh negatif"
+    },
+    "monthly_distribution": {
+      "invalid": "Distribusi Bulanan harus diisi minimal 1"
+    },
+    "select_all_month": "Pilih Semua Bulan",
+    "group_target": {
+      "add": "Tambah Kelompok Sasaran",
+      "placeholder": "Pilih Kelompok Sasaran",
+      "edit": "Ubah Kelompok Sasaran"
+    },
+    "number_of_doses": {
+      "placeholder": "Masukan Jumlah Pemberian",
+      "edit": "Ubah Jumlah Pemberian"
+    },
+    "coverage": {
+      "label": "Sasaran",
+      "update": "Perbarui Sasaran",
+      "add": "Tambah Sasaran",
+      "edit": "Ubah Sasaran",
+      "placeholder": "Masukkan jumlah pemberian",
+      "saved": "{{coverage}} dari {{total}} Provinsi Tersimpan",
+      "target": {
+        "invalid": "Masukkan persentase dari 1 hingga 100"
+      }
+    }
+  }
+}

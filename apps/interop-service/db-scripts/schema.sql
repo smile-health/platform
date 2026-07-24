@@ -1,0 +1,51 @@
+-- Create openhim_route_mappings table
+CREATE TABLE IF NOT EXISTS `openhim_route_mappings` (
+  `id` int AUTO_INCREMENT PRIMARY KEY,
+  `rabbitmq_topic` varchar(255) NOT NULL,
+  `enabled` boolean NOT NULL DEFAULT true,
+  `openhim_channel_id` varchar(255) NOT NULL,
+  `openhim_channel_name` varchar(255) NOT NULL,
+  `http_method` varchar(10) NOT NULL DEFAULT 'POST',
+  `request_path` varchar(500) NOT NULL DEFAULT '/',
+  `headers_json` json,
+  `include_context` boolean NOT NULL DEFAULT true,
+  `auth_type` varchar(50) DEFAULT 'basic',
+  `auth_config_json` json,
+  `max_retries` int NOT NULL DEFAULT 3,
+  `retry_backoff_ms` int NOT NULL DEFAULT 1000,
+  `retry_backoff_multiplier` int NOT NULL DEFAULT 2,
+  `expected_status_codes` varchar(255) NOT NULL DEFAULT '200,201,202,204',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_by` varchar(255),
+  UNIQUE KEY `uk_rabbitmq_topic_channel` (`rabbitmq_topic`, `openhim_channel_id`),
+  KEY `idx_enabled` (`enabled`),
+  KEY `idx_topic` (`rabbitmq_topic`)
+);
+
+-- Create openhim_route_execution_logs table
+CREATE TABLE IF NOT EXISTS `openhim_route_execution_logs` (
+  `id` bigint AUTO_INCREMENT PRIMARY KEY,
+  `rabbitmq_topic` varchar(255) NOT NULL,
+  `order_id` varchar(255),
+  `program_id` varchar(255),
+  `openhim_channel_id` varchar(255) NOT NULL,
+  `openhim_endpoint` varchar(255) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `http_status_code` int,
+  `execution_time_ms` int,
+  `attempt_number` int NOT NULL DEFAULT 1,
+  `request_payload` text,
+  `response_payload` text,
+  `error_message` text,
+  `user_id` varchar(255),
+  `user_email` varchar(255),
+  `request_id` varchar(255),
+  `trace_id` varchar(255),
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  KEY `idx_status` (`status`),
+  KEY `idx_channel` (`openhim_channel_id`),
+  KEY `idx_topic` (`rabbitmq_topic`),
+  KEY `idx_order_id` (`order_id`),
+  KEY `idx_created_at` (`created_at`)
+);

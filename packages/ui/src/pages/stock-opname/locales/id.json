@@ -1,0 +1,80 @@
+{
+    "stock_opname": "Stok Opname",
+    "stock_opname_list": "Daftar Stok Opname",
+    "stock_opname_create": "Tambah Stok Opname",
+    "form": {
+        "activity": {
+            "label": "Kegiatan",
+            "placeholder": "Pilih kegiatan"
+        },
+        "material_type": {
+            "label": "Jenis Material",
+            "placeholder": "Pilih jenis material"
+        },
+        "material": {
+            "label": "Material",
+            "placeholder": "Pilih material"
+        },
+        "batch": {
+            "label": "Batch",
+            "placeholder": "Cari dengan batch"
+        },
+        "entity_tag": {
+            "label": "Tag Entitas",
+            "placeholder": "Pilih tag entitas"
+        },
+        "stock_taking_period": {
+            "label": "Periode Stok Opname",
+            "placeholder": "Pilih periode stok opname",
+            "required": "Periode Stok Opname harus diisi"
+        },
+        "expired_date": {
+            "label": "Tanggal Kedaluwarsa",
+            "start": "Kedaluwarsa dari",
+            "end": "Kedaluwarsa hingga"
+        },
+        "do_from": {
+            "label": "Dilakukan Dari",
+            "start": "Dilakukan dari",
+            "end": "Dilakukan hingga"
+        },
+        "show_stock_zero": {
+            "label": "Tampilkan Stok Nol"
+        },
+        "integrated_healthcare": {
+            "label": "Puskesmas",
+            "placeholder": "Pilih puskesmas"
+        },
+        "material_kfa_level": {
+            "label": "Level KFA Material",
+            "placeholder": "Pilih level KFA material",
+            "required": "Level KFA Material harus diisi"
+        },
+        "created_at": {
+            "label": "Tanggal Dibuat"
+        }
+    },
+    "columns": {
+        "entity_name": "Nama Entitas",
+        "material_name": "Nama Material",
+        "material_info": "Informasi Material",
+        "activity": "Kegiatan",
+        "batch": "Batch",
+        "expired_date": "Tanggal Kedaluwarsa",
+        "remaining_stock_in_smile": "Sisa Stok Di SMILE",
+        "stock_in_transit": "Stok In Transit",
+        "remaining_stock_real": "Sisa Stok Riil",
+        "stock_taking_period": "Periode",
+        "compliance": "Kepatuhan",
+        "stock_opname_new_has_opnamed": "Sudah SO",
+        "stock_opname_new_has_not_opnamed": "Belum SO",
+        "do_at": "Dilakukan Pada",
+        "created_by": "Dibuat Oleh",
+        "last_stocktaken_by": "Stok Opname Terakhir Oleh"
+    },
+    "others": {
+        "active_substance_and_strength": "Produk Template",
+        "trademark": "Produk Varian"
+    },
+    "cut_off_time": "Cut-off Time Stok"
+}

@@ -1,0 +1,68 @@
+{
+  "title": "Program Plan (BMHP)",
+  "list_title": "Program Plan Years List",
+  "add_year": "Add Program Plan",
+  "detail_and_configure": "Detail & Configure",
+  "year": "Year",
+  "year_plan": "Year Plan",
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "draft": "Draft",
+    "final": "Final"
+  },
+  "tabs": {
+    "master_pemeriksaan": "Examination Master",
+    "jenis_pemeriksaan": "Examination Type",
+    "method": "Method",
+    "parameter": "Parameter",
+    "variant": "Variant",
+    "material": "Material",
+    "target_group": "Target Group",
+    "populasi": "Population"
+  },
+  "form": {
+    "year_label": "Year",
+    "year_placeholder": "Enter year (e.g., 2025)"
+  },
+  "placeholder": {
+    "select_year": "Select year"
+  },
+  "confirm": "Confirm",
+  "validation": {
+    "year_required": "Year is required",
+    "year_invalid": "Invalid year",
+    "year_duplicate": "Year already exists",
+    "year_min": "Year must be at least 2000",
+    "year_max": "Year must be at most 2100"
+  },
+  "mark_as_final": "Mark as Final",
+  "confirmation_activation": {
+    "description": "Are you sure you want to finalize this?",
+    "subdescription_top": "Please make sure all required data below are completed before continuing.",
+    "subdescription_bottom": "You can't press `Yes` until all required data are completed."
+  },
+  "checklist": {
+    "master_pemeriksaan": "Examination Master",
+    "jenis_pemeriksaan": "Examination Type",
+    "method": "Method",
+    "parameter": "Parameter",
+    "variant": "Variant",
+    "material": "Material",
+    "populasi": "Population"
+  },
+  "message": {
+    "create_success": "Program Plan created successfully",
+    "update_success": "Year updated successfully",
+    "delete_success": "Year deleted successfully",
+    "delete_confirm": "Are you sure you want to delete this year?",
+    "delete_warning": "Years with existing master data cannot be deleted",
+    "mark_as_final_success": "Program Plan marked as final successfully"
+  },
+  "list": {
+    "empty_filter": {
+      "title": "No filter selected",
+      "description": "Please select a province first to display data."
+    }
+  }
+}

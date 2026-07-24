@@ -1,0 +1,23 @@
+{
+  "show_report": "Show Report",
+  "all_regions": "All Regions",
+  "export_as": "Export as {{format}}",
+  "empty": "No data to display",
+  "close": "Close",
+  "last_updated_at": "Last updated at",
+  "sort": {
+    "asc": "Ascending",
+    "desc": "Descending"
+  },
+  "data": {
+    "entity_tag": {
+      "province": "Provincial Health Office",
+      "regency": "City/District Health Office",
+      "primary_health_care": "Community Health Center",
+      "hospital": "Hospital"
+    },
+    "activity": {
+      "routine": "Routine"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "page": {
+    "title": "Membuat Instruksi Pemusnahan"
+  },
+  "section": {
+    "detail_form": {
+      "title": "Detail Pemusnahan"
+    },
+    "select_material": {
+      "title": "Material",
+      "title_in_entity": "Material di {{entity}}",
+      "instruction": "Lengkapi detail pemusnahan terlebih dahulu",
+      "description": "Klik pada kotak centang untuk memilih material. Material yang dipilih akan muncul pada tabel pemusnahan di bawah"
+    },
+    "disposal_table": {
+      "title": "Tabel Pemusnahan"
+    },
+    "batch_qty_drawer": {
+      "title": "Kuantitas Batch"
+    },
+    "add_batch_qty": {
+      "title": "Tambah Kuantitas Batch"
+    }
+  },
+  "table": {
+    "column": {
+      "activity": "Aktivitas",
+      "si_no": "SI.No.",
+      "material_name": "Nama Material",
+      "material_info": "Info Material",
+      "stock_qty_on": "Stok pada {{activity}}",
+      "selection": "Seleksi",
+      "total_discard": "Total Pembuangan",
+      "quantity": "Kuantitas",
+      "action": "Aksi",
+      "batch_info": "Info Batch",
+      "production_date": "Tanggal Produksi",
+      "manufacturer": "Pabrik",
+      "expired_date": "Tanggal Kedaluwarsa",
+      "discard_from_internal": "Pembuangan dari Internal",
+      "disposal_instruction_qty_from_internal": "Jumlah Pengiriman Pemusnahan dari Internal",
+      "discard_from_external": "Pembuangan dari Eksternal",
+      "disposal_instruction_qty_from_external": "Jumlah Pengiriman Pemusnahan dari Pihak Eksternal"
+    }
+  },
+  "field": {
+    "discard_qty": {
+      "validation": {
+        "max_qty": "Kuantitas tidak boleh lebih dari max retur"
+      }
+    },
+    "received_qty": {
+      "validation": {
+        "max_qty": "Kuantitas tidak boleh lebih dari max retur"
+      }
+    },
+    "bast_no": {
+      "label": "Nomor Laporan Serah Terima",
+      "placeholder": "Masukkan Nomor Laporan Serah Terima"
+    },
+    "comment": {
+      "label": "Komentar",
+      "placeholder": "Silakan masukkan komentar..."
+    }
+  },
+  "form": {
+    "activity": {
+      "info": "Kegiatan yang ditampilkan hanya Kegiatan yang masih aktif di Entitas ini"
+    },
+    "validation": {
+      "stock_at_least_one_qty": "Tidak ada item yang akan disimpan. Periksa kembali material yang di tambahkan dan tekan tombol simpan pada batch untuk menyimpan perubahan.",
+      "qty_unit": "Kuantitas harus kelipatan {{amount}}"
+    }
+  },
+  "button": {
+    "add_batch_quantity": "Kuantitas Batch",
+    "add_quantity": "Kuantitas",
+    "update_batch_quantity": "Perbarui Kuantitas Batch",
+    "update_quantity": "Perbarui Kuantitas",
+    "submit_confirmation": "Kirimkan"
+  },
+  "api": {
+    "create_success": "Instruksi Pemusnahan berhasil dibuat"
+  }
+}
