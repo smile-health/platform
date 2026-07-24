@@ -12,9 +12,9 @@ import {
   transformImportUserRowSchema,
   update,
 } from "@/modules/user/user.schema.js"
-import { ValidationError } from "@smile/lib/error.js"
-import { PROCESSOR } from "@smile/lib/excel/types.js"
-import { conditionsMessage, translateError } from "@smile/lib/zod.js"
+import { ValidationError } from "@smile-health/lib/error.js"
+import { PROCESSOR } from "@smile-health/lib/excel/types.js"
+import { conditionsMessage, translateError } from "@smile-health/lib/zod.js"
 import { Context } from "hono"
 import { validator } from "hono/validator"
 import { z } from "zod"
@@ -22,7 +22,7 @@ import { RoleRepository } from "../role/role.repository.js"
 import { WorkspaceRepository } from "../workspace/workspace.repository.js"
 import { UserTemplateXlsx } from "./user.excel.js"
 import { EntityRepository } from "../entity/entity.repository.js"
-import { collect } from "@smile/lib/utils.js"
+import { collect } from "@smile-health/lib/utils.js"
 import { unique } from "remeda"
 import {
   WMS_CLIENT_ID,

@@ -1,7 +1,7 @@
 import {
   QueryParamsSchema,
 } from "@/common/schemas/query-param.schema.js"
-import { IdSchema, IdsSchema } from "@smile/lib/types/param.js"
+import { IdSchema, IdsSchema } from "@smile-health/lib/types/param.js"
 import { z } from "zod"
 
 export const RabiesQueryParamsSchema = z.intersection(

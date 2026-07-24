@@ -1,0 +1,46 @@
+{
+  "list": {
+    "list": "Waste Disposal Transaction",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Waste Group Number"
+      },
+      "date_range": {
+        "label": "Date Range",
+        "placeholder": "Select Date Range"
+      },
+      "healthcare_facility_name": {
+        "label": "Healthcare Facility Name",
+        "placeholder": "Select Healthcare Facility Name"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+
+    "column": {
+      "waste_group_number": "Waste Group Number",
+      "healthcare_facility": "Healthcare Facility",
+      "weight": "Weight ({{ unit }})",
+      "third_party": "Third Party",
+      "transport_officer": "Transport Officer",
+      "vehicle_number": "Vehicle Number",
+      "pickup_time": "Pickup Time",
+      "drop_time": "Dropped Time",
+      "process_time": "Process Time",
+      "landfill_time": "Landfill Time",
+      "recycle_time": "Recycle Time",
+      "action": "Action"
+    },
+    "column_detail": {
+      "waste_bag": "Waste Bag Number",
+      "waste_group": "Waste Group Number",
+      "waste_characteristic": "Type / Group / Waste Characteristics",
+      "weight": "Waste Weight ({{ unit }})"
+    }
+  },
+  "modal": {
+    "title": "Waste Group"
+  }
+}

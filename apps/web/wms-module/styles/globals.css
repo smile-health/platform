@@ -1,0 +1,95 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './style.css';
+
+:root {
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.circle-loading {
+  border: 3px solid rgb(66, 140, 66);
+  border-top: 3px solid white;
+}
+
+.shadow-r {
+  box-shadow: 10px 0 8px -8px #00000026;
+}
+
+.sticky-column-1 {
+  word-break: break-all;
+  top: 0;
+  left: 0px;
+  position: sticky;
+  z-index: 2;
+}
+
+.sticky-column-2 {
+  word-break: break-all;
+  top: 0;
+  left: 50px;
+  position: sticky;
+  z-index: 2;
+}
+
+.sticky-column-3 {
+  word-break: break-all;
+  top: 0;
+  left: 291px;
+  position: sticky;
+  z-index: 2;
+}
+
+.s-column-1 {
+  word-break: break-all;
+  left: 0px;
+  position: sticky;
+  z-index: 2;
+}
+
+.s-column-2 {
+  word-break: break-all;
+  left: 50px;
+  position: sticky;
+  z-index: 2;
+}
+
+.s-column-3 {
+  word-break: break-all;
+  left: 292px;
+  position: sticky;
+  z-index: 2;
+}
+
+.link-notif a {
+  color: #0ea5e9;
+}
+
+input:disabled + .form-toggle-slider {
+  background-color: #d2d2d2;
+}
+
+@media print {
+  @page {
+    size: 100mm 50mm;
+    margin: 0;
+  }
+
+  #print,
+  #print * {
+    visibility: visible !important;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  .print {
+    page-break-after: always;
+  }
+}
+
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}

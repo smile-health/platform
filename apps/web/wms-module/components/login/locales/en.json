@@ -1,0 +1,13 @@
+{
+  "policy": "Privacy Policy",
+  "password": "Password",
+  "forgot": "Forgot password",
+  "login": "Login",
+  "help": "Need Help ?",
+  "processing": "Processing",
+  "about": "About",
+  "success_login": "Login successful. Redirecting to the homepage",
+  "invalid_login": "Invalid username or password",
+  "success_logout": "Logout successful. Thank you for visiting",
+  "success_back_to_smile": "Redirecting to the SMILE homepage"
+}

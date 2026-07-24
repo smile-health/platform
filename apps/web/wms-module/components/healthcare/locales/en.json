@@ -1,0 +1,165 @@
+{
+  "list": {
+    "list": "Healthcare Asset Management",
+    "tab": {
+      "list": "Entity List",
+      "create": "Add Entity"
+    },
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search model"
+      },
+      "healthcare_facility": {
+        "label": "Healthcare Facility",
+        "placeholder": "Select healthcare facility"
+      },
+      "asset_type": {
+        "label": "Asset Type",
+        "placeholder": "Select asset type"
+      },
+      "manufacture": {
+        "label": "Manufacture",
+        "placeholder": "Select manufacture"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "healthcare_facility": "Healthcare Facility",
+      "asset_type": "Asset Type",
+      "manufacture": "Manufacture",
+      "model": "Model",
+      "asset_id": "Asset ID",
+      "sync_status": "Sync",
+      "last_maintenance": "Last Maintenance",
+      "last_calibration": "Last Calibration",
+      "asset_status": "Status",
+      "year_production": "Year of Production",
+      "warranty_start": "Warranty Start Date",
+      "warranty_end": "Warranty End Date",
+      "action": "Action"
+    },
+    "column_maintenance": {
+      "operator_name": "Operator Name",
+      "maintenance_date": "Maintenance Date"
+    },
+    "column_calibration": {
+      "operator_name": "Operator Name",
+      "calibration_start_date": "calibration Start Date",
+      "calibration_end_date": "calibration End Date"
+    },
+    "button": {
+      "add": "Add Healthcare Asset"
+    }
+  },
+  "title": {
+    "healthcare": "Healthcare Asset",
+    "list": "Healthcare Asset List",
+    "create": "Create Healthcare Asset",
+    "edit": "Edit Healthcare Asset"
+  },
+  "title_asset_activity": {
+    "maintenance": "Maintenance Activity",
+    "calibration": "Calibration Activity"
+  },
+  "action": {
+    "activate": {
+      "button": "Activate",
+      "confirmation": "Are you sure you want to activate this product?"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "confirmation": "Are you sure you want to deactivate this product?"
+    }
+  },
+  "button": {
+    "add_maintenance": "Add Maintenance",
+    "add_calibration": "Add Calibration"
+  },
+  "form": {
+    "healthcare_facility": {
+      "label": "Healthcare Facility",
+      "placeholder": "Select healthcare facility",
+      "validation": {
+        "required": "Healthcare facility is required"
+      }
+    },
+    "asset_type": {
+      "label": "Asset Type",
+      "placeholder": "Select asset type",
+      "validation": {
+        "required": "Asset type is required"
+      }
+    },
+    "manufacture": {
+      "label": "Manufacture",
+      "placeholder": "Select manufacture",
+      "validation": {
+        "required": "Manufacture is required"
+      }
+    },
+    "model": {
+      "label": "Model",
+      "placeholder": "Select model",
+      "validation": {
+        "required": "Model is required"
+      }
+    },
+    "asset_id": {
+      "label": "Asset ID",
+      "placeholder": "Enter asset id"
+    },
+    "asset_status": {
+      "label": "Asset Status",
+      "placeholder": "Enter asset status"
+    },
+    "sync": {
+      "label": "Sync"
+    },
+    "year_production": {
+      "label": "Year of Production",
+      "placeholder": "Enter Year of Production (example : 2024)"
+    },
+    "warranty_start": {
+      "label": "Warranty Start Date",
+      "placeholder": "Enter Warranty Start Date"
+    },
+    "warranty_end": {
+      "label": "Warranty End Date",
+      "placeholder": "Enter Warranty End Date"
+    }
+  },
+  "form_asset_activity": {
+    "operator_name": {
+      "label": "Operator Name",
+      "placeholder": "Enter Operator Name"
+    },
+    "calibration_start_date": {
+      "label": "Calibration Start Date",
+      "placeholder": "Select Date"
+    },
+    "calibration_end_date": {
+      "label": "Calibration End Date",
+      "placeholder": "Select Date"
+    },
+    "maintenance_date": {
+      "label": "Maintenance Date",
+      "placeholder": "Select Date"
+    }
+  },
+  "detail": {
+    "title": "About Healthcare Asset",
+    "calibration_act": "Calibration Activity",
+    "maintenance_act": "Maintenance Activity"
+  },
+  "asset_status": {
+    "OPERATIONAL": "Function",
+    "UNDER_MAINTAINENCE": "Repair",
+    "OUT_OF_SERVICE": "Damaged",
+    "IDLE": "Standby",
+    "NEED_REPAIR": "Need Repair",
+    "RETIRED": "Disposed"
+  }
+}

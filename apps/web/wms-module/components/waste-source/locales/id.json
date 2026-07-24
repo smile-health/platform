@@ -1,0 +1,89 @@
+{
+  "list": {
+    "list": "Sumber Limbah",
+    "filter": {
+      "waste_source": {
+        "search": {
+          "label": "Cari",
+          "placeholder": "Cari sumber limbah"
+        },
+        "source_type": {
+          "label": "Jenis Sumber",
+          "placeholder": "Pilih Jenis Sumber"
+        }
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "source_type": "Jenis Sumber",
+      "waste_source": "Sumber Limbah",
+      "updated_at": "Diperbarui Pada",
+      "updated_by": "Diperbarui",
+      "action": "Aksi"
+    },
+    "action": {
+      "activate": {
+        "title": "Aktifkan"
+      },
+      "deactivate": {
+        "title": "Nonaktifkan"
+      }
+    },
+    "button": {
+      "add_waste_source": "Tambah Sumber Limbah"
+    }
+  },
+  "title": {
+    "waste_source": "Sumber Limbah",
+    "list_waste_source": "Daftar Sumber Limbah",
+    "create_waste_source": "Sumber Limbah"
+  },
+  "action": {
+    "activate": {
+      "button": "Aktifkan",
+      "confirmation": "Apakah Anda yakin ingin mengaktifkan produk ini?"
+    },
+    "deactivate": {
+      "button": "Nonaktifkan",
+      "confirmation": "Apakah Anda yakin ingin menonaktifkan produk ini?"
+    }
+  },
+  "button": {},
+  "form": {
+    "source_type": {
+      "label": "Jenis Sumber",
+      "placeholder": "Pilih Jenis Sumber"
+    },
+    "internal_waste_source": {
+      "label": "Sumber Limbah",
+      "placeholder": "Masukan Sumber Limbah"
+    },
+    "external_waste_source": {
+      "label": "Nama Fasyankes",
+      "placeholder": "Pilih Fasyankes",
+      "placeholder_input": "Masukan Nama Fasyankes"
+    },
+    "internal_treatment_waste_source": {
+      "label": "Sumber Limbah",
+      "placeholder": "Pilih Sumber Limbah"
+    },
+    "select_healthcare_facility": {
+      "label": "Pilih Fasyankes"
+    },
+    "input_healthcare_facility": {
+      "label": "Masukan Nama Fasyankes"
+    }
+  },
+  "scroll_list": {},
+  "source_type": {
+    "INTERNAL": "Internal",
+    "EXTERNAL": "Eksternal",
+    "INTERNAL_TREATMENT": "Pengolahan Internal"
+  },
+  "waste_source_treatment": {
+    "PYROLYSIS": "Insinerasi/Pirolisis",
+    "DISINFECTION": "Sterilisasi/Desinfeksi"
+  }
+}

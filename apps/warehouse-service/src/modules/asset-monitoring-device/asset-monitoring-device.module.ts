@@ -5,7 +5,7 @@ import {
   ColdstorageDashboardResponse,
   ExcursionDashboardResponse,
 } from "./asset-monitoring-device.schema.js"
-import { FileResponse } from "@smile/lib/types/file.js"
+import { FileResponse } from "@smile-health/lib/types/file.js"
 import { AssetMonitoringDeviceExcel } from "./asset-monitoring-device.excel.js"
 
 export class AssetMonitoringDeviceModule {

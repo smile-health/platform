@@ -1,0 +1,68 @@
+{
+  "list": {
+    "list": "Healthcare Asset Management",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Serial Number"
+      },
+      "working_status": {
+        "label": "Operational Status",
+        "placeholder": "Select operational status"
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Select status"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "asset_type": "Asset Type",
+      "manufacture": "Manufacture",
+      "model": "Model",
+      "asset_id": "Asset ID",
+      "serial_number": "Serial Number",
+      "asset_status": "Status",
+      "working_status": "Operational Status",
+      "ownership_status": "Ownership Status",
+      "ownership_qty": "Amount Owned",
+      "action": "Action"
+    }
+  },
+  "title": {
+    "healthcare": "Healthcare Asset",
+    "list": "Healthcare Asset List",
+    "create": "Create Healthcare Asset",
+    "edit": "Edit Healthcare Asset",
+    "detail": "Healthcare Asset Detail"
+  },
+  "form": {
+    "dongle_id": {
+      "label": "IoT Dongle ID",
+      "placeholder": "Enter IoT Dongle ID"
+    },
+    "error_dongle_id": "IoT ID is not authenticated. Please request approval from the Ministry of Health."
+  },
+  "asset_status": {
+    "OPERATIONAL": "Function",
+    "UNDER_MAINTAINENCE": "Repair",
+    "OUT_OF_SERVICE": "Damaged",
+    "IDLE": "Standby",
+    "NEED_REPAIR": "Need Repair",
+    "RETIRED": "Disposed"
+  },
+  "working_status": {
+    "function": "Function",
+    "standby": "Standby",
+    "repair": "Repair",
+    "damaged": "Damaged",
+    "need_repair": "Need Repair",
+    "disposed": "Disposed"
+  },
+  "modal": {
+    "title": "Warning",
+    "description": "There is a mismatch, ID {{dongleId}} does not match / configuration failed. Please contact the vendor provider."
+  }
+}

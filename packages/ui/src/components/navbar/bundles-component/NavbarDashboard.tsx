@@ -137,11 +137,6 @@ const NavbarDashboard = () => {
                 ),
               },
               {
-                title: 'SMILE vs ASIK',
-                url: `/v5/dashboard/asik`,
-                isHidden: !hasPermission('dashboard-asik-view'),
-              },
-              {
                 //  Not found
                 title: t('navbar:navbar_rabies'),
                 url: `/v5/dashboard/immunization-rabies`,

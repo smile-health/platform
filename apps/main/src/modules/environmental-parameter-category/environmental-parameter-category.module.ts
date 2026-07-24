@@ -9,8 +9,8 @@ import {
   UpdateParameterCategoryRequest,
   ParameterCategoryField,
 } from "./environmental-parameter-category.schema.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
-import { logger } from "@smile/lib/logger.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
+import { logger } from "@smile-health/lib/logger.js"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)

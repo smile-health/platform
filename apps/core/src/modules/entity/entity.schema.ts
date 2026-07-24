@@ -1,9 +1,9 @@
 import { FLAG } from "@/common/constants/general"
 import { WMS_PROGRAM_ID } from "@/common/constants/integration"
 import { Entities } from "@/common/infrastructure/database/types/db.js"
-import { PaginationQueriesSchema } from "@smile/lib/types/paginate.js"
-import { IdSchema } from "@smile/lib/types/param.js"
-import { transformStringNumbersToArrayNumbers } from "@smile/lib/utils"
+import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
+import { IdSchema } from "@smile-health/lib/types/param.js"
+import { transformStringNumbersToArrayNumbers } from "@smile-health/lib/utils"
 import { Selectable } from "kysely"
 import z from "zod"
 

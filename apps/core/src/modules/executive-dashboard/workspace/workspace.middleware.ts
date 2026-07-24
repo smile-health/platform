@@ -1,6 +1,6 @@
 import z from "zod"
 import { Context } from "hono"
-import { BaseMiddleware } from "@smile/lib/base/middleware"
+import { BaseMiddleware } from "@smile-health/lib/base/middleware"
 import { GetWorkspacesParamsSchema } from "./workspace.schema"
 
 export class ExecutiveWorkspaceMiddleware extends BaseMiddleware {

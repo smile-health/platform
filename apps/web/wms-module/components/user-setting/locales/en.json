@@ -1,0 +1,75 @@
+{
+  "title": {
+    "index": "User Settings",
+    "add": "Add User",
+    "edit": "Edit User",
+    "list": {
+      "index": "User List",
+      "management": "User Management"
+    },
+    "user": "User",
+    "detail": "User Detail",
+    "details": "Detail",
+    "status": "User Status"
+  },
+  "column": {
+    "username": "Username",
+    "fullname": "Full Name",
+    "role": "Role",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "location": "Location",
+    "email": "Email",
+    "entity": {
+      "index": "Entity",
+      "name": "Entity Name",
+      "address": "Entity Address",
+      "type": "Type",
+      "tag": "Tag"
+    },
+    "mobile_phone": "Phone Number",
+    "birthdate": "Birth Date",
+    "gender": "Gender",
+    "view_only": "View Only",
+    "last": {
+      "login": "Last Login",
+      "device": "Last Device Access"
+    },
+    "status": "Status",
+    "action": "Action"
+  },
+  "filter": {
+    "search": {
+      "label": "Search",
+      "placeholder": "Search username"
+    },
+    "type": {
+      "label": "Type",
+      "placeholder": "Select type"
+    },
+    "role": {
+      "label": "Role",
+      "placeholder": "Select role"
+    },
+    "status": {
+      "label": "Status",
+      "placeholder": "Select status",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "button": {
+      "search": "Search"
+    }
+  },
+  "confirmation": {
+    "activate": {
+      "button": "Activate",
+      "question": "Are you sure you want to activate this??"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "question": "Are you sure you want to deactivate this?",
+      "description": "This user will lose access to SMILE."
+    }
+  }
+}

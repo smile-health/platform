@@ -1,7 +1,5 @@
 import { NextRouter } from 'next/router'
 
-import { ENTITY_TYPE } from '#constants/entity'
-
 import { TLeftMenu } from './navbar.types'
 
 export const filterLeftMenus = (leftMenus: Array<TLeftMenu> | []) =>
@@ -67,16 +65,6 @@ export const isActiveSingleMenu = (
 ) => {
   const path = router?.asPath || ''
   return leftMenus.some((menu) => path.includes(menu?.url ?? ''))
-}
-
-export const getBmhpApprovalUrl = (entityType?: ENTITY_TYPE): string => {
-  if (entityType === ENTITY_TYPE.PROVINSI) {
-    return `/v5/bmhp-approval-province`
-  }
-  if (entityType === ENTITY_TYPE.PRIMARY_VENDOR) {
-    return `/v5/bmhp-approval-ministry`
-  }
-  return `/v5/bmhp-approval`
 }
 
 export default {}

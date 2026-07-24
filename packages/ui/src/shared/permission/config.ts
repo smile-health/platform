@@ -30,8 +30,6 @@ const smileRolePermission: {
   [key in USER_ROLE]: Permission
 } = {
   [SUPERADMIN]: {
-    /* can view smile vs smdv dashboard */
-    'dashboard-smile-smdv-view': 'query',
     /* can view global asset dashboard */
     'global-asset-dashboard-view': 'query',
     /* can view global asset management */
@@ -241,7 +239,6 @@ const smileRolePermission: {
     'dashboard-discard-view': 'query',
     'dashboard-monthly-report-view': 'query',
     'dashboard-yearly-report-view': 'query',
-    'dashboard-asik-view': 'query',
     'dashboard-inventory-overview-view': 'query',
     'dashboard-rabies-view': 'query',
     'dashboard-asset-ownership-inventory-view': 'query',
@@ -282,11 +279,6 @@ const smileRolePermission: {
     'annual-commitment-mutate': 'mutation',
 
     'dashboard-asset-temperature-monitoring-view': 'query',
-    /** Master BMHP */
-    'master-bmhp-view': 'query',
-
-    /** BMHP History */
-    'bmhp-history-view': 'query',
 
     /* Test Method */
     'test-method-view': 'query',
@@ -415,7 +407,6 @@ const smileRolePermission: {
     'dashboard-discard-view': 'query',
     'dashboard-monthly-report-view': 'query',
     'dashboard-yearly-report-view': 'query',
-    'dashboard-asik-view': 'query',
     'dashboard-inventory-overview-view': 'query',
     'dashboard-rabies-view': 'query',
     'dashboard-microplanning-view': 'query',
@@ -555,7 +546,6 @@ const smileRolePermission: {
     'dashboard-discard-view': 'query',
     'dashboard-monthly-report-view': 'query',
     'dashboard-yearly-report-view': 'query',
-    'dashboard-asik-view': 'query',
     'dashboard-inventory-overview-view': 'query',
     'dashboard-rabies-view': 'query',
     'dashboard-asset-ownership-inventory-view': 'query',
@@ -601,9 +591,6 @@ const smileRolePermission: {
 
     /* Environmental Health History - view only */
     'environmental-health-history-view': 'query',
-
-    /** BMHP History */
-    'bmhp-history-view': 'query',
   },
   [OPERATOR]: {
     'ticketing-system-access-packing-link': 'query',

@@ -2,7 +2,6 @@ import NavbarSetting from '../bundles-component/NavbarSetting'
 import NavbarAnalysis from './components/NavbarAnalysis'
 import NavbarAnnual from './components/NavbarAnnual'
 import NavbarDisposal from './components/NavbarDisposal'
-import NavbarImmunization from './components/NavbarImmunization'
 import NavbarInventory from './components/NavbarInventory'
 import NavbarOrder from './components/NavbarOrder'
 import NavbarScreening from './components/NavbarScreening'
@@ -13,7 +12,6 @@ const NavbarV2 = () => {
     <div className="main__nav ui-bg-primary-500 ui-h-10">
       <div className="ui-container ui-mx-auto ui-flex ui-items-center ui-justify-start ui-text-primary-contrast">
         <NavbarScreening />
-        <NavbarImmunization />
         <NavbarAnnual />
         <NavbarOrder />
         <NavbarTransactions />

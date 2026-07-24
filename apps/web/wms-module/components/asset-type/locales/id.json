@@ -1,0 +1,51 @@
+{
+  "list": {
+    "list": "Manajemen Tipe Aset",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Tipe Aset"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "name": "Nama Tipe Aset",
+      "description": "Keterangan",
+      "max_temperature": "Max Ambang Batas Suhu (°C)",
+      "min_temperature": "Min Ambang Batas Suhu (°C)",
+
+      "updated_by": "Diperbarui Oleh",
+      "action": "Aksi"
+    },
+
+    "button": {
+      "add": "Tambah Tipe Aset"
+    }
+  },
+  "title": {
+    "asset_type": "Tipe Aset",
+    "list": "Daftar Tipe Aset",
+    "create": "Tipe Aset",
+    "edit": "Edit Tipe Aset"
+  },
+  "form": {
+    "asset_type": {
+      "label": "Tipe Aset",
+      "placeholder": "Masukkan nama tipe aset"
+    },
+    "description": {
+      "label": "Deskripsi",
+      "placeholder": "Masukkan deskripsi"
+    },
+    "min_temperature": {
+      "label": "Min Ambang Batas Suhu (°C)",
+      "placeholder": "contoh: 10"
+    },
+    "max_temperature": {
+      "label": "Max Ambang Batas Suhu (°C)",
+      "placeholder": "contoh: 20"
+    }
+  }
+}

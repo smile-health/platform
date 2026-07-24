@@ -1,4 +1,4 @@
-import { PaginationQueriesSchema } from "@smile/lib/types/paginate.js"
+import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import z from "zod"
 
 export type ProgramPlanTaskDTO = {
@@ -107,12 +107,3 @@ export type SubmitSetStatusProgramPlanRequest = z.infer<
   typeof SubmitSetStatusProgramPlanSchema
 >
 export type CopyProgramPlanRequest = z.infer<typeof CopyProgramPlanSchema>
-
-export type BmhpStatus = {
-  master_pemeriksaan: boolean
-  jenis_pemeriksaan: boolean
-  method: boolean
-  parameter: boolean
-  variant: boolean
-  material: boolean
-}

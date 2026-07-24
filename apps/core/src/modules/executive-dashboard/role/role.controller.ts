@@ -1,8 +1,8 @@
 import { Hono } from "hono"
 import { StatusCodes } from "http-status-codes"
 import { ExecutiveRoleModule } from "./role.module.js"
-import { BaseController } from "@smile/lib/base/controller.js"
-import { PaginationQueriesSchema } from "@smile/lib/types/paginate.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
+import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 
 export class ExecutiveRoleController extends BaseController {
   constructor(private readonly module: ExecutiveRoleModule) {

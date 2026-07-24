@@ -1,0 +1,49 @@
+{
+  "list": {
+    "list": "Asset Type Management",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search asset type"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "name": "Asset Type",
+      "description": "Description",
+      "max_temperature": "Temperature Threshold Max (°C)",
+      "min_temperature": "Temperature Threshold Min (°C)",
+      "updated_by": "Updated By",
+      "action": "Action"
+    },
+    "button": {
+      "add": "Add Asset Type"
+    }
+  },
+  "title": {
+    "asset_type": "Asset Type",
+    "list": "Asset Type List",
+    "create": "Asset Type",
+    "edit": "Edit Asset Type"
+  },
+  "form": {
+    "asset_type": {
+      "label": "Asset Type",
+      "placeholder": "Enter asset type name"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Input description"
+    },
+    "min_temperature": {
+      "label": "Temperature Threshold Min (°C)",
+      "placeholder": "ex: 10"
+    },
+    "max_temperature": {
+      "label": "Temperature Threshold Max (°C)",
+      "placeholder": "ex: 20"
+    }
+  }
+}

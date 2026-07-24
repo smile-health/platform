@@ -1,0 +1,60 @@
+{
+  "index": {
+    "title": "Healthcare Storage Location",
+    "edit": "Edit Healthcare Storage Location"
+  },
+  "filter": {
+    "search": {
+      "label": "Search",
+      "placeholder": "Search location name"
+    }
+  },
+  "form": {
+    "facility_name": {
+      "label": "Facility Name",
+      "placeholder": "Enter facility name"
+    },
+    "location_name": {
+      "label": "Location Name",
+      "placeholder": "Enter location name"
+    },
+    "latitude": {
+      "label": "Latitude",
+      "placeholder": "Enter latitude"
+    },
+    "longitude": {
+      "label": "Longitude",
+      "placeholder": "Enter longitude"
+    },
+    "address": {
+      "label": "Address",
+      "placeholder": "Enter address"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "city": {
+      "label": "City",
+      "placeholder": "Select city"
+    },
+    "distance_limit": {
+      "label": "Distance Limit",
+      "placeholder": "Enter distance limit (in meters)"
+    }
+  },
+  "column": {
+    "facility_name": "Facility Name",
+    "location_name": "Location Name",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "address": "Address",
+    "province": "Province",
+    "city": "City",
+    "action": "Action"
+  },
+  "information": {
+    "title": "Healthcare Storage Location",
+    "description": "Waste Storage Locations monitors and manages data on temporary storage locations for medical waste in healthcare facilities."
+  }
+}

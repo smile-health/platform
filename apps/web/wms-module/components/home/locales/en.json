@@ -1,0 +1,154 @@
+{
+  "title": "Homepage",
+  "group": "Group",
+  "home_superadmin": {
+    "filter": {
+      "date_range": {
+        "label": "Date Range"
+      },
+      "waste_type": {
+        "label": "Waste Type",
+        "placeholder": "Select waste type"
+      },
+      "date_type": {
+        "label": "Date Type",
+        "placeholder": "Select date type"
+      },
+      "healthcare_facility": {
+        "label": "Healthcare Facility Name",
+        "placeholder": "Enter healthcare facility name"
+      }
+    },
+    "column": {
+      "province": "Province",
+      "total_transaction": "Total Transaction",
+      "city": "City",
+      "healthcare_facility": "Healthcare Facility Name",
+      "total_weight": "Total Weight ({{ unit }})",
+      "view_detail_transaction": "View Detail Transaction",
+      "view_detail_district": "View Detail City/District",
+      "view_detail_healthcare": "View Detail Healthcare",
+      "view_history": "View History",
+      "view_detail": "View Detail",
+      "waste_type": "Waste Type",
+      "waste_weight": "Waste Weight ({{ unit }})"
+    },
+    "column_transaction": {
+      "waste_group_number": "Waste Group Number",
+      "waste_transporter": "Waste Transporter",
+      "waste_treatment_facilitator": "Waste Treatment Facilitator",
+      "waste_characteristic": "Type / Group / Waste Characteristic",
+      "waste_source": "Waste Source",
+      "waste_in_date": "Waste In Date",
+      "storage_limit": "Storage Limit",
+      "last_follow_up": "Last Follow Up",
+      "waste_weight": "Waste Weight ({{ unit }})",
+      "action": "Action"
+    },
+    "modal": {
+      "waste_status": "Waste Status",
+      "updated_status": "Date of Updated Status"
+    },
+    "modal_waste_characteristics_summary": {
+      "waste_characteristic": "Waste Characteristics",
+      "waste_weight": "Waste Weight ({{ unit }})"
+    }
+  },
+  "home_hf": {
+    "title": "Transaction Summary",
+    "modal": {
+      "title": "History Transaction",
+      "waste_status": "Waste Status",
+      "updated_status": "Date of Updated Status"
+    },
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Transaction"
+      },
+      "waste_group": {
+        "label": "Waste Group",
+        "placeholder": "Select Waste Group"
+      },
+      "waste_type": {
+        "label": "Waste Type",
+        "placeholder": "Select Waste Type"
+      },
+      "waste_characteristic": {
+        "label": "Waste Characteristic",
+        "placeholder": "Select Waste Characteristic"
+      },
+      "waste_status": {
+        "label": "Waste Status",
+        "placeholder": "Select Waste Status"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "waste_group_number": "Waste Group Number",
+      "waste_number": "Waste Group Number",
+      "waste_code": "Waste Bag Number",
+      "waste_transporter": "Waste Transporter",
+      "waste_treatment": "Waste Treatment",
+      "waste_hierarchy": "Type/Group/Waste Characteristic",
+      "waste_source": "Waste Source",
+      "waste_date": "Waste In Date",
+      "storage_date_limit": "Maximum Storage (days)",
+      "last_follow_up": "Last Follow Up",
+      "weight": "Weight ({{ unit }})",
+      "action": "Action"
+    }
+  },
+  "home_tp": {
+    "filter": {
+      "date_range": {
+        "label": "Date Range"
+      },
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Entity Name/Waste Group Number/Transport Officer/Vehicle Number"
+      },
+      "healthcare_facility": {
+        "label": "Healthcare Facility Name",
+        "placeholder": "Enter healthcare facility name"
+      }
+    },
+    "transport_tab": {
+      "column": {
+        "entity_name": "Entity Name",
+        "waste_group_number": "Waste Group Number",
+        "waste_weight": "Waste Weight ({{ unit }})",
+        "transport_officer": "Transport Officer",
+        "treatment_operator": "Treatment Operator",
+        "vehicle_number": "Vehicle Number",
+        "handover_time_to_transport": "Handover Time To {{ handover }}",
+        "action": "Action"
+      }
+    },
+    "recyle_tab": {
+      "column": {
+        "entity_name": "Entity Name",
+        "waste_group_number": "Waste Group Number",
+        "waste_weight": "Waste Weight ({{ unit }})",
+        "transport_officer": "Transport Officer",
+        "vehicle_number": "Vehicle Number",
+        "manifest_number": "Manifest Number",
+        "handover_time_to_transport": "Handover Time To {{ handover }}",
+        "on_site_recyler": "On-site Recyler",
+        "handover_time_to_recyle": "Handover Time To Recyle",
+        "action": "Action"
+      }
+    },
+    "tab": {
+      "transport": "Transport",
+      "recycle": "Recyle",
+      "landfill": "Landfill",
+      "treatment": "Treatment",
+      "government": "Government",
+      "waste_bank": "Waste Bank",
+      "specialized": "Specialized"
+    }
+  }
+}

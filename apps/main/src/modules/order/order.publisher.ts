@@ -1,6 +1,6 @@
-import { SyncPublisher } from "@smile/lib/base/sync-publisher.js"
-import { Publisher } from "@smile/lib/rabbitmq/publisher.js"
-import { TOPIC } from "@smile/lib/rabbitmq/topic.js"
+import { SyncPublisher } from "@smile-health/lib/base/sync-publisher.js"
+import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
+import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
 import { Context } from "hono"
 import { OrderCommentRepository } from "../order-comment/order-comment.repository.js"
 import { OrderItemStockRepository } from "../order-item-stock/order-item-stock.repository.js"
@@ -76,59 +76,28 @@ export class OrderPublisher extends SyncPublisher {
   }
 
   async processRetryIntegrationLog(c: Context, data) {
-    switch (data.client_key) {
-      case "din": {
-        const message = {
-          headers: c.req.header(),
-          payload: {
-            ...data,
-            order_id: data.order_id,
-            program_id: data.program_id,
-            retry: true,
-          },
-          user: c.var.user,
-          context: {
-            program_id: data.program_id,
-            user_id: c.var.user?.id,
-            user_email: c.var.user?.email,
-            request_id: c.req.header("x-request-id"),
-            client_key: data.client_key,
-          },
-        }
+    const message = {
+      headers: c.req.header(),
+      payload: {
+        ...data,
+        order_id: data.order_id,
+        program_id: data.program_id,
+        retry: true,
+      },
+      user: c.var.user,
+      context: {
+        program_id: data.program_id,
+        user_id: c.var.user?.id,
+        user_email: c.var.user?.email,
+        request_id: c.req.header("x-request-id"),
+        client_key: data.client_key,
+      },
+    }
 
-        if (data.tag === "cancel_order") {
-          c.addEvent(TOPIC.ORDER_STATUS_ORDER_CANCEL, message)
-        } else if (data.tag === "receive_order") {
-          c.addEvent(TOPIC.ORDER_STATUS_ORDER_FULFILLED, message)
-        }
-        break
-      }
-      default: {
-        const message = {
-          headers: c.req.header(),
-          payload: {
-            ...data,
-            order_id: data.order_id,
-            program_id: data.program_id,
-            retry: true,
-          },
-          user: c.var.user,
-          context: {
-            program_id: data.program_id,
-            user_id: c.var.user?.id,
-            user_email: c.var.user?.email,
-            request_id: c.req.header("x-request-id"),
-            client_key: data.client_key,
-          },
-        }
-
-        if (data.tag === "validate_order") {
-          c.addEvent(TOPIC.ORDER_STATUS_ORDER_VALIDATED, message)
-        } else if (data.tag === "cancel_order") {
-          c.addEvent(TOPIC.ORDER_STATUS_ORDER_CANCEL, message)
-        }
-        break
-      }
+    if (data.tag === "validate_order") {
+      c.addEvent(TOPIC.ORDER_STATUS_ORDER_VALIDATED, message)
+    } else if (data.tag === "cancel_order") {
+      c.addEvent(TOPIC.ORDER_STATUS_ORDER_CANCEL, message)
     }
   }
 

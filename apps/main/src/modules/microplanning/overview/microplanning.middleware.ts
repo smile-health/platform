@@ -1,4 +1,4 @@
-import { NotFoundError } from "@smile/lib/error.js"
+import { NotFoundError } from "@smile-health/lib/error.js"
 import { Context, Next } from "hono"
 import { TargetsRepository } from "../targets/targets.repository.js"
 import { MicroplanningRepository } from "./microplanning.repository.js"

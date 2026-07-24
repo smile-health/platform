@@ -14,22 +14,22 @@ import { MasterRepository } from "@/modules/master/master.repository.js"
 import { UserController } from "@/modules/user/user.controller.js"
 import { UsersMiddleware } from "@/modules/user/user.middleware.js"
 import { UserRepository } from "@/modules/user/user.repository.js"
-import { AuthKeycloakService as AuthKcServiceLib } from "@smile/lib/api"
-import { TransactionManager } from "@smile/lib/database.js"
-import { featureFlagsMiddleware } from "@smile/lib/feature-flags/middleware.js"
+import { AuthKeycloakService as AuthKcServiceLib } from "@smile-health/lib/api"
+import { TransactionManager } from "@smile-health/lib/database.js"
+import { featureFlagsMiddleware } from "@smile-health/lib/feature-flags/middleware.js"
 import {
   createRefreshHandler,
   createWebhookHandler,
-} from "@smile/lib/feature-flags/webhook.js"
-import { reloadTranslations } from "@smile/lib/i18n.js"
+} from "@smile-health/lib/feature-flags/webhook.js"
+import { reloadTranslations } from "@smile-health/lib/i18n.js"
 import {
   ExcelMiddleware,
   RequestMiddleware,
   TransactionMiddleware,
-} from "@smile/lib/middlewares"
-import { EventMiddleware } from "@smile/lib/middlewares/event.middleware.js"
-import { Consumer, Publisher, TOPIC } from "@smile/lib/rabbitmq"
-import { middlewareTracer, routeTracer } from "@smile/lib/tracing.js"
+} from "@smile-health/lib/middlewares"
+import { EventMiddleware } from "@smile-health/lib/middlewares/event.middleware.js"
+import { Consumer, Publisher, TOPIC } from "@smile-health/lib/rabbitmq"
+import { middlewareTracer, routeTracer } from "@smile-health/lib/tracing.js"
 import { randomUUID } from "crypto"
 import { Hono } from "hono"
 import { cors } from "hono/cors"
@@ -51,9 +51,6 @@ import { AnnualPlanningGroupTargetController } from "./modules/annual-planning-g
 import { AnnualPlanningGroupTargetMiddleware } from "./modules/annual-planning-group-target/annual-planning-group-target.middleware.js"
 import { AnnualPlanningGroupTargetModule } from "./modules/annual-planning-group-target/annual-planning-group-target.module.js"
 import { AnnualPlanningGroupTargetRepository } from "./modules/annual-planning-group-target/annual-planning-group-target.repository.js"
-import { AsikController } from "./modules/asik/asik.controller.js"
-import { AsikModule } from "./modules/asik/asik.module.js"
-import { AsikRepository } from "./modules/asik/asik.repository.js"
 import { AssetInventoryController } from "./modules/asset-inventory/asset-inventory.controller.js"
 import { AssetInventoryMiddleware } from "./modules/asset-inventory/asset-inventory.middleware.js"
 import { AssetInventoryModule } from "./modules/asset-inventory/asset-inventory.module.js"
@@ -309,7 +306,6 @@ const assetTypesClassificationRepo = new AssetTypesClassificationRepository()
 const annualPlanningGrooupTargetRepo = new AnnualPlanningGroupTargetRepository()
 const populationRepo = new PopulationRepository()
 const materialSubtypeRepo = new MaterialSubtypeRepository()
-const asikRepo = new AsikRepository()
 const assetTypeHumidityRepo = new AssetTypeHumidityRepository()
 const executiveWorkspaceRepo = new ExecutiveWorkspaceRepository()
 const executiveMaterialTypeRepo = new ExecutiveMaterialTypeRepository()
@@ -933,9 +929,6 @@ const coldstorageController = new ColdstorageController(
 const coldstorageWorker = new ColdstorageWorker(coldstorageModule)
 coldstorageWorker.registerWorkers(coldstorageConsumer)
 
-const asikModule = new AsikModule(asikRepo)
-const asikController = new AsikController(asikModule)
-
 // Cleansing
 const cleansingMiddleware = new CleansingMiddleware(cleansingRepo)
 const cleansingModule = new CleansingModule(cleansingRepo, publisher)
@@ -1212,7 +1205,6 @@ const routeConfigs = [
     controller: coldstorageController,
     name: "coldstorage",
   },
-  { path: "/asik", controller: asikController, name: "asik" },
   {
     path: "/cleansing",
     controller: cleansingController,

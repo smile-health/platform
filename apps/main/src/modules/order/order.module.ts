@@ -12,9 +12,9 @@ import {
 } from "@/common/constants/order.js"
 import { TRANSACTION_TYPE } from "@/common/constants/transaction.js"
 import { CursorPaginatedResponse } from "@/modules/helpers/cursor-helper.js"
-import { ValidationError } from "@smile/lib/error.js"
-import { TOPIC } from "@smile/lib/rabbitmq/topic.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
+import { ValidationError } from "@smile-health/lib/error.js"
+import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
 import {
   associate,
   collect,
@@ -22,7 +22,7 @@ import {
   group,
   merge,
   pick,
-} from "@smile/lib/utils.js"
+} from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import _ from "lodash"
 import moment from "moment"

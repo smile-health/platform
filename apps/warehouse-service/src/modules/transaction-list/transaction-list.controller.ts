@@ -3,7 +3,7 @@ import { USER_ROLE } from "@/common/constants/role.js"
 import { RoleMiddleware } from "@/common/middlewares/role-validation.middleware.js"
 import { TransactionListModule } from "./transaction-list.module.js"
 import { TransactionListPaginatedRequestSchema } from "./transaction-list.schema.js"
-import { BaseController } from "@smile/lib/base/controller.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
 import { StatusCodes } from "http-status-codes"
 import { DEVICE_TYPE } from "@/common/constants/headers.js"
 

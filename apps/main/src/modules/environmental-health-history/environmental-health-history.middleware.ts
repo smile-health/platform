@@ -1,4 +1,4 @@
-import { BaseMiddleware } from "@smile/lib/base/middleware.js"
+import { BaseMiddleware } from "@smile-health/lib/base/middleware.js"
 import { Context } from "hono"
 import { z } from "zod"
 import { EnvironmentalHealthHistoryRepository } from "./environmental-health-history.repository.js"
@@ -7,7 +7,7 @@ import {
   GetHistoryListQuery,
 } from "./environmental-health-history.schema.js"
 import { createMiddleware } from "hono/factory"
-import { NotFoundError } from "@smile/lib/error.js"
+import { NotFoundError } from "@smile-health/lib/error.js"
 
 export class EnvironmentalHealthHistoryMiddleware extends BaseMiddleware {
   constructor(

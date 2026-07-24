@@ -2,22 +2,22 @@ import { db } from "@/common/infrastructure/database/index.js"
 import { UserController } from "@/modules/user/user.controller.js"
 import { UserModule } from "@/modules/user/user.module.js"
 import { UserRepository } from "@/modules/user/user.repository.js"
-import { AuthKeycloakService } from "@smile/lib/api/auth.service.js"
-import { TransactionManager } from "@smile/lib/database.js"
-import { featureFlagsMiddleware } from "@smile/lib/feature-flags/middleware.js"
+import { AuthKeycloakService } from "@smile-health/lib/api/auth.service.js"
+import { TransactionManager } from "@smile-health/lib/database.js"
+import { featureFlagsMiddleware } from "@smile-health/lib/feature-flags/middleware.js"
 import {
   createRefreshHandler,
   createWebhookHandler,
-} from "@smile/lib/feature-flags/webhook.js"
-import i18n, { loadResources, reloadTranslations } from "@smile/lib/i18n.js"
-import { EventMiddleware } from "@smile/lib/middlewares/event.middleware.js"
-import { ExcelMiddleware } from "@smile/lib/middlewares/excel.middleware.js"
-import { RequestMiddleware } from "@smile/lib/middlewares/request.middleware.js"
-import { TransactionMiddleware } from "@smile/lib/middlewares/transaction.middleware.js"
-import { Consumer } from "@smile/lib/rabbitmq/consumer.js"
-import { Publisher } from "@smile/lib/rabbitmq/publisher.js"
-import { TOPIC } from "@smile/lib/rabbitmq/topic.js"
-import { middlewareTracer, routeTracer } from "@smile/lib/tracing.js"
+} from "@smile-health/lib/feature-flags/webhook.js"
+import i18n, { loadResources, reloadTranslations } from "@smile-health/lib/i18n.js"
+import { EventMiddleware } from "@smile-health/lib/middlewares/event.middleware.js"
+import { ExcelMiddleware } from "@smile-health/lib/middlewares/excel.middleware.js"
+import { RequestMiddleware } from "@smile-health/lib/middlewares/request.middleware.js"
+import { TransactionMiddleware } from "@smile-health/lib/middlewares/transaction.middleware.js"
+import { Consumer } from "@smile-health/lib/rabbitmq/consumer.js"
+import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
+import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
+import { middlewareTracer, routeTracer } from "@smile-health/lib/tracing.js"
 import { randomUUID } from "crypto"
 import { Hono } from "hono"
 import { cors } from "hono/cors"
@@ -67,62 +67,6 @@ import { OrderDroppingPublisher } from "./modules/base.order-dropping.publisher.
 import { BatchController } from "./modules/batch/batch.controller.js"
 import { BatchModule } from "./modules/batch/batch.module.js"
 import { BatchRepository } from "./modules/batch/batch.repository.js"
-import { NotifyRevisionController } from "./modules/bmhp-approval/notify-revision/notify-revision.controller.js"
-import { NotifyRevisionModule } from "./modules/bmhp-approval/notify-revision/notify-revision.module.js"
-import { NotifyRevisionRepository } from "./modules/bmhp-approval/notify-revision/notify-revision.repository.js"
-import {
-  BmhpTargetAdjustmentController,
-  BmhpTargetAdjustmentExcelMiddleware,
-  BmhpTargetAdjustmentMiddleware,
-  BmhpTargetAdjustmentModule,
-  BmhpTargetAdjustmentRepository,
-} from "./modules/bmhp-approval/target-and-adjusment/index.js"
-import { BmhpExaminationMethodController } from "./modules/bmhp-examination-methods/bmhp-examination-methods.controller.js"
-import { BmhpExaminationMethodMiddleware } from "./modules/bmhp-examination-methods/bmhp-examination-methods.middleware.js"
-import { BmhpExaminationMethodModule } from "./modules/bmhp-examination-methods/bmhp-examination-methods.module.js"
-import {
-  BmhpExaminationMethodRepository,
-  WsBmhpExaminationMethodRepository,
-} from "./modules/bmhp-examination-methods/bmhp-examination-methods.repository.js"
-import { BmhpExaminationParameterController } from "./modules/bmhp-examination-parameters/bmhp-examination-parameters.controller.js"
-import { BmhpExaminationParameterMiddleware } from "./modules/bmhp-examination-parameters/bmhp-examination-parameters.middleware.js"
-import { BmhpExaminationParameterModule } from "./modules/bmhp-examination-parameters/bmhp-examination-parameters.module.js"
-import { BmhpExaminationParameterRepository } from "./modules/bmhp-examination-parameters/bmhp-examination-parameters.repository.js"
-import { BmhpExaminationTargetGroupController } from "./modules/bmhp-examination-target-groups/bmhp-examination-target-groups.controller.js"
-import { BmhpExaminationTargetGroupMiddleware } from "./modules/bmhp-examination-target-groups/bmhp-examination-target-groups.middleware.js"
-import { BmhpExaminationTargetGroupModule } from "./modules/bmhp-examination-target-groups/bmhp-examination-target-groups.module.js"
-import { BmhpExaminationTargetGroupRepository } from "./modules/bmhp-examination-target-groups/bmhp-examination-target-groups.repository.js"
-import { BmhpMaterialsUnitDetailsController } from "./modules/bmhp-materials-unit-details/bmhp-materials-unit-details.controller.js"
-import { BmhpMaterialsUnitDetailsModule } from "./modules/bmhp-materials-unit-details/bmhp-materials-unit-details.module.js"
-import { BmhpMaterialsUnitDetailRepository } from "./modules/bmhp-materials-unit-details/bmhp-materials-unit-details.repository.js"
-import { BmhpParameterController } from "./modules/bmhp-parameters/bmhp-parameters.controller.js"
-import { BmhpParameterMiddleware } from "./modules/bmhp-parameters/bmhp-parameters.middleware.js"
-import { BmhpParameterModule } from "./modules/bmhp-parameters/bmhp-parameters.module.js"
-import { BmhpParameterRepository } from "./modules/bmhp-parameters/bmhp-parameters.repository.js"
-import { BmhpExaminationTypeRepository } from "./modules/bmhp-planning-examination/bmhp-examination-type.repository.js"
-import { BmhpExaminationController } from "./modules/bmhp-planning-examination/bmhp-examination.controller.js"
-import { BmhpExaminationMiddleware } from "./modules/bmhp-planning-examination/bmhp-examination.middleware.js"
-import {
-  BmhpExaminationModule,
-  ExaminationTargetMaterialsModule,
-} from "./modules/bmhp-planning-examination/bmhp-examination.module.js"
-import { BmhpExaminationRepository } from "./modules/bmhp-planning-examination/bmhp-examination.repository.js"
-import { ExaminationTargetMaterialsRepository } from "./modules/bmhp-planning-examination/examination-target-materials.repository.js"
-import { BmhpPlanningMaterialController } from "./modules/bmhp-planning-material/bmhp-planning-material.controller.js"
-import { BmhpPlanningMaterialMiddleware } from "./modules/bmhp-planning-material/bmhp-planning-material.middleware.js"
-import { BmhpPlanningMaterialModule } from "./modules/bmhp-planning-material/bmhp-planning-material.module.js"
-import {
-  BmhpMaterialDetailRepository,
-  BmhpMaterialRepository,
-} from "./modules/bmhp-planning-material/bmhp-planning-material.repository.js"
-import { BmhpPlanningController } from "./modules/bmhp-planning/bmhp-planning.controller.js"
-import { BmhpPlanningMiddleware } from "./modules/bmhp-planning/bmhp-planning.middleware.js"
-import { BmhpPlanningModule } from "./modules/bmhp-planning/bmhp-planning.module.js"
-import { BmhpPlanningRepository } from "./modules/bmhp-planning/bmhp-planning.repository.js"
-import { BmhpTargetGroupController } from "./modules/bmhp-target-groups/bmhp-target-groups.controller.js"
-import { BmhpTargetGroupMiddleware } from "./modules/bmhp-target-groups/bmhp-target-groups.middleware.js"
-import { BmhpTargetGroupModule } from "./modules/bmhp-target-groups/bmhp-target-groups.module.js"
-import { BmhpTargetGroupRepository } from "./modules/bmhp-target-groups/bmhp-target-groups.repository.js"
 import { BudgetSourceController } from "./modules/budget-source/budget-source.controller.js"
 import { BudgetSourceMiddleware } from "./modules/budget-source/budget-source.middleware.js"
 import { BudgetSourceModule } from "./modules/budget-source/budget-source.module.js"
@@ -131,36 +75,6 @@ import { BiasImmunizationLogisticsController } from "./modules/microplanning/bia
 import { BiasImmunizationLogisticsModule } from "./modules/microplanning/bias-immunization-logistics/bias-immunization-logistics.module.js"
 import { BiasImmunizationLogisticsRepository } from "./modules/microplanning/bias-immunization-logistics/bias-immunization-logistics.repository.js"
 
-import { BmhpApprovalController } from "./modules/bmhp-approval/bmhp-approval/bmhp-approval.controller.js"
-import { BmhpApprovalModule } from "./modules/bmhp-approval/bmhp-approval/bmhp-approval.module.js"
-import { BmhpApprovalRepository } from "./modules/bmhp-approval/bmhp-approval/bmhp-approval.repository.js"
-// import { BmhpApprovalController } from "./modules/bmhp-approval/bmhp-approval.controller.js"
-// import { BmhpApprovalModule } from "./modules/bmhp-approval/bmhp-approval.module.js"
-import { BmhpApprovalMaterialNeedsController } from "./modules/bmhp-approval/bmhp-approval-material-needs/bmhp-approval-material-needs.controller.js"
-import { BmhpApprovalMaterialNeedsModule } from "./modules/bmhp-approval/bmhp-approval-material-needs/bmhp-approval-material-needs.module.js"
-import { BmhpApprovalMaterialNeedsRepository } from "./modules/bmhp-approval/bmhp-approval-material-needs/bmhp-approval-material-needs.repository.js"
-import { BmhpApprovalMinistryController } from "./modules/bmhp-approval/bmhp-approval-ministry/bmhp-approval-ministry.controller.js"
-import { BmhpApprovalMinistryModule } from "./modules/bmhp-approval/bmhp-approval-ministry/bmhp-approval-ministry.module.js"
-import { BmhpApprovalMinistryRepository } from "./modules/bmhp-approval/bmhp-approval-ministry/bmhp-approval-ministry.repository.js"
-import { BmhpApprovalMonitoringController } from "./modules/bmhp-approval/bmhp-approval-monitoring/bmhp-approval-monitoring.controller.js"
-import { BmhpApprovalMonitoringModule } from "./modules/bmhp-approval/bmhp-approval-monitoring/bmhp-approval-monitoring.module.js"
-import { BmhpApprovalMonitoringRepository } from "./modules/bmhp-approval/bmhp-approval-monitoring/bmhp-approval-monitoring.repository.js"
-import { BmhpApprovalNeedsAggregateController } from "./modules/bmhp-approval/bmhp-approval-needs-aggregate/bmhp-approval-needs-aggregate.controller.js"
-import { BmhpApprovalNeedsAggregateModule } from "./modules/bmhp-approval/bmhp-approval-needs-aggregate/bmhp-approval-needs-aggregate.module.js"
-import { BmhpApprovalNeedsAggregateRepository } from "./modules/bmhp-approval/bmhp-approval-needs-aggregate/bmhp-approval-needs-aggregate.repository.js"
-import { BmhpApprovalPreviewController } from "./modules/bmhp-approval/bmhp-approval-preview/bmhp-approval-preview.controller.js"
-import { BmhpApprovalPreviewModule } from "./modules/bmhp-approval/bmhp-approval-preview/bmhp-approval-preview.module.js"
-import { BmhpApprovalPreviewRepository } from "./modules/bmhp-approval/bmhp-approval-preview/bmhp-approval-preview.repository.js"
-import { BmhpApprovalProcurementRecapitulationController } from "./modules/bmhp-approval/bmhp-approval-procurement-recapitulation/bmhp-approval-procurement-recapitulation.controller.js"
-import { BmhpApprovalProcurementRecapitulationModule } from "./modules/bmhp-approval/bmhp-approval-procurement-recapitulation/bmhp-approval-procurement-recapitulation.module.js"
-import { BmhpApprovalProcurementRecapitulationRepository } from "./modules/bmhp-approval/bmhp-approval-procurement-recapitulation/bmhp-approval-procurement-recapitulation.repository.js"
-import { BmhpHistoryController } from "./modules/bmhp-histories/bmhp-histories.controller.js"
-import { BmhpHistoryMiddleware } from "./modules/bmhp-histories/bmhp-histories.middleware.js"
-import { BmhpHistoryModule } from "./modules/bmhp-histories/bmhp-histories.module.js"
-import { BmhpHistoryRepository } from "./modules/bmhp-histories/bmhp-histories.repository.js"
-import { BmhpPlanningPopulationController } from "./modules/bmhp-planning-population/bmhp-planning-population.controller.js"
-import { BmhpPlanningPopulationModule } from "./modules/bmhp-planning-population/bmhp-planning-population.module.js"
-import { BmhpPlanningPopulationRepository } from "./modules/bmhp-planning-population/bmhp-planning-population.repository.js"
 import { ColdstoragePublisher } from "./modules/coldstorage/coldstorage.publisher.js"
 import { ContractController } from "./modules/contracts/contract.controller.js"
 import { ContractModule } from "./modules/contracts/contract.module.js"
@@ -191,9 +105,6 @@ import { DisposalStockMiddleware } from "./modules/disposal/stocks/disposal-stoc
 import { DisposalStockModule } from "./modules/disposal/stocks/disposal-stock.module.js"
 import { DisposalStockRepository } from "./modules/disposal/stocks/disposal-stock.repository.js"
 import { EducationRepository } from "./modules/education/education.repository.js"
-import { EmonevController } from "./modules/emonev/emonev.controller.js"
-import { EmonevModule } from "./modules/emonev/emonev.module.js"
-import { EmonevRepository } from "./modules/emonev/emonev.repository.js"
 import { EntityActivityController } from "./modules/entity-activity/entity-activity.controller.js"
 import { EntityActivityMiddleware } from "./modules/entity-activity/entity-activity.middleware.js"
 import { EntityActivityModule } from "./modules/entity-activity/entity-activity.module.js"
@@ -337,9 +248,6 @@ import { OsrmRouteController } from "./modules/microplanning/osrm-route/osrm-rou
 import { OsrmRouteGateway } from "./modules/microplanning/osrm-route/osrm-route.gateway.js"
 import { OsrmRouteModule } from "./modules/microplanning/osrm-route/osrm-route.module.js"
 
-import { WsPlanTargetGroupController } from "./modules/bmhp-target-group/ws-plan-target-group.controller.js"
-import { WsPlanTargetGroupModule } from "./modules/bmhp-target-group/ws-plan-target-group.module.js"
-import { WsPlanTargetGroupRepository } from "./modules/bmhp-target-group/ws-plan-target-group.repository.js"
 import { MpConfigRepository } from "./modules/microplanning/mp-config/mp-config.repository.js"
 import { NonBiasImmunizationLogisticsController } from "./modules/microplanning/non-bias-immunization-logistics/non-bias-immunization-logistics.controller.js"
 import { NonBiasImmunizationLogisticsModule } from "./modules/microplanning/non-bias-immunization-logistics/non-bias-immunization-logistics.module.js"
@@ -457,11 +365,6 @@ import { RegencyModule } from "./modules/regency/regency.module.js"
 import { RegencyRepository } from "./modules/regency/regency.repository.js"
 import { ReligionRepository } from "./modules/religion/religion.repository.js"
 import { RoleRepository } from "./modules/role/role.repository.js"
-import {
-  SismalController,
-  SismalModule,
-  SismalRepository,
-} from "./modules/sismal/index.js"
 import { StockConsumptionController } from "./modules/stock-consumption/stock-consumption.controller.js"
 import { StockConsumptionModule } from "./modules/stock-consumption/stock-consumption.module.js"
 import { StockConsumptionRepository } from "./modules/stock-consumption/stock-consumption.repository.js"
@@ -579,7 +482,6 @@ const orderRepo = new OrderRepository()
 const orderStockStatusRepo = new OrderStockStatusRepository()
 const orderTypeRepo = new OrderTypeRepository()
 const stockRepo = new StockRepository()
-const sismalRepo = new SismalRepository()
 const stockOpnameRepo = new StockOpnameRepository()
 const stockOpnamePeriodRepo = new StockOpnamePeriodRepository()
 const transactionRepo = new TransactionRepository()
@@ -625,7 +527,6 @@ const eventReportReasonRepo = new EventReportReasonRepository()
 const exportHistoryRepo = new ExportHistoryRepository()
 const orderRelocationRepo = new OrderRelocationRepository()
 const integrationRepo = new OrderIntegrationRepository()
-const emonevRepo = new EmonevRepository()
 const notificationRepo = new NotificationRepository()
 const patientRepo = new PatientRepository()
 const targetsRepo = new TargetsRepository()
@@ -1301,10 +1202,6 @@ const transactionController = new TransactionController(
   deduplicationMiddleware
 )
 
-// Sismal
-const sismalModule = new SismalModule(sismalRepo)
-const sismalController = new SismalController(sismalModule)
-
 // Transaction - Rabies
 const consumptionRabiesModule = new ConsumptionRabiesModule(
   consumptionRabiesRepo,
@@ -1765,290 +1662,6 @@ const biasImmunizationLogisticsController =
     trxMiddleware
   )
 
-// BMHP Planning Material
-const bmhpMaterialRepo = new BmhpMaterialRepository()
-const bmhpMaterialDetailRepo = new BmhpMaterialDetailRepository()
-const bmhpPlanningMaterialMiddleware = new BmhpPlanningMaterialMiddleware(
-  bmhpMaterialRepo
-)
-const bmhpPlanningMaterialModule = new BmhpPlanningMaterialModule(
-  bmhpMaterialRepo,
-  bmhpMaterialDetailRepo
-)
-const bmhpPlanningMaterialController = new BmhpPlanningMaterialController(
-  bmhpPlanningMaterialModule,
-  bmhpPlanningMaterialMiddleware,
-  roleMiddleware
-)
-
-// BMHP Materials Unit Details
-const bmhpMaterialsUnitDetailRepo = new BmhpMaterialsUnitDetailRepository()
-const bmhpMaterialsUnitDetailsModule = new BmhpMaterialsUnitDetailsModule(
-  bmhpMaterialsUnitDetailRepo
-)
-const bmhpMaterialsUnitDetailsController =
-  new BmhpMaterialsUnitDetailsController(bmhpMaterialsUnitDetailsModule)
-
-// BMHP Examination Types
-// const bmhpExaminationTypeRepo = new BmhpExaminationTypesRepository()
-// const bmhpExaminationTypeMiddleware = new BmhpExaminationTypeMiddleware()
-// const bmhpExaminationTypeModule = new BmhpExaminationTypeModule(
-//   bmhpExaminationTypeRepo
-// )
-// const bmhpExaminationTypeController = new BmhpExaminationTypeController(
-//   bmhpExaminationTypeModule,
-//   bmhpExaminationTypeMiddleware
-// )
-
-// BMHP Examinations
-const bmhpExaminationRepo = new BmhpExaminationRepository()
-const bmhpExaminationTypeRepoForExam = new BmhpExaminationTypeRepository()
-const bmhpExaminationTargetGroupRepo =
-  new BmhpExaminationTargetGroupRepository()
-const bmhpExaminationMethodRepoForExam = new BmhpExaminationMethodRepository()
-const bmhpTargetGroupRepoForExam = new BmhpTargetGroupRepository()
-const bmhpParameterRepoForExam = new BmhpParameterRepository()
-const bmhpExaminationMiddleware = new BmhpExaminationMiddleware(
-  bmhpExaminationRepo,
-  bmhpExaminationTypeRepoForExam,
-  bmhpTargetGroupRepoForExam,
-  bmhpExaminationMethodRepoForExam,
-  bmhpParameterRepoForExam
-)
-const bmhpExaminationParameterRepoForExam =
-  new BmhpExaminationParameterRepository()
-const wsBmhpExaminationMethodRepoForExam =
-  new WsBmhpExaminationMethodRepository()
-const examinationTargetMaterialsRepo =
-  new ExaminationTargetMaterialsRepository()
-const bmhpExaminationModule = new BmhpExaminationModule(
-  bmhpExaminationRepo,
-  bmhpExaminationTargetGroupRepo,
-  bmhpExaminationMethodRepoForExam,
-  wsBmhpExaminationMethodRepoForExam,
-  bmhpExaminationParameterRepoForExam,
-  examinationTargetMaterialsRepo
-)
-const examinationTargetMaterialsModule = new ExaminationTargetMaterialsModule(
-  examinationTargetMaterialsRepo
-)
-const bmhpExaminationController = new BmhpExaminationController(
-  bmhpExaminationTypeRepoForExam,
-  bmhpExaminationRepo,
-  bmhpExaminationModule,
-  bmhpExaminationMiddleware,
-  examinationTargetMaterialsModule
-)
-
-// BMHP Examination Parameters
-const bmhpExaminationParameterRepo = new BmhpExaminationParameterRepository()
-const bmhpExaminationParameterMiddleware =
-  new BmhpExaminationParameterMiddleware()
-const bmhpExaminationParameterModule = new BmhpExaminationParameterModule(
-  bmhpExaminationParameterRepo
-)
-const bmhpExaminationParameterController =
-  new BmhpExaminationParameterController(
-    bmhpExaminationParameterModule,
-    bmhpExaminationParameterMiddleware
-  )
-
-// BMHP Parameters
-const bmhpParameterRepo = new BmhpParameterRepository()
-const bmhpParameterMiddleware = new BmhpParameterMiddleware()
-const bmhpParameterModule = new BmhpParameterModule(bmhpParameterRepo)
-const bmhpParameterController = new BmhpParameterController(
-  bmhpParameterModule,
-  bmhpParameterMiddleware
-)
-
-// BMHP Target Groups
-const bmhpTargetGroupRepo = new BmhpTargetGroupRepository()
-const bmhpTargetGroupMiddleware = new BmhpTargetGroupMiddleware()
-const bmhpTargetGroupModule = new BmhpTargetGroupModule(bmhpTargetGroupRepo)
-const bmhpTargetGroupController = new BmhpTargetGroupController(
-  bmhpTargetGroupModule,
-  bmhpTargetGroupMiddleware
-)
-
-// BMHP Examination Target Groups
-// const bmhpExaminationTargetGroupRepo = new BmhpExaminationTargetGroupRepository()
-const bmhpExaminationTargetGroupMiddleware =
-  new BmhpExaminationTargetGroupMiddleware()
-const bmhpExaminationTargetGroupModule = new BmhpExaminationTargetGroupModule(
-  bmhpExaminationTargetGroupRepo
-)
-const bmhpExaminationTargetGroupController =
-  new BmhpExaminationTargetGroupController(
-    bmhpExaminationTargetGroupModule,
-    bmhpExaminationTargetGroupMiddleware
-  )
-
-// BMHP Examination Methods
-const bmhpExaminationMethodRepo = new BmhpExaminationMethodRepository()
-const wsBmhpExaminationMethodRepo = new WsBmhpExaminationMethodRepository()
-const bmhpExaminationMethodMiddleware = new BmhpExaminationMethodMiddleware()
-const bmhpExaminationMethodModule = new BmhpExaminationMethodModule(
-  bmhpExaminationMethodRepo,
-  wsBmhpExaminationMethodRepo
-)
-const bmhpExaminationMethodController = new BmhpExaminationMethodController(
-  bmhpExaminationMethodModule,
-  bmhpExaminationMethodMiddleware
-)
-
-// BMHP Planning
-const bmhpPlanningRepo = new BmhpPlanningRepository()
-const bmhpPlanningMiddleware = new BmhpPlanningMiddleware(bmhpPlanningRepo)
-const bmhpPlanningModule = new BmhpPlanningModule(bmhpPlanningRepo)
-const bmhpPlanningController = new BmhpPlanningController(
-  bmhpPlanningModule,
-  bmhpPlanningMiddleware
-)
-
-// BMHP Target And Target Adjustment
-const bmhpPlanningVerifyRepo = new BmhpTargetAdjustmentRepository()
-const bmhpTargetAdjustmentMiddleware = new BmhpTargetAdjustmentMiddleware()
-const bmhpTargetAdjustmentExcelMiddleware =
-  new BmhpTargetAdjustmentExcelMiddleware(bmhpPlanningVerifyRepo)
-const bmhpApprovalNotificationPublisher = new BmhpApprovalNotificationPublisher(
-  publisher
-)
-const bmhpTargetAdjustmentModule = new BmhpTargetAdjustmentModule(
-  bmhpPlanningVerifyRepo,
-  bmhpApprovalNotificationPublisher
-)
-const bmhpTargetAdjustmentController = new BmhpTargetAdjustmentController(
-  bmhpTargetAdjustmentModule,
-  bmhpTargetAdjustmentMiddleware,
-  excelMiddleware,
-  bmhpTargetAdjustmentExcelMiddleware
-)
-
-// BMHP Approval – Notify Revision
-const notifyRevisionRepo = new NotifyRevisionRepository()
-const notifyRevisionModule = new NotifyRevisionModule(notifyRevisionRepo)
-const notifyRevisionController = new NotifyRevisionController(
-  notifyRevisionModule
-)
-
-const bmhpHistoryRepo = new BmhpHistoryRepository()
-const bmhpHistoryMiddleware = new BmhpHistoryMiddleware()
-const bmhpHistoryModule = new BmhpHistoryModule(bmhpHistoryRepo)
-const bmhpHistoryController = new BmhpHistoryController(
-  bmhpHistoryModule,
-  bmhpHistoryMiddleware
-)
-
-// BMHP Approval - Monitoring
-const bmhpApprovalMonitoringRepo = new BmhpApprovalMonitoringRepository()
-const bmhpApprovalMonitoringModule = new BmhpApprovalMonitoringModule(
-  bmhpApprovalMonitoringRepo
-)
-const bmhpApprovalMonitoringController = new BmhpApprovalMonitoringController(
-  bmhpApprovalMonitoringModule
-)
-
-// BMHP Approval - Preview
-const bmhpApprovalPreviewRepo = new BmhpApprovalPreviewRepository()
-const bmhpApprovalPreviewModule = new BmhpApprovalPreviewModule(
-  bmhpApprovalPreviewRepo
-)
-const bmhpApprovalPreviewController = new BmhpApprovalPreviewController(
-  bmhpApprovalPreviewModule
-)
-
-const bmhpApprovalMaterialNeedsRepo = new BmhpApprovalMaterialNeedsRepository()
-const bmhpApprovalMaterialNeedsModule = new BmhpApprovalMaterialNeedsModule(
-  bmhpApprovalMaterialNeedsRepo
-)
-const bmhpApprovalMaterialNeedsController =
-  new BmhpApprovalMaterialNeedsController(bmhpApprovalMaterialNeedsModule)
-
-const bmhpApprovalProcurementRecapRepo =
-  new BmhpApprovalProcurementRecapitulationRepository()
-const bmhpApprovalProcurementRecapModule =
-  new BmhpApprovalProcurementRecapitulationModule(
-    bmhpApprovalProcurementRecapRepo
-  )
-const bmhpApprovalProcurementRecapController =
-  new BmhpApprovalProcurementRecapitulationController(
-    bmhpApprovalProcurementRecapModule
-  )
-// BMHP Approval - Year
-const bmhpApprovalRepo = new BmhpApprovalRepository()
-const bmhpApprovalModule = new BmhpApprovalModule(
-  bmhpApprovalRepo,
-  bmhpApprovalMonitoringModule,
-  bmhpTargetAdjustmentModule,
-  bmhpApprovalMaterialNeedsModule,
-  bmhpApprovalProcurementRecapModule
-)
-const bmhpApprovalController = new BmhpApprovalController(
-  bmhpApprovalModule,
-  excelMiddleware
-)
-// BMHP Approval - Needs Aggregate
-const bmhpApprovalNeedsAggregateRepo =
-  new BmhpApprovalNeedsAggregateRepository()
-const bmhpApprovalNeedsAggregateModule = new BmhpApprovalNeedsAggregateModule(
-  bmhpApprovalNeedsAggregateRepo
-)
-const bmhpApprovalNeedsAggregateController =
-  new BmhpApprovalNeedsAggregateController(bmhpApprovalNeedsAggregateModule)
-
-// BMHP Approval - Ministry of Health
-const bmhpApprovalMinistryRepo = new BmhpApprovalMinistryRepository()
-const bmhpApprovalMinistryModule = new BmhpApprovalMinistryModule(
-  bmhpApprovalMinistryRepo
-)
-const bmhpApprovalMinistryController = new BmhpApprovalMinistryController(
-  bmhpApprovalMinistryModule
-)
-
-const bmhpApprovalRoutes = new Hono()
-bmhpApprovalRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpApprovalRoutes.use("*", routeTracer.traceRoute("bmhp-approval"))
-bmhpApprovalRoutes.route(
-  "/monitoring",
-  bmhpApprovalMonitoringController.getRoutes()
-)
-bmhpApprovalRoutes.route("/preview", bmhpApprovalPreviewController.getRoutes())
-bmhpApprovalRoutes.route(
-  "/material-needs",
-  bmhpApprovalMaterialNeedsController.getRoutes()
-)
-bmhpApprovalRoutes.route(
-  "/procurement-recapitulation",
-  bmhpApprovalProcurementRecapController.getRoutes()
-)
-bmhpApprovalRoutes.route(
-  "/ministry-of-health",
-  bmhpApprovalMinistryController.getRoutes()
-)
-bmhpApprovalRoutes.route(
-  "/needs-aggregate",
-  bmhpApprovalNeedsAggregateController.getRoutes()
-)
-
-// BMHP Approval Target
-bmhpApprovalRoutes.use("*", routeTracer.traceRoute("bmhp-approval"))
-bmhpApprovalRoutes.route("/", bmhpTargetAdjustmentController.getRoutes())
-bmhpApprovalRoutes.route("/", notifyRevisionController.getRoutes())
-bmhpApprovalRoutes.route("/", bmhpApprovalController.getRoutes())
-
-// BMHP Planning Population
-const bmhpPlanningPopulationRepo = new BmhpPlanningPopulationRepository()
-const bmhpPlanningPopulationModule = new BmhpPlanningPopulationModule(
-  bmhpPlanningPopulationRepo
-)
-const bmhpPlanningPopulationController = new BmhpPlanningPopulationController(
-  bmhpPlanningPopulationModule
-)
-
 // Non-Bias Immunization Logistics
 const nonBiasImmunizationLogisticsRepo =
   new NonBiasImmunizationLogisticsRepository()
@@ -2264,25 +1877,6 @@ const annualCommitmentController = new AnnualCommitmentController(
   roleMiddleware,
   excelMiddleware
 )
-
-// // BMHP Examination
-// const bmhpExaminationTypeRepo = new BmhpExaminationTypeRepository()
-// const bmhpExaminationRepo = new BmhpExaminationRepository()
-// const bmhpExaminationMiddleware = new BmhpExaminationMiddleware(
-//   bmhpExaminationRepo,
-//   bmhpExaminationTypeRepo
-// )
-// const bmhpExaminationModule = new BmhpExaminationModule(bmhpExaminationRepo)
-// const bmhpExaminationController = new BmhpExaminationController(
-//   bmhpExaminationTypeRepo,
-//   bmhpExaminationRepo,
-//   bmhpExaminationModule,
-//   bmhpExaminationMiddleware
-// )
-
-// Emonev
-const emonevModule = new EmonevModule(emonevRepo)
-const emonevController = new EmonevController(emonevModule)
 
 // Main App routes
 const mainApp = new Hono()
@@ -2904,11 +2498,6 @@ transactionTransferStockRoutes.route(
 )
 mainApp.route("/transactions", transactionTransferStockRoutes)
 
-const sismalRoutes = new Hono()
-sismalRoutes.use("*", routeTracer.traceRoute("sismal"))
-sismalRoutes.route("/", sismalController.getRoutes())
-mainApp.route("/sismal", sismalRoutes)
-
 // Reconciliation Additional routes with tracing
 const reconciliationAdditionalRoutes = new Hono()
 reconciliationAdditionalRoutes.use(
@@ -3233,177 +2822,6 @@ biasImmunizationLogisticsRoutes.route(
 )
 mainApp.route("/bias-immunization-logistics", biasImmunizationLogisticsRoutes)
 
-// BMHP Planning Routes
-const bmhpPlanningRoutes = new Hono()
-bmhpPlanningRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpPlanningRoutes.use("*", routeTracer.traceRoute("bmhp-planning"))
-bmhpPlanningRoutes.route("/", bmhpPlanningController.getRoutes())
-mainApp.route("/bmhp-planning", bmhpPlanningRoutes)
-
-// BMHP Approval routes
-mainApp.route("/bmhp-approval", bmhpApprovalRoutes)
-
-const bmhpHistoryRoutes = new Hono()
-bmhpHistoryRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpHistoryRoutes.use("*", routeTracer.traceRoute("bmhp-histories"))
-bmhpHistoryRoutes.route("/", bmhpHistoryController.getRoutes())
-mainApp.route("/bmhp-histories", bmhpHistoryRoutes)
-
-// BMHP Planning Population Routes
-const bmhpPlanningPopulationRoutes = new Hono()
-bmhpPlanningPopulationRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpPlanningPopulationRoutes.use(
-  "*",
-  routeTracer.traceRoute("bmhp-planning-populations")
-)
-bmhpPlanningPopulationRoutes.route(
-  "/",
-  bmhpPlanningPopulationController.getRoutes()
-)
-mainApp.route("/bmhp-planning-populations", bmhpPlanningPopulationRoutes)
-
-// BMHP Planning Material Routes
-const bmhpPlanningMaterialRoutes = new Hono()
-bmhpPlanningMaterialRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpPlanningMaterialRoutes.use(
-  "*",
-  routeTracer.traceRoute("bmhp-planning-materials")
-)
-bmhpPlanningMaterialRoutes.route(
-  "/",
-  bmhpPlanningMaterialController.getRoutes()
-)
-mainApp.route("/bmhp-planning-materials", bmhpPlanningMaterialRoutes)
-
-// BMHP Materials Unit Details Routes
-const bmhpMaterialsUnitDetailsRoutes = new Hono()
-bmhpMaterialsUnitDetailsRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpMaterialsUnitDetailsRoutes.use(
-  "*",
-  routeTracer.traceRoute("bmhp-materials-unit-details")
-)
-bmhpMaterialsUnitDetailsRoutes.route(
-  "/",
-  bmhpMaterialsUnitDetailsController.getRoutes()
-)
-mainApp.route("/bmhp-materials-unit-details", bmhpMaterialsUnitDetailsRoutes)
-
-// BMHP Examinations Routes
-const bmhpExaminationsRoutes = new Hono()
-bmhpExaminationsRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpExaminationsRoutes.use("*", routeTracer.traceRoute("bmhp-examinations"))
-bmhpExaminationsRoutes.route("/", bmhpExaminationController.getRoutes())
-mainApp.route("/bmhp-examinations", bmhpExaminationsRoutes)
-
-// BMHP Examination Parameters Routes
-const bmhpExaminationParametersRoutes = new Hono()
-bmhpExaminationParametersRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpExaminationParametersRoutes.use(
-  "*",
-  routeTracer.traceRoute("bmhp-examination-parameters")
-)
-bmhpExaminationParametersRoutes.route(
-  "/",
-  bmhpExaminationParameterController.getRoutes()
-)
-mainApp.route("/bmhp-examination-parameters", bmhpExaminationParametersRoutes)
-
-// BMHP Parameters Routes
-const bmhpParametersRoutes = new Hono()
-bmhpParametersRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpParametersRoutes.use("*", routeTracer.traceRoute("bmhp-parameters"))
-bmhpParametersRoutes.route("/", bmhpParameterController.getRoutes())
-mainApp.route("/bmhp-parameters", bmhpParametersRoutes)
-
-// BMHP Target Groups Routes - Plan
-const wsPlanTargetGroupRepo = new WsPlanTargetGroupRepository()
-const wsPlanTargetGroupModule = new WsPlanTargetGroupModule(
-  wsPlanTargetGroupRepo
-)
-const wsPlanTargetGroupController = new WsPlanTargetGroupController(
-  wsPlanTargetGroupModule
-)
-const wsPlanTargetGroupRoutes = new Hono()
-wsPlanTargetGroupRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-wsPlanTargetGroupRoutes.use(
-  "*",
-  routeTracer.traceRoute("ws-plan-target-groups")
-)
-wsPlanTargetGroupRoutes.route("/", wsPlanTargetGroupController.getRoutes())
-mainApp.route("/bmhp-target-groups/plan", wsPlanTargetGroupRoutes)
-
-// BMHP Target Groups Routes
-const bmhpTargetGroupsRoutes = new Hono()
-bmhpTargetGroupsRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpTargetGroupsRoutes.use("*", routeTracer.traceRoute("bmhp-target-groups"))
-bmhpTargetGroupsRoutes.route("/", bmhpTargetGroupController.getRoutes())
-mainApp.route("/bmhp-target-groups", bmhpTargetGroupsRoutes)
-
-// BMHP Examination Target Groups Routes
-const bmhpExaminationTargetGroupsRoutes = new Hono()
-bmhpExaminationTargetGroupsRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpExaminationTargetGroupsRoutes.use(
-  "*",
-  routeTracer.traceRoute("bmhp-examination-target-groups")
-)
-bmhpExaminationTargetGroupsRoutes.route(
-  "/",
-  bmhpExaminationTargetGroupController.getRoutes()
-)
-mainApp.route(
-  "/bmhp-examination-target-groups",
-  bmhpExaminationTargetGroupsRoutes
-)
-
-// BMHP Examination Methods Routes
-const bmhpExaminationMethodsRoutes = new Hono()
-bmhpExaminationMethodsRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.bmhp", { defaultEnabled: false })
-)
-bmhpExaminationMethodsRoutes.use(
-  "*",
-  routeTracer.traceRoute("bmhp-examination-methods")
-)
-bmhpExaminationMethodsRoutes.route(
-  "/",
-  bmhpExaminationMethodController.getRoutes()
-)
-mainApp.route("/bmhp-examination-methods", bmhpExaminationMethodsRoutes)
-
 const nonBiasImmunizationLogisticsRoutes = new Hono()
 nonBiasImmunizationLogisticsRoutes.use(
   "*",
@@ -3425,12 +2843,6 @@ mainApp.route(
   "/non-bias-immunization-logistics",
   nonBiasImmunizationLogisticsRoutes
 )
-
-// Emonev routes
-const emonevRoutes = new Hono()
-emonevRoutes.use("*", routeTracer.traceRoute("integration-emonev"))
-emonevRoutes.route("/", emonevController.getRoutes())
-mainApp.route("/integration/emonev", emonevRoutes)
 
 // Environmental Health routes
 import { EnvironmentalHealthController } from "./modules/environmental-health/environmental-health.controller.js"
@@ -3455,7 +2867,6 @@ envHealthRoutes.route("/", envHealthController.getRoutes())
 mainApp.route("/environmental-health", envHealthRoutes)
 
 // Environmental Health History routes (Web)
-import { BmhpApprovalNotificationPublisher } from "./modules/bmhp-approval/notification/bmhp-approval-notification.publisher.js"
 import { EnvironmentalHealthHistoryController } from "./modules/environmental-health-history/environmental-health-history.controller.js"
 import { EnvironmentalHealthHistoryMiddleware } from "./modules/environmental-health-history/environmental-health-history.middleware.js"
 import { EnvironmentalHealthHistoryModule } from "./modules/environmental-health-history/environmental-health-history.module.js"

@@ -33,15 +33,11 @@ import assetType from '../pages/asset-type/locales/en.json'
 import assetVendor from '../pages/asset-vendor/locales/en.json'
 import assetVendor from '../pages/asset-vendor/locales/en.json'
 import assetVendor from '../pages/asset-vendor/locales/en.json'
-import bmhpApproval from '../pages/bmhp-approval/bmhp-approval/locales/en.json'
-import bmhpPlanning from '../pages/bmhp/bmhp-planning/locales/en.json'
-import masterBmhp from '../pages/bmhp/locales/en.json'
 import budgetSource from '../pages/budget-source/locales/en.json'
 import coldStorageCapacity from '../pages/cold-storage-capacity/locales/en.json'
 import coldStorageCapacity from '../pages/cold-storage-capacity/locales/en.json'
 import dashboardAnnualCommitmentVsRealization from '../pages/dashboard/dashboard-annual-commitment-vs-realization/locales/en.json'
 import dashboardAnnualCommitmentVsRealization from '../pages/dashboard/dashboard-annual-commitment-vs-realization/locales/en.json'
-import dashboardAsik from '../pages/dashboard/dashboard-asik/locales/en.json'
 import dashboardAssetOwnershipInventory from '../pages/dashboard/dashboard-asset-ownership-inventory/locales/en.json'
 import dashboardAssetOwnershipInventory from '../pages/dashboard/dashboard-asset-ownership-inventory/locales/en.json'
 import dashboardColdStorageCapacity from '../pages/dashboard/dashboard-cold-storage-capacity/locales/en.json'
@@ -53,7 +49,6 @@ import dashboardMicroplanning from '../pages/dashboard/dashboard-microplanning/l
 import dashboardOrder from '../pages/dashboard/dashboard-order/locales/en.json'
 import dashboardRabies from '../pages/dashboard/dashboard-rabies/locales/en.json'
 import dashboardReport from '../pages/dashboard/dashboard-report/locales/en.json'
-import dashboardSmileSmdv from '../pages/dashboard/dashboard-smile-smdv/locales/en.json'
 import dashboardStockTaking from '../pages/dashboard/dashboard-stock-taking/locales/en.json'
 import dashboardStock from '../pages/dashboard/dashboard-stock/locales/en.json'
 import dashboardAssetTemperatureMonitoring from '../pages/dashboard/dashboard-temperature-monitoring/locales/en.json'
@@ -188,7 +183,6 @@ declare module 'i18next' {
       dashboardInventory: typeof dashboardInventory
       dashboardDiscard: typeof dashboardDiscard
       dashboardReport: typeof dashboardReport
-      dashboardAsik: typeof dashboardAsik
       dashboardInventoryOverview: typeof dashboardInventoryOverview
       dashboardRabies: typeof dashboardRabies
       dashboardColdStorageCapacity: typeof dashboardColdStorageCapacity
@@ -217,14 +211,10 @@ declare module 'i18next' {
       dashboardAssetTemperatureMonitoring: typeof dashboardAssetTemperatureMonitoring
       annualCommitmentDetail: typeof annualCommitmentDetail
       dashboardAnnualCommitmentVsRealization: typeof dashboardAnnualCommitmentVsRealization
-      masterBmhp: typeof masterBmhp
-      bmhpPlanning: typeof bmhpPlanning
-      bmhpApproval: typeof bmhpApproval
       analysisParameter: typeof analysisParameter
       testMethod: typeof testMethod
       parameterCategory: typeof parameterCategory
       environmentalHealthHistory: typeof environmentalHealthHistory
-      dashboardSmileSmdv: typeof dashboardSmileSmdv
     }
   }
 }

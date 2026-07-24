@@ -29,7 +29,7 @@ import {
 } from "./distribution.util.js"
 import moment from "moment"
 import { RegionRepository } from "@/modules/region/region.repository.js"
-import { round } from "@smile/lib/utils.js"
+import { round } from "@smile-health/lib/utils.js"
 
 export class ExecutiveDashboardDistributionModule {
   constructor(

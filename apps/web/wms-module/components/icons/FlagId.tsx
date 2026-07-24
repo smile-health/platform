@@ -1,0 +1,17 @@
+import { SVGProps } from 'react';
+
+export default function FlagId(props: SVGProps<SVGSVGElement>) {
+  const { dominantBaseline, textAnchor, ...svgProps } = props;
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 512 512"
+      {...svgProps}
+    >
+      <path fill="#e70011" d="M0 0h512v256H0Z"></path>
+      <path fill="#fff" d="M0 256h512v256H0Z"></path>
+    </svg>
+  );
+}

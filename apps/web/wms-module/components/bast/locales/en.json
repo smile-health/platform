@@ -1,0 +1,45 @@
+{
+  "list": {
+    "list": "Handover Document",
+    "filter": {
+      "handover_document": {
+        "search": {
+          "label": "Search",
+          "placeholder": "Search handover document"
+        }
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "no_handover_document": "No Handover Document",
+      "entity_name": "Entity Name",
+      "created_by": "Created By",
+      "handover_document": "Handover Document",
+      "description": "Description",
+      "status": "Status",
+      "created_at": "Submission Date",
+      "material_name": "Material Name",
+      "qty": "Qty",
+      "material_id": "Material ID",
+      "action": "Action"
+    },
+    "action": {
+      "approve": "Approve",
+      "reject": "Reject",
+      "description": "Are you sure you want to approve this handover document {{bast}}?"
+    }
+  },
+  "title": {
+    "handover_document": "Handover Document",
+    "handover_document_list": "Handover Document List",
+    "handover_document_detail": "Handover Document Detail",
+    "handover_document_approval": "Handover Document Approval"
+  },
+  "bast_status": {
+    "PENDING": "Pending Approval",
+    "APPROVED": "Approved",
+    "REJECTED": "Rejected"
+  }
+}

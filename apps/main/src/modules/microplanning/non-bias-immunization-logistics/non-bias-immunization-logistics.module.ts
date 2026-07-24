@@ -13,8 +13,8 @@ import {
   resolveLogisticsIds,
   type VialNeedResult,
 } from "@/common/utils/material-key.utils.js"
-import { ValidationError } from "@smile/lib/error.js"
-import { ExportTemplate } from "@smile/lib/excel.js"
+import { ValidationError } from "@smile-health/lib/error.js"
+import { ExportTemplate } from "@smile-health/lib/excel.js"
 import Excel from "exceljs"
 import { Context } from "hono"
 import moment from "moment"

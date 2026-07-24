@@ -1,4 +1,4 @@
-import { BaseController } from "@smile/lib/base/controller"
+import { BaseController } from "@smile-health/lib/base/controller"
 import { Hono } from "hono"
 import { CleansingModule } from "./cleansing.module"
 import { CleansingMiddleware } from "./cleansing.middleware"

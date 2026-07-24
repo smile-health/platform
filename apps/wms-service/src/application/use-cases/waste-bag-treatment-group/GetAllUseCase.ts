@@ -1,0 +1,55 @@
+import WasteTreatmentGroupRepository from '../../../domain/repositories/WasteBagTreatmentGroupRepository';
+import WasteTreatmentGroup from '../../../domain/entities/WasteBagTreatmentGroup';
+
+export default class GetAllWasteTreatmentGroupUseCase {
+    constructor(private readonly wasteSourceRepository: WasteTreatmentGroupRepository) {}
+
+    async execute(
+        limit: number,
+        page: number,
+        entityId?: number,
+        startDate?: Date,
+        endDate?: Date,
+        status?:
+            | 'INTERNAL_LANDFILL_IN_PROCESS'
+            | 'INTERNAL_LANDFILLED'
+            | 'IN_TEMPORARY_STORAGE'
+            | 'IN_COLD_STORAGE'
+            | 'INCINERATION_IN_PROCESS'
+            | 'STERILIZATION_IN_PROCESS'
+            | 'INCINERATED'
+            | 'STERILISED'
+            | 'READY_FOR_TRANSPORT'
+            | 'TRANSPORTATION_REQUEST_CREATED'
+            | 'IN_TRANSIT'
+            | 'READY_FOR_TREATMENT'
+            | 'RECYCLED'
+            | 'LANDFILLED'
+            | 'COLLECTED'
+            | 'DISPOSED',
+    ): Promise<{
+        data: WasteTreatmentGroup[];
+        pagination: {
+            total: number;
+            pages: number;
+            currentPage: number;
+            perPage: number;
+        };
+    }> {
+        try {
+            const wasteSources = await this.wasteSourceRepository.getAllWasteTreatMentGroup(
+                limit,
+                page,
+                entityId,
+                startDate,
+                endDate,
+                status,
+            );
+            console.log('Fetched all waste sources successfully:', wasteSources);
+            return wasteSources;
+        } catch (error) {
+            console.error('Error fetching all waste sources:', error);
+            throw new Error(error instanceof Error ? error.message : String(error));
+        }
+    }
+}

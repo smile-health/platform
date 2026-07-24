@@ -1,0 +1,17 @@
+{
+  "list": {
+    "list": "Explanation of Waste Classification",
+    "column": {
+      "waste_type": "Waste Type",
+      "waste_type_description": "Description of Waste Type",
+      "waste_group": "Waste Group",
+      "waste_group_description": "Description of Waste Group",
+      "waste_characteristics": "Waste Characteristics",
+      "waste_characteristics_description": "Description of Waste Characteristics"
+    },
+    "message": {
+      "no_characteristics": "No characteristics defined.",
+      "no_data": "No waste specifications available."
+    }
+  }
+}

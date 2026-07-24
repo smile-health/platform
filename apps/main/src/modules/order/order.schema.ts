@@ -1,5 +1,5 @@
-import { PaginationQueriesSchema } from "@smile/lib/types/paginate.js"
-import { IdParamsSchema } from "@smile/lib/types/param.js"
+import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
+import { IdParamsSchema } from "@smile-health/lib/types/param.js"
 import z from "zod"
 
 export const LIST_PAGINATION = [10, 25, 50, 100]

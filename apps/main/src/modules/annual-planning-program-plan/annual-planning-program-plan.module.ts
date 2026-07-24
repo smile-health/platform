@@ -1,6 +1,6 @@
-import { ValidationError } from "@smile/lib/error.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
-import { generateEventCode } from "@smile/lib/utils.js"
+import { ValidationError } from "@smile-health/lib/error.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
+import { generateEventCode } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import { AnnualPlanningProgramPlanRepository } from "./annual-planning-program-plan.repository.js"
 import {
@@ -191,16 +191,13 @@ export class AnnualPlanningProgramPlanModule {
       throw new ValidationError(c.var.t("validator.program_plan_not_found"))
     }
 
-    const isBmhp = detail.approach_name === "BMHP"
-    const status = isBmhp
-      ? await this.repository.getBmhpStatus(c, id)
-      : {
-          target_group: !!detail.id_target_group,
-          population: !!detail.id_population,
-          needs_calculation: !!detail.id_tasks,
-          material_ratio: !!detail.id_material_ratio,
-          material_substitution: !!detail.id_material_substitution,
-        }
+    const status = {
+      target_group: !!detail.id_target_group,
+      population: !!detail.id_population,
+      needs_calculation: !!detail.id_tasks,
+      material_ratio: !!detail.id_material_ratio,
+      material_substitution: !!detail.id_material_substitution,
+    }
 
     return {
       id: detail.id,
@@ -235,12 +232,6 @@ export class AnnualPlanningProgramPlanModule {
       throw new ValidationError(c.var.t("validator.program_plan_not_found"))
     }
 
-    const isBmhp = detail.approach_name === "BMHP"
-    if (isBmhp) {
-      const bmhpStatus = await this.repository.getBmhpStatus(c, id)
-      return { id, ...bmhpStatus }
-    }
-
     return {
       id,
       target_group_complete: !!detail.id_target_group,
@@ -257,17 +248,6 @@ export class AnnualPlanningProgramPlanModule {
 
     if (!detail) {
       throw new ValidationError(c.var.t("validator.program_plan_not_found"))
-    }
-
-    const isBmhp = detail.approach_name === "BMHP"
-    if (isBmhp) {
-      const bmhpStatus = await this.repository.getBmhpStatus(c, id)
-      const allComplete = Object.values(bmhpStatus).every(Boolean)
-      if (!allComplete) {
-        throw new ValidationError(
-          "Tidak dapat memfinalkan. Pastikan semua data telah lengkap."
-        )
-      }
     }
 
     await this.repository.update(c, { status: 1 }, { id })

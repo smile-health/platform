@@ -67,45 +67,6 @@ test.describe("Specialized Modules — Rabies Dashboard", () => {
   });
 });
 
-test.describe("Specialized Modules — Smile vs ASIK", () => {
-  const P = { program_id: "1" };
-
-  test("GET /asik returns comparison data", async ({ request }) => {
-    const res = await apiGet(request, "/asik", P);
-    expect(res.ok()).toBeTruthy();
-    const body = await res.json();
-    expect(body).toBeDefined();
-    const data = body.data || body;
-    if (Array.isArray(data) && data.length > 0) {
-      const item = data[0];
-      expectStringField(item, "health_facility");
-      expectNumericField(item, "smile_quantity");
-      expectNumericField(item, "asik_quantity");
-      expectNumericField(item, "difference");
-      expectNoNaN(item);
-    }
-  });
-});
-
-test.describe("Specialized Modules — Smile vs Biofarma", () => {
-  const P = { program_id: "1" };
-
-  test("GET /biofarma returns comparison data", async ({ request }) => {
-    const res = await apiGet(request, "/biofarma", P);
-    expect(res.ok()).toBeTruthy();
-    const body = await res.json();
-    expect(body).toBeDefined();
-    const data = body.data || body;
-    if (Array.isArray(data) && data.length > 0) {
-      const item = data[0];
-      expectStringField(item, "health_facility");
-      expectNumericField(item, "smile_quantity");
-      expectNumericField(item, "biofarma_quantity");
-      expectNumericField(item, "difference");
-      expectNoNaN(item);
-    }
-  });
-});
 
 test.describe("Specialized Modules — Asset Inventory", () => {
   const P = { program_id: "1" };

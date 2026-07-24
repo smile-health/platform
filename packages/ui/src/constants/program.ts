@@ -23,7 +23,6 @@ export enum ProgramEnum {
   KIA = 'kia',
   Kusta = 'kusta',
   WasteManagement = 'waste-management',
-  BMHP = 'bmhp-skrining',
   Kesling = 'kesling',
 }
 
@@ -171,14 +170,6 @@ export const WORKSPACE: Record<ProgramEnum, TProgramPoc> = {
     bg: 'ui-bg-[#047856]',
     color: 'ui-text-white',
   },
-  'bmhp-skrining': {
-    id: 2,
-    key: ProgramEnum.BMHP,
-    name: 'PKG-TEST',
-    label: 'BMHP',
-    bg: 'ui-bg-[#047856]',
-    color: 'ui-text-white',
-  },
   'kesling': {
     id: 2,
     key: ProgramEnum.Kesling,
@@ -204,7 +195,6 @@ export const programPocList = [
   WORKSPACE.keswa,
   WORKSPACE.kia,
   WORKSPACE.kusta,
-  WORKSPACE['bmhp-skrining'],
   WORKSPACE.kesling,
 ]
 
@@ -213,7 +203,7 @@ export const noProgram = (t: TFunction) => ({
   value: 0,
 })
 
-export const ProgramWasteManagement = (): TProgram => ({
+export const ProgramWasteManagement = (lang?: string): TProgram => ({
   id: 999,
   key: ProgramEnum.WasteManagement,
   name: 'Waste Management',
@@ -227,7 +217,10 @@ export const ProgramWasteManagement = (): TProgram => ({
     is_annual_planning: false,
   },
   protocols: [],
-  href: `${process.env.URL_WMS}/wms/validate-token`,
+  // In-app now that the WMS frontend has been merged into apps/web (see
+  // apps/web/pages/wms and apps/web/wms-module) — no more /wms/validate-token handoff
+  // to a separate origin.
+  href: `/wms/${lang ?? 'id'}/transaction-monitoring`,
   created_at: '',
   updated_at: '',
 })
@@ -237,7 +230,6 @@ export const IconPrograms: Record<string, string> = {
   'malaria': '/images/icon-programs/SMILE_MALARIA.png',
   'tb': '/images/icon-programs/SMILE_TUBERKOLOSIS.png',
   'hiv': '/images/icon-programs/SMILE_HIV.png',
-  'bmhp-skrining': '/images/icon-programs/SMILE_CKG.png',
   'diare': '/images/icon-programs/SMILE_DIARE.png',
   'kusta': '/images/icon-programs/SMILE_KUSTA.png',
   'frambusia': '/images/icon-programs/SMILE_FRAMBUSIA.png',

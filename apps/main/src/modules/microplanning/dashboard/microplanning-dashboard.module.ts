@@ -1,5 +1,5 @@
 import { LOCATION } from "@/common/constants/location.js"
-import { FileResponse } from "@smile/lib/types/file.js"
+import { FileResponse } from "@smile-health/lib/types/file.js"
 import { Context } from "hono"
 import moment from "moment"
 import { LocationRepository } from "../location/location.repository.js"

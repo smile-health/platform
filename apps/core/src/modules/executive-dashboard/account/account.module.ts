@@ -4,20 +4,20 @@ import { Context } from "hono"
 import * as jwt from "jsonwebtoken"
 import moment from "moment"
 import env from "@/config/env.js"
-import { collect, getLabelByKey, pick } from "@smile/lib/utils.js"
+import { collect, getLabelByKey, pick } from "@smile-health/lib/utils.js"
 import {
   BadRequestError,
   NotFoundError,
   UnauthorizedError,
   ValidationError,
-} from "@smile/lib/error.js"
+} from "@smile-health/lib/error.js"
 import {
   DEVICE_TYPE,
   USER_CHANGELOGS_FIELD,
   USER_GENDER,
   USER_ROLE,
 } from "@/common/constants/users.js"
-import { logger } from "@smile/lib/logger.js"
+import { logger } from "@smile-health/lib/logger.js"
 import { AuthKeycloakService } from "../../auth/auth.keycloak.service.js"
 import { EntityRepository } from "../../entity/entity.repository.js"
 import { LocationRepository } from "../../location/location.repository.js"
@@ -35,7 +35,7 @@ import { ExecutiveWorkspaceRepository } from "../workspace/workspace.repository.
 import { extractJSONFromString } from "@/modules/user/user.schema.js"
 import { ExecutiveRoleRepository } from "../role/role.repository.js"
 import { ExecutiveUserChangelogRepository } from "../user_changelog/user_changelog.repository.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
 import { StatusCodes } from "http-status-codes"
 
 export class ExecutiveAccountModule {

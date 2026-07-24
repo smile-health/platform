@@ -5,7 +5,7 @@ import {
   InvalidSensor,
   RTMDEntityMismatch,
 } from "@/modules/asset-inventory/asset-inventory.error.js"
-import { ValidationError } from "@smile/lib/error.js"
+import { ValidationError } from "@smile-health/lib/error.js"
 
 describe("asset-inventory custom errors", () => {
   it("InvalidAsset is an instance of ValidationError and Error", () => {

@@ -1,0 +1,333 @@
+{
+    "common": {
+        "user-info-not-found": "User information is missing",
+        "missing-token": "Authorization token required",
+        "entity-invalid": "Entity is not valid",
+        "server-error": "Internal Server Error",
+        "limit": "Rate limit exceeded",
+        "validate-token": "Validate token error",
+        "not-found": "Data not found"
+    },
+    "region": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "healthfacility": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste": {
+        "error": {
+            "WASTE_TRANSPORTATION_GROUP_NOT_FOUND": "Waste Transportation External Group Ids and QR CodeIds cannot be empty",
+            "TRANSPORTATION_GROUP_NOT_FOUND": "Waste Transportation External Group not found",
+            "GROUP_ID_NOT_FOUND": "Group id not found",
+            "VEHICLE_NOT_FOUND": "Number vehicle registration not found",
+            "UNSUCCESS_HANDOVER_TREATMENT_WG": "Failed to create Waste Bag Treatment Group for Hadover",
+            "INVALID_ARRAY_WBQC": "Waste Bag Qr Code Id is required and must be an array",
+            "WG_TRANSPORTATION_EXTERNAL_NOT_FOUND": "Waste Transportation External Group Id not found",
+            "MISSING_FIELD": "Missing required fields for creating WasteBag",
+            "MANUAL_REQUEST_REJECT": "Manual request not requested or got rejected",
+            "INVALID_BIN": "Invalid bin number",
+            "INVALID_ACTION_TYPE": "Invalid Action Type provided",
+            "UNCOMPLETED_ACTION_TYPE": "Follow-up action uncompleted",
+            "WASTE_CLASSIFICATION_NOT_FOUND": "Waste classification not found.",
+            "MIXED_CLASSIFICATION_NOT_ALLOWED": "All waste bags in a batch must have the same waste classification",
+            "MAX_STORAGE_TIME_NOT_FOUND": "Temporary storage max hours not defined",
+            "MAX_COLD_STORAGE_TIME_NOT_FOUND": "Cold storage max hours not defined",
+            "NOT_USE_COLD_STORAGE": "Waste Classification not use cold storage",
+            "FACILITY_COLD_STORAGE_NOT_FOUND": "Cold Storage is not available on healthcare facility",
+            "UNSUCCESS_CREATE_COLD_STORAGE_WG": "Failed to create Waste Bag Treatment Group for Cold Storage",
+            "UNSUCCESS_CREATE_STERILISE_WG": "Failed to create Waste Bag Treatment Group for Sterilize",
+            "UNSUCCESS_CREATE_INCINERATION_WG": "Failed to create Waste Bag Treatment Group for Incinerate",
+            "UNSUCCESS_CREATE_INTERNAL_LANDFILL_WG": "Failed to create Waste Bag Treatment Group for Internal Landfill",
+            "UNSUCCESS_CREATE_TP1_WG": "Failed to create Waste Bag Treatment Group for Transportation Group 1",
+            "UNSUCCESS_CREATE_TP2_WG": "Failed to create Waste Bag Treatment Group for Transportation Group 2",
+            "PARTNERSHIP_TRANSPORTER_NOT_FOUND": "Transporter partnership not found on this waste classification",
+            "PARTNERSHIP_THIRD_PARTY_NOT_FOUND": "Third party partnership not found on this waste classification",
+            "NOT_FOUND_WG": "Waste bag group not found",
+            "NOT_FOUND": "Waste bag not found"
+        },
+        "success": {
+            "DETAIL": "Waste bag detail retrieved successfully",
+            "RETRIEVED": "Waste bags retrieved successfully",
+            "FOLLOW_UP_COMPLETED": "Follow-up action completed successfully",
+            "NOT_FOUND": "Waste bag not found"
+        }
+    },
+    "asset": {
+        "error": {
+            "NOT_FOUND_MANUFACTURER": "Asset manufacturer not found",
+            "NOT_FOUND": "Asset not found"
+        },
+        "success": ""
+    },
+    "asset-model": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "asset-dongle": {
+        "error": {
+            "NOT_FOUND": "",
+            "ALREADY_EXIST_IN_ASSET_ID": "Asset ID sudah ada."
+        },
+        "success": ""
+    },
+    "healthcare-facility-asset": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "healthcare-asset": {
+        "error": {
+            "NOT_FOUND": "",
+            "ERROR_DONGLE_ID": "IoT ID is not authenticated. Please request approval from the Ministry of Health."
+        },
+        "success": ""
+    },
+    "healthcare-facility-settings": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-source": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-source-group": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "partnership": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": "",
+        "partnership_created": "New Partnership Created",
+        "partnership_expired": "Partnership Expiry Reminder",
+        "partnership_expired_exceed": "Partnership Expired",
+        "partnership_updated": "Partnership Updated"
+    },
+    "partnership-operator-map": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "partnership-vehicle-map": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-hierarchy": {
+        "error": {
+            "ALREADY_EXIST_IN_HIERARCHY": "You cannot delete a waste type that still has associated waste groups. Please contact the Helpdesk.",
+            "ALREADY_EXIST_IN_CLASSIFICATION": "You cannot delete a waste type that still has associated waste classifications. Please contact the Helpdesk.",
+            "NOT_VALID": "Invalid request.",
+            "NOT_FOUND": "Waste hierarchy not found."
+        },
+        "success": "Waste hierarchy processed successfully."
+    },
+    "waste-classification": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "qr-code-config": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "scale-data": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "transporter-operator-coordinates": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "partner-vehicle": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-bag-qrcode": {
+        "error": {
+            "RADIOACTIVE_STILL_IN_STORAGE": "The radioactive waste is still in the storage period and cannot be processed yet",
+            "ALREADY_REGISTERED": "QR Code is already registered on wastebag",
+            "NOT_FOUND_WS": "Waste Source with not found",
+            "NOT_FOUND_CLASSIFICATION": "Waste Classification with not found",
+            "NOT_FOUND": "QR Code Waste Bag not found"
+        },
+        "success": ""
+    },
+    "waste-transportation-group": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-transportation-request": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-bag-treatment-group": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-bag-treatment-request": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "healthcare-facility-asset-activity": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "entity-settings": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "entity-location": {
+        "error": {
+            "ENTITY_TAG_MISSING": "Entity tag is missing",
+            "ALREADY_EXIST": "Data already exist",
+            "NOT_FOUND": "Entity location not found"
+        },
+        "success": ""
+    },
+    "global-settings": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "roles": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "audit-trail": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "manual-scale": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-treatment-external-group": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "waste-transport-external-group": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "dashboard": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "notification": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": "",
+        "inactive_entity": {
+            "title": "Inactive Entity",
+            "message": "Entity {{entity_name}} {{regency_name}} has been inactive for {{age_days}} days. Please proceed with waste weighing immediately."
+        },
+        "maximum_temporary_storage": {
+            "title": "Waste Stored > Maximum Temporary Storage Duration (2 Days)",
+            "message": "Waste bag {{waste_bag_qr_code_id}} from entity {{healthcare_facility_name}} has exceeded the maximum temporary storage duration (2 days). Please take immediate action."
+        },
+        "waste_generartion_below_monthly_projection": {
+            "title": "Waste Generation Below Monthly Projection",
+            "message": "Waste generation for {{waste_characteristic}} at entity {{entity_name}} as of the 15th of this month is {{total_weight}} kg, below the projected {{projection_weight}} kg (last 3 months average: {{avg_weight}} kg/month)."
+        },
+        "update_status_manual_weighing_approval": {
+            "title": "Manual Weighing Request Expired",
+            "message": "Manual weighing request expired due to no approval follow-up within 24 hours."
+        }
+    },
+    "bast": {
+        "create_request": "Bast Number requested"
+    },
+    "manual_request": {
+        "manual_request_approved": "Manual Weighing Request Approved",
+        "manual_request_created": "Manual Weighing Request Submitted",
+        "manual_request_rejected": "Manual Weighing Request Rejected"
+    },
+    "waste_bag": {
+        "waste_bag_in_external_temporary_storage": "Waste Moved to External Temporary Storage"
+    },
+    "waste_bag_group": {
+        "waste_bag_group_in_cold_storage": "Waste Group In Cold Storage"
+    },
+    "waste_bag_group_transport": {
+        "waste_bag_group_handover_to_treatment": "Waste Handover to Treatment External",
+        "waste_bag_group_transport_follow_up": "Transport Follow-up Required",
+        "waste_bag_group_transport_handover": "Waste Handover Completed",
+        "waste_bag_group_transport_pickup": "Waste Pickup Scheduled"
+    },
+    "waste_bag_group_treatment": {
+        "waste_bag_group_treatment_receivment": "Waste Received by Treatment Facility"
+    },
+    "waste_bag_treatment_group": {
+        "waste_bag_treatment_group_end_status": "Waste Received by Treatment Facility",
+        "waste_bag_treatment_group_incinerated": "Incineration Completed",
+        "waste_bag_treatment_group_incinerate_in_process": "Incineration In Process",
+        "waste_bag_treatment_group_sterilised": "Sterilization Completed",
+        "waste_bag_treatment_group_sterilise_in_process": "Sterilization In Process"
+    },
+    "fcm-token": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    },
+    "dispose": {
+        "error": {
+            "NOT_FOUND": ""
+        },
+        "success": ""
+    }
+}

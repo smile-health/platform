@@ -1,0 +1,99 @@
+{
+  "title": {
+    "page": "Aktivitas Pengguna",
+    "tab": {
+      "overview": "Tinjauan",
+      "entity": "Per Entitas"
+    },
+    "type": {
+      "active": "Aktif",
+      "inactive": "Tidak Aktif"
+    },
+    "type_processing": {
+      "internal": "Internal",
+      "external": "Eksternal"
+    }
+  },
+  "export": "Ekspor sebagai {{type}}",
+  "empty": "Tidak ada data untuk di tampilkan",
+  "percentage": "{b}: {d}% ({c} dari {{total}} entitas)",
+  "form": {
+    "period": {
+      "label": "Periode",
+      "placeholder": "Pilih periode bulan dan tahun"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    }
+  },
+  "information": {
+    "title": "Laporan Aktivitas Pengguna",
+    "close": "Tutup",
+    "description": "Aktivitas Pengguna menampilkan laporan tingkat keaktifan entitas terhadap aktifitas penimbangan limbah dalam periode satu bulan tertentu. Warna kuning menggambarkan terjadinya manual penimbangan.",
+    "item": {
+      "chart": {
+        "title": "Data Diagram Lingkaran",
+        "description": "Keaktifan dihitung dari transaksi pengeluaran oleh material yang dipilih pada filter. Satu kali melakukan transaksi pengeluaran pada bulan tersebut maka entitas sudah terhitung sebagai entitas aktif. Grafik berwarna hijau menunjukkan entitas yang aktif dan warna merah tidak aktif."
+      },
+      "table": {
+        "title": "Tabel Data",
+        "description": [
+          "Baris menunjukkan entitas yang memiliki material sesuai pilihan filter.",
+          "Kolom bulan menunjukkan tanggal dalam satu bulan tersebut, nilai yang tampil adalah jumlah transaksi pengeluaran pada hari tersebut.",
+          "Total hari aktif adalah total hari yang terjadi transaksi pengeluaran.",
+          "Total hari tidak aktif adalah total hari yang tidak ada transaksi pengeluaran.",
+          "Total frekuensi adalah total kumulatif transaksi pengeluaran dalam satu bulan.",
+          "Rata-rata frekuensi adalah total frekuensi dibagi dengan total hari aktif, menunjukkan jumlah frekuensi setiap hari nya (dalam rata-rata)."
+        ]
+      }
+    }
+  },
+  "column": {
+    "no": "No",
+    "healthcare_facility": "Fasyankes",
+    "province": "Provinsi",
+    "regency": "Kabupaten/Kota",
+    "active": "Jumlah Hari Aktif",
+    "inactive": "Jumlah Hari Tidak Aktif",
+    "manual_scale": "Jumlah Hari Manual Scale",
+    "frequency": {
+      "total": "Jumlah Frekuensi",
+      "average": "Rata-rata Frekuensi"
+    }
+  },
+  "filter": {
+    "waste_type": {
+      "label": "Jenis Limbah",
+      "placeholder": "Pilih jenis limbah"
+    },
+    "waste_group": {
+      "label": "Grup Limbah",
+      "placeholder": "Pilih grup limbah"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "type_processing": {
+      "label": "Jenis Pengolahan",
+      "placeholder": "Pilih jenis pengolahan"
+    }
+  },
+  "tag": {
+    "hospital": "Rumah Sakit",
+    "clinic": "Klinik",
+    "health_center": "Puskesmas",
+    "health_post": "Posyandu",
+    "pharmacy": "Apotek/Farmasi",
+    "laboratory": "Lab"
+  }
+}

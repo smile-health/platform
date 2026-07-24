@@ -1,7 +1,7 @@
 import { DB } from "@/common/infrastructure/database/types/db.js"
-import { TransactionManager } from "@smile/lib/database.js"
-import { Consumer } from "@smile/lib/rabbitmq/consumer.js"
-import { CustomContext } from "@smile/lib/types/context.js"
+import { TransactionManager } from "@smile-health/lib/database.js"
+import { Consumer } from "@smile-health/lib/rabbitmq/consumer.js"
+import { CustomContext } from "@smile-health/lib/types/context.js"
 import {
   EntityImportPublisher,
   ImportEntityJobPayload,
@@ -9,7 +9,7 @@ import {
 import { EntityModule } from "./entity.module.js"
 import { EntityMiddleware } from "./entity.middleware.js"
 import { z } from "zod"
-import { ValidationError } from "@smile/lib/error.js"
+import { ValidationError } from "@smile-health/lib/error.js"
 import {
   ImportEntityRequest,
   ImportEntityRequestSchema,

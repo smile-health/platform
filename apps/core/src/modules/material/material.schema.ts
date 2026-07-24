@@ -1,8 +1,8 @@
-import { PaginationQueriesSchema } from "@smile/lib/types/paginate.js"
+import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import {
   isStringNumbers,
   transformStringNumbersToArrayNumbers,
-} from "@smile/lib/utils.js"
+} from "@smile-health/lib/utils.js"
 import { z } from "zod"
 
 const preprocessToString = (value: unknown) =>
@@ -117,8 +117,6 @@ export const GetMaterialsQueryParamSchema = PaginationQueriesSchema.extend({
   integration_client_id: z.number().nullish(),
 })
 
-export const GetBiofarmaQueryParamsSchema = PaginationQueriesSchema
-
 export const GetTemplateQueryParamsSchema = z.object({
   material_level_id: z.preprocess(
     (value) => (typeof value === "string" ? parseInt(value, 10) : value),
@@ -205,9 +203,6 @@ export const arrayString = z.string().transform((val) => [val])
 /* Query Params Type */
 export type GetMaterialsQueryParams = z.infer<
   typeof GetMaterialsQueryParamSchema
->
-export type GetBiofarmaQueryParams = z.infer<
-  typeof GetBiofarmaQueryParamsSchema
 >
 export type GetTemplateQueryParams = z.infer<
   typeof GetTemplateQueryParamsSchema

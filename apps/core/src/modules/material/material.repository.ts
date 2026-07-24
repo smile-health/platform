@@ -2,10 +2,7 @@ import { DB } from "@/common/infrastructure/database/types/db.js"
 import { Context } from "hono"
 import { ComparisonOperatorExpression, ReferenceExpression, sql } from "kysely"
 import { BaseRepository } from "../base.repository.js"
-import {
-  GetBiofarmaQueryParams,
-  GetMaterialsQueryParams,
-} from "./material.schema.js"
+import { GetMaterialsQueryParams } from "./material.schema.js"
 
 type Options = {
   paginate?: boolean
@@ -66,39 +63,6 @@ export class MaterialRepository extends BaseRepository<"materials"> {
         .execute(),
       query
         .select((eb) => eb.fn.count("m.id").distinct().as("total"))
-        .executeTakeFirstOrThrow(),
-    ])
-
-    return {
-      data: list,
-      total: Number(count.total),
-    }
-  }
-
-  async findAllBiofarma(
-    c: Context,
-    queryParam: GetBiofarmaQueryParams,
-    options: Options = { paginate: true }
-  ) {
-    let query = c.var.trx
-      .selectFrom("integration_biofarma_orders")
-      .select(sql`DISTINCT trim(produk)`.as("name"))
-      .orderBy("name", "asc")
-
-    if (queryParam.keyword) {
-      query = query.where(sql`trim(produk)`, "like", `%${queryParam.keyword}%`)
-    }
-
-    const offset = (queryParam.page - 1) * queryParam.paginate
-    const isPaginate =
-      !!queryParam.page && !!queryParam.paginate && !!options.paginate
-
-    const [list, count] = await Promise.all([
-      query
-        .$if(isPaginate, (qb) => qb.limit(queryParam.paginate).offset(offset))
-        .execute(),
-      query
-        .select((eb) => eb.fn.count("produk").distinct().as("total"))
         .executeTakeFirstOrThrow(),
     ])
 

@@ -63,16 +63,6 @@ export const env = parseEnv(process.env, {
     .default("https://router.project-osrm.org/route/v1/driving"),
   OSRM_TIMEOUT_MS: z.number().positive().default(15_000),
 
-  //Biofarma Integration
-  BIOFARMA_URL: z.string().min(1).optional(),
-  BIOFARMA_USER: z.string().min(1).optional(),
-  BIOFARMA_PASSWORD: z.string().min(1).optional(),
-  BIOFARMA_STARTDATE: z.string().min(1).optional(),
-  BF_SMILE_USER: z.string().min(1).optional(),
-  BF_SMILE_PASS: z.string().min(1).optional(),
-  ADMIN_USER: z.string().min(1).optional(),
-  ADMIN_PASS: z.string().min(1).optional(),
-
   //Mail
   MAIL_HOST: z.string().min(1),
   MAIL_PORT: z.number(),

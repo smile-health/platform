@@ -2,7 +2,7 @@ import {
   addValidationIssue,
   validateRequiredFields,
 } from "@/common/utils/validation.utils.js"
-import { BaseMiddleware } from "@smile/lib/base/middleware.js"
+import { BaseMiddleware } from "@smile-health/lib/base/middleware.js"
 import { Context } from "hono"
 import z from "zod"
 import { TargetEstimationNonBiasRepository } from "../target-estimation-non-bias/target-estimation-non-bias.repository.js"

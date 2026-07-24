@@ -1,0 +1,36 @@
+{
+  "list": {
+    "list": "Operator Pengguna",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari nama pengguna"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "username": "Nama Pengguna",
+      "healthcare_facility_consumer": "Fasyankes",
+      "action": "Tindakan"
+    },
+    "button": {
+      "add": "Tambahkan operator"
+    }
+  },
+  "title": {
+    "create": "Buat operator pengguna",
+    "edit": "Edit operator pengguna"
+  },
+  "form": {
+    "operator": {
+      "label": "Pilih Nama Pengguna Operator",
+      "placeholder": "Pilih operator"
+    },
+    "healthcare_facility": {
+      "label": "Pilih Fasyankes",
+      "placeholder": "Pilih Fasyankes"
+    }
+  }
+}

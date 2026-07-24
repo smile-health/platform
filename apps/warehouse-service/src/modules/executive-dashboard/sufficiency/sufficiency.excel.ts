@@ -1,13 +1,13 @@
 import { Context } from "hono"
 import moment from "moment"
 import { SufficiencyQueryParams } from "./sufficiency.schema.js"
-import WarehouseTemplate from "@smile/lib/excel/warehouse-template.js"
-import { Column } from "@smile/lib/excel/types.js"
+import WarehouseTemplate from "@smile-health/lib/excel/warehouse-template.js"
+import { Column } from "@smile-health/lib/excel/types.js"
 import { ExcelExportOption } from "@/common/types/excel.js"
 import { getExportLocationFileName } from "@/common/utils/export.js"
 import { ExecutiveDashboardSufficiencyRepository } from "./sufficiency.repository.js"
 import { RegionRepository } from "@/modules/region/region.repository.js"
-import { round } from "@smile/lib/utils.js"
+import { round } from "@smile-health/lib/utils.js"
 
 export class ExecutiveDashboardSufficiencyExcel {
   constructor(

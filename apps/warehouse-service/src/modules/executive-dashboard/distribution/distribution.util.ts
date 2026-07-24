@@ -30,7 +30,7 @@ import {
   YearlyComparisonDTO,
 } from "./distribution.schema.js"
 import moment from "moment"
-import { round } from "@smile/lib/utils.js"
+import { round } from "@smile-health/lib/utils.js"
 
 export const buildMapsData = (
   c: Context,

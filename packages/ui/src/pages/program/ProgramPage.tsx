@@ -57,7 +57,6 @@ const ProgramPage: React.FC = () => {
                   label: 'ui-text-2xl',
                   title: 'ui-text-center ui-px-2',
                 }}
-                target={x.key === 'waste-management' ? '_blank' : undefined}
                 icon={IconPrograms[x.key]}
               />
             ))}

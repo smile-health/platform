@@ -2,7 +2,7 @@ import { ExcelMiddleware } from "@/common/middlewares/excel.middleware.js"
 import { RoleMiddleware } from "@/common/middlewares/role-validation.middleware.js"
 import { DEVICE_TYPE } from "@/common/constants/headers.js"
 import { USER_ROLE } from "@/common/constants/role.js"
-import { BaseController } from "@smile/lib/base/controller.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
 import { Hono } from "hono"
 import { StatusCodes } from "http-status-codes"
 import { MonitoringStockMiddleware } from "./stock.middleware.js"
@@ -72,16 +72,6 @@ export class MonitoringStockController extends BaseController {
 
     router.get(
       "/entity-stock",
-      this.validateRequest("query", this.middleware.common),
-      async (c) => {
-        const queryParams = c.req.valid("query")
-        const response = await this.module.getEntityStock(c, queryParams)
-        return c.json(response, StatusCodes.OK)
-      }
-    )
-
-    router.get(
-      "/sismal",
       this.validateRequest("query", this.middleware.common),
       async (c) => {
         const queryParams = c.req.valid("query")

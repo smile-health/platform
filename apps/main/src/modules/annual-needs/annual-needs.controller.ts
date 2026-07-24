@@ -1,4 +1,4 @@
-import { BaseController } from "@smile/lib/base/controller.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
 import { Hono } from "hono"
 import { StatusCodes } from "http-status-codes"
 import { AnnualNeedModule } from "./annual-needs.module.js"
@@ -27,7 +27,7 @@ import {
   ActivatedMinMaxProvinceSchema,
 } from "./annual-needs.schema.js"
 import { AnnualNeedMiddleware } from "./annual-needs.middleware.js"
-import { ExcelMiddleware } from "@smile/lib/middlewares"
+import { ExcelMiddleware } from "@smile-health/lib/middlewares"
 
 export class AnnualNeedController extends BaseController {
   constructor(

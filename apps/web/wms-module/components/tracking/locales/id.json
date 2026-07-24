@@ -1,0 +1,72 @@
+{
+  "list": {
+    "list": "Pelacakan Limbah",
+    "waste_source": "Ringkasan per Sumber Limbah",
+    "waste_bag": "Timbulan per Kantong Limbah",
+    "waste_characteristic": "Ringkasan per Karakteristik Limbah",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Kode Kantong Limbah"
+      },
+      "date_range": {
+        "label": "Rentang Tanggal",
+        "placeholder": "Pilih Rentang Tanggal"
+      },
+      "healthcare_facility_name": {
+        "label": "Nama Fasyankes",
+        "placeholder": "Pilih Nama Fasyankes"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column_waste_source": {
+      "source_type": "Tipe Sumber Limbah",
+      "waste_source_name": "Nama Sumber Limbah",
+      "total_waste_bag": "Total Kantong Limbah",
+      "total_weight_in_kgs": "Total Berat ({{ unit }})"
+    },
+    "column_waste_bag": {
+      "waste_bag_code": "Kode Kantong Limbah",
+      "healthcare_facility": "Fasyankes",
+      "carrier": "Pengangkut",
+      "waste_treatment_facilitator": "Pengolah Limbah",
+      "waste_characteristic": "Jenis / Grup / Karakteristik Limbah",
+      "waste_source": "Sumber Limbah",
+      "waste_in_date": "Tanggal Masuk",
+      "storage_date_limit": "Maksimal Penyimpanan (Hari)",
+      "status": "Status",
+      "weight_kg": "Berat ({{ unit }})",
+      "healthcare_facility_operator": "Operator Fasyankes",
+      "action": "Aksi"
+    },
+    "column_waste_characteristics": {
+      "healthcare_facility": "Fasyankes",
+      "waste_characteristic": "Jenis / Grup / Karakteristik Limbah",
+      "waste_action": "Tindak Lanjut",
+      "total_weight": "Total Berat ({{ unit }})",
+      "average_weight": "Rata - rata berat per hari ({{ unit }})",
+      "total_bag": "Jumlah kantong (Kantong)",
+      "average_bag": "Jumlah Rata-rata kantong per hari (Kantong)"
+    },
+    "emptyDescription": "Pilih Rentang Tanggal Pelacakan Limbah"
+  },
+  "modal": {
+    "title": "Riwayat Transaksi",
+    "info": {
+      "transaction_code": "Kode Pelacakan",
+      "healthcare_facility": "Nama Fasyankes",
+      "waste_characteristic": "Karakteristik Limbah"
+    },
+    "column": {
+      "updated_status": "Tanggal Perubahan Status",
+      "waste_action": "Aksi Limbah",
+      "waste_status": "Status Limbah"
+    }
+  },
+  "information": {
+    "title": "Pelacakan Limbah",
+    "description": "Pelacakan limbah memantau dan merekam data sumber limbah, termasuk total kantong limbah dan total berat limbah."
+  }
+}

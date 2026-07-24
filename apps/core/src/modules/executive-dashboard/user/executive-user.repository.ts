@@ -8,7 +8,7 @@ import moment from "moment"
 import { BaseRepository } from "../../base.repository.js"
 import { UpdateLastLoginRequest } from "./executive-user.schema.js"
 import { TExistData } from "@/modules/user/user.schema.js"
-import { associate, getLabelByKey } from "@smile/lib/utils.js"
+import { associate, getLabelByKey } from "@smile-health/lib/utils.js"
 import { ListQuery } from "../account/account.schema.js"
 import { sql } from "kysely"
 

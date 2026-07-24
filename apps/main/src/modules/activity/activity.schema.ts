@@ -3,8 +3,8 @@ import {
   WsActivities,
   WsEntityActivities,
 } from "@/common/infrastructure/database/types/db.js"
-import { PaginationQueriesSchema } from "@smile/lib/types/paginate.js"
-import { IdParamsSchema } from "@smile/lib/types/param.js"
+import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
+import { IdParamsSchema } from "@smile-health/lib/types/param.js"
 import { Selectable } from "kysely"
 import z from "zod"
 

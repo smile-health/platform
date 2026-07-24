@@ -1,4 +1,4 @@
-import { Database } from "@smile/lib/types/database/mod.js"
+import { Database } from "@smile-health/lib/types/database/mod.js"
 import { Kysely, sql } from "kysely"
 
 export async function up(db: Kysely<Database>): Promise<void> {

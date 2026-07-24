@@ -3,7 +3,7 @@ import {
   BadRequestError,
   NotFoundError,
   ValidationError,
-} from "@smile/lib/error.js"
+} from "@smile-health/lib/error.js"
 import { Context } from "hono"
 import { ActivityPlanRepository } from "./activity-plan.repository.js"
 import {

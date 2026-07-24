@@ -1,6 +1,0 @@
-export * from "./bmhp-target-and-adjusment.controller.js"
-export * from "./bmhp-target-and-adjusment.module.js"
-export * from "./bmhp-target-and-adjusment.middleware.js"
-export * from "./bmhp-target-and-adjusment.excel.middleware.js"
-export * from "./bmhp-target-and-adjusment.repository.js"
-export * from "./bmhp-target-and-adjusment.schema.js"

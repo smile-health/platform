@@ -1,0 +1,187 @@
+{
+  "list": {
+    "list": "Partnership",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Contract Number"
+      },
+      "company_name": {
+        "label": "Company Name",
+        "placeholder": "Select Company Name"
+      },
+      "waste_characteristic": {
+        "label": "Characteristic",
+        "placeholder": "Select Characteristic"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "partnership_type": "Partnership Type",
+      "company_name": "Company Name",
+      "entitas_name": "Entitas Name",
+      "entity_name": "Entity Name",
+      "contract_date": "Contract Date",
+      "contract_start_date": "Contract Start Date",
+      "contract_end_date": "Contract End Date",
+      "contract_id": "Contract Number",
+      "partnership_status": "Partnership Status",
+      "pic_name": "PIC Name",
+      "phone_number": "Phone Number",
+      "position": "Position",
+      "price_kg": "Price/Kg",
+      "province": "Province",
+      "city": "City",
+      "address": "Address",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "waste_type": "Waste Type",
+      "waste_group": "Waste Group",
+      "waste_characteristic": "Waste Characteristic",
+      "last_updated": "Last Updated",
+      "waste_code": "KLHK Code",
+      "nib": "NIB",
+      "action": "Action"
+    },
+    "column_third_party": {
+      "treatment_company ": "Treatment Company",
+      "landfill_company": "Landfill Company",
+      "recycle_company": "Recycle Company"
+    },
+    "column_vehicle": {
+      "vehicle_type ": "Vehicle Type",
+      "vehicle_number": "Vehicle Number",
+      "capacity": "Capacity (Kg)"
+    },
+    "column_operator": {
+      "username ": "Username",
+      "name": "Name",
+      "role": "Role",
+      "company_name": "Company Name",
+      "company_type": "Company Type",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "column_classification_partnership": {
+      "waste_characteristics": "Waste Characteristic",
+      "waste_code": "KLHK Code",
+      "price": "Price/Kg",
+      "partnership_type": "Partnership Type",
+      "contract_date": "Contract Date",
+      "contract_start_date": "Contract Start Date",
+      "contract_end_date": "Contract End Date",
+      "contract_id": "Contract Number",
+      "partnership_status": "Partnership Status"
+    },
+    "button": {
+      "add": "Add Partnership",
+      "add_specification": "Add Waste Specification",
+      "edit_specification": "Edit Waste Specification"
+    }
+  },
+  "title": {
+    "partnership": "Partnership",
+    "list": "Partnership List",
+    "create": "Create Partnership",
+    "edit": "Edit Partnership"
+  },
+  "form": {
+    "waste_specification": {
+      "label": "Waste Specification",
+      "placeholder": "Select waste Specification"
+    },
+    "waste_type": {
+      "label": "Waste Type",
+      "placeholder": "Select waste type"
+    },
+    "waste_group": {
+      "label": "Waste Group",
+      "placeholder": "Select waste group"
+    },
+    "waste_characteristic": {
+      "label": "Waste Characteristic",
+      "placeholder": "Select characteristic"
+    },
+    "partnership_type": {
+      "label": "Partnership Type",
+      "placeholder": "Select Partnership Type"
+    },
+    "waste_category": {
+      "label": "Waste Category",
+      "placeholder": "Select Waste Category"
+    },
+    "company_name": {
+      "label": "Company Name",
+      "placeholder": "Select Company Name"
+    },
+    "pic_name": {
+      "label": "PIC Name",
+      "placeholder": "Enter PIC Name"
+    },
+    "nib": {
+      "label": "NIB",
+      "placeholder": "NIB"
+    },
+    "phone_number": {
+      "label": "Phone Number",
+      "placeholder": "Enter Phone Number"
+    },
+    "position": {
+      "label": "Position",
+      "placeholder": "Enter Position"
+    },
+    "price_kg": {
+      "label": "Price/Kg",
+      "placeholder": "Enter Price/Kg"
+    },
+    "contract_date": {
+      "label": "Contract Date",
+      "placeholder": "Enter Contract Date"
+    },
+    "contract_id": {
+      "label": "Contract Number",
+      "placeholder": "Enter Contract Number"
+    },
+    "partnership_status": {
+      "label": "Partnership Status",
+      "placeholder": "Select Partnership Status"
+    },
+    "help_text_characteristic": "Leave blank to select all characteristics in this group"
+  },
+  "detail": {
+    "healthcare_info": "Healthcare Partnership info",
+    "operator_info": "Partner Operator Info",
+    "vehicle_info": "Partner Vehicle Info",
+    "third_party_info": "Third Party Partnership info",
+    "classification_partnership_info": "Characteristic Info"
+  },
+  "status_partnership": {
+    "ACTIVE": "Active",
+    "SUSPENDED": "Suspended",
+    "PENDING": "Pending",
+    "TERMINATED": "Terminated",
+    "EXPIRED": "Expired"
+  },
+  "status_partnership_info": {
+    "ACTIVE": "Contract is currently active",
+    "SUSPENDED": "Contract is temporarily suspended",
+    "PENDING": "Contract is pending approval",
+    "TERMINATED": "Contract has been terminated or not renewed",
+    "EXPIRED": "Contract has passed its validity period"
+  },
+  "provider_type": {
+    "TRANSPORTER": "Only Transporter",
+    "TRANSPORTER_TREATMENT": "Transporter Treatment",
+    "TRANSPORTER_LANDFILL": "Transporter Landfill",
+    "TRANSPORTER_RECYCLER": "Transporter Recycler",
+    "SPECIALIZED_TREATMENT_PROVIDER": "Transporter Specialized",
+    "TRANSPORTER_GOVERNMENT": "Transporter Government",
+    "TRANSPORTER_GOVERNMENT_WASTE_BANK": "Transporter Government Waste Bank"
+  },
+  "information": {
+    "title": "Partnership",
+    "description": "Partnerships monitor and manage third-party data that plays a role in waste management"
+  }
+}

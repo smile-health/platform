@@ -1,4 +1,4 @@
-import { Consumer } from "@smile/lib/rabbitmq/consumer.js"
+import { Consumer } from "@smile-health/lib/rabbitmq/consumer.js"
 import { DB } from "@/common/infrastructure/database/types/db.js"
 import { CleansingRepository } from "./cleansing.repository.js"
 import { CleansingModule } from "./cleansing.module.js"

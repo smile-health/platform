@@ -1,0 +1,13 @@
+{
+  "policy": "Kebijakan Privasi",
+  "password": "Kata Sandi",
+  "forgot": "Lupa kata sandi",
+  "login": "Masuk",
+  "help": "Pusat Bantuan",
+  "processing": "Memproses",
+  "about": "Tentang",
+  "success_login": "Login berhasil. Mengalihkan ke beranda",
+  "invalid_login": "Nama pengguna atau kata sandi tidak valid",
+  "success_logout": "Logout berhasil. Terima kasih telah berkunjung",
+  "success_back_to_smile": "Mengalihkan ke beranda SMILE"
+}

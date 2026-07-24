@@ -1,0 +1,56 @@
+{
+  "list": {
+    "list": "Transport Vehicle",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Vehicle Number"
+      },
+      "healthcare_partner": {
+        "label": "Healthcare Partner",
+        "placeholder": "Select Healthcare Partner"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "vehicle_type ": "Vehicle Type",
+      "vehicle_number": "Vehicle Number",
+      "capacity": "Capacity (Kg)",
+      "healthcare_consumer": "Healthcare Facility Consumer",
+      "action": "Action"
+    },
+    "button": {
+      "add": "Add Partner Vehicle"
+    }
+  },
+  "title": {
+    "partnership_vehicle": "Transport Vehicle",
+    "list": "Transport Vehicle List",
+    "create": "Create Transport Vehicle",
+    "edit": "Edit Transport Vehicle"
+  },
+  "form": {
+    "healthcare_consumer": {
+      "label": "Healthcare Facility Consumer",
+      "placeholder": "Select Healthcare Facility Consumer"
+    },
+    "vehicle_number": {
+      "label": "Vehicle Number",
+      "placeholder": "Enter Vehicle Number",
+      "validation": {
+        "duplicate": "Vehicle Number already exists within this entity.",
+        "invalid_format": "Invalid Vehicle Plate Number Format"
+      }
+    },
+    "capacity": {
+      "label": "Capacity (Kg)",
+      "placeholder": "Enter Capacity (Kg)"
+    },
+    "vehicle_type": {
+      "label": "Vehicle Type",
+      "placeholder": "Enter Vehicle Type"
+    }
+  }
+}

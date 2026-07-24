@@ -1,0 +1,12 @@
+{
+  "index": {
+    "title": "Distance Limit"
+  },
+  "form": {
+    "distance": {
+      "label": "Distance Limit (Meters)",
+      "placeholder": "Meters",
+      "helper_text": "The maximum radius specified for the location of waste transfer can be implemented. The distance limit listed is the limit within the permitted range."
+    }
+  }
+}

@@ -20,7 +20,7 @@ import {
   createCountMap,
   createCountRecord,
 } from "@/common/utils/target.utils.js"
-import { NotFoundError, ValidationError } from "@smile/lib/error.js"
+import { NotFoundError, ValidationError } from "@smile-health/lib/error.js"
 import { Context } from "hono"
 import { isEmpty } from "lodash"
 import moment from "moment"

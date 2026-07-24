@@ -1,0 +1,72 @@
+{
+  "list": {
+    "list": "Waste Trackings",
+    "waste_source": "Recap per Waste Source",
+    "waste_bag": "Recap per Waste Bag",
+    "waste_characteristic": "Recap per Waste Characteristics",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Transaction Code"
+      },
+      "date_range": {
+        "label": "Date Range",
+        "placeholder": "Select Date Range"
+      },
+      "healthcare_facility_name": {
+        "label": "Healthcare Facility Name",
+        "placeholder": "Select Healthcare Facility Name"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column_waste_source": {
+      "source_type": "Source Type",
+      "waste_source_name": "Waste Source Name",
+      "total_waste_bag": "Total Waste Bag",
+      "total_weight_in_kgs": "Total Weight ({{ unit }})"
+    },
+    "column_waste_bag": {
+      "waste_bag_code": "Waste Bag Code",
+      "healthcare_facility": "Healthcare Facility",
+      "carrier": "Carrier",
+      "waste_treatment_facilitator": "Waste Treatment Facilitator",
+      "waste_characteristic": "Type / Group / Waste Characteristics",
+      "waste_source": "Waste Source",
+      "waste_in_date": "Waste In Date",
+      "storage_date_limit": "Storage Date Limit (days)",
+      "status": "Status",
+      "weight_kg": "Weight ({{ unit }})",
+      "healthcare_facility_operator": "Healthcare Facility Operator",
+      "action": "Action"
+    },
+    "column_waste_characteristics": {
+      "healthcare_facility": "Healthcare Facility",
+      "waste_characteristic": "Type / Group / Waste Characteristics",
+      "waste_action": "Follow-up",
+      "total_weight": "Total Weight ({{ unit }})",
+      "average_weight": "Average weight per day ({{ unit }})",
+      "total_bag": "Total Bag (Pocket)",
+      "average_bag": "Average number of bags per day (Pocket)"
+    },
+    "emptyDescription": "Select Date Range Waste Tracking"
+  },
+  "modal": {
+    "title": "History Transaction",
+    "info": {
+      "transaction_code": "Transaction Code",
+      "healthcare_facility": "Healthcare Facility Name",
+      "waste_characteristic": "Waste Characteristic"
+    },
+    "column": {
+      "updated_status": "Date of Updated Status",
+      "waste_action": "Waste Action",
+      "waste_status": "Waste Status"
+    }
+  },
+  "information": {
+    "title": "Waste Disposal Transaction",
+    "description": "Waste tracking monitors and records waste source data, including total waste bags and total waste weight."
+  }
+}

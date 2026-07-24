@@ -1,4 +1,4 @@
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
 import { RabiesRepository } from "./rabies.repostitory.js"
 import { RabiesQueryParams } from "./rabies.schema.js"
 import { Context } from "hono"

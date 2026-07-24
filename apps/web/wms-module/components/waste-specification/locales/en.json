@@ -1,0 +1,208 @@
+{
+  "list": {
+    "list": "Waste Specification",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Enter keyword"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "waste_code": "Waste Code",
+      "waste_type": "Waste Type",
+      "waste_group": "Waste Group",
+      "waste_characteristic": "Waste Characteristic",
+      "multiple_transporters": "More than one third party",
+      "use_cold_storage": "Use Cold Storage",
+      "internal_treatment": "Internal Treatment",
+      "external_treatment": "External Treatment",
+      "vehicle_type": "Vehicle Type",
+      "updated_at": "Updated At",
+      "updated_by": "Updated By",
+      "action": "Action"
+    },
+    "options": {
+      "tag": "Select Tag",
+      "type": "Select Type"
+    },
+    "action": {
+      "activate": {
+        "title": "Activate"
+      },
+      "deactivate": {
+        "title": "Deactivate"
+      }
+    }
+  },
+  "title": {
+    "waste_specification": "Waste Specification",
+    "list": "Waste Specification List",
+    "create": "Waste Specification",
+    "edit": "Edit Waste Specification"
+  },
+  "detail": {
+    "title": "Waste Specification Detail",
+    "waste_code": "Waste Code",
+    "waste_type": "Waste Type",
+    "waste_group": "Waste Group",
+    "waste_characteristic": "Waste Characteristic",
+    "waste_bag_color": "Waste Bag Color",
+    "minimum_decay_time_process": "Minimum Decay Time Process",
+    "multiple_transporters": "More than one third party",
+    "use_cold_storage": "Use Cold Storage",
+    "cold_storage_max_processing": "Cold Storage Max Duration",
+    "temporary_storage_max_processing": "Temporary Storage Max Duration",
+    "internal_treatment": "Internal Treatment",
+    "external_treatment": "Third Party Treatment",
+    "vehicle_type": "Vehicle Type",
+    "created_at": "Created At",
+    "created_by": "Created By",
+    "updated_at": "Updated At",
+    "updated_by": "Updated By"
+  },
+  "action": {
+    "activate": {
+      "button": "Activate",
+      "confirmation": "Are you sure you want to activate this product?"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "confirmation": "Are you sure you want to deactivate this product?"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "Product Template",
+    "trademark": "Product Variant",
+    "non_hierarchy": "Non Hierarchy"
+  },
+  "form": {
+    "waste_type": {
+      "label": "Waste Type",
+      "placeholder": "Select waste type",
+      "validation": {
+        "required": "Waste waste type is required"
+      }
+    },
+    "waste_group": {
+      "label": "Waste Group",
+      "placeholder": "Select waste group",
+      "validation": {
+        "required": "Waste waste group is required"
+      }
+    },
+    "waste_characteristic": {
+      "label": "Waste Characteristic",
+      "placeholder": "Select characteristic",
+      "validation": {
+        "required": "Waste characteristic is required"
+      }
+    },
+    "waste_code": {
+      "label": "Waste Code",
+      "placeholder": "Enter Waste Code"
+    },
+    "waste_bag_color": {
+      "label": "Waste Bag Color",
+      "placeholder": "Select waste bag color",
+      "validation": {
+        "required": "Waste bag is required"
+      }
+    },
+    "use_cold_storage": {
+      "label": "Use Cold Storage",
+      "validation": {
+        "required": "Use cold storage is required"
+      }
+    },
+    "multiple_transporters": {
+      "label": "More than one third party"
+    },
+    "storage_rule": {
+      "label": "Storage Rule",
+      "placeholder": "Enter storage rule"
+    },
+    "cold_storage_max_processing_type": {
+      "label": "Cold Storage Max Duration (Days)"
+    },
+    "cold_storage_max_processing_time": {
+      "placeholder": "Enter cold storage max processing"
+    },
+    "temporary_storage_min_processing_type": {
+      "label": "Temporary Storage Min Duration"
+    },
+    "temporary_storage_min_processing_time": {
+      "placeholder": "Enter temporary storage min processing"
+    },
+    "temporary_storage_max_processing_type": {
+      "label": "Temporary Storage Max Duratio (Days)"
+    },
+    "minimum_decay_time_process": {
+      "label": "Minimum decay time process (Days)",
+      "placeholder": "Enter minimum decay time process"
+    },
+    "temporary_storage_max_processing_time": {
+      "placeholder": "Enter temporary storage max processing"
+    },
+    "waste_internal_treatment": {
+      "label": "Waste Internal Treatment",
+      "placeholder": "Select internal treatment"
+    },
+    "waste_external_treatment": {
+      "label": "Waste External Treatment",
+      "placeholder": "Select external treatment",
+      "transport_auto_selected": "Transport is automatically selected when Treatment, Recycle, or Landfill is chosen",
+      "validation": {
+        "required": "Waste external treatment is required"
+      }
+    },
+    "vehicle_type": {
+      "label": "Vehicle Type",
+      "placeholder": "Select vehicle type",
+      "validation": {
+        "required": "vehicle type is required"
+      }
+    }
+  },
+  "master_waste_create": "Add Waste Specification",
+  "internal_treatment": {
+    "PYROLYSIS": "Incineration/Pyrolysis",
+    "DISINFECTION": "Sterilization/Disinfection",
+    "INTERNAL_LANDFILL": "Landfill"
+  },
+  "external_treatment": {
+    "TRANSPORTER_TREATMENT": "Transport - Treatment",
+    "TRANSPORTER_LANDFILL": "Transport - Landfill",
+    "TRANSPORTER_RECYCLER": "Transport - Recyle",
+    "SPECIALIZED_TREATMENT_PROVIDER": "Specialized Treatment",
+    "TRANSPORTER_GOVERNMENT": "Transport - Government",
+    "TRANSPORTER_GOVERNMENT_WASTE_BANK": "Transport - Government Waste Bank"
+  },
+  "waste_bag_color": {
+    "BLACK": "Black",
+    "GRAY": "Gray",
+    "PURPLE": "Purple",
+    "BROWN": "Brown",
+    "RED": "Red",
+    "YELLOW": "Yellow",
+    "NONE": "None"
+  },
+  "vehicle_type": {
+    "BOX_TRUCK": "Box Truck",
+    "REFRIGERATED_BOX_TRUCK": "Refrigerated Box Truck",
+    "OPEN_BODY_TRUCK": "Open Body Truck",
+    "TANKER": "Tanker",
+    "HAZARDOUS_MATERIAL_TRUCK": "Hazardous Material Truck",
+    "RADIOACTIVE_MATERIAL_TRUCK": "Radioactive Material Truck",
+    "FLATBED_TRUCK": "Flatbed Truck",
+    "LOADER_TRUCK": "Loader Truck",
+    "TRAILER": "Trailer",
+    "VAN": "Van"
+  },
+  "information": {
+    "title": "Waste Specification",
+    "description": "Waste specifications record, monitor, and manage waste classification/specification data based on type, group, characteristics, and storage and processing methods."
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "list": {
+    "list": "Waste Hierarchy",
+    "tab": {
+      "waste_type": "Waste Type",
+      "waste_group": "Waste Group",
+      "waste_characteristic": "Waste Characteristic"
+    },
+    "filter": {
+      "waste_type": {
+        "search": {
+          "label": "Search",
+          "placeholder": "Search waste type"
+        },
+        "waste_type": {
+          "label": "Waste Type",
+          "placeholder": "Select waste type"
+        }
+      },
+      "waste_group": {
+        "search": {
+          "label": "Search",
+          "placeholder": "Search waste group"
+        },
+        "waste_group": {
+          "label": "Waste Group",
+          "placeholder": "Select waste group"
+        }
+      },
+      "waste_characteristic": {
+        "search": {
+          "label": "Search",
+          "placeholder": "Search waste characteristic"
+        }
+      },
+      "is_active": {
+        "label": "Status",
+        "placeholder": "Select status"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "waste_type": "Waste Type",
+      "waste_group": "Waste Group",
+      "waste_characteristic": "Waste Characteristic",
+      "residue": "Residue",
+      "description": "Description",
+      "status": "Status",
+      "updated_at": "Updated At",
+      "updated_by": "Updated By",
+      "action": "Action",
+      "is_active": {
+        "1": "Active",
+        "0": "Non Active"
+      }
+    },
+    "action": {
+      "activate": {
+        "title": "Activate"
+      },
+      "deactivate": {
+        "title": "Deactivate"
+      }
+    },
+    "button": {
+      "add_waste_type": "Add Waste Type",
+      "add_waste_group": "Add Waste Group",
+      "add_waste_characteristic": "Add Waste Characteristic"
+    }
+  },
+  "title": {
+    "waste_type": "Waste Type",
+    "waste_group": "Waste Group",
+    "waste_characteristic": "Waste Characteristic",
+    "list_waste_type": "Waste Type List",
+    "list_waste_group": "Waste Group List",
+    "list_waste_characteristic": "Waste Characteristic List",
+    "create_waste_type": "Waste Type",
+    "create_waste_group": "Waste Group",
+    "create_waste_characteristic": "Waste Characteristic",
+    "explain_waste_classification": "Explanation of Waste Classification"
+  },
+  "action": {
+    "activate": {
+      "button": "Activate",
+      "confirmation": "Are you sure you want to activate this product?"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "confirmation": "Are you sure you want to deactivate this product?"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "Product Template",
+    "trademark": "Product Variant",
+    "non_hierarchy": "Non Hierarchy"
+  },
+  "form": {
+    "waste_group": {
+      "label": "Waste Group",
+      "placeholder": "Input Waste Group",
+      "placeholder_select": "Select Waste Group"
+    },
+    "waste_type": {
+      "label": "Waste Type",
+      "placeholder": "Input Waste Type",
+      "placeholder_select": "Select Waste Type"
+    },
+    "waste_characteristic": {
+      "label": "Waste Characteristic",
+      "placeholder": "Input Waste Characteristic"
+    },
+    "status": {
+      "label": "Status",
+      "active": "Active",
+      "non_active": "Non Active"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Enter Description"
+    }
+  },
+  "information": {
+    "title": "Waste Hierarchy",
+    "description": "The waste hierarchy classifies, records, monitors, and manages waste data based on type, group, and characteristics."
+  }
+}

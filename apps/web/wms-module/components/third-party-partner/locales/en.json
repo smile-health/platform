@@ -1,0 +1,130 @@
+{
+  "list": {
+    "list": "Third Party Partner",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Contract Number"
+      },
+      "healthcare_partner": {
+        "label": "Healthcare Partner",
+        "placeholder": "Select Healthcare Partner"
+      },
+      "third_party_patner": {
+        "label": "Third Party Partner",
+        "placeholder": "Select Third Party Partner"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "partnership_type": "Partnership Type",
+      "third_party_name": "Third Party Patner",
+      "healthcare_partner": "Healthcare Partner",
+      "company_name": "Company Name",
+      "healthcare_facility": "Healthcare Facility Consumer",
+      "entity_name": "Entity Name",
+      "contract_date": "Contract Date",
+      "contract_start_date": "Contract Start Date",
+      "contract_end_date": "Contract End Date",
+      "contract_id": "Contract Number",
+      "partnership_status": "Partnership Status",
+      "pic_name": "PIC Name",
+      "phone_number": "Phone Number",
+      "position": "Position",
+      "price_kg": "Price/Kg",
+      "province": "Province",
+      "city": "City",
+      "address": "Address",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "last_updated": "Last Updated",
+      "waste_characteristic": "Waste Characteristic",
+      "nib": "NIB",
+      "action": "Action"
+    },
+    "column_operator": {
+      "username ": "Username",
+      "name": "Name",
+      "role": "Role",
+      "company_name": "Company Name",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "button": {
+      "add": "Add Partnership",
+      "add_characteristic": "Add Waste Characteristic",
+      "edit_characteristic": "Edit Waste Characteristic"
+    }
+  },
+  "title": {
+    "partnership": "Third Party Partner",
+    "list": "Third Party Partner List",
+    "create": "Create Third Party Partner",
+    "edit": "Edit Third Party Partner"
+  },
+  "form": {
+    "is_same_company": {
+      "label": "Is Same Company ?"
+    },
+    "partnership_type": {
+      "label": "Partnership Type",
+      "placeholder": "Select Partnership Type"
+    },
+    "company_name": {
+      "label": "Company Name",
+      "placeholder": "Select Company Name"
+    },
+    "healthcare_partner": {
+      "label": "Healthcare Facility Consumer",
+      "placeholder": "Select Healthcare Facility"
+    },
+    "pic_name": {
+      "label": "PIC Name",
+      "placeholder": "Enter PIC Name"
+    },
+    "phone_number": {
+      "label": "Phone Number",
+      "placeholder": "Enter Phone Number"
+    },
+    "position": {
+      "label": "Position",
+      "placeholder": "Enter Position"
+    },
+    "nib": {
+      "label": "NIB",
+      "placeholder": "NIB"
+    },
+    "price_kg": {
+      "label": "Price/Kg",
+      "placeholder": "Enter Price/Kg"
+    },
+    "contract_date": {
+      "label": "Contract Date",
+      "placeholder": "Enter Contract Date"
+    },
+    "contract_id": {
+      "label": "Contract Number",
+      "placeholder": "Enter Contract Number"
+    },
+    "partnership_status": {
+      "label": "Partnership Status",
+      "placeholder": "Select Partnership Status"
+    },
+    "waste_characteristic": {
+      "label": "Waste Characteristic",
+      "placeholder": "Select characteristic"
+    }
+  },
+  "detail": {
+    "third_party_info": "Third Party Partnership info",
+    "operator_info": "Partner Operator Info"
+  },
+  "classification_info": "Waste characteristics do not appear if the partnership type is transporter - processor/transporter - depositor/transporter - user",
+  "provider_type": {
+    "LANDFILLER": "Landfill",
+    "TREATMENT": "Treatment",
+    "RECYCLER": "Recycler"
+  }
+}

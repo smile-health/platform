@@ -5,10 +5,10 @@ import { env } from "@/config/env.js"
 import {
   NOTIFICATION_MEDIA,
   NOTIFICATION_TYPE,
-} from "@smile/lib/rabbitmq/notification.js"
-import { Publisher } from "@smile/lib/rabbitmq/publisher.js"
-import { Context } from "@smile/lib/types/context.js"
-import { generateEventCode } from "@smile/lib/utils.js"
+} from "@smile-health/lib/rabbitmq/notification.js"
+import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
+import { Context } from "@smile-health/lib/types/context.js"
+import { generateEventCode } from "@smile-health/lib/utils.js"
 import { Context as HonoContext } from "hono"
 import moment from "moment-timezone"
 import { UserRepository } from "../../user/user.repository.js"

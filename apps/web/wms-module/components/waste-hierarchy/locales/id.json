@@ -1,0 +1,129 @@
+{
+  "list": {
+    "list": "Hirarki Limbah",
+    "tab": {
+      "waste_type": "Jenis Limbah",
+      "waste_group": "Grup Limbah",
+      "waste_characteristic": "Karakteristik Limbah"
+    },
+    "filter": {
+      "waste_type": {
+        "search": {
+          "label": "Cari",
+          "placeholder": "Cari jenis limbah"
+        },
+        "waste_type": {
+          "label": "Jenis Limbah",
+          "placeholder": "Pilih jenis limbah"
+        }
+      },
+      "waste_group": {
+        "search": {
+          "label": "Cari",
+          "placeholder": "Cari grup limbah"
+        },
+        "waste_group": {
+          "label": "Grup Limbah",
+          "placeholder": "Pilih Grup Limbah"
+        }
+      },
+      "waste_characteristic": {
+        "search": {
+          "label": "Cari",
+          "placeholder": "Cari karakteristik limbah"
+        }
+      },
+      "is_active": {
+        "label": "Status",
+        "placeholder": "Pilih status"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "waste_type": "Jenis Limbah",
+      "waste_group": "Grup Limbah",
+      "waste_characteristic": "Karakteristik Limbah",
+      "residue": "Sisa",
+      "description": "Keterangan",
+      "status": "Status",
+      "updated_at": "Diperbarui",
+      "updated_by": "Diperbarui Oleh",
+      "action": "Aksi",
+      "is_active": {
+        "1": "Aktif",
+        "0": "Tidak Aktif"
+      }
+    },
+    "action": {
+      "activate": {
+        "title": "Aktifkan"
+      },
+      "deactivate": {
+        "title": "Nonaktifkan"
+      }
+    },
+    "button": {
+      "add_waste_type": "Tambah Jenis Limbah",
+      "add_waste_group": "Tambah Grup Limbah",
+      "add_waste_characteristic": "Tambah Karakteristik Limbah"
+    }
+  },
+  "title": {
+    "waste_type": "Jenis Limbah",
+    "waste_group": "Grup Limbah",
+    "waste_characteristic": "Karakteristik Limbah",
+    "list_waste_type": "Daftar Jenis Limbah",
+    "list_waste_group": "Daftar Grup Limbah",
+    "list_waste_characteristic": "Daftar Karakteristik Limbah",
+    "create_waste_type": "Jenis Limbah",
+    "create_waste_group": "Grup Limbah",
+    "create_waste_characteristic": "Karakteristik Limbah",
+    "explain_waste_classification": "Penjelasan Klasifikasi Limbah"
+  },
+  "action": {
+    "activate": {
+      "button": "Aktifkan",
+      "confirmation": "Apakah Anda yakin ingin mengaktifkan produk ini?"
+    },
+    "deactivate": {
+      "button": "Nonaktifkan",
+      "confirmation": "Apakah Anda yakin ingin menonaktifkan produk ini?"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "Produk Template",
+    "trademark": "Produk Varian",
+    "non_hierarchy": "Non Hirarki"
+  },
+  "form": {
+    "waste_group": {
+      "label": "Grup Limbah",
+      "placeholder": "Masukkan Grup Limbah",
+      "placeholder_select": "Pilih Grup Limbah"
+    },
+    "waste_type": {
+      "label": "Jenis Limbah",
+      "placeholder": "Masukkan Jenis Limbah",
+      "placeholder_select": "Pilih Jenis Limbah"
+    },
+    "waste_characteristic": {
+      "label": "Karakteristik Limbah",
+      "placeholder": "Masukkan Karakteristik Limbah"
+    },
+    "status": {
+      "label": "Status",
+      "active": "Aktif",
+      "non_active": "Tidak Aktif"
+    },
+    "description": {
+      "label": "Deskripsi",
+      "placeholder": "Masukkan Deskripsi"
+    }
+  },
+  "information": {
+    "title": "Hirarki Limbah",
+    "description": "Hirarki limbah mengelompokkan, mencatat, memantau, dan mengatur data limbah berdasarkan jenis, kelompok, dan karakteristiknya."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "index": {
+    "title": "Lokasi Penyimpanan Limbah",
+    "edit": "Edit Lokasi Penyimpanan Limbah"
+  },
+  "filter": {
+    "search": {
+      "label": "Cari",
+      "placeholder": "Cari nama lokasi"
+    }
+  },
+  "form": {
+    "facility_name": {
+      "label": "Nama Fasyankes",
+      "placeholder": "Masukkan nama Fasyankes"
+    },
+    "location_name": {
+      "label": "Nama lokasi ",
+      "placeholder": "Masukkan nama lokasi"
+    },
+    "latitude": {
+      "label": "Lintang",
+      "placeholder": "Masukkan Latitude"
+    },
+    "longitude": {
+      "label": "Garis bujur",
+      "placeholder": "Masukkan bujur"
+    },
+    "address": {
+      "label": "Alamat",
+      "placeholder": "Masukkan alamat"
+    },
+    "province": {
+      "label": "Propinsi",
+      "placeholder": "Pilih Provinsi"
+    },
+    "city": {
+      "label": "Kota",
+      "placeholder": "Pilih Kota"
+    },
+    "distance_limit": {
+      "label": "Batas jarak ",
+      "placeholder": "Masukkan batas jarak (dalam meter)"
+    }
+  },
+  "column": {
+    "facility_name": "Nama Fasyankes",
+    "location_name": "Nama lokasi ",
+    "latitude": "Lintang",
+    "longitude": "Garis bujur",
+    "address": "Alamat",
+    "province": "Propinsi",
+    "city": "Kota",
+    "action": "Aksi"
+  },
+  "information": {
+    "title": "Lokasi Penyimpanan Limbah",
+    "description": "Lokasi Penyimpanan Limbah memantau dan mengelola data lokasi penyimpanan sementara limbah medis di fasilitas kesehatan"
+  }
+}

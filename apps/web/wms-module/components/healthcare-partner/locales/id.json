@@ -1,0 +1,95 @@
+{
+  "list": {
+    "list": "Mitra Fasyankes",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Status Kemitraan"
+      },
+      "healthcare_partner": {
+        "label": "Fasyankes",
+        "placeholder": "Pilih Fasyankes"
+      },
+      "partnership_status": {
+        "label": "Status Kemitraan",
+        "placeholder": "Pilih Status Kemitraan"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "partnership_type": "Tipe Kemitraan",
+      "healthcare_facility": "Fasyankes",
+      "company_name": "Nama Perusahaan",
+      "entity_name": "Nama Entitas",
+      "contract_start_date": "Tanggal Mulai Kontrak",
+      "contract_end_date": "Tanggal Berakhir Kontrak",
+      "partnership_status": "Status Kemitraan",
+      "pic_name": "Nama PIC",
+      "phone_number": "Nomer Telepon",
+      "position": "Jabatan",
+      "price_kg": "Harga/Kg",
+      "province": "Provinsi",
+      "city": "Kab/Kota",
+      "address": "Alamat Kantor",
+      "latitude": "Lintang",
+      "longitude": "Bujur",
+      "last_updated": "Pembaruan Terakhir",
+      "waste_characteristic": "Karakteristik Limbah",
+      "action": "Aksi"
+    }
+  },
+  "title": {
+    "partnership": "Mitra Fasyankes",
+    "list": "Daftar Mitra Fasyankes"
+  },
+  "form": {
+    "is_same_company": {
+      "label": "Apakah Perusahaan yang Sama ?"
+    },
+    "partnership_type": {
+      "label": "Tipe Kemitraan",
+      "placeholder": "Pilih Tipe Kemitraan"
+    },
+    "company_name": {
+      "label": "Nama Perusahaan",
+      "placeholder": "Pilih Nama Perusahaan"
+    },
+    "healthcare_partner": {
+      "label": "Fasyankes",
+      "placeholder": "Pilih Fasyankes"
+    },
+    "pic_name": {
+      "label": "Nama PIC",
+      "placeholder": "Masukan Nama PIC"
+    },
+    "phone_number": {
+      "label": "Nomer Telepon",
+      "placeholder": "Masukan Nomer Telepon"
+    },
+    "position": {
+      "label": "Jabatan",
+      "placeholder": "Masukan Jabatan"
+    },
+    "price_kg": {
+      "label": "Harga/Kg",
+      "placeholder": "Masukan Harga/Kg"
+    },
+    "contract_start_date": {
+      "label": "Tanggal Mulai Kontrak",
+      "placeholder": "Masukan Tanggal Mulai Kontrak"
+    },
+    "contract_end_date": {
+      "label": "Tanggal Berakhir Kontrak",
+      "placeholder": "Masukan Tanggal Berakhir Kontrak"
+    },
+    "partnership_status": {
+      "label": "Status Kemitraan",
+      "placeholder": "Pilih Status Kemitraan"
+    }
+  },
+  "detail": {
+    "healthcare_partner_info": "Info Kemitraan Fasyankes"
+  }
+}

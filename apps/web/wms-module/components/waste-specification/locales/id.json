@@ -1,0 +1,214 @@
+{
+  "list": {
+    "list": "Spesifikasi Limbah",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Masukkan kata kunci"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "waste_code": "Kode Limbah",
+      "waste_type": "Jenis Limbah",
+      "waste_group": "Kelompok Limbah",
+      "waste_characteristic": "Karakteristik Limbah",
+      "multiple_transporters": "Pihak ketiga lebih dari satu",
+      "use_cold_storage": "Gunakan Penyimpanan Dingin",
+      "internal_treatment": "Pengolahan Internal",
+      "external_treatment": "Pengolahan Eksternal",
+      "vehicle_type": "Jenis Kendaraan",
+      "updated_at": "Diperbarui Pada",
+      "updated_by": "Diperbarui Oleh",
+      "action": "Aksi"
+    },
+    "options": {
+      "tag": "Pilih Tag",
+      "type": "Pilih Tipe"
+    },
+    "action": {
+      "activate": {
+        "title": "Aktifkan"
+      },
+      "deactivate": {
+        "title": "Non Aktifkan"
+      }
+    },
+    "button": {
+      "add": "Tambah Material"
+    }
+  },
+  "title": {
+    "waste_specification": "Spesifikasi Limbah",
+    "list": "Daftar Spesifikasi Limbah",
+    "create": "Klasifikasi Limbah",
+    "edit": "Edit Spesifikasi Limbah"
+  },
+  "detail": {
+    "title": "Detail Spesifikasi Limbah",
+    "waste_code": "Kode Limbah",
+    "waste_type": "Jenis Limbah",
+    "waste_group": "Kelompok Limbah",
+    "waste_characteristic": "Karakteristik Limbah",
+    "waste_bag_color": "Warna Kantong Limbah",
+    "minimum_decay_time_process": "Proses minimum waktu peluruhan",
+    "multiple_transporters": "Pihak ketiga lebih dari satu",
+    "use_cold_storage": "Gunakan Penyimpanan Dingin",
+    "cold_storage_max_processing": "Durasi Max Penyimpanan Dingin",
+    "temporary_storage_max_processing": "Durasi Maksimal Penyimpanan Sementara",
+    "internal_treatment": "Pengolahan Internal",
+    "external_treatment": "Pengolahan Eksternal",
+    "vehicle_type": "Jenis Kendaraan",
+    "created_at": "Dibuat Pada",
+    "created_by": "Dibuat Oleh",
+    "updated_at": "Diperbarui Pada",
+    "updated_by": "Diperbarui Oleh"
+  },
+  "column": {
+    "name": "Nama Material"
+  },
+  "action": {
+    "activate": {
+      "button": "Aktifkan",
+      "confirmation": "Apakah anda yakin akan mengaktifkan produk ini ?"
+    },
+    "deactivate": {
+      "button": "Non Aktifkan",
+      "confirmation": "Apakah anda yakin akan menonaktifkan produk ini ?"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "Produk Template",
+    "trademark": "Produk Varian",
+    "non_hierarchy": "Non Hirarki"
+  },
+  "form": {
+    "waste_type": {
+      "label": "Jenis limbah",
+      "placeholder": "Pilih Jenis Limbah",
+      "validation": {
+        "required": "Jenis limbah limbah diperlukan"
+      }
+    },
+    "waste_group": {
+      "label": "Kelompok limbah",
+      "placeholder": "Pilih Kelompok Limbah",
+      "validation": {
+        "required": "Kelompok limbah limbah dibutuhkan"
+      }
+    },
+    "waste_characteristic": {
+      "label": "Karakteristik limbah",
+      "placeholder": "Pilih karakteristik",
+      "validation": {
+        "required": "Karakteristik limbah diperlukan"
+      }
+    },
+    "waste_code": {
+      "label": "Kode Limbah",
+      "placeholder": "Masukkan Kode Limbah"
+    },
+    "waste_bag_color": {
+      "label": "Warna Kantong Limbah",
+      "placeholder": "Pilih warna kantong limbah",
+      "validation": {
+        "required": "Kantong limbah diperlukan"
+      }
+    },
+    "use_cold_storage": {
+      "label": "Gunakan Penyimpanan Dingin",
+      "validation": {
+        "required": "Penggunaan penyimpanan dingin wajib diisi"
+      }
+    },
+    "multiple_transporters": {
+      "label": "Pihak ketiga lebih dari satu"
+    },
+    "storage_rule": {
+      "label": "Aturan penyimpanan",
+      "placeholder": "Masukkan aturan penyimpanan"
+    },
+    "cold_storage_max_processing_type": {
+      "label": "Proses Maksimal Penyimpanan Dingin (Hari)"
+    },
+    "cold_storage_max_processing_time": {
+      "placeholder": "Masukkan proses maksimal penyimpanan dingin"
+    },
+    "temporary_storage_min_processing_type": {
+      "label": "Proses Minimal Penyimpanan Sementara"
+    },
+    "temporary_storage_min_processing_time": {
+      "placeholder": "Masukkan proses minimal penyimpanan sementara (Hari)"
+    },
+    "temporary_storage_max_processing_type": {
+      "label": "Proses Maksimal Penyimpanan Sementara (Hari)"
+    },
+    "minimum_decay_time_process": {
+      "label": "Proses minimum waktu peluruhan (Hari)",
+      "placeholder": "Masukkan proses minimum waktu peluruhan"
+    },
+    "temporary_storage_max_processing_time": {
+      "placeholder": "Masukkan proses maksimal penyimpanan sementara"
+    },
+    "waste_internal_treatment": {
+      "label": "Pengolahan Limbah Internal",
+      "placeholder": "Pilih pengolahan internal"
+    },
+    "waste_external_treatment": {
+      "label": "Pengolahan Limbah Eksternal",
+      "placeholder": "Pilih Pengolahan Eksternal",
+      "transport_auto_selected": "Diangkut dipilih secara otomatis saat diolah, dimanfaat, atau ditimbus dipilih",
+      "validation": {
+        "required": "Diperlukan Pengolahan Limbah Eksternal"
+      }
+    },
+    "vehicle_type": {
+      "label": "Jenis Kendaraan",
+      "placeholder": "Pilih jenis kendaraan",
+      "validation": {
+        "required": "Jenis kendaraan wajib diisi"
+      }
+    }
+  },
+  "master_waste_create": "Tambah Klasifikasi Limbah",
+  "internal_treatment": {
+    "PYROLYSIS": "Insinerasi/Pirolisis ",
+    "DISINFECTION": "Sterilisasi/Desinfeksi",
+    "INTERNAL_LANDFILL": "Ditimbus"
+  },
+  "external_treatment": {
+    "TRANSPORTER_TREATMENT": "Diangkut - Diolah",
+    "TRANSPORTER_LANDFILL": "Diangkut - Ditimbus",
+    "TRANSPORTER_RECYCLER": "Diangkut - Dimanfaat",
+    "SPECIALIZED_TREATMENT_PROVIDER": "Pengolahan Khusus",
+    "TRANSPORTER_GOVERNMENT": "Pengangkut Limbah Lokal - TPA",
+    "TRANSPORTER_GOVERNMENT_WASTE_BANK": "Pengangkut Limbah Lokal - Bank Sampah"
+  },
+  "waste_bag_color": {
+    "BLACK": "Hitam",
+    "GRAY": "Abu-abu",
+    "PURPLE": "Ungu",
+    "BROWN": "Coklat",
+    "RED": "Merah",
+    "YELLOW": "Kuning",
+    "NONE": "Tidak ada"
+  },
+  "vehicle_type": {
+    "BOX_TRUCK": "Truk Boks",
+    "REFRIGERATED_BOX_TRUCK": "Truk Pendingin",
+    "OPEN_BODY_TRUCK": "Truk Bak Terbuka",
+    "TANKER": "Truk Tangki",
+    "HAZARDOUS_MATERIAL_TRUCK": "Truk Bahan Baku Berbahaya",
+    "RADIOACTIVE_MATERIAL_TRUCK": "Truk Bahan Radioaktif",
+    "FLATBED_TRUCK": "Truk Bak Datar",
+    "LOADER_TRUCK": "Truk Pengangkut",
+    "TRAILER": "Trailer",
+    "VAN": "Van"
+  },
+  "information": {
+    "title": "Spesifikasi Limbah",
+    "description": "Spesifikasi limbah mencatat, memantau, dan mengelola data klasifikasi/spesifikasi limbah berdasarkan jenis, kelompok, karakteristik, serta metode penyimpanan dan pengolahannya."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "list": {
+    "list": "Lokasi Pengolahan",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari nama lokasi"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "location_name": "Nama Lokasi",
+      "latitude": "Lintang",
+      "longitude": "Garis Bujur",
+      "address": "Alamat",
+      "province": "Provinsi",
+      "city": "Kota",
+      "action": "Tindakan"
+    },
+    "button": {
+      "add": "Tambahkan Lokasi",
+      "distance_limit": "Atur Batas Jarak"
+    }
+  },
+  "title": {
+    "create": "Membuat Lokasi Pengolahan",
+    "edit": "Edit Lokasi Pengolahan"
+  },
+  "form": {
+    "location_name": {
+      "label": "Nama lokasi ",
+      "placeholder": "Masukkan nama lokasi"
+    },
+    "latitude": {
+      "label": "Lintang",
+      "placeholder": "Masukkan Latitude"
+    },
+    "longitude": {
+      "label": "Garis bujur",
+      "placeholder": "Masukkan bujur"
+    },
+    "address": {
+      "label": "Alamat",
+      "placeholder": "Masukkan alamat"
+    },
+    "province": {
+      "label": "Propinsi",
+      "placeholder": "Pilih Provinsi"
+    },
+    "city": {
+      "label": "Kota",
+      "placeholder": "Pilih Kota"
+    },
+    "distance_limit": {
+      "label": "Batas jarak ",
+      "placeholder": "Masukkan batas jarak (dalam meter)"
+    }
+  },
+  "information": {
+    "title": "Lokasi Pengolahan",
+    "description": "Lokasi Pengolahan memantau dan mengelola data pengelola limbah, termasuk status kemitraan"
+  }
+}

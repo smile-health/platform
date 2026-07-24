@@ -10,7 +10,6 @@ import { AssetInventory } from './asset-inventory'
 import { AssetManagement } from './asset-management'
 import { AssetType } from './asset-type'
 import { AssetVendor } from './asset-vendor'
-import { BmhpHistory } from './bmhp-history'
 import { BudgetSource } from './budget-source'
 import { ColdchainEquipment } from './coldchain-equipment'
 import { CommunicationProvider } from './communication-provider'
@@ -21,11 +20,6 @@ import { Entities } from './entity'
 import { EnvironmentalHealthHistory } from './environmental-health-history'
 import { GlobalAsset } from './global-asset'
 import { Manufacturers } from './manufacturer'
-import { MasterBmhp } from './master-bmhp'
-import { MasterJenisPemeriksaan } from './master-jenis-pemeriksaan'
-import { MasterMethod } from './master-method'
-import { MasterParameter } from './master-parameter'
-import { MasterPemeriksaan } from './master-pemeriksaan'
 import { Material } from './material'
 import { MaterialVolumeManagement } from './material-volume-management'
 import { Menu } from './menu'
@@ -63,10 +57,6 @@ export type FeatureName =
   | Users
   | Material
   | Manufacturers
-  | MasterJenisPemeriksaan
-  | MasterMethod
-  | MasterParameter
-  | MasterPemeriksaan
   | Orders
   | ParameterCategory
   | TestMethod
@@ -106,7 +96,5 @@ export type FeatureName =
   | AnnualPlanningProcess
   | ProgramPlanMaterialRatio
   | AnnualCommitment
-  | MasterBmhp
-  | BmhpHistory
   | GlobalAsset
   | EnvironmentalHealthHistory

@@ -1,7 +1,7 @@
 import { Hono } from "hono"
 import { CceModule } from "./cce.module.js"
 import { StatusCodes } from "http-status-codes"
-import { BaseController } from "@smile/lib/base/controller.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
 import { CceQueryParams, CceQueryParamsSchema } from "./cce.schema.js"
 import { AnnualModule } from "./annual/annual.module.js"
 import {

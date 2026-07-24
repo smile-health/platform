@@ -1,0 +1,56 @@
+{
+  "list": {
+    "list": "Kendaraan Transportasi",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Nomor Plat Kendaraan Transportasi"
+      },
+      "healthcare_partner": {
+        "label": "Mitra Fasyankes",
+        "placeholder": "Pilih Mitra Fasyankes"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "vehicle_type ": "Tipe Kendaraan",
+      "vehicle_number": "Nomor Plat Kendaraan",
+      "capacity": "Kapasitas (Kg)",
+      "healthcare_consumer": "Fasyankes",
+      "action": "Aksi"
+    },
+    "button": {
+      "add": "Tambah Kendaraan Mitra"
+    }
+  },
+  "title": {
+    "partnership_vehicle": "Kendaraan Mitra",
+    "list": "Daftar Kendaraan Mitra",
+    "create": "Tambah Kendaraan Mitra",
+    "edit": "Edit Kendaraan Mitra"
+  },
+  "form": {
+    "healthcare_consumer": {
+      "label": "Fasyankes",
+      "placeholder": "Pilih Fasyankes"
+    },
+    "vehicle_number": {
+      "label": "Nomor Plat Kendaraan",
+      "placeholder": "Masukan Nomor Plat Kendaraan",
+      "validation": {
+        "duplicate": "Nomor Plat Kendaraan sudah terdaftar pada entitas ini.",
+        "invalid_format": "Format Nomor Plat Kendaraan Tidak Valid"
+      }
+    },
+    "capacity": {
+      "label": "Kapasitas (Kg)",
+      "placeholder": "Masukan Kapasitas (Kg)"
+    },
+    "vehicle_type": {
+      "label": "Tipe Kendaraan",
+      "placeholder": "Masukan Tipe Kendaraan"
+    }
+  }
+}

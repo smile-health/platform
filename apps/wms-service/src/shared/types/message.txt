@@ -1,0 +1,169 @@
+PARTNERSHIP_EXPIRED:
+  Type:
+  Title: Partnership Expiry Reminder
+  Message: The partnership contract [contract_id] will expire on [expiry_date]. Please review and renew if needed.
+
+PARTNERSHIP_CREATED:
+  Type:
+  Title: New Partnership Created
+  Message: A new partnership contract has been created between [healthcare_facility] and [third_party].
+
+PARTNERSHIP_UPDATED:
+  Type:
+  Title: Partnership Updated
+  Message: Partnership contract [contract_id] has been updated. Please check the latest details.
+
+PARTNERSHIP_COMPLIANCE_ALERT:
+  Type:
+  Title: Partnership Compliance Alert
+  Message: Contract [contract_id] has compliance issues that require review.
+
+WASTE_BAG_RESIDUE_CREATED:
+  Type:
+  Title: Residue Waste Bag Created
+  Message: A new residue waste bag [waste_bag_id] has been created.
+
+WASTE_BAG_DOMESTIC_CREATED:
+  Type:
+  Title: Domestic Waste Bag Created
+  Message: A new domestic waste bag [waste_bag_id] has been created.
+
+WASTE_BAG_IN_TEMPORARY_STORAGE:
+  Type:
+  Title: Waste Moved to Temporary Storage
+  Message: Waste bag [waste_bag_id] has been moved into temporary storage.
+
+WASTE_BAG_OUT_TEMPORARY_STORAGE:
+  Type:
+  Title: Waste Removed from Temporary Storage
+  Message: Waste bag [waste_bag_id] has been removed from temporary storage.
+
+WASTE_BAG_TEMPORARY_STORAGE_EXPIRED:
+  Type:
+  Title: Temporary Storage Expired
+  Message: Waste bag [waste_bag_id] has exceeded its maximum allowed duration in temporary storage.
+
+WASTE_BAG_IN_COLD_STORAGE:
+  Type:
+  Title: Waste Moved to Cold Storage
+  Message: Waste bag [waste_bag_id] has been moved into cold storage.
+
+WASTE_BAG_OUT_COLD_STORAGE:
+  Type:
+  Title: Waste Removed from Cold Storage
+  Message: Waste bag [waste_bag_id] has been removed from cold storage.
+
+WASTE_BAG_COLD_STORAGE_EXPIRED:
+  Type:
+  Title: Cold Storage Expired
+  Message: Waste bag [waste_bag_id] has exceeded its maximum allowed duration in cold storage.
+
+WASTE_BAG_GROUP_IN_TEMPORARY_STORAGE:
+  Type:
+  Title: Waste Group In Temporary Storage
+  Message: Waste group [group_id] has been placed in temporary storage.
+
+WASTE_BAG_GROUP_OUT_TEMPORARY_STORAGE:
+  Type:
+  Title: Waste Group Out of Temporary Storage
+  Message: Waste group [group_id] has been removed from temporary storage.
+
+WASTE_BAG_GROUP_TEMPORARY_STORAGE_EXPIRED:
+  Type:
+  Title: Waste Group Temporary Storage Expired
+  Message: Waste group [group_id] has exceeded its maximum allowed duration in temporary storage.
+
+WASTE_BAG_GROUP_IN_COLD_STORAGE:
+  Type:
+  Title: Waste Group In Cold Storage
+  Message: Waste group [group_id] has been placed in cold storage.
+
+WASTE_BAG_GROUP_OUT_COLD_STORAGE:
+  Type:
+  Title: Waste Group Out of Cold Storage
+  Message: Waste group [group_id] has been removed from cold storage.
+
+WASTE_BAG_GROUP_COLD_STORAGE_EXPIRED:
+  Type:
+  Title: Waste Group Cold Storage Expired
+  Message: Waste group [group_id] has exceeded its maximum allowed duration in cold storage.
+
+WASTE_BAG_TREATMENT_GROUP_INCINERATE_IN_PROCESS:
+  Type:
+  Title: Incineration In Process
+  Message: Waste group [group_id] is currently undergoing incineration.
+
+WASTE_BAG_TREATMENT_GROUP_INCINERATED:
+  Type:
+  Title: Incineration Completed
+  Message: Waste group [group_id] has been incinerated successfully.
+
+WASTE_BAG_TREATMENT_GROUP_STERILISE_IN_PROCESS:
+  Type:
+  Title: Sterilisation In Process
+  Message: Waste group [group_id] is currently undergoing sterilisation.
+
+WASTE_BAG_TREATMENT_GROUP_STERILISED:
+  Type:
+  Title: Sterilisation Completed
+  Message: Waste group [group_id] has been sterilised successfully.
+
+WASTE_BAG_GROUP_TRANSPORT_PICKUP:
+  Type:
+  Title: Waste Pickup Scheduled
+  Message: Waste group [group_id] is scheduled for pickup by [transporter].
+
+WASTE_BAG_GROUP_TRANSPORT_HANDOVER:
+  Type:
+  Title: Waste Handover Completed
+  Message: Waste group [group_id] has been handed over to [transporter].
+
+WASTE_BAG_GROUP_TRANSPORT_FOLLOW_UP:
+  Type:
+  Title: Transport Follow-up Required
+  Message: Please follow up on waste group [group_id] transport status.
+
+WASTE_BAG_GROUP_TREATMENT_RECEIVMENT:
+  Type:
+  Title: Waste Received by Treatment Facility
+  Message: Waste group [group_id] has been received by [treatment_facility].
+
+MANUAL_REQUEST_CREATED:
+  Type:
+  Title: Manual Weighing Request Submitted
+  Message: A manual weighing request [request_id] has been submitted by [operator].
+
+MANUAL_REQUEST_APPROVED:
+  Type:
+  Title: Manual Weighing Request Approved
+  Message: Manual weighing request [request_id] has been approved.
+
+MANUAL_REQUEST_REJECTED:
+  Type:
+  Title: Manual Weighing Request Rejected
+  Message: Manual weighing request [request_id] has been rejected. Reason: [reason].
+
+ASSET_INACTIVE:
+  Type:
+  Title: Inactive Asset Detected
+  Message: Asset [asset_name] is currently inactive. Please check its status.
+
+ASSET_WARRANTY_EXPIRED:
+  Type:
+  Title: Asset Warranty Expiry Reminder
+  Message: The warranty for asset [asset_name] will expire on [expiry_date].
+
+ASSET_CALIBRATION_DUE:
+  Type:
+  Title: Asset Calibration Due
+  Message: Asset [asset_name] requires calibration on [calibration_date].
+
+WASTE_STATUS_CHANGED:
+  Type:
+  Title: Waste Status Updated
+  Message: Waste bag [waste_bag_id] status changed from [old_status] to [new_status].
+
+WASTE_ACCUMULATED_UPDATE:
+  Type:
+  Title: Daily Waste Accumulation Update
+  Message: Total accumulated waste processed today: [summary_data].

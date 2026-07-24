@@ -1,13 +1,12 @@
 import { RoleValidationMiddleware } from "@/common/middlewares/role-validation.middleware.js"
-import { BaseController } from "@smile/lib/base/controller.js"
-import { ExcelMiddleware } from "@smile/lib/middlewares"
-import { IdParamsSchema } from "@smile/lib/types/param.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
+import { ExcelMiddleware } from "@smile-health/lib/middlewares"
+import { IdParamsSchema } from "@smile-health/lib/types/param.js"
 import { Hono } from "hono"
 import { StatusCodes } from "http-status-codes"
 import { MaterialMiddleware } from "./material.middleware.js"
 import { MaterialModule } from "./material.module.js"
 import {
-  GetBiofarmaQueryParamsSchema,
   GetMaterialsQueryParamSchema,
   GetTemplateQueryParamsSchema,
   UpdateStatusMaterialRequestSchema,
@@ -32,16 +31,6 @@ export class MaterialController extends BaseController {
       async (c) => {
         const queryParam = c.req.valid("query")
         const response = await this.module.list(c, queryParam)
-        return c.json(response, StatusCodes.OK)
-      }
-    )
-
-    router.get(
-      "/biofarma",
-      this.validateRequest("query", GetBiofarmaQueryParamsSchema),
-      async (c) => {
-        const queryParam = c.req.valid("query")
-        const response = await this.module.listBiofarma(c, queryParam)
         return c.json(response, StatusCodes.OK)
       }
     )

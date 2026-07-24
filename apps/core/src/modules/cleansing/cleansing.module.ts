@@ -13,7 +13,7 @@ import {
 import { CleansingRepository } from "./cleansing.repository"
 import { randomUUID } from "crypto"
 import { v7 as uuidv7 } from "uuid"
-import { Publisher } from "@smile/lib/rabbitmq/publisher.js"
+import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
 
 interface Transaction {
   stock_id: number

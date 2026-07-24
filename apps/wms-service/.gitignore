@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+.git-credentials
+.qodo
+.vscode
+.DS_Store
+.history
+bun.lockb
+dump.rdb

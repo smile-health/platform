@@ -1,4 +1,4 @@
-import { Mailer } from "@smile/lib/mail/mail.js"
+import { Mailer } from "@smile-health/lib/mail/mail.js"
 import { Context } from "hono"
 import { readFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"

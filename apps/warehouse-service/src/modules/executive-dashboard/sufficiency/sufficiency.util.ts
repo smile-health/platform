@@ -20,7 +20,7 @@ import {
   SufficiencyMapItem,
   SufficiencyCriticalOverviewResult,
 } from "./sufficiency.schema.js"
-import { round } from "@smile/lib/utils.js"
+import { round } from "@smile-health/lib/utils.js"
 
 // Type aliases for better readability
 export type StatusGroups = {

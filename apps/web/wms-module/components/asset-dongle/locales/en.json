@@ -1,0 +1,40 @@
+{
+  "list": {
+    "list": "Waste Scale Setting",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search entity name"
+      },
+      "type": {
+        "label": "Type",
+        "placeholder": "Select type"
+      }
+    },
+    "button": {
+      "search": "Search",
+      "add_asset_dongle": "Add IoT Dongle ID"
+    },
+    "column": {
+      "entity_name": "Entity Name",
+      "location": "Location",
+      "province": "Province",
+      "regency": "Regency",
+      "amount_of_dongle": "Amount of IoT Dongle",
+      "dongle_id": "IoT Dongle ID",
+      "created_at": "Created At",
+      "action": "Action"
+    }
+  },
+  "title": {
+    "list": "IoT Dongle ID Setting",
+    "create": "Create IoT Dongle ID Setting",
+    "dongle_id": "IoT Dongle ID"
+  },
+  "form": {
+    "dongle_id": {
+      "label": "IoT Dongle ID",
+      "placeholder": "Enter IoT Dongle ID"
+    }
+  }
+}

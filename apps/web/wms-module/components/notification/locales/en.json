@@ -1,0 +1,248 @@
+{
+  "title": {
+    "notification": "Notification"
+  },
+  "info": {
+    "request_accepted": "Request Accepted",
+    "request_accepted_desc": "Accepted manual weighing request from {{name}}",
+    "request_rejected": "Request Rejected",
+    "request_rejected_desc": "Rejected manual weighing request from {{name}}"
+  },
+  "request": {
+    "title": "Manual Weighing",
+    "description": "Manual weighing request from {{name}} "
+  },
+  "button": {
+    "mark_all_as_read": "Mark All as Read",
+    "contact_patient": "Contact Patient",
+    "mark_as_finished": "Mark as Finished",
+    "action": "Action",
+    "download": "Download"
+  },
+  "filter": {
+    "notification_type": {
+      "label": "Notification Type",
+      "placeholder": "Select Notification Type"
+    },
+    "program": {
+      "label": "Program",
+      "placeholder": "Select Program",
+      "without_program": "Without Program"
+    },
+    "health_center": {
+      "label": "Primary Health Center",
+      "placeholder": "Select primary health center"
+    },
+    "receive_date": {
+      "label": "Notification Date Received"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    }
+  },
+  "modal": {
+    "title": {
+      "mark_all": "Mark all as read?"
+    },
+    "description": {
+      "mark_all": "By clicking yes, you acknowledge that all notifications will be marked as read."
+    }
+  },
+  "partnership.partnership_expired": {
+    "title": "Partnership Expiry Reminder",
+    "message": "Partnership contract will expire {{dayText}} on {{expiryDate}}. Please review and renew if needed."
+  },
+  "partnership.partnership_expired_exceed": {
+    "title": "Partnership Expiry Exceeded",
+    "message": "Partnership contract has expired on {{expiryDate}}."
+  },
+  "partnership.partnership_created": {
+    "title": "New Partnership Created",
+    "message": "A new partnership contract has been created between {{healthcareFacility}} and {{thirdParty}}."
+  },
+  "partnership.partnership_updated": {
+    "title": "Partnership Updated",
+    "message": "Partnership contract has been updated. Please check the latest details."
+  },
+  "partnership.partnership_compliance_alert": {
+    "title": "Partnership Compliance Alert",
+    "message": "Contract has compliance issues that require review."
+  },
+  "waste_bag.waste_bag_residue_created": {
+    "title": "Residue Waste Bag Created",
+    "message": "A new residue waste bag has been created."
+  },
+  "waste_bag.waste_bag_domestic_created": {
+    "title": "Domestic Waste Bag Created",
+    "message": "A new domestic waste bag has been created."
+  },
+  "waste_bag.waste_bag_in_temporary_storage": {
+    "title": "Waste Moved to Temporary Storage",
+    "message": "Waste bag has been moved into temporary storage."
+  },
+  "waste_bag.waste_bag_out_temporary_storage": {
+    "title": "Waste Removed from Temporary Storage",
+    "message": "Waste bag has been removed from temporary storage."
+  },
+  "waste_bag.waste_bag_temporary_storage_expired": {
+    "title": "Temporary Storage Expired",
+    "message": "Waste bag has exceeded its maximum allowed duration in temporary storage."
+  },
+  "waste_bag.waste_bag_in_cold_storage": {
+    "title": "Waste Moved to Cold Storage",
+    "message": "Waste bag has been moved into cold storage."
+  },
+  "waste_bag.waste_bag_out_cold_storage": {
+    "title": "Waste Removed from Cold Storage",
+    "message": "Waste bag has been removed from cold storage."
+  },
+  "waste_bag.waste_bag_cold_storage_expired": {
+    "title": "Cold Storage Expired",
+    "message": "Waste bag has exceeded its maximum allowed duration in cold storage."
+  },
+  "waste_bag_group.waste_bag_group_in_temporary_storage": {
+    "title": "Waste Group In Temporary Storage",
+    "message": "Waste group has been placed in temporary storage."
+  },
+  "waste_bag_group.waste_bag_group_out_temporary_storage": {
+    "title": "Waste Group Out of Temporary Storage",
+    "message": "Waste group has been removed from temporary storage."
+  },
+  "waste_bag_group.waste_bag_group_temporary_storage_expired": {
+    "title": "Waste Group Temporary Storage Expired",
+    "message": "Waste group has exceeded its maximum allowed duration in temporary storage."
+  },
+  "waste_bag_group.waste_bag_group_in_cold_storage": {
+    "title": "Waste Group In Cold Storage",
+    "message": "Waste group has been placed in cold storage."
+  },
+  "waste_bag_group.waste_bag_group_out_cold_storage": {
+    "title": "Waste Group Out of Cold Storage",
+    "message": "Waste group has been removed from cold storage."
+  },
+  "waste_bag_group.waste_bag_group_cold_storage_expired": {
+    "title": "Waste Group Cold Storage Expired",
+    "message": "Waste group has exceeded its maximum allowed duration in cold storage."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_internal_landfill_in_process": {
+    "title": "Internal Landfill In Process",
+    "message": "Waste group is currently undergoing internal landfill."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_internal_landfilled": {
+    "title": "Internal Landfill Completed",
+    "message": "Waste group has been internal landfill successfully."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_incinerate_in_process": {
+    "title": "Incineration In Process",
+    "message": "Waste group is currently undergoing incineration."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_incinerated": {
+    "title": "Incineration Completed",
+    "message": "Waste group has been incinerated successfully."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_sterilise_in_process": {
+    "title": "Sterilisation In Process",
+    "message": "Waste group is currently undergoing sterilisation."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_sterilised": {
+    "title": "Sterilisation Completed",
+    "message": "Waste group has been sterilised successfully."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled_in_process": {
+    "title": "External Landfill In Process",
+    "message": "Waste group is currently undergoing External Landfill."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled": {
+    "title": "External Landfill Completed",
+    "message": "Waste group has been external landfilled successfully."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_recycled_in_process": {
+    "title": "Recycled In Process",
+    "message": "Waste group is currently undergoing Recycled."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_recycled": {
+    "title": "Recycled Completed",
+    "message": "Waste group has been recycled successfully."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_disposed_in_process": {
+    "title": "Disposed In Process",
+    "message": "Waste group is currently undergoing disposed."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_disposed": {
+    "title": "Disposed Completed",
+    "message": "Waste group has been disposed successfully."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_follow_up": {
+    "title": "Transport Follow-up Required",
+    "message": "Please follow up on waste group transport status."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_handover": {
+    "title": "Waste Handover Completed",
+    "message": "Waste group has been handed over to {{vehicleNumber}}."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_pickup": {
+    "title": "Waste Pickup Scheduled",
+    "message": "Waste group is scheduled for pickup by transporter."
+  },
+  "waste_bag_group_transport.waste_bag_group_handover_to_treatment": {
+    "title": "Waste Handover to Treatment External",
+    "message": "{{totalData}} Waste group is handover by transporter to third party."
+  },
+  "waste_bag_group_treatment.waste_bag_group_treatment_receivment": {
+    "title": "Waste Received by Treatment Facility",
+    "message": "Waste group has been received by treatment facility."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_end_status": {
+    "title": "Lifecycle Waste Completed",
+    "message": "Waste group has been {{status}} successfully."
+  },
+  "manual_request.manual_request_created": {
+    "title": "Manual Weighing Request Submitted",
+    "message": "A manual weighing request has been submitted."
+  },
+  "manual_request.manual_request_approved": {
+    "title": "Manual Weighing Request Approved",
+    "message": "Manual weighing request has been approved by {{name}}."
+  },
+  "manual_request.manual_request_rejected": {
+    "title": "Manual Weighing Request Rejected",
+    "message": "Manual weighing request has been rejected by {{name}}."
+  },
+  "asset.asset_inactive": {
+    "title": "Inactive Asset Detected",
+    "message": "Asset {{assetName}} is currently inactive. Please check its status."
+  },
+  "asset.asset_warranty_expired": {
+    "title": "Asset Warranty Expiry Reminder",
+    "message": "The warranty for asset {{assetName}} will expire on {{expiryDate}}."
+  },
+  "asset.asset_calibration_due": {
+    "title": "Asset Calibration Due",
+    "message": "Asset {{assetName}} requires calibration on {{calibrationDate}}."
+  },
+  "waste.waste_status_changed": {
+    "title": "Waste Status Updated",
+    "message": "Waste bag status changed from {{oldStatus}} to {{newStatus}}."
+  },
+  "waste.waste_accumulated_update": {
+    "title": "Daily Waste Accumulation Update",
+    "message": "Total accumulated waste processed today: {{summaryData}}."
+  },
+  "bast.create_request": {
+    "title": "Bast Number Requested",
+    "message": "Bast number {{bastNo}} is ready to review."
+  },
+  "waste_classification.deleted": {
+    "title": "Waste Classification Inactivated",
+    "message": "Waste classification id {{id}} has been inactivated"
+  },
+  "waste_hierarchy.deleted": {
+    "title": "Waste Hierarchy Inactivated",
+    "message": "Waste hierarchy id {{id}} has been inactivated"
+  },
+  "waste_bag.waste_bag_in_external_temporary_storage": {
+    "title": "Waste Moved to External Temporary Storage",
+    "message": "Waste group has been moved into external temporary storage"
+  }
+}

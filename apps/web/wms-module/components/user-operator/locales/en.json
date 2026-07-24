@@ -1,0 +1,36 @@
+{
+  "list": {
+    "list": "User Operator",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search operator"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "username": "Username",
+      "healthcare_facility_consumer": "Healthcare Facility Consumer",
+      "action": "Action"
+    },
+    "button": {
+      "add": "Add Operator"
+    }
+  },
+  "title": {
+    "create": "Create User Operator",
+    "edit": "Edit User Operator"
+  },
+  "form": {
+    "operator": {
+      "label": "Select Operator Username",
+      "placeholder": "Select operator"
+    },
+    "healthcare_facility": {
+      "label": "Select Healthcare Facility Consumer",
+      "placeholder": "Select healthcare facility"
+    }
+  }
+}

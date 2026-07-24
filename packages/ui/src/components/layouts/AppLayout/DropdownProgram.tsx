@@ -72,9 +72,6 @@ const DropdownProgram = () => {
                   logo: 'ui-w-8 ui-h-8',
                   title: 'ui-text-sm ui-m-2',
                 }}
-                target={
-                  program.key === 'waste-management' ? '_blank' : undefined
-                }
                 icon={IconPrograms[program.key]}
                 sizeIcon={32}
               />

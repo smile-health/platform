@@ -1,4 +1,4 @@
-import { round } from "@smile/lib/utils.js"
+import { round } from "@smile-health/lib/utils.js"
 import {
   StockTakingMapsDataDTO,
   StockTakingOverviewDataDTO,

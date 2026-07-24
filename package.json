@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "init": "pnpm install",
-    "reinitiate": "rm -rf node_modules apps/core/node_modules apps/main/node_modules apps/3.0/main-api/node_modules apps/platform/node_modules apps/sync-service/node_modules apps/warehouse-service/node_modules packages/lib/node_modules && pnpm install",
+    "reinitiate": "rm -rf node_modules apps/core/node_modules apps/main/node_modules apps/platform/node_modules apps/warehouse-service/node_modules packages/lib/node_modules && pnpm install",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
@@ -28,7 +28,6 @@
   },
   "workspaces": [
     "apps/*",
-    "apps/3.0/*",
     "packages/*"
   ],
   "packageManager": "pnpm@9.12.3",
@@ -36,7 +35,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@smile/lib": "^1.0.262",
+    "@smile-health/lib": "^1.0.262",
     "bun": "^1.3.11",
     "kysely-ctl": "^0.18.0",
     "pnpm": "^10.27.0"

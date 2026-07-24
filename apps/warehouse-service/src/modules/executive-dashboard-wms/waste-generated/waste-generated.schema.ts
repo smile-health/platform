@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { IdSchema } from "@smile/lib/types/param.js"
+import { IdSchema } from "@smile-health/lib/types/param.js"
 
 export const WasteGeneratedQueryParamsSchema = z.object({
   unit: z.enum(["kg", "ton"]).optional().default("kg"),

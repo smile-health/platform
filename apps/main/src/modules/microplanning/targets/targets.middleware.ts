@@ -9,9 +9,9 @@ import {
   validateRequiredFields,
 } from "@/common/utils/validation.utils.js"
 import { getIdentityAndAddressByNIK } from "@/common/utils/verify-nik.js"
-import { BaseMiddleware } from "@smile/lib/base/middleware.js"
-import { ValidationError } from "@smile/lib/error.js"
-import BaseTemplate from "@smile/lib/excel/index.js"
+import { BaseMiddleware } from "@smile-health/lib/base/middleware.js"
+import { ValidationError } from "@smile-health/lib/error.js"
+import BaseTemplate from "@smile-health/lib/excel/index.js"
 import { Context } from "hono"
 import z from "zod"
 import { LocationRepository } from "../../location/location.repository.js"

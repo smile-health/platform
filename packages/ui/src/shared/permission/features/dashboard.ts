@@ -14,7 +14,6 @@ export type Dashboard =
   | 'dashboard-discard-view'
   | 'dashboard-monthly-report-view'
   | 'dashboard-yearly-report-view'
-  | 'dashboard-asik-view'
   | 'dashboard-inventory-overview-view'
   | 'dashboard-rabies-view'
   | 'dashboard-asset-ownership-inventory-view'
@@ -23,5 +22,4 @@ export type Dashboard =
   | 'dashboard-microplanning-view'
   | 'dashboard-annual-commitment-vs-realization-view'
   | 'dashboard-rabies-main-filter'
-  | 'dashboard-smile-smdv-view'
   | 'dashboard-enable-select-entity'

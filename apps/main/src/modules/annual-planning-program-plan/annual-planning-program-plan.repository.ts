@@ -1,11 +1,8 @@
-import { associate } from "@smile/lib/utils.js"
+import { associate } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import { sql } from "kysely"
 import { BaseRepository } from "../base.repository.js"
-import {
-  BmhpStatus,
-  GetListProgramPlanQueries,
-} from "./annual-planning-program-plan.schema.js"
+import { GetListProgramPlanQueries } from "./annual-planning-program-plan.schema.js"
 
 export class AnnualPlanningProgramPlanRepository extends BaseRepository<"ws_program_plans"> {
   constructor() {
@@ -145,35 +142,6 @@ export class AnnualPlanningProgramPlanRepository extends BaseRepository<"ws_prog
         )`.as("id_material_substitution"),
       ])
       .executeTakeFirst()
-  }
-
-  async getBmhpStatus(c: Context, programPlanId: number): Promise<BmhpStatus> {
-    const result = await sql<{
-      master_pemeriksaan: number
-      jenis_pemeriksaan: number
-      method: number
-      parameter: number
-      variant: number
-      material: number
-    }>`
-      SELECT
-        EXISTS(SELECT 1 FROM bmhp_examinations WHERE program_plan_id = ${programPlanId} AND deleted_at IS NULL) as master_pemeriksaan,
-        EXISTS(SELECT 1 FROM bmhp_examination_types WHERE program_plan_id = ${programPlanId} AND deleted_at IS NULL) as jenis_pemeriksaan,
-        EXISTS(SELECT 1 FROM bmhp_examination_methods WHERE program_plan_id = ${programPlanId} AND deleted_at IS NULL) as method,
-        EXISTS(SELECT 1 FROM bmhp_parameters WHERE program_plan_id = ${programPlanId} AND deleted_at IS NULL) as parameter,
-        EXISTS(SELECT 1 FROM ws_bmhp_material_variant WHERE program_plan_id = ${programPlanId} AND deleted_at IS NULL) as variant,
-        EXISTS(SELECT 1 FROM bmhp_materials WHERE program_plan_id = ${programPlanId} AND deleted_at IS NULL) as material
-    `.execute(c.var.trx)
-
-    const row = result.rows[0]!
-    return {
-      master_pemeriksaan: !!row.master_pemeriksaan,
-      jenis_pemeriksaan: !!row.jenis_pemeriksaan,
-      method: !!row.method,
-      parameter: !!row.parameter,
-      variant: !!row.variant,
-      material: !!row.material,
-    }
   }
 
   async getProgramPlanMapped(c: Context, programPlanIds: number[]) {

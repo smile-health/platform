@@ -3,7 +3,7 @@ import { Context } from "hono"
 import { OrderByDirectionExpression } from "kysely"
 import { BaseRepository } from "../base.repository.js"
 import { GetBudgetSourceQueries } from "./budget-source.schema.js"
-import { collect } from "@smile/lib/utils.js"
+import { collect } from "@smile-health/lib/utils.js"
 
 export class BudgetSourceRepository extends BaseRepository<"budget_sources"> {
   constructor() {

@@ -1,0 +1,65 @@
+{
+  "list": {
+    "list": "Treatment Location",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search location name"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "location_name": "Location Name",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "address": "Address",
+      "province": "Province",
+      "city": "City",
+      "action": "Action"
+    },
+    "button": {
+      "add": "Add Location",
+      "distance_limit": "Set Distance Limit"
+    }
+  },
+  "title": {
+    "create": "Create Treatment Location",
+    "edit": "Edit Treatment Location"
+  },
+  "form": {
+    "location_name": {
+      "label": "Location Name",
+      "placeholder": "Enter location name"
+    },
+    "latitude": {
+      "label": "Latitude",
+      "placeholder": "Enter latitude"
+    },
+    "longitude": {
+      "label": "Longitude",
+      "placeholder": "Enter longitude"
+    },
+    "address": {
+      "label": "Address",
+      "placeholder": "Enter address"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "city": {
+      "label": "City",
+      "placeholder": "Select city"
+    },
+    "distance_limit": {
+      "label": "Distance Limit",
+      "placeholder": "Enter distance limit (in meters)"
+    }
+  },
+  "information": {
+    "title": "Treatment Location",
+    "description": "The Processing Location monitors and manages waste management data, including partnership status."
+  }
+}

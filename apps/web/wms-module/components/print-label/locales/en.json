@@ -1,0 +1,174 @@
+{
+  "list": {
+    "list": "Print Label",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Waste Source / Waste Characteristic"
+      },
+      "activity": {
+        "label": "Activity",
+        "placeholder": "Select activity"
+      },
+      "hierarchical": {
+        "label": "Hierarchical"
+      },
+      "source_type": {
+        "label": "Source Type",
+        "placeholder": "Select Source type"
+      },
+      "material_type": {
+        "label": "Material Type",
+        "placeholder": "Select Material type"
+      },
+      "material_level": {
+        "label": "Level Material",
+        "placeholder": "Select Level Material",
+        "radio": {
+          "all": "All",
+          "active_substance": "Product Template",
+          "trademark": "Product Variant",
+          "non_hierarchy": "Non Hirarki"
+        }
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Select Program"
+      },
+      "without_program": "No program applied",
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "select": "Select",
+      "source_type": "Source Type",
+      "waste_source_group": "Waste Source Group",
+      "waste_source": "Waste Source",
+      "waste_classification": "Waste Classification",
+      "waste_characteristic": "Waste Characteristic",
+      "total_label": "Total Label",
+      "updated_at": "Updated At",
+      "updated_by": "Updated By",
+      "print": "Print",
+      "action": "Action"
+    },
+    "options": {
+      "tag": "Select Tag",
+      "type": "Select Type"
+    },
+    "action": {
+      "activate": {
+        "title": "Activate"
+      },
+      "deactivate": {
+        "title": "Deactivate"
+      }
+    },
+    "button": {
+      "add": "Add Print Label"
+    }
+  },
+  "title": {
+    "master_waste": "Print Label",
+    "list": "Print Label List",
+    "create": "Create Print Label",
+    "edit": "Edit Print Label"
+  },
+  "detail": {
+    "title": "Waste Characteristic Detail",
+    "waste_code": "Waste Code",
+    "waste_characteristic": "Waste Characteristic",
+    "waste_bag_color": "Waste Bag Color",
+    "use_cold_storage": "Use Cold Storage",
+    "cold_storage_max_processing": "Cold Storage Max Processing",
+    "temporary_storage_min_processing": "Temporary Storage Min Processing",
+    "temporary_storage_max_processing": "Temporary Storage Max Processing",
+    "internal_treatment": "Internal Treatment",
+    "third_party_treatment": "Third Party Treatment",
+    "vehicle_type": "Vehicle Type",
+    "storage_rule": "Storage Rule",
+    "created_at": "Created At",
+    "created_by": "Created By",
+    "updated_at": "Updated At",
+    "updated_by": "Updated By"
+  },
+  "action": {
+    "activate": {
+      "button": "Activate",
+      "confirmation": "Are you sure you want to activate this product?"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "confirmation": "Are you sure you want to deactivate this product?"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "Product Template",
+    "trademark": "Product Variant",
+    "non_hierarchy": "Non Hierarchy",
+    "print": "Print Label",
+    "explain_waste_classification": "Explanation of Waste Classification"
+  },
+  "form": {
+    "source_type": {
+      "label": "Source Type",
+      "placeholder": "Select source type",
+      "validation": {
+        "required": "source type is required"
+      }
+    },
+    "waste_source": {
+      "label": "Waste Source",
+      "placeholder": "Select waste source",
+      "validation": {
+        "required": "waste source is required"
+      }
+    },
+    "waste_type": {
+      "label": "Waste Type",
+      "placeholder": "Select waste type",
+      "validation": {
+        "required": "Waste waste type is required"
+      }
+    },
+    "waste_group": {
+      "label": "Waste Group",
+      "placeholder": "Select waste group",
+      "validation": {
+        "required": "Waste waste group is required"
+      }
+    },
+    "waste_characteristic": {
+      "label": "Waste Characteristic",
+      "placeholder": "Select characteristic",
+      "validation": {
+        "required": "Waste characteristic is required"
+      }
+    },
+    "total_number": {
+      "label": "Total Number Printed",
+      "placeholder": "Enter total number printed",
+      "validation": {
+        "required": "total number is required"
+      }
+    }
+  },
+  "scroll_list": {
+    "title": "Material",
+    "description": "Please choose entity and transaction type first",
+    "column": {
+      "material_name": "Material Name",
+      "available_stock": "Available Stock",
+      "current_stock": "Current Stock"
+    }
+  },
+  "modal": {
+    "confirmation": "Confirmation",
+    "description": "The paper will be printed, please stick it where it is easy to see",
+    "copies": "Number of copies"
+  },
+  "message": {
+    "max_characteristics": "You can print a maximum of {{max}} waste characteristics at a time."
+  }
+}

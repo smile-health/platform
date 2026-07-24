@@ -3,7 +3,7 @@
 # for all services (excluding 3.0 and platform folders)
 
 # Define the services to manage
-SERVICES := auth-service core main sync-service warehouse-service
+SERVICES := auth-service core main warehouse-service
 
 # Environment file mappings
 # .env = production (default)
@@ -221,14 +221,6 @@ main-dev:
 	@echo "$(BLUE)Setting main to development...$(RESET)"
 	@cp ".env.test.local" "apps/main/.env" 2>/dev/null || cp "apps/main/.env.test.local" "apps/main/.env" 2>/dev/null || cp "apps/main/.env.test" "apps/main/.env" 2>/dev/null || echo "$(RED)✗$(RESET) No dev env file found for main"
 
-sync-prod:
-	@echo "$(BLUE)Setting sync-service to production...$(RESET)"
-	@cp ".env.production.local" "apps/sync-service/.env" 2>/dev/null || cp "apps/sync-service/.env.production.local" "apps/sync-service/.env" 2>/dev/null || cp "apps/sync-service/.env.example" "apps/sync-service/.env" 2>/dev/null || echo "$(RED)✗$(RESET) Failed to set production env for sync-service"
-
-sync-dev:
-	@echo "$(BLUE)Setting sync-service to development...$(RESET)"
-	@cp ".env.test.local" "apps/sync-service/.env" 2>/dev/null || cp "apps/sync-service/.env.test.local" "apps/sync-service/.env" 2>/dev/null || cp "apps/sync-service/.env.test" "apps/sync-service/.env" 2>/dev/null || echo "$(RED)✗$(RESET) No dev env file found for sync-service"
-
 warehouse-prod:
 	@echo "$(BLUE)Setting warehouse-service to production...$(RESET)"
 	@cp ".env.production.local" "apps/warehouse-service/.env" 2>/dev/null || cp "apps/warehouse-service/.env.production.local" "apps/warehouse-service/.env" 2>/dev/null || cp "apps/warehouse-service/.env.example" "apps/warehouse-service/.env" 2>/dev/null || echo "$(RED)✗$(RESET) Failed to set production env for warehouse-service"
@@ -256,10 +248,6 @@ main-staging:
 main-training:
 	@echo "$(BLUE)Setting main to training...$(RESET)"
 	@cp ".env.training.local" "apps/main/.env" 2>/dev/null || cp "apps/main/.env.training.local" "apps/main/.env" 2>/dev/null || cp "apps/main/.env.training" "apps/main/.env" 2>/dev/null || echo "$(RED)✗$(RESET) No training env file found for main"
-
-sync-staging:
-	@echo "$(BLUE)Setting sync-service to staging...$(RESET)"
-	@cp ".env.staging.local" "apps/sync-service/.env" 2>/dev/null || cp "apps/sync-service/.env.staging.local" "apps/sync-service/.env" 2>/dev/null || cp "apps/sync-service/.env.staging" "apps/sync-service/.env" 2>/dev/null || echo "$(RED)✗$(RESET) No staging env file found for sync-service"
 
 warehouse-staging:
 	@echo "$(BLUE)Setting warehouse-service to staging...$(RESET)"

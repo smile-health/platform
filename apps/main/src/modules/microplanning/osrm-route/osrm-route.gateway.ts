@@ -1,6 +1,6 @@
 import env from "@/config/env.js"
-import { HTTPError } from "@smile/lib/error.js"
-import { logger } from "@smile/lib/logger.js"
+import { HTTPError } from "@smile-health/lib/error.js"
+import { logger } from "@smile-health/lib/logger.js"
 import axios, { AxiosError } from "axios"
 import { StatusCodes } from "http-status-codes"
 import { GetOsrmRouteQuery } from "./osrm-route.schema.js"

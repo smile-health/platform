@@ -20,15 +20,34 @@ const Dynamic = dynamic(() => import('../components/Dynamic'), {
   ssr: false,
 })
 
+// Only fetched/mounted for /wms/* routes — carries its own Redux store and a second,
+// isolated i18next instance (see wms-module/provider/WmsProviders.tsx), so it's kept
+// out of the bundle for every other page via next/dynamic.
+const WmsRouteWrapper = dynamic(
+  () => import('../wms-module/components/WmsRouteWrapper'),
+  { ssr: false }
+)
+
 const MyApp = ({ Component, pageProps }) => {
   const isOnline = useOnlineStatus()
-  const { query } = useRouter()
+  const { query, pathname } = useRouter()
+  const isWmsRoute = pathname === '/wms' || pathname.startsWith('/wms/')
+
+  const page = isOnline ? (
+    <Component {...pageProps} />
+  ) : (
+    <CustomError withLayout error="connection" />
+  )
 
   return (
     <Dynamic>
-      <PlatformProvider locale={query?.lang ? query.lang : 'id'}>
-        {isOnline ? <Component {...pageProps} /> : <CustomError withLayout error="connection" />}
-      </PlatformProvider>
+      {isWmsRoute ? (
+        <WmsRouteWrapper>{page}</WmsRouteWrapper>
+      ) : (
+        <PlatformProvider locale={query?.lang ? query.lang : 'id'}>
+          {page}
+        </PlatformProvider>
+      )}
     </Dynamic>
   )
 }

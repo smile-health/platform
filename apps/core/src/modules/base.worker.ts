@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { DB } from "@/common/infrastructure/database/types/db.js"
 import env from "@/config/env.js"
-import { BadRequestError } from "@smile/lib/error.js"
-import { MultiSheetZipExporter } from "@smile/lib/excel/multi-sheet-zip.js"
-import i18n from "@smile/lib/i18n"
-import { logger } from "@smile/lib/logger.js"
-import { createMinioClientFromEnv } from "@smile/lib/minio.js"
-import { Consumer } from "@smile/lib/rabbitmq/consumer.js"
-import { Context } from "@smile/lib/types/context.js"
+import { BadRequestError } from "@smile-health/lib/error.js"
+import { MultiSheetZipExporter } from "@smile-health/lib/excel/multi-sheet-zip.js"
+import i18n from "@smile-health/lib/i18n"
+import { logger } from "@smile-health/lib/logger.js"
+import { createMinioClientFromEnv } from "@smile-health/lib/minio.js"
+import { Consumer } from "@smile-health/lib/rabbitmq/consumer.js"
+import { Context } from "@smile-health/lib/types/context.js"
 import { ExportHistoryRepository } from "./export-history"
-import { MinioExporter } from "@smile/lib/excel/minio-excel-processor"
+import { MinioExporter } from "@smile-health/lib/excel/minio-excel-processor"
 
 export class BaseWorker {
   constructor(protected exportHistoryRepo?: ExportHistoryRepository) {}

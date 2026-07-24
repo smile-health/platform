@@ -7,10 +7,6 @@ export type TMaterialResponse = {
   list: TMaterialList[] | TMaterial[] | TMaterialTypeList[]
 }
 
-export type TMaterialBiofarmaList = {
-  name: string
-}
-
 export type TMaterial = {
   material_companion_label: string
   manufactures_label: string

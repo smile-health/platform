@@ -1,7 +1,7 @@
-import { ValidationError } from "@smile/lib/error.js"
+import { ValidationError } from "@smile-health/lib/error.js"
 import { Context } from "hono"
 import { MicroplanningMapDestinationRepository } from "./microplanning-map-destination.repository.js"
-import { BaseMiddleware } from "@smile/lib/base/middleware.js"
+import { BaseMiddleware } from "@smile-health/lib/base/middleware.js"
 import { createMiddleware } from "hono/factory"
 import { SubmitMicroplanningMapDestinationRequest } from "./microplanning-map-destination.schema.js"
 

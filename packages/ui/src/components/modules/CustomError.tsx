@@ -97,13 +97,19 @@ const CustomError: React.FC<Props> = ({
                 </p>
                 <Trans>
                   <ul className="ui-text-primary-700 ui-list-disc ui-ml-6">
-                    {(
-                      t(`error.${currentError}.list.content`, {
+                    {(() => {
+                      // Falls back to an empty list instead of crashing if the current
+                      // i18n language has no bundle loaded (returnObjects then hands back
+                      // the raw key string, not an array).
+                      const content = t(`error.${currentError}.list.content`, {
                         returnObjects: true,
-                      }) as string[]
-                    ).map((x) => (
-                      <li key={`error-content-${x}`}>{x}</li>
-                    ))}
+                      })
+                      return Array.isArray(content)
+                        ? content.map((x) => (
+                            <li key={`error-content-${x}`}>{x}</li>
+                          ))
+                        : null
+                    })()}
                   </ul>
                 </Trans>
               </div>

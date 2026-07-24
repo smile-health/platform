@@ -1,4 +1,3 @@
-const { consumeBiofarma } = require('./biofarma.worker')
 const {
   updateSaranaBPOM,
   orderBPOMWorker,
@@ -21,7 +20,6 @@ module.exports = {
   consumeSms,
   consumeWhatsapp,
   consumeHttp,
-  consumeBiofarma,
   consumeColdStorage,
   updateSaranaBPOM,
   orderBPOMWorker,
@@ -31,7 +29,6 @@ module.exports = {
   consumeFirebase,
   stopNotifications,
   startAllWorkers: () => {
-    consumeBiofarma()
     consumeColdStorage()
     consumeEmail()
     consumeFirebase()

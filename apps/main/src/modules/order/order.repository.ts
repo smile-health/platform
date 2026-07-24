@@ -13,7 +13,7 @@ import {
   CursorPaginatedResponse,
   CursorUtils,
 } from "@/modules/helpers/cursor-helper.js"
-import { Context } from "@smile/lib/types/context.js"
+import { Context } from "@smile-health/lib/types/context.js"
 import { Context as HonoContext } from "hono"
 import { Kysely, Selectable, sql } from "kysely"
 import { pick } from "lodash"

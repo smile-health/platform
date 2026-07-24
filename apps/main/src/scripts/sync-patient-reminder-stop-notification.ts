@@ -1,5 +1,5 @@
 import { db, notificationDb } from "@/common/infrastructure/database/index.js"
-import { NOTIFICATION_TYPE } from "@smile/lib/rabbitmq/notification.js"
+import { NOTIFICATION_TYPE } from "@smile-health/lib/rabbitmq/notification.js"
 import { sql } from "kysely"
 
 const formatDuration = (startTime: Date, endTime: Date): string => {

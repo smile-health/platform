@@ -7,17 +7,12 @@ import {
   rollbackMigration,
   runMigrations,
 } from "./common/infrastructure/database/index.js"
-import { checkBiofarmaOrder } from "./modules/biofarma-order/biofarma-order.controller.js"
 import { backfillTransactionActualDate } from "./scripts/backfill-transaction-actual-date.js"
 import { cleansingBatchStock } from "./scripts/cleansing-batch-stock.js"
 import { compareOrderData } from "./scripts/clickhouse/compare-data-order.js"
 import { updateOrInsertOrderListClickHouse } from "./scripts/clickhouse/sync-order-list.js"
 import { doActivateAnnualNeedMinMax } from "./scripts/cron/annual-need-min-max/activate-annual-need-min-max.js"
 import { dailyBiasImmunizationRecalculation } from "./scripts/cron/bias-immunization-logistics/daily_bias_immunization_recalculation.js"
-import {
-  syncBiofarmaDashboard,
-  syncBiofarmaOrders,
-} from "./scripts/cron/biofarma/sync_orders.js"
 import { dailyTargetSnapshot } from "./scripts/cron/daily-target-snapshot/daily_target_snapshot.js"
 import { inactiveEntityReminder } from "./scripts/cron/entity/inactive_entity_reminder.js"
 import { checkProgressExportHistory } from "./scripts/cron/export-history/check_progress_export_history.js"
@@ -32,9 +27,6 @@ import { up as migrateDisposalShipment } from "./scripts/migrate-disposal/shipme
 import { populateEntityMaterialsActivityFinalDistribution } from "./scripts/populate-ema-final-distribution.js"
 import { populateEntityStock } from "./scripts/populate-entity-stock.js"
 import { populateEntityMaterialsAndVendors } from "./scripts/populate-entity-vendors-customer-level-subdistrict.js"
-import { populateCustomerVendor } from "./scripts/siha/populate-customer-vendor.js"
-import { populateMasterData } from "./scripts/siha/populate-master-data.js"
-import { retryValidateOrder } from "./scripts/siha/retry-validate-order.js"
 import { syncConsumptionStopNotification } from "./scripts/sync-consumption-stop-notification.js"
 import { syncPatientReminderStopNotification } from "./scripts/sync-patient-reminder-stop-notification.js"
 import { fixTargetVillageId } from "./scripts/fix-target-village-id.js"
@@ -120,43 +112,12 @@ program
   .action(async () => checkProgressExportHistory())
 
 program
-  .command("siha-populate-master-data")
-  .description("Populate master data with activityId, kfaCodes, and msiCodes")
-  .requiredOption("--activityIds <activityIds>", "Activity ID")
-  .requiredOption("--kfaCodes <kfaCodes>", "Comma separated KFA codes")
-  .requiredOption("--msiCodes <msiCodes>", "Comma separated MSI codes")
-  .action(async (options) => {
-    const activityIds = options.activityIds.split(",").map(Number)
-    const kfaCodes = options.kfaCodes.split(",")
-    const msiCodes = options.msiCodes.split(",").map(Number)
-    await populateMasterData(activityIds, kfaCodes, msiCodes)
-  })
-
-program
   .command("update-or-insert-order-list-clickhouse")
   .description("Update or insert order list to clickhouse")
   .requiredOption("--orderIds <orderIds>", "Activity ID")
   .action(async (options) => {
     const orderIds = options.orderIds.split(",").map(Number)
     await updateOrInsertOrderListClickHouse(orderIds)
-  })
-
-program
-  .command("siha-populate-customer-vendor")
-  .description(
-    "Populate customer and vendor data with activityId, vendorCodes, and customerCodes"
-  )
-  .requiredOption("--activityIds <activityIds>", "Activity IDs")
-  .requiredOption("--vendorCode <vendorCode>", "Vendor msi codes")
-  .requiredOption(
-    "--customerCodes <customerCodes>",
-    "Comma separated customer msi codes"
-  )
-  .action(async (options) => {
-    const activityId = options.activityIds.split(",").map(Number)
-    const vendorCode = Number(options.vendorCode)
-    const customerCodes = options.customerCodes.split(",").map(Number)
-    await populateCustomerVendor(activityId, vendorCode, customerCodes)
   })
 
 program
@@ -169,15 +130,6 @@ program
   })
 
 program
-  .command("retry-validate-order")
-  .requiredOption("--orderIds <orderIds>", "Order IDs")
-  .description("Retry failed validate order attempts by publishing messages")
-  .action(async (options) => {
-    const orderIds = options.orderIds.split(",").map(Number)
-    await retryValidateOrder(orderIds)
-  })
-
-program
   .command("encrypt-patient")
   .description(
     "Encrypt ws_patients name, birth_date (to enc_birth_date), address, residential_address"
@@ -186,63 +138,6 @@ program
   .action(async (options) => {
     const batchSize = options.batchSize ? Number(options.batchSize) : 1000
     await encryptPatients(batchSize)
-  })
-
-program
-  .command("check-biofarma-order")
-  .description("Check and process Biofarma orders")
-  .option("--monthly", "Process monthly data")
-  .option("--isV2", "Use V2 processing")
-  .option("--startDate <startDate>", "Start date for filtering (YYYY-MM-DD)")
-  .option("--endDate <endDate>", "End date for filtering (YYYY-MM-DD)")
-  .action(async (options) => {
-    const filterDate =
-      options.startDate || options.endDate
-        ? {
-          start_date: options.startDate,
-          end_date: options.endDate,
-        }
-        : null
-
-    await checkBiofarmaOrder({
-      filterDate,
-      monthly: options.monthly || false,
-      isV2: options.isV2 || false,
-    })
-  })
-
-program
-  .command("sync-biofarma-orders")
-  .description("Sync Biofarma orders from external system")
-  .requiredOption("--type <type>", "Order type: hub or province")
-  .option("--startDate <startDate>", "Start date (YYYY-MM-DD)")
-  .option("--endDate <endDate>", "End date (YYYY-MM-DD)")
-  .action(async (options) => {
-    const { type, startDate, endDate } = options
-
-    if (type !== "hub" && type !== "province") {
-      console.error("Error: Type must be either 'hub' or 'province'")
-      process.exit(1)
-    }
-
-    await syncBiofarmaOrders(type, startDate, endDate)
-  })
-
-program
-  .command("sync-biofarma-dashboard")
-  .description("Sync Biofarma dashboard data from external system")
-  .requiredOption("--type <type>", "Dashboard type: hub or province")
-  .option("--startDate <startDate>", "Start date (YYYY-MM-DD)")
-  .option("--endDate <endDate>", "End date (YYYY-MM-DD)")
-  .action(async (options) => {
-    const { type, startDate, endDate } = options
-
-    if (type !== "hub" && type !== "province") {
-      console.error("Error: Type must be either 'hub' or 'province'")
-      process.exit(1)
-    }
-
-    await syncBiofarmaDashboard(type, startDate, endDate)
   })
 
 program

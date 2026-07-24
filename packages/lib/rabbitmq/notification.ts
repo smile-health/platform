@@ -36,7 +36,6 @@ export const NOTIFICATION_TYPE = {
   INACTIVE_ENTITY: "inactive-entity", // Exists
   PENDING_ENTITY: "pending-entity", // New 09 Oct 2025
   PATIENT_REMINDER: "patient-reminder", // New 21 Oct 2025
-  BMHP_REVISION: "bmhp-revision",
   ASSET_RTMD_UNLINKED: "asset-rtmd-unlinked",
   ASSET_DEFROSTING_REMINDER: "asset-defrosting-reminder",
 };

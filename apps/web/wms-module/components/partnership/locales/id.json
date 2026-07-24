@@ -1,0 +1,188 @@
+{
+  "list": {
+    "list": "Kemitraan",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Nomor Kontrak"
+      },
+      "company_name": {
+        "label": "Nama Perusahaan",
+        "placeholder": "Pilih Nama Perusahaan"
+      },
+      "waste_characteristic": {
+        "label": "Karakteristik Limbah",
+        "placeholder": "Pilih Karakteristik Limbah"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "partnership_type": "Tipe Kemitraan",
+      "waste_category": "Kategori Limbah",
+      "company_name": "Nama Perusahaan",
+      "entitas_name": "Nama Entitas",
+      "entity_name": "Nama Entitas",
+      "contract_date": "Tanggal Kontrak",
+      "contract_start_date": "Tanggal Mulai Kontrak",
+      "contract_end_date": "Tanggal Berakhir Kontrak",
+      "contract_id": "Nomor Kontrak",
+      "partnership_status": "Status Kemitraan",
+      "pic_name": "Nama PIC",
+      "phone_number": "Nomer Telepon",
+      "position": "Jabatan",
+      "price_kg": "Harga/Kg",
+      "province": "Provinsi",
+      "city": "Kab/Kota",
+      "address": "Alamat Kantor",
+      "latitude": "Lintang",
+      "longitude": "Bujur",
+      "last_updated": "Pembaruan Terakhir",
+      "waste_type": "Jenis limbah",
+      "waste_group": "Grup limbah",
+      "waste_characteristic": "Karakteristik limbah",
+      "waste_code": "kode KLHK",
+      "nib": "NIB",
+      "action": "Aksi"
+    },
+    "column_third_party": {
+      "treatment_company ": "Perusahaan Pengolahan",
+      "landfill_company": "Perusahaan TPA",
+      "recycle_company": "Perusahaan Pemanfaat"
+    },
+    "column_vehicle": {
+      "vehicle_type ": "Tipe Kendaraan",
+      "vehicle_number": "Nomor Plat Kendaraan",
+      "capacity": "Kapasitas (Kg)"
+    },
+    "column_operator": {
+      "username ": "Nama pengguna",
+      "name": "Nama",
+      "role": "Peran",
+      "company_name": "Nama Perusahaan",
+      "company_type": "Tipe Perusahaan",
+      "email": "Email",
+      "phone": "Telepon"
+    },
+    "column_classification_partnership": {
+      "waste_characteristics": "Karakteristik limbah",
+      "waste_code": "Kode KLHK",
+      "price": "Harga/Kg",
+      "partnership_type": "Tipe Kemitraan",
+      "contract_date": "Tanggal Kontrak",
+      "contract_start_date": "Tanggal Mulai Kontrak",
+      "contract_end_date": "Tanggal Berakhir Kontrak",
+      "contract_id": "Nomor Kontrak",
+      "partnership_status": "Status Kemitraan"
+    },
+    "button": {
+      "add": "Tambah Kemitraan",
+      "add_specification": "Tambah Spesifikasi Limbah",
+      "edit_specification": "Ubah Spesifikasi Limbah"
+    }
+  },
+  "title": {
+    "partnership": "Kemitraan",
+    "list": "Daftar Kemitraan",
+    "create": "Tambah Kemitraan",
+    "edit": "Edit Kemitraan"
+  },
+  "form": {
+    "waste_specification": {
+      "label": "Spesifikasi Limbah",
+      "placeholder": "Pilih Spesifikasi Limbah"
+    },
+    "waste_type": {
+      "label": "Jenis limbah",
+      "placeholder": "Pilih Jenis Limbah"
+    },
+    "waste_group": {
+      "label": "Grup limbah",
+      "placeholder": "Pilih Grup Limbah"
+    },
+    "waste_characteristic": {
+      "label": "Karakteristik limbah",
+      "placeholder": "Pilih karakteristik"
+    },
+    "partnership_type": {
+      "label": "Tipe Kemitraan",
+      "placeholder": "Pilih Tipe Kemitraan"
+    },
+    "waste_category": {
+      "label": "Kategori Limbah",
+      "placeholder": "Pilih Kategori Limbah"
+    },
+    "company_name": {
+      "label": "Nama Perusahaan",
+      "placeholder": "Masukan Nama Perusahaan"
+    },
+    "pic_name": {
+      "label": "Nama PIC",
+      "placeholder": "Masukan Nama PIC"
+    },
+    "nib": {
+      "label": "Nomor NIB",
+      "placeholder": "Nomor NIB"
+    },
+    "phone_number": {
+      "label": "Nomer Telepon",
+      "placeholder": "Masukan Nomer Telepon"
+    },
+    "position": {
+      "label": "Jabatan",
+      "placeholder": "Masukan Jabatan"
+    },
+    "price_kg": {
+      "label": "Harga/Kg (Rp)",
+      "placeholder": "Masukan Harga/Kg"
+    },
+    "contract_date": {
+      "label": "Tanggal Kontrak",
+      "placeholder": "Masukan Tanggal Kontrak"
+    },
+    "contract_id": {
+      "label": "Nomor Kontrak",
+      "placeholder": "Masukan Nomor Kontrak"
+    },
+    "partnership_status": {
+      "label": "Status Kemitraan",
+      "placeholder": "Pilih Status Kemitraan"
+    },
+    "help_text_characteristic": "Kosongkan untuk memilih semua karakteristik dalam grup ini"
+  },
+  "detail": {
+    "healthcare_info": "Info Kemitraan Fasyankes",
+    "operator_info": "Info Operator Kemitraan",
+    "vehicle_info": "Info Kendaraan Kemitraan",
+    "third_party_info": "Info Kemitraan Pihak Ketiga",
+    "classification_partnership_info": "Info karakteristik"
+  },
+  "status_partnership": {
+    "ACTIVE": "Aktif",
+    "SUSPENDED": "Ditangguhkan",
+    "PENDING": "Menunggu Persetujuan",
+    "TERMINATED": "Dihentikan",
+    "EXPIRED": "Kedaluwarsa"
+  },
+  "status_partnership_info": {
+    "ACTIVE": "Kontrak sedang berjalan",
+    "SUSPENDED": "Kontrak diberhentikan sementara",
+    "PENDING": "Kontrak menunggu persetujuan",
+    "TERMINATED": "Kontrak diberhentikan atau tidak diperpanjang",
+    "EXPIRED": "Kontrak melewati tanggal masa berlaku"
+  },
+  "provider_type": {
+    "TRANSPORTER": "Diangkut",
+    "TRANSPORTER_TREATMENT": "Diangkut - Diolah",
+    "TRANSPORTER_LANDFILL": "Diangkut - Ditimbus",
+    "TRANSPORTER_RECYCLER": "Diangkut - Dimanfaat",
+    "SPECIALIZED_TREATMENT_PROVIDER": "Diangkut - Pengolahan Khusus",
+    "TRANSPORTER_GOVERNMENT": "Pengangkut Limbah Lokal - TPA",
+    "TRANSPORTER_GOVERNMENT_WASTE_BANK": "Pengangkut Limbah Lokal - Bank Sampah"
+  },
+  "information": {
+    "title": "Kemitraan",
+    "description": "Kemitraan memantau dan mengelola data pihak ketiga yang berperan dalam pengelolaan limbah"
+  }
+}

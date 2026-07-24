@@ -1,0 +1,99 @@
+{
+  "title": {
+    "page": "User Activity",
+    "tab": {
+      "overview": "Overview",
+      "entity": "Per Entity"
+    },
+    "type": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "type_processing": {
+      "internal": "Internal",
+      "external": "External"
+    }
+  },
+  "export": "Export as {{type}}",
+  "empty": "No data to display",
+  "percentage": "{b}: {d}% ({c} of {{total}} entity)",
+  "form": {
+    "period": {
+      "label": "Period",
+      "placeholder": "Select month and year period"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    }
+  },
+  "information": {
+    "title": "User Activity Report",
+    "close": "Close",
+    "description": "User Activity displays a report on the level of entity activity in waste weighing during a specific one-month period. Yellow indicates manual weighing.",
+    "item": {
+      "chart": {
+        "title": "Pie Chart Data",
+        "description": "Activity is measured based on outgoing transactions involving the material selected in the filter. If an entity makes at least one outgoing transaction during the month, it is counted as an active entity. The green section in the chart shows active entities, while the red section shows inactive ones."
+      },
+      "table": {
+        "title": "Data Table",
+        "description": [
+          "Each row shows an entity that has the selected material based on the filter.",
+          "Each month column shows the date in that month, and the displayed value is the number of outgoing transactions on that day.",
+          "Total active days refer to the number of days with at least one outgoing transaction.",
+          "Total inactive days refer to the number of days with no outgoing transactions.",
+          "Total frequency is the overall number of outgoing transactions during the month.",
+          "Average frequency is the total frequency divided by the number of active days, showing how often transactions happened on average each active day."
+        ]
+      }
+    }
+  },
+  "column": {
+    "no": "No",
+    "healthcare_facility": "Healthcare Facility",
+    "province": "Province",
+    "regency": "Regency",
+    "active": "Total Active Days",
+    "inactive": "Total Inactive Days",
+    "manual_scale": "Total Manual Scale Days",
+    "frequency": {
+      "total": "Total Frequency",
+      "average": "Average Frequency"
+    }
+  },
+  "filter": {
+    "waste_type": {
+      "label": "Waste Type",
+      "placeholder": "Select waste type"
+    },
+    "waste_group": {
+      "label": "Waste Group",
+      "placeholder": "Select waste group"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "type_processing": {
+      "label": "Type of Processing",
+      "placeholder": "Select type of processing"
+    }
+  },
+  "tag": {
+    "hospital": "Hospital",
+    "clinic": "Clinic",
+    "health_center": "Community Health Center (Puskesmas)",
+    "health_post": "Community Health Post (Posyandu)",
+    "pharmacy": "Pharmacy Room",
+    "laboratory": "Laboratory"
+  }
+}

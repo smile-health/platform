@@ -1,0 +1,126 @@
+{
+	"list": {
+		"list": "Manajemen Aset Manufaktur",
+		"tab": {
+			"list": "Daftar Entitas",
+			"create": "Tambah Entitas"
+		},
+		"filter": {
+			"search": {
+				"label": "Cari",
+				"placeholder": "Cari model aset"
+			},
+			"asset_type": {
+				"label": "Jenis Aset",
+				"placeholder": "Pilih jenis aset"
+			},
+			"manufacture": {
+				"label": "Manufaktur",
+				"placeholder": "Pilih pabrikan"
+			},
+			"button": {
+				"search": "Cari"
+			}
+		},
+		"column": {
+			"asset_type": "Jenis Aset",
+			"manufacture": "Manufaktur",
+			"asset_model": "Model Aset",
+			"description": "Keterangan",
+			"updated_at": "Diperbarui Pada",
+			"updated_by": "Diperbarui Oleh",
+			"action": "Aksi"
+		},
+		"options": {
+			"tag": "Pilih Tag",
+			"type": "Pilih Tipe"
+		},
+		"action": {
+			"activate": {
+				"title": "Aktifkan"
+			},
+			"deactivate": {
+				"title": "Non Aktifkan"
+			}
+		},
+		"button": {
+			"add": "Tambah Asset Manufaktur"
+		}
+	},
+	"title": {
+		"manufacture": "Aset Manufaktur",
+		"list": "Daftar Aset Manufaktur",
+		"create": "Aset Manufaktur",
+		"edit": "Edit Aset Manufaktur"
+	},
+	"detail": {
+		"title": "Detail Karakteristik Limbah",
+		"waste_code": "Kode Limbah",
+		"waste_characteristic": "Karakteristik Limbah",
+		"waste_bag_color": "Warna Kantong Limbah",
+		"use_cold_storage": "Gunakan Penyimpanan Dingin",
+		"cold_storage_max_processing": "Durasi Maksimal Penyimpanan Dingin",
+		"temporary_storage_min_processing_time": "Durasi Minimal Penyimpanan Sementara",
+		"temporary_storage_max_processing_time": "Durasi Maksimal Penyimpanan Sementara",
+		"internal_treatment": "Pengolahan Internal",
+		"third_party_treatment": "Pengolahan Pihak Ketiga",
+		"vehicle_type": "Jenis Kendaraan",
+		"storage_rule": "Aturan Penyimpanan",
+		"created_at": "Dibuat Pada",
+		"created_by": "Dibuat Oleh",
+		"updated_at": "Diperbarui Pada",
+		"updated_by": "Diperbarui Oleh"
+	},
+	"column": {
+		"name": "Nama Material"
+	},
+	"action": {
+		"activate": {
+			"button": "Aktifkan",
+			"confirmation": "Apakah anda yakin akan mengaktifkan produk ini ?"
+		},
+		"deactivate": {
+			"button": "Non Aktifkan",
+			"confirmation": "Apakah anda yakin akan menonaktifkan produk ini ?"
+		}
+	},
+	"button": {
+		"material_active_substance_and_strength": "Produk Template",
+		"trademark": "Produk Varian",
+		"non_hierarchy": "Non Hirarki"
+	},
+	"form": {
+		"asset_type": {
+			"label": "Jenis Aset",
+			"placeholder": "Pilih jenis aset",
+			"validation": {
+				"required": "Jenis aset wajib diisi"
+			}
+		},
+		"manufacture": {
+			"label": "Nama Manufaktur",
+			"placeholder": "Pilih nama pabrikan",
+			"validation": {
+				"required": "Manufaktur wajib diisi"
+			},
+			"description": "Anda dapat memilih nama perusahaan manufaktur yang sudah ada atau membuat yang baru. Ketik terlebih dahulu nama perusahaan. Jika tidak ditemukan, opsi Create 'nama yang diketik' akan muncul."
+		},
+		"model": {
+			"label": "Model",
+			"placeholder": "Masukkan model"
+		},
+		"description": {
+			"label": "Deskripsi",
+			"placeholder": "Masukkan deskripsi"
+		}
+	},
+	"scroll_list": {
+		"title": "Material",
+		"description": "Pilih entitas dan tipe transaksi terlebih dahulu",
+		"column": {
+			"material_name": "Nama Material",
+			"available_stock": "Stok Tersedia",
+			"current_stock": "Stock Saat Ini"
+		}
+	}
+}

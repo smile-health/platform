@@ -77,14 +77,6 @@ module.exports = {
       instances: '1',
     },
     {
-      name: 'biofarma-worker',
-      args: 'consumeBiofarma',
-      exec_mode: 'fork',
-      watch: false,
-      script: 'src/index.js',
-      instances: '1',
-    },
-    {
       name: 'coldstorage-worker',
       args: 'consumeColdStorage',
       exec_mode: 'fork',

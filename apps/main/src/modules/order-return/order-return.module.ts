@@ -4,7 +4,7 @@ import {
   ORDER_STATUS,
   ORDER_TYPE,
 } from "@/common/constants/order.js"
-import { ValidationError } from "@smile/lib/error.js"
+import { ValidationError } from "@smile-health/lib/error.js"
 import { Context } from "hono"
 import { OrderReturnRepository } from "./order-return.repository.js"
 import {

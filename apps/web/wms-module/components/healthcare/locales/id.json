@@ -1,0 +1,165 @@
+{
+  "list": {
+    "list": "Manajemen Aset Layanan Kesehatan",
+    "tab": {
+      "list": "Daftar Entitas",
+      "create": "Tambah Entitas"
+    },
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari model"
+      },
+      "healthcare_facility": {
+        "label": "Fasyankes",
+        "placeholder": "Pilih Fasyankes"
+      },
+      "asset_type": {
+        "label": "Jenis Aset",
+        "placeholder": "Pilih jenis aset"
+      },
+      "manufacture": {
+        "label": "Pabrikan",
+        "placeholder": "Pilih pabrikan"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "healthcare_facility": "Fasyankes",
+      "asset_type": "Jenis Aset",
+      "manufacture": "Pabrikan",
+      "model": "Model",
+      "asset_id": "ID Aset",
+      "sync_status": "Sinkronisasi",
+      "last_maintenance": "Pemeliharaan Terakhir",
+      "last_calibration": "Kalibrasi Terakhir",
+      "asset_status": "Status",
+      "year_production": "Tahun Produksi",
+      "warranty_start": "Tanggal Mulai Garansi",
+      "warranty_end": "Tanggal Berakhir Garansi",
+      "action": "Aksi"
+    },
+    "column_maintenance": {
+      "operator_name": "Nama Operator",
+      "maintenance_date": "Tanggal Pemeliharaan"
+    },
+    "column_calibration": {
+      "operator_name": "Nama Operator",
+      "calibration_start_date": "Tanggal Mulai Kalibrasi",
+      "calibration_end_date": "Tanggal Berakhir Kalibrasi"
+    },
+    "button": {
+      "add": "Tambah Asset Kesehatan"
+    }
+  },
+  "title": {
+    "healthcare": "Aset Kesehatan",
+    "list": "Daftar Aset Kesehatan",
+    "create": "Tambah Aset Kesehatan",
+    "edit": "Edit Aset Kesehatan"
+  },
+  "title_asset_activity": {
+    "maintenance": "Aktivitas Pemeliharaan",
+    "calibration": "Aktivitas Kalibrasi"
+  },
+  "action": {
+    "activate": {
+      "button": "Aktifkan",
+      "confirmation": "Apakah anda yakin akan mengaktifkan produk ini ?"
+    },
+    "deactivate": {
+      "button": "Non Aktifkan",
+      "confirmation": "Apakah anda yakin akan menonaktifkan produk ini ?"
+    }
+  },
+  "button": {
+    "add_maintenance": "Tambah Pemeliharaan",
+    "add_calibration": "Tambah Kalibrasi"
+  },
+  "form": {
+    "healthcare_facility": {
+      "label": "Fasyankes",
+      "placeholder": "Pilih Fasyankes",
+      "validation": {
+        "required": "Fasyankes wajib diisi"
+      }
+    },
+    "asset_type": {
+      "label": "Tipe Aset",
+      "placeholder": "Pilih tipe aset",
+      "validation": {
+        "required": "Tipe aset wajib diisi"
+      }
+    },
+    "manufacture": {
+      "label": "Pabrikan",
+      "placeholder": "Pilih pabrikan",
+      "validation": {
+        "required": "Pabrikan wajib diisi"
+      }
+    },
+    "model": {
+      "label": "Model",
+      "placeholder": "Pilih model",
+      "validation": {
+        "required": "Model wajib diisi"
+      }
+    },
+    "asset_id": {
+      "label": "ID Aset",
+      "placeholder": "Masukkan ID aset"
+    },
+    "asset_status": {
+      "label": "Status Aset",
+      "placeholder": "Masukkan status aset"
+    },
+    "sync": {
+      "label": "Sinkronisasi"
+    },
+    "year_production": {
+      "label": "Tahun Produksi",
+      "placeholder": "Masukkan Tahun Produksi (contoh : 2024)"
+    },
+    "warranty_start": {
+      "label": "Tanggal Mulai Garansi",
+      "placeholder": "Masukkan Tanggal Mulai Garansi"
+    },
+    "warranty_end": {
+      "label": "Tanggal Berakhir Garansi",
+      "placeholder": "Masukkan Tanggal Berakhir Garansi"
+    }
+  },
+  "form_asset_activity": {
+    "operator_name": {
+      "label": "Nama Operator",
+      "placeholder": "Masukan Nama Operator"
+    },
+    "calibration_start_date": {
+      "label": "Tanggal Mulai Kalibrasi",
+      "placeholder": "Pilih Tanggal"
+    },
+    "calibration_end_date": {
+      "label": "Tanggal Berakhir Kalibrasi",
+      "placeholder": "Pilih Tanggal"
+    },
+    "maintenance_date": {
+      "label": "Tanggal Pemeliharaan",
+      "placeholder": "Pilih Tanggal"
+    }
+  },
+  "detail": {
+    "title": "Tentang Aset Kesehatan",
+    "calibration_act": "Aktivitas Kalibrasi",
+    "maintenance_act": "Aktivitas Pemeliharaan"
+  },
+  "asset_status": {
+    "OPERATIONAL": "Berfungsi",
+    "UNDER_MAINTAINENCE": "Dalam Perbaikan",
+    "OUT_OF_SERVICE": "Rusak",
+    "IDLE": "Standby",
+    "NEED_REPAIR": "Perlu Perbaikan",
+    "RETIRED": "Sudah Dibuang"
+  }
+}

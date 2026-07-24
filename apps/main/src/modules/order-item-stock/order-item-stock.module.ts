@@ -1,5 +1,5 @@
 import { ORDER_REASON } from "@/common/constants/order.js"
-import { collect } from "@smile/lib/utils.js"
+import { collect } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import { OrderItemStockRepository } from "../order-item-stock/order-item-stock.repository.js"
 import {

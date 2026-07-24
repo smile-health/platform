@@ -1,0 +1,65 @@
+{
+  "list": {
+    "list": "Tentang"
+  },
+  "title": {
+    "list": "Info",
+    "edit": "Ubah Informasi Entitas"
+  },
+  "info": {
+    "title": "Formulir ini hanya untuk mengubah data tambahan terkait entitas penghasil limbah",
+    "body": "Untuk mengubah data akun, silakan akses menu 'Lihat Profil' melalui beranda SMILE"
+  },
+  "button": {
+    "edit": "Ubah"
+  },
+  "detail": {
+    "registration_code": "Kode Registrasi WMS",
+    "satu_sehat_code": "Kode SATUSEHAT",
+    "entity_name": "Nama Entitas",
+    "entity_tag": "Tag Entitas",
+    "head_name": "Nama Kepala",
+    "gender": "Jenis Kelamin",
+    "email": "Alamat Email",
+    "phone": "Nomor Telepon",
+    "province": "Provinsi",
+    "city": "Kab/Kota",
+    "address": "Alamat",
+    "latitude": "Lintang",
+    "longitude": "Bujur",
+    "nib": "NIB",
+    "last_updated": "Pembaruan Terakhir",
+    "total_bad_room": "Jumlah Tempat Tidur",
+    "percentage_bad_room": "Persentase Penggunaan Tempat Tidur (%)"
+  },
+  "form": {
+    "nib": {
+      "label": "NIB",
+      "placeholder": "Masukkan nib"
+    },
+    "head_name": {
+      "label": "Nama Kepala",
+      "placeholder": "Masukkan nama kepala"
+    },
+    "gender": {
+      "label": "Jenis Kelamin",
+      "placeholder": "Masukkan jenis kelamin"
+    },
+    "email": {
+      "label": "Alamat Email",
+      "placeholder": "Masukkan alamat email"
+    },
+    "phone": {
+      "label": "Nomor Telepon",
+      "placeholder": "Masukkan nomor telepon"
+    },
+    "total_bad_room": {
+      "label": "Jumlah tempat tidur",
+      "placeholder": "Masukkan jumlah tempat tidur"
+    },
+    "percentage_bad_room": {
+      "label": "Persentase Penggunaan tempat tidur (%)",
+      "placeholder": "Masukkan persentase penggunaan tempat tidur"
+    }
+  }
+}

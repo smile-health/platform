@@ -1,0 +1,16 @@
+START TRANSACTION;
+
+DROP TABLE IF EXISTS `partner`;
+
+RENAME TABLE `healthcare_facility` TO `entity`;
+
+ALTER TABLE `entity`
+  ADD COLUMN `entity_type` ENUM('HEALTHCARE_FACILITY', 'PARTNER') NULL DEFAULT NULL AFTER `entity_name`,
+	ADD UNIQUE INDEX `registration_code` (`registration_code`);
+
+ALTER TABLE `entity`
+  CHANGE COLUMN `entity_id` `id` INT UNSIGNED NOT NULL AUTO_INCREMENT FIRST,
+  DROP PRIMARY KEY,
+  ADD PRIMARY KEY (`id`) USING BTREE;
+
+COMMIT;

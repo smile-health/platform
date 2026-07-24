@@ -9,10 +9,10 @@ import {
   BadRequestError,
   NotFoundError,
   ValidationError,
-} from "@smile/lib/error.js"
-import { TOPIC } from "@smile/lib/rabbitmq/topic.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
-import { collect } from "@smile/lib/utils.js"
+} from "@smile-health/lib/error.js"
+import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
+import { collect } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import { Insertable, Updateable } from "kysely"
 import moment from "moment"

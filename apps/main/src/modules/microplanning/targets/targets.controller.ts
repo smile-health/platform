@@ -1,7 +1,7 @@
 import { Hono } from "hono"
 import { TargetsModule } from "./targets.module.js"
 import { StatusCodes } from "http-status-codes"
-import { BaseController } from "@smile/lib/base/controller.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
 import { TargetsMiddleware } from "./targets.middleware.js"
 import {
   SummaryRequestSchema,
@@ -9,7 +9,7 @@ import {
   SummaryDetailRequestSchema,
   GroupedSummaryRequestSchema,
 } from "./targets.schema.js"
-import { ExcelMiddleware } from "@smile/lib/middlewares/excel.middleware.js"
+import { ExcelMiddleware } from "@smile-health/lib/middlewares/excel.middleware.js"
 import { MicroplanningTemplate } from "./targets.excel.js"
 
 export class TargetsController extends BaseController {

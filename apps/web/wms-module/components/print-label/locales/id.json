@@ -1,0 +1,174 @@
+{
+  "list": {
+    "list": "Cetak Label",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Sumber Limbah / Karakteristik Limbah"
+      },
+      "activity": {
+        "label": "Kegiatan",
+        "placeholder": "Pilih Kegiatan"
+      },
+      "hierarchical": {
+        "label": "Hirarki"
+      },
+      "source_type": {
+        "label": "Jenis Limbah",
+        "placeholder": "Pilih Jenis Limbah"
+      },
+      "material_type": {
+        "label": "Tipe Material",
+        "placeholder": "Pilih Tipe"
+      },
+      "material_level": {
+        "label": "Level Material",
+        "placeholder": "Pilih Level",
+        "radio": {
+          "all": "Semua",
+          "active_substance": "Produk Template",
+          "trademark": "Produk Varian",
+          "non_hierarchy": "Non Hirarki"
+        }
+      },
+      "program": {
+        "label": "Program",
+        "placeholder": "Select Program"
+      },
+      "without_program": "Tidak ada program",
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "select": "Pilih",
+      "source_type": "Jenis Sumber",
+      "waste_source_group": "Kelompok k",
+      "waste_source": "Sumber Limbah",
+      "waste_classification": "Klasifikasi Limbah",
+      "waste_characteristic": "Karakteristik Limbah",
+      "total_label": "Jumlah Label",
+      "updated_at": "Diperbarui Pada",
+      "updated_by": "Diperbarui Oleh",
+      "print": "Cetak",
+      "action": "Aksi"
+    },
+    "options": {
+      "tag": "Pilih Tag",
+      "type": "Pilih Tipe"
+    },
+    "action": {
+      "activate": {
+        "title": "Aktifkan"
+      },
+      "deactivate": {
+        "title": "Non Aktifkan"
+      }
+    },
+    "button": {
+      "add": "Tambah Cetak Label"
+    }
+  },
+  "title": {
+    "material": "Cetak Label",
+    "list": "Daftar Cetak Label",
+    "create": "Tambah Cetak Label",
+    "edit": "Edit Cetak Label"
+  },
+  "detail": {
+    "title": "Detail Karakteristik Limbah",
+    "waste_code": "Kode Limbah",
+    "waste_characteristic": "Karakteristik Limbah",
+    "waste_bag_color": "Warna Kantong Limbah",
+    "use_cold_storage": "Gunakan Penyimpanan Dingin",
+    "cold_storage_max_processing": "Proses Maksimal Penyimpanan Dingin",
+    "temporary_storage_min_processing_time": "Waktu Proses Minimal Penyimpanan Sementara",
+    "temporary_storage_max_processing_time": "Waktu Proses Maksimal Penyimpanan Sementara",
+    "internal_treatment": "Pengolahan Internal",
+    "third_party_treatment": "Pengolahan Pihak Ketiga",
+    "vehicle_type": "Jenis Kendaraan",
+    "storage_rule": "Aturan Penyimpanan",
+    "created_at": "Dibuat Pada",
+    "created_by": "Dibuat Oleh",
+    "updated_at": "Diperbarui Pada",
+    "updated_by": "Diperbarui Oleh"
+  },
+  "action": {
+    "activate": {
+      "button": "Aktifkan",
+      "confirmation": "Apakah anda yakin akan mengaktifkan produk ini ?"
+    },
+    "deactivate": {
+      "button": "Non Aktifkan",
+      "confirmation": "Apakah anda yakin akan menonaktifkan produk ini ?"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "Produk Template",
+    "trademark": "Produk Varian",
+    "non_hierarchy": "Non Hirarki",
+    "print": "Cetak Label",
+    "explain_waste_classification": "Penjelasan Klasifikasi Limbah"
+  },
+  "form": {
+    "source_type": {
+      "label": "Jenis Sumber",
+      "placeholder": "Pilih jenis sumber",
+      "validation": {
+        "required": "jenis sumber diperlukan"
+      }
+    },
+    "waste_source": {
+      "label": "Sumber Limbah",
+      "placeholder": "Pilih sumber limbah",
+      "validation": {
+        "required": "sumber limbah diperlukan"
+      }
+    },
+    "waste_type": {
+      "label": "Jenis limbah",
+      "placeholder": "Pilih Jenis Limbah",
+      "validation": {
+        "required": "Jenis limbah limbah diperlukan"
+      }
+    },
+    "waste_group": {
+      "label": "Kelompok limbah",
+      "placeholder": "Pilih Kelompok Limbah",
+      "validation": {
+        "required": "Kelompok limbah limbah dibutuhkan"
+      }
+    },
+    "waste_characteristic": {
+      "label": "Karakteristik limbah",
+      "placeholder": "Pilih karakteristik",
+      "validation": {
+        "required": "Karakteristik limbah diperlukan"
+      }
+    },
+    "total_number": {
+      "label": "Jumlah Total Cetakan",
+      "placeholder": "Masukkan jumlah total cetakan",
+      "validation": {
+        "required": "jumlah total diperlukan"
+      }
+    }
+  },
+  "scroll_list": {
+    "title": "Material",
+    "description": "Pilih entitas dan tipe transaksi terlebih dahulu",
+    "column": {
+      "material_name": "Nama Material",
+      "available_stock": "Stok Tersedia",
+      "current_stock": "Stock Saat Ini"
+    }
+  },
+  "modal": {
+    "confirmation": "Konfirmasi",
+    "description": "Kertas akan dicetak, harap tempelkan di tempat yang mudah dilihat",
+    "copies": "Jumlah salinan"
+  },
+  "message": {
+    "max_characteristics": "Anda hanya dapat mencetak maksimal {{max}} karakteristik limbah dalam satu waktu."
+  }
+}

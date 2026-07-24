@@ -1,0 +1,12 @@
+{
+  "index": {
+    "title": "Batas Jarak"
+  },
+  "form": {
+    "distance": {
+      "label": "Batas jarak (Meter)",
+      "placeholder": "Meter",
+      "helper_text": "Radius terjauh yang ditetapkan untuk titik lokasi terjadinya serah terima limbah dapat dilakukan. Batas jarak tercantum merupakan batas di dalam jangkauan yang diizinkan."
+    }
+  }
+}

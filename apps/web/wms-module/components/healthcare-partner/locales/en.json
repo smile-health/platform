@@ -1,0 +1,95 @@
+{
+  "list": {
+    "list": "Healthcare Partner",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Partnership Status"
+      },
+      "healthcare_partner": {
+        "label": "Healthcare Facility",
+        "placeholder": "Select Healthcare Facility"
+      },
+      "partnership_status": {
+        "label": "Partnership Status",
+        "placeholder": "Select Partnership Status"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "partnership_type": "Partnership Type",
+      "healthcare_facility": "Healthcare Facility",
+      "company_name": "Company Name",
+      "entity_name": "Entity Name",
+      "contract_start_date": "Contract Start Date",
+      "contract_end_date": "Contract End Date",
+      "partnership_status": "Partnership Status",
+      "pic_name": "PIC Name",
+      "phone_number": "Phone Number",
+      "position": "Position",
+      "price_kg": "Price/Kg",
+      "province": "Province",
+      "city": "City",
+      "address": "Address",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "last_updated": "Last Updated",
+      "waste_characteristic": "Waste Characteristic",
+      "action": "Action"
+    }
+  },
+  "title": {
+    "partnership": "Healthcare Partner",
+    "list": "Healthcare Partner List"
+  },
+  "form": {
+    "is_same_company": {
+      "label": "Is Same Company ?"
+    },
+    "partnership_type": {
+      "label": "Partnership Type",
+      "placeholder": "Select Partnership Type"
+    },
+    "company_name": {
+      "label": "Company Name",
+      "placeholder": "Select Company Name"
+    },
+    "healthcare_partner": {
+      "label": "Healthcare Facility Consumer",
+      "placeholder": "Select Healthcare Facility"
+    },
+    "pic_name": {
+      "label": "PIC Name",
+      "placeholder": "Enter PIC Name"
+    },
+    "phone_number": {
+      "label": "Phone Number",
+      "placeholder": "Enter Phone Number"
+    },
+    "position": {
+      "label": "Position",
+      "placeholder": "Enter Position"
+    },
+    "price_kg": {
+      "label": "Price/Kg",
+      "placeholder": "Enter Price/Kg"
+    },
+    "contract_start_date": {
+      "label": "Contract Start Date",
+      "placeholder": "Enter Contract Start Date"
+    },
+    "contract_end_date": {
+      "label": "Contract End Date",
+      "placeholder": "Enter Contract End Date"
+    },
+    "partnership_status": {
+      "label": "Partnership Status",
+      "placeholder": "Select Partnership Status"
+    }
+  },
+  "detail": {
+    "healthcare_partner_info": "Healthcare Facility info"
+  }
+}

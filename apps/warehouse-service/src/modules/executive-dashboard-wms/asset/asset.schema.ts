@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { IdSchema } from "@smile/lib/types/param.js"
+import { IdSchema } from "@smile-health/lib/types/param.js"
 
 export const AssetQueryParamsSchema = z.object({
   province_id: IdSchema.optional(),

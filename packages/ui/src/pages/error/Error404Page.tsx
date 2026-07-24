@@ -3,6 +3,8 @@ import CustomError from '#components/modules/CustomError'
 import { useLoadingPopupStore } from '#store/loading.store'
 import { useTranslation } from 'react-i18next'
 
+const SUPPORTED_LANGUAGES = ['en', 'id']
+
 const Error404Page: React.FC = () => {
   const { loadingPopup, setLoadingPopup } = useLoadingPopupStore()
   const {
@@ -16,7 +18,13 @@ const Error404Page: React.FC = () => {
   }, [loadingPopup])
 
   useEffect(() => {
-    if (languageUrl) changeLanguage(languageUrl)
+    // Only switch language if the first path segment is actually one of ours —
+    // an unmatched URL (e.g. a stale link with a non-locale first segment) would
+    // otherwise call changeLanguage with a code that has no translation bundle,
+    // leaving every t() call below unable to resolve.
+    if (languageUrl && SUPPORTED_LANGUAGES.includes(languageUrl)) {
+      changeLanguage(languageUrl)
+    }
   }, [language, languageUrl])
 
   return <CustomError error="404_pages" withLayout />

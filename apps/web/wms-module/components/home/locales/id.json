@@ -1,0 +1,154 @@
+{
+  "title": "Beranda",
+  "group": "Grup",
+  "home_superadmin": {
+    "filter": {
+      "date_range": {
+        "label": "Rentang Tanggal"
+      },
+      "waste_type": {
+        "label": "Jenis Limbah",
+        "placeholder": "Pilih jenis limbah"
+      },
+      "date_type": {
+        "label": "Jenis Tanggal",
+        "placeholder": "Pilih jenis tanggal"
+      },
+      "healthcare_facility": {
+        "label": "Nama Fasyankes",
+        "placeholder": "Pilih Fasyankes"
+      }
+    },
+    "column": {
+      "province": "Provinsi",
+      "total_transaction": "Total Transaksi",
+      "city": "Kota",
+      "healthcare_facility": "Nama Fasyankes",
+      "total_weight": "Total Berat ({{ unit }})",
+      "view_detail_transaction": "Lihat Transaksi Detail",
+      "view_detail_district": "Lihat Detail Kota",
+      "view_detail_healthcare": "Lihat Detail Fasyankes",
+      "view_history": "Lihat History",
+      "view_detail": "Lihat Detail",
+      "waste_type": "Tipe Limbah",
+      "waste_weight": "Berat Limbah ({{ unit }})"
+    },
+    "column_transaction": {
+      "waste_group_number": "Nomor Grup Limbah",
+      "waste_transporter": "Transporter Limbah",
+      "waste_treatment_facilitator": "Fasilitator Pengolahan Limbah",
+      "waste_characteristic": "Karakteristik Jenis / Grup / Limbah",
+      "waste_source": "Sumber Limbah",
+      "waste_in_date": "Limbah Dalam Tanggal",
+      "storage_limit": "Batas Penyimpanan",
+      "last_follow_up": "Tindak Lanjut Terakhir",
+      "waste_weight": "Berat Limbah ({{ unit }})",
+      "action": "Aksi"
+    },
+    "modal": {
+      "waste_status": "Status Limbah",
+      "updated_status": "Tanggal Status Yang Diperbarui"
+    },
+    "modal_waste_characteristics_summary": {
+      "waste_characteristic": "Karakteristik Limbah",
+      "waste_weight": "Berat Limbah ({{ unit }})"
+    }
+  },
+  "home_hf": {
+    "title": "Rangkuman Transaksi",
+    "modal": {
+      "title": "Riwayat Transaksi",
+      "waste_status": "Status Limbah",
+      "updated_status": "Tanggal Perubahan Status"
+    },
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Transaksi"
+      },
+      "waste_group": {
+        "label": "Grup Limbah",
+        "placeholder": "Pilih Grup Limbah"
+      },
+      "waste_type": {
+        "label": "Jenis Limbah",
+        "placeholder": "Pilih Jenis Limbah"
+      },
+      "waste_characteristic": {
+        "label": "Karakteristik Limbah",
+        "placeholder": "Pilih Karakteristik Limbah"
+      },
+      "waste_status": {
+        "label": "Status Limbah",
+        "placeholder": "Pilih Status Limbah"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "waste_group_number": "Nomor Grup Limbah",
+      "waste_number": "Nomor Kantong",
+      "waste_code": "Kode Kantong Limbah",
+      "waste_transporter": "Pengangkut Limbah",
+      "waste_treatment": "Pengolahan Limbah",
+      "waste_hierarchy": "Jenis Grup",
+      "waste_source": "Sumber Limbah",
+      "waste_date": "Tanggal Masuk",
+      "storage_date_limit": "Maksimal Penyimpanan (Hari)",
+      "last_follow_up": "Tindak Lanjut Terakhir",
+      "weight": "Berat ({{ unit }})",
+      "action": "Aksi"
+    }
+  },
+  "home_tp": {
+    "filter": {
+      "date_range": {
+        "label": "Rincian Tanggal"
+      },
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Nama Entitas/Nomor Grup Limbah/Petugas Transportasi/Nomor Plat Kendaraan"
+      },
+      "healthcare_facility": {
+        "label": "Nama Faskes",
+        "placeholder": "Pilih Faskes"
+      }
+    },
+    "transport_tab": {
+      "column": {
+        "entity_name": "Nama Entitas",
+        "waste_group_number": "Nomor Grup Limbah",
+        "waste_weight": "Berat Limbah ({{ unit }})",
+        "treatment_operator": "Operator Pengolah",
+        "transport_officer": "Petugas Transportasi",
+        "vehicle_number": "Nomor Plat Kendaraan",
+        "handover_time_to_transport": "Waktu Serah Terima Ke {{ handover }}",
+        "action": "Aksi"
+      }
+    },
+    "recyle_tab": {
+      "column": {
+        "entity_name": "Nama Entitas",
+        "waste_group_number": "Nomor Grup Limbah",
+        "waste_weight": "Berat Limbah ({{ unit }})",
+        "transport_officer": "Petugas Transportasi",
+        "vehicle_number": "Nomor Plat Kendaraan",
+        "manifest_number": "Manifest Number",
+        "handover_time_to_transport": "Waktu Serah Terima Ke {{ handover }}",
+        "on_site_recyler": "Pemanfaat di lokasi",
+        "handover_time_to_recyle": "Waktu penyerahan untuk Di Pemanfaat",
+        "action": "Aksi"
+      }
+    },
+    "tab": {
+      "transport": "Pengangkut",
+      "recycle": "Pemanfaat",
+      "landfill": "Penimbus",
+      "treatment": "Pengolah",
+      "government": "Pengolah Limbah Lokal",
+      "waste_bank": "Pengolah Bank Sampah",
+      "specialized": "Pengolah Khusus"
+    }
+  }
+}

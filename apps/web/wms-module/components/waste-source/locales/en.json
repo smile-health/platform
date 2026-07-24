@@ -1,0 +1,89 @@
+{
+  "list": {
+    "list": "Waste Source",
+    "filter": {
+      "waste_source": {
+        "search": {
+          "label": "Search",
+          "placeholder": "Search waste source"
+        },
+        "source_type": {
+          "label": "Source Type",
+          "placeholder": "Select Source Type"
+        }
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "source_type": "Source Type",
+      "waste_source": "Waste Source",
+      "updated_at": "Updated At",
+      "updated_by": "Updated",
+      "action": "Action"
+    },
+    "action": {
+      "activate": {
+        "title": "Activate"
+      },
+      "deactivate": {
+        "title": "Deactivate"
+      }
+    },
+    "button": {
+      "add_waste_source": "Add Waste Source"
+    }
+  },
+  "title": {
+    "waste_source": "Waste Source",
+    "list_waste_source": "Waste Source List",
+    "create_waste_source": "Waste Source"
+  },
+  "action": {
+    "activate": {
+      "button": "Activate",
+      "confirmation": "Are you sure you want to activate this product?"
+    },
+    "deactivate": {
+      "button": "Deactivate",
+      "confirmation": "Are you sure you want to deactivate this product?"
+    }
+  },
+  "button": {},
+  "form": {
+    "source_type": {
+      "label": "Source Type",
+      "placeholder": "Select source type"
+    },
+    "internal_waste_source": {
+      "label": "Waste Source",
+      "placeholder": "Input waste source"
+    },
+    "external_waste_source": {
+      "label": "Healthcare Facility Name",
+      "placeholder": "Select healthcare facility",
+      "placeholder_input": "Input healthcare facility"
+    },
+    "internal_treatment_waste_source": {
+      "label": "Waste Source",
+      "placeholder": "Select waste source"
+    },
+    "select_healthcare_facility": {
+      "label": "Select Healthcare Facility"
+    },
+    "input_healthcare_facility": {
+      "label": "Input Healthcare Facility"
+    }
+  },
+  "scroll_list": {},
+  "source_type": {
+    "INTERNAL": "Internal",
+    "EXTERNAL": "External",
+    "INTERNAL_TREATMENT": "Internal Treatment"
+  },
+  "waste_source_treatment": {
+    "PYROLYSIS": "Incineration/Pyrolysis",
+    "DISINFECTION": "Sterilization/Disinfection"
+  }
+}

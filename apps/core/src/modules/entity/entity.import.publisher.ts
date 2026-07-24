@@ -1,5 +1,5 @@
-import { SyncPublisher } from "@smile/lib/base/sync-publisher.js"
-import { Publisher } from "@smile/lib/rabbitmq/publisher.js"
+import { SyncPublisher } from "@smile-health/lib/base/sync-publisher.js"
+import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
 import { Context } from "hono"
 import { EntityRepository } from "./entity.repository.js"
 

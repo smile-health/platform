@@ -1,6 +1,6 @@
 import { Hono } from "hono"
 import { ExecutiveWorkspaceModule } from "./workspace.module.js"
-import { BaseController } from "@smile/lib/base/controller.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
 import { ExecutiveWorkspaceMiddleware } from "./workspace.middleware.js"
 
 export class ExecutiveWorkspaceController extends BaseController {

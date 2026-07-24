@@ -36,7 +36,6 @@ const NavbarAnalysis = () => {
   const isShowDiscard = useFeatureIsOn('dashboard.discard')
   const isShowMonthlyReport = useFeatureIsOn('dashboard.report.monthly')
   const isShowYearlyReport = useFeatureIsOn('dashboard.report.yearly')
-  const isShowAsik = useFeatureIsOn('dashboard.asik')
   const isShowInventoryOverview = useFeatureIsOn('dashboard.inventory_overview')
   const isShowRabies = useFeatureIsOn('dashboard.rabies')
   const isShowLPO = useFeatureIsOn('report_lplpo')
@@ -44,7 +43,6 @@ const NavbarAnalysis = () => {
   const isShowAnnualCommitmentVsRealization = useFeatureIsOn(
     'dashboard.annual_commitment_vs_realization'
   )
-  const isShowSmileVsSmdvDashboard = useFeatureIsOn('dashboard.smile_vs_smdv')
 
   const rawMenus: TLeftMenu[] = useMemo(() => {
     const program = getProgramStorage()
@@ -102,14 +100,6 @@ const NavbarAnalysis = () => {
                 url: `/v5/dashboard/discard`,
                 isHidden:
                   !hasPermission('dashboard-discard-view') || !isShowDiscard,
-              },
-              {
-                title: 'SMILE vs ASIK',
-                url: `/v5/dashboard/asik`,
-                isHidden:
-                  !hasPermission('dashboard-asik-view') ||
-                  !isShowAsik ||
-                  program?.key !== ProgramEnum.Immunization,
               },
               {
                 title: 'Rabies',
@@ -285,14 +275,6 @@ const NavbarAnalysis = () => {
                     'dashboard-annual-commitment-vs-realization-view'
                   ),
               },
-              {
-                title: t('navbar:nav_smile_vs_smdv'),
-                url: `/v5/dashboard/smile-vs-smdv`,
-                isHidden:
-                  !hasPermission('dashboard-smile-smdv-view') ||
-                  !isShowSmileVsSmdvDashboard ||
-                  program?.key !== ProgramEnum.Immunization,
-              },
             ],
           },
         ],
@@ -310,7 +292,6 @@ const NavbarAnalysis = () => {
     isShowDiscard,
     isShowMonthlyReport,
     isShowYearlyReport,
-    isShowAsik,
     isShowInventoryOverview,
     isShowRabies,
     isShowLPO,

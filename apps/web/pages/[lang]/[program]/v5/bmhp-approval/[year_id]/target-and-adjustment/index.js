@@ -1,1 +1,0 @@
-export { default } from '@repo/ui/pages/bmhp-approval/bmhp-approval/tabs/target-and-adjustment/TargetAndAdjustmentPage.tsx'

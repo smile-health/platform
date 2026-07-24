@@ -1,0 +1,68 @@
+{
+  "list": {
+    "list": "Manajemen Aset Layanan Kesehatan",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Nomor Seri"
+      },
+      "working_status": {
+        "label": "Status Operasional",
+        "placeholder": "Pilih status operasional"
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Pilih status"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "asset_type": "Tipe Aset",
+      "manufacture": "Pabrik",
+      "model": "Model Aset",
+      "asset_id": "ID Aset",
+      "serial_number": "Nomor Seri",
+      "asset_status": "Status",
+      "working_status": "Status Operasional",
+      "ownership_status": "Status Kepemilikan",
+      "ownership_qty": "Jumlah yang dimiliki",
+      "action": "Aksi"
+    }
+  },
+  "title": {
+    "healthcare": "Aset Layanan Kesehatan",
+    "list": "Daftar Aset Layanan Kesehatan",
+    "create": "Tambah Aset Layanan Kesehatan",
+    "edit": "Edit Aset Layanan Kesehatan",
+    "detail": "Detail Aset Layanan Kesehatan"
+  },
+  "form": {
+    "dongle_id": {
+      "label": "ID IoT Dongle",
+      "placeholder": "Masukkan ID IoT Dongle"
+    },
+    "error_dongle_id": "ID IoT tidak terotentikasi, silahkan meminta persetujuan Kemenkes."
+  },
+  "asset_status": {
+    "OPERATIONAL": "Berfungsi",
+    "UNDER_MAINTAINENCE": "Dalam Perbaikan",
+    "OUT_OF_SERVICE": "Rusak",
+    "IDLE": "Standby",
+    "NEED_REPAIR": "Perlu Perbaikan",
+    "RETIRED": "Sudah Dibuang"
+  },
+  "working_status": {
+    "function": "Berfungsi",
+    "standby": "Standby",
+    "repair": "Dalam Perbaikan",
+    "damaged": "Rusak",
+    "need_repair": "Perlu Perbaikan",
+    "disposed": "Sudah Dibuang"
+  },
+  "modal": {
+    "title": "Peringatan",
+    "description": "Ada ketidaksesuaian, ID {{dongleId}} tidak cocok/ konfigurasi gagal. Silahkan menghubungi vendor penyedia."
+  }
+}

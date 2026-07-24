@@ -1,4 +1,4 @@
-import { NotFoundError, ValidationError } from "@smile/lib/error"
+import { NotFoundError, ValidationError } from "@smile-health/lib/error"
 export class MicroplanningNotFound extends NotFoundError {
   constructor() {
     super("validator.microplanning.not_found")

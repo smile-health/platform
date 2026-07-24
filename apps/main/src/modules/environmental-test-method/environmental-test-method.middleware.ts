@@ -1,4 +1,4 @@
-import { BaseMiddleware } from "@smile/lib/base/middleware.js"
+import { BaseMiddleware } from "@smile-health/lib/base/middleware.js"
 import { Context } from "hono"
 import { z } from "zod"
 import { EnvironmentalTestMethodRepository } from "./environmental-test-method.repository.js"
@@ -11,7 +11,7 @@ import {
   UpdateEnvironmentalTestMethodRequest,
 } from "./environmental-test-method.schema.js"
 import { createMiddleware } from "hono/factory"
-import { NotFoundError } from "@smile/lib/error.js"
+import { NotFoundError } from "@smile-health/lib/error.js"
 
 export class EnvironmentalTestMethodMiddleware extends BaseMiddleware {
   constructor(private readonly repository: EnvironmentalTestMethodRepository) {

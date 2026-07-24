@@ -1,4 +1,4 @@
-import { collect, differ } from "@smile/lib/utils.js"
+import { collect, differ } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import {
   CreateUserWorkspaceRequest,

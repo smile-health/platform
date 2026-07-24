@@ -18,7 +18,7 @@ import {
   resolveLogisticsIds,
   type VialNeedResult,
 } from "@/common/utils/material-key.utils.js"
-import { ValidationError } from "@smile/lib/error.js"
+import { ValidationError } from "@smile-health/lib/error.js"
 import { Context } from "hono"
 import moment from "moment"
 import { MaterialRepository } from "../../material/material.repository.js"

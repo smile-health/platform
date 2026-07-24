@@ -1,15 +1,15 @@
-import { featureFlagsMiddleware } from "@smile/lib"
-import { TransactionManager } from "@smile/lib/database.js"
+import { featureFlagsMiddleware } from "@smile-health/lib"
+import { TransactionManager } from "@smile-health/lib/database.js"
 import {
   createRefreshHandler,
   createWebhookHandler,
-} from "@smile/lib/feature-flags/webhook.js"
-import i18n, { loadResources, reloadTranslations } from "@smile/lib/i18n.js"
-import { RequestMiddleware } from "@smile/lib/middlewares/request.middleware.js"
-import { TransactionMiddleware } from "@smile/lib/middlewares/transaction.middleware.js"
-import { Consumer } from "@smile/lib/rabbitmq/consumer.js"
-import { Publisher } from "@smile/lib/rabbitmq/publisher.js"
-import { routeTracer } from "@smile/lib/tracing.js"
+} from "@smile-health/lib/feature-flags/webhook.js"
+import i18n, { loadResources, reloadTranslations } from "@smile-health/lib/i18n.js"
+import { RequestMiddleware } from "@smile-health/lib/middlewares/request.middleware.js"
+import { TransactionMiddleware } from "@smile-health/lib/middlewares/transaction.middleware.js"
+import { Consumer } from "@smile-health/lib/rabbitmq/consumer.js"
+import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
+import { routeTracer } from "@smile-health/lib/tracing.js"
 import { Hono } from "hono"
 import { cors } from "hono/cors"
 import { db } from "./common/infrastructure/database/index.js"
@@ -137,15 +137,9 @@ import { InventoryOverviewController } from "./modules/inventory-overview/invent
 import { InventoryOverviewModule } from "./modules/inventory-overview/inventory-overview.module.js"
 import { InventoryOverviewQuery } from "./modules/inventory-overview/inventory-overview.query.js"
 import { InventoryOverviewRepository } from "./modules/inventory-overview/inventory-overview.repository.js"
-// Smile vs ASIK Module
 import { LplpoController } from "./modules/lplpo/lplpo.controller.js"
 import { LplpoModule } from "./modules/lplpo/lplpo.module.js"
 import { LplpoRepository } from "./modules/lplpo/lplpo.repository.js"
-import { SmileVsAsikController } from "./modules/smile-vs-asik/smile-vs-asik.controller.js"
-import { SmileVsAsikExcel } from "./modules/smile-vs-asik/smile-vs-asik.excel.js"
-import { SmileVsAsikModule } from "./modules/smile-vs-asik/smile-vs-asik.module.js"
-import { SmileVsAsikQuery } from "./modules/smile-vs-asik/smile-vs-asik.query.js"
-import { SmileVsAsikRepository } from "./modules/smile-vs-asik/smile-vs-asik.repository.js"
 
 import { AssetInventoryController } from "./modules/asset-inventory/asset-inventory.controller.js"
 import { AssetInventoryExcel } from "./modules/asset-inventory/asset-inventory.excel.js"
@@ -165,11 +159,6 @@ import { StockAvailabilityGenerateReport } from "./modules/download-report/gener
 import { LoggerMonitoringQuery } from "./modules/logger-monitoring/logger-monitoring.query.js"
 import { LoggerMonitoringRepository } from "./modules/logger-monitoring/logger-monitoring.repository.js"
 import { LplpoWorker } from "./modules/lplpo/lplpo.worker.js"
-import { SmileVsBiofarmaController } from "./modules/smile-vs-biofarma/smile-vs-biofarma.controller.js"
-import { SmileVsBiofarmaExcel } from "./modules/smile-vs-biofarma/smile-vs-biofarma.excel.js"
-import { SmileVsBiofarmaModule } from "./modules/smile-vs-biofarma/smile-vs-biofarma.module.js"
-import { SmileVsBiofarmaQuery } from "./modules/smile-vs-biofarma/smile-vs-biofarma.query.js"
-import { SmileVsBiofarmaRepository } from "./modules/smile-vs-biofarma/smile-vs-biofarma.repository.js"
 
 // CCE Module
 import { CceController } from "./modules/cce/cce.controller.js"
@@ -251,7 +240,7 @@ import { RabiesRepository } from "./modules/rabies/rabies.repostitory.js"
 import { RabiesModule } from "./modules/rabies/rabies.module.js"
 import { RabiesController } from "./modules/rabies/rabies.controller.js"
 import { RabiesExcel } from "./modules/rabies/rabies.excel.js"
-import { TOPIC } from "@smile/lib/rabbitmq/topic.js"
+import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
 import { randomUUID } from "node:crypto"
 
 /* Shared Dependencies */
@@ -766,42 +755,6 @@ const cceController = new CceController(
   cceMaterialModule
 )
 
-// Smile vs ASIK Module
-const smileVsAsikQuery = new SmileVsAsikQuery()
-const smileVsAsikRepository = new SmileVsAsikRepository(smileVsAsikQuery)
-const smileVsAsikExcel = new SmileVsAsikExcel(
-  activityRepo,
-  regionRepo,
-  entityTagRepo,
-  materialRepo
-)
-const smileVsAsikModule = new SmileVsAsikModule(
-  smileVsAsikRepository,
-  locationModule,
-  smileVsAsikExcel
-)
-const smileVsAsikController = new SmileVsAsikController(
-  smileVsAsikModule,
-  roleMiddleware
-)
-
-// Smile vs Biofarma Module
-const smileVsBiofarmaQuery = new SmileVsBiofarmaQuery()
-const smileVsBiofarmaRepository = new SmileVsBiofarmaRepository(
-  smileVsBiofarmaQuery
-)
-const smileVsBiofarmaExcel = new SmileVsBiofarmaExcel(
-  new MasterDataRepository()
-)
-const smileVsBiofarmaModule = new SmileVsBiofarmaModule(
-  smileVsBiofarmaRepository,
-  locationModule,
-  smileVsBiofarmaExcel
-)
-const smileVsBiofarmaController = new SmileVsBiofarmaController(
-  smileVsBiofarmaModule,
-  roleMiddleware
-)
 // Executive Dashboard Distribution Module
 const executiveDashboardDistributionQuery =
   new ExecutiveDashboardDistributionQuery()
@@ -1153,16 +1106,6 @@ assetMonitoringDeviceRoutes.route(
   assetMonitoringDeviceController.getRoutes()
 )
 warehouseApp.route("/asset-monitoring-device", assetMonitoringDeviceRoutes)
-
-const smileVsAsikRoutes = new Hono()
-smileVsAsikRoutes.use("*", routeTracer.traceRoute("smile-vs-asik"))
-smileVsAsikRoutes.route("/", smileVsAsikController.getRoutes())
-warehouseApp.route("/asik", smileVsAsikRoutes)
-
-const smileVsBiofarmaRoutes = new Hono()
-smileVsBiofarmaRoutes.use("*", routeTracer.traceRoute("smile-vs-biofarma"))
-smileVsBiofarmaRoutes.route("/", smileVsBiofarmaController.getRoutes())
-warehouseApp.route("/biofarma", smileVsBiofarmaRoutes)
 
 const executiveDashboardDistributionRoutes = new Hono()
 executiveDashboardDistributionRoutes.use(

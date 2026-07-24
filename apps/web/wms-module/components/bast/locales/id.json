@@ -1,0 +1,45 @@
+{
+  "list": {
+    "list": "Berita Acara Serah Terima",
+    "filter": {
+      "handover_document": {
+        "search": {
+          "label": "Cari",
+          "placeholder": "Cari berita acara serah terima"
+        }
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "no_handover_document": "No Berita Acara Serah Terima",
+      "entity_name": "Nama Entitas",
+      "created_by": "Dibuat Oleh",
+      "handover_document": "Berita Acara Serah Terima",
+      "description": "Deskripsi",
+      "status": "Status",
+      "created_at": "Tanggal Pengajuan",
+      "material_name": "Nama Material",
+      "qty": "Qty",
+      "material_id": "Material ID",
+      "action": "Aksi"
+    },
+    "action": {
+      "approve": "Terima",
+      "reject": "Tolak",
+      "description": "Apakah Anda yakin ingin menyetujui berita acara serah terima {{bast}} ini?"
+    }
+  },
+  "title": {
+    "handover_document": "Berita Acara Serah Terima",
+    "handover_document_list": "Daftar Berita Acara Serah Terima",
+    "handover_document_detail": "Berita Acara Serah Terima Detail",
+    "handover_document_approval": "Permohonan Berita Acara Serah Terima "
+  },
+  "bast_status": {
+    "PENDING": "Menunggu Persetujuan",
+    "APPROVED": "Disetujui",
+    "REJECTED": "Ditolak"
+  }
+}

@@ -79,7 +79,7 @@ All services sit behind **Nginx** (port 8080) for routing.
 
 ### Shared Library
 
-`packages/lib` (imported as `@smile/lib`) exports:
+`packages/lib` (imported as `@smile-health/lib`) exports:
 - Database client (Kysely + MySQL)
 - Error handling utilities
 - Excel processing
@@ -117,4 +117,4 @@ ADRs and architecture docs are in `adr/`:
 - `databaseModels.md` — schema reference
 - `authentication.md` — auth implementation
 - `cursor-pagination-guide.md` — pagination patterns
-- `lib-documentation.md` — `@smile/lib` reference
+- `lib-documentation.md` — `@smile-health/lib` reference

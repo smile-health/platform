@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import BaseTemplate from "@smile/lib/excel/index.js"
-import { PROCESSOR } from "@smile/lib/excel/types.js"
-import { FileResponse } from "@smile/lib/types/file.js"
+import BaseTemplate from "@smile-health/lib/excel/index.js"
+import { PROCESSOR } from "@smile-health/lib/excel/types.js"
+import { FileResponse } from "@smile-health/lib/types/file.js"
 
 export class MaterialAggregateCapacityRemainingExcel extends BaseTemplate {
   constructor(private data: any) {

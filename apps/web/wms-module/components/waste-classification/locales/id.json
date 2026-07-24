@@ -1,0 +1,17 @@
+{
+  "list": {
+    "list": "Penjelasan Klasifikasi Limbah",
+    "column": {
+      "waste_type": "Jenis Limbah",
+      "waste_type_description": "Penjelasan Jenis Limbah",
+      "waste_group": "Grup Limbah",
+      "waste_group_description": "Penjelasan Grup Limbah",
+      "waste_characteristics": "Karakteristik Limbah",
+      "waste_characteristics_description": "Penjelasan Karakteristik Limbah"
+    },
+    "message": {
+      "no_characteristics": "Tidak ada karakteristik yang didefinisikan.",
+      "no_data": "Tidak ada spesifikasi limbah yang tersedia."
+    }
+  }
+}

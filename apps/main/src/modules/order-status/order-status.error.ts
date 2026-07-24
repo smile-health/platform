@@ -1,4 +1,4 @@
-import { BadRequestError } from "@smile/lib/error.js"
+import { BadRequestError } from "@smile-health/lib/error.js"
 
 export class MissingStockStatusIdError extends BadRequestError {
   constructor() {

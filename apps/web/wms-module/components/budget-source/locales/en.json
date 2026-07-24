@@ -1,0 +1,40 @@
+{
+  "list": {
+    "list": "Budget Source Management",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search budget source"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "name": "Budget Source",
+      "description": "Description",
+      "updated_at": "Updated At",
+      "updated_by": "Updated By",
+      "action": "Action"
+    },
+    "button": {
+      "add": "Add Budget Source"
+    }
+  },
+  "title": {
+    "budget_source": "Budget Source",
+    "list": "Budget Source List",
+    "create": "Budget Source",
+    "edit": "Edit Budget Source"
+  },
+  "form": {
+    "budget_source": {
+      "label": "Budget Source",
+      "placeholder": "Enter budget source"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Input description"
+    }
+  }
+}

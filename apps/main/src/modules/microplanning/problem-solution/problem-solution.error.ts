@@ -1,4 +1,4 @@
-import { NotFoundError, ValidationError } from "@smile/lib/error.js"
+import { NotFoundError, ValidationError } from "@smile-health/lib/error.js"
 
 export class ProblemSolutionNotFound extends NotFoundError {
   constructor() {

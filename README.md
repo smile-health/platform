@@ -19,6 +19,20 @@
 
 SMILE Platform Backend - A modern monorepo built with Bun, TypeScript, and Turborepo
 
+## Apps
+
+| App | Purpose |
+|-----|---------|
+| `apps/core` | Auth, file storage, shared utilities |
+| `apps/platform` | Multi-workspace service instances |
+| `apps/auth-service` | JWT authentication & user management |
+| `apps/main` | Core business logic, analytics |
+| `apps/warehouse-service` | Warehouse Management — stock, inventory, asset-inventory |
+| `apps/wms-service` | Waste Management System backend — lifted from the standalone `wms` + `wms-migrations` repos (Express/Sequelize, kept as-is). Auth was cut over to call `apps/core`'s `/account/profile` internally instead of an external SSO handoff. The rest of its API calls still hit the standalone wms backend host until routing is merged in a future iteration |
+| `apps/web` | Main Next.js frontend. Now also hosts the merged WMS frontend under `pages/wms/[lang]/**` (source in `apps/web/wms-module/`) — previously a separate app (`frontend-turborepo/apps/wms`) reached via `/wms/validate-token` cross-origin handoff; that handoff is gone now that it's the same session, gated instead by an inline `WmsAuthGate` |
+| `apps/interop-service` | External system interoperability |
+| `apps/notification` | Push notifications |
+
 ## License
 
 This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See the [LICENSE](LICENSE) file for details.
@@ -66,6 +80,8 @@ pnpm install
 cp .env.example .env
 ```
 
+> `apps/web`'s `.env` needs a few WMS-specific vars for the merged `pages/wms/**` module: `WMS_API_URL`, `WMS_STORAGE_PREFIX`, `SMILE_STORAGE_PREFIX`, `NEXT_PUBLIC_URL_FE_SMILE`, `KESLING_PATH`. See the comments above them in `apps/web/.env.development` for what each one is for and why they're kept distinct from this app's own `API_URL`/`STORAGE_PREFIX`.
+
 ### 4. Run build (will run kysely-codegen)
 
 ```bash
@@ -102,6 +118,23 @@ turbo dev
 - [Infrastructure Monitoring](adr/INFRASTRUCTURE_MONITORING.md)
 - [Troubleshooting](adr/TIMEOUT_TROUBLESHOOTING.md)
 - [Service Statuses](adr/SERVICE_STATUSES.md)
+
+### WMS merge notes
+
+The Waste Management System frontend and backend, previously two separate repos
+(`frontend-turborepo/apps/wms` and `wms`/`wms-migrations`), have been merged into this
+monorepo:
+
+- Backend: `apps/wms-service` (Express/Sequelize, unchanged stack), with `wms-migrations`'
+  migrations/seeders under `apps/wms-service/db/`. Auth now calls `apps/core`'s
+  `/account/profile` internally rather than an external SMILE_BE_URL callback. Everything
+  else still targets the standalone wms backend host (`WMS_API_URL`) — full backend
+  routing consolidation is a future iteration.
+- Frontend: routes at `apps/web/pages/wms/[lang]/**`, source in `apps/web/wms-module/`.
+  Runs its own Redux store and an isolated i18next instance (see
+  `wms-module/provider/WmsProviders.tsx`), mounted only for `/wms/*` routes via
+  `pages/_app.js`. The old cross-origin `/wms/validate-token` handoff is gone — replaced
+  by `wms-module/components/WmsAuthGate.tsx`, which checks the shared login cookie inline.
 
 ## Contributing
 

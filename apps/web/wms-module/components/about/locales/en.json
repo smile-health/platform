@@ -1,0 +1,65 @@
+{
+  "list": {
+    "list": "About"
+  },
+  "title": {
+    "list": "Info",
+    "edit": "Edit Entity Information"
+  },
+  "info": {
+    "title": "This form is only for changing additional data related to waste-producing entities",
+    "body": "To change account data, please access the 'View Profile' menu through the SMILE homepage"
+  },
+  "button": {
+    "edit": "Edit"
+  },
+  "detail": {
+    "registration_code": "WMS Registration Code",
+    "satu_sehat_code": "SATUSEHAT Code",
+    "entity_name": "Entity Name",
+    "entity_tag": "Entity Tag",
+    "head_name": "Head Name",
+    "gender": "Gender",
+    "email": "Email Address",
+    "phone": "Phone",
+    "province": "Province",
+    "city": "City",
+    "address": "Addres",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "nib": "NIB",
+    "last_updated": "Last Update",
+    "total_bad_room": "Number of Bedrooms",
+    "percentage_bad_room": "Percentage of Bedroom Usage (%)"
+  },
+  "form": {
+    "nib": {
+      "label": "NIB",
+      "placeholder": "Enter nib"
+    },
+    "head_name": {
+      "label": "Head Name",
+      "placeholder": "Enter head name"
+    },
+    "gender": {
+      "label": "Gender",
+      "placeholder": "Enter gender"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Enter email address"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Enter phone"
+    },
+    "total_bad_room": {
+      "label": "Number of bedrooms",
+      "placeholder": "Enter number of bedrooms"
+    },
+    "percentage_bad_room": {
+      "label": "Percentage of bedroom usage (%)",
+      "placeholder": "Enter percentage of bedroom usage"
+    }
+  }
+}

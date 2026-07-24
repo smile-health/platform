@@ -16,7 +16,6 @@ import {
 } from "./common/infrastructure/database/index.js"
 // import { runWorker } from "./server.js"
 import { sendingRecapNotif } from "./modules/notification/notification.recap-module.js"
-import { syncAsikAggregateCron } from "./scripts/cron/asik/asik.js"
 import {
   dailyAssetCalibrationReminder,
   dailyAssetDefrostingReminder,
@@ -169,16 +168,5 @@ program
   .command("asset-defrosting-reminder")
   .description("Run daily asset defrosting reminder notifications")
   .action(async () => dailyAssetDefrostingReminder())
-
-program
-  .command("asik-aggregate-sync")
-  .description("Sync ASIK daily aggregate into integration_asik_aggregate")
-  .option("--input-date <inputDate>", "Input date in YYYY-MM-DD")
-  .option("--page <page>", "Start page")
-  .option("--no-iterate", "Only sync one page")
-  .action(async (options) => {
-    const page = options.page ? Number(options.page) : undefined
-    await syncAsikAggregateCron(options.inputDate, page, options.iterate)
-  })
 
 program.parse(process.argv)

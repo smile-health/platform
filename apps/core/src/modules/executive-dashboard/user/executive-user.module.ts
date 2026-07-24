@@ -1,4 +1,4 @@
-import { BadRequestError, NotFoundError } from "@smile/lib/error.js"
+import { BadRequestError, NotFoundError } from "@smile-health/lib/error.js"
 import { Context } from "hono"
 import { ExecutiveUserRepository } from "./executive-user.repository.js"
 import { UpdateLastLoginRequest } from "./executive-user.schema.js"

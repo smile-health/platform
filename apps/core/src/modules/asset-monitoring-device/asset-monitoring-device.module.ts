@@ -2,15 +2,15 @@ import { ASSET_CLASSIFICATION } from "@/common/constants/assets.js"
 import { DEVICE_TYPE } from "@/common/constants/device.js"
 import { STATUS } from "@/common/constants/general.js"
 import { USER_ROLE } from "@/common/constants/user.js"
-import { TOPIC } from "@smile/lib/rabbitmq/topic.js"
+import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
 import {
   BadRequestError,
   ForbiddenError,
   NotFoundError,
   ValidationError,
-} from "@smile/lib/error.js"
-import { logger } from "@smile/lib/logger.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
+} from "@smile-health/lib/error.js"
+import { logger } from "@smile-health/lib/logger.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
 import { Context } from "hono"
 import moment from "moment"
 import { BaseModule } from "../base.module.js"

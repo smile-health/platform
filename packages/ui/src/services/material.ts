@@ -1,24 +1,10 @@
 import { BOOLEAN, STATUS } from '#constants/common'
 import axios from '#lib/axios'
 import { TCommonFilter, TCommonResponseList } from '#types/common'
-import {
-  TMaterial,
-  TMaterialBiofarmaList,
-  TMaterialList,
-} from '#types/material'
+import { TMaterial, TMaterialList } from '#types/material'
 import { handleAxiosResponse } from '#utils/api'
 import { parseDownload } from '#utils/download'
 import { removeEmptyObject } from '#utils/object'
-
-export type GetMaterialBiofarmaParams = TCommonFilter & {
-  page?: number
-  paginate?: number
-  sort_by_name?: string
-  sort_by_program?: string
-  sort_by_material_type?: string
-  sort_by_material_level?: string
-  sort_by_managed_in_batch?: string
-}
 
 export type GetMaterialsParams = TCommonFilter & {
   keyword?: string
@@ -248,11 +234,6 @@ export type GetProgramMaterialsResponse = TCommonResponseList & {
 
 export type GetGlobalMaterialsResponse = TCommonResponseList & {
   data: TMaterialList[]
-  statusCode: number
-}
-
-export type GetGlobalMaterialBiofarmaResponse = TCommonResponseList & {
-  data: TMaterialBiofarmaList[]
   statusCode: number
 }
 
@@ -796,59 +777,3 @@ export async function loadBatch(
   }
 }
 
-export async function getMaterialBiofarma(
-  params: GetMaterialBiofarmaParams
-): Promise<GetGlobalMaterialBiofarmaResponse> {
-  const response = await axios.get(
-    '/warehouse-report/biofarma/material/search',
-    {
-      params,
-      cleanParams: true,
-    }
-  )
-
-  return handleAxiosResponse<GetGlobalMaterialBiofarmaResponse>(response)
-}
-
-export async function loadMaterialBiofarma(
-  keyword: string,
-  _: unknown,
-  additional?: GetMaterialBiofarmaParams
-) {
-  const params = {
-    ...additional,
-    page: additional?.page ?? 1,
-    paginate: 10,
-    status: BOOLEAN.TRUE,
-    keyword,
-  }
-
-  const fixedParams = removeEmptyObject(params)
-
-  const result = await getMaterialBiofarma(fixedParams)
-
-  if (result?.statusCode === 204) {
-    return {
-      options: [],
-      hasMore: false,
-      additional: {
-        ...fixedParams,
-        page: additional?.page ? additional?.page + 1 : 1,
-      },
-    }
-  }
-
-  const options = result?.data?.map((item) => ({
-    label: item?.name,
-    value: item?.name,
-  }))
-
-  return {
-    options,
-    hasMore: result?.data?.length > 0,
-    additional: {
-      ...fixedParams,
-      page: additional?.page ? additional?.page + 1 : 1,
-    },
-  }
-}

@@ -1,0 +1,130 @@
+{
+  "list": {
+    "list": "Mitra Pihak Ketiga",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Nomor Kontrak"
+      },
+      "healthcare_partner": {
+        "label": "Mitra Fasyankes",
+        "placeholder": "Pilih Mitra Fasyankes"
+      },
+      "third_party_patner": {
+        "label": "Mitra Pihak Ketiga",
+        "placeholder": "Pilih Mitra Pihak Ketiga"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "partnership_type": "Tipe Kemitraan",
+      "third_party_name": "Mitra Pihak Ketiga",
+      "healthcare_partner": "Mitra Fasyankes",
+      "healthcare_facility": "Nama Fasyankes",
+      "company_name": "Nama Perusahaan",
+      "entity_name": "Nama Entitas",
+      "contract_date": "Tanggal Kontrak",
+      "contract_start_date": "Tanggal Mulai Kontrak",
+      "contract_end_date": "Tanggal Berakhir Kontrak",
+      "contract_id": "Nomor Kontrak",
+      "partnership_status": "Status Kemitraan",
+      "pic_name": "Nama PIC",
+      "phone_number": "Nomer Telepon",
+      "position": "Jabatan",
+      "price_kg": "Harga/Kg",
+      "province": "Provinsi",
+      "city": "Kab/Kota",
+      "address": "Alamat Kantor",
+      "latitude": "Lintang",
+      "longitude": "Bujur",
+      "last_updated": "Pembaruan Terakhir",
+      "waste_characteristic": "Karakteristik Limbah",
+      "nib": "NIB",
+      "action": "Aksi"
+    },
+    "column_operator": {
+      "username ": "Nama pengguna",
+      "name": "Nama",
+      "role": "Peran",
+      "company_name": "Nama Perusahaan",
+      "email": "Email",
+      "phone": "Telepon"
+    },
+    "button": {
+      "add": "Tambah Kemitraan",
+      "add_characteristic": "Tambah Karakteristik Limbah",
+      "edit_characteristic": "Ubah Karakteristik Limbah"
+    }
+  },
+  "title": {
+    "partnership": "Mitra Pihak Ketiga",
+    "list": "Daftar Mitra Pihak Ketiga",
+    "create": "Tambah Mitra Pihak Ketiga",
+    "edit": "Edit Mitra Pihak Ketiga"
+  },
+  "form": {
+    "is_same_company": {
+      "label": "Apakah Perusahaan yang Sama ?"
+    },
+    "partnership_type": {
+      "label": "Tipe Kemitraan",
+      "placeholder": "Pilih Tipe Kemitraan"
+    },
+    "company_name": {
+      "label": "Nama Perusahaan",
+      "placeholder": "Pilih Nama Perusahaan"
+    },
+    "healthcare_partner": {
+      "label": "Fasyankes",
+      "placeholder": "Pilih Fasyankes"
+    },
+    "pic_name": {
+      "label": "Nama PIC",
+      "placeholder": "Masukan Nama PIC"
+    },
+    "phone_number": {
+      "label": "Nomer Telepon",
+      "placeholder": "Masukan Nomer Telepon"
+    },
+    "position": {
+      "label": "Jabatan",
+      "placeholder": "Masukan Jabatan"
+    },
+    "price_kg": {
+      "label": "Harga/Kg",
+      "placeholder": "Masukan Harga/Kg"
+    },
+    "nib": {
+      "label": "Nomor NIB",
+      "placeholder": "Nomor NIB"
+    },
+    "contract_date": {
+      "label": "Tanggal Kontrak",
+      "placeholder": "Masukan Tanggal Kontrak"
+    },
+    "contract_id": {
+      "label": "Nomor Kontrak",
+      "placeholder": "Masukan Nomor Kontrak"
+    },
+    "partnership_status": {
+      "label": "Status Kemitraan",
+      "placeholder": "Pilih Status Kemitraan"
+    },
+    "waste_characteristic": {
+      "label": "Karakteristik Limbah",
+      "placeholder": "Pilih Karakteristik Limbah"
+    }
+  },
+  "detail": {
+    "third_party_info": "Info Kemitraan Pihak Ketiga",
+    "operator_info": "Info Operator"
+  },
+  "classification_info": "Karakteristik limbah tidak muncul, jika tipe kemitraan adalah pengangkut - pengolah/ pengangkut - penimbus/ pengangkut - pemanfaat",
+  "provider_type": {
+    "LANDFILLER": "Ditimbus",
+    "TREATMENT": "Diolah",
+    "RECYCLER": "Dimanfaat"
+  }
+}

@@ -3,8 +3,8 @@ import {
   TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL,
 } from "@/common/constants/assets.js"
 import { MANUFACTURE_TYPE } from "@/common/constants/manufacture.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
-import { collect, merge } from "@smile/lib/utils.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
+import { collect, merge } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import moment from "moment"
 import { AssetInventoryRepository } from "../asset-inventory/asset-inventory.repository.js"

@@ -1,0 +1,41 @@
+{
+  "list": {
+    "list": "Persetujuan Penimbangan Manual",
+    "by": "Oleh",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Penimbangan Manual"
+      },
+      "healthcare_facility_name": {
+        "label": "Fasyankes",
+        "placeholder": "Pilih Fasyankes"
+      },
+      "date_range": {
+        "label": "Rentang Tanggal",
+        "placeholder": "Pilih Rentang Tanggal"
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Pilih Status"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "title": "Penimbangan Manual"
+    }
+  },
+  "manual_scale_status": {
+    "APPROVED": "Disetujui",
+    "REJECTED": "Ditolak",
+    "PENDING": "Menunggu",
+    "WAITING_FOR_APPROVAL": "Menunggu Persetujuan",
+    "EXPIRED": "Kedaluwarsa"
+  },
+  "information": {
+    "title": "Persetujuan Penimbangan Manual",
+    "description": "Persetujuan Penimbangan Manual untuk meninjau dan memvalidasi hasil penimbangan limbah."
+  }
+}

@@ -319,53 +319,6 @@ describe('Warehouse Service - Monitoring Stock Module', function() {
         });
     });
 
-    describe('GET /monitoring-stock/sismal - SISMAL Data', function() {
-        it('should return SISMAL stock data', async function() {
-            const queryParams = WarehouseTestUtils.getTestQueryParams();
-
-            const res = await WarehouseTestUtils.request()
-                .get('/monitoring-stock/sismal')
-                .query(queryParams);
-
-            // Accept 200 (success), 422 (validation error), or 404 (endpoint not found) as valid responses
-            if (res.status === 404) {
-                expect(res).to.have.status(404);
-                return; // Skip validation if endpoint doesn't exist
-            }
-            WarehouseTestUtils.validateResponse(res);
-            if (res.status === 200) {
-                expect(res.body.data).to.be.an('array');
-            }
-        });
-
-        it('should handle SISMAL-specific filters', async function() {
-            const queryParams = WarehouseTestUtils.getTestQueryParams({
-                sismal_entity_id: 1
-            });
-
-            const res = await WarehouseTestUtils.request()
-                .get('/monitoring-stock/sismal')
-                .query(queryParams);
-
-            expect([200, 204, 404]).to.include(res.status);
-        });
-
-        it('should validate SISMAL data consistency', async function() {
-            const queryParams = WarehouseTestUtils.getTestQueryParams();
-
-            const res = await WarehouseTestUtils.request()
-                .get('/monitoring-stock/sismal')
-                .query(queryParams);
-
-            if (res.status === 200 && res.body.data && res.body.data.length > 0) {
-                const sismalItem = res.body.data[0];
-                expect(sismalItem).to.be.an('object');
-                // SISMAL should have specific data structure
-                expect(sismalItem).to.have.property('entity_id');
-            }
-        });
-    });
-
     describe('GET /monitoring-stock/material-entity - Material Entity Mapping', function() {
         it('should return material-entity mapping data', async function() {
             const queryParams = WarehouseTestUtils.getTestQueryParams();

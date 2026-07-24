@@ -1,0 +1,46 @@
+{
+  "list": {
+    "list": "Pelacakan Limbah Keluar",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Nomor Grup Limbah"
+      },
+      "date_range": {
+        "label": "Rentang Tanggal",
+        "placeholder": "Pilih Rentang Tanggal"
+      },
+      "healthcare_facility_name": {
+        "label": "Nama Fasyankes",
+        "placeholder": "Pilih Nama Fasyankes"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+
+    "column": {
+      "waste_group_number": "Nomor Grup Limbah",
+      "healthcare_facility": "Fasyankes",
+      "weight": "Berat Limbah ({{ unit }})",
+      "third_party": "Pihak Ketiga",
+      "transport_officer": "Petugas Pengangkut",
+      "vehicle_number": "Nomor Plat Kendaraan",
+      "pickup_time": "Waktu Diangkut",
+      "drop_time": "Waktu Dikeluarkan",
+      "process_time": "Waktu Diolah",
+      "landfill_time": "Waktu Ditimbus",
+      "recycle_time": "Waktu Diangkut Pemanfaat",
+      "action": "Aksi"
+    },
+    "column_detail": {
+      "waste_bag": "Nomor Kantong Limbah",
+      "waste_group": "Nomor Grup Limbah",
+      "waste_characteristic": "Jenis / Grup / Karakteristik Limbah",
+      "weight": "Berat Limbah ({{ unit }})"
+    }
+  },
+  "modal": {
+    "title": "Grup Limbah"
+  }
+}

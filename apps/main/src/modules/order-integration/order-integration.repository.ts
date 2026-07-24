@@ -5,12 +5,10 @@ import {
   WsOrderItemStocks,
 } from "@/common/infrastructure/database/types/db.js"
 import { OrderRepository } from "@/modules/order/order.repository.js"
-import { BadRequestError, NotFoundError } from "@smile/lib/error.js"
-import { associate, associateField } from "@smile/lib/utils.js"
+import { BadRequestError, NotFoundError } from "@smile-health/lib/error.js"
+import { associate, associateField } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import { Insertable, Updateable, sql } from "kysely"
-import { DinGateway } from "./din/din.gateway.js"
-import { SihaGateway } from "./siha/siha.gateway.js"
 
 export class OrderIntegrationRepository extends OrderRepository {
   constructor() {
@@ -54,17 +52,7 @@ export class OrderIntegrationRepository extends OrderRepository {
     const client = await this.getClientByKey(c, clientKey)
     if (!client) throw new NotFoundError("Client not found")
 
-    switch (client.key) {
-      case "siha":
-      case "sitb":
-        return new SihaGateway(client)
-
-      case "din":
-        return new DinGateway(client)
-
-      default:
-        throw new NotFoundError("Client not implemented")
-    }
+    throw new NotFoundError("Client not implemented")
   }
 
   public getInternalId = async (

@@ -1,0 +1,123 @@
+{
+	"list": {
+		"list": "Manufacture Asset Management",
+		"tab": {
+			"list": "Entity List",
+			"create": "Add Entity"
+		},
+		"filter": {
+			"search": {
+				"label": "Search",
+				"placeholder": "Search asset model"
+			},
+			"asset_type": {
+				"label": "Asset Type",
+				"placeholder": "Select asset type"
+			},
+			"manufacture": {
+				"label": "Manufacture",
+				"placeholder": "Select manufacture"
+			},
+			"button": {
+				"search": "Search"
+			}
+		},
+		"column": {
+			"asset_type": "Asset Type",
+			"manufacture": "Manufacture",
+			"asset_model": "Asset Model",
+			"description": "Description",
+			"updated_at": "Updated At",
+			"updated_by": "Updated By",
+			"action": "Action"
+		},
+		"options": {
+			"tag": "Select Tag",
+			"type": "Select Type"
+		},
+		"action": {
+			"activate": {
+				"title": "Activate"
+			},
+			"deactivate": {
+				"title": "Deactivate"
+			}
+		},
+		"button": {
+			"add": "Add Manufacture Asset"
+		}
+	},
+	"title": {
+		"manufacture": "Manufacture Asset",
+		"list": "Manufacture Asset List",
+		"create": "Manufacture Asset",
+		"edit": "Edit Manufacture Asset"
+	},
+	"detail": {
+		"title": "Waste Characteristic Detail",
+		"waste_code": "Waste Code",
+		"waste_characteristic": "Waste Characteristic",
+		"waste_bag_color": "Waste Bag Color",
+		"use_cold_storage": "Use Cold Storage",
+		"cold_storage_max_processing": "Cold Storage Max Duration",
+		"temporary_storage_min_processing": "Temporary Storage Min Duration",
+		"temporary_storage_max_processing": "Temporary Storage Max Duration",
+		"internal_treatment": "Internal Treatment",
+		"third_party_treatment": "Third Party Treatment",
+		"vehicle_type": "Vehicle Type",
+		"storage_rule": "Storage Rule",
+		"created_at": "Created At",
+		"created_by": "Created By",
+		"updated_at": "Updated At",
+		"updated_by": "Updated By"
+	},
+	"action": {
+		"activate": {
+			"button": "Activate",
+			"confirmation": "Are you sure you want to activate this product?"
+		},
+		"deactivate": {
+			"button": "Deactivate",
+			"confirmation": "Are you sure you want to deactivate this product?"
+		}
+	},
+	"button": {
+		"material_active_substance_and_strength": "Product Template",
+		"trademark": "Product Variant",
+		"non_hierarchy": "Non Hierarchy"
+	},
+	"form": {
+		"asset_type": {
+			"label": "Asset Type",
+			"placeholder": "Select asset type",
+			"validation": {
+				"required": "Asset type is required"
+			}
+		},
+		"manufacture": {
+			"label": "Manufacture Company Name",
+			"placeholder": "Select manufacture name",
+			"validation": {
+				"required": "Manufacture is required"
+			},
+			"description": "You can select an existing manufacture company or create a new one. First, type the company name. If it’s not found, a Create 'typed name' option will appear."
+		},
+		"model": {
+			"label": "Model",
+			"placeholder": "Enter model"
+		},
+		"description": {
+			"label": "Description",
+			"placeholder": "Input description"
+		}
+	},
+	"scroll_list": {
+		"title": "Material",
+		"description": "Please choose entity and transaction type first",
+		"column": {
+			"material_name": "Material Name",
+			"available_stock": "Available Stock",
+			"current_stock": "Current Stock"
+		}
+	}
+}

@@ -1,0 +1,248 @@
+{
+  "title": {
+    "notification": "Notification"
+  },
+  "info": {
+    "request_accepted": "Permintaan Diterima",
+    "request_accepted_desc": "Permintaan penimbangan manual diterima dari {{name}}",
+    "request_rejected": "Permintaan Ditolak",
+    "request_rejected_desc": "Permintaan penimbangan manual ditolak dari {{name}}"
+  },
+  "request": {
+    "title": "Penimbangan Manual",
+    "description": "Permohonan penimbangan manual dari {{name}}"
+  },
+  "button": {
+    "mark_all_as_read": "Tandai Semua Sudah Dibaca",
+    "contact_patient": "Hubungi Pasien",
+    "mark_as_finished": "Tandai Selesai",
+    "action": "Aksi",
+    "download": "Unduh"
+  },
+  "filter": {
+    "notification_type": {
+      "label": "Jenis Notifikasi",
+      "placeholder": "Pilih jenis notifikasi"
+    },
+    "program": {
+      "label": "Program",
+      "placeholder": "Pilih program",
+      "without_program": "Tidak Ada Program"
+    },
+    "health_center": {
+      "label": "Fasyankes",
+      "placeholder": "Pilih Fasyankes"
+    },
+    "receive_date": {
+      "label": "Tanggal Notifikasi Diterima"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    }
+  },
+  "modal": {
+    "title": {
+      "mark_all": "Tandai semua sudah dibaca?"
+    },
+    "description": {
+      "mark_all": "Dengan mengklik “Ya,” Anda setuju bahwa semua pemberitahuan akan ditandai sebagai sudah dibaca."
+    }
+  },
+  "partnership.partnership_expired": {
+    "title": "Pengingat Kedaluwarsa Kerja Sama",
+    "message": "Kontrak kerja sama akan berakhir {{dayText}} pada {{expiryDate}}. Silakan tinjau dan perpanjang bila diperlukan."
+  },
+  "partnership.partnership_expired_exceed": {
+    "title": "Kerja Sama Berakhir",
+    "message": "Kontrak kerja sama telah berakhir pada {{expiryDate}}."
+  },
+  "partnership.partnership_created": {
+    "title": "Kerja Sama Baru Dibuat",
+    "message": "Kontrak kerja sama baru telah dibuat antara {{healthcareFacility}} dan {{thirdParty}}."
+  },
+  "partnership.partnership_updated": {
+    "title": "Kerja Sama Diperbarui",
+    "message": "Kontrak kerja sama telah diperbarui. Silakan periksa detail terbaru."
+  },
+  "partnership.partnership_compliance_alert": {
+    "title": "Peringatan Kepatuhan Kerja Sama",
+    "message": "Kontrak memiliki masalah kepatuhan yang perlu ditinjau."
+  },
+  "waste_bag.waste_bag_residue_created": {
+    "title": "Kantong Limbah Residu Dibuat",
+    "message": "Kantong limbah residu baru telah dibuat."
+  },
+  "waste_bag.waste_bag_domestic_created": {
+    "title": "Kantong Limbah Domestik Dibuat",
+    "message": "Kantong limbah domestik baru telah dibuat."
+  },
+  "waste_bag.waste_bag_in_temporary_storage": {
+    "title": "Limbah Masuk Penyimpanan Sementara",
+    "message": "Kantong limbah telah dipindahkan ke penyimpanan sementara."
+  },
+  "waste_bag.waste_bag_out_temporary_storage": {
+    "title": "Limbah Keluar dari Penyimpanan Sementara",
+    "message": "Kantong limbah telah dikeluarkan dari penyimpanan sementara."
+  },
+  "waste_bag.waste_bag_temporary_storage_expired": {
+    "title": "Penyimpanan Sementara Kedaluwarsa",
+    "message": "Kantong limbah telah melewati batas waktu maksimum di penyimpanan sementara."
+  },
+  "waste_bag.waste_bag_in_cold_storage": {
+    "title": "Limbah Masuk Penyimpanan Dingin",
+    "message": "Kantong limbah telah dipindahkan ke penyimpanan dingin."
+  },
+  "waste_bag.waste_bag_out_cold_storage": {
+    "title": "Limbah Keluar dari Penyimpanan Dingin",
+    "message": "Kantong limbah telah dikeluarkan dari penyimpanan dingin."
+  },
+  "waste_bag.waste_bag_cold_storage_expired": {
+    "title": "Penyimpanan Dingin Kedaluwarsa",
+    "message": "Kantong limbah telah melewati batas waktu maksimum di penyimpanan dingin."
+  },
+  "waste_bag_group.waste_bag_group_in_temporary_storage": {
+    "title": "Grup Limbah Masuk Penyimpanan Sementara",
+    "message": "Grup limbah telah ditempatkan di penyimpanan sementara."
+  },
+  "waste_bag_group.waste_bag_group_out_temporary_storage": {
+    "title": "Grup Limbah Keluar dari Penyimpanan Sementara",
+    "message": "Grup limbah telah dikeluarkan dari penyimpanan sementara."
+  },
+  "waste_bag_group.waste_bag_group_temporary_storage_expired": {
+    "title": "Penyimpanan Sementara Grup Kedaluwarsa",
+    "message": "Grup limbah telah melewati batas waktu maksimum di penyimpanan sementara."
+  },
+  "waste_bag_group.waste_bag_group_in_cold_storage": {
+    "title": "Grup Limbah Masuk Penyimpanan Dingin",
+    "message": "Grup limbah telah ditempatkan di penyimpanan dingin."
+  },
+  "waste_bag_group.waste_bag_group_out_cold_storage": {
+    "title": "Grup Limbah Keluar dari Penyimpanan Dingin",
+    "message": "Grup limbah telah dikeluarkan dari penyimpanan dingin."
+  },
+  "waste_bag_group.waste_bag_group_cold_storage_expired": {
+    "title": "Penyimpanan Dingin Grup Kedaluwarsa",
+    "message": "Grup limbah telah melewati batas waktu maksimum di penyimpanan dingin."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_internal_landfill_in_process": {
+    "title": "Proses Landfill Internal",
+    "message": "Grup limbah sedang menjalani proses landfill internal."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_internal_landfilled": {
+    "title": "Landfill Internal Selesai",
+    "message": "Grup limbah telah berhasil diselesaikan dengan landfill internal."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_incinerate_in_process": {
+    "title": "Proses Insinerasi",
+    "message": "Grup limbah sedang menjalani proses insinerasi."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_incinerated": {
+    "title": "Insinerasi Selesai",
+    "message": "Grup limbah telah berhasil diinsinerasi."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_sterilise_in_process": {
+    "title": "Proses Sterilisasi",
+    "message": "Grup limbah sedang menjalani proses sterilisasi."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_sterilised": {
+    "title": "Sterilisasi Selesai",
+    "message": "Grup limbah telah berhasil disterilisasi."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled_in_process": {
+    "title": "Proses Landfill Eksternal",
+    "message": "Grup limbah sedang menjalani proses landfill eksternal."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled": {
+    "title": "Landfill Eksternal Selesai",
+    "message": "Grup limbah telah berhasil diselesaikan dengan landfill eksternal."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_recycled_in_process": {
+    "title": "Proses Daur Ulang",
+    "message": "Grup limbah sedang menjalani proses daur ulang."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_recycled": {
+    "title": "Daur Ulang Selesai",
+    "message": "Grup limbah telah berhasil didaur ulang."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_disposed_in_process": {
+    "title": "Proses Pembuangan",
+    "message": "Grup limbah sedang menjalani proses pembuangan."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_disposed": {
+    "title": "Pembuangan Selesai",
+    "message": "Grup limbah telah berhasil dibuang."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_follow_up": {
+    "title": "Tindak Lanjut Transportasi Dibutuhkan",
+    "message": "Mohon tindak lanjuti status transportasi grup limbah."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_handover": {
+    "title": "Penyerahan Limbah Selesai",
+    "message": "Grup limbah telah diserahkan ke {{vehicleNumber}}."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_pickup": {
+    "title": "Jadwal Pengambilan Limbah",
+    "message": "Grup limbah dijadwalkan untuk diambil oleh pengangkut."
+  },
+  "waste_bag_group_transport.waste_bag_group_handover_to_treatment": {
+    "title": "Penyerahan ke Pengolahan Limbah Eksternal",
+    "message": "{{totalData}} grup limbah telah diserahkan oleh pengangkut ke pihak ketiga."
+  },
+  "waste_bag_group_treatment.waste_bag_group_treatment_receivment": {
+    "title": "Limbah Diterima Pengolahan Limbah Eksternal",
+    "message": "Grup limbah telah diterima oleh fasilitas pengolahan."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_end_status": {
+    "title": "Pemrosesan Limbah Selesai",
+    "message": "Grup limbah telah berhasil {{status}}."
+  },
+  "manual_request.manual_request_created": {
+    "title": "Permintaan Penimbangan Manual Diajukan",
+    "message": "Permintaan penimbangan manual telah diajukan."
+  },
+  "manual_request.manual_request_approved": {
+    "title": "Permintaan Penimbangan Manual Disetujui",
+    "message": "Permintaan penimbangan manual telah disetujui oleh {{name}}."
+  },
+  "manual_request.manual_request_rejected": {
+    "title": "Permintaan Penimbangan Manual Ditolak",
+    "message": "Permintaan penimbangan manual telah ditolak oleh {{name}}."
+  },
+  "asset.asset_inactive": {
+    "title": "Aset Tidak Aktif Terdeteksi",
+    "message": "Aset {{assetName}} saat ini tidak aktif. Silakan periksa statusnya."
+  },
+  "asset.asset_warranty_expired": {
+    "title": "Pengingat Kedaluwarsa Garansi Aset",
+    "message": "Garansi untuk aset {{assetName}} akan berakhir pada {{expiryDate}}."
+  },
+  "asset.asset_calibration_due": {
+    "title": "Kalibrasi Aset Jatuh Tempo",
+    "message": "Aset {{assetName}} perlu dikalibrasi pada {{calibrationDate}}."
+  },
+  "waste.waste_status_changed": {
+    "title": "Status Limbah Diperbarui",
+    "message": "Status kantong limbah berubah dari {{oldStatus}} menjadi {{newStatus}}."
+  },
+  "waste.waste_accumulated_update": {
+    "title": "Laporan Akumulasi Limbah Harian",
+    "message": "Total akumulasi limbah yang diproses hari ini: {{summaryData}}."
+  },
+  "bast.create_request": {
+    "title": "Permintaan Nomor BAST",
+    "message": "Nomor BAST {{bastNo}} siap untuk ditinjau."
+  },
+  "waste_classification.deleted": {
+    "title": "Klasifikasi Limbah Dinonaktifkan",
+    "message": "Klasifikasi limbah dengan id {{id}} telah dinonaktifkan"
+  },
+  "waste_hierarchy.deleted": {
+    "title": "Hierarki Limbah Dinonaktifkan",
+    "message": "Hierarki limbah dengan id {{id}} telah dinonaktifkan"
+  },
+  "waste_bag.waste_bag_in_external_temporary_storage": {
+    "title": "Limbah diserahkan ke penyimpanan sementara pengolahan limbah eksternal",
+    "message": "Grup limbah telah diserahkan ke penyimpanan sementara pengolahan limbah eksternal"
+  }
+}

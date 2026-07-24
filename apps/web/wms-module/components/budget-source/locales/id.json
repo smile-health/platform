@@ -1,0 +1,41 @@
+{
+  "list": {
+    "list": "Manajemen Sumber Anggaran",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Sumber Anggaran"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "name": "Nama Sumber Anggaran",
+      "description": "Keterangan",
+      "updated_by": "Diperbarui Oleh",
+      "updated_at": "Diperbarui Pada",
+      "action": "Aksi"
+    },
+
+    "button": {
+      "add": "Tambah Sumber Anggaran"
+    }
+  },
+  "title": {
+    "budget_source": "Sumber Anggaran",
+    "list": "Daftar Sumber Anggaran",
+    "create": "Sumber Anggaran",
+    "edit": "Edit Sumber Anggaran"
+  },
+  "form": {
+    "budget_source": {
+      "label": "Sumber Anggaran",
+      "placeholder": "Masukkan sumber anggaran"
+    },
+    "description": {
+      "label": "Deskripsi",
+      "placeholder": "Masukkan deskripsi"
+    }
+  }
+}

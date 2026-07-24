@@ -6,7 +6,7 @@ import {
   UpdatePasswordRequest,
   UpdateStatusSchema,
 } from "./account.schema.js"
-import { BaseController } from "@smile/lib/base/controller.js"
+import { BaseController } from "@smile-health/lib/base/controller.js"
 import { ExecutiveAccountMiddleware } from "./account.middleware.js"
 import { StatusCodes } from "http-status-codes"
 import { RoleValidationMiddleware } from "@/common/middlewares/role-validation.middleware.js"

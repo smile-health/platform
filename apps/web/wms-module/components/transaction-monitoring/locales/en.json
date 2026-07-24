@@ -1,0 +1,109 @@
+{
+  "title": {
+    "page": "Waste Bag Monitoring Dashboard",
+    "month": "Month",
+    "province": "Province",
+    "regency": "City",
+    "total": "Total Waste Bag ({{informationType}})",
+    "waste_bag_group": "Waste Bag per Group ({{informationType}})",
+    "waste_bag_characteristic": "Waste Bag per Characteristic ({{informationType}})",
+    "trend_waste_bag_month": "Trend Waste Bag per Month ({{informationType}})",
+    "characteristic": "Waste Characteristic",
+    "by": "Waste Bag By {{title}} ({{informationType}})",
+    "sort": {
+      "id": "Sort by {{type}} ID",
+      "name": "Sort by {{type}} name",
+      "title": "Sort by {{type}} title"
+    },
+    "sort_province": "Sort by province ID",
+    "entity": {
+      "main": "Entity",
+      "group": "Entity Waste Group",
+      "complete": "Entity Complete"
+    }
+  },
+  "description": {
+    "information": "Data waste bag displayed is accumulated based on {{title}}"
+  },
+  "data": {
+    "information_type": {
+      "bag": "Bag",
+      "weight": "Weight"
+    }
+  },
+  "column": {
+    "province": "Province",
+    "regency": "City",
+    "activity": "Activity",
+    "material": "Material Name",
+    "manufacturer": "Manufacturer Name",
+    "vendor": "Sender",
+    "customer": "Receiver",
+    "created_at": "Created At",
+    "transaction_type": "Transaction Type",
+    "unit": "Unit",
+    "total": "Total Waste Bag",
+    "waste_group": "Waste Group",
+    "waste_characteristic": "Type / Group / Waste Characteristic",
+    "projection_waste_bag": "Projection Waste Bag (month)",
+    "max_waste_bag": "Max Waste Bag (month)",
+    "gap_waste_bag": "Gap Waste Bag",
+    "entity": {
+      "tag": "Entity Tag",
+      "id": "Entity ID",
+      "name": "Entity Name"
+    },
+    "batch": {
+      "code": "Batch Code",
+      "expired": "Batch Expired Date"
+    }
+  },
+  "filter": {
+    "date_range": {
+      "label": "Date Range"
+    },
+    "waste_type": {
+      "label": "Waste Type",
+      "placeholder": "Select waste type"
+    },
+    "waste_group": {
+      "label": "Waste Group",
+      "placeholder": "Select waste group"
+    },
+    "waste_characteristic": {
+      "label": "Waste Characteristic",
+      "placeholder": "Select Waste Characteristic"
+    },
+    "entity_tag": {
+      "label": "Entity Tag",
+      "placeholder": "Select entity tag"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "regency": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "health_facilities": {
+      "label": "Health Facilities",
+      "placeholder": "Select health facilities"
+    },
+    "information_type": {
+      "label": "Kind of Information"
+    }
+  },
+  "all_regions": "All Regions",
+  "empty": "Data not found",
+  "export_as": "Export as {{type}}",
+  "last_updated_at": "Last Updated At",
+  "sort": {
+    "asc": "Ascending",
+    "desc": "Descending"
+  },
+  "information": {
+    "title": "Waste Bag Monitoring Dashboard",
+    "description": "The Waste Generation Monitoring Dashboard displays waste generation data (amount and type of waste produced) visually, interactively, and in real time based on time period, location, and source category."
+  }
+}

@@ -56,14 +56,6 @@ test.describe("Monitoring Module", () => {
       }
     });
 
-    test("GET /sismal returns sismal data", async ({ request }) => {
-      const res = await apiGet(request, `${BASE}/sismal`, DEFAULT_MONITORING_PARAMS);
-      const body = await expectPaginated(res);
-      if (body.data.length > 0) {
-        expect(body.data[0]).toHaveProperty("id");
-      }
-    });
-
     test("GET /material-entity returns material-entity data", async ({ request }) => {
       const res = await apiGet(request, `${BASE}/material-entity`, DEFAULT_MONITORING_PARAMS);
       const body = await expectPaginated(res);

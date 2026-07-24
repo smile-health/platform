@@ -1,5 +1,5 @@
-import { BadRequestError } from "@smile/lib/error.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
+import { BadRequestError } from "@smile-health/lib/error.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
 import { Context } from "hono"
 import { GetActivityQuery } from "../activity/activity.schema.js"
 import { ActivityTransactionRow, EnvironmentalHealthRepository } from "./environmental-health.repository.js"

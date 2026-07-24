@@ -220,8 +220,8 @@ audit-trail/
 ### Schema Definition
 
 ```typescript
-import { PaginationQueriesSchema } from "@smile/lib/types/paginate.js"
-import { OptionalIdSchema } from "@smile/lib/types/param.js"
+import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
+import { OptionalIdSchema } from "@smile-health/lib/types/param.js"
 import z from "zod"
 
 export const GetAuditLogsQueriesSchema = PaginationQueriesSchema.extend({

@@ -2,7 +2,7 @@ import z from "zod"
 import {
   IdParamsSchema,
   IdSchema as numberInParamSchema,
-} from "@smile/lib/types/param.js"
+} from "@smile-health/lib/types/param.js"
 
 export const SubmitMicroplanningMapDestinationItemSchema = z.object({
   id: z.number().positive().nullish().optional(),

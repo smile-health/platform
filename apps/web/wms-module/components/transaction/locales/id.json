@@ -1,0 +1,69 @@
+{
+  "list": {
+    "list": "Buku Log",
+    "logbook": "Logbook",
+    "bags": "Kantong",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari Transaksi"
+      },
+      "date_range": {
+        "label": "Rentang Tanggal",
+        "placeholder": "Pilih Rentang Tanggal"
+      },
+      "healthcare_facility_name": {
+        "label": "Nama Fasyankes",
+        "placeholder": "Pilih Nama Fasyankes"
+      },
+      "waste_group": {
+        "label": "Grup Limbah",
+        "placeholder": "Pilih Grup Limbah"
+      },
+      "waste_type": {
+        "label": "Jenis Limbah",
+        "placeholder": "Pilih Jenis Limbah"
+      },
+      "waste_characteristic": {
+        "label": "Karakteristik Limbah",
+        "placeholder": "Pilih Karakteristik Limbah"
+      },
+      "waste_treatment": {
+        "label": "Pengolahan Limbah",
+        "placeholder": "Pilih Pengolahan Limbah"
+      },
+      "button": {
+        "search": "Cari"
+      }
+    },
+    "column": {
+      "waste_group_code": "Kode Grup Limbah",
+      "waste_code": "Kode Limbah sesuai PP 22/2021",
+      "waste_bag_code": "Kode Kantong Limbah",
+      "waste_characteristic": "Jenis / Grup / Karakteristik Limbah",
+      "healthcare_facility": "Fasyankes",
+      "waste_in_date": "Tanggal Limbah Masuk",
+      "waste_source": "Sumber Limbah",
+      "waste_in_weight": "Jumlah Limbah Masuk ({{ unit }})",
+      "storage_date_limit": "Maksimal Penyimpanan s/d tanggal",
+      "waste_out_date": "Tanggal Limbah Keluar",
+      "waste_out_weight": "Jumlah Limbah Keluar ({{ unit }})",
+      "third_party": "Tujuan Penyerahan",
+      "manifest_number": "Nomor Manifest",
+      "remaining_waste_at_collection_place": "Sisa Limbah di TPS ({{ unit }})",
+      "action": "Aksi"
+    },
+    "card": {
+      "total_kg": "Total Kg",
+      "total_waste_bag": "Total Kantong Sampah",
+      "total_waste_in": "Total Limbah Masuk",
+      "total_waste_out": "Total Limbah Keluar",
+      "remaining_waste_at_collection_place": "Sisa Limbah di TPS"
+    }
+  },
+  "information": {
+    "title": "Buku Log",
+    "description": "Buku Log mencatat seluruh aktivitas, transaksi, serta perubahan data yang terjadi dalam sistem secara kronologis dan real-time pada setiap fasilitas pelayanan kesehatan (fasyankes).",
+    "sub_description": "Untuk user <bold>Kemenkes</bold> dan <bold>Dinas Kesehatan (Dinkes)</bold> yang berperan sebagai penghasil limbah, hanya dapat melihat data transaksi yang dimiliki atau dihasilkan oleh masing-masing pengguna tersebut."
+  }
+}

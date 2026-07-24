@@ -1,8 +1,8 @@
 import { STATUS } from "@/common/constants/general.js"
-import { NotFoundError, ValidationError } from "@smile/lib/error.js"
+import { NotFoundError, ValidationError } from "@smile-health/lib/error.js"
 
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
-import { collect, group, merge, pick } from "@smile/lib/utils.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
+import { collect, group, merge, pick } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import moment from "moment"
 import { IntegrationRepository } from "../integration/integration.repository.js"
@@ -15,15 +15,14 @@ import { UserRepository } from "../user/user.repository.js"
 import { WorkspaceRepository } from "../workspace/workspace.repository.js"
 
 import { MATERIAL_LEVEL } from "@/common/constants/material.js"
-import { PROCESSOR } from "@smile/lib/excel/types.js"
-import { FileResponse } from "@smile/lib/types/file.js"
+import { PROCESSOR } from "@smile-health/lib/excel/types.js"
+import { FileResponse } from "@smile-health/lib/types/file.js"
 import { MaterialTemplate } from "./material.excel.js"
 import { MaterialPublisher } from "./material.publisher.js"
 import { MaterialRepository } from "./material.repository.js"
 import {
   CreateMaterialDTO,
   CreateMaterialRequest,
-  GetBiofarmaQueryParams,
   GetMaterialsQueryParams,
   GetTemplateQueryParams,
   UpdateMaterialDTO,
@@ -78,16 +77,6 @@ export class MaterialModule {
     }))
 
     return new PaginatedResponse(queryParam, materials, total)
-  }
-
-  async listBiofarma(c: Context, queryParam: GetBiofarmaQueryParams) {
-    const { data, total } = await this.repo.findAllBiofarma(c, queryParam)
-
-    if (data.length === 0) {
-      return new PaginatedResponse(queryParam)
-    }
-
-    return new PaginatedResponse(queryParam, data, total)
   }
 
   async detail(c: Context, id: number) {

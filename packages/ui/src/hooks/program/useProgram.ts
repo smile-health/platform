@@ -114,9 +114,9 @@ export const useProgram = ({
 
     if (token) {
       if (isUserWMS(user)) {
-        temp = [ProgramWasteManagement(), ...(temp ?? [])]
+        temp = [ProgramWasteManagement(language), ...(temp ?? [])]
       } else if (isIncludeWasteManagement) {
-        temp = userPrograms?.concat(ProgramWasteManagement())
+        temp = userPrograms?.concat(ProgramWasteManagement(language))
       }
     }
 
@@ -132,7 +132,7 @@ export const useProgram = ({
           .toLowerCase()
           .includes(debounceLocalSearch.toLowerCase())
     )
-  }, [user, token, debounceLocalSearch])
+  }, [user, token, debounceLocalSearch, language])
 
   return {
     data: isCore ? coreProgram.data?.data : filteredPrograms,

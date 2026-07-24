@@ -1,5 +1,5 @@
 import { db } from "@/common/infrastructure/database/index.js"
-import { associateField } from "@smile/lib/utils.js"
+import { associateField } from "@smile-health/lib/utils.js"
 import { sql } from "kysely";
 
 const IMMUNIZATION_PROGRAM = 1;

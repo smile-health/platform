@@ -1,0 +1,41 @@
+{
+  "list": {
+    "list": "Manual Weighing",
+    "by": "By",
+    "filter": {
+      "search": {
+        "label": "Search",
+        "placeholder": "Search Transaction"
+      },
+      "healthcare_facility_name": {
+        "label": "Healthcare Facility",
+        "placeholder": "Select Healthcare Facility"
+      },
+      "date_range": {
+        "label": "Date Range",
+        "placeholder": "Select Date Range"
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Select Status"
+      },
+      "button": {
+        "search": "Search"
+      }
+    },
+    "column": {
+      "title": "Manual Weighing"
+    }
+  },
+  "manual_scale_status": {
+    "APPROVED": "Approved",
+    "REJECTED": "Rejected",
+    "PENDING": "Pending",
+    "WAITING_FOR_APPROVAL": "Waiting for Approval",
+    "EXPIRED": "Expired"
+  },
+  "information": {
+    "title": "Manual Weighing",
+    "description": "Manual Weighing Approval to review and validate waste weighing results."
+  }
+}

@@ -10,14 +10,14 @@ import { EntityRepository } from "@/modules/entity/entity.repository.js"
 import { applyQtyData } from "./periodic-material-stock.utils.js"
 import moment from "moment"
 import { PeriodicMaterialStockExcel } from "./periodic-material-stock.excel.js"
-import { round } from "@smile/lib/utils.js"
+import { round } from "@smile-health/lib/utils.js"
 import { BaseModule } from "../base.module.js"
 import ExportHistoryRepository from "../export-history/export-history.repository.js"
-import { Publisher } from "@smile/lib/rabbitmq/publisher.js"
-import { TOPIC } from "@smile/lib/rabbitmq/topic.js"
+import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
+import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
 import { KFA_LEVEL_CODE } from "@/common/constants/material.js"
 import { ActivityRepository } from "../activity/activity.repository.js"
-import { ValidationError } from "@smile/lib/error.js"
+import { ValidationError } from "@smile-health/lib/error.js"
 
 export class PeriodicMaterialStockModule extends BaseModule {
   constructor(

@@ -1,7 +1,7 @@
 import { Context } from "hono"
 import { HumidityThresholdRepository } from "./humidity-threshold.repository"
 import { GetHumidityThresholdsQueryParams } from "./humidity-threshold.schema"
-import { PaginatedResponse } from "@smile/lib/types/paginate"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate"
 
 export class HumidityThresholdModule {
   constructor(private readonly repository: HumidityThresholdRepository) {}

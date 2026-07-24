@@ -1,0 +1,32 @@
+START TRANSACTION;
+
+DROP TABLE IF EXISTS `asset_data`;
+DROP TABLE IF EXISTS `asset_manufacturer`;
+DROP TABLE IF EXISTS `asset_model`;
+DROP TABLE IF EXISTS `healthcare_facility`;
+DROP TABLE IF EXISTS `healthcare_facility_asset`;
+DROP TABLE IF EXISTS `healthcare_facility_settings`;
+DROP TABLE IF EXISTS `partner`;
+DROP TABLE IF EXISTS `partnership`;
+DROP TABLE IF EXISTS `partner_vehicle`;
+DROP TABLE IF EXISTS `region`;
+DROP TABLE IF EXISTS `scale_data`;
+DROP TABLE IF EXISTS `system_feature`;
+DROP TABLE IF EXISTS `transporter_operator_coodinates`;
+DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `user_role`;
+DROP TABLE IF EXISTS `user_role_system_feature_access`;
+DROP TABLE IF EXISTS `user_to_user_role_map`;
+DROP TABLE IF EXISTS `waste_audit_log`;
+DROP TABLE IF EXISTS `waste_bag_collection`;
+DROP TABLE IF EXISTS `waste_bag_label`;
+DROP TABLE IF EXISTS `waste_classification`;
+DROP TABLE IF EXISTS `waste_hierarchy`;
+DROP TABLE IF EXISTS `waste_source`;
+DROP TABLE IF EXISTS `waste_source_group`;
+DROP TABLE IF EXISTS `waste_transportation_group`;
+DROP TABLE IF EXISTS `waste_transportation_request`;
+DROP TABLE IF EXISTS `waste_treatment_group`;
+DROP TABLE IF EXISTS `waste_treatment_request`;
+
+COMMIT;

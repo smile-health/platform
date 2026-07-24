@@ -1,14 +1,14 @@
 import { REGEX_PASS } from "@/common/constants/users"
 import { stringDate } from "@/modules/user/user.schema"
-import { PaginationQueriesSchema } from "@smile/lib/types/paginate"
+import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate"
 import {
   containsOnlyUnderscoresPeriod,
   hasWhiteSpace,
   isDateMoreThanNow,
   isStringNumbers,
   transformStringNumbersToArrayNumbers,
-} from "@smile/lib/utils"
-import { conditionsMessage } from "@smile/lib/zod.js"
+} from "@smile-health/lib/utils"
+import { conditionsMessage } from "@smile-health/lib/zod.js"
 import z from "zod"
 
 export const LoginSchema = z.object({

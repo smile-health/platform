@@ -1,0 +1,75 @@
+{
+  "title": {
+    "index": "Pengaturan Pengguna",
+    "add": "Tambah Pengguna",
+    "edit": "Ubah Pengguna",
+    "list": {
+      "index": "Daftar Penguna",
+      "management": "Pengaturan Pengguna"
+    },
+    "user": "Pengguna",
+    "detail": "Detail Pengguna",
+    "details": "Detail",
+    "status": "Status Pengguna"
+  },
+  "column": {
+    "username": "Username",
+    "fullname": "Nama Lengkap",
+    "role": "Role",
+    "firstname": "Nama Depan",
+    "lastname": "Nama Belakang",
+    "location": "Lokasi",
+    "email": "Email",
+    "entity": {
+      "index": "Entitas",
+      "name": "Nama Entitas",
+      "address": "Alamat Entitas",
+      "type": "Tipe",
+      "tag": "Tag"
+    },
+    "mobile_phone": "Nomor Handphone",
+    "birthdate": "Tanggal Lahir",
+    "gender": "Jenis Kelamin",
+    "view_only": "Hanya View",
+    "last": {
+      "login": "Login Terakhir",
+      "device": "Perangkat Login Terakhir"
+    },
+    "status": "Status",
+    "action": "Aksi"
+  },
+  "filter": {
+    "search": {
+      "label": "Cari",
+      "placeholder": "Cari username"
+    },
+    "type": {
+      "label": "Tipe",
+      "placeholder": "Pilih tipe"
+    },
+    "role": {
+      "label": "Role",
+      "placeholder": "Pilih role"
+    },
+    "status": {
+      "label": "Status",
+      "placeholder": "Pilih status",
+      "active": "Aktif",
+      "inactive": "Non Aktif"
+    },
+    "button": {
+      "search": "Cari"
+    }
+  },
+  "confirmation": {
+    "activate": {
+      "button": "Aktifkan",
+      "question": "Apakah anda yakin akan mengaktifkan ini ?"
+    },
+    "deactivate": {
+      "button": "Non Aktifkan",
+      "question": "Apakah anda yakin akan menonaktifkan ini?",
+      "description": "Pengguna ini akan kehilangan akses SMILE"
+    }
+  }
+}

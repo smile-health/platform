@@ -6,7 +6,6 @@ import assetInventory from '#pages/locales/id/asset-inventory'
 import budgetSource from '#pages/locales/id/budget-source'
 import dashboard from '#pages/locales/id/dashboard'
 import dashboardAnnualCommitmentVsRealization from '#pages/locales/id/dashboard/dashboard-annual-commitment-vs-realization'
-import dashboardAsik from '#pages/locales/id/dashboard/dashboard-asik'
 import dashboardAssetOwnershipInventory from '#pages/locales/id/dashboard/dashboard-asset-ownership-inventory'
 import dashboardColdStorageCapacity from '#pages/locales/id/dashboard/dashboard-cold-storage-capacity'
 import dashboardDiscard from '#pages/locales/id/dashboard/dashboard-discard'
@@ -77,20 +76,12 @@ import storageTemperatureMonitoringDetail from '../../pages/asset-managements/st
 import storageTemperatureMonitoringList from '../../pages/asset-managements/storage-temperature-monitoring/StorageTemperatureMonitoringList/locales/id.json'
 import assetType from '../../pages/asset-type/locales/id.json'
 import assetVendor from '../../pages/asset-vendor/locales/id.json'
-import bmhpApproval from '../../pages/bmhp-approval/bmhp-approval/locales/id.json'
-import bmhpPlanning from '../../pages/bmhp/bmhp-planning/locales/id.json'
-import masterBmhp from '../../pages/bmhp/locales/id.json'
 import coldStorageCapacity from '../../pages/cold-storage-capacity/locales/id.json'
-import dashboardSmileSmdv from '../../pages/dashboard/dashboard-smile-smdv/locales/id.json'
 import distributionDisposal from '../../pages/disposal/distribution-disposal/locales/id.json'
 import disposalList from '../../pages/disposal/list-disposal/locales/id.json'
 import environmentalHealthHistory from '../../pages/environmental-health-history/locales/id.json'
 import exportHistory from '../../pages/export-history/locales/id.json'
 import programGlobalSettings from '../../pages/global-settings/program/locales/id.json'
-import masterJenisPemeriksaan from '../../pages/master-jenis-pemeriksaan/locales/id.json'
-import masterMethod from '../../pages/master-method/locales/id.json'
-import masterParameter from '../../pages/master-parameter/locales/id.json'
-import masterPemeriksaan from '../../pages/master-pemeriksaan/locales/id.json'
 import modelAsset from '../../pages/model-asset-management/locales/id.json'
 import notification from '../../pages/notification/locales/id.json'
 import parameterCategory from '../../pages/parameter-category/locales/id.json'
@@ -180,7 +171,6 @@ export default {
   dashboardInventory,
   dashboardDiscard,
   dashboardReport,
-  dashboardAsik,
   dashboardInventoryOverview,
   dashboardRabies,
   dashboardAnnualCommitmentVsRealization,
@@ -201,18 +191,10 @@ export default {
   patient,
   population,
   task,
-  masterBmhp,
-  bmhpPlanning,
   lplpo,
   coldStorageCapacity,
-  'master-jenis-pemeriksaan': masterJenisPemeriksaan,
-  'master-method': masterMethod,
-  'master-parameter': masterParameter,
-  'master-pemeriksaan': masterPemeriksaan,
-  bmhpApproval,
   analysisParameter,
   testMethod,
   parameterCategory,
-  dashboardSmileSmdv,
   environmentalHealthHistory,
 }

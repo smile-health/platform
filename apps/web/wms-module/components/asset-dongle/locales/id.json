@@ -1,0 +1,41 @@
+{
+  "list": {
+    "list": "Pengaturan Timbangan Limbah",
+    "filter": {
+      "search": {
+        "label": "Cari",
+        "placeholder": "Cari nama entitas"
+      },
+      "type": {
+        "label": "Tipe",
+        "placeholder": "Pilih tipe"
+      }
+    },
+    "button": {
+      "search": "Cari",
+      "add_asset_dongle": "Tambah ID IoT Dongle"
+    },
+    "column": {
+      "entity_name": "Nama Entitas",
+      "location": "Lokasi",
+      "province": "Provinsi",
+      "regency": "Kabupaten/Kota",
+      "amount_of_dongle": "Jumlah IoT Dongle",
+      "dongle_id": "ID IoT Dongle",
+      "created_at": "Dibuat Pada",
+      "action": "Aksi"
+    }
+  },
+
+  "title": {
+    "list": "Pengaturan ID IoT Dongle",
+    "create": "Tambah ID IoT Dongle",
+    "dongle_id": "ID IoT Dongle"
+  },
+  "form": {
+    "dongle_id": {
+      "label": "ID IoT Dongle",
+      "placeholder": "Masukkan ID IoT Dongle"
+    }
+  }
+}

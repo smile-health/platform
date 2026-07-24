@@ -2,8 +2,8 @@ import z from "zod"
 import {
   containsOnlyUnderscoresPeriod,
   hasWhiteSpace,
-} from "@smile/lib/utils.js"
-import { conditionsMessage } from "@smile/lib/zod.js"
+} from "@smile-health/lib/utils.js"
+import { conditionsMessage } from "@smile-health/lib/zod.js"
 import { stringMinMax } from "@/modules/user/user.schema"
 
 export const UpdateLastLoginSchema = z.object({

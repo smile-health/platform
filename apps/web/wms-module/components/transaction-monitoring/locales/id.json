@@ -1,0 +1,109 @@
+{
+  "title": {
+    "page": "Dasbor Monitoring Timbulan",
+    "month": "Bulan",
+    "province": "Provinsi",
+    "regency": "Kabupaten/Kota",
+    "total": "Total Timbulan ({{informationType}})",
+    "waste_bag_group": "Timbulan per Grup Limbah ({{informationType}})",
+    "waste_bag_characteristic": "Timbulan per Karakteristik Limbah ({{informationType}})",
+    "trend_waste_bag_month": "Trend Timbulan per Bulan ({{informationType}})",
+    "characteristic": "Karakteristik Limbah",
+    "by": "Timbulan Per {{title}} ({{informationType}})",
+    "sort": {
+      "id": "Urutkan berdasarkan {{type}} ID",
+      "name": "Urutkan berdasarkan nama {{type}}",
+      "title": "Urutkan berdasarkan judul {{type}}"
+    },
+    "sort_province": "Urutkan berdasarkan provinsi ID",
+    "entity": {
+      "main": "Entitas",
+      "group": "Entitas Grup Limbah",
+      "complete": "Entitas Lengkap"
+    }
+  },
+  "description": {
+    "information": "Data timbulan yang ditampilkan diakumulasi berdasarkan {{title}}"
+  },
+  "data": {
+    "information_type": {
+      "bag": "Kantong",
+      "weight": "Berat"
+    }
+  },
+  "column": {
+    "province": "Provinsi",
+    "regency": "Kabupaten/Kota",
+    "activity": "Kegiatan",
+    "material": "Nama Material",
+    "manufacturer": "Nama Pabrik",
+    "vendor": "Pengirim",
+    "customer": "Penerima",
+    "created_at": "Dibuat Pada",
+    "transaction_type": "Tipe Transaksi",
+    "unit": "Satuan",
+    "total": "Total Timbulan",
+    "waste_group": "Grup Limbah",
+    "waste_characteristic": "Karakteristik Jenis / Grup / Limbah",
+    "projection_waste_bag": "Proyeksi Timbulan (bulan)",
+    "max_waste_bag": "Max Timbulan (bulan)",
+    "gap_waste_bag": "Gap Timbulan",
+    "entity": {
+      "tag": "Tag Entitas",
+      "id": "ID Entitas",
+      "name": "Nama Entitas"
+    },
+    "batch": {
+      "code": "Kode Batch",
+      "expired": "Tanggal Batch Kedaluwarsa"
+    }
+  },
+  "filter": {
+    "date_range": {
+      "label": "Rentang Tanggal"
+    },
+    "waste_type": {
+      "label": "Jenis Limbah",
+      "placeholder": "Pilih jenis limbah"
+    },
+    "waste_group": {
+      "label": "Grup Limbah",
+      "placeholder": "Pilih grup limbah"
+    },
+    "waste_characteristic": {
+      "label": "Karakteristik Limbah",
+      "placeholder": "Pilih karakteristik limbah"
+    },
+    "entity_tag": {
+      "label": "Tag Entitas",
+      "placeholder": "Pilih tag entitas"
+    },
+    "province": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "regency": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "health_facilities": {
+      "label": "Fasilitas Kesehatan",
+      "placeholder": "Pilih fasilitas kesehatan"
+    },
+    "information_type": {
+      "label": "Jenis Informasi"
+    }
+  },
+  "all_regions": "Semua Wilayah",
+  "empty": "Data tidak ditemukan",
+  "export_as": "Ekspor sebagai {{type}}",
+  "last_updated_at": "Terakhir Diperbarui Pada",
+  "sort": {
+    "asc": "Urutan Menaik",
+    "desc": "Urutan Menurun"
+  },
+  "information": {
+    "title": "Dasbor Monitoring Timbulan",
+    "description": "Dasbor Monitoring Timbulan menampilkan data timbulan limbah (jumlah dan jenis limbah yang dihasilkan) secara visual, interaktif, dan real-time berdasarkan periode waktu, lokasi, dan kategori sumber."
+  }
+}

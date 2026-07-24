@@ -47,12 +47,6 @@ export const menuConsumedChilds = (t: TFunction) => [
   //   className: 'ui-hover:bg-gray-200 ui-text-left ui-hidden',
   //   isExist: false,
   // },
-  {
-    link: '/dashboard/asik',
-    title: t('menu.dashboard.item.consumed.item.asik'),
-    className: 'ui-hover:ui-bg-gray-200 ui-text-left',
-    isExist: true,
-  },
 ]
 
 export const menuDashboardChilds = (t: TFunction) => {

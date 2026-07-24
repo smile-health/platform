@@ -5,7 +5,7 @@ import {
   CreateEnvironmentalTestMethodRequest,
   UpdateEnvironmentalTestMethodRequest,
 } from "./environmental-test-method.schema.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
 
 export class EnvironmentalTestMethodModule {
   constructor(private readonly repository: EnvironmentalTestMethodRepository) {}

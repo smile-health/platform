@@ -1,6 +1,6 @@
-import { Column } from "@smile/lib/excel/types.js"
-import WarehouseTemplate from "@smile/lib/excel/warehouse-template.js"
-import i18n from "@smile/lib/i18n.js"
+import { Column } from "@smile-health/lib/excel/types.js"
+import WarehouseTemplate from "@smile-health/lib/excel/warehouse-template.js"
+import i18n from "@smile-health/lib/i18n.js"
 import { Context } from "hono"
 import { MaterialExcelRow } from "./commitment.schema.js"
 

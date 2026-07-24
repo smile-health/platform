@@ -5,7 +5,7 @@ import {
   CreateAnalysisParameterRequest,
   UpdateAnalysisParameterRequest,
 } from "./environmental-analysis-parameter.schema.js"
-import { PaginatedResponse } from "@smile/lib/types/paginate.js"
+import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
 
 export class EnvironmentalAnalysisParameterModule {
   constructor(
