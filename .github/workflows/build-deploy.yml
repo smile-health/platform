@@ -1,0 +1,157 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  REGISTRY_NAMESPACE: smile-health/platform
+
+jobs:
+  changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    outputs:
+      auth: ${{ steps.filter.outputs.auth }}
+      core: ${{ steps.filter.outputs.core }}
+      main: ${{ steps.filter.outputs.main }}
+      notification: ${{ steps.filter.outputs.notification }}
+      wms: ${{ steps.filter.outputs.wms }}
+      web: ${{ steps.filter.outputs.web }}
+      lib: ${{ steps.filter.outputs.lib }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            auth:
+              - 'apps/auth-service/**'
+            core:
+              - 'apps/core/**'
+            main:
+              - 'apps/main/**'
+            notification:
+              - 'apps/notification/**'
+            wms:
+              - 'apps/wms-service/**'
+            web:
+              - 'apps/web/**'
+            lib:
+              - 'packages/lib/**'
+
+  build:
+    name: Build ${{ matrix.service }}
+    needs: changes
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    strategy:
+      matrix:
+        include:
+          - service: auth-service
+            changed: ${{ needs.changes.outputs.auth }}
+            context: apps/auth-service
+          - service: core
+            changed: ${{ needs.changes.outputs.core }}
+            context: apps/core
+          - service: main
+            changed: ${{ needs.changes.outputs.main }}
+            context: apps/main
+          - service: notification
+            changed: ${{ needs.changes.outputs.notification }}
+            context: apps/notification
+          - service: wms-service
+            changed: ${{ needs.changes.outputs.wms }}
+            context: apps/wms-service
+          - service: web
+            changed: ${{ needs.changes.outputs.web }}
+            context: apps/web
+    if: ${{ matrix.changed == 'true' || needs.changes.outputs.lib == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & Push
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.context }}
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/${{ matrix.service }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/${{ matrix.service }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Deploy to RKE
+    needs: [changes, build]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    env:
+      NAMESPACE: smile-health
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup kubectl
+        run: |
+          mkdir -p $HOME/.kube
+          echo "${{ secrets.RKE_KUBECONFIG }}" | base64 -d > $HOME/.kube/config
+          chmod 600 $HOME/.kube/config
+
+      - name: Deploy changed services
+        run: |
+          SHA="${{ github.sha }}"
+          REGISTRY="ghcr.io/${{ env.REGISTRY_NAMESPACE }}"
+          
+          deploy_service() {
+            local service="$1"
+            local deployment="$2"
+            local image="${REGISTRY}/${service}:${SHA}"
+            
+            echo "🔄 Deploying ${deployment} with image ${image}..."
+            kubectl set image deployment/${deployment} smile-app=${image} -n ${NAMESPACE}
+            kubectl rollout status deployment/${deployment} -n ${NAMESPACE} --timeout=180s
+            echo "✅ ${deployment} deployed successfully"
+          }
+          
+          if [[ "${{ needs.changes.outputs.auth }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            deploy_service "auth-service" "smile-health-auth"
+          fi
+          
+          if [[ "${{ needs.changes.outputs.core }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            deploy_service "core" "smile-health-core"
+          fi
+          
+          if [[ "${{ needs.changes.outputs.main }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            deploy_service "main" "smile-health-main"
+          fi
+          
+          if [[ "${{ needs.changes.outputs.notification }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            deploy_service "notification" "smile-health-notification"
+          fi
+          
+          if [[ "${{ needs.changes.outputs.wms }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            deploy_service "wms-service" "smile-health-wms"
+          fi
+          
+          if [[ "${{ needs.changes.outputs.web }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            deploy_service "web" "smile-health-frontend"
+          fi
+
+      - name: Verify deployments
+        run: |
+          echo "📋 Deployment status:"
+          kubectl get deployments -n ${NAMESPACE} -o custom-columns=NAME:.metadata.name,IMAGE:.spec.template.spec.containers[0].image,READY:.status.readyReplicas --no-headers | grep smile-health
