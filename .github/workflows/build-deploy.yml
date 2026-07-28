@@ -55,18 +55,23 @@ jobs:
           - service: auth-service
             changed: ${{ needs.changes.outputs.auth }}
             context: apps/auth-service
+            dockerfile: apps/auth-service/Dockerfile
           - service: core
             changed: ${{ needs.changes.outputs.core }}
             context: apps/core
+            dockerfile: apps/core/Dockerfile
           - service: main
             changed: ${{ needs.changes.outputs.main }}
             context: apps/main
+            dockerfile: apps/main/Dockerfile
           - service: notification
             changed: ${{ needs.changes.outputs.notification }}
             context: apps/notification
+            dockerfile: apps/notification/Dockerfile
           - service: wms-service
             changed: ${{ needs.changes.outputs.wms }}
             context: apps/wms-service
+            dockerfile: apps/wms-service/Dockerfile
           - service: web
             changed: ${{ needs.changes.outputs.web }}
             context: .
