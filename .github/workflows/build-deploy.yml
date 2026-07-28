@@ -116,11 +116,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup SSH tunnel to RKE
+        run: |
+          mkdir -p $HOME/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > $HOME/.ssh/id_rsa
+          chmod 600 $HOME/.ssh/id_rsa
+          ssh-keyscan -p ${{ secrets.DEPLOY_SSH_PORT || 60322 }} -H ${{ secrets.DEPLOY_SSH_HOST }} >> $HOME/.ssh/known_hosts 2>/dev/null
+          
+          # Create SSH tunnel: local 6443 → jump server → RKE API server
+          ssh -f -N -L 16443:10.10.0.10:6443 \
+            -p ${{ secrets.DEPLOY_SSH_PORT || 60322 }} \
+            ${{ secrets.DEPLOY_SSH_USER || 'devel' }}@${{ secrets.DEPLOY_SSH_HOST }} \
+            -o StrictHostKeyChecking=no -o ServerAliveInterval=60
+          
+          # Wait for tunnel
+          sleep 3
+          nc -z 127.0.0.1 16443 && echo "Tunnel OK" || { echo "Tunnel FAILED"; exit 1; }
+
       - name: Setup kubectl
         run: |
           mkdir -p $HOME/.kube
           echo "${{ secrets.RKE_KUBECONFIG }}" | base64 -d > $HOME/.kube/config
+          # Replace 10.10.0.10:6443 with localhost:16443 (tunneled)
+          sed -i 's|10.10.0.10:6443|127.0.0.1:16443|g' $HOME/.kube/config
           chmod 600 $HOME/.kube/config
+          kubectl version --client 2>&1 | head -1
+          kubectl get nodes 2>&1 | head -5
 
       - name: Deploy changed services
         run: |
