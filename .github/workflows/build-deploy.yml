@@ -123,16 +123,19 @@ jobs:
           mkdir -p $HOME/.ssh
           echo "${{ secrets.DEPLOY_SSH_KEY }}" > $HOME/.ssh/id_rsa
           chmod 600 $HOME/.ssh/id_rsa
-          ssh-keyscan -p ${{ secrets.DEPLOY_SSH_PORT || 60322 }} -H ${{ secrets.DEPLOY_SSH_HOST }} >> $HOME/.ssh/known_hosts 2>/dev/null
           
-          # Create SSH tunnel: local 6443 → jump server → RKE API server
+          # Create SSH tunnel: local 16443 → jump server → RKE API server
           ssh -f -N -L 16443:10.10.0.10:6443 \
-            -p ${{ secrets.DEPLOY_SSH_PORT || 60322 }} \
-            ${{ secrets.DEPLOY_SSH_USER || 'devel' }}@${{ secrets.DEPLOY_SSH_HOST }} \
-            -o StrictHostKeyChecking=no -o ServerAliveInterval=60
+            -p ${{ secrets.DEPLOY_SSH_PORT }} \
+            -i $HOME/.ssh/id_rsa \
+            ${{ secrets.DEPLOY_SSH_USER }}@${{ secrets.DEPLOY_SSH_HOST }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            -o ServerAliveInterval=60 \
+            -o ConnectTimeout=10
           
           # Wait for tunnel
-          sleep 3
+          sleep 5
           nc -z 127.0.0.1 16443 && echo "Tunnel OK" || { echo "Tunnel FAILED"; exit 1; }
 
       - name: Setup kubectl
