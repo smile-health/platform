@@ -118,82 +118,50 @@ jobs:
     needs: [changes, build]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    env:
-      NAMESPACE: smile-health
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup SSH tunnel to RKE
-        run: |
-          mkdir -p $HOME/.ssh
-          echo "${{ secrets.DEPLOY_SSH_KEY }}" > $HOME/.ssh/id_rsa
-          chmod 600 $HOME/.ssh/id_rsa
-          
-          # Create SSH tunnel: local 16443 → jump server → RKE API server
-          ssh -f -N -L 16443:10.10.0.10:6443 \
-            -p ${{ secrets.DEPLOY_SSH_PORT }} \
-            -i $HOME/.ssh/id_rsa \
-            ${{ secrets.DEPLOY_SSH_USER }}@${{ secrets.DEPLOY_SSH_HOST }} \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            -o ServerAliveInterval=60 \
-            -o ConnectTimeout=10
-          
-          # Wait for tunnel
-          sleep 5
-          nc -z 127.0.0.1 16443 && echo "Tunnel OK" || { echo "Tunnel FAILED"; exit 1; }
-
-      - name: Setup kubectl
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.RKE_KUBECONFIG }}" | base64 -d > $HOME/.kube/config
-          # Replace 10.10.0.10:6443 with localhost:16443 (tunneled)
-          sed -i 's|10.10.0.10:6443|127.0.0.1:16443|g' $HOME/.kube/config
-          chmod 600 $HOME/.kube/config
-          kubectl version --client 2>&1 | head -1
-          kubectl get nodes 2>&1 | head -5
-
-      - name: Deploy changed services
+      - name: Trigger deploy webhook
         run: |
           SHA="${{ github.sha }}"
-          REGISTRY="ghcr.io/${{ env.REGISTRY_NAMESPACE }}"
           
-          deploy_service() {
-            local service="$1"
-            local deployment="$2"
-            local image="${REGISTRY}/${service}:${SHA}"
-            
-            echo "🔄 Deploying ${deployment} with image ${image}..."
-            kubectl set image deployment/${deployment} smile-app=${image} -n ${NAMESPACE}
-            kubectl rollout status deployment/${deployment} -n ${NAMESPACE} --timeout=180s
-            echo "✅ ${deployment} deployed successfully"
+          # Build list of services to deploy
+          SERVICES=""
+          if [[ "${{ needs.changes.outputs.auth }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            SERVICES="$SERVICES,\"auth-service\""
+          fi
+          if [[ "${{ needs.changes.outputs.core }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            SERVICES="$SERVICES,\"core\""
+          fi
+          if [[ "${{ needs.changes.outputs.main }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            SERVICES="$SERVICES,\"main\""
+          fi
+          if [[ "${{ needs.changes.outputs.notification }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            SERVICES="$SERVICES,\"notification\""
+          fi
+          if [[ "${{ needs.changes.outputs.wms }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            SERVICES="$SERVICES,\"wms-service\""
+          fi
+          if [[ "${{ needs.changes.outputs.web }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
+            SERVICES="$SERVICES,\"web\""
+          fi
+          
+          # Remove leading comma
+          SERVICES="${SERVICES:1}"
+          
+          echo "Deploying services: [$SERVICES] with SHA: $SHA"
+          
+          RESPONSE=$(curl -s -X POST "${{ secrets.DEPLOY_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"sha\":\"$SHA\",\"services\":[$SERVICES],\"webhook_secret\":\"${{ secrets.DEPLOY_WEBHOOK_SECRET }}\"}")
+          
+          echo "Webhook response: $RESPONSE"
+          
+          # Check if any service failed
+          echo "$RESPONSE" | jq -e '.results[] | select(.error != null)' >/dev/null 2>&1 && {
+            echo "❌ Some services failed to deploy:"
+            echo "$RESPONSE" | jq '.results[] | select(.error != null)'
+            exit 1
           }
           
-          if [[ "${{ needs.changes.outputs.auth }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            deploy_service "auth-service" "smile-health-auth"
-          fi
-          
-          if [[ "${{ needs.changes.outputs.core }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            deploy_service "core" "smile-health-core"
-          fi
-          
-          if [[ "${{ needs.changes.outputs.main }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            deploy_service "main" "smile-health-main"
-          fi
-          
-          if [[ "${{ needs.changes.outputs.notification }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            deploy_service "notification" "smile-health-notification"
-          fi
-          
-          if [[ "${{ needs.changes.outputs.wms }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            deploy_service "wms-service" "smile-health-wms"
-          fi
-          
-          if [[ "${{ needs.changes.outputs.web }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            deploy_service "web" "smile-health-frontend"
-          fi
-
-      - name: Verify deployments
-        run: |
-          echo "📋 Deployment status:"
-          kubectl get deployments -n ${NAMESPACE} -o custom-columns=NAME:.metadata.name,IMAGE:.spec.template.spec.containers[0].image,READY:.status.readyReplicas --no-headers | grep smile-health
+          echo "✅ All services deployed successfully"
