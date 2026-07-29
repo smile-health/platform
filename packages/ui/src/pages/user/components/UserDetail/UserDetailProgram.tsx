@@ -1,15 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { useFeatureIsOn } from '@growthbook/growthbook-react'
 import { EmptyState } from '#components/empty-state'
 import { ProgramItem } from '#components/modules/ProgramItem'
-import {
-  IconPrograms,
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
+import { IconPrograms } from '#constants/program'
 import cx from '#lib/cx'
 import { TUserDetail } from '#types/user'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { useTranslation } from 'react-i18next'
 
 import { getUserBeneficiaries, getUserPrograms } from '../../user.helper'
@@ -28,23 +23,12 @@ export default function UserDetailProgram({
 }: Readonly<Props>) {
   const [tab, setTab] = useState<TabType>('logistik')
   const { t } = useTranslation()
-  const token = getAuthTokenCookies()
   const isShowBeneficiaries = useFeatureIsOn('feature.beneficiaries')
 
   const programs = getUserPrograms(data)
   const beneficiaries = getUserBeneficiaries(data)
 
-  const displayPrograms = useMemo(() => {
-    if (
-      token &&
-      data?.integration_client_id === ProgramIntegrationClient.WasteManagement
-    ) {
-      return [ProgramWasteManagement(), ...programs]
-    }
-    return programs
-  }, [token, data?.integration_client_id, programs])
-
-  const activeList = tab === 'beneficiaries' ? beneficiaries : displayPrograms
+  const activeList = tab === 'beneficiaries' ? beneficiaries : programs
 
   if (isLoading) return <UserSkeleton />
 

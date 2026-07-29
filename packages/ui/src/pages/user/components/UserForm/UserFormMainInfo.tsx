@@ -7,14 +7,9 @@ import {
 import { Input, InputPassword } from '#components/input'
 import { Radio } from '#components/radio'
 import { OptionType, ReactSelectAsync } from '#components/react-select'
-import {
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
 import { USER_ROLE } from '#constants/roles'
 import { loadManufacturers } from '#services/manufacturer'
 import { loadUserRoles } from '#services/user'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { getUserStorage } from '#utils/storage/user'
 import { isUserWMS } from '#utils/user'
 import { useEffect, useRef } from 'react'
@@ -24,6 +19,11 @@ import { useTranslation } from 'react-i18next'
 import { USER_GENDER } from '../../user.constants'
 import { CreateUserBody } from '../../user.service'
 import { UseFormProgramValues } from './UseFormProgram'
+
+// Passthrough integration client id for the WMS client, used only to scope
+// the role options query — matches apps/core's WMS_CLIENT_ID. Unrelated to
+// the workspace/program `type` field used elsewhere to detect WMS.
+const WMS_INTEGRATION_CLIENT_ID = 4
 
 export type UserFormMainInfoValues = Pick<
   CreateUserBody,
@@ -47,7 +47,6 @@ export default function UserFormMainInfo({
   isEdit = false,
 }: UserFormMainInfoProps) {
   const { t } = useTranslation('user')
-  const token = getAuthTokenCookies()
   const user = getUserStorage()
   const {
     control,
@@ -57,15 +56,17 @@ export default function UserFormMainInfo({
     formState: { errors, defaultValues },
   } = useFormContext<UserFormMainInfoValues>()
 
-  const { role, integration_client_id, entity } = watch()
+  const { role, entity } = watch()
   const programIds = watch('program_ids' as any) as number[] | undefined
-  const wmsId = token ? ProgramWasteManagement().id : null
 
-  const defaultEntity = defaultValues?.entity
-  const isSameEntity = defaultEntity?.value === entity?.value
-
-  const isWmsChecked = Boolean(wmsId && programIds?.includes(wmsId)) || (isSameEntity && integration_client_id === ProgramIntegrationClient.WasteManagement)
-  const isEntityIntegratedWithWMS = entity?.integration_client_id === ProgramIntegrationClient.WasteManagement
+  const isEntityIntegratedWithWMS = Boolean(
+    entity?.programs?.some((program) => program.type === 'wms')
+  )
+  const isWmsChecked = Boolean(
+    programIds?.some(
+      (id) => entity?.programs?.find((program) => program.id === id)?.type === 'wms'
+    )
+  )
   const isWmsCheckedRef = useRef(isWmsChecked)
 
   useEffect(() => {
@@ -128,8 +129,7 @@ export default function UserFormMainInfo({
                 additional={{
                   page: 1,
                   ...(isWmsChecked && {
-                    integration_client_id:
-                      ProgramIntegrationClient.WasteManagement,
+                    integration_client_id: WMS_INTEGRATION_CLIENT_ID,
                   }),
                 }}
               />

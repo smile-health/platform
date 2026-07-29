@@ -5,13 +5,8 @@ import { EmptyState } from '#components/empty-state'
 import Warning from '#components/icons/Warning'
 import { InputSearch } from '#components/input'
 import InfiniteScrollContainer from '#components/modules/InfiniteScrollContainer'
-import {
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
 import { useProgramInfiniteList } from '#hooks/useProgramInfiniteList'
 import cx from '#lib/cx'
-import { TDetailEntity } from '#types/entity'
 import { Controller, useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
@@ -19,18 +14,13 @@ import { TFormData } from '../../hooks/useEntityForm'
 import ProgramItemWrapper from './ProgramItemWrapper'
 
 type Props = Readonly<{
-  data: TDetailEntity | undefined
   programs: number[]
   beneficiaries: number[]
 }>
 
 type TabType = 'logistik' | 'beneficiaries'
 
-export default function EntityFormProgram({
-  data: detailData,
-  programs,
-  beneficiaries,
-}: Props) {
+export default function EntityFormProgram({ programs, beneficiaries }: Props) {
   const [tab, setTab] = useState<TabType>('logistik')
 
   const { t } = useTranslation(['common', 'entity'])
@@ -39,16 +29,10 @@ export default function EntityFormProgram({
   const { control } = useFormContext<TFormData>()
 
   const isShowBeneficiaries = useFeatureIsOn('feature.beneficiaries')
-  const isEntityWms =
-    detailData?.integration_client_id ===
-    ProgramIntegrationClient.WasteManagement
-
-  const showWms = tab !== 'beneficiaries'
 
   const { data, loading, hasMore, loadMore, keyword, setKeyword } =
     useProgramInfiniteList({
       tab,
-      showWms,
       is_beneficiaries: tab === 'beneficiaries',
     })
 
@@ -117,10 +101,7 @@ export default function EntityFormProgram({
                   !!id &&
                   (programs.includes(itemId) || beneficiaries.includes(itemId))
 
-                const isWasteManagement = itemId === ProgramWasteManagement().id
-
-                const disabled =
-                  isAlreadySelected || (isEntityWms && isWasteManagement)
+                const disabled = isAlreadySelected
 
                 return (
                   <ProgramItemWrapper

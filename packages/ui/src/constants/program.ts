@@ -1,8 +1,10 @@
-import { TProgram } from '#types/program'
 import { TFunction } from 'i18next'
 
+// Generic integration-client passthrough ids — unrelated to the `type`
+// ('smile' | 'wms') field now returned on workspaces/programs. Do not use
+// these to detect "is this entity/user/program WMS", use
+// `program.type === 'wms'` instead.
 export const ProgramIntegrationClient = {
-  WasteManagement: 4,
   Kesling: Number(process.env.KESLING_PROGRAM_ID),
 } as const
 
@@ -201,28 +203,6 @@ export const programPocList = [
 export const noProgram = (t: TFunction) => ({
   label: t('form.program.no_program'),
   value: 0,
-})
-
-export const ProgramWasteManagement = (lang?: string): TProgram => ({
-  id: 999,
-  key: ProgramEnum.WasteManagement,
-  name: 'Waste Management',
-  color: '#068009',
-  config: {
-    color: '#068009',
-    material: {
-      is_hierarchy_enabled: false,
-      is_batch_enabled: false,
-    },
-    is_annual_planning: false,
-  },
-  protocols: [],
-  // In-app now that the WMS frontend has been merged into apps/web (see
-  // apps/web/pages/wms and apps/web/wms-module) — no more /wms/validate-token handoff
-  // to a separate origin.
-  href: `/wms/${lang ?? 'id'}/transaction-monitoring`,
-  created_at: '',
-  updated_at: '',
 })
 
 export const IconPrograms: Record<string, string> = {

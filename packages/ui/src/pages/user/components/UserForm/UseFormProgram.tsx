@@ -5,14 +5,9 @@ import {
 } from '#components/form-control'
 import ProgramSelection from '#components/modules/ProgramSelection'
 import { OptionType, ReactSelectAsync } from '#components/react-select'
-import {
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
 import cx from '#lib/cx'
 import { loadCoreEntities } from '#services/entity'
 import { TEntities } from '#types/entity'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
 import { useMemo } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
@@ -35,7 +30,6 @@ type Props = {
 }
 
 export default function UseFormProgram({ isEdit }: Readonly<Props>) {
-  const token = getAuthTokenCookies()
   const { t } = useTranslation(['common', 'user'])
 
   const {
@@ -45,14 +39,8 @@ export default function UseFormProgram({ isEdit }: Readonly<Props>) {
     formState: { defaultValues },
   } = useFormContext<UseFormProgramValues>()
 
-  const { entity, program_ids, beneficiaries_ids, integration_client_id } =
-    watch()
+  const { entity, program_ids, beneficiaries_ids } = watch()
 
-  const wmsId = useMemo(
-    () => (token ? ProgramWasteManagement().id : null),
-    [token]
-  )
-  
   const defaultEntity = defaultValues?.entity
   const isSameEntity = defaultEntity?.value === entity?.value
 
@@ -60,15 +48,10 @@ export default function UseFormProgram({ isEdit }: Readonly<Props>) {
   const defaultBeneficiariesIds = (defaultValues?.beneficiaries_ids ??
     []) as number[]
 
-  const forbiddenUncheckIds = useMemo(() => {
-    if (!isSameEntity) return []
-    return [
-      ...(integration_client_id === ProgramIntegrationClient.WasteManagement
-        ? [wmsId]
-        : []),
-      ...defaultProgramIds,
-    ]
-  }, [isSameEntity, integration_client_id, wmsId, defaultProgramIds])
+  const forbiddenUncheckIds = useMemo(
+    () => (isSameEntity ? [...defaultProgramIds] : []),
+    [isSameEntity, defaultProgramIds]
+  )
 
   const forbiddenUncheckBeneficiariesIds = useMemo(
     () => (isSameEntity ? [...defaultBeneficiariesIds] : []),
@@ -135,10 +118,6 @@ export default function UseFormProgram({ isEdit }: Readonly<Props>) {
           beneficiariesList={entity.beneficiaries}
           isEnabledApi={false}
           withLayout={false}
-          showWms={
-            entity?.integration_client_id ===
-            ProgramIntegrationClient.WasteManagement
-          }
         />
       ) : (
         <div

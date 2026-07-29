@@ -134,7 +134,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
   async getListEntity(c: Context, params: GetEntitiesQueries) {
     const { page, paginate, sort_by, sort_type } = params
     const offset = (page - 1) * paginate
-    const { client, trx } = c.var
+    const { trx } = c.var
     let query = trx
       .selectFrom("entities as e")
       .select([
@@ -158,7 +158,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
       .leftJoin("locations as r", "r.id", "e.regency_id")
       .leftJoin("locations as sd", "sd.id", "e.sub_district_id")
       .leftJoin("locations as v", "v.id", "e.village_id")
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .where("e.deleted_at", "is", null)
 
     let countQuery = trx
@@ -166,7 +165,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
       .leftJoin("integration_associations as a", (join) =>
         join.onRef("a.internal_id", "=", "e.id").on("a.type", "=", "entity")
       )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .where("e.deleted_at", "is", null)
 
     query = this.#generateQueryWhereClause(c, query, params)
@@ -263,30 +261,17 @@ export class EntityRepository extends BaseRepository<"entities"> {
   }
 
   async findById(c: Context, entityID: number, withDetails = true) {
-    const { client, trx } = c.var
+    const { trx } = c.var
 
-    let entity = await trx
+    const entity = await trx
       .selectFrom("entities as e")
       .leftJoin("integration_associations as a", (join) =>
         join.onRef("a.internal_id", "=", "e.id").on("a.type", "=", "entity")
       )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .select(["a.metadata", "a.client_id as integration_client_id"])
       .where("e.id", "=", entityID)
       .selectAll("e")
       .executeTakeFirst()
-
-    if (!entity && client) {
-      entity = await trx
-        .selectFrom("entities as e")
-        .leftJoin("integration_associations as a", (join) =>
-          join.onRef("a.internal_id", "=", "e.id").on("a.type", "=", "entity")
-        )
-        .select(["a.metadata", "a.client_id as integration_client_id"])
-        .where("e.id", "=", entityID)
-        .selectAll("e")
-        .executeTakeFirst()
-    }
 
     if (!withDetails) {
       return entity
@@ -424,11 +409,9 @@ export class EntityRepository extends BaseRepository<"entities"> {
         "e.regency_id",
         "e.sub_district_id",
         "e.village_id",
-        "e.integration_type",
         sql<string>`if(ets.id IS NULL, NULL, JSON_OBJECT(
           'id', ets.id,
           'name', ets.name,
-          'integration_type', ets.integration_type,
           'external_properties', ets.external_properties
         ))`.as("entity_type"),
         "a.metadata as external_properties",
@@ -442,7 +425,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
         )
       )
       .where("e.id", "=", entityID)
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .executeTakeFirst()
 
     if (!entity) return entity
@@ -640,7 +622,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
   ) {
     const { page, paginate, sort_by, sort_type } = params
     const offset = (page - 1) * paginate
-    const { client, trx } = c.var
+    const { trx } = c.var
 
     let query = trx
       .selectFrom("entities as e")
@@ -665,7 +647,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
       .leftJoin("locations as r", "r.id", "e.regency_id")
       .leftJoin("locations as sd", "sd.id", "e.sub_district_id")
       .leftJoin("locations as v", "v.id", "e.village_id")
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .where("e.deleted_at", "is", null)
       .where("e.id", "!=", entityId)
 
@@ -674,7 +655,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
       .leftJoin("integration_associations as a", (join) =>
         join.onRef("a.internal_id", "=", "e.id").on("a.type", "=", "entity")
       )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .where("e.deleted_at", "is", null)
 
     const isNullOrEmpty = (eb: any, field: string) => {

@@ -1,7 +1,3 @@
-import {
-  WMS_CLIENT_ID,
-  WMS_PROGRAM_ID,
-} from "@/common/constants/integration.js"
 import { DB } from "@/common/infrastructure/database/types/db.js"
 import { associate, collect, differ } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
@@ -14,6 +10,16 @@ import { TCreateUserWorkspaceSchema } from "../user/user.schema.js"
 import { GetWorkspacesParams, TableWorkspaces } from "./workspace.schema.js"
 
 export class WorkspaceRepository {
+  async getWmsWorkspaceId(c: Context): Promise<number | undefined> {
+    const workspace = await c.var.trx
+      .selectFrom("workspaces")
+      .select("id")
+      .where("type", "=", "wms")
+      .executeTakeFirst()
+
+    return workspace?.id
+  }
+
   async findAll(c: Context, queryParam: GetWorkspacesParams) {
     let query = c.var.trx.selectFrom("workspaces")
 
@@ -105,21 +111,12 @@ export class WorkspaceRepository {
     from: string,
     ids: number | number[]
   ) {
-    const { isWMSUser, trx } = c.var
+    const { trx } = c.var
 
     if (typeof ids === "number") ids = [ids]
     if (!ids || ids.length === 0) return {}
     const workspaces = await trx
       .selectFrom("workspaces as w")
-      .$if(isWMSUser, (qb) =>
-        qb.innerJoin("integration_associations as a", (join) =>
-          join
-            .onRef("a.internal_id", "=", "w.id")
-            .on("a.client_id", "=", WMS_CLIENT_ID)
-            .on("a.type", "=", "program")
-            .on("a.deleted_at", "is", null)
-        )
-      )
       .$if(from == "user", (qb) =>
         qb
           .innerJoin("user_workspaces as uw", "w.id", "uw.workspace_id")
@@ -144,6 +141,7 @@ export class WorkspaceRepository {
             "w.name",
             "w.config",
             "w.is_beneficiaries",
+            "w.type",
             "uw.status",
             "uw.user_id",
             "ew.id as entity_id",
@@ -163,6 +161,7 @@ export class WorkspaceRepository {
             "ew.id as entity_program_id",
             "config",
             "w.is_beneficiaries",
+            "w.type",
           ])
       )
       .$if(from == "budget_source", (qb) =>
@@ -181,6 +180,7 @@ export class WorkspaceRepository {
             "sbw.id as budget_source_program_id",
             "config",
             "w.is_beneficiaries",
+            "w.type",
           ])
       )
       .$if(from == "manufacture", (qb) =>
@@ -195,6 +195,7 @@ export class WorkspaceRepository {
             "mw.id as manufacture_program_id",
             "config",
             "w.is_beneficiaries",
+            "w.type",
           ])
       )
       .$if(from == "material", (qb) =>
@@ -210,6 +211,7 @@ export class WorkspaceRepository {
             "mw.id as material_program_id",
             "config",
             "w.is_beneficiaries",
+            "w.type",
           ])
       )
       .$if(from == "asset_inventory", (qb) =>
@@ -230,6 +232,7 @@ export class WorkspaceRepository {
             "aiw.id as asset_inventory_program_id",
             "config",
             "w.is_beneficiaries",
+            "w.type",
           ])
       )
       .where("w.deleted_at", "is", null)
@@ -536,7 +539,7 @@ export class WorkspaceRepository {
           isHierarchy === 1
         )
       )
-      .where((eb) => eb("deleted_at", "is", null).or("id", "=", WMS_PROGRAM_ID))
+      .where("deleted_at", "is", null)
       .stream()
   }
 

@@ -1,18 +1,15 @@
 import { useQuery } from '@tanstack/react-query'
-import { ProgramWasteManagement } from '#constants/program'
 import { getProfileV2 } from '#services/profile'
 import { listUserChangeHistory } from '#services/user'
 import { parseDateTime } from '#utils/date'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { getUserStorage } from '#utils/storage/user'
-import { getEntityType, isUserWMS } from '#utils/user'
+import { getEntityType } from '#utils/user'
 import { useTranslation } from 'react-i18next'
 
 export type FetchType = 'all' | 'profile'
 
 export const useAccountManagement = () => {
   const userData = getUserStorage()
-  const token = getAuthTokenCookies()
   const { t, i18n } = useTranslation(['common', 'account'])
 
   const fetchAllData = async () => {
@@ -29,19 +26,6 @@ export const useAccountManagement = () => {
     retry: false,
     enabled: !!userData?.id,
     refetchOnWindowFocus: false,
-    select: (data) => {
-      if (isUserWMS(userData) && token && data?.user) {
-        const wmsProgram = ProgramWasteManagement()
-        const hasWmsProgram = data.user.programs?.some(
-          (p) => p.id === wmsProgram.id || p.key === wmsProgram.key
-        )
-
-        if (!hasWmsProgram) {
-          data.user.programs = [wmsProgram, ...(data.user.programs ?? [])]
-        }
-      }
-      return data
-    },
   })
 
   const profileDetailFields = {

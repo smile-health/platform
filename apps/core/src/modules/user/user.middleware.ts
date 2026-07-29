@@ -24,17 +24,15 @@ import { UserTemplateXlsx } from "./user.excel.js"
 import { EntityRepository } from "../entity/entity.repository.js"
 import { collect } from "@smile-health/lib/utils.js"
 import { unique } from "remeda"
-import {
-  WMS_CLIENT_ID,
-  WMS_PROGRAM_ID,
-} from "@/common/constants/integration.js"
+import { IntegrationRepository } from "../integration/integration.repository.js"
 
 export class UsersMiddleware {
   constructor(
     private readonly userRepo: UserRepository,
     private readonly roleRepo: RoleRepository,
     private readonly programRepo: WorkspaceRepository,
-    private readonly entityRepo: EntityRepository
+    private readonly entityRepo: EntityRepository,
+    private readonly integrationRepo: IntegrationRepository
   ) {}
 
   async #isDataExist(c: Context, data: TExistData<string>) {
@@ -120,12 +118,15 @@ export class UsersMiddleware {
       entityIds.push(row[userColumnExcel.IDEntity])
     })
 
-    const [roles, clientRoles, entities, workspaces] = await Promise.all([
-      this.roleRepo.findByIDMapped(c, unique(listRoleID)),
-      this.roleRepo.getClientRole(c, unique(listRoleID)),
-      this.entityRepo.findByIdsMapped(c, unique(entityIds)),
-      this.programRepo.findAllByIdsMapped(c),
-    ])
+    const [roles, clientRoles, entities, workspaces, wmsClient, wmsWorkspaceId] =
+      await Promise.all([
+        this.roleRepo.findByIDMapped(c, unique(listRoleID)),
+        this.roleRepo.getClientRole(c, unique(listRoleID)),
+        this.entityRepo.findByIdsMapped(c, unique(entityIds)),
+        this.programRepo.findAllByIdsMapped(c),
+        this.integrationRepo.getClientByKey(c, "wms"),
+        this.programRepo.getWmsWorkspaceId(c),
+      ])
     // loop rows data
     for (let index = 0; index < rows.length; index++) {
       // parse row to schema object
@@ -162,13 +163,15 @@ export class UsersMiddleware {
             userColumnExcel.IDRole
           ]?.superRefine(async (val, cfx) => {
             const isIncludeWMSProgram =
+              wmsWorkspaceId != null &&
               `${rows[index]![userColumnExcel.IDProgram]}`?.includes(
-                `${WMS_PROGRAM_ID}`
+                `${wmsWorkspaceId}`
               )
 
-            const checkRole = isIncludeWMSProgram
-              ? clientRoles[WMS_CLIENT_ID]?.external_id.includes(val)
-              : roles[Number(rows[index]![userColumnExcel.IDRole])]
+            const checkRole =
+              isIncludeWMSProgram && wmsClient
+                ? clientRoles[wmsClient.getId()]?.external_id.includes(val)
+                : roles[Number(rows[index]![userColumnExcel.IDRole])]
 
             if (checkRole) {
               c.set("role_label", checkRole?.name)

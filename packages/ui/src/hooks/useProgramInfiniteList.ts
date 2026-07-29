@@ -1,14 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
-import { ProgramWasteManagement } from '#constants/program'
 import { useDebounce } from '#hooks/useDebounce'
 import { listPrograms } from '#services/program'
 import { TProgram } from '#types/program'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 
 type Props = {
   params?: Record<string, string | number | boolean>
   isEnabled?: boolean
-  showWms?: boolean
   tab?: 'logistik' | 'beneficiaries'
   is_beneficiaries?: boolean
 }
@@ -19,16 +16,7 @@ type ProgramItem = TProgram & {
 }
 
 export const useProgramInfiniteList = (props: Props = {}) => {
-  const {
-    params,
-    isEnabled = true,
-    showWms = false,
-    tab,
-    is_beneficiaries = false,
-  } = props
-
-  const token = getAuthTokenCookies()
-  const wmsProgram = token ? ProgramWasteManagement() : null
+  const { params, isEnabled = true, tab, is_beneficiaries = false } = props
 
   const [data, setData] = useState<ProgramItem[]>([])
   const [loading, setLoading] = useState(false)
@@ -97,7 +85,7 @@ export const useProgramInfiniteList = (props: Props = {}) => {
   }, [debouncedKeyword, tab, isEnabled, fetchPrograms])
 
   return {
-    data: showWms && wmsProgram ? [wmsProgram, ...data] : data,
+    data,
     loading,
     hasMore,
     loadMore,

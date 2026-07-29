@@ -46,7 +46,6 @@ const EntityForm: React.FC<Props> = ({ isGlobal }) => {
         <EntityFormLocation />
 
         <EntityFormProgram
-          data={detail}
           programs={detail?.programs.map((x) => x.id) || []}
           beneficiaries={detail?.beneficiaries?.map((x) => x.id) || []}
         />

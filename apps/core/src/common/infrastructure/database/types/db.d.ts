@@ -526,7 +526,6 @@ export interface Entities {
   external_properties: Generated<string | null>;
   id: Generated<number>;
   id_satu_sehat: Generated<number | null>;
-  integration_type: Generated<number | null>;
   is_puskesmas: Generated<number>;
   is_vendor: Generated<number>;
   lat: Generated<string | null>;
@@ -564,7 +563,6 @@ export interface EntityTags {
   created_at: Generated<Date>;
   deleted_at: Generated<Date | null>;
   id: Generated<number>;
-  integration_type: Generated<number | null>;
   is_open_vial: Generated<number | null>;
   title: Generated<string | null>;
   updated_at: Generated<Date>;
@@ -575,7 +573,6 @@ export interface EntityTypes {
   deleted_at: Generated<Date | null>;
   external_properties: Generated<string | null>;
   id: Generated<number>;
-  integration_type: Generated<number | null>;
   name: string;
   updated_at: Generated<Date>;
 }
@@ -799,6 +796,7 @@ export interface ExecutiveWorkspaces {
   key: string;
   name: string;
   program_uuid: Generated<string | null>;
+  type: Generated<string>;
   updated_at: Generated<Date>;
   updated_by: Generated<number | null>;
 }
@@ -1878,6 +1876,7 @@ export interface Workspaces {
   key: string;
   name: string;
   program_uuid: Generated<string | null>;
+  type: Generated<string>;
   updated_at: Generated<Date>;
   updated_by: Generated<number | null>;
 }

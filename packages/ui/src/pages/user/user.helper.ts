@@ -1,5 +1,4 @@
 import { OptionType } from '#components/react-select'
-import { ProgramEnum, ProgramIntegrationClient } from '#constants/program'
 import { userRoleList } from '#constants/roles'
 import { UserChangeHistoryType } from '#services/user'
 import { TUserDetail } from '#types/user'
@@ -30,15 +29,6 @@ export function handleFilterParams(values: Values<Record<string, any>>) {
     values?.primary_health_care?.value
   )
 
-  const isWmsSelected =
-    Array.isArray(values?.program_ids) &&
-    values?.program_ids.some((opt) => opt.value === ProgramEnum.WasteManagement)
-  const filteredProgramIds = Array.isArray(values?.program_ids)
-    ? values?.program_ids.filter(
-        (opt) => opt.value !== ProgramEnum.WasteManagement
-      )
-    : values?.program_ids
-
   const newData = {
     page: values?.page,
     paginate: values?.paginate,
@@ -49,15 +39,12 @@ export function handleFilterParams(values: Values<Record<string, any>>) {
     province_id: getReactSelectValue(values?.province),
     regency_id: getReactSelectValue(values?.regency),
     beneficiaries_ids: getReactSelectValue(values?.beneficiaries_ids),
-    program_ids: getReactSelectValue(filteredProgramIds),
+    program_ids: getReactSelectValue(values?.program_ids),
     ...(values?.date_range?.start && {
       start_date: `${values?.date_range?.start} 00:00:00`,
     }),
     ...(values?.date_range?.end && {
       end_date: `${values?.date_range?.end} 23:59:59`,
-    }),
-    ...(isWmsSelected && {
-      integration_client_id: ProgramIntegrationClient.WasteManagement,
     }),
   }
 

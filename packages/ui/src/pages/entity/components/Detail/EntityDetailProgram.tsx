@@ -1,15 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { useFeatureIsOn } from '@growthbook/growthbook-react'
 import { EmptyState } from '#components/empty-state'
 import { ProgramItem } from '#components/modules/ProgramItem'
-import {
-  IconPrograms,
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
+import { IconPrograms } from '#constants/program'
 import cx from '#lib/cx'
 import { TDetailEntity } from '#types/entity'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { useTranslation } from 'react-i18next'
 
 type TabType = 'logistik' | 'beneficiaries'
@@ -21,23 +16,12 @@ type Props = {
 export default function EntityDetailProgram({ entity }: Readonly<Props>) {
   const [tab, setTab] = useState<TabType>('logistik')
   const { t } = useTranslation(['common', 'entity'])
-  const token = getAuthTokenCookies()
   const isShowBeneficiaries = useFeatureIsOn('feature.beneficiaries')
 
   const programs = entity?.programs ?? []
   const beneficiaries = entity?.beneficiaries ?? []
 
-  const displayPrograms = useMemo(() => {
-    if (
-      token &&
-      entity?.integration_client_id === ProgramIntegrationClient.WasteManagement
-    ) {
-      return [ProgramWasteManagement(), ...programs]
-    }
-    return programs
-  }, [token, entity?.integration_client_id, programs])
-
-  const activeList = tab === 'beneficiaries' ? beneficiaries : displayPrograms
+  const activeList = tab === 'beneficiaries' ? beneficiaries : programs
 
   return (
     <div className="ui-p-4 ui-mt-6 ui-border ui-border-gray-300 ui-rounded ui-space-y-4">

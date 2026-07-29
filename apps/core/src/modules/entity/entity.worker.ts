@@ -1,13 +1,8 @@
-import {
-  WMS_CLIENT_ID,
-  WMS_PROGRAM_NAME,
-} from "@/common/constants/integration.js"
 import { DB } from "@/common/infrastructure/database/types/db.js"
 import { MultiSheetZipExporter } from "@smile-health/lib/excel/multi-sheet-zip-v3.js"
 import { Consumer } from "@smile-health/lib/rabbitmq/consumer.js"
 import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
 import { CustomContext } from "@smile-health/lib/types/context.js"
-import { associateField } from "@smile-health/lib/utils.js"
 import env from "../../config/env.js"
 import { BaseWorker } from "../base.worker.js"
 import { ExportHistoryRepository } from "../export-history/export-history.repository.js"
@@ -138,7 +133,7 @@ export class EntityWorker extends BaseWorker {
     // LOAD PROGRAM (BULK)
     // =========================
     const loadProgramsByBatch = async (
-      items: { id: string | number; integration_client_id?: number }[]
+      items: { id: string | number }[]
     ): Promise<void> => {
       const ids = items
         .map((i) => String(i.id))
@@ -146,7 +141,6 @@ export class EntityWorker extends BaseWorker {
 
       if (ids.length === 0) return
 
-      const mapClients = associateField(items, "id", "integration_client_id")
       const rawResult = await this.workspaceRepo.getByFromMappedWorkspace(
         c,
         "entity",
@@ -156,19 +150,13 @@ export class EntityWorker extends BaseWorker {
 
       for (const [entityId, programs] of Object.entries(result)) {
         const names = programs.map((p) => p.name)
-        if (mapClients[entityId] === WMS_CLIENT_ID) {
-          names.push(WMS_PROGRAM_NAME)
-        }
         programNameCache.set(entityId, names.join(", "))
       }
 
       // entity tanpa program → set string kosong
       for (const id of ids) {
         if (!programNameCache.has(id)) {
-          programNameCache.set(
-            id,
-            mapClients[id] === WMS_CLIENT_ID ? WMS_PROGRAM_NAME : ""
-          )
+          programNameCache.set(id, "")
         }
       }
     }
@@ -395,7 +383,7 @@ export class EntityWorker extends BaseWorker {
       // LOAD PROGRAM (BULK)
       // =========================
       const loadProgramsByBatch = async (
-        items: { id: string | number; integration_client_id?: number }[]
+        items: { id: string | number }[]
       ): Promise<void> => {
         const ids = items
           .map((i) => String(i.id))
@@ -403,7 +391,6 @@ export class EntityWorker extends BaseWorker {
 
         if (ids.length === 0) return
 
-        const mapClients = associateField(items, "id", "integration_client_id")
         const rawResult = await this.workspaceRepo.getByFromMappedWorkspace(
           c,
           "entity",
@@ -413,19 +400,13 @@ export class EntityWorker extends BaseWorker {
 
         for (const [entityId, programs] of Object.entries(result)) {
           const names = programs.map((p) => p.name)
-          if (mapClients[entityId] === WMS_CLIENT_ID) {
-            names.push(WMS_PROGRAM_NAME)
-          }
           programNameCache.set(entityId, names.join(", "))
         }
 
         // entity tanpa program → set string kosong
         for (const id of ids) {
           if (!programNameCache.has(id)) {
-            programNameCache.set(
-              id,
-              mapClients[id] === WMS_CLIENT_ID ? WMS_PROGRAM_NAME : ""
-            )
+            programNameCache.set(id, "")
           }
         }
       }

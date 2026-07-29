@@ -17,9 +17,8 @@ const ProgramPage: React.FC = () => {
 
   const user = getUserStorage()
 
-  const { data, isLoading, getHref, localSearch, setLocalSearch } = useProgram({
-    isIncludeWasteManagement: isUserWMS(user),
-  })
+  const { data, isLoading, getHref, localSearch, setLocalSearch } =
+    useProgram()
   useSetLoadingPopupStore(isLoading)
 
   return (

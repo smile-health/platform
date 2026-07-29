@@ -4,6 +4,10 @@ export type TProgram = {
   id: number
   key: string
   name: string
+  // Real workspace type from the backend — the source of truth for
+  // "is this program/workspace WMS" (replaces the old fake WMS program +
+  // integration_client_id checks).
+  type?: 'smile' | 'wms'
   entity_id?: number
   color?: string
   protocols: TProtocol[]

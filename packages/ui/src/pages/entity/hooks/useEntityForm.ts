@@ -4,10 +4,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { OptionType } from '#components/react-select'
 import { toast } from '#components/toast'
 import { BOOLEAN } from '#constants/common'
-import {
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
 import { useSetLoadingPopupStore } from '#hooks/useSetLoading'
 import { listActivities } from '#services/activity'
 import {
@@ -17,7 +13,6 @@ import {
   updateEntity,
 } from '#services/entity'
 import { TEntityForm } from '#types/entity'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { AxiosError } from 'axios'
 import { UseFormReturn } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -42,7 +37,6 @@ type Props = {
 export const useEntityForm = ({ methodsForm, isGlobal }: Props) => {
   const router = useRouter()
   const queryClient = useQueryClient()
-  const token = getAuthTokenCookies()
   const { setValue, reset, setError } = methodsForm
   const { id } = router.query
   const {
@@ -167,19 +161,6 @@ export const useEntityForm = ({ methodsForm, isGlobal }: Props) => {
             sentinel_lab_end_date: values.sentinel_lab_end_date ?? null,
           }
         : { is_sentinel_lab: false }),
-    }
-
-    if (token) {
-      const isWmsSelected = payload.program_ids.find(
-        (programId) => programId === ProgramWasteManagement().id
-      )
-
-      if (isWmsSelected) {
-        payload.integration_client_id = ProgramIntegrationClient.WasteManagement
-        payload.program_ids = payload.program_ids.filter((programId) => {
-          return programId !== ProgramWasteManagement().id
-        })
-      }
     }
 
     mutateEntity(payload)

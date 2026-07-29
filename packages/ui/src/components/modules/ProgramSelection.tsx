@@ -6,11 +6,10 @@ import Check from '#components/icons/Check'
 import Information from '#components/icons/Information'
 import { InputSearch } from '#components/input'
 import { ProgramItem } from '#components/modules/ProgramItem'
-import { IconPrograms, ProgramWasteManagement } from '#constants/program'
+import { IconPrograms } from '#constants/program'
 import { useProgramInfiniteList } from '#hooks/useProgramInfiniteList'
 import cx from '#lib/cx'
 import { TProgram } from '#types/program'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { useTranslation } from 'react-i18next'
 
 import InfiniteScrollContainer from './InfiniteScrollContainer'
@@ -24,7 +23,6 @@ type BaseProps = {
   forbiddenUncheckBeneficiariesIds?: number[]
   isMaterialHierarchyEnabled?: number
   withLayout?: boolean
-  showWms?: boolean
   hideTabs?: boolean
   showInfo?: boolean
 }
@@ -53,13 +51,11 @@ export default function ProgramSelection({
   programList = [],
   beneficiariesList = [],
   withLayout = true,
-  showWms = false,
   hideTabs = false,
   showInfo = true,
 }: Readonly<ProgramSelectionProps>) {
   const [tab, setTab] = useState<TabType>('logistik')
 
-  const token = getAuthTokenCookies()
   const { t } = useTranslation(['common'])
   const isShowBeneficiaries = useFeatureIsOn('feature.beneficiaries')
 
@@ -71,7 +67,6 @@ export default function ProgramSelection({
         }),
       },
       isEnabled: isEnabledApi,
-      showWms,
     })
 
   /**
@@ -90,25 +85,10 @@ export default function ProgramSelection({
   const activeList = useMemo<TProgram[]>(() => {
     if (isEnabledApi) return data
 
-    const wmsProgram = showWms && token ? ProgramWasteManagement() : null
-
     const baseList = tab === 'beneficiaries' ? beneficiariesList : programList
 
-    const mergedList = wmsProgram
-      ? [wmsProgram, ...(baseList ?? [])]
-      : (baseList ?? [])
-
-    return filterByKeyword(mergedList, keyword)
-  }, [
-    isEnabledApi,
-    data,
-    tab,
-    programList,
-    beneficiariesList,
-    keyword,
-    token,
-    showWms,
-  ])
+    return filterByKeyword(baseList ?? [], keyword)
+  }, [isEnabledApi, data, tab, programList, beneficiariesList, keyword])
 
   const selectProgram = (id: number) => {
     onChange?.([...selected, id])

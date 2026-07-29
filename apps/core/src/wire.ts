@@ -484,7 +484,8 @@ const usersMiddleware = new UsersMiddleware(
   userRepo,
   roleRepo,
   workspaceRepo,
-  entityRepo
+  entityRepo,
+  integrationRepo
 )
 const usersController = new UserController(
   usersModule,

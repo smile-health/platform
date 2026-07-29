@@ -21,6 +21,5 @@ declare module "hono" {
     client?: Client
     token: string
     timezone: string
-    isWMSUser: boolean
   }
 }

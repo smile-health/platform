@@ -1,4 +1,3 @@
-import { WMS_PROGRAM_ID } from "@/common/constants/integration"
 import {
   DAILY_RECAP_EMAIL,
   getTranslateUserColumnExcel,
@@ -262,11 +261,7 @@ export const UserQueriesSchema = PaginationQueriesSchema.omit({
     .nullish()
     .refine((val) => !val || isStringNumbers(val))
     .transform((val) =>
-      val
-        ? transformStringNumbersToArrayNumbers(val).filter(
-            (n) => n !== WMS_PROGRAM_ID
-          )
-        : null
+      val ? transformStringNumbersToArrayNumbers(val) : null
     ),
   external_properties: z.coerce.boolean().optional(),
   sort_by: z

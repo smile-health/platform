@@ -1,9 +1,4 @@
 import {
-  WMS_CLIENT_ID,
-  WMS_PROGRAM_ID,
-  WMS_PROGRAM_NAME,
-} from "@/common/constants/integration.js"
-import {
   DAILY_RECAP_EMAIL,
   USER_CHANGELOGS_FIELD,
   USER_GENDER,
@@ -635,9 +630,6 @@ export class UserModule {
     const setRows: TExportUser[] = []
     for (const user of items) {
       const programNames = user.programs?.map((el) => el.name)
-      if (user.integration_client_id === WMS_CLIENT_ID) {
-        programNames?.push(WMS_PROGRAM_NAME)
-      }
 
       const row: TExportUser = {
         id: user.id,
@@ -705,10 +697,8 @@ export class UserModule {
   }
 
   async importExcel(c: Context, rows: TImportUser[]) {
-    const wmsClient = await this.integrationRepo.getClientByKey(
-      c,
-      WMS_CLIENT_ID
-    )
+    const wmsClient = await this.integrationRepo.getClientByKey(c, "wms")
+    const wmsWorkspaceId = await this.workspaceRepo.getWmsWorkspaceId(c)
 
     for (const [index, row] of rows.entries()) {
       const user: TCreateUserReq = {
@@ -727,10 +717,10 @@ export class UserModule {
         entity_id: row.entity_id,
         manufacture_id: row?.manufacture_id,
         password: row.password,
-        program_ids: row.program_ids?.filter((id) => id !== WMS_PROGRAM_ID),
+        program_ids: row.program_ids,
       }
 
-      if (row.program_ids?.includes(WMS_PROGRAM_ID)) {
+      if (wmsWorkspaceId != null && row.program_ids?.includes(wmsWorkspaceId)) {
         c.set("client", wmsClient)
       } else {
         c.set("client", undefined)

@@ -12,7 +12,7 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
   }
 
   readonly #baseQueryFindAll = (c: Context, params) => {
-    const { client, trx } = c.var
+    const { trx } = c.var
     const {
       keyword,
       sort_by,
@@ -31,14 +31,6 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
             eb("ws.key", "like", `%${keyword}%`),
             eb("ws.name", "like", `%${keyword}%`),
           ])
-        )
-      )
-      .$if(!!client, (qb) =>
-        qb.innerJoin("integration_associations as a", (join) =>
-          join
-            .onRef("a.internal_id", "=", "ws.id")
-            .on("a.client_id", "=", client!.getId())
-            .on("a.type", "=", "program")
         )
       )
       .where("ws.deleted_at", "is", null)
@@ -98,6 +90,7 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
           "ws.id as id",
           "ws.key as key",
           "ws.name as name",
+          "ws.type as type",
           "ws.description as description",
           "ws.config as config",
           "ws.created_at as created_at",
@@ -130,6 +123,7 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
       .select([
         "ws.id as id",
         "ws.name as name",
+        "ws.type as type",
         "ws.description as description",
         "ws.config as config",
         "ws.created_at as created_at",
@@ -157,6 +151,7 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
         "ws.id as id",
         "ws.key as key",
         "ws.name as name",
+        "ws.type as type",
         "ws.description as description",
         "ws.config as config",
         "ws.created_at as created_at",

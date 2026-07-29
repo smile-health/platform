@@ -9,7 +9,6 @@ import {
   ReactSelect,
   ReactSelectAsync,
 } from '#components/react-select'
-import { ProgramIntegrationClient } from '#constants/program'
 import { USER_ROLE } from '#constants/roles'
 import { loadEntities } from '#services/entity'
 import { getUserStorage } from '#utils/storage/user'
@@ -19,6 +18,12 @@ import useEntityActivitesOption from '../../../../disposal/distribution-disposal
 import { loadDisposalInstructionTypeOptions } from '../../../disposal-instruction.service'
 import { useDisposalInstructionCreate } from '../../DisposalInstructionCreateContext'
 import { useMaterialSelection } from '../material-selection/useMaterialSelection'
+
+// Passthrough integration client id used to scope the entity picker to
+// WMS-integrated entities — matches apps/core's WMS_CLIENT_ID. Disposal
+// instructions only exist for WMS, so this filter is intentionally
+// hardcoded here rather than derived from `program.type`.
+const WMS_INTEGRATION_CLIENT_ID = 4
 
 export const DisposalDetailForm = () => {
   const user = getUserStorage()
@@ -70,7 +75,7 @@ export const DisposalDetailForm = () => {
           error={Boolean(disposalInstructionCreate.form.errors.entity)}
           additional={{
             page: 1,
-            integration_client_id: ProgramIntegrationClient.WasteManagement,
+            integration_client_id: WMS_INTEGRATION_CLIENT_ID,
           }}
         />
         {disposalInstructionCreate.form.errors.entity && (

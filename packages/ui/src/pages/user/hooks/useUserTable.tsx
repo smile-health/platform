@@ -7,11 +7,6 @@ import {
 import { CellContext, ColumnDef, SortingState } from '@tanstack/react-table'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { ButtonActionTable } from '#components/modules/ButtonActionTable'
-import {
-  ProgramEnum,
-  ProgramIntegrationClient,
-  WORKSPACE,
-} from '#constants/program'
 import useChangeStatus from '#hooks/useChangeStatus'
 import useSmileRouter from '#hooks/useSmileRouter'
 import { listPlatformUsers, listUsers } from '#services/user'
@@ -145,16 +140,10 @@ export default function useUserTableTable({
             accessorKey: 'programs',
             size: 100,
             minSize: 100,
-            cell: ({ row }: CellContext<TUser, unknown>) => {
-              const programText =
-                row?.original?.programs?.length > 0
-                  ? row?.original?.programs?.map((item) => item.name).join(', ')
-                  : ''
-              return row?.original?.integration_client_id ===
-                ProgramIntegrationClient.WasteManagement
-                ? `${WORKSPACE[ProgramEnum.WasteManagement].name}${programText ? `, ${programText}` : ''}`
-                : programText
-            },
+            cell: ({ row }: CellContext<TUser, unknown>) =>
+              row?.original?.programs?.length > 0
+                ? row?.original?.programs?.map((item) => item.name).join(', ')
+                : '',
           },
         ]
       : []),

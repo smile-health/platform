@@ -1,5 +1,4 @@
 import { FLAG } from "@/common/constants/general"
-import { WMS_PROGRAM_ID } from "@/common/constants/integration"
 import { Entities } from "@/common/infrastructure/database/types/db.js"
 import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import { IdSchema } from "@smile-health/lib/types/param.js"
@@ -110,11 +109,7 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
       }
     )
     .transform((val) =>
-      val
-        ? transformStringNumbersToArrayNumbers(val).filter(
-            (n) => n !== WMS_PROGRAM_ID
-          )
-        : null
+      val ? transformStringNumbersToArrayNumbers(val) : null
     )
     .optional(),
   type_ids: z
@@ -170,7 +165,6 @@ export const EntityDto = z.object({
   updated_by: z.number().nullish(),
   created_at: z.date().optional(),
   updated_at: z.date().optional(),
-  integration_type: z.coerce.number().nullish(),
   external_properties: z.record(z.any()).nullish(),
   integration_client_id: z.number().optional(),
   id_satu_sehat: z.number().nullable().optional(),

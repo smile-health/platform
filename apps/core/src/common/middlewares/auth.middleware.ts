@@ -8,7 +8,6 @@ import { logger } from "@smile-health/lib/logger.js"
 import { Context, Next } from "hono"
 import * as jwt from "jsonwebtoken"
 import { DEVICE_TYPE } from "../constants/device"
-import { WMS_CLIENT_KEY } from "../constants/integration"
 import { USER_ROLE } from "../constants/users"
 
 const whitelistedPaths = [
@@ -150,8 +149,6 @@ export class AuthKeycloakMiddleware {
       // if user is superadmin, this client key can be overriden by query params
       if (user.role === USER_ROLE.SUPERADMIN || user.role === USER_ROLE.ADMIN) {
         clientKey = await this.#getIntegrationClientId(c)
-      } else {
-        c.set("isWMSUser", clientKey === WMS_CLIENT_KEY)
       }
 
       const client = await this.integrationRepo.getClientByKey(c, clientKey)

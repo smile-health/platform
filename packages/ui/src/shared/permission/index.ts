@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { getUserStorage } from '#utils/storage/user'
-import { isUserEntityWMS } from '#utils/user'
+import { isUserWMS } from '#utils/user'
 import { useTranslation } from 'react-i18next'
 
 import { getRolePermission } from './config'
@@ -23,11 +23,11 @@ export function hasPermission(featureName: FeatureName) {
   }
 
   if (WMS_ONLY_FEATURES.includes(featureName)) {
-    return isUserEntityWMS(user)
+    return isUserWMS(user)
   }
 
   if (SMILE_ONLY_FEATURES.includes(featureName)) {
-    return !isUserEntityWMS(user)
+    return !isUserWMS(user)
   }
 
   const feature = permission?.[featureName as keyof typeof permission]

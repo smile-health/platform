@@ -1,7 +1,3 @@
-import {
-  WMS_CLIENT_ID,
-  WMS_PROGRAM_ID,
-} from "@/common/constants/integration.js"
 import { LOCATION } from "@/common/constants/location.js"
 import { USER_ROLE } from "@/common/constants/users.js"
 import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
@@ -407,26 +403,11 @@ export class EntityModule extends BaseModule {
         await this.workspaceRepo.attachWithEntityID(
           c,
           Number(newEntityID),
-          program_ids.filter((id) => id !== WMS_PROGRAM_ID)
+          program_ids
         )
       }
 
       row.id = Number(newEntityID)
-    }
-
-    const wmsEntities = rows.filter((row) =>
-      row.ProgramId?.includes(WMS_PROGRAM_ID)
-    )
-    if (wmsEntities.length > 0) {
-      await this.integrationRepo.upsertAssociations(
-        c,
-        WMS_CLIENT_ID,
-        wmsEntities.map((row) => ({
-          id: row.id,
-          type: "entity",
-          metadata: JSON.stringify({}),
-        }))
-      )
     }
 
     return this.#messageResponse(`create ${rows.length} rows`)

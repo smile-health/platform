@@ -11,7 +11,6 @@ import {
   loadVillages,
 } from '#services/location'
 import { listPrograms } from '#services/program'
-import { ProgramEnum, WORKSPACE } from '#constants/program'
 import { hasPermission } from '#shared/permission/index'
 import { TFunction } from 'i18next'
 
@@ -78,12 +77,7 @@ export const createFilterSchema = ({ t, isGlobal }: Params): UseFilter => [
               { value: 0, label: t('entity:list.filter.without_program') },
             ]
 
-            const wasteManagementOption = {
-              value: ProgramEnum.WasteManagement,
-              label: WORKSPACE[ProgramEnum.WasteManagement].name,
-            }
-
-            return [...defaultList, wasteManagementOption, ...reformatResult]
+            return [...defaultList, ...reformatResult]
           },
         } as FilterFormSchema,
         {

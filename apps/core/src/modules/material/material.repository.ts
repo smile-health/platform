@@ -83,9 +83,6 @@ export class MaterialRepository extends BaseRepository<"materials"> {
       )
       .where("m.deleted_at", "is", null)
       .where("mw.deleted_at", "is", null)
-      .$if(!!c.var.client, (qb) =>
-        qb.where("ia.client_id", "=", c.var.client!.getId())
-      )
   }
 
   private applyFilters(query, queryParam: GetMaterialsQueryParams) {

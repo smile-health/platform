@@ -1,5 +1,4 @@
 import { entityTypeList } from '#constants/entity'
-import { ProgramIntegrationClient } from '#constants/program'
 import { EXTERNAL_USER_ROLE, USER_ROLE, userRoleList } from '#constants/roles'
 import { RequestloginResponse } from '#types/auth'
 
@@ -45,14 +44,10 @@ export const asExternalAdmin = (user?: RequestloginResponse | null) => {
     : null
 }
 
-export const isWms = (integrationClientId: number | null) => {
-  return integrationClientId === ProgramIntegrationClient.WasteManagement
-}
-
+// A user is WMS when one of their attached programs is the real WMS
+// workspace (`type === 'wms'`) — WMS is now a normal program row reached
+// through the same user_workspaces attachment as any other program, so
+// this replaces the old integration_client_id-based checks.
 export const isUserWMS = (user?: RequestloginResponse | null) => {
-  return user ? isWms(user.integration_client_id) : false
-}
-
-export const isUserEntityWMS = (user?: RequestloginResponse | null) => {
-  return user ? isWms(user?.entity.integration_client_id) : false
+  return Boolean(user?.programs?.some((program) => program.type === 'wms'))
 }
