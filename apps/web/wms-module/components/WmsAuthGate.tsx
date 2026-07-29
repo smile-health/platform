@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useQuery } from '@tanstack/react-query';
 import { Spinner } from '@repo/ui/components/spinner';
 import { useFirebaseMessaging } from '@repo/ui/hooks/useFirebaseMessaging';
-import { checkToken, resultLogin } from '@/redux/actions/auth';
+import { checkToken, AUTH_RESULT_CHECK_TOKEN } from '@/redux/actions/auth';
 import { sendFCMToken } from '@/services/notification';
 
 /**
@@ -60,7 +60,10 @@ export function WmsAuthGate({ children }: { children: React.ReactNode }) {
       // standalone token-auth. The WMS backend still validates on each API call via
       // the main app's auth header. Without this bypass every WMS page redirects to
       // /v5/login which creates an infinite loop.
-      dispatch(resultLogin({} as any));
+      dispatch({
+        type: AUTH_RESULT_CHECK_TOKEN,
+        payload: { data: {} },
+      });
     }
   }, [])
 
