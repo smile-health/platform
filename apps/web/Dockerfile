@@ -7,8 +7,9 @@ RUN npm install -g pnpm@9.12.3 turbo
 WORKDIR /app
 COPY . .
 
-# Fix @smile-health/lib to use workspace:* so pnpm resolves from packages/lib/
-RUN jq '.dependencies["@smile-health/lib"] = "workspace:*"' package.json > /tmp/pkg.json && mv /tmp/pkg.json package.json
+# Fix all @smile-health/lib references to use workspace:* so pnpm resolves locally
+RUN find . -name package.json -not -path '*/node_modules/*' -exec sh -c \
+    'jq "if .dependencies[\"@smile-health/lib\"] then .dependencies[\"@smile-health/lib\"] = \"workspace:*\" else . end" "$1" > /tmp/pkg.json && mv /tmp/pkg.json "$1"' _ {} \;
 
 # Install all workspace deps (needed for turbo build)
 RUN pnpm install --frozen-lockfile=false
