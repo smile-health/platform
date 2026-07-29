@@ -119,49 +119,76 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v4
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
 
-      - name: Trigger deploy webhook
+      - name: Set up kubeconfig
+        env:
+          RKE_KUBECONFIG: ${{ secrets.RKE_KUBECONFIG }}
+        run: |
+          mkdir -p ~/.kube
+          echo "$RKE_KUBECONFIG" > ~/.kube/config
+          chmod 600 ~/.kube/config
+
+      - name: Deploy via SSH to RKE
+        env:
+          RKE_SSH_HOST: ${{ secrets.RKE_SSH_HOST || '10.10.0.3' }}
+          RKE_SSH_PORT: ${{ secrets.RKE_SSH_PORT || '60322' }}
+          RKE_SSH_USER: ${{ secrets.RKE_SSH_USER || 'devel' }}
+          RKE_SSH_PASSWORD: ${{ secrets.RKE_SSH_PASSWORD }}
         run: |
           SHA="${{ github.sha }}"
           
           # Build list of services to deploy
-          SERVICES=""
+          DEPLOY_SERVICES=""
           if [[ "${{ needs.changes.outputs.auth }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES,\"auth-service\""
+            DEPLOY_SERVICES="$DEPLOY_SERVICES auth-service:smile-health-auth"
           fi
           if [[ "${{ needs.changes.outputs.core }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES,\"core\""
+            DEPLOY_SERVICES="$DEPLOY_SERVICES core:smile-health-core"
           fi
           if [[ "${{ needs.changes.outputs.main }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES,\"main\""
+            DEPLOY_SERVICES="$DEPLOY_SERVICES main:smile-health-main"
           fi
           if [[ "${{ needs.changes.outputs.notification }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES,\"notification\""
+            DEPLOY_SERVICES="$DEPLOY_SERVICES notification:smile-health-notification"
           fi
           if [[ "${{ needs.changes.outputs.wms }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES,\"wms-service\""
+            DEPLOY_SERVICES="$DEPLOY_SERVICES wms-service:smile-health-wms"
           fi
           if [[ "${{ needs.changes.outputs.web }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES,\"web\""
+            DEPLOY_SERVICES="$DEPLOY_SERVICES web:smile-health-frontend"
           fi
           
-          # Remove leading comma
-          SERVICES="${SERVICES:1}"
+          echo "Deploying services with SHA: $SHA"
           
-          echo "Deploying services: [$SERVICES] with SHA: $SHA"
-          
-          RESPONSE=$(curl -s -X POST "${{ secrets.DEPLOY_WEBHOOK_URL }}" \
-            -H "Content-Type: application/json" \
-            -d "{\"sha\":\"$SHA\",\"services\":[$SERVICES],\"webhook_secret\":\"${{ secrets.DEPLOY_WEBHOOK_SECRET }}\"}")
-          
-          echo "Webhook response: $RESPONSE"
-          
-          # Check if any service failed
-          echo "$RESPONSE" | jq -e '.results[] | select(.error != null)' >/dev/null 2>&1 && {
-            echo "❌ Some services failed to deploy:"
-            echo "$RESPONSE" | jq '.results[] | select(.error != null)'
-            exit 1
-          }
+          for entry in $DEPLOY_SERVICES; do
+            svc=$(echo $entry | cut -d: -f1)
+            deployment=$(echo $entry | cut -d: -f2)
+            image="ghcr.io/smile-health/platform/${svc}:${SHA}"
+            
+            echo "→ Deploying $svc ($deployment) with image $image..."
+            sshpass -p "$RKE_SSH_PASSWORD" ssh -p "$RKE_SSH_PORT" \
+              -o StrictHostKeyChecking=no -o ConnectTimeout=10 \
+              "$RKE_SSH_USER@$RKE_SSH_HOST" \
+              "KUBECONFIG=/tmp/rke-badr-config.yaml kubectl set image deployment/$deployment -n smile-health smile-app=$image && echo '✅ $svc deployed'" || {
+              echo "❌ Failed to deploy $svc"
+              exit 1
+            }
+          done
           
           echo "✅ All services deployed successfully"
+          
+          # Wait for rollouts
+          for entry in $DEPLOY_SERVICES; do
+            deployment=$(echo $entry | cut -d: -f2)
+            echo "→ Waiting for $deployment rollout..."
+            sshpass -p "$RKE_SSH_PASSWORD" ssh -p "$RKE_SSH_PORT" \
+              -o StrictHostKeyChecking=no -o ConnectTimeout=10 \
+              "$RKE_SSH_USER@$RKE_SSH_HOST" \
+              "KUBECONFIG=/tmp/rke-badr-config.yaml kubectl rollout status deployment/$deployment -n smile-health --timeout=180s" || {
+              echo "❌ Rollout timeout for $deployment"
+              exit 1
+            }
+            echo "✅ $deployment rollout complete"
+          done
