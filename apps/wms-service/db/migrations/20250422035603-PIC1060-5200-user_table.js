@@ -5,14 +5,14 @@ const sqlRunner = require('../helpers/sqlRunner');
 module.exports = {
     async up(queryInterface, Sequelize) {
         await sqlRunner.rawSQLRunner({
-            sqlPath: './migrations-sql/PIC1060-5200-user_table/up.sql',
+            sqlPath: './db/migrations-sql/PIC1060-5200-user_table/up.sql',
             queryInterface,
         });
     },
 
     async down(queryInterface, Sequelize) {
         await sqlRunner.rawSQLRunner({
-            sqlPath: './migrations-sql/PIC1060-5200-user_table/down.sql',
+            sqlPath: './db/migrations-sql/PIC1060-5200-user_table/down.sql',
             queryInterface,
         });
     },

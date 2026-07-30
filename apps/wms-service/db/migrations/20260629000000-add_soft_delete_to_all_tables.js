@@ -42,28 +42,32 @@ const TABLES = [
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface) {
-        await Promise.all(
-            TABLES.flatMap((table) => [
-                queryInterface.sequelize.query(
-                    `ALTER TABLE ${table} ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMP NULL`,
-                ),
-                queryInterface.sequelize.query(
-                    `ALTER TABLE ${table} ADD COLUMN IF NOT EXISTS deleted_by BIGINT NULL`,
-                ),
-            ]),
-        );
+        for (const table of TABLES) {
+            const columns = await queryInterface.describeTable(table);
+            if (!columns.deleted_at) {
+                await queryInterface.addColumn(table, 'deleted_at', {
+                    type: 'TIMESTAMP',
+                    allowNull: true,
+                });
+            }
+            if (!columns.deleted_by) {
+                await queryInterface.addColumn(table, 'deleted_by', {
+                    type: 'BIGINT',
+                    allowNull: true,
+                });
+            }
+        }
     },
 
     async down(queryInterface) {
-        await Promise.all(
-            TABLES.flatMap((table) => [
-                queryInterface.sequelize.query(
-                    `ALTER TABLE ${table} DROP COLUMN IF EXISTS deleted_at`,
-                ),
-                queryInterface.sequelize.query(
-                    `ALTER TABLE ${table} DROP COLUMN IF EXISTS deleted_by`,
-                ),
-            ]),
-        );
+        for (const table of TABLES) {
+            const columns = await queryInterface.describeTable(table);
+            if (columns.deleted_at) {
+                await queryInterface.removeColumn(table, 'deleted_at');
+            }
+            if (columns.deleted_by) {
+                await queryInterface.removeColumn(table, 'deleted_by');
+            }
+        }
     },
 };
