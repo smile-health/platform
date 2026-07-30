@@ -119,63 +119,68 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Install sshpass
-        run: sudo apt-get update && sudo apt-get install -y sshpass
+      - uses: actions/checkout@v4
 
-      - name: Set up kubeconfig
+      - name: Trigger deploy webhook
         env:
-          RKE_KUBECONFIG: ${{ secrets.RKE_KUBECONFIG }}
-        run: |
-          mkdir -p ~/.kube
-          echo "$RKE_KUBECONFIG" > ~/.kube/config
-          chmod 600 ~/.kube/config
-
-      - name: Deploy via SSH to RKE
-        env:
-          RKE_SSH_HOST: ${{ secrets.RKE_SSH_HOST || '10.10.0.3' }}
-          RKE_SSH_PORT: ${{ secrets.RKE_SSH_PORT || '60322' }}
-          RKE_SSH_USER: ${{ secrets.RKE_SSH_USER || 'devel' }}
-          RKE_SSH_PASSWORD: ${{ secrets.RKE_SSH_PASSWORD }}
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
         run: |
           SHA="${{ github.sha }}"
           
           # Build list of services to deploy
-          DEPLOY_SERVICES=""
+          SERVICES=""
           if [[ "${{ needs.changes.outputs.auth }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            DEPLOY_SERVICES="$DEPLOY_SERVICES auth-service:smile-health-auth"
+            SERVICES="$SERVICES auth-service"
           fi
           if [[ "${{ needs.changes.outputs.core }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            DEPLOY_SERVICES="$DEPLOY_SERVICES core:smile-health-core"
+            SERVICES="$SERVICES core"
           fi
           if [[ "${{ needs.changes.outputs.main }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            DEPLOY_SERVICES="$DEPLOY_SERVICES main:smile-health-main"
+            SERVICES="$SERVICES main"
           fi
           if [[ "${{ needs.changes.outputs.notification }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            DEPLOY_SERVICES="$DEPLOY_SERVICES notification:smile-health-notification"
+            SERVICES="$SERVICES notification"
           fi
           if [[ "${{ needs.changes.outputs.wms }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            DEPLOY_SERVICES="$DEPLOY_SERVICES wms-service:smile-health-wms"
+            SERVICES="$SERVICES wms-service"
           fi
           if [[ "${{ needs.changes.outputs.web }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            DEPLOY_SERVICES="$DEPLOY_SERVICES web:smile-health-frontend"
+            SERVICES="$SERVICES web"
           fi
           
-          echo "Deploying services with SHA: $SHA"
+          if [ -z "$SERVICES" ]; then
+            echo "No services changed"
+            exit 0
+          fi
           
-          for entry in $DEPLOY_SERVICES; do
-            svc=$(echo $entry | cut -d: -f1)
-            deployment=$(echo $entry | cut -d: -f2)
-            image="ghcr.io/smile-health/platform/${svc}:${SHA}"
-            
-            echo "→ Deploying $svc ($deployment) with image $image..."
-            sshpass -p "$RKE_SSH_PASSWORD" ssh -p "$RKE_SSH_PORT" \
-              -o StrictHostKeyChecking=no -o ConnectTimeout=10 \
-              "$RKE_SSH_USER@$RKE_SSH_HOST" \
-              "KUBECONFIG=/tmp/rke-badr-config.yaml kubectl set image deployment/$deployment -n smile-health smile-app=$image && echo '✅ $svc deployed'" || {
-              echo "❌ Failed to deploy $svc"
-              exit 1
-            }
-          done
+          echo "Deploying services: $SERVICES"
+          echo "SHA: $SHA"
+          
+          # Convert space-separated services to JSON array
+          JSON_SERVICES=$(echo "$SERVICES" | jq -R 'split(" ")')
+          
+          PAYLOAD=$(jq -n \
+            --arg sha "$SHA" \
+            --argjson services "$JSON_SERVICES" \
+            --arg secret "$WEBHOOK_SECRET" \
+            '{sha: $sha, services: $services, webhook_secret: $secret}')
+          
+          echo "Sending webhook payload..."
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD")
+          
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+          
+          if [ "$HTTP_CODE" -ne 200 ]; then
+            echo "❌ Webhook deployment failed"
+            exit 1
+          fi
           
           echo "✅ All services deployed successfully"
           
