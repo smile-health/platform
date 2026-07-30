@@ -13,16 +13,23 @@ export async function getUserRole(
   return handleAxiosResponse<GetRoleResponse>(response);
 }
 
-export async function loadUserRole() {
+const USER_ROLE_PAGE_LIMIT = 50;
+
+export async function loadUserRole(
+  _keyword: string,
+  _loadedOptions: unknown,
+  additional: { page: number } = { page: 1 }
+) {
   const result = await getUserRole({
-    page: 1,
-    limit: 50,
+    page: additional.page,
+    limit: USER_ROLE_PAGE_LIMIT,
   });
 
   if (result?.data.data.length === 0)
     return {
       options: [],
       hasMore: false,
+      additional,
     };
 
   const options = result?.data.data.map((item) => ({
@@ -32,6 +39,9 @@ export async function loadUserRole() {
 
   return {
     options,
-    hasMore: result?.data.data.length > 0,
+    hasMore: result?.data.data.length >= USER_ROLE_PAGE_LIMIT,
+    additional: {
+      page: additional.page + 1,
+    },
   };
 }
