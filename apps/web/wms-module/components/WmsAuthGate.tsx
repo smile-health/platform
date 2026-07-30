@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useQuery } from '@tanstack/react-query';
 import { Spinner } from '@repo/ui/components/spinner';
 import { useFirebaseMessaging } from '@repo/ui/hooks/useFirebaseMessaging';
-import { checkToken, AUTH_RESULT_CHECK_TOKEN } from '@/redux/actions/auth';
+import { checkToken } from '@/redux/actions/auth';
 import { sendFCMToken } from '@/services/notification';
 
 /**
@@ -56,15 +56,12 @@ export function WmsAuthGate({ children }: { children: React.ReactNode }) {
     if (typeof token === 'string') {
       dispatch(checkToken(token, lang) as any)
     } else {
-      // Bypass WMS auth check — main app uses Keycloak, not the WMS module's
-      // standalone token-auth. The WMS backend still validates on each API call via
-      // the main app's auth header. Without this bypass every WMS page redirects to
-      // /v5/login which creates an infinite loop.
-      dispatch({
-        type: AUTH_RESULT_CHECK_TOKEN,
-        payload: { data: {} },
-      });
+      // Same-app login now, instead of the old cross-origin redirect to
+      // NEXT_PUBLIC_URL_FE_SMILE.
+      setRedirecting(true)
+      router.replace(`/${lang}/v5/login`)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (redirecting || !isAuthReady) {
