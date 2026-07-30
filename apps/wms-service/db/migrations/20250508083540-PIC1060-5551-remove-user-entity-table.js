@@ -5,14 +5,14 @@ const sqlRunner = require('../helpers/sqlRunner');
 module.exports = {
     async up(queryInterface, Sequelize) {
         await sqlRunner.rawSQLRunner({
-            sqlPath: './migrations-sql/PIC1060-5551-remove-user-entity-table/up.sql',
+            sqlPath: './db/migrations-sql/PIC1060-5551-remove-user-entity-table/up.sql',
             queryInterface,
         });
     },
 
     async down(queryInterface, Sequelize) {
         await sqlRunner.rawSQLRunner({
-            sqlPath: './migrations-sql/PIC1060-5551-remove-user-entity-table/down.sql',
+            sqlPath: './db/migrations-sql/PIC1060-5551-remove-user-entity-table/down.sql',
             queryInterface,
         });
     },

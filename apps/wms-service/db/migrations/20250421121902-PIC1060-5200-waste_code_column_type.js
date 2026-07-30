@@ -5,14 +5,14 @@ const sqlRunner = require('../helpers/sqlRunner');
 module.exports = {
     async up(queryInterface, Sequelize) {
         await sqlRunner.rawSQLRunner({
-            sqlPath: './migrations-sql/PIC1060-5200-waste_code_column_type/up.sql',
+            sqlPath: './db/migrations-sql/PIC1060-5200-waste_code_column_type/up.sql',
             queryInterface,
         });
     },
 
     async down(queryInterface, Sequelize) {
         await sqlRunner.rawSQLRunner({
-            sqlPath: './migrations-sql/PIC1060-5200-waste_code_column_type/down.sql',
+            sqlPath: './db/migrations-sql/PIC1060-5200-waste_code_column_type/down.sql',
             queryInterface,
         });
     },
