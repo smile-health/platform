@@ -66,11 +66,11 @@ jobs:
             dockerfile: apps/main/Dockerfile
           - service: notification
             changed: ${{ needs.changes.outputs.notification }}
-            context: .
+            context: apps/notification
             dockerfile: apps/notification/Dockerfile
           - service: wms-service
             changed: ${{ needs.changes.outputs.wms }}
-            context: .
+            context: apps/wms-service
             dockerfile: apps/wms-service/Dockerfile
           - service: web
             changed: ${{ needs.changes.outputs.web }}
