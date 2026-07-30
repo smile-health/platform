@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "npm@9.8.1",
   "scripts": {
-    "dev": "next start",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start --port 7500",
     "format": "echo 0"

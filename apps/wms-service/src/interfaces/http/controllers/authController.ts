@@ -52,6 +52,6 @@ export async function setAuthController(req: Request, res: Response): Promise<vo
 
     res.success(userInfo);
   } catch (error) {
-    res.error(error instanceof Error ? error.message : String(error));
+    res.error(error);
   }
 }

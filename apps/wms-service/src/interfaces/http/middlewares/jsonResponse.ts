@@ -55,9 +55,13 @@ export default (req: Request, res: Response, next: NextFunction) => {
     };
 
     res.error = (error: Error | string | unknown, option?: ErrorResponseOptions) => {
-        const resObj: jsonResponseData = {
+        const resObj: jsonResponseData & Record<string, any> = {
             status: Status.error,
             message: error instanceof Error ? error.message : error,
+            data:
+                error instanceof Error
+                    ? { name: error.name, message: error.message, stack: error.stack }
+                    : error,
         };
         console.error(error);
         if (option) {

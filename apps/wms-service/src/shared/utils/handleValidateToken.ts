@@ -18,6 +18,16 @@ function parseJson(value: any): object | undefined {
   }
 }
 
+// core's entities.lat/lng are unvalidated varchar(255), but wms-service stores them as
+// DECIMAL(10,6) — reject anything that doesn't fit a real coordinate instead of letting
+// MySQL throw "Out of range value" on insert.
+function toSafeCoordinate(value: unknown, min: number, max: number): number | undefined {
+  if (value === '' || value === null || value === undefined) return undefined;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < min || parsed > max) return undefined;
+  return parsed;
+}
+
 export default async function handleValidateToken(token: string): Promise<UserInfo | null> {
   // Auth cutover: this used to call an external SMILE_BE_URL + ENDPOINT_VALIDATION_TOKEN
   // (smile-platform.badr.co.id) over the public domain. Now that this service lives in the
@@ -43,11 +53,109 @@ export default async function handleValidateToken(token: string): Promise<UserIn
     });
 
     if (!response.ok) {
+      const body = await response.text().catch(() => '<unreadable body>');
+      console.error(
+        `Token validation failed: ${URL} responded ${response.status} ${response.statusText} - ${body}`,
+      );
       return null;
     }
 
     const jsonData = await response.json();
     const dataInput = jsonData as UserInfo;
+
+    const dataEntity = dataInput.entity;
+    const entityData = await EntitiesModel.findOne({
+      where: { id: dataInput.entity_id },
+      attributes: ['id', 'is_active'],
+    });
+
+    if (!entityData) {
+      // Auth cutover: was SMILE_BE_URL + /core/entities/:id (external). apps/core mounts its
+      // entity module at /entities (see apps/core/src/wire.ts:1060), so this now calls it
+      // directly. TODO: confirm entity.module.ts#getDetail's response still has `code`,
+      // `id_satu_sehat`, and a `locations[]` array in this order (province/regency/district)
+      // before relying on this in production — that shape hasn't been diffed field-by-field.
+      const detailEntities = await fetch(
+        process.env.CORE_API_URL + `/entities/${dataEntity.id}`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+            'accept-language': 'en',
+            'device-type': 'web',
+          },
+        },
+      );
+
+      const resultEntities = await detailEntities.json();
+
+      await EntitiesModel.create({
+        id: dataEntity.id,
+        name: dataEntity.name,
+        type: dataEntity.type,
+        address: dataEntity.address,
+        code: resultEntities.code,
+        id_satu_sehat: resultEntities?.id_satu_sehat,
+        tag: dataEntity.tag,
+        latitude: toSafeCoordinate(resultEntities.lat, -90, 90),
+        longitude: toSafeCoordinate(resultEntities.lng, -180, 180),
+        province_id: dataEntity.province_id,
+        regency_id: dataEntity.regency_id,
+        sub_district_id: dataEntity.sub_district_id,
+        village_id: dataEntity.village_id,
+        integration_type: dataEntity.integration_type,
+        integration_client_id: dataEntity.integration_client_id,
+        location: dataEntity.location,
+        entity_type_id: dataEntity.entity_type.id,
+        entity_type_name: dataEntity.entity_type.name,
+        entity_type_integration_type: dataEntity.entity_type.integration_type,
+        entity_type_external_properties: dataEntity.entity_type.external_properties,
+        province_name: resultEntities.locations[0]?.name ?? 'PROV. DKI JAKARTA',
+        regency_name: resultEntities.locations[1]?.name ?? 'KOTA JAKARTA PUSAT',
+        district_name: resultEntities.locations[2]?.name,
+      });
+    } else {
+      // Auth cutover: was SMILE_BE_URL + /core/entities/:id (external). apps/core mounts its
+      // entity module at /entities (see apps/core/src/wire.ts:1060), so this now calls it
+      // directly. TODO: confirm entity.module.ts#getDetail's response still has `code`,
+      // `id_satu_sehat`, and a `locations[]` array in this order (province/regency/district)
+      // before relying on this in production — that shape hasn't been diffed field-by-field.
+      const detailEntities = await fetch(
+        process.env.CORE_API_URL + `/entities/${dataEntity.id}`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+            'accept-language': 'en',
+            'device-type': 'web',
+          },
+        },
+      );
+
+      const resultEntities = await detailEntities.json();
+
+      await EntitiesModel.update(
+        {
+          tag: dataEntity.tag,
+          entity_type_id: dataEntity.entity_type.id,
+          entity_type_name: dataEntity.entity_type.name,
+          code: resultEntities.code,
+          province_id: resultEntities.province_id,
+          regency_id: resultEntities.regency_id,
+          id_satu_sehat: resultEntities?.id_satu_sehat,
+          province_name: resultEntities.locations[0]?.name ?? 'PROV. DKI JAKARTA',
+          regency_name: resultEntities.locations[1]?.name ?? 'KOTA JAKARTA PUSAT',
+          district_name: resultEntities.locations[2]?.name,
+        },
+        {
+          where: {
+            id: dataEntity.id,
+          },
+        },
+      );
+    }
 
     const userData = await UsersModel.findOne({
       where: { id: dataInput.id },
@@ -106,100 +214,6 @@ export default async function handleValidateToken(token: string): Promise<UserIn
         {
           where: {
             id: dataInput.id,
-          },
-        },
-      );
-    }
-
-    const dataEntity = dataInput.entity;
-    const entityData = await EntitiesModel.findOne({
-      where: { id: dataInput.entity_id },
-      attributes: ['id', 'is_active'],
-    });
-
-    if (!entityData) {
-      // Auth cutover: was SMILE_BE_URL + /core/entities/:id (external). apps/core mounts its
-      // entity module at /entities (see apps/core/src/wire.ts:1060), so this now calls it
-      // directly. TODO: confirm entity.module.ts#getDetail's response still has `code`,
-      // `id_satu_sehat`, and a `locations[]` array in this order (province/regency/district)
-      // before relying on this in production — that shape hasn't been diffed field-by-field.
-      const detailEntities = await fetch(
-        process.env.CORE_API_URL + `/entities/${dataEntity.id}`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-            'accept-language': 'en',
-            'device-type': 'web',
-          },
-        },
-      );
-
-      const resultEntities = await detailEntities.json();
-
-      await EntitiesModel.create({
-        id: dataEntity.id,
-        name: dataEntity.name,
-        type: dataEntity.type,
-        address: dataEntity.address,
-        code: resultEntities.code,
-        id_satu_sehat: resultEntities?.id_satu_sehat,
-        tag: dataEntity.tag,
-        latitude: resultEntities.lat == '' ? null : resultEntities.lat,
-        longitude: resultEntities.lng == '' ? null : resultEntities.lng,
-        province_id: dataEntity.province_id,
-        regency_id: dataEntity.regency_id,
-        sub_district_id: dataEntity.sub_district_id,
-        village_id: dataEntity.village_id,
-        integration_type: dataEntity.integration_type,
-        integration_client_id: dataEntity.integration_client_id,
-        location: dataEntity.location,
-        entity_type_id: dataEntity.entity_type.id,
-        entity_type_name: dataEntity.entity_type.name,
-        entity_type_integration_type: dataEntity.entity_type.integration_type,
-        entity_type_external_properties: dataEntity.entity_type.external_properties,
-        province_name: resultEntities.locations[0]?.name ?? 'PROV. DKI JAKARTA',
-        regency_name: resultEntities.locations[1]?.name ?? 'KOTA JAKARTA PUSAT',
-        district_name: resultEntities.locations[2]?.name,
-      });
-    } else {
-      // Auth cutover: was SMILE_BE_URL + /core/entities/:id (external). apps/core mounts its
-      // entity module at /entities (see apps/core/src/wire.ts:1060), so this now calls it
-      // directly. TODO: confirm entity.module.ts#getDetail's response still has `code`,
-      // `id_satu_sehat`, and a `locations[]` array in this order (province/regency/district)
-      // before relying on this in production — that shape hasn't been diffed field-by-field.
-      const detailEntities = await fetch(
-        process.env.CORE_API_URL + `/entities/${dataEntity.id}`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-            'accept-language': 'en',
-            'device-type': 'web',
-          },
-        },
-      );
-
-      const resultEntities = await detailEntities.json();
-
-      await EntitiesModel.update(
-        {
-          tag: dataEntity.tag,
-          entity_type_id: dataEntity.entity_type.id,
-          entity_type_name: dataEntity.entity_type.name,
-          code: resultEntities.code,
-          province_id: resultEntities.province_id,
-          regency_id: resultEntities.regency_id,
-          id_satu_sehat: resultEntities?.id_satu_sehat,
-          province_name: resultEntities.locations[0]?.name ?? 'PROV. DKI JAKARTA',
-          regency_name: resultEntities.locations[1]?.name ?? 'KOTA JAKARTA PUSAT',
-          district_name: resultEntities.locations[2]?.name,
-        },
-        {
-          where: {
-            id: dataEntity.id,
           },
         },
       );
@@ -267,6 +281,6 @@ export default async function handleValidateToken(token: string): Promise<UserIn
       'Token validation failed:',
       error instanceof Error ? error.message : String(error),
     );
-    return null;
+    throw error;
   }
 }

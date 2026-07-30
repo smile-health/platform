@@ -10,6 +10,10 @@ export async function up(db: Kysely<Database>): Promise<void> {
       created_at: sql`CURRENT_TIMESTAMP`,
       updated_at: sql`CURRENT_TIMESTAMP`,
     })
+    .onDuplicateKeyUpdate({
+      name: sql`VALUES(name)`,
+      updated_at: sql`CURRENT_TIMESTAMP`,
+    })
     .execute()
 }
 

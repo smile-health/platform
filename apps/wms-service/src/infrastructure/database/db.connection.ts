@@ -3,6 +3,7 @@ import dbConfig from '../../config/db.config';
 
 export const sequelize = new Sequelize(dbConfig.database!, dbConfig.username!, dbConfig.password, {
     host: dbConfig.host,
+    port: dbConfig.port,
     dialect: dbConfig.dialect as Dialect,
         pool: {
         max: process.env.NODE_ENV === 'development' ? 10 : 30, // default cukup 30 per instance
