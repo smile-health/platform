@@ -35,4 +35,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
   CMD curl -f http://localhost:3000/health || exit 1
 
 # Set the default command to run your application
-CMD ["bun", "run", "src/index.ts"]
+CMD ["bun", "run", "apps/auth-service/src/index.ts"]
