@@ -1,4 +1,11 @@
-# Base image: Use the official Bun image
+# Stage 1: Prune the monorepo to only what auth-service + its workspace deps need
+FROM node:20-alpine AS pruner
+RUN npm install -g turbo@2
+WORKDIR /app
+COPY . .
+RUN turbo prune @smile/auth-service --docker
+
+# Stage 2: Install deps + build using the pruned workspace
 FROM oven/bun:1 AS base
 
 # Install Node.js and pnpm
@@ -7,7 +14,6 @@ RUN apt-get update && \
     update-ca-certificates && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash && \
     apt-get install -y --no-install-recommends nodejs npm && \
-#     apt-get install -y --no-install-recommends build-essential python3 g++ make && \
     rm -rf /var/lib/apt/lists/* && \
     npm install -g pnpm@8.15.6
 
@@ -24,11 +30,12 @@ ENV PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
 # Switch to the non-root user
 USER appuser
 
-# Copy your application files with proper ownership
-COPY --chown=appuser:appuser . .
+# Copy pruned lockfile + package.json skeleton first for better layer caching
+COPY --chown=appuser:appuser --from=pruner /app/out/json/ .
+RUN pnpm install --frozen-lockfile=false
 
-# Install dependencies (using pnpm instead of npm)
-RUN pnpm install
+# Copy the pruned full source (only the packages auth-service actually depends on)
+COPY --chown=appuser:appuser --from=pruner /app/out/full/ .
 
 # Add health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
