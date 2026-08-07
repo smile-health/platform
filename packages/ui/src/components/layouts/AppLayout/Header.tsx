@@ -27,8 +27,8 @@ import { AxiosError } from 'axios'
 import { useTranslation } from 'react-i18next'
 
 import LanguageChanger from '../LanguageChanger'
-import DropdownNotification from './DropdownNotification'
 import DropdownProgram from './DropdownProgram'
+import NotificationInbox from './NotificationInbox'
 
 const Header: React.FC = () => {
   const {
@@ -137,7 +137,7 @@ const Header: React.FC = () => {
               <ExportHistory />
             </Link>
           </div>
-          <DropdownNotification />
+          <NotificationInbox />
           <LanguageChanger />
         </div>
 
