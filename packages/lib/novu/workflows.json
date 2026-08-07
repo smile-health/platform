@@ -1,0 +1,3335 @@
+[
+  {
+    "name": "Cold Storage Capacity Above 80%",
+    "workflowId": "cap-80",
+    "description": "Cold storage refrigerator capacity has reached or exceeded 80%.",
+    "tags": [
+      "coldstorage",
+      "capacity"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Asset Maintenance Reminder",
+    "workflowId": "asset-maintenance",
+    "description": "Asset maintenance is upcoming or overdue.",
+    "tags": [
+      "asset",
+      "maintenance"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Asset Calibration Reminder",
+    "workflowId": "asset-calibration",
+    "description": "Asset calibration is upcoming or overdue.",
+    "tags": [
+      "asset",
+      "calibration"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Asset Warranty Reminder",
+    "workflowId": "asset-warranty",
+    "description": "Asset warranty has expired.",
+    "tags": [
+      "asset",
+      "warranty"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Asset Status Changed",
+    "workflowId": "asset-status-changed",
+    "description": "An asset's status has changed (e.g. functioning, malfunctioning, defrosting).",
+    "tags": [
+      "asset",
+      "status"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Unlinked RTMD",
+    "workflowId": "asset-rtmd-unlinked",
+    "description": "There are RTMDs associated with an entity that are not yet linked to an asset.",
+    "tags": [
+      "asset",
+      "rtmd"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Asset Defrosting Reminder",
+    "workflowId": "asset-defrosting-reminder",
+    "description": "An asset has been in defrosting status for longer than expected.",
+    "tags": [
+      "asset",
+      "defrosting"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Temperature Excursion Below Minimum",
+    "workflowId": "below-excursion",
+    "description": "Asset temperature has dropped below the minimum threshold.",
+    "tags": [
+      "asset",
+      "temperature"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Temperature Excursion Above Maximum",
+    "workflowId": "above-excursion",
+    "description": "Asset temperature has risen above the maximum threshold.",
+    "tags": [
+      "asset",
+      "temperature"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Material Out of Stock",
+    "workflowId": "zero-stock",
+    "description": "A material's stock has reached zero.",
+    "tags": [
+      "stock"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Material Less than Minimum Stock",
+    "workflowId": "less-stock",
+    "description": "A material's stock has fallen below the configured minimum.",
+    "tags": [
+      "stock"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Stock Restored to Normal",
+    "workflowId": "stock-back-to-normal",
+    "description": "A material's stock has returned to normal level from below minimum.",
+    "tags": [
+      "stock"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Inactive Entity",
+    "workflowId": "inactive-entity",
+    "description": "An entity has been inactive for a configured number of days.",
+    "tags": [
+      "entity"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Order Shipped",
+    "workflowId": "order-ship",
+    "description": "An order has been shipped by the vendor to the customer.",
+    "tags": [
+      "order"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Relocation Order Created",
+    "workflowId": "order-relocation",
+    "description": "A relocation order has been created between entities.",
+    "tags": [
+      "order",
+      "relocation"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Patient Vaccination Reminder",
+    "workflowId": "patient-reminder",
+    "description": "A patient has not received their next scheduled vaccination.",
+    "tags": [
+      "patient",
+      "vaccination"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stop_notification": {
+          "type": [
+            "string",
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Partnership Expired",
+    "workflowId": "partnership-expired-exceed",
+    "description": "WMS event: partnership.partnership_expired_exceed",
+    "tags": [
+      "partnership"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Partnership Expiry Reminder",
+    "workflowId": "partnership-expired",
+    "description": "WMS event: partnership.partnership_expired",
+    "tags": [
+      "partnership"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "New Partnership Created",
+    "workflowId": "partnership-created",
+    "description": "WMS event: partnership.partnership_created",
+    "tags": [
+      "partnership"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Partnership Updated",
+    "workflowId": "partnership-updated",
+    "description": "WMS event: partnership.partnership_updated",
+    "tags": [
+      "partnership"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Partnership Compliance Alert",
+    "workflowId": "partnership-compliance-alert",
+    "description": "WMS event: partnership.partnership_compliance_alert",
+    "tags": [
+      "partnership"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Residue Waste Bag Created",
+    "workflowId": "waste-bag-residue-created",
+    "description": "WMS event: waste_bag.waste_bag_residue_created",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Domestic Waste Bag Created",
+    "workflowId": "waste-bag-domestic-created",
+    "description": "WMS event: waste_bag.waste_bag_domestic_created",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Moved to External Temporary Storage",
+    "workflowId": "waste-bag-in-external-temporary-storage",
+    "description": "WMS event: waste_bag.waste_bag_in_external_temporary_storage",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Moved to Temporary Storage",
+    "workflowId": "waste-bag-in-temporary-storage",
+    "description": "WMS event: waste_bag.waste_bag_in_temporary_storage",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Removed from Temporary Storage",
+    "workflowId": "waste-bag-out-temporary-storage",
+    "description": "WMS event: waste_bag.waste_bag_out_temporary_storage",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Temporary Storage Expired",
+    "workflowId": "waste-bag-temporary-storage-expired",
+    "description": "WMS event: waste_bag.waste_bag_temporary_storage_expired",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Moved to Cold Storage",
+    "workflowId": "waste-bag-in-cold-storage",
+    "description": "WMS event: waste_bag.waste_bag_in_cold_storage",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Removed from Cold Storage",
+    "workflowId": "waste-bag-out-cold-storage",
+    "description": "WMS event: waste_bag.waste_bag_out_cold_storage",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Cold Storage Expired",
+    "workflowId": "waste-bag-cold-storage-expired",
+    "description": "WMS event: waste_bag.waste_bag_cold_storage_expired",
+    "tags": [
+      "waste-bag"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Group In Temporary Storage",
+    "workflowId": "waste-bag-group-in-temporary-storage",
+    "description": "WMS event: waste_bag_group.waste_bag_group_in_temporary_storage",
+    "tags": [
+      "waste-bag-group"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Group Out of Temporary Storage",
+    "workflowId": "waste-bag-group-out-temporary-storage",
+    "description": "WMS event: waste_bag_group.waste_bag_group_out_temporary_storage",
+    "tags": [
+      "waste-bag-group"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Group Temporary Storage Expired",
+    "workflowId": "waste-bag-group-temporary-storage-expired",
+    "description": "WMS event: waste_bag_group.waste_bag_group_temporary_storage_expired",
+    "tags": [
+      "waste-bag-group"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Group In Cold Storage",
+    "workflowId": "waste-bag-group-in-cold-storage",
+    "description": "WMS event: waste_bag_group.waste_bag_group_in_cold_storage",
+    "tags": [
+      "waste-bag-group"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Group Out of Cold Storage",
+    "workflowId": "waste-bag-group-out-cold-storage",
+    "description": "WMS event: waste_bag_group.waste_bag_group_out_cold_storage",
+    "tags": [
+      "waste-bag-group"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Group Cold Storage Expired",
+    "workflowId": "waste-bag-group-cold-storage-expired",
+    "description": "WMS event: waste_bag_group.waste_bag_group_cold_storage_expired",
+    "tags": [
+      "waste-bag-group"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Classification Inactivated",
+    "workflowId": "waste-classification-deleted",
+    "description": "WMS event: waste_classification.deleted",
+    "tags": [
+      "waste-classification"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Hierarchy Inactivated",
+    "workflowId": "waste-hierarchy-deleted",
+    "description": "WMS event: waste_hierarchy.deleted",
+    "tags": [
+      "waste-hierarchy"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Internal Landfill In Process",
+    "workflowId": "waste-treatment-internal-landfill-in-process",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_internal_landfill_in_process",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Internal Landfill Completed",
+    "workflowId": "waste-treatment-internal-landfilled",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_internal_landfilled",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Incineration In Process",
+    "workflowId": "waste-treatment-incinerate-in-process",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_incinerate_in_process",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Incineration Completed",
+    "workflowId": "waste-treatment-incinerated",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_incinerated",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Sterilisation In Process",
+    "workflowId": "waste-treatment-sterilise-in-process",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_sterilise_in_process",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Sterilisation Completed",
+    "workflowId": "waste-treatment-sterilised",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_sterilised",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "External Landfill In Process",
+    "workflowId": "waste-treatment-external-landfill-in-process",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled_in_process",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "External Landfill Completed",
+    "workflowId": "waste-treatment-external-landfilled",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Recycled In Process",
+    "workflowId": "waste-treatment-recycled-in-process",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_recycled_in_process",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Recycled Completed",
+    "workflowId": "waste-treatment-recycled",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_recycled",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Lifecycle Waste Completed",
+    "workflowId": "waste-treatment-end-status",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_end_status",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Disposed In Process",
+    "workflowId": "waste-treatment-disposed-in-process",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_disposed_in_process",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Disposed Completed",
+    "workflowId": "waste-treatment-disposed",
+    "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_disposed",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Transport Follow-up Required",
+    "workflowId": "waste-transport-follow-up",
+    "description": "WMS event: waste_bag_group_transport.waste_bag_group_transport_follow_up",
+    "tags": [
+      "waste-transport"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Handover Completed",
+    "workflowId": "waste-transport-handover",
+    "description": "WMS event: waste_bag_group_transport.waste_bag_group_transport_handover",
+    "tags": [
+      "waste-transport"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Pickup Scheduled",
+    "workflowId": "waste-transport-pickup",
+    "description": "WMS event: waste_bag_group_transport.waste_bag_group_transport_pickup",
+    "tags": [
+      "waste-transport"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Handover to Treatment External",
+    "workflowId": "waste-transport-handover-to-treatment",
+    "description": "WMS event: waste_bag_group_transport.waste_bag_group_handover_to_treatment",
+    "tags": [
+      "waste-transport"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Received by Treatment Facility",
+    "workflowId": "waste-treatment-receivement",
+    "description": "WMS event: waste_bag_group_treatment.waste_bag_group_treatment_receivment",
+    "tags": [
+      "waste-treatment"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Manual Weighing Request Submitted",
+    "workflowId": "manual-request-created",
+    "description": "WMS event: manual_request.manual_request_created",
+    "tags": [
+      "manual-request"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Manual Weighing Request Approved",
+    "workflowId": "manual-request-approved",
+    "description": "WMS event: manual_request.manual_request_approved",
+    "tags": [
+      "manual-request"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Manual Weighing Request Rejected",
+    "workflowId": "manual-request-rejected",
+    "description": "WMS event: manual_request.manual_request_rejected",
+    "tags": [
+      "manual-request"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Inactive Asset Detected",
+    "workflowId": "wms-asset-inactive",
+    "description": "WMS event: asset.asset_inactive",
+    "tags": [
+      "asset"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Asset Warranty Expiry Reminder",
+    "workflowId": "wms-asset-warranty-expired",
+    "description": "WMS event: asset.asset_warranty_expired",
+    "tags": [
+      "asset"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Asset Calibration Due",
+    "workflowId": "wms-asset-calibration-due",
+    "description": "WMS event: asset.asset_calibration_due",
+    "tags": [
+      "asset"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Status Updated",
+    "workflowId": "waste-status-changed",
+    "description": "WMS event: waste.waste_status_changed",
+    "tags": [
+      "waste"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Daily Waste Accumulation Update",
+    "workflowId": "waste-accumulated-update",
+    "description": "WMS event: waste.waste_accumulated_update",
+    "tags": [
+      "waste"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Bast Number Requested",
+    "workflowId": "bast-number-requested",
+    "description": "WMS event: bast.create_request",
+    "tags": [
+      "bast"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  }
+]

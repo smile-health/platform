@@ -21,7 +21,6 @@ import {
   OrderRelocationEntityDTO,
 } from "./order-relocation.schema.js"
 import { OrderPublisher } from "../order/order.publisher.js"
-import { NOTIFICATION_MEDIA } from "@smile-health/lib/rabbitmq/notification.js"
 import { ENTITY_TAG, ENTITY_TYPE } from "@/common/constants/entity.js"
 import { generateEventCode } from "@smile-health/lib/utils.js"
 import { NotificationTypeRepository } from "@/common/repository/notification-type.js"
@@ -241,6 +240,11 @@ export class OrderRelocationModule {
     const programId = c.get("programId")
     const eventCode = await generateEventCode()
 
+    if (notifChannel.length === 0) {
+      // No channel enabled for this notification type - nothing to send.
+      return
+    }
+
     for (const user of users) {
       const messageData = this.setMessageNotification(
         orderId,
@@ -264,22 +268,9 @@ export class OrderRelocationModule {
         false
       )
 
-      for (const item of notifChannel) {
-        if (
-          (item.media === NOTIFICATION_MEDIA.WHATSAPP &&
-            !payload.user.mobile_phone) ||
-          (item.media === NOTIFICATION_MEDIA.FIREBASE &&
-            !payload.user.fcm_token) ||
-          (item.media === NOTIFICATION_MEDIA.EMAIL && !payload.user.email)
-        ) {
-          // Will skip process if payload not fulfilled
-          continue
-        } else {
-          payload.worker = item.worker
-          payload.workerMedia = item.media
-          await this.publisher.processNotification(c, payload)
-        }
-      }
+      payload.worker = notifChannel[0].worker
+      payload.workerMedia = notifChannel[0].media
+      await this.publisher.processNotification(c, payload)
     }
 
     if (parentUsers) {
@@ -307,22 +298,9 @@ export class OrderRelocationModule {
           true
         )
 
-        for (const item of notifChannel) {
-          if (
-            (item.media === NOTIFICATION_MEDIA.WHATSAPP &&
-              !payload.user.mobile_phone) ||
-            (item.media === NOTIFICATION_MEDIA.FIREBASE &&
-              !payload.user.fcm_token) ||
-            (item.media === NOTIFICATION_MEDIA.EMAIL && !payload.user.email)
-          ) {
-            // Will skip process if payload not fulfilled
-            continue
-          } else {
-            payload.worker = item.worker
-            payload.workerMedia = item.media
-            await this.publisher.processNotification(c, payload)
-          }
-        }
+        payload.worker = notifChannel[0].worker
+        payload.workerMedia = notifChannel[0].media
+        await this.publisher.processNotification(c, payload)
       }
     }
   }
@@ -551,7 +529,7 @@ export class OrderRelocationModule {
     const payload = {
       event_code: eventCode,
       user: {
-        user_id: value.id,
+        user_id: value.global_id,
         email: value.email,
         mobile_phone: value.mobile_phone,
         fcm_token: value.fcm_token,

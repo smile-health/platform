@@ -35,7 +35,13 @@ import {
   useQueryStates,
 } from 'nuqs'
 import { DateValue } from 'react-aria'
-import { Controller, useForm, UseFormSetValue } from 'react-hook-form'
+import {
+  Control,
+  Controller,
+  useForm,
+  UseFormSetValue,
+  UseFormWatch,
+} from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 const parseISOString = (dateString: string): DateValue | null => {
@@ -346,6 +352,101 @@ const parseAsDateRange = createParser({
   },
 })
 
+type SelectAsyncPaginateFieldProps = {
+  field: SelectAsyncSchema
+  control: Control<any>
+  watch: UseFormWatch<any>
+  setValue: UseFormSetValue<any>
+  language: string
+}
+
+const SelectAsyncPaginateField = ({
+  field,
+  control,
+  watch,
+  setValue,
+  language,
+}: SelectAsyncPaginateFieldProps) => {
+  const [inputValue, setInputValue] = useState('')
+
+  return (
+    <FormControl key={field.name} className={field.className}>
+      <FormLabel required={Boolean(field?.required)} htmlFor={field?.id}>
+        {field.label}
+      </FormLabel>
+      <Controller
+        name={field.name}
+        control={control}
+        rules={{
+          required: field?.required,
+        }}
+        render={({
+          field: { onChange, value, ref },
+          fieldState: { error },
+        }) => (
+          <>
+            <ReactSelectAsyncHash
+              id={field.id}
+              key={language}
+              data-testid={field.id}
+              isClearable
+              options={field?.options}
+              isMulti={field.isMulti}
+              multiSelectCounterStyle={field.multiSelectCounterStyle}
+              multiSelectOptionStyle={field.multiSelectOptionStyle}
+              showIndicator={field.showIndicator}
+              placeholder={field.placeholder}
+              isSearchable={field.isSearchable}
+              selectRef={ref}
+              inputValue={inputValue}
+              onInputChange={(value, meta) => {
+                if (meta.action === 'input-change') {
+                  setInputValue(value)
+                }
+                return value
+              }}
+              onMenuClose={() => setInputValue('')}
+              disabled={
+                typeof field.disabled === 'function'
+                  ? field.disabled({
+                      getValue: watch,
+                      getReactSelectValue: (name: string) =>
+                        getReactSelectValue(watch(name)),
+                    })
+                  : field.disabled
+              }
+              onChange={(v: unknown) => {
+                if (field?.onChange) {
+                  onChange(field?.onChange(v))
+                } else {
+                  onChange(v)
+                }
+                clearField({
+                  setValue,
+                  name: field.clearOnChangeFields ?? [],
+                })
+              }}
+              value={value}
+              loadOptions={field.loadOptions}
+              additional={
+                typeof field.additional === 'function'
+                  ? field.additional({
+                      getValue: watch,
+                      getReactSelectValue: (name: string) =>
+                        getReactSelectValue(watch(name)),
+                    })
+                  : field.additional
+              }
+              // {...(field.refetchWhenLanguageChange && { key: language })}
+            />
+            {error && <FormErrorMessage>{error?.message}</FormErrorMessage>}
+          </>
+        )}
+      />
+    </FormControl>
+  )
+}
+
 export function useFilter(schema: UseFilter) {
   const {
     t,
@@ -643,85 +744,15 @@ export function useFilter(schema: UseFilter) {
           </FormControl>
         )
       case 'select-async-paginate':
-        const [inputValue, setInputValue] = useState('')
-
         return (
-          <FormControl key={field.name} className={field.className}>
-            <FormLabel required={Boolean(field?.required)} htmlFor={field?.id}>
-              {field.label}
-            </FormLabel>
-            <Controller
-              name={field.name}
-              control={control}
-              rules={{
-                required: field?.required,
-              }}
-              render={({
-                field: { onChange, value, ref },
-                fieldState: { error },
-              }) => (
-                <>
-                  <ReactSelectAsyncHash
-                    id={field.id}
-                    key={language}
-                    data-testid={field.id}
-                    isClearable
-                    options={field?.options}
-                    isMulti={field.isMulti}
-                    multiSelectCounterStyle={field.multiSelectCounterStyle}
-                    multiSelectOptionStyle={field.multiSelectOptionStyle}
-                    showIndicator={field.showIndicator}
-                    placeholder={field.placeholder}
-                    isSearchable={field.isSearchable}
-                    selectRef={ref}
-                    inputValue={inputValue}
-                    onInputChange={(value, meta) => {
-                      if (meta.action === 'input-change') {
-                        setInputValue(value)
-                      }
-                      return value
-                    }}
-                    onMenuClose={() => setInputValue('')}
-                    disabled={
-                      typeof field.disabled === 'function'
-                        ? field.disabled({
-                            getValue: watch,
-                            getReactSelectValue: (name: string) =>
-                              getReactSelectValue(watch(name)),
-                          })
-                        : field.disabled
-                    }
-                    onChange={(v: unknown) => {
-                      if (field?.onChange) {
-                        onChange(field?.onChange(v))
-                      } else {
-                        onChange(v)
-                      }
-                      clearField({
-                        setValue,
-                        name: field.clearOnChangeFields ?? [],
-                      })
-                    }}
-                    value={value}
-                    loadOptions={field.loadOptions}
-                    additional={
-                      typeof field.additional === 'function'
-                        ? field.additional({
-                            getValue: watch,
-                            getReactSelectValue: (name: string) =>
-                              getReactSelectValue(watch(name)),
-                          })
-                        : field.additional
-                    }
-                    // {...(field.refetchWhenLanguageChange && { key: language })}
-                  />
-                  {error && (
-                    <FormErrorMessage>{error?.message}</FormErrorMessage>
-                  )}
-                </>
-              )}
-            />
-          </FormControl>
+          <SelectAsyncPaginateField
+            key={field.name}
+            field={field}
+            control={control}
+            watch={watch}
+            setValue={setValue}
+            language={language}
+          />
         )
       case 'date-range-picker':
         return (

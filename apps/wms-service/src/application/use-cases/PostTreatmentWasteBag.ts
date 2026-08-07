@@ -84,6 +84,7 @@ export default class PostTreatmentWasteBag {
                             forOperator: true,
                         },
                     );
+                    break;
                 }
                 case 'PYROLYSIS': {
                     await this.notificationService.sendMultiNotification(
@@ -108,6 +109,7 @@ export default class PostTreatmentWasteBag {
                                 forOperator: true,
                             },
                     );
+                    break;
                 }
                 // case 'LANDFILLED': {
                 //     await this.notificationService.sendMultiNotification(

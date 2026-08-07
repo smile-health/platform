@@ -5,10 +5,7 @@ import { ColdstorageRepository } from "../coldstorage.repository"
 import { UserRepository } from "@/modules/user/user.repository"
 // import { Context } from "@smile-health/lib/types/context.js"
 import { Context } from "hono"
-import {
-  NOTIFICATION_MEDIA,
-  NOTIFICATION_TYPE,
-} from "@smile-health/lib/rabbitmq/notification"
+import { NOTIFICATION_TYPE } from "@smile-health/lib/rabbitmq/notification"
 import { generateEventCode } from "@smile-health/lib/utils.js"
 
 interface DataMessage {
@@ -107,26 +104,20 @@ export class ColdstorageNotification {
     const uniqueSuperAdmins = userSuperAdmin.filter((u) => !seenIds.has(u.id))
     const combinedUsers = [...userEntities, ...uniqueSuperAdmins]
 
+    if (notifChannel.length === 0) {
+      // No channel enabled for this notification type - nothing to send.
+      return
+    }
+
     for (const user of [...combinedUsers]) {
       const payload = await this.buildMessageForUser(user, message, dataMessage)
-      for (const mw of notifChannel) {
-        if (
-          (mw.media === NOTIFICATION_MEDIA.WHATSAPP && !user.mobile_phone) ||
-          (mw.media === NOTIFICATION_MEDIA.FIREBASE && !user.fcm_token) ||
-          (mw.media === NOTIFICATION_MEDIA.EMAIL && !user.email)
-        ) {
-          // Will skip process if payload not fulfilled
-          continue
-        } else {
-          payload.media = mw.media
-          payload.worker = mw.worker
-          payload.workerMedia = mw.media
-          payload.messageTranslation = this.setMessage(c.var.t, payload.message)
-          payload.titleTranslation = this.setMessage(c.var.t, payload.title)
+      payload.media = notifChannel[0].media
+      payload.worker = notifChannel[0].worker
+      payload.workerMedia = notifChannel[0].media
+      payload.messageTranslation = this.setMessage(c.var.t, payload.message)
+      payload.titleTranslation = this.setMessage(c.var.t, payload.title)
 
-          await this.publisher.publishNotification(c, payload.worker, payload)
-        }
-      }
+      await this.publisher.publishNotification(c, payload.worker, payload)
     }
   }
 
@@ -134,7 +125,7 @@ export class ColdstorageNotification {
     return {
       ...baseMessage,
       user: {
-        user_id: user.id,
+        user_id: user.global_id,
         email: user.email,
         mobile_phone: user.mobile_phone,
         fcm_token: user.fcm_token,

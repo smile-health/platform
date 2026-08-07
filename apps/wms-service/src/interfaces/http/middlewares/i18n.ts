@@ -25,4 +25,8 @@ i18next
         },
     });
 
-export default middleware.handle(i18next);
+// i18next-http-middleware doesn't declare i18next as a dependency, so its
+// bundled types resolve against whichever copy pnpm happens to hoist,
+// which can be a different (but structurally identical at runtime) major
+// version than the one installed here.
+export default middleware.handle(i18next as any);

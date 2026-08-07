@@ -1,32 +1,36 @@
-import { getChannel } from '../rabbitmq';
+import { Publisher } from '@smile-health/lib/rabbitmq/publisher.js';
+import { GetConnection } from '@smile-health/lib/rabbitmq/type.js';
 import {
     NotificationPayload,
     NOTIFICATION_WORKER,
     NOTIFICATION_MEDIA,
 } from '../../../../shared/types/notificationTypes';
 import NotificationServiceRepository from '../../../../domain/services/NotificationService';
+import { WMS_NOTIFICATION_WORKFLOW_MAP } from './notificationWorkflowMap';
+
+// publishNotification no longer needs a live RabbitMQ connection - it triggers
+// Novu directly - so this getConnection is never actually invoked.
+const getConnection: GetConnection = async () => {
+    throw new Error('RabbitMQ connection not needed for Novu-based notifications');
+};
+
+const sharedPublisher = new Publisher(getConnection);
 
 export class NotificationPublisher implements NotificationServiceRepository {
-    private async getChannel() {
-        return getChannel();
-    }
-
     async processNotification(payload: NotificationPayload): Promise<void> {
         await this.publishNotification(payload.worker, payload);
     }
 
     async publishNotification<T>(worker: string, payload: T): Promise<void> {
-        const channel = await this.getChannel();
-        try {
-            channel.assertQueue(worker, { durable: true });
-            const result = channel.sendToQueue(worker, Buffer.from(JSON.stringify(payload)));
+        const type = (payload as { type?: string }).type;
+        const workflowId = type
+            ? WMS_NOTIFICATION_WORKFLOW_MAP[type] ?? type
+            : type;
 
-            console.log(result, 'result', 2222);
-            console.log(' [x] Sent %s', worker, payload);
-        } catch (error) {
-            console.error('Failed to publish message:', error);
-            throw error;
-        }
+        await sharedPublisher.publishNotification(undefined, worker, {
+            ...payload,
+            type: workflowId,
+        });
     }
 
     async sendMultiNotification(

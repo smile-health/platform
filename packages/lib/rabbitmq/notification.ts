@@ -54,3 +54,29 @@ export const NOTIFICATION_WORKER = {
   SMS: "sms-notifications",
   STOP_NOTIFICATION: "stop-notifications",
 };
+
+export interface NotificationPublishPayload {
+  user?: {
+    user_id?: number | string;
+    email?: string;
+    mobile_phone?: string;
+    fcm_token?: string;
+    entity_id?: number;
+    province_id?: number | null;
+    regency_id?: number | null;
+  };
+  user_entity_tag_id?: number | null;
+  program_id?: number | null;
+  event_code?: string;
+  title?: string;
+  message?: string;
+  type?: string;
+  template?: string;
+  variables?: unknown[];
+  media?: string;
+  worker?: string;
+  workerMedia?: string;
+  titleTranslation?: string;
+  messageTranslation?: string;
+  data?: string;
+}
