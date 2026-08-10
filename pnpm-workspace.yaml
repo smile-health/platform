@@ -2,4 +2,5 @@ packages:
   - "apps/*"
   # - "apps/3.0/*"
   - "apps/openhim-mediators/*"
+  - "apps/smile-encore/frontend"
   - "packages/*"

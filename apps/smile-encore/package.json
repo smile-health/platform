@@ -1,0 +1,19 @@
+{
+  "name": "smile-encore",
+  "private": true,
+  "version": "0.0.1",
+  "description": "SMILE Platform rewrite backend on Encore.ts, reusing existing MySQL + Keycloak infra",
+  "license": "MPL-2.0",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "encore.dev": "^1.57.13",
+    "kysely": "^0.29.4",
+    "mysql2": "^3.11.3",
+    "jose": "^5.9.6",
+    "dotenv": "^16.4.5"
+  }
+}
