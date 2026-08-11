@@ -7,6 +7,7 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "dev:core-web-wms": "turbo dev --filter=web --filter=@smile/smile-core --filter=@smile/smile-wms",
+    "start": "turbo start",
     "lint": "turbo lint",
     "lint:package": "npx sherif@latest",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

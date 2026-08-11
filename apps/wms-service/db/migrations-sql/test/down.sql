@@ -1,3 +1,0 @@
-SELECT CURRENT_USER();
-
-DROP TABLE IF EXISTS `asset_data`;
