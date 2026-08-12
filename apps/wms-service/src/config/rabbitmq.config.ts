@@ -1,5 +1,7 @@
 export default {
-    HOST: process.env.RABBITMQ_HOST || 'localhost:5672',
+    HOST:
+        process.env.AMQP_SERVER ||
+        `amqp://${process.env.RABBITMQ_USERNAME || 'guest'}:${process.env.RABBITMQ_PASSWORD || 'guest'}@${process.env.RABBITMQ_HOST || 'localhost'}:${process.env.RABBITMQ_PORT || 5672}`,
     EXCHANGE: process.env.RABBITMQ_EXCHANGE || 'amq.direct',
 
     WASTE_STATUS_UPDATE: {
