@@ -2,10 +2,7 @@ import { DB } from "@/common/infrastructure/database/types/db.js"
 import { NotificationTypeRepository } from "@/common/repository/notification-type.js"
 import { UserRepository } from "@/modules/user/user.repository.js"
 import { mask } from "@smile-health/lib/masking.js"
-import {
-  NOTIFICATION_MEDIA,
-  NOTIFICATION_TYPE,
-} from "@smile-health/lib/rabbitmq/notification.js"
+import { NOTIFICATION_TYPE } from "@smile-health/lib/rabbitmq/notification.js"
 import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
 import { Context } from "@smile-health/lib/types/context.js"
 import { generateEventCode } from "@smile-health/lib/utils.js"
@@ -101,48 +98,42 @@ export class PatientCron {
           }),
         }
 
-        for (const user of users) {
-          for (const mw of notifChannel) {
-            const payload = {
-              user: {
-                user_id: user.id,
-                email: user.email,
-                mobile_phone: user.mobile_phone,
-                fcm_token: user.fcm_token,
-                entity_id: user.entity_id,
-                province_id: user.entity_province_id || null,
-                regency_id: user.entity_regency_id || null,
-              },
-              user_entity_tag_id:
-                (user as unknown as { entity_tag_id?: number }).entity_tag_id ||
-                null,
-              program_id: user.program_id || null,
-              ...notificationTemplate,
-              media: mw.media,
-              worker: mw.worker,
-              workerMedia: mw.media,
-              titleTranslation: this.setMessage(t, notificationTemplate.title),
-              messageTranslation: this.setMessage(
-                t,
-                notificationTemplate.message
-              ),
-            }
+        if (notifChannel.length === 0) {
+          // No channel enabled for this notification type - nothing to send.
+          continue
+        }
 
-            if (
-              (mw.media === NOTIFICATION_MEDIA.WHATSAPP &&
-                !user.mobile_phone) ||
-              (mw.media === NOTIFICATION_MEDIA.FIREBASE && !user.fcm_token) ||
-              (mw.media === NOTIFICATION_MEDIA.EMAIL && !user.email)
-            ) {
-              continue
-            } else {
-              await this.publisher.publishNotification(
-                context,
-                payload.worker,
-                payload
-              )
-            }
+        for (const user of users) {
+          const payload = {
+            user: {
+              user_id: user.global_id,
+              email: user.email,
+              mobile_phone: user.mobile_phone,
+              fcm_token: user.fcm_token,
+              entity_id: user.entity_id,
+              province_id: user.entity_province_id || null,
+              regency_id: user.entity_regency_id || null,
+            },
+            user_entity_tag_id:
+              (user as unknown as { entity_tag_id?: number }).entity_tag_id ||
+              null,
+            program_id: user.program_id || null,
+            ...notificationTemplate,
+            media: notifChannel[0].media,
+            worker: notifChannel[0].worker,
+            workerMedia: notifChannel[0].media,
+            titleTranslation: this.setMessage(t, notificationTemplate.title),
+            messageTranslation: this.setMessage(
+              t,
+              notificationTemplate.message
+            ),
           }
+
+          await this.publisher.publishNotification(
+            context,
+            payload.worker,
+            payload
+          )
         }
       }
 

@@ -4,10 +4,7 @@ import { StockRepository } from "./stock.repository.js"
 import { UserRepository } from "../user/user.repository.js"
 import moment from "moment-timezone"
 import { DataMessage, stockNotif } from "./stock.schema.js"
-import {
-  NOTIFICATION_MEDIA,
-  NOTIFICATION_TYPE,
-} from "@smile-health/lib/rabbitmq/notification.js"
+import { NOTIFICATION_TYPE } from "@smile-health/lib/rabbitmq/notification.js"
 import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
 import { EntityCustomerRepository } from "../entity-customer/entity-customer.repository.js"
 import { NotificationTypeRepository } from "@/common/repository/notification-type.js"
@@ -231,7 +228,7 @@ export class StockCron {
     return {
       ...baseMessage,
       user: {
-        user_id: user.id,
+        user_id: user.global_id,
         email: user.email,
         mobile_phone: user.mobile_phone,
         fcm_token: user.fcm_token,
@@ -261,6 +258,11 @@ export class StockCron {
     ])
     console.log(userEntities.length, "userEntities found")
     console.log(userVendors.length, "userVendors found")
+    if (notifChannel.length === 0) {
+      // No channel enabled for this notification type - nothing to send.
+      return
+    }
+
     for (const user of [...userEntities, ...userVendors]) {
       const payload = await this.buildMessageForUser(
         c,
@@ -269,28 +271,17 @@ export class StockCron {
         dataMessage
       )
 
-      for (const mw of notifChannel) {
-        payload.media = mw.media
-        payload.worker = mw.worker
-        payload.workerMedia = mw.media
-        payload.messageTranslation = this.setMessage(t, payload.message)
-        payload.titleTranslation = this.setMessage(t, payload.title)
+      payload.media = notifChannel[0].media
+      payload.worker = notifChannel[0].worker
+      payload.workerMedia = notifChannel[0].media
+      payload.messageTranslation = this.setMessage(t, payload.message)
+      payload.titleTranslation = this.setMessage(t, payload.title)
 
-        if (
-          (mw.media === NOTIFICATION_MEDIA.WHATSAPP && !user.mobile_phone) ||
-          (mw.media === NOTIFICATION_MEDIA.FIREBASE && !user.fcm_token) ||
-          (mw.media === NOTIFICATION_MEDIA.EMAIL && !user.email)
-        ) {
-          // Will skip process if payload not fulfilled
-          continue
-        } else {
-          await this.publisher.publishNotification(
-            context,
-            payload.worker,
-            payload
-          )
-        }
-      }
+      await this.publisher.publishNotification(
+        context,
+        payload.worker,
+        payload
+      )
     }
   }
 

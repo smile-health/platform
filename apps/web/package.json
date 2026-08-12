@@ -10,8 +10,9 @@
     "format": "echo 0"
   },
   "dependencies": {
-    "@repo/ui": "workspace:*",
     "@growthbook/growthbook-react": "^1.6.1",
+    "@novu/nextjs": "^3.18.2",
+    "@repo/ui": "workspace:*",
     "@tanstack/react-query": "^5.51.23",
     "@tanstack/react-table": "^8.20.5",
     "axios": "^1.7.4",

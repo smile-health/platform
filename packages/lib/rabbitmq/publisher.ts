@@ -1,6 +1,8 @@
 import amqp from "amqplib";
 import { logger } from "../logger.js";
+import { getNovuClient } from "../novu/client.js";
 import { GetConnection } from "./type.js";
+import { NotificationPublishPayload } from "./notification.js";
 import { Context } from "hono";
 
 export class Publisher {
@@ -15,19 +17,20 @@ export class Publisher {
       return this.channel;
     }
     const connection = await this.getConnection();
-    this.channel = await connection.createChannel();
+    const channel = await connection.createChannel();
+    this.channel = channel;
 
-    this.channel.on("error", (err) => {
+    channel.on("error", (err) => {
       logger.error(`Connection error: ${err}`);
-      this.channel = null;
+      this.channel = undefined;
     });
 
-    this.channel.on("close", () => {
+    channel.on("close", () => {
       logger.info("RabbitMQ: Connection closed");
-      this.channel = null;
+      this.channel = undefined;
     });
 
-    return this.channel;
+    return channel;
   }
 
   private async assertExchange(
@@ -83,29 +86,55 @@ export class Publisher {
     this.assertedExchanges.clear();
   }
 
-  public async publishNotification<T>(c: Context, worker: string, payload: T) {
-    const channel = await this.getChannel();
-    try {
-      channel.assertQueue(worker, { durable: true });
-      const messageBuffer = Buffer.from(JSON.stringify(payload));
-      
-      // Validate message size against frame limit (1MB - some overhead for headers)
-      const maxMessageSize = 4194304 - 8192; // 1MB - 8KB overhead
-      if (messageBuffer.length > maxMessageSize) {
-        throw new Error(`Message size (${messageBuffer.length} bytes) exceeds maximum frame size (${maxMessageSize} bytes). Consider splitting the message or reducing payload size.`);
-      }
+  public async publishNotification<T>(
+    c: Context | undefined,
+    _worker: string,
+    payload: T
+  ) {
+    const notification = payload as unknown as NotificationPublishPayload;
+    const novu = getNovuClient();
 
-      const result = channel.sendToQueue(worker, messageBuffer);
-      console.log(result);
-      console.log(" [x] Sent %s", worker, payload);
+    if (!novu) {
+      logger.error(
+        "publishNotification: Novu client not configured, skipping trigger"
+      );
+      return;
+    }
+
+    const subscriberId =
+      notification.user?.user_id != null
+        ? String(notification.user.user_id)
+        : undefined;
+
+    if (!subscriberId || !notification.type) {
+      logger.error(
+        "publishNotification: missing subscriberId or type, skipping Novu trigger"
+      );
+      return;
+    }
+
+    const transactionId = notification.event_code
+      ? `${notification.type}-${notification.event_code}-${subscriberId}`
+      : undefined;
+
+    try {
+      await novu.trigger({
+        workflowId: notification.type,
+        to: { subscriberId },
+        payload: {
+          title: notification.titleTranslation ?? notification.title ?? "",
+          message:
+            notification.messageTranslation ?? notification.message ?? "",
+          eventCode: notification.event_code ?? null,
+          ...(notification.data ? JSON.parse(notification.data) : {}),
+        },
+        ...(transactionId ? { transactionId } : {}),
+      });
+      logger.info(
+        `Novu notification triggered: ${notification.type} -> ${subscriberId}`
+      );
     } catch (error) {
-      // Handle frame size exceeded errors specifically
-      if (error instanceof Error && error.message.includes('frame size exceeds')) {
-        const enhancedError = new Error(`RabbitMQ frame size exceeded: ${error.message}. Consider reducing message payload size or implementing message chunking.`);
-        logger.error(`Frame size error in publishNotification: ${enhancedError.message}`);
-        throw enhancedError;
-      }
-      logger.error(`Failed to publish message: ${error}`);
+      logger.error(`Failed to trigger Novu notification: ${error}`);
       throw error;
     }
   }

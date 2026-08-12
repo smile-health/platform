@@ -1,9 +1,6 @@
 import { DB } from "@/common/infrastructure/database/types/db.js"
 import { NotificationTypeRepository } from "@/common/repository/notification-type.js"
-import {
-  NOTIFICATION_MEDIA,
-  NOTIFICATION_TYPE,
-} from "@smile-health/lib/rabbitmq/notification.js"
+import { NOTIFICATION_TYPE } from "@smile-health/lib/rabbitmq/notification.js"
 import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
 import { Context } from "@smile-health/lib/types/context.js"
 import { generateEventCode } from "@smile-health/lib/utils.js"
@@ -604,7 +601,10 @@ export class AssetMonitoringTemperatureNotification {
         this.userRepo.getUserVendorByCustomerId(c, entityId),
       ])
 
-      if (userEntities.length === 0 && userVendors.length === 0) {
+      if (
+        (userEntities.length === 0 && userVendors.length === 0) ||
+        notifChannel.length === 0
+      ) {
         return
       }
 
@@ -620,34 +620,22 @@ export class AssetMonitoringTemperatureNotification {
           message,
           enhancedDataMessage
         )
-        for (const channel of notifChannel) {
-          if (
-            (channel.media === NOTIFICATION_MEDIA.WHATSAPP &&
-              !user.mobile_phone) ||
-            (channel.media === NOTIFICATION_MEDIA.FIREBASE &&
-              !user.fcm_token) ||
-            (channel.media === NOTIFICATION_MEDIA.EMAIL && !user.email)
-          ) {
-            continue
-          } else {
-            payload.media = channel.media
-            payload.worker = channel.worker
-            payload.workerMedia = channel.media
-            payload.messageTranslation = this.setMessage(
-              context.var.t,
-              payload.message
-            )
-            payload.titleTranslation = this.setMessage(
-              context.var.t,
-              payload.title
-            )
-            await this.publisher.publishNotification(
-              context,
-              payload.worker,
-              payload
-            )
-          }
-        }
+        payload.media = notifChannel[0].media
+        payload.worker = notifChannel[0].worker
+        payload.workerMedia = notifChannel[0].media
+        payload.messageTranslation = this.setMessage(
+          context.var.t,
+          payload.message
+        )
+        payload.titleTranslation = this.setMessage(
+          context.var.t,
+          payload.title
+        )
+        await this.publisher.publishNotification(
+          context,
+          payload.worker,
+          payload
+        )
       }
     } catch (error) {
       console.error("Error sending notification to users:", error)
@@ -662,7 +650,7 @@ export class AssetMonitoringTemperatureNotification {
     return {
       ...message,
       user: {
-        user_id: user.id,
+        user_id: user.global_id,
         email: user.email,
         mobile_phone: user.mobile_phone,
         fcm_token: user.fcm_token,

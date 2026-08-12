@@ -7,7 +7,6 @@ import StockOpnamePeriodRepository from "@/modules/stock-opname-period/stock-opn
 import { TransactionPublisher } from "@/modules/transaction/transaction.publisher.js"
 import { PublishTrxDTO } from "@/modules/transaction/transaction.schema.js"
 import { ValidationError } from "@smile-health/lib/error.js"
-import { NOTIFICATION_MEDIA } from "@smile-health/lib/rabbitmq/notification.js"
 import { generateEventCode } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import { OrderModule } from "../../order/order.module.js"
@@ -516,6 +515,10 @@ export class OrderStatusShipModule {
     const eventCode = await generateEventCode()
     const notifChannel =
       await this.notificationTypeRepo.generateNotificationChannels(c, type)
+    if (notifChannel.length === 0) {
+      // No channel enabled for this notification type - nothing to send.
+      return
+    }
     for (const userCustomerVendor of usersCustomerVendor) {
       const entityId = userCustomerVendor.entity.id
       const messageData = this.setMessageNotification(
@@ -564,7 +567,7 @@ export class OrderStatusShipModule {
       const payload = {
         event_code: eventCode,
         user: {
-          user_id: userCustomerVendor.id,
+          user_id: userCustomerVendor.global_id,
           email: userCustomerVendor.email,
           mobile_phone: userCustomerVendor.mobile_phone,
           fcm_token: userCustomerVendor.fcm_token,
@@ -584,29 +587,14 @@ export class OrderStatusShipModule {
         message: messageData,
         title: titleData,
         type: type,
-        worker: "",
-        workerMedia: "",
+        worker: notifChannel[0].worker,
+        workerMedia: notifChannel[0].media,
         program_id: programId,
         template,
         variables,
       }
 
-      for (const item of notifChannel) {
-        if (
-          (item.media === NOTIFICATION_MEDIA.WHATSAPP &&
-            !userCustomerVendor.mobile_phone) ||
-          (item.media === NOTIFICATION_MEDIA.FIREBASE &&
-            !userCustomerVendor.fcm_token) ||
-          (item.media === NOTIFICATION_MEDIA.EMAIL && !userCustomerVendor.email)
-        ) {
-          // Will skip process if payload not fulfilled
-          continue
-        } else {
-          payload.worker = item.worker
-          payload.workerMedia = item.media
-          await this.publisher.processNotification(c, payload)
-        }
-      }
+      await this.publisher.processNotification(c, payload)
     }
   }
 

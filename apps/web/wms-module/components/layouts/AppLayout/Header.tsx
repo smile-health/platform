@@ -14,8 +14,8 @@ import { getUserStorage, resetStorageUser } from '@/utils/storage/user';
 import Image from 'next/image';
 import LanguageChanger from '../LanguageChanger';
 import WeightChanger from '../WeightChanger';
-import DropdownNotification from './DropdownNotification';
 import DropdownProgram from './DropdownProgram';
+import NotificationInbox from './NotificationInbox';
 
 const Header: React.FC = () => {
   const {
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
       </div>
       <div className="ui-flex ui-items-center ui-space-x-4 ui-divide-x-2 ui-divide-[#D9D9D9]">
         <div className="ui-flex ui-items-center ui-gap-4">
-          <DropdownNotification />
+          <NotificationInbox />
           <LanguageChanger />
           <WeightChanger />
         </div>

@@ -5,4 +5,4 @@ export interface Event {
   payload: object;
 }
 
-export type GetConnection = () => Promise<amqp.Connection>;
+export type GetConnection = () => Promise<amqp.ChannelModel>;
