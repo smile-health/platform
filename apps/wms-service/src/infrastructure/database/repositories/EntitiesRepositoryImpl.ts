@@ -3,7 +3,7 @@ import Entities from '../../../domain/entities/Entities';
 import EntitiesRepository from '../../../domain/repositories/EntitiesRepository';
 import EntitiesModel from '../models/EntitiesModel';
 import HealthcareAssetModel from '../models/HealthcareAssetModel';
-import { sequelize } from '../db-notification.connection';
+import { sequelize } from '../db.connection';
 
 export default class EntitiesRepositoryImpl implements EntitiesRepository {
   async getEntityId(entityId: number): Promise<Entities | null> {

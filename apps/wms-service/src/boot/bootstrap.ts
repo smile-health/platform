@@ -1,5 +1,4 @@
 import { authenticateDatabase } from '../infrastructure/database/db.connection';
-import { authenticateDatabase as authDbNotif } from '../infrastructure/database/db-notification.connection';
 import { verifyS3Connection } from '../infrastructure/fileStorage/s3Client';
 import { connectRabbitMQ } from '../infrastructure/queue/rabbitmq/rabbitmq';
 import { initSchedulers } from '../interfaces/schedulers/runners/initSchedulers';
@@ -8,7 +7,6 @@ import { initSchedulers } from '../interfaces/schedulers/runners/initSchedulers'
 export async function bootstrap() {
     const results = {
         database: false,
-        databaseNotification: false,
         s3: false,
         rabbitMQ: false,
         schedulers: false,
@@ -19,10 +17,6 @@ export async function bootstrap() {
         await authenticateDatabase();
         results.database = true;
         console.log('[BOOTSTRAP] Database connected successfully');
-
-        await authDbNotif();
-        results.databaseNotification = true;
-        console.log('[BOOTSTRAP] Database notification connected successfully');
 
         await connectRabbitMQ();
         results.rabbitMQ = true;
