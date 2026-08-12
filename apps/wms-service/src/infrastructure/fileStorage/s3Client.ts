@@ -7,6 +7,7 @@ const s3ClientConfig: S3ClientConfig = {
         accessKeyId: awsConfig.AWS_ACCESS_KEY_ID!,
         secretAccessKey: awsConfig.AWS_SECRET_ACCESS_KEY!,
     },
+    ...(awsConfig.ENDPOINT ? { endpoint: awsConfig.ENDPOINT, forcePathStyle: true } : {}),
 };
 
 const client = new S3Client(s3ClientConfig);
