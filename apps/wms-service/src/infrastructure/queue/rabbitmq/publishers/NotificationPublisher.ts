@@ -1,5 +1,4 @@
-import { Publisher } from '@smile-health/lib/rabbitmq/publisher.js';
-import { GetConnection } from '@smile-health/lib/rabbitmq/type.js';
+import { Publisher, GetConnection } from './novuPublisher';
 import {
     NotificationPayload,
     NOTIFICATION_WORKER,
