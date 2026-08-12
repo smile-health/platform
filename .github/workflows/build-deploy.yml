@@ -42,158 +42,309 @@ jobs:
             lib:
               - 'packages/lib/**'
 
-  build:
-    name: Build ${{ matrix.service }}
+  # ---- Per-service build jobs. Each is independent: a failure in one
+  # service does NOT block the others. A service is skipped when neither
+  # its own path nor packages/lib changed.
+  build-auth:
+    name: Build auth-service
     needs: changes
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
-    strategy:
-      matrix:
-        include:
-          - service: auth-service
-            changed: ${{ needs.changes.outputs.auth }}
-            context: .
-            dockerfile: apps/auth-service/Dockerfile
-          - service: core
-            changed: ${{ needs.changes.outputs.core }}
-            context: .
-            dockerfile: apps/core/Dockerfile
-          - service: main
-            changed: ${{ needs.changes.outputs.main }}
-            context: .
-            dockerfile: apps/main/Dockerfile
-          - service: notification
-            changed: ${{ needs.changes.outputs.notification }}
-            context: apps/notification
-            dockerfile: apps/notification/Dockerfile
-          - service: wms-service
-            changed: ${{ needs.changes.outputs.wms }}
-            context: .
-            dockerfile: apps/wms-service/Dockerfile
-          - service: web
-            changed: ${{ needs.changes.outputs.web }}
-            context: .
-            dockerfile: apps/web/Dockerfile
+    if: needs.changes.outputs.auth == 'true' || needs.changes.outputs.lib == 'true'
     steps:
       - uses: actions/checkout@v4
-
-      - name: Check if should build
-        id: should_build
-        run: |
-          if [[ "${{ matrix.changed }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            echo "skip=false" >> $GITHUB_OUTPUT
-          else
-            echo "skip=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Set up Docker Buildx
-        if: steps.should_build.outputs.skip != 'true'
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to GHCR
-        if: steps.should_build.outputs.skip != 'true'
-        uses: docker/login-action@v3
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build & Push
-        if: steps.should_build.outputs.skip != 'true'
-        uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v5
         with:
-          context: ${{ matrix.context }}
-          file: ${{ matrix.dockerfile || 'Dockerfile' }}
+          context: .
+          file: apps/auth-service/Dockerfile
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/${{ matrix.service }}:${{ github.sha }}
-            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/${{ matrix.service }}:latest
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/auth-service:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/auth-service:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  deploy:
-    name: Deploy to RKE
-    needs: [changes, build]
+  build-core:
+    name: Build core
+    needs: changes
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    permissions:
+      packages: write
+      contents: read
+    if: needs.changes.outputs.core == 'true' || needs.changes.outputs.lib == 'true'
     steps:
       - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/core/Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/core:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/core:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
+  build-main:
+    name: Build main
+    needs: changes
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    if: needs.changes.outputs.main == 'true' || needs.changes.outputs.lib == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/main/Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/main:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/main:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  build-notification:
+    name: Build notification
+    needs: changes
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    if: needs.changes.outputs.notification == 'true' || needs.changes.outputs.lib == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v5
+        with:
+          context: apps/notification
+          file: apps/notification/Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/notification:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/notification:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  build-wms:
+    name: Build wms-service
+    needs: changes
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    if: needs.changes.outputs.wms == 'true' || needs.changes.outputs.lib == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/wms-service/Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/wms-service:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/wms-service:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  build-web:
+    name: Build web
+    needs: changes
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    if: needs.changes.outputs.web == 'true' || needs.changes.outputs.lib == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/web/Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/web:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/web:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ---- Per-service deploy jobs. Each only waits on ITS OWN build job, so
+  # a failed build in one service does not block deploys of the others.
+  # A deploy runs only when its build job actually ran (i.e. the service
+  # changed) AND we're on main.
+  deploy-auth:
+    name: Deploy auth-service
+    needs: [changes, build-auth]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.build-auth.result == 'success'
+    steps:
+      - uses: actions/checkout@v4
       - name: Trigger deploy webhook
         env:
           WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
           WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
         run: |
           SHA="${{ github.sha }}"
-          
-          # Build list of services to deploy
-          SERVICES=""
-          if [[ "${{ needs.changes.outputs.auth }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES auth-service"
-          fi
-          if [[ "${{ needs.changes.outputs.core }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES core"
-          fi
-          if [[ "${{ needs.changes.outputs.main }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES main"
-          fi
-          if [[ "${{ needs.changes.outputs.notification }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES notification"
-          fi
-          if [[ "${{ needs.changes.outputs.wms }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES wms-service"
-          fi
-          if [[ "${{ needs.changes.outputs.web }}" == "true" || "${{ needs.changes.outputs.lib }}" == "true" ]]; then
-            SERVICES="$SERVICES web"
-          fi
-          
-          if [ -z "$SERVICES" ]; then
-            echo "No services changed"
-            exit 0
-          fi
-          
-          echo "Deploying services: $SERVICES"
-          echo "SHA: $SHA"
-          
-          # Convert space-separated services to JSON array
-          JSON_SERVICES=$(echo "$SERVICES" | jq -R 'split(" ")')
-          
-          PAYLOAD=$(jq -n \
-            --arg sha "$SHA" \
-            --argjson services "$JSON_SERVICES" \
-            --arg secret "$WEBHOOK_SECRET" \
-            '{sha: $sha, services: $services, webhook_secret: $secret}')
-          
-          echo "Sending webhook payload..."
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
-          
+          SERVICES='["auth-service"]'
+          PAYLOAD=$(jq -n --arg sha "$SHA" --argjson services "$SERVICES" --arg secret "$WEBHOOK_SECRET" '{sha: $sha, services: $services, webhook_secret: $secret}')
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" -H "Content-Type: application/json" -d "$PAYLOAD")
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
           BODY=$(echo "$RESPONSE" | head -n -1)
-          
           echo "HTTP Status: $HTTP_CODE"
           echo "Response: $BODY"
-          
-          if [ "$HTTP_CODE" -ne 200 ]; then
-            echo "❌ Webhook deployment failed"
-            exit 1
-          fi
-          
-          echo "✅ All services deployed successfully"
-          
-          # Wait for rollouts
-          for entry in $DEPLOY_SERVICES; do
-            deployment=$(echo $entry | cut -d: -f2)
-            echo "→ Waiting for $deployment rollout..."
-            sshpass -p "$RKE_SSH_PASSWORD" ssh -p "$RKE_SSH_PORT" \
-              -o StrictHostKeyChecking=no -o ConnectTimeout=10 \
-              "$RKE_SSH_USER@$RKE_SSH_HOST" \
-              "KUBECONFIG=/tmp/rke-badr-config.yaml kubectl rollout status deployment/$deployment -n smile-health --timeout=180s" || {
-              echo "❌ Rollout timeout for $deployment"
-              exit 1
-            }
-            echo "✅ $deployment rollout complete"
-          done
+          if [ "$HTTP_CODE" -ne 200 ]; then echo "❌ Webhook deployment failed"; exit 1; fi
+          echo "✅ auth-service deployed"
+
+  deploy-core:
+    name: Deploy core
+    needs: [changes, build-core]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.build-core.result == 'success'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger deploy webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+        run: |
+          SHA="${{ github.sha }}"
+          SERVICES='["core"]'
+          PAYLOAD=$(jq -n --arg sha "$SHA" --argjson services "$SERVICES" --arg secret "$WEBHOOK_SECRET" '{sha: $sha, services: $services, webhook_secret: $secret}')
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" -H "Content-Type: application/json" -d "$PAYLOAD")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+          if [ "$HTTP_CODE" -ne 200 ]; then echo "❌ Webhook deployment failed"; exit 1; fi
+          echo "✅ core deployed"
+
+  deploy-main:
+    name: Deploy main
+    needs: [changes, build-main]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.build-main.result == 'success'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger deploy webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+        run: |
+          SHA="${{ github.sha }}"
+          SERVICES='["main"]'
+          PAYLOAD=$(jq -n --arg sha "$SHA" --argjson services "$SERVICES" --arg secret "$WEBHOOK_SECRET" '{sha: $sha, services: $services, webhook_secret: $secret}')
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" -H "Content-Type: application/json" -d "$PAYLOAD")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+          if [ "$HTTP_CODE" -ne 200 ]; then echo "❌ Webhook deployment failed"; exit 1; fi
+          echo "✅ main deployed"
+
+  deploy-notification:
+    name: Deploy notification
+    needs: [changes, build-notification]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.build-notification.result == 'success'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger deploy webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+        run: |
+          SHA="${{ github.sha }}"
+          SERVICES='["notification"]'
+          PAYLOAD=$(jq -n --arg sha "$SHA" --argjson services "$SERVICES" --arg secret "$WEBHOOK_SECRET" '{sha: $sha, services: $services, webhook_secret: $secret}')
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" -H "Content-Type: application/json" -d "$PAYLOAD")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+          if [ "$HTTP_CODE" -ne 200 ]; then echo "❌ Webhook deployment failed"; exit 1; fi
+          echo "✅ notification deployed"
+
+  deploy-wms:
+    name: Deploy wms-service
+    needs: [changes, build-wms]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.build-wms.result == 'success'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger deploy webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+        run: |
+          SHA="${{ github.sha }}"
+          SERVICES='["wms-service"]'
+          PAYLOAD=$(jq -n --arg sha "$SHA" --argjson services "$SERVICES" --arg secret "$WEBHOOK_SECRET" '{sha: $sha, services: $services, webhook_secret: $secret}')
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" -H "Content-Type: application/json" -d "$PAYLOAD")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+          if [ "$HTTP_CODE" -ne 200 ]; then echo "❌ Webhook deployment failed"; exit 1; fi
+          echo "✅ wms-service deployed"
+
+  deploy-web:
+    name: Deploy web
+    needs: [changes, build-web]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.build-web.result == 'success'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger deploy webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+        run: |
+          SHA="${{ github.sha }}"
+          SERVICES='["web"]'
+          PAYLOAD=$(jq -n --arg sha "$SHA" --argjson services "$SERVICES" --arg secret "$WEBHOOK_SECRET" '{sha: $sha, services: $services, webhook_secret: $secret}')
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" -H "Content-Type: application/json" -d "$PAYLOAD")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+          if [ "$HTTP_CODE" -ne 200 ]; then echo "❌ Webhook deployment failed"; exit 1; fi
+          echo "✅ web deployed"
