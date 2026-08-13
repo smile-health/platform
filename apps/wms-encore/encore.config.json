@@ -1,0 +1,102 @@
+{
+  "$schema": "https://encore.dev/schemas/infra.schema.json",
+  "metadata": {
+    "app_id": "wms-encore",
+    "env_name": "dev",
+    "env_type": "development",
+    "cloud": "custom",
+    "base_url": "https://smile-health-api.badr.co.id/wms"
+  },
+  "sql_servers": [
+    {
+      "host": "10.10.0.8:5433",
+      "databases": {
+        "wms": {
+          "username": "postgres",
+          "password": { "$env": "DB_PASSWORD" }
+        }
+      }
+    }
+  ],
+  "redis": {
+    "wms-cache": {
+      "database_index": 0,
+      "auth": {
+        "type": "acl",
+        "username": "default",
+        "password": { "$env": "REDIS_PASSWORD" }
+      },
+      "host": "redis-master.smile-health.svc.cluster.local"
+    }
+  },
+  "pubsub": [
+    {
+      "type": "nsq",
+      "hosts": "nsqd.wms-encore.svc.cluster.local:4150",
+      "topics": {
+        "waste-bag-created": {
+          "name": "waste-bag-created",
+          "subscriptions": {
+            "audit-trail-writer-created": { "name": "audit-trail-writer-created" }
+          }
+        },
+        "waste-bag-stored": {
+          "name": "waste-bag-stored",
+          "subscriptions": {
+            "audit-trail-writer-stored": { "name": "audit-trail-writer-stored" }
+          }
+        },
+        "waste-bag-treatment-started": {
+          "name": "waste-bag-treatment-started",
+          "subscriptions": {
+            "audit-trail-writer-treatment-started": { "name": "audit-trail-writer-treatment-started" }
+          }
+        },
+        "waste-bag-treated": {
+          "name": "waste-bag-treated",
+          "subscriptions": {
+            "audit-trail-writer-treated": { "name": "audit-trail-writer-treated" },
+            "push-notification-sender-treated": { "name": "push-notification-sender-treated" }
+          }
+        },
+        "waste-bag-transport-requested": {
+          "name": "waste-bag-transport-requested",
+          "subscriptions": {
+            "audit-trail-writer-transport-requested": { "name": "audit-trail-writer-transport-requested" }
+          }
+        },
+        "waste-bag-picked-up": {
+          "name": "waste-bag-picked-up",
+          "subscriptions": {
+            "audit-trail-writer-picked-up": { "name": "audit-trail-writer-picked-up" }
+          }
+        },
+        "waste-bag-handed-over-to-treatment": {
+          "name": "waste-bag-handed-over-to-treatment",
+          "subscriptions": {
+            "audit-trail-writer-handed-over-to-treatment": { "name": "audit-trail-writer-handed-over-to-treatment" }
+          }
+        },
+        "waste-bag-received-for-treatment": {
+          "name": "waste-bag-received-for-treatment",
+          "subscriptions": {
+            "audit-trail-writer-received-for-treatment": { "name": "audit-trail-writer-received-for-treatment" }
+          }
+        },
+        "waste-bag-finalized": {
+          "name": "waste-bag-finalized",
+          "subscriptions": {
+            "audit-trail-writer-finalized": { "name": "audit-trail-writer-finalized" },
+            "push-notification-sender-finalized": { "name": "push-notification-sender-finalized" }
+          }
+        },
+        "scheduled-event-processed": {
+          "name": "scheduled-event-processed",
+          "subscriptions": {
+            "process-scheduled-event": { "name": "process-scheduled-event" }
+          }
+        }
+      }
+    }
+  ]
+}
