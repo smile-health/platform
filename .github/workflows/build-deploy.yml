@@ -170,17 +170,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        # if this fails, pnpm-lock.yaml is out of sync with package.json —
-        # fix the lockfile locally, don't bypass it in CI
+        # kalau ini gagal, artinya pnpm-lock.yaml out-of-sync dengan
+        # package.json — perbaiki lockfile-nya lokal, jangan di-bypass di CI
 
       - name: Install Encore CLI
         run: |
@@ -189,7 +191,8 @@ jobs:
 
       - name: Build encore docker image
         working-directory: apps/wms-encore
-        run: encore build docker --config encore.config.json wms-encore:latest
+        run: |
+          encore build docker --config encore.config.json wms-encore:latest
 
       - uses: docker/login-action@v3
         with:

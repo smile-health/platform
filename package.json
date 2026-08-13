@@ -6,7 +6,7 @@
     "reinitiate": "rm -rf node_modules apps/core/node_modules apps/main/node_modules apps/platform/node_modules apps/warehouse-service/node_modules packages/lib/node_modules && pnpm install",
     "build": "turbo build",
     "dev": "turbo dev",
-    "dev:core-web-wms": "turbo dev --filter=web --filter=@smile/smile-core --filter=@smile/smile-wms",
+    "dev:core-web-wms": "turbo dev --filter=web --filter=@smile/smile-core --filter=@smile/wms-encore",
     "lint": "turbo lint",
     "lint:package": "npx sherif@latest",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

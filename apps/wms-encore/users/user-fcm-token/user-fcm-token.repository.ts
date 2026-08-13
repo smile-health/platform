@@ -41,16 +41,26 @@ function toEntity(row: {
 // Mirrors UserFcmTokenRepositoryImpl.getTokenByUserId: matches on
 // (user_uuid = id OR user_id = id) AND entity_id = entityId — the original
 // Sequelize `Op.or` compares `id` (a string) against the numeric `userId`
-// column too, letting Sequelize coerce it; Number(id) here preserves that
-// same "id may be either the uuid or the numeric id" lookup.
+// column too, letting Sequelize coerce it (a non-numeric string like a UUID
+// just never matches that side, since Sequelize/MySQL don't error on a bad
+// numeric literal bound as a query param). Postgres does error on that —
+// `user_id = 'a-uuid'::integer` throws "invalid input syntax for type
+// integer" — so the `user_id = Number(id)` clause is only included when
+// Number(id) is actually finite; sync-profile.ts's getFcmToken always calls
+// this with a UUID, which would otherwise hit that error on every login.
 export async function findByIdentity(
   id: string,
   entityId: number,
 ): Promise<UserFcmToken | null> {
+  const numericId = Number(id);
   const row = await db
     .selectFrom("user_fcm_token")
     .selectAll()
-    .where((eb) => (id ? eb.or([eb("user_uuid", "=", id), eb("user_id", "=", Number(id))]) : eb("user_id", "=", Number(id))))
+    .where((eb) =>
+      Number.isFinite(numericId)
+        ? eb.or([eb("user_uuid", "=", id), eb("user_id", "=", numericId)])
+        : eb("user_uuid", "=", id)
+    )
     .where("entity_id", "=", entityId)
     .where("deleted_at", "is", null)
     .executeTakeFirst();
