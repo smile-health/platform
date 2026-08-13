@@ -3,9 +3,9 @@
   "metadata": {
     "app_id": "wms-encore",
     "env_name": "dev",
-    "env_type": "development",
+    "env_type": "production",
     "cloud": "custom",
-    "base_url": "https://smile-health-api.badr.co.id/wms"
+    "base_url": "https://smile-health-api.badr.co.id/wms-encore"
   },
   "sql_servers": [
     {
