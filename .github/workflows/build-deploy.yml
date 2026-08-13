@@ -191,6 +191,9 @@ jobs:
 
       - name: Build encore docker image
         working-directory: apps/wms-encore
+        env:
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
         run: |
           encore build docker --config encore.config.json wms-encore:latest
 
