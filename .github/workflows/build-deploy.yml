@@ -189,6 +189,12 @@ jobs:
           curl -L https://encore.dev/install.sh | bash
           echo "$HOME/.encore/bin" >> "$GITHUB_PATH"
 
+      - name: Verify config exists
+        working-directory: apps/wms-encore
+        run: |
+          ls -la encore.config.json
+          cat encore.config.json
+
       - name: Build encore docker image
         working-directory: apps/wms-encore
         env:
@@ -196,6 +202,10 @@ jobs:
           REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
         run: |
           encore build docker --config encore.config.json wms-encore:latest
+
+      - name: Inspect embedded config
+        run: |
+          docker run --rm --entrypoint sh wms-encore:latest -c 'env | grep -i encore; find / -iname "*runtime-config*" -o -iname "*infra*" 2>/dev/null'
 
       - uses: docker/login-action@v3
         with:
