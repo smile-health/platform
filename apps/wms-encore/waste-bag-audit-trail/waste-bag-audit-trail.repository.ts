@@ -1,4 +1,4 @@
-import { db } from "../db/db";
+import { db } from "./db";
 import type { PaginationMeta, WasteBagAuditTrailEntry } from "./waste-bag-audit-trail.types";
 
 export async function insertAuditTrailEntry(input: {

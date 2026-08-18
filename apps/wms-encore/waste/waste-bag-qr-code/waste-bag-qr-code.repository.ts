@@ -48,7 +48,7 @@
 // today (Asia/Jakarta) < that waste_bag's scheduled_storage_end_datetime (also
 // Asia/Jakarta) -> 'RADIOACTIVE_STILL_IN_STORAGE'.
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { PaginationMeta, WasteBagQrCode } from "./waste-bag-qr-code.types";
 
 interface WasteBagQrCodeRow {

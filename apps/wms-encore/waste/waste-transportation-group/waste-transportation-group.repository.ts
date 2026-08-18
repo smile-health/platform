@@ -38,7 +38,7 @@
 // waste-transportation-group.service.ts), via partnership.service.ts's
 // getProviderNameAndListOperatorNameByHfIdAndWasteClassificationId.
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import * as wasteClassificationRepo from "../waste-classification/waste-classification.repository";
 import * as partnerVehicleRepo from "../../partnership/partner-vehicle/partner-vehicle.repository";
 import type { WasteTransportationGroup, PaginationMeta } from "./waste-transportation-group.types";

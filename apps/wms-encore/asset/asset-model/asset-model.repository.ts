@@ -26,7 +26,7 @@
 //   model_id        integer, unsigned, not null (FK -> asset_model.id)
 //   deleted_at      timestamp, nullable (paranoid soft-delete)
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { AssetModelTable } from "../../db/db";
 import type { AssetModel, AssetManufacturerSummary, PaginationMeta } from "./asset-model.types";
 

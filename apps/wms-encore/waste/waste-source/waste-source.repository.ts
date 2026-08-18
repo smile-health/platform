@@ -32,7 +32,7 @@
 // below reference tables that don't exist in the Kysely schema either —
 // expect tsc errors there too, same as the waste_source table itself.
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import { sql } from "kysely";
 import type { WasteSource, PaginationMeta } from "./waste-source.types";
 

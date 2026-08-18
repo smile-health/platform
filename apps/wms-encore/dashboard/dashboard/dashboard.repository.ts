@@ -113,7 +113,7 @@
 // ---------------------------------------------------------------------------
 
 import { sql } from "kysely";
-import { db } from "../../db/db";
+import { db } from "../db";
 import { isValidDateString } from "../../shared/utils/date-range";
 import type {
   DashboardHealthcareRow,

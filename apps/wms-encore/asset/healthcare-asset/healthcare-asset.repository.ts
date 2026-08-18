@@ -12,7 +12,7 @@
 //   deleted_at                  timestamp, nullable (paranoid soft-delete)
 //   deleted_by                  bigint, nullable
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { HealthcareAsset } from "./healthcare-asset.types";
 
 function toEntity(row: {

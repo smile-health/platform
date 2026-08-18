@@ -17,7 +17,7 @@
 //
 // Indexes: PRIMARY KEY on `id` (BTREE).
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { PaginatedUserRoles, UserRole } from "./user-role.types";
 
 function toEntity(row: {

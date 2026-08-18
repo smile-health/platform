@@ -2,7 +2,7 @@ import { SQLDatabase } from "encore.dev/storage/sqldb";
 import { Kysely, PostgresDialect, type Generated } from "kysely";
 import { Pool } from "pg";
 
-export const sqlDatabase = new SQLDatabase("wms", {
+export const wmsDatabase = new SQLDatabase("wms", {
   migrations: "./migrations",
 });
 
@@ -792,7 +792,7 @@ export interface DisposalItemsTable {
   deleted_by: number | null;
 }
 
-interface Database {
+export interface Database {
   regions: RegionsTable;
   waste_bag_audit_trail: WasteBagAuditTrailTable;
   scheduled_events: ScheduledEventsTable;
@@ -832,8 +832,12 @@ interface Database {
   disposal_items: DisposalItemsTable;
 }
 
-export const db = new Kysely<Database>({
-  dialect: new PostgresDialect({
-    pool: new Pool({ connectionString: sqlDatabase.connectionString }),
-  }),
-});
+export function initDB(sqlDb: SQLDatabase): Kysely<Database> {
+  return new Kysely<Database>({
+    dialect: new PostgresDialect({
+      pool: new Pool({ connectionString: sqlDb.connectionString }),
+    }),
+  });
+}
+
+export const db = initDB(wmsDatabase);

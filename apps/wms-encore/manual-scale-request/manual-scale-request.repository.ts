@@ -19,7 +19,7 @@
 //
 // See db/migrations/12_create_manual_scale_request.up.sql for the CREATE TABLE.
 
-import { db } from "../db/db";
+import { db } from "./db";
 import { isValidDateString } from "../shared/utils/date-range";
 import type { ManualScaleRequest, PaginationMeta } from "./manual-scale-request.types";
 

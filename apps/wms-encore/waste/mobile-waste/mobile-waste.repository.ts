@@ -10,7 +10,7 @@
 // current waste_status directly — same simplification precedent as
 // waste-bag.repository.ts's dashboard-style summaries, which also read
 // current-state columns rather than reconstructing historical state.
-import { db } from "../../db/db";
+import { db } from "../db";
 
 export interface WasteBagReportByStatusParams {
   limit: number;

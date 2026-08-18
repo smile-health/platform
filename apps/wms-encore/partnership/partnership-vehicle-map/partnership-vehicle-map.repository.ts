@@ -21,7 +21,7 @@
 //   unsigned), vehicle_type (enum), vehicle_number (varchar), capacity_in_kgs
 //   (numeric), ... (only these four plus id are read here).
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type {
   PaginatedPartnershipVehicleMaps,
   PartnerVehicleSummary,

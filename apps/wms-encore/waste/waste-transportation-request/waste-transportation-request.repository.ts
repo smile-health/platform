@@ -30,7 +30,7 @@
 // table names below, ignore them (this module's own table, plus the
 // sibling table under active parallel development).
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type {
   WasteTransportationRequest,
   WasteTransportationGroupSummary,

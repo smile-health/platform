@@ -21,7 +21,7 @@
 //   deleted_at    timestamp, nullable (paranoid soft-delete)
 //   deleted_by    bigint, nullable
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { HealthcareFacilityAssetActivityTable } from "../../db/db";
 import type { HealthcareFacilityAssetActivity, PaginationMeta } from "./healthcare-facility-asset-activity.types";
 

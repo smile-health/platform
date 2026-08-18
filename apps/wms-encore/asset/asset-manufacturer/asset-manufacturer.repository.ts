@@ -11,7 +11,7 @@
 //   deleted_at    timestamp, nullable (paranoid soft-delete)
 //   deleted_by    bigint, nullable
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { AssetManufacturer, PaginationMeta } from "./asset-manufacturer.types";
 
 function toEntity(row: {

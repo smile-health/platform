@@ -47,7 +47,7 @@
 // those tables are wired in. That is the expected, ignorable class of tsc
 // error for this file (per the module's task brief).
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import { isValidDate } from "../../shared/utils/date-range";
 import type { PaginationMeta, WasteTreatmentExternalGroup, WasteTreatmentExternalGroupBag } from "./waste-treatment-external-group.types";
 import * as classificationRepo from "../waste-classification/waste-classification.repository";

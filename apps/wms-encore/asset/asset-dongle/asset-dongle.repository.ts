@@ -18,7 +18,7 @@
 //   healthcare_asset.asset_id   varchar(64), nullable — FK-ish reference to
 //                                asset_dongle.asset_id
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { AssetDongle, PaginationMeta } from "./asset-dongle.types";
 
 function toEntity(row: {

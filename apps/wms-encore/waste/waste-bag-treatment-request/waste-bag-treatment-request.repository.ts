@@ -30,7 +30,7 @@
 // module. waste_bag_treatment_group (referenced for the existence guard) is
 // also not registered yet since it's being built in parallel.
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { WasteBagTreatmentRequest, PaginationMeta } from "./waste-bag-treatment-request.types";
 
 // Zod already validates requestStatus against its enum before this is called

@@ -20,7 +20,7 @@
 // partner-vehicle's entityName.)
 // ---------------------------------------------------------------------------
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import { sql } from "kysely";
 import type {
   Partnership,

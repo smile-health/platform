@@ -1,5 +1,5 @@
 import { sql } from "kysely";
-import { db } from "../db/db";
+import { db } from "./db";
 import { INACTIVE_AGE_DAYS } from "./inactive-user.repository";
 
 // Same 56-day hard cutoff as inactive-user.repository.ts — see that file's

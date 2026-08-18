@@ -55,7 +55,7 @@
 // history and presigned manifest URLs aren't applicable here (no
 // manifestDocPath field on this module's bags).
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import { isValidDate } from "../../shared/utils/date-range";
 import type { PaginationMeta, TransportationStatus, WasteTransportExternalGroup, WasteTransportExternalGroupBag } from "./waste-transport-external-group.types";
 import * as classificationRepo from "../waste-classification/waste-classification.repository";

@@ -1,4 +1,4 @@
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { Region } from "./region.types";
 
 function toRegion(row: {
