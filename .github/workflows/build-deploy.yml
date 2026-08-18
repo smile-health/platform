@@ -151,7 +151,10 @@ jobs:
 
       - name: Install Encore CLI
         run: |
-          curl -L https://encore.dev/install.sh | bash
+          # Pin to 1.58.0 (same as the standalone wms-encore CI). Newer encore
+          # CLI versions fail to resolve node_modules during `encore build docker`
+          # (ERR installing node_modules failed).
+          curl -L https://encore.dev/install.sh | bash -s -- 1.58.0
           echo "$HOME/.encore/bin" >> "$GITHUB_PATH"
 
       # IMPORTANT: build wms-encore from an ISOLATED dir, not the monorepo root.
