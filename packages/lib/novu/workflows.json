@@ -4,6 +4,7 @@
     "workflowId": "cap-80",
     "description": "Cold storage refrigerator capacity has reached or exceeded 80%.",
     "tags": [
+      "smile",
       "coldstorage",
       "capacity"
     ],
@@ -56,6 +57,7 @@
     "workflowId": "asset-maintenance",
     "description": "Asset maintenance is upcoming or overdue.",
     "tags": [
+      "smile",
       "asset",
       "maintenance"
     ],
@@ -108,6 +110,7 @@
     "workflowId": "asset-calibration",
     "description": "Asset calibration is upcoming or overdue.",
     "tags": [
+      "smile",
       "asset",
       "calibration"
     ],
@@ -160,6 +163,7 @@
     "workflowId": "asset-warranty",
     "description": "Asset warranty has expired.",
     "tags": [
+      "smile",
       "asset",
       "warranty"
     ],
@@ -212,6 +216,7 @@
     "workflowId": "asset-status-changed",
     "description": "An asset's status has changed (e.g. functioning, malfunctioning, defrosting).",
     "tags": [
+      "smile",
       "asset",
       "status"
     ],
@@ -264,6 +269,7 @@
     "workflowId": "asset-rtmd-unlinked",
     "description": "There are RTMDs associated with an entity that are not yet linked to an asset.",
     "tags": [
+      "smile",
       "asset",
       "rtmd"
     ],
@@ -316,6 +322,7 @@
     "workflowId": "asset-defrosting-reminder",
     "description": "An asset has been in defrosting status for longer than expected.",
     "tags": [
+      "smile",
       "asset",
       "defrosting"
     ],
@@ -368,6 +375,7 @@
     "workflowId": "below-excursion",
     "description": "Asset temperature has dropped below the minimum threshold.",
     "tags": [
+      "smile",
       "asset",
       "temperature"
     ],
@@ -420,6 +428,7 @@
     "workflowId": "above-excursion",
     "description": "Asset temperature has risen above the maximum threshold.",
     "tags": [
+      "smile",
       "asset",
       "temperature"
     ],
@@ -472,6 +481,7 @@
     "workflowId": "zero-stock",
     "description": "A material's stock has reached zero.",
     "tags": [
+      "smile",
       "stock"
     ],
     "active": true,
@@ -523,6 +533,7 @@
     "workflowId": "less-stock",
     "description": "A material's stock has fallen below the configured minimum.",
     "tags": [
+      "smile",
       "stock"
     ],
     "active": true,
@@ -574,6 +585,7 @@
     "workflowId": "stock-back-to-normal",
     "description": "A material's stock has returned to normal level from below minimum.",
     "tags": [
+      "smile",
       "stock"
     ],
     "active": true,
@@ -625,6 +637,7 @@
     "workflowId": "inactive-entity",
     "description": "An entity has been inactive for a configured number of days.",
     "tags": [
+      "wms",
       "entity"
     ],
     "active": true,
@@ -676,6 +689,7 @@
     "workflowId": "order-ship",
     "description": "An order has been shipped by the vendor to the customer.",
     "tags": [
+      "smile",
       "order"
     ],
     "active": true,
@@ -727,6 +741,7 @@
     "workflowId": "order-relocation",
     "description": "A relocation order has been created between entities.",
     "tags": [
+      "smile",
       "order",
       "relocation"
     ],
@@ -779,6 +794,7 @@
     "workflowId": "patient-reminder",
     "description": "A patient has not received their next scheduled vaccination.",
     "tags": [
+      "smile",
       "patient",
       "vaccination"
     ],
@@ -838,6 +854,7 @@
     "workflowId": "partnership-expired-exceed",
     "description": "WMS event: partnership.partnership_expired_exceed",
     "tags": [
+      "wms",
       "partnership"
     ],
     "active": true,
@@ -889,6 +906,7 @@
     "workflowId": "partnership-expired",
     "description": "WMS event: partnership.partnership_expired",
     "tags": [
+      "wms",
       "partnership"
     ],
     "active": true,
@@ -940,6 +958,7 @@
     "workflowId": "partnership-created",
     "description": "WMS event: partnership.partnership_created",
     "tags": [
+      "wms",
       "partnership"
     ],
     "active": true,
@@ -991,6 +1010,7 @@
     "workflowId": "partnership-updated",
     "description": "WMS event: partnership.partnership_updated",
     "tags": [
+      "wms",
       "partnership"
     ],
     "active": true,
@@ -1042,6 +1062,7 @@
     "workflowId": "partnership-compliance-alert",
     "description": "WMS event: partnership.partnership_compliance_alert",
     "tags": [
+      "wms",
       "partnership"
     ],
     "active": true,
@@ -1093,6 +1114,7 @@
     "workflowId": "waste-bag-residue-created",
     "description": "WMS event: waste_bag.waste_bag_residue_created",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1144,6 +1166,7 @@
     "workflowId": "waste-bag-domestic-created",
     "description": "WMS event: waste_bag.waste_bag_domestic_created",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1195,6 +1218,7 @@
     "workflowId": "waste-bag-in-external-temporary-storage",
     "description": "WMS event: waste_bag.waste_bag_in_external_temporary_storage",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1246,6 +1270,7 @@
     "workflowId": "waste-bag-in-temporary-storage",
     "description": "WMS event: waste_bag.waste_bag_in_temporary_storage",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1297,6 +1322,7 @@
     "workflowId": "waste-bag-out-temporary-storage",
     "description": "WMS event: waste_bag.waste_bag_out_temporary_storage",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1348,6 +1374,7 @@
     "workflowId": "waste-bag-temporary-storage-expired",
     "description": "WMS event: waste_bag.waste_bag_temporary_storage_expired",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1399,6 +1426,7 @@
     "workflowId": "waste-bag-in-cold-storage",
     "description": "WMS event: waste_bag.waste_bag_in_cold_storage",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1450,6 +1478,7 @@
     "workflowId": "waste-bag-out-cold-storage",
     "description": "WMS event: waste_bag.waste_bag_out_cold_storage",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1501,6 +1530,7 @@
     "workflowId": "waste-bag-cold-storage-expired",
     "description": "WMS event: waste_bag.waste_bag_cold_storage_expired",
     "tags": [
+      "wms",
       "waste-bag"
     ],
     "active": true,
@@ -1552,6 +1582,7 @@
     "workflowId": "waste-bag-group-in-temporary-storage",
     "description": "WMS event: waste_bag_group.waste_bag_group_in_temporary_storage",
     "tags": [
+      "wms",
       "waste-bag-group"
     ],
     "active": true,
@@ -1603,6 +1634,7 @@
     "workflowId": "waste-bag-group-out-temporary-storage",
     "description": "WMS event: waste_bag_group.waste_bag_group_out_temporary_storage",
     "tags": [
+      "wms",
       "waste-bag-group"
     ],
     "active": true,
@@ -1654,6 +1686,7 @@
     "workflowId": "waste-bag-group-temporary-storage-expired",
     "description": "WMS event: waste_bag_group.waste_bag_group_temporary_storage_expired",
     "tags": [
+      "wms",
       "waste-bag-group"
     ],
     "active": true,
@@ -1705,6 +1738,7 @@
     "workflowId": "waste-bag-group-in-cold-storage",
     "description": "WMS event: waste_bag_group.waste_bag_group_in_cold_storage",
     "tags": [
+      "wms",
       "waste-bag-group"
     ],
     "active": true,
@@ -1756,6 +1790,7 @@
     "workflowId": "waste-bag-group-out-cold-storage",
     "description": "WMS event: waste_bag_group.waste_bag_group_out_cold_storage",
     "tags": [
+      "wms",
       "waste-bag-group"
     ],
     "active": true,
@@ -1807,6 +1842,7 @@
     "workflowId": "waste-bag-group-cold-storage-expired",
     "description": "WMS event: waste_bag_group.waste_bag_group_cold_storage_expired",
     "tags": [
+      "wms",
       "waste-bag-group"
     ],
     "active": true,
@@ -1858,6 +1894,7 @@
     "workflowId": "waste-classification-deleted",
     "description": "WMS event: waste_classification.deleted",
     "tags": [
+      "wms",
       "waste-classification"
     ],
     "active": true,
@@ -1909,6 +1946,7 @@
     "workflowId": "waste-hierarchy-deleted",
     "description": "WMS event: waste_hierarchy.deleted",
     "tags": [
+      "wms",
       "waste-hierarchy"
     ],
     "active": true,
@@ -1960,6 +1998,7 @@
     "workflowId": "waste-treatment-internal-landfill-in-process",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_internal_landfill_in_process",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2011,6 +2050,7 @@
     "workflowId": "waste-treatment-internal-landfilled",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_internal_landfilled",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2062,6 +2102,7 @@
     "workflowId": "waste-treatment-incinerate-in-process",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_incinerate_in_process",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2113,6 +2154,7 @@
     "workflowId": "waste-treatment-incinerated",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_incinerated",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2164,6 +2206,7 @@
     "workflowId": "waste-treatment-sterilise-in-process",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_sterilise_in_process",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2215,6 +2258,7 @@
     "workflowId": "waste-treatment-sterilised",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_sterilised",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2266,6 +2310,7 @@
     "workflowId": "waste-treatment-external-landfill-in-process",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled_in_process",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2317,6 +2362,7 @@
     "workflowId": "waste-treatment-external-landfilled",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2368,6 +2414,7 @@
     "workflowId": "waste-treatment-recycled-in-process",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_recycled_in_process",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2419,6 +2466,7 @@
     "workflowId": "waste-treatment-recycled",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_recycled",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2470,6 +2518,7 @@
     "workflowId": "waste-treatment-end-status",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_end_status",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2521,6 +2570,7 @@
     "workflowId": "waste-treatment-disposed-in-process",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_disposed_in_process",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2572,6 +2622,7 @@
     "workflowId": "waste-treatment-disposed",
     "description": "WMS event: waste_bag_treatment_group.waste_bag_treatment_group_disposed",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2623,6 +2674,7 @@
     "workflowId": "waste-transport-follow-up",
     "description": "WMS event: waste_bag_group_transport.waste_bag_group_transport_follow_up",
     "tags": [
+      "wms",
       "waste-transport"
     ],
     "active": true,
@@ -2674,6 +2726,7 @@
     "workflowId": "waste-transport-handover",
     "description": "WMS event: waste_bag_group_transport.waste_bag_group_transport_handover",
     "tags": [
+      "wms",
       "waste-transport"
     ],
     "active": true,
@@ -2725,6 +2778,7 @@
     "workflowId": "waste-transport-pickup",
     "description": "WMS event: waste_bag_group_transport.waste_bag_group_transport_pickup",
     "tags": [
+      "wms",
       "waste-transport"
     ],
     "active": true,
@@ -2776,6 +2830,7 @@
     "workflowId": "waste-transport-handover-to-treatment",
     "description": "WMS event: waste_bag_group_transport.waste_bag_group_handover_to_treatment",
     "tags": [
+      "wms",
       "waste-transport"
     ],
     "active": true,
@@ -2827,6 +2882,7 @@
     "workflowId": "waste-treatment-receivement",
     "description": "WMS event: waste_bag_group_treatment.waste_bag_group_treatment_receivment",
     "tags": [
+      "wms",
       "waste-treatment"
     ],
     "active": true,
@@ -2878,6 +2934,7 @@
     "workflowId": "manual-request-created",
     "description": "WMS event: manual_request.manual_request_created",
     "tags": [
+      "wms",
       "manual-request"
     ],
     "active": true,
@@ -2929,6 +2986,7 @@
     "workflowId": "manual-request-approved",
     "description": "WMS event: manual_request.manual_request_approved",
     "tags": [
+      "wms",
       "manual-request"
     ],
     "active": true,
@@ -2980,6 +3038,7 @@
     "workflowId": "manual-request-rejected",
     "description": "WMS event: manual_request.manual_request_rejected",
     "tags": [
+      "wms",
       "manual-request"
     ],
     "active": true,
@@ -3031,6 +3090,7 @@
     "workflowId": "wms-asset-inactive",
     "description": "WMS event: asset.asset_inactive",
     "tags": [
+      "wms",
       "asset"
     ],
     "active": true,
@@ -3082,6 +3142,7 @@
     "workflowId": "wms-asset-warranty-expired",
     "description": "WMS event: asset.asset_warranty_expired",
     "tags": [
+      "wms",
       "asset"
     ],
     "active": true,
@@ -3133,6 +3194,7 @@
     "workflowId": "wms-asset-calibration-due",
     "description": "WMS event: asset.asset_calibration_due",
     "tags": [
+      "wms",
       "asset"
     ],
     "active": true,
@@ -3184,6 +3246,7 @@
     "workflowId": "waste-status-changed",
     "description": "WMS event: waste.waste_status_changed",
     "tags": [
+      "wms",
       "waste"
     ],
     "active": true,
@@ -3235,6 +3298,7 @@
     "workflowId": "waste-accumulated-update",
     "description": "WMS event: waste.waste_accumulated_update",
     "tags": [
+      "wms",
       "waste"
     ],
     "active": true,
@@ -3286,7 +3350,167 @@
     "workflowId": "bast-number-requested",
     "description": "WMS event: bast.create_request",
     "tags": [
+      "wms",
       "bast"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Maximum Temporary Storage Duration Exceeded",
+    "workflowId": "max-temp-storage-duration",
+    "description": "WMS scheduled job: notification.maximum_temporary_storage.message",
+    "tags": [
+      "wms",
+      "scheduled-job",
+      "temporary-storage"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waste Generation Below Monthly Projection",
+    "workflowId": "waste-generation-below-projection",
+    "description": "WMS scheduled job: notification.waste_generartion_below_monthly_projection.message",
+    "tags": [
+      "wms",
+      "scheduled-job",
+      "waste-generation"
+    ],
+    "active": true,
+    "validatePayload": true,
+    "payloadSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "message"
+      ]
+    },
+    "steps": [
+      {
+        "type": "in_app",
+        "name": "In-App Notification",
+        "stepId": "in-app",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      },
+      {
+        "type": "push",
+        "name": "Push Notification",
+        "stepId": "push",
+        "controlValues": {
+          "subject": "{{payload.title}}",
+          "body": "{{payload.message}}"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Manual Weighing Approval Expired",
+    "workflowId": "manual-weighing-approval-expired",
+    "description": "WMS scheduled job: notification.update_status_manual_weighing_approval.message",
+    "tags": [
+      "wms",
+      "scheduled-job",
+      "manual-request"
     ],
     "active": true,
     "validatePayload": true,

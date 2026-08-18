@@ -28,6 +28,7 @@ export function getNovuClient(): Novu | undefined {
     return undefined;
   }
 
-  cachedClient = new Novu({ secretKey: key });
+  const serverURL = process.env.NOVU_API_URL;
+  cachedClient = new Novu({ secretKey: key, ...(serverURL ? { serverURL } : {}) });
   return cachedClient;
 }

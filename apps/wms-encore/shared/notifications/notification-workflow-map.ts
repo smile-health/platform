@@ -95,4 +95,15 @@ export const WMS_NOTIFICATION_WORKFLOW_MAP: Record<string, string> = {
   "waste.waste_accumulated_update": "waste-accumulated-update",
 
   "bast.create_request": "bast-number-requested",
+
+  // jobs/*.service.ts scheduled-notification types — dot-namespaced
+  // "notification.<name>.message" rather than "<domain>.<event>", but still
+  // need a mapping here or they'd fall through to the raw-type fallback and
+  // never resolve to a provisioned Novu workflow.
+  "notification.inactive_entity.message": "inactive-entity",
+  "notification.maximum_temporary_storage.message": "max-temp-storage-duration",
+  "notification.waste_generartion_below_monthly_projection.message":
+    "waste-generation-below-projection",
+  "notification.update_status_manual_weighing_approval.message":
+    "manual-weighing-approval-expired",
 };
