@@ -66,3 +66,6 @@ apps/notification/src/config/*firebase-adminsdk*.json
 apps/interop-service/*.log
 apps/interop-service/logs/
 apps/interop-service/server.pid
+
+# Encore build artifacts
+.encore*

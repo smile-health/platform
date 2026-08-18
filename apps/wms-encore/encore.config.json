@@ -5,7 +5,7 @@
     "env_name": "dev",
     "env_type": "production",
     "cloud": "custom",
-    "base_url": "https://smile-health-api.badr.co.id/wms-encore"
+    "base_url": "https://smile-health-api.badr.co.id/wms"
   },
   "sql_servers": [
     {
@@ -13,7 +13,7 @@
       "databases": {
         "wms": {
           "username": "postgres",
-          "password": "niatikhla5"
+          "password": { "$env": "DB_PASSWORD" }
         }
       }
     }
@@ -21,12 +21,16 @@
   "redis": {
     "wms-cache": {
       "database_index": 0,
+      "host": "redis-master.wms.svc.cluster.local",
+      "tls_config": {
+        "disabled": true
+      },
       "auth": {
         "type": "acl",
         "username": "default",
         "password": { "$env": "REDIS_PASSWORD" }
       },
-      "host": "redis-master.smile-health.svc.cluster.local"
+      "in_memory": false
     }
   },
   "pubsub": [

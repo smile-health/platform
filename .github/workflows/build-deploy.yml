@@ -22,7 +22,6 @@ jobs:
       auth: ${{ steps.filter.outputs.auth }}
       core: ${{ steps.filter.outputs.core }}
       main: ${{ steps.filter.outputs.main }}
-      wms: ${{ steps.filter.outputs.wms }}
       wms_encore: ${{ steps.filter.outputs.wms_encore }}
       web: ${{ steps.filter.outputs.web }}
       lib: ${{ steps.filter.outputs.lib }}
@@ -38,8 +37,6 @@ jobs:
               - 'apps/core/**'
             main:
               - 'apps/main/**'
-            wms:
-              - 'apps/wms-service/**'
             wms_encore:
               - 'apps/wms-encore/**'
             web:
@@ -131,33 +128,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  build-wms:
-    name: Build wms-service
-    needs: changes
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    if: needs.changes.outputs.wms == 'true' || needs.changes.outputs.lib == 'true' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.services == 'all' || contains(github.event.inputs.services, 'wms')))
-    steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-      - uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: apps/wms-service/Dockerfile
-          push: true
-          tags: |
-            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/wms-service:${{ github.sha }}
-            ${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/wms-service:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
   build-wms-encore:
     name: Build wms-encore
     needs: changes
@@ -179,24 +149,35 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-        # kalau ini gagal, artinya pnpm-lock.yaml out-of-sync dengan
-        # package.json — perbaiki lockfile-nya lokal, jangan di-bypass di CI
+      # Install turbo (only) at monorepo root for pruning
+      - name: Install turbo
+        run: |
+          npm install -g turbo@2
 
       - name: Install Encore CLI
         run: |
           curl -L https://encore.dev/install.sh | bash
           echo "$HOME/.encore/bin" >> "$GITHUB_PATH"
 
+      # Prune wms-encore into an isolated workspace (with only its deps,
+      # NOT the hoisted monorepo root node_modules). Without this, encore
+      # bundles the whole 2.4GB monorepo node_modules -> ~4GB image.
+      - name: Prune wms-encore workspace
+        run: |
+          turbo prune @smile/wms-encore --docker --out-dir=/tmp/wms-pruned
+
+      - name: Install pruned dependencies
+        working-directory: /tmp/wms-pruned/full
+        run: pnpm install --no-frozen-lockfile
+
       - name: Verify config exists
-        working-directory: apps/wms-encore
+        working-directory: /tmp/wms-pruned/full/apps/wms-encore
         run: |
           ls -la encore.config.json
           cat encore.config.json
 
       - name: Build encore docker image
-        working-directory: apps/wms-encore
+        working-directory: /tmp/wms-pruned/full/apps/wms-encore
         env:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
@@ -323,29 +304,6 @@ jobs:
           echo "Response: $BODY"
           if [ "$HTTP_CODE" -ne 200 ]; then echo "❌ Webhook deployment failed"; exit 1; fi
           echo "✅ main deployed"
-
-  deploy-wms:
-    name: Deploy wms-service
-    needs: [changes, build-wms]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && needs.build-wms.result == 'success'
-    steps:
-      - uses: actions/checkout@v4
-      - name: Trigger deploy webhook
-        env:
-          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
-          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
-        run: |
-          SHA="${{ github.sha }}"
-          SERVICES='["wms-service"]'
-          PAYLOAD=$(jq -n --arg sha "$SHA" --argjson services "$SERVICES" --arg secret "$WEBHOOK_SECRET" '{sha: $sha, services: $services, webhook_secret: $secret}')
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$WEBHOOK_URL" -H "Content-Type: application/json" -d "$PAYLOAD")
-          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          BODY=$(echo "$RESPONSE" | head -n -1)
-          echo "HTTP Status: $HTTP_CODE"
-          echo "Response: $BODY"
-          if [ "$HTTP_CODE" -ne 200 ]; then echo "❌ Webhook deployment failed"; exit 1; fi
-          echo "✅ wms-service deployed"
 
   deploy-wms-encore:
     name: Deploy wms-encore
