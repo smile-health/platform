@@ -1,8 +1,24 @@
 import { Inbox } from '@novu/nextjs';
+import { useCounts } from '@novu/nextjs/hooks';
 import Bell from '@repo/ui/components/icons/Bell';
 import { useRouter } from 'next/router';
 
 import { getUserStorage } from '@/utils/storage/user';
+
+const NOTIFICATION_TAGS = ['wms'];
+
+const NotificationBell = ({
+  renderIcon,
+}: {
+  renderIcon: (unreadCount: number) => React.ReactNode;
+}) => {
+  const { counts } = useCounts({
+    filters: [{ read: false, tags: NOTIFICATION_TAGS }],
+  });
+  const unreadCount = counts?.[0]?.count ?? 0;
+
+  return <>{renderIcon(unreadCount)}</>;
+};
 
 const NotificationInbox = () => {
   const router = useRouter();
@@ -23,6 +39,7 @@ const NotificationInbox = () => {
       subscriberId={subscriberId}
       {...(backendUrl ? { backendUrl } : {})}
       {...(socketUrl ? { socketUrl } : {})}
+      tabs={[{ label: 'Notifications', filter: { tags: NOTIFICATION_TAGS } }]}
       appearance={{
         variables: {
           colorPrimary: '#004990',
@@ -54,17 +71,21 @@ const NotificationInbox = () => {
       placement="bottom-start"
       placementOffset={10}
       routerPush={(path) => router.push(path)}
-      renderBell={(unreadCount) => (
-        <div className="ui-relative ui-inline-flex ui-cursor-pointer">
-          <Bell className="ui-text-blue-800" />
-          {unreadCount.total > 0 && (
-            <div
-              className="ui-absolute ui-top-[-6px] ui-right-[-6px] ui-flex ui-items-center ui-justify-center ui-min-w-[16px] ui-h-4 ui-px-[3px] ui-text-[10px] ui-leading-none ui-font-semibold ui-text-white ui-bg-red-600 ui-rounded-full"
-            >
-              {unreadCount.total > 99 ? '99+' : unreadCount.total}
+      renderBell={() => (
+        <NotificationBell
+          renderIcon={(unreadCount) => (
+            <div className="ui-relative ui-inline-flex ui-cursor-pointer">
+              <Bell className="ui-text-blue-800" />
+              {unreadCount > 0 && (
+                <div
+                  className="ui-absolute ui-top-[-6px] ui-right-[-6px] ui-flex ui-items-center ui-justify-center ui-min-w-[16px] ui-h-4 ui-px-[3px] ui-text-[10px] ui-leading-none ui-font-semibold ui-text-white ui-bg-red-600 ui-rounded-full"
+                >
+                  {unreadCount > 99 ? '99+' : unreadCount}
+                </div>
+              )}
             </div>
           )}
-        </div>
+        />
       )}
     />
   );

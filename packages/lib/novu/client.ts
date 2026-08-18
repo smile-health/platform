@@ -3,6 +3,7 @@ import { logger } from "../logger.js";
 
 export interface NovuConfig {
   secretKey: string;
+  serverURL?: string;
 }
 
 let cachedClient: Novu | undefined;
@@ -13,7 +14,10 @@ export function createNovuClient(config: NovuConfig): Novu | undefined {
     return undefined;
   }
 
-  return new Novu({ secretKey: config.secretKey });
+  return new Novu({
+    secretKey: config.secretKey,
+    ...(config.serverURL ? { serverURL: config.serverURL } : {}),
+  });
 }
 
 export function createNovuClientFromEnv(): Novu | undefined {
@@ -26,7 +30,7 @@ export function createNovuClientFromEnv(): Novu | undefined {
     return undefined;
   }
 
-  return createNovuClient({ secretKey });
+  return createNovuClient({ secretKey, serverURL: process.env.NOVU_API_URL });
 }
 
 export function getNovuClient(): Novu | undefined {
