@@ -149,35 +149,41 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      # Install turbo (only) at monorepo root for pruning
-      - name: Install turbo
-        run: |
-          npm install -g turbo@2
-
       - name: Install Encore CLI
         run: |
           curl -L https://encore.dev/install.sh | bash
           echo "$HOME/.encore/bin" >> "$GITHUB_PATH"
 
-      # Prune wms-encore into an isolated workspace (with only its deps,
-      # NOT the hoisted monorepo root node_modules). Without this, encore
-      # bundles the whole 2.4GB monorepo node_modules -> ~4GB image.
-      - name: Prune wms-encore workspace
+      # IMPORTANT: build wms-encore from an ISOLATED dir, not the monorepo root.
+      # `encore build docker` determines the workspace root by walking up to the
+      # nearest .git. In the monorepo that is the repo root, so it bundles the
+      # whole hoisted root node_modules (multi-GB). Copying the app source to a
+      # dir WITHOUT .git makes encore treat it as a standalone app and bundle
+      # only wms-encore's own node_modules (~150MB) -> ~600MB image that boots.
+      # (turbo prune does NOT work here: encore.dev becomes a broken symlink.)
+      - name: Isolate wms-encore source
         run: |
-          turbo prune @smile/wms-encore --docker --out-dir=/tmp/wms-pruned
+          rm -rf /tmp/wms-iso && mkdir -p /tmp/wms-iso
+          cp -r apps/wms-encore/. /tmp/wms-iso/
+          rm -rf /tmp/wms-iso/node_modules /tmp/wms-iso/encore.gen /tmp/wms-iso/.encore
+          cp apps/wms-encore/pnpm-lock.yaml /tmp/wms-iso/pnpm-lock.yaml
 
-      - name: Install pruned dependencies
-        working-directory: /tmp/wms-pruned/full
-        run: pnpm install --no-frozen-lockfile
+      - name: Install isolated dependencies
+        working-directory: /tmp/wms-iso
+        env:
+          # apps/wms-encore/.npmrc is gitignored (global *.npmrc pattern), so
+          # the allow-all-builds flag must come from env for esbuild/sharp.
+          PNPM_DANGEROUSLY_ALLOW_ALL_BUILDS: "true"
+        run: pnpm install --frozen-lockfile
 
       - name: Verify config exists
-        working-directory: /tmp/wms-pruned/full/apps/wms-encore
+        working-directory: /tmp/wms-iso
         run: |
           ls -la encore.config.json
           cat encore.config.json
 
       - name: Build encore docker image
-        working-directory: /tmp/wms-pruned/full/apps/wms-encore
+        working-directory: /tmp/wms-iso
         env:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
