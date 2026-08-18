@@ -1,5 +1,5 @@
 import { sql } from "kysely";
-import { db } from "../db/db";
+import { db } from "./db";
 
 // Mirrors inActiveUserScheduler.ts's hardcoded weekly milestones.
 export const INACTIVE_AGE_DAYS = [7, 14, 21, 28, 35, 42, 49, 56] as const;

@@ -83,7 +83,7 @@
 // shared/core/entity-region-lookup.ts for the id-to-name resolution).
 
 import { sql } from "kysely";
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { WasteBagRecord } from "./waste-bag-record.types";
 
 // See asset-model.repository.ts's toAssetType helper for the pattern this follows.

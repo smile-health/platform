@@ -1,4 +1,4 @@
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { Entities, EntitiesPagination } from "./entities.types";
 
 interface EntityRow {

@@ -40,7 +40,7 @@
 // RegionRepositoryImpl.getOneRegion, which is just `findOne()` with no
 // ordering/filter).
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type {
   WasteHierarchy,
   WasteHierarchySummary,

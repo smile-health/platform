@@ -47,7 +47,7 @@
 //   entities  (belongsTo via users.entity_id -> entities.id, as "entity")
 //   user_role (belongsTo via users.external_roles -> user_role.type, as "userRole")
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { PaginationMeta, User } from "./users.types";
 
 interface UserRow {

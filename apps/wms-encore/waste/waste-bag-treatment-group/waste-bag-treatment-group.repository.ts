@@ -72,7 +72,7 @@
 // `wtg.is_read_only` here for clarity, same semantics.
 
 import { sql } from "kysely";
-import { db } from "../../db/db";
+import { db } from "../db";
 import { isValidDate } from "../../shared/utils/date-range";
 import type {
   WasteTreatmentGroup,

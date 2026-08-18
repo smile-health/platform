@@ -1,4 +1,4 @@
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { EntitySettings } from "./entity-settings.types";
 
 // The original Sequelize model is `paranoid: true` (soft delete via deleted_at) —

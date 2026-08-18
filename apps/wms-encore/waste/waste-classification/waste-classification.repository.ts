@@ -70,7 +70,7 @@
 // soft-delete). softDelete() below mirrors that exactly: it does not touch
 // deleted_at, only is_active.
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { PaginationMeta, WasteClassification, WasteHierarchySummary } from "./waste-classification.types";
 
 // Zod already validates these against their enums before this is called (see

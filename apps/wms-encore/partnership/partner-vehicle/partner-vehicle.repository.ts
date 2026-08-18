@@ -24,7 +24,7 @@
 // Indexes: PRIMARY (id), unique "Unique Vehicle Number" (vehicle_number)
 // ---------------------------------------------------------------------------
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import { sql } from "kysely";
 import { getEntityId } from "../../entity/entities/entities.repository";
 import type { PartnerVehicle, PaginatedPartnerVehicles } from "./partner-vehicle.types";

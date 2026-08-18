@@ -1,4 +1,4 @@
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { ScheduledEventMetadata, ScheduledEventType } from "../../messaging/topics";
 
 export async function insertScheduledEvent(input: {

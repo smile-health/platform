@@ -1,5 +1,5 @@
 import { sql } from "kysely";
-import { db } from "../db/db";
+import { db } from "./db";
 
 export interface OverThresholdBag {
   id: number;

@@ -80,7 +80,7 @@
 // reporting functions at the bottom of this file) pending the actual schema
 // integration pass.
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import { sql } from "kysely";
 import { isValidDateString } from "../../shared/utils/date-range";
 import type { WasteBag, PaginationMeta } from "./waste-bag.types";

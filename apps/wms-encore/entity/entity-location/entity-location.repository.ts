@@ -1,4 +1,4 @@
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { EntityLocation, PaginatedEntityLocations } from "./entity-location.types";
 
 function toEntity(row: {

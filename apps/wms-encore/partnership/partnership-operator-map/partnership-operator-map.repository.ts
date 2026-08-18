@@ -42,7 +42,7 @@
 // table here), so it isn't derivable locally the way entityName/userName are.
 // ---------------------------------------------------------------------------
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import { getEntityId } from "../../entity/entities/entities.repository";
 import type { PaginatedPartnershipOperatorMaps, PartnershipOperatorMap } from "./partnership-operator-map.types";
 

@@ -1,4 +1,4 @@
-import { db } from "../db/db";
+import { db } from "./db";
 import { sql } from "kysely";
 
 // Mirrors ProcessScheduledEventUseCase.ts's `scheduledEventRepository.removeEvent(eventData.id!)`

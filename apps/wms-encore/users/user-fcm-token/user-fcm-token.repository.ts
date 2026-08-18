@@ -15,7 +15,7 @@
 //   deleted_by    bigint           null
 //   indexes: idx_user_uuid (user_uuid), idx_user_id (user_id)
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { UserFcmToken } from "./user-fcm-token.types";
 
 function toEntity(row: {

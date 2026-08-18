@@ -40,7 +40,7 @@
 // qr-code-config.service.ts, which now does this via getLocalUserName
 // (shared/core/entity-user-lookup.ts) rather than in this repository layer.
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import type { PaginationMeta, QrCodeConfig } from "./qr-code-config.types";
 
 function toEntity(row: {

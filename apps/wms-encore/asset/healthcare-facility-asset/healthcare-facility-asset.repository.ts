@@ -36,7 +36,7 @@
 // ../../entity/entities/entities.repository's getEntityId — see the
 // deviation note on findAllPaginated below.
 
-import { db } from "../../db/db";
+import { db } from "../db";
 import { getEntityId } from "../../entity/entities/entities.repository";
 import type { HealthcareFacilityAssetTable } from "../../db/db";
 import type { AssetManufacturer, AssetModel, HealthcareFacilityAsset, PaginationMeta } from "./healthcare-facility-asset.types";
