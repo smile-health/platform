@@ -83,7 +83,7 @@ async function getDateRange(startDate: string, endDate: string): Promise<DayNum[
     WITH RECURSIVE dates AS (
       SELECT ${startDate}::date AS dt
       UNION ALL
-      SELECT dt + INTERVAL '1 day'
+      SELECT (dt + INTERVAL '1 day')::date
       FROM dates
       WHERE dt < ${endDate}::date
     )

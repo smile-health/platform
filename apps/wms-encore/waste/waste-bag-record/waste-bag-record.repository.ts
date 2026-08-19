@@ -489,9 +489,9 @@ export async function findRecordCharacteristicsSummary(params: {
       wh.name AS "wasteCharacteristicsName",
       COUNT(a.id) AS "totalWasteBag",
       SUM(a.weight_in_kgs) AS "totalWeightInKgs",
-      ROUND(SUM(a.weight_in_kgs) / dr.days_count, 2) AS "avgWeightPerDay",
-      CEIL(COUNT(a.id)::numeric / dr.days_count) AS "avgWasteBagPerDay",
-      a.healthcare_facility_name AS "healthcareFacilityName"
+      ROUND(SUM(a.weight_in_kgs) / MAX(dr.days_count), 2) AS "avgWeightPerDay",
+      CEIL(COUNT(a.id)::numeric / MAX(dr.days_count)) AS "avgWasteBagPerDay",
+      MAX(a.healthcare_facility_name) AS "healthcareFacilityName"
     FROM waste_bag_record a
     JOIN waste_classification wc ON wc.id = a.waste_classification_id
     JOIN waste_hierarchy wh ON wh.id = wc.waste_characteristics_id
