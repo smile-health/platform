@@ -18,7 +18,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -35,9 +35,8 @@ import { usePrintLabelTable } from './hooks/usePrintLabelTable';
 
 const PrintLabelListPage: React.FC = () => {
   usePermission('print-label-view');
-  const { t, i18n } = useTranslation(['common', 'printLabel']);
-  const locale = i18n.language;
-  const route = useRouter();
+  const { t } = useTranslation(['common', 'printLabel']);
+  const route = useWmsRouter();
 
   const [rowSelection, setRowSelection] = useState<Record<string, boolean>>({});
   const [selectedRows, setSelectedRows] = useState<TPrintLabel[]>([]);
@@ -117,7 +116,7 @@ const PrintLabelListPage: React.FC = () => {
                     leftIcon={<Plus className="ui-size-5" />}
                     loading={false}
                     disabled={false}
-                    onClick={() => route.push(`/${locale}/print-label/create`)}
+                    onClick={() => route.push('/print-label/create')}
                   >
                     {t('printLabel:list.button.add')}
                   </Button>
@@ -131,7 +130,7 @@ const PrintLabelListPage: React.FC = () => {
               loading={false}
               disabled={false}
               color="info"
-              onClick={() => route.push(`/${locale}/waste-classification`)}
+              onClick={() => route.push('/waste-classification')}
             >
               {t('printLabel:button.explain_waste_classification')}
             </Button>

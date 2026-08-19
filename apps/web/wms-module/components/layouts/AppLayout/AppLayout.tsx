@@ -14,7 +14,7 @@ import { ReactNode, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import cx from 'src/lib/cx';
 
-import { getAuthTokenStorage } from '@/utils/storage/auth';
+import { getAuthTokenCookies } from '@/utils/storage/auth';
 import { toast } from '@repo/ui/components/toast';
 import Header from './Header';
 import Navbar from './Navbar';
@@ -73,7 +73,7 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
   useEffect(() => {
     setIsLoading(true);
 
-    const token = getAuthTokenStorage();
+    const token = getAuthTokenCookies();
 
     if (token) {
       setIsLoading(false);

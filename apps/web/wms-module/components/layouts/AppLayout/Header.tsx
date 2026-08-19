@@ -1,4 +1,3 @@
-import { removeAuthTokenCookies } from '@/utils/storage/auth';
 import { Avatar } from '@repo/ui/components/avatar';
 import {
   DropdownMenuContent,
@@ -10,7 +9,7 @@ import Logout from '@repo/ui/components/icons/Logout';
 import { toast } from '@repo/ui/components/toast';
 import { useTranslation } from 'react-i18next';
 
-import { getUserStorage, resetStorageUser } from '@/utils/storage/user';
+import { getUserStorage } from '@/utils/storage/user';
 import Image from 'next/image';
 import LanguageChanger from '../LanguageChanger';
 import WeightChanger from '../WeightChanger';
@@ -24,17 +23,18 @@ const Header: React.FC = () => {
   } = useTranslation(['common', 'login']);
   const user = getUserStorage();
 
-  const handleLogout = () => {
+  const handleBackToSmile = () => {
     toast.success({
       description: t('login:success_back_to_smile'),
       id: 'toast-success-back-to-smile',
     });
 
+    // Just navigate — AUTH_TOKEN is the shared Smile session cookie now, so
+    // clearing it here (as this used to, back when WMS had its own separate
+    // session) would end the user's real Smile session too.
     setTimeout(() => {
-      removeAuthTokenCookies();
-      resetStorageUser();
       window.location.replace(
-        `${process.env.NEXT_PUBLIC_URL_FE_SMILE}/${language}/v5/login`
+        `${process.env.NEXT_PUBLIC_URL_FE_SMILE}/${language}/v5/program`
       );
     }, 1000);
   };
@@ -123,8 +123,8 @@ const Header: React.FC = () => {
               <DropdownMenuItem>
                 <button
                   className="ui-my-1 ui-flex ui-gap-3 ui-items-center ui-min-w-60 focus:outline-none"
-                  onClick={() => handleLogout()}
-                  id="dropdown-header-logout"
+                  onClick={() => handleBackToSmile()}
+                  id="dropdown-header-back-to-smile"
                   type="button"
                 >
                   <Logout />

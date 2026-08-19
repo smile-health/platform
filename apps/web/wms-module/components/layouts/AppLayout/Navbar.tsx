@@ -13,7 +13,7 @@ import { ButtonGroup } from '@repo/ui/components/button';
 import DropdownNav from './DropdownNav';
 import { getUserStorage } from '@/utils/storage/user';
 import { ENTITY_TYPE } from '@/types/entity';
-import { getAuthTokenCookies, getAuthTokenStorage } from '@/utils/storage/auth';
+import { getAuthTokenCookies } from '@/utils/storage/auth';
 
 const styleHover =
   'hover:ui-text-primary-300 ui-flex ui-flex-row ui-text-white ui-cursor-pointer ui-items-center ui-px-[2px]';
@@ -43,9 +43,7 @@ const Navbar: React.FC = () => {
     (program) => program.key === 'kesling' && program.status === 1
   );
 
-  const tokenCookies = getAuthTokenCookies();
-  const tokenLocalStorage = getAuthTokenStorage();
-  const token = tokenCookies ?? tokenLocalStorage;
+  const token = getAuthTokenCookies();
 
   return (
     <div className="ui-bg-primary-500 ui-h-10">

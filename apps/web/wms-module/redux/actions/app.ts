@@ -1,6 +1,5 @@
 import Axios from 'axios';
-import nookies from 'nookies';
-import store from 'store2';
+import { getAuthTokenCookies, removeAuthTokenCookies } from '@/utils/storage/auth';
 
 export const APP_SHOW_MESSAGE = 'APP_SHOW_MESSAGE';
 export const APP_HIDE_MESSAGE = 'APP_HIDE_MESSAGE';
@@ -17,8 +16,7 @@ Axios.interceptors.request.use(
       ...config,
       headers: {
         Authorization:
-          config?.headers?.Authorization ??
-          'Bearer ' + store.get(process.env.WMS_STORAGE_PREFIX + 'AUTH_TOKEN'),
+          config?.headers?.Authorization ?? 'Bearer ' + getAuthTokenCookies(),
         'accept-language': window.location.pathname.split('/')[1] ?? 'id',
         'device-type': process.env.DEVICE_TYPE,
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
@@ -46,11 +44,7 @@ Axios.interceptors.response.use(
       const { status } = error.response;
 
       if (Number(status) === 401) {
-        const nameToken = process.env.WMS_STORAGE_PREFIX + 'AUTH_TOKEN';
-
-        nookies.destroy(null, nameToken);
-        store.remove(nameToken);
-        store.remove(process.env.WMS_STORAGE_PREFIX + 'AUTH');
+        removeAuthTokenCookies();
       }
     }
     // Any status codes that fall   s outside the range of 2xx cause this function to trigger

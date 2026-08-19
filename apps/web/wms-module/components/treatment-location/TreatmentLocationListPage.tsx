@@ -17,7 +17,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -29,9 +29,8 @@ import TooltipModal from '@/components/TooltipModal';
 
 const TreatmentLocationListPage: React.FC = () => {
   usePermission('treatment-location-view');
-  const { t, i18n } = useTranslation(['common', 'treatmentLocation']);
-  const locale = i18n.language;
-  const route = useRouter();
+  const { t } = useTranslation(['common', 'treatmentLocation']);
+  const route = useWmsRouter();
 
   const [openInformation, setOpenInformation] = useState(false);
 
@@ -72,7 +71,7 @@ const TreatmentLocationListPage: React.FC = () => {
                 loading={false}
                 disabled={false}
                 onClick={() =>
-                  route.push(`/${locale}/treatment-location/create`)
+                  route.push('/treatment-location/create')
                 }
               >
                 {t('treatmentLocation:list.button.add')}

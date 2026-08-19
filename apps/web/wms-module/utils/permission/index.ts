@@ -1,12 +1,11 @@
-import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { getUserRoleString, loggedAsAdmin } from '../getUserRole';
 import { getUserStorage } from '../storage/user';
 import { rolePermission } from './config';
 import { FeatureName } from './features';
 import { ENTITY_TYPE } from '@/types/entity';
+import useWmsRouter from '../hooks/useWmsRouter';
 
 export function hasPermission(featureName: FeatureName) {
   const user = getUserStorage();
@@ -44,18 +43,15 @@ export function hasPermission(featureName: FeatureName) {
 }
 
 export function usePermission(featureName: FeatureName) {
-  const router = useRouter();
+  const router = useWmsRouter();
   const user = getUserStorage();
-
-  const {
-    i18n: { language },
-  } = useTranslation();
 
   useEffect(() => {
     const has = hasPermission(featureName);
 
     if (user && !has) {
-      router.replace(`/${language}/403`);
+      router.replace('/403');
     }
-  }, [user, featureName, language, router]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, featureName]);
 }

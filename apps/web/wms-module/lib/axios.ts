@@ -2,7 +2,6 @@ import { DEFAULT_LANGUAGE } from '@/constants/language';
 import { removeEmptyObject } from '@/utils/object';
 import {
   getAuthTokenCookies,
-  getAuthTokenStorage,
   removeAuthTokenCookies,
   setAuthRedirectPathCookies,
 } from '@/utils/storage/auth';
@@ -52,9 +51,7 @@ const redirectToErrorDataPages = () => {
 };
 
 instance.interceptors.request.use((config) => {
-  const tokenCookies = getAuthTokenCookies();
-  const tokenLocalStorage = getAuthTokenStorage();
-  const token = tokenCookies ?? tokenLocalStorage;
+  const token = getAuthTokenCookies();
   const language =
     window.location.pathname.split('/')[1] ?? DEFAULT_LANGUAGE.value;
   const acceptLanguage = config.headers.get('accept-language');

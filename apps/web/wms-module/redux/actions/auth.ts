@@ -2,7 +2,6 @@ import { RequestloginResponse } from '@/types/auth';
 import { ROLE_TYPE } from '@/types/roles';
 import { parseError } from '@/utils/common';
 import axios from 'axios';
-import nookies from 'nookies';
 import { showMessage } from './app';
 import { toast } from '@repo/ui/components/toast';
 
@@ -32,9 +31,6 @@ export const checkToken = (token: string, locale: string) => (
     })
     .then((res) => res.data.data)
     .then((data: RequestloginResponse) => {
-      const nameToken = `${process.env.WMS_STORAGE_PREFIX}AUTH_TOKEN`;
-      const valueToken = token;
-
       // Map smile role to wms role
       const userData = { ...data };
       const { role_label, external_properties } = userData;
@@ -47,13 +43,12 @@ export const checkToken = (token: string, locale: string) => (
           },
         };
       }
-      nookies.destroy(null, nameToken);
-      nookies.set(null, nameToken, valueToken, {
-        sameSite: true,
-        secure: true,
-      });
 
-      localStorage.setItem(nameToken, valueToken);
+      // AUTH_TOKEN is the shared Smile session cookie/localStorage entry —
+      // it's already set correctly (path: '/') by Smile's own login. Do not
+      // re-write it here: nookies.set without an explicit path used to scope
+      // a duplicate cookie to the current page's directory (e.g. /wms/id),
+      // which then shadowed the real one and went stale on the next login.
       localStorage.setItem(
         `${process.env.WMS_STORAGE_PREFIX}USER`,
         JSON.stringify(userData)

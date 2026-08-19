@@ -74,6 +74,7 @@ export const rolePermission: Partial<Record<ROLE_LABEL, Permission>> = {
     'treatment-location-mutate': 'mutation',
     /** partnership setting */
     'partnership-view': 'query',
+    'partnership-mutate': 'mutation',
     // asset dongle setting,
     'asset-dongle-view': 'query',
     'asset-dongle-mutate': 'mutation',

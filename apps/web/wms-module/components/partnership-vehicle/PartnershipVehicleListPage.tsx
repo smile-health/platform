@@ -16,7 +16,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -30,9 +30,8 @@ import { useDownloadVehice } from './hooks/useDownloadVehicle';
 
 const PartnershipVehicleListPage: React.FC = () => {
   usePermission('transport-vehicle-view');
-  const { t, i18n } = useTranslation(['common', 'partnershipVehicle']);
-  const locale = i18n.language;
-  const route = useRouter();
+  const { t } = useTranslation(['common', 'partnershipVehicle']);
+  const route = useWmsRouter();
   const user = getUserStorage();
 
   const {
@@ -74,7 +73,7 @@ const PartnershipVehicleListPage: React.FC = () => {
               loading={false}
               disabled={false}
               onClick={() =>
-                route.push(`/${locale}/partnership-vehicle/create`)
+                route.push('/partnership-vehicle/create')
               }
             >
               {t('partnershipVehicle:list.button.add')}

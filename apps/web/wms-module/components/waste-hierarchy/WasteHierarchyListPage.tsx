@@ -21,7 +21,7 @@ import {
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
 import { TabsList, TabsRoot, TabsTrigger } from '@repo/ui/components/tabs';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import { parseAsString, useQueryStates } from 'nuqs';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -31,10 +31,9 @@ import TooltipModal from '@/components/TooltipModal';
 
 const WasteHierarchyListPage: React.FC = () => {
   usePermission('waste-hierarchy-view');
-  const route = useRouter();
+  const route = useWmsRouter();
 
-  const { t, i18n } = useTranslation(['common', 'wasteHierarchy']);
-  const locale = i18n.language;
+  const { t } = useTranslation(['common', 'wasteHierarchy']);
 
   const [openInformation, setOpenInformation] = React.useState(false);
 
@@ -140,9 +139,7 @@ const WasteHierarchyListPage: React.FC = () => {
                 loading={false}
                 disabled={false}
                 onClick={() =>
-                  route.push(
-                    `/${locale}/waste-hierarchy/create?tab=${query.tab}`
-                  )
+                  route.push(`/waste-hierarchy/create?tab=${query.tab}`)
                 }
               >
                 {getAddButtonLabel()}
@@ -153,7 +150,7 @@ const WasteHierarchyListPage: React.FC = () => {
               loading={false}
               color="info"
               disabled={false}
-              onClick={() => route.push(`/${locale}/waste-classification`)}
+              onClick={() => route.push('/waste-classification')}
             >
               {t('wasteHierarchy:title.explain_waste_classification')}
             </Button>
