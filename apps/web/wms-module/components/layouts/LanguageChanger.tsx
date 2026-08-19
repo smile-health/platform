@@ -18,10 +18,10 @@ const LanguageChanger: React.FC = () => {
 
   const handleLocaleChange = (value: string) => {
     const regex = new RegExp(
-      `^/(${listLanguage.map((x) => x.value).join('|')})`
+      `^(/wms)?/(${listLanguage.map((x) => x.value).join('|')})`
     );
     // handle for base error page 404
-    router.push(router.pathname, router.asPath.replace(regex, `/${value}`));
+    router.push(router.pathname, router.asPath.replace(regex, `$1/${value}`));
   };
 
   const currentLang = listLanguage.find((x) => x.value === language);

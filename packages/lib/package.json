@@ -4,7 +4,7 @@
   "version": "1.0.264",
   "scripts": {
     "dev": "bun --watch index.ts",
-    "novu:import-workflows": "bun run novu/import-workflows.ts",
+    "novu:import-workflows": "bun run --env-file=../../.env novu/import-workflows.ts",
     "test": "bun test",
     "test:watch": "bun test --watch",
     "test:coverage": "./scripts/coverage.sh",
