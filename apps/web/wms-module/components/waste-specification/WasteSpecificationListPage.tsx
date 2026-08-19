@@ -17,7 +17,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -29,11 +29,9 @@ import TooltipModal from '@/components/TooltipModal';
 
 const WasteSpecificationPageList: React.FC = () => {
   usePermission('waste-specification-view');
-  const { t, i18n } = useTranslation(['common', 'wasteSpecification']);
+  const { t } = useTranslation(['common', 'wasteSpecification']);
 
-  const locale = i18n.language;
-
-  const route = useRouter();
+  const route = useWmsRouter();
 
   const {
     handleChangePage: handleChangePageWasteSpecification,
@@ -74,7 +72,7 @@ const WasteSpecificationPageList: React.FC = () => {
               loading={false}
               disabled={false}
               onClick={() =>
-                route.push(`/${locale}/waste-specification/create`)
+                route.push('/waste-specification/create')
               }
             >
               {t('wasteSpecification:master_waste_create')}

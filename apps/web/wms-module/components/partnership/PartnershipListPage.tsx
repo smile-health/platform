@@ -17,7 +17,6 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -26,12 +25,12 @@ import { usePermission } from '@/utils/permission';
 import PartnershipTable from './components/PartnershipTable';
 import { usePartnershipTable } from './hooks/usePartnershipTable';
 import TooltipModal from '@/components/TooltipModal';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 
 const PartnershipListPage: React.FC = () => {
   usePermission('partnership-view');
-  const { t, i18n } = useTranslation(['common', 'partnership']);
-  const locale = i18n.language;
-  const route = useRouter();
+  const { t } = useTranslation(['common', 'partnership']);
+  const route = useWmsRouter();
 
   const [openInformation, setOpenInformation] = useState(false);
 
@@ -70,7 +69,7 @@ const PartnershipListPage: React.FC = () => {
               leftIcon={<Plus className="ui-size-5" />}
               loading={false}
               disabled={false}
-              onClick={() => route.push(`/${locale}/partnership/create`)}
+              onClick={() => route.push('/partnership/create')}
             >
               {t('partnership:list.button.add')}
             </Button>

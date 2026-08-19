@@ -17,7 +17,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -28,9 +28,8 @@ import { useAssetTypeTable } from './hooks/useAssetTypeTable';
 
 const AssetTypeListPage: React.FC = () => {
   usePermission('asset-type-view');
-  const { t, i18n } = useTranslation(['common', 'assetType']);
-  const locale = i18n.language;
-  const route = useRouter();
+  const { t } = useTranslation(['common', 'assetType']);
+  const route = useWmsRouter();
 
   const {
     handleChangePage,
@@ -60,7 +59,7 @@ const AssetTypeListPage: React.FC = () => {
               leftIcon={<Plus className="ui-size-5" />}
               loading={false}
               disabled={false}
-              onClick={() => route.push(`/${locale}/asset-type/create`)}
+              onClick={() => route.push('/asset-type/create')}
             >
               {t('assetType:list.button.add')}
             </Button>

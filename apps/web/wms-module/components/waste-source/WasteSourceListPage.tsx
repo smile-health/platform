@@ -16,7 +16,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -27,10 +27,9 @@ import { useWasteSourceTable } from './hooks/useWasteSourceTable';
 
 const WasteSourceListPage: React.FC = () => {
   usePermission('waste-source-view');
-  const route = useRouter();
+  const route = useWmsRouter();
 
-  const { t, i18n } = useTranslation(['common', 'wasteSource']);
-  const locale = i18n.language;
+  const { t } = useTranslation(['common', 'wasteSource']);
 
   const {
     handleChangePage: handleChangePageWasteSource,
@@ -57,7 +56,7 @@ const WasteSourceListPage: React.FC = () => {
               leftIcon={<Plus className="ui-size-5" />}
               loading={false}
               disabled={false}
-              onClick={() => route.push(`/${locale}/waste-source/create`)}
+              onClick={() => route.push('/waste-source/create')}
             >
               {t('wasteSource:list.button.add_waste_source')}
             </Button>

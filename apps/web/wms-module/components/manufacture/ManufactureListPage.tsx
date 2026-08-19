@@ -17,7 +17,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -28,9 +28,8 @@ import { useManufactureTable } from './hooks/useManufactureTable';
 
 const ManufactureListPage: React.FC = () => {
   usePermission('manufacture-view');
-  const { t, i18n } = useTranslation(['common', 'manufacture']);
-  const locale = i18n.language;
-  const route = useRouter();
+  const { t } = useTranslation(['common', 'manufacture']);
+  const route = useWmsRouter();
 
   const {
     handleChangePage,
@@ -60,7 +59,7 @@ const ManufactureListPage: React.FC = () => {
               leftIcon={<Plus className="ui-size-5" />}
               loading={false}
               disabled={false}
-              onClick={() => route.push(`/${locale}/manufacture/create`)}
+              onClick={() => route.push('/manufacture/create')}
             >
               {t('manufacture:list.button.add')}
             </Button>

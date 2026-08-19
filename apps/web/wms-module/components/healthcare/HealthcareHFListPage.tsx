@@ -17,7 +17,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -26,9 +26,8 @@ import HealthcareHFTable from './components/HealthcareHFTable';
 import { useHealthcareHFTable } from './hooks/useHealthcareHFTable';
 
 const HealthcareHFListPage: React.FC = () => {
-  const { t, i18n } = useTranslation(['common', 'healthCare']);
-  const locale = i18n.language;
-  const route = useRouter();
+  const { t } = useTranslation(['common', 'healthCare']);
+  const route = useWmsRouter();
 
   const {
     filter,
@@ -58,7 +57,7 @@ const HealthcareHFListPage: React.FC = () => {
               leftIcon={<Plus className="ui-size-5" />}
               loading={false}
               disabled={false}
-              onClick={() => route.push(`/${locale}/healthcare/create`)}
+              onClick={() => route.push('/healthcare/create')}
             >
               {t('healthCare:list.button.add')}
             </Button>

@@ -16,7 +16,7 @@ import {
   PaginationInfo,
   PaginationSelectLimit,
 } from '@repo/ui/components/pagination';
-import { useRouter } from 'next/router';
+import useWmsRouter from '@/utils/hooks/useWmsRouter';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -28,9 +28,8 @@ import { useThirdPartyPartnerTable } from './hooks/useThirdPartyPartnerTable';
 
 const ThirdPartyPartnerListPage: React.FC = () => {
   usePermission('thirdparty-partner-view');
-  const { t, i18n } = useTranslation(['common', 'thirdPartyPartner']);
-  const locale = i18n.language;
-  const route = useRouter();
+  const { t } = useTranslation(['common', 'thirdPartyPartner']);
+  const route = useWmsRouter();
   const user = getUserStorage();
 
   const {
@@ -59,7 +58,7 @@ const ThirdPartyPartnerListPage: React.FC = () => {
               loading={false}
               disabled={false}
               onClick={() =>
-                route.push(`/${locale}/third-party-partner/create`)
+                route.push('/third-party-partner/create')
               }
             >
               {t('thirdPartyPartner:list.button.add')}

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useQuery } from '@tanstack/react-query';
@@ -7,6 +6,7 @@ import { Spinner } from '@repo/ui/components/spinner';
 import { useFirebaseMessaging } from '@repo/ui/hooks/useFirebaseMessaging';
 import { checkToken } from '@/redux/actions/auth';
 import { sendFCMToken } from '@/services/notification';
+import { getAuthTokenCookies } from '@/utils/storage/auth';
 
 /**
  * Replaces the standalone wms app's /validate-token page (see the old
@@ -26,7 +26,7 @@ export function WmsAuthGate({ children }: { children: React.ReactNode }) {
   const auth = useSelector((state: any) => state.auth)
   const { token: fcmToken } = useFirebaseMessaging()
   const [redirecting, setRedirecting] = useState(false)
-  const hasCheckedRef = useRef(false)
+  const lastCheckedTokenRef = useRef<string | null>(null)
 
   const isAuthReady = !auth.isProcessCheckToken && auth.data_login !== null
 
@@ -48,19 +48,29 @@ export function WmsAuthGate({ children }: { children: React.ReactNode }) {
   }, [])
 
   useEffect(() => {
-    if (hasCheckedRef.current) return
-    hasCheckedRef.current = true
+    const checkAuth = () => {
+      const token = getAuthTokenCookies()
 
-    const token = Cookies.get(`${process.env.SMILE_STORAGE_PREFIX}AUTH_TOKEN`)
+      // Re-validate whenever the underlying Smile cookie's token actually
+      // changes (e.g. a fresh login elsewhere) instead of only once per
+      // mount — WmsRouteWrapper stays mounted across /wms/* navigation, so
+      // a one-time check would keep using a stale token after re-login.
+      if (lastCheckedTokenRef.current === token) return
+      lastCheckedTokenRef.current = token ?? null
 
-    if (typeof token === 'string') {
-      dispatch(checkToken(token, lang) as any)
-    } else {
-      // Same-app login now, instead of the old cross-origin redirect to
-      // NEXT_PUBLIC_URL_FE_SMILE.
-      setRedirecting(true)
-      router.replace(`/${lang}/v5/login`)
+      if (typeof token === 'string') {
+        dispatch(checkToken(token, lang) as any)
+      } else {
+        // Same-app login now, instead of the old cross-origin redirect to
+        // NEXT_PUBLIC_URL_FE_SMILE.
+        setRedirecting(true)
+        router.replace(`/${lang}/v5/login`)
+      }
     }
+
+    checkAuth()
+    router.events.on('routeChangeComplete', checkAuth)
+    return () => router.events.off('routeChangeComplete', checkAuth)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
