@@ -1,42 +1,49 @@
 // Mirrors apps/wms-service's domain/entities/Entities.ts field-for-field.
 export interface Entities {
   id?: number;
-  name?: string;
-  type?: number;
-  address?: string;
-  tag?: string;
-  provinceId?: string;
-  regencyId?: string;
-  subDistrictId?: string;
-  villageId?: string;
-  integrationType?: number;
-  integrationClientId?: number;
-  location?: string;
+  name?: string | null;
+  type?: number | null;
+  address?: string | null;
+  tag?: string | null;
+  provinceId?: string | null;
+  regencyId?: string | null;
+  subDistrictId?: string | null;
+  villageId?: string | null;
+  integrationType?: number | null;
+  integrationClientId?: number | null;
+  location?: string | null;
   // Encore's schema generator rejects a bare `object` type ("unsupported basic
   // type in schema: Object") for anything reachable from an api() response —
   // Record<string, unknown> is the supported equivalent for an open-ended map.
-  externalProperties?: Record<string, unknown>;
-  entityTypeId?: number;
-  entityTypeName?: string;
-  entityTypeIntegrationType?: number;
-  entityTypeExternalProperties?: string;
-  provinceName?: string;
-  regencyName?: string;
-  districtName?: string;
-  updatedAt?: Date;
-  code?: string;
-  nib?: string;
-  headName?: string;
-  email?: string;
-  gender?: number;
-  mobilePhone?: string;
-  latitude?: number;
-  longitude?: number;
-  idSatuSehat?: number;
-  totalBadRoom?: number;
-  percentageBadRoom?: number;
+  externalProperties?: Record<string, unknown> | null;
+  entityTypeId?: number | null;
+  // TODO: no `entity_type` lookup table (or denormalized name column) exists
+  // in wms-encore's schema — the old wms-service stored entity_type_name/
+  // entity_type_integration_type/entity_type_external_properties as flat,
+  // separately-synced columns directly on `entities` (not a join), and that
+  // sync mechanism was never ported. Left unpopulated rather than guessed;
+  // needs a real decision (add denormalized columns + sync job, or a real
+  // entity_type table) before this can be filled in.
+  entityTypeName?: string | null;
+  entityTypeIntegrationType?: number | null;
+  entityTypeExternalProperties?: string | null;
+  provinceName?: string | null;
+  regencyName?: string | null;
+  districtName?: string | null;
+  updatedAt?: Date | null;
+  code?: string | null;
+  nib?: string | null;
+  headName?: string | null;
+  email?: string | null;
+  gender?: number | null;
+  mobilePhone?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
+  idSatuSehat?: number | null;
+  totalBadRoom?: number | null;
+  percentageBadRoom?: number | null;
   isActive?: boolean;
-  countDongle?: number;
+  countDongle?: number | null;
 }
 
 export interface EntitiesPagination {

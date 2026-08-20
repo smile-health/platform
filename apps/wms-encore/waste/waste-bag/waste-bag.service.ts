@@ -163,29 +163,87 @@ export async function getAllWasteBags(input: {
   transportationExternalGroupId?: number;
   treatmentGroupId?: number;
   treatmentExternalGroupId?: number;
+  sourceType?: string;
   ownedBy?: string;
   wasteStatus?: string;
   binNumber?: string;
   wasteBagQrCodeId?: string;
   id?: number;
+  wasteTypeId?: number;
+  wasteGroupId?: number;
+  wasteCharacteristicsId?: number;
   isTreated?: boolean;
   isDisposed?: boolean;
+  loggerHistory?: string;
+  // Auth context — mirrors getAllWasteController's entityTag/entityId
+  // resolution off req.user.entity (see that controller's allowedTypes
+  // override: hospital/regency/province/central non-super-admin callers are
+  // always treated as 'hospital'-tagged). Required: GetAllWasteBagUseCase /
+  // WasteBagRepositoryImpl.getAllWasteBag throw a plain "Authorization
+  // error" when entityTag is missing — same here.
+  entityTag?: string;
+  entityId?: number;
 }): Promise<PaginatedWasteBags> {
+  if (!input.entityTag) {
+    throw new APIError(ErrCode.PermissionDenied, "Authorization error");
+  }
   const safeLimit = input.limit && input.limit > 0 ? input.limit : 10;
   const safePage = input.page && input.page > 0 ? input.page : 1;
-  return repo.findPaginated({ ...input, limit: safeLimit, page: safePage });
+  const result = await repo.findPaginated({ ...input, limit: safeLimit, page: safePage });
+  const withRelations = await repo.attachRelations(result.data);
+  if (input.loggerHistory === "1" || input.loggerHistory === "true") {
+    await Promise.all(
+      withRelations.map(async (bag) => {
+        if (bag.wasteBagQrCodeId) {
+          bag.logHistory = await repo.findLogHistoryForBag(bag.wasteBagQrCodeId);
+        }
+      })
+    );
+  }
+  return { data: withRelations, pagination: result.pagination };
 }
 
-export async function getWasteBagById(id: string): Promise<WasteBag> {
-  const numericId = Number(id);
-  if (!id || Number.isNaN(numericId)) {
+// getWasteBagById — restores two regressions found in this port:
+//   1. The original's getWasteBagById(id: string) resolves by
+//      wasteBagQrCodeId (WasteBagRepositoryImpl.getWasteBagById does
+//      `where: { wasteBagQrCodeId: id }`), not by the numeric primary key —
+//      this port had switched to a raw numeric-PK lookup, breaking any
+//      existing caller passing a QR code. Restored by detecting the param
+//      shape: a plain integer string is treated as the numeric PK (so
+//      callers already relying on this port's numeric-ID behavior keep
+//      working), anything else is treated as a QR code and resolved via
+//      waste-bag-qr-code's established QR lookup path (same table/column
+//      waste-bag-qr-code.repository.ts and findByQrCodeId already use).
+//   2. Entity scoping (entityTag/entityId, "Authorization error" when
+//      missing) — see getAllWasteBags' comment above; the original's
+//      getWasteBagById itself has no such gate (it's called internally, not
+//      from an HTTP route in the original), but this port DOES expose it as
+//      a public GET /api/v1/waste/:id route, so the same authorization
+//      boundary the list endpoint enforces is applied here too rather than
+//      leaving the detail endpoint as an open door to any bag by ID/QR code.
+export async function getWasteBagById(
+  id: string,
+  auth: { entityTag?: string; entityId?: number }
+): Promise<WasteBag> {
+  if (!id) {
     throw new APIError(ErrCode.FailedPrecondition, "ID parameter is required");
   }
-  const data = await repo.findById(numericId);
+  if (!auth.entityTag) {
+    throw new APIError(ErrCode.PermissionDenied, "Authorization error");
+  }
+
+  const isNumericId = /^\d+$/.test(id);
+  const data = isNumericId
+    ? await repo.findByIdScoped(Number(id), auth.entityTag, auth.entityId ?? -1)
+    : await repo.findByQrCodeIdScoped(id, auth.entityTag, auth.entityId ?? -1);
   if (!data) {
     throw new APIError(ErrCode.FailedPrecondition, "WasteBag not found");
   }
-  return data;
+  const [withRelations] = await repo.attachRelations([data]);
+  if (data.wasteBagQrCodeId) {
+    withRelations.logHistory = await repo.findLogHistoryForBag(data.wasteBagQrCodeId);
+  }
+  return withRelations;
 }
 
 // createWasteController — mirrors CreateWaste.ts / createWasteController.ts:
@@ -274,7 +332,15 @@ export async function createWasteBag(input: {
   // enrichment (denormalized onto the row at insert time) — from the local
   // `entities`/`regions` tables rather than the HTTP round-trip.
   const entity = await getEntityId(parsed.data.healthcareFacilityId);
-  const regionNames = await getEntityRegionNames(entity);
+  const regionNames = await getEntityRegionNames(
+    entity
+      ? {
+          provinceId: entity.provinceId ?? undefined,
+          regencyId: entity.regencyId ?? undefined,
+          subDistrictId: entity.subDistrictId ?? undefined,
+        }
+      : null
+  );
 
   const created = await repo.create({
     createdBy: input.createdBy,
@@ -293,7 +359,7 @@ export async function createWasteBag(input: {
     iotMethod: parsed.data.iotMethod,
     isTreated: parsed.data.isTreated ?? false,
     scheduledStorageEndDatetime,
-    healthcareFacilityName: entity?.name,
+    healthcareFacilityName: entity?.name ?? undefined,
     ...regionNames,
   });
 

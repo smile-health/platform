@@ -16,6 +16,7 @@ import cx from 'src/lib/cx';
 
 import { getAuthTokenCookies } from '@/utils/storage/auth';
 import { toast } from '@repo/ui/components/toast';
+import { setAuthRedirectPathCookies } from '@repo/ui/utils/storage/auth';
 import Header from './Header';
 import Navbar from './Navbar';
 
@@ -87,9 +88,8 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
         description: 'Token not found',
       });
 
-      window.location.replace(
-        `${process.env.NEXT_PUBLIC_URL_FE_SMILE}/${lang}/v5/login`
-      );
+      setAuthRedirectPathCookies();
+      window.location.replace(`/${lang}/v5/login`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

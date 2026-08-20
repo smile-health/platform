@@ -28,6 +28,7 @@ import type {
   PartnershipProviderType,
   PartnershipStatusValue,
   PartnershipWasteClassification,
+  PartnershipWasteClassificationHierarchy,
 } from "./partnership.types";
 
 function toEntity(row: {
@@ -470,17 +471,29 @@ export async function findOneThirdParty(params: {
 // `entities` table (already joined the same way in
 // findMultipleTransporterPartnerships above), since no thirdparty-admin
 // client is ported into this module yet.
-export async function findConsumersForThirdPartyAdmin(providerId: number): Promise<Array<{ consumerId: number; consumerName: string | null }>> {
+export async function findConsumersForThirdPartyAdmin(
+  providerId: number,
+): Promise<Array<{ id: number; consumerId: number; consumerName: string | null }>> {
   const rows = await db
     .selectFrom("partnership")
     .leftJoin("entities", "entities.id", "partnership.consumer_id")
-    .select(["partnership.consumer_id as consumerId", "entities.name as consumerName"])
+    .select((eb) => [
+      // Mirrors the original's grouped PartnershipModel.findAll({ group:
+      // ['consumerId'] }) — `id` there is just whichever row Postgres/MySQL
+      // happens to pick for the group; min() here reproduces "some id from
+      // this consumer's group" without relying on undefined GROUP BY
+      // row-selection behavior (Postgres requires every selected
+      // non-aggregate column in the GROUP BY, unlike MySQL's lax mode).
+      eb.fn.min("partnership.id").as("id"),
+      "partnership.consumer_id as consumerId",
+      "entities.name as consumerName",
+    ])
     .where("partnership.provider_id", "=", providerId)
     .where("partnership.deleted_at", "is", null)
     .groupBy(["partnership.consumer_id", "entities.name"])
     .execute();
 
-  return rows.map((row) => ({ consumerId: row.consumerId, consumerName: row.consumerName }));
+  return rows.map((row) => ({ id: Number(row.id), consumerId: row.consumerId, consumerName: row.consumerName }));
 }
 
 // getWasteClassificationByHealthcare()'s provider-type filter, mirrored
@@ -706,6 +719,128 @@ export async function findTransporterProviderIds(params: {
   }
   const rows = await query.execute();
   return rows.map((row) => row.provider_id).filter((id): id is number => id !== null);
+}
+
+// Mirrors PartnershipRepositoryImpl.ts's getPartnershipById/
+// getAllPartnershipByUserId three-way WasteClassificationModel ->
+// WasteHierarchyModel (wasteType/wasteGroup/wasteCharacteristics) include —
+// the nested `wasteClassification` hierarchy object surfaced on both the
+// list and detail responses. Same aliased-triple-join pattern as
+// waste-classification.repository.ts's baseSelectWithHierarchy.
+export async function findWasteClassificationHierarchy(
+  wasteClassificationId: number,
+): Promise<PartnershipWasteClassificationHierarchy | null> {
+  const row = await db
+    .selectFrom("waste_classification")
+    .leftJoin(
+      "waste_hierarchy as waste_type",
+      (join) => join.onRef("waste_type.id", "=", "waste_classification.waste_type_id") as any,
+    )
+    .leftJoin(
+      "waste_hierarchy as waste_group",
+      (join) => join.onRef("waste_group.id", "=", "waste_classification.waste_group_id") as any,
+    )
+    .leftJoin(
+      "waste_hierarchy as waste_characteristics",
+      (join) =>
+        join.onRef("waste_characteristics.id", "=", "waste_classification.waste_characteristics_id") as any,
+    )
+    .select([
+      "waste_classification.waste_type_id as wasteTypeId",
+      "waste_classification.waste_group_id as wasteGroupId",
+      "waste_classification.waste_characteristics_id as wasteCharacteristicsId",
+      "waste_classification.waste_code as wasteCode",
+      "waste_type.id as waste_type_id_join",
+      "waste_type.name as waste_type_name",
+      "waste_type.description as waste_type_description",
+      "waste_type.name_en as waste_type_name_en",
+      "waste_type.description_en as waste_type_description_en",
+      "waste_group.id as waste_group_id_join",
+      "waste_group.name as waste_group_name",
+      "waste_group.description as waste_group_description",
+      "waste_group.name_en as waste_group_name_en",
+      "waste_group.description_en as waste_group_description_en",
+      "waste_characteristics.id as waste_characteristics_id_join",
+      "waste_characteristics.name as waste_characteristics_name",
+      "waste_characteristics.description as waste_characteristics_description",
+      "waste_characteristics.name_en as waste_characteristics_name_en",
+      "waste_characteristics.description_en as waste_characteristics_description_en",
+    ] as any)
+    .where("waste_classification.id", "=", wasteClassificationId)
+    .executeTakeFirst();
+
+  if (!row) return null;
+  const r = row as any;
+
+  return {
+    wasteTypeId: r.wasteTypeId ?? null,
+    wasteGroupId: r.wasteGroupId ?? null,
+    wasteCharacteristicsId: r.wasteCharacteristicsId ?? null,
+    wasteCode: r.wasteCode ?? null,
+    wasteType:
+      r.waste_type_id_join != null
+        ? {
+            id: r.waste_type_id_join,
+            name: r.waste_type_name,
+            description: r.waste_type_description ?? undefined,
+            nameEn: r.waste_type_name_en ?? undefined,
+            descriptionEn: r.waste_type_description_en ?? undefined,
+          }
+        : undefined,
+    wasteGroup:
+      r.waste_group_id_join != null
+        ? {
+            id: r.waste_group_id_join,
+            name: r.waste_group_name,
+            description: r.waste_group_description ?? undefined,
+            nameEn: r.waste_group_name_en ?? undefined,
+            descriptionEn: r.waste_group_description_en ?? undefined,
+          }
+        : undefined,
+    wasteCharacteristics:
+      r.waste_characteristics_id_join != null
+        ? {
+            id: r.waste_characteristics_id_join,
+            name: r.waste_characteristics_name,
+            description: r.waste_characteristics_description ?? undefined,
+            nameEn: r.waste_characteristics_name_en ?? undefined,
+            descriptionEn: r.waste_characteristics_description_en ?? undefined,
+          }
+        : undefined,
+  };
+}
+
+// Mirrors PartnershipRepositoryImpl.ts's getPartnershipById three
+// PartnershipModel.findOne({ where: { consumerId, providerType } }) calls
+// (TREATMENT_PROVIDER / LANDFILLER / RECYCLER) used to resolve
+// treatmentCompanyName/landfilCompanyName/recycleCompanyName — collapsed
+// into one query here, one row per matching providerType (first match per
+// type, same "whichever row findOne happens to return" semantics).
+export async function findCompanyProviderIdsByConsumer(consumerId: number): Promise<{
+  treatmentProviderId?: number;
+  landfillerId?: number;
+  recyclerId?: number;
+}> {
+  const rows = await db
+    .selectFrom("partnership")
+    .select(["provider_id", "provider_type"])
+    .where("consumer_id", "=", consumerId)
+    .where("provider_type", "in", ["TREATMENT_PROVIDER", "LANDFILLER", "RECYCLER"])
+    .where("deleted_at", "is", null)
+    .execute();
+
+  const result: { treatmentProviderId?: number; landfillerId?: number; recyclerId?: number } = {};
+  for (const row of rows) {
+    if (row.provider_id === null) continue;
+    if (row.provider_type === "TREATMENT_PROVIDER" && result.treatmentProviderId === undefined) {
+      result.treatmentProviderId = row.provider_id;
+    } else if (row.provider_type === "LANDFILLER" && result.landfillerId === undefined) {
+      result.landfillerId = row.provider_id;
+    } else if (row.provider_type === "RECYCLER" && result.recyclerId === undefined) {
+      result.recyclerId = row.provider_id;
+    }
+  }
+  return result;
 }
 
 // Mirrors updatePartnership()'s "sync contract dates to the parent

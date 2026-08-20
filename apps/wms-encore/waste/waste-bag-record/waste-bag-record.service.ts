@@ -65,7 +65,15 @@ export async function createWasteBagRecord(input: {
   // `entities`/`regions` tables rather than the HTTP round-trip (same
   // pattern as waste-bag.service.ts's createWasteBag).
   const entity = await getEntityId(input.healthcareFacilityId);
-  const regionNames = await getEntityRegionNames(entity);
+  const regionNames = await getEntityRegionNames(
+    entity
+      ? {
+          provinceId: entity.provinceId ?? undefined,
+          regencyId: entity.regencyId ?? undefined,
+          subDistrictId: entity.subDistrictId ?? undefined,
+        }
+      : null
+  );
 
   const created = await repo.create({
     createdBy: input.createdBy,
@@ -86,7 +94,7 @@ export async function createWasteBagRecord(input: {
     wasteGroupIds: parsed.data.wasteGroupIds,
     bastNo: parsed.data.bastNo,
     materialIds: parsed.data.materialIds,
-    healthcareFacilityName: entity?.name,
+    healthcareFacilityName: entity?.name ?? undefined,
     ...regionNames,
   });
 

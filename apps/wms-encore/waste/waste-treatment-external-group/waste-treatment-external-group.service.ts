@@ -102,6 +102,8 @@ export async function getWasteTreatmentExternalGroup(input: {
         logHistory: await repo.getWasteBagLogHistory(r.bag.wasteBagQrCodeId),
         treatmentMethod: classification?.treatmentMethod ?? undefined,
         wasteClassification: repo.buildBagWasteClassification(classification),
+        treatmentStartTime: r.bag.treatmentStartTime,
+        treatmentEndTime: r.bag.treatmentEndTime,
       };
     })
   );
@@ -248,6 +250,10 @@ export async function getAllWasteTreatmentExternalGroup(input: {
         healthcareFacilityName: bag.healthcareFacilityName,
         wasteStatusUpdatedAt: bag.wasteStatusUpdatedAt,
         wasteClassification: repo.buildBagWasteClassification(classificationById.get(bag.wasteClassificationId)),
+        treatmentMethod: classificationById.get(bag.wasteClassificationId)?.treatmentMethod ?? undefined,
+        treatmentStartTime: bag.treatmentStartTime,
+        treatmentEndTime: bag.treatmentEndTime,
+        wasteSource: bag.wasteSource,
       })),
       // The original also sorts the final list by
       // `wasteType.id` ascending — now that wasteType is populated, applying

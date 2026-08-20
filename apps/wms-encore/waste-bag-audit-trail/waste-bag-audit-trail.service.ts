@@ -22,15 +22,23 @@ function sanitizePaginationParams(limit?: number, page?: number): { limit: numbe
 }
 
 // Mirrors GetAllWasteBagAuditTrail.executeAll -> WasteBagAuditTrailRepositoryImpl.getAllWasteBagAuditTrails.
-// See GetAllWasteBagAuditTrailsRequest's comment: search/healthcareFacilityId/
-// transporterId/thirdPartyProviderId are dropped, not silently no-op'd, since
-// this table has no matching columns to filter/search on.
+// See GetAllWasteBagAuditTrailsRequest's comment: `search` is dropped (dead
+// parameter upstream too); healthcareFacilityId/transporterId/
+// thirdPartyProviderId are restored now that migration 16
+// (16_extend_waste_bag_audit_trail.up.sql) added their backing columns.
 export async function getAllWasteBagAuditTrails(
   input: GetAllWasteBagAuditTrailsRequest
 ): Promise<PaginatedWasteBagAuditTrailEntries> {
   const { limit, page } = sanitizePaginationParams(input.limit, input.page);
   try {
-    return await repo.findPaginated({ limit, page, wasteBagId: input.wasteBagId });
+    return await repo.findPaginated({
+      limit,
+      page,
+      wasteBagId: input.wasteBagId,
+      healthcareFacilityId: input.healthcareFacilityId,
+      transporterId: input.transporterId,
+      thirdPartyProviderId: input.thirdPartyProviderId,
+    });
   } catch (error) {
     console.error("Error retrieving wastebag audit trail:", error);
     throw new Error("Error retrieving wastebag audit trail");

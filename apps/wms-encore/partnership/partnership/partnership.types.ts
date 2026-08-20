@@ -9,6 +9,8 @@
 // (see partnership.service.ts's withProviderConsumerNames and
 // shared/core/entity-user-lookup.ts) rather than the HTTP fallback. See
 // partnership.repository.ts for the remaining TODOs.
+import type { Entities } from "../../entity/entities/entities.types";
+
 export type PartnershipConsumerType =
   | "HEALTHCARE_FACILITY"
   | "TRANSPORTER"
@@ -34,6 +36,40 @@ export type PartnershipProviderType =
   | "TRANSPORTER_GOVERNMENT_WASTE_BANK";
 
 export type PartnershipStatusValue = "PENDING" | "ACTIVE" | "SUSPENDED" | "TERMINATED" | "EXPIRED";
+
+// Mirrors the shape returned by apps/core's getEntityDetail(...) as consumed
+// by PartnershipRepositoryImpl.ts's consumerDetail/providerDetail fields —
+// ported here from the local `entities` table (see entities.types.ts's
+// Entities) rather than the HTTP round-trip, same local-DB-first pattern
+// already used for providerName/consumerName below.
+export type PartnershipEntityDetail = Entities;
+
+// Mirrors the plain id/name/description/nameEn/descriptionEn subset of
+// WasteHierarchyModel used by PartnershipRepositoryImpl.ts's
+// getPartnershipById/getAllPartnershipByUserId includes (wasteType/
+// wasteGroup/wasteCharacteristics — the last one also carries isActive on
+// the model but that isn't surfaced on the response DTO).
+export interface PartnershipWasteHierarchySummary {
+  id: number;
+  name: string;
+  description?: string;
+  nameEn?: string;
+  descriptionEn?: string;
+}
+
+// Mirrors the `wasteClassification` object nested onto the partnership
+// response by PartnershipRepositoryImpl.ts's getPartnershipById/
+// getAllPartnershipByUserId (WasteClassificationModel joined with its three
+// WasteHierarchyModel associations).
+export interface PartnershipWasteClassificationHierarchy {
+  wasteTypeId: number | null;
+  wasteGroupId: number | null;
+  wasteCharacteristicsId: number | null;
+  wasteCode: string | null;
+  wasteType?: PartnershipWasteHierarchySummary;
+  wasteGroup?: PartnershipWasteHierarchySummary;
+  wasteCharacteristics?: PartnershipWasteHierarchySummary;
+}
 
 export interface Partnership {
   id: number;
@@ -61,6 +97,25 @@ export interface Partnership {
   // partnership.service.ts's withProviderConsumerNames.
   providerName?: string;
   consumerName?: string;
+  // The remaining fields below were previously not ported (see this file's
+  // and partnership.repository.ts's header comments) — now populated by
+  // partnership.service.ts's withFullPartnershipDetail, from the local
+  // `entities`/`waste_classification`/`waste_hierarchy`/`regions` tables
+  // rather than the original's cross-service HTTP lookups.
+  wasteClassification?: PartnershipWasteClassificationHierarchy;
+  consumerDetail?: PartnershipEntityDetail;
+  providerDetail?: PartnershipEntityDetail;
+  // Mirrors PartnershipRepositoryImpl.ts's `dataEntities?.nib` — the nib of
+  // the *provider* entity (PartnershipModel.belongsTo(EntitiesModel, {
+  // foreignKey: 'provider_id', as: 'entities' })), not the consumer's.
+  nib?: string;
+  treatmentCompanyName?: string;
+  landfilCompanyName?: string;
+  recycleCompanyName?: string;
+  // List-endpoint-only fields (getAllPartnerships) — mirrors
+  // consumerDetail?.locations?.[0]/[1]?.name.
+  consumerProvinceName?: string;
+  consumerCityName?: string;
 }
 
 export interface PaginationMeta {
@@ -231,6 +286,7 @@ export interface FindOneThirdPartyResponse {
 // findMultipleTransporterPartnerships), so no thirdparty-admin client is
 // needed for this read path.
 export interface HealthcareSelect {
+  id: number;
   consumerId: number;
   consumerName: string | null;
 }

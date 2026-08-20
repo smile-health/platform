@@ -39,7 +39,11 @@ export const getHealthcareAssetById = api(
   async (req: GetHealthcareAssetByIdRequest): Promise<GetHealthcareAssetByIdResponse> => {
     const { entityId } = getAuthData()!;
     const token = req.authorization?.replace(/^Bearer\s+/i, "");
-    const data = await service.getHealthcareAssetById(req.id, req.healthcareFacilityId, entityId, token);
+    // Mirrors healthcareAssetController.ts: `(req.headers['accept-language']
+    // as string)?.toLowerCase() || 'id'`, then `lang.includes('en') ? 'en' : 'id'`.
+    const acceptLanguage = req.acceptLanguage?.toLowerCase() ?? "id";
+    const lang = acceptLanguage.includes("en") ? "en" : "id";
+    const data = await service.getHealthcareAssetById(req.id, req.healthcareFacilityId, entityId, token, lang);
     return { status: "success", data };
   }
 );

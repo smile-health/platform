@@ -15,8 +15,8 @@ export interface QrCodeConfig {
   wasteSourceId: number;
   wasteClassificationId: number;
   labelCount: number;
-  wasteSource?: Record<string, unknown>;
-  wasteClassification?: Record<string, unknown>;
+  wasteSource?: unknown;
+  wasteClassification?: unknown;
   // Original: enriched via getUsersDetail(updatedBy, token)
   // (infrastructure/external-apis/thirdPartyClient.ts), only in the list
   // endpoint — see QrCodeConfigRepoitoryImpl.ts:454

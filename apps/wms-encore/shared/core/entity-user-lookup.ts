@@ -28,7 +28,7 @@ import { findById, findByUserUuid } from "../../users/users/users.repository";
 export async function getLocalEntityName(entityId: number | null | undefined): Promise<string | undefined> {
   if (!entityId) return undefined;
   const entity = await getEntityId(entityId);
-  return entity?.name;
+  return entity?.name ?? undefined;
 }
 
 function displayName(user: { firstname?: string; lastname?: string; username?: string }): string | undefined {

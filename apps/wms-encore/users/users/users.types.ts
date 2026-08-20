@@ -54,8 +54,8 @@ export interface User {
   createdBy?: number;
   updatedBy?: number;
   isActive?: boolean;
-  entity?: UserEntitySummary;
-  userRole?: UserRoleSummary;
+  entity?: UserEntitySummary | null;
+  userRole?: UserRoleSummary | null;
 }
 
 export interface PaginationMeta {

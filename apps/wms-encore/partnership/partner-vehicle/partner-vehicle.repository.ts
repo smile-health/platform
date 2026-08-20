@@ -72,7 +72,7 @@ export async function findById(id: number): Promise<PartnerVehicle | null> {
   if (!row) return null;
   const entity = toEntity(row);
   const entityDetail = await getEntityId(row.entity_id);
-  entity.entityName = entityDetail?.name;
+  entity.entityName = entityDetail?.name ?? undefined;
   return entity;
 }
 
@@ -151,7 +151,7 @@ export async function findPaginated(params: {
     rows.map(async (row) => {
       const entity = toEntity(row);
       const entityDetail = await getEntityId(row.entity_id);
-      entity.entityName = entityDetail?.name;
+      entity.entityName = entityDetail?.name ?? undefined;
       return entity;
     }),
   );

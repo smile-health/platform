@@ -225,7 +225,11 @@ export async function getWasteBagLogHistory(
     .where("is_group", "=", true)
     .orderBy("created_at", "asc")
     .execute();
-  return rows.map((r) => ({ wasteStatus: r.waste_bag_status, wasteBagStatusUpdateDate: r.created_at }));
+  // waste_bag_status became nullable via db/migrations/16_extend_waste_bag_audit_trail.up.sql
+  // (waste-bag-audit-trail module's fix restoring the 11 dropped audit-trail
+  // fields); coalesced to "" to preserve this function's pre-existing
+  // non-null `wasteStatus: string` contract without guessing a real status.
+  return rows.map((r) => ({ wasteStatus: r.waste_bag_status ?? "", wasteBagStatusUpdateDate: r.created_at }));
 }
 
 export { classificationRepo };

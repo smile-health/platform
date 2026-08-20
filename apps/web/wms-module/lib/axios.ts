@@ -1,11 +1,12 @@
 import { DEFAULT_LANGUAGE } from '@/constants/language';
 import { removeEmptyObject } from '@/utils/object';
-import {
-  getAuthTokenCookies,
-  removeAuthTokenCookies,
-  setAuthRedirectPathCookies,
-} from '@/utils/storage/auth';
+import { getAuthTokenCookies, getAuthTokenStorage, removeAuthTokenCookies } from '@/utils/storage/auth';
 import { toast } from '@repo/ui/components/toast';
+// The redirect-back path must be saved under the SAME cookie AuthProvider reads after
+// login (packages/ui/src/provider/auth-provider.tsx) — that's the smile-prefixed one,
+// not wms-module's own (unread) copy, since re-login always happens on the shared
+// /[lang]/v5/login page outside /wms.
+import { setAuthRedirectPathCookies } from '@repo/ui/utils/storage/auth';
 import axios, { AxiosError } from 'axios';
 
 declare module 'axios' {
@@ -30,7 +31,7 @@ export const setAxiosLanguage = (language: string) => {
 const redirectToLogin = () => {
   const pathname = window.location.pathname;
   const language = pathname.split('/')[2] ?? DEFAULT_LANGUAGE.value;
-  const loginPath = `${process.env.NEXT_PUBLIC_URL_FE_SMILE}/${language}/v5/login`;
+  const loginPath = `/${language}/v5/login`;
 
   removeAuthTokenCookies();
   localStorage.clear();

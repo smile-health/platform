@@ -86,34 +86,71 @@ export async function findPaginated(params: {
   sortBy?: string;
   sortOrder?: string;
 }): Promise<{ data: QrCodeConfig[]; pagination: PaginationMeta }> {
-  let query = db.selectFrom("qr_code_config").where("deleted_at", "is", null);
-
-  if (params.healthcareFacilityId !== undefined) {
-    query = query.where("healthcare_facility_id", "=", params.healthcareFacilityId);
+  // Joins waste_source (required, matching the original's `required: true`
+  // include) and waste_classification -> waste_hierarchy (aliased
+  // waste_characteristics via waste_characteristics_id) so search/sourceType
+  // filtering and the two relational sortBy values can run against them.
+  function withJoins<T extends typeof baseQuery>(q: T) {
+    return q
+      .innerJoin("waste_source", "waste_source.id", "qr_code_config.waste_source_id")
+      .innerJoin("waste_classification", "waste_classification.id", "qr_code_config.waste_classification_id")
+      .leftJoin(
+        "waste_hierarchy as waste_characteristics",
+        "waste_characteristics.id",
+        "waste_classification.waste_characteristics_id"
+      );
   }
 
-  // Original filters/searches across the joined waste_source /
-  // waste_classification->wasteCharacteristics tables (sourceType,
-  // internal_source_name, internal_treatment_name,
-  // external_healthcare_facility_name, wasteCharacteristics.name) via
-  // Op.like. Those joins aren't wired up yet (see header comment) — search
-  // and sourceType filtering on this table's own columns is a no-op today,
-  // left here as the integration point for when those joins land. Using
-  // ILIKE (not LIKE) per convention once the join column is available.
-  // e.g.: query = query.where("waste_source.internal_source_name", "ilike", `%${params.search}%`)
+  const baseQuery = db.selectFrom("qr_code_config").where("qr_code_config.deleted_at", "is", null);
+  let query = withJoins(baseQuery);
+
+  if (params.healthcareFacilityId !== undefined) {
+    query = query.where("qr_code_config.healthcare_facility_id", "=", params.healthcareFacilityId);
+  }
+  if (params.sourceType) {
+    query = query.where(
+      "waste_source.source_type",
+      "=",
+      params.sourceType as "INTERNAL" | "EXTERNAL" | "INTERNAL_TREATMENT"
+    );
+  }
+  if (params.search) {
+    const term = `%${params.search}%`;
+    query = query.where((eb) =>
+      eb.or([
+        eb("waste_source.internal_source_name", "ilike", term),
+        eb(eb.cast("waste_source.internal_treatment_name", "text"), "ilike", term),
+        eb("waste_source.external_healthcare_facility_name", "ilike", term),
+        eb("waste_characteristics.name", "ilike", term),
+      ])
+    );
+  }
 
   const countRow = await query.select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
 
   // Original default sort: ['updated_at', 'DESC'], with a fallback re-push
   // of the same order if sortBy differs — net effect for the two relational
-  // sortBy values (wasteSourceName / wasteCharacteristicsName) is: primary
-  // sort by the joined column, secondary tie-break by updated_at DESC. Those
-  // joins aren't wired up (see header comment), so only the updated_at
-  // fallback is actually implementable against this table alone right now.
-  const rows = await query
-    .selectAll()
-    .orderBy("updated_at", "desc")
+  // sortBy values is: primary sort by the joined column, secondary tie-break
+  // by updated_at DESC.
+  let sorted = query.selectAll("qr_code_config");
+  const direction = params.sortOrder === "DESC" ? "desc" : "asc";
+  if (params.sortBy === "wasteSourceName") {
+    sorted = sorted.orderBy(
+      (eb) =>
+        eb.fn.coalesce(
+          "waste_source.internal_source_name",
+          eb.cast("waste_source.internal_treatment_name", "text"),
+          "waste_source.external_healthcare_facility_name"
+        ),
+      direction
+    );
+  } else if (params.sortBy === "wasteCharacteristicsName") {
+    sorted = sorted.orderBy("waste_characteristics.name", direction);
+  }
+  sorted = sorted.orderBy("qr_code_config.updated_at", "desc");
+
+  const rows = await sorted
     .limit(params.limit)
     .offset((params.page - 1) * params.limit)
     .execute();

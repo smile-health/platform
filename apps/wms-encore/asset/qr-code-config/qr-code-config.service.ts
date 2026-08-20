@@ -25,7 +25,11 @@ export async function getQrCodeConfigById(id: string): Promise<QrCodeConfig> {
   // user_uuid via getLocalUserName — see shared/core/entity-user-lookup.ts)
   // rather than the original's HTTP fallback to apps/core.
   const userName = data.updatedBy ? await getLocalUserName(data.updatedBy) : undefined;
-  return { ...data, userName };
+  const [wasteSource, wasteClassification] = await Promise.all([
+    wasteSourceRepo.findById(data.wasteSourceId),
+    wasteClassificationRepo.findById(data.wasteClassificationId),
+  ]);
+  return { ...data, userName, wasteSource: wasteSource ?? undefined, wasteClassification: wasteClassification ?? undefined };
 }
 
 export async function getAllQrCodeConfigs(input: {
@@ -72,10 +76,14 @@ export async function getAllQrCodeConfigs(input: {
     sortOrder: validSortOrder,
   });
   const data = await Promise.all(
-    result.data.map(async (row) => ({
-      ...row,
-      userName: row.updatedBy ? await getLocalUserName(row.updatedBy) : undefined,
-    })),
+    result.data.map(async (row) => {
+      const [userName, wasteSource, wasteClassification] = await Promise.all([
+        row.updatedBy ? getLocalUserName(row.updatedBy) : Promise.resolve(undefined),
+        wasteSourceRepo.findById(row.wasteSourceId),
+        wasteClassificationRepo.findById(row.wasteClassificationId),
+      ]);
+      return { ...row, userName, wasteSource: wasteSource ?? undefined, wasteClassification: wasteClassification ?? undefined };
+    }),
   );
   return { ...result, data };
 }

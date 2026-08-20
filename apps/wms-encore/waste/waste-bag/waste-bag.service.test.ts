@@ -3,9 +3,13 @@ import { APIError, ErrCode } from "encore.dev/api";
 
 const repoMock = vi.hoisted(() => ({
   findById: vi.fn(),
+  findByIdScoped: vi.fn(),
   findByQrCodeId: vi.fn(),
+  findByQrCodeIdScoped: vi.fn(),
   findManyByQrCodeIds: vi.fn(),
   findPaginated: vi.fn(),
+  attachRelations: vi.fn(async (bags) => bags),
+  findLogHistoryForBag: vi.fn(async () => []),
   create: vi.fn(),
   updateStatusByQrCodeIds: vi.fn(),
   findTransactionsPaginated: vi.fn(),
@@ -58,16 +62,24 @@ describe("waste-bag.service", () => {
   });
 
   describe("getWasteBagById", () => {
+    const auth = { entityTag: "hospital", entityId: 1 };
+
     it("throws FailedPrecondition when id is missing/NaN", async () => {
-      await expect(service.getWasteBagById("")).rejects.toMatchObject({
+      await expect(service.getWasteBagById("", auth)).rejects.toMatchObject({
         code: ErrCode.FailedPrecondition,
       });
-      await expect(service.getWasteBagById("abc")).rejects.toBeInstanceOf(APIError);
+    });
+
+    it("throws PermissionDenied when entityTag is missing", async () => {
+      await expect(service.getWasteBagById("1", {})).rejects.toMatchObject({
+        code: ErrCode.PermissionDenied,
+        message: "Authorization error",
+      });
     });
 
     it("throws FailedPrecondition when the row does not exist", async () => {
-      repoMock.findById.mockResolvedValue(null);
-      await expect(service.getWasteBagById("1")).rejects.toMatchObject({
+      repoMock.findByIdScoped.mockResolvedValue(null);
+      await expect(service.getWasteBagById("1", auth)).rejects.toMatchObject({
         code: ErrCode.FailedPrecondition,
         message: "WasteBag not found",
       });

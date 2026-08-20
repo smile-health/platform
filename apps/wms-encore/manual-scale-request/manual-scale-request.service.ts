@@ -184,7 +184,7 @@ export async function getAllManualScaleRequests(input: {
   const safeLimit = input.limit && input.limit > 0 ? input.limit : 10;
   const safePage = input.page && input.page > 0 ? input.page : 1;
 
-  return repo.findPaginated({
+  const result = await repo.findPaginated({
     limit: safeLimit,
     page: safePage,
     entityId: input.entityId,
@@ -195,6 +195,22 @@ export async function getAllManualScaleRequests(input: {
     startDate: input.startDate,
     endDate: input.endDate,
   });
+
+  // Original enriches every row with operatorName/processedName/entityName —
+  // same local-tables-only lookup as createManualScaleRequest/
+  // activateManualScaleRequest above, just applied per-row here.
+  const data = await Promise.all(
+    result.data.map(async (row) => {
+      const [operatorName, processedName, entityName] = await Promise.all([
+        getLocalUserName(row.requestedBy),
+        row.processedBy ? getLocalUserName(row.processedBy) : Promise.resolve(undefined),
+        getLocalEntityName(row.entityId),
+      ]);
+      return { ...row, operatorName, processedName, entityName };
+    })
+  );
+
+  return { ...result, data };
 }
 
 // Mirrors PatchManualScaleRequestUseCase.execute + activateManualScaleRequest

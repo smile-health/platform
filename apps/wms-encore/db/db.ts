@@ -350,26 +350,37 @@ export interface WasteBagAuditTrailTable {
   previous_status: string;
   new_status: string;
   created_at: Date;
-  // Added for waste/waste-treatment-external-group, waste/waste-bag-treatment-group
-  // and waste/waste-transport-external-group's getWasteBagLogHistory port
-  // (mirrors apps/wms-service's shared/utils/wasteBagLogHistory.ts query).
-  // waste_bag_status / is_group came from migration
-  // 20250528101730-waste_bag_audit_trail.js / 20250820082347-add_is_group_on_audit_trail.js.
-  // waste_bag_qr_code is the new (dual-write) join column added by
-  // 20260703000002-rename_waste_bag_audit_trail_qr_code_column.js as an
-  // expand/contract rename of waste_bag_id -> waste_bag_qr_code; queries here
-  // join on it directly (varchar-to-varchar) rather than the legacy
-  // waste_bag_id column (whose declared type above doesn't actually match
-  // what the original raw SQL compared it against — see those repositories'
-  // getWasteBagLogHistory comments).
-  // Generated<> here isn't a real DB default for waste_bag_status (the
-  // migration declares it NOT NULL with no default) — it's used pragmatically
-  // so this addition doesn't force ../waste-bag-audit-trail/'s existing
-  // insert() (out of this task's scope to touch) to suddenly require a value
-  // it doesn't currently pass, matching this codebase's existing loose usage
-  // of Generated<> for "insert path doesn't set this column today" fields.
-  waste_bag_status: Generated<string>;
-  is_group: Generated<boolean>;
+  // The 11 columns below restore parity with apps/wms-service's
+  // WasteBagAuditTrailModel (id/waste_bag_id/created_at plus
+  // previous_status/new_status were the only ones migration 2
+  // — 2_create_waste_bag_audit_trail.up.sql — originally ported). Added by
+  // migration 16 (16_extend_waste_bag_audit_trail.up.sql) as nullable
+  // columns since ../waste-bag-audit-trail/'s existing insertAuditTrailEntry()
+  // doesn't populate them (see that migration's comment for why NOT NULL
+  // wasn't used).
+  //
+  // waste_bag_status / is_group are also the columns
+  // waste/waste-treatment-external-group, waste/waste-bag-treatment-group and
+  // waste/waste-transport-external-group's getWasteBagLogHistory port query
+  // off this table (mirrors apps/wms-service's shared/utils/wasteBagLogHistory.ts
+  // query) — previously declared here with a Generated<> workaround admitting
+  // no migration backed them; migration 16 makes those two real, fixing that
+  // module's previously-undefined runtime behavior as a side effect.
+  // waste_bag_qr_code (also referenced by those repositories, for the same
+  // expand/contract rename of waste_bag_id -> waste_bag_qr_code) is left
+  // untouched by migration 16 — it's unrelated to these 11 fields and still
+  // has no backing migration; that gap is pre-existing and out of scope here.
+  event: string | null;
+  source: string | null;
+  remarks: string | null;
+  waste_bag_status: string | null;
+  transport_status: string | null;
+  healthcare_facility_id: number | null;
+  transporter_id: number | null;
+  third_party_provider_id: number | null;
+  updated_by: string | null;
+  is_group: boolean;
+  is_failed: boolean;
   waste_bag_qr_code: string | null;
 }
 
@@ -429,6 +440,8 @@ export interface EntitiesTable {
   is_active: Generated<boolean>;
   created_at: Generated<Date>;
   updated_at: Date | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
 }
 
 export interface EntityLocationTable {

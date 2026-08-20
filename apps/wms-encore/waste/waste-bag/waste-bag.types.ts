@@ -59,6 +59,112 @@ export type ScaleMethod = "MANUAL" | "IOT";
 export const IOT_METHOD_VALUES = ["BLUETOOTH", "INTERNET"] as const;
 export type IotMethod = "BLUETOOTH" | "INTERNET";
 
+// ---- Nested relations (restored — mirror WasteBagModel's Sequelize
+// associations / getWasteBagFromModel's mapping in the original
+// WasteBagRepositoryImpl.ts). Each is undefined when the underlying FK is
+// null or the joined row wasn't found (LEFT JOIN), matching the original's
+// `wasteSource ? {...} : undefined` style.
+export interface WasteSourceInfo {
+  id: number;
+  healthcareFacilityId: number;
+  sourceType: string;
+  internalSourceName?: string;
+  internalTreatmentName?: string;
+  externalHealthcareFacilityId?: number;
+  externalHealthcareFacilityName?: string;
+  isActive: boolean;
+  isResidue: boolean;
+}
+
+export interface WasteHierarchyInfo {
+  id: number;
+  name: string;
+  description?: string;
+  nameEn: string;
+  descriptionEn?: string;
+  isResidue?: boolean;
+  parentHierarchyId?: number;
+}
+
+export interface WasteClassificationInfo {
+  id: number;
+  regionId: number;
+  effectiveFrom: Date;
+  effectiveTo: Date;
+  wasteTypeId: number;
+  wasteGroupId: number;
+  wasteCharacteristicsId: number;
+  wasteCode: string;
+  wasteBagColorCode: string;
+  storageRuleType?: string;
+  useColdStorage: boolean;
+  coldStorageMinHours?: number;
+  coldStorageMaxHours?: number;
+  tempStorageMinHours?: number;
+  tempStorageMaxHours?: number;
+  minimunDecayDay?: number;
+  allowHealthcareFacilityTreatment: boolean;
+  isActive: boolean;
+  hasMultipleTransporters: boolean;
+  treatmentMethod?: string;
+  disposalMethod?: string;
+  allowedVehicleTypes?: string;
+  wasteType: WasteHierarchyInfo;
+  wasteGroup: WasteHierarchyInfo;
+  wasteCharacteristics: WasteHierarchyInfo;
+}
+
+export interface TransportationGroupInfo {
+  id: number;
+  totalBagsCount: number;
+  totalWeightInKgs: number;
+  transporterVehicleId?: number;
+  transporterOperatorId?: string;
+  handoverLattitude?: number;
+  handoverLongitude?: number;
+  transportationStatus: string;
+  isReadOnly: boolean;
+  groupId: string;
+}
+
+export interface TreatmentGroupInfo {
+  id: number;
+  totalBagsCount: number;
+  totalWeightInKgs: number;
+  treatmentAssetId?: number;
+  treatmentOperatorId?: number;
+  handoverLattitude?: number;
+  handoverLongitude?: number;
+  treatmentStatus: string;
+  isReadOnly: boolean;
+  groupId: string;
+}
+
+export interface TransportationExternalGroupInfo {
+  id: number;
+  totalBagsCount: number;
+  transporterId: number;
+  totalWeightInKgs: number;
+  transporterVehicleId?: number;
+  transporterOperatorId?: string;
+  handoverLattitude?: number;
+  handoverLongitude?: number;
+  transportationStatus: string;
+  handoverTimestamp?: Date;
+  isReadOnly: boolean;
+  groupId: string;
+}
+
+export interface TreatmentExternalGroupInfo {
+  id: number;
+  totalBagsCount: number;
+  totalWeightInKgs: number;
+  treatmentOperatorId?: string;
+  transportationStatus: string;
+  isReadOnly: boolean;
+  groupId: string;
+}
+
 export interface WasteBag {
   id?: number;
   createdAt: Date;
@@ -106,6 +212,28 @@ export interface WasteBag {
   thirdPartyName?: string;
   bastNo?: string;
   materialIds?: string;
+
+  // Nested relations restored to match apps/wms-service's Sequelize
+  // `include` shape on WasteBagModel (belongsTo wasteClassification/
+  // wasteSource/treatmentGroup/transportationGroup/treatmentExternalGroup/
+  // transportationExternalGroup) — populated by waste-bag.service.ts's
+  // attachRelations() for both getAllWasteBags and getWasteBagById, mirroring
+  // WasteBagRepositoryImpl.getAllWasteBag/getWasteBagById. Left undefined for
+  // callers (e.g. lifecycle actions) that don't populate them.
+  wasteSource?: WasteSourceInfo;
+  wasteClassification?: WasteClassificationInfo;
+  transportationGroup?: TransportationGroupInfo;
+  treatmentGroup?: TreatmentGroupInfo;
+  transportationExternalGroup?: TransportationExternalGroupInfo;
+  treatmentExternalGroup?: TreatmentExternalGroupInfo;
+  // Mirrors getLogHistories(wasteBagId) — group-level status history off
+  // waste_bag_audit_trail (is_group = true rows), same shape/source as
+  // waste-bag-treatment-group.repository.ts's getWasteBagLogHistory.
+  logHistory?: Array<{ wasteStatus: string; wasteBagStatusUpdateDate: Date }>;
+  // Mirrors handleAnalisisProcessCount(disposalMethod, treatmentMethod,
+  // isTreated, wasteGroupIds, wasteStatus) — the projected remaining
+  // lifecycle steps for this bag.
+  processWastebagEnd?: string[];
 }
 
 export interface PaginationMeta {
@@ -156,6 +284,7 @@ export interface GetAllWasteBagsRequest {
   id?: number;
   wasteTypeId?: number;
   wasteGroupId?: number;
+  wasteCharacteristicsId?: number;
   isTreated?: boolean;
   isDisposed?: boolean;
   loggerHistory?: string;

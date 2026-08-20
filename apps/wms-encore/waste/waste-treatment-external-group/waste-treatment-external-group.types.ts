@@ -96,6 +96,14 @@ export interface WasteTreatmentExternalGroupBag {
   logHistory?: Record<string, unknown>[];
   treatmentMethod?: string;
   wasteClassification?: Record<string, unknown>;
+  treatmentStartTime?: Date;
+  treatmentEndTime?: Date;
+  wasteSource?: {
+    internalSourceName?: string;
+    internalTreatmentName?: string;
+    externalHealthcareFacilityName?: string;
+    sourceType?: string;
+  };
 }
 
 export interface WasteTreatmentExternalGroup {

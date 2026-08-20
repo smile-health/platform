@@ -83,6 +83,8 @@
 import { db } from "../db";
 import { sql } from "kysely";
 import { isValidDateString } from "../../shared/utils/date-range";
+import { getPresignedUrl } from "../../shared/storage/s3-client";
+import { handleAnalisisProcessCount } from "./waste-bag.process-analysis";
 import type { WasteBag, PaginationMeta } from "./waste-bag.types";
 import type { WasteStatus } from "./waste-bag.types";
 import type {
@@ -218,6 +220,45 @@ export async function findByQrCodeId(qrCodeId: string): Promise<WasteBag | null>
   return row ? toEntity(row as WasteBagRow) : null;
 }
 
+// Applies the same entityTag-driven scoping findPaginated uses (hospital-tag
+// -> healthcare_facility_id, else -> third_party_id/transporter_id) to a
+// single-row lookup, for GET /waste/:id — restores the entity-scoping the
+// original's getWasteBagById callers relied on the shared getAllWasteBag
+// gate for. Returns null (not found) rather than throwing when the row
+// exists but is out of scope, so this reads as a plain 404 to the caller
+// instead of leaking the row's existence.
+export async function findByIdScoped(
+  id: number,
+  entityTag: string,
+  entityId: number
+): Promise<WasteBag | null> {
+  const currentTag = entityTag.toLowerCase();
+  let query = db.selectFrom("waste_bag").selectAll().where("id", "=", id).where("deleted_at", "is", null);
+  query = currentTag.includes("hospital")
+    ? query.where("healthcare_facility_id", "=", entityId)
+    : query.where((eb) => eb.or([eb("third_party_id", "=", entityId), eb("transporter_id", "=", entityId)]));
+  const row = await query.executeTakeFirst();
+  return row ? toEntity(row as WasteBagRow) : null;
+}
+
+export async function findByQrCodeIdScoped(
+  qrCodeId: string,
+  entityTag: string,
+  entityId: number
+): Promise<WasteBag | null> {
+  const currentTag = entityTag.toLowerCase();
+  let query = db
+    .selectFrom("waste_bag")
+    .selectAll()
+    .where("waste_bag_qr_code_id", "=", qrCodeId)
+    .where("deleted_at", "is", null);
+  query = currentTag.includes("hospital")
+    ? query.where("healthcare_facility_id", "=", entityId)
+    : query.where((eb) => eb.or([eb("third_party_id", "=", entityId), eb("transporter_id", "=", entityId)]));
+  const row = await query.executeTakeFirst();
+  return row ? toEntity(row as WasteBagRow) : null;
+}
+
 export async function findManyByQrCodeIds(qrCodeIds: string[]): Promise<WasteBag[]> {
   if (qrCodeIds.length === 0) return [];
   const rows = await db
@@ -248,14 +289,79 @@ export interface FindPaginatedParams {
   binNumber?: string;
   wasteBagQrCodeId?: string;
   id?: number;
+  // Mirrors getAllWasteController's sourceType/wasteTypeId/wasteGroupId/
+  // wasteCharacteristicsId query params — dropped from this port's list
+  // filters and restored here. sourceType filters via a join against
+  // waste_source.source_type (waste_bag itself carries no source_type
+  // column); wasteTypeId/wasteGroupId/wasteCharacteristicsId filter via a
+  // join against waste_classification's matching FK columns.
+  sourceType?: string;
+  wasteTypeId?: number;
+  wasteGroupId?: number;
+  wasteCharacteristicsId?: number;
   isTreated?: boolean;
   isDisposed?: boolean;
+  // Entity scoping restored to match GetAllWasteBagUseCase/
+  // WasteBagRepositoryImpl.getAllWasteBag's entityTag/entityId gate — see
+  // waste-bag.service.ts's getAllWasteBags for the "Authorization error"
+  // check and the hospital-vs-transporter/third-party branch this drives.
+  entityTag?: string;
+  entityId?: number;
 }
 
 export async function findPaginated(
   params: FindPaginatedParams
 ): Promise<{ data: WasteBag[]; pagination: PaginationMeta }> {
   let query = db.selectFrom("waste_bag").where("deleted_at", "is", null);
+
+  // Mirrors WasteBagRepositoryImpl.getAllWasteBag's entityTag-driven scoping:
+  // hospital-tagged callers are scoped to their own healthcare_facility_id;
+  // everyone else (transporter/third-party entities) is scoped to rows where
+  // they're the transporter OR the third party. entityTag is required (see
+  // service.ts's Authorization-error guard) — this is enforced again here as
+  // a belt-and-suspenders check since this is a security boundary.
+  if (params.entityTag) {
+    const currentTag = params.entityTag.toLowerCase();
+    if (currentTag.includes("hospital")) {
+      query = query.where("healthcare_facility_id", "=", params.entityId ?? -1);
+    } else {
+      query = query.where((eb) =>
+        eb.or([
+          eb("third_party_id", "=", params.entityId ?? -1),
+          eb("transporter_id", "=", params.entityId ?? -1),
+        ])
+      );
+    }
+  }
+
+  if (params.sourceType || params.wasteTypeId || params.wasteGroupId || params.wasteCharacteristicsId) {
+    // Restrict to bags whose waste_source/waste_classification match —
+    // implemented as an `id in (subquery)` rather than a join so the
+    // existing selectAll()/countAll() shape below doesn't need reworking.
+    // Both tables are always joined here (harmless — waste_source_id and
+    // waste_classification_id are both NOT NULL on waste_bag) so the query
+    // builder's type stays stable across the conditional `.where()` calls
+    // below, rather than reassigning a `let` across differently-joined
+    // branches (which Kysely's type inference doesn't narrow cleanly).
+    const idSubquery = db
+      .selectFrom("waste_bag as wb2")
+      .innerJoin("waste_source", "waste_source.id", "wb2.waste_source_id")
+      .innerJoin("waste_classification", "waste_classification.id", "wb2.waste_classification_id")
+      .select("wb2.id")
+      .$if(!!params.sourceType, (qb) =>
+        qb.where(
+          "waste_source.source_type",
+          "=",
+          params.sourceType as "INTERNAL" | "EXTERNAL" | "INTERNAL_TREATMENT"
+        )
+      )
+      .$if(!!params.wasteTypeId, (qb) => qb.where("waste_classification.waste_type_id", "=", params.wasteTypeId!))
+      .$if(!!params.wasteGroupId, (qb) => qb.where("waste_classification.waste_group_id", "=", params.wasteGroupId!))
+      .$if(!!params.wasteCharacteristicsId, (qb) =>
+        qb.where("waste_classification.waste_characteristics_id", "=", params.wasteCharacteristicsId!)
+      );
+    query = query.where("id", "in", idSubquery);
+  }
 
   // Uses Postgres ILIKE for case-insensitive search, matching binNumber /
   // wasteBagQrCodeId free-text search in the original's Sequelize `Op.like`
@@ -309,6 +415,247 @@ export async function findPaginated(
       perPage: params.limit,
     },
   };
+}
+
+// ---------------------------------------------------------------------------
+// Nested-relation attachment — restores the associations
+// WasteBagRepositoryImpl.getAllWasteBag / getWasteBagById include on every
+// row in the original (getWasteBagFromModel's mapping): wasteSource,
+// wasteClassification (itself nested with wasteType/wasteGroup/
+// wasteCharacteristics), transportationGroup, treatmentGroup,
+// transportationExternalGroup, treatmentExternalGroup. Ported here as
+// batched follow-up SELECTs keyed by the FK columns already on `waste_bag`,
+// rather than a single giant join, so pagination/counting above is untouched
+// and a bag with a null FK simply gets `undefined` for that relation (same
+// as the original's `wasteSource ? {...} : undefined` branches).
+export async function attachRelations(bags: WasteBag[]): Promise<WasteBag[]> {
+  if (bags.length === 0) return bags;
+
+  const wasteSourceIds = [...new Set(bags.map((b) => b.wasteSourceId))];
+  const wasteClassificationIds = [...new Set(bags.map((b) => b.wasteClassificationId))];
+  const treatmentGroupIds = [...new Set(bags.map((b) => b.wasteTreatmentGroupId).filter((id): id is number => id != null))];
+  const transportationGroupIds = [...new Set(bags.map((b) => b.wasteTransportationGroupId).filter((id): id is number => id != null))];
+  const treatmentExternalGroupIds = [...new Set(bags.map((b) => b.wasteTreatmentExternalGroupId).filter((id): id is number => id != null))];
+  const transportationExternalGroupIds = [...new Set(bags.map((b) => b.wasteTransportationExternalGroupId).filter((id): id is number => id != null))];
+
+  const [wasteSources, classifications, treatmentGroups, transportationGroups, treatmentExternalGroups, transportationExternalGroups] =
+    await Promise.all([
+      wasteSourceIds.length
+        ? db.selectFrom("waste_source").selectAll().where("id", "in", wasteSourceIds).execute()
+        : Promise.resolve([]),
+      wasteClassificationIds.length
+        ? db
+            .selectFrom("waste_classification as wc")
+            .innerJoin("waste_hierarchy as wt", "wt.id", "wc.waste_type_id")
+            .innerJoin("waste_hierarchy as wg", "wg.id", "wc.waste_group_id")
+            .innerJoin("waste_hierarchy as wch", "wch.id", "wc.waste_characteristics_id")
+            .where("wc.id", "in", wasteClassificationIds)
+            .selectAll("wc")
+            .select([
+              "wt.id as wt_id", "wt.name as wt_name", "wt.description as wt_description",
+              "wt.name_en as wt_name_en", "wt.description_en as wt_description_en",
+              "wt.parent_hierarchy_id as wt_parent_hierarchy_id",
+              "wg.id as wg_id", "wg.name as wg_name", "wg.description as wg_description",
+              "wg.name_en as wg_name_en", "wg.description_en as wg_description_en",
+              "wg.parent_hierarchy_id as wg_parent_hierarchy_id",
+              "wch.id as wch_id", "wch.name as wch_name", "wch.description as wch_description",
+              "wch.name_en as wch_name_en", "wch.description_en as wch_description_en",
+              "wch.is_residue as wch_is_residue", "wch.parent_hierarchy_id as wch_parent_hierarchy_id",
+            ])
+            .execute()
+        : Promise.resolve([]),
+      treatmentGroupIds.length
+        ? db.selectFrom("waste_treatment_group").selectAll().where("id", "in", treatmentGroupIds).execute()
+        : Promise.resolve([]),
+      transportationGroupIds.length
+        ? db.selectFrom("waste_transportation_group").selectAll().where("id", "in", transportationGroupIds).execute()
+        : Promise.resolve([]),
+      treatmentExternalGroupIds.length
+        ? db.selectFrom("waste_treatment_external_group").selectAll().where("id", "in", treatmentExternalGroupIds).execute()
+        : Promise.resolve([]),
+      transportationExternalGroupIds.length
+        ? db.selectFrom("waste_transportation_external_group").selectAll().where("id", "in", transportationExternalGroupIds).execute()
+        : Promise.resolve([]),
+    ]);
+
+  const wasteSourceById = new Map(wasteSources.map((r) => [r.id, r]));
+  const classificationById = new Map(classifications.map((r) => [r.id, r]));
+  const treatmentGroupById = new Map(treatmentGroups.map((r) => [r.id, r]));
+  const transportationGroupById = new Map(transportationGroups.map((r) => [r.id, r]));
+  const treatmentExternalGroupById = new Map(treatmentExternalGroups.map((r) => [r.id, r]));
+  const transportationExternalGroupById = new Map(transportationExternalGroups.map((r) => [r.id, r]));
+
+  return Promise.all(
+    bags.map(async (bag) => {
+      const ws = wasteSourceById.get(bag.wasteSourceId);
+      const wc = classificationById.get(bag.wasteClassificationId);
+      const tg = bag.wasteTreatmentGroupId != null ? treatmentGroupById.get(bag.wasteTreatmentGroupId) : undefined;
+      const tag = bag.wasteTransportationGroupId != null ? transportationGroupById.get(bag.wasteTransportationGroupId) : undefined;
+      const teg =
+        bag.wasteTreatmentExternalGroupId != null ? treatmentExternalGroupById.get(bag.wasteTreatmentExternalGroupId) : undefined;
+      const taeg =
+        bag.wasteTransportationExternalGroupId != null
+          ? transportationExternalGroupById.get(bag.wasteTransportationExternalGroupId)
+          : undefined;
+
+      const manifestDocPath = bag.manifestDocPath
+        ? (await getPresignedUrl(bag.manifestDocPath)) ?? bag.manifestDocPath
+        : bag.manifestDocPath;
+
+      return {
+        ...bag,
+        manifestDocPath,
+        wasteSource: ws
+          ? {
+              id: ws.id,
+              healthcareFacilityId: ws.healthcare_facility_id,
+              sourceType: ws.source_type,
+              internalSourceName: ws.internal_source_name ?? undefined,
+              internalTreatmentName: ws.internal_treatment_name ?? undefined,
+              externalHealthcareFacilityId: ws.external_healthcare_facility_id ?? undefined,
+              externalHealthcareFacilityName: ws.external_healthcare_facility_name ?? undefined,
+              isActive: ws.is_active,
+              isResidue: ws.is_residue,
+            }
+          : undefined,
+        wasteClassification: wc
+          ? {
+              id: wc.id,
+              regionId: wc.region_id,
+              effectiveFrom: wc.effective_from,
+              effectiveTo: wc.effective_to,
+              wasteTypeId: wc.waste_type_id,
+              wasteGroupId: wc.waste_group_id,
+              wasteCharacteristicsId: wc.waste_characteristics_id,
+              wasteCode: wc.waste_code,
+              wasteBagColorCode: wc.waste_bag_color_code,
+              storageRuleType: wc.storage_rule_type ?? undefined,
+              useColdStorage: wc.use_cold_storage,
+              coldStorageMinHours: wc.cold_storage_min_hours ?? undefined,
+              coldStorageMaxHours: wc.cold_storage_max_hours ?? undefined,
+              tempStorageMinHours: wc.temp_storage_min_hours ?? undefined,
+              tempStorageMaxHours: wc.temp_storage_max_hours ?? undefined,
+              minimunDecayDay: wc.minimun_decay_day ?? undefined,
+              allowHealthcareFacilityTreatment: wc.allow_healthcare_facility_treatment,
+              isActive: wc.is_active,
+              hasMultipleTransporters: wc.has_multiple_transporters,
+              treatmentMethod: wc.treatment_method ?? undefined,
+              disposalMethod: wc.disposal_method ?? undefined,
+              allowedVehicleTypes: wc.allowed_vehicle_types ?? undefined,
+              wasteType: {
+                id: (wc as unknown as Record<string, unknown>).wt_id as number,
+                name: (wc as unknown as Record<string, unknown>).wt_name as string,
+                description: ((wc as unknown as Record<string, unknown>).wt_description as string | null) ?? undefined,
+                nameEn: (wc as unknown as Record<string, unknown>).wt_name_en as string,
+                descriptionEn: ((wc as unknown as Record<string, unknown>).wt_description_en as string | null) ?? undefined,
+                parentHierarchyId: ((wc as unknown as Record<string, unknown>).wt_parent_hierarchy_id as number | null) ?? undefined,
+              },
+              wasteGroup: {
+                id: (wc as unknown as Record<string, unknown>).wg_id as number,
+                name: (wc as unknown as Record<string, unknown>).wg_name as string,
+                description: ((wc as unknown as Record<string, unknown>).wg_description as string | null) ?? undefined,
+                nameEn: (wc as unknown as Record<string, unknown>).wg_name_en as string,
+                descriptionEn: ((wc as unknown as Record<string, unknown>).wg_description_en as string | null) ?? undefined,
+                parentHierarchyId: ((wc as unknown as Record<string, unknown>).wg_parent_hierarchy_id as number | null) ?? undefined,
+              },
+              wasteCharacteristics: {
+                id: (wc as unknown as Record<string, unknown>).wch_id as number,
+                name: (wc as unknown as Record<string, unknown>).wch_name as string,
+                description: ((wc as unknown as Record<string, unknown>).wch_description as string | null) ?? undefined,
+                nameEn: (wc as unknown as Record<string, unknown>).wch_name_en as string,
+                descriptionEn: ((wc as unknown as Record<string, unknown>).wch_description_en as string | null) ?? undefined,
+                isResidue: ((wc as unknown as Record<string, unknown>).wch_is_residue as boolean | null) ?? undefined,
+                parentHierarchyId: ((wc as unknown as Record<string, unknown>).wch_parent_hierarchy_id as number | null) ?? undefined,
+              },
+            }
+          : undefined,
+        transportationGroup: tag
+          ? {
+              id: tag.id,
+              totalBagsCount: tag.total_bags_count,
+              totalWeightInKgs: tag.total_weight_in_kgs,
+              transporterVehicleId: tag.transporter_vehicle_id ?? undefined,
+              transporterOperatorId: tag.transporter_operator_id ?? undefined,
+              handoverLattitude: tag.handover_lattitude ?? undefined,
+              handoverLongitude: tag.handover_longitude ?? undefined,
+              transportationStatus: tag.transportation_status,
+              isReadOnly: tag.is_read_only,
+              groupId: tag.group_id,
+            }
+          : undefined,
+        treatmentGroup: tg
+          ? {
+              id: tg.id,
+              totalBagsCount: tg.total_bags_count,
+              totalWeightInKgs: tg.total_weight_in_kgs,
+              treatmentAssetId: tg.treatment_asset_id ?? undefined,
+              treatmentOperatorId: tg.treatment_operator_id ?? undefined,
+              handoverLattitude: tg.handover_lattitude ?? undefined,
+              handoverLongitude: tg.handover_longitude ?? undefined,
+              treatmentStatus: tg.treatment_status,
+              isReadOnly: tg.is_read_only,
+              groupId: tg.group_id,
+            }
+          : undefined,
+        transportationExternalGroup: taeg
+          ? {
+              id: taeg.id,
+              totalBagsCount: taeg.total_bags_count,
+              transporterId: taeg.transporter_id,
+              totalWeightInKgs: taeg.total_weight_in_kgs,
+              transporterVehicleId: taeg.transporter_vehicle_id ?? undefined,
+              transporterOperatorId: taeg.transporter_operator_id ?? undefined,
+              handoverLattitude: taeg.handover_lattitude ?? undefined,
+              handoverLongitude: taeg.handover_longitude ?? undefined,
+              transportationStatus: taeg.transportation_status,
+              handoverTimestamp: taeg.handover_timestamp ?? undefined,
+              isReadOnly: taeg.is_read_only,
+              groupId: taeg.group_id,
+            }
+          : undefined,
+        treatmentExternalGroup: teg
+          ? {
+              id: teg.id,
+              totalBagsCount: teg.total_bags_count,
+              totalWeightInKgs: teg.total_weight_in_kgs,
+              treatmentOperatorId: teg.treatment_operator_id ?? undefined,
+              transportationStatus: teg.transportation_status,
+              isReadOnly: teg.is_read_only,
+              groupId: teg.group_id,
+            }
+          : undefined,
+        processWastebagEnd: handleAnalisisProcessCount(
+          wc?.disposal_method ?? undefined,
+          wc?.treatment_method ?? undefined,
+          bag.isTreated,
+          bag.wasteGroupIds,
+          bag.wasteStatus
+        ),
+      };
+    })
+  );
+}
+
+// Mirrors getLogHistories(wasteBagId) restricted to this bag's own
+// wasteBagQrCodeId (is_group=true rows on waste_bag_audit_trail), same
+// source findHistory below already reads — exposed separately so
+// attachRelations' callers (list/detail) can opt in without paying for it
+// on every lifecycle action that also returns a WasteBag.
+export async function findLogHistoryForBag(wasteBagQrCodeId: string): Promise<{ wasteStatus: string; wasteBagStatusUpdateDate: Date }[]> {
+  const rows = await db
+    .selectFrom("waste_bag_audit_trail")
+    .select(["waste_bag_status", "created_at"])
+    .where("waste_bag_qr_code", "=", wasteBagQrCodeId)
+    .where("is_group", "=", true)
+    .orderBy("created_at", "asc")
+    .execute();
+  // waste_bag_status is nullable on this table (no NOT NULL default at the
+  // DB level) — coalesced to "" rather than widening this function's return
+  // type, matching the non-null `wasteStatus: string` contract every other
+  // getWasteBagLogHistory port in this codebase (waste-bag-treatment-group,
+  // waste-treatment-external-group, waste-transport-external-group) already
+  // exposes.
+  return rows.map((row) => ({ wasteStatus: row.waste_bag_status ?? "", wasteBagStatusUpdateDate: row.created_at }));
 }
 
 export async function create(payload: {

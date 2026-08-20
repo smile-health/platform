@@ -94,6 +94,8 @@ function buildBagWasteClassification(classification?: WasteClassification | null
           name: classification.wasteCharacteristics.name,
           isActive: true,
           nameEn: classification.wasteCharacteristics.nameEn,
+          description: classification.wasteCharacteristics.description,
+          descriptionEn: classification.wasteCharacteristics.descriptionEn,
         }
       : undefined,
   };
@@ -104,23 +106,42 @@ function buildBagWasteClassification(classification?: WasteClassification | null
 // dedup/merge across all of them); wasteCharacteristics is deduped by id
 // across every classification in the group.
 function buildGroupWasteClassificationSummary(classifications: Array<WasteClassification | null | undefined>): {
-  wasteType?: { id: number; name: string; nameEn: string };
-  wasteGroup?: { id: number; name: string; nameEn: string };
-  wasteCharacteristics: { id: number; name: string; isActive: boolean; nameEn: string }[];
+  wasteType?: { id: number; name: string; nameEn: string; description?: string; descriptionEn?: string };
+  wasteGroup?: { id: number; name: string; nameEn: string; description?: string; descriptionEn?: string };
+  wasteCharacteristics: { id: number; name: string; isActive: boolean; nameEn: string; description?: string; descriptionEn?: string }[];
 } {
   const valid = classifications.filter((c): c is WasteClassification => Boolean(c));
   const first = valid[0];
   const wasteType = first?.wasteType
-    ? { id: first.wasteType.id, name: first.wasteType.name, nameEn: first.wasteType.nameEn }
+    ? {
+        id: first.wasteType.id,
+        name: first.wasteType.name,
+        nameEn: first.wasteType.nameEn,
+        description: first.wasteType.description,
+        descriptionEn: first.wasteType.descriptionEn,
+      }
     : undefined;
   const wasteGroup = first?.wasteGroup
-    ? { id: first.wasteGroup.id, name: first.wasteGroup.name, nameEn: first.wasteGroup.nameEn }
+    ? {
+        id: first.wasteGroup.id,
+        name: first.wasteGroup.name,
+        nameEn: first.wasteGroup.nameEn,
+        description: first.wasteGroup.description,
+        descriptionEn: first.wasteGroup.descriptionEn,
+      }
     : undefined;
   const seen = new Set<number>();
   const wasteCharacteristics = valid
     .map((c) => c.wasteCharacteristics)
     .filter((wc): wc is NonNullable<typeof wc> => Boolean(wc) && !seen.has(wc!.id) && seen.add(wc!.id) !== undefined)
-    .map((wc) => ({ id: wc!.id, name: wc!.name, isActive: true, nameEn: wc!.nameEn }));
+    .map((wc) => ({
+      id: wc!.id,
+      name: wc!.name,
+      isActive: true,
+      nameEn: wc!.nameEn,
+      description: wc!.description,
+      descriptionEn: wc!.descriptionEn,
+    }));
   return { wasteType, wasteGroup, wasteCharacteristics };
 }
 
@@ -212,7 +233,11 @@ export async function getWasteBagLogHistory(
     .where("is_group", "=", true)
     .orderBy("created_at", "asc")
     .execute();
-  return rows.map((r) => ({ wasteStatus: r.waste_bag_status, wasteBagStatusUpdateDate: r.created_at }));
+  // waste_bag_status became nullable via db/migrations/16_extend_waste_bag_audit_trail.up.sql
+  // (see waste-bag-audit-trail module's fix restoring the 11 dropped audit-trail
+  // fields); coalesced to "" here to preserve this function's pre-existing
+  // non-null `wasteStatus: string` contract without guessing a real status.
+  return rows.map((r) => ({ wasteStatus: r.waste_bag_status ?? "", wasteBagStatusUpdateDate: r.created_at }));
 }
 
 // Mirrors PartnerVehicleModel.findAll({ where: { entityId, transporterId } })
@@ -315,6 +340,8 @@ export async function findGroupBagRows(params: {
       isTreated?: boolean;
       wasteGroupIds?: string;
       treatmentLocationId?: number;
+      treatmentStartTime?: Date;
+      treatmentEndTime?: Date;
     };
   }>
 > {
@@ -364,6 +391,8 @@ export async function findGroupBagRows(params: {
       "wb.is_treated",
       "wb.waste_group_ids",
       "wb.treatment_location_id",
+      "wb.treatment_start_time",
+      "wb.treatment_end_time",
     ])
     .execute();
 
@@ -402,6 +431,8 @@ export async function findGroupBagRows(params: {
       isTreated: row.is_treated ?? undefined,
       wasteGroupIds: row.waste_group_ids ?? undefined,
       treatmentLocationId: row.treatment_location_id ?? undefined,
+      treatmentStartTime: row.treatment_start_time ?? undefined,
+      treatmentEndTime: row.treatment_end_time ?? undefined,
     },
   }));
 }
@@ -448,7 +479,20 @@ export async function findAllPaginated(params: {
 }): Promise<{
   data: Array<{
     group: WasteTreatmentExternalGroup;
-    bags: Array<WasteTreatmentExternalGroupBag & { wasteClassificationId: number; healthcareFacilityId: number; transporterId?: number; transporterName?: string }>;
+    bags: Array<WasteTreatmentExternalGroupBag & {
+      wasteClassificationId: number;
+      healthcareFacilityId: number;
+      transporterId?: number;
+      transporterName?: string;
+      treatmentStartTime?: Date;
+      treatmentEndTime?: Date;
+      wasteSource?: {
+        internalSourceName?: string;
+        internalTreatmentName?: string;
+        externalHealthcareFacilityName?: string;
+        sourceType?: string;
+      };
+    }>;
   }>;
   pagination: PaginationMeta;
 }> {
@@ -498,7 +542,7 @@ export async function findAllPaginated(params: {
   const groupIdRows = await joined
     .select("wteg.id")
     .distinct()
-    .orderBy("wteg.updated_at", "desc")
+    .orderBy("wteg.created_at", "desc")
     .limit(params.limit)
     .offset((params.page - 1) * params.limit)
     .execute();
@@ -511,6 +555,7 @@ export async function findAllPaginated(params: {
   const rows = await db
     .selectFrom("waste_treatment_external_group as wteg")
     .innerJoin("waste_bag as wb", "wb.waste_treatment_external_group_id", "wteg.id")
+    .leftJoin("waste_source", "waste_source.id", "wb.waste_source_id")
     .where("wteg.id", "in", groupIds)
     .select([
       "wteg.id as group_id_col",
@@ -538,6 +583,12 @@ export async function findAllPaginated(params: {
       "wb.transporter_id",
       "wb.transporter_name",
       "wb.third_party_id",
+      "wb.treatment_start_time",
+      "wb.treatment_end_time",
+      "waste_source.internal_source_name",
+      "waste_source.internal_treatment_name",
+      "waste_source.external_healthcare_facility_name",
+      "waste_source.source_type",
     ])
     .execute();
 
@@ -557,6 +608,16 @@ export async function findAllPaginated(params: {
       transporterId: row.transporter_id ?? undefined,
       transporterName: row.transporter_name ?? undefined,
       thirdPartyId: row.third_party_id ?? undefined,
+      treatmentStartTime: row.treatment_start_time ?? undefined,
+      treatmentEndTime: row.treatment_end_time ?? undefined,
+      wasteSource: row.internal_source_name || row.internal_treatment_name || row.external_healthcare_facility_name
+        ? {
+            internalSourceName: row.internal_source_name ?? undefined,
+            internalTreatmentName: row.internal_treatment_name ?? undefined,
+            externalHealthcareFacilityName: row.external_healthcare_facility_name ?? undefined,
+            sourceType: row.source_type ?? undefined,
+          }
+        : undefined,
     };
     if (existing) {
       existing.bags.push(bag);

@@ -8,7 +8,9 @@ import { ScheduledEventTypes } from "../../messaging/topics";
 import { scheduling, notification } from "~encore/clients";
 import type { ScheduledEventTrigger, ScheduledEventMetadata } from "../../messaging/topics";
 import { getLocalEntityName, getLocalUserName } from "../../shared/core/entity-user-lookup";
+import { getEntityRegionNames } from "../../shared/core/entity-region-lookup";
 import { findByUserUuid } from "../../users/users/users.repository";
+import { getEntityId } from "../../entity/entities/entities.repository";
 import type {
   CreatePartnershipInput,
   DeletePartnershipInput,
@@ -200,15 +202,67 @@ export async function createPartnership(input: CreatePartnershipInput): Promise<
   return created;
 }
 
-// providerName/consumerName are populated from the local `entities` table
-// (see shared/core/entity-user-lookup.ts) rather than the original's
-// getEntityDetail(...) HTTP fallback to apps/core.
-async function withProviderConsumerNames(partnership: Partnership): Promise<Partnership> {
-  const [providerName, consumerName] = await Promise.all([
-    getLocalEntityName(partnership.providerId),
-    getLocalEntityName(partnership.consumerId),
+// Mirrors PartnershipRepositoryImpl.ts's getPartnershipById/
+// getAllPartnershipByUserId enrichment, ported from the local `entities`/
+// `waste_classification`/`waste_hierarchy`/`regions` tables rather than the
+// original's cross-service HTTP lookups (getEntityDetail(...) against
+// apps/core) — see partnership.types.ts's Partnership header comment.
+// `includeConsumerProvinceCity` is only requested by the list endpoint (see
+// getAllPartnerships below), matching the original's consumerProvinceName/
+// consumerCityName being list-only fields.
+async function withFullPartnershipDetail(
+  partnership: Partnership,
+  options: { includeConsumerProvinceCity?: boolean } = {},
+): Promise<Partnership> {
+  const [providerName, consumerName, providerEntity, consumerEntity, wasteClassification, companyProviderIds] =
+    await Promise.all([
+      getLocalEntityName(partnership.providerId),
+      getLocalEntityName(partnership.consumerId),
+      getEntityId(partnership.providerId),
+      getEntityId(partnership.consumerId),
+      partnership.wasteClassificationId
+        ? repo.findWasteClassificationHierarchy(partnership.wasteClassificationId)
+        : Promise.resolve(null),
+      repo.findCompanyProviderIdsByConsumer(partnership.consumerId),
+    ]);
+
+  const [treatmentCompanyName, landfilCompanyName, recycleCompanyName, consumerRegionNames] = await Promise.all([
+    getLocalEntityName(companyProviderIds.treatmentProviderId),
+    getLocalEntityName(companyProviderIds.landfillerId),
+    getLocalEntityName(companyProviderIds.recyclerId),
+    options.includeConsumerProvinceCity
+      ? getEntityRegionNames(
+          consumerEntity
+            ? {
+                provinceId: consumerEntity.provinceId ?? undefined,
+                regencyId: consumerEntity.regencyId ?? undefined,
+                subDistrictId: consumerEntity.subDistrictId ?? undefined,
+              }
+            : undefined
+        )
+      : Promise.resolve(undefined),
   ]);
-  return { ...partnership, providerName, consumerName };
+
+  return {
+    ...partnership,
+    providerName,
+    consumerName,
+    consumerDetail: consumerEntity ?? undefined,
+    providerDetail: providerEntity ?? undefined,
+    // Mirrors the original's `dataEntities?.nib` — the provider entity's nib
+    // (PartnershipModel.belongsTo(EntitiesModel, { foreignKey: 'provider_id' })).
+    nib: providerEntity?.nib ?? undefined,
+    wasteClassification: wasteClassification ?? undefined,
+    treatmentCompanyName: treatmentCompanyName ?? "-",
+    landfilCompanyName: landfilCompanyName ?? "-",
+    recycleCompanyName: recycleCompanyName ?? "-",
+    ...(options.includeConsumerProvinceCity
+      ? {
+          consumerProvinceName: consumerRegionNames?.provinceName,
+          consumerCityName: consumerRegionNames?.regencyName,
+        }
+      : {}),
+  };
 }
 
 export async function getPartnershipById(id: string): Promise<Partnership> {
@@ -219,7 +273,7 @@ export async function getPartnershipById(id: string): Promise<Partnership> {
   if (!partnership) {
     throw new APIError(ErrCode.FailedPrecondition, "Partnership not found");
   }
-  return withProviderConsumerNames(partnership);
+  return withFullPartnershipDetail(partnership);
 }
 
 export async function getAllPartnerships(input: GetAllPartnershipsInput): Promise<PaginatedPartnerships> {
@@ -237,7 +291,11 @@ export async function getAllPartnerships(input: GetAllPartnershipsInput): Promis
     wasteClassificationId: input.wasteClassificationId,
     partnershipStatus: input.partnershipStatus,
   });
-  const data = await Promise.all(result.data.map(withProviderConsumerNames));
+  const data = await Promise.all(
+    result.data.map((partnership) =>
+      withFullPartnershipDetail(partnership, { includeConsumerProvinceCity: true }),
+    ),
+  );
   return { ...result, data };
 }
 
@@ -419,7 +477,7 @@ export async function deletePartnership(input: DeletePartnershipInput): Promise<
 
 // Mirrors getPartnershipByThirdPartyAdmin() grouped-by-providerId listing.
 // providerName is populated from the local `entities` table, same as
-// withProviderConsumerNames above.
+// withFullPartnershipDetail above.
 export async function getPartnershipByThirdPartyAdmin(
   input: GetPartnershipByThirdPartyAdminInput,
 ): Promise<PartnershipSelect[]> {

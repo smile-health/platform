@@ -85,7 +85,16 @@ import type {
 export const getAllWasteBags = api(
   { method: "GET", path: "/api/v1/waste", auth: true, expose: true },
   async (req: GetAllWasteBagsRequest): Promise<GetAllWasteBagsResponse> => {
-    const data = await service.getAllWasteBags(req);
+    // Mirrors getAllWasteController's entityTag/entityId resolution off
+    // req.user.entity — allowedTypes (hospital/regency/province/central),
+    // when the caller isn't a super_admin, are always folded to the
+    // 'hospital' tag (matching the original's `entityTag = 'hospital'`
+    // override) rather than their own literal entity type.
+    const { entityId, entityTag, entityTypeName, isSuperAdmin } = getAuthData()!;
+    const allowedTypes = ["healthcare_facility", "regency", "province", "central"];
+    const resolvedEntityTag =
+      allowedTypes.includes(entityTypeName) && !isSuperAdmin ? "hospital" : entityTag;
+    const data = await service.getAllWasteBags({ ...req, entityTag: resolvedEntityTag, entityId });
     return { status: "success", data };
   }
 );
@@ -93,7 +102,11 @@ export const getAllWasteBags = api(
 export const getWasteBagById = api(
   { method: "GET", path: "/api/v1/waste/:id", auth: true, expose: true },
   async (req: GetWasteBagByIdRequest): Promise<GetWasteBagByIdResponse> => {
-    const data = await service.getWasteBagById(req.id);
+    const { entityId, entityTag, entityTypeName, isSuperAdmin } = getAuthData()!;
+    const allowedTypes = ["healthcare_facility", "regency", "province", "central"];
+    const resolvedEntityTag =
+      allowedTypes.includes(entityTypeName) && !isSuperAdmin ? "hospital" : entityTag;
+    const data = await service.getWasteBagById(req.id, { entityTag: resolvedEntityTag, entityId });
     return { status: "success", data };
   }
 );

@@ -140,7 +140,7 @@ function toEntity(row: UserRow): User {
           type: row.entity_type ?? undefined,
           location: row.entity_location ?? undefined,
         }
-      : undefined,
+      : null,
     userRole: row.role_ref_id
       ? {
           id: row.role_ref_id,
@@ -148,7 +148,7 @@ function toEntity(row: UserRow): User {
           nameEn: row.role_ref_name_en ?? undefined,
           type: row.role_ref_type ?? undefined,
         }
-      : undefined,
+      : null,
   };
 }
 

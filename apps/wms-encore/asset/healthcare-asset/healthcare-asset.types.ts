@@ -39,6 +39,7 @@ export interface GetHealthcareAssetByIdRequest {
   id: string;
   healthcareFacilityId?: number;
   authorization: Header<"Authorization">;
+  acceptLanguage?: Header<"Accept-Language">;
 }
 export interface GetHealthcareAssetByIdResponse {
   status: "success";

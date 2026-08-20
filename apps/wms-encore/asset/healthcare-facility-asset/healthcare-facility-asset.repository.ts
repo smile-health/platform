@@ -259,7 +259,7 @@ export async function findAllPaginated(params: {
     rows.map(async (row) => {
       const entity = toEntity(row);
       const entityDetail = await getEntityId(row.healthcare_facility_id);
-      entity.entityName = entityDetail?.name;
+      entity.entityName = entityDetail?.name ?? undefined;
       return entity;
     })
   );

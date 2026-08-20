@@ -47,7 +47,8 @@ export async function getHealthcareAssetById(
   id: string,
   healthcareFacilityIdInput: number | undefined,
   authEntityId: number,
-  token: string | undefined
+  token: string | undefined,
+  lang = "id"
 ): Promise<Record<string, unknown>> {
   const numericId = Number(id);
 
@@ -62,7 +63,7 @@ export async function getHealthcareAssetById(
   const [existingDataById, existingData, assetInventories] = await Promise.all([
     repo.findById(numericId),
     repo.findByIdAndFacility(numericId, healthcareFacilityId),
-    token ? getAssetInventoryById(numericId, token) : Promise.resolve(undefined),
+    token ? getAssetInventoryById(numericId, token, lang) : Promise.resolve(undefined),
   ]);
 
   if (!existingData && assetInventories) {
