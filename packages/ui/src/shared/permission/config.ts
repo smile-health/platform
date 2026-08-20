@@ -37,12 +37,6 @@ const smileRolePermission: {
     /* Settings (global)    */
     'global-settings-menu': 'query',
     'global-asset-managements-menu': 'query',
-    /* can view global patient */
-    'patient-global-view': 'query',
-    /* can create,update,delete global patient, must have patient-global-view permission */
-    'patient-global-mutate': 'mutation',
-    'population-global-view': 'query',
-    'population-global-mutate': 'mutation',
     'population-view': 'query',
     'population-mutate': 'mutation',
     'task-view': 'query',
@@ -279,21 +273,6 @@ const smileRolePermission: {
     'annual-commitment-mutate': 'mutation',
 
     'dashboard-asset-temperature-monitoring-view': 'query',
-
-    /* Test Method */
-    'test-method-view': 'query',
-    'test-method-mutate': 'mutation',
-
-    /* Parameter Category */
-    'parameter-category-view': 'query',
-    'parameter-category-mutate': 'mutation',
-
-    /* Analysis Parameter */
-    'analysis-parameter-view': 'query',
-    'analysis-parameter-mutate': 'mutation',
-
-    /* Environmental Health History */
-    'environmental-health-history-view': 'query',
   },
   [ADMIN]: {
     /* can view global asset dashboard */
@@ -468,21 +447,6 @@ const smileRolePermission: {
     'annual-commitment-view': 'query',
     'annual-commitment-mutate': 'mutation',
 
-    /* Test Method */
-    'test-method-view': 'query',
-    'test-method-mutate': 'mutation',
-
-    /* Parameter Category */
-    'parameter-category-view': 'query',
-    'parameter-category-mutate': 'mutation',
-
-    /* Analysis Parameter */
-    'analysis-parameter-view': 'query',
-    'analysis-parameter-mutate': 'mutation',
-
-    /* Environmental Health History */
-    'environmental-health-history-view': 'query',
-
     /* can create,update,delete global user, must have user-view permission */
     'user-mutate': 'mutation',
   },
@@ -588,9 +552,6 @@ const smileRolePermission: {
 
     'asset-type-global-view': 'query',
     'asset-type-global-mutate': 'mutation',
-
-    /* Environmental Health History - view only */
-    'environmental-health-history-view': 'query',
   },
   [OPERATOR]: {
     'ticketing-system-access-packing-link': 'query',

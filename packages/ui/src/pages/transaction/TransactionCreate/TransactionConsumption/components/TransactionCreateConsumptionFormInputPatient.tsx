@@ -1,9 +1,6 @@
 import React, { useContext } from 'react'
 
 import cx from '#lib/cx'
-import { VACCINE_PROTOCOL } from '../transaction-consumption.constant'
-import ProtocolRabiesVaccine from './protocols/ProtocolRabiesVaccine'
-import ProtocolDengueVaccine from './protocols/ProtocolDengueVaccine'
 import { ProtocolContext } from '../context/ProtocolContext'
 import NonProtocolVaccine from './protocols/NonProtocolVaccine'
 
@@ -25,14 +22,6 @@ const TransactionCreateConsumptionFormInputPatient: React.FC<Props> = (props) =>
         "ui-min-h-max": !protocolId && historyVaccination !== undefined,
       })}
     >
-      {protocolId === VACCINE_PROTOCOL.RABIES && (
-        <ProtocolRabiesVaccine />
-      )}
-
-      {protocolId === VACCINE_PROTOCOL.DENGUE && (
-        <ProtocolDengueVaccine />
-      )}
-
       {!protocolId && (
         <NonProtocolVaccine />
       )}

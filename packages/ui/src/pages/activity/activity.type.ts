@@ -1,10 +1,5 @@
 import { CommonType, TCommonFilter, TCommonResponseList } from '#types/common'
 
-export type EnvironmentalParameterCategory = {
-  id: number
-  name: string
-}
-
 export type DetailActivityResponse = {
   id: number
   name: string
@@ -21,7 +16,6 @@ export type DetailActivityResponse = {
   updated_at: string
   deleted_at: string
   status: number
-  environmental_parameter_categories: EnvironmentalParameterCategory[]
   user_created_by: null | { id: number; name: string }
   user_updated_by: null | { id: number; name: string }
 }
@@ -45,7 +39,6 @@ export type CreateActivityBody = {
   is_ordered_purchase: number
   is_final_distribution?: number
   protocol: string
-  environmental_parameter_category_ids?: number[]
 }
 
 export type ActivityTableProps = CommonType & {
@@ -62,7 +55,6 @@ export type ActivityFormValues = {
   is_ordered_purchase: boolean
   is_final_distribution?: boolean | null
   protocol: string
-  environmental_parameter_category_ids?: number[]
 }
 
 export type ActivityFormProps = {

@@ -5,13 +5,7 @@ import * as yup from 'yup'
 import { getTodayDate } from '../../utils/helper'
 import {
   IDENTITY_TYPE_VALUE,
-  VACCINE_PROTOCOL,
 } from '../transaction-consumption.constant'
-import {
-  formSchemaHistoryMedicalDengue,
-  formSchemaVaccineDengue,
-} from './TransactionCreateConsumptionSchemaProtocolDengueForm'
-import { formSchemaVaccineRabies } from './TransactionCreateConsumptionSchemaProtocolRabiesForm'
 
 export const formSchemaConsumption = (
   t: TFunction<['transactionCreate', 'common', 'transactionCreateConsumption']>
@@ -370,17 +364,8 @@ export const formSchemaInputPatient = (
           protocol_id: yup.number().nullable(),
           vaccination: yup
             .object()
-            .when(['protocol_id'], ([protocol_id], schema) => {
-              switch (Number(protocol_id)) {
-                case VACCINE_PROTOCOL.RABIES:
-                  return formSchemaVaccineRabies(schema, t)
-
-                case VACCINE_PROTOCOL.DENGUE:
-                  return formSchemaVaccineDengue(schema, t)
-
-                default:
-                  return formSchemaVaccine(schema, t)
-              }
+            .when(['protocol_id'], ([, schema]) => {
+              return formSchemaVaccine(schema, t)
             }),
           identity: yup.object().when(['is_vaccine'], {
             is: (is_vaccine: number) => Number(is_vaccine) === STATUS.ACTIVE,
@@ -497,13 +482,8 @@ export const formSchemaInputPatient = (
           }),
           history_medical: yup
             .object()
-            .when('protocol_id', ([protocol_id], schema) => {
-              if (Number(protocol_id) === VACCINE_PROTOCOL.DENGUE) {
-                return formSchemaHistoryMedicalDengue(schema, t)
-              }
-
-              return schema.shape({}).notRequired()
-            }),
+            .shape({})
+            .notRequired(),
           history_vaccination: yup.object().shape({}).notRequired(),
         })
       )

@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import { useFeatureIsOn } from '@growthbook/growthbook-react'
 import { Button } from '#components/button'
 import Plus from '#components/icons/Plus'
 import AppLayout from '#components/layouts/AppLayout/AppLayout'
@@ -64,21 +63,6 @@ const tabs = (t: TFunction, lang: string): Tabs => [
     hasChildTab: true,
     childTab: ['type', 'model', 'vendor', 'pqs'],
   },
-  {
-    label: t('tab.patient'),
-    url: `/${lang}/v5/global-settings/patient`,
-    featureName: 'patient-global-view',
-  },
-  {
-    label: t('tab.annual_planning_target_group'),
-    url: `/${lang}/v5/global-settings/annual-planning-target-group`,
-    featureName: 'annual-planning-target-group-view',
-  },
-  {
-    label: t('tab.population'),
-    url: `/${lang}/v5/global-settings/population`,
-    featureName: 'population-view',
-  },
 ]
 
 type TTabsItem = {
@@ -113,17 +97,7 @@ const GlobalSettings: React.FC<TProps> = ({
   const router = useSmileRouter()
   const isOnline = useOnlineStatus()
   const pathname = router.pathname
-  const isShowAnnualPlanningTargetGroup = useFeatureIsOn(
-    'annual_planning.global_target_group'
-  )
-  const isShowPopulation = useFeatureIsOn('annual_planning.global_population')
-  const isShowPatient = useFeatureIsOn('global_setting.patient')
-
-  const featureFlags: Record<string, boolean> = {
-    'annual-planning-target-group-view': isShowAnnualPlanningTargetGroup,
-    'population-view': isShowPopulation,
-    'patient-global-view': isShowPatient,
-  }
+  const featureFlags: Record<string, boolean> = {}
 
   return isOnline ? (
     <AppLayout

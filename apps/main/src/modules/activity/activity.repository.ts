@@ -295,46 +295,4 @@ export class ActivityRepository extends BaseRepository<"ws_activities"> {
       .limit(1)
       .executeTakeFirst()
   }
-
-  async syncActivityCategories(
-    c: Context,
-    activityId: number,
-    categoryIds: number[]
-  ) {
-    await c.var.trx
-      .deleteFrom("ws_activity_environmental_parameter_categories")
-      .where("activity_id", "=", activityId)
-      .execute()
-
-    if (categoryIds.length === 0) return
-
-    await c.var.trx
-      .insertInto("ws_activity_environmental_parameter_categories")
-      .values(
-        categoryIds.map((id) => ({
-          activity_id: activityId,
-          environmental_parameter_categories_id: id,
-        }))
-      )
-      .execute()
-  }
-
-  async findCategoriesByActivityIds(c: Context, activityIds: number[]) {
-    if (activityIds.length === 0) return []
-    return await c.var.trx
-      .selectFrom("ws_activity_environmental_parameter_categories")
-      .innerJoin(
-        "environmental_parameter_categories",
-        "environmental_parameter_categories.id",
-        "ws_activity_environmental_parameter_categories.environmental_parameter_categories_id"
-      )
-      .select([
-        "ws_activity_environmental_parameter_categories.activity_id",
-        "environmental_parameter_categories.id",
-        "environmental_parameter_categories.name",
-      ])
-      .where("ws_activity_environmental_parameter_categories.activity_id", "in", activityIds)
-      .where("environmental_parameter_categories.deleted_at", "is", null)
-      .execute()
-  }
 }

@@ -2,10 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { NextRouter } from 'next/router'
 import { useFeatureIsOn } from '@growthbook/growthbook-react'
 import { HoverCardRoot } from '#components/hover-card'
-import { ProgramEnum } from '#constants/program'
 import useSmileRouter from '#hooks/useSmileRouter'
 import { hasPermission } from '#shared/permission/index'
-import { getProgramStorage } from '#utils/storage/program'
 import { useTranslation } from 'react-i18next'
 
 import NavbarList from '../../components/NavbarList'
@@ -25,30 +23,14 @@ const NavbarAnalysis = () => {
   )
 
   const isShowResponseTime = useFeatureIsOn('dashboard.response_time')
-  const isShowOrderDifference = useFeatureIsOn('dashboard.order_difference')
   const isShowReceptionDistribution = useFeatureIsOn(
     'dashboard.reception_distribution'
   )
   const isShowStockAvailability = useFeatureIsOn('dashboard.stock_availability')
   const isShowAbnormalStock = useFeatureIsOn('dashboard.abnormal_stock')
-  const isShowCountStock = useFeatureIsOn('dashboard.add_remove_stock')
-  const isShowFillingStock = useFeatureIsOn('dashboard.filling_stock')
   const isShowDiscard = useFeatureIsOn('dashboard.discard')
-  const isShowMonthlyReport = useFeatureIsOn('dashboard.report.monthly')
-  const isShowYearlyReport = useFeatureIsOn('dashboard.report.yearly')
-  const isShowInventoryOverview = useFeatureIsOn('dashboard.inventory_overview')
-  const isShowRabies = useFeatureIsOn('dashboard.rabies')
-  const isShowLPO = useFeatureIsOn('report_lplpo')
-  const isShowMicroplanning = useFeatureIsOn('dashboard.microplanning')
-  const isShowAnnualCommitmentVsRealization = useFeatureIsOn(
-    'dashboard.annual_commitment_vs_realization'
-  )
 
   const rawMenus: TLeftMenu[] = useMemo(() => {
-    const program = getProgramStorage()
-    const isEnabledAnnualPlanning = program?.config?.is_annual_planning
-    const isRabiesWorkspace = program?.key === ProgramEnum.Rabies
-
     return [
       {
         title: t('navbar:nav_order'),
@@ -63,13 +45,6 @@ const NavbarAnalysis = () => {
                 isHidden:
                   !hasPermission('dashboard-order-response-view') ||
                   !isShowResponseTime,
-              },
-              {
-                title: t('navbar:nav_order_difference'),
-                url: `/v5/dashboard/order-difference`,
-                isHidden:
-                  !hasPermission('dashboard-order-difference-view') ||
-                  !isShowOrderDifference,
               },
               {
                 title: t('navbar:nav_consumption_supply'),
@@ -101,14 +76,6 @@ const NavbarAnalysis = () => {
                 isHidden:
                   !hasPermission('dashboard-discard-view') || !isShowDiscard,
               },
-              {
-                title: 'Rabies',
-                url: `/v5/dashboard/rabies`,
-                isHidden:
-                  !hasPermission('dashboard-rabies-view') ||
-                  !isShowRabies ||
-                  !isRabiesWorkspace,
-              },
             ],
           },
         ],
@@ -119,18 +86,6 @@ const NavbarAnalysis = () => {
         sub: [
           {
             subChild: [
-              {
-                title: t('navbar:nav_dashboard_inventory_overview'),
-                url: `/v5/dashboard/inventory-overview`,
-                isHidden:
-                  !hasPermission('dashboard-inventory-overview-view') ||
-                  !isShowInventoryOverview,
-              },
-              {
-                title: t('navbar:nav_on_hand_stock'),
-                url: `/v5/dashboard/stock`,
-                isHidden: !hasPermission('dashboard-stock-view'),
-              },
               {
                 title: t('navbar:navbar_inventory_stock_detail'),
                 url: `/v5/stock`,
@@ -160,121 +115,6 @@ const NavbarAnalysis = () => {
                   !hasPermission('dashboard-stock-availability-view') ||
                   !isShowStockAvailability,
               },
-              {
-                title: t('navbar:nav_count_stock'),
-                url: `/v5/dashboard/count-stock`,
-                isHidden:
-                  !hasPermission('dashboard-count-stock-view') ||
-                  !isShowCountStock,
-              },
-              {
-                title: t('navbar:navbar_filling_to_normal_bound'),
-                url: `/v5/dashboard/filling-stock`,
-                isHidden:
-                  !hasPermission('dashboard-filling-stock-view') ||
-                  !isShowFillingStock,
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: t('navbar:navbar_disposal'),
-        chosenTitle: t('navbar:navbar_disposal_management'),
-        sub: [
-          {
-            subChild: [
-              {
-                title: t('navbar:navbar_view_disposal_stock'),
-                url: `/v5/stock-pemusnahan`,
-                isHidden: !hasPermission('disposal-list-view'),
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: t('navbar:navbar_activeness'),
-        chosenTitle: t('navbar:navbar_activeness_management'),
-        sub: [
-          {
-            subChild: [
-              {
-                title: t('navbar:navbar_activity_user'),
-                url: `v5/report/user-activity`,
-                isHidden: !hasPermission('user-activity-view'),
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: t('navbar:navbar_report'),
-        chosenTitle: t('navbar:navbar_report_management'),
-        sub: [
-          {
-            subChild: [
-              {
-                title: t('navbar:nav_monthly_report'),
-                url: '/v5/dashboard/monthly-report',
-                isHidden:
-                  !hasPermission('dashboard-monthly-report-view') ||
-                  !isShowMonthlyReport ||
-                  program?.key !== ProgramEnum.Immunization,
-              },
-              {
-                title: t('navbar:nav_yearly_report'),
-                url: '/v5/dashboard/yearly-report',
-                isHidden:
-                  !hasPermission('dashboard-yearly-report-view') ||
-                  !isShowYearlyReport ||
-                  program?.key !== ProgramEnum.Immunization,
-              },
-              {
-                title: t('common:menu.report.item.stock_book'),
-                url: `/v5/report/stock-book`,
-                isHidden: !hasPermission('stock-book-view'),
-              },
-              {
-                title: t('navbar:nav_dashboard_download_page'),
-                url: `/v5/dashboard/download`,
-                isHidden: !hasPermission('dashboard-download-view'),
-              },
-              {
-                title: t('common:menu.analysis.lplpo'),
-                url: `/v5/report/lplpo`,
-                isHidden: !hasPermission('lplpo-view') || !isShowLPO,
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: t('navbar:nav_planning'),
-        chosenTitle: t('navbar:navbar_planning_management'),
-        sub: [
-          {
-            subChild: [
-              {
-                title: t('navbar:nav_dashboard_microplanning'),
-                url: `/v5/dashboard/microplanning`,
-                isHidden:
-                  program?.key !== ProgramEnum.Immunization ||
-                  !isShowMicroplanning ||
-                  !hasPermission('dashboard-microplanning-view'),
-              },
-              {
-                title: t(
-                  'navbar:nav_dashboard_annual_commitment_vs_realization'
-                ),
-                url: `/v5/dashboard/annual-commitment-vs-realization`,
-                isHidden:
-                  !isEnabledAnnualPlanning ||
-                  !isShowAnnualCommitmentVsRealization ||
-                  !hasPermission(
-                    'dashboard-annual-commitment-vs-realization-view'
-                  ),
-              },
             ],
           },
         ],
@@ -283,20 +123,10 @@ const NavbarAnalysis = () => {
   }, [
     t,
     isShowResponseTime,
-    isShowOrderDifference,
     isShowReceptionDistribution,
     isShowStockAvailability,
     isShowAbnormalStock,
-    isShowCountStock,
-    isShowFillingStock,
     isShowDiscard,
-    isShowMonthlyReport,
-    isShowYearlyReport,
-    isShowInventoryOverview,
-    isShowRabies,
-    isShowLPO,
-    isShowMicroplanning,
-    isShowAnnualCommitmentVsRealization,
   ])
 
   const leftSideMenus = useMemo(() => {

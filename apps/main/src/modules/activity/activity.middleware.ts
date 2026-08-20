@@ -10,7 +10,6 @@ import { OrderRepository } from "../order/order.repository.js"
 import { TransactionRepository } from "../transaction/transaction.repository.js"
 import { ActivityImport } from "./activity.excel.js"
 import { ActivityRepository } from "./activity.repository.js"
-import { EnvironmentalParameterCategoryRepository } from "../environmental-parameter-category/environmental-parameter-category.repository.js"
 import {
   COL,
   CreateActivityRequest,
@@ -27,8 +26,7 @@ export class ActivityMiddleware extends BaseMiddleware {
   constructor(
     private readonly repository: ActivityRepository,
     private readonly transactionRepo: TransactionRepository,
-    private readonly orderRepo: OrderRepository,
-    private readonly categoryRepo: EnvironmentalParameterCategoryRepository
+    private readonly orderRepo: OrderRepository
   ) {
     super()
   }
@@ -331,49 +329,20 @@ export class ActivityMiddleware extends BaseMiddleware {
     await next()
   })
 
-  readonly #validateCategoryIds = async (
-    c: Context,
-    categoryIds: number[],
-    ctx
-  ) => {
-    for (const id of categoryIds) {
-      const exists = await this.categoryRepo.getOnlyById(c, id)
-      if (!exists) {
-        ctx.addIssue({
-          path: ["environmental_parameter_category_ids"],
-          message: c.var.t("validator.not_exist", {
-            field: `Category ID ${id}`,
-          }),
-          code: z.ZodIssueCode.custom,
-        })
-      }
-    }
-  }
-
   create = (c: Context) => {
     return CreateActivityRequestSchema.superRefine(async (data, ctx) => {
       await this.#createdNameIsExists(c, data, ctx)
       this.#bothCannotHaveZeroValue(c, data, ctx)
-      if (data.environmental_parameter_category_ids?.length) {
-        await this.#validateCategoryIds(c, data.environmental_parameter_category_ids, ctx)
-      }
     })
   }
 
   update = (c: Context) => {
     return UpdateActivityRequestSchema.extend({
       protocol: z.string().nullish().optional(),
-      environmental_parameter_category_ids: z
-        .array(z.number().int().positive())
-        .optional()
-        .default([]),
     }).superRefine(async (data, ctx) => {
       await this.#updatedIdNotExists(c, ctx)
       await this.#updatedNameIsExists(c, data, ctx)
       this.#bothCannotHaveZeroValue(c, data, ctx)
-      if (data.environmental_parameter_category_ids?.length) {
-        await this.#validateCategoryIds(c, data.environmental_parameter_category_ids, ctx)
-      }
     })
   }
 

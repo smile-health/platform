@@ -43,27 +43,11 @@ import ExportHistoryRepository from "./modules/export-history/export-history.rep
 import { LocationModule } from "./modules/location/location.module.js"
 import { MaterialQuery } from "./modules/material/material.query.js"
 import { MaterialRepository } from "./modules/material/material.repository.js"
-import { CommitmentMonitoringController } from "./modules/monitoring/commitment/commitment.controller.js"
-import { CommitmentMonitoringExcel } from "./modules/monitoring/commitment/commitment.excel.js"
-import { CommitmentMonitoringModule } from "./modules/monitoring/commitment/commitment.module.js"
-import { CommitmentQuery } from "./modules/monitoring/commitment/commitment.query.js"
-import { CommitmentRepository } from "./modules/monitoring/commitment/commitment.repository.js"
-import { MonitoringStockController } from "./modules/monitoring/stock/stock.controller.js"
-import { MonitoringStockInTransitQuery } from "./modules/monitoring/stock/stock.intransit.query.js"
-import { MonitoringStockMiddleware } from "./modules/monitoring/stock/stock.middleware.js"
-import { MonitoringStockModule } from "./modules/monitoring/stock/stock.module.js"
-import { MonitoringStockOnHandQuery } from "./modules/monitoring/stock/stock.onhand.query.js"
-import { MonitoringStockRepository } from "./modules/monitoring/stock/stock.repository.js"
 import { MonitoringTransactionController } from "./modules/monitoring/transaction/transaction.controller.js"
 import { MonitoringTransactionMiddleware } from "./modules/monitoring/transaction/transaction.middleware.js"
 import { MonitoringTransactionModule } from "./modules/monitoring/transaction/transaction.module.js"
 import { MonitoringTransactionQuery } from "./modules/monitoring/transaction/transaction.query.js"
 import { MonitoringTransactionRepository } from "./modules/monitoring/transaction/transaction.repository.js"
-import { OrderDifferenceController } from "./modules/order-difference/order-difference.controller.js"
-import { OrderDifferenceExcel } from "./modules/order-difference/order-difference.excel.js"
-import { OrderDifferenceModule } from "./modules/order-difference/order-difference.module.js"
-import { OrderDifferenceQuery } from "./modules/order-difference/order-difference.query.js"
-import { OrderDifferenceRepository } from "./modules/order-difference/order-difference.repository.js"
 import { OrderResponseController } from "./modules/order-response/order-response.controller.js"
 import { OrderResponseExcel } from "./modules/order-response/order-response.excel.js"
 import { OrderResponseModule } from "./modules/order-response/order-response.module.js"
@@ -76,11 +60,6 @@ import { ReconciliationQuery } from "./modules/reconciliation/reconciliation.que
 import { ReconciliationRepository } from "./modules/reconciliation/reconciliation.repository.js"
 import { RegionQuery } from "./modules/region/region.query.js"
 import { RegionRepository } from "./modules/region/region.repository.js"
-import { StockBookController } from "./modules/stock-book/stock-book.controller.js"
-import { StockBookModule } from "./modules/stock-book/stock-book.module.js"
-import { StockBookQuery } from "./modules/stock-book/stock-book.query.js"
-import { StockBookRepository } from "./modules/stock-book/stock-book.repository.js"
-import { StockBookWorker } from "./modules/stock-book/stock-book.worker.js"
 import { StockOpnameController } from "./modules/stock-opname/stock-opname.controller.js"
 import { StockOpnameModule } from "./modules/stock-opname/stock-opname.module.js"
 import { StockOpnameQuery } from "./modules/stock-opname/stock-opname.query.js"
@@ -90,12 +69,6 @@ import { TransactionListController } from "./modules/transaction-list/transactio
 import { TransactionListModule } from "./modules/transaction-list/transaction-list.module.js"
 import { TransactionListQuery } from "./modules/transaction-list/transaction-list.query.js"
 import { TransactionListRepository } from "./modules/transaction-list/transaction-list.repository.js"
-import { UserActivityController } from "./modules/user-activity/user-activity.controller.js"
-import { UserActivityMiddleware } from "./modules/user-activity/user-activity.middleware.js"
-import { UserActivityModule } from "./modules/user-activity/user-activity.module.js"
-import { UserActivityQuery } from "./modules/user-activity/user-activity.query.js"
-import { UserActivityRepository } from "./modules/user-activity/user-activity.repository.js"
-import { UserActivityWorker } from "./modules/user-activity/user-activity.worker.js"
 // Stock Inventory - Shared Infrastructure
 import { StockInventoryQuery } from "./modules/stock-inventory/stock-inventory.query.js"
 import { StockInventoryRepository } from "./modules/stock-inventory/stock-inventory.repository.js"
@@ -125,21 +98,6 @@ import { MasterDataRepository } from "./common/repositories/master-data.reposito
 import { StockDiscardController } from "./modules/add-remove-discard/stock-discard/stock-discard.controller.js"
 import { StockDiscardExcel } from "./modules/add-remove-discard/stock-discard/stock-discard.excel.js"
 import { StockDiscardModule } from "./modules/add-remove-discard/stock-discard/stock-discard.module.js"
-// Periodic Material Stock Module
-import { PeriodicMaterialStockController } from "./modules/periodic-material-stock/periodic-material-stock.controller.js"
-import { PeriodicMaterialStockExcel } from "./modules/periodic-material-stock/periodic-material-stock.excel.js"
-import { PeriodicMaterialStockModule } from "./modules/periodic-material-stock/periodic-material-stock.module.js"
-import { PeriodicMaterialStockQuery } from "./modules/periodic-material-stock/periodic-material-stock.query.js"
-import { PeriodicMaterialStockRepository } from "./modules/periodic-material-stock/periodic-material-stock.repository.js"
-import { PeriodicMaterialStockWorker } from "./modules/periodic-material-stock/periodic-material-stock.worker.js"
-// Inventory Overview Module
-import { InventoryOverviewController } from "./modules/inventory-overview/inventory-overview.controller.js"
-import { InventoryOverviewModule } from "./modules/inventory-overview/inventory-overview.module.js"
-import { InventoryOverviewQuery } from "./modules/inventory-overview/inventory-overview.query.js"
-import { InventoryOverviewRepository } from "./modules/inventory-overview/inventory-overview.repository.js"
-import { LplpoController } from "./modules/lplpo/lplpo.controller.js"
-import { LplpoModule } from "./modules/lplpo/lplpo.module.js"
-import { LplpoRepository } from "./modules/lplpo/lplpo.repository.js"
 
 import { AssetInventoryController } from "./modules/asset-inventory/asset-inventory.controller.js"
 import { AssetInventoryExcel } from "./modules/asset-inventory/asset-inventory.excel.js"
@@ -158,7 +116,6 @@ import { LoggerMonitoringGenerateReport } from "./modules/download-report/genera
 import { StockAvailabilityGenerateReport } from "./modules/download-report/generate-report/stock-availability.generate-report.js"
 import { LoggerMonitoringQuery } from "./modules/logger-monitoring/logger-monitoring.query.js"
 import { LoggerMonitoringRepository } from "./modules/logger-monitoring/logger-monitoring.repository.js"
-import { LplpoWorker } from "./modules/lplpo/lplpo.worker.js"
 
 // CCE Module
 import { CceController } from "./modules/cce/cce.controller.js"
@@ -285,25 +242,6 @@ tolgeeConsumer.route(TOPIC.TOLGEE_RELOADED, async () => {
 })
 
 /* Inject Dependencies */
-// Monitoring Stock
-const monitoringStockOnHandQuery = new MonitoringStockOnHandQuery()
-const monitoringStockInTransitQuery = new MonitoringStockInTransitQuery()
-const monitoringStockRepo = new MonitoringStockRepository(
-  monitoringStockOnHandQuery,
-  monitoringStockInTransitQuery
-)
-const monitoringStockModule = new MonitoringStockModule(monitoringStockRepo)
-const monitoringStockMiddleware = new MonitoringStockMiddleware(
-  queryParamDateRangeValidator,
-  activityRepo
-)
-const monitoringStockController = new MonitoringStockController(
-  monitoringStockModule,
-  monitoringStockMiddleware,
-  roleMiddleware,
-  excelMiddleware
-)
-
 // Monitoring Transaction
 const monitoringTransactionQuery = new MonitoringTransactionQuery()
 const monitoringTransactionRepo = new MonitoringTransactionRepository(
@@ -321,45 +259,6 @@ const monitoringTransactionMiddleware = new MonitoringTransactionMiddleware(
 const monitoringTransactionController = new MonitoringTransactionController(
   monitoringTransactionModule,
   monitoringTransactionMiddleware,
-  roleMiddleware
-)
-
-// Commitment Monitoring
-const commitmentQuery = new CommitmentQuery()
-const commitmentRepo = new CommitmentRepository(commitmentQuery)
-const commitmentExcel = new CommitmentMonitoringExcel()
-const commitmentMonitoringModule = new CommitmentMonitoringModule(
-  commitmentRepo,
-  commitmentExcel
-)
-const commitmentMonitoringController = new CommitmentMonitoringController(
-  commitmentMonitoringModule,
-  roleMiddleware
-)
-
-// User Activity
-const userActivityQuery = new UserActivityQuery()
-const userActivityRepo = new UserActivityRepository(userActivityQuery)
-const userActivityModule = new UserActivityModule(
-  userActivityRepo,
-  materialRepo,
-  exportHistoryRepo,
-  publisher
-)
-const userActivityWorker = new UserActivityWorker(
-  userActivityModule,
-  exportHistoryRepo,
-  materialRepo
-)
-const userActivityConsumer = new Consumer(mq, trxManager)
-userActivityWorker.registerWorkers(userActivityConsumer)
-
-const userActivityMiddleware = new UserActivityMiddleware(
-  queryParamDateRangeValidator
-)
-const userActivityController = new UserActivityController(
-  userActivityModule,
-  userActivityMiddleware,
   roleMiddleware
 )
 
@@ -409,27 +308,6 @@ const reconciliationController = new ReconciliationController(
   reconciliationModule,
   roleMiddleware
 )
-
-// Stock Book
-const stockBookQuery = new StockBookQuery()
-const stockBookRepo = new StockBookRepository(stockBookQuery)
-const stockBookModule = new StockBookModule(
-  stockBookRepo,
-  entityRepo,
-  exportHistoryRepo,
-  publisher
-)
-const stockBookController = new StockBookController(
-  stockBookModule,
-  roleMiddleware
-)
-const stockBookWorker = new StockBookWorker(
-  stockBookRepo,
-  entityRepo,
-  exportHistoryRepo
-)
-const stockBookConsumer = new Consumer(mq, trxManager)
-stockBookWorker.registerWorkers(stockBookConsumer)
 
 // Transaction List
 const transactionListQuery = new TransactionListQuery()
@@ -487,33 +365,6 @@ const consumptionSupplyModule = new ConsumptionSupplyModule(
 )
 const consumptionSupplyController = new ConsumptionSupplyController(
   consumptionSupplyModule,
-  roleMiddleware
-)
-
-// Order Difference Module
-const orderDifferenceQuery = new OrderDifferenceQuery()
-const orderDifferenceRepository = new OrderDifferenceRepository(
-  orderDifferenceQuery
-)
-const orderDifferenceExcel = new OrderDifferenceExcel(
-  activityRepo,
-  regionRepo,
-  entityTagRepo,
-  entityRepo,
-  materialRepo
-)
-const orderDifferenceModule = new OrderDifferenceModule(
-  orderDifferenceRepository,
-  materialRepo,
-  entityRepo,
-  locationModule,
-  activityRepo,
-  regionRepo,
-  entityTagRepo,
-  orderDifferenceExcel
-)
-const orderDifferenceController = new OrderDifferenceController(
-  orderDifferenceModule,
   roleMiddleware
 )
 
@@ -657,55 +508,6 @@ const stockDiscardModule = new StockDiscardModule(
 )
 const stockDiscardController = new StockDiscardController(
   stockDiscardModule,
-  roleMiddleware
-)
-
-// Periodic Material Stock Module
-const periodicMaterialStockQuery = new PeriodicMaterialStockQuery()
-const periodicMaterialStockRepository = new PeriodicMaterialStockRepository(
-  periodicMaterialStockQuery
-)
-const periodicMaterialStockExcel = new PeriodicMaterialStockExcel(
-  activityRepo,
-  entityRepo,
-  materialRepo
-)
-const periodicMaterialStockModule = new PeriodicMaterialStockModule(
-  periodicMaterialStockRepository,
-  materialRepo,
-  entityRepo,
-  activityRepo,
-  periodicMaterialStockExcel,
-  exportHistoryRepo,
-  publisher
-)
-const periodicMaterialStockController = new PeriodicMaterialStockController(
-  periodicMaterialStockModule,
-  roleMiddleware
-)
-const periodicMaterialStockWorker = new PeriodicMaterialStockWorker(
-  periodicMaterialStockRepository,
-  materialRepo,
-  entityRepo,
-  activityRepo,
-  exportHistoryRepo
-)
-const periodicMaterialStockConsumer = new Consumer(mq, trxManager)
-periodicMaterialStockWorker.registerWorkers(periodicMaterialStockConsumer)
-
-// Inventory Overview Module
-const inventoryOverviewQuery = new InventoryOverviewQuery()
-const inventoryOverviewRepository = new InventoryOverviewRepository(
-  inventoryOverviewQuery
-)
-const inventoryOverviewModule = new InventoryOverviewModule(
-  inventoryOverviewRepository,
-  regionRepo,
-  entityRepo,
-  locationModule
-)
-const inventoryOverviewController = new InventoryOverviewController(
-  inventoryOverviewModule,
   roleMiddleware
 )
 
@@ -965,11 +767,6 @@ warehouseApp.use("*", featureFlagsMiddleware())
 warehouseApp.use("*", trxMiddleware.handle)
 
 /* Register Routes */
-const monitoringStockRoutes = new Hono()
-monitoringStockRoutes.use("*", routeTracer.traceRoute("monitoring-stock"))
-monitoringStockRoutes.route("/", monitoringStockController.getRoutes())
-warehouseApp.route("/monitoring/stock", monitoringStockRoutes)
-
 const monitoringTransactionRoutes = new Hono()
 monitoringTransactionRoutes.use(
   "*",
@@ -981,25 +778,6 @@ monitoringTransactionRoutes.route(
 )
 warehouseApp.route("/monitoring/transaction", monitoringTransactionRoutes)
 
-const commitmentMonitoringRoutes = new Hono()
-commitmentMonitoringRoutes.use(
-  "*",
-  routeTracer.traceRoute("dashboard-commitment-monitoring")
-)
-commitmentMonitoringRoutes.route(
-  "/",
-  commitmentMonitoringController.getRoutes()
-)
-warehouseApp.route(
-  "/dashboard-commitment-monitoring",
-  commitmentMonitoringRoutes
-)
-
-const userActivityRoutes = new Hono()
-userActivityRoutes.use("*", routeTracer.traceRoute("user-activity"))
-userActivityRoutes.route("/", userActivityController.getRoutes())
-warehouseApp.route("/activity", userActivityRoutes)
-
 const stockOpnameRoutes = new Hono()
 stockOpnameRoutes.use("*", routeTracer.traceRoute("stock-opname"))
 stockOpnameRoutes.route("/", stockOpnameController.getRoutes())
@@ -1009,11 +787,6 @@ const reconciliationRoutes = new Hono()
 reconciliationRoutes.use("*", routeTracer.traceRoute("reconciliation"))
 reconciliationRoutes.route("/", reconciliationController.getRoutes())
 warehouseApp.route("/reconciliation", reconciliationRoutes)
-
-const stockBookRoutes = new Hono()
-stockBookRoutes.use("*", routeTracer.traceRoute("stock-book"))
-stockBookRoutes.route("/", stockBookController.getRoutes())
-warehouseApp.route("/stock-book", stockBookRoutes)
 
 const transactionListRoutes = new Hono()
 transactionListRoutes.use("*", routeTracer.traceRoute("transaction-list"))
@@ -1030,10 +803,6 @@ consumptionSupplyRoutes.use("*", routeTracer.traceRoute("consumption-supply"))
 consumptionSupplyRoutes.route("/", consumptionSupplyController.getRoutes())
 warehouseApp.route("/consumption-supply", consumptionSupplyRoutes)
 
-const orderDifferenceRoutes = new Hono()
-orderDifferenceRoutes.use("*", routeTracer.traceRoute("order-difference"))
-orderDifferenceRoutes.route("/", orderDifferenceController.getRoutes())
-warehouseApp.route("/order-difference", orderDifferenceRoutes)
 
 const orderResponseRoutes = new Hono()
 orderResponseRoutes.use("*", routeTracer.traceRoute("order-response"))
@@ -1064,22 +833,6 @@ const stockDiscardRoutes = new Hono()
 stockDiscardRoutes.use("*", routeTracer.traceRoute("stock-discard"))
 stockDiscardRoutes.route("/", stockDiscardController.getRoutes())
 warehouseApp.route("/stock-discard", stockDiscardRoutes)
-
-const periodicMaterialStockRoutes = new Hono()
-periodicMaterialStockRoutes.use(
-  "*",
-  routeTracer.traceRoute("periodic-material-stock")
-)
-periodicMaterialStockRoutes.route(
-  "/",
-  periodicMaterialStockController.getRoutes()
-)
-warehouseApp.route("/periodic-material-stock", periodicMaterialStockRoutes)
-
-const inventoryOverviewRoutes = new Hono()
-inventoryOverviewRoutes.use("*", routeTracer.traceRoute("inventory-overview"))
-inventoryOverviewRoutes.route("/", inventoryOverviewController.getRoutes())
-warehouseApp.route("/inventory", inventoryOverviewRoutes)
 
 const assetInventoryRoutes = new Hono()
 assetInventoryRoutes.use("*", routeTracer.traceRoute("asset-inventory"))
@@ -1223,27 +976,6 @@ featureFlagsWebhookRoutes.post("/webhook", createWebhookHandler())
 featureFlagsWebhookRoutes.post("/refresh", createRefreshHandler())
 warehouseApp.route("/feature-flags", featureFlagsWebhookRoutes)
 
-const lplpoModule = new LplpoModule(
-  new LplpoRepository(),
-  exportHistoryRepo,
-  publisher
-)
-
-const lplpoController = new LplpoController(
-  lplpoModule,
-  roleMiddleware
-  // roleMiddleware
-)
-
-const lplpoWorker = new LplpoWorker(lplpoModule, exportHistoryRepo)
-const lplpoConsumer = new Consumer(mq, trxManager)
-lplpoWorker.registerWorkers(lplpoConsumer)
-
-const lplpoRoutes = new Hono()
-lplpoRoutes.use("*", routeTracer.traceRoute("report"))
-lplpoRoutes.route("/", lplpoController.getRoutes())
-warehouseApp.route("/report", lplpoRoutes)
-
 // Testing tolgee translation
 warehouseApp.get("/tolgee/:key", async (c) => {
   i18n.loadResources(await loadResources())
@@ -1253,12 +985,4 @@ warehouseApp.get("/tolgee/:key", async (c) => {
   return c.json({ value }, 200)
 })
 
-export {
-  lplpoConsumer,
-  periodicMaterialStockConsumer,
-  stockBookConsumer,
-  stockOpnameConsumer,
-  tolgeeConsumer,
-  userActivityConsumer,
-  warehouseApp,
-}
+export { stockOpnameConsumer, tolgeeConsumer, warehouseApp }

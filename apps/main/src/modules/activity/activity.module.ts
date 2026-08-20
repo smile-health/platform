@@ -66,12 +66,6 @@ export class ActivityModule {
 
     const activityId = Number(result.insertId)
 
-    await this.activityRepo.syncActivityCategories(
-      c,
-      activityId,
-      req.environmental_parameter_category_ids ?? []
-    )
-
     await this.activityPublisher.processCreate(c, {
       ...req,
       id: activityId,
@@ -114,11 +108,6 @@ export class ActivityModule {
       updated_at: new Date(),
       updated_by: userId,
     })
-
-    const categoryIds = (req as any).environmental_parameter_category_ids
-    if (categoryIds !== undefined) {
-      await this.activityRepo.syncActivityCategories(c, id, categoryIds)
-    }
 
     await this.activityPublisher.processUpdate(c, {
       ...req,
@@ -166,10 +155,6 @@ export class ActivityModule {
         width: 20,
       },
       {
-        header: c.var.t("activity.label.parameter_category"),
-        width: 40,
-      },
-      {
         header: c.var.t("common.status"),
         width: 20,
       },
@@ -213,9 +198,6 @@ export class ActivityModule {
             ? c.var.t("common.yes")
             : c.var.t("common.no"),
         protocol: item.protocol,
-        parameter_category: (item.environmental_parameter_categories ?? [])
-          .map((cat: { id: number; name: string }) => cat.name)
-          .join(", "),
         status: item.status
           ? c.var.t("common.active")
           : c.var.t("common.inactive"),
@@ -275,12 +257,9 @@ export class ActivityModule {
   async detailResponse(c: Context, id: number) {
     const data = await this.activityRepo.findById(c, id, c.get("programId"))
     if (data) {
-      const [mapUsers, categories] = await Promise.all([
-        this.userRepo.getBasicDetailMappedTableUser(c, [
-          Number(data?.created_by),
-          Number(data?.updated_by),
-        ]),
-        this.activityRepo.findCategoriesByActivityIds(c, [Number(data.id)]),
+      const mapUsers = await this.userRepo.getBasicDetailMappedTableUser(c, [
+        Number(data?.created_by),
+        Number(data?.updated_by),
       ])
 
       return {
@@ -295,10 +274,6 @@ export class ActivityModule {
           "created_at",
           "updated_at",
         ]),
-        environmental_parameter_categories: categories.map((cat) => ({
-          id: cat.id,
-          name: cat.name,
-        })),
         user_created_by: mapUsers[data.created_by ?? 0] ?? null,
         user_updated_by: mapUsers[data.updated_by ?? 0] ?? null,
       }
@@ -310,23 +285,11 @@ export class ActivityModule {
   async listResponse<T extends Record<string, any>>(c: Context, data: T[]) {
     const createdUsers = collect(data, "created_by")
     const updatedUsers = collect(data, "updated_by")
-    const activityIds = data.map((d) => Number(d.id))
 
-    const [mapUsers, categoryRows] = await Promise.all([
-      this.userRepo.getBasicDetailMappedTableUser(
-        c,
-        merge(createdUsers, updatedUsers)
-      ),
-      this.activityRepo.findCategoriesByActivityIds(c, activityIds),
-    ])
-
-    // Group categories by activity_id
-    const categoryMap: Record<number, { id: number; name: string }[]> = {}
-    for (const cat of categoryRows) {
-      const aid = Number(cat.activity_id)
-      if (!categoryMap[aid]) categoryMap[aid] = []
-      categoryMap[aid].push({ id: Number(cat.id), name: String(cat.name) })
-    }
+    const mapUsers = await this.userRepo.getBasicDetailMappedTableUser(
+      c,
+      merge(createdUsers, updatedUsers)
+    )
 
     const list = data.map((res) => ({
       ...pick(res, [
@@ -340,7 +303,6 @@ export class ActivityModule {
         "created_at",
         "updated_at",
       ]),
-      environmental_parameter_categories: categoryMap[Number(res.id)] ?? [],
       user_created_by: mapUsers[res.created_by ?? 0] ?? null,
       user_updated_by: mapUsers[res.updated_by ?? 0] ?? null,
     }))

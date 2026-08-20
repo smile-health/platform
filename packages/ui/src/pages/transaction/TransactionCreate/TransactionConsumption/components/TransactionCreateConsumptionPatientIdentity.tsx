@@ -12,11 +12,8 @@ import { FormProvider } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 import { useTransactionCreateConsumptionPatientIdentity } from '../hooks/useTransactionCreateConsumptionPatientIdentity'
-import { VACCINE_PROTOCOL } from '../transaction-consumption.constant'
 import { PatientIdentityProps } from '../transaction-consumption.type'
 import TransactionCreateConsumptionWithProtocol from './TransactionCreateConsumptionWithProtocol'
-import PreviewPatiensRabies from './protocols/PreviewPatiensRabies'
-import PreviewPatiensDengue from './protocols/PreviewPatiensDengue'
 import cx from '#lib/cx'
 import PreviewPatiens from './protocols/PreviewPatiens'
 
@@ -70,18 +67,6 @@ const TransactionCreateConsumptionPatientIdentity = ({
               })}
               key={`patient-${indexItem}-${index}`}
             >
-              {item.protocol_id === VACCINE_PROTOCOL.RABIES && (
-                <PreviewPatiensRabies
-                  item={x}
-                  buttonEdit={index === 0 ? buttonEdit : null}
-                />
-              )}
-              {item.protocol_id === VACCINE_PROTOCOL.DENGUE && (
-                <PreviewPatiensDengue
-                  item={x}
-                  buttonEdit={index === 0 ? buttonEdit : null}
-                />
-              )}
               {!item.protocol_id && (
                 <PreviewPatiens
                   item={x}

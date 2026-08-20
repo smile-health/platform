@@ -54,7 +54,7 @@ export const useCreateTransaction = () => {
   const userStorage = getUserStorage()
   const { activeProgram } = useProgram()
   const isTransferStockRestricted =
-    activeProgram?.config.transaction?.is_transfer_stock_restricted ?? true
+    activeProgram?.config?.transaction?.is_transfer_stock_restricted ?? true
   const [modalAcknowledge, setModalAcknowledge] = useState(false)
 
   useEffect(() => {

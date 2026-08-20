@@ -14,20 +14,14 @@ import dashboardInventory from '#pages/locales/id/dashboard/dashboard-inventory'
 import dashboardInventoryOverview from '#pages/locales/id/dashboard/dashboard-inventory-overview'
 import dashboardMicroplanning from '#pages/locales/id/dashboard/dashboard-microplanning'
 import dashboardOrder from '#pages/locales/id/dashboard/dashboard-order'
-import dashboardRabies from '#pages/locales/id/dashboard/dashboard-rabies'
 import dashboardReport from '#pages/locales/id/dashboard/dashboard-report'
 import dashboardStock from '#pages/locales/id/dashboard/dashboard-stock'
 import dashboardStockTaking from '#pages/locales/id/dashboard/dashboard-stock-taking'
 import dashboardAssetTemperatureMonitoring from '#pages/locales/id/dashboard/dashboard-temperature-monitoring'
 import dashboardMonitoringTransactions from '#pages/locales/id/dashboard/dashboard-transaction-monitoring'
-import disposalInstruction from '#pages/locales/id/disposal-instruction'
-import disposalInstructionCreate from '#pages/locales/id/disposal-instruction/DisposalInstructionCreate'
-import disposalInstructionDetail from '#pages/locales/id/disposal-instruction/DisposalInstructionDetail'
-import disposalInstructionList from '#pages/locales/id/disposal-instruction/DisposalInstructionList'
 import entity from '#pages/locales/id/entity'
 import entityMaterialBulk from '#pages/locales/id/entity-material-bulk'
 import forgot from '#pages/locales/id/forgot-password'
-import patient from '#pages/locales/id/global-settings/patient'
 import population from '#pages/locales/id/global-settings/population'
 import stock from '#pages/locales/id/inventory/stock'
 import login from '#pages/locales/id/login'
@@ -50,16 +44,10 @@ import reconciliationDetail from '#pages/locales/id/reconciliation/Reconciliatio
 import reconciliationReport from '#pages/locales/id/report/reconciliation'
 import stockBook from '#pages/locales/id/report/stock-book'
 import userActivity from '#pages/locales/id/report/user-activity'
-import selfDisposal from '#pages/locales/id/self-disposal'
 import stockOpname from '#pages/locales/id/stock-opname'
-import ticketingSystem from '#pages/locales/id/ticketing-system'
-import ticketingSystemCreate from '#pages/locales/id/ticketing-system/TicketingSystemCreate'
-import ticketingSystemDetail from '#pages/locales/id/ticketing-system/TicketingSystemDetail'
-import ticketingSystemList from '#pages/locales/id/ticketing-system/TicketingSystemList'
 import user from '#pages/locales/id/user'
 
 import navbar from '../../components/navbar/locales/id.json'
-import analysisParameter from '../../pages/analysis-parameter/locales/id.json'
 import annualCommitmentDetail from '../../pages/annual-commitment/detail/locales/id.json'
 import annualCommitmentForm from '../../pages/annual-commitment/form/locales/id.json'
 import annualCommitmentList from '../../pages/annual-commitment/list/locales/id.json'
@@ -77,20 +65,15 @@ import storageTemperatureMonitoringList from '../../pages/asset-managements/stor
 import assetType from '../../pages/asset-type/locales/id.json'
 import assetVendor from '../../pages/asset-vendor/locales/id.json'
 import coldStorageCapacity from '../../pages/cold-storage-capacity/locales/id.json'
-import distributionDisposal from '../../pages/disposal/distribution-disposal/locales/id.json'
-import disposalList from '../../pages/disposal/list-disposal/locales/id.json'
-import environmentalHealthHistory from '../../pages/environmental-health-history/locales/id.json'
 import exportHistory from '../../pages/export-history/locales/id.json'
 import programGlobalSettings from '../../pages/global-settings/program/locales/id.json'
 import modelAsset from '../../pages/model-asset-management/locales/id.json'
 import notification from '../../pages/notification/locales/id.json'
-import parameterCategory from '../../pages/parameter-category/locales/id.json'
 import pqs from '../../pages/pqs/locales/id.json'
 import programPlanMaterialRatio from '../../pages/program-plan-material-ratio/locales/id.json'
 import protocol from '../../pages/protocol/locales/id.json'
 import lplpo from '../../pages/report/lplpo/locales/id.json'
 import stockOpnameCreate from '../../pages/stock-opname/create/locales/id.json'
-import testMethod from '../../pages/test-method/locales/id.json'
 import transaction from '../../pages/transaction/locales/id.json'
 import transactionCreate from '../../pages/transaction/TransactionCreate/locales/id.json'
 import transactionCreateAddStock from '../../pages/transaction/TransactionCreate/TransactionAddStock/locales/id.json'
@@ -142,22 +125,11 @@ export default {
   transactionList,
   transactionCreateAddStock,
   stockOpnameCreate,
-  ticketingSystem,
-  ticketingSystemList,
-  ticketingSystemCreate,
-  ticketingSystemDetail,
   reconciliation,
   reconciliationDetail,
   reconciliationReport,
   transactionCreateConsumption,
   programGlobalSettings,
-  disposalList,
-  selfDisposal,
-  disposalInstruction,
-  disposalInstructionCreate,
-  disposalInstructionList,
-  disposalInstructionDetail,
-  distributionDisposal,
   notification,
   dashboard,
   dashboardDownload,
@@ -172,7 +144,6 @@ export default {
   dashboardDiscard,
   dashboardReport,
   dashboardInventoryOverview,
-  dashboardRabies,
   dashboardAnnualCommitmentVsRealization,
   dashboardColdStorageCapacity,
   assetManagements,
@@ -188,13 +159,8 @@ export default {
   storageTemperatureMonitoringDetail,
   storageTemperatureMonitoringList,
   protocol,
-  patient,
   population,
   task,
   lplpo,
   coldStorageCapacity,
-  analysisParameter,
-  testMethod,
-  parameterCategory,
-  environmentalHealthHistory,
 }

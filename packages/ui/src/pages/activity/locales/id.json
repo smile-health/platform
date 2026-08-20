@@ -49,10 +49,6 @@
       "label": "Protokol",
       "placeholder": "Pilih protokol"
     },
-    "environmental_parameter_categories": {
-      "label": "Parameter Kategori",
-      "placeholder": "Pilih kategori"
-    },
     "is_final_distribution": {
       "label": "Distribusi Akhir"
     }

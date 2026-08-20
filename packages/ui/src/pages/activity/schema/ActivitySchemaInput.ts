@@ -16,6 +16,5 @@ export const schemaInput = (t: TFunction<['common', 'activity']>) =>
       .matches(/^(?!\s+$).*/, t('activity:form.name.validation.required'))
       .max(255, t('common:validation.char.max', { char: 255 })),
     protocol: yup.string().required(t('common:validation.required')),
-    environmental_parameter_category_ids: yup.array().of(yup.number()).optional(),
     is_final_distribution: yup.boolean().nullable().optional(),
   })

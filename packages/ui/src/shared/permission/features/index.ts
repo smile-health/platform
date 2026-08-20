@@ -1,6 +1,5 @@
 import { Account } from './account'
 import { Activity } from './activity'
-import { AnalysisParameter } from './analysis-parameter'
 import { AnnualCommitment } from './annual-commitment'
 import { AnnualPlanningProcess } from './annual-planning-process'
 import { AnnualPlanningSubstitution } from './annual-planning-substitution'
@@ -17,7 +16,6 @@ import { Dashboard } from './dashboard'
 import { Disposal } from './disposal'
 import { DisposalInstruction } from './disposal-instruction'
 import { Entities } from './entity'
-import { EnvironmentalHealthHistory } from './environmental-health-history'
 import { GlobalAsset } from './global-asset'
 import { Manufacturers } from './manufacturer'
 import { Material } from './material'
@@ -27,8 +25,6 @@ import { ModelAsset } from './model-asset'
 import { MonitoringDeviceInventory } from './monitoring-device-inventory'
 import { Notification } from './notification'
 import { Orders } from './orders'
-import { ParameterCategory } from './parameter-category'
-import { Patients } from './patient'
 import { PeriodOfStockTaking } from './period-of-stock-taking'
 import { Populations } from './population'
 import { Pqs } from './pqs'
@@ -43,23 +39,18 @@ import { StockOpnames } from './stock-opnames'
 import { Stocks } from './stocks'
 import { StorageTemperatureMonitoring } from './storage-temperature-monitoring'
 import { Task } from './task'
-import { TestMethod } from './test-method'
 import { TicketingSystem } from './ticketing-system'
 import { Transactions } from './transactions'
 import { Users } from './users'
 
 export type FeatureName =
-  | AnalysisParameter
   | Entities
   | Task
   | Populations
-  | Patients
   | Users
   | Material
   | Manufacturers
   | Orders
-  | ParameterCategory
-  | TestMethod
   | Transactions
   | Stocks
   | StockOpnames
@@ -97,4 +88,3 @@ export type FeatureName =
   | ProgramPlanMaterialRatio
   | AnnualCommitment
   | GlobalAsset
-  | EnvironmentalHealthHistory

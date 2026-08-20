@@ -1,12 +1,4 @@
-import {
-  stockBookConsumer,
-  periodicMaterialStockConsumer,
-  lplpoConsumer,
-  warehouseApp,
-  stockOpnameConsumer,
-  userActivityConsumer,
-  tolgeeConsumer,
-} from "@/wire.js"
+import { warehouseApp, stockOpnameConsumer, tolgeeConsumer } from "@/wire.js"
 import { SpanStatusCode, trace } from "@opentelemetry/api"
 import { errorHandler } from "@smile-health/lib/error.js"
 import { httpLogger } from "@smile-health/lib/logger.js"
@@ -189,14 +181,7 @@ export default {
 }
 
 export const runWorker = async () => {
-  await Promise.all([
-    stockBookConsumer.start(),
-    periodicMaterialStockConsumer.start(),
-    stockOpnameConsumer.start(),
-    lplpoConsumer.start(),
-    tolgeeConsumer.start(),
-    userActivityConsumer.start(),
-  ])
+  await Promise.all([stockOpnameConsumer.start(), tolgeeConsumer.start()])
 }
 
 // await runWorker()

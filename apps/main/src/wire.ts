@@ -29,7 +29,6 @@ import {
 } from "./common/middlewares/auth.middleware.js"
 import { CommonMiddleware } from "./common/middlewares/common.middleware.js"
 import { DeduplicationMiddleware } from "./common/middlewares/dedup.middleware.js"
-import { featureGuardMiddleware } from "./common/middlewares/feature-guard.middleware.js"
 import { RoleMiddleware } from "./common/middlewares/role-validation.middleware.js"
 import { NotificationTypeRepository } from "./common/repository/notification-type.js"
 import { RolesToResourceMappingRepository } from "./common/repository/roles.repository.js"
@@ -71,39 +70,11 @@ import { BudgetSourceController } from "./modules/budget-source/budget-source.co
 import { BudgetSourceMiddleware } from "./modules/budget-source/budget-source.middleware.js"
 import { BudgetSourceModule } from "./modules/budget-source/budget-source.module.js"
 import { BudgetSourceRepository } from "./modules/budget-source/budget-source.repository.js"
-import { BiasImmunizationLogisticsController } from "./modules/microplanning/bias-immunization-logistics/bias-immunization-logistics.controller.js"
-import { BiasImmunizationLogisticsModule } from "./modules/microplanning/bias-immunization-logistics/bias-immunization-logistics.module.js"
-import { BiasImmunizationLogisticsRepository } from "./modules/microplanning/bias-immunization-logistics/bias-immunization-logistics.repository.js"
 
 import { ColdstoragePublisher } from "./modules/coldstorage/coldstorage.publisher.js"
 import { ContractController } from "./modules/contracts/contract.controller.js"
 import { ContractModule } from "./modules/contracts/contract.module.js"
 import { ContractRepository } from "./modules/contracts/contract.repository.js"
-import { DengueCaseController } from "./modules/dengue/dengue-case/dengue-case.controller.js"
-import { DengueCaseMiddleware } from "./modules/dengue/dengue-case/dengue-case.middleware.js"
-import { DengueCaseModule } from "./modules/dengue/dengue-case/dengue-case.module.js"
-import { DengueCaseRepository } from "./modules/dengue/dengue-case/dengue-case.repository.js"
-import { SentinelSurveillanceController } from "./modules/dengue/sentinel-surveillance/sentinel-surveillance.controller.js"
-import { SentinelSurveillanceMiddleware } from "./modules/dengue/sentinel-surveillance/sentinel-surveillance.middleware.js"
-import { SentinelSurveillanceModule } from "./modules/dengue/sentinel-surveillance/sentinel-surveillance.module.js"
-import { SentinelSurveillanceRepository } from "./modules/dengue/sentinel-surveillance/sentinel-surveillance.repository.js"
-import { DisposalInstructionModule } from "./modules/disposal/disposal-instruction/disposal-instruction.module.js"
-import { DisposalMethodsController } from "./modules/disposal/methods/disposal-methods.controller.js"
-import { DisposalMethodsModule } from "./modules/disposal/methods/disposal-methods.module.js"
-import { DisposalMethodsRepository } from "./modules/disposal/methods/disposal-methods.repository.js"
-import { SelfDisposalController } from "./modules/disposal/self-disposal/self-disposal.controller.js"
-import { SelfDisposalMiddleware } from "./modules/disposal/self-disposal/self-disposal.middleware.js"
-import { SelfDisposalModule } from "./modules/disposal/self-disposal/self-disposal.module.js"
-import { SelfDisposalPublisher } from "./modules/disposal/self-disposal/self-disposal.publisher.js"
-import { SelfDisposalRepository } from "./modules/disposal/self-disposal/self-disposal.repository.js"
-import { DisposalShipmentController } from "./modules/disposal/shipment/shipment.controller.js"
-import { DisposalShipmentMiddleware } from "./modules/disposal/shipment/shipment.middleware.js"
-import { DisposalShipmentModule } from "./modules/disposal/shipment/shipment.module.js"
-import { DisposalShipmentRepository } from "./modules/disposal/shipment/shipment.repository.js"
-import { DisposalStockController } from "./modules/disposal/stocks/disposal-stock.controller.js"
-import { DisposalStockMiddleware } from "./modules/disposal/stocks/disposal-stock.middleware.js"
-import { DisposalStockModule } from "./modules/disposal/stocks/disposal-stock.module.js"
-import { DisposalStockRepository } from "./modules/disposal/stocks/disposal-stock.repository.js"
 import { EducationRepository } from "./modules/education/education.repository.js"
 import { EntityActivityController } from "./modules/entity-activity/entity-activity.controller.js"
 import { EntityActivityMiddleware } from "./modules/entity-activity/entity-activity.middleware.js"
@@ -144,37 +115,8 @@ import { EntityModule } from "./modules/entity/entity.module.js"
 import { EntityPublisher } from "./modules/entity/entity.publisher.js"
 import { EntityRepository } from "./modules/entity/entity.repository.js"
 import { EntityWorker } from "./modules/entity/entity.worker.js"
-import { EnvironmentalAnalysisParameterController } from "./modules/environmental-analysis-parameter/environmental-analysis-parameter.controller.js"
-import { EnvironmentalAnalysisParameterMiddleware } from "./modules/environmental-analysis-parameter/environmental-analysis-parameter.middleware.js"
-import { EnvironmentalAnalysisParameterModule } from "./modules/environmental-analysis-parameter/environmental-analysis-parameter.module.js"
-import { EnvironmentalAnalysisParameterRepository } from "./modules/environmental-analysis-parameter/environmental-analysis-parameter.repository.js"
-import { EnvironmentalParameterCategoryController } from "./modules/environmental-parameter-category/environmental-parameter-category.controller.js"
-import { EnvironmentalParameterCategoryMiddleware } from "./modules/environmental-parameter-category/environmental-parameter-category.middleware.js"
-import { EnvironmentalParameterCategoryModule } from "./modules/environmental-parameter-category/environmental-parameter-category.module.js"
-import { EnvironmentalParameterCategoryRepository } from "./modules/environmental-parameter-category/environmental-parameter-category.repository.js"
-import { EnvironmentalTestMethodController } from "./modules/environmental-test-method/environmental-test-method.controller.js"
-import { EnvironmentalTestMethodMiddleware } from "./modules/environmental-test-method/environmental-test-method.middleware.js"
-import { EnvironmentalTestMethodModule } from "./modules/environmental-test-method/environmental-test-method.module.js"
-import { EnvironmentalTestMethodRepository } from "./modules/environmental-test-method/environmental-test-method.repository.js"
 import { EthnicRepository } from "./modules/ethnic/ethnic.repository.js"
-import { EventReportCommentRepository } from "./modules/event-report-comment/event-report-comment.repository.js"
-import { EventReportHistoryRepository } from "./modules/event-report-history/event-report-history.repository.js"
-import { EventReportItemRepository } from "./modules/event-report-item/event-report-item.repository.js"
-import { EventReportReasonController } from "./modules/event-report-reason/event-report-reason.controller.js"
-import { EventReportReasonModule } from "./modules/event-report-reason/event-report-reason.module.js"
-import { EventReportReasonRepository } from "./modules/event-report-reason/event-report-reason.repository.js"
-import { EventReportStatusController } from "./modules/event-report-status/event-report-status.controller.js"
-import { EventReportStatusModule } from "./modules/event-report-status/event-report-status.module.js"
-import { EventReportStatusRepository } from "./modules/event-report-status/event-report-status.repository.js"
-import { EventReportController } from "./modules/event-report/event-report.controller.js"
-import { EventReportMiddleware } from "./modules/event-report/event-report.middleware.js"
-import { EventReportModule } from "./modules/event-report/event-report.module.js"
-import { EventReportRepository } from "./modules/event-report/event-report.repository.js"
 import ExportHistoryRepository from "./modules/export-history/export-history.repository.js"
-import { ImmunizationController } from "./modules/immunization/immunization.controller.js"
-import { ImmunizationMiddleware } from "./modules/immunization/immunization.middleware.js"
-import { ImmunizationModule } from "./modules/immunization/immunization.module.js"
-import { ImmunizationRepository } from "./modules/immunization/immunization.repository.js"
 import { IntegrationController } from "./modules/integration/integration.controller.js"
 import { IntegrationModule } from "./modules/integration/integration.module.js"
 import { IntegrationRepository } from "./modules/integration/integration.repository.js"
@@ -203,64 +145,12 @@ import { MaterialMiddleware } from "./modules/material/material.middleware.js"
 import { MaterialModule } from "./modules/material/material.module.js"
 import { MaterialPublisher } from "./modules/material/material.publisher.js"
 import { MaterialRepository } from "./modules/material/material.repository.js"
-import { MicroplanningDashboardController } from "./modules/microplanning/dashboard/microplanning-dashboard.controller.js"
-import { MicroplanningDashboardModule } from "./modules/microplanning/dashboard/microplanning-dashboard.module.js"
-import { ImmunizationLogisticsController } from "./modules/microplanning/immunization-logistics/immunization-logistics.controller.js"
-import { ImmunizationLogisticsModule } from "./modules/microplanning/immunization-logistics/immunization-logistics.module.js"
-import { ImmunizationLogisticsRepository } from "./modules/microplanning/immunization-logistics/immunization-logistics.repository.js"
-import { MaterialTargetsController } from "./modules/microplanning/material-targets/material-targets.controller.js"
-import { MaterialTargetsModule } from "./modules/microplanning/material-targets/material-targets.module.js"
-import { MaterialTargetsRepository } from "./modules/microplanning/material-targets/material-targets.repository.js"
-import { MicroplanningController } from "./modules/microplanning/overview/microplanning.controller.js"
-import { MicroplanningMiddleware } from "./modules/microplanning/overview/microplanning.middleware.js"
-import { MicroplanningModule } from "./modules/microplanning/overview/microplanning.module.js"
-import { MicroplanningRepository } from "./modules/microplanning/overview/microplanning.repository.js"
 
-import { MicroplanningMapServicePointController } from "./modules/microplanning/map-service-point/microplanning-map-service-point.controller.js"
-import { MicroplanningMapServicePointMiddleware } from "./modules/microplanning/map-service-point/microplanning-map-service-point.middleware.js"
-import { MicroplanningMapServicePointModule } from "./modules/microplanning/map-service-point/microplanning-map-service-point.module.js"
-import { MicroplanningMapServicePointRepository } from "./modules/microplanning/map-service-point/microplanning-map-service-point.repository.js"
-import { PriorityAreasController } from "./modules/microplanning/priority-areas/priority-areas.controller.js"
-import { PriorityAreasMiddleware } from "./modules/microplanning/priority-areas/priority-areas.middleware.js"
-import { PriorityAreasModule } from "./modules/microplanning/priority-areas/priority-areas.module.js"
-import { PriorityAreasRepository } from "./modules/microplanning/priority-areas/priority-areas.repository.js"
 
-import { MicroplanningMapDestinationController } from "./modules/microplanning/map-destination/microplanning-map-destination.controller.js"
-import { MicroplanningMapDestinationMiddleware } from "./modules/microplanning/map-destination/microplanning-map-destination.middleware.js"
-import { MicroplanningMapDestinationModule } from "./modules/microplanning/map-destination/microplanning-map-destination.module.js"
-import { MicroplanningMapDestinationRepository } from "./modules/microplanning/map-destination/microplanning-map-destination.repository.js"
 
-import { ProblemSolutionController } from "./modules/microplanning/problem-solution/problem-solution.controller.js"
-import { ProblemSolutionMiddleware } from "./modules/microplanning/problem-solution/problem-solution.middleware.js"
-import { ProblemSolutionModule } from "./modules/microplanning/problem-solution/problem-solution.module.js"
-import { ProblemSolutionRepository } from "./modules/microplanning/problem-solution/problem-solution.repository.js"
 
-import { ActivityPlanController } from "./modules/microplanning/activity-plan/activity-plan.controller.js"
-import { ActivityPlanMiddleware } from "./modules/microplanning/activity-plan/activity-plan.middleware.js"
-import { ActivityPlanModule } from "./modules/microplanning/activity-plan/activity-plan.module.js"
-import { ActivityPlanRepository } from "./modules/microplanning/activity-plan/activity-plan.repository.js"
 
-import { MicroplanningMapRouteController } from "./modules/microplanning/map-route/microplanning-map-route.controller.js"
-import { MicroplanningMapRouteMiddleware } from "./modules/microplanning/map-route/microplanning-map-route.middleware.js"
-import { MicroplanningMapRouteModule } from "./modules/microplanning/map-route/microplanning-map-route.module.js"
-import { MicroplanningMapRouteRepository } from "./modules/microplanning/map-route/microplanning-map-route.repository.js"
-import { OsrmRouteController } from "./modules/microplanning/osrm-route/osrm-route.controller.js"
-import { OsrmRouteGateway } from "./modules/microplanning/osrm-route/osrm-route.gateway.js"
-import { OsrmRouteModule } from "./modules/microplanning/osrm-route/osrm-route.module.js"
 
-import { MpConfigRepository } from "./modules/microplanning/mp-config/mp-config.repository.js"
-import { NonBiasImmunizationLogisticsController } from "./modules/microplanning/non-bias-immunization-logistics/non-bias-immunization-logistics.controller.js"
-import { NonBiasImmunizationLogisticsModule } from "./modules/microplanning/non-bias-immunization-logistics/non-bias-immunization-logistics.module.js"
-import { NonBiasImmunizationLogisticsRepository } from "./modules/microplanning/non-bias-immunization-logistics/non-bias-immunization-logistics.repository.js"
-import { TargetEstimationBiasRepository } from "./modules/microplanning/target-estimation-bias/target-estimation-bias.repository.js"
-import { TargetEstimationNonBiasRepository } from "./modules/microplanning/target-estimation-non-bias/target-estimation-non-bias.repository.js"
-import { TargetEstimationController } from "./modules/microplanning/target-estimation/target-estimation.controller.js"
-import { TargetEstimationMiddleware } from "./modules/microplanning/target-estimation/target-estimation.middleware.js"
-import { TargetEstimationModule } from "./modules/microplanning/target-estimation/target-estimation.module.js"
-import { TargetsController } from "./modules/microplanning/targets/targets.controller.js"
-import { TargetsMiddleware } from "./modules/microplanning/targets/targets.middleware.js"
-import { TargetsModule } from "./modules/microplanning/targets/targets.module.js"
-import { TargetsRepository } from "./modules/microplanning/targets/targets.repository.js"
 import { NotificationController } from "./modules/notification/notification.controller.js"
 import { NotificationModule } from "./modules/notification/notification.module.js"
 import { NotificationPublisher } from "./modules/notification/notification.publisher.js"
@@ -413,10 +303,6 @@ import { TransactionTransferStockModule } from "./modules/transaction-transfer-s
 import { TransactionTransferStockPublisher } from "./modules/transaction-transfer-stock/transaction-transfer-stock.publisher.js"
 import { TransactionTransferStockRepository } from "./modules/transaction-transfer-stock/transaction-transfer-stock.repository.js"
 import { TransactionTypeRepository } from "./modules/transaction-type/transaction-type.repository.js"
-import { ConsumptionRabiesController } from "./modules/transaction/consumption-rabies/consumption-rabies.controller.js"
-import { ConsumptionRabiesMiddleware } from "./modules/transaction/consumption-rabies/consumption-rabies.middleware.js"
-import { ConsumptionRabiesModule } from "./modules/transaction/consumption-rabies/consumption-rabies.module.js"
-import { ConsumptionRabiesRepository } from "./modules/transaction/consumption-rabies/consumption-rabies.repository.js"
 import { ConsumptionReactionController } from "./modules/transaction/consumption-reaction/consumption-reaction.controller.js"
 import { ConsumptionReactionMiddleware } from "./modules/transaction/consumption-reaction/consumption-reaction.middleware.js"
 import { ConsumptionReactionModule } from "./modules/transaction/consumption-reaction/consumption-reaction.module.js"
@@ -485,7 +371,6 @@ const stockRepo = new StockRepository()
 const stockOpnameRepo = new StockOpnameRepository()
 const stockOpnamePeriodRepo = new StockOpnamePeriodRepository()
 const transactionRepo = new TransactionRepository()
-const consumptionRabiesRepo = new ConsumptionRabiesRepository()
 const batchRepo = new BatchRepository()
 const stockQualityRepo = new StockQualityRepository()
 const stockConsumptionRepo = new StockConsumptionRepository()
@@ -501,35 +386,21 @@ const orderReturnRepo = new OrderReturnRepository()
 const orderAllocationRepo = new OrderAllocationRepository()
 const rolesToResourceMappingRepo = new RolesToResourceMappingRepository()
 const contractRepo = new ContractRepository()
-const disposalMethodsRepo = new DisposalMethodsRepository()
-const selfDisposalRepo = new SelfDisposalRepository()
 const targetGroupsRepo = new TargetGroupRepository()
-const targetEstimationNonBiasRepo = new TargetEstimationNonBiasRepository()
-const targetEstimationBiasRepo = new TargetEstimationBiasRepository()
 const annualPlanningGroupTargetRepo = new AnnualPlanningGroupTargetRepository()
 const taskRepo = new TaskRepository()
 const materialRatioRepo = new MaterialRatioRepository()
 const annualPlanningMaterialSubstitutionRepo =
   new AnnualPlanningMaterialSubstitutionRepository()
 
-// Disposal Instruction
-const disposalInstructionModule = new DisposalInstructionModule()
-const disposalInstructionController = disposalInstructionModule.getController()
 const entityTypeRepo = new EntityTypeRepository()
 const orderCancelReasonRepo = new OrderCancelReasonRepository()
-const eventReportRepo = new EventReportRepository()
-const eventReportHistoryRepo = new EventReportHistoryRepository()
-const eventReportCommentRepo = new EventReportCommentRepository()
-const eventReportItemRepo = new EventReportItemRepository()
-const eventReportStatusRepo = new EventReportStatusRepository()
 const reconciliationAdditionalRepo = new ReconciliationAdditionalRepository()
-const eventReportReasonRepo = new EventReportReasonRepository()
 const exportHistoryRepo = new ExportHistoryRepository()
 const orderRelocationRepo = new OrderRelocationRepository()
 const integrationRepo = new OrderIntegrationRepository()
 const notificationRepo = new NotificationRepository()
 const patientRepo = new PatientRepository()
-const targetsRepo = new TargetsRepository()
 const transactionDetailRepo = new TransactionDetailRepository()
 const consumptionReactionRepo = new ConsumptionReactionRepository()
 const notificationTypeRepo = new NotificationTypeRepository()
@@ -539,7 +410,6 @@ const locationRepo = new LocationRepository()
 const occupationRepo = new OccupationRepository()
 const religionRepo = new ReligionRepository()
 const annualCommitmentRepo = new AnnualCommitmentRepository()
-const dengueCaseRepo = new DengueCaseRepository()
 const entitySchoolRepositoty = new EntitySchoolReposity()
 
 const commonMiddleware = new CommonMiddleware()
@@ -679,15 +549,6 @@ const entityUserController = new EntityUserController(entityUserModule)
 const entitySchoolModule = new EntitySchoolModule(entitySchoolRepositoty)
 const entitySchoolController = new EntitySchoolController(entitySchoolModule)
 
-// Material Targets
-const materialTargetsRepository = new MaterialTargetsRepository()
-const materialTargetsModule = new MaterialTargetsModule(
-  materialTargetsRepository
-)
-const materialTargetsController = new MaterialTargetsController(
-  materialTargetsModule
-)
-
 // Entity Activity
 const entityActivityPublisher = new EntityActivityPublisher(
   publisher,
@@ -737,12 +598,10 @@ const activityModule = new ActivityModule(
   userRepo,
   activityPublisher
 )
-const activityCategoryRepo = new EnvironmentalParameterCategoryRepository()
 const activityMiddleware = new ActivityMiddleware(
   activityRepo,
   transactionRepo,
-  orderRepo,
-  activityCategoryRepo
+  orderRepo
 )
 const activityController = new ActivityController(
   activityModule,
@@ -1202,25 +1061,6 @@ const transactionController = new TransactionController(
   deduplicationMiddleware
 )
 
-// Transaction - Rabies
-const consumptionRabiesModule = new ConsumptionRabiesModule(
-  consumptionRabiesRepo,
-  stockRepo,
-  batchRepo,
-  new TransactionPublisher(publisher, transactionRepo),
-  stockOpnamePeriodRepo
-)
-const consumptionRabiesMiddleware = new ConsumptionRabiesMiddleware(
-  consumptionRabiesRepo,
-  transactionRepo,
-  activityRepo,
-  entityActivityRepository
-)
-const consumptionRabiesController = new ConsumptionRabiesController(
-  consumptionRabiesModule,
-  consumptionRabiesMiddleware
-)
-
 // Transaction - Consumption Reaction (KIPI)
 const consumptionReactionModule = new ConsumptionReactionModule(
   consumptionReactionRepo
@@ -1244,86 +1084,6 @@ const patientModule = new PatientModule(
   userRepo
 )
 const patientController = new PatientController(patientModule)
-
-// Microplanning
-
-// Mp Config
-const mpConfigRepository = new MpConfigRepository()
-
-const targetsModule = new TargetsModule(
-  entitySchoolRepositoty,
-  dengueCaseRepo,
-  targetsRepo,
-  locationRepo,
-  targetGroupsRepo,
-  entityRepo,
-  mpConfigRepository,
-)
-const targetsMiddleware = new TargetsMiddleware(targetsRepo, locationRepo)
-const targetsController = new TargetsController(
-  targetsModule,
-  targetsMiddleware,
-  excelMiddleware
-)
-
-// Target Estimation
-const targetEstimationMiddleware = new TargetEstimationMiddleware(
-  targetEstimationNonBiasRepo
-)
-const targetEstimationModule = new TargetEstimationModule(
-  targetEstimationNonBiasRepo,
-  targetEstimationBiasRepo,
-  locationRepo,
-  entitySchoolRepositoty,
-  targetsRepo
-)
-const targetEstimationController = new TargetEstimationController(
-  targetEstimationMiddleware,
-  targetEstimationModule
-)
-
-const microplanningRepo = new MicroplanningRepository()
-const priorityAreasRepo = new PriorityAreasRepository()
-
-const microplanningMiddleware = new MicroplanningMiddleware(
-  microplanningRepo,
-  targetsRepo
-)
-
-const priorityAreasModule = new PriorityAreasModule(priorityAreasRepo)
-const priorityAreasMiddleware = new PriorityAreasMiddleware(priorityAreasRepo)
-const priorityAreasController = new PriorityAreasController(
-  priorityAreasModule,
-  priorityAreasMiddleware
-)
-
-// Problem Solution
-const problemSolutionRepo = new ProblemSolutionRepository()
-const problemSolutionModule = new ProblemSolutionModule(problemSolutionRepo)
-const problemSolutionMiddleware = new ProblemSolutionMiddleware(
-  problemSolutionRepo
-)
-const problemSolutionController = new ProblemSolutionController(
-  problemSolutionModule,
-  problemSolutionMiddleware
-)
-
-// Activity Plan
-const activityPlanRepo = new ActivityPlanRepository()
-const activityPlanModule = new ActivityPlanModule(activityPlanRepo)
-const activityPlanMiddleware = new ActivityPlanMiddleware(activityPlanRepo)
-const activityPlanController = new ActivityPlanController(
-  activityPlanModule,
-  activityPlanMiddleware
-)
-
-const microplanningModule = new MicroplanningModule(
-  microplanningRepo,
-  priorityAreasRepo,
-  activityPlanModule,
-  targetsModule
-)
-const microplanningController = new MicroplanningController(microplanningModule)
 
 // Batch
 const batchModule = new BatchModule(batchRepo)
@@ -1363,70 +1123,6 @@ const appMobileNotifController = new AppMobileNotifController(
 // contract
 const contractModule = new ContractModule(contractRepo)
 const contractController = new ContractController(contractModule)
-
-// Disposal Methods
-const disposalMethodsModule = new DisposalMethodsModule(disposalMethodsRepo)
-const disposalMethodsController = new DisposalMethodsController(
-  disposalMethodsModule
-)
-
-// Self Disposal
-const selfDisposalPublisher = new SelfDisposalPublisher(
-  publisher,
-  selfDisposalRepo
-)
-const selfDisposalModule = new SelfDisposalModule(
-  selfDisposalRepo,
-  selfDisposalPublisher,
-  entityRepo,
-  materialRepo,
-  userRepo,
-  activityRepo
-)
-const selfDisposalMiddleware = new SelfDisposalMiddleware(selfDisposalRepo)
-const selfDisposalController = new SelfDisposalController(
-  selfDisposalModule,
-  selfDisposalMiddleware,
-  roleMiddleware,
-  excelMiddleware
-)
-
-// event Report
-const eventReportModule = new EventReportModule(
-  eventReportRepo,
-  eventReportHistoryRepo,
-  eventReportCommentRepo,
-  eventReportItemRepo,
-  eventReportStatusRepo
-)
-const eventReportMiddleware = new EventReportMiddleware(
-  entityRepo,
-  eventReportRepo,
-  eventReportStatusRepo,
-  eventReportHistoryRepo,
-  eventReportReasonRepo
-)
-const eventReportController = new EventReportController(
-  eventReportMiddleware,
-  eventReportModule,
-  roleMiddleware,
-  excelMiddleware
-)
-// event report status
-const eventReportStatusModule = new EventReportStatusModule(
-  eventReportStatusRepo
-)
-const eventReportStatusController = new EventReportStatusController(
-  eventReportStatusModule,
-  roleMiddleware
-)
-// event report reason
-const eventReportReasonModule = new EventReportReasonModule(
-  eventReportReasonRepo
-)
-const eventReportReasonController = new EventReportReasonController(
-  eventReportReasonModule
-)
 
 // Order Cancel Reason
 const orderCancelReasonModule = new OrderCancelReasonModule(
@@ -1499,35 +1195,6 @@ const transactionTransferStockController =
     roleMiddleware
   )
 
-// Disposal
-const disposalRepo = new DisposalStockRepository()
-const disposalModule = new DisposalStockModule(
-  disposalRepo,
-  entityRepo,
-  materialRepo
-)
-const disposalController = new DisposalStockController(
-  disposalModule,
-  new DisposalStockMiddleware(),
-  roleMiddleware,
-  excelMiddleware
-)
-
-// disposal
-const disposalShipmentRepo = new DisposalShipmentRepository(
-  entityMaterialRepo,
-  stockRepo
-)
-
-const disposalShipmentModule = new DisposalShipmentModule(disposalShipmentRepo)
-
-const disposalShipmentController = new DisposalShipmentController(
-  disposalShipmentModule,
-  new DisposalShipmentMiddleware(),
-  roleMiddleware,
-  excelMiddleware
-)
-
 const protocolRepository = new ProtocolRepository()
 const protocolModule = new ProtocolModule(protocolRepository)
 const protocolController = new ProtocolController(protocolModule)
@@ -1573,113 +1240,6 @@ const consumptionController = new ConsumptionController(
   consumptionV2Middleware
 )
 
-// Microplanning Dashboard
-const microplanningDashboardModule = new MicroplanningDashboardModule(
-  locationRepo,
-  targetsRepo,
-  mpConfigRepository
-)
-const microplanningDashboardController = new MicroplanningDashboardController(
-  microplanningDashboardModule,
-  excelMiddleware
-)
-
-// Microplanning Map Service Point
-const microplanningMapServicePointRepository =
-  new MicroplanningMapServicePointRepository()
-const microplanningMapServicePointModule =
-  new MicroplanningMapServicePointModule(microplanningMapServicePointRepository)
-const microplanningMapServicePointMiddleware =
-  new MicroplanningMapServicePointMiddleware(
-    microplanningMapServicePointRepository
-  )
-const microplanningMapServicePointController =
-  new MicroplanningMapServicePointController(
-    microplanningMapServicePointModule,
-    microplanningMapServicePointMiddleware
-  )
-
-// Microplanning Map Destination
-const microplanningMapDestinationRepository =
-  new MicroplanningMapDestinationRepository()
-const microplanningMapDestinationModule = new MicroplanningMapDestinationModule(
-  microplanningMapDestinationRepository
-)
-const microplanningMapDestinationMiddleware =
-  new MicroplanningMapDestinationMiddleware(
-    microplanningMapDestinationRepository
-  )
-const microplanningMapDestinationController =
-  new MicroplanningMapDestinationController(
-    microplanningMapDestinationModule,
-    microplanningMapDestinationMiddleware
-  )
-
-// Microplanning Map Route
-const microplanningMapRouteRepository = new MicroplanningMapRouteRepository()
-const microplanningMapRouteModule = new MicroplanningMapRouteModule(
-  microplanningMapRouteRepository
-)
-const microplanningMapRouteMiddleware = new MicroplanningMapRouteMiddleware(
-  microplanningMapRouteRepository
-)
-const microplanningMapRouteController = new MicroplanningMapRouteController(
-  microplanningMapRouteModule,
-  microplanningMapRouteMiddleware
-)
-
-const osrmRouteGateway = new OsrmRouteGateway()
-const osrmRouteModule = new OsrmRouteModule(osrmRouteGateway)
-const osrmRouteController = new OsrmRouteController(osrmRouteModule)
-
-// Immunization Logistics
-const immunizationLogisticsRepo = new ImmunizationLogisticsRepository()
-const immunizationLogisticsModule = new ImmunizationLogisticsModule(
-  targetEstimationNonBiasRepo,
-  materialRepo,
-  immunizationLogisticsRepo,
-  targetsRepo,
-  mpConfigRepository
-)
-const immunizationLogisticsController = new ImmunizationLogisticsController(
-  immunizationLogisticsModule
-)
-
-// Bias Immunization Logistics
-const biasImmunizationLogisticsRepo = new BiasImmunizationLogisticsRepository()
-const biasImmunizationLogisticsModule = new BiasImmunizationLogisticsModule(
-  targetEstimationBiasRepo,
-  materialRepo,
-  materialTargetsRepository,
-  biasImmunizationLogisticsRepo,
-  targetsRepo,
-  stockRepo,
-  mpConfigRepository
-)
-const biasImmunizationLogisticsController =
-  new BiasImmunizationLogisticsController(
-    biasImmunizationLogisticsModule,
-    trxMiddleware
-  )
-
-// Non-Bias Immunization Logistics
-const nonBiasImmunizationLogisticsRepo =
-  new NonBiasImmunizationLogisticsRepository()
-const nonBiasImmunizationLogisticsModule =
-  new NonBiasImmunizationLogisticsModule(
-    targetEstimationNonBiasRepo,
-    materialRepo,
-    materialTargetsRepository,
-    nonBiasImmunizationLogisticsRepo,
-    targetsRepo,
-    stockRepo,
-    mpConfigRepository
-  )
-const nonBiasImmunizationLogisticsController =
-  new NonBiasImmunizationLogisticsController(
-    nonBiasImmunizationLogisticsModule,
-    trxMiddleware
-  )
 
 // Annual Planning Program Plan
 const annualPlanningProgramPlanRepo = new AnnualPlanningProgramPlanRepository()
@@ -1815,56 +1375,6 @@ const annualNeedsController = new AnnualNeedController(
   excelMiddleware
 )
 
-// Immunization
-const immunizationRepo = new ImmunizationRepository()
-
-const immunizationModule = new ImmunizationModule(
-  immunizationRepo,
-  locationRepo,
-  targetsRepo,
-  mpConfigRepository
-)
-
-const immunizationMiddleware = new ImmunizationMiddleware(
-  immunizationRepo,
-  locationRepo
-)
-
-const immunizationController = new ImmunizationController(
-  immunizationModule,
-  immunizationMiddleware
-)
-
-// Dengue Case
-const dengueCaseModule = new DengueCaseModule(dengueCaseRepo, locationRepo)
-
-const dengueCaseMiddleware = new DengueCaseMiddleware(
-  locationRepo,
-  dengueCaseRepo,
-  entityRepo
-)
-
-const dengueCaseController = new DengueCaseController(
-  dengueCaseModule,
-  dengueCaseMiddleware,
-  excelMiddleware
-)
-
-// Dengue Sentinel Surveillance
-const sentinelSurveillanceRepo = new SentinelSurveillanceRepository()
-
-const sentinelSurveillanceModule = new SentinelSurveillanceModule(
-  sentinelSurveillanceRepo
-)
-
-const sentinelSurveillanceMiddleware = new SentinelSurveillanceMiddleware(
-  sentinelSurveillanceRepo
-)
-
-const sentinelSurveillanceController = new SentinelSurveillanceController(
-  sentinelSurveillanceModule,
-  sentinelSurveillanceMiddleware
-)
 
 // Annual Commitment
 const annualCommitmentMiddleware = new AnnualCommitmentMiddleware(
@@ -2042,12 +1552,6 @@ const entitySchoolsRoutes = new Hono()
 entitySchoolsRoutes.use("*", routeTracer.traceRoute("schools"))
 entitySchoolsRoutes.route("/", entitySchoolController.getRoutes())
 mainApp.route("/schools", entitySchoolsRoutes)
-
-// Material targets routes with tracing
-const materialTargetsRoutes = new Hono()
-materialTargetsRoutes.use("*", routeTracer.traceRoute("material-targets"))
-materialTargetsRoutes.route("/", materialTargetsController.getRoutes())
-mainApp.route("/material-targets", materialTargetsRoutes)
 
 // Entity tags routes with tracing
 const entityTagsRoutes = new Hono()
@@ -2233,22 +1737,6 @@ orderCancelReasonsRoutes.use(
 orderCancelReasonsRoutes.route("/", orderCancelReasonControler.getRoutes())
 mainApp.route("/order-cancel-reasons", orderCancelReasonsRoutes)
 
-// Event Report routes with tracing
-const eventReportStatusRoutes = new Hono()
-eventReportStatusRoutes.use("*", routeTracer.traceRoute("event-report-status"))
-eventReportStatusRoutes.route("/", eventReportStatusController.getRoutes())
-mainApp.route("/event-report", eventReportStatusRoutes)
-
-const eventReportReasonRoutes = new Hono()
-eventReportReasonRoutes.use("*", routeTracer.traceRoute("event-report-reason"))
-eventReportReasonRoutes.route("/", eventReportReasonController.getRoutes())
-mainApp.route("/event-report", eventReportReasonRoutes)
-
-const eventReportRoutes = new Hono()
-eventReportRoutes.use("*", routeTracer.traceRoute("event-report"))
-eventReportRoutes.route("/", eventReportController.getRoutes())
-mainApp.route("/event-report", eventReportRoutes)
-
 // IOTx routes with tracing
 const stockOpnamePeriodsRoutes = new Hono()
 stockOpnamePeriodsRoutes.use(
@@ -2308,183 +1796,6 @@ patientRoutes.use("*", routeTracer.traceRoute("patient"))
 patientRoutes.route("/", patientController.getRoutes())
 mainApp.route("/consumptions", patientRoutes)
 
-const microplanningRoutes = new Hono()
-microplanningRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-microplanningRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrCreate
-)
-microplanningRoutes.use("*", routeTracer.traceRoute("microplanning"))
-microplanningRoutes.route("/", microplanningController.getRoutes())
-mainApp.route("/microplanning/overview", microplanningRoutes)
-
-const targetsRoutesHono = new Hono()
-targetsRoutesHono.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-targetsRoutesHono.use("*", routeTracer.traceRoute("targets"))
-targetsRoutesHono.use("*", microplanningMiddleware.fetchMicroplanningIdOrThrow)
-targetsRoutesHono.route("/", targetsController.getRoutes())
-mainApp.route("/microplanning", targetsRoutesHono)
-
-const priorityAreasRoutes = new Hono()
-priorityAreasRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-priorityAreasRoutes.use(
-  "*",
-  routeTracer.traceRoute("microplanning-priority-areas")
-)
-priorityAreasRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-priorityAreasRoutes.route("/", priorityAreasController.getRoutes())
-mainApp.route("/microplanning/priority-areas", priorityAreasRoutes)
-
-// Problem Solution Routes
-const problemSolutionRoutes = new Hono()
-problemSolutionRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-problemSolutionRoutes.use(
-  "*",
-  routeTracer.traceRoute("microplanning-problem-solutions")
-)
-problemSolutionRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-problemSolutionRoutes.route("/", problemSolutionController.getRoutes())
-mainApp.route("/microplanning/problem-solutions", problemSolutionRoutes)
-
-// Activity Plan Routes
-const activityPlanRoutes = new Hono()
-activityPlanRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-activityPlanRoutes.use(
-  "*",
-  routeTracer.traceRoute("microplanning-activity-plans")
-)
-activityPlanRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-activityPlanRoutes.route("/", activityPlanController.getRoutes())
-mainApp.route("/microplanning/activity-plans", activityPlanRoutes)
-
-const targetEstimationRoutes = new Hono()
-targetEstimationRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-targetEstimationRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-targetEstimationRoutes.use("*", routeTracer.traceRoute("target-estimation"))
-targetEstimationRoutes.route("/", targetEstimationController.getRoutes())
-mainApp.route("/microplanning/estimation", targetEstimationRoutes)
-
-const microplanningDashboardRoutes = new Hono()
-microplanningDashboardRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-microplanningDashboardRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-microplanningDashboardRoutes.use(
-  "*",
-  routeTracer.traceRoute("microplanning-dashboard")
-)
-microplanningDashboardRoutes.route(
-  "/",
-  microplanningDashboardController.getRoutes()
-)
-mainApp.route("/microplanning/dashboard", microplanningDashboardRoutes)
-
-// Microplanning Map Service Point Routes
-const microplanningMapServicePointRoutes = new Hono()
-microplanningMapServicePointRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-microplanningMapServicePointRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-microplanningMapServicePointRoutes.use(
-  "*",
-  routeTracer.traceRoute("mp-map-service-point")
-)
-microplanningMapServicePointRoutes.route(
-  "/",
-  microplanningMapServicePointController.getRoutes()
-)
-mainApp.route(
-  "/microplanning/map/service-points",
-  microplanningMapServicePointRoutes
-)
-
-// Microplanning Map Destination Routes
-const microplanningMapDestinationRoutes = new Hono()
-microplanningMapDestinationRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-microplanningMapDestinationRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-microplanningMapDestinationRoutes.use(
-  "*",
-  routeTracer.traceRoute("mp-map-destination")
-)
-microplanningMapDestinationRoutes.route(
-  "/",
-  microplanningMapDestinationController.getRoutes()
-)
-mainApp.route(
-  "/microplanning/map/destinations",
-  microplanningMapDestinationRoutes
-)
-
-// Microplanning Map Route Routes
-const microplanningMapRouteRoutes = new Hono()
-microplanningMapRouteRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-microplanningMapRouteRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-microplanningMapRouteRoutes.use("*", routeTracer.traceRoute("mp-map-route"))
-microplanningMapRouteRoutes.route(
-  "/",
-  microplanningMapRouteController.getRoutes()
-)
-mainApp.route("/microplanning/map/route", microplanningMapRouteRoutes)
-
-// Microplanning OSRM Route Proxy Routes
-const osrmRouteRoutes = new Hono()
-osrmRouteRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-osrmRouteRoutes.use("*", routeTracer.traceRoute("mp-osrm-route"))
-osrmRouteRoutes.route("/", osrmRouteController.getRoutes())
-mainApp.route("/microplanning/osrm/route", osrmRouteRoutes)
 
 // Transaction Transfer Stock Routes
 const transactionTransferStockRoutes = new Hono()
@@ -2548,39 +1859,6 @@ mainApp.get("/tolgee/:key", async (c) => {
 
   return c.json({ value }, 200)
 })
-
-// Isolated Disposal Instruction routes with tracing (completely separate from other disposal routes)
-const disposalInstructionRoutes = new Hono()
-disposalInstructionRoutes.use(
-  "*",
-  routeTracer.traceRoute("disposal-instructions")
-)
-disposalInstructionRoutes.route(
-  "/disposal/instructions",
-  disposalInstructionController.getRoutes()
-)
-mainApp.route("/", disposalInstructionRoutes)
-
-// Disposal routes with tracing
-const disposalRoutes = new Hono()
-disposalRoutes.use("*", routeTracer.traceRoute("disposal"))
-disposalRoutes.route("/", disposalController.getRoutes())
-mainApp.route("/disposal", disposalRoutes)
-
-const disposalShipmentRoutes = new Hono()
-disposalShipmentRoutes.use("*", routeTracer.traceRoute("disposal-shipment"))
-disposalShipmentRoutes.route("/", disposalShipmentController.getRoutes())
-mainApp.route("/disposal/shipment", disposalShipmentRoutes)
-
-const disposalMethodsRoutes = new Hono()
-disposalMethodsRoutes.use("*", routeTracer.traceRoute("disposal-methods"))
-disposalMethodsRoutes.route("/", disposalMethodsController.getRoutes())
-mainApp.route("/disposal/methods", disposalMethodsRoutes)
-
-const selfDisposalRoutes = new Hono()
-selfDisposalRoutes.use("*", routeTracer.traceRoute("self-disposal"))
-selfDisposalRoutes.route("/", selfDisposalController.getRoutes())
-mainApp.route("/disposal", selfDisposalRoutes)
 
 // Feature flags webhook routes (public - bypasses auth for external webhooks)
 const featureFlagsWebhookRoutes = new Hono()
@@ -2736,25 +2014,6 @@ annualNeedNationalIpRoutes.use(
 annualNeedNationalIpRoutes.route("/", annualNeedsController.getRoutes())
 mainApp.route("/annual-planning/program-plans", annualNeedNationalIpRoutes)
 
-// Dengue Sentinel Surveillance routes
-const dengueSentinelRoutes = new Hono()
-dengueSentinelRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.dengue", { defaultEnabled: false })
-)
-dengueSentinelRoutes.use("*", routeTracer.traceRoute("sentinel-surveillance"))
-dengueSentinelRoutes.route("/", sentinelSurveillanceController.getRoutes())
-mainApp.route("/dengue/sentinel-surveillance", dengueSentinelRoutes)
-
-// Dengue Case routes
-const dengueCaseRoutes = new Hono()
-dengueCaseRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.dengue", { defaultEnabled: false })
-)
-dengueCaseRoutes.use("*", routeTracer.traceRoute("case-report"))
-dengueCaseRoutes.route("/", dengueCaseController.getRoutes())
-mainApp.route("/dengue", dengueCaseRoutes)
 /**
  * integration transactions and stock opnames
  */
@@ -2775,186 +2034,6 @@ annualCommitmentRoutes.use("*", routeTracer.traceRoute("annual-commitments"))
 annualCommitmentRoutes.route("/", annualCommitmentController.getRoutes())
 mainApp.route("/annual-commitments", annualCommitmentRoutes)
 
-const immunizationRoutes = new Hono()
-immunizationRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.immunization", { defaultEnabled: false })
-)
-immunizationRoutes.use("*", routeTracer.traceRoute("immunizations"))
-immunizationRoutes.route("/", immunizationController.getRoutes())
-mainApp.route("/immunization", immunizationRoutes)
-
-const immunizationLogisticsRoutes = new Hono()
-immunizationLogisticsRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-immunizationLogisticsRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-immunizationLogisticsRoutes.use(
-  "*",
-  routeTracer.traceRoute("immunization-logistics")
-)
-immunizationLogisticsRoutes.route(
-  "/",
-  immunizationLogisticsController.getRoutes()
-)
-mainApp.route("/immunization-logistics", immunizationLogisticsRoutes)
-
-const biasImmunizationLogisticsRoutes = new Hono()
-biasImmunizationLogisticsRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-biasImmunizationLogisticsRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-biasImmunizationLogisticsRoutes.use(
-  "*",
-  routeTracer.traceRoute("bias-immunization-logistics")
-)
-biasImmunizationLogisticsRoutes.route(
-  "/",
-  biasImmunizationLogisticsController.getRoutes()
-)
-mainApp.route("/bias-immunization-logistics", biasImmunizationLogisticsRoutes)
-
-const nonBiasImmunizationLogisticsRoutes = new Hono()
-nonBiasImmunizationLogisticsRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.microplanning", { defaultEnabled: false })
-)
-nonBiasImmunizationLogisticsRoutes.use(
-  "*",
-  microplanningMiddleware.fetchMicroplanningIdOrThrow
-)
-nonBiasImmunizationLogisticsRoutes.use(
-  "*",
-  routeTracer.traceRoute("non-bias-immunization-logistics")
-)
-nonBiasImmunizationLogisticsRoutes.route(
-  "/",
-  nonBiasImmunizationLogisticsController.getRoutes()
-)
-mainApp.route(
-  "/non-bias-immunization-logistics",
-  nonBiasImmunizationLogisticsRoutes
-)
-
-// Environmental Health routes
-import { EnvironmentalHealthController } from "./modules/environmental-health/environmental-health.controller.js"
-import { EnvironmentalHealthMiddleware } from "./modules/environmental-health/environmental-health.middleware.js"
-import { EnvironmentalHealthModule } from "./modules/environmental-health/environmental-health.module.js"
-import { EnvironmentalHealthRepository } from "./modules/environmental-health/environmental-health.repository.js"
-const envHealthRepo = new EnvironmentalHealthRepository()
-const envHealthModule = new EnvironmentalHealthModule(envHealthRepo)
-const envHealthMiddleware = new EnvironmentalHealthMiddleware()
-const envHealthController = new EnvironmentalHealthController(
-  envHealthModule,
-  envHealthMiddleware,
-  roleMiddleware
-)
-const envHealthRoutes = new Hono()
-envHealthRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.kesling", { defaultEnabled: false })
-)
-envHealthRoutes.use("*", routeTracer.traceRoute("environmental-health"))
-envHealthRoutes.route("/", envHealthController.getRoutes())
-mainApp.route("/environmental-health", envHealthRoutes)
-
-// Environmental Health History routes (Web)
-import { EnvironmentalHealthHistoryController } from "./modules/environmental-health-history/environmental-health-history.controller.js"
-import { EnvironmentalHealthHistoryMiddleware } from "./modules/environmental-health-history/environmental-health-history.middleware.js"
-import { EnvironmentalHealthHistoryModule } from "./modules/environmental-health-history/environmental-health-history.module.js"
-import { EnvironmentalHealthHistoryRepository } from "./modules/environmental-health-history/environmental-health-history.repository.js"
-const envHealthHistoryRepo = new EnvironmentalHealthHistoryRepository()
-const envHealthHistoryModule = new EnvironmentalHealthHistoryModule(
-  envHealthHistoryRepo
-)
-const envHealthHistoryMiddleware = new EnvironmentalHealthHistoryMiddleware(
-  envHealthHistoryRepo
-)
-const envHealthHistoryController = new EnvironmentalHealthHistoryController(
-  envHealthHistoryModule,
-  envHealthHistoryMiddleware,
-  roleMiddleware
-)
-const envHealthHistoryRoutes = new Hono()
-envHealthHistoryRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.kesling", { defaultEnabled: false })
-)
-envHealthHistoryRoutes.use(
-  "*",
-  routeTracer.traceRoute("environmental-health-history")
-)
-envHealthHistoryRoutes.route("/", envHealthHistoryController.getRoutes())
-mainApp.route("/environmental-health-history", envHealthHistoryRoutes)
-
-const envParamCategoryRepo = new EnvironmentalParameterCategoryRepository()
-const envParamCategoryModule = new EnvironmentalParameterCategoryModule(
-  envParamCategoryRepo
-)
-const envParamCategoryMiddleware = new EnvironmentalParameterCategoryMiddleware(
-  envParamCategoryRepo
-)
-const envParamCategoryController = new EnvironmentalParameterCategoryController(
-  envParamCategoryModule,
-  envParamCategoryMiddleware,
-  roleMiddleware
-)
-const envParamCategoryRoutes = new Hono()
-envParamCategoryRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.kesling", { defaultEnabled: false })
-)
-envParamCategoryRoutes.use("*", routeTracer.traceRoute("parameter-categories"))
-envParamCategoryRoutes.route("/", envParamCategoryController.getRoutes())
-mainApp.route("/parameter-categories", envParamCategoryRoutes)
-
-const envAnalysisParamRepo = new EnvironmentalAnalysisParameterRepository()
-const envAnalysisParamModule = new EnvironmentalAnalysisParameterModule(
-  envAnalysisParamRepo
-)
-const envAnalysisParamMiddleware = new EnvironmentalAnalysisParameterMiddleware(
-  envAnalysisParamRepo
-)
-const envAnalysisParamController = new EnvironmentalAnalysisParameterController(
-  envAnalysisParamModule,
-  envAnalysisParamMiddleware,
-  roleMiddleware
-)
-const envAnalysisParamRoutes = new Hono()
-envAnalysisParamRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.kesling", { defaultEnabled: false })
-)
-envAnalysisParamRoutes.use("*", routeTracer.traceRoute("analysis-parameters"))
-envAnalysisParamRoutes.route("/", envAnalysisParamController.getRoutes())
-mainApp.route("/analysis-parameters", envAnalysisParamRoutes)
-
-const envTestMethodRepo = new EnvironmentalTestMethodRepository()
-const envTestMethodModule = new EnvironmentalTestMethodModule(envTestMethodRepo)
-const envTestMethodMiddleware = new EnvironmentalTestMethodMiddleware(
-  envTestMethodRepo
-)
-const envTestMethodController = new EnvironmentalTestMethodController(
-  envTestMethodModule,
-  envTestMethodMiddleware,
-  roleMiddleware
-)
-const envTestMethodRoutes = new Hono()
-envTestMethodRoutes.use(
-  "*",
-  featureGuardMiddleware("feature.kesling", { defaultEnabled: false })
-)
-envTestMethodRoutes.use("*", routeTracer.traceRoute("test-methods"))
-envTestMethodRoutes.route("/", envTestMethodController.getRoutes())
-mainApp.route("/test-methods", envTestMethodRoutes)
 
 export {
   entityConsumer,
