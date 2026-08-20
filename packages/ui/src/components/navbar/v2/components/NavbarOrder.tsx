@@ -2,7 +2,6 @@ import React, { useMemo, useState } from 'react'
 import { NextRouter } from 'next/router'
 import { HoverCardRoot } from '#components/hover-card'
 import useSmileRouter from '#hooks/useSmileRouter'
-import { hasPermission } from '#shared/permission/index'
 import { useTranslation } from 'react-i18next'
 
 import NavbarList from '../../components/NavbarList'
@@ -23,11 +22,6 @@ const NavbarOrder = () => {
         title: t('navbar:nav_order_list'),
         url: `/v5/order`,
         isHidden: false,
-      },
-      {
-        title: t('common:menu.order.item.ticketing'),
-        url: `/v5/ticketing-system`,
-        isHidden: !hasPermission('ticketing-system-view'),
       },
     ],
     [t]

@@ -5,13 +5,10 @@ import activity from '../../src/pages/activity/locales/en.json'
 import assetInventory from '../../src/pages/asset-inventory/locales/en.json'
 import asset from '../../src/pages/asset/locales/en.json'
 import entity from '../../src/pages/entity/locales/en.json'
-import patient from '../../src/pages/global-settings/patient/locales/en.json'
 import population from '../../src/pages/global-settings/population/locales/en.json'
 import materialVolume from '../../src/pages/material-volume-management/locales/en.json'
 import navbar from '../components/navbar/locales/en.json'
 import account from '../pages/account/locales/en.json'
-import analysisParameter from '../pages/analysis-parameter/locales/en.json'
-import environmentalHealthHistory from '../pages/environmental-health-history/locales/en.json'
 import annualCommitmentDetail from '../pages/annual-commitment/detail/locales/en.json'
 import annualCommitmentDetail from '../pages/annual-commitment/detail/locales/en.json'
 import annualCommitmentDetail from '../pages/annual-commitment/detail/locales/en.json'
@@ -47,7 +44,6 @@ import dashboardInventoryOverview from '../pages/dashboard/dashboard-inventory-o
 import dashboardInventory from '../pages/dashboard/dashboard-inventory/locales/en.json'
 import dashboardMicroplanning from '../pages/dashboard/dashboard-microplanning/locales/en.json'
 import dashboardOrder from '../pages/dashboard/dashboard-order/locales/en.json'
-import dashboardRabies from '../pages/dashboard/dashboard-rabies/locales/en.json'
 import dashboardReport from '../pages/dashboard/dashboard-report/locales/en.json'
 import dashboardStockTaking from '../pages/dashboard/dashboard-stock-taking/locales/en.json'
 import dashboardStock from '../pages/dashboard/dashboard-stock/locales/en.json'
@@ -55,14 +51,7 @@ import dashboardAssetTemperatureMonitoring from '../pages/dashboard/dashboard-te
 import dashboardAssetTemperatureMonitoring from '../pages/dashboard/dashboard-temperature-monitoring/locales/en.json'
 import dashboardMonitoringTransactions from '../pages/dashboard/dashboard-transaction-monitoring/locales/en.json'
 import dashboard from '../pages/dashboard/locales/en.json'
-import disposalInstructionCreate from '../pages/disposal-instruction/DisposalInstructionCreate/locales/en.json'
-import disposalInstructionDetail from '../pages/disposal-instruction/DisposalInstructionDetail/locales/en.json'
-import disposalInstructionList from '../pages/disposal-instruction/DisposalInstructionList/locales/en.json'
-import disposalInstruction from '../pages/disposal-instruction/locales/en.json'
-import distributionDisposal from '../pages/disposal/distribution-disposal/locales/en.json'
-import disposalList from '../pages/disposal/list-disposal/locales/en.json'
 import entityMaterialBulk from '../pages/entity-material-bulk/locales/en.json'
-import environmentalHealthHistory from '../pages/environmental-health-history/locales/en.json'
 import executiveDashboard from '../pages/executive-dashboard/locales/en.json'
 import exportHistory from '../pages/export-history/locales/en.json'
 import forgot from '../pages/forgot-password/locales/en.json'
@@ -81,7 +70,6 @@ import orderCreateRelocation from '../pages/order/orderCreateRelocation/locales/
 import orderCreateReturn from '../pages/order/OrderCreateReturn/locales/en.json'
 import orderDetail from '../pages/order/OrderDetail/locales/en.json'
 import orderList from '../pages/order/OrderList/locales/en.json'
-import parameterCategory from '../pages/parameter-category/locales/en.json'
 import periodOfStockTaking from '../pages/period-of-stock-taking/locales/en.json'
 import programPlanMaterialRatio from '../pages/program-plan-material-ratio/locales/en.json'
 import programPlan from '../pages/program-plan/locales/en.json'
@@ -93,16 +81,10 @@ import lplpo from '../pages/report/lplpo/locales/en.json'
 import reconciliationReport from '../pages/report/reconciliation/locales/en.json'
 import stockBook from '../pages/report/stock-book/locales/en.json'
 import userActivity from '../pages/report/user-activity/locales/en.json'
-import selfDisposal from '../pages/self-disposal/locales/en.json'
 import stockOpnameCreate from '../pages/stock-opname/create/locales/en.json'
 import stockOpname from '../pages/stock-opname/locales/en.json'
 import storageTemperatureMonitoring from '../pages/storage-temperature-monitoring/locales/en.json'
 import storageTemperatureMonitoring from '../pages/storage-temperature-monitoring/locales/en.json'
-import testMethod from '../pages/test-method/locales/en.json'
-import ticketingSystem from '../pages/ticketing-system/locales/en.json'
-import ticketingSystemCreate from '../pages/ticketing-system/TicketingSystemCreate/locales/en.json'
-import ticketingSystemDetail from '../pages/ticketing-system/TicketingSystemDetail/locales/en.json'
-import ticketingSystemList from '../pages/ticketing-system/TicketingSystemList/locales/en.json'
 import transaction from '../pages/transaction/locales/en.json'
 import transactionCreate from '../pages/transaction/TransactionCreate/locales/en.json'
 import transactionCreateAddStock from '../pages/transaction/TransactionCreate/TransactionAddStock/locales/en.json'
@@ -154,25 +136,14 @@ declare module 'i18next' {
       transactionCreateAddStock: typeof transactionCreateAddStock
       stockOpname: typeof stockOpname
       stockOpnameCreate: typeof stockOpnameCreate
-      ticketingSystem: typeof ticketingSystem
-      ticketingSystemList: typeof ticketingSystemList
-      ticketingSystemCreate: typeof ticketingSystemCreate
-      ticketingSystemDetail: typeof ticketingSystemDetail
       reconciliation: typeof reconciliation
       reconciliationDetail: typeof reconciliationDetail
       reconciliationReport: typeof reconciliationReport
       transactionCreateConsumption: typeof transactionCreateConsumption
       programGlobalSettings: typeof programGlobalSettings
       programPlanMaterialRatio: typeof programPlanMaterialRatio
-      disposalList: typeof disposalList
-      selfDisposal: typeof selfDisposal
-      disposalInstruction: typeof disposalInstruction
-      disposalInstructionList: typeof disposalInstructionList
-      disposalInstructionCreate: typeof disposalInstructionCreate
-      disposalInstructionDetail: typeof disposalInstructionDetail
       programPlan: typeof programPlan
       notification: typeof notification
-      distributionDisposal: typeof distributionDisposal
       dashboard: typeof dashboard
       dashboardDownload: typeof dashboardDownload
       dashboardMicroplanning: typeof dashboardMicroplanning
@@ -184,7 +155,6 @@ declare module 'i18next' {
       dashboardDiscard: typeof dashboardDiscard
       dashboardReport: typeof dashboardReport
       dashboardInventoryOverview: typeof dashboardInventoryOverview
-      dashboardRabies: typeof dashboardRabies
       dashboardColdStorageCapacity: typeof dashboardColdStorageCapacity
       periodOfStockTaking: typeof periodOfStockTaking
       assetManagements: typeof assetManagements
@@ -201,7 +171,6 @@ declare module 'i18next' {
       storageTemperatureMonitoringDetail: typeof storageTemperatureMonitoringDetail
       storageTemperatureMonitoringList: typeof storageTemperatureMonitoringList
       protocol: typeof protocol
-      patient: typeof patient
       annualPlanningProcess: typeof annualPlanningProcess
       coldStorageCapacity: typeof coldStorageCapacity
       population: typeof population
@@ -211,10 +180,6 @@ declare module 'i18next' {
       dashboardAssetTemperatureMonitoring: typeof dashboardAssetTemperatureMonitoring
       annualCommitmentDetail: typeof annualCommitmentDetail
       dashboardAnnualCommitmentVsRealization: typeof dashboardAnnualCommitmentVsRealization
-      analysisParameter: typeof analysisParameter
-      testMethod: typeof testMethod
-      parameterCategory: typeof parameterCategory
-      environmentalHealthHistory: typeof environmentalHealthHistory
     }
   }
 }

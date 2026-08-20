@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useMemo } from 'react'
+import React, { Fragment, useMemo } from 'react'
 import { Button } from '#components/button'
 import {
   Drawer,
@@ -13,13 +13,10 @@ import { useTranslation } from 'react-i18next'
 
 import { useTransactionCreateConsumptionFormCompletedSequence } from '../hooks/useTransactionCreateConsumptionFormCompletedSequence'
 import { useOpenCompletedSequenceStore } from '../store/completed-sequence.store'
-import { VACCINE_PROTOCOL } from '../transaction-consumption.constant'
 import {
   MaterialCompletedSequenceForm,
 } from '../transaction-consumption.type'
 import { CompleteSequenceContext } from '../context/CompleteSequenceContext'
-import CompleteSequenceRabiesForm from './complete-sequence/CompleteSequenceRabiesForm'
-import CompleteSequenceDengueForm from './complete-sequence/CompleteSequenceDengueForm'
 
 type Props = {
   entity_id?: number | null
@@ -91,12 +88,7 @@ export const HeaderContent = ({
   t: TFunction<'transactionCreateConsumption'>
   onClose: () => void
 }) => {
-  const { protocol_id } = useContext(CompleteSequenceContext)
-  let description = ''
-
-  if (protocol_id === VACCINE_PROTOCOL.RABIES) {
-    description = t('completed_sequence.description.rabies')
-  }
+  const description = ''
 
   return (
     <div className="ui-flex ui-justify-between">
@@ -160,29 +152,10 @@ export const MaterialSection = ({
   material: MaterialCompletedSequenceForm
   indexMaterial: number
 }) => {
-  const { protocol_id } = useContext(CompleteSequenceContext)
-
   return (
     <>
-      {material.patients.map((patient, indexPatient) => (
-        <Fragment key={`patient-section-${indexMaterial.toString()}-${indexPatient.toString()}`}>
-          {protocol_id === VACCINE_PROTOCOL.RABIES && (
-            <CompleteSequenceRabiesForm
-              key={`patient-section-${indexMaterial.toString()}-${indexPatient.toString()}`}
-              patient={patient}
-              indexMaterial={indexMaterial}
-              indexPatient={indexPatient}
-            />
-          )}
-          {protocol_id === VACCINE_PROTOCOL.DENGUE && (
-            <CompleteSequenceDengueForm
-              key={`patient-section-${indexMaterial.toString()}-${indexPatient.toString()}`}
-              patient={patient}
-              indexMaterial={indexMaterial}
-              indexPatient={indexPatient}
-            />
-          )}
-        </Fragment>
+      {material.patients.map((_patient, indexPatient) => (
+        <Fragment key={`patient-section-${indexMaterial.toString()}-${indexPatient.toString()}`} />
       ))}
     </>
   )

@@ -1,5 +1,1 @@
-export type Populations =
-  | 'population-global-view'
-  | 'population-global-mutate'
-  | 'population-view'
-  | 'population-mutate'
+export type Populations = 'population-view' | 'population-mutate'

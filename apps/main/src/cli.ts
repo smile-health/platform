@@ -12,28 +12,19 @@ import { cleansingBatchStock } from "./scripts/cleansing-batch-stock.js"
 import { compareOrderData } from "./scripts/clickhouse/compare-data-order.js"
 import { updateOrInsertOrderListClickHouse } from "./scripts/clickhouse/sync-order-list.js"
 import { doActivateAnnualNeedMinMax } from "./scripts/cron/annual-need-min-max/activate-annual-need-min-max.js"
-import { dailyBiasImmunizationRecalculation } from "./scripts/cron/bias-immunization-logistics/daily_bias_immunization_recalculation.js"
-import { dailyTargetSnapshot } from "./scripts/cron/daily-target-snapshot/daily_target_snapshot.js"
 import { inactiveEntityReminder } from "./scripts/cron/entity/inactive_entity_reminder.js"
 import { checkProgressExportHistory } from "./scripts/cron/export-history/check_progress_export_history.js"
 import { UpdateMinMaxEMA } from "./scripts/cron/min-max-entity-material-activity/min-max-ema.js"
-import { dailyNonBiasImmunizationRecalculation } from "./scripts/cron/non-bias-immunization-logistics/daily_non_bias_immunization_recalculation.js"
 import { patientReminder } from "./scripts/cron/patient/patient_reminder.js"
 import { dailyStockExpiredReminder } from "./scripts/cron/stock/daily_stock_expired_reminder.js"
 import { dailyStockReminder } from "./scripts/cron/stock/daily_stock_reminder.js"
-import { dailyTargetRecalculation } from "./scripts/cron/target-estimation/daily_target_recalculation.js"
 import { encryptPatients } from "./scripts/encrypt-patients.js"
-import { up as migrateDisposalShipment } from "./scripts/migrate-disposal/shipment.js"
 import { populateEntityMaterialsActivityFinalDistribution } from "./scripts/populate-ema-final-distribution.js"
 import { populateEntityStock } from "./scripts/populate-entity-stock.js"
 import { populateEntityMaterialsAndVendors } from "./scripts/populate-entity-vendors-customer-level-subdistrict.js"
 import { syncConsumptionStopNotification } from "./scripts/sync-consumption-stop-notification.js"
 import { syncPatientReminderStopNotification } from "./scripts/sync-patient-reminder-stop-notification.js"
-import { fixTargetVillageId } from "./scripts/fix-target-village-id.js"
-import { fixTargetSchoolId } from "./scripts/fix-target-school-id.js"
 import { runWorker } from "./server.js"
-import { runPopulatePatientTarget } from "./scripts/migrate-microplanning/migrate-patient-target.js"
-import { changeMicroplanningYear } from "./scripts/change-microplanning-year.js"
 
 const program = new Command()
 
@@ -69,14 +60,6 @@ program
       Number(option.programId)
     )
   )
-
-program
-  .command("migrate-disposal-shipment")
-  .description("Run migration for Disposal Shipment tables")
-  .action(async () => {
-    await migrateDisposalShipment(db as any)
-    console.log("Disposal Shipment migration completed.")
-  })
 
 program
   .command("time")
@@ -235,34 +218,6 @@ program
   })
 
 program
-  .command("daily-target-snapshot")
-  .description("Run daily target count snapshot for microplanning")
-  .action(async () => {
-    await dailyTargetSnapshot()
-  })
-
-program
-  .command("daily-target-recalculation")
-  .description("Run daily target estimation recalculation")
-  .action(async () => {
-    await dailyTargetRecalculation()
-  })
-
-program
-  .command("daily-bias-immunization-recalculation")
-  .description("Run daily bias immunization logistics recalculation")
-  .action(async () => {
-    await dailyBiasImmunizationRecalculation()
-  })
-
-program
-  .command("daily-non-bias-immunization-recalculation")
-  .description("Run daily non bias immunization logistics recalculation")
-  .action(async () => {
-    await dailyNonBiasImmunizationRecalculation()
-  })
-
-program
   .command("backfill-transaction-actual-date")
   .description(
     "Backfill ws_transactions.actual_transaction_date from order audits"
@@ -302,59 +257,10 @@ program
   })
 
 program
-  .command("fix-target-village-id")
-  .description("Fix incorrect village_id for a target by NIK")
-  .requiredOption("--niks <niks>", "Comma-separated plain NIKs to fix (e.g. 3201...,3201...)")
-  .option("--villageId <villageId>", "Correct registered village ID to set")
-  .option("--residenceVillageId <residenceVillageId>", "Correct residence village ID to set")
-  .action(async (option) => {
-    const niks = option.niks.split(",").map((n: string) => n.trim()).filter(Boolean)
-    const villageId = option.villageId ? Number(option.villageId) : undefined
-    const residenceVillageId = option.residenceVillageId ? Number(option.residenceVillageId) : undefined
-    await fixTargetVillageId(niks, villageId, residenceVillageId)
-    process.exit(0)
-  })
-
-program
-  .command("fix-target-school-id")
-  .description("Fix incorrect school (entity_id) for targets by NIK")
-  .requiredOption("--niks <niks>", "Comma-separated plain NIKs to fix")
-  .requiredOption("--schoolId <schoolId>", "Correct school entity ID to set")
-  .action(async (option) => {
-    const niks = option.niks.split(",").map((n: string) => n.trim()).filter(Boolean)
-    await fixTargetSchoolId(niks, Number(option.schoolId))
-    process.exit(0)
-  })
-
-program
   .command("run-worker")
   .description("Run the worker process")
   .action(async () => {
     await runWorker()
-  })
-
-program
-  .command("run-migrate-data-patient-targets")
-  .description("Migrate data patient targets")
-  .requiredOption("--limit <limit>", "Limit number of records to migrate")
-  .action(async (options) => {
-    await runPopulatePatientTarget(Number(options.limit))
-    process.exit(0)
-  })
-
-program
-  .command("change-microplanning-year")
-  .description("Change microplanning year (update year column on ws_microplanning)")
-  .requiredOption("--from <from>", "Source year to change from (e.g. 2027)")
-  .requiredOption("--to <to>", "Target year to change to (e.g. 2026)")
-  .option("--dryRun", "Preview changes without writing to the database")
-  .action(async (options) => {
-    await changeMicroplanningYear(
-      Number(options.from),
-      Number(options.to),
-      Boolean(options.dryRun)
-    )
-    process.exit(0)
   })
 
 program.parse(process.argv)

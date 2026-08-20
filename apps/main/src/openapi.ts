@@ -3,7 +3,6 @@ import { OpenAPIHono } from "@hono/zod-openapi"
 import { errorHandler } from "@smile-health/lib/error.js"
 import { basicAuth } from "hono/basic-auth"
 import { env } from "process"
-import { wmsApp } from "./modules/disposal/integration/wms/index.js"
 import "./modules/order-integration/index.js"
 
 export const app = new OpenAPIHono<object>({
@@ -66,8 +65,6 @@ app.doc("/doc", {
     },
   ],
 })
-
-wmsApp.registerRoutes(app)
 
 // Consumer sudah di-start di index.ts, tidak perlu start lagi di sini
 // await integrationWorker.start()

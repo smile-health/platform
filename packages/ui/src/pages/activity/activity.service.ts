@@ -7,7 +7,6 @@ import { removeEmptyObject } from '#utils/object'
 import {
   CreateActivityBody,
   DetailActivityResponse,
-  EnvironmentalParameterCategory,
   ExportActivitiesParams,
   ListActivitiesParams,
   ListActivitiesResponse,
@@ -95,18 +94,5 @@ export async function updateStatusActivity(
 ): Promise<UpdateStatusActivityResponse> {
   const response = await axios.put(`${MAIN_SERVICE}/activities/${id}/status`, data)
 
-  return response?.data
-}
-
-export async function listEnvironmentalParameterCategoryOptions(): Promise<{
-  data: EnvironmentalParameterCategory[]
-}> {
-  const response = await axios.get(
-    `${MAIN_SERVICE}/parameter-categories`,
-    {
-      params: { paginate: 100 },
-      cleanParams: true,
-    }
-  )
   return response?.data
 }

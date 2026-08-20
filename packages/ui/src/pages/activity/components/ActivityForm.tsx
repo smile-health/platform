@@ -11,7 +11,6 @@ import {
 } from '#components/form-control'
 import { Input } from '#components/input'
 import { Radio, RadioGroup } from '#components/radio'
-import { ReactSelect } from '#components/react-select'
 import useSmileRouter from '#hooks/useSmileRouter'
 import { getProgramStorage } from '#utils/storage/program'
 import { Controller } from 'react-hook-form'
@@ -27,7 +26,7 @@ export default function ActivityForm({
 }: Readonly<ActivityFormProps>) {
   const { t } = useTranslation(['common', 'activity'])
   const router = useSmileRouter()
-  const { register, handleSubmit, errors, onValid, control, setValue, watch, environmentalCategoryOptions } =
+  const { register, handleSubmit, errors, onValid, control } =
     useActivityCreateEdit({
       isEdit,
       defaultValues,
@@ -36,13 +35,6 @@ export default function ActivityForm({
 
   const program = getProgramStorage()
   const isKesling = program?.key === ProgramEnum.Kesling
-
-  const selectedCategoryIds = watch('environmental_parameter_category_ids') ?? []
-
-  const categoryOptions = environmentalCategoryOptions.map((c) => ({
-    value: c.id,
-    label: c.name,
-  }))
 
   return (
     <form
@@ -78,28 +70,6 @@ export default function ActivityForm({
                 errors?.is_ordered_sales?.message}
             </FormErrorMessage>
           </FormControl>
-          {isKesling && (
-            <FormControl>
-              <FormLabel htmlFor="select-environmental-categories">
-                {t('activity:form.environmental_parameter_categories.label')}
-              </FormLabel>
-              <ReactSelect
-                id="select-environmental-categories"
-                placeholder={t('activity:form.environmental_parameter_categories.placeholder')}
-                isMulti
-                options={categoryOptions}
-                value={categoryOptions.filter((opt) =>
-                  selectedCategoryIds.includes(opt.value)
-                )}
-                onChange={(selected) => {
-                  const ids = (selected as { value: number; label: string }[]).map(
-                    (opt) => opt.value
-                  )
-                  setValue('environmental_parameter_category_ids', ids)
-                }}
-              />
-            </FormControl>
-          )}
           {isKesling && (
             <Controller
               control={control}

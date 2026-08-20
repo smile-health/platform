@@ -262,10 +262,7 @@
           "temperature_monitoring": "Temperature Monitoring Dashboard"
         }
       }
-    },
-    "patient": "Patient",
-    "annual_planning_target_group": "Target Group",
-    "population": "Population"
+    }
   },
   "dropdown_setting": {
     "view_profile": "View Profile",
@@ -555,21 +552,7 @@
         "parameter_category": "Parameter Category",
         "parameter_analysis": "Parameter Analysis",
         "test_method": "Test Method",
-        "environmental_health_history": "Screening History",
-        "asset": {
-          "model": "Asset Model",
-          "vendor": "Asset Vendor",
-          "type": "Asset Type"
-        },
-        "annual_planning": {
-          "title": "Annual Planning",
-          "item": {
-            "pusdatin_target": "Master Data Pusdatin Target",
-            "national_ip": "Master Data National IP",
-            "group_target": "Master Data Target Group",
-            "amount_of_giving": "Master Data Amount of Giving"
-          }
-        }
+        "environmental_health_history": "Screening History"
       }
     },
     "bmhp": {

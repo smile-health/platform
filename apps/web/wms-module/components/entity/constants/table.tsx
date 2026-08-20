@@ -64,10 +64,10 @@ export const columnsEntity = (
       return (
         <Badge
           rounded="full"
-          color={original.isActive ? 'success' : 'danger'}
+          color={original.is_active ? 'success' : 'danger'}
           variant="light"
         >
-          {original.isActive
+          {original.is_active
             ? t('entityWMS:list.filter.status.active')
             : t('entityWMS:list.filter.status.inactive')}
         </Badge>
@@ -100,10 +100,10 @@ export const columnsEntity = (
             }
             type="button"
             variant="subtle"
-            color={original.isActive ? 'danger' : 'info'}
+            color={original.is_active ? 'danger' : 'info'}
             className="!ui-px-1.5"
           >
-            {original.isActive
+            {original.is_active
               ? t('entityWMS:action.deactivate.button')
               : t('entityWMS:action.activate.button')}
           </Button>

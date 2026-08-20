@@ -262,10 +262,7 @@
           "temperature_monitoring": "Dasbor Pemantauan Suhu"
         }
       }
-    },
-    "patient": "Pasien",
-    "annual_planning_target_group": "Kelompok Sasaran",
-    "population": "Populasi"
+    }
   },
   "dropdown_setting": {
     "view_profile": "Lihat Profil",
@@ -555,21 +552,7 @@
         "parameter_category": "Parameter Kategori",
         "parameter_analysis": "Parameter Analisa",
         "test_method": "Metode Pengujian",
-        "environmental_health_history": "Riwayat Pengujian",
-        "asset": {
-          "model": "Model Aset",
-          "vendor": "Vendor Aset",
-          "type": "Tipe Asset"
-        },
-        "annual_planning": {
-          "title": "Perencanaan Tahunan",
-          "item": {
-            "pusdatin_target": "Master Data Sasaran Pusdatin",
-            "national_ip": "Master Data IP Nasional",
-            "group_target": "Master Data Kelompok Sasaran",
-            "amount_of_giving": "Master Data Jumlah Pemberian"
-          }
-        }
+        "environmental_health_history": "Riwayat Pengujian"
       }
     },
     "bmhp": {

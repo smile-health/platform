@@ -168,17 +168,6 @@ import { NotificationRepository } from "./modules/notification/notification.repo
 import { OccupationController } from "./modules/occupation/occupation.controller.js"
 import { OccupationModule } from "./modules/occupation/occupation.module.js"
 import { OccupationRepository } from "./modules/occupation/occupation.repository.js"
-import { PatientExcelController } from "./modules/patient/patient.excel.controller.js"
-import { PatientExcelMiddleware } from "./modules/patient/patient.excel.middleware.js"
-import { PatientExcelModule } from "./modules/patient/patient.excel.module.js"
-import { PatientExcelRepository } from "./modules/patient/patient.excel.repository.js"
-import { PopulationController } from "./modules/population/population.controller.js"
-import { PopulationExcelController } from "./modules/population/population.excel.controller.js"
-import { PopulationExcelMiddleware } from "./modules/population/population.excel.middleware.js"
-import { PopulationExcelModule } from "./modules/population/population.excel.module.js"
-import { PopulationExcelRepository } from "./modules/population/population.excel.repository.js"
-import { PopulationModule } from "./modules/population/population.module.js"
-import { PopulationRepository } from "./modules/population/population.repository.js"
 import { ProgramController } from "./modules/program/program.controller.js"
 import { ProgramMiddleware } from "./modules/program/program.middleware.js"
 import { ProgramModule } from "./modules/program/program.module.js"
@@ -304,7 +293,6 @@ const maritalStatusRepo = new MaritalStatusRepository()
 const genderRepo = new GenderRepository()
 const assetTypesClassificationRepo = new AssetTypesClassificationRepository()
 const annualPlanningGrooupTargetRepo = new AnnualPlanningGroupTargetRepository()
-const populationRepo = new PopulationRepository()
 const materialSubtypeRepo = new MaterialSubtypeRepository()
 const assetTypeHumidityRepo = new AssetTypeHumidityRepository()
 const executiveWorkspaceRepo = new ExecutiveWorkspaceRepository()
@@ -864,50 +852,6 @@ const materialSubtypeController = new MaterialSubtypeController(
   materialSubtypeModule
 )
 
-// Population
-const populationModule = new PopulationModule(populationRepo, userRepo)
-const populationController = new PopulationController(populationModule)
-
-// Population Excel
-const populationExcelRepo = new PopulationExcelRepository()
-const populationExcelModule = new PopulationExcelModule(
-  entityRepo,
-  annualPlanningGrooupTargetRepo,
-  populationExcelRepo,
-  userRepo,
-  locationRepo
-)
-const populationExcelMiddleware = new PopulationExcelMiddleware(
-  entityRepo,
-  annualPlanningGrooupTargetRepo
-)
-const populationExcelController = new PopulationExcelController(
-  populationExcelModule,
-  excelMiddleware,
-  populationExcelMiddleware
-)
-
-// Patient Excel
-const patientExcelRepo = new PatientExcelRepository()
-const patientExcelModule = new PatientExcelModule(
-  patientExcelRepo,
-  userRepo,
-  locationRepo,
-  educationRepo,
-  occupationRepo,
-  religionRepo,
-  ethnicRepo
-)
-const patientExcelMiddleware = new PatientExcelMiddleware(
-  patientExcelRepo,
-  locationRepo
-)
-const patientExcelController = new PatientExcelController(
-  patientExcelModule,
-  excelMiddleware,
-  patientExcelMiddleware
-)
-
 // Coldstorage
 const coldstorageConsumer = new Consumer(mq, trxManager)
 const coldstorageModule = new ColdstorageModule(
@@ -1076,7 +1020,6 @@ const routeConfigs = [
   { path: "/users", controller: usersController, name: "users" },
   { path: "/master", controller: masterController, name: "master" },
   { path: "/workspaces", controller: workspaceController, name: "workspaces" },
-  { path: "/patients", controller: patientExcelController, name: "patients" },
   {
     path: "/budget-sources",
     controller: budgetSourceController,
@@ -1184,16 +1127,6 @@ const routeConfigs = [
     path: "/annual-planning",
     controller: annualPlanningGroupTargetController,
     name: "annual-planning",
-  },
-  {
-    path: "/annual-planning",
-    controller: populationController,
-    name: "population",
-  },
-  {
-    path: "/annual-planning",
-    controller: populationExcelController,
-    name: "population-excel",
   },
   {
     path: "/annual-planning",

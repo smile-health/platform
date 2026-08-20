@@ -1,8 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { NextRouter } from 'next/router'
-import { useFeatureIsOn } from '@growthbook/growthbook-react'
 import { HoverCardRoot } from '@repo/ui/components/hover-card'
-import { ProgramEnum } from '#constants/program'
 import useSmileRouter from '#hooks/useSmileRouter'
 import { hasPermission } from '#shared/permission/index'
 import { getProgramStorage } from '#utils/storage/program'
@@ -28,7 +26,6 @@ const NavbarSetting = () => {
   const {
     showMenuProtocol
   } = useTransactionBeneficiaryConfigFlag()
-  const isKeslingEnabled = useFeatureIsOn('feature.kesling')
 
   const rawMenus: TLeftMenu[] = useMemo(
     () => [
@@ -116,33 +113,6 @@ const NavbarSetting = () => {
         ],
       },
       {
-        title: t('common:menu.setting.item.annual_planning.title'),
-        chosenTitle: t('common:menu.setting.item.annual_planning.title'),
-        sub: [
-          {
-            subChild: [
-              {
-                title: t('navbar:navbar_master_data_target_center_data'),
-                url: `/v5/master-perencanaan-tahunan/sasaran`,
-              },
-              {
-                title: t('navbar:navbar_master_data_national_ip'),
-                url: `/v5/master-perencanaan-tahunan/ip`,
-              },
-              {
-                title: t('navbar:navbar_master_data_target_group'),
-                url: `/v5/master-perencanaan-tahunan/kelompok-sasaran`,
-              },
-              {
-                title: t('navbar:navbar_master_data_gift_number'),
-                url: `/v5/master-perencanaan-tahunan/jumlah-pemberian`,
-              },
-            ],
-          },
-        ],
-        isHidden: program?.config?.material?.is_hierarchy_enabled,
-      },
-      {
         title: t('navbar:nav_asset'),
         chosenTitle: t('navbar:nav_asset'),
         sub: [
@@ -178,34 +148,8 @@ const NavbarSetting = () => {
           },
         ],
       },
-      {
-        title: t('navbar:nav_screening'),
-        chosenTitle: t('navbar:nav_screening'),
-        isHidden: !isKeslingEnabled,
-        sub: [
-          {
-            subChild: [
-              {
-                title: t('common:menu.setting.item.test_method'),
-                url: `/v5/test-method`,
-                isHidden: program?.key !== ProgramEnum.Kesling || !hasPermission('test-method-view'),
-              },
-              {
-                title: t('common:menu.setting.item.parameter_analysis'),
-                url: `/v5/analysis-parameter`,
-                isHidden: program?.key !== ProgramEnum.Kesling || !hasPermission('analysis-parameter-view'),
-              },
-              {
-                title: t('common:menu.setting.item.parameter_category'),
-                url: `/v5/parameter-category`,
-                isHidden: program?.key !== ProgramEnum.Kesling || !hasPermission('parameter-category-view'),
-              },
-            ],
-          },
-        ],
-      },
     ],
-    [t, program, isKeslingEnabled]
+    [t, program]
   )
 
   const leftSideMenus = useMemo(() => filterLeftMenus(rawMenus), [rawMenus])

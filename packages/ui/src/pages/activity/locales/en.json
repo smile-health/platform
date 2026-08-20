@@ -49,10 +49,6 @@
       "label": "Protocol",
       "placeholder": "Select protocol"
     },
-    "environmental_parameter_categories": {
-      "label": "Environmental Parameter Categories",
-      "placeholder": "Select categories"
-    },
     "is_final_distribution": {
       "label": "Final Distribution"
     }

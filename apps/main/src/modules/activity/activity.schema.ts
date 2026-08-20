@@ -172,10 +172,6 @@ const ActivityRequestSchema = z.object({
   is_ordered_purchase: requiredTopDownBottomUpRegular(0, 1),
   is_final_distribution: z.number().int().min(0).max(1).nullable().optional(),
   protocol: requiredProtocolString(1, 255),
-  environmental_parameter_category_ids: z
-    .array(z.number().int().positive())
-    .optional()
-    .default([]),
 })
 
 const ImportActivityRowSchema = z.object({

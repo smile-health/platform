@@ -8,7 +8,6 @@ import {
   DropdownMenuTrigger,
 } from '#components/dropdown-menu'
 import Account from '#components/icons/Account'
-import Book from '#components/icons/Book'
 import ExportHistory from '#components/icons/ExportHistory'
 import Inventory from '#components/icons/Inventory'
 import Logout from '#components/icons/Logout'
@@ -117,17 +116,6 @@ const Header: React.FC = () => {
               </Link>
             </div>
           )}
-          <div>
-            <a
-              href="https://elearning.smile-indonesia.id/"
-              target="_blank"
-              className="ui-flex ui-items-center ui-space-x-3 ui-text-blue-800"
-              rel="noreferrer"
-            >
-              <Book />
-              <div>E-learning</div>
-            </a>
-          </div>
           <div>
             <Link
               href={router.getAsLinkGlobal(`/v5/export-history`)}

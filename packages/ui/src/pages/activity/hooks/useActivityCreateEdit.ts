@@ -1,7 +1,7 @@
 import { useParams } from 'next/navigation'
 import { useRouter } from 'next/router'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { toast } from '#components/toast'
 import { useSetLoadingPopupStore } from '#hooks/useSetLoading'
 import useSmileRouter from '#hooks/useSmileRouter'
@@ -14,11 +14,7 @@ import {
   createActivityProgram,
   updateActivityProgram,
 } from '../../global-settings/program/services/programActivities'
-import {
-  createActivity,
-  listEnvironmentalParameterCategoryOptions,
-  updateActivity,
-} from '../activity.service'
+import { createActivity, updateActivity } from '../activity.service'
 import {
   ActivityFormProps,
   ActivityFormValues,
@@ -57,16 +53,9 @@ export const useActivityCreateEdit = ({
         ? Boolean(defaultValues.is_final_distribution)
         : null,
       protocol: defaultValues?.protocol ?? 'default',
-      environmental_parameter_category_ids:
-        defaultValues?.environmental_parameter_categories?.map((c) => c.id) ?? [],
     },
   })
 
-  const { data: environmentalCategoryOptions } = useQuery({
-    queryKey: ['environmental-parameter-category-options'],
-    queryFn: listEnvironmentalParameterCategoryOptions,
-    refetchOnWindowFocus: false,
-  })
   const queryClient = useQueryClient()
   const { mutate, isPending } = useMutation({
     mutationFn: (data: CreateActivityBody) =>
@@ -113,8 +102,6 @@ export const useActivityCreateEdit = ({
       is_final_distribution: formData.is_final_distribution != null
         ? Number(formData.is_final_distribution)
         : undefined,
-      environmental_parameter_category_ids:
-        formData.environmental_parameter_category_ids ?? [],
     }
     mutate(data)
   }
@@ -129,6 +116,5 @@ export const useActivityCreateEdit = ({
     control,
     setValue,
     watch,
-    environmentalCategoryOptions: environmentalCategoryOptions?.data ?? [],
   }
 }

@@ -1,1 +1,0 @@
-export { default } from '@repo/ui/pages/disposal/distribution-disposal/DistributionDisposalDetailPage'
