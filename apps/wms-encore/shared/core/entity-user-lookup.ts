@@ -22,8 +22,8 @@
 // entity/user that has never authenticated here) returns `undefined`, same
 // externally-visible fallback behavior as the original's swallowed-HTTP-
 // error case, just via a different path to the same "missing" outcome.
-import { getEntityId } from "../../entity/entities/entities.repository";
-import { findById, findByUserUuid } from "../../users/users/users.repository";
+import { getEntityId } from "../../core/entities/entities.repository";
+import { findById, findByUserUuid } from "../../core/users/users.repository";
 
 export async function getLocalEntityName(entityId: number | null | undefined): Promise<string | undefined> {
   if (!entityId) return undefined;

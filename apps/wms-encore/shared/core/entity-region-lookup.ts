@@ -5,7 +5,7 @@
 // stringified (confirmed against apps/core/src/modules/entity/entity.module.ts's
 // `row.ProvinceId?.toString()`) — not a code — so resolving the name is a
 // plain findRegionById lookup, once the string is parsed back to a number.
-import { findRegionById } from "../../entity/region/region.repository";
+import { findRegionById } from "../../core/region/region.repository";
 
 export interface EntityRegionNames {
   provinceId?: number;
