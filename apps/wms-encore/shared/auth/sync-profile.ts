@@ -19,9 +19,9 @@
 // cache miss (i.e. once per token TTL window, not every request).
 import { sql } from "kysely";
 import { db } from "../../db/db";
-import * as entitiesRepo from "../../entity/entities/entities.repository";
-import * as usersRepo from "../../users/users/users.repository";
-import * as fcmTokenRepo from "../../users/user-fcm-token/user-fcm-token.repository";
+import * as entitiesRepo from "../../core/entities/entities.repository";
+import * as usersRepo from "../../core/users/users.repository";
+import * as fcmTokenRepo from "../../core/user-fcm-token/user-fcm-token.repository";
 import type { CoreProfileResponse } from "./authHandler";
 
 const TRANSPORTER_PROVIDER_TYPES = [
