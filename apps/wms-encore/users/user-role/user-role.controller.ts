@@ -8,7 +8,7 @@ import * as service from "./user-role.service";
 import type { GetAllUserRoleRequest, GetAllUserRoleResponse } from "./user-role.types";
 
 export const getAllUserRole = api(
-  { method: "GET", path: "/api/v1/roles", auth: true, expose: true },
+  { method: "GET", path: "/api/v1/roles", expose: true },
   async (req: GetAllUserRoleRequest): Promise<GetAllUserRoleResponse> => {
     const data = await service.getAllUserRole({
       limit: req.limit,
