@@ -126,12 +126,16 @@ const AuthLayout: React.FC<Props> = (props) => {
           <div className="ui-w-full ui-mb-[40px] ui-border-t ui-pt-6">
             <div className="ui-flex ui-flex-col ui-items-center ui-gap-6">
               <div className="ui-flex ui-items-center ui-justify-center ui-gap-8">
-                <img src="/images/logo-undp.png" height={50} alt="undp-logo" />
+                <img
+                  src="/images/logo-undp.png"
+                  alt="undp-logo"
+                  className="ui-h-[50px]"
+                />
                 {isBadr && (
                   <img
                     src="/images/logo-badr.png"
-                    height={50}
                     alt="badr-logo"
+                    className="ui-h-[50px]"
                   />
                 )}
               </div>
