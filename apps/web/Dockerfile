@@ -5,21 +5,23 @@ RUN apk update && apk add --no-cache libc6-compat jq python3 make g++ && rm -rf 
 RUN npm install -g pnpm@9.12.3 turbo
 
 # NEXT_PUBLIC_* vars are inlined at build time by Next.js. They MUST be present
-# here (as ARG defaults) so the image always bakes the correct values, even when
-# CI does not pass build args. Override via --build-arg when needed.
-ARG NEXT_PUBLIC_FIREBASE_DATABASE_URL=https://smile-indonesia.firebaseio.com
-ARG NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyBU7Kv5lSHhVd-emcIgwVUQrN5bo3ZPNo8
-ARG NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=smile-platform.firebaseapp.com
-ARG NEXT_PUBLIC_FIREBASE_PROJECT_ID=smile-platform
-ARG NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=smile-platform.firebasestorage.app
-ARG NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=39330161703
-ARG NEXT_PUBLIC_FIREBASE_APP_ID=1:39330161703:web:097f935a8dbfa219c41a02
-ARG NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-WTEE61PVKP
-ARG NEXT_PUBLIC_FIREBASE_VAPID_KEY=BPPiNOhG978_S-w4j_IngrdwEoZAQvvVxgLaWMB7uruibku6csxq1U5_n5oeyFaeTb5WLp5VBmXMD564Aw5vZ0w
-ARG NEXT_PUBLIC_URL_FE_SMILE=
-ARG NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER=7wgDjyVS3VZv
-ARG NEXT_PUBLIC_NOVU_BACKEND_URL=https://novu-api.badr.co.id
-ARG NEXT_PUBLIC_NOVU_SOCKET_URL=wss://novu-ws.badr.co.id
+# here (as ARG) so the image bakes the correct values. Values are supplied via
+# --build-arg from GitHub secrets (see build-deploy.yml) — never hardcode them
+# in this file. If a value is missing, the build fails loudly rather than
+# shipping an image with empty config.
+ARG NEXT_PUBLIC_FIREBASE_DATABASE_URL
+ARG NEXT_PUBLIC_FIREBASE_API_KEY
+ARG NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+ARG NEXT_PUBLIC_FIREBASE_PROJECT_ID
+ARG NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+ARG NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+ARG NEXT_PUBLIC_FIREBASE_APP_ID
+ARG NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+ARG NEXT_PUBLIC_FIREBASE_VAPID_KEY
+ARG NEXT_PUBLIC_URL_FE_SMILE
+ARG NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER
+ARG NEXT_PUBLIC_NOVU_BACKEND_URL
+ARG NEXT_PUBLIC_NOVU_SOCKET_URL
 
 ENV NEXT_PUBLIC_FIREBASE_DATABASE_URL=$NEXT_PUBLIC_FIREBASE_DATABASE_URL \
     NEXT_PUBLIC_FIREBASE_API_KEY=$NEXT_PUBLIC_FIREBASE_API_KEY \
