@@ -121,34 +121,30 @@ const AuthLayout: React.FC<Props> = (props) => {
                 alt="smile=logo"
               />
             </div>
-
             {children}
           </div>
-          <div className="ui-w-full ui-mb-[40px]">
-            <div className="ui-flex ui-items-center ui-justify-center">
-              <img
-                src="/images/logo-undp.png"
-                className="ui-ml-[56px]"
-                alt="undp-logo"
-              />
-              {isBadr && (
-                <img
-                  src="/images/logo-badr.png"
-                  className="ui-ml-[56px]"
-                  alt="badr-logo"
-                />
-              )}
+          <div className="ui-w-full ui-mb-[40px] ui-border-t ui-pt-6">
+            <div className="ui-flex ui-flex-col ui-items-center ui-gap-6">
+              <div className="ui-flex ui-items-center ui-justify-center ui-gap-8">
+                <img src="/images/logo-undp.png" height={50} alt="undp-logo" />
+                {isBadr && (
+                  <img
+                    src="/images/logo-badr.png"
+                    height={50}
+                    alt="badr-logo"
+                  />
+                )}
+              </div>
+              <Divider position="center">
+                <button
+                  id="show-help-center"
+                  onClick={() => setShowModal(true)}
+                  className="ui-bg-white ui-p-[0 10px] ui-cursor-pointer ui-text-[#fa6400] ui-font-bold"
+                >
+                  {t("help_center.title")}
+                </button>
+              </Divider>
             </div>
-            <div className="ui-clear-both">&nbsp;</div>
-            <Divider position="center">
-              <button
-                id="show-help-center"
-                onClick={() => setShowModal(true)}
-                className="ui-bg-white ui-p-[0 10px] ui-cursor-pointer ui-text-[#fa6400] ui-font-bold"
-              >
-                {t("help_center.title")}
-              </button>
-            </Divider>
           </div>
         </div>
       </div>
