@@ -71,14 +71,14 @@ const Header: React.FC = () => {
             {program?.activeProgram?.name ?? "SMILE Indonesia"}
           </p>
         </div>
-        <div className="ui-flex ui-gap-4 ui-pl-4 ui-items-center">
+        <div className="ui-flex ui-gap-6 ui-pl-4 ui-items-center">
           <img
-            className="ui-mr-4 ui-h-7 ui-w-auto"
+            className="ui-h-7 ui-w-auto"
             src="/images/logo-smile.svg"
             alt="smile-logo"
           />
           <img
-            className="ui-mr-4 ui-h-7 ui-w-auto"
+            className="ui-h-7 ui-w-auto"
             src="/images/logo-undp.png"
             alt="undp-logo"
           />

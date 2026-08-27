@@ -44,23 +44,23 @@ const Header: React.FC = () => {
           <DropdownProgram />
           <p className="ui-text-base font-bold">{t('titleHeader')}</p>
         </div>
-        <div className="ui-flex ui-gap-4 ui-pl-4 ui-items-center">
+        <div className="ui-flex ui-gap-6 ui-pl-4 ui-items-center">
           <Image
-            className="ui-mr-4 ui-h-7 ui-w-auto"
+            className="ui-h-7 ui-w-auto"
             src="/images/logo-smile.svg"
             alt="smile-logo"
             width={200}
             height={200}
           />
           <Image
-            className="ui-mr-4 ui-h-7 ui-w-auto"
+            className="ui-h-7 ui-w-auto"
             src="/images/logo-kesling.png"
             alt="kesling-logo"
             width={100}
             height={100}
           />
           <Image
-            className="ui-mr-4 ui-h-7 ui-w-auto"
+            className="ui-h-7 ui-w-auto"
             src="/images/logo-undp.png"
             alt="undp-logo"
             width={100}
