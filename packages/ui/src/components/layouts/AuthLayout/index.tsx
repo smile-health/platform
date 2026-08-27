@@ -1,45 +1,45 @@
-import React, { Fragment, ReactNode, useEffect, useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { Button } from '#components/button'
+import React, { Fragment, ReactNode, useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { Button } from "#components/button";
 import {
   Dialog,
   DialogCloseButton,
   DialogContent,
   DialogFooter,
   DialogHeader,
-} from '#components/dialog'
-import { Divider } from '#components/divider'
-import SendEmail from '#components/icons/SendEmail'
-import cx from 'clsx'
-import { useTranslation, Trans } from 'react-i18next'
+} from "#components/dialog";
+import { Divider } from "#components/divider";
+import SendEmail from "#components/icons/SendEmail";
+import cx from "clsx";
+import { useTranslation, Trans } from "react-i18next";
 
-import LanguageChanger from '../LanguageChanger'
-import Meta from '../Meta'
+import LanguageChanger from "../LanguageChanger";
+import Meta from "../Meta";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 const AuthLayout: React.FC<Props> = (props) => {
-  const { children } = props
-  const router = useRouter()
+  const { children } = props;
+  const router = useRouter();
   const {
     t,
     i18n: { language },
-  } = useTranslation('login')
+  } = useTranslation("login");
 
-  const [isBadr, setIsBadr] = useState<boolean>(false)
-  const [showModal, setShowModal] = useState<boolean>(false)
-  const [showDisclaimer, setShowDisclaimer] = useState<boolean>(false)
-  const [showPrivacy, setShowPrivacy] = useState<boolean>(false)
+  const [isBadr, setIsBadr] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [showDisclaimer, setShowDisclaimer] = useState<boolean>(false);
+  const [showPrivacy, setShowPrivacy] = useState<boolean>(false);
 
   useEffect(() => {
-    setIsBadr(window.location.hostname == 'smile.badr.co.id')
-    if (window.location.hash === '#privacy-policy') {
-      setShowPrivacy(true)
+    setIsBadr(window.location.hostname == "smile.badr.co.id");
+    if (window.location.hash === "#privacy-policy") {
+      setShowPrivacy(true);
     }
-  }, [])
+  }, []);
 
   return (
     <Fragment>
@@ -53,10 +53,10 @@ const AuthLayout: React.FC<Props> = (props) => {
 
           <div className="ui-flex ui-mt-6 ui-space-x-3">
             <div
-              className={cx('ui-font-semibold', {
-                'ui-text-primary-500 ui-font-bold':
-                  router.pathname === '/[lang]/v5/login',
-                'ui-text-gray-500': router.pathname !== '/[lang]/v5/login',
+              className={cx("ui-font-semibold", {
+                "ui-text-primary-500 ui-font-bold":
+                  router.pathname === "/[lang]/v5/login",
+                "ui-text-gray-500": router.pathname !== "/[lang]/v5/login",
               })}
             >
               <Link id="redirect-login" href={`/${language}/v5/login`}>
@@ -66,14 +66,14 @@ const AuthLayout: React.FC<Props> = (props) => {
             <div className="text-gray-700">|</div>
             {isBadr ? (
               <div
-                className={cx('ui-font-semibold', {
-                  'ui-text-primary-500 ui-font-bold':
-                    router.pathname === '/[lang]/about',
-                  'ui-text-gray-500': router.pathname !== '/[lang]/about',
+                className={cx("ui-font-semibold", {
+                  "ui-text-primary-500 ui-font-bold":
+                    router.pathname === "/[lang]/about",
+                  "ui-text-gray-500": router.pathname !== "/[lang]/about",
                 })}
               >
                 <Link id="redirect-about" href={`/${language}/about`}>
-                  {t('about')}
+                  {t("about")}
                 </Link>
               </div>
             ) : (
@@ -82,30 +82,30 @@ const AuthLayout: React.FC<Props> = (props) => {
                   className="ui-font-semibold ui-text-gray-500 ui-cursor-pointer"
                   onClick={() => setShowDisclaimer(true)}
                   onKeyDown={(e: React.KeyboardEvent) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
+                    if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
                       setShowDisclaimer(true);
                     }
                   }}
-                  role='button'
+                  role="button"
                   tabIndex={0}
                 >
-                  {t('disclaimer.title')}
+                  {t("disclaimer.title")}
                 </a>
                 <div className="ui-text-gray-700">|</div>
                 <a
                   className="ui-font-semibold ui-text-gray-500 ui-cursor-pointer"
                   onClick={() => setShowPrivacy(true)}
                   onKeyDown={(e: React.KeyboardEvent) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
+                    if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
                       setShowPrivacy(true);
                     }
                   }}
-                  role='button'
+                  role="button"
                   tabIndex={0}
                 >
-                  {t('privacy_policy.title')}
+                  {t("privacy_policy.title")}
                 </a>
               </Fragment>
             )}
@@ -126,7 +126,6 @@ const AuthLayout: React.FC<Props> = (props) => {
           </div>
           <div className="ui-w-full ui-mb-[40px]">
             <div className="ui-flex ui-items-center ui-justify-center">
-              <img src="/images/logo-kemenkes.png" alt="kemenkes-logo" />
               <img
                 src="/images/logo-undp.png"
                 className="ui-ml-[56px]"
@@ -147,7 +146,7 @@ const AuthLayout: React.FC<Props> = (props) => {
                 onClick={() => setShowModal(true)}
                 className="ui-bg-white ui-p-[0 10px] ui-cursor-pointer ui-text-[#fa6400] ui-font-bold"
               >
-                {t('help_center.title')}
+                {t("help_center.title")}
               </button>
             </Divider>
           </div>
@@ -165,7 +164,7 @@ const AuthLayout: React.FC<Props> = (props) => {
           className="ui-text-center ui-text-xl ui-text-dark-blue"
           border
         >
-          {t('help_center.title')}
+          {t("help_center.title")}
         </DialogHeader>
         <DialogContent>
           <div className="ui-flex ui-flex-col ui-space-y-6 ui-p-5">
@@ -181,12 +180,15 @@ const AuthLayout: React.FC<Props> = (props) => {
               <div className="ui-w-full ui-flex ui-justify-between">
                 <div className="ui-justify-start">
                   <div className="ui-text-md-1">
-                    {t('help_center.send_email')}
+                    {t("help_center.send_email")}
                   </div>
                   <div>halo@smile-indonesia.id</div>
                 </div>
                 <div className="ui-justify-end">
-                  <img src="/images/ic-expand-right.png" alt="ic-expand-right" />
+                  <img
+                    src="/images/ic-expand-right.png"
+                    alt="ic-expand-right"
+                  />
                 </div>
               </div>
             </a>
@@ -202,12 +204,15 @@ const AuthLayout: React.FC<Props> = (props) => {
               <div className="ui-w-full ui-flex ui-justify-between">
                 <div className="ui-justify-start">
                   <div className="ui-text-md-1">
-                    {t('help_center.no_handphone')}
+                    {t("help_center.no_handphone")}
                   </div>
                   <span>08041 501900</span>
                 </div>
                 <div className="ui-justify-start">
-                  <img src="/images/ic-expand-right.png" alt="ic-expand-right" />
+                  <img
+                    src="/images/ic-expand-right.png"
+                    alt="ic-expand-right"
+                  />
                 </div>
               </div>
             </a>
@@ -223,24 +228,27 @@ const AuthLayout: React.FC<Props> = (props) => {
               <div className="ui-w-full ui-flex ui-justify-between">
                 <div className="ui-justify-start">
                   <div className="ui-text-md-1">
-                    {t('help_center.whatsapp')}
+                    {t("help_center.whatsapp")}
                   </div>
                   <span>+62812 8893 3314</span>
                 </div>
                 <div className="ui-justify-start">
-                  <img src="/images/ic-expand-right.png" alt="ic-expand-right" />
+                  <img
+                    src="/images/ic-expand-right.png"
+                    alt="ic-expand-right"
+                  />
                 </div>
               </div>
             </a>
             <div className="ui-bg-[#F4F4F5] ui-flex ui-flex-col ui-items-center ui-space-y-2 ui-p-6">
               <div className="ui-text-dark-blue ui-font-bold">
-                {t('help_center.smile_help_desk')}
+                {t("help_center.smile_help_desk")}
               </div>
               <div className="flex items-center">
                 <img src="/images/qr-wa.png" alt="wa" />
               </div>
               <div className="ui-text-label-dark ui-text-center ui-font-medium">
-                {t('help_center.desc')}
+                {t("help_center.desc")}
               </div>
             </div>
           </div>
@@ -252,7 +260,7 @@ const AuthLayout: React.FC<Props> = (props) => {
             color="primary"
             className="ui-w-full"
           >
-            {t('close')}
+            {t("close")}
           </Button>
         </DialogFooter>
       </Dialog>
@@ -268,7 +276,7 @@ const AuthLayout: React.FC<Props> = (props) => {
           className="ui-text-center ui-text-xl ui-text-dark-blue"
           border
         >
-          {t('disclaimer.title')}
+          {t("disclaimer.title")}
         </DialogHeader>
         <DialogContent>
           <div className="ui-p-5 ui-text-justify ui-text-neutral-500">
@@ -282,7 +290,7 @@ const AuthLayout: React.FC<Props> = (props) => {
             color="primary"
             className="ui-w-full"
           >
-            {t('close')}
+            {t("close")}
           </Button>
         </DialogFooter>
       </Dialog>
@@ -298,34 +306,34 @@ const AuthLayout: React.FC<Props> = (props) => {
           className="ui-text-center ui-text-xl ui-text-dark-blue"
           border
         >
-          {t('privacy_policy.title')}
+          {t("privacy_policy.title")}
         </DialogHeader>
         <DialogContent>
           <div className="ui-p-5 ui-flex ui-flex-col ui-space-y-5 ui-h-80">
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div>
                 <div className="ui-font-bold ui-text-dark-blue">
-                  {t('privacy_policy.sub_title_one')}
+                  {t("privacy_policy.sub_title_one")}
                 </div>
                 <div className="ui-text-neutral-500">
-                  {t('privacy_policy.effective_date')}
+                  {t("privacy_policy.effective_date")}
                 </div>
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_one')}
+                {t("privacy_policy.desc_one")}
               </div>
             </div>
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div className="ui-font-bold ui-text-dark-blue">
-                {t('privacy_policy.sub_title_two')}
+                {t("privacy_policy.sub_title_two")}
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_two')}
+                {t("privacy_policy.desc_two")}
               </div>
               <div className="ui-ml-5 ui-text-neutral-500">
                 <ul className="ui-list-disc ui-space-y-1">
                   {(
-                    t('privacy_policy.desc_two_list', {
+                    t("privacy_policy.desc_two_list", {
                       returnObjects: true,
                     }) as string[]
                   ).map((item, i) => (
@@ -336,15 +344,15 @@ const AuthLayout: React.FC<Props> = (props) => {
             </div>
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div className="ui-font-bold ui-text-dark-blue">
-                {t('privacy_policy.sub_title_three')}
+                {t("privacy_policy.sub_title_three")}
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_three')}
+                {t("privacy_policy.desc_three")}
               </div>
               <div className="ui-ml-5 ui-text-neutral-500">
                 <ul className="ui-list-disc ui-space-y-1">
                   {(
-                    t('privacy_policy.desc_three_list', {
+                    t("privacy_policy.desc_three_list", {
                       returnObjects: true,
                     }) as string[]
                   ).map((item, i) => (
@@ -355,54 +363,54 @@ const AuthLayout: React.FC<Props> = (props) => {
             </div>
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div className="ui-font-bold ui-text-dark-blue">
-                {t('privacy_policy.sub_title_four')}
+                {t("privacy_policy.sub_title_four")}
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_four')}
+                {t("privacy_policy.desc_four")}
               </div>
             </div>
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div className="ui-font-bold ui-text-dark-blue">
-                {t('privacy_policy.sub_title_five')}
+                {t("privacy_policy.sub_title_five")}
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_five')}
+                {t("privacy_policy.desc_five")}
               </div>
             </div>
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div className="ui-font-bold ui-text-dark-blue">
-                {t('privacy_policy.sub_title_six')}
+                {t("privacy_policy.sub_title_six")}
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_six')}
+                {t("privacy_policy.desc_six")}
               </div>
             </div>
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div className="ui-font-bold ui-text-dark-blue">
-                {t('privacy_policy.sub_title_seven')}
+                {t("privacy_policy.sub_title_seven")}
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_seven')}
+                {t("privacy_policy.desc_seven")}
               </div>
             </div>
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div className="ui-font-bold ui-text-dark-blue">
-                {t('privacy_policy.sub_title_eight')}
+                {t("privacy_policy.sub_title_eight")}
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_eight')}
+                {t("privacy_policy.desc_eight")}
               </div>
             </div>
             <div className="ui-flex ui-flex-col ui-space-y-5 ui-text-left">
               <div className="ui-font-bold ui-text-dark-blue">
-                {t('privacy_policy.sub_title_nine')}
+                {t("privacy_policy.sub_title_nine")}
               </div>
               <div className="ui-text-neutral-500">
-                {t('privacy_policy.desc_nine')}{' '}
+                {t("privacy_policy.desc_nine")}{" "}
                 <Link href="mailto:smile.dev.contact@gmail.com">
                   smile.dev.contact@gmail.com
                 </Link>
-                {', '}
+                {", "}
                 <Link href="mailto:helpdesk@kemkes.go.id">
                   helpdesk@kemkes.go.id
                 </Link>
@@ -417,12 +425,12 @@ const AuthLayout: React.FC<Props> = (props) => {
             color="primary"
             className="ui-w-full"
           >
-            {t('close')}
+            {t("close")}
           </Button>
         </DialogFooter>
       </Dialog>
     </Fragment>
-  )
-}
+  );
+};
 
-export default AuthLayout
+export default AuthLayout;
