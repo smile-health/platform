@@ -20,6 +20,11 @@ export const env = parseEnv(process.env, {
   APP_URL: z.string().default("http://localhost:3000"),
   FRONTEND_URL: z.string().default("http://localhost:5000"),
 
+  //Keycloak
+  USE_LOCAL_JWT_VALIDATION: z.boolean().default(false),
+  KEYCLOAK_SERVER_URL: z.string().optional(),
+  KEYCLOAK_REALM: z.string().optional(),
+
   WORKSPACE_ID: z.number().default(1),
 
   //DB

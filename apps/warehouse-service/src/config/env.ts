@@ -23,6 +23,11 @@ export const env = parseEnv(process.env, {
   CORE_API_URL: z.string(),
   WORKSPACE_ID: z.number().default(1),
 
+  //Keycloak
+  USE_LOCAL_JWT_VALIDATION: z.boolean().default(false),
+  KEYCLOAK_SERVER_URL: z.string().optional(),
+  KEYCLOAK_REALM: z.string().optional(),
+
   DB_HOST: z.string().min(1),
   DB_USER: z.string().min(1),
   DB_PORT: port(),

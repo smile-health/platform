@@ -229,6 +229,22 @@ export async function findManyByQrCodeIds(qrCodeIds: string[]): Promise<WasteBag
   return rows.map((row) => toEntity(row as WasteBagRow));
 }
 
+// Added for the waste-bag machine's precondition check in
+// handoverTreatmentExternalRequest — applyHandoverTreatmentExternal itself
+// has no waste_status filter (it matches purely by external transport group
+// id), so callers that need to know each bag's CURRENT status before
+// mutating by group have to look it up separately, via this.
+export async function findManyByExternalTransportGroupIds(groupIds: number[]): Promise<WasteBag[]> {
+  if (groupIds.length === 0) return [];
+  const rows = await db
+    .selectFrom("waste_bag")
+    .selectAll()
+    .where("waste_transportation_external_group_id", "in", groupIds)
+    .where("deleted_at", "is", null)
+    .execute();
+  return rows.map((row) => toEntity(row as WasteBagRow));
+}
+
 export interface FindPaginatedParams {
   limit: number;
   page: number;

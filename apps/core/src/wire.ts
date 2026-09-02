@@ -315,7 +315,7 @@ const accountModule = new AccountModule(
   entityRepo,
   workspaceRepo,
   locationRepo,
-  new AuthKeycloakService(env.AUTH_URL ?? "http://localhost:5001"),
+  new AuthKeycloakService(env.AUTH_URL ?? "http://localhost:5001", env.USE_LOCAL_JWT_VALIDATION),
   manufactureRepo,
   userPublisher
 )
@@ -335,7 +335,7 @@ const executiveAccountModule = new ExecutiveAccountModule(
   entityRepo,
   executiveWorkspaceRepo,
   locationRepo,
-  new AuthKeycloakService(env.AUTH_URL ?? "http://localhost:5001"),
+  new AuthKeycloakService(env.AUTH_URL ?? "http://localhost:5001", env.USE_LOCAL_JWT_VALIDATION),
   manufactureRepo,
   executiveRoleRepo,
   executiveUserChangelogRepo
@@ -461,7 +461,7 @@ const usersModule = new UserModule(
   roleRepo,
   manufactureRepo,
   integrationRepo,
-  new AuthKeycloakService(env.AUTH_URL ?? "http://localhost:5001"),
+  new AuthKeycloakService(env.AUTH_URL ?? "http://localhost:5001", env.USE_LOCAL_JWT_VALIDATION),
   userPublisher
 )
 
@@ -488,7 +488,7 @@ const executiveUsersController = new ExecutiveUserController(
 
 const authMiddleware = new AuthMiddleware(accountRepo)
 const authMiddlewareKc = new AuthKeycloakMiddleware(
-  new AuthKcServiceLib(env.AUTH_URL ?? "http://localhost:5001"),
+  new AuthKcServiceLib(env.AUTH_URL ?? "http://localhost:5001", env.USE_LOCAL_JWT_VALIDATION),
   userRepo,
   executiveUserRepo,
   integrationRepo

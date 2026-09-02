@@ -1,4 +1,6 @@
+import { env } from "@/config/env.js"
 import { DEVICE_TYPE } from "@/common/constants/headers.js"
+import { AuthKeycloakService } from "@smile-health/lib/api/auth.service.js"
 import {
   ForbiddenError,
   HTTPError,
@@ -6,6 +8,11 @@ import {
 } from "@smile-health/lib/error.js"
 import { logger } from "@smile-health/lib/logger.js"
 import { createMiddleware } from "hono/factory"
+
+const authKeycloakService = new AuthKeycloakService(
+  env.CORE_API_URL,
+  env.USE_LOCAL_JWT_VALIDATION
+)
 
 export class AuthMiddleware {
   handleAuthHeaderReinjection = createMiddleware(async (c, next) => {
@@ -18,20 +25,20 @@ export class AuthMiddleware {
 
 export class AuthKeycloakMiddleware {
   handleAuthKeycloak = createMiddleware(async (c, next) => {
-    // This is a placeholder for the actual Keycloak auth middleware
-    // In a real implementation, this would validate Keycloak tokens
     try {
       const authHeader = c.req.header("Authorization")
       const programId = c.req.header("x-program-id") ?? 0
       if (!authHeader) throw new UnauthorizedError()
 
-      logger.info(`Token Auth: ${authHeader}`)
+      // Verify the token's signature/expiry locally before making any
+      // network call, so an invalid/expired token never reaches core.
+      await authKeycloakService.validateToken(authHeader.split(" ")[1] ?? "")
 
       const pathUrl = c.req.path.includes("/executive")
         ? "/executive/account/profile"
         : "/account/profile"
 
-      const responseProfile = await fetch(process.env.CORE_API_URL + pathUrl, {
+      const responseProfile = await fetch(env.CORE_API_URL + pathUrl, {
         method: "GET",
         headers: {
           Authorization: authHeader,

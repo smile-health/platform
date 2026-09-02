@@ -439,7 +439,6 @@ export class OrderWorker extends BaseWorker {
           // ✅ Process each item in the batch
           for (const item of batch) {
             const isTargetStatus = [
-              ORDER_STATUS.DRAFT,
               ORDER_STATUS.PENDING,
               ORDER_STATUS.CONFIRMED,
               ORDER_STATUS.CANCELED,

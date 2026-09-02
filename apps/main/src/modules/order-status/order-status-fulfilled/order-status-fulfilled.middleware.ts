@@ -1,12 +1,13 @@
 import { FLAG } from "@/common/constants/common.js"
-import { ORDER_STATUS } from "@/common/constants/order.js"
 import { BaseMiddleware } from "@smile-health/lib/base/middleware.js"
 import { NotFoundError, ValidationError } from "@smile-health/lib/error.js"
 import { Context } from "hono"
 import { createMiddleware } from "hono/factory"
 import moment from "moment"
 import { z } from "zod"
+import { assertOrderTransitionAllowed } from "../order-status.guard.js"
 import { MissingStockStatusIdError } from "../order-status.error.js"
+import { ORDER_EVENT } from "../order.machine.js"
 import { OrderStatusFulfilledRepository } from "./order-status-fulfilled.repository.js"
 import {
   ChangeOrderStatusFulfilledRequest,
@@ -72,27 +73,7 @@ export class OrderStatusFulfilledMiddleware extends BaseMiddleware {
   }
 
   readonly #statusNotAllowed = (c: Context, statusId: number) => {
-    if (statusId === ORDER_STATUS.FULFILLED) {
-      throw new ValidationError(
-        c.var.t("validator.cannot_same_status", {
-          field: c.var.t("order_status.label.order_status_id"),
-        })
-      )
-    } else if (statusId !== ORDER_STATUS.SHIPPED) {
-      if (statusId === ORDER_STATUS.CANCELED) {
-        throw new ValidationError(
-          c.var.t("validator.has_cancelled", {
-            field: c.var.t("order_status.label.order_status_id"),
-          })
-        )
-      } else {
-        throw new ValidationError(
-          c.var.t("validator.not_yet_shipped", {
-            field: c.var.t("order_status.label.order_status_id"),
-          })
-        )
-      }
-    }
+    assertOrderTransitionAllowed(c, statusId, ORDER_EVENT.FULFILL)
   }
 
   readonly #getMaterial = async (c: Context, id: number) => {

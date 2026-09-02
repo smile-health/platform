@@ -1,11 +1,31 @@
 import { BadRequestError } from "../error.js";
+import { KeycloakJwtVerifier } from "../auth/keycloak-jwt.js";
 import { logger } from "../logger.js";
 import { fetchData } from "./fetch.js";
 import type { LoginResponse, UserInfo } from "./type.js";
 
 export class AuthKeycloakService {
-  constructor(private readonly authUrl: string = "http://localhost:5001") {
+  private readonly jwtVerifier?: KeycloakJwtVerifier;
+
+  constructor(
+    private readonly authUrl: string = "http://localhost:5001",
+    private readonly useLocalJwtValidation: boolean = false,
+    keycloakServerUrl: string = process.env.KEYCLOAK_SERVER_URL ?? "",
+    keycloakRealm: string = process.env.KEYCLOAK_REALM ?? ""
+  ) {
     this._testConnection();
+
+    if (this.useLocalJwtValidation) {
+      if (!keycloakServerUrl || !keycloakRealm) {
+        throw new Error(
+          "KEYCLOAK_SERVER_URL and KEYCLOAK_REALM are required when USE_LOCAL_JWT_VALIDATION is enabled"
+        );
+      }
+      this.jwtVerifier = new KeycloakJwtVerifier({
+        serverUrl: keycloakServerUrl,
+        realm: keycloakRealm,
+      });
+    }
   }
 
   private _testConnection() {
@@ -27,6 +47,10 @@ export class AuthKeycloakService {
   }
 
   async validateToken(token: string): Promise<{ userInfo: UserInfo }> {
+    if (this.jwtVerifier) {
+      return this.#validateTokenLocally(token);
+    }
+
     try {
       const responseAuthKeycloak = await fetchData(
         `${this.authUrl}/validate-token`,
@@ -44,6 +68,19 @@ export class AuthKeycloakService {
       return responseAuthKeycloak as { userInfo: UserInfo };
     } catch (error) {
       logger.info(`Failed Validate Token Keycloak: ${JSON.stringify(error)}`);
+      throw new BadRequestError(`Failed Get User`);
+    }
+  }
+
+  async #validateTokenLocally(token: string): Promise<{ userInfo: UserInfo }> {
+    try {
+      const payload = await this.jwtVerifier!.verify(token);
+      logger.info(`Success Validate Token Keycloak (local JWKS): ${payload.sub}`);
+      return { userInfo: payload as unknown as UserInfo };
+    } catch (error) {
+      logger.info(
+        `Failed Validate Token Keycloak (local JWKS): ${JSON.stringify(error)}`
+      );
       throw new BadRequestError(`Failed Get User`);
     }
   }

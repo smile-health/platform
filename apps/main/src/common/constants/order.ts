@@ -5,8 +5,9 @@ export const ORDER_STATUS = {
   SHIPPED: 4,
   FULFILLED: 5,
   CANCELED: 6,
-  INDEPENDENT_EXTERMINATION: 7,
-  DRAFT: 8,
+  // 7 (independent_extermination) and 8 (draft) were retired — no code path
+  // sets or checks them anymore. Existing rows with those values, if any,
+  // are left as-is in the DB; only the code-level support was removed.
 }
 
 export const ORDER_STOCK_STATUSES = {

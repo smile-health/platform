@@ -174,7 +174,6 @@ import { OrderCommentPublisher } from "./modules/order-comment/order-comment.pub
 import { OrderCommentRepository } from "./modules/order-comment/order-comment.repository.js"
 import { OrderHistoryRepository } from "./modules/order-history/order-history.repository.js"
 import { OrderIntegrationRepository } from "./modules/order-integration/order-integration.repository.js"
-import { OrderIntegrationWorker } from "./modules/order-integration/order-integration.worker.js"
 import { OrderItemStockController } from "./modules/order-item-stock/order-item-stock.controller.js"
 import { OrderItemStockMiddleware } from "./modules/order-item-stock/order-item-stock.middleware.js"
 import { OrderItemStockModule } from "./modules/order-item-stock/order-item-stock.module.js"
@@ -221,10 +220,6 @@ import { OrderStatusShipMiddleware } from "./modules/order-status/order-status-s
 import { OrderStatusShipModule } from "./modules/order-status/order-status-ship/order-status-ship.module.js"
 import { OrderStatusShippedPublisher } from "./modules/order-status/order-status-ship/order-status-ship.publisher.js"
 import { OrderStatusShipRepository } from "./modules/order-status/order-status-ship/order-status-ship.repository.js"
-import { OrderStatusValidateController } from "./modules/order-status/order-status-validate/order-status-validate.controller.js"
-import { OrderStatusValidateMiddleware } from "./modules/order-status/order-status-validate/order-status-validate.middleware.js"
-import { OrderStatusValidateModule } from "./modules/order-status/order-status-validate/order-status-validate.module.js"
-import { OrderStatusValidateRepository } from "./modules/order-status/order-status-validate/order-status-validate.repository.js"
 import { OrderStockStatusRepository } from "./modules/order-stock-status/order-stock-status.repository.js"
 import { OrderTypeRepository } from "./modules/order-type/order-type.repository.js"
 import { OrderController } from "./modules/order/order.controller.js"
@@ -376,7 +371,6 @@ const stockQualityRepo = new StockQualityRepository()
 const stockConsumptionRepo = new StockConsumptionRepository()
 const transactionTypeRepo = new TransactionTypeRepository()
 const orderStatusConfirmRepo = new OrderStatusConfirmRepository()
-const orderStatusValidateRepo = new OrderStatusValidateRepository()
 const orderStatusPendingRepo = new OrderStatusPendingRepository()
 const orderStatusAllocateRepo = new OrderStatusAllocateRepository()
 const orderStatusShipRepo = new OrderStatusShipRepository()
@@ -423,7 +417,7 @@ const authKeycloakMiddleware = new AuthKeycloakMiddleware(
   integrationRepo,
   new AuthKeycloakService(
     env.AUTH_URL ?? "http://localhost:5001",
-    env.USE_LOCAL_JWT_VALIDATION === "true"
+    env.USE_LOCAL_JWT_VALIDATION
   )
 )
 const requestMiddleware = new RequestMiddleware()
@@ -818,23 +812,6 @@ const orderStatusConfirmModule = new OrderStatusConfirmModule(
 const orderStatusConfirmController = new OrderStatusConfirmController(
   orderStatusConfirmMiddleware,
   orderStatusConfirmModule,
-  roleMiddleware,
-  deduplicationMiddleware
-)
-
-// Order Status Validate
-const orderIntegrationWorker = new OrderIntegrationWorker(integrationRepo)
-const orderStatusValidateMiddleware = new OrderStatusValidateMiddleware(
-  orderStatusValidateRepo
-)
-const orderStatusValidateModule = new OrderStatusValidateModule(
-  orderStatusValidateRepo,
-  orderIntegrationWorker,
-  publisher
-)
-const orderStatusValidateController = new OrderStatusValidateController(
-  orderStatusValidateMiddleware,
-  orderStatusValidateModule,
   roleMiddleware,
   deduplicationMiddleware
 )
@@ -1636,15 +1613,6 @@ orderStatusPendingRoutes.use(
 )
 orderStatusPendingRoutes.route("/", orderStatusPendingController.getRoutes())
 mainApp.route("/orders", orderStatusPendingRoutes)
-// Order status validate routes with tracing
-const orderStatusValidateRoutes = new Hono()
-orderStatusValidateRoutes.use(
-  "*",
-  routeTracer.traceRoute("order-status-validate")
-)
-orderStatusValidateRoutes.route("/", orderStatusValidateController.getRoutes())
-mainApp.route("/orders", orderStatusValidateRoutes)
-
 // Order status confirm routes with tracing
 const orderStatusConfirmRoutes = new Hono()
 orderStatusConfirmRoutes.use(

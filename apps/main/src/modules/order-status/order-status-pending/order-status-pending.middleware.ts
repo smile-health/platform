@@ -1,8 +1,9 @@
-import { ORDER_STATUS } from "@/common/constants/order.js"
 import { BaseMiddleware } from "@smile-health/lib/base/middleware.js"
 import { NotFoundError, ValidationError } from "@smile-health/lib/error.js"
 import { Context } from "hono"
 import { createMiddleware } from "hono/factory"
+import { assertOrderTransitionAllowed } from "../order-status.guard.js"
+import { ORDER_EVENT } from "../order.machine.js"
 import { OrderStatusPendingRepository } from "./order-status-pending.repository.js"
 
 export class OrderStatusPendingMiddleware extends BaseMiddleware {
@@ -51,33 +52,7 @@ export class OrderStatusPendingMiddleware extends BaseMiddleware {
   }
 
   readonly #statusNotAllowed = (c: Context, statusId: number) => {
-    if (statusId === ORDER_STATUS.PENDING) {
-      throw new ValidationError(
-        c.var.t("validator.cannot_same_status", {
-          field: c.var.t("order_status.label.order_status_id"),
-        })
-      )
-    } else if (statusId !== ORDER_STATUS.CONFIRMED) {
-      if (statusId === ORDER_STATUS.FULFILLED) {
-        throw new ValidationError(
-          c.var.t("validator.has_fulfilled", {
-            field: c.var.t("order_status.label.order_status_id"),
-          })
-        )
-      } else if (statusId === ORDER_STATUS.CANCELED) {
-        throw new ValidationError(
-          c.var.t("validator.has_cancelled", {
-            field: c.var.t("order_status.label.order_status_id"),
-          })
-        )
-      } else {
-        throw new ValidationError(
-          c.var.t("validator.cannot_previous_state", {
-            field: c.var.t("order_status.label.order_status_id"),
-          })
-        )
-      }
-    }
+    assertOrderTransitionAllowed(c, statusId, ORDER_EVENT.RESET_TO_PENDING)
   }
 
   readonly #programIdNotMatch = (c: Context, order) => {

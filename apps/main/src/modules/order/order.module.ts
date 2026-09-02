@@ -272,11 +272,10 @@ export class OrderModule extends BaseModule {
     return { data: formatted }
   }
 
-  async create(c: Context, body: CreateOrderRequest, isDraft = false) {
+  async create(c: Context, body: CreateOrderRequest) {
     const { order_items, order_comment, required_date, ...createBody } = body
     const userId = Number(c.var.userId)
     const deviceType = c.var.deviceType ?? DEVICE_TYPE.web
-    const orderStatus = isDraft ? ORDER_STATUS.DRAFT : ORDER_STATUS.PENDING
 
     // Create Order
     const orderData: CreateOrderDTO = {
@@ -284,7 +283,7 @@ export class OrderModule extends BaseModule {
       is_allocated: IS_ALLOCATED.TRUE,
       order_type_id: ORDER_TYPE.REQUEST,
       device_type: deviceType,
-      order_status_id: orderStatus,
+      order_status_id: ORDER_STATUS.PENDING,
       total_order_items: order_items.length,
       created_by: userId,
       updated_by: userId,
@@ -316,7 +315,7 @@ export class OrderModule extends BaseModule {
     // Create Order History
     const orderHistoryData: CreateOrderHistoryDTO = {
       order_id: createdOrderId,
-      order_status_id: orderStatus,
+      order_status_id: ORDER_STATUS.PENDING,
       created_by: userId,
       updated_by: userId,
     }
@@ -392,7 +391,7 @@ export class OrderModule extends BaseModule {
         {
           id: createdOrderId,
           customer_id: createBody.customer_id,
-          status: orderStatus,
+          status: ORDER_STATUS.PENDING,
         },
         order_items
       )
