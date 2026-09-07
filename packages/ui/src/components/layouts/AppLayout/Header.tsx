@@ -68,7 +68,7 @@ const Header: React.FC = () => {
         <div className="ui-flex ui-gap-4 ui-items-center">
           <DropdownProgram />
           <p className="ui-text-base font-bold">
-            {program?.activeProgram?.name ?? "SMILE Indonesia"}
+            {program?.activeProgram?.name ?? "SMILE"}
           </p>
         </div>
         <div className="ui-flex ui-gap-6 ui-pl-4 ui-items-center">
