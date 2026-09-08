@@ -12,9 +12,6 @@ export async function seed(db: Kysely<Database>): Promise<void> {
 			created_by: null,
 			updated_by: null,
 			deleted_by: null,
-			created_at: new Date('2026-07-30T04:05:34Z'),
-			updated_at: new Date('2026-07-30T04:05:34Z'),
-			deleted_at: null,
 			is_restricted: 0,
 			is_custom: 1,
 		},
@@ -29,7 +26,6 @@ export async function seed(db: Kysely<Database>): Promise<void> {
 				description: source.description,
 				is_restricted: source.is_restricted,
 				is_custom: source.is_custom,
-				updated_at: new Date(),
 			})
 			.execute()
 	}
