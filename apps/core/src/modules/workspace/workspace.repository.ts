@@ -1,7 +1,4 @@
-import {
-  WMS_CLIENT_ID,
-  WMS_PROGRAM_ID,
-} from "@/common/constants/integration.js"
+import { WMS_PROGRAM_ID } from "@/common/constants/integration.js"
 import { DB } from "@/common/infrastructure/database/types/db.js"
 import { associate, collect, differ } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
@@ -105,21 +102,12 @@ export class WorkspaceRepository {
     from: string,
     ids: number | number[]
   ) {
-    const { isWMSUser, trx } = c.var
+    const { trx } = c.var
 
     if (typeof ids === "number") ids = [ids]
     if (!ids || ids.length === 0) return {}
     const workspaces = await trx
       .selectFrom("workspaces as w")
-      .$if(isWMSUser, (qb) =>
-        qb.innerJoin("integration_associations as a", (join) =>
-          join
-            .onRef("a.internal_id", "=", "w.id")
-            .on("a.client_id", "=", WMS_CLIENT_ID)
-            .on("a.type", "=", "program")
-            .on("a.deleted_at", "is", null)
-        )
-      )
       .$if(from == "user", (qb) =>
         qb
           .innerJoin("user_workspaces as uw", "w.id", "uw.workspace_id")
