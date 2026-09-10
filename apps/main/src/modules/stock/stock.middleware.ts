@@ -15,13 +15,13 @@ export class StockMiddleware {
 
     if (
       roleId === USER_ROLE.MANAGER &&
-      userEntity.type === ENTITY_TYPE.PROVINSI
+      (userEntity.type === ENTITY_TYPE.PROVINSI ||
+        userEntity.type === ENTITY_TYPE.KOTA)
     ) {
-      data.province_id = Number(userEntity.province_id)
-    }
-
-    if (roleId === USER_ROLE.MANAGER && userEntity.type === ENTITY_TYPE.KOTA) {
-      data.regency_id = Number(userEntity.regency_id)
+      // userEntity.location_id points at the manager's own administrative
+      // node (province or regency); #applyEntityFilter resolves it to a
+      // path prefix so only entities under that node are returned.
+      data.location_id = Number(userEntity.location_id)
     }
 
     return data

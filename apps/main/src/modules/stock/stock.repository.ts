@@ -24,13 +24,39 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
   }
 
   #isFilterEntity(params: GetStocksQueries) {
-    return !!params.entity_tag_id || !!params.province_id || !!params.regency_id
+    return !!params.entity_tag_id || !!params.location_id
   }
 
   #isFilterBatch(params: GetStocksQueries) {
     return !!params.expired_start_date || !!params.expired_end_date
   }
 
+  // Derives province/regency/sub_district display names from
+  // ws_entities.location_id via locations.path (a materialized root-to-self
+  // ancestor chain, e.g. "1#23#2345"). Mirrors
+  // apps/main/src/modules/entity/entity.repository.ts's #joinLocationHierarchy.
+  #joinLocationNames<T>(qb: T & { leftJoin: Function }, entityAlias = "e") {
+    return (qb as any)
+      .leftJoin("locations as loc", "loc.id", `${entityAlias}.location_id`)
+      .leftJoin("locations as prov", (join: any) =>
+        join.on(sql`prov.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as reg", (join: any) =>
+        join.on(
+          sql`reg.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as sub", (join: any) =>
+        join.on(
+          sql`sub.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
+  }
+
+  // filterValue can be at any location level (province/regency/etc); an
+  // entity is "under" it when the entity's own location's path starts with
+  // the filter location's path. Mirrors the location_id filter shape applied
+  // to the transaction/order repositories in this migration effort.
   #applyEntityFilter<T>(
     qb: T & { $if: Function; where: Function; innerJoin: Function },
     params: GetStocksQueries,
@@ -45,11 +71,19 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .$if(!!params.entity_tag_id, (qb: any) =>
         qb.where("e.entity_tag_id", "=", params.entity_tag_id ?? 0)
       )
-      .$if(!!params.province_id, (qb: any) =>
-        qb.where("e.province_id", "=", String(params.province_id))
-      )
-      .$if(!!params.regency_id, (qb: any) =>
-        qb.where("e.regency_id", "=", String(params.regency_id))
+      .$if(!!params.location_id, (qb: any) =>
+        qb
+          .innerJoin("locations as loc", "loc.id", "e.location_id")
+          .where((eb: any) =>
+            eb(
+              "loc.path",
+              "like",
+              eb
+                .selectFrom("locations")
+                .select(sql`CONCAT(path, '%')`.as("prefix"))
+                .where("id", "=", params.location_id ?? 0)
+            )
+          )
       )
   }
 
@@ -456,9 +490,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .leftJoin("ws_materials as m", "m.id", "s.parent_material_id")
       .leftJoin("ws_entities as e", "e.id", "s.entity_id")
       .leftJoin("entity_types as et", "et.id", "e.type")
-      .leftJoin("locations as prov", "prov.id", "e.province_id")
-      .leftJoin("locations as reg", "reg.id", "e.regency_id")
-      .leftJoin("locations as sub", "sub.id", "e.sub_district_id")
+      .$call((qb) => this.#joinLocationNames(qb))
       .leftJoin("ws_entity_material_activities as wema", (join) =>
         join
           .onRef("s.parent_material_id", "=", "wema.material_id")
@@ -513,11 +545,17 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .$if(!!params.entity_tag_id, (qb) =>
         qb.where("e.entity_tag_id", "=", params.entity_tag_id ?? 0)
       )
-      .$if(!!params.province_id, (qb) =>
-        qb.where("e.province_id", "=", String(params.province_id))
-      )
-      .$if(!!params.regency_id, (qb) =>
-        qb.where("e.regency_id", "=", String(params.regency_id))
+      .$if(!!params.location_id, (qb) =>
+        qb.where((eb) =>
+          eb(
+            "loc.path",
+            "like",
+            eb
+              .selectFrom("locations")
+              .select(sql`CONCAT(path, '%')`.as("prefix"))
+              .where("id", "=", params.location_id ?? 0)
+          )
+        )
       )
       .$if(filterBatch, (qb) =>
         qb
@@ -563,9 +601,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .leftJoin("ws_materials as m", "m.id", "s.parent_material_id")
       .leftJoin("ws_entities as e", "e.id", "s.entity_id")
       .leftJoin("entity_types as et", "et.id", "e.type")
-      .leftJoin("locations as prov", "prov.id", "e.province_id")
-      .leftJoin("locations as reg", "reg.id", "e.regency_id")
-      .leftJoin("locations as sub", "sub.id", "e.sub_district_id")
+      .$call((qb) => this.#joinLocationNames(qb))
       .leftJoin("ws_entity_material_activities as wema", (join) =>
         join
           .onRef("s.parent_material_id", "=", "wema.material_id")
@@ -622,11 +658,17 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .$if(!!params.entity_tag_id, (qb) =>
         qb.where("e.entity_tag_id", "=", params.entity_tag_id ?? 0)
       )
-      .$if(!!params.province_id, (qb) =>
-        qb.where("e.province_id", "=", String(params.province_id))
-      )
-      .$if(!!params.regency_id, (qb) =>
-        qb.where("e.regency_id", "=", String(params.regency_id))
+      .$if(!!params.location_id, (qb) =>
+        qb.where((eb) =>
+          eb(
+            "loc.path",
+            "like",
+            eb
+              .selectFrom("locations")
+              .select(sql`CONCAT(path, '%')`.as("prefix"))
+              .where("id", "=", params.location_id ?? 0)
+          )
+        )
       )
       .$if(filterBatch, (qb) =>
         qb
@@ -674,9 +716,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .innerJoin("ws_activities as a", "a.id", "s.activity_id")
       .leftJoin("ws_materials as p", "s.parent_material_id", "p.id")
       .leftJoin("entity_types as et", "et.id", "e.type")
-      .leftJoin("locations as prov", "prov.id", "e.province_id")
-      .leftJoin("locations as reg", "reg.id", "e.regency_id")
-      .leftJoin("locations as sub", "sub.id", "e.sub_district_id")
+      .$call((qb) => this.#joinLocationNames(qb))
       .leftJoin("ws_entity_material_activities as ema", (join) =>
         join
           .onRef("s.entity_id", "=", "ema.entity_id")
@@ -724,11 +764,17 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .$if(!!params.entity_tag_id, (qb) =>
         qb.where("e.entity_tag_id", "=", params.entity_tag_id ?? 0)
       )
-      .$if(!!params.province_id, (qb) =>
-        qb.where("e.province_id", "=", String(params.province_id))
-      )
-      .$if(!!params.regency_id, (qb) =>
-        qb.where("e.regency_id", "=", String(params.regency_id))
+      .$if(!!params.location_id, (qb) =>
+        qb.where((eb) =>
+          eb(
+            "loc.path",
+            "like",
+            eb
+              .selectFrom("locations")
+              .select(sql`CONCAT(path, '%')`.as("prefix"))
+              .where("id", "=", params.location_id ?? 0)
+          )
+        )
       )
       .$if(!!params.expired_start_date, (qb) =>
         qb.where((eb) =>
@@ -1061,7 +1107,19 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
           .onRef("we.id", "=", "wema.entity_id")
           .on("we.deleted_at", "is", null)
       )
-      .leftJoin("locations as loc", "loc.id", "we.regency_id")
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
+      .leftJoin("locations as reg", (join) =>
+        join.on((eb) =>
+          eb.and([
+            eb(
+              "reg.id",
+              "=",
+              sql<number>`CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) AS UNSIGNED)`
+            ),
+            eb("reg.level", "=", 1),
+          ])
+        )
+      )
       .select([
         "wema.id",
         "wema.entity_id",
@@ -1073,7 +1131,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         "wm.name as material_name",
         "wm.unit_of_consumption as material_consumption_unit",
         "we.name as customer_entity_name",
-        sql<string>`CASE WHEN we.type = 3 THEN loc.name ELSE '' END`.as(
+        sql<string>`CASE WHEN we.type = 3 THEN reg.name ELSE '' END`.as(
           "regency_name"
         ),
         "wm.material_type_id",
@@ -1130,7 +1188,19 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .innerJoin("ws_materials as wsm", "wsm.id", "wss.material_id")
       .innerJoin("ws_entities as wse", "wse.id", "wss.entity_id")
       .leftJoin("ws_batches as wsb", "wsb.id", "wss.batch_id")
-      .leftJoin("locations as loc", "loc.id", "wse.regency_id")
+      .leftJoin("locations as loc", "loc.id", "wse.location_id")
+      .leftJoin("locations as reg", (join) =>
+        join.on((eb) =>
+          eb.and([
+            eb(
+              "reg.id",
+              "=",
+              sql<number>`CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) AS UNSIGNED)`
+            ),
+            eb("reg.level", "=", 1),
+          ])
+        )
+      )
       .select([
         "wss.id",
         "wss.batch_id",
@@ -1142,8 +1212,8 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         "wsm.unit_of_consumption as material_consumption_unit",
         "wse.id as entity_id",
         "wse.name as customer_entity_name",
-        "loc.id as regency_id",
-        sql<string>`CASE WHEN wse.type = 3 THEN loc.name ELSE '' END`.as(
+        "reg.id as regency_id",
+        sql<string>`CASE WHEN wse.type = 3 THEN reg.name ELSE '' END`.as(
           "regency_name"
         ),
         sql<number>`DATEDIFF(wsb.expired_date, CURDATE())`.as("number_of_days"),
@@ -1452,15 +1522,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
           join.onRef("e.id", "=", "s.entity_id").on("e.deleted_at", "is", null)
       )
       .leftJoin("entity_types as et", "et.id", "e.type")
-      .leftJoin("locations as prov", (join) =>
-        join.onRef("prov.id", "=", "e.province_id")
-      )
-      .leftJoin("locations as reg", (join) =>
-        join.onRef("reg.id", "=", "e.regency_id")
-      )
-      .leftJoin("locations as sub", (join) =>
-        join.onRef("sub.id", "=", "e.sub_district_id")
-      )
+      .$call((qb) => this.#joinLocationNames(qb))
       .leftJoin("ws_batches as b", (join) =>
         join.onRef("b.id", "=", "s.batch_id")
       )
@@ -1520,11 +1582,17 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .$if(!!params.entity_tag_id, (qb) =>
         qb.where("e.entity_tag_id", "=", params.entity_tag_id ?? 0)
       )
-      .$if(!!params.province_id, (qb) =>
-        qb.where("e.province_id", "=", String(params.province_id))
-      )
-      .$if(!!params.regency_id, (qb) =>
-        qb.where("e.regency_id", "=", String(params.regency_id))
+      .$if(!!params.location_id, (qb) =>
+        qb.where((eb) =>
+          eb(
+            "loc.path",
+            "like",
+            eb
+              .selectFrom("locations")
+              .select(sql`CONCAT(path, '%')`.as("prefix"))
+              .where("id", "=", params.location_id ?? 0)
+          )
+        )
       )
       .$if(filterBatch, (qb) => this.#applyBatchFilter(qb, params, useDatamart))
       .orderBy(sql`lower(m.name)`)
@@ -1654,9 +1722,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         "s.entity_id"
       )
       .leftJoin("entity_types as et", "et.id", "e.type")
-      .leftJoin("locations as prov", "prov.id", "e.province_id")
-      .leftJoin("locations as reg", "reg.id", "e.regency_id")
-      .leftJoin("locations as sub", "sub.id", "e.sub_district_id")
+      .$call((qb) => this.#joinLocationNames(qb))
       .leftJoin("ws_batches as b", "b.id", "s.batch_id")
       .leftJoin("ws_activities as a", "a.id", "s.activity_id")
       .leftJoin("ws_budget_sources as bs", "bs.id", "s.budget_source_id")
@@ -1706,11 +1772,17 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .$if(!!params.entity_tag_id, (qb) =>
         qb.where("e.entity_tag_id", "=", params.entity_tag_id ?? 0)
       )
-      .$if(!!params.province_id, (qb) =>
-        qb.where("e.province_id", "=", String(params.province_id))
-      )
-      .$if(!!params.regency_id, (qb) =>
-        qb.where("e.regency_id", "=", String(params.regency_id))
+      .$if(!!params.location_id, (qb) =>
+        qb.where((eb) =>
+          eb(
+            "loc.path",
+            "like",
+            eb
+              .selectFrom("locations")
+              .select(sql`CONCAT(path, '%')`.as("prefix"))
+              .where("id", "=", params.location_id ?? 0)
+          )
+        )
       )
       .$if(filterBatch, (qb) => this.#applyBatchFilter(qb, params, useDatamart))
       .orderBy(sql`lower(m.name)`)

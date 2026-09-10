@@ -74,9 +74,7 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
       updated_to_date,
       purpose,
       service_type,
-      entity_province_id,
-      entity_city_id,
-      entity_puskesmas_id,
+      location_id,
       status,
       status_ids,
       type,
@@ -120,14 +118,7 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
     }
 
     if (purpose === "purchase" || purpose === "sales") {
-      let entityIdLocation: number | undefined = undefined
-      if (entity_puskesmas_id) {
-        entityIdLocation = entity_puskesmas_id
-      } else if (entity_city_id) {
-        entityIdLocation = entity_city_id
-      } else if (entity_province_id) {
-        entityIdLocation = entity_province_id
-      }
+      const entityIdLocation = location_id
 
       if (purpose === "purchase") {
         query = this.#filterLocationOrder(
@@ -173,6 +164,60 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
     return query
   }
 
+  /**
+   * Builds a "is this location under that location's administrative subtree
+   * (or that location itself)" predicate using `locations.path` (a
+   * materialized root-to-self id chain, e.g. "1#23#2345") instead of
+   * comparing province_id/regency_id/sub_district_id columns individually.
+   *
+   * Since `path` always ends with the node's own id, appending '#' to both
+   * sides and comparing with LIKE '<scope>#%' captures self-or-descendant in
+   * a single predicate: a location IS the scope location when its path is
+   * exactly the scope's path, and it's a descendant when its path extends
+   * the scope's path with further '#'-separated segments.
+   */
+  #underLocationPath(
+    query: any,
+    locationIdColumn: string,
+    scopeLocationId: number | string
+  ) {
+    return query.where(
+      sql`CONCAT((SELECT path FROM locations WHERE id = ${sql.ref(locationIdColumn)}), '#')`,
+      "like",
+      sql`CONCAT((SELECT path FROM locations WHERE id = ${scopeLocationId}), '#%')`
+    )
+  }
+
+  // Derives an entity's province/regency/sub_district ancestor ids/names
+  // from its single `location_id` + `locations.path` (a materialized
+  // root-to-self id chain), instead of joining on 4 separate flat FK
+  // columns. Mirrors EntityRepository#joinLocationHierarchy; `prefix` lets
+  // this be called once per "side" (e.g. "vendor"/"customer") of a query
+  // that needs both entities' hierarchies at once.
+  #joinLocationHierarchy(qb: any, entityAlias: string, prefix: string) {
+    return qb
+      .leftJoin(
+        `locations as ${prefix}_loc`,
+        `${prefix}_loc.id`,
+        `${entityAlias}.location_id`
+      )
+      .leftJoin(`locations as ${prefix}_p`, (join) =>
+        join.on(
+          sql`${sql.ref(`${prefix}_p.id`)} = SUBSTRING_INDEX(${sql.ref(`${prefix}_loc.path`)}, '#', 1)`
+        )
+      )
+      .leftJoin(`locations as ${prefix}_r`, (join) =>
+        join.on(
+          sql`${sql.ref(`${prefix}_r.id`)} = CASE WHEN ${sql.ref(`${prefix}_loc.level`)} >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(${sql.ref(`${prefix}_loc.path`)}, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin(`locations as ${prefix}_sd`, (join) =>
+        join.on(
+          sql`${sql.ref(`${prefix}_sd.id`)} = CASE WHEN ${sql.ref(`${prefix}_loc.level`)} >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(${sql.ref(`${prefix}_loc.path`)}, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
+  }
+
   #filterLocationOrder(
     query: any,
     params: GetOrderQueries,
@@ -183,146 +228,96 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
     stream: boolean,
     entityId?: number
   ) {
-    const {
-      province_id,
-      regency_id,
-      vendor_id,
-      customer_id,
-      is_from_ticketing,
-      entity_tag_id,
-    } = params
+    const { location_id, vendor_id, customer_id, is_from_ticketing } = params
 
-    if (roleId === USER_ROLE.SUPERADMIN || roleId === USER_ROLE.ADMIN) {
-      if (province_id) {
-        query = stream
-          ? query.where(`wse_${flex}.province_id`, "=", province_id)
-          : query.where(`${flex}_province_id`, "=", province_id)
-      }
-      if (regency_id) {
-        query = stream
-          ? query.where(`wse_${flex}.regency_id`, "=", regency_id)
-          : query.where(`${flex}_regency_id`, "=", regency_id)
-      }
+    const targetLocationCol = stream
+      ? `wse_${flex}.location_id`
+      : `${flex}_location_id`
+    const targetIdCol = stream ? `wse_${flex}.id` : `${flex}_id`
+    const otherSide = flex === "vendor" ? "customer" : "vendor"
+    const otherIdCol = stream ? `wse_${otherSide}.id` : `${otherSide}_id`
+
+    const applyDirectIdFilters = () => {
       if (flex === "vendor" && vendor_id) {
-        query = stream
-          ? query.where(`wse_${flex}.id`, "=", vendor_id)
-          : query.where(`${flex}_id`, "=", vendor_id)
+        query = query.where(targetIdCol, "=", vendor_id)
       }
       if (flex === "customer" && customer_id) {
-        query = stream
-          ? query.where(`wse_${flex}.id`, "=", customer_id)
-          : query.where(`${flex}_id`, "=", customer_id)
+        query = query.where(targetIdCol, "=", customer_id)
       }
+    }
 
+    if (roleId === USER_ROLE.SUPERADMIN || roleId === USER_ROLE.ADMIN) {
+      if (location_id) {
+        query = this.#underLocationPath(query, targetLocationCol, location_id)
+      }
+      applyDirectIdFilters()
       return query
     }
 
     switch (roleId) {
-      case USER_ROLE.MANAGER:
-        // Handle for web
+      case USER_ROLE.MANAGER: {
+        // Handle for web (or ticketing): scope to the manager's own
+        // administrative subtree, expressed as a single subtree predicate
+        // instead of separate province/regency/sub_district equality checks.
         if (
           deviceType === DEVICE_TYPE.web ||
           is_from_ticketing === IS_FROM_TICKETING.TRUE
         ) {
-          query = stream
-            ? query.where(
-                `wse_${flex}.province_id`,
-                "=",
-                Number(userEntity.province_id)
-              )
-            : query.where(
-                `${flex}_province_id`,
-                "=",
-                Number(userEntity.province_id)
-              )
-
-          // Manager Level Regency
           if (userEntity.entity_tag_id === 7) {
-            if (Number(userEntity.regency_id)) {
-              query = stream
-                ? query.where(
-                    `wse_${flex}.regency_id`,
-                    "=",
-                    Number(userEntity.regency_id)
-                  )
-                : query.where(
-                    `${flex}_regency_id`,
-                    "=",
-                    Number(userEntity.regency_id)
-                  )
+            // Regency-level manager: scope to their own (regency-level)
+            // location if assigned, otherwise fall back to their own entity
+            // only (mirrors the old "no regency_id -> filter by entityId").
+            if (userEntity.location_id) {
+              query = this.#underLocationPath(
+                query,
+                targetLocationCol,
+                Number(userEntity.location_id)
+              )
             } else {
-              query = stream
-                ? query.where(`wse_${flex}.id`, "=", Number(entityId))
-                : query.where(`${flex}_id`, "=", Number(entityId))
+              query = query.where(targetIdCol, "=", Number(entityId))
             }
           } else {
-            // Manager Level Province
-            console.log(userEntity.entity_tag_id)
-            if (regency_id && userEntity.entity_tag_id === 5) {
-              query = stream
-                ? query.where(`wse_${flex}.regency_id`, "=", regency_id)
-                : query.where(`${flex}_regency_id`, "=", regency_id)
+            // Other manager tags (e.g. province-level): always scoped to
+            // their own assigned location's subtree first -- this is a
+            // mandatory bound, not something a request param can widen.
+            if (userEntity.location_id) {
+              query = this.#underLocationPath(
+                query,
+                targetLocationCol,
+                Number(userEntity.location_id)
+              )
             }
-
-            const subDistrictId = Number(userEntity.sub_district_id)
-            if (subDistrictId) {
-              query = stream
-                ? query.where(`wse_${flex}.sub_district_id`, "=", subDistrictId)
-                : query.where(`${flex}_sub_district_id`, "=", subDistrictId)
+            // entity_tag_id 5 may additionally narrow (never replace) that
+            // scope to a specific location_id drill-down param, mirroring
+            // the old regency_id override that only applied to that tag.
+            if (location_id && userEntity.entity_tag_id === 5) {
+              query = this.#underLocationPath(
+                query,
+                targetLocationCol,
+                location_id
+              )
             }
           }
 
-          if (flex === "vendor" && vendor_id) {
-            query = stream
-              ? query.where(`wse_${flex}.id`, "=", vendor_id)
-              : query.where(`${flex}_id`, "=", vendor_id)
-          }
-          if (flex === "customer" && customer_id) {
-            query = stream
-              ? query.where(`wse_${flex}.id`, "=", customer_id)
-              : query.where(`${flex}_id`, "=", customer_id)
-          }
+          applyDirectIdFilters()
         }
 
         // Handle for mobile
         if (deviceType === DEVICE_TYPE.mobile && !is_from_ticketing) {
-          if (flex === "vendor") {
-            query = stream
-              ? query.where(`wse_${flex}.id`, "=", entityId)
-              : query.where(`${flex}_id`, "=", entityId)
-
-            if (vendor_id) {
-              query = stream
-                ? query.where(`wse_customer.id`, "=", vendor_id)
-                : query.where(`customer_id`, "=", vendor_id)
-            }
+          query = query.where(targetIdCol, "=", entityId)
+          if (flex === "vendor" && vendor_id) {
+            query = query.where(otherIdCol, "=", vendor_id)
           }
-          if (flex === "customer") {
-            query = stream
-              ? query.where(`wse_${flex}.id`, "=", entityId)
-              : query.where(`${flex}_id`, "=", entityId)
-            if (customer_id) {
-              query = stream
-                ? query.where(`wse_vendor.id`, "=", customer_id)
-                : query.where(`vendor_id`, "=", customer_id)
-            }
+          if (flex === "customer" && customer_id) {
+            query = query.where(otherIdCol, "=", customer_id)
           }
         }
         return query
+      }
       case USER_ROLE.OPERATOR:
-        query = stream
-          ? query.where(`wse_${flex}.id`, "=", entityId)
-          : query.where(`${flex}_id`, "=", entityId)
-        return query
       case USER_ROLE.MANUFACTURE:
-        query = stream
-          ? query.where(`wse_${flex}.id`, "=", entityId)
-          : query.where(`${flex}_id`, "=", entityId)
-        return query
       default:
-        query = stream
-          ? query.where(`wse_${flex}.id`, "=", entityId)
-          : query.where(`${flex}_id`, "=", entityId)
+        query = query.where(targetIdCol, "=", entityId)
         return query
     }
   }
@@ -429,9 +424,7 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
       to_date,
       purpose,
       service_type,
-      entity_province_id,
-      entity_city_id,
-      entity_puskesmas_id,
+      location_id,
       status,
       status_ids,
       type,
@@ -473,14 +466,7 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
     }
 
     if (purpose === "purchase" || purpose === "sales") {
-      let entityIdLocation: number | undefined = undefined
-      if (entity_puskesmas_id) {
-        entityIdLocation = entity_puskesmas_id
-      } else if (entity_city_id) {
-        entityIdLocation = entity_city_id
-      } else if (entity_province_id) {
-        entityIdLocation = entity_province_id
-      }
+      const entityIdLocation = location_id
 
       if (purpose === "purchase") {
         query = this.#filterLocationOrderV2(
@@ -533,96 +519,82 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
     deviceType: number,
     entityId?: number
   ) {
-    const {
-      province_id,
-      regency_id,
-      vendor_id,
-      customer_id,
-      is_from_ticketing,
-      entity_tag_id,
-    } = params
+    const { location_id, vendor_id, customer_id, is_from_ticketing } = params
 
-    if (roleId === USER_ROLE.SUPERADMIN || roleId === USER_ROLE.ADMIN) {
-      if (province_id) {
-        query = query.where(`wse_${flex}.province_id`, "=", province_id)
-      }
-      if (regency_id) {
-        query = query.where(`wse_${flex}.regency_id`, "=", regency_id)
-      }
+    const targetLocationCol = `wse_${flex}.location_id`
+    const targetIdCol = `wse_${flex}.id`
+    const otherSide = flex === "vendor" ? "customer" : "vendor"
+    const otherIdCol = `wse_${otherSide}.id`
+
+    const applyDirectIdFilters = () => {
       if (flex === "vendor" && vendor_id) {
-        query = query.where(`wse_${flex}.id`, "=", vendor_id)
+        query = query.where(targetIdCol, "=", vendor_id)
       }
       if (flex === "customer" && customer_id) {
-        query = query.where(`wse_${flex}.id`, "=", customer_id)
+        query = query.where(targetIdCol, "=", customer_id)
       }
+    }
 
+    if (roleId === USER_ROLE.SUPERADMIN || roleId === USER_ROLE.ADMIN) {
+      if (location_id) {
+        query = this.#underLocationPath(query, targetLocationCol, location_id)
+      }
+      applyDirectIdFilters()
       return query
     }
 
     switch (roleId) {
-      case USER_ROLE.MANAGER:
-        // Handle for web
+      case USER_ROLE.MANAGER: {
+        // See #filterLocationOrder for the rationale -- identical scoping
+        // rules, just applied against the wse_<flex> alias unconditionally
+        // (this V2 path always joins ws_entities under that alias).
         if (
           deviceType === DEVICE_TYPE.web ||
           is_from_ticketing === IS_FROM_TICKETING.TRUE
         ) {
-          query = query.where(
-            `wse_${flex}.province_id`,
-            "=",
-            Number(userEntity.province_id)
-          )
-
-          // Manager Level Regency
           if (userEntity.entity_tag_id === 7) {
-            if (Number(userEntity.regency_id)) {
-              query = query.where(
-                `wse_${flex}.regency_id`,
-                "=",
-                Number(userEntity.regency_id)
+            if (userEntity.location_id) {
+              query = this.#underLocationPath(
+                query,
+                targetLocationCol,
+                Number(userEntity.location_id)
               )
             } else {
-              query = query.where(`wse_${flex}.id`, "=", Number(entityId))
+              query = query.where(targetIdCol, "=", Number(entityId))
             }
           } else {
-            // Manager Level Province
-            if (regency_id && userEntity.entity_tag_id === 5) {
-              query = query.where(`wse_${flex}.regency_id`, "=", regency_id)
+            const scopeLocationId =
+              location_id && userEntity.entity_tag_id === 5
+                ? location_id
+                : Number(userEntity.location_id)
+            if (scopeLocationId) {
+              query = this.#underLocationPath(
+                query,
+                targetLocationCol,
+                scopeLocationId
+              )
             }
           }
 
-          if (flex === "vendor" && vendor_id) {
-            query = query.where(`wse_${flex}.id`, "=", vendor_id)
-          }
-          if (flex === "customer" && customer_id) {
-            query = query.where(`wse_${flex}.id`, "=", customer_id)
-          }
+          applyDirectIdFilters()
         }
 
         // Handle for mobile
         if (deviceType === DEVICE_TYPE.mobile && !is_from_ticketing) {
-          if (flex === "vendor") {
-            query = query.where(`wse_${flex}.id`, "=", entityId)
-
-            if (vendor_id) {
-              query = query.where(`wse_customer.id`, "=", vendor_id)
-            }
+          query = query.where(targetIdCol, "=", entityId)
+          if (flex === "vendor" && vendor_id) {
+            query = query.where(otherIdCol, "=", vendor_id)
           }
-          if (flex === "customer") {
-            query = query.where(`wse_${flex}.id`, "=", entityId)
-            if (customer_id) {
-              query = query.where(`wse_vendor.id`, "=", customer_id)
-            }
+          if (flex === "customer" && customer_id) {
+            query = query.where(otherIdCol, "=", customer_id)
           }
         }
         return query
+      }
       case USER_ROLE.OPERATOR:
-        query = query.where(`wse_${flex}.id`, "=", entityId)
-        return query
       case USER_ROLE.MANUFACTURE:
-        query = query.where(`wse_${flex}.id`, "=", entityId)
-        return query
       default:
-        query = query.where(`wse_${flex}.id`, "=", entityId)
+        query = query.where(targetIdCol, "=", entityId)
         return query
     }
   }
@@ -1656,18 +1628,8 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
           .onRef("wdt.id", "=", "wso.delivery_type_id")
           .on("wdt.deleted_at", "is", null)
       )
-      .leftJoin("locations as province_customer", (join) =>
-        join.onRef("province_customer.id", "=", "wse_customer.province_id")
-      )
-      .leftJoin("locations as regency_customer", (join) =>
-        join.onRef("regency_customer.id", "=", "wse_customer.regency_id")
-      )
-      .leftJoin("locations as province_vendor", (join) =>
-        join.onRef("province_vendor.id", "=", "wse_vendor.province_id")
-      )
-      .leftJoin("locations as regency_vendor", (join) =>
-        join.onRef("regency_vendor.id", "=", "wse_vendor.regency_id")
-      )
+      .$call((qb) => this.#joinLocationHierarchy(qb, "wse_customer", "customer"))
+      .$call((qb) => this.#joinLocationHierarchy(qb, "wse_vendor", "vendor"))
       .leftJoin("ws_users as wsu_created", (join) =>
         join
           .onRef("wsu_created.id", "=", "wso.created_by")
@@ -1776,10 +1738,10 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
         "wsoa.confirmed_at",
         "wsoa.allocated_at",
         "wsoa.shipped_at",
-        "wse_vendor.province_id as vendor_province_id",
-        "wse_vendor.regency_id as vendor_regency_id",
-        "wse_customer.province_id as customer_province_id",
-        "wse_customer.regency_id as customer_regency_id",
+        "vendor_p.id as vendor_province_id",
+        "vendor_r.id as vendor_regency_id",
+        "customer_p.id as customer_province_id",
+        "customer_r.id as customer_regency_id",
         "wsa.name as activity_name",
         "wdt.name as delivery_type_name",
         "wso.order_status_id as status_id",
@@ -2040,12 +2002,8 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
           .on("wse.program_id", "=", programId)
           .on("wse.deleted_at", "is", null)
       )
-      .select([
-        "wse.province_id",
-        "wse.regency_id",
-        "wse.sub_district_id",
-        "wse.village_id",
-      ])
+      .leftJoin("locations as loc", "loc.id", "wse.location_id")
+      .select(["wse.location_id", "loc.level"])
       .where("wso.id", "=", id)
       .where("wso.deleted_at", "is", null)
       .executeTakeFirst()
@@ -2057,46 +2015,28 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
     programId: number
   ) {
     return await c.var.trx
-      .selectFrom("ws_entities")
-      .select(["province_id", "regency_id", "sub_district_id", "village_id"])
-      .where("id", "=", id)
-      .where("program_id", "=", programId)
-      .where("deleted_at", "is", null)
+      .selectFrom("ws_entities as wse")
+      .leftJoin("locations as loc", "loc.id", "wse.location_id")
+      .select(["wse.location_id", "loc.level"])
+      .where("wse.id", "=", id)
+      .where("wse.program_id", "=", programId)
+      .where("wse.deleted_at", "is", null)
       .executeTakeFirst()
   }
 
+  // Replaces the old triple-nested parent_id subquery (self + children +
+  // grandchildren + great-grandchildren) with a single `locations.path`
+  // prefix predicate: any location whose path is the scope location's path,
+  // or extends it, is in that location's subtree. Mirrors the predicate
+  // shape used in #underLocationPath for order list filtering.
   async getLocationsAuthorityByEntityLocationId(c: Context<DB>, id: number) {
     return await c.var.trx
       .selectFrom("locations")
       .select(["id"])
-      .where((qb) =>
-        qb.or([
-          qb("id", "=", id),
-          qb("parent_id", "=", id),
-          qb(
-            "parent_id",
-            "in",
-            c.var.trx
-              .selectFrom("locations")
-              .select("id")
-              .where("parent_id", "=", id)
-          ),
-          qb(
-            "parent_id",
-            "in",
-            c.var.trx
-              .selectFrom("locations")
-              .select("id")
-              .where(
-                "parent_id",
-                "in",
-                c.var.trx
-                  .selectFrom("locations")
-                  .select("id")
-                  .where("parent_id", "=", id)
-              )
-          ),
-        ])
+      .where(
+        sql`CONCAT(path, '#')`,
+        "like",
+        sql`CONCAT((SELECT path FROM locations WHERE id = ${id}), '#%')`
       )
       .execute()
   }
@@ -2128,25 +2068,8 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
           .on("wsu_created.program_id", "=", programId)
           .on("wsu_created.deleted_by", "is", null)
       )
-      .leftJoin("locations as vendor_province", (join) =>
-        join.onRef("vendor_province.id", "=", "wse_vendor.province_id")
-      )
-      .leftJoin("locations as vendor_regency", (join) =>
-        join.onRef("vendor_regency.id", "=", "wse_vendor.regency_id")
-      )
-      .leftJoin("locations as customer_province", (join) =>
-        join.onRef("customer_province.id", "=", "wse_customer.province_id")
-      )
-      .leftJoin("locations as customer_regency", (join) =>
-        join.onRef("customer_regency.id", "=", "wse_customer.regency_id")
-      )
-      .leftJoin("locations as customer_sub_district", (join) =>
-        join.onRef(
-          "customer_sub_district.id",
-          "=",
-          "wse_customer.sub_district_id"
-        )
-      )
+      .$call((qb) => this.#joinLocationHierarchy(qb, "wse_vendor", "vendor"))
+      .$call((qb) => this.#joinLocationHierarchy(qb, "wse_customer", "customer"))
       .select([
         "wso.vendor_id",
         "wso.customer_id",
@@ -2161,11 +2084,11 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
         "wsa.name as activity_name",
         "wse_vendor.name as vendor_name",
         "wse_customer.name as customer_name",
-        "vendor_province.name as vendor_province_name",
-        "vendor_regency.name as vendor_regency_name",
-        "customer_province.name as customer_province_name",
-        "customer_regency.name as customer_regency_name",
-        "customer_sub_district.name as sub_district_name",
+        "vendor_p.name as vendor_province_name",
+        "vendor_r.name as vendor_regency_name",
+        "customer_p.name as customer_province_name",
+        "customer_r.name as customer_regency_name",
+        "customer_sd.name as sub_district_name",
       ])
       .where("wso.id", "=", id)
       .where("wso.deleted_at", "is", null)
@@ -2341,12 +2264,8 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
           .on("wse.program_id", "=", programId)
           .on("wse.deleted_at", "is", null)
       )
-      .select([
-        "wse.province_id",
-        "wse.regency_id",
-        "wse.sub_district_id",
-        "wse.village_id",
-      ])
+      .leftJoin("locations as loc", "loc.id", "wse.location_id")
+      .select(["wse.location_id", "loc.level"])
       .where("wso.id", "=", id)
       .where("wso.deleted_at", "is", null)
       .executeTakeFirst()
@@ -2882,18 +2801,9 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
           .onRef("wdt.id", "=", "wso.delivery_type_id")
           .on("wdt.deleted_at", "is", null)
       )
-      .leftJoin("locations as province_customer", (join) =>
-        join.onRef("province_customer.id", "=", "wse_customer.province_id")
-      )
-      .leftJoin("locations as regency_customer", (join) =>
-        join.onRef("regency_customer.id", "=", "wse_customer.regency_id")
-      )
-      .leftJoin("locations as province_vendor", (join) =>
-        join.onRef("province_vendor.id", "=", "wse_vendor.province_id")
-      )
-      .leftJoin("locations as regency_vendor", (join) =>
-        join.onRef("regency_vendor.id", "=", "wse_vendor.regency_id")
-      )
+      // NOTE: this query never selects vendor/customer province/regency
+      // names, so (unlike getListOrderForExport) no location join is needed
+      // here at all -- the old per-level location joins were dead code.
       .where("wso.deleted_at", "is", null)
       .where("wso.activity_id", "is not", null)
       .where("wso.activity_id", "in", c.var.activityIds ?? [-1])

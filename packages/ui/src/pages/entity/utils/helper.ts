@@ -9,24 +9,20 @@ import { formSchema } from '../schema/EntitySchemaForm'
 import { IS_CONSUMPTION } from '../utils/constants'
 
 type FormData = yup.InferType<typeof formSchema>
-type TLocationsValue = { value: number; label: string } | undefined
 
-const extractLocations = (locations: TDetailEntity['locations']) => {
-  const result = {
-    province: undefined as TLocationsValue,
-    regency: undefined as TLocationsValue,
-    sub_district: undefined as TLocationsValue,
-    village: undefined as TLocationsValue,
-  }
+// ASSUMPTION: `values.locations` (from the detail API) still carries an
+// array of ancestor location rows with a `level` field, and the deepest
+// (highest-level) entry is the entity's actual `location_id`. Once the
+// backend migration lands and the detail endpoint returns `location_id`
+// directly, this can likely be simplified to `values.location_id`.
+const extractLocationId = (
+  locations: TDetailEntity['locations']
+): number | undefined => {
+  if (!locations || locations.length === 0) return undefined
 
-  locations.forEach((x) => {
-    if (x.level === 0) result.province = { label: x.name, value: x.id }
-    if (x.level === 1) result.regency = { label: x.name, value: x.id }
-    if (x.level === 2) result.sub_district = { label: x.name, value: x.id }
-    if (x.level === 3) result.village = { label: x.name, value: x.id }
-  })
+  const deepest = locations.toSorted((a, b) => b.level - a.level)[0]
 
-  return result
+  return deepest?.id
 }
 
 export const reformatFromDetail = (
@@ -56,12 +52,8 @@ export const reformatFromDetail = (
     lng: values.lng,
     name: values.name,
     postal_code: values.postal_code,
-    province_id: values.province_id || undefined,
-    regency_id: values.regency_id || undefined,
     rutin_join_date: values.rutin_join_date,
-    sub_district_id: values.sub_district_id || undefined,
     type: typeof values.type === 'number' ? values.type : 0,
-    village_id: values.village_id ?? undefined,
     id: String(values.id),
     program_ids: values.programs.map((x) => x.id),
     id_satu_sehat: String(values.id_satu_sehat ?? null),
@@ -72,7 +64,7 @@ export const reformatFromDetail = (
     sentinel_lab_end_date: values.sentinel_lab_end_date
       ? values.sentinel_lab_end_date.slice(0, 10)
       : null,
-    ...extractLocations(values.locations),
+    location_id: extractLocationId(values.locations),
   }
 }
 

@@ -544,7 +544,11 @@ export const TransactionListPaginatedRequestSchema =
         .optional()
     ),
 
-    province_id: z.preprocess(
+    // Replaces the old separate province_id/regency_id params: a single
+    // location_id filters transactions by any level of the location
+    // hierarchy (province down to village) via a path-prefix match against
+    // `locations.path` (see transaction.repository.ts).
+    location_id: z.preprocess(
       (value) => {
         if (typeof value === "string" && value.trim() !== "") {
           const parsed = parseInt(value, 10)
@@ -554,23 +558,8 @@ export const TransactionListPaginatedRequestSchema =
       },
       z
         .number()
-        .int({ message: "Province ID must be an integer." })
-        .nonnegative({ message: "Province ID must be a positive number." })
-        .optional()
-    ),
-
-    regency_id: z.preprocess(
-      (value) => {
-        if (typeof value === "string" && value.trim() !== "") {
-          const parsed = parseInt(value, 10)
-          return isNaN(parsed) ? undefined : parsed
-        }
-        return typeof value === "number" ? value : undefined
-      },
-      z
-        .number()
-        .int({ message: "Regency ID must be an integer." })
-        .nonnegative({ message: "Regency ID must be a positive number." })
+        .int({ message: "Location ID must be an integer." })
+        .nonnegative({ message: "Location ID must be a positive number." })
         .optional()
     ),
 
@@ -813,7 +802,11 @@ export const TransactionListCursorPaginatedRequestSchema =
         .optional()
     ),
 
-    province_id: z.preprocess(
+    // Replaces the old separate province_id/regency_id params: a single
+    // location_id filters transactions by any level of the location
+    // hierarchy (province down to village) via a path-prefix match against
+    // `locations.path` (see transaction.repository.ts).
+    location_id: z.preprocess(
       (value) => {
         if (typeof value === "string" && value.trim() !== "") {
           const parsed = parseInt(value, 10)
@@ -823,23 +816,8 @@ export const TransactionListCursorPaginatedRequestSchema =
       },
       z
         .number()
-        .int({ message: "Province ID must be an integer." })
-        .nonnegative({ message: "Province ID must be a positive number." })
-        .optional()
-    ),
-
-    regency_id: z.preprocess(
-      (value) => {
-        if (typeof value === "string" && value.trim() !== "") {
-          const parsed = parseInt(value, 10)
-          return isNaN(parsed) ? undefined : parsed
-        }
-        return typeof value === "number" ? value : undefined
-      },
-      z
-        .number()
-        .int({ message: "Regency ID must be an integer." })
-        .nonnegative({ message: "Regency ID must be a positive number." })
+        .int({ message: "Location ID must be an integer." })
+        .nonnegative({ message: "Location ID must be a positive number." })
         .optional()
     ),
 

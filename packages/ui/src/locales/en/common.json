@@ -41,6 +41,7 @@
   "view_detail": "View Detail",
   "finish": "Finish",
   "form": {
+    "location_levels": ["province", "city", "subdistrict", "village"],
     "province": {
       "label": "Province",
       "placeholder": "Select province"

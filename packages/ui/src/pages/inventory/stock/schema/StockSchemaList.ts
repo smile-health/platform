@@ -6,7 +6,6 @@ import { ProgramEnum } from '#constants/program'
 import { loadActivityOptions } from '#services/activity'
 import { loadBatch } from '#services/batch'
 import { loadEntities, loadEntityTags } from '#services/entity'
-import { loadProvinces, loadRegencies } from '#services/location'
 import { loadMaterialType } from '#services/material'
 import { getProgramStorage } from '#utils/storage/program'
 import { TFunction } from 'i18next'
@@ -155,41 +154,19 @@ export const createFilterSchema = ({
       hidden: !isManager,
     },
     {
-      id: 'select-province',
-      type: 'select-async-paginate',
-      name: 'province_id',
-      label: t('stock:filter.label.province'),
-      placeholder: t('stock:filter.placeholder.province'),
-      disabled: () => entityType >= ENTITY_TYPE.PROVINSI && isManager,
-      loadOptions: loadProvinces,
-      clearOnChangeFields: ['regency_id', 'entity_id'],
-      additional: { page: 1 },
-      defaultValue: initialFilter.province,
-    },
-    {
-      id: 'select-regency',
-      type: 'select-async-paginate',
-      name: 'regency_id',
+      id: 'select-location',
+      type: 'locationCascade',
+      name: 'location_id',
+      // maxLevel: 1 preserves the original depth of this filter
+      // (province + regency only — it never went down to sub_district/village).
+      maxLevel: 1,
       label: t('stock:filter.label.city'),
-      placeholder: t('stock:filter.placeholder.city'),
-      loadOptions: loadRegencies,
-      disabled: ({ getReactSelectValue }) =>
-        !getReactSelectValue('province_id') ||
+      disabled: () =>
+        (entityType >= ENTITY_TYPE.PROVINSI && isManager) ||
         (entityType >= ENTITY_TYPE.KOTA && isManager),
       clearOnChangeFields: ['entity_id'],
-      additional: ({
-        getReactSelectValue,
-      }: {
-        getReactSelectValue: (
-          fieldName: string
-        ) => OptionType | OptionType[] | null
-      }) => ({
-        page: 1,
-        ...(getReactSelectValue('province_id') && {
-          parent_id: getReactSelectValue('province_id'),
-        }),
-      }),
-      defaultValue: initialFilter.regency,
+      defaultValue:
+        initialFilter.regency?.value ?? initialFilter.province?.value ?? null,
     },
     {
       id: 'select-health-center',
@@ -200,22 +177,13 @@ export const createFilterSchema = ({
       className: '',
       defaultValue: null,
       loadOptions: loadEntities,
-      additional: ({
-        getReactSelectValue,
-      }: {
-        getReactSelectValue: (
-          fieldName: string
-        ) => OptionType | OptionType[] | null
-      }) => ({
+      // ASSUMPTION: entity list endpoint now accepts a single `location_id`
+      // instead of separate `province_ids`/`regency_ids` params.
+      additional: ({ getValue }: { getValue: any }) => ({
         page: 1,
         type_ids: ENTITY_TYPE.FASKES,
         is_vendor: 1,
-        ...(getReactSelectValue('province_id') && {
-          province_ids: getReactSelectValue('province_id'),
-        }),
-        ...(getReactSelectValue('regency_id') && {
-          regency_ids: getReactSelectValue('regency_id'),
-        }),
+        location_id: getValue('location_id') ?? null,
       }),
       clearOnChangeFields: ['primary_vendor_id', 'entity_user_id'],
     },

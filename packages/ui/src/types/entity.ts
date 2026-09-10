@@ -158,10 +158,7 @@ export type TEntityForm = {
   is_vendor?: number
   is_puskesmas?: number
   is_ayosehat?: number
-  province_id?: string | null
-  regency_id?: string | null
-  sub_district_id?: string | null
-  village_id?: string | null
+  location_id?: number | null
   postal_code: string | null
   address: string
   lat: string | null

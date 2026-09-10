@@ -25,8 +25,19 @@ export async function seed(db: Kysely<Database>): Promise<void> {
           "wt.companion_activity_id",
           "wa_companion.id"
         )
-        .leftJoin("locations as l_province", "we.province_id", "l_province.id")
-        .leftJoin("locations as l_regency", "we.regency_id", "l_regency.id")
+        // Mirrors apps/core's EntityRepository#joinLocationHierarchy /
+        // apps/main's EntityRepository#joinLocationHierarchy: we.location_id
+        // points at `locations`, whose materialized `path` ("root#..#self")
+        // lets us derive province/regency ids+names for any location depth.
+        .leftJoin("locations as loc", "we.location_id", "loc.id")
+        .leftJoin("locations as l_province", (join) =>
+          join.on(sql`l_province.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+        )
+        .leftJoin("locations as l_regency", (join) =>
+          join.on(
+            sql`l_regency.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+          )
+        )
         .leftJoin("ws_stocks as ws", "wt.stock_id", "ws.id")
         .leftJoin("ws_materials as wm", "ws.material_id", "wm.id")
         .leftJoin("ws_materials as wmp", "wm.parent_id", "wmp.id")
@@ -73,6 +84,7 @@ export async function seed(db: Kysely<Database>): Promise<void> {
           "wt.entity_id as entity_id", // Changed from we.id
           "we.name as entity_name",
           "we.entity_tag_id as entity_tag_id",
+          "we.location_id as location_id",
           "l_province.id as province_id",
           "l_province.name as province_name",
           "l_regency.id as regency_id",

@@ -7,6 +7,7 @@ CREATE TABLE ws_transaction_lists on cluster '{cluster}'
     `entity_id` Nullable(Int64),
     `entity_name` Nullable(String),
     `entity_tag_id` Nullable(Int64),
+    `location_id` Nullable(Int64),
     `province_id` Nullable(Int64),
     `province_name` Nullable(String),
     `regency_id` Nullable(Int64),

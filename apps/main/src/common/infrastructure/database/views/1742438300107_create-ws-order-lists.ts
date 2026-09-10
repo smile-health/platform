@@ -54,17 +54,50 @@ export async function seed(db: Kysely<Database>): Promise<void> {
             .onRef("wsu_updated.id", "=", "wso.updated_by")
             .on("wsu_updated.deleted_by", "is", null)
         )
-        .leftJoin("locations as province_customer", (join) =>
-          join.onRef("province_customer.id", "=", "wse_customer.province_id")
-        )
-        .leftJoin("locations as regency_customer", (join) =>
-          join.onRef("regency_customer.id", "=", "wse_customer.regency_id")
+        // ws_entities has a single location_id (+ locations.path) instead of
+        // separate province/regency/sub_district/village id columns, so the
+        // ancestor ids/names below are derived via SUBSTRING_INDEX(path, ...)
+        // rather than joining on those flat columns directly. Mirrors
+        // EntityRepository#joinLocationHierarchy.
+        .leftJoin(
+          "locations as vendor_loc",
+          "vendor_loc.id",
+          "wse_vendor.location_id"
         )
         .leftJoin("locations as province_vendor", (join) =>
-          join.onRef("province_vendor.id", "=", "wse_vendor.province_id")
+          join.on(
+            sql`province_vendor.id = SUBSTRING_INDEX(vendor_loc.path, '#', 1)`
+          )
         )
         .leftJoin("locations as regency_vendor", (join) =>
-          join.onRef("regency_vendor.id", "=", "wse_vendor.regency_id")
+          join.on(
+            sql`regency_vendor.id = CASE WHEN vendor_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(vendor_loc.path, '#', 2), '#', -1) ELSE NULL END`
+          )
+        )
+        .leftJoin(
+          "locations as customer_loc",
+          "customer_loc.id",
+          "wse_customer.location_id"
+        )
+        .leftJoin("locations as province_customer", (join) =>
+          join.on(
+            sql`province_customer.id = SUBSTRING_INDEX(customer_loc.path, '#', 1)`
+          )
+        )
+        .leftJoin("locations as regency_customer", (join) =>
+          join.on(
+            sql`regency_customer.id = CASE WHEN customer_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(customer_loc.path, '#', 2), '#', -1) ELSE NULL END`
+          )
+        )
+        .leftJoin("locations as sub_district_vendor", (join) =>
+          join.on(
+            sql`sub_district_vendor.id = CASE WHEN vendor_loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(vendor_loc.path, '#', 3), '#', -1) ELSE NULL END`
+          )
+        )
+        .leftJoin("locations as sub_district_customer", (join) =>
+          join.on(
+            sql`sub_district_customer.id = CASE WHEN customer_loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(customer_loc.path, '#', 3), '#', -1) ELSE NULL END`
+          )
         )
         .select([
           "wso.id as order_id",
@@ -88,12 +121,14 @@ export async function seed(db: Kysely<Database>): Promise<void> {
           "wse_vendor.id as vendor_id",
           "wse_vendor.name as vendor_name",
           "wse_vendor.entity_tag_id as vendor_entity_tag_id",
-          "wse_vendor.province_id as vendor_province_id",
-          "wse_vendor.regency_id as vendor_regency_id",
-          "wse_vendor.sub_district_id as vendor_sub_district_id",
-          "wse_customer.province_id as customer_province_id",
-          "wse_customer.regency_id as customer_regency_id",
-          "wse_customer.sub_district_id as customer_sub_district_id",
+          "wse_vendor.location_id as vendor_location_id",
+          "province_vendor.id as vendor_province_id",
+          "regency_vendor.id as vendor_regency_id",
+          "sub_district_vendor.id as vendor_sub_district_id",
+          "wse_customer.location_id as customer_location_id",
+          "province_customer.id as customer_province_id",
+          "regency_customer.id as customer_regency_id",
+          "sub_district_customer.id as customer_sub_district_id",
           "province_vendor.name as vendor_province_name",
           "regency_vendor.name as vendor_regency_name",
           "wse_customer.id as customer_id",

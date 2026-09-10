@@ -41,6 +41,7 @@
   "view_detail": "Lihat Detail",
   "finish": "Selesai",
   "form": {
+    "location_levels": ["province", "city", "subdistrict", "village"],
     "province": {
       "label": "Provinsi",
       "placeholder": "Pilih provinsi"

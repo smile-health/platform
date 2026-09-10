@@ -9,7 +9,6 @@ import {
   loadEntityCustomerOptions,
   loadEntityTags,
 } from '#services/entity'
-import { loadProvinces, loadRegencies } from '#services/location'
 import {
   getMaterialLevels,
   loadMaterial,
@@ -229,41 +228,19 @@ export const transactionFilterSchema = ({
       defaultValue: null,
     },
     {
-      id: 'transaction__list__province_id',
-      type: 'select-async-paginate',
-      name: 'province_id',
-      isMulti: false,
-      label: t('common:form.province.label'),
-      placeholder: t('common:form.province.placeholder'),
-      loadOptions: loadProvinces,
-      disabled: !!defaultProvince,
-      clearOnChangeFields: [
-        'regency_id',
-        'entity_id',
-        'entity_for_consumption',
-      ],
-      additional: { page: 1 },
-      defaultValue: defaultProvince,
-    } as FilterFormSchema,
-    {
-      id: 'transaction__list__regency_id',
-      type: 'select-async-paginate',
-      name: 'regency_id',
-      isMulti: false,
+      id: 'transaction__list__location_id',
+      type: 'locationCascade',
+      name: 'location_id',
+      // maxLevel: 1 preserves the original depth of this filter
+      // (province + regency only — it never went down to sub_district/village).
+      maxLevel: 1,
       label: t('common:form.city.label'),
-      placeholder: t('common:form.city.placeholder'),
-      loadOptions: loadRegencies,
-      disabled: ({ getReactSelectValue }) =>
-        !getReactSelectValue('province_id') || !!defaultRegency,
+      disabled: !!defaultProvince || !!defaultRegency,
       clearOnChangeFields: ['entity_id', 'entity_for_consumption'],
-      additional: ({ getReactSelectValue }: { getReactSelectValue: any }) => ({
-        page: 1,
-        ...(getReactSelectValue('province_id') && {
-          parent_id: getReactSelectValue('province_id'),
-        }),
-      }),
-      defaultValue: defaultRegency,
-    },
+      // ASSUMPTION: defaultRegency (the deeper, more specific default) wins
+      // over defaultProvince when both are present.
+      defaultValue: defaultRegency?.value ?? defaultProvince?.value ?? null,
+    } as FilterFormSchema,
     {
       id: 'transaction__list__entity_id',
       type: 'select-async-paginate',
@@ -275,10 +252,11 @@ export const transactionFilterSchema = ({
       ),
       loadOptions: loadEntities,
       clearOnChangeFields: ['entity_for_consumption', 'entity_user_id'],
-      additional: ({ getReactSelectValue }: { getReactSelectValue: any }) => ({
+      // ASSUMPTION: entity list endpoint now accepts a single `location_id`
+      // instead of separate `province_ids`/`regency_ids` params.
+      additional: ({ getValue }: { getValue: any }) => ({
         page: 1,
-        province_ids: getReactSelectValue('province_id')?.toString() ?? null,
-        regency_ids: getReactSelectValue('regency_id')?.toString() ?? null,
+        location_id: getValue('location_id') ?? null,
         type_ids: ENTITY_TYPE.FASKES.toString(),
         is_vendor: BOOLEAN.TRUE,
       }),

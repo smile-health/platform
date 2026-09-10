@@ -23,6 +23,7 @@ import {
   ReactSelectAsyncHash,
   ReactSelectWithQuery,
 } from '#components/react-select'
+import { LocationPicker } from '#components/modules/LocationPicker'
 import { Switch } from '#components/switch'
 import { BOOLEAN } from '#constants/common'
 import cx from '#lib/cx'
@@ -151,6 +152,20 @@ type SelectAsyncSchema = {
   defaultValue: null | OptionType | Array<OptionType>
 }
 
+type LocationCascadeSchema = {
+  id?: string
+  type: 'locationCascade'
+  name: string
+  label?: string
+  maxLevel?: number
+  disabled?: Disabled
+  hidden?: Disabled
+  required?: boolean
+  className?: string
+  clearOnChangeFields?: Array<string>
+  defaultValue: null | number
+}
+
 type RadioSchema = {
   type: 'radio'
   name: string
@@ -262,6 +277,7 @@ export type FilterFormSchema =
   | SelectAsyncSchema
   | SwitchSchema
   | MonthYearPickerSchema
+  | LocationCascadeSchema
 
 export type UseFilter = FilterFormSchema[]
 
@@ -753,6 +769,35 @@ export function useFilter(schema: UseFilter) {
             setValue={setValue}
             language={language}
           />
+        )
+      case 'locationCascade':
+        return (
+          <FormControl key={field.name} className={field.className}>
+            {field.label && (
+              <FormLabel required={field?.required ?? false}>
+                {field.label}
+              </FormLabel>
+            )}
+            <LocationPicker
+              name={field.name}
+              maxLevel={field.maxLevel ?? 3}
+              disabled={
+                typeof field.disabled === 'function'
+                  ? field.disabled({
+                      getValue: watch,
+                      getReactSelectValue: (name: string) =>
+                        getReactSelectValue(watch(name)),
+                    })
+                  : field.disabled
+              }
+              onChange={() => {
+                clearField({
+                  setValue,
+                  name: field.clearOnChangeFields ?? [],
+                })
+              }}
+            />
+          </FormControl>
         )
       case 'date-range-picker':
         return (
