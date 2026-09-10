@@ -4,12 +4,16 @@ import cx from '#lib/cx'
 export function FormControl({
   children,
   className,
+  style,
 }: {
   readonly children?: React.ReactNode
   readonly className?: string
+  readonly style?: React.CSSProperties
 }) {
   return (
-    <div className={cx('ui-relative ui-space-y-2', className)}>{children}</div>
+    <div className={cx('ui-relative ui-space-y-2', className)} style={style}>
+      {children}
+    </div>
   )
 }
 

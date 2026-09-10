@@ -86,8 +86,7 @@ export const useStockListPage = (isHierarchical: boolean) => {
       material_type_id,
       material_id,
       entity_tag_id,
-      province_id,
-      regency_id,
+      location_id,
       entity_id,
       date_range,
       primary_vendor_id,
@@ -110,8 +109,7 @@ export const useStockListPage = (isHierarchical: boolean) => {
       ...(entity_tag_id && {
         entity_tag_id: getReactSelectValue(entity_tag_id),
       }),
-      ...(province_id && { province_id: getReactSelectValue(province_id) }),
-      ...(regency_id && { regency_id: getReactSelectValue(regency_id) }),
+      ...(location_id && { location_id }),
       ...(entity_id && { entity_id: getReactSelectValue(entity_id) }),
       ...(material_id && { material_id: getReactSelectValue(material_id) }),
       ...(primary_vendor_id && {

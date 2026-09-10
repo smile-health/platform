@@ -576,24 +576,21 @@ export class OrderMiddleware {
     }
   }
 
+  // `location` now carries a single `location_id` (+ its `level`, per
+  // locations.level: 0=province,1=regency,2=sub_district,3=village) instead
+  // of separate province_id/regency_id/sub_district_id columns -- the
+  // deepest assigned level is exactly what location_id already points at.
   readonly #getAuthorityId = (location) => {
-    let authorityId = null
-    let locations: "province" | "regency" | "sub_district" = "province" as const
-
-    if (location?.sub_district_id) {
-      authorityId = location.sub_district_id
-      locations = "sub_district" as const
-    } else if (location?.regency_id) {
-      authorityId = location.regency_id
-      locations = "regency" as const
-    } else if (location?.province_id) {
-      authorityId = location.province_id
-      locations = "province" as const
-    }
+    const LEVEL_TO_NAME = {
+      0: "province",
+      1: "regency",
+      2: "sub_district",
+    } as const
 
     return {
-      authorityId,
-      locations,
+      authorityId: location?.location_id ?? null,
+      locations: (LEVEL_TO_NAME[location?.level as 0 | 1 | 2] ??
+        "province") as "province" | "regency" | "sub_district",
     }
   }
 

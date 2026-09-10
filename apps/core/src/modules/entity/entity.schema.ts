@@ -27,7 +27,7 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
     .optional(),
-  province_ids: z
+  location_ids: z
     .string()
     .refine(
       (val) =>
@@ -36,49 +36,7 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_PROVINCE_ID_PARAM",
-      }
-    )
-    .transform((val) => val.split(",").filter((item) => item !== ""))
-    .optional(),
-  regency_ids: z
-    .string()
-    .refine(
-      (val) =>
-        val
-          .split(",")
-          .filter((item) => item !== "")
-          .every((num) => !isNaN(Number(num))),
-      {
-        message: "INVALID_REGENCY_ID_PARAM",
-      }
-    )
-    .transform((val) => val.split(",").filter((item) => item !== ""))
-    .optional(),
-  sub_district_ids: z
-    .string()
-    .refine(
-      (val) =>
-        val
-          .split(",")
-          .filter((item) => item !== "")
-          .every((num) => !isNaN(Number(num))),
-      {
-        message: "INVALID_SUB_DISTRICT_ID_PARAM",
-      }
-    )
-    .transform((val) => val.split(",").filter((item) => item !== ""))
-    .optional(),
-  village_ids: z
-    .string()
-    .refine(
-      (val) =>
-        val
-          .split(",")
-          .filter((item) => item !== "")
-          .every((num) => !isNaN(Number(num))),
-      {
-        message: "INVALID_VILLAGE_ID_PARAM",
+        message: "INVALID_LOCATION_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))

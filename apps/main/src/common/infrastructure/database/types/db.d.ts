@@ -631,17 +631,14 @@ export interface Entities {
   is_vendor: Generated<number>;
   lat: Generated<string | null>;
   lng: Generated<string | null>;
+  location_id: number | null;
   name: Generated<string | null>;
   parent_id: Generated<number | null>;
   postal_code: Generated<string | null>;
-  province_id: Generated<string | null>;
-  regency_id: Generated<string | null>;
   status: Generated<number>;
-  sub_district_id: Generated<string | null>;
   type: Generated<number>;
   updated_at: Generated<Date>;
   updated_by: Generated<number | null>;
-  village_id: Generated<string | null>;
 }
 
 export interface EntityEntityTags {
@@ -1309,6 +1306,7 @@ export interface Locations {
   lng: Generated<string | null>;
   name: string;
   parent_id: Generated<number | null>;
+  path: string | null;
   updated_at: Generated<Date>;
 }
 
@@ -2934,17 +2932,14 @@ export interface WsEntities {
   is_vendor: Generated<number | null>;
   lat: Generated<string | null>;
   lng: Generated<string | null>;
+  location_id: number | null;
   name: Generated<string | null>;
   postal_code: Generated<string | null>;
   program_id: number;
-  province_id: Generated<string | null>;
-  regency_id: Generated<string | null>;
   status: Generated<number | null>;
-  sub_district_id: Generated<string | null>;
   type: Generated<number>;
   updated_at: Generated<Date>;
   updated_by: Generated<number | null>;
-  village_id: Generated<string | null>;
 }
 
 export interface WsEntityActivities {
@@ -3892,6 +3887,7 @@ export interface WsOrderLists {
   created_by_name: Generated<string | null>;
   customer_entity_tag_id: Generated<number | null>;
   customer_id: Generated<number>;
+  customer_location_id: Generated<number | null>;
   customer_name: Generated<string | null>;
   customer_province_id: Generated<string | null>;
   customer_province_name: string | null;
@@ -3927,6 +3923,7 @@ export interface WsOrderLists {
   user_updated_by: Generated<number | null>;
   vendor_entity_tag_id: Generated<number | null>;
   vendor_id: Generated<number>;
+  vendor_location_id: Generated<number | null>;
   vendor_name: Generated<string | null>;
   vendor_province_id: Generated<string | null>;
   vendor_province_name: string | null;
@@ -4628,6 +4625,7 @@ export interface WsTransactionLists {
   entity_is_open_vial: Generated<number | null>;
   entity_name: Generated<string | null>;
   entity_tag_id: Generated<number | null>;
+  location_id: number | null;
   manufacture_address: Generated<string | null>;
   manufacture_id: Generated<number | null>;
   manufacture_name: string | null;

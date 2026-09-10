@@ -3,7 +3,7 @@ import { zValidator } from "@hono/zod-validator"
 import { ValidationError } from "@smile-health/lib/error.js"
 import { Hono } from "hono"
 import { MasterModule } from "./master.module.js"
-import { Pageable } from "./master.schema.js"
+import { LocationPageable, Pageable } from "./master.schema.js"
 
 export class MasterController {
   constructor(private readonly module: MasterModule) {}
@@ -85,6 +85,33 @@ export class MasterController {
         const list = await this.module.getLocations(c, {
           ...q,
           level: LOCATION.VILLAGE,
+        })
+        if (list.data && list.data.length == 0) {
+          return c.body(null, 204)
+        }
+        return c.json(list, 200)
+      }
+    )
+
+    // Generic replacement for /provinces, /regencies, /subdistricts,
+    // /villages: one endpoint over the same self-referencing `locations`
+    // table, with `level` taken from the query instead of hardcoded per
+    // route. The 4 fixed-level routes above are kept for now since other
+    // callers may still use them; new frontend code (LocationPicker) should
+    // call this one instead.
+    router.get(
+      "/locations",
+      zValidator("query", LocationPageable, (result) => {
+        if (!result.success) {
+          throw new ValidationError(result.error.issues[0]?.message)
+        }
+      }),
+      async (c) => {
+        const q = c.req.valid("query")
+        const list = await this.module.getLocations(c, {
+          ...q,
+          level: q.level ?? LOCATION.PROVINCE,
+          parent_id: q.parent_id ?? [0],
         })
         if (list.data && list.data.length == 0) {
           return c.body(null, 204)

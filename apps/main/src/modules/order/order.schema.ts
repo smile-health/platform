@@ -49,10 +49,8 @@ export type ListUserOrderDTO = {
 
 export type LocationUserOrderDTO =
   | {
-      province_id: string | null
-      regency_id: string | null
-      sub_district_id: string | null
-      village_id: string | null
+      location_id: number | null
+      level: number | null
     }
   | undefined
 
@@ -151,21 +149,6 @@ const ListOrderSchema = {
     .transform((val) => Number(val))
     .refine((v) => !isNaN(v!), { message: "invalid customer_id" })
     .optional(),
-  entity_province_id: z
-    .string()
-    .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid entity_province_id" })
-    .optional(),
-  entity_city_id: z
-    .string()
-    .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid entity_city_id" })
-    .optional(),
-  entity_puskesmas_id: z
-    .string()
-    .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid entity_puskesmas_id" })
-    .optional(),
   status_ids: z.preprocess(
     (val) => {
       if (typeof val === "string") {
@@ -185,15 +168,16 @@ const ListOrderSchema = {
     z.array(z.number().refine((n) => !isNaN(n))).optional()
   ),
   integration: z.string().optional(),
-  province_id: z
+  // Single administrative-node scope, replacing the old
+  // province_id/regency_id/entity_province_id/entity_city_id/
+  // entity_puskesmas_id fields -- all of which picked one node out of the
+  // location hierarchy to filter or scope by. `location_id` refers to a row
+  // in `locations` at any level (province/regency/sub_district/village);
+  // callers pass whichever administrative node they mean to filter on.
+  location_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid province_id" })
-    .optional(),
-  regency_id: z
-    .string()
-    .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid regency_id" })
+    .refine((v) => !isNaN(v!), { message: "invalid location_id" })
     .optional(),
   is_from_ticketing: z
     .enum(["0", "1"], {

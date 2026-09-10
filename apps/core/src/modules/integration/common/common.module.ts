@@ -224,11 +224,11 @@ export class CommonModule {
       page: page ? Number(page) : 1,
       paginate: paginate ? Number(paginate) : 10,
       offset: 0,
-      province_ids: province_id ? province_id.split(",") : undefined,
-      regency_ids: regency_id ? regency_id.split(",") : undefined,
-      sub_district_ids: sub_district_id
-        ? sub_district_id.split(",")
-        : undefined,
+      location_ids:
+        [province_id, regency_id, sub_district_id]
+          .filter((id): id is string => !!id)
+          .flatMap((id) => id.split(","))
+          .filter((item) => item !== "") || undefined,
       entity_tag_ids: entity_tag ? entity_tag.split(",") : undefined,
       is_vendor: is_vendor ? Number(is_vendor) : undefined,
     } as GetEntitiesQueries)

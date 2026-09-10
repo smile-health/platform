@@ -4,12 +4,6 @@ import {
   getGlobalEntityType,
   loadEntityTags,
 } from '#services/entity'
-import {
-  loadProvinces,
-  loadRegencies,
-  loadSubdistricts,
-  loadVillages,
-} from '#services/location'
 import { listPrograms } from '#services/program'
 import { ProgramEnum, WORKSPACE } from '#constants/program'
 import { hasPermission } from '#shared/permission/index'
@@ -86,96 +80,24 @@ export const createFilterSchema = ({ t, isGlobal }: Params): UseFilter => [
             return [...defaultList, wasteManagementOption, ...reformatResult]
           },
         } as FilterFormSchema,
-        {
-          id: 'select-province',
-          type: 'select-async-paginate',
-          name: 'province_ids',
-          isMulti: true,
-          label: t('common:form.province.label'),
-          placeholder: t('common:form.province.placeholder'),
-          loadOptions: loadProvinces,
-          clearOnChangeFields: [
-            'regency_ids',
-            'sub_district_ids',
-            'village_ids',
-          ],
-          additional: { page: 1 },
-          defaultValue: null,
-        } as FilterFormSchema,
       ]
-    : [
-        {
-          id: 'select-province',
-          type: 'select-async-paginate',
-          name: 'province_ids',
-          isMulti: true,
-          label: t('common:form.province.label'),
-          placeholder: t('common:form.province.placeholder'),
-          loadOptions: loadProvinces,
-          clearOnChangeFields: [
-            'regency_ids',
-            'sub_district_ids',
-            'village_ids',
-          ],
-          additional: { page: 1 },
-          defaultValue: null,
-        } as FilterFormSchema,
-      ]),
+    : []),
+  // Collapsed province/regency/sub_district/village multi-selects into a
+  // single generic multi-select cascade: the resolved `location_ids` is the
+  // UNION of every level's selections (not just the deepest level), matching
+  // the backend's at-or-under-any-selected-node OR semantics. The isGlobal
+  // branch above/below had no actual difference between its two variants
+  // (both defined the same province field), so no isGlobal-conditional
+  // structure is needed for this field.
   {
-    id: 'select-regency',
-    type: 'select-async-paginate',
-    name: 'regency_ids',
+    id: 'select-location',
+    type: 'locationCascade',
+    name: 'location_ids',
     isMulti: true,
-    label: t('common:form.city.label'),
-    placeholder: t('common:form.city.placeholder'),
-    loadOptions: loadRegencies,
-    disabled: ({ getReactSelectValue }) => !getReactSelectValue('province_ids'),
-    clearOnChangeFields: ['sub_district_ids', 'village_ids'],
-    additional: ({ getReactSelectValue }: { getReactSelectValue: any }) => ({
-      page: 1,
-      ...(getReactSelectValue('province_ids') && {
-        parent_id: getReactSelectValue('province_ids'),
-      }),
-    }),
+    maxLevel: 3,
+    label: t('common:form.province.label'),
     defaultValue: null,
-  },
-  {
-    id: 'select-sub-district',
-    type: 'select-async-paginate',
-    name: 'sub_district_ids',
-    isMulti: true,
-    label: t('common:form.subdistrict.label'),
-    placeholder: t('common:form.subdistrict.placeholder'),
-    loadOptions: loadSubdistricts,
-    disabled: ({ getReactSelectValue }) => !getReactSelectValue('regency_ids'),
-    clearOnChangeFields: ['village_ids'],
-    additional: ({ getReactSelectValue }: { getReactSelectValue: any }) => ({
-      page: 1,
-      ...(getReactSelectValue('regency_ids') && {
-        parent_id: getReactSelectValue('regency_ids'),
-      }),
-    }),
-    defaultValue: null,
-  },
-  {
-    id: 'select-village',
-    type: 'select-async-paginate',
-    name: 'village_ids',
-    isMulti: true,
-    label: t('common:form.village.label'),
-    placeholder: t('common:form.village.placeholder'),
-    loadOptions: loadVillages,
-    disabled: ({ getReactSelectValue }) =>
-      !getReactSelectValue('sub_district_ids'),
-    clearOnChangeFields: [],
-    additional: ({ getReactSelectValue }: { getReactSelectValue: any }) => ({
-      page: 1,
-      ...(getReactSelectValue('sub_district_ids') && {
-        parent_id: getReactSelectValue('sub_district_ids'),
-      }),
-    }),
-    defaultValue: null,
-  },
+  } as FilterFormSchema,
   {
     id: 'input-id-satu-sehat',
     type: 'text',

@@ -101,6 +101,16 @@ export function FilterFormBody({
         },
         className
       )}
+      // Inline style, not a Tailwind class: fields with a non-default
+      // column span (e.g. locationCascade) can leave a gap in the current
+      // row when they don't fit the remaining space and wrap to a new one.
+      // grid-auto-flow: dense backfills that gap with a later, smaller
+      // field instead of leaving it empty. Using a class here previously
+      // silently did nothing because "full" (a different col-span value)
+      // wasn't in this project's generated Tailwind scale -- rather than
+      // risk the same with grid-flow-row-dense, set it directly so it's
+      // never at the mercy of what got generated.
+      style={{ gridAutoFlow: 'dense' }}
     >
       {children}
     </div>

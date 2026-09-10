@@ -480,8 +480,7 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
       transaction_reason_id,
       order_type,
       entity_tag_id,
-      province_id,
-      regency_id,
+      location_id,
       customer_tag_id,
       entity_for_consumption,
     } = params
@@ -516,8 +515,18 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
         "wt.companion_activity_id",
         "wa_companion.id"
       )
-      .leftJoin("locations as l_province", "we.province_id", "l_province.id")
-      .leftJoin("locations as l_regency", "we.regency_id", "l_regency.id")
+      // Mirrors apps/core & apps/main EntityRepository#joinLocationHierarchy:
+      // we.location_id -> locations.path ("root#..#self") derives province/
+      // regency id+name for any location depth.
+      .leftJoin("locations as loc", "we.location_id", "loc.id")
+      .leftJoin("locations as l_province", (join) =>
+        join.on(sql`l_province.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as l_regency", (join) =>
+        join.on(
+          sql`l_regency.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
       .leftJoin("ws_stocks as ws", "wt.stock_id", "ws.id")
       .leftJoin("ws_materials as wm", "ws.material_id", "wm.id")
       .leftJoin("ws_materials as wmp", "wm.parent_id", "wmp.id")
@@ -571,6 +580,7 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
         "wt.entity_id as entity_id",
         "we.name as entity_name",
         "we.entity_tag_id as entity_tag_id",
+        "we.location_id as location_id",
         "l_province.id as province_id",
         "l_province.name as province_name",
         "l_regency.id as regency_id",
@@ -719,11 +729,14 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
     if (entity_tag_id) {
       query = query.where("we.entity_tag_id", "=", entity_tag_id)
     }
-    if (province_id) {
-      query = query.where("l_province.id", "=", province_id)
-    }
-    if (regency_id) {
-      query = query.where("l_regency.id", "=", regency_id)
+    if (location_id) {
+      // Path-prefix match: any transaction whose entity location is at/under
+      // the requested location (works for province down to village).
+      query = query.where(
+        "loc.path",
+        "like",
+        sql<string>`(SELECT CONCAT(path, '%') FROM locations WHERE id = ${location_id})`
+      )
     }
     if (customer_tag_id) {
       query = query.where("we_companion.entity_tag_id", "=", customer_tag_id)
@@ -841,8 +854,6 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
       "transaction_reason_id",
       "order_type",
       "entity_tag_id",
-      "province_id",
-      "regency_id",
       "entity_id",
     ]
 
@@ -850,6 +861,18 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
       if (params[filter])
         query = query.where(`wtl.${filter}` as any, "=", params[filter])
     })
+
+    if (params.location_id) {
+      // Path-prefix match against wtl.location_id (works for any level,
+      // province down to village), mirroring EntityRepository's pattern.
+      query = query
+        .innerJoin("locations as loc", "loc.id", "wtl.location_id")
+        .where(
+          "loc.path",
+          "like",
+          sql<string>`(SELECT CONCAT(path, '%') FROM locations WHERE id = ${params.location_id})`
+        )
+    }
 
     if (params.customer_tag_id) {
       query = query.where(
@@ -978,6 +1001,12 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
       }
     }
 
+    // NOTE: these methods may read from either the MySQL `ws_transaction_lists`
+    // view or, when LIST_USE_CLICKHOUSE is set, a ClickHouse table
+    // (datamart_transaction_list_v5 or the ws_transaction_lists mirror). We
+    // could not confirm a `locations` table/mirror is available on the
+    // ClickHouse side, so this filter is an exact location_id match rather
+    // than a path-prefix (hierarchy) match.
     const filters = [
       "activity_id",
       "material_type_id",
@@ -987,8 +1016,7 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
       "transaction_reason_id",
       "order_type",
       "entity_tag_id",
-      "province_id",
-      "regency_id",
+      "location_id",
       "entity_id",
     ]
 
@@ -1218,6 +1246,11 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
     if (filters.entity_tag_id) {
       query = query.where("entity_tags_id", "=", filters.entity_tag_id)
     }
+    // NOTE: out of scope for the ws_transaction_lists location_id migration.
+    // applyFilterCount queries datamart_monitoring_transactions_v5, a
+    // separate ClickHouse analytics table whose source ETL was not located
+    // in this repo, so its entities_province_id/entities_regency_id columns
+    // are left as-is rather than guessed at.
     if (filters.province_id) {
       query = query.where("entities_province_id", "=", filters.province_id)
     }
@@ -1299,11 +1332,18 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
     if (filters.entity_tag_id) {
       query = query.where("entity_tag_id", "=", filters.entity_tag_id)
     }
-    if (filters.province_id) {
-      query = query.where("province_id", "=", filters.province_id)
-    }
-    if (filters.regency_id) {
-      query = query.where("regency_id", "=", filters.regency_id)
+    if (filters.location_id) {
+      // Path-prefix match against location_id (works for any level,
+      // province down to village). applyFilter is used only by
+      // getTransactionListCursor, a pure-MySQL query against the
+      // ws_transaction_lists view, so joining `locations` here is safe.
+      query = query
+        .innerJoin("locations as loc", "loc.id", "location_id")
+        .where(
+          "loc.path",
+          "like",
+          sql<string>`(SELECT CONCAT(path, '%') FROM locations WHERE id = ${filters.location_id})`
+        )
     }
     if (filters.customer_tag_id) {
       query = query.where(
@@ -1377,6 +1417,12 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
         }
       })
 
+    // NOTE: these methods may read from either the MySQL `ws_transaction_lists`
+    // view or, when LIST_USE_CLICKHOUSE is set, a ClickHouse table
+    // (datamart_transaction_list_v5 or the ws_transaction_lists mirror). We
+    // could not confirm a `locations` table/mirror is available on the
+    // ClickHouse side, so this filter is an exact location_id match rather
+    // than a path-prefix (hierarchy) match.
     const filters = [
       "activity_id",
       "material_type_id",
@@ -1386,8 +1432,7 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
       "transaction_reason_id",
       "order_type",
       "entity_tag_id",
-      "province_id",
-      "regency_id",
+      "location_id",
       "entity_id",
     ]
 
@@ -2315,8 +2360,18 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
         "wt.companion_activity_id",
         "wa_companion.id"
       )
-      .leftJoin("locations as l_province", "we.province_id", "l_province.id")
-      .leftJoin("locations as l_regency", "we.regency_id", "l_regency.id")
+      // Mirrors apps/core & apps/main EntityRepository#joinLocationHierarchy:
+      // we.location_id -> locations.path ("root#..#self") derives province/
+      // regency id+name for any location depth.
+      .leftJoin("locations as loc", "we.location_id", "loc.id")
+      .leftJoin("locations as l_province", (join) =>
+        join.on(sql`l_province.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as l_regency", (join) =>
+        join.on(
+          sql`l_regency.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
       .leftJoin("ws_stocks as ws", "wt.stock_id", "ws.id")
       .leftJoin("ws_materials as wm", "ws.material_id", "wm.id")
       .leftJoin("ws_materials as wmp", "wm.parent_id", "wmp.id")
@@ -2363,6 +2418,7 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
         "wt.entity_id as entity_id",
         "we.name as entity_name",
         "we.entity_tag_id as entity_tag_id",
+        "we.location_id as location_id",
         "l_province.id as province_id",
         "l_province.name as province_name",
         "l_regency.id as regency_id",
@@ -2579,11 +2635,15 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
     if (filters.entity_tag_id) {
       query = query.where("we.entity_tag_id", "=", filters.entity_tag_id)
     }
-    if (filters.province_id) {
-      query = query.where("we.province_id", "=", filters.province_id)
-    }
-    if (filters.regency_id) {
-      query = query.where("we.regency_id", "=", filters.regency_id)
+    if (filters.location_id) {
+      // Path-prefix match against the entity's location (works for any
+      // level, province down to village), via the `loc` alias joined on
+      // we.location_id (see the leftJoin block above).
+      query = query.where(
+        "loc.path",
+        "like",
+        sql<string>`(SELECT CONCAT(path, '%') FROM locations WHERE id = ${filters.location_id})`
+      )
     }
     if (filters.customer_tag_id) {
       if (filters.is_order === "1") {
