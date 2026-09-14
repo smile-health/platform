@@ -8,6 +8,7 @@ import {
 } from "@/modules/entity/entity.schema.js"
 import { Context as ContextDB } from "@smile-health/lib/types/context.js"
 import { associate, collect } from "@smile-health/lib/utils.js"
+import { locationHierarchyJsonAgg } from "@smile-health/lib/sql.js"
 import { Context } from "hono"
 import { Expression, sql, SqlBool } from "kysely"
 import { BaseRepository } from "../base.repository"
@@ -196,7 +197,12 @@ export class EntityRepository extends BaseRepository<"entities"> {
       )
     }
 
-    return query
+    // Wrapped in an object because Kysely's SelectQueryBuilder overrides
+    // `.then` to throw (guarding against `await someQuery` instead of
+    // `.execute()`). Returning the builder directly from this async method
+    // would make JS's promise machinery call that `.then` while unwrapping
+    // the return value, tripping the same guard.
+    return { query }
   }
 
   async getListEntity(c: Context, params: GetEntitiesQueries) {
@@ -237,8 +243,12 @@ export class EntityRepository extends BaseRepository<"entities"> {
 
     countQuery = this.#joinLocationHierarchy(countQuery)
 
-    query = await this.#generateQueryWhereClause(c, query, params)
-    countQuery = await this.#generateQueryWhereClause(c, countQuery, params)
+    ;({ query } = await this.#generateQueryWhereClause(c, query, params))
+    ;({ query: countQuery } = await this.#generateQueryWhereClause(
+      c,
+      countQuery,
+      params
+    ))
 
     const [list, totalList] = await Promise.all([
       query
@@ -272,6 +282,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
           "r.level as regency_level",
           "sd.level as sub_district_level",
           "v.level as village_level",
+          locationHierarchyJsonAgg("loc").as("locations"),
         ]) // Do NOT select e.external_properties here
         .$if(!!sort_by, (qb) => {
           // Only allow sorting by these columns
@@ -524,6 +535,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
           "location"
         )
       )
+      .select(locationHierarchyJsonAgg("loc").as("locations"))
       .where("e.id", "=", entityID)
       .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .executeTakeFirst()
@@ -550,6 +562,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
       .leftJoin("entity_tags as et", "et.id", "e.entity_tag_id")
       .select(["e.id", "e.name", "e.type", "e.address", "et.title as tag"])
       .select(sql<string>`concat(city.name, ', ', prov.name)`.as("location"))
+      .select(locationHierarchyJsonAgg("loc").as("locations"))
       .where("e.id", "in", entityIDs)
       .execute()
 
@@ -664,6 +677,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
         "u.username as created_by_name",
         "e.updated_at",
         sql<string>`DATE_FORMAT(e.updated_at, '%d %M %Y')`.as("updated_at"),
+        locationHierarchyJsonAgg("loc").as("locations"),
       ])
       .stream()
   }
@@ -964,6 +978,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
           "r.level as regency_level",
           "sd.level as sub_district_level",
           "v.level as village_level",
+          locationHierarchyJsonAgg("loc").as("locations"),
         ])
         .$if(!!sort_by, (qb) => {
           const allowedSortColumns = [
