@@ -850,6 +850,20 @@ export class ColdstorageRepository extends BaseRepository<"coldstorages"> {
       .innerJoin("entities as e", (join) =>
         join.onRef("cs.entity_id", "=", "e.id").on("e.deleted_at", "is", null)
       )
+      .leftJoin("locations as loc", "loc.id", "e.location_id")
+      .leftJoin("locations as lp", (join) =>
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as lr", (join) =>
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as lsd", (join) =>
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .where("cs.deleted_at", "is", null)
 
     queries = this.applySorting(queries, queryParam)
@@ -887,23 +901,23 @@ export class ColdstorageRepository extends BaseRepository<"coldstorages"> {
 
     if (queryParam.province_id) {
       queries = queries
-        .where("e.province_id", "=", `${queryParam.province_id}`)
+        .where("lp.id", "=", `${queryParam.province_id}`)
         .orderBy("e.entity_tag_id", "asc")
     }
 
     if (queryParam.regency_id) {
       queries = queries
-        .where("e.regency_id", "=", `${queryParam.regency_id}`)
-        .where((eb) => isNotNullOrEmpty(eb, "e.regency_id"))
+        .where("lr.id", "=", `${queryParam.regency_id}`)
+        .where((eb) => isNotNullOrEmpty(eb, "lr.id"))
         .orderBy("e.entity_tag_id", "asc")
     }
 
     if (queryParam.health_facility_id) {
       queries = queries
         .where("e.id", "=", queryParam.health_facility_id)
-        .where((eb) => isNotNullOrEmpty(eb, "e.province_id"))
-        .where((eb) => isNotNullOrEmpty(eb, "e.regency_id"))
-        .where((eb) => isNotNullOrEmpty(eb, "e.sub_district_id"))
+        .where((eb) => isNotNullOrEmpty(eb, "lp.id"))
+        .where((eb) => isNotNullOrEmpty(eb, "lr.id"))
+        .where((eb) => isNotNullOrEmpty(eb, "lsd.id"))
     }
 
     const additionalQueries = queries
@@ -980,8 +994,20 @@ export class ColdstorageRepository extends BaseRepository<"coldstorages"> {
       .innerJoin("entities as e", (join) =>
         join.onRef("cs.entity_id", "=", "e.id").on("e.deleted_at", "is", null)
       )
-      .leftJoin("locations as p", "p.id", "e.province_id")
-      .leftJoin("locations as r", "r.id", "e.regency_id")
+      .leftJoin("locations as loc", "loc.id", "e.location_id")
+      .leftJoin("locations as p", (join) =>
+        join.on(sql`p.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as r", (join) =>
+        join.on(
+          sql`r.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as sd", (join) =>
+        join.on(
+          sql`sd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .leftJoin(serialNumbersSubquery, "serial_data.entity_id", "cs.entity_id")
       .where("cs.deleted_at", "is", null)
 
@@ -1018,23 +1044,23 @@ export class ColdstorageRepository extends BaseRepository<"coldstorages"> {
 
     if (queryParam.province_id) {
       queries = queries
-        .where("e.province_id", "=", `${queryParam.province_id}`)
+        .where("p.id", "=", `${queryParam.province_id}`)
         .orderBy("e.entity_tag_id", "asc")
     }
 
     if (queryParam.regency_id) {
       queries = queries
-        .where("e.regency_id", "=", `${queryParam.regency_id}`)
-        .where((eb) => isNotNullOrEmpty(eb, "e.regency_id"))
+        .where("r.id", "=", `${queryParam.regency_id}`)
+        .where((eb) => isNotNullOrEmpty(eb, "r.id"))
         .orderBy("e.entity_tag_id", "asc")
     }
 
     if (queryParam.health_facility_id) {
       queries = queries
         .where("e.id", "=", queryParam.health_facility_id)
-        .where((eb) => isNotNullOrEmpty(eb, "e.province_id"))
-        .where((eb) => isNotNullOrEmpty(eb, "e.regency_id"))
-        .where((eb) => isNotNullOrEmpty(eb, "e.sub_district_id"))
+        .where((eb) => isNotNullOrEmpty(eb, "p.id"))
+        .where((eb) => isNotNullOrEmpty(eb, "r.id"))
+        .where((eb) => isNotNullOrEmpty(eb, "sd.id"))
     }
 
     const result = await queries

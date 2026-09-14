@@ -127,17 +127,24 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
       .leftJoin("users as wuu", (join) =>
         join.onRef("wai.updated_by", "=", "wuu.id")
       )
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
       .leftJoin("locations as lp", (join) =>
-        join.onRef("we.province_id", "=", "lp.id")
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
       )
       .leftJoin("locations as lr", (join) =>
-        join.onRef("we.regency_id", "=", "lr.id")
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("locations as lsd", (join) =>
-        join.onRef("we.sub_district_id", "=", "lsd.id")
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("locations as lv", (join) =>
-        join.onRef("we.village_id", "=", "lv.id")
+        join.on(
+          sql`lv.id = CASE WHEN loc.level >= 3 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 4), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("asset_models as wam", (join) =>
         join.onRef("wai.asset_model_id", "=", "wam.id")
@@ -206,13 +213,13 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
         "we.is_puskesmas as entity_is_puskesmas",
         "we.entity_tag_id",
         "et.title as entity_tag_title",
-        "we.province_id",
+        "lp.id as province_id",
         "lp.name as province_name",
-        "we.regency_id",
+        "lr.id as regency_id",
         "lr.name as regency_name",
-        "we.sub_district_id",
+        "lsd.id as sub_district_id",
         "lsd.name as sub_district_name",
-        "we.village_id",
+        "lv.id as village_id",
         "lv.name as village_name",
         "wai.maintenance_asset_vendor_id",
         "wavm.name as maintenance_asset_vendor_name",
@@ -369,11 +376,14 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
       .leftJoin("users as wuu", (join) =>
         join.onRef("wai.updated_by", "=", "wuu.id")
       )
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
       .leftJoin("locations as lp", (join) =>
-        join.onRef("we.province_id", "=", "lp.id")
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
       )
       .leftJoin("locations as lr", (join) =>
-        join.onRef("we.regency_id", "=", "lr.id")
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("asset_models as wam", (join) =>
         join.onRef("wai.asset_model_id", "=", "wam.id")
@@ -404,9 +414,9 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
       "wai.entity_id",
       "we.name as entity_name",
       "we.is_puskesmas as entity_is_puskesmas",
-      "we.province_id",
+      "lp.id as province_id",
       "lp.name as province_name",
-      "we.regency_id",
+      "lr.id as regency_id",
       "lr.name as regency_name",
       "wai.ownership_qty",
       "wai.ownership_status",
@@ -470,14 +480,19 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
       .leftJoin("users as wuu", (join) =>
         join.onRef("wai.updated_by", "=", "wuu.id")
       )
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
       .leftJoin("locations as lp", (join) =>
-        join.onRef("we.province_id", "=", "lp.id")
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
       )
       .leftJoin("locations as lr", (join) =>
-        join.onRef("we.regency_id", "=", "lr.id")
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("locations as lsd", (join) =>
-        join.onRef("we.sub_district_id", "=", "lsd.id")
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("asset_models as wam", (join) =>
         join.onRef("wai.asset_model_id", "=", "wam.id")
@@ -540,11 +555,11 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
         "we.lat as entity_lat",
         "we.lng as entity_lng",
         "we.is_puskesmas as entity_is_puskesmas",
-        "we.province_id",
+        "lp.id as province_id",
         "lp.name as province_name",
-        "we.regency_id",
+        "lr.id as regency_id",
         "lr.name as regency_name",
-        "we.sub_district_id",
+        "lsd.id as sub_district_id",
         "lsd.name as sub_district_name",
         "wai.ownership_qty",
         "wai.ownership_status",
@@ -893,11 +908,25 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
       .leftJoin("integration_associations as ia", (join) =>
         join.onRef("e.id", "=", "ia.internal_id").on("ia.type", "=", "entity")
       )
+      .leftJoin("locations as loc", "loc.id", "e.location_id")
+      .leftJoin("locations as lp", (join) =>
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as lr", (join) =>
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as lsd", (join) =>
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .select([
         "e.id",
-        "e.province_id",
-        "e.regency_id",
-        "e.sub_district_id",
+        "lp.id as province_id",
+        "lr.id as regency_id",
+        "lsd.id as sub_district_id",
         "e.type",
         "e.is_puskesmas",
         "ia.client_id",
@@ -1072,17 +1101,24 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
       .innerJoin("entity_tags as et", (join) =>
         join.onRef("we.entity_tag_id", "=", "et.id")
       )
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
       .leftJoin("locations as lp", (join) =>
-        join.onRef("we.province_id", "=", "lp.id")
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
       )
       .leftJoin("locations as lr", (join) =>
-        join.onRef("we.regency_id", "=", "lr.id")
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("locations as lsd", (join) =>
-        join.onRef("we.sub_district_id", "=", "lsd.id")
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("locations as lv", (join) =>
-        join.onRef("we.village_id", "=", "lv.id")
+        join.on(
+          sql`lv.id = CASE WHEN loc.level >= 3 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 4), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("asset_models as wam", (join) =>
         join.onRef("wai.asset_model_id", "=", "wam.id")
@@ -1311,11 +1347,14 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
       .innerJoin("entities as we", (join) =>
         join.onRef("ar.entity_id", "=", "we.id")
       )
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
       .leftJoin("locations as lp", (join) =>
-        join.onRef("we.province_id", "=", "lp.id")
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
       )
       .leftJoin("locations as lr", (join) =>
-        join.onRef("we.regency_id", "=", "lr.id")
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("entity_tags as et", (join) =>
         join.onRef("we.entity_tag_id", "=", "et.id")
@@ -1329,9 +1368,9 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
         "ar.entity_id as entity_id",
         "we.name as entity_name",
         "we.type as entity_type",
-        "we.province_id as province_id",
+        "lp.id as province_id",
         "lp.name as province_name",
-        "we.regency_id as regency_id",
+        "lr.id as regency_id",
         "lr.name as regency_name",
         "we.entity_tag_id as entity_tag_id",
         "et.title as entity_tag_name",
@@ -1344,9 +1383,9 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
         "ar.entity_id",
         "we.name",
         "we.type",
-        "we.province_id",
+        "lp.id",
         "lp.name",
-        "we.regency_id",
+        "lr.id",
         "lr.name",
         "we.entity_tag_id",
         "et.title",

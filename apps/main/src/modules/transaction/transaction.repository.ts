@@ -7,6 +7,7 @@ import {
   CursorPaginatedResponse,
   CursorUtils,
 } from "@/modules/helpers/cursor-helper.js"
+import { locationHierarchyJsonAgg } from "@smile-health/lib/sql.js"
 import { associate, group } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
 import { sql } from "kysely"
@@ -585,6 +586,7 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
         "l_province.name as province_name",
         "l_regency.id as regency_id",
         "l_regency.name as regency_name",
+        locationHierarchyJsonAgg("loc").as("locations"),
         "wt.companion_entity_id as companion_entity_id",
         "we_companion.name as companion_entity_name",
         "wmp.id as parent_material_id",
@@ -2423,6 +2425,7 @@ export class TransactionRepository extends BaseRepository<"ws_transactions"> {
         "l_province.name as province_name",
         "l_regency.id as regency_id",
         "l_regency.name as regency_name",
+        locationHierarchyJsonAgg("loc").as("locations"),
         "wt.companion_entity_id as companion_entity_id",
         "we_companion.name as companion_entity_name",
         "wt.companion_program_id as companion_program_id",

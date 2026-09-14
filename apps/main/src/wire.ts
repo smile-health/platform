@@ -94,9 +94,6 @@ import { EntityMaterialMiddleware } from "./modules/entity-material/entity-mater
 import { EntityMaterialModule } from "./modules/entity-material/entity-material.module.js"
 import { EntityMaterialPublisher } from "./modules/entity-material/entity-material.publisher.js"
 import { EntityMaterialRepository } from "./modules/entity-material/entity-material.repository.js"
-import { EntitySchoolController } from "./modules/entity-school/entity-school.controller.js"
-import { EntitySchoolModule } from "./modules/entity-school/entity-school.module.js"
-import { EntitySchoolReposity } from "./modules/entity-school/entity-school.repository.js"
 import { EntityTagController } from "./modules/entity-tag/entity-tag.controller.js"
 import { EntityTagModule } from "./modules/entity-tag/entity-tag.module.js"
 import { EntityTagRepository } from "./modules/entity-tag/entity-tag.repository.js"
@@ -410,7 +407,6 @@ const locationRepo = new LocationRepository()
 const occupationRepo = new OccupationRepository()
 const religionRepo = new ReligionRepository()
 const annualCommitmentRepo = new AnnualCommitmentRepository()
-const entitySchoolRepositoty = new EntitySchoolReposity()
 
 const commonMiddleware = new CommonMiddleware()
 const trxMiddleware = new TransactionMiddleware(trxManager)
@@ -544,10 +540,6 @@ const entityVendorController = new EntityVendorController(
 // Entity User
 const entityUserModule = new EntityUserModule(entityUserRepository)
 const entityUserController = new EntityUserController(entityUserModule)
-
-// Entity School
-const entitySchoolModule = new EntitySchoolModule(entitySchoolRepositoty)
-const entitySchoolController = new EntitySchoolController(entitySchoolModule)
 
 // Entity Activity
 const entityActivityPublisher = new EntityActivityPublisher(
@@ -1546,12 +1538,6 @@ const entityActivitiesRoutes = new Hono()
 entityActivitiesRoutes.use("*", routeTracer.traceRoute("entity-activities"))
 entityActivitiesRoutes.route("/", entityActivityController.getRoutes())
 mainApp.route("/entities", entityActivitiesRoutes)
-
-// Entity schools routes with tracing
-const entitySchoolsRoutes = new Hono()
-entitySchoolsRoutes.use("*", routeTracer.traceRoute("schools"))
-entitySchoolsRoutes.route("/", entitySchoolController.getRoutes())
-mainApp.route("/schools", entitySchoolsRoutes)
 
 // Entity tags routes with tracing
 const entityTagsRoutes = new Hono()

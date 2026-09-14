@@ -390,16 +390,14 @@ export class EntityRepository extends BaseRepository<"entities"> {
         .select(["entity_tags.id", "entity_tags.title"])
         .where("id", "=", entity.entity_tag_id)
         .executeTakeFirst(),
-      trx
-        .selectFrom("locations")
-        .select(["locations.id", "locations.name", "locations.level"])
-        .orderBy("locations.level")
-        .where(
-          "id",
-          "in",
-          locationIds.filter((id) => !isNaN(id))
-        )
-        .execute(),
+      locationIds.length > 0
+        ? trx
+            .selectFrom("locations")
+            .select(["locations.id", "locations.name", "locations.level"])
+            .orderBy("locations.level")
+            .where("id", "in", locationIds)
+            .execute()
+        : Promise.resolve([]),
       trx
         .selectFrom("entity_types")
         .select(["id", "name"])

@@ -565,23 +565,39 @@ export class EntityMaterialRepository {
       village_ids,
       entity_tag_ids,
     } = query
+
+    // Mirrors apps/core's EntityRepository location_ids filter (OR-of-path-prefix
+    // against the entity's own joined location), but resolved as a correlated
+    // subquery so this method can stay synchronous for its .stream() caller.
+    const locationIds = [
+      ...(province_ids ?? []),
+      ...(regency_ids ?? []),
+      ...(sub_district_ids ?? []),
+      ...(village_ids ?? []),
+    ]
+      .map(Number)
+      .filter((id) => !isNaN(id))
+
     return c.var.trx
       .selectFrom("ws_entities as e")
       .where("e.is_vendor", "=", 1)
       .where("e.status", "=", 1)
       .where("e.deleted_at", "is", null)
       .$if(keyword != null, (qb) => qb.where("e.name", "like", `%${keyword}%`))
-      .$if(village_ids?.length !== 0, (qb) =>
-        qb.where("e.village_id", "in", village_ids)
-      )
-      .$if(sub_district_ids?.length !== 0, (qb) =>
-        qb.where("e.sub_district_id", "in", sub_district_ids ?? [])
-      )
-      .$if(regency_ids?.length !== 0, (qb) =>
-        qb.where("e.regency_id", "in", regency_ids ?? [])
-      )
-      .$if(province_ids?.length !== 0, (qb) =>
-        qb.where("e.province_id", "in", province_ids ?? [])
+      .$if(locationIds.length > 0, (qb) =>
+        qb
+          .innerJoin("locations as loc", "loc.id", "e.location_id")
+          .where((eb) =>
+            eb.exists(
+              eb
+                .selectFrom("locations as loc2")
+                .select(sql`1`.as("x"))
+                .where("loc2.id", "in", locationIds)
+                .where(
+                  sql<boolean>`CONCAT(loc.path, '#') LIKE CONCAT(loc2.path, '#%')`
+                )
+            )
+          )
       )
       .$if(type_ids?.length !== 0, (qb) =>
         qb.where("e.type", "in", type_ids?.map(Number) ?? [])
