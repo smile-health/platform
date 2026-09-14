@@ -453,47 +453,15 @@ export class EntityMiddleware {
 
   list = (c: Context) => {
     return GetEntitiesParamsSchema.extend({
-      province_ids: generalMultipleIdSchema
+      location_ids: generalMultipleIdSchema
         .superRefine(async (val, ctx) => {
+          // location_ids may mix province/regency/sub_district/village ids,
+          // so validate existence without restricting to a single level.
           await this.#validateDataFromDB(
             ctx,
             val,
             this.locationRepo.findByIDs,
-            c,
-            LOCATION.PROVINCE
-          )
-        })
-        .optional(),
-      regency_ids: generalMultipleIdSchema
-        .superRefine(async (val, ctx) => {
-          await this.#validateDataFromDB(
-            ctx,
-            val,
-            this.locationRepo.findByIDs,
-            c,
-            LOCATION.REGENCY
-          )
-        })
-        .optional(),
-      sub_district_ids: generalMultipleIdSchema
-        .superRefine(async (val, ctx) => {
-          await this.#validateDataFromDB(
-            ctx,
-            val,
-            this.locationRepo.findByIDs,
-            c,
-            LOCATION.SUBDISTRICT
-          )
-        })
-        .optional(),
-      village_ids: generalMultipleIdSchema
-        .superRefine(async (val, ctx) => {
-          await this.#validateDataFromDB(
-            ctx,
-            val,
-            this.locationRepo.findByIDs,
-            c,
-            LOCATION.VILLAGE
+            c
           )
         })
         .optional(),

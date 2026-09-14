@@ -23,6 +23,7 @@ import {
   ReactSelectAsyncHash,
   ReactSelectWithQuery,
 } from '#components/react-select'
+import { LocationPicker } from '#components/modules/LocationPicker'
 import { Switch } from '#components/switch'
 import { BOOLEAN } from '#constants/common'
 import cx from '#lib/cx'
@@ -151,6 +152,24 @@ type SelectAsyncSchema = {
   defaultValue: null | OptionType | Array<OptionType>
 }
 
+type LocationCascadeSchema = {
+  id?: string
+  type: 'locationCascade'
+  name: string
+  label?: string
+  maxLevel?: number
+  isMulti?: boolean
+  // 'row' (default) lays the per-level dropdowns side by side; 'column'
+  // stacks them. Purely presentational.
+  layout?: 'row' | 'column'
+  disabled?: Disabled
+  hidden?: Disabled
+  required?: boolean
+  className?: string
+  clearOnChangeFields?: Array<string>
+  defaultValue: null | number | Array<number>
+}
+
 type RadioSchema = {
   type: 'radio'
   name: string
@@ -262,6 +281,7 @@ export type FilterFormSchema =
   | SelectAsyncSchema
   | SwitchSchema
   | MonthYearPickerSchema
+  | LocationCascadeSchema
 
 export type UseFilter = FilterFormSchema[]
 
@@ -485,6 +505,14 @@ export function useFilter(schema: UseFilter) {
       const queryConfigMap: Record<string, ParserBuilder<any>> = {
         'select': parseAsJson.withDefault(null),
         'select-async-paginate': parseAsJson.withDefault(null),
+        // Multi-select locationCascade resolves to a number[] (union across
+        // levels) and needs JSON encoding to round-trip through the URL;
+        // the pre-existing single-select locationCascade usages (a plain
+        // number) keep falling through to the default parseAsString below
+        // to avoid changing their already-working URL format.
+        ...(field.type === 'locationCascade' && field.isMulti
+          ? { locationCascade: parseAsJson.withDefault(null) }
+          : {}),
         'date-picker': parseAsDate,
         'date-range-picker': parseAsDateRange,
         'month-year-picker': parseAsJson.withDefault(null),
@@ -517,6 +545,7 @@ export function useFilter(schema: UseFilter) {
     getValues,
     formState,
     trigger,
+    clearErrors,
   } = useForm({
     defaultValues,
   })
@@ -754,6 +783,59 @@ export function useFilter(schema: UseFilter) {
             language={language}
           />
         )
+      case 'locationCascade': {
+        // This field renders 1 dropdown per level side by side (layout
+        // 'row'), so it needs roughly one grid column per level -- spanning
+        // ALL columns regardless of level count (as a prior version of this
+        // did) made a 2-level cascade (transaction/stock filters) stretch
+        // absurdly wide for just 2 dropdowns. Span exactly as many columns
+        // as there are levels instead, via inline style (grid-column: span
+        // N) so it isn't at the mercy of which col-span-N classes this
+        // project's Tailwind scale happens to generate.
+        const levelCount = (field.maxLevel ?? 3) + 1
+        const cascadeLayout = field.layout ?? 'row'
+        return (
+          // No outer FormLabel here: LocationPicker already renders one
+          // label per dropdown (province/regency/...), so a group-level
+          // label on top of that just duplicates the first one.
+          <FormControl
+            key={field.name}
+            className={field.className}
+            style={
+              field.className || cascadeLayout !== 'row'
+                ? undefined
+                : { gridColumn: `span ${levelCount}` }
+            }
+          >
+            <LocationPicker
+              name={field.name}
+              maxLevel={field.maxLevel ?? 3}
+              isMulti={field.isMulti}
+              layout={field.layout ?? 'row'}
+              control={control}
+              watch={watch}
+              setValue={setValue}
+              clearErrors={clearErrors}
+              errors={formState.errors}
+              disabled={
+                typeof field.disabled === 'function'
+                  ? field.disabled({
+                      getValue: watch,
+                      getReactSelectValue: (name: string) =>
+                        getReactSelectValue(watch(name)),
+                    })
+                  : field.disabled
+              }
+              onChange={() => {
+                clearField({
+                  setValue,
+                  name: field.clearOnChangeFields ?? [],
+                })
+              }}
+            />
+          </FormControl>
+        )
+      }
       case 'date-range-picker':
         return (
           <FormControl key={field.name} className={field.className}>

@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { OptionType } from '#components/react-select'
 import { toast } from '#components/toast'
 import { BOOLEAN } from '#constants/common'
 import {
@@ -26,12 +25,7 @@ import * as yup from 'yup'
 import { formSchema } from '../schema/EntitySchemaForm'
 import { reformatFromDetail } from '../utils/helper'
 
-export type TFormData = yup.InferType<typeof formSchema> & {
-  province: OptionType | null
-  regency: OptionType | null
-  sub_district: OptionType | null
-  village: OptionType | null
-}
+export type TFormData = yup.InferType<typeof formSchema>
 export type TFormValidationKeys = 'common:validation.required'
 
 type Props = {
@@ -145,10 +139,7 @@ export const useEntityForm = ({ methodsForm, isGlobal }: Props) => {
       name: values.name.toUpperCase(),
       type: values.type,
       entity_tag_id: values.entity_tag_id,
-      province_id: values.province_id ?? '',
-      regency_id: values.regency_id ?? '',
-      sub_district_id: values.sub_district_id ?? '',
-      village_id: values.village_id ?? '',
+      location_id: values.location_id ?? null,
       address: values.address,
       lat: values.lat ?? '',
       lng: values.lng ?? '',

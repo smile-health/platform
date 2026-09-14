@@ -23,10 +23,7 @@ export const formSchema = yup.object({
   is_vendor: yup.string().nullable(),
   is_ayosehat: yup.string().required(),
 
-  province_id: yup.string().notRequired(),
-  regency_id: yup.string().notRequired(),
-  sub_district_id: yup.string().notRequired(),
-  village_id: yup.string().notRequired(),
+  location_id: yup.number().nullable().notRequired(),
   postal_code: yup.string().notRequired(),
   address: yup.string().required('common:validation.required'),
   lat: yup.string().notRequired(),
@@ -65,32 +62,6 @@ export const formSchema = yup.object({
       is: true,
       then: (schema) => schema.required('common:validation.required'),
     }),
-
-  // addtional data global
-  province: yup
-    .object({
-      value: yup.number(),
-      label: yup.string(),
-    })
-    .notRequired(),
-  regency: yup
-    .object({
-      value: yup.number(),
-      label: yup.string(),
-    })
-    .notRequired(),
-  sub_district: yup
-    .object({
-      value: yup.number(),
-      label: yup.string(),
-    })
-    .notRequired(),
-  village: yup
-    .object({
-      value: yup.number(),
-      label: yup.string(),
-    })
-    .notRequired(),
 })
 
 export const addMaterialEntitySchema = (t: TFunction<['entity', 'common']>) =>

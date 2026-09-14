@@ -86,6 +86,34 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
     super("ws_entities", filterProgram, filterActivity)
   }
 
+  // ws_entities.location_id points at the deepest locations row for an
+  // entity. locations.path is a materialized root-to-self ancestor path
+  // (e.g. "1#23#2345"), so ancestor ids/names are derived from it instead of
+  // the old flat province_id/regency_id/sub_district_id/village_id columns.
+  // Mirrors apps/core's EntityRepository#joinLocationHierarchy.
+  #joinLocationHierarchy(qb: any, entityAlias = "e") {
+    return qb
+      .leftJoin("locations as loc", "loc.id", `${entityAlias}.location_id`)
+      .leftJoin("locations as p", (join) =>
+        join.on(sql`p.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as r", (join) =>
+        join.on(
+          sql`r.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as sd", (join) =>
+        join.on(
+          sql`sd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as v", (join) =>
+        join.on(
+          sql`v.id = CASE WHEN loc.level >= 3 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 4), '#', -1) ELSE NULL END`
+        )
+      )
+  }
+
   readonly #getTranslation = (
     c: Context,
     key: string,
@@ -135,14 +163,16 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       query = query.where("e.is_vendor", "=", is_vendor)
     }
 
+    // Requires the caller to have joined the locations hierarchy
+    // (see #joinLocationHierarchy) so that p/r/sd/v aliases exist.
     if (village_ids && village_ids.length > 0) {
-      query = query.where("e.village_id", "in", village_ids)
+      query = query.where("v.id", "in", village_ids)
     } else if (sub_district_ids && sub_district_ids.length > 0) {
-      query = query.where("e.sub_district_id", "in", sub_district_ids)
+      query = query.where("sd.id", "in", sub_district_ids)
     } else if (regency_ids && regency_ids.length > 0) {
-      query = query.where("e.regency_id", "in", regency_ids)
+      query = query.where("r.id", "in", regency_ids)
     } else if (province_ids && province_ids.length > 0) {
-      query = query.where("e.province_id", "in", province_ids)
+      query = query.where("p.id", "in", province_ids)
     }
 
     if (status !== undefined) {
@@ -241,10 +271,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
     } else {
       query = query
         .selectFrom("ws_entities as e")
-        .leftJoin("locations as p", "p.id", "e.province_id")
-        .leftJoin("locations as r", "r.id", "e.regency_id")
-        .leftJoin("locations as sd", "sd.id", "e.sub_district_id")
-        .leftJoin("locations as v", "v.id", "e.village_id")
+        .$call((qb) => this.#joinLocationHierarchy(qb))
         .leftJoin("entity_tags as et", "et.id", "e.entity_tag_id")
         .leftJoin("entity_types as etp", "etp.id", "e.type")
     }
@@ -262,9 +289,9 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
           .execute()
         const provinceIds = provinces.map((item) => String(item.id))
 
-        query = query.where("e.province_id", "in", provinceIds)
-        query = query.where("e.regency_id", "is", null)
-        query = query.where("e.sub_district_id", "is", null)
+        query = query.where("p.id", "in", provinceIds)
+        query = query.where("r.id", "is", null)
+        query = query.where("sd.id", "is", null)
         query = query.where("e.type", "=", 1)
       }
 
@@ -276,17 +303,17 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
           .execute()
         const regencyIds = regencies.map((item) => String(item.id))
 
-        query = query.where("e.province_id", "=", province_id)
+        query = query.where("p.id", "=", province_id)
         query = query.where((eb) =>
           eb.or([
             eb.and([
-              eb("e.regency_id", "in", regencyIds),
-              eb("e.sub_district_id", "is", null),
+              eb("r.id", "in", regencyIds),
+              eb("sd.id", "is", null),
               eb("e.type", "=", 2),
             ]),
             eb.and([
-              eb("e.regency_id", "is", null),
-              eb("e.sub_district_id", "is", null),
+              eb("r.id", "is", null),
+              eb("sd.id", "is", null),
               eb("e.type", "=", 1),
             ]),
           ])
@@ -308,17 +335,17 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
           .execute()
         const subDistrictIds = subDistricts.map((item) => String(item.id))
 
-        query = query.where("e.province_id", "=", province_id)
+        query = query.where("p.id", "=", province_id)
         query = query.where((eb) =>
           eb.or([
             eb.and([
-              eb("e.sub_district_id", "in", subDistrictIds),
+              eb("sd.id", "in", subDistrictIds),
               eb("e.type", "=", 3),
               eb("e.is_puskesmas", "=", 1),
             ]),
             eb.and([
-              eb("e.regency_id", "=", regency_id),
-              eb("e.sub_district_id", "is", null),
+              eb("r.id", "=", regency_id),
+              eb("sd.id", "is", null),
               eb("e.type", "=", 2),
             ]),
           ])
@@ -363,7 +390,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
             "location"
           ),
           useDatamart ? sql`COUNT(*) OVER ()`.as("total") : sql`0`.as("total"),
-          "e.village_id as village_id",
+          useDatamart ? "e.village_id as village_id" : "v.id as village_id",
         ])
         .limit(validatedPageSize)
         .offset(offset)
@@ -475,10 +502,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
     } else {
       query = query
         .selectFrom("ws_entities as e")
-        .leftJoin("locations as p", "p.id", "e.province_id")
-        .leftJoin("locations as r", "r.id", "e.regency_id")
-        .leftJoin("locations as sd", "sd.id", "e.sub_district_id")
-        .leftJoin("locations as v", "v.id", "e.village_id")
+        .$call((qb) => this.#joinLocationHierarchy(qb))
         .leftJoin("entity_tags as et", "et.id", "e.entity_tag_id")
         .leftJoin("entity_types as etp", "etp.id", "e.type")
     }
@@ -502,9 +526,9 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
           .execute()
         const provinceIds = provinces.map((item) => String(item.id))
 
-        query = query.where("e.province_id", "in", provinceIds)
-        query = query.where("e.regency_id", "is", null)
-        query = query.where("e.sub_district_id", "is", null)
+        query = query.where("p.id", "in", provinceIds)
+        query = query.where("r.id", "is", null)
+        query = query.where("sd.id", "is", null)
         query = query.where("e.type", "=", 1)
       }
 
@@ -520,17 +544,17 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
           .execute()
         const regencyIds = regencies.map((item) => String(item.id))
 
-        query = query.where("e.province_id", "=", filters.province_id)
+        query = query.where("p.id", "=", filters.province_id)
         query = query.where((eb) =>
           eb.or([
             eb.and([
-              eb("e.regency_id", "in", regencyIds),
-              eb("e.sub_district_id", "is", null),
+              eb("r.id", "in", regencyIds),
+              eb("sd.id", "is", null),
               eb("e.type", "=", 2),
             ]),
             eb.and([
-              eb("e.regency_id", "is", null),
-              eb("e.sub_district_id", "is", null),
+              eb("r.id", "is", null),
+              eb("sd.id", "is", null),
               eb("e.type", "=", 1),
             ]),
           ])
@@ -556,17 +580,17 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
           .execute()
         const subDistrictIds = subDistricts.map((item) => String(item.id))
 
-        query = query.where("e.province_id", "=", filters.province_id)
+        query = query.where("p.id", "=", filters.province_id)
         query = query.where((eb) =>
           eb.or([
             eb.and([
-              eb("e.sub_district_id", "in", subDistrictIds),
+              eb("sd.id", "in", subDistrictIds),
               eb("e.type", "=", 3),
               eb("e.is_puskesmas", "=", 1),
             ]),
             eb.and([
-              eb("e.regency_id", "=", filters.regency_id),
-              eb("e.sub_district_id", "is", null),
+              eb("r.id", "=", filters.regency_id),
+              eb("sd.id", "is", null),
               eb("e.type", "=", 2),
             ]),
           ])
@@ -627,7 +651,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       sql<string>`CONCAT_WS(', ', v.name, sd.name, r.name, p.name)`.as(
         "location"
       ),
-      "e.village_id as village_id",
+      useDatamart ? "e.village_id as village_id" : "v.id as village_id",
     ])
 
     // Order by created_at DESC, id DESC for consistent pagination
@@ -750,10 +774,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
 
     const result = await c.var.trx
       .selectFrom("ws_entities as e")
-      .leftJoin("locations as p", "p.id", "e.province_id")
-      .leftJoin("locations as r", "r.id", "e.regency_id")
-      .leftJoin("locations as sd", "sd.id", "e.sub_district_id")
-      .leftJoin("locations as v", "v.id", "e.village_id")
+      .$call((qb) => this.#joinLocationHierarchy(qb))
       .leftJoin("entity_types as etp", "etp.id", "e.type")
       .leftJoin("entity_tags as et", "et.id", "e.entity_tag_id")
       .select([
@@ -822,10 +843,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
     // Handle big data query using stream process
     let query = c.var.trx
       .selectFrom("ws_entities as e")
-      .leftJoin("locations as p", "p.id", "e.province_id")
-      .leftJoin("locations as r", "r.id", "e.regency_id")
-      .leftJoin("locations as sd", "sd.id", "e.sub_district_id")
-      .leftJoin("locations as v", "v.id", "e.village_id")
+      .$call((qb) => this.#joinLocationHierarchy(qb))
       .leftJoin("users as u", "u.id", "e.created_by")
       .leftJoin("entity_types as etp", "etp.id", "e.type")
       .where("e.program_id", "=", params.program_id ?? 0)
@@ -855,15 +873,15 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
         "etp.name as entity_type_name",
         "e.name",
         "e.address",
-        "e.village_id",
+        "v.id as village_id",
         "v.name as village_name",
         "e.code",
         "e.id_satu_sehat",
-        "e.province_id",
+        "p.id as province_id",
         "p.name as province_name",
-        "e.regency_id",
+        "r.id as regency_id",
         "r.name as regency_name",
-        "e.sub_district_id",
+        "sd.id as sub_district_id",
         "sd.name as sub_district_name",
         "e.status",
         sql<string>`et.title`.as("entity_tag_name"),
@@ -907,8 +925,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
 
     const entities = await c.var.trx
       .selectFrom("ws_entities as e")
-      .leftJoin("locations as prov", "prov.id", "e.province_id")
-      .leftJoin("locations as city", "city.id", "e.regency_id")
+      .$call((qb) => this.#joinLocationHierarchy(qb))
       .leftJoin("entity_tags as et", "et.id", "e.entity_tag_id")
       .select([
         "e.id",
@@ -919,7 +936,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
         "e.id_satu_sehat",
         "e.updated_at",
       ])
-      .select(sql<string>`concat(city.name, ', ', prov.name)`.as("location"))
+      .select(sql<string>`concat(r.name, ', ', p.name)`.as("location"))
       .where("e.id", "in", entityIds)
       .execute()
 
@@ -965,8 +982,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
 
     const entity = await c.var.trx
       .selectFrom("ws_entities as e")
-      .leftJoin("locations as prov", "prov.id", "e.province_id")
-      .leftJoin("locations as city", "city.id", "e.regency_id")
+      .$call((qb) => this.#joinLocationHierarchy(qb))
       .leftJoin("entity_tags as et", "et.id", "e.entity_tag_id")
       .select([
         "e.id",
@@ -975,12 +991,12 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
         "e.type",
         "e.address",
         "et.title as tag",
-        "city.name as city_name",
-        "prov.name as province_name",
+        "r.name as city_name",
+        "p.name as province_name",
         "e.id_satu_sehat",
         "e.updated_at",
       ])
-      .select(sql<string>`concat(city.name, ', ', prov.name)`.as("location"))
+      .select(sql<string>`concat(r.name, ', ', p.name)`.as("location"))
       .where("e.id", "=", entityID)
       .executeTakeFirst()
 
@@ -1219,7 +1235,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       .selectFrom("ws_entities as e")
       .innerJoin(entityActivities, "entity_acts.entity_id", "e.id")
       .leftJoin(latestTransactions, "latest_tx.entity_id", "e.id")
-      .leftJoin("locations as r", "r.id", "e.regency_id")
+      .$call((qb) => this.#joinLocationHierarchy(qb))
       .select([
         "e.id as entity_id",
         "e.type as entity_type_id",
@@ -1279,12 +1295,57 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
     return { schoolTargets, sum }
   }
 
+  // NOTE: this queries `entities`, a table owned/migrated by apps/core, not
+  // apps/main's own `ws_entities`. apps/core's entities.province_id/
+  // regency_id/sub_district_id have already been dropped in favor of
+  // entities.location_id + locations.path (see apps/core's
+  // 1783200000002/1783200000004 migrations), but apps/main's own copy of
+  // db.d.ts still declares the old flat columns and has not been
+  // regenerated against `entities` (out of scope for this ws_entities
+  // task - only WsEntities/Locations were updated in db.d.ts here). Left
+  // as-is to avoid referencing a location_id field that doesn't exist yet
+  // in this file's Entities type; flagging for whoever owns keeping
+  // apps/main's `entities` typings in sync with apps/core's schema.
   async findById(c: Context, entity_id: number) {
     const result = await c.var.trx
       .selectFrom("entities as e")
-      .leftJoin("locations as p", "p.id", "e.province_id")
-      .leftJoin("locations as c", "c.id", "e.regency_id")
-      .leftJoin("locations as d", "d.id", "e.sub_district_id")
+      .leftJoin("locations as loc", "loc.id", "e.location_id")
+      .leftJoin("locations as p", (join) =>
+        join.on((eb) =>
+          eb.and([
+            eb(
+              "p.id",
+              "=",
+              sql<number>`CAST(SUBSTRING_INDEX(loc.path, '#', 1) AS UNSIGNED)`
+            ),
+            eb("p.level", "=", 0),
+          ])
+        )
+      )
+      .leftJoin("locations as c", (join) =>
+        join.on((eb) =>
+          eb.and([
+            eb(
+              "c.id",
+              "=",
+              sql<number>`CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) AS UNSIGNED)`
+            ),
+            eb("c.level", "=", 1),
+          ])
+        )
+      )
+      .leftJoin("locations as d", (join) =>
+        join.on((eb) =>
+          eb.and([
+            eb(
+              "d.id",
+              "=",
+              sql<number>`CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) AS UNSIGNED)`
+            ),
+            eb("d.level", "=", 2),
+          ])
+        )
+      )
       .where("e.deleted_at", "is", null)
       .where("e.id", "=", entity_id)
       .select([

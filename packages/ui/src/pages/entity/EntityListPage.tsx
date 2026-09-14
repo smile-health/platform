@@ -127,10 +127,7 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
         keyword,
         type_ids,
         entity_tag_ids,
-        province_ids,
-        regency_ids,
-        sub_district_ids,
-        village_ids,
+        location_ids,
         program_ids,
         id_satu_sehat,
       } = filter.query
@@ -149,14 +146,7 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
         ...(entity_tag_ids && {
           entity_tag_ids: getReactSelectValue(entity_tag_ids),
         }),
-        ...(province_ids && {
-          province_ids: getReactSelectValue(province_ids),
-        }),
-        ...(regency_ids && { regency_ids: getReactSelectValue(regency_ids) }),
-        ...(sub_district_ids && {
-          sub_district_ids: getReactSelectValue(sub_district_ids),
-        }),
-        ...(village_ids && { village_ids: getReactSelectValue(village_ids) }),
+        ...(location_ids?.length && { location_ids }),
         ...(filteredProgramIds?.length && {
           program_ids: getReactSelectValue(filteredProgramIds),
         }),
@@ -198,10 +188,7 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
         keyword,
         type_ids,
         entity_tag_ids,
-        province_ids,
-        regency_ids,
-        sub_district_ids,
-        village_ids,
+        location_ids,
         program_ids,
         id_satu_sehat,
       } = filter.query
@@ -222,14 +209,7 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
         ...(entity_tag_ids && {
           entity_tag_ids: getReactSelectValue(entity_tag_ids),
         }),
-        ...(province_ids && {
-          province_ids: getReactSelectValue(province_ids),
-        }),
-        ...(regency_ids && { regency_ids: getReactSelectValue(regency_ids) }),
-        ...(sub_district_ids && {
-          sub_district_ids: getReactSelectValue(sub_district_ids),
-        }),
-        ...(village_ids && { village_ids: getReactSelectValue(village_ids) }),
+        ...(location_ids?.length && { location_ids }),
         ...(filteredProgramIds?.length && {
           program_ids: getReactSelectValue(filteredProgramIds),
         }),

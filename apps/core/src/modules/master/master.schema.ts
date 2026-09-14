@@ -14,6 +14,10 @@ export const Pageable = PaginationQueriesSchema.extend({
     }),
 })
 
+export const LocationPageable = Pageable.extend({
+  level: z.coerce.number().int().min(0).optional(),
+})
+
 export type TLocations = Selectable<Locations>
 export type TLocationPageable = z.infer<typeof Pageable> & {
   level?: number

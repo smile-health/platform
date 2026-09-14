@@ -531,17 +531,14 @@ export interface Entities {
   is_vendor: Generated<number>;
   lat: Generated<string | null>;
   lng: Generated<string | null>;
+  location_id: number | null;
   name: Generated<string | null>;
   parent_id: Generated<number | null>;
   postal_code: Generated<string | null>;
-  province_id: Generated<string | null>;
-  regency_id: Generated<string | null>;
   status: Generated<number>;
-  sub_district_id: Generated<string | null>;
   type: Generated<number>;
   updated_at: Generated<Date>;
   updated_by: Generated<number | null>;
-  village_id: Generated<string | null>;
 }
 
 export interface EntityEntityTags {
@@ -1200,6 +1197,7 @@ export interface Locations {
   lng: Generated<string | null>;
   name: string;
   parent_id: Generated<number | null>;
+  path: string | null;
   updated_at: Generated<Date>;
 }
 
