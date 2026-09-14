@@ -30,10 +30,7 @@ export type EntityDetailRelationCustomerDTO = {
   type: number
   name: string | null
   is_vendor?: number | null
-  province_id: string | number | null
-  regency_id: string | number | null
-  sub_district_id: string | number | null
-  village_id: string | number | null
+  location_id: number | null
   location?: string
 }
 

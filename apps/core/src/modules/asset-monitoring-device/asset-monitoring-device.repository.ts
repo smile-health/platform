@@ -100,15 +100,14 @@ export class AssetMonitoringDeviceRepository {
       .leftJoin("entity_types", "entity_types.id", "e.type")
       .leftJoin("users as creator", "creator.id", "asset_rtmds.created_by")
       .leftJoin("users as updater", "updater.id", "asset_rtmds.updated_by")
-      .leftJoin(
-        "locations as province_locations",
-        "province_locations.id",
-        "e.province_id"
+      .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+      .leftJoin("locations as province_locations", (join) =>
+        join.on(sql`province_locations.id = SUBSTRING_INDEX(e_loc.path, '#', 1)`)
       )
-      .leftJoin(
-        "locations as regency_locations",
-        "regency_locations.id",
-        "e.regency_id"
+      .leftJoin("locations as regency_locations", (join) =>
+        join.on(
+          sql`regency_locations.id = CASE WHEN e_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
       .select([
         "asset_rtmds.id",
@@ -161,7 +160,7 @@ export class AssetMonitoringDeviceRepository {
           regency_id?: string
           province_name?: string
           regency_name?: string
-        }>`JSON_OBJECT('id', e.id, 'name', e.name, 'entity_type_name', entity_types.name, 'address', e.address, 'province_id', e.province_id, 'regency_id', e.regency_id, 'province_name', province_locations.name, 'regency_name', regency_locations.name)`.as(
+        }>`JSON_OBJECT('id', e.id, 'name', e.name, 'entity_type_name', entity_types.name, 'address', e.address, 'province_id', province_locations.id, 'regency_id', regency_locations.id, 'province_name', province_locations.name, 'regency_name', regency_locations.name)`.as(
           "entity"
         ),
         sql<{
@@ -297,15 +296,16 @@ export class AssetMonitoringDeviceRepository {
         .leftJoin("entity_types", "entity_types.id", "e.type")
         .leftJoin("users as creator", "creator.id", "asset_rtmds.created_by")
         .leftJoin("users as updater", "updater.id", "asset_rtmds.updated_by")
-        .leftJoin(
-          "locations as province_locations",
-          "province_locations.id",
-          "e.province_id"
+        .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+        .leftJoin("locations as province_locations", (join) =>
+          join.on(
+            sql`province_locations.id = SUBSTRING_INDEX(e_loc.path, '#', 1)`
+          )
         )
-        .leftJoin(
-          "locations as regency_locations",
-          "regency_locations.id",
-          "e.regency_id"
+        .leftJoin("locations as regency_locations", (join) =>
+          join.on(
+            sql`regency_locations.id = CASE WHEN e_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 2), '#', -1) ELSE NULL END`
+          )
         )
         .select([
           "asset_rtmds.id",
@@ -363,7 +363,7 @@ export class AssetMonitoringDeviceRepository {
             regency_id?: string
             province_name?: string
             regency_name?: string
-          }>`JSON_OBJECT('id', e.id, 'name', e.name, 'entity_type_name', entity_types.name, 'province_id', e.province_id, 'regency_id', e.regency_id, 'province_name', province_locations.name, 'regency_name', regency_locations.name)`.as(
+          }>`JSON_OBJECT('id', e.id, 'name', e.name, 'entity_type_name', entity_types.name, 'province_id', province_locations.id, 'regency_id', regency_locations.id, 'province_name', province_locations.name, 'regency_name', regency_locations.name)`.as(
             "entity"
           ),
           sql<string>`COALESCE(CONCAT_WS(' ', creator.firstname, IFNULL(creator.lastname, '')), '')`.as(
@@ -462,11 +462,11 @@ export class AssetMonitoringDeviceRepository {
       }
 
       if (params.province_id) {
-        query = query.where("e.province_id", "=", params.province_id)
+        query = query.where("province_locations.id", "=", params.province_id)
       }
 
       if (params.city_id) {
-        query = query.where("e.regency_id", "=", params.city_id)
+        query = query.where("regency_locations.id", "=", params.city_id)
       }
 
       if (params.health_center_id) {
@@ -565,15 +565,16 @@ export class AssetMonitoringDeviceRepository {
         .leftJoin("entity_types", "entity_types.id", "e.type")
         .leftJoin("users as creator", "creator.id", "asset_rtmds.created_by")
         .leftJoin("users as updater", "updater.id", "asset_rtmds.updated_by")
-        .leftJoin(
-          "locations as province_locations",
-          "province_locations.id",
-          "e.province_id"
+        .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+        .leftJoin("locations as province_locations", (join) =>
+          join.on(
+            sql`province_locations.id = SUBSTRING_INDEX(e_loc.path, '#', 1)`
+          )
         )
-        .leftJoin(
-          "locations as regency_locations",
-          "regency_locations.id",
-          "e.regency_id"
+        .leftJoin("locations as regency_locations", (join) =>
+          join.on(
+            sql`regency_locations.id = CASE WHEN e_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 2), '#', -1) ELSE NULL END`
+          )
         )
         .where("asset_rtmds.deleted_at", "is", null)
 
@@ -669,11 +670,19 @@ export class AssetMonitoringDeviceRepository {
       }
 
       if (params.province_id) {
-        totalQuery = totalQuery.where("e.province_id", "=", params.province_id)
+        totalQuery = totalQuery.where(
+          "province_locations.id",
+          "=",
+          params.province_id
+        )
       }
 
       if (params.city_id) {
-        totalQuery = totalQuery.where("e.regency_id", "=", params.city_id)
+        totalQuery = totalQuery.where(
+          "regency_locations.id",
+          "=",
+          params.city_id
+        )
       }
 
       if (params.health_center_id) {
@@ -1516,20 +1525,21 @@ export class AssetMonitoringDeviceRepository {
       .leftJoin("entity_types", "entity_types.id", "entities.type")
       .leftJoin("users as creator", "creator.id", "asset_rtmds.created_by")
       .leftJoin("users as updater", "updater.id", "asset_rtmds.updated_by")
-      .leftJoin(
-        "locations as province_locations",
-        "province_locations.id",
-        "entities.province_id"
+      .leftJoin("locations as entities_loc", "entities_loc.id", "entities.location_id")
+      .leftJoin("locations as province_locations", (join) =>
+        join.on(
+          sql`province_locations.id = SUBSTRING_INDEX(entities_loc.path, '#', 1)`
+        )
       )
-      .leftJoin(
-        "locations as regency_locations",
-        "regency_locations.id",
-        "entities.regency_id"
+      .leftJoin("locations as regency_locations", (join) =>
+        join.on(
+          sql`regency_locations.id = CASE WHEN entities_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(entities_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
-      .leftJoin(
-        "locations as subdistrict_locations",
-        "subdistrict_locations.id",
-        "entities.sub_district_id"
+      .leftJoin("locations as subdistrict_locations", (join) =>
+        join.on(
+          sql`subdistrict_locations.id = CASE WHEN entities_loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(entities_loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
       )
       .select([
         "asset_rtmds.id",
@@ -1551,8 +1561,8 @@ export class AssetMonitoringDeviceRepository {
         "entity_types.name as entity_type_name",
         "entities.lng as longitude",
         "entities.lat as latitude",
-        "entities.province_id",
-        "entities.regency_id",
+        "province_locations.id as province_id",
+        "regency_locations.id as regency_id",
         "province_locations.name as province_name",
         "regency_locations.name as regency_name",
         "subdistrict_locations.name as subdistrict_name",
@@ -1640,11 +1650,11 @@ export class AssetMonitoringDeviceRepository {
     }
 
     if (params.province_id) {
-      query = query.where("entities.province_id", "=", params.province_id)
+      query = query.where("province_locations.id", "=", params.province_id)
     }
 
     if (params.city_id) {
-      query = query.where("entities.regency_id", "=", params.city_id)
+      query = query.where("regency_locations.id", "=", params.city_id)
     }
 
     if (params.health_center_id) {
@@ -1769,19 +1779,25 @@ export class AssetMonitoringDeviceRepository {
 
   async getEntityByProvince(c: Context, provinceId: number) {
     return await c.var.trx
-      .selectFrom("entities")
-      .select(["id"])
-      .where("province_id", "=", provinceId)
-      .where("deleted_at", "is", null)
+      .selectFrom("entities as e")
+      .leftJoin("locations as loc", "loc.id", "e.location_id")
+      .select(["e.id"])
+      .where(sql`SUBSTRING_INDEX(loc.path, '#', 1)`, "=", provinceId)
+      .where("e.deleted_at", "is", null)
       .execute()
   }
 
   async getEntityByRegency(c: Context, regencyId: number) {
     return await c.var.trx
-      .selectFrom("entities")
-      .select(["id"])
-      .where("regency_id", "=", regencyId)
-      .where("deleted_at", "is", null)
+      .selectFrom("entities as e")
+      .leftJoin("locations as loc", "loc.id", "e.location_id")
+      .select(["e.id"])
+      .where(
+        sql`CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`,
+        "=",
+        regencyId
+      )
+      .where("e.deleted_at", "is", null)
       .execute()
   }
 

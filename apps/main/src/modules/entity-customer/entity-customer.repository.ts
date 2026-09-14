@@ -19,27 +19,54 @@ export class EntityCustomerRepository extends BaseRepository<"ws_customer_vendor
     super("ws_customer_vendors")
   }
 
+  // Mirrors apps/main's EntityRepository#joinLocationHierarchy.
+  #joinLocationHierarchy(qb: any, entityAlias = "e") {
+    return qb
+      .leftJoin("locations as loc", "loc.id", `${entityAlias}.location_id`)
+      .leftJoin("locations as p", (join) =>
+        join.on(sql`p.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as r", (join) =>
+        join.on(
+          sql`r.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as sd", (join) =>
+        join.on(
+          sql`sd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as v", (join) =>
+        join.on(
+          sql`v.id = CASE WHEN loc.level >= 3 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 4), '#', -1) ELSE NULL END`
+        )
+      )
+  }
+
+  // Mirrors apps/main's StockRepository#applyEntityFilter's location_id path-prefix match.
   #generateQueryWhereClause(
     query,
-    entityDetail: EntityDetailRelationCustomerDTO
+    entityDetail: EntityDetailRelationCustomerDTO,
+    entityAlias = ""
   ) {
-    const { province_id, regency_id, sub_district_id, village_id } =
-      entityDetail
+    const { location_id } = entityDetail
+    const locationIdRef = entityAlias
+      ? `${entityAlias}.location_id`
+      : "location_id"
 
-    if (village_id) {
-      query = query.where("village_id", "=", village_id)
-    } else if (sub_district_id) {
+    if (location_id) {
       query = query
-        .where("sub_district_id", "=", sub_district_id)
-        .where("village_id", "is not", null)
-    } else if (regency_id) {
-      query = query
-        .where("regency_id", "=", regency_id)
-        .where("sub_district_id", "is not", null)
-    } else if (province_id) {
-      query = query
-        .where("province_id", "=", province_id)
-        .where("regency_id", "is not", null)
+        .innerJoin("locations as loc", "loc.id", locationIdRef)
+        .where((eb) =>
+          eb(
+            "loc.path",
+            "like",
+            eb
+              .selectFrom("locations")
+              .select(sql`CONCAT(path, '%')`.as("prefix"))
+              .where("id", "=", location_id)
+          )
+        )
     }
 
     return query
@@ -76,27 +103,8 @@ export class EntityCustomerRepository extends BaseRepository<"ws_customer_vendor
         join.onRef("e.id", "=", "c.customer_id").on("e.deleted_at", "is", null)
       )
       .leftJoin("entity_tags as et", "et.id", "e.entity_tag_id")
-      .leftJoin("locations as p", (join) =>
-        join.onRef("p.id", "=", "e.province_id").on("p.level", "=", 0)
-      )
-      .leftJoin("locations as r", (join) =>
-        join
-          .onRef("r.id", "=", "e.regency_id")
-          .onRef("r.parent_id", "=", "p.id")
-          .on("r.level", "=", 1)
-      )
-      .leftJoin("locations as sd", (join) =>
-        join
-          .onRef("sd.id", "=", "e.sub_district_id")
-          .onRef("sd.parent_id", "=", "r.id")
-          .on("sd.level", "=", 2)
-      )
-      .leftJoin("locations as v", (join) =>
-        join
-          .onRef("v.id", "=", "e.village_id")
-          .onRef("v.parent_id", "=", "sd.id")
-          .on("v.level", "=", 3)
-      )
+
+    query = this.#joinLocationHierarchy(query, "e")
       .leftJoin("ws_customer_vendor_activities as cha", (join) =>
         join
           .onRef("cha.customer_vendor_id", "=", "c.id")
@@ -154,29 +162,10 @@ export class EntityCustomerRepository extends BaseRepository<"ws_customer_vendor
   }
 
   async getEntityDetail(c: Context<DB>, id: number, programId: number) {
-    return c.var.trx
-      .selectFrom("ws_entities as e")
-      .leftJoin("locations as p", (join) =>
-        join.onRef("p.id", "=", "e.province_id").on("p.level", "=", 0)
-      )
-      .leftJoin("locations as r", (join) =>
-        join
-          .onRef("r.id", "=", "e.regency_id")
-          .onRef("r.parent_id", "=", "p.id")
-          .on("p.level", "=", 1)
-      )
-      .leftJoin("locations as sd", (join) =>
-        join
-          .onRef("sd.id", "=", "e.sub_district_id")
-          .onRef("sd.parent_id", "=", "r.id")
-          .on("p.level", "=", 2)
-      )
-      .leftJoin("locations as v", (join) =>
-        join
-          .onRef("v.id", "=", "e.village_id")
-          .onRef("v.parent_id", "=", "sd.id")
-          .on("p.level", "=", 3)
-      )
+    return this.#joinLocationHierarchy(
+      c.var.trx.selectFrom("ws_entities as e"),
+      "e"
+    )
       .where("e.deleted_at", "is", null)
       .where("e.program_id", "=", programId)
       .select([
@@ -184,10 +173,7 @@ export class EntityCustomerRepository extends BaseRepository<"ws_customer_vendor
         "e.name",
         "e.is_vendor",
         "e.type",
-        "e.village_id as village_id",
-        "e.sub_district_id as sub_district_id",
-        "e.regency_id as regency_id",
-        "e.province_id as province_id",
+        "e.location_id",
         sql<string>`CONCAT_WS(', ', v.name, sd.name, r.name, p.name)`.as(
           "location"
         ),
@@ -431,7 +417,7 @@ export class EntityCustomerRepository extends BaseRepository<"ws_customer_vendor
       .where("wse.program_id", "=", programId)
       .where("wse.status", "=", 1)
       .where("wse.id", "not in", mapIDListCustomer)
-    query = this.#generateQueryWhereClause(query, entityDetail)
+    query = this.#generateQueryWhereClause(query, entityDetail, "wse")
 
     return query
       .select([

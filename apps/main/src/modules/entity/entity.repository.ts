@@ -11,6 +11,7 @@ import {
 } from "@/modules/helpers/cursor-helper.js"
 import { redis } from "@/common/infrastructure/redis.js"
 import { env } from "@/config/env.js"
+import { locationHierarchyJsonAgg } from "@smile-health/lib/sql.js"
 import { Context as CustomContext } from "@smile-health/lib/types/context.js"
 import { associate } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
@@ -797,6 +798,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
         "et.is_open_vial as is_open_vial",
         "etp.name as entity_type_name",
         "e.is_relocation",
+        locationHierarchyJsonAgg("loc").as("locations"),
       ])
       .where("e.id", "=", id)
       .where("e.program_id", "=", programId)
@@ -935,6 +937,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
         "et.title as tag",
         "e.id_satu_sehat",
         "e.updated_at",
+        locationHierarchyJsonAgg("loc").as("locations"),
       ])
       .select(sql<string>`concat(r.name, ', ', p.name)`.as("location"))
       .where("e.id", "in", entityIds)
@@ -995,6 +998,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
         "p.name as province_name",
         "e.id_satu_sehat",
         "e.updated_at",
+        locationHierarchyJsonAgg("loc").as("locations"),
       ])
       .select(sql<string>`concat(r.name, ', ', p.name)`.as("location"))
       .where("e.id", "=", entityID)

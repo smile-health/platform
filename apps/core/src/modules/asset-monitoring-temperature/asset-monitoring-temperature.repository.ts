@@ -1246,11 +1246,22 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
     }
 
     // Apply location filters
+    if (province_id || regency_id) {
+      idQuery = idQuery.leftJoin("locations as we_loc", "we_loc.id", "we.location_id")
+    }
     if (province_id) {
-      idQuery = idQuery.where("we.province_id", "=", province_id)
+      idQuery = idQuery.where(
+        sql`SUBSTRING_INDEX(we_loc.path, '#', 1)`,
+        "=",
+        province_id
+      )
     }
     if (regency_id) {
-      idQuery = idQuery.where("we.regency_id", "=", regency_id)
+      idQuery = idQuery.where(
+        sql`CASE WHEN we_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(we_loc.path, '#', 2), '#', -1) ELSE NULL END`,
+        "=",
+        regency_id
+      )
     }
     if (health_center_id) {
       idQuery = idQuery.where("we.id", "=", health_center_id)
@@ -1451,9 +1462,20 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
       .innerJoin("entities as we", "we.id", "wai.entity_id")
       .leftJoin("entity_types as et", "et.id", "we.type")
       .leftJoin("users as wuu", "wuu.id", "wai.updated_by")
-      .leftJoin("locations as lp", "lp.id", "we.province_id")
-      .leftJoin("locations as lr", "lr.id", "we.regency_id")
-      .leftJoin("locations as lsd", "lsd.id", "we.sub_district_id")
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
+      .leftJoin("locations as lp", (join) =>
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as lr", (join) =>
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as lsd", (join) =>
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .leftJoin("asset_models as wam", "wam.id", "wai.asset_model_id")
       .leftJoin("asset_types as wat", "wat.id", "wai.asset_type_id")
       .leftJoin("asset_types_classifications as atc", (join) =>
@@ -1511,11 +1533,11 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
         "wai.entity_id",
         "we.name as entity_name",
         "we.is_puskesmas as entity_is_puskesmas",
-        "we.province_id",
+        "lp.id as province_id",
         "lp.name as province_name",
-        "we.regency_id",
+        "lr.id as regency_id",
         "lr.name as regency_name",
-        "we.sub_district_id",
+        "lsd.id as sub_district_id",
         "lsd.name as sub_district_name",
         "et.name as entity_type",
         "wai.ownership_qty",
@@ -1578,11 +1600,11 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
         "wai.entity_id",
         "we.name",
         "we.is_puskesmas",
-        "we.province_id",
+        "lp.id",
         "lp.name",
-        "we.regency_id",
+        "lr.id",
         "lr.name",
-        "we.sub_district_id",
+        "lsd.id",
         "lsd.name",
         "et.name",
         "wai.ownership_qty",
@@ -1743,11 +1765,22 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
       }
     }
 
+    if (province_id || regency_id) {
+      idQuery = idQuery.leftJoin("locations as we_loc", "we_loc.id", "we.location_id")
+    }
     if (province_id) {
-      idQuery = idQuery.where("we.province_id", "=", province_id)
+      idQuery = idQuery.where(
+        sql`SUBSTRING_INDEX(we_loc.path, '#', 1)`,
+        "=",
+        province_id
+      )
     }
     if (regency_id) {
-      idQuery = idQuery.where("we.regency_id", "=", regency_id)
+      idQuery = idQuery.where(
+        sql`CASE WHEN we_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(we_loc.path, '#', 2), '#', -1) ELSE NULL END`,
+        "=",
+        regency_id
+      )
     }
     if (health_center_id) {
       idQuery = idQuery.where("we.id", "=", health_center_id)
@@ -1892,9 +1925,20 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
       .innerJoin("entities as we", "we.id", "wai.entity_id")
       .innerJoin("entity_types as et", "et.id", "we.type")
       .leftJoin("users as wuu", "wuu.id", "wai.updated_by")
-      .leftJoin("locations as lp", "lp.id", "we.province_id")
-      .leftJoin("locations as lr", "lr.id", "we.regency_id")
-      .leftJoin("locations as lsd", "lsd.id", "we.sub_district_id")
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
+      .leftJoin("locations as lp", (join) =>
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as lr", (join) =>
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as lsd", (join) =>
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .leftJoin("asset_models as wam", "wam.id", "wai.asset_model_id")
       .leftJoin("asset_types as wat", "wat.id", "wai.asset_type_id")
       .leftJoin("manufactures as wm", "wm.id", "wai.manufacture_id")
@@ -1956,11 +2000,11 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
         "we.lat as entity_lat",
         "we.lng as entity_lng",
         "we.is_puskesmas as entity_is_puskesmas",
-        "we.province_id",
+        "lp.id as province_id",
         "lp.name as province_name",
-        "we.regency_id",
+        "lr.id as regency_id",
         "lr.name as regency_name",
-        "we.sub_district_id",
+        "lsd.id as sub_district_id",
         "lsd.name as sub_district_name",
         "wai.ownership_qty",
         "wai.ownership_status",
@@ -2041,17 +2085,24 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
       .leftJoin("users as wuu", (join) =>
         join.onRef("wai.updated_by", "=", "wuu.id")
       )
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
       .leftJoin("locations as lp", (join) =>
-        join.onRef("we.province_id", "=", "lp.id")
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
       )
       .leftJoin("locations as lr", (join) =>
-        join.onRef("we.regency_id", "=", "lr.id")
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("locations as lsd", (join) =>
-        join.onRef("we.sub_district_id", "=", "lsd.id")
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("locations as lv", (join) =>
-        join.onRef("we.village_id", "=", "lv.id")
+        join.on(
+          sql`lv.id = CASE WHEN loc.level >= 3 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 4), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("asset_models as wam", (join) =>
         join.onRef("wai.asset_model_id", "=", "wam.id")
@@ -2091,9 +2142,9 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
         "wai.entity_id",
         "we.name as entity_name",
         "we.is_puskesmas as entity_is_puskesmas",
-        "we.province_id",
+        "lp.id as province_id",
         "lp.name as province_name",
-        "we.regency_id",
+        "lr.id as regency_id",
         "lr.name as regency_name",
         "wai.ownership_qty",
         "wai.ownership_status",
@@ -2279,11 +2330,25 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
       .leftJoin("integration_associations as ia", (join) =>
         join.onRef("e.id", "=", "ia.internal_id").on("ia.type", "=", "entity")
       )
+      .leftJoin("locations as loc", "loc.id", "e.location_id")
+      .leftJoin("locations as lp", (join) =>
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as lr", (join) =>
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as lsd", (join) =>
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .select([
         "e.id",
-        "e.province_id",
-        "e.regency_id",
-        "e.sub_district_id",
+        "lp.id as province_id",
+        "lr.id as regency_id",
+        "lsd.id as sub_district_id",
         "e.type",
         "e.is_puskesmas",
         "ia.client_id",
@@ -2492,14 +2557,19 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
       .leftJoin("users as wuu", (join) =>
         join.onRef("wai.updated_by", "=", "wuu.id")
       )
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
       .leftJoin("locations as lp", (join) =>
-        join.onRef("we.province_id", "=", "lp.id")
+        join.on(sql`lp.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
       )
       .leftJoin("locations as lr", (join) =>
-        join.onRef("we.regency_id", "=", "lr.id")
+        join.on(
+          sql`lr.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("locations as lsd", (join) =>
-        join.onRef("we.sub_district_id", "=", "lsd.id")
+        join.on(
+          sql`lsd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
       )
       .leftJoin("asset_models as wam", (join) =>
         join.onRef("wai.asset_model_id", "=", "wam.id")
@@ -2580,11 +2650,11 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
         "we.name as entity_name",
         "et.name as entity_type", // Added: Entity Type
         "we.is_puskesmas as entity_is_puskesmas",
-        "we.province_id",
+        "lp.id as province_id",
         "lp.name as province_name",
-        "we.regency_id",
+        "lr.id as regency_id",
         "lr.name as regency_name",
-        "we.sub_district_id",
+        "lsd.id as sub_district_id",
         "lsd.name as sub_district_name", // Added: District (Sub District Name)
         "wai.ownership_qty",
         "wai.ownership_status",

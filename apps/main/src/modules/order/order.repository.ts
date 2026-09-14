@@ -13,6 +13,7 @@ import {
   CursorPaginatedResponse,
   CursorUtils,
 } from "@/modules/helpers/cursor-helper.js"
+import { locationHierarchyJsonAgg } from "@smile-health/lib/sql.js"
 import { Context } from "@smile-health/lib/types/context.js"
 import { Context as HonoContext } from "hono"
 import { Kysely, Selectable, sql } from "kysely"
@@ -1742,6 +1743,8 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
         "vendor_r.id as vendor_regency_id",
         "customer_p.id as customer_province_id",
         "customer_r.id as customer_regency_id",
+        locationHierarchyJsonAgg("vendor_loc").as("vendor_locations"),
+        locationHierarchyJsonAgg("customer_loc").as("customer_locations"),
         "wsa.name as activity_name",
         "wdt.name as delivery_type_name",
         "wso.order_status_id as status_id",
@@ -2089,6 +2092,8 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
         "customer_p.name as customer_province_name",
         "customer_r.name as customer_regency_name",
         "customer_sd.name as sub_district_name",
+        locationHierarchyJsonAgg("vendor_loc").as("vendor_locations"),
+        locationHierarchyJsonAgg("customer_loc").as("customer_locations"),
       ])
       .where("wso.id", "=", id)
       .where("wso.deleted_at", "is", null)

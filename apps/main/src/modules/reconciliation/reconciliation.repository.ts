@@ -1,14 +1,9 @@
 import { ORDER_STATUS, ORDER_TYPE } from "@/common/constants/order.js"
 import { TRANSACTION_TYPE } from "@/common/constants/transaction.js"
-import {
-  DB,
-  WsEntities,
-  WsMaterials,
-  WsReconciliations,
-} from "@/common/infrastructure/database/types/db.js"
+import { DB } from "@/common/infrastructure/database/types/db.js"
 import { CustomContext } from "@smile-health/lib/types/context.js"
 import { Context } from "hono"
-import { Nullable, SelectQueryBuilder, sql } from "kysely"
+import { sql } from "kysely"
 import moment from "moment-timezone"
 import { BaseRepository } from "../base.repository.js"
 import {
@@ -22,14 +17,32 @@ export class ReconciliationRepository extends BaseRepository<"ws_reconciliations
     super("ws_reconciliations")
   }
 
+  // Mirrors apps/main's EntityRepository#joinLocationHierarchy.
+  #joinLocationHierarchy(qb: any, entityAlias = "wse") {
+    return qb
+      .leftJoin("locations as loc", "loc.id", `${entityAlias}.location_id`)
+      .leftJoin("locations as p", (join) =>
+        join.on(sql`p.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as r", (join) =>
+        join.on(
+          sql`r.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as sd", (join) =>
+        join.on(
+          sql`sd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as v", (join) =>
+        join.on(
+          sql`v.id = CASE WHEN loc.level >= 3 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 4), '#', -1) ELSE NULL END`
+        )
+      )
+  }
+
   #conditionReconciliationWhereClause(
-    query: SelectQueryBuilder<
-      DB & { wsr: WsReconciliations } & { wsm: WsMaterials } & {
-        wse: Nullable<WsEntities>
-      },
-      "wsr" | "wsm" | "wse",
-      object
-    >,
+    query: any,
     params: GetListReconciliationQueries
   ) {
     const {
@@ -104,11 +117,11 @@ export class ReconciliationRepository extends BaseRepository<"ws_reconciliations
     }
 
     if (province_id) {
-      query = query.where("wse.province_id", "=", String(province_id))
+      query = query.where("p.id", "=", province_id)
     }
 
     if (regency_id) {
-      query = query.where("wse.regency_id", "=", String(regency_id))
+      query = query.where("r.id", "=", regency_id)
     }
 
     return query
@@ -431,15 +444,16 @@ export class ReconciliationRepository extends BaseRepository<"ws_reconciliations
         join.onRef("wse.id", "=", "wsr.entity_id")
       )
 
-    const filteredQuery = this.#conditionReconciliationWhereClause(query, param)
+    const filteredQuery = this.#conditionReconciliationWhereClause(
+      this.#joinLocationHierarchy(query, "wse"),
+      param
+    )
       .leftJoin("ws_activities as wsa", (join) =>
         join.onRef("wsa.id", "=", "wsr.activity_id")
       )
       .leftJoin("ws_materials as wsm_parent", (join) =>
         join.onRef("wsm_parent.id", "=", "wsm.parent_id")
       )
-      .leftJoin("locations as prov", "prov.id", "wse.province_id")
-      .leftJoin("locations as reg", "reg.id", "wse.regency_id")
       .leftJoin("ws_users as wsu_created", "wsu_created.id", "wsr.created_by")
       .leftJoin("ws_users as wsu_updated", "wsu_updated.id", "wsr.updated_by")
       .where("wsr.program_id", "=", programId)
@@ -466,10 +480,10 @@ export class ReconciliationRepository extends BaseRepository<"ws_reconciliations
           "wsm_parent.code as material_parent_code",
           "wse.id as entity_id",
           "wse.name as entity_name",
-          "prov.id as province_id",
-          "prov.name as province_name",
-          "reg.id as regency_id",
-          "reg.name as regency_name",
+          "p.id as province_id",
+          "p.name as province_name",
+          "r.id as regency_id",
+          "r.name as regency_name",
           "wsa.id as activity_id",
           "wsa.name as activity_name",
           "wsu_created.id as user_id_created",
@@ -517,14 +531,15 @@ export class ReconciliationRepository extends BaseRepository<"ws_reconciliations
   }
 
   async getDetailReconciliation(c: Context, id: number, programId: number) {
-    return c.var.trx
-      .selectFrom("ws_reconciliations as wsr")
-      .innerJoin("ws_materials as wsm", "wsm.id", "wsr.material_id")
-      .leftJoin("ws_entities as wse", "wse.id", "wsr.entity_id")
+    return this.#joinLocationHierarchy(
+      c.var.trx
+        .selectFrom("ws_reconciliations as wsr")
+        .innerJoin("ws_materials as wsm", "wsm.id", "wsr.material_id")
+        .leftJoin("ws_entities as wse", "wse.id", "wsr.entity_id"),
+      "wse"
+    )
       .leftJoin("ws_activities as wsa", "wsa.id", "wsr.activity_id")
       .leftJoin("ws_materials as wsm_parent", "wsm_parent.id", "wsm.parent_id")
-      .leftJoin("locations as prov", "prov.id", "wse.province_id")
-      .leftJoin("locations as reg", "reg.id", "wse.regency_id")
       .leftJoin("ws_users as wsu_created", "wsu_created.id", "wsr.created_by")
       .leftJoin("ws_users as wsu_updated", "wsu_updated.id", "wsr.updated_by")
       .where("wsr.deleted_at", "is", null)
@@ -546,10 +561,10 @@ export class ReconciliationRepository extends BaseRepository<"ws_reconciliations
         "wsm_parent.code as material_parent_code",
         "wse.id as entity_id",
         "wse.name as entity_name",
-        "prov.id as province_id",
-        "prov.name as province_name",
-        "reg.id as regency_id",
-        "reg.name as regency_name",
+        "p.id as province_id",
+        "p.name as province_name",
+        "r.id as regency_id",
+        "r.name as regency_name",
         "wsa.id as activity_id",
         "wsa.name as activity_name",
         "wsu_created.id as user_id_created",
@@ -614,7 +629,10 @@ export class ReconciliationRepository extends BaseRepository<"ws_reconciliations
       .innerJoin("ws_materials as wsm", "wsm.id", "wsr.material_id")
       .leftJoin("ws_entities as wse", "wse.id", "wsr.entity_id")
 
-    const filteredQuery = this.#conditionReconciliationWhereClause(query, param)
+    const filteredQuery = this.#conditionReconciliationWhereClause(
+      this.#joinLocationHierarchy(query, "wse"),
+      param
+    )
       .leftJoin("ws_activities as wsa", "wsa.id", "wsr.activity_id")
       .leftJoin("ws_materials as wsm_parent", "wsm_parent.id", "wsm.parent_id")
       .leftJoin(

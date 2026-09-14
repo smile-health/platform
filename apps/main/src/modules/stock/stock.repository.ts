@@ -5,6 +5,7 @@ import { db } from "@/common/infrastructure/database/index.js"
 import { Datamart } from "@/common/infrastructure/database/types/datamart.js"
 import { DB } from "@/common/infrastructure/database/types/db.js"
 import env from "@/config/env.js"
+import { locationHierarchyJsonAgg } from "@smile-health/lib/sql.js"
 import { CustomContext } from "@smile-health/lib/types/context.js"
 import { Context } from "hono"
 import { Kysely, sql, CompiledQuery } from "kysely"
@@ -503,6 +504,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         "prov.name as province",
         "reg.name as regency",
         "sub.name as sub_district",
+        locationHierarchyJsonAgg("loc").as("locations"),
         "et.name as entity_type",
         "m.name as material_name",
         "m.hierarchy_code as material_hierarchy_code",
@@ -614,6 +616,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         "prov.name as province",
         "reg.name as regency",
         "sub.name as sub_district",
+        locationHierarchyJsonAgg("loc").as("locations"),
         "et.name as entity_type",
         "m.name as material_name",
         "m.hierarchy_code as material_hierarchy_code",
@@ -806,6 +809,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         "prov.name as province",
         "reg.name as regency",
         "sub.name as subdistrict",
+        locationHierarchyJsonAgg("loc").as("locations"),
         "et.name as entity_type",
         "p.name as parent_material",
         "m.name as material",
@@ -1481,6 +1485,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         "prov.name as province",
         "reg.name as regency",
         "sub.name as sub_district",
+        locationHierarchyJsonAgg("loc").as("locations"),
         "et.name as entity_type",
         isHierarchy
           ? "s.parent_material_id as material_id"
@@ -1681,6 +1686,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         "prov.name as province",
         "reg.name as regency",
         "sub.name as sub_district",
+        locationHierarchyJsonAgg("loc").as("locations"),
         "et.name as entity_type",
         isHierarchy
           ? "s.parent_material_id as material_id"
