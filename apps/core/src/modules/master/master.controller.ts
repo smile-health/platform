@@ -120,6 +120,15 @@ export class MasterController {
       }
     )
 
+    // Level metadata for LocationPicker: depth (array length) + label/
+    // placeholder per level, resolved server-side via c.var.t in the
+    // request's language -- the frontend has no locale lookup of its own
+    // for these strings, it just renders whatever this returns.
+    router.get("/locations/levels", async (c) => {
+      const levels = await this.module.getLocationLevels(c)
+      return c.json(levels, 200)
+    })
+
     router.get("/roles", async (c) => {
       const list = await this.module.getRoles(c)
       return c.json({ list }, 200)

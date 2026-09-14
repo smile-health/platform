@@ -611,6 +611,24 @@
       "not_given": "Not Given"
     }
   },
+  "location": {
+    "0": {
+      "label": "Province",
+      "placeholder": "Select province"
+    },
+    "1": {
+      "label": "Regency",
+      "placeholder": "Select regency"
+    },
+    "2": {
+      "label": "Sub-district",
+      "placeholder": "Select sub-district"
+    },
+    "3": {
+      "label": "Village",
+      "placeholder": "Select village"
+    }
+  },
   "manufacture": {
     "export": {
       "id": "Manufacture ID",

@@ -26,6 +26,29 @@ export async function getLocations(params: Params): Promise<GetResponse> {
   return handleAxiosResponse<GetResponse>(response)
 }
 
+export type LocationLevel = {
+  level: number
+  label: string
+  placeholder: string
+}
+
+// Depth + per-level label/placeholder, already resolved server-side (via
+// c.var.t, in the request's language) -- no frontend locale lookup for
+// these strings. Array length = hierarchy depth, so a newly-added level
+// shows up here without a frontend deploy.
+//
+// NOTE: doesn't go through handleAxiosResponse -- that helper spreads the
+// response body (`{...data, statusCode}`), which turns an array response
+// into a plain object with numeric keys. This endpoint always returns 200
+// with a plain array (never 204), so there's nothing for that helper to do.
+export async function getLocationLevels(): Promise<LocationLevel[]> {
+  const response = await axios.get<LocationLevel[]>(
+    '/core/master/locations/levels'
+  )
+
+  return response.data
+}
+
 export async function loadLocations(
   keyword: string,
   _: unknown,
