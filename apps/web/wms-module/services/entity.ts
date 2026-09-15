@@ -1,5 +1,4 @@
 import { getTranslatedTagLabel } from '@/components/user-activity/utils/helper';
-import { SMILE_SERVICES } from '@/constants/smile-api';
 import { TCommonFilter } from '@/types/common';
 import {
   GetEntityDetailUsersListParams,
@@ -14,14 +13,13 @@ import {
 import { handleAxiosResponse } from '@/utils/api';
 import axios from 'src/lib/axios';
 
-const BASE_URL = process.env.API_URL_V5;
-const CORE_SERVICE = SMILE_SERVICES.CORE;
+const CORE_BASE_URL = process.env.API_CORE_URL;
 
 export async function getEntityList(
   params: GetEntityListParams
 ): Promise<GetEntityListResponse> {
-  const response = await axios.get(`${CORE_SERVICE}/entities`, {
-    baseURL: BASE_URL,
+  const response = await axios.get('/entities', {
+    baseURL: CORE_BASE_URL,
     params,
   });
 
@@ -29,8 +27,8 @@ export async function getEntityList(
 }
 
 export async function getEntityDetail(id: string | number): Promise<TEntities> {
-  const response = await axios.get(`${CORE_SERVICE}/entities/${id}`, {
-    baseURL: BASE_URL,
+  const response = await axios.get(`/entities/${id}`, {
+    baseURL: CORE_BASE_URL,
     cleanParams: true,
   });
 
@@ -57,8 +55,8 @@ export async function updateEntity(body: UpdateEntityInput) {
 export async function getEntityUsersList(
   params: GetEntityDetailUsersListParams
 ): Promise<GetEntityDetailUsersResponse> {
-  const response = await axios.get(`${CORE_SERVICE}/users`, {
-    baseURL: BASE_URL,
+  const response = await axios.get('/users', {
+    baseURL: CORE_BASE_URL,
     params,
   });
 

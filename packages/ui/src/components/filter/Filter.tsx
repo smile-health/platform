@@ -809,7 +809,13 @@ export function useFilter(schema: UseFilter) {
           >
             <LocationPicker
               name={field.name}
-              maxLevel={field.maxLevel ?? 3}
+              // No `?? 3` fallback here: undefined should reach
+              // LocationPicker as-is so it defaults from the live
+              // hierarchy depth (GET .../locations/levels) -- hardcoding
+              // 3 here silently overrode that for every field that didn't
+              // set maxLevel explicitly (i.e. every field meant to use the
+              // full hierarchy), regardless of what depth actually exists.
+              maxLevel={field.maxLevel}
               isMulti={field.isMulti}
               layout={field.layout ?? 'row'}
               control={control}

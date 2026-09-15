@@ -1,15 +1,30 @@
 const { headers } = require('next/headers')
 
+// On staging/prod, every service sits behind one gateway (API_BASE_URL),
+// path-routed -- so API_CORE_URL etc. default to API_BASE_URL + a suffix
+// and changing environments only means changing API_BASE_URL. Locally,
+// though, each service commonly runs standalone on its own port (no
+// shared gateway in front), so each of these can also be set directly in
+// .env.* to override the derived default -- same escape hatch WMS_API_URL
+// already used for the same reason. Example local override:
+//   API_CORE_URL=http://localhost:4000
+//   API_AUTH_URL=http://localhost:3003
+const API_BASE_URL = process.env.API_BASE_URL
 
 module.exports = {
   env: {
     STORAGE_PREFIX: process.env.STORAGE_PREFIX,
-    API_URL: process.env.API_URL,
-    API_URL_ALT: process.env.API_URL_ALT,
+    API_BASE_URL,
+    API_CORE_URL: process.env.API_CORE_URL || `${API_BASE_URL}/core`,
+    API_MAIN_URL: process.env.API_MAIN_URL || `${API_BASE_URL}/main`,
+    // Path confirmed against
+    // packages/global-tests/test/api/warehouse/auth.setup.ts, which hits
+    // `${AUTH_BASE_URL}/auth/login` directly.
+    API_AUTH_URL: process.env.API_AUTH_URL || `${API_BASE_URL}/auth`,
+    API_BIG_DATA_URL:
+      process.env.API_BIG_DATA_URL || `${API_BASE_URL}/warehouse-report`,
     DEVICE_TYPE: process.env.DEVICE_TYPE,
     DATE_FORMAT: process.env.DATE_FORMAT,
-    API_BIG_DATA_URL: process.env.API_BIG_DATA_URL,
-    API_URL_V5: process.env.API_URL_V5,
     CURRENCY: process.env.CURRENCY,
     GEOJSON_MAPS_URL: process.env.GEOJSON_MAPS_URL,
     GROWTHBOOK_API_HOST: process.env.GROWTHBOOK_API_HOST,
