@@ -618,6 +618,24 @@
       "not_given": "Tidak Diberikan"
     }
   },
+  "location": {
+    "0": {
+      "label": "Provinsi",
+      "placeholder": "Pilih provinsi"
+    },
+    "1": {
+      "label": "Kabupaten/Kota",
+      "placeholder": "Pilih kabupaten/kota"
+    },
+    "2": {
+      "label": "Kecamatan",
+      "placeholder": "Pilih kecamatan"
+    },
+    "3": {
+      "label": "Desa/Kelurahan",
+      "placeholder": "Pilih desa/kelurahan"
+    }
+  },
   "manufacture": {
     "export": {
       "id": "ID Pabrik",

@@ -1,4 +1,3 @@
-import { SMILE_SERVICES } from '@/constants/smile-api';
 import {
   GetHealthcareAssetParams,
   GetHealthcareAssetResponse,
@@ -8,14 +7,13 @@ import {
 import { handleAxiosResponse } from '@/utils/api';
 import axios from 'src/lib/axios';
 
-const BASE_URL = process.env.API_URL_V5;
-const CORE_SERVICE = SMILE_SERVICES.CORE;
+const CORE_BASE_URL = process.env.API_CORE_URL;
 
 export async function getAssetInventory(
   params: GetHealthcareAssetParams
 ): Promise<GetHealthcareAssetResponse> {
-  const response = await axios.get(`${CORE_SERVICE}/asset-inventories`, {
-    baseURL: BASE_URL,
+  const response = await axios.get('/asset-inventories', {
+    baseURL: CORE_BASE_URL,
     params,
   });
 

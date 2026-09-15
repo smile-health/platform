@@ -15,10 +15,57 @@ declare module 'axios' {
   }
 }
 
+const DEFAULT_BASE_URL = process.env.API_BASE_URL
+
 const instance = axios.create({
-  baseURL: process.env.API_URL_V5,
+  baseURL: DEFAULT_BASE_URL,
   cleanParams: false,
   cleanBody: false,
+})
+
+// Every call site across the app hardcodes its own service prefix into the
+// request path (e.g. axios.get('/core/master/locations')) rather than
+// setting its own baseURL -- historically fine, since baseURL was always
+// just API_BASE_URL and the prefix was part of the same URL either way.
+// But that means a per-service override (API_CORE_URL etc., set directly
+// in .env.* to point at a service running standalone on its own port
+// locally) had no effect on the vast majority of calls: only the handful
+// of files that already passed their own explicit `baseURL` per-request
+// actually consulted it.
+//
+// Fix that once, here, instead of touching every call site: when a
+// request's url starts with a known service prefix and it didn't already
+// set its own baseURL, route it to that service's URL (override or
+// derived default, whichever env.ts resolved) and strip the prefix --
+// core's (and every other service's) own routes never had the prefix
+// built in to begin with, Nginx adds/strips it in front, so the
+// unprefixed path is what a directly-hit local service actually expects.
+// When nothing is overridden, this resolves to exactly the same final URL
+// as before (API_CORE_URL defaults to `${API_BASE_URL}/core`).
+const SERVICE_BASE_URL_BY_PREFIX: [prefix: string, baseUrl?: string][] = [
+  ['/core', process.env.API_CORE_URL],
+  ['/main', process.env.API_MAIN_URL],
+  ['/auth', process.env.API_AUTH_URL],
+  ['/warehouse-report', process.env.API_BIG_DATA_URL],
+]
+
+instance.interceptors.request.use((config) => {
+  // axios merges the instance's own default baseURL into `config` before
+  // request interceptors run, so `config.baseURL` is never falsy here even
+  // for a call that never set one itself -- comparing against the known
+  // default is the only way to tell "this call didn't set its own baseURL"
+  // apart from "this call explicitly set baseURL to something else".
+  if (config.baseURL === DEFAULT_BASE_URL && config.url) {
+    const match = SERVICE_BASE_URL_BY_PREFIX.find(([prefix]) =>
+      config.url!.startsWith(prefix)
+    )
+    if (match) {
+      const [prefix, baseUrl] = match
+      config.baseURL = baseUrl
+      config.url = config.url.slice(prefix.length) || '/'
+    }
+  }
+  return config
 })
 
 export const setAxiosLanguage = (language: string) => {
@@ -60,7 +107,11 @@ instance.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
     if (
-      error.config?.url !== '/auth/login' &&
+      // '/login', not '/auth/login': the request interceptor above strips
+      // the '/auth' service prefix before the request is sent, and
+      // error.config reflects that already-rewritten url, not the
+      // original one requestlogin() called with.
+      error.config?.url !== '/login' &&
       error?.response?.status === 401
     ) {
       useAuth.getState().unauthorized()

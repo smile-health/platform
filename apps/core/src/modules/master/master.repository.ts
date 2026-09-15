@@ -32,4 +32,16 @@ export class MasterRepository {
       .selectAll()
       .execute()
   }
+
+  // The hierarchy's actual depth, as a live fact rather than a hardcoded
+  // constant -- adding a 5th administrative level later is a data change
+  // (new rows at level 4), not a code change.
+  async getMaxLocationLevel(c: Context): Promise<number> {
+    const result = await c.var.trx
+      .selectFrom("locations")
+      .select((eb) => eb.fn.max("level").as("maxLevel"))
+      .executeTakeFirst()
+
+    return result?.maxLevel ?? 0
+  }
 }

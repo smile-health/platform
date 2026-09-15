@@ -372,6 +372,85 @@ const parseAsDateRange = createParser({
   },
 })
 
+type LocationCascadeFieldProps = {
+  field: LocationCascadeSchema
+  control: Control<any>
+  watch: UseFormWatch<any>
+  setValue: UseFormSetValue<any>
+  clearErrors: UseFormClearErrors<any>
+  errors: FieldErrors<any>
+}
+
+const LocationCascadeField = ({
+  field,
+  control,
+  watch,
+  setValue,
+  clearErrors,
+  errors,
+}: LocationCascadeFieldProps) => {
+  // Starts at 1 (a safe, narrow guess) unless the field pins an explicit
+  // maxLevel, then grows to the real count once LocationPicker's own
+  // live-depth fetch resolves -- see onLevelCountChange below. Sizing the
+  // wrapper off a static guess (the previous approach) went stale the
+  // moment the actual rendered count came from a fetch instead of a prop:
+  // it always reserved room for 4 levels even when the live data (or an
+  // explicit maxLevel) meant far fewer dropdowns actually rendered.
+  const [levelCount, setLevelCount] = useState(
+    field.maxLevel != null ? field.maxLevel + 1 : 1
+  )
+  const cascadeLayout = field.layout ?? 'row'
+
+  return (
+    // No outer FormLabel here: LocationPicker already renders one label
+    // per dropdown (province/regency/...), so a group-level label on top
+    // of that just duplicates the first one.
+    <FormControl
+      key={field.name}
+      className={field.className}
+      style={
+        field.className || cascadeLayout !== 'row'
+          ? undefined
+          : { gridColumn: `span ${levelCount}` }
+      }
+    >
+      <LocationPicker
+        name={field.name}
+        // No `?? 3` fallback here: undefined should reach LocationPicker
+        // as-is so it defaults from the live hierarchy depth (GET
+        // .../locations/levels) -- hardcoding 3 here silently overrode
+        // that for every field that didn't set maxLevel explicitly (i.e.
+        // every field meant to use the full hierarchy), regardless of
+        // what depth actually exists.
+        maxLevel={field.maxLevel}
+        isMulti={field.isMulti}
+        layout={cascadeLayout}
+        control={control}
+        watch={watch}
+        setValue={setValue}
+        clearErrors={clearErrors}
+        errors={errors}
+        onLevelCountChange={setLevelCount}
+        disabled={
+          typeof field.disabled === 'function'
+            ? field.disabled({
+                getValue: watch,
+                getReactSelectValue: (name: string) =>
+                  getReactSelectValue(watch(name)),
+              })
+            : field.disabled
+        }
+        onChange={() => {
+          clearField({
+            setValue,
+            name: field.clearOnChangeFields ?? [],
+          })
+        }}
+      />
+    </FormControl>
+  )
+}
+
 type SelectAsyncPaginateFieldProps = {
   field: SelectAsyncSchema
   control: Control<any>
@@ -783,59 +862,18 @@ export function useFilter(schema: UseFilter) {
             language={language}
           />
         )
-      case 'locationCascade': {
-        // This field renders 1 dropdown per level side by side (layout
-        // 'row'), so it needs roughly one grid column per level -- spanning
-        // ALL columns regardless of level count (as a prior version of this
-        // did) made a 2-level cascade (transaction/stock filters) stretch
-        // absurdly wide for just 2 dropdowns. Span exactly as many columns
-        // as there are levels instead, via inline style (grid-column: span
-        // N) so it isn't at the mercy of which col-span-N classes this
-        // project's Tailwind scale happens to generate.
-        const levelCount = (field.maxLevel ?? 3) + 1
-        const cascadeLayout = field.layout ?? 'row'
+      case 'locationCascade':
         return (
-          // No outer FormLabel here: LocationPicker already renders one
-          // label per dropdown (province/regency/...), so a group-level
-          // label on top of that just duplicates the first one.
-          <FormControl
+          <LocationCascadeField
             key={field.name}
-            className={field.className}
-            style={
-              field.className || cascadeLayout !== 'row'
-                ? undefined
-                : { gridColumn: `span ${levelCount}` }
-            }
-          >
-            <LocationPicker
-              name={field.name}
-              maxLevel={field.maxLevel ?? 3}
-              isMulti={field.isMulti}
-              layout={field.layout ?? 'row'}
-              control={control}
-              watch={watch}
-              setValue={setValue}
-              clearErrors={clearErrors}
-              errors={formState.errors}
-              disabled={
-                typeof field.disabled === 'function'
-                  ? field.disabled({
-                      getValue: watch,
-                      getReactSelectValue: (name: string) =>
-                        getReactSelectValue(watch(name)),
-                    })
-                  : field.disabled
-              }
-              onChange={() => {
-                clearField({
-                  setValue,
-                  name: field.clearOnChangeFields ?? [],
-                })
-              }}
-            />
-          </FormControl>
+            field={field}
+            control={control}
+            watch={watch}
+            setValue={setValue}
+            clearErrors={clearErrors}
+            errors={formState.errors}
+          />
         )
-      }
       case 'date-range-picker':
         return (
           <FormControl key={field.name} className={field.className}>

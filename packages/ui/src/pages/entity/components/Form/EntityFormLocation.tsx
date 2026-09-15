@@ -4,13 +4,24 @@ import {
   FormLabel,
 } from '#components/form-control'
 import { Input } from '#components/input'
-import { LocationPicker } from '#components/modules/LocationPicker'
+import {
+  LocationAncestor,
+  LocationPicker,
+} from '#components/modules/LocationPicker'
 import { useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 import { TFormData, TFormValidationKeys } from '../../hooks/useEntityForm'
 
-const EntityFormLocation = () => {
+type Props = {
+  // The entity's own root->leaf location chain (from its detail response),
+  // used to pre-fill each dropdown's label when editing -- otherwise only
+  // location_id itself would be populated and every level would render
+  // empty until re-picked by hand.
+  defaultLocations?: LocationAncestor[]
+}
+
+const EntityFormLocation = ({ defaultLocations }: Props) => {
   const { t } = useTranslation(['entity', 'common'])
 
   const {
@@ -26,9 +37,16 @@ const EntityFormLocation = () => {
 
       <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
         {/* This form is much narrower than e.g. the entity list filter
-            panel, so 4 side-by-side dropdowns (layout="row") end up too
-            cramped -- stack them instead. */}
-        <LocationPicker name="location_id" maxLevel={3} layout="column" />
+            panel, so side-by-side dropdowns (layout="row") end up too
+            cramped -- stack them instead. No maxLevel here on purpose: the
+            entity form should always show the full hierarchy, so it's left
+            to default from the live-fetched depth rather than a hardcoded
+            number that would silently go stale if a level is ever added. */}
+        <LocationPicker
+          name="location_id"
+          layout="column"
+          defaultLocations={defaultLocations}
+        />
         <div className="ui-grid ui-grid-cols-2 ui-gap-x-6 ui-gap-y-6">
           <FormControl>
             <FormLabel>{t('entity:form.location.label.postal')}</FormLabel>

@@ -43,7 +43,7 @@ const EntityForm: React.FC<Props> = ({ isGlobal }) => {
 
         {isLabTag && <EntityFormSentinelLab />}
 
-        <EntityFormLocation />
+        <EntityFormLocation defaultLocations={detail?.locations} />
 
         <EntityFormProgram
           data={detail}

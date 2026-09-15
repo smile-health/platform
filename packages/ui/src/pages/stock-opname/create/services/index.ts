@@ -12,8 +12,7 @@ import {
   ListPeriodeResponse,
 } from '../types'
 
-const baseURL = process.env.API_URL
-const baseURLAlt = process.env.API_URL_ALT
+const coreBaseURL = process.env.API_CORE_URL
 
 const defaultResponse = {
   statusCode: 204,
@@ -94,7 +93,7 @@ export async function listColdStorages(params: {
   const response = await axios.get('/coldstorages', {
     params,
     cleanParams: true,
-    baseURL: baseURLAlt,
+    baseURL: coreBaseURL,
   })
 
   return handleAxiosResponse<ListColdStoragesResponse>(

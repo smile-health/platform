@@ -94,7 +94,9 @@ export const createFilterSchema = ({ t, isGlobal }: Params): UseFilter => [
     type: 'locationCascade',
     name: 'location_ids',
     isMulti: true,
-    maxLevel: 3,
+    // No maxLevel: this filter should cover the full hierarchy, so depth
+    // is left to default from the live-fetched depth rather than a
+    // hardcoded number that would go stale if a level is ever added.
     label: t('common:form.province.label'),
     defaultValue: null,
   } as FilterFormSchema,

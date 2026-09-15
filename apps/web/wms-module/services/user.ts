@@ -1,4 +1,3 @@
-import { SMILE_SERVICES } from '@/constants/smile-api';
 import { TCommonFilter } from '@/types/common';
 import {
   GetUsersResponse,
@@ -9,12 +8,11 @@ import {
 import { handleAxiosResponse } from '@/utils/api';
 import axios from 'src/lib/axios';
 
-const BASE_URL = process.env.API_URL_V5;
-const CORE_SERVICE = SMILE_SERVICES.CORE;
+const CORE_BASE_URL = process.env.API_CORE_URL;
 
 export async function getUserDetail(id: string | number): Promise<TUserDetail> {
-  const response = await axios.get(`${CORE_SERVICE}/users/${id}`, {
-    baseURL: BASE_URL,
+  const response = await axios.get(`/users/${id}`, {
+    baseURL: CORE_BASE_URL,
     cleanParams: true,
   });
 
@@ -29,8 +27,8 @@ export type GetUserParams = TCommonFilter & {
 export async function getUsers(
   params: GetUserParams
 ): Promise<GetUsersResponse> {
-  const response = await axios.get(`${CORE_SERVICE}/users`, {
-    baseURL: BASE_URL,
+  const response = await axios.get('/users', {
+    baseURL: CORE_BASE_URL,
     params,
   });
 

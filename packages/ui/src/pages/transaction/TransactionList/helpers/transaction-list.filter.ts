@@ -252,9 +252,9 @@ export const transactionFilterSchema = ({
       id: 'transaction__list__location_id',
       type: 'locationCascade',
       name: 'location_id',
-      // maxLevel: 1 preserves the original depth of this filter
-      // (province + regency only — it never went down to sub_district/village).
-      maxLevel: 1,
+      // No maxLevel: defaults to the live hierarchy depth (GET
+      // .../locations/levels) instead of a hardcoded assumption about how
+      // deep this filter should go.
       label: t('common:form.city.label'),
       disabled: !!defaultProvince || !!defaultRegency,
       clearOnChangeFields: ['entity_id', 'entity_for_consumption'],

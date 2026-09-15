@@ -27,4 +27,20 @@ export class MasterModule {
   async getRoles(c: Context) {
     return await this.roleRepo.getRoles(c)
   }
+
+  // Resolves each level's label/placeholder server-side via c.var.t (same
+  // resolver every other translated field in this API already uses), so
+  // the frontend never needs its own locale lookup for these strings --
+  // it just displays whatever this endpoint already returned in the
+  // request's language. Depth is the array's length, derived from the
+  // data itself rather than a separate stored config value.
+  async getLocationLevels(c: Context) {
+    const maxLevel = await this.repository.getMaxLocationLevel(c)
+
+    return Array.from({ length: maxLevel + 1 }, (_, level) => ({
+      level,
+      label: c.var.t(`location.${level}.label`),
+      placeholder: c.var.t(`location.${level}.placeholder`),
+    }))
+  }
 }
