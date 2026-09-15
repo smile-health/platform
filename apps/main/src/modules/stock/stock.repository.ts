@@ -58,10 +58,22 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
   // entity is "under" it when the entity's own location's path starts with
   // the filter location's path. Mirrors the location_id filter shape applied
   // to the transaction/order repositories in this migration effort.
+  //
+  // isAnalyticsSource covers BOTH the DATAMART and CLICKHOUSE query paths
+  // (findAll's `useDatamart || source === DATASOURCE.CLICKHOUSE` check,
+  // duplicated here since this helper doesn't otherwise see `source`).
+  // Neither backend's `ws_entities`/`raw_ws_entities` mirror has a
+  // location_id column -- warehouse-service/ClickHouse was explicitly out
+  // of scope for this migration (see the phase-2 plan's "Phase 3" note) --
+  // so the locations join/filter below only runs against real MySQL.
+  // Passing a location_id filter on an analytics-source query is silently
+  // a no-op rather than a crash; a proper fix needs its own ClickHouse-side
+  // migration, not a workaround here.
   #applyEntityFilter<T>(
     qb: T & { $if: Function; where: Function; innerJoin: Function },
     params: GetStocksQueries,
-    useDatamart: boolean
+    useDatamart: boolean,
+    isAnalyticsSource: boolean = useDatamart
   ) {
     return (qb as any)
       .innerJoin(
@@ -72,7 +84,7 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
       .$if(!!params.entity_tag_id, (qb: any) =>
         qb.where("e.entity_tag_id", "=", params.entity_tag_id ?? 0)
       )
-      .$if(!!params.location_id, (qb: any) =>
+      .$if(!!params.location_id && !isAnalyticsSource, (qb: any) =>
         qb
           .innerJoin("locations as loc", "loc.id", "e.location_id")
           .where((eb: any) =>
@@ -225,7 +237,12 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         )
       )
       .$if(filterEntity, (qb) =>
-        this.#applyEntityFilter(qb, params, useDatamart)
+        this.#applyEntityFilter(
+          qb,
+          params,
+          useDatamart,
+          useDatamart || source === DATASOURCE.CLICKHOUSE
+        )
       )
       .$if(filterBatch, (qb) => this.#applyBatchFilter(qb, params, useDatamart))
 
@@ -1351,7 +1368,12 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         )
       )
       .$if(filterEntity, (qb) =>
-        this.#applyEntityFilter(qb, params, useDatamart)
+        this.#applyEntityFilter(
+          qb,
+          params,
+          useDatamart,
+          useDatamart || source === DATASOURCE.CLICKHOUSE
+        )
       )
       .$if(filterBatch, (qb) => this.#applyBatchFilter(qb, params, useDatamart))
       .executeTakeFirst()
@@ -1438,7 +1460,12 @@ export class StockRepository extends BaseRepository<"ws_stocks"> {
         )
       )
       .$if(filterEntity, (qb) =>
-        this.#applyEntityFilter(qb, params, useDatamart)
+        this.#applyEntityFilter(
+          qb,
+          params,
+          useDatamart,
+          useDatamart || source === DATASOURCE.CLICKHOUSE
+        )
       )
       .$if(filterBatch, (qb) => this.#applyBatchFilter(qb, params, useDatamart))
       .executeTakeFirst()
