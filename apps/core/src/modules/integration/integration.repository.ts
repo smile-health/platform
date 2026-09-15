@@ -40,9 +40,8 @@ export class IntegrationRepository {
     metadata: string | null | undefined = null,
     clientId: number | undefined = undefined
   ) => {
-    const { client, trx } = c.var
-    // Prefer the client from context, fallback to provided clientId
-    const client_id = client?.getId() ?? clientId
+    const { trx } = c.var
+    const client_id = clientId
 
     if (!client_id) {
       await trx

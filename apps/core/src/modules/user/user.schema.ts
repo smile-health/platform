@@ -467,7 +467,6 @@ export type UserResponse = Selectable<Users> & {
   manufacture?: Selectable<Manufactures>
   programs?: TWorkspaces[]
   program_ids?: number[]
-  beneficiaries_ids?: number[]
   integration_client_id?: number
   user_created_by?: Pick<UserResponse, "id" | "firstname" | "lastname">
   user_updated_by?: Pick<UserResponse, "id" | "firstname" | "lastname">

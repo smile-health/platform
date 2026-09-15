@@ -1,27 +1,27 @@
-import { Fragment, useMemo, useState } from 'react'
-import { useRouter } from 'next/router'
-import { Button } from '#components/button'
-import { ButtonIcon } from '#components/button-icon'
-import { Drawer, DrawerContent, DrawerHeader } from '#components/drawer'
-import DotsGrid from '#components/icons/DotsGrid'
-import Home from '#components/icons/Home'
-import { ProgramItemLink } from '#components/modules/ProgramItemLink'
-import { IconPrograms } from '#constants/program'
-import { useProgram } from '#hooks/program/useProgram'
-import { useTranslation } from 'react-i18next'
+import { Fragment, useMemo, useState } from "react";
+import { useRouter } from "next/router";
+import { Button } from "#components/button";
+import { ButtonIcon } from "#components/button-icon";
+import { Drawer, DrawerContent, DrawerHeader } from "#components/drawer";
+import DotsGrid from "#components/icons/DotsGrid";
+import Home from "#components/icons/Home";
+import { ProgramItemLink } from "#components/modules/ProgramItemLink";
+import { getProgramHref, getProgramIconUrl } from "#constants/program";
+import { useProgram } from "#hooks/program/useProgram";
+import { useTranslation } from "react-i18next";
 
 const DropdownProgram = () => {
   const {
     i18n: { language },
-  } = useTranslation()
-  const router = useRouter()
-  const [open, setOpen] = useState(false)
-  const { data, getHref } = useProgram({ isEnabled: false })
+  } = useTranslation();
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const { data, getHref } = useProgram({ isEnabled: false });
 
   let programs = useMemo(() => {
-    let temp = data || []
-    return temp
-  }, [data])
+    let temp = data || [];
+    return temp;
+  }, [data]);
 
   return (
     <Fragment>
@@ -65,14 +65,14 @@ const DropdownProgram = () => {
                 key={program.key}
                 data={program}
                 onClick={() => setOpen(false)}
-                href={program.href || getHref(program.key)}
+                href={getProgramHref(program, language, getHref, program.key)}
                 className={{
                   wrapper:
-                    'ui-py-2 ui-cursor-pointer ui-gap-2 hover:ui-bg-gray-100',
-                  logo: 'ui-w-8 ui-h-8',
-                  title: 'ui-text-sm ui-m-2',
+                    "ui-py-2 ui-cursor-pointer ui-gap-2 hover:ui-bg-gray-100",
+                  logo: "ui-w-8 ui-h-8",
+                  title: "ui-text-sm ui-m-2",
                 }}
-                icon={IconPrograms[program.key]}
+                icon={getProgramIconUrl(program)}
                 sizeIcon={32}
               />
             ))}
@@ -80,7 +80,7 @@ const DropdownProgram = () => {
         </DrawerContent>
       </Drawer>
     </Fragment>
-  )
-}
+  );
+};
 
-export default DropdownProgram
+export default DropdownProgram;

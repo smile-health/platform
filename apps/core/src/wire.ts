@@ -490,8 +490,7 @@ const authMiddleware = new AuthMiddleware(accountRepo)
 const authMiddlewareKc = new AuthKeycloakMiddleware(
   new AuthKcServiceLib(env.AUTH_URL ?? "http://localhost:5001"),
   userRepo,
-  executiveUserRepo,
-  integrationRepo
+  executiveUserRepo
 )
 const requestMiddleware = new RequestMiddleware()
 const evtMiddleware = new EventMiddleware(publisher)

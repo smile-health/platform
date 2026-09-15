@@ -12,13 +12,12 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
   }
 
   readonly #baseQueryFindAll = (c: Context, params) => {
-    const { client, trx } = c.var
+    const { trx } = c.var
     const {
       keyword,
       sort_by,
       sort_type,
       is_hierarchy_enabled,
-      is_beneficiaries,
       is_batch_enabled,
     } = params
     let query = trx
@@ -33,16 +32,7 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
           ])
         )
       )
-      .$if(!!client, (qb) =>
-        qb.innerJoin("integration_associations as a", (join) =>
-          join
-            .onRef("a.internal_id", "=", "ws.id")
-            .on("a.client_id", "=", client!.getId())
-            .on("a.type", "=", "program")
-        )
-      )
       .where("ws.deleted_at", "is", null)
-      .where("ws.is_beneficiaries", "=", is_beneficiaries === "true" ? 1 : 0)
 
     if (!isNaN(Number(is_hierarchy_enabled))) {
       query = query.where(
@@ -100,6 +90,7 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
           "ws.name as name",
           "ws.description as description",
           "ws.config as config",
+          "ws.app_type as app_type",
           "ws.created_at as created_at",
           "ws.updated_at as updated_at",
           "wuc.id as user_created_by.id",
@@ -132,6 +123,7 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
         "ws.name as name",
         "ws.description as description",
         "ws.config as config",
+        "ws.app_type as app_type",
         "ws.created_at as created_at",
         "ws.updated_at as updated_at",
         "wuc.id as user_created_by.id",
@@ -159,6 +151,7 @@ export class ProgramRepository extends BaseRepository<"workspaces"> {
         "ws.name as name",
         "ws.description as description",
         "ws.config as config",
+        "ws.app_type as app_type",
         "ws.created_at as created_at",
         "ws.updated_at as updated_at",
         "wuc.id as user_created_by.id",

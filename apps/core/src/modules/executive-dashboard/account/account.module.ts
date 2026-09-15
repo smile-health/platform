@@ -189,12 +189,7 @@ export class ExecutiveAccountModule {
 
     return {
       ...baseResponse,
-      programs: workspaces
-        .filter((ws) => ws.is_beneficiaries === 0)
-        .map((ws) => ws.id),
-      beneficiaries: workspaces
-        .filter((ws) => ws.is_beneficiaries === 1)
-        .map((ws) => ws.id),
+      programs: workspaces.map((ws) => ws.id),
     }
   }
 
@@ -356,14 +351,8 @@ export class ExecutiveAccountModule {
       location,
       role_label: role?.name,
       gender_label: getLabelByKey(USER_GENDER, filteredUser?.gender),
-      programs: userPrograms.filter((w) => w.is_beneficiaries === 0),
-      beneficiaries: userPrograms.filter((w) => w.is_beneficiaries === 1),
-      program_ids: userPrograms
-        .filter((ws) => ws.is_beneficiaries === 0)
-        .map((ws) => ws.id),
-      beneficiaries_ids: userPrograms
-        .filter((ws) => ws.is_beneficiaries === 1)
-        .map((ws) => ws.id),
+      programs: userPrograms,
+      program_ids: userPrograms.map((ws) => ws.id),
     }
   }
 
@@ -432,15 +421,13 @@ export class ExecutiveAccountModule {
       return {
         ...user,
         entity: entities[user.entity_id ?? 0],
-        programs: userPrograms.filter((w) => w.is_beneficiaries === 0),
-        beneficiaries: userPrograms.filter((w) => w.is_beneficiaries === 1),
+        programs: userPrograms,
       }
     })
   }
 
   async create(c: Context, data: CreateUserRequest, returnDetail = true) {
     const { program_ids: workspace_ids, external_roles, ...crte } = data
-    const { client } = c.var
 
     // add prosess check if keycloak doesnt exists
     const userExist = await this.executiveUserRepo.checkUsernameEmail(
@@ -507,7 +494,7 @@ export class ExecutiveAccountModule {
     }
 
     const bcryptPassword = await bcrypt.hash(crte.password, 10)
-    const { external_properties, integration_client_id, ...restCrte } = crte
+    const { external_properties, ...restCrte } = crte
     const result = await this.executiveUserRepo.create(c, {
       ...restCrte,
       status: 1,

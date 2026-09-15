@@ -14,7 +14,7 @@ export class EntityTypeRepository {
   }
 
   async findAllPageable(c: Context, param: TEntityTypePageableRequest) {
-    const { client, trx } = c.var
+    const { trx } = c.var
     const { page, paginate, keyword } = param
     const startIndex = (page - 1) * paginate
     const endIndex = startIndex + paginate
@@ -22,14 +22,6 @@ export class EntityTypeRepository {
     const query = trx
       .selectFrom("entity_types as et")
       .where("et.deleted_at", "is", null)
-      .$if(!!client, (qb) =>
-        qb.innerJoin("integration_associations as a", (join) =>
-          join
-            .onRef("a.internal_id", "=", "et.id")
-            .on("a.client_id", "=", client!.getId())
-            .on("a.type", "=", "entity_type")
-        )
-      )
 
     let entityType = await query.select(["et.id", "et.name"]).execute()
     entityType = this.#mappingDataResultByLanguage(c, entityType)

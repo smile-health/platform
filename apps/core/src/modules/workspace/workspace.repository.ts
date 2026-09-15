@@ -1,4 +1,3 @@
-import { WMS_PROGRAM_ID } from "@/common/constants/integration.js"
 import { DB } from "@/common/infrastructure/database/types/db.js"
 import { associate, collect, differ } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
@@ -131,7 +130,7 @@ export class WorkspaceRepository {
             "w.key",
             "w.name",
             "w.config",
-            "w.is_beneficiaries",
+            "w.app_type",
             "uw.status",
             "uw.user_id",
             "ew.id as entity_id",
@@ -150,7 +149,7 @@ export class WorkspaceRepository {
             "ew.entity_id",
             "ew.id as entity_program_id",
             "config",
-            "w.is_beneficiaries",
+            "w.app_type",
           ])
       )
       .$if(from == "budget_source", (qb) =>
@@ -168,7 +167,7 @@ export class WorkspaceRepository {
             "sbw.budget_source_id",
             "sbw.id as budget_source_program_id",
             "config",
-            "w.is_beneficiaries",
+            "w.app_type",
           ])
       )
       .$if(from == "manufacture", (qb) =>
@@ -182,7 +181,7 @@ export class WorkspaceRepository {
             "mw.manufacture_id",
             "mw.id as manufacture_program_id",
             "config",
-            "w.is_beneficiaries",
+            "w.app_type",
           ])
       )
       .$if(from == "material", (qb) =>
@@ -197,7 +196,7 @@ export class WorkspaceRepository {
             "mw.material_id",
             "mw.id as material_program_id",
             "config",
-            "w.is_beneficiaries",
+            "w.app_type",
           ])
       )
       .$if(from == "asset_inventory", (qb) =>
@@ -217,17 +216,28 @@ export class WorkspaceRepository {
             "aiw.asset_inventory_id",
             "aiw.id as asset_inventory_program_id",
             "config",
-            "w.is_beneficiaries",
+            "w.app_type",
           ])
       )
       .where("w.deleted_at", "is", null)
       .execute()
 
     return workspaces.reduce((mapWorkspace, workspace) => {
-      if (!mapWorkspace[workspace[`${from}_id`]]) {
-        mapWorkspace[workspace[`${from}_id`]] = []
+      const ownerId = workspace[`${from}_id`]
+      if (!mapWorkspace[ownerId]) {
+        mapWorkspace[ownerId] = []
       }
-      mapWorkspace[workspace[`${from}_id`]].push(workspace)
+      // The "user" branch's joins (entity_workspaces, manufacture_workspaces)
+      // can fan out into more than one row for the same workspace when the
+      // joined side has more than one matching association -- dedupe by
+      // workspace id so a data-quality issue upstream never surfaces as the
+      // same program appearing twice.
+      const alreadyIncluded = mapWorkspace[ownerId].some(
+        (existing) => existing.id === workspace.id
+      )
+      if (!alreadyIncluded) {
+        mapWorkspace[ownerId].push(workspace)
+      }
       return mapWorkspace
     }, {})
   }
@@ -237,7 +247,7 @@ export class WorkspaceRepository {
     assetInventoryId: number,
     programIds?: number[]
   ) {
-    if (!programIds || c.var.client) return
+    if (!programIds) return
 
     await c.var.trx
       .updateTable("asset_inventory_workspaces")
@@ -285,7 +295,7 @@ export class WorkspaceRepository {
   }
 
   async attachWithEntityID(c: Context, entityId: number, programIds: number[]) {
-    if (programIds.length === 0 || c.var.client) return
+    if (programIds.length === 0) return
 
     const wsMaterials = await c.var.trx
       .selectFrom("ws_entities")
@@ -377,7 +387,7 @@ export class WorkspaceRepository {
     id: number,
     data: CreateBudgetSourceWorkspaceRequest[]
   ) {
-    if (data.length === 0 || c.var.client) return
+    if (data.length === 0) return
 
     const programIdS = collect(data, "workspace_id")
     const wsBudgetSources = await c.var.trx
@@ -411,7 +421,7 @@ export class WorkspaceRepository {
     id: number,
     data: ManufactureWorkspaceCreateRequestDTO[]
   ) {
-    if (data.length === 0 || c.var.client) return
+    if (data.length === 0) return
 
     const programIds = collect(data, "workspace_id")
     const wsManufactures = await c.var.trx
@@ -446,7 +456,7 @@ export class WorkspaceRepository {
     id: number,
     data: CreateMaterialWorkSpaceRequest[]
   ) {
-    if (data.length === 0 || c.var.client) return
+    if (data.length === 0) return
 
     const programIds = collect(data, "workspace_id")
     const wsMaterials = await c.var.trx
@@ -524,7 +534,9 @@ export class WorkspaceRepository {
           isHierarchy === 1
         )
       )
-      .where((eb) => eb("deleted_at", "is", null).or("id", "=", WMS_PROGRAM_ID))
+      .where((eb) =>
+        eb("deleted_at", "is", null).or("app_type", "=", "waste_management")
+      )
       .stream()
   }
 

@@ -1,4 +1,3 @@
-import { TProgram } from '#types/program'
 import { TFunction } from 'i18next'
 
 export const ProgramIntegrationClient = {
@@ -203,28 +202,6 @@ export const noProgram = (t: TFunction) => ({
   value: 0,
 })
 
-export const ProgramWasteManagement = (lang?: string): TProgram => ({
-  id: 999,
-  key: ProgramEnum.WasteManagement,
-  name: 'Waste Management',
-  color: '#068009',
-  config: {
-    color: '#068009',
-    material: {
-      is_hierarchy_enabled: false,
-      is_batch_enabled: false,
-    },
-    is_annual_planning: false,
-  },
-  protocols: [],
-  // In-app now that the WMS frontend has been merged into apps/web (see
-  // apps/web/pages/wms and apps/web/wms-module) — no more /wms/validate-token handoff
-  // to a separate origin.
-  href: `/wms/${lang ?? 'id'}/transaction-monitoring`,
-  created_at: '',
-  updated_at: '',
-})
-
 export const IconPrograms: Record<string, string> = {
   'logistic': '/images/icon-programs/SMILE_OBAT_ESENSIAL_NASIONAL.png',
   'malaria': '/images/icon-programs/SMILE_MALARIA.png',
@@ -243,4 +220,29 @@ export const IconPrograms: Record<string, string> = {
   'rabies': '/images/icon-programs/SMILE_RABIES.png',
   'immunization': '/images/icon-programs/SMILE_IMUNISASI.png',
   'wms': '/images/icon-programs/SMILE_WMS.png',
+}
+
+// WMS pages currently live inside this same app at /wms/[lang] (see
+// apps/web/wms-module) rather than a genuinely separate deployment, so
+// unless a program explicitly sets config.base_url (a real external
+// deployment), waste_management programs should navigate in-app to
+// /wms/[lang] instead of the [lang]/[program]/v5/... route every other
+// program uses (which doesn't exist for WMS).
+export const getProgramHref = (
+  program: { app_type?: string; href?: string; config?: { base_url?: string } },
+  language: string,
+  fallbackHref: (key?: string) => string,
+  key?: string
+): string => {
+  if (program.href) return program.href
+  if (program.config?.base_url) return program.config.base_url
+  if (program.app_type === 'waste_management') return `/${language}/wms`
+  return fallbackHref(key)
+}
+
+export const getProgramIconUrl = (program?: {
+  key?: string
+  config?: { icon_url?: string }
+}): string | undefined => {
+  return program?.config?.icon_url ?? IconPrograms[program?.key ?? '']
 }

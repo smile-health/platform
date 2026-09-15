@@ -70,7 +70,6 @@ export type ListEntitiesParams = {
   regency_ids?: string
   sub_district_ids?: string
   village_ids?: string
-  beneficiaries_ids?: string
   program_ids?: string
   is_vendor?: number
   lang?: string
@@ -582,7 +581,6 @@ export async function loadCoreEntities(
     label: item?.name,
     value: item?.id,
     programs: item?.programs,
-    beneficiaries: item?.beneficiaries,
     integration_client_id: item?.integration_client_id,
   }))
 

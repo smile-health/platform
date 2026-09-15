@@ -99,8 +99,7 @@
       "description": "The selected programs cannot be undone (unchecked) once data has been saved",
       "search": "Search program name",
       "selected": "Selected",
-      "logistics": "Logistics",
-      "beneficiary": "Beneficiaries"
+      "logistics": "Logistics"
     },
     "users": {
       "search": "User Name"

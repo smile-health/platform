@@ -3,16 +3,11 @@ import { useRouter } from 'next/router'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
 import { toast } from '#components/toast'
-import {
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
 import { useAuthProfile } from '#hooks/useAuthProfile'
 import { updateUser, UpdateUserBody } from '#services/user'
 import { ErrorResponse } from '#types/common'
 import { TUserDetail } from '#types/user'
 import { removeEmptyObject } from '#utils/object'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { getUserStorage } from '#utils/storage/user'
 import { AxiosError } from 'axios'
 import { FieldValues, Path, SubmitHandler, useForm } from 'react-hook-form'
@@ -37,7 +32,6 @@ export default function useUserCreate<T extends FieldValues>({
   const params = useParams()
   const isEdit = Boolean(params?.id)
   const user = getUserStorage()
-  const token = getAuthTokenCookies()
   const { fetchProfile } = useAuthProfile({})
 
   const methods = useForm({
@@ -92,17 +86,6 @@ export default function useUserCreate<T extends FieldValues>({
       view_only: Number(formData?.view_only),
       manufacture_id: formData?.manufacturer?.value,
       daily_recap_email: Number(formData?.daily_recap_email),
-    }
-
-    const wmsId = token ? ProgramWasteManagement().id : null
-    const isWmsSelected = wmsId && formData.program_ids?.includes(wmsId)
-    if (token && isWmsSelected) {
-      Object.assign(newValues, {
-        integration_client_id: ProgramIntegrationClient.WasteManagement,
-        program_ids: formData.program_ids.filter((programId: number) => {
-          return programId !== wmsId
-        }),
-      })
     }
 
     delete newValues.province

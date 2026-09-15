@@ -130,12 +130,7 @@ export class AccountModule {
 
     return {
       ...baseResponse,
-      programs: workspaces
-        .filter((ws) => ws.is_beneficiaries === 0)
-        .map((ws) => ws.id),
-      beneficiaries: workspaces
-        .filter((ws) => ws.is_beneficiaries === 1)
-        .map((ws) => ws.id),
+      programs: workspaces.map((ws) => ws.id),
     }
   }
 
@@ -165,21 +160,12 @@ export class AccountModule {
     )
 
     const workspaces = allWorkspaces[user.id] ?? []
-    const { client, resource_access } = c.var
 
     const baseResponse = {
       ...user,
       address: user.address === "" ? "-" : user.address,
-      client: client
-        ? {
-            id: client.getId(),
-            key: client.getKey(),
-          }
-        : null,
-      external_roles:
-        client && resource_access
-          ? resource_access[client.getKey()]?.roles
-          : [],
+      client: null,
+      external_roles: [] as string[],
       entity,
       manufacture,
     }
@@ -198,8 +184,7 @@ export class AccountModule {
 
     return {
       ...baseResponse,
-      programs: workspaces.filter((w) => w.is_beneficiaries === 0),
-      beneficiaries: workspaces.filter((w) => w.is_beneficiaries === 1),
+      programs: workspaces,
       is_sentinel_lab: !!sentinelLab?.id,
       is_disabled_notification: c.var.is_disabled_notification,
     }

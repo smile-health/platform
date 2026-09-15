@@ -1,44 +1,35 @@
-import { useMemo, useState } from 'react'
-import { useFeatureIsOn } from '@growthbook/growthbook-react'
+import { useMemo } from 'react'
 import { Checkbox } from '#components/checkbox'
 import { EmptyState } from '#components/empty-state'
 import Check from '#components/icons/Check'
 import Information from '#components/icons/Information'
 import { InputSearch } from '#components/input'
 import { ProgramItem } from '#components/modules/ProgramItem'
-import { IconPrograms, ProgramWasteManagement } from '#constants/program'
+import { getProgramIconUrl } from '#constants/program'
 import { useProgramInfiniteList } from '#hooks/useProgramInfiniteList'
 import cx from '#lib/cx'
 import { TProgram } from '#types/program'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { useTranslation } from 'react-i18next'
 
 import InfiniteScrollContainer from './InfiniteScrollContainer'
-
-type TabType = 'logistik' | 'beneficiaries'
 
 type BaseProps = {
   selected?: number[]
   onChange?: (selected: number[]) => void
   forbiddenUncheckIds?: number[]
-  forbiddenUncheckBeneficiariesIds?: number[]
   isMaterialHierarchyEnabled?: number
   withLayout?: boolean
-  showWms?: boolean
-  hideTabs?: boolean
   showInfo?: boolean
 }
 
 type WithApiEnabled = BaseProps & {
   isEnabledApi?: true
   programList?: TProgram[]
-  beneficiariesList?: TProgram[]
 }
 
 type WithoutApiEnabled = BaseProps & {
   isEnabledApi: false
   programList: TProgram[]
-  beneficiariesList?: TProgram[]
 }
 
 export type ProgramSelectionProps = WithApiEnabled | WithoutApiEnabled
@@ -47,21 +38,13 @@ export default function ProgramSelection({
   selected = [],
   onChange,
   forbiddenUncheckIds = [],
-  forbiddenUncheckBeneficiariesIds = [],
   isMaterialHierarchyEnabled,
   isEnabledApi = true,
   programList = [],
-  beneficiariesList = [],
   withLayout = true,
-  showWms = false,
-  hideTabs = false,
   showInfo = true,
 }: Readonly<ProgramSelectionProps>) {
-  const [tab, setTab] = useState<TabType>('logistik')
-
-  const token = getAuthTokenCookies()
   const { t } = useTranslation(['common'])
-  const isShowBeneficiaries = useFeatureIsOn('feature.beneficiaries')
 
   const { data, loading, hasMore, loadMore, keyword, setKeyword } =
     useProgramInfiniteList({
@@ -71,7 +54,6 @@ export default function ProgramSelection({
         }),
       },
       isEnabled: isEnabledApi,
-      showWms,
     })
 
   /**
@@ -85,30 +67,13 @@ export default function ProgramSelection({
       : list
 
   /**
-   * Active list based on tab & source
+   * Active list based on source
    */
   const activeList = useMemo<TProgram[]>(() => {
     if (isEnabledApi) return data
 
-    const wmsProgram = showWms && token ? ProgramWasteManagement() : null
-
-    const baseList = tab === 'beneficiaries' ? beneficiariesList : programList
-
-    const mergedList = wmsProgram
-      ? [wmsProgram, ...(baseList ?? [])]
-      : (baseList ?? [])
-
-    return filterByKeyword(mergedList, keyword)
-  }, [
-    isEnabledApi,
-    data,
-    tab,
-    programList,
-    beneficiariesList,
-    keyword,
-    token,
-    showWms,
-  ])
+    return filterByKeyword(programList ?? [], keyword)
+  }, [isEnabledApi, data, programList, keyword])
 
   const selectProgram = (id: number) => {
     onChange?.([...selected, id])
@@ -137,31 +102,6 @@ export default function ProgramSelection({
           </div>
         )}
 
-        {/* Tabs */}
-        {!hideTabs && isShowBeneficiaries && (
-          <div className="ui-flex ui-border-b ui-border-neutral-400 ui-bg-blue-100">
-            {(['logistik', 'beneficiaries'] as TabType[]).map((type) => (
-              <button
-                key={type}
-                type="button"
-                onClick={() => setTab(type)}
-                className={cx(
-                  'ui-flex-1 ui-py-2 ui-text-center ui-text-dark-blue',
-                  'focus:outline-none focus:ring-0',
-                  tab === type &&
-                    'ui-font-semibold ui-border-b-[3px] ui-border-primary-500'
-                )}
-              >
-                {t(
-                  type === 'logistik'
-                    ? 'form.program.logistics'
-                    : 'form.program.beneficiary'
-                )}
-              </button>
-            ))}
-          </div>
-        )}
-
         {/* Search */}
         <InputSearch
           data-testid="input-search-workspace"
@@ -180,9 +120,7 @@ export default function ProgramSelection({
           <div className="ui-space-y-2">
             {activeList.map((item) => {
               const isChecked = selected.includes(item.id)
-              const isForbidden =
-                forbiddenUncheckIds.includes(item.id) ||
-                forbiddenUncheckBeneficiariesIds.includes(item.id)
+              const isForbidden = forbiddenUncheckIds.includes(item.id)
 
               return (
                 <button
@@ -220,7 +158,7 @@ export default function ProgramSelection({
                     id={item.key}
                     data={item}
                     disabled={isForbidden}
-                    icon={IconPrograms[item.key]}
+                    icon={getProgramIconUrl(item)}
                     sizeIcon={40}
                     className={{
                       wrapper: 'ui-gap-4',

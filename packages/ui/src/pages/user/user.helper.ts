@@ -1,5 +1,4 @@
 import { OptionType } from '#components/react-select'
-import { ProgramEnum, ProgramIntegrationClient } from '#constants/program'
 import { userRoleList } from '#constants/roles'
 import { UserChangeHistoryType } from '#services/user'
 import { TUserDetail } from '#types/user'
@@ -30,15 +29,6 @@ export function handleFilterParams(values: Values<Record<string, any>>) {
     values?.primary_health_care?.value
   )
 
-  const isWmsSelected =
-    Array.isArray(values?.program_ids) &&
-    values?.program_ids.some((opt) => opt.value === ProgramEnum.WasteManagement)
-  const filteredProgramIds = Array.isArray(values?.program_ids)
-    ? values?.program_ids.filter(
-        (opt) => opt.value !== ProgramEnum.WasteManagement
-      )
-    : values?.program_ids
-
   const newData = {
     page: values?.page,
     paginate: values?.paginate,
@@ -48,16 +38,12 @@ export function handleFilterParams(values: Values<Record<string, any>>) {
     entity_id,
     province_id: getReactSelectValue(values?.province),
     regency_id: getReactSelectValue(values?.regency),
-    beneficiaries_ids: getReactSelectValue(values?.beneficiaries_ids),
-    program_ids: getReactSelectValue(filteredProgramIds),
+    program_ids: getReactSelectValue(values?.program_ids),
     ...(values?.date_range?.start && {
       start_date: `${values?.date_range?.start} 00:00:00`,
     }),
     ...(values?.date_range?.end && {
       end_date: `${values?.date_range?.end} 23:59:59`,
-    }),
-    ...(isWmsSelected && {
-      integration_client_id: ProgramIntegrationClient.WasteManagement,
     }),
   }
 
@@ -71,15 +57,6 @@ export function getUserPrograms(data?: TUserDetail) {
     }) || []
 
   return programs
-}
-
-export function getUserBeneficiaries(data?: TUserDetail) {
-  const beneficiaries =
-    data?.entity?.beneficiaries?.filter((beneficiary) => {
-      return data?.beneficiaries_ids?.indexOf(beneficiary?.id) >= 0
-    }) || []
-
-  return beneficiaries
 }
 
 export function getGender(t: TFunction<['common', 'user']>, gender: number) {
@@ -183,7 +160,6 @@ export function generateUserDetail(
 
 export function handleDefaultValue(defaultValue?: TUserDetail) {
   const programs = defaultValue?.entity?.programs
-  const beneficiaries = defaultValue?.entity?.beneficiaries
   const province = defaultValue?.location?.province
   const regency = defaultValue?.location?.regency
   const subdistrict = defaultValue?.location?.subdistrict
@@ -234,7 +210,6 @@ export function handleDefaultValue(defaultValue?: TUserDetail) {
           label: defaultValue?.entity?.name || '',
           value: defaultValue?.entity?.id,
           programs,
-          beneficiaries,
           integration_client_id: defaultValue?.entity?.integration_client_id,
         }
       : null,
@@ -245,7 +220,6 @@ export function handleDefaultValue(defaultValue?: TUserDetail) {
         }
       : null,
     program_ids: defaultValue?.program_ids ?? [],
-    beneficiaries_ids: defaultValue?.beneficiaries_ids ?? [],
     daily_recap_email: !!defaultValue?.daily_recap_email,
     integration_client_id: defaultValue?.integration_client_id ?? null,
   }

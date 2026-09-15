@@ -20,18 +20,10 @@ export class EntityTagRepository {
     const { page, paginate, keyword } = param
     const startIndex = (page - 1) * paginate
     const endIndex = startIndex + paginate
-    const { client, trx } = c.var
+    const { trx } = c.var
 
     const query = trx
       .selectFrom("entity_tags as et")
-      .$if(!!client, (qb) =>
-        qb.innerJoin("integration_associations as a", (join) =>
-          join
-            .onRef("a.internal_id", "=", "et.id")
-            .on("a.client_id", "=", client!.getId())
-            .on("a.type", "=", "entity_tag")
-        )
-      )
       .where("et.deleted_at", "is", null)
 
     let entityTags = await query.select(["et.id", "et.title"]).execute()

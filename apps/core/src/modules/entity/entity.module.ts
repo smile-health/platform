@@ -88,7 +88,6 @@ export class EntityModule extends BaseModule {
           },
         ],
         programs: [],
-        beneficiaries: [] as any[],
       }
     })
   }
@@ -149,21 +148,14 @@ export class EntityModule extends BaseModule {
         this.workspaceRepo.getByFromMappedWorkspace(c, "entity", entityIDs),
       ])
 
-      // Filter workspaces into programs and beneficiaries
       const programs: Record<number, any[]> = {}
-      const beneficiaries: Record<number, any[]> = {}
 
       entityIDs.forEach((entityId) => {
-        const workspaces = allWorkspaces[entityId] ?? []
-        programs[entityId] = workspaces.filter((w) => w.is_beneficiaries === 0)
-        beneficiaries[entityId] = workspaces.filter(
-          (w) => w.is_beneficiaries === 1
-        )
+        programs[entityId] = allWorkspaces[entityId] ?? []
       })
 
       remappedEntity.forEach((res) => {
         res.programs = programs[Number(res.id)] ?? []
-        res.beneficiaries = beneficiaries[Number(res.id)] ?? []
         return res
       })
     }
@@ -189,8 +181,7 @@ export class EntityModule extends BaseModule {
     }
 
     return {
-      programs: workspaces.filter((w) => w.is_beneficiaries === 0),
-      beneficiaries: workspaces.filter((w) => w.is_beneficiaries === 1),
+      programs: workspaces,
       ...baseResponse,
       is_sentinel_lab: !!sentinelLab,
       sentinel_lab_start_date: sentinelLab?.start_date ?? null,
@@ -209,7 +200,6 @@ export class EntityModule extends BaseModule {
     const entityDto = EntityDto.parse(data)
 
     const {
-      integration_client_id,
       external_properties,
       province_id,
       regency_id,
@@ -242,7 +232,7 @@ export class EntityModule extends BaseModule {
         Number(newEntityID),
         "entity",
         external_properties ? JSON.stringify(external_properties) : undefined,
-        integration_client_id ?? undefined
+        undefined
       ),
     ]
 
@@ -273,7 +263,6 @@ export class EntityModule extends BaseModule {
     const entityDto = EntityDto.parse(data)
 
     const {
-      integration_client_id,
       external_properties,
       province_id,
       regency_id,
@@ -304,7 +293,7 @@ export class EntityModule extends BaseModule {
         entityID,
         "entity",
         external_properties ? JSON.stringify(external_properties) : undefined,
-        integration_client_id ?? undefined
+        undefined
       ),
     ]
 

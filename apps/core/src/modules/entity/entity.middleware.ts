@@ -671,25 +671,6 @@ export class EntityMiddleware {
 
       external_properties: z.record(z.any()).optional(),
 
-      integration_client_id: z
-        .number()
-        .superRefine(async (val, ctx) => {
-          const result = await c.var.trx
-            .selectFrom("integration_clients as ic")
-            .where("ic.id", "=", [val])
-            .select(["id"])
-            .execute()
-          if (result.length === 0) {
-            ctx.addIssue({
-              message: c.var.t("validator.not_exist", {
-                field: "integration_clients",
-              }),
-              code: "custom",
-            })
-          }
-        })
-        .optional(),
-
       id_satu_sehat: z
         .number({
           invalid_type_error: c.var.t("validator.number", {

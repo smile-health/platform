@@ -25,7 +25,13 @@ ARG NEXT_PUBLIC_NOVU_SOCKET_URL
 # API_BASE_URL is read through next.config.js `env:` block, so Next.js inlines
 # it into the client bundle at build time — runtime `kubectl set env` does NOT
 # reach browser code. Same treatment as the NEXT_PUBLIC_* vars above.
+# WMS_API_URL/WMS_STORAGE_PREFIX get the same treatment: wms-module's client
+# code (redux/actions/auth.ts's checkToken -> WMS_API_URL/set-auth) reads them
+# directly, and a missing WMS_API_URL fails that call silently, leaving every
+# WMS permission check (and therefore the whole WMS navbar menu) empty.
 ARG API_BASE_URL
+ARG WMS_API_URL
+ARG WMS_STORAGE_PREFIX
 
 ENV NEXT_PUBLIC_FIREBASE_DATABASE_URL=$NEXT_PUBLIC_FIREBASE_DATABASE_URL \
     NEXT_PUBLIC_FIREBASE_API_KEY=$NEXT_PUBLIC_FIREBASE_API_KEY \
@@ -40,7 +46,9 @@ ENV NEXT_PUBLIC_FIREBASE_DATABASE_URL=$NEXT_PUBLIC_FIREBASE_DATABASE_URL \
     NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER=$NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER \
     NEXT_PUBLIC_NOVU_BACKEND_URL=$NEXT_PUBLIC_NOVU_BACKEND_URL \
     NEXT_PUBLIC_NOVU_SOCKET_URL=$NEXT_PUBLIC_NOVU_SOCKET_URL \
-    API_BASE_URL=$API_BASE_URL
+    API_BASE_URL=$API_BASE_URL \
+    WMS_API_URL=$WMS_API_URL \
+    WMS_STORAGE_PREFIX=$WMS_STORAGE_PREFIX
 
 WORKDIR /app
 COPY . .

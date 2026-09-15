@@ -46,6 +46,20 @@ module.exports = {
   },
   transpilePackages: ['@repo/ui'],
   output: 'standalone',
+  images: {
+    // Program config.icon_url (see apps/core program.schema.ts) is now a
+    // full URL served from wherever this deployment hosts static/program
+    // assets, rather than always being one of the locally-bundled
+    // /images/icon-programs/*.png files — allow the shared badr.co.id asset
+    // hosts next/image is seeing in practice (smile-platform.badr.co.id and
+    // siblings), same domain family as API_BASE_URL/GROWTHBOOK_API_HOST above.
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.badr.co.id',
+      },
+    ],
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

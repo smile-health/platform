@@ -41,6 +41,8 @@ jobs:
               - 'apps/wms-encore/**'
             web:
               - 'apps/web/**'
+              - 'packages/ui/**'
+              - 'turbo.json'
             lib:
               - 'packages/lib/**'
 
@@ -253,6 +255,8 @@ jobs:
             NEXT_PUBLIC_NOVU_BACKEND_URL=${{ secrets.NEXT_PUBLIC_NOVU_BACKEND_URL }}
             NEXT_PUBLIC_NOVU_SOCKET_URL=${{ secrets.NEXT_PUBLIC_NOVU_SOCKET_URL }}
             API_BASE_URL=${{ vars.API_BASE_URL || 'https://smile-health-api.badr.co.id' }}
+            WMS_API_URL=${{ vars.WMS_API_URL || 'https://smile-health-api.badr.co.id/wms' }}
+            WMS_STORAGE_PREFIX=${{ vars.WMS_STORAGE_PREFIX || 'WMSWEB_' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

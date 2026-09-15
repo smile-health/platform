@@ -109,7 +109,6 @@ export const generalScema = z.object({
   updated_by: z.number().nullish(),
   created_at: z.date().optional(),
   updated_at: z.date().optional(),
-  integration_client_id: z.number().optional(),
   external_properties: z.record(z.any()).optional(),
   program_ids: z.array(z.number()).optional(),
 })

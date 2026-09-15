@@ -1,7 +1,6 @@
 import env from "@/config/env.js"
 import { ActivityRepository } from "@/modules/activity/activity.repository.js"
 import { EntityRepository } from "@/modules/entity/entity.repository.js"
-import { OrderIntegrationRepository } from "@/modules/order-integration/order-integration.repository.js"
 import { UserRepository } from "@/modules/user/user.repository.js"
 import { AuthKeycloakService } from "@smile-health/lib/api/auth.service.js"
 import { ForbiddenError, UnauthorizedError } from "@smile-health/lib/error.js"
@@ -137,7 +136,6 @@ export class AuthKeycloakMiddleware {
     private readonly userRepo: UserRepository,
     private readonly activityRepo: ActivityRepository,
     private readonly entityRepo: EntityRepository,
-    private readonly integrationRepo: OrderIntegrationRepository,
     private readonly authKeycloakService: AuthKeycloakService
   ) {}
   public handleAuthKeycloak = async (c: Context, next: Next) => {
@@ -163,17 +161,10 @@ export class AuthKeycloakMiddleware {
         return c.json({ message: c.var.t("auth.unauthorized") }, 401)
       }
 
-      // handle client users (siha/sitb/din)
-      const clientKey = Object.keys(
-        responseAuthKeycloak?.userInfo?.resource_access
-      ).filter((key) => key !== "account")[0]
-      const client = await this.integrationRepo.getClientByKey(c, clientKey)
-
-      // fill programId if not sent via headers only for client users
-      if (client) {
-        c.set("client", client)
-        c.set("programId", c.var.programId ?? user[0]?.program_id)
-      }
+      // Fill programId from the user's workspace row if not sent via headers.
+      // Previously this only happened for "client" (WMS) users; applied
+      // unconditionally now that WMS users are ordinary users.
+      c.set("programId", c.var.programId ?? user[0]?.program_id)
 
       const workspace = user.find(
         (ws) => ws.program_id == Number(c.var.programId)

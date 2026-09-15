@@ -7,6 +7,7 @@ export type TProgram = {
   entity_id?: number
   color?: string
   protocols: TProtocol[]
+  app_type?: 'logistic' | 'waste_management'
   config: {
     color?: string
     material: {
@@ -23,6 +24,8 @@ export type TProgram = {
       is_transfer_stock_restricted: boolean
     }
     is_annual_planning: boolean
+    icon_url?: string
+    base_url?: string
   }
   is_related?: boolean
   user_created_by?: {

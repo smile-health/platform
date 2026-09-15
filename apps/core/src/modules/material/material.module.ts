@@ -50,11 +50,7 @@ export class MaterialModule {
   ) {}
 
   async list(c: Context, queryParam: GetMaterialsQueryParams) {
-    const { client } = c.var
-    const { data, total } = await this.repo.findAll(c, {
-      ...queryParam,
-      integration_client_id: client?.getId(),
-    })
+    const { data, total } = await this.repo.findAll(c, queryParam)
 
     if (data.length === 0) {
       return new PaginatedResponse(queryParam)
@@ -80,8 +76,7 @@ export class MaterialModule {
   }
 
   async detail(c: Context, id: number) {
-    const { client } = c.var
-    const material = await this.repo.findById(c, id, client?.getId())
+    const material = await this.repo.findById(c, id)
     if (!material) throw new NotFoundError("Material not found.")
 
     if (material.deleted_at) {
@@ -237,7 +232,7 @@ export class MaterialModule {
         createdMaterialId,
         "material",
         undefined,
-        body.integration_client_id ?? c.var.client?.getId()
+        undefined
       ),
     ])
 
@@ -281,7 +276,7 @@ export class MaterialModule {
         id,
         "material",
         undefined,
-        body.integration_client_id ?? c.var.client?.getId()
+        undefined
       ),
     ])
 

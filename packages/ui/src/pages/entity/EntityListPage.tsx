@@ -33,7 +33,6 @@ import {
   PaginationSelectLimit,
 } from '#components/pagination'
 import { toast } from '#components/toast'
-import { ProgramEnum, ProgramIntegrationClient } from '#constants/program'
 import { USER_ROLE } from '#constants/roles'
 import { usePermission } from '#hooks/usePermission'
 import { useSetExportPopupStore } from '#hooks/useSetExportPopup'
@@ -132,13 +131,6 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
         id_satu_sehat,
       } = filter.query
 
-      const isWmsSelected =
-        Array.isArray(program_ids) &&
-        program_ids.some((opt) => opt.value === ProgramEnum.WasteManagement)
-      const filteredProgramIds = Array.isArray(program_ids)
-        ? program_ids.filter((opt) => opt.value !== ProgramEnum.WasteManagement)
-        : program_ids
-
       const params = {
         keyword: keyword,
         id_satu_sehat,
@@ -147,15 +139,12 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
           entity_tag_ids: getReactSelectValue(entity_tag_ids),
         }),
         ...(location_ids?.length && { location_ids }),
-        ...(filteredProgramIds?.length && {
-          program_ids: getReactSelectValue(filteredProgramIds),
+        ...(Array.isArray(program_ids) && program_ids.length && {
+          program_ids: getReactSelectValue(program_ids),
         }),
         ...(sorting.id && {
           sort_by: sorting.id,
           sort_type: sorting.desc ? 'desc' : 'asc',
-        }),
-        ...(isWmsSelected && {
-          integration_client_id: ProgramIntegrationClient.WasteManagement,
         }),
       }
 
@@ -193,13 +182,6 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
         id_satu_sehat,
       } = filter.query
 
-      const isWmsSelected =
-        Array.isArray(program_ids) &&
-        program_ids.some((opt) => opt.value === ProgramEnum.WasteManagement)
-      const filteredProgramIds = Array.isArray(program_ids)
-        ? program_ids.filter((opt) => opt.value !== ProgramEnum.WasteManagement)
-        : program_ids
-
       const params = {
         page: pagination.page || 1,
         paginate: pagination.paginate || 10,
@@ -210,15 +192,12 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
           entity_tag_ids: getReactSelectValue(entity_tag_ids),
         }),
         ...(location_ids?.length && { location_ids }),
-        ...(filteredProgramIds?.length && {
-          program_ids: getReactSelectValue(filteredProgramIds),
+        ...(Array.isArray(program_ids) && program_ids.length && {
+          program_ids: getReactSelectValue(program_ids),
         }),
         ...(sorting.id && {
           sort_by: sorting.id,
           sort_type: sorting.desc ? 'desc' : 'asc',
-        }),
-        ...(isWmsSelected && {
-          integration_client_id: ProgramIntegrationClient.WasteManagement,
         }),
       }
 
