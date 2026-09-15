@@ -176,9 +176,9 @@ export const createFilterSchema = ({
       id: 'select-location',
       type: 'locationCascade',
       name: 'location_id',
-      // maxLevel: 1 preserves the original depth of this filter
-      // (province + regency only — it never went down to sub_district/village).
-      maxLevel: 1,
+      // No maxLevel: defaults to the live hierarchy depth (GET
+      // .../locations/levels) instead of a hardcoded assumption about how
+      // deep this filter should go.
       label: t('stock:filter.label.city'),
       disabled: () =>
         (entityType >= ENTITY_TYPE.PROVINSI && isManager) ||

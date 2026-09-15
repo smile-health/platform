@@ -75,6 +75,13 @@ type LocationPickerProps = {
   watch?: UseFormWatch<any>
   clearErrors?: UseFormClearErrors<any>
   errors?: FieldErrors<any>
+  // Fires whenever the resolved number of rendered levels changes (once,
+  // when maxLevel is an explicit prop; after the live-depth fetch settles,
+  // when it isn't). For a caller that sizes its own wrapper around this
+  // component (e.g. Filter.tsx spanning N grid columns) -- without this,
+  // that sizing has no way to know the real count once it depends on a
+  // fetch this component owns internally.
+  onLevelCountChange?: (count: number) => void
 }
 
 // Field name used internally in the react-hook-form state for each cascade
@@ -105,6 +112,7 @@ export function LocationPicker({
   isMulti,
   layout = 'row',
   defaultLocations,
+  onLevelCountChange,
   control: controlProp,
   setValue: setValueProp,
   watch: watchProp,
@@ -145,6 +153,11 @@ export function LocationPicker({
   }
 
   const levels = Array.from({ length: maxLevel + 1 }, (_, index) => index)
+
+  useEffect(() => {
+    onLevelCountChange?.(levels.length)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [levels.length])
 
   // Seed each level's dropdown label from the ancestor chain once per
   // distinct leaf id (e.g. once per entity loaded into an edit form) --
