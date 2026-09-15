@@ -14,7 +14,6 @@ type ListProgramsParams = {
   paginate: string | number
   keyword?: string
   is_hierarchy_enabled?: number
-  is_beneficiaries?: boolean
   is_user_program?: number
 }
 export async function listPrograms(

@@ -339,7 +339,6 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
     entityId: number | number[]
   ) {
     const { page, paginate, sort_by, sort_type } = params
-    const { client } = c.var
     const offset = (page - 1) * paginate
 
     let sort
@@ -364,14 +363,6 @@ export class AssetInventoryRepository extends BaseRepository<"asset_inventories"
       .selectFrom("asset_inventories as wai")
       .innerJoin("entities as we", (join) =>
         join.onRef("wai.entity_id", "=", "we.id")
-      )
-      .$if(!!client, (qb) =>
-        qb.innerJoin("integration_associations as ea", (join) =>
-          join
-            .onRef("ea.internal_id", "=", "we.id")
-            .on("ea.type", "=", "entity")
-            .on("ea.client_id", "=", client!.getId())
-        )
       )
       .leftJoin("users as wuu", (join) =>
         join.onRef("wai.updated_by", "=", "wuu.id")

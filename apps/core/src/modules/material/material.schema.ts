@@ -53,7 +53,6 @@ export const MaterialSchema = z.object({
   created_at: z.date(),
   updated_at: z.date(),
   deleted_at: z.date().nullish(),
-  integration_client_id: z.number().nullish(),
   is_kfa: z.number().min(0).max(1).nullish(),
 })
 
@@ -114,7 +113,6 @@ export const GetMaterialsQueryParamSchema = PaginationQueriesSchema.extend({
   sort_type: z
     .enum(["asc", "desc"], { message: "INVALID REQUEST SORT_TYPE" })
     .default("desc"),
-  integration_client_id: z.number().nullish(),
 })
 
 export const GetTemplateQueryParamsSchema = z.object({
@@ -177,8 +175,6 @@ export const CreateMaterialDTOSchema = MaterialSchema.omit({
   id: true,
   created_at: true,
   updated_at: true,
-}).extend({
-  integration_client_id: z.number().nullish(),
 })
 
 export const UpdateMaterialDTOSchema = MaterialSchema.omit({
@@ -187,8 +183,6 @@ export const UpdateMaterialDTOSchema = MaterialSchema.omit({
   created_by: true,
   created_at: true,
   updated_at: true,
-}).extend({
-  integration_client_id: z.number().nullish(),
 })
 
 export const UpdateStatusMaterialDTOSchema = MaterialSchema.pick({

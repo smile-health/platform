@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { ProgramEnum, ProgramWasteManagement } from '#constants/program'
+import { ProgramEnum } from '#constants/program'
 import { MANUFACTURE_TYPE, USER_ROLE } from '#constants/roles'
 import useSmileRouter from '#hooks/useSmileRouter'
 import { listPrograms } from '#services/program'
@@ -8,7 +8,6 @@ import { getAuthTokenCookies } from '#utils/storage/auth'
 import { getProgramStorage, removeProgramStorage } from '#utils/storage/program'
 import { getUserStorage } from '#utils/storage/user'
 import { generateInitials } from '#utils/strings'
-import { isUserWMS } from '#utils/user'
 import { parseAsString, useQueryStates } from 'nuqs'
 import { useTranslation } from 'react-i18next'
 
@@ -18,16 +17,14 @@ type Props = {
   isCore?: boolean
   onlyBaseParams?: boolean
   isEnabled?: boolean
-  isIncludeWasteManagement?: boolean
-  isWms?:boolean
+  isWms?: boolean
 }
 
 export const useProgram = ({
   isCore,
   onlyBaseParams,
   isEnabled = true,
-  isIncludeWasteManagement,
-  isWms =false,
+  isWms = false,
 }: Props = {}) => {
   const { pathname } = useSmileRouter()
   const {
@@ -110,15 +107,7 @@ export const useProgram = ({
     removeProgramStorage()
 
   const filteredPrograms = useMemo(() => {
-    let temp = userPrograms
-
-    if (token) {
-      if (isUserWMS(user)) {
-        temp = [ProgramWasteManagement(language), ...(temp ?? [])]
-      } else if (isIncludeWasteManagement) {
-        temp = userPrograms?.concat(ProgramWasteManagement(language))
-      }
-    }
+    const temp = userPrograms
 
     if (!debounceLocalSearch) {
       return temp

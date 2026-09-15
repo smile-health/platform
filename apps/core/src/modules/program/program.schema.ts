@@ -21,6 +21,7 @@ const config = z.object({
     })
     .optional(),
   icon_url: z.string().url().optional(),
+  base_url: z.string().url().optional(),
 })
 
 export const ProgramSchema = z.object({
@@ -34,7 +35,6 @@ export const ProgramSchema = z.object({
 export const ProgramParamsSchema = PaginationQueriesSchema.extend({
   is_hierarchy_enabled: z.string().nullish().optional(),
   is_batch_enabled: z.string().nullish().optional(),
-  is_beneficiaries: z.string().nullish().optional(),
   sort_by: z.string().nullish().optional(),
   sort_type: z.string().nullish().optional(),
   is_user_program: z.string().nullish().optional(),

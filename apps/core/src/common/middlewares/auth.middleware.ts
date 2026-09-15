@@ -1,14 +1,12 @@
 import env from "@/config/env.js"
 import { AccountRepository } from "@/modules/account/account.repository.js"
 import { ExecutiveUserRepository } from "@/modules/executive-dashboard/user/executive-user.repository"
-import { IntegrationRepository } from "@/modules/integration/integration.repository"
 import { UserRepository } from "@/modules/user/user.repository.js"
 import { AuthKeycloakService } from "@smile-health/lib/api"
 import { logger } from "@smile-health/lib/logger.js"
 import { Context, Next } from "hono"
 import * as jwt from "jsonwebtoken"
 import { DEVICE_TYPE } from "../constants/device"
-import { USER_ROLE } from "../constants/users"
 
 const whitelistedPaths = [
   "/account/login",
@@ -90,27 +88,8 @@ export class AuthKeycloakMiddleware {
   constructor(
     private readonly authKeycloakService: AuthKeycloakService,
     private readonly userRepo: UserRepository,
-    private readonly executiveUserRepo: ExecutiveUserRepository,
-    private readonly integrationRepo: IntegrationRepository
+    private readonly executiveUserRepo: ExecutiveUserRepository
   ) {}
-
-  #getIntegrationClientId = async (c: Context): Promise<number | null> => {
-    const contentType = c.req.header("content-type") || ""
-    const queryVal = c.req.query("integration_client_id")
-
-    if (contentType.includes("application/json")) {
-      try {
-        const body = await c.req.json()
-        return body.integration_client_id
-          ? Number(body.integration_client_id)
-          : Number(queryVal)
-      } catch {
-        return Number(queryVal)
-      }
-    }
-
-    return Number(queryVal)
-  }
 
   public handleAuthKeycloak = async (c: Context, next: Next) => {
     if (whitelistedPaths.includes(c.req.path)) {
@@ -141,18 +120,6 @@ export class AuthKeycloakMiddleware {
       if (!user || user.status == 0) {
         return c.json({ message: c.var.t("auth.account_inactive") }, 403)
       }
-
-      let clientKey: string | number | undefined = Object.keys(
-        responseAuthKeycloak?.userInfo?.resource_access
-      ).filter((key) => key !== "account")[0]
-
-      // if user is superadmin, this client key can be overriden by query params
-      if (user.role === USER_ROLE.SUPERADMIN || user.role === USER_ROLE.ADMIN) {
-        clientKey = await this.#getIntegrationClientId(c)
-      }
-
-      const client = await this.integrationRepo.getClientByKey(c, clientKey)
-      c.set("client", client)
 
       // sync keycloak uuid to our db
       const keycloakUuid = responseAuthKeycloak?.userInfo?.sub

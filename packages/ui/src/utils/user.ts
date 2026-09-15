@@ -1,7 +1,7 @@
 import { entityTypeList } from '#constants/entity'
-import { ProgramIntegrationClient } from '#constants/program'
 import { EXTERNAL_USER_ROLE, USER_ROLE, userRoleList } from '#constants/roles'
 import { RequestloginResponse } from '#types/auth'
+import { TProgram } from '#types/program'
 
 import { getUserStorage } from './storage/user'
 
@@ -45,14 +45,16 @@ export const asExternalAdmin = (user?: RequestloginResponse | null) => {
     : null
 }
 
-export const isWms = (integrationClientId: number | null) => {
-  return integrationClientId === ProgramIntegrationClient.WasteManagement
+export const isWms = (programs?: TProgram[] | null) => {
+  return programs?.some((p) => p.app_type === 'waste_management') ?? false
 }
 
 export const isUserWMS = (user?: RequestloginResponse | null) => {
-  return user ? isWms(user.integration_client_id) : false
+  return user ? isWms(user.programs) : false
 }
 
+// The entity itself carries no app_type of its own -- a user's entity is
+// treated as WMS-scoped when their assigned programs include the WMS program.
 export const isUserEntityWMS = (user?: RequestloginResponse | null) => {
-  return user ? isWms(user?.entity.integration_client_id) : false
+  return user ? isWms(user.programs) : false
 }

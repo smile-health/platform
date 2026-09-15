@@ -1,10 +1,5 @@
 import { FilterFormSchema, UseFilter } from '#components/filter'
-import {
-  noProgram,
-  ProgramEnum,
-  ProgramWasteManagement,
-  WORKSPACE,
-} from '#constants/program'
+import { noProgram } from '#constants/program'
 import { loadCoreEntities, loadEntities } from '#services/entity'
 import { loadProvinces, loadRegencies } from '#services/location'
 import { listPrograms } from '#services/program'
@@ -62,12 +57,7 @@ export default function userFilterFormSchema(
                   label: item?.name,
                 })) || []
 
-              const wasteManagementOption = {
-                value: ProgramEnum.WasteManagement,
-                label: WORKSPACE[ProgramEnum.WasteManagement].name,
-              }
-
-              return [noProgram(t), wasteManagementOption, ...result]
+              return [noProgram(t), ...result]
             },
           } as FilterFormSchema,
         ]

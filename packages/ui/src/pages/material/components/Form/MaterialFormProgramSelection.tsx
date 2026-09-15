@@ -13,7 +13,7 @@ import { Controller, useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 import { MaterialGlobalFormData } from '../../schema/MaterialSchemaForm'
-import { IconPrograms } from '#constants/program'
+import { getProgramIconUrl } from '#constants/program'
 
 type Props = {
   program_ids?: number[]
@@ -115,7 +115,7 @@ export default function MaterialFormProgramSelection(props: Readonly<Props>) {
                             title: 'ui-text-base ui-text-left',
                           }),
                         }}
-                        icon={IconPrograms[item.key]}
+                        icon={getProgramIconUrl(item)}
                       />
 
                       {disabled && (

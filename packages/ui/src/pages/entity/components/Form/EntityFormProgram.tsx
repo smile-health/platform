@@ -1,16 +1,9 @@
-import { useState } from 'react'
 import { useParams } from 'next/navigation'
-import { useFeatureIsOn } from '@growthbook/growthbook-react'
 import { EmptyState } from '#components/empty-state'
 import Warning from '#components/icons/Warning'
 import { InputSearch } from '#components/input'
 import InfiniteScrollContainer from '#components/modules/InfiniteScrollContainer'
-import {
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
 import { useProgramInfiniteList } from '#hooks/useProgramInfiniteList'
-import cx from '#lib/cx'
 import { TDetailEntity } from '#types/entity'
 import { Controller, useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -21,36 +14,16 @@ import ProgramItemWrapper from './ProgramItemWrapper'
 type Props = Readonly<{
   data: TDetailEntity | undefined
   programs: number[]
-  beneficiaries: number[]
 }>
 
-type TabType = 'logistik' | 'beneficiaries'
-
-export default function EntityFormProgram({
-  data: detailData,
-  programs,
-  beneficiaries,
-}: Props) {
-  const [tab, setTab] = useState<TabType>('logistik')
-
+export default function EntityFormProgram({ programs }: Props) {
   const { t } = useTranslation(['common', 'entity'])
   const { id } = useParams() ?? {}
 
   const { control } = useFormContext<TFormData>()
 
-  const isShowBeneficiaries = useFeatureIsOn('feature.beneficiaries')
-  const isEntityWms =
-    detailData?.integration_client_id ===
-    ProgramIntegrationClient.WasteManagement
-
-  const showWms = tab !== 'beneficiaries'
-
   const { data, loading, hasMore, loadMore, keyword, setKeyword } =
-    useProgramInfiniteList({
-      tab,
-      showWms,
-      is_beneficiaries: tab === 'beneficiaries',
-    })
+    useProgramInfiniteList()
 
   return (
     <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded">
@@ -62,31 +35,6 @@ export default function EntityFormProgram({
           <Warning />
           <p className="ui-text-xs">{t('entity:form.programs.description')}</p>
         </div>
-
-        {/* Tabs */}
-        {isShowBeneficiaries && (
-          <div className="ui-flex ui-border-b ui-border-neutral-400 ui-bg-blue-100">
-            {(['logistik', 'beneficiaries'] as TabType[]).map((type) => (
-              <button
-                key={type}
-                type="button"
-                onClick={() => setTab(type)}
-                className={cx(
-                  'ui-flex-1 ui-py-2 ui-text-center ui-text-dark-blue',
-                  'focus:outline-none focus:ring-0',
-                  tab === type &&
-                    'ui-font-semibold ui-border-b-[3px] ui-border-primary-500'
-                )}
-              >
-                {t(
-                  type === 'logistik'
-                    ? 'entity:form.programs.logistics'
-                    : 'entity:form.programs.beneficiary'
-                )}
-              </button>
-            ))}
-          </div>
-        )}
 
         {/* Search */}
         <InputSearch
@@ -113,14 +61,9 @@ export default function EntityFormProgram({
                 const itemId = item.id ?? -1
 
                 const isChecked = value?.includes(itemId)
-                const isAlreadySelected =
-                  !!id &&
-                  (programs.includes(itemId) || beneficiaries.includes(itemId))
+                const isAlreadySelected = !!id && programs.includes(itemId)
 
-                const isWasteManagement = itemId === ProgramWasteManagement().id
-
-                const disabled =
-                  isAlreadySelected || (isEntityWms && isWasteManagement)
+                const disabled = isAlreadySelected
 
                 return (
                   <ProgramItemWrapper

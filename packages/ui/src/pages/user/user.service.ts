@@ -21,7 +21,6 @@ export type CreateUserBody = {
   password: string
   village_id?: string
   program_ids: number[]
-  beneficiaries_ids: number[]
   integration_client_id?: number
 }
 

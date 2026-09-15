@@ -31,7 +31,6 @@ export const assetFilterSchema = ({ t }: Params): UseFilter => {
 
   const { data } = useProgram({
     isCore: true,
-    isIncludeWasteManagement: true,
   })
 
   return [

@@ -1,8 +1,4 @@
-import {
-  WMS_CLIENT_ID,
-  WMS_PROGRAM_ID,
-  WMS_PROGRAM_NAME,
-} from "@/common/constants/integration.js"
+import { WMS_CLIENT_ID, WMS_PROGRAM_ID } from "@/common/constants/integration.js"
 import {
   DAILY_RECAP_EMAIL,
   USER_CHANGELOGS_FIELD,
@@ -108,15 +104,12 @@ export class UserModule {
 
   async createUser(c: Context, data: TCreateUserReq, returnDetail = true) {
     const { program_ids: workspace_ids, external_roles, ...crte } = data
-    let { client } = c.var
-
-    if (!client && data.integration_client_id) {
-      client = await this.integrationRepo.getClientByKey(
-        c,
-        data.integration_client_id
-      )
-      c.set("client", client)
-    }
+    const client = data.integration_client_id
+      ? await this.integrationRepo.getClientByKey(
+          c,
+          data.integration_client_id
+        )
+      : undefined
 
     // add prosess check if keycloak doesnt exists
     const userExist = await this.repository.checkUsernameEmail(
@@ -197,7 +190,9 @@ export class UserModule {
     }
 
     const bcryptPassword = await bcrypt.hash(crte.password, 10)
-    const { external_properties, integration_client_id, ...restCrte } = crte
+    // integration_client_id is not a users column; kept only to grant the
+    // matching Keycloak client role above, not persisted or read back locally
+    const { external_properties, integration_client_id: _unused, ...restCrte } = crte
     const result = await this.repository.create(c, {
       ...restCrte,
       password: bcryptPassword, // after integration with auth keycloak done, it will be removed
@@ -227,18 +222,12 @@ export class UserModule {
           keycloak_uuid: authKeycloak.keycloak_uuid,
           user_uuid: authKeycloak.user_uuid,
           role: roleMapping[data.role]?.internal_id ?? data.role,
+          external_properties: JSON.stringify({ role, ...external_properties }),
         },
         { id: userId }
       ),
       this.#manageWorkspaces(c, userId, workspace_ids ?? []),
       this.userPublisher.processCreate(c, userId, data),
-      this.integrationRepo.upsertAssociation(
-        c,
-        userId,
-        "user",
-        JSON.stringify({ role, ...external_properties }),
-        integration_client_id
-      ),
     ])
 
     return {
@@ -283,12 +272,7 @@ export class UserModule {
 
             return {
               ...entity,
-              programs: entityWorkspaces.filter(
-                (w: any) => w.is_beneficiaries === 0
-              ),
-              beneficiaries: entityWorkspaces.filter(
-                (w: any) => w.is_beneficiaries === 1
-              ),
+              programs: entityWorkspaces,
             }
           }),
         this.workspaceRepo.getByFromMappedWorkspace(c, "user", user.id),
@@ -297,7 +281,12 @@ export class UserModule {
         this.manufactureRepo.findOne(c, { id: user.manufacture_id }),
         this.authKeycloakService.getUser(user.keycloak_uuid ?? ""),
       ])
-    const { client } = c.var
+    const client = entity?.integration_client_id
+      ? await this.integrationRepo.getClientByKey(
+          c,
+          entity.integration_client_id
+        )
+      : undefined
 
     const userWorkspaces = workspaces[user.id] ?? []
     const clientMappings = kcUser?.data?.roleMappings?.clientMappings
@@ -317,12 +306,7 @@ export class UserModule {
 
     return {
       ...baseResponse,
-      program_ids: userWorkspaces
-        .filter((ws) => ws.is_beneficiaries === 0)
-        .map((ws) => ws.id),
-      beneficiaries_ids: userWorkspaces
-        .filter((ws) => ws.is_beneficiaries === 1)
-        .map((ws) => ws.id),
+      program_ids: userWorkspaces.map((ws) => ws.id),
     } as UserResponse
   }
 
@@ -331,7 +315,7 @@ export class UserModule {
     const {
       program_ids: workspace_ids,
       external_roles,
-      integration_client_id,
+      integration_client_id: _unused,
       external_properties,
       ...user
     } = data
@@ -341,17 +325,6 @@ export class UserModule {
       this.entityRepo.findById(c, user.entity_id ?? 0),
     ])
     let hashPassword: string | undefined
-
-    let { client } = c.var
-    client = entity?.integration_client_id ? client : undefined
-
-    if (!client && data.integration_client_id) {
-      client = await this.integrationRepo.getClientByKey(
-        c,
-        data.integration_client_id
-      )
-      c.set("client", client)
-    }
 
     // resolve WMS client from the entity's own (fixed) association rather than
     // the per-request client, so the Keycloak payload/role mapping stay correct
@@ -461,6 +434,7 @@ export class UserModule {
           role: roleMapping[user.role ?? 0]?.internal_id ?? user.role,
           password: hashPassword!,
           keycloak_uuid: userNotFound ? null : dataPrevious.keycloak_uuid, // reset keycloak uuid on user keycloak not found
+          external_properties: JSON.stringify({ role, ...external_properties }),
         },
         { id }
       ),
@@ -474,13 +448,6 @@ export class UserModule {
           )
         : null,
       this.userPublisher.processUpdate(c, id, data),
-      this.integrationRepo.upsertAssociation(
-        c,
-        id,
-        "user",
-        JSON.stringify({ role, ...external_properties }),
-        integration_client_id
-      ),
     ])
 
     return this.detail(c, { id })
@@ -635,9 +602,6 @@ export class UserModule {
     const setRows: TExportUser[] = []
     for (const user of items) {
       const programNames = user.programs?.map((el) => el.name)
-      if (user.integration_client_id === WMS_CLIENT_ID) {
-        programNames?.push(WMS_PROGRAM_NAME)
-      }
 
       const row: TExportUser = {
         id: user.id,
@@ -705,11 +669,6 @@ export class UserModule {
   }
 
   async importExcel(c: Context, rows: TImportUser[]) {
-    const wmsClient = await this.integrationRepo.getClientByKey(
-      c,
-      WMS_CLIENT_ID
-    )
-
     for (const [index, row] of rows.entries()) {
       const user: TCreateUserReq = {
         username: row.username,
@@ -727,13 +686,10 @@ export class UserModule {
         entity_id: row.entity_id,
         manufacture_id: row?.manufacture_id,
         password: row.password,
-        program_ids: row.program_ids?.filter((id) => id !== WMS_PROGRAM_ID),
-      }
-
-      if (row.program_ids?.includes(WMS_PROGRAM_ID)) {
-        c.set("client", wmsClient)
-      } else {
-        c.set("client", undefined)
+        program_ids: row.program_ids,
+        integration_client_id: row.program_ids?.includes(WMS_PROGRAM_ID)
+          ? WMS_CLIENT_ID
+          : undefined,
       }
 
       const inserted = await this.createUser(c, user, false)

@@ -209,19 +209,13 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       province_id,
       regency_id,
       sub_district_id,
-      integration_client_id,
     } = params
 
     // Validate pagination to prevent memory exhaustion
     const validatedPageSize = Math.min(paginate || 20, 1000)
     const offset = ((page || 1) - 1) * validatedPageSize
 
-    let source = env.ENTITY_LIST_SOURCE
-
-    // force to mysql for entity with integration client
-    if (integration_client_id) {
-      source = DATASOURCE.MYSQL
-    }
+    const source = env.ENTITY_LIST_SOURCE
 
     const useSlave = [DATASOURCE.DATAMART, DATASOURCE.CLICKHOUSE].includes(
       source
@@ -358,14 +352,6 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
     query = query
       .where("e.program_id", "=", params.program_id! ?? 0)
       .where("e.deleted_at", "is", null)
-      .$if(integration_client_id, (qb) =>
-        qb.innerJoin("integration_associations as ia", (join) =>
-          join
-            .onRef("ia.internal_id", "=", "e.global_id")
-            .on("ia.client_id", "=", integration_client_id)
-            .on("ia.type", "=", "entity")
-        )
-      )
 
     const [list, count] = await Promise.all([
       query
@@ -447,12 +433,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
   ) {
     const { cursor, paginate, ...filters } = params
 
-    let source = env.ENTITY_LIST_SOURCE
-
-    // force to mysql for entity with integration client
-    if (filters.integration_client_id) {
-      source = DATASOURCE.MYSQL
-    }
+    const source = env.ENTITY_LIST_SOURCE
 
     const useSlave = [DATASOURCE.DATAMART, DATASOURCE.CLICKHOUSE].includes(
       source
@@ -605,14 +586,6 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
     query = query
       .where("e.program_id", "=", params.program_id ?? 0)
       .where("e.deleted_at", "is", null)
-      .$if(!!filters.integration_client_id, (qb) =>
-        qb.innerJoin("integration_associations as ia", (join) =>
-          join
-            .onRef("ia.internal_id", "=", "e.global_id")
-            .on("ia.client_id", "=", filters.integration_client_id!)
-            .on("ia.type", "=", "entity")
-        )
-      )
 
     // Apply cursor-based pagination
     if (cursor) {

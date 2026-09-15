@@ -10,7 +10,7 @@ import { ChangeHistoryCard } from './components/ChangeHistoryCard'
 import DetailComponent from './components/DetailComponent'
 import DetailComponentLoadingState from './components/DetailComponentLoadingState'
 import { useAccountManagement } from './hooks/useAccountManagement'
-import { IconPrograms } from '#constants/program'
+import { getProgramIconUrl } from '#constants/program'
 
 export type UpdateListFieldType = {
   label: string
@@ -100,7 +100,7 @@ export default function AccountPage(): JSX.Element {
                     logo: 'ui-w-8 ui-h-8',
                     title: 'ui-text-left'
                   }}
-                  icon={IconPrograms[item.key]}
+                  icon={getProgramIconUrl(item)}
                   sizeIcon={32}
                 />
               )

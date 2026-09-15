@@ -11,7 +11,7 @@ import { ProgramItemLink } from '@repo/ui/components/modules/ProgramItemLink';
 import { Fragment, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useProgram } from '@repo/ui/hooks/program/useProgram';
-import { IconPrograms } from '@repo/ui/constants/program';
+import { getProgramHref, getProgramIconUrl } from '@repo/ui/constants/program';
 
 const DropdownProgram = () => {
   const {
@@ -70,14 +70,14 @@ const DropdownProgram = () => {
                 key={program.key}
                 data={program}
                 onClick={() => setOpen(false)}
-                href={program.href || getHref(program.key)}
+                href={getProgramHref(program, language, getHref, program.key)}
                 className={{
                   wrapper:
                     'ui-py-2 ui-cursor-pointer ui-gap-2 hover:ui-bg-gray-100',
                   logo: 'ui-w-8 ui-h-8',
                   title: 'ui-text-sm ui-m-2',
                 }}
-                icon={IconPrograms[program.key]}
+                icon={getProgramIconUrl(program)}
                 sizeIcon={32}
               />
             ))}

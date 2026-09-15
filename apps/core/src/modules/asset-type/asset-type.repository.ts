@@ -120,11 +120,7 @@ export class AssetTypeRepository extends BaseRepository<"asset_types"> {
         join.onRef("atw.workspace_id", "=", "w.id")
       )
 
-    queries = queries
-      .where("at.deleted_at", "is", null)
-      .$if(!!c.var.client, (qb) =>
-        qb.where("ia.client_id", "=", c.var.client!.getId())
-      )
+    queries = queries.where("at.deleted_at", "is", null)
 
     if (keyword) {
       queries = queries.where("at.name", "like", `%${keyword}%`)

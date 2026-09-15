@@ -7,14 +7,10 @@ import {
 import { Input, InputPassword } from '#components/input'
 import { Radio } from '#components/radio'
 import { OptionType, ReactSelectAsync } from '#components/react-select'
-import {
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
+import { ProgramIntegrationClient } from '#constants/program'
 import { USER_ROLE } from '#constants/roles'
 import { loadManufacturers } from '#services/manufacturer'
 import { loadUserRoles } from '#services/user'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { getUserStorage } from '#utils/storage/user'
 import { isUserWMS } from '#utils/user'
 import { useEffect, useRef } from 'react'
@@ -47,7 +43,6 @@ export default function UserFormMainInfo({
   isEdit = false,
 }: UserFormMainInfoProps) {
   const { t } = useTranslation('user')
-  const token = getAuthTokenCookies()
   const user = getUserStorage()
   const {
     control,
@@ -57,15 +52,16 @@ export default function UserFormMainInfo({
     formState: { errors, defaultValues },
   } = useFormContext<UserFormMainInfoValues>()
 
-  const { role, integration_client_id, entity } = watch()
+  const { role, entity } = watch()
   const programIds = watch('program_ids' as any) as number[] | undefined
-  const wmsId = token ? ProgramWasteManagement().id : null
+  const wmsProgramId = entity?.programs?.find(
+    (p) => p.app_type === 'waste_management'
+  )?.id
 
-  const defaultEntity = defaultValues?.entity
-  const isSameEntity = defaultEntity?.value === entity?.value
-
-  const isWmsChecked = Boolean(wmsId && programIds?.includes(wmsId)) || (isSameEntity && integration_client_id === ProgramIntegrationClient.WasteManagement)
-  const isEntityIntegratedWithWMS = entity?.integration_client_id === ProgramIntegrationClient.WasteManagement
+  const isWmsChecked = Boolean(
+    wmsProgramId && programIds?.includes(wmsProgramId)
+  )
+  const isEntityIntegratedWithWMS = Boolean(wmsProgramId)
   const isWmsCheckedRef = useRef(isWmsChecked)
 
   useEffect(() => {

@@ -103,7 +103,6 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
     .optional(),
   is_vendor: z.preprocess(Number, z.nativeEnum(FLAG)).optional(),
   entity_id: z.string().optional(),
-  integration_client_id: z.coerce.number().optional(),
 })
 
 export const EntityDto = z.object({
@@ -130,7 +129,6 @@ export const EntityDto = z.object({
   updated_at: z.date().optional(),
   integration_type: z.coerce.number().nullish(),
   external_properties: z.record(z.any()).nullish(),
-  integration_client_id: z.number().optional(),
   id_satu_sehat: z.number().nullable().optional(),
 })
 
@@ -318,7 +316,6 @@ export type TCreateEntityRequest = {
   country?: string
   external_properties?: Record<string, any> | undefined
   status?: number
-  integration_client_id?: number
   id_satu_sehat?: string | number | undefined | null
   is_sentinel_lab?: boolean
   sentinel_lab_start_date?: string | null

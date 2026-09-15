@@ -3,7 +3,7 @@ import { TManufacturer } from '#types/manufacturer'
 import { useTranslation } from 'react-i18next'
 
 import ManufacturerLoading from '../ManufacturerLoading'
-import { IconPrograms } from '#constants/program'
+import { getProgramIconUrl } from '#constants/program'
 
 type ManufacturerDetailProgramProps = {
   isLoading?: boolean
@@ -33,7 +33,7 @@ export default function ManufacturerDetailProgram({
                 'ui-gap-4 ui-p-4 ui-rounded-lg ui-border ui-border-neutral-300',
               title: 'ui-text-left'
             }}
-            icon={IconPrograms[item.key]}
+            icon={getProgramIconUrl(item)}
           />
         ))}
       </div>

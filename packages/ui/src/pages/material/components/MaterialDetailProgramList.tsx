@@ -1,6 +1,6 @@
 import { ProgramItem } from '#components/modules/ProgramItem'
 import { Skeleton } from '#components/skeleton'
-import { IconPrograms } from '#constants/program'
+import { getProgramIconUrl } from '#constants/program'
 import { MaterialDetailGlobalResponse } from '#services/material'
 
 type MaterialDetailProgramListProps = Readonly<{
@@ -30,7 +30,7 @@ export default function MaterialDetailProgramList({
                 'ui-gap-4 ui-p-4 ui-rounded-lg ui-border ui-border-neutral-300',
               title: 'ui-text-left'
             }}
-            icon={IconPrograms[item.key]}
+            icon={getProgramIconUrl(item)}
           />
         ))}
       </div>

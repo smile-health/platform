@@ -13,7 +13,6 @@ export type ListUsersParams = TCommonFilter & {
   regency_ids?: string
   entity_id?: string | number
   program_ids?: string
-  beneficiaries_ids?: string
 }
 
 export type ListUsersResponse = TCommonResponseList & {
@@ -47,7 +46,6 @@ export type UpdateUserBody = {
   password?: string
   village_id?: string
   program_ids?: number[]
-  beneficiaries_ids?: number[]
   integration_client_id?: number
 }
 
@@ -92,7 +90,6 @@ export type ListUserRolesParams = TCommonFilter & {
   regency_ids?: string
   entity_id?: string | number
   program_ids?: string
-  beneficiaries_ids?: string
   integration_client_id?: string | number
 }
 

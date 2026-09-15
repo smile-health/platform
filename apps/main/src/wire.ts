@@ -416,7 +416,6 @@ const authKeycloakMiddleware = new AuthKeycloakMiddleware(
   userRepo,
   activityRepo,
   entityRepo,
-  integrationRepo,
   new AuthKeycloakService(
     env.AUTH_URL ?? "http://localhost:5001",
     env.USE_LOCAL_JWT_VALIDATION === "true"

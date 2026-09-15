@@ -41,6 +41,8 @@ jobs:
               - 'apps/wms-encore/**'
             web:
               - 'apps/web/**'
+              - 'packages/ui/**'
+              - 'turbo.json'
             lib:
               - 'packages/lib/**'
 

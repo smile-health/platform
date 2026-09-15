@@ -208,7 +208,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
   async getListEntity(c: Context, params: GetEntitiesQueries) {
     const { page, paginate, sort_by, sort_type } = params
     const offset = (page - 1) * paginate
-    const { client, trx } = c.var
+    const { trx } = c.var
     let query = trx
       .selectFrom("entities as e")
       .select([
@@ -228,7 +228,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
           .onRef("e_types.id", "=", "e.type")
           .on("e_types.deleted_at", "is", null)
       )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .where("e.deleted_at", "is", null)
 
     query = this.#joinLocationHierarchy(query)
@@ -238,7 +237,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
       .leftJoin("integration_associations as a", (join) =>
         join.onRef("a.internal_id", "=", "e.id").on("a.type", "=", "entity")
       )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .where("e.deleted_at", "is", null)
 
     countQuery = this.#joinLocationHierarchy(countQuery)
@@ -339,30 +337,17 @@ export class EntityRepository extends BaseRepository<"entities"> {
   }
 
   async findById(c: Context, entityID: number, withDetails = true) {
-    const { client, trx } = c.var
+    const { trx } = c.var
 
-    let entity = await trx
+    const entity = await trx
       .selectFrom("entities as e")
       .leftJoin("integration_associations as a", (join) =>
         join.onRef("a.internal_id", "=", "e.id").on("a.type", "=", "entity")
       )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .select(["a.metadata", "a.client_id as integration_client_id"])
       .where("e.id", "=", entityID)
       .selectAll("e")
       .executeTakeFirst()
-
-    if (!entity && client) {
-      entity = await trx
-        .selectFrom("entities as e")
-        .leftJoin("integration_associations as a", (join) =>
-          join.onRef("a.internal_id", "=", "e.id").on("a.type", "=", "entity")
-        )
-        .select(["a.metadata", "a.client_id as integration_client_id"])
-        .where("e.id", "=", entityID)
-        .selectAll("e")
-        .executeTakeFirst()
-    }
 
     if (!withDetails) {
       return entity
@@ -475,7 +460,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
   }
 
   async findBasicById(c: Context, entityID: number) {
-    const { client, trx } = c.var
+    const { trx } = c.var
 
     const entity = await trx
       .selectFrom("entities as e")
@@ -503,7 +488,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
       )
       .leftJoin("entity_types as ets", "ets.id", "e.type")
       .leftJoin("entity_tags as et", "et.id", "e.entity_tag_id")
-      .$if(!client, (qb) => qb.select(["e.external_properties"]))
+      .select(["e.external_properties"])
       .select([
         "e.id",
         "e.name",
@@ -535,7 +520,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
       )
       .select(locationHierarchyJsonAgg("loc").as("locations"))
       .where("e.id", "=", entityID)
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .executeTakeFirst()
 
     if (!entity) return entity
@@ -648,9 +632,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
             .select("entity_id")
             .where("workspace_id", "in", params.program_ids)
         )
-      )
-      .$if(!!params.integration_client_id, (qb) =>
-        qb.where("a.client_id", "=", params.integration_client_id!)
       )
       .select([
         "e.id",
@@ -816,7 +797,7 @@ export class EntityRepository extends BaseRepository<"entities"> {
   ) {
     const { page, paginate, sort_by, sort_type } = params
     const offset = (page - 1) * paginate
-    const { client, trx } = c.var
+    const { trx } = c.var
 
     let query = trx
       .selectFrom("entities as e")
@@ -837,7 +818,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
           .onRef("e_types.id", "=", "e.type")
           .on("e_types.deleted_at", "is", null)
       )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .where("e.deleted_at", "is", null)
       .where("e.id", "!=", entityId)
 
@@ -848,7 +828,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
       .leftJoin("integration_associations as a", (join) =>
         join.onRef("a.internal_id", "=", "e.id").on("a.type", "=", "entity")
       )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
       .where("e.deleted_at", "is", null)
 
     countQuery = this.#joinLocationHierarchy(countQuery)
@@ -1177,9 +1156,6 @@ export class EntityRepository extends BaseRepository<"entities"> {
             .select("entity_id")
             .where("workspace_id", "in", params.program_ids)
         )
-      )
-      .$if(!!params.integration_client_id, (qb) =>
-        qb.where("a.client_id", "=", params.integration_client_id!)
       )
       .select(sql<number>`count(*)`.as("count"))
       .executeTakeFirst()
