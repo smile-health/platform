@@ -26,6 +26,11 @@ ARG NEXT_PUBLIC_NOVU_SOCKET_URL
 # it into the client bundle at build time — runtime `kubectl set env` does NOT
 # reach browser code. Same treatment as the NEXT_PUBLIC_* vars above.
 ARG API_BASE_URL
+# WMS_API_URL is used by apps/web/wms-module (lib/axios.ts baseURL +
+# redux/actions/auth.ts `${WMS_API_URL}/set-auth`). It also goes through the
+# next.config.js `env:` block, so it is inlined at build time and needs the
+# same ARG/ENV + build-arg treatment.
+ARG WMS_API_URL
 
 ENV NEXT_PUBLIC_FIREBASE_DATABASE_URL=$NEXT_PUBLIC_FIREBASE_DATABASE_URL \
     NEXT_PUBLIC_FIREBASE_API_KEY=$NEXT_PUBLIC_FIREBASE_API_KEY \
@@ -40,7 +45,8 @@ ENV NEXT_PUBLIC_FIREBASE_DATABASE_URL=$NEXT_PUBLIC_FIREBASE_DATABASE_URL \
     NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER=$NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER \
     NEXT_PUBLIC_NOVU_BACKEND_URL=$NEXT_PUBLIC_NOVU_BACKEND_URL \
     NEXT_PUBLIC_NOVU_SOCKET_URL=$NEXT_PUBLIC_NOVU_SOCKET_URL \
-    API_BASE_URL=$API_BASE_URL
+    API_BASE_URL=$API_BASE_URL \
+    WMS_API_URL=$WMS_API_URL
 
 WORKDIR /app
 COPY . .
