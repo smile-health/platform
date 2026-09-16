@@ -1,6 +1,7 @@
 import { RequestloginResponse } from '@/types/auth';
 import { ROLE_TYPE } from '@/types/roles';
 import { parseError } from '@/utils/common';
+import { setUserStorage } from '@/utils/storage/user';
 import axios from 'axios';
 import { showMessage } from './app';
 import { toast } from '@repo/ui/components/toast';
@@ -49,10 +50,7 @@ export const checkToken = (token: string, locale: string) => (
       // re-write it here: nookies.set without an explicit path used to scope
       // a duplicate cookie to the current page's directory (e.g. /wms/id),
       // which then shadowed the real one and went stale on the next login.
-      localStorage.setItem(
-        `${process.env.WMS_STORAGE_PREFIX}USER`,
-        JSON.stringify(userData)
-      );
+      setUserStorage(userData);
 
       dispatch(
         showMessage(

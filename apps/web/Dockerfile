@@ -31,6 +31,11 @@ ARG API_BASE_URL
 # next.config.js `env:` block, so it is inlined at build time and needs the
 # same ARG/ENV + build-arg treatment.
 ARG WMS_API_URL
+# WMS_STORAGE_PREFIX prefixes the localStorage key wms-module stores the
+# logged-in user under (utils/storage/user.ts). Missing this bakes
+# `undefined` into that key at write time, silently breaking every WMS
+# permission check and the header profile name with no visible error.
+ARG WMS_STORAGE_PREFIX
 
 ENV NEXT_PUBLIC_FIREBASE_DATABASE_URL=$NEXT_PUBLIC_FIREBASE_DATABASE_URL \
     NEXT_PUBLIC_FIREBASE_API_KEY=$NEXT_PUBLIC_FIREBASE_API_KEY \
@@ -46,7 +51,8 @@ ENV NEXT_PUBLIC_FIREBASE_DATABASE_URL=$NEXT_PUBLIC_FIREBASE_DATABASE_URL \
     NEXT_PUBLIC_NOVU_BACKEND_URL=$NEXT_PUBLIC_NOVU_BACKEND_URL \
     NEXT_PUBLIC_NOVU_SOCKET_URL=$NEXT_PUBLIC_NOVU_SOCKET_URL \
     API_BASE_URL=$API_BASE_URL \
-    WMS_API_URL=$WMS_API_URL
+    WMS_API_URL=$WMS_API_URL \
+    WMS_STORAGE_PREFIX=$WMS_STORAGE_PREFIX
 
 WORKDIR /app
 COPY . .
