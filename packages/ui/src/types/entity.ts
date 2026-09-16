@@ -56,7 +56,6 @@ export type TEntities = {
     id: string
     name: string
   } | null
-  beneficiaries: TProgram[]
   programs: TProgram[]
   integration_client_id: number | null
   locations?: Array<{
@@ -115,7 +114,6 @@ export type TDetailEntity = {
     firstname: string
     lastname: string
   }
-  beneficiaries: TProgram[]
   programs: TProgram[]
   locations: Array<{
     id: number
@@ -163,7 +161,6 @@ export type TEntityForm = {
   address: string
   lat: string | null
   lng: string | null
-  beneficiaries_ids: number[]
   program_ids: number[]
   activities_date: Array<{
     activity_id: number

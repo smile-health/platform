@@ -1,6 +1,5 @@
 import { Datamart } from "@/common/infrastructure/database/types/datamart.js"
 import {
-  IntegrationClients,
   WsEntities,
   WsUsers,
 } from "@/common/infrastructure/database/types/db.js"
@@ -29,7 +28,6 @@ declare module "hono" {
     roles?: string[]
     user?: Selectable<WsUsers> & { program_name: string }
     userEntity: Selectable<WsEntities>
-    client: Selectable<IntegrationClients>
     roleId?: number
     entityId?: number
     microplanningId?: number

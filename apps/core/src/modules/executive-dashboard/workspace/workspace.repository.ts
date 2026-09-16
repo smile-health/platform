@@ -105,7 +105,6 @@ export class ExecutiveWorkspaceRepository extends BaseRepository<"executive_work
         "w.description",
         "uw.status",
         "uw.user_id",
-        "w.is_beneficiaries",
       ])
       .where("w.deleted_at", "is", null)
       .execute()

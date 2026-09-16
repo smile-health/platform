@@ -83,9 +83,6 @@ export class MaterialRepository extends BaseRepository<"materials"> {
       )
       .where("m.deleted_at", "is", null)
       .where("mw.deleted_at", "is", null)
-      .$if(!!c.var.client, (qb) =>
-        qb.where("ia.client_id", "=", c.var.client!.getId())
-      )
   }
 
   private applyFilters(query, queryParam: GetMaterialsQueryParams) {
@@ -195,7 +192,7 @@ export class MaterialRepository extends BaseRepository<"materials"> {
     return query
   }
 
-  async findById(c: Context, id: number, integrationClientID?: number) {
+  async findById(c: Context, id: number) {
     const result = await c.var.trx
       .selectFrom("materials as m")
       .leftJoin("integration_associations as ia", (join) =>
@@ -204,9 +201,6 @@ export class MaterialRepository extends BaseRepository<"materials"> {
           .on("ia.type", "=", sql`'material'`)
       )
       .where("m.id", "=", id)
-      .$if(!!integrationClientID, (qb) =>
-        qb.where("ia.client_id", "=", integrationClientID!)
-      )
       .selectAll("m")
       .select([
         "ia.metadata as external_properties",

@@ -98,8 +98,7 @@
         "name": "Search program name",
         "select": "Select programs"
       },
-      "logistics": "Logistics",
-      "beneficiary": "Beneficiaries"
+      "logistics": "Logistics"
     },
     "date_range": {
       "label": "Date Range",

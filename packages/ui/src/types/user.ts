@@ -54,7 +54,6 @@ type TUserBase = {
 export type TUser = TUserBase & {
   entity: TUserEntity
   programs: TProgram[]
-  beneficiaries: TProgram[]
 }
 
 export type TUserRole = {
@@ -68,7 +67,6 @@ export type TUserDetail = TUserBase & {
   entity: TUserDetailEntity
   location: TUserLocation
   program_ids: number[]
-  beneficiaries_ids: number[]
   integration_client_id: number | null
   programs?: TProgram[]
 }
@@ -96,7 +94,6 @@ type TUserEntity = {
 
 type TUserDetailEntity = TUserEntity & {
   programs: TProgram[]
-  beneficiaries: TProgram[]
   integration_client_id: number | null
 }
 

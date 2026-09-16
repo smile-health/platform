@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next'
 
 import useListProgramTransferStock from '../hooks/useListProgramTransferStock'
 import { useModalWarningRemoveMaterialStore } from '../store/modal-warning.store'
-import { IconPrograms } from '#constants/program'
+import { getProgramIconUrl } from '#constants/program'
 import { reValidateQueryFetchInfiniteScroll } from '#components/infinite-scroll-list'
 
 const TransactionCreateListProgram = () => {
@@ -99,7 +99,7 @@ const TransactionCreateListProgram = () => {
                         wrapper: 'ui-gap-4',
                         title: 'ui-text-left'
                       }}
-                      icon={IconPrograms[item.key]}
+                      icon={getProgramIconUrl(item)}
                     />
                     <Radio
                       id={`cbx-program-${item?.key}`}

@@ -12,7 +12,6 @@ import { filterLeftMenus, isActiveMenu } from '../libs/navbar.commons'
 import { FIRST_SUBMENU_INDEX } from '../libs/navbar.constants'
 import { NavbarContext } from '../libs/navbar.context'
 import { TLeftMenu } from '../libs/navbar.types'
-import { useTransactionBeneficiaryConfigFlag } from '#hooks/useTransactionBeneficiaryConfigFlag'
 
 const NavbarSetting = () => {
   const { t } = useTranslation(['common', 'navbar'])
@@ -23,9 +22,6 @@ const NavbarSetting = () => {
     [setMenuClicked, menuClicked]
   )
   const program = getProgramStorage()
-  const {
-    showMenuProtocol
-  } = useTransactionBeneficiaryConfigFlag()
 
   const rawMenus: TLeftMenu[] = useMemo(
     () => [
@@ -102,11 +98,6 @@ const NavbarSetting = () => {
                 title: t('common:menu.setting.item.import_material_entity'),
                 url: `/v5/entity-material-bulk`,
                 isHidden: !hasPermission('entity-mutate'),
-              },
-              {
-                title: t('common:menu.setting.item.protocol'),
-                url: `/v5/protocol`,
-                isHidden: !hasPermission('protocol-view') || !showMenuProtocol,
               },
             ],
           },

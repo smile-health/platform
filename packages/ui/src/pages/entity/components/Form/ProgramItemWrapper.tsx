@@ -1,7 +1,7 @@
 import { Checkbox } from '#components/checkbox'
 import Check from '#components/icons/Check'
 import { ProgramItem } from '#components/modules/ProgramItem'
-import { IconPrograms } from '#constants/program'
+import { getProgramIconUrl } from '#constants/program'
 import cx from '#lib/cx'
 import { TProgram } from '#types/program'
 import { useTranslation } from 'react-i18next'
@@ -62,7 +62,7 @@ const ProgramItemWrapper: React.FC<ProgramItemWrapperProps> = (props) => {
                 title: 'ui-text-base ui-text-left',
               }),
             }}
-            icon={IconPrograms[item.key]}
+            icon={getProgramIconUrl(item)}
           />
         </>
       )}

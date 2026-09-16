@@ -18,7 +18,6 @@ export const AssetTypeSchema = z.object({
   updated_by: z.number().positive(),
   created_at: z.date(),
   updated_at: z.date(),
-  integration_client_id: z.number().nullish(),
   is_temperature_adjustable: z
     .union([
       z.literal("0"),
@@ -86,20 +85,13 @@ export const AddAssetTypeDTOSchema = AssetTypeSchema.pick({
   max_temperature: true,
 })
   .merge(AuditAssetTypeDTOSchema)
-  .extend({
-    integration_client_id: z.number().nullish(),
-  })
 
 export const EditAssetTypeDTOSchema = AssetTypeSchema.pick({
   name: true,
   description: true,
   min_temperature: true,
   max_temperature: true,
-})
-  .merge(PartialAuditAssetTypeDTOSchema)
-  .extend({
-    integration_client_id: z.number().nullish(),
-  })
+}).merge(PartialAuditAssetTypeDTOSchema)
 
 export const AddAssetTypeWorkspaceDTOSchema = AssetTypeSchema.pick({
   asset_type_id: true,
@@ -136,7 +128,6 @@ export const AddAssetTypeRequestSchema = AssetTypeSchema.pick({
       })
     )
     .optional(),
-  integration_client_id: z.number().nullish(),
   external_properties: z.record(z.any()).nullish(),
   humidity_thresholds: z
     .array(
@@ -174,7 +165,6 @@ export const AddAssetTypeImportSchema = AssetTypeSchema.pick({
 })
 
 export const EditAssetTypeRequestSchema = AddAssetTypeRequestSchema.extend({
-  integration_client_id: z.number().nullish(),
   external_properties: z.record(z.any()).nullish(),
 })
 
@@ -284,7 +274,6 @@ export const GetAssetTypesQueryParamsSchema = PaginationQueriesSchema.extend({
   sort_type: z
     .enum(["asc", "desc"], { message: "INVALID REQUEST SORT_TYPE" })
     .default("desc"),
-  integration_client_id: z.number().nullish(),
   is_related_asset: z
     .enum(["0", "1"], { message: "INVALID REQUEST IS_RELATED_ASSET" })
     .transform((val) => Number(val))

@@ -5,7 +5,7 @@ import AppLayout from '#components/layouts/AppLayout/AppLayout'
 import Meta from '#components/layouts/Meta'
 import { ProgramItemLink } from '#components/modules/ProgramItemLink'
 import { Spinner } from '#components/spinner'
-import { IconPrograms } from '#constants/program'
+import { getProgramHref, getProgramIconUrl } from '#constants/program'
 import { useProgram } from '#hooks/program/useProgram'
 import { useSetLoadingPopupStore } from '#hooks/useSetLoading'
 import { getUserStorage } from '#utils/storage/user'
@@ -17,9 +17,7 @@ const ProgramPage: React.FC = () => {
 
   const user = getUserStorage()
 
-  const { data, isLoading, getHref, localSearch, setLocalSearch } = useProgram({
-    isIncludeWasteManagement: isUserWMS(user),
-  })
+  const { data, isLoading, getHref, localSearch, setLocalSearch } = useProgram()
   useSetLoadingPopupStore(isLoading)
 
   return (
@@ -49,7 +47,7 @@ const ProgramPage: React.FC = () => {
                 key={`${x.key}-${i}`}
                 data={x}
                 direction="vertical"
-                href={x.href || getHref(x.key)}
+                href={getProgramHref(x, i18n.language, getHref, x.key)}
                 className={{
                   wrapper:
                     'ui-border ui-border-neutral-300 ui-rounded-lg ui-py-8 ui-cursor-pointer ui-gap-4',
@@ -57,7 +55,7 @@ const ProgramPage: React.FC = () => {
                   label: 'ui-text-2xl',
                   title: 'ui-text-center ui-px-2',
                 }}
-                icon={IconPrograms[x.key]}
+                icon={getProgramIconUrl(x)}
               />
             ))}
           </div>

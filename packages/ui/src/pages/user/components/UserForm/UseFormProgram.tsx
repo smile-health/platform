@@ -5,14 +5,10 @@ import {
 } from '#components/form-control'
 import ProgramSelection from '#components/modules/ProgramSelection'
 import { OptionType, ReactSelectAsync } from '#components/react-select'
-import {
-  ProgramIntegrationClient,
-  ProgramWasteManagement,
-} from '#constants/program'
+import { ProgramIntegrationClient } from '#constants/program'
 import cx from '#lib/cx'
 import { loadCoreEntities } from '#services/entity'
 import { TEntities } from '#types/entity'
-import { getAuthTokenCookies } from '#utils/storage/auth'
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
 import { useMemo } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
@@ -22,11 +18,10 @@ import { CreateUserBody } from '../../user.service'
 
 export type UseFormProgramValues = Pick<
   CreateUserBody,
-  'program_ids' | 'integration_client_id' | 'beneficiaries_ids'
+  'program_ids' | 'integration_client_id'
 > & {
   entity?:
-    | (OptionType &
-        Pick<TEntities, 'programs' | 'beneficiaries' | 'integration_client_id'>)
+    | (OptionType & Pick<TEntities, 'programs' | 'integration_client_id'>)
     | null
 }
 
@@ -35,7 +30,6 @@ type Props = {
 }
 
 export default function UseFormProgram({ isEdit }: Readonly<Props>) {
-  const token = getAuthTokenCookies()
   const { t } = useTranslation(['common', 'user'])
 
   const {
@@ -45,35 +39,30 @@ export default function UseFormProgram({ isEdit }: Readonly<Props>) {
     formState: { defaultValues },
   } = useFormContext<UseFormProgramValues>()
 
-  const { entity, program_ids, beneficiaries_ids, integration_client_id } =
-    watch()
+  const { entity, program_ids, integration_client_id } = watch()
 
   const wmsId = useMemo(
-    () => (token ? ProgramWasteManagement().id : null),
-    [token]
+    () =>
+      entity?.programs?.find((p) => p.app_type === 'waste_management')?.id ??
+      null,
+    [entity]
   )
-  
+
   const defaultEntity = defaultValues?.entity
   const isSameEntity = defaultEntity?.value === entity?.value
 
   const defaultProgramIds = (defaultValues?.program_ids ?? []) as number[]
-  const defaultBeneficiariesIds = (defaultValues?.beneficiaries_ids ??
-    []) as number[]
 
   const forbiddenUncheckIds = useMemo(() => {
     if (!isSameEntity) return []
     return [
-      ...(integration_client_id === ProgramIntegrationClient.WasteManagement
+      ...(integration_client_id === ProgramIntegrationClient.WasteManagement &&
+      wmsId
         ? [wmsId]
         : []),
       ...defaultProgramIds,
     ]
   }, [isSameEntity, integration_client_id, wmsId, defaultProgramIds])
-
-  const forbiddenUncheckBeneficiariesIds = useMemo(
-    () => (isSameEntity ? [...defaultBeneficiariesIds] : []),
-    [isSameEntity, defaultBeneficiariesIds]
-  )
 
   return (
     <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6">
@@ -107,7 +96,6 @@ export default function UseFormProgram({ isEdit }: Readonly<Props>) {
                 const selected = option as UseFormProgramValues['entity']
 
                 setValue('program_ids', defaultProgramIds)
-                setValue('beneficiaries_ids', defaultBeneficiariesIds)
 
                 setValue(
                   'integration_client_id',
@@ -127,18 +115,12 @@ export default function UseFormProgram({ isEdit }: Readonly<Props>) {
       {entity ? (
         <ProgramSelection
           key={entity?.value}
-          selected={program_ids || beneficiaries_ids || []}
+          selected={program_ids || []}
           onChange={(ids) => setValue('program_ids', ids)}
           forbiddenUncheckIds={forbiddenUncheckIds}
-          forbiddenUncheckBeneficiariesIds={forbiddenUncheckBeneficiariesIds}
           programList={entity.programs}
-          beneficiariesList={entity.beneficiaries}
           isEnabledApi={false}
           withLayout={false}
-          showWms={
-            entity?.integration_client_id ===
-            ProgramIntegrationClient.WasteManagement
-          }
         />
       ) : (
         <div

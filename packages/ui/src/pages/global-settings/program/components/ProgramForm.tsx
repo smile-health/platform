@@ -1,11 +1,10 @@
 import { Button } from '#components/button'
-import { EmptyState } from '#components/empty-state'
 import {
   FormControl,
   FormErrorMessage,
   FormLabel,
 } from '#components/form-control'
-import { Input, InputSearch } from '#components/input'
+import { Input } from '#components/input'
 import { InputColor } from '#components/input-color'
 import { TextArea } from '#components/text-area'
 import { FormProvider } from 'react-hook-form'
@@ -14,13 +13,10 @@ import {
   FormValidationKeys,
   useGlobalSettingProgramForm,
 } from '../hooks/useGlobalSettingProgramForm'
-import ProtocolItemWrapper from './ProtocolWrapper'
-import { useTransactionBeneficiaryConfigFlag } from '#hooks/useTransactionBeneficiaryConfigFlag'
 
 const ProgramForm: React.FC = () => {
   const {
     t,
-    detailProgram,
     router,
     methodsForm,
     handleSubmit,
@@ -29,13 +25,7 @@ const ProgramForm: React.FC = () => {
     isSuccess,
     disabled,
     handleChangeColor,
-    filteredProtocols,
-    keywordProtocol,
-    setKeywordProtocol,
   } = useGlobalSettingProgramForm()
-  const {
-    showFieldProtocol
-  } = useTransactionBeneficiaryConfigFlag()
   const {
     register,
     formState: { errors },
@@ -49,20 +39,6 @@ const ProgramForm: React.FC = () => {
     const filtered = raw.replace(/[^a-zA-Z0-9]/g, '')
     setValue('key', filtered)
     clearErrors('key')
-  }
-
-  const protocolsSelected = watch('protocols') || []
-
-  const handleSelectProtocol = (protocolId: number) => {
-    clearErrors('protocols')
-    if (protocolsSelected.includes(protocolId)) {
-      setValue(
-        'protocols',
-        protocolsSelected.filter((id) => id !== protocolId)
-      )
-    } else {
-      setValue('protocols', [...protocolsSelected, protocolId])
-    }
   }
 
   return (
@@ -174,55 +150,6 @@ const ProgramForm: React.FC = () => {
                 </FormErrorMessage>
               )}
             </FormControl>
-
-            {showFieldProtocol && (
-              <FormControl>
-                <FormLabel>
-                  {t('programGlobalSettings:form.label.protocol')}
-                </FormLabel>
-                <InputSearch
-                  placeholder={t(
-                    'programGlobalSettings:form.placeholder.protocol'
-                  )}
-                  defaultValue={keywordProtocol}
-                  onChange={(e) => setKeywordProtocol(e.target.value)}
-                />
-                {errors?.protocols?.message && (
-                  <FormErrorMessage>
-                    {t(errors?.protocols?.message as FormValidationKeys)}
-                  </FormErrorMessage>
-                )}
-                <div className="ui-grid ui-grid-cols-1 ui-gap-2 ui-mt-4 ui-max-h-96 ui-overflow-auto">
-                  {filteredProtocols?.map((protocol) => {
-                    const isChecked = protocolsSelected.includes(protocol.id)
-                    const isSelected =
-                      disabled &&
-                      detailProgram?.protocols.some(
-                        (selectedProtocol) => selectedProtocol.id === protocol.id
-                      )
-
-                    return (
-                      <ProtocolItemWrapper
-                        key={protocol?.id}
-                        protocol={protocol}
-                        isChecked={isChecked}
-                        disabled={isSelected || false}
-                        onChange={handleSelectProtocol}
-                      />
-                    )
-                  })}
-
-                  {filteredProtocols?.length === 0 ? (
-                    <EmptyState
-                      title={t('common:message.empty.title')}
-                      description={t('common:message.empty.description')}
-                      withIcon
-                      className="ui-h-[480px]"
-                    />
-                  ) : null}
-                </div>
-              </FormControl>
-            )}
           </div>
         </div>
 

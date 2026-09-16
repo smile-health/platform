@@ -42,7 +42,7 @@ export class AssetTypeModule {
   ) {}
 
   async create(c: Context, body: AddAssetTypeRequest) {
-    const { integration_client_id, external_properties, ...restRequest } = body
+    const { external_properties, ...restRequest } = body
     const userId = Number(c.var.accountID)
     const currentDate = new Date()
     const promises: any[] = []
@@ -169,14 +169,14 @@ export class AssetTypeModule {
       assetTypeId,
       "asset_type",
       external_properties ? JSON.stringify(external_properties) : undefined,
-      integration_client_id ?? undefined
+      undefined
     )
 
     return { id: assetTypeId }
   }
 
   async update(c: Context, id: number, body: EditAssetTypeRequest) {
-    const { integration_client_id, external_properties, ...restRequest } = body
+    const { external_properties, ...restRequest } = body
     const userId = Number(c.var.accountID)
     const currentDate = new Date()
     const promises: any[] = []
@@ -190,7 +190,6 @@ export class AssetTypeModule {
       name: restRequest.name,
       description: restRequest.description,
       ...auditData,
-      integration_client_id: integration_client_id ?? c.var.client?.getId(),
     }
 
     const temperatureExist =
@@ -246,7 +245,7 @@ export class AssetTypeModule {
       id,
       "asset_type",
       external_properties ? JSON.stringify(external_properties) : undefined,
-      integration_client_id ?? undefined
+      undefined
     )
   }
 
@@ -296,11 +295,7 @@ export class AssetTypeModule {
   }
 
   async list(c: Context, params: GetAssetTypesQueryParams) {
-    const { client } = c.var
-    const { data, total } = await this.repository.listAssetType(c, {
-      ...params,
-      integration_client_id: client?.getId(),
-    })
+    const { data, total } = await this.repository.listAssetType(c, params)
 
     if (data.length === 0) {
       return new PaginatedResponse(params, data)

@@ -75,9 +75,6 @@ export class UsersMiddleware {
     input: unknown,
     ctx: z.RefinementCtx
   ) {
-    // skip validate manufacture for wms
-    if (c.var.client) return
-
     const parsed = add
       .pick({
         role: true,
@@ -288,24 +285,6 @@ export class UsersMiddleware {
           const programIdExist = await this.#isProgramExist(c, val)
           conditionsMessage(cfx, "validator.not_exist", !programIdExist)
         }),
-        integration_client_id: z
-          .number()
-          .superRefine(async (val, ctx) => {
-            const result = await c.var.trx
-              .selectFrom("integration_clients as ic")
-              .where("ic.id", "=", [val])
-              .select(["id"])
-              .execute()
-            if (result.length === 0) {
-              ctx.addIssue({
-                message: c.var.t("validator.not_exist", {
-                  field: "integration_clients",
-                }),
-                code: "custom",
-              })
-            }
-          })
-          .optional(),
       })
     )
     return created
@@ -335,24 +314,6 @@ export class UsersMiddleware {
             const programIdExist = await this.#isProgramExist(c, val)
             conditionsMessage(cfx, "validator.not_exist", !programIdExist)
           }),
-          integration_client_id: z
-            .number()
-            .superRefine(async (val, ctx) => {
-              const result = await c.var.trx
-                .selectFrom("integration_clients as ic")
-                .where("ic.id", "=", [val])
-                .select(["id"])
-                .execute()
-              if (result.length === 0) {
-                ctx.addIssue({
-                  message: c.var.t("validator.not_exist", {
-                    field: "integration_clients",
-                  }),
-                  code: "custom",
-                })
-              }
-            })
-            .optional(),
         })
         .superRefine(async (val, cfx) => {
           const dataPrev = await this.userRepo.dataExists(c, {

@@ -82,17 +82,8 @@ export class UserRepository extends BaseRepository<"users"> {
   }
 
   async findAll(c: Context, queries: GetUserQueries) {
-    const { client, trx } = c.var
-    let query = trx
-      .selectFrom("users")
-      .leftJoin("integration_associations as a", (join) =>
-        join
-          .onRef("a.internal_id", "=", "users.id")
-          .on("a.type", "=", "user")
-          .on("a.deleted_at", "is", null)
-      )
-      .$if(!!client, (qb) => qb.where("a.client_id", "=", client!.getId()))
-      .select(["a.metadata", "a.client_id as integration_client_id"])
+    const { trx } = c.var
+    let query = trx.selectFrom("users")
 
     const conditionWhereClause = await this.#conditionWhereClause(
       c,
@@ -181,30 +172,17 @@ export class UserRepository extends BaseRepository<"users"> {
       .$if(typeof id !== "string", (qb) =>
         qb.where("users.id", "=", id as number)
       )
-      .leftJoin("integration_associations as a", (join) =>
-        join
-          .onRef("a.internal_id", "=", "users.id")
-          .on("a.type", "=", "user")
-          .on("a.deleted_at", "is", null)
-      )
-      .select([
-        ...cols,
-        "roles.id as role_id",
-        "roles.name as role_label",
-        "a.metadata",
-        "a.client_id as integration_client_id",
-      ])
+      .select([...cols, "roles.id as role_id", "roles.name as role_label"])
       .where("users.deleted_at", "is", null)
       .executeTakeFirst()
 
     const gender_label = getLabelByKey(USER_GENDER, result?.gender)
 
-    const { metadata, ...restResult } = result ?? {}
-
     return {
-      ...(restResult ?? {}),
-      external_properties: metadata ?? result?.external_properties,
-      integration_client_id: result?.integration_client_id,
+      ...(result ?? {}),
+      external_properties: result?.external_properties
+        ? JSON.parse(result.external_properties)
+        : undefined,
       gender_label,
       external_roles: result?.external_roles ?? [], // Provide default empty array if missing
     } as UserResponse

@@ -22,7 +22,6 @@ export class TransferStockRepository {
       .innerJoin("workspaces as w", "w.id", "ew.workspace_id")
       .where("ew.entity_id", "=", entityId)
       .where("w.deleted_at", "is", null)
-      .where("w.is_beneficiaries", "=", 0)
       .$if(!!keyword, (eb) => eb.where("w.name", "like", `%${keyword}%`))
       .select(["w.id", "w.key", "w.name", "w.config"])
       .execute()

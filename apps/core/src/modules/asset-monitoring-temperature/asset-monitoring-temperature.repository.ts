@@ -1132,7 +1132,6 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
       rtmd_manufacture_ids,
       is_range_temperature,
     } = params
-    const { client } = c.var
     const offset = (page - 1) * paginate
 
     // ============================================
@@ -1144,14 +1143,6 @@ export class AssetMonitoringTemperatureRepository extends AssetInventoryReposito
       .selectFrom("asset_inventories as wai")
       .select(["wai.id", "wai.updated_at"])
       .innerJoin("entities as we", "we.id", "wai.entity_id")
-      .$if(!!client, (qb) =>
-        qb.innerJoin("integration_associations as ea", (join) =>
-          join
-            .onRef("ea.internal_id", "=", "we.id")
-            .on("ea.type", "=", "entity")
-            .on("ea.client_id", "=", client!.getId())
-        )
-      )
       .where("wai.deleted_at", "is", null)
 
     // Apply entity filter

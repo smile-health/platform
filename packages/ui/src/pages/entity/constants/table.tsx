@@ -3,11 +3,6 @@ import { CellContext, ColumnDef } from '@tanstack/react-table'
 import { Button } from '#components/button'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { ButtonActionTable } from '#components/modules/ButtonActionTable'
-import {
-  ProgramEnum,
-  ProgramIntegrationClient,
-  WORKSPACE,
-} from '#constants/program'
 import cx from '#lib/cx'
 import { hasPermission } from '#shared/permission/index'
 import { TEntities } from '#types/entity'
@@ -74,12 +69,7 @@ export const columns = (
           accessorKey: 'programs',
           cell: ({ row: { original } }: CellContext<TEntities, unknown>) => {
             const programs = original?.programs?.map((item) => item?.name)
-            const programText = programs?.length > 0 ? programs?.join(',') : ''
-
-            return original?.integration_client_id ===
-              ProgramIntegrationClient.WasteManagement
-              ? `${WORKSPACE[ProgramEnum.WasteManagement].name}${programText ? `, ${programText}` : programText}`
-              : programText
+            return programs?.length > 0 ? programs?.join(',') : ''
           },
           size: 160,
         },
@@ -253,14 +243,9 @@ export const columnsDetailUserGlobal = (
     accessorKey: 'program',
     cell: ({
       row: {
-        original: { programs, integration_client_id },
+        original: { programs },
       },
-    }) => {
-      const programText = programs?.map((w) => w?.name).join(', ') || '-'
-      return integration_client_id === ProgramIntegrationClient.WasteManagement
-        ? `${WORKSPACE[ProgramEnum.WasteManagement].name}, ${programText}`
-        : programText
-    },
+    }) => programs?.map((w) => w?.name).join(', ') || '-',
     size: 160,
   },
 ]

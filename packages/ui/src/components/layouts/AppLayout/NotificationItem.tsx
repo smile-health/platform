@@ -6,7 +6,7 @@ import SmileIcon from '#components/icons/SmileIcon'
 import Whatsapp from '#components/icons/Whatsapp'
 import { ProgramItem } from '#components/modules/ProgramItem'
 import { BOOLEAN } from '#constants/common'
-import { IconPrograms } from '#constants/program'
+import { getProgramIconUrl } from '#constants/program'
 import { ActionButtonType } from '#hooks/useNotification'
 import cx from '#lib/cx'
 import { TNotification } from '#types/notification'
@@ -189,7 +189,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
                 label: 'ui-text-xs',
                 title: 'ui-text-xs',
               }}
-              icon={IconPrograms[item.program.key]}
+              icon={getProgramIconUrl(item.program)}
               sizeIcon={24}
             />
           )}

@@ -124,7 +124,6 @@ export class EntityWorker extends BaseWorker {
       entity_id: number
       entity_program_id: number
       config: unknown
-      is_beneficiaries: number
     }
 
     // =========================
@@ -383,7 +382,6 @@ export class EntityWorker extends BaseWorker {
         entity_id: number
         entity_program_id: number
         config: unknown
-        is_beneficiaries: number
       }
 
       // =========================

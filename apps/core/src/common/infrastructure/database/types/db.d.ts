@@ -792,7 +792,6 @@ export interface ExecutiveWorkspaces {
   deleted_by: Generated<number | null>;
   description: Generated<string | null>;
   id: Generated<number>;
-  is_beneficiaries: Generated<number | null>;
   key: string;
   name: string;
   program_uuid: Generated<string | null>;
@@ -1865,6 +1864,7 @@ export interface VectorControl {
 }
 
 export interface Workspaces {
+  app_type: Generated<string>;
   config: Generated<string | null>;
   created_at: Generated<Date>;
   created_by: Generated<number | null>;
@@ -1872,7 +1872,6 @@ export interface Workspaces {
   deleted_by: Generated<number | null>;
   description: Generated<string | null>;
   id: Generated<number>;
-  is_beneficiaries: Generated<number | null>;
   key: string;
   name: string;
   program_uuid: Generated<string | null>;

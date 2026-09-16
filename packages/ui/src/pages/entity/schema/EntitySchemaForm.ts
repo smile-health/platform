@@ -41,7 +41,6 @@ export const formSchema = yup.object({
     .notRequired(),
 
   rutin_join_date: yup.string().notRequired(),
-  beneficiaries_ids: yup.array().of(yup.number().required()),
   program_ids: yup.array().of(yup.number().required()),
 
   // sentinel lab

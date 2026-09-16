@@ -98,8 +98,7 @@
         "name": "Cari program",
         "select": "Pilih program"
       },
-      "logistics": "Logistik",
-      "beneficiary": "Penerima Manfaat"
+      "logistics": "Logistik"
     },
     "date_range": {
       "label": "Rentang Tanggal",

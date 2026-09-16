@@ -26,8 +26,6 @@ import { MaterialProgramFormData } from '../../schema/MaterialSchemaForm'
 import { DEFAULT_VALUE } from '../../utils/material.constants'
 import ActivityItemWrapper from './ActivityItemWrapper'
 import { MaterialFormProgramDetail } from './MaterialFormProgramDetail'
-import { useTransactionBeneficiaryConfigFlag } from '#hooks/useTransactionBeneficiaryConfigFlag'
-import { KfaLevelEnum } from '#constants/material'
 
 type Props = {
   detailProgram?: MaterialDetailProgramResponse
@@ -39,10 +37,6 @@ const MaterialFormPrograms: React.FC<Props> = ({ detailProgram }) => {
     i18n: { language },
   } = useTranslation(['material', 'common'])
   const { activeProgram } = useProgram()
-  const {
-    showMaterialActivityPatient
-  } = useTransactionBeneficiaryConfigFlag()
-  const isMaterialKfaLevel93 = detailProgram?.material_level_id === KfaLevelEnum.KFA_93
 
   const {
     register,
@@ -106,16 +100,6 @@ const MaterialFormPrograms: React.FC<Props> = ({ detailProgram }) => {
       })
     }
 
-    setValue('activities', activities)
-  }
-
-  const handleChangePatientNeeded = (activityId: number) => {
-    const index = activities.findIndex((item) => item.value === activityId)
-    const activity = activities[index]
-    activities.splice(index, 1, {
-      ...activity,
-      isPatientNeeded: !activity?.isPatientNeeded,
-    })
     setValue('activities', activities)
   }
 
@@ -196,12 +180,7 @@ const MaterialFormPrograms: React.FC<Props> = ({ detailProgram }) => {
                           key={activity?.id}
                           activity={activity}
                           isChecked={Boolean(activitySelected)}
-                          isPatientNeeded={
-                            activitySelected?.isPatientNeeded || false
-                          }
                           onSelectActivity={handleSelectActivity}
-                          onChangePatientNeeded={handleChangePatientNeeded}
-                          showMaterialActivityPatient={showMaterialActivityPatient && isMaterialKfaLevel93}
                         />
                       )
                     })}

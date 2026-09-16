@@ -11,89 +11,102 @@ export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   ? ColumnType<S, I | undefined, U>
   : ColumnType<T, T | undefined, T>;
 
+export type Json = ColumnType<JsonValue, string, string>;
+
+export type JsonArray = JsonValue[];
+
+export type JsonObject = {
+  [x: string]: JsonValue | undefined;
+};
+
+export type JsonPrimitive = boolean | number | string | null;
+
+export type JsonValue = JsonArray | JsonObject | JsonPrimitive;
+
 export interface AssetCalibrationSchedules {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetClassifications {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetElectricities {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetInventories {
-  asset_model_id: Generated<number | null>;
-  asset_model_temperature_capacity_id: Generated<number | null>;
-  asset_type_id: Generated<number | null>;
-  borrowed_from_entity_id: Generated<number | null>;
-  budget_source_id: Generated<number | null>;
-  budget_year: Generated<number | null>;
-  calibration_asset_vendor_id: Generated<number | null>;
-  calibration_last_date: Generated<Date | null>;
-  calibration_schedule_id: Generated<number | null>;
+  asset_model_id: number | null;
+  asset_model_temperature_capacity_id: number | null;
+  asset_type_id: number | null;
+  borrowed_from_entity_id: number | null;
+  budget_source_id: number | null;
+  budget_year: number | null;
+  calibration_asset_vendor_id: number | null;
+  calibration_last_date: Date | null;
+  calibration_schedule_id: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  delete_reason: Generated<string | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  electricity_id: Generated<number | null>;
-  entity_id: Generated<number | null>;
+  created_by: number | null;
+  delete_reason: string | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  electricity_id: number | null;
+  entity_id: number | null;
   id: Generated<number>;
-  maintenance_asset_vendor_id: Generated<number | null>;
-  maintenance_last_date: Generated<Date | null>;
-  maintenance_schedule_id: Generated<number | null>;
-  manufacture_id: Generated<number | null>;
-  other_asset_budget_source_name: Generated<string | null>;
-  other_asset_manufacture_name: Generated<string | null>;
-  other_asset_model_name: Generated<string | null>;
-  other_asset_type_name: Generated<string | null>;
-  other_borrowed_from_entity_name: Generated<string | null>;
-  ownership_qty: Generated<number | null>;
-  ownership_status: Generated<number | null>;
-  production_year: Generated<number | null>;
-  serial_number: Generated<string | null>;
-  status: Generated<number | null>;
+  maintenance_asset_vendor_id: number | null;
+  maintenance_last_date: Date | null;
+  maintenance_schedule_id: number | null;
+  manufacture_id: number | null;
+  other_asset_budget_source_name: string | null;
+  other_asset_manufacture_name: string | null;
+  other_asset_model_name: string | null;
+  other_asset_type_name: string | null;
+  other_borrowed_from_entity_name: string | null;
+  ownership_qty: number | null;
+  ownership_status: Generated<number>;
+  production_year: number | null;
+  serial_number: string | null;
+  status: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  warranty_asset_vendor_id: Generated<number | null>;
-  warranty_end_date: Generated<Date | null>;
-  warranty_start_date: Generated<Date | null>;
-  working_status_id: Generated<number | null>;
+  updated_by: number | null;
+  warranty_asset_vendor_id: number | null;
+  warranty_end_date: Date | null;
+  warranty_start_date: Date | null;
+  working_status_changed_at: Date | null;
+  working_status_id: number | null;
 }
 
 export interface AssetInventoryOtherCapacities {
   asset_inventory_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  gross: Generated<number | null>;
+  deleted_at: Date | null;
+  gross: number | null;
   id: Generated<number>;
-  max_temperature: Generated<number | null>;
-  min_temperature: Generated<number | null>;
-  net: Generated<number | null>;
+  max_temperature: number | null;
+  min_temperature: number | null;
+  net: number | null;
   updated_at: Generated<Date>;
 }
 
@@ -101,11 +114,11 @@ export interface AssetInventoryRtmds {
   asset_inventory_id: number;
   asset_rtmd_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  description: Generated<string | null>;
+  deleted_at: Date | null;
+  description: string | null;
   id: Generated<number>;
-  latest_history_id: Generated<number | null>;
-  sensor_qty: Generated<number | null>;
+  latest_history_id: number | null;
+  sensor_qty: number | null;
   updated_at: Generated<Date>;
 }
 
@@ -113,7 +126,7 @@ export interface AssetInventoryTemperatureCapacityHistories {
   asset_inventory_id: number;
   asset_model_temperature_capacity_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
 }
@@ -121,216 +134,216 @@ export interface AssetInventoryTemperatureCapacityHistories {
 export interface AssetInventoryWorkspaces {
   asset_inventory_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   workspace_id: number;
 }
 
 export interface AssetMaintenanceSchedules {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetModels {
   asset_type_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  gross_capacity: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  gross_capacity: number | null;
   id: Generated<number>;
   manufacture_id: number;
   name: string;
-  net_capacity: Generated<number | null>;
-  pqs_code_id: Generated<number | null>;
+  net_capacity: number | null;
+  pqs_code_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetModelsNonTemperaturesCapacities {
   asset_model_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  gross_capacity: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  gross_capacity: number | null;
   id: Generated<number>;
-  net_capacity: Generated<number | null>;
+  net_capacity: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetModelsTemperaturesCapacities {
   asset_model_id: number;
   asset_type_temperature_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  gross_capacity: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  gross_capacity: number | null;
   id: Generated<number>;
-  net_capacity: Generated<number | null>;
+  net_capacity: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetModelWorkspaces {
   asset_model_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   workspace_id: number;
 }
 
 export interface AssetRtmdHistories {
-  actual_time: Generated<Date>;
-  asset_model_temperature_capacity_id: Generated<number | null>;
+  actual_time: Date | null;
+  asset_model_temperature_capacity_id: number | null;
   asset_rtmd_id: number;
-  battery: Generated<number | null>;
+  battery: number | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  device_status: Generated<number | null>;
-  humidity: Generated<number | null>;
+  deleted_at: Date | null;
+  device_status: number | null;
+  humidity: number | null;
   id: Generated<number>;
-  inventory_working_status_id: Generated<number | null>;
-  is_power_connected: Generated<number | null>;
-  latitude: Generated<number | null>;
-  longitude: Generated<number | null>;
-  rtmd_status_id: Generated<number | null>;
-  signal: Generated<number | null>;
-  temperature: Generated<number | null>;
+  inventory_working_status_id: number | null;
+  is_power_connected: number | null;
+  latitude: number | null;
+  longitude: number | null;
+  rtmd_status_id: number | null;
+  signal: number | null;
+  temperature: number | null;
   updated_at: Generated<Date>;
 }
 
 export interface AssetRtmds {
-  asset_communication_provider_id: Generated<number | null>;
-  asset_model_id: Generated<number | null>;
-  asset_rtmd_status_id: Generated<number | null>;
-  asset_type_id: Generated<number | null>;
-  asset_vendor_id: Generated<number | null>;
-  budget_source_id: Generated<number | null>;
-  budget_year: Generated<number | null>;
+  asset_communication_provider_id: number | null;
+  asset_model_id: number | null;
+  asset_rtmd_status_id: number | null;
+  asset_type_id: number | null;
+  asset_vendor_id: number | null;
+  budget_source_id: number | null;
+  budget_year: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  entity_id: number | null;
   id: Generated<number>;
-  manufacture_id: Generated<number | null>;
-  production_year: Generated<number | null>;
-  serial_number: Generated<string | null>;
-  status: Generated<number | null>;
+  manufacture_id: number | null;
+  production_year: number | null;
+  serial_number: string | null;
+  status: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetRtmdStatuses {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetTypeHumidity {
   asset_type_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  humidity_threshold_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  humidity_threshold_id: number | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetTypes {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
-  max_temperature: Generated<number | null>;
-  min_temperature: Generated<number | null>;
+  max_temperature: number | null;
+  min_temperature: number | null;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetTypesClassifications {
   asset_classifications_id: number;
   asset_type_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetTypesTemperatures {
   asset_type_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   temperature_threshold_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetTypeWorkspaces {
   asset_type_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   workspace_id: number;
 }
 
 export interface AssetVendors {
   asset_vendor_type_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface AssetVendorTypes {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -339,155 +352,138 @@ export interface AssetVendorTypes {
 export interface AssetVendorWorkspaces {
   asset_vendor_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   workspace_id: number;
 }
 
 export interface AssetWorkingStatuses {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface BmhpApprovalSignatures {
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: Generated<number | null>;
-  id: Generated<number>;
-  name: string;
-  position: Generated<string | null>;
-  program: Generated<string | null>;
-  signature_url: string;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  user_id: number;
+  updated_by: number | null;
 }
 
 export interface BmhpExaminationMethods {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
   name: string;
-  program_plan_id: Generated<number | null>;
+  program_plan_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface BmhpExaminations {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
-  examination_type_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
+  examination_type_id: number | null;
   id: Generated<number>;
   is_active: Generated<number>;
   name: string;
-  program_plan_id: Generated<number | null>;
+  program_plan_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface BmhpExaminationTypes {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
   name: string;
-  program_plan_id: Generated<number | null>;
+  program_plan_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface BmhpMaterials {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
   is_active: Generated<number | null>;
-  is_reagen: Generated<number | null>;
+  is_reagen: number | null;
   name: string;
-  program_plan_id: Generated<number | null>;
+  program_plan_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface BmhpParameters {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
   name: string;
-  program_plan_id: Generated<number | null>;
-  unit: Generated<string | null>;
+  program_plan_id: number | null;
+  unit: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface BmhpTargetGroups {
-  age_range: Generated<string | null>;
-  code: Generated<string | null>;
+  age_range: string | null;
+  code: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
   is_active: Generated<number | null>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface BudgetSources {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<string | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
   is_custom: Generated<number | null>;
   is_restricted: Generated<number | null>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface BudgetSourceWorkspaces {
   budget_source_id: number;
   created_at: Generated<Date>;
   id: Generated<number>;
-  is_related: Generated<number | null>;
   status: Generated<number>;
   updated_at: Generated<Date>;
-  workspace_id: Generated<number | null>;
+  workspace_id: number | null;
 }
 
 export interface CceigatDescriptions {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -495,21 +491,21 @@ export interface CceigatDescriptions {
 
 export interface ClinicalDiagnosis {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ColdstorageMaterials {
   coldstorage_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   dosage_stock: Generated<number | null>;
   entity_id: number;
   id: Generated<number>;
@@ -524,7 +520,7 @@ export interface ColdstorageMaterials {
   recommend_order_base_on_max: Generated<number | null>;
   remain_package_fulfill: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   vial_stock: Generated<number | null>;
   volume_per_liter: Generated<number | null>;
 }
@@ -532,9 +528,9 @@ export interface ColdstorageMaterials {
 export interface ColdstoragePerTemperature {
   coldstorage_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
   percentage_capacity: Generated<number>;
@@ -544,15 +540,15 @@ export interface ColdstoragePerTemperature {
   temperature_threshold_id: number;
   total_volume: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   volume_asset: Generated<number>;
 }
 
 export interface Coldstorages {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
   percentage_capacity: Generated<number>;
@@ -561,179 +557,165 @@ export interface Coldstorages {
   projection_volume_asset: Generated<number | null>;
   total_volume: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   volume_asset: Generated<number>;
-}
-
-export interface ConnectionTest {
-  id: Generated<number>;
 }
 
 export interface ContactPersons {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
-  phone: Generated<string | null>;
-  source_id: Generated<number | null>;
-  source_type: Generated<string | null>;
+  name: string | null;
+  phone: string | null;
+  source_id: number | null;
+  source_type: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface CustomerVendors {
-  customer_id: Generated<number>;
-  entity_tag_id: Generated<number | null>;
-  id: Generated<number>;
-  name: Generated<string | null>;
-  province_id: Generated<string | null>;
-  regency_id: Generated<string | null>;
+  updated_by: number | null;
 }
 
 export interface DashboardConfigs {
-  config: Generated<string | null>;
+  config: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   key: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface Educations {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface Entities {
-  address: Generated<string | null>;
-  code: Generated<string | null>;
+  address: string | null;
+  code: string | null;
   country: Generated<string | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  entity_tag_id: Generated<number | null>;
-  external_properties: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  entity_tag_id: number | null;
+  external_properties: string | null;
   id: Generated<number>;
-  id_satu_sehat: Generated<number | null>;
-  integration_type: Generated<number | null>;
+  id_satu_sehat: number | null;
+  integration_type: number | null;
   is_puskesmas: Generated<number>;
   is_vendor: Generated<number>;
-  lat: Generated<string | null>;
-  lng: Generated<string | null>;
+  lat: string | null;
+  lng: string | null;
   location_id: number | null;
-  name: Generated<string | null>;
-  parent_id: Generated<number | null>;
-  postal_code: Generated<string | null>;
+  name: string | null;
+  parent_id: number | null;
+  postal_code: string | null;
+  province_id: string | null;
+  regency_id: string | null;
   status: Generated<number>;
+  sub_district_id: string | null;
   type: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface EntityEntityTags {
-  entity_id: number;
-  entity_tag_id: number;
+  updated_by: number | null;
+  village_id: string | null;
 }
 
 export interface EntityPrepMinMax {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  distribution_time: Generated<number | null>;
-  entity_id: Generated<number | null>;
+  deleted_at: Date | null;
+  distribution_time: number | null;
+  entity_id: number | null;
   id: Generated<number>;
-  lead_time: Generated<number | null>;
+  lead_time: number | null;
   program_id: number;
   updated_at: Generated<Date>;
 }
 
 export interface EntityTags {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
+  external_properties: string | null;
   id: Generated<number>;
-  integration_type: Generated<number | null>;
+  integration_type: number | null;
   is_open_vial: Generated<number | null>;
-  title: Generated<string | null>;
+  title: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface EntityTypes {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  external_properties: Generated<string | null>;
+  deleted_at: Date | null;
+  external_properties: string | null;
   id: Generated<number>;
-  integration_type: Generated<number | null>;
+  integration_type: number | null;
   name: string;
   updated_at: Generated<Date>;
 }
 
 export interface EntityWorkspaces {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: number;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  entity_id: number | null;
   id: Generated<number>;
   is_relocation: Generated<number>;
   is_vendor: Generated<number | null>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  workspace_id: number;
+  updated_by: number | null;
+  workspace_id: number | null;
 }
 
 export interface EnvironmentalAnalysisParameters {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   result_data_type: Generated<string | null>;
-  unit_id: Generated<number | null>;
+  unit_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface EnvironmentalParameterCategories {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
-  status: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface EnvironmentalParameterCategoriesFields {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   environmental_parameter_categories_id: number;
-  hint: Generated<string | null>;
+  hint: string | null;
   id: Generated<number>;
   key: string;
   label: string;
   mandatory: number;
-  options: Generated<string | null>;
+  options: string | null;
   type_data: string;
   updated_at: Generated<Date>;
 }
 
 export interface EnvironmentalParameterOptions {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   option_value: string;
   sort_order: Generated<number | null>;
@@ -742,14 +724,14 @@ export interface EnvironmentalParameterOptions {
 
 export interface EnvironmentalParameterValidationRules {
   allow_decimal: Generated<number | null>;
-  comparison_operator: Generated<string | null>;
-  comparison_value: Generated<Decimal | null>;
+  comparison_operator: string | null;
+  comparison_value: Decimal | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  max_value: Generated<Decimal | null>;
-  min_value: Generated<Decimal | null>;
-  result_format_type: Generated<string | null>;
+  max_value: Decimal | null;
+  min_value: Decimal | null;
+  result_format_type: string | null;
   test_method_id: number;
   updated_at: Generated<Date>;
   validation_type: string;
@@ -757,20 +739,20 @@ export interface EnvironmentalParameterValidationRules {
 
 export interface EnvironmentalTestMethods {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  deskripsi: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  deskripsi: string | null;
   id: Generated<number>;
-  name: Generated<string | null>;
-  quality_standard: Generated<string | null>;
+  name: string | null;
+  quality_standard: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface EnvironmentalUnits {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -778,154 +760,153 @@ export interface EnvironmentalUnits {
 
 export interface Ethnics {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ExaminationMethod {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ExaminationResult {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ExecutiveRoles {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ExecutiveUserChangelogs {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   field: string;
   id: Generated<number>;
-  new_value: Generated<string | null>;
-  old_value: Generated<string | null>;
+  new_value: string | null;
+  old_value: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   user_id: number;
 }
 
 export interface ExecutiveUsers {
-  address: Generated<string | null>;
-  application_version: Generated<string | null>;
-  change_password: Generated<number | null>;
+  address: string | null;
+  application_version: string | null;
+  change_password: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  daily_recap_email: Generated<number | null>;
-  date_of_birth: Generated<Date | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  email: Generated<string | null>;
-  entity_id: Generated<number | null>;
-  external_properties: Generated<string | null>;
-  fcm_token: Generated<string | null>;
-  firstname: Generated<string | null>;
-  gender: Generated<number | null>;
+  created_by: number | null;
+  daily_recap_email: number | null;
+  date_of_birth: Date | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  email: string | null;
+  entity_id: number | null;
+  external_properties: string | null;
+  fcm_token: string | null;
+  firstname: string | null;
+  gender: number | null;
   id: Generated<number>;
-  imei_number: Generated<string | null>;
-  iota_app_gui_theme: Generated<string | null>;
-  keycloak_uuid: Generated<string | null>;
-  last_device: Generated<number | null>;
-  last_login: Generated<Date>;
-  last_mobile_access: Generated<Date | null>;
-  lastname: Generated<string | null>;
-  manufacture_id: Generated<number | null>;
-  mobile_phone: Generated<string | null>;
-  mobile_phone_2: Generated<string | null>;
-  mobile_phone_brand: Generated<string | null>;
-  mobile_phone_model: Generated<string | null>;
-  password: Generated<string | null>;
-  permission: Generated<string | null>;
-  role: Generated<number | null>;
-  sim_id: Generated<string | null>;
-  sim_provider: Generated<string | null>;
-  status: Generated<number | null>;
-  timezone_id: Generated<number | null>;
-  token_login: Generated<string | null>;
+  imei_number: string | null;
+  iota_app_gui_theme: string | null;
+  keycloak_uuid: string | null;
+  last_device: number | null;
+  last_login: Date | null;
+  last_mobile_access: Date | null;
+  lastname: string | null;
+  manufacture_id: number | null;
+  mobile_phone: string | null;
+  mobile_phone_2: string | null;
+  mobile_phone_brand: string | null;
+  mobile_phone_model: string | null;
+  password: string | null;
+  permission: string | null;
+  role: number | null;
+  sim_id: string | null;
+  sim_provider: string | null;
+  status: number | null;
+  timezone_id: number | null;
+  token_login: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  user_uuid: Generated<string | null>;
-  username: Generated<string | null>;
+  updated_by: number | null;
+  user_uuid: string | null;
+  username: string | null;
   view_only: Generated<number>;
-  village_id: Generated<string | null>;
+  village_id: string | null;
 }
 
 export interface ExecutiveUsersWorkspaces {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   user_id: number;
   workspace_id: number;
 }
 
 export interface ExecutiveWorkspaces {
-  config: Generated<string | null>;
+  config: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
-  is_beneficiaries: Generated<number | null>;
   key: string;
   name: string;
-  program_uuid: Generated<string | null>;
+  program_uuid: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ExportCategories {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  title: Generated<string | null>;
+  title: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface ExportHistories {
   created_at: Generated<Date>;
   created_by: number;
-  download_url: Generated<string | null>;
-  expires_at: Generated<Date | null>;
+  download_url: string | null;
+  expires_at: Date | null;
   filename: string;
   id: Generated<number>;
-  log: Generated<string | null>;
+  log: string | null;
   original_filename: string;
-  program_id: Generated<number | null>;
+  program_id: number | null;
   status: Generated<"done" | "failed" | "in_progress" | "in_queue">;
   updated_at: Generated<Date>;
 }
@@ -933,19 +914,19 @@ export interface ExportHistories {
 export interface ExportLogs {
   code: string;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   export_category_id: number;
   id: Generated<number>;
-  lang: Generated<string | null>;
-  month: Generated<number | null>;
+  lang: string | null;
+  month: number | null;
   program_id: number;
   updated_at: Generated<Date>;
-  year: Generated<number | null>;
+  year: number | null;
 }
 
 export interface ExportRoles {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   export_code: number;
   id: Generated<number>;
   role_id: number;
@@ -954,20 +935,20 @@ export interface ExportRoles {
 
 export interface HumidityThresholds {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   max_humidity: number;
   min_humidity: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ImportCategories {
   category_name: string;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
 }
@@ -975,156 +956,156 @@ export interface ImportCategories {
 export interface ImportLogs {
   category_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   on_progress: Generated<number>;
-  program_id: Generated<number | null>;
+  program_id: number | null;
   progress: Generated<number>;
   updated_at: Generated<Date>;
   user_id: number;
 }
 
 export interface IntegrationAsikAggregate {
-  aggregate: Generated<number | null>;
-  batch_code_smile: Generated<string | null>;
-  batch_id_smile: Generated<number | null>;
-  batch_number_asik: Generated<string | null>;
+  aggregate: number | null;
+  batch_code_smile: string | null;
+  batch_id_smile: number | null;
+  batch_number_asik: string | null;
   created_at: Generated<Date>;
-  customer_id: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
+  customer_id: number | null;
+  deleted_at: Date | null;
   id: Generated<number>;
-  injection_date: Generated<Date | null>;
-  input_date: Generated<Date | null>;
-  material_id: Generated<number | null>;
-  page: Generated<number | null>;
-  pos_imunisasi_asik: Generated<string | null>;
-  pos_imunisasi_asik_province_id: Generated<number | null>;
-  pos_imunisasi_asik_regency_id: Generated<number | null>;
-  pos_imunisasi_asik_subdistrict_id: Generated<number | null>;
-  puskesmas_asik: Generated<string | null>;
-  puskesmas_asik_province_id: Generated<number | null>;
-  puskesmas_asik_regency_id: Generated<number | null>;
-  puskesmas_asik_subdistrict_id: Generated<number | null>;
+  injection_date: Date | null;
+  input_date: Date | null;
+  material_id: number | null;
+  page: number | null;
+  pos_imunisasi_asik: string | null;
+  pos_imunisasi_asik_province_id: number | null;
+  pos_imunisasi_asik_regency_id: number | null;
+  pos_imunisasi_asik_subdistrict_id: number | null;
+  puskesmas_asik: string | null;
+  puskesmas_asik_province_id: number | null;
+  puskesmas_asik_regency_id: number | null;
+  puskesmas_asik_subdistrict_id: number | null;
   updated_at: Generated<Date>;
-  vaksin_asik: Generated<string | null>;
-  vendor_id: Generated<number | null>;
+  vaksin_asik: string | null;
+  vendor_id: number | null;
 }
 
 export interface IntegrationAssociations {
-  client_id: Generated<number | null>;
+  client_id: number | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   internal_id: number;
-  metadata: Generated<string | null>;
+  metadata: string | null;
   type: string;
   updated_at: Generated<Date>;
 }
 
 export interface IntegrationAyoSehat {
-  activity_id: Generated<number | null>;
-  batch_id: Generated<number | null>;
-  consumed_qty: Generated<Decimal | null>;
-  consumed_qty_closevial: Generated<Decimal | null>;
-  consumed_qty_openvial: Generated<Decimal | null>;
-  consumed_status: Generated<number | null>;
+  activity_id: number | null;
+  batch_id: number | null;
+  consumed_qty: Decimal | null;
+  consumed_qty_closevial: Decimal | null;
+  consumed_qty_openvial: Decimal | null;
+  consumed_status: number | null;
   created_at: Generated<Date>;
-  created_at_consumed_smile: Generated<Date | null>;
-  created_at_injection: Generated<Date | null>;
-  created_at_return_vaccination: Generated<Date | null>;
-  created_by: Generated<number | null>;
-  customer_id: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
+  created_at_consumed_smile: Date | null;
+  created_at_injection: Date | null;
+  created_at_return_vaccination: Date | null;
+  created_by: number | null;
+  customer_id: number | null;
+  deleted_at: Date | null;
   id: Generated<number>;
-  injection_qty: Generated<Decimal | null>;
+  injection_qty: Decimal | null;
   integration_status: Generated<number>;
-  material_id: Generated<number | null>;
-  return_qty: Generated<Decimal | null>;
-  return_qty_closevial: Generated<Decimal | null>;
-  return_qty_openvial: Generated<Decimal | null>;
-  return_status: Generated<number | null>;
-  return_validation: Generated<number | null>;
-  session_id: Generated<string | null>;
-  status_vvm: Generated<number | null>;
-  stock_id: Generated<number | null>;
-  transaction_id_consumed: Generated<number | null>;
-  transaction_id_injection: Generated<number | null>;
-  transaction_id_return: Generated<number | null>;
+  material_id: number | null;
+  return_qty: Decimal | null;
+  return_qty_closevial: Decimal | null;
+  return_qty_openvial: Decimal | null;
+  return_status: number | null;
+  return_validation: number | null;
+  session_id: string | null;
+  status_vvm: number | null;
+  stock_id: number | null;
+  transaction_id_consumed: number | null;
+  transaction_id_injection: number | null;
+  transaction_id_return: number | null;
   updated_at: Generated<Date>;
-  updated_at_return_vaccination: Generated<Date | null>;
-  vendor_id: Generated<number | null>;
+  updated_at_return_vaccination: Date | null;
+  vendor_id: number | null;
 }
 
 export interface IntegrationBiofarmaOrders {
-  alamat: Generated<string | null>;
-  biofarma_id: Generated<number | null>;
-  biofarma_type: Generated<string | null>;
-  code_product_kemenkes: Generated<string | null>;
+  alamat: string | null;
+  biofarma_id: number | null;
+  biofarma_type: string | null;
+  code_product_kemenkes: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  entrance_type: Generated<string | null>;
-  exist_smile: Generated<number | null>;
-  expired_date: Generated<Date | null>;
-  grant_country: Generated<string | null>;
+  deleted_at: Date | null;
+  entrance_type: string | null;
+  exist_smile: number | null;
+  expired_date: Date | null;
+  grant_country: string | null;
   id: Generated<number>;
-  jm_dosis: Generated<number | null>;
-  jm_dosis_terima: Generated<number | null>;
-  jm_vial: Generated<number | null>;
-  jm_vial_terima: Generated<number | null>;
-  kode_area: Generated<string | null>;
-  manufacture_country: Generated<string | null>;
-  no_batch: Generated<string | null>;
-  no_do: Generated<string | null>;
-  no_document: Generated<string | null>;
-  no_po: Generated<string | null>;
-  notes: Generated<string | null>;
-  pengirim: Generated<string | null>;
-  produk: Generated<string | null>;
-  released_date: Generated<Date | null>;
-  service_type: Generated<number | null>;
-  status: Generated<string | null>;
-  tanggal_do: Generated<Date | null>;
-  tanggal_kirim: Generated<Date | null>;
-  tanggal_terima: Generated<Date | null>;
-  tujuan: Generated<string | null>;
-  unit_price: Generated<number | null>;
+  jm_dosis: number | null;
+  jm_dosis_terima: number | null;
+  jm_vial: number | null;
+  jm_vial_terima: number | null;
+  kode_area: string | null;
+  manufacture_country: string | null;
+  no_batch: string | null;
+  no_do: string | null;
+  no_document: string | null;
+  no_po: string | null;
+  notes: string | null;
+  pengirim: string | null;
+  produk: string | null;
+  released_date: Date | null;
+  service_type: number | null;
+  status: string | null;
+  tanggal_do: Date | null;
+  tanggal_kirim: Date | null;
+  tanggal_terima: Date | null;
+  tujuan: string | null;
+  unit_price: number | null;
   updated_at: Generated<Date>;
 }
 
 export interface IntegrationBiofarmaSmdvOrders {
-  alamat: Generated<string | null>;
+  alamat: string | null;
   biofarma_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  do_pusat: Generated<string | null>;
-  expired_date: Generated<Date | null>;
+  deleted_at: Date | null;
+  do_pusat: string | null;
+  expired_date: Date | null;
   id: Generated<number>;
-  jenis_layanan: Generated<string | null>;
-  jumlah_dosis: Generated<Decimal | null>;
-  jumlah_vial: Generated<Decimal | null>;
-  keterangan: Generated<string | null>;
-  kode_area: Generated<string | null>;
-  kode_hub: Generated<string | null>;
-  nama_produk: Generated<string | null>;
-  nama_smdv: Generated<string | null>;
-  no_batch: Generated<string | null>;
-  nomor_do: Generated<string | null>;
-  nomor_po: Generated<string | null>;
-  nomor_surat_alokasi: Generated<string | null>;
-  pengiriman: Generated<string | null>;
-  status: Generated<string | null>;
-  tanggal_do: Generated<Date | null>;
-  tanggal_pickup: Generated<Date | null>;
-  tanggal_terima: Generated<Date | null>;
-  tipe_vaksin: Generated<string | null>;
-  tujuan_pengiriman: Generated<string | null>;
+  jenis_layanan: string | null;
+  jumlah_dosis: Decimal | null;
+  jumlah_vial: Decimal | null;
+  keterangan: string | null;
+  kode_area: string | null;
+  kode_hub: string | null;
+  nama_produk: string | null;
+  nama_smdv: string | null;
+  no_batch: string | null;
+  nomor_do: string | null;
+  nomor_po: string | null;
+  nomor_surat_alokasi: string | null;
+  pengiriman: string | null;
+  status: string | null;
+  tanggal_do: Date | null;
+  tanggal_pickup: Date | null;
+  tanggal_terima: Date | null;
+  tipe_vaksin: string | null;
+  tujuan_pengiriman: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface IntegrationClients {
-  config: Generated<string | null>;
+  config: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   key: string;
   name: string;
@@ -1133,98 +1114,98 @@ export interface IntegrationClients {
 
 export interface IntegrationEmonevMaterials {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  material_id: Generated<number | null>;
-  nama_xls: Generated<string | null>;
-  obat_id: Generated<string | null>;
-  tahun: Generated<number | null>;
-  target_group_id: Generated<number | null>;
-  type_rop: Generated<string | null>;
+  material_id: number | null;
+  nama_xls: string | null;
+  obat_id: string | null;
+  tahun: number | null;
+  target_group_id: number | null;
+  type_rop: string | null;
   updated_at: Generated<Date>;
-  uraian: Generated<string | null>;
+  uraian: string | null;
 }
 
 export interface IntegrationEmonevProvinces {
-  code: Generated<string | null>;
+  code: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  name: Generated<string | null>;
-  npwp: Generated<string | null>;
-  permit: Generated<string | null>;
-  permit_date: Generated<Date | null>;
-  pic: Generated<string | null>;
-  pic_email: Generated<string | null>;
-  pic_phone: Generated<string | null>;
-  pimpinan: Generated<string | null>;
-  pimpinan_email: Generated<string | null>;
-  pimpinan_phone: Generated<string | null>;
+  name: string | null;
+  npwp: string | null;
+  permit: string | null;
+  permit_date: Date | null;
+  pic: string | null;
+  pic_email: string | null;
+  pic_phone: string | null;
+  pimpinan: string | null;
+  pimpinan_email: string | null;
+  pimpinan_phone: string | null;
   province_id: number;
-  trader_id: Generated<string | null>;
+  trader_id: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface IntegrationEmonevRegencies {
   bps_regency_id: Generated<number | null>;
-  code: Generated<string | null>;
+  code: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: number;
-  name: Generated<string | null>;
-  npwp: Generated<string | null>;
-  permit: Generated<string | null>;
-  permit_date: Generated<Date | null>;
-  pic: Generated<string | null>;
-  pic_email: Generated<string | null>;
-  pic_phone: Generated<string | null>;
-  pimpinan: Generated<string | null>;
-  pimpinan_email: Generated<string | null>;
-  pimpinan_phone: Generated<string | null>;
-  regency_id: Generated<number | null>;
-  trader_id: Generated<string | null>;
+  name: string | null;
+  npwp: string | null;
+  permit: string | null;
+  permit_date: Date | null;
+  pic: string | null;
+  pic_email: string | null;
+  pic_phone: string | null;
+  pimpinan: string | null;
+  pimpinan_email: string | null;
+  pimpinan_phone: string | null;
+  regency_id: number | null;
+  trader_id: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface IntegrationEmonevRegenciesUpdated {
   bps_regency_id: Generated<number | null>;
-  code: Generated<string | null>;
+  code: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  name: Generated<string | null>;
-  npwp: Generated<string | null>;
-  permit: Generated<string | null>;
-  permit_date: Generated<Date | null>;
-  pic: Generated<string | null>;
-  pic_email: Generated<string | null>;
-  pic_phone: Generated<string | null>;
-  pimpinan: Generated<string | null>;
-  pimpinan_email: Generated<string | null>;
-  pimpinan_phone: Generated<string | null>;
-  regency_id: Generated<number | null>;
-  trader_id: Generated<string | null>;
+  name: string | null;
+  npwp: string | null;
+  permit: string | null;
+  permit_date: Date | null;
+  pic: string | null;
+  pic_email: string | null;
+  pic_phone: string | null;
+  pimpinan: string | null;
+  pimpinan_email: string | null;
+  pimpinan_phone: string | null;
+  regency_id: number | null;
+  trader_id: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface IntegrationLogs {
-  client_id: Generated<number | null>;
+  client_id: number | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   flow: string;
   id: Generated<number>;
-  request: Generated<string | null>;
-  response: Generated<string | null>;
-  source_id: Generated<number | null>;
+  request: string | null;
+  response: string | null;
+  source_id: number | null;
   source_type: string;
-  tag: Generated<string>;
+  tag: string;
   updated_at: Generated<Date>;
 }
 
 export interface IntegrationMappings {
-  client_id: Generated<number | null>;
+  client_id: number | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   external_id: string;
   id: Generated<number>;
   internal_id: number;
@@ -1233,135 +1214,122 @@ export interface IntegrationMappings {
 }
 
 export interface IntegrationWsOrderItemStocks {
-  confirmed_qty: Generated<number | null>;
+  confirmed_qty: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   integration_ws_order_id: number;
   material_id: number;
-  other_reason: Generated<string | null>;
-  parent_material_id: Generated<number | null>;
-  product_code: Generated<string | null>;
-  qty: Generated<number | null>;
-  reason_id: Generated<number | null>;
-  recommended_stock: Generated<number | null>;
+  other_reason: string | null;
+  parent_material_id: number | null;
+  product_code: string | null;
+  qty: number | null;
+  reason_id: number | null;
+  recommended_stock: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface IntegrationWsOrderLogs {
-  action_type: Generated<string | null>;
+  action_type: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  endpoint: Generated<string | null>;
-  error_message: Generated<string | null>;
-  http_method: Generated<string | null>;
-  http_status_code: Generated<number | null>;
+  deleted_at: Date | null;
+  endpoint: string | null;
+  error_message: string | null;
+  http_method: string | null;
+  http_status_code: number | null;
   integration_order_id: number;
-  request_body: Generated<string | null>;
-  request_headers: Generated<string | null>;
-  status: Generated<string | null>;
-  system_source: Generated<string | null>;
-  system_target: Generated<string | null>;
+  request_body: string | null;
+  request_headers: string | null;
+  status: string | null;
+  system_source: string | null;
+  system_target: string | null;
   updated_at: Generated<Date>;
   ws_order_id: number;
 }
 
 export interface IntegrationWsOrders {
-  activity_id: Generated<string | null>;
+  activity_id: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
+  created_by: number | null;
   customer_id: number;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  is_validate: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  is_validate: number | null;
   key_ssl: string;
-  no_surat: Generated<string | null>;
+  no_surat: string | null;
   smile_platform_order_id: number;
-  status: Generated<number | null>;
-  system_source: Generated<string | null>;
-  total_patients: Generated<number | null>;
+  status: number | null;
+  system_source: string | null;
+  total_patients: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   vendor_id: number;
 }
 
 export interface LastStatus {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface Locations {
   created_at: Generated<Date>;
   id: number;
-  lat: Generated<string | null>;
+  lat: string | null;
   level: Generated<number | null>;
-  lng: Generated<string | null>;
+  lng: string | null;
   name: string;
-  parent_id: Generated<number | null>;
+  parent_id: number | null;
   path: string | null;
   updated_at: Generated<Date>;
 }
 
-export interface LogEntityMaterialImports {
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  file: string;
-  id: Generated<number>;
-  notes: string;
-  status: number;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
 export interface LoggerStatus {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface LoginAttempts {
   created_at: Generated<Date>;
-  hit: Generated<number | null>;
+  hit: number | null;
   id: Generated<number>;
-  ip: Generated<string | null>;
-  last_attempt: Generated<Date>;
+  ip: string | null;
+  last_attempt: Date | null;
   updated_at: Generated<Date>;
 }
 
 export interface Manufactures {
-  address: Generated<string | null>;
-  contact_name: Generated<string | null>;
+  address: string | null;
+  contact_name: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
-  email: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
+  email: string | null;
   id: Generated<number>;
   name: string;
-  phone_number: Generated<string | null>;
-  reference_id: Generated<string | null>;
-  status: Generated<number | null>;
+  phone_number: string | null;
+  reference_id: string | null;
+  status: number | null;
   type: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ManufactureTypes {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -1373,13 +1341,13 @@ export interface ManufactureWorkspaces {
   manufacture_id: number;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   workspace_id: number;
 }
 
 export interface MaterialLevels {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   enable: Generated<number | null>;
   id: Generated<number>;
   name: string;
@@ -1390,7 +1358,7 @@ export interface MaterialLevels {
 export interface MaterialRelations {
   child_material_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   parent_material_id: number;
   updated_at: Generated<Date>;
@@ -1401,22 +1369,22 @@ export interface Materials {
   consumption_unit_per_distribution_unit: number;
   created_at: Generated<Date>;
   created_by: number;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
-  hierarchy_code: Generated<string | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
+  hierarchy_code: string | null;
   id: Generated<number>;
   is_kfa: Generated<number>;
   is_managed_in_batch: number;
   is_stock_opname_mandatory: Generated<number>;
   is_temperature_sensitive: number;
   material_level_id: number;
-  material_subtype_id: Generated<number | null>;
+  material_subtype_id: number | null;
   material_type_id: number;
   max_retail_price: number;
-  max_temperature: Generated<number | null>;
+  max_temperature: number | null;
   min_retail_price: number;
-  min_temperature: Generated<number | null>;
+  min_temperature: number | null;
   name: string;
   status: number;
   unit_of_consumption_id: number;
@@ -1427,31 +1395,31 @@ export interface Materials {
 
 export interface MaterialSubtypeRelations {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   from_material_subtype_id: number;
   id: Generated<number>;
   to_material_subtype_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface MaterialSubtypes {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  material_type_id: Generated<number>;
+  material_type_id: number;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface MaterialTypes {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -1459,7 +1427,7 @@ export interface MaterialTypes {
 
 export interface MaterialUnits {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   name: string;
   type: string;
@@ -1471,66 +1439,67 @@ export interface MaterialVolumes {
   box_length: number;
   box_width: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   manufacture_id: number;
   material_id: number;
   unit_per_box: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface MaterialWorkspaces {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   is_addremove: Generated<number | null>;
   is_open_vial: Generated<number | null>;
   material_id: number;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   workspace_id: number;
 }
 
 export interface NotificationRecaps {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   notification_type_id: number;
   section: string;
   sorter: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface NotificationTypes {
+  action_url: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   email_enabled: Generated<number>;
   fcm_enabled: Generated<number>;
   id: Generated<number>;
-  title: Generated<string | null>;
-  type: Generated<string | null>;
+  title: string | null;
+  type: string | null;
   updated_at: Generated<Date>;
   whatsapp_enabled: Generated<number>;
 }
 
 export interface Occupations {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface PasswordResets {
@@ -1541,44 +1510,44 @@ export interface PasswordResets {
 
 export interface PatientImportLogs {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   file: string;
   id: Generated<number>;
-  notes: string;
+  notes: Json;
   status: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface PcrLabResult {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface PlanApproaches {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface Populations {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
   population_number: number;
@@ -1586,39 +1555,39 @@ export interface Populations {
   status: Generated<number>;
   target_group_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   year: number;
 }
 
 export interface PqsCodes {
-  cceigat_description_id: Generated<number | null>;
+  cceigat_description_id: number | null;
   code: string;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   pqs_type_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface PqsNetCapacities {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  net_capacity: Generated<number | null>;
+  net_capacity: number | null;
   pqs_code_id: number;
   temperature_threshold_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface PqsTypes {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -1626,21 +1595,21 @@ export interface PqsTypes {
 
 export interface ProtocolPrograms {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   program_id: number;
   protocol_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface Protocols {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   is_identity_type: Generated<number | null>;
   is_kipi: Generated<number | null>;
@@ -1648,7 +1617,7 @@ export interface Protocols {
   name: string;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface RabiesVaccineMethods {
@@ -1658,16 +1627,16 @@ export interface RabiesVaccineMethods {
 }
 
 export interface RabiesVaccineRules {
-  active_duration: Generated<number | null>;
-  end_notification: Generated<number | null>;
+  active_duration: number | null;
+  end_notification: number | null;
   id: Generated<number>;
   max: number;
   method_id: number;
   min: number;
-  next_sequence: Generated<string | null>;
-  prerequisite_qty: Generated<number | null>;
-  previous_sequence: Generated<number | null>;
-  start_notification: Generated<number | null>;
+  next_sequence: string | null;
+  prerequisite_qty: number | null;
+  previous_sequence: number | null;
+  start_notification: number | null;
   title: string;
   type_id: number;
 }
@@ -1679,93 +1648,93 @@ export interface RabiesVaccineTypes {
 
 export interface RangeTemperature {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   temperature_max: number;
   temperature_min: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface Reactions {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ReconciliationActions {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ReconciliationActionsWorkspaces {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   reconciliation_action_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   workspace_id: number;
 }
 
 export interface ReconciliationCategories {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ReconciliationReasons {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface ReconciliationReasonsWorkspaces {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   reconciliation_reason_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   workspace_id: number;
 }
 
 export interface Religions {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface Roles {
@@ -1778,184 +1747,177 @@ export interface Roles {
 
 export interface RolesToResourceMapping {
   created_at: Generated<Date>;
-  created_by: Generated<string>;
-  http_method: Generated<string | null>;
+  created_by: string;
+  http_method: string | null;
   id: Generated<number>;
   resource_type: Generated<"be" | "fe">;
-  role_list: Generated<string | null>;
+  role_list: string | null;
   route_handler: string;
   status: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<string | null>;
+  updated_by: string | null;
 }
 
 export interface SpecimenType {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface StockAdjustLog {
-  batch_id_malaria: Generated<number | null>;
-  batch_id_mbs: Generated<number | null>;
-  budget_source_id_malaria: Generated<number | null>;
-  budget_source_id_mbs: Generated<number | null>;
-  created_at: Generated<Date>;
-  entity_id_malaria: Generated<number | null>;
-  entity_id_mbs: Generated<number | null>;
-  exterminate_qty_malaria: Generated<Decimal | null>;
-  exterminate_qty_mbs: Generated<Decimal | null>;
+  batch_id_malaria: number | null;
+  batch_id_mbs: number | null;
+  budget_source_id_malaria: number | null;
+  budget_source_id_mbs: number | null;
+  created_at: Generated<Date | null>;
+  entity_id_malaria: number | null;
+  entity_id_mbs: number | null;
+  exterminate_qty_malaria: Decimal | null;
+  exterminate_qty_mbs: Decimal | null;
   id: Generated<number>;
-  manufacture_id_malaria: Generated<number | null>;
-  manufacture_id_mbs: Generated<number | null>;
-  material_id_malaria: Generated<number | null>;
-  material_id_mbs: Generated<number | null>;
-  message: Generated<string | null>;
-  open_vial_qty_malaria: Generated<Decimal | null>;
-  open_vial_qty_mbs: Generated<Decimal | null>;
-  price_malaria: Generated<Decimal | null>;
-  price_mbs: Generated<Decimal | null>;
-  qty_malaria: Generated<Decimal | null>;
-  qty_mbs: Generated<Decimal | null>;
+  manufacture_id_malaria: number | null;
+  manufacture_id_mbs: number | null;
+  material_id_malaria: number | null;
+  material_id_mbs: number | null;
+  message: string | null;
+  open_vial_qty_malaria: Decimal | null;
+  open_vial_qty_mbs: Decimal | null;
+  price_malaria: Decimal | null;
+  price_mbs: Decimal | null;
+  qty_malaria: Decimal | null;
+  qty_mbs: Decimal | null;
   status: Generated<"failed" | "skipped" | "success">;
-  stock_id_malaria: Generated<number | null>;
-  stock_id_mbs: Generated<number | null>;
-  total_price_malaria: Generated<Decimal | null>;
-  total_price_mbs: Generated<Decimal | null>;
-  transaction_id_add: Generated<number | null>;
-  transaction_id_remove: Generated<number | null>;
-  year_malaria: Generated<number | null>;
-  year_mbs: Generated<number | null>;
+  stock_id_malaria: number | null;
+  stock_id_mbs: number | null;
+  total_price_malaria: Decimal | null;
+  total_price_mbs: Decimal | null;
+  transaction_id_add: number | null;
+  transaction_id_remove: number | null;
+  year_malaria: number | null;
+  year_mbs: number | null;
 }
 
 export interface Symptoms {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface TargetGroups {
   age_max: Generated<number>;
   age_min: Generated<number>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   is_active: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface TargetGroupWorkspaces {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  program_id: Generated<number | null>;
+  program_id: number | null;
   target_group_id: number;
   updated_at: Generated<Date>;
 }
 
 export interface TemperatureThresholds {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   is_predefined: Generated<number | null>;
-  max_temperature: Generated<number | null>;
-  min_temperature: Generated<number | null>;
+  max_temperature: number | null;
+  min_temperature: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface UserChangelogs {
   created_at: Generated<Date>;
-  field: Generated<string | null>;
+  field: string;
   id: Generated<number>;
-  new_value: Generated<string | null>;
-  old_value: Generated<string | null>;
+  new_value: string | null;
+  old_value: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<string | null>;
+  updated_by: number | null;
   user_id: number;
 }
 
 export interface Users {
-  address: Generated<string | null>;
-  application_version: Generated<string | null>;
-  change_password: Generated<number | null>;
+  address: string | null;
+  application_version: string | null;
+  change_password: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
+  created_by: number | null;
   daily_recap_email: Generated<number | null>;
-  date_of_birth: Generated<Date | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  email: Generated<string | null>;
-  entity_id: Generated<number | null>;
-  external_properties: Generated<string | null>;
-  fcm_token: Generated<string | null>;
-  firstname: Generated<string | null>;
-  gender: Generated<number | null>;
+  date_of_birth: Date | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  email: string | null;
+  entity_id: number | null;
+  external_properties: string | null;
+  fcm_token: string | null;
+  firstname: string | null;
+  gender: number | null;
   id: Generated<number>;
-  imei_number: Generated<string | null>;
-  iota_app_gui_theme: Generated<string | null>;
-  keycloak_uuid: Generated<string | null>;
-  last_device: Generated<number | null>;
+  imei_number: string | null;
+  iota_app_gui_theme: string | null;
+  keycloak_uuid: string | null;
+  last_device: number | null;
   last_login: Generated<Date>;
-  last_mobile_access: Generated<Date | null>;
-  lastname: Generated<string | null>;
-  manufacture_id: Generated<number | null>;
-  mobile_phone: Generated<string | null>;
-  mobile_phone_2: Generated<string | null>;
-  mobile_phone_brand: Generated<string | null>;
-  mobile_phone_model: Generated<string | null>;
-  password: Generated<string | null>;
-  permission: Generated<string | null>;
-  role: Generated<number | null>;
-  sim_id: Generated<string | null>;
-  sim_provider: Generated<string | null>;
-  status: Generated<number | null>;
-  timezone_id: Generated<number | null>;
-  token_login: Generated<string | null>;
+  last_mobile_access: Date | null;
+  lastname: string | null;
+  manufacture_id: number | null;
+  mobile_phone: string | null;
+  mobile_phone_2: string | null;
+  mobile_phone_brand: string | null;
+  mobile_phone_model: string | null;
+  password: string | null;
+  permission: string | null;
+  role: number | null;
+  sim_id: string | null;
+  sim_provider: string | null;
+  status: number | null;
+  timezone_id: number | null;
+  token_login: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  user_uuid: Generated<string | null>;
-  username: Generated<string | null>;
+  updated_by: number | null;
+  user_uuid: string | null;
+  username: string | null;
   view_only: Generated<number>;
-  village_id: Generated<string | null>;
-}
-
-export interface UsersBackup {
-  created_at: Generated<Date>;
-  id: Generated<number>;
-  mobile_phone: Generated<string | null>;
+  village_id: string | null;
 }
 
 export interface UserWorkspaces {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
   user_id: number;
   workspace_id: number;
-  workspace_user_id: Generated<number | null>;
 }
 
 export interface VaccineMethods {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   is_multi_patient: Generated<number | null>;
   title: string;
@@ -1964,7 +1926,7 @@ export interface VaccineMethods {
 
 export interface VaccineTypes {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
@@ -1972,39 +1934,37 @@ export interface VaccineTypes {
 
 export interface VectorControl {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface Workspaces {
   config: Generated<string | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   id: Generated<number>;
-  is_beneficiaries: Generated<number | null>;
   key: string;
   name: string;
-  program_uuid: Generated<string | null>;
+  program_uuid: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsActivities {
-  code: Generated<string | null>;
+  code: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  is_final_distribution: Generated<number | null>;
   is_ordered_purchase: Generated<number | null>;
   is_ordered_sales: Generated<number | null>;
   name: string;
@@ -2012,13 +1972,13 @@ export interface WsActivities {
   protocol: Generated<string | null>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsActivityEnvironmentalParameterCategories {
   activity_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   environmental_parameter_categories_id: number;
   id: Generated<number>;
   updated_at: Generated<Date>;
@@ -2027,7 +1987,7 @@ export interface WsActivityEnvironmentalParameterCategories {
 export interface WsActivityMaterialTypes {
   activity_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   is_patient: Generated<number | null>;
   material_type_id: number;
   updated_at: Generated<Date>;
@@ -2035,115 +1995,115 @@ export interface WsActivityMaterialTypes {
 
 export interface WsAdditionalNeeds {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_need_id: number;
   material_target_id: number;
-  remaining_stock: Generated<number | null>;
-  total: Generated<number | null>;
+  remaining_stock: number | null;
+  total: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsAnnualNeedIpvs {
   activity_id: number;
   annual_need_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_id: number;
-  national_ip: Generated<number | null>;
-  regency_ip: Generated<number | null>;
-  sku: Generated<number | null>;
-  status: Generated<number | null>;
-  target_group_id: Generated<number | null>;
+  national_ip: number | null;
+  regency_ip: number | null;
+  sku: number | null;
+  status: number | null;
+  target_group_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsAnnualNeedMinMaxStatus {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
   program_plan_id: number;
-  province_activated_at: Generated<Date | null>;
+  province_activated_at: Date | null;
   province_id: number;
-  regency_activated_at: Generated<Date | null>;
+  regency_activated_at: Date | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsAnnualNeedPopulations {
   annual_need_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
   percentage: Generated<number | null>;
   population: Generated<number | null>;
   population_correction: Generated<number | null>;
-  status: Generated<number | null>;
+  status: number | null;
   target_group_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsAnnualNeedResults {
   activity_id: number;
   annual_need_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  dependent_material_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  dependent_material_id: number | null;
   entity_id: number;
   id: Generated<number>;
-  ip: Generated<number | null>;
+  ip: number | null;
   material_id: number;
-  max: Generated<number | null>;
-  min: Generated<number | null>;
-  month_distribution: Generated<string | null>;
-  monthly_need: Generated<number | null>;
-  monthly_need_vial: Generated<number | null>;
-  target_group_id: Generated<number | null>;
+  max: number | null;
+  min: number | null;
+  month_distribution: string | null;
+  monthly_need: number | null;
+  monthly_need_vial: number | null;
+  target_group_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  weekly_need: Generated<number | null>;
-  weekly_need_vial: Generated<number | null>;
-  yearly_need: Generated<number | null>;
-  yearly_need_vial: Generated<number | null>;
+  updated_by: number | null;
+  weekly_need: number | null;
+  weekly_need_vial: number | null;
+  yearly_need: number | null;
+  yearly_need_vial: number | null;
 }
 
 export interface WsAnnualNeeds {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
-  min_max_status: Generated<number | null>;
-  min_max_updated_at: Generated<Date | null>;
+  min_max_status: number | null;
+  min_max_updated_at: Date | null;
   program_plan_id: number;
   province_id: number;
   regency_id: number;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsAssetCalibrationSchedules {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -2151,49 +2111,49 @@ export interface WsAssetCalibrationSchedules {
 
 export interface WsAssetElectricities {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
 }
 
 export interface WsAssetInventories {
-  asset_electricity_id: Generated<number | null>;
-  asset_model_id: Generated<number | null>;
-  asset_type_id: Generated<number | null>;
-  asset_working_status_id: Generated<number | null>;
-  borrowed_from_entity_id: Generated<number | null>;
-  budget_source_id: Generated<number | null>;
+  asset_electricity_id: number | null;
+  asset_model_id: number | null;
+  asset_type_id: number | null;
+  asset_working_status_id: number | null;
+  borrowed_from_entity_id: number | null;
+  budget_source_id: number | null;
   budget_year: number;
-  calibration_asset_vendor_id: Generated<number | null>;
-  calibration_last_date: Generated<Date | null>;
-  calibration_schedule_id: Generated<number | null>;
+  calibration_asset_vendor_id: number | null;
+  calibration_last_date: Date | null;
+  calibration_schedule_id: number | null;
   contact_person_user_1_name: string;
   contact_person_user_1_number: string;
-  contact_person_user_2_name: Generated<string | null>;
-  contact_person_user_2_number: Generated<string | null>;
-  contact_person_user_3_name: Generated<string | null>;
-  contact_person_user_3_number: Generated<string | null>;
+  contact_person_user_2_name: string | null;
+  contact_person_user_2_number: string | null;
+  contact_person_user_3_name: string | null;
+  contact_person_user_3_number: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  entity_id: number | null;
   id: Generated<number>;
-  maintenance_asset_vendor_id: Generated<number | null>;
-  maintenance_last_date: Generated<Date | null>;
-  maintenance_schedule_id: Generated<number | null>;
-  manufacture_id: Generated<number | null>;
-  other_asset_model_name: Generated<string | null>;
-  other_asset_type_name: Generated<string | null>;
-  other_borrowed_from_entity_name: Generated<string | null>;
-  other_budget_source_name: Generated<string | null>;
-  other_gross_capacity: Generated<number | null>;
-  other_manufacture_name: Generated<string | null>;
-  other_max_temperature: Generated<number | null>;
-  other_min_temperature: Generated<number | null>;
-  other_net_capacity: Generated<number | null>;
+  maintenance_asset_vendor_id: number | null;
+  maintenance_last_date: Date | null;
+  maintenance_schedule_id: number | null;
+  manufacture_id: number | null;
+  other_asset_model_name: string | null;
+  other_asset_type_name: string | null;
+  other_borrowed_from_entity_name: string | null;
+  other_budget_source_name: string | null;
+  other_gross_capacity: number | null;
+  other_manufacture_name: string | null;
+  other_max_temperature: number | null;
+  other_min_temperature: number | null;
+  other_net_capacity: number | null;
   ownership_qty: number;
   ownership_status: number;
   production_year: number;
@@ -2201,16 +2161,16 @@ export interface WsAssetInventories {
   serial_number: string;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  warranty_asset_vendor_id: Generated<number | null>;
-  warranty_end_date: Generated<Date | null>;
-  warranty_start_date: Generated<Date | null>;
+  updated_by: number | null;
+  warranty_asset_vendor_id: number | null;
+  warranty_end_date: Date | null;
+  warranty_start_date: Date | null;
 }
 
 export interface WsAssetMaintenanceSchedules {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -2220,54 +2180,54 @@ export interface WsAssetModels {
   asset_type_id: Generated<number>;
   asset_type_name: string;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
+  created_by: number | null;
   global_id: Generated<number>;
-  gross_capacity: Generated<number | null>;
+  gross_capacity: number | null;
   id: Generated<number>;
   manufacture_id: Generated<number>;
   manufacture_name: string;
   name: string;
-  net_capacity: Generated<number | null>;
+  net_capacity: number | null;
   program_id: number;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsAssetTypes {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  description: string | null;
   global_id: Generated<number>;
   id: Generated<number>;
-  max_temperature: Generated<number | null>;
-  min_temperature: Generated<number | null>;
+  max_temperature: number | null;
+  min_temperature: number | null;
   name: string;
   program_id: number;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsAssetVendors {
   asset_vendor_type_id: Generated<number>;
   asset_vendor_type_name: string;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  description: string | null;
   global_id: Generated<number>;
   id: Generated<number>;
   name: string;
   program_id: number;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsAssetWorkingStatuses {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
@@ -2276,12 +2236,12 @@ export interface WsAssetWorkingStatuses {
 export interface WsBatches {
   code: string;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  expired_date: Generated<Date | null>;
+  deleted_at: Date | null;
+  expired_date: Date | null;
   id: Generated<number>;
   manufacture_id: number;
-  material_id: Generated<number | null>;
-  production_date: Generated<Date | null>;
+  material_id: number | null;
+  production_date: Date | null;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
 }
@@ -2292,68 +2252,35 @@ export interface WsBmhpApprovalLogs {
   approval_period_id: number;
   created_at: Generated<Date>;
   id: Generated<number>;
-  metadata: Generated<string | null>;
-}
-
-export interface WsBmhpApprovalPeriodProvince {
-  approved_at: Generated<Date | null>;
-  approved_by: Generated<number | null>;
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  current_step: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: number;
-  id: Generated<number>;
-  program_plan_id: Generated<number | null>;
-  status: Generated<number>;
-  submitted_at: Generated<Date | null>;
-  submitted_by: Generated<number | null>;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  metadata: Json | null;
 }
 
 export interface WsBmhpApprovalPeriods {
-  approval_period_province_id: Generated<number | null>;
-  approval_signature_id: Generated<number | null>;
-  approved_at: Generated<Date | null>;
-  approved_by: Generated<number | null>;
+  approved_at: Date | null;
+  approved_by: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
+  created_by: number | null;
   current_step: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
-  program_plan_id: Generated<number | null>;
-  remaining_stock_date: Generated<Date | null>;
   status: Generated<number>;
-  submitted_at: Generated<Date | null>;
-  submitted_by: Generated<number | null>;
+  submitted_at: Date | null;
+  submitted_by: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface WsBmhpApprovalSignature {
-  approval_period_id: number;
-  created_at: Generated<Date>;
-  desk_result_id: Generated<number | null>;
-  entity_id: number;
-  id: Generated<number>;
-  updated_at: Generated<Date>;
-  user_id: number;
+  updated_by: number | null;
+  year: number;
 }
 
 export interface WsBmhpDeskResults {
   approval_period_id: number;
-  approval_signature_id: Generated<number | null>;
-  ba_file_url: Generated<string | null>;
+  ba_file_url: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  desk_by: Generated<number | null>;
-  desk_date: Generated<Date | null>;
+  deleted_at: Date | null;
+  desk_date: Date | null;
   id: Generated<number>;
-  signature_link: Generated<string | null>;
+  signature_link: string | null;
   status_desk: Generated<number | null>;
   updated_at: Generated<Date>;
 }
@@ -2381,153 +2308,153 @@ export interface WsBmhpExaminationTargetGroups {
 }
 
 export interface WsBmhpExaminationTargetMaterials {
-  bmhp_material_id: Generated<number | null>;
+  bmhp_material_id: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  exam_target_group_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  exam_target_group_id: number | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsBmhpMaterialCalculations {
   approval_period_id: number;
   consumption_rate: Decimal;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   examination_id: number;
   id: Generated<number>;
   material_id: number;
   target_group_id: number;
   total_needed: number;
   total_target: number;
-  unit: Generated<string | null>;
+  unit: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface WsBmhpMaterialDetails {
   bmhp_material_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_id: number;
-  material_level_id: Generated<number | null>;
-  test_qty_per_package: Generated<number | null>;
+  material_level_id: number | null;
+  test_qty_per_package: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsBmhpMaterialsUnitDetails {
   bmhp_material_details_id: number;
-  consumption_per_test: Generated<number | null>;
+  consumption_per_test: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  qty_per_package: Generated<number | null>;
-  test_qty_per_package: Generated<number | null>;
+  qty_per_package: number | null;
+  test_qty_per_package: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   variant_material_id: number;
 }
 
 export interface WsBmhpMaterialVariant {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   is_variant: Generated<number | null>;
   material_id: number;
-  program_plan_id: Generated<number | null>;
+  program_plan_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsBmhpMaterialVariantDetail {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_id: number;
   material_variant_id: number;
   name: string;
-  test_qty: Generated<number | null>;
-  unit_id: Generated<number | null>;
+  test_qty: number | null;
+  unit_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsBmhpPlanning {
-  approval_period_id: Generated<number | null>;
-  approved_at: Generated<Date | null>;
-  approved_by: Generated<number | null>;
+  approved_at: Date | null;
+  approved_by: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: Generated<number | null>;
-  examination_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  entity_id: number | null;
+  examination_id: number | null;
   id: Generated<number>;
-  status: Generated<string | null>;
-  submitted_at: Generated<Date | null>;
+  status: string | null;
+  submitted_at: Date | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
+  year: number;
 }
 
 export interface WsBmhpPlanningMaterials {
-  calculated_requirement: Generated<number | null>;
+  calculated_requirement: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  lab_usage: Generated<number | null>;
-  material_id: Generated<number | null>;
-  material_template_id: Generated<number | null>;
-  method_id: Generated<number | null>;
-  planning_target_group_id: Generated<number | null>;
+  lab_usage: number | null;
+  material_id: number | null;
+  material_template_id: number | null;
+  method_id: number | null;
+  planning_target_group_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  variant_id: Generated<number | null>;
+  updated_by: number | null;
+  variant_id: number | null;
 }
 
 export interface WsBmhpPlanningMethods {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  method_id: Generated<number | null>;
-  planning_id: Generated<number | null>;
+  method_id: number | null;
+  planning_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsBmhpPlanningTargetGroups {
-  adjusted_target: Generated<number | null>;
+  adjusted_target: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   original_target: Generated<number>;
-  planning_id: Generated<number | null>;
-  revision_note: Generated<string | null>;
+  planning_id: number | null;
+  revision_note: string | null;
   sample_count: number;
-  target_group_id: Generated<number | null>;
+  target_group_id: number | null;
   test_count: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   verification_status: Generated<number | null>;
-  verified_at: Generated<Date | null>;
-  verified_by: Generated<number | null>;
+  verified_at: Date | null;
+  verified_by: number | null;
 }
 
 export interface WsBmhpRevisionNotifications {
@@ -2535,17 +2462,17 @@ export interface WsBmhpRevisionNotifications {
   id: Generated<number>;
   message: string;
   puskesmas_entity_id: number;
-  read_at: Generated<Date | null>;
-  resolved_at: Generated<Date | null>;
+  read_at: Date | null;
+  resolved_at: Date | null;
   sent_at: Generated<Date>;
   sent_by: number;
 }
 
 export interface WsBmhpScreeningCompletions {
   approval_period_id: number;
-  completed_at: Generated<Date | null>;
+  completed_at: Date | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   examination_id: number;
   id: Generated<number>;
   puskesmas_entity_id: number;
@@ -2556,67 +2483,64 @@ export interface WsBmhpScreeningCompletions {
 export interface WsBmhpStockRecaps {
   approval_period_id: number;
   buffer_percentage: Generated<Decimal | null>;
-  buffer_qty: Generated<number | null>;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  desk_result: Generated<number | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   material_id: number;
-  proposal_qty: Generated<number | null>;
+  proposal_qty: number | null;
   stock_on_hand: Generated<number | null>;
-  stock_opname_date: Generated<Date | null>;
+  stock_opname_date: Date | null;
   total_needed: number;
   updated_at: Generated<Date>;
-  variant_id: Generated<number | null>;
 }
 
 export interface WsBudgetSources {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<string | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   global_id: Generated<number>;
   id: Generated<number>;
   is_custom: Generated<number | null>;
   is_restricted: Generated<number | null>;
   name: string;
-  program_id: Generated<number | null>;
+  program_id: number | null;
   status: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsCommitmentItems {
   commitment_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   delivery_type_id: number;
   dose_quantity: number;
   id: Generated<number>;
   material_id: number;
-  parent_material_id: Generated<number | null>;
-  province_id: Generated<number | null>;
+  parent_material_id: number | null;
+  province_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   vial_quantity: number;
 }
 
 export interface WsCommitments {
-  contract_end_date: Generated<Date | null>;
+  contract_end_date: Date | null;
   contract_id: number;
   contract_start_date: Date;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  information: Generated<string | null>;
+  information: string | null;
   program_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   vendor_id: number;
   year: number;
 }
@@ -2624,7 +2548,7 @@ export interface WsCommitments {
 export interface WsConsumptionRabies {
   consumption_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
   vaccine_method: number;
@@ -2633,74 +2557,72 @@ export interface WsConsumptionRabies {
 }
 
 export interface WsConsumptionReactions {
-  actual_date: Generated<Date | null>;
+  actual_date: Date | null;
   consumption_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  other_reaction: Generated<string | null>;
+  other_reaction: string | null;
   reaction_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsConsumptions {
-  actual_date: Generated<Date | null>;
+  actual_date: Date | null;
   actual_qty: Generated<number | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  expired_date: Generated<Date | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  expired_date: Date | null;
   id: Generated<number>;
   injection_count: Generated<number | null>;
-  is_pep_insertion: Generated<number | null>;
-  next_vaccine_date: Generated<Date | null>;
-  patient_id: Generated<number | null>;
-  pep_shifted_by_entity_id: Generated<number | null>;
-  protocol_id: Generated<number | null>;
-  reference_consumption_id: Generated<number | null>;
-  return_transaction_id: Generated<number | null>;
-  stop_notification: Generated<number | null>;
-  transaction_id: Generated<number | null>;
+  next_vaccine_date: Date | null;
+  patient_id: number | null;
+  protocol_id: number | null;
+  reference_consumption_id: number | null;
+  return_transaction_id: number | null;
+  stop_notification: number | null;
+  transaction_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  vaccine_method_id: Generated<number | null>;
-  vaccine_sequence_id: Generated<number | null>;
-  vaccine_type_id: Generated<number | null>;
+  updated_by: number | null;
+  vaccine_method_id: number | null;
+  vaccine_sequence_id: number | null;
+  vaccine_type_id: number | null;
 }
 
 export interface WsContracts {
   contract_number: string;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsCoverage {
   coverage_number: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   plan_task_id: number;
   province_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsCustomerVendorActivities {
   activity_id: number;
   created_at: Generated<Date>;
   customer_vendor_id: number;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
 }
@@ -2708,7 +2630,7 @@ export interface WsCustomerVendorActivities {
 export interface WsCustomerVendors {
   created_at: Generated<Date>;
   customer_id: number;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   is_consumption: Generated<number | null>;
   is_distribution: Generated<number | null>;
@@ -2719,12 +2641,12 @@ export interface WsCustomerVendors {
 }
 
 export interface WsDailyTargetCountSnapshots {
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
+  created_at: Generated<Date | null>;
+  created_by: number | null;
   cumulative_count: Generated<number>;
   current_count: Generated<number>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_type: string;
   id: Generated<number>;
   microplanning_id: number;
@@ -2732,143 +2654,148 @@ export interface WsDailyTargetCountSnapshots {
   promoted_out_count: Generated<number>;
   reference_id: number;
   snapshot_date: Date;
-  sub_district_id: Generated<number | null>;
+  sub_district_id: number | null;
   target_group_id: number;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_at: Generated<Date | null>;
+  updated_by: number | null;
 }
 
 export interface WsDeliveryTypes {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
 }
 
 export interface WsDisposalInstructionComments {
-  comment: Generated<string | null>;
+  comment: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   disposal_instruction_id: number;
   id: Generated<number>;
-  status: Generated<number | null>;
+  status: number | null;
   updated_at: Generated<Date>;
-  user_id: Generated<number | null>;
+  user_id: number | null;
 }
 
 export interface WsDisposalInstructions {
   activity_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  device_type: Generated<number | null>;
-  disposal_instruction_type_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  device_type: number | null;
+  disposal_instruction_type_id: number | null;
   entity_id: number;
   id: Generated<number>;
-  item_count: Generated<number | null>;
-  report_number: Generated<string | null>;
-  status: Generated<number | null>;
+  item_count: number | null;
+  report_number: string | null;
+  status: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsDisposalInstructionTypes {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsDisposalMethodReasons {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   disposal_method_id: number;
   id: Generated<number>;
   transaction_reason_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsDisposalMethods {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   status: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsDisposalShipmentComments {
-  comment: Generated<string | null>;
+  comment: string | null;
   created_at: Generated<Date>;
+  deleted_at: Date | null;
   disposal_shipment_id: number;
   id: Generated<number>;
-  status: Generated<number | null>;
+  status: number | null;
+  updated_at: Generated<Date>;
   user_id: number;
 }
 
 export interface WsDisposalShipmentItems {
-  confirmed_qty: Generated<number | null>;
+  confirmed_qty: number | null;
   created_at: Generated<Date>;
   created_by: number;
+  deleted_at: Date | null;
   disposal_shipment_id: number;
   id: Generated<number>;
   material_id: number;
-  notes: Generated<string | null>;
+  notes: string | null;
   qty: number;
   updated_at: Generated<Date>;
 }
 
 export interface WsDisposalShipments {
   activity_id: number;
-  cancelled_at: Generated<Date | null>;
-  comments: Generated<string | null>;
+  cancelled_at: Date | null;
+  comments: string | null;
   created_at: Generated<Date>;
   created_by: number;
   customer_id: number;
-  device_type: Generated<number | null>;
-  fulfilled_at: Generated<Date | null>;
+  deleted_at: Date | null;
+  device_type: number | null;
+  fulfilled_at: Date | null;
   id: Generated<number>;
-  no_document: Generated<string | null>;
-  shipped_at: Generated<Date | null>;
+  no_document: string | null;
+  shipped_at: Date | null;
   status: number;
   type: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   vendor_id: number;
 }
 
 export interface WsDisposalShipmentStocks {
-  activity_id: Generated<number | null>;
-  batch_id: Generated<number | null>;
+  activity_id: number | null;
+  batch_id: number | null;
   created_at: Generated<Date>;
   created_by: number;
-  discard_qty: Generated<number | null>;
+  deleted_at: Date | null;
+  discard_qty: number | null;
   disposal_shipment_item_id: number;
   id: Generated<number>;
-  received_qty: Generated<number | null>;
+  received_qty: number | null;
   stock_id: number;
-  stock_qty: Generated<number | null>;
-  transaction_reason_id: Generated<number | null>;
+  stock_qty: number | null;
+  transaction_reason_id: number | null;
   updated_at: Generated<Date>;
 }
 
 export interface WsDisposalStocks {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   disposal_discard_qty: Generated<number | null>;
   disposal_qty: Generated<number | null>;
   disposal_received_qty: Generated<number | null>;
@@ -2877,79 +2804,79 @@ export interface WsDisposalStocks {
   stock_id: number;
   transaction_reason_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsDisposalTransactions {
   activity_id: number;
   change_qty: Generated<number | null>;
-  comment: Generated<string | null>;
+  comment: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  disposal_discard_qty: Generated<number | null>;
-  disposal_instruction_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  disposal_discard_qty: number | null;
+  disposal_instruction_id: number | null;
   disposal_method_id: number;
-  disposal_received_qty: Generated<number | null>;
+  disposal_received_qty: number | null;
   disposal_transaction_type_id: number;
-  entity_id: Generated<number | null>;
+  entity_id: number;
   id: Generated<number>;
   material_id: number;
   open_vial: Generated<number | null>;
   opening_qty: Generated<number | null>;
-  report_number: Generated<string | null>;
+  report_number: string | null;
   stock_disposal_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsDisposalTransactionTypes {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsEntities {
-  address: Generated<string | null>;
-  code: Generated<string | null>;
+  address: string | null;
+  code: string | null;
   country: Generated<string | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  entity_tag_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  entity_tag_id: number | null;
   global_id: Generated<number>;
   id: Generated<number>;
-  id_satu_sehat: Generated<number | null>;
+  id_satu_sehat: number | null;
   is_open_vial: Generated<number | null>;
   is_puskesmas: Generated<number>;
   is_relocation: Generated<number>;
   is_vendor: Generated<number | null>;
-  lat: Generated<string | null>;
-  lng: Generated<string | null>;
+  lat: string | null;
+  lng: string | null;
   location_id: number | null;
-  name: Generated<string | null>;
-  postal_code: Generated<string | null>;
-  program_id: number;
+  name: string | null;
+  postal_code: string | null;
+  program_id: number | null;
   status: Generated<number | null>;
   type: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsEntityActivities {
   activity_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  end_date: Generated<Date | null>;
+  deleted_at: Date | null;
+  end_date: Date | null;
   entity_id: number;
   id: Generated<number>;
-  start_date: Generated<Date | null>;
+  start_date: Date | null;
   updated_at: Generated<Date>;
 }
 
@@ -2957,9 +2884,9 @@ export interface WsEntityMaterialActivities {
   activity_id: number;
   consumption_rate: Generated<number | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
   material_id: number;
@@ -2968,138 +2895,125 @@ export interface WsEntityMaterialActivities {
   retailer_price: Generated<number | null>;
   tax: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsEntityMaterialActivityMinmax {
   annual_need_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_material_activity_id: number;
   id: Generated<number>;
   max: number;
   min: number;
   program_plan_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsEntityMaterialHierarchyStocks {
-  entity_id: Generated<number | null>;
-  material_id: Generated<number | null>;
-  max: Generated<number | null>;
-  min: Generated<number | null>;
-  program_id: number;
-  total_allocated_qty: Generated<number | null>;
-  total_available_qty: Generated<number | null>;
-  total_exterminated_qty: Generated<number | null>;
-  total_in_transit_qty: Generated<number | null>;
-  total_open_vial_qty: Generated<number | null>;
-  total_qty: Generated<number | null>;
-  updated_at: Generated<Date | null>;
+  entity_id: number;
+  material_id: number | null;
+  max: Generated<number>;
+  min: Generated<number>;
+  program_id: number | null;
+  total_allocated_qty: Generated<number>;
+  total_available_qty: Generated<number>;
+  total_exterminated_qty: Generated<number>;
+  total_in_transit_qty: Generated<number>;
+  total_open_vial_qty: Generated<number>;
+  total_qty: Generated<number>;
+  updated_at: Date | null;
 }
 
 export interface WsEntityMaterialImportLogs {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   file: string;
   id: Generated<number>;
   notes: string;
   program_id: number;
   status: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsEntityMaterialStocks {
   entity_id: number;
   material_id: number;
-  max: Generated<number | null>;
-  min: Generated<number | null>;
+  max: Generated<number>;
+  min: Generated<number>;
   program_id: number;
-  total_allocated_qty: Generated<number | null>;
-  total_available_qty: Generated<number | null>;
-  total_exterminated_qty: Generated<number | null>;
-  total_in_transit_qty: Generated<number | null>;
-  total_open_vial_qty: Generated<number | null>;
-  total_qty: Generated<number | null>;
-  updated_at: Generated<Date | null>;
+  total_allocated_qty: Generated<number>;
+  total_available_qty: Generated<number>;
+  total_exterminated_qty: Generated<number>;
+  total_in_transit_qty: Generated<number>;
+  total_open_vial_qty: Generated<number>;
+  total_qty: Generated<number>;
+  updated_at: Date | null;
 }
 
 export interface WsEnvironmentalParameterCategoryDetails {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   env_analysis_parameter_id: number;
   env_parameter_category_id: number;
-  env_test_method_id: Generated<number | null>;
+  env_test_method_id: number | null;
   id: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsEnvironmentalTestField {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   environmental_test_id: number;
   id: Generated<number>;
   key: string;
   label: string;
   updated_at: Generated<Date>;
-  value: Generated<string | null>;
+  value: string | null;
 }
 
 export interface WsEnvironmentalTests {
-  activity_id: Generated<number | null>;
-  brand: Generated<string | null>;
-  collection_date: Generated<Date | null>;
+  activity_id: number | null;
+  brand: string | null;
+  collection_date: Date | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
-  examination_entity_id: Generated<number | null>;
-  has_ikl: Generated<number | null>;
+  has_ikl: number | null;
   id: Generated<number>;
-  ikl_score: Generated<Decimal | null>;
-  ikl_test_date: Generated<Date | null>;
-  inventory_id: Generated<number | null>;
+  ikl_score: Decimal | null;
+  ikl_test_date: Date | null;
+  inventory_id: number | null;
   lab_result_status: Generated<string>;
-  location: Generated<string | null>;
-  management_asset_id: Generated<number | null>;
-  packaging: Generated<string | null>;
+  location: string | null;
+  packaging: string | null;
   parameter_category_id: number;
   received_date: Date;
-  sample_collected_by: Generated<string | null>;
+  sample_collected_by: string | null;
   sample_id: string;
-  test_end_date: Generated<Date | null>;
-  test_material: Generated<string | null>;
-  test_start_date: Generated<Date | null>;
+  test_end_date: Date | null;
+  test_material: string | null;
+  test_start_date: Date | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface WsEnvironmentalTestsDetail {
-  created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  entity_id: number;
-  environmental_test_id: number;
-  id: Generated<number>;
-  is_transaction: Generated<number>;
-  transaction_id: Generated<number | null>;
-  updated_at: Generated<Date>;
+  updated_by: number | null;
 }
 
 export interface WsEventReportComments {
   comment: string;
   created_at: Generated<Date>;
   created_by: number;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   report_id: number;
   updated_at: Generated<Date>;
@@ -3108,7 +3022,7 @@ export interface WsEventReportComments {
 export interface WsEventReportHistories {
   created_at: Generated<Date>;
   created_by: number;
-  deleted_at: Generated<Date>;
+  deleted_at: Date | null;
   id: Generated<number>;
   report_id: number;
   status_id: number;
@@ -3116,48 +3030,29 @@ export interface WsEventReportHistories {
 }
 
 export interface WsEventReportItems {
-  child_reason_id: Generated<number | null>;
+  child_reason_id: number | null;
   created_at: Generated<Date>;
   created_by: number;
-  custom_material: Generated<string | null>;
-  deleted_at: Generated<Date | null>;
-  expired_date: Generated<Date | null>;
+  custom_material: string | null;
+  deleted_at: Date | null;
+  expired_date: Date | null;
   id: Generated<number>;
-  material_id: Generated<number | null>;
-  no_batch: Generated<string | null>;
-  production_date: Generated<Date | null>;
+  material_id: number | null;
+  no_batch: string | null;
+  production_date: Date | null;
   qty: Generated<number>;
-  reason_id: Generated<number | null>;
+  reason_id: number | null;
   report_id: number;
-  updated_at: Generated<Date>;
-}
-
-export interface WsEventReportLists {
-  arrived_date: Date;
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  do_number: Generated<string | null>;
-  entity_id: Generated<number | null>;
-  entity_name: Generated<string | null>;
-  has_order: Generated<number>;
-  id: Generated<number>;
-  lead_time: Generated<Decimal | null>;
-  link: Generated<string | null>;
-  order_id: Generated<number | null>;
-  program_id: number | null;
-  status_id: Generated<number>;
-  total: Generated<number>;
   updated_at: Generated<Date>;
 }
 
 export interface WsEventReportReasons {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  description: Generated<string | null>;
+  deleted_at: Date | null;
+  description: string | null;
   id: Generated<number>;
   is_active: Generated<number>;
-  parent_id: Generated<number | null>;
+  parent_id: number | null;
   program_id: number;
   title: string;
   updated_at: Generated<Date>;
@@ -3166,25 +3061,25 @@ export interface WsEventReportReasons {
 export interface WsEventReports {
   arrived_date: Date;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  do_number: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  do_number: string | null;
   entity_id: number;
   has_order: Generated<number>;
   id: Generated<number>;
-  link: Generated<string | null>;
-  order_id: Generated<number | null>;
+  link: string | null;
+  order_id: number | null;
   program_id: number;
   status_id: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsEventReportStatus {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  description: Generated<string | null>;
+  deleted_at: Date | null;
+  description: string | null;
   id: Generated<number>;
   title: string;
   updated_at: Generated<Date>;
@@ -3192,7 +3087,7 @@ export interface WsEventReportStatus {
 
 export interface WsExportCategories {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   export_category_id: number;
   id: Generated<number>;
   program_id: number;
@@ -3201,21 +3096,21 @@ export interface WsExportCategories {
 
 export interface WsImmunizationWeighingHistory {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  gender: Generated<number | null>;
-  height: Generated<Decimal | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  gender: number | null;
+  height: Decimal | null;
   id: Generated<number>;
-  input_date: Generated<Date | null>;
+  input_date: Date | null;
   patient_immunization_id: number;
   status: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  weight: Generated<Decimal | null>;
-  z_score_bmi: Generated<Decimal | null>;
-  z_score_height: Generated<Decimal | null>;
-  z_score_weight: Generated<Decimal | null>;
+  updated_by: number | null;
+  weight: Decimal | null;
+  z_score_bmi: Decimal | null;
+  z_score_height: Decimal | null;
+  z_score_weight: Decimal | null;
 }
 
 export interface WsKyselyMigration {
@@ -3229,148 +3124,86 @@ export interface WsKyselyMigrationLock {
 }
 
 export interface WsLoggerHistories {
-  actual_date: Generated<Date | null>;
-  asset_id: Generated<number | null>;
+  actual_date: Date | null;
+  asset_id: number | null;
   battery: Generated<number>;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  device_code: Generated<string | null>;
-  entity_id: Generated<number | null>;
-  humidity: Generated<number | null>;
+  deleted_at: Date | null;
+  device_code: string | null;
+  entity_id: number | null;
+  humidity: number | null;
   id: Generated<number>;
   lat: Generated<number | null>;
-  logger_status: Generated<string | null>;
+  logger_status: string | null;
   long: Generated<number | null>;
-  max_temp: Generated<Decimal | null>;
-  min_temp: Generated<Decimal | null>;
+  max_temp: Decimal | null;
+  min_temp: Decimal | null;
   power: Generated<number>;
   signal: Generated<number>;
-  status: Generated<number | null>;
+  status: number | null;
   status_device: Generated<number>;
-  temp: Generated<number | null>;
+  temp: number | null;
   updated_at: Generated<Date>;
-  working_status: Generated<string | null>;
+  working_status: string | null;
 }
 
 export interface WsLoggers {
-  asset_id: Generated<number | null>;
+  asset_id: number | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  gsm_no: Generated<string | null>;
+  deleted_at: Date | null;
+  gsm_no: string | null;
   id: Generated<number>;
-  location: Generated<string | null>;
+  location: string | null;
   max: Generated<number>;
   min: Generated<number>;
   position: string;
   prod_year: Generated<string | null>;
-  serial_number: Generated<string | null>;
+  serial_number: string | null;
   status: Generated<number>;
   temp: Generated<string>;
   updated_at: Generated<Date>;
-  vendor: Generated<string | null>;
+  vendor: string | null;
 }
 
 export interface WsManufactures {
-  address: Generated<string | null>;
-  contact_name: Generated<string | null>;
+  address: string | null;
+  contact_name: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
-  email: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
+  email: string | null;
   global_id: Generated<number>;
   id: Generated<number>;
   name: string;
-  phone_number: Generated<string | null>;
+  phone_number: string | null;
   program_id: number;
-  reference_id: Generated<string | null>;
+  reference_id: string | null;
   status: Generated<number | null>;
   type: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface WsMapDestinations {
-  category: Generated<number | null>;
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  distance_meters: Generated<Decimal | null>;
-  duration_seconds: Generated<Decimal | null>;
-  id: Generated<number>;
-  latitude: Decimal;
-  longitude: Decimal;
-  microplanning_id: number;
-  name: string;
-  notes: Generated<string | null>;
-  road_type: Generated<number | null>;
-  service_point_id: number;
-  status: Generated<number>;
-  sub_type: Generated<number | null>;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface WsMapRoutes {
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  id: Generated<number>;
-  microplanning_id: number;
-  service_point_id: number;
-  status: Generated<number>;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface WsMapRouteStops {
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  destination_id: number;
-  id: Generated<number>;
-  route_id: number;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface WsMapServicePoints {
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: number;
-  id: Generated<number>;
-  latitude: Decimal;
-  longitude: Decimal;
-  microplanning_id: number;
-  status: Generated<number>;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMaterialActivities {
   activity_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
   id: Generated<number>;
   is_patient_needed: Generated<number | null>;
   is_sequence: Generated<number | null>;
   material_id: number;
-  protocol_id: Generated<number | null>;
+  protocol_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMaterialCompanions {
   companion_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   material_id: number;
   updated_at: Generated<Date>;
@@ -3378,7 +3211,7 @@ export interface WsMaterialCompanions {
 
 export interface WsMaterialManufactures {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   manufacture_id: number;
   material_id: number;
@@ -3387,39 +3220,39 @@ export interface WsMaterialManufactures {
 
 export interface WsMaterialNeeds {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  material_id: Generated<number | null>;
+  material_id: number | null;
   material_target_id: number;
   microplanning_id: number;
   reference_id: number;
   reference_type: string;
   status: Generated<number | null>;
-  total_needs: Generated<number | null>;
+  total_needs: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMaterialNeedsDetails {
-  absolute_number_of_routine_immunization: Generated<number | null>;
+  absolute_number_of_routine_immunization: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_need_id: number;
-  number_of_vials_used: Generated<number | null>;
-  remaining_stock: Generated<number | null>;
+  number_of_vials_used: number | null;
+  remaining_stock: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMaterialPermissions {
   action: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   key: string;
   material_id: number;
@@ -3429,31 +3262,31 @@ export interface WsMaterialPermissions {
 
 export interface WsMaterialRatios {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  from_material_id: Generated<number>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  from_material_id: number;
   from_material_qty: number;
   from_subtype_id: number;
   id: Generated<number>;
   program_plan_id: number;
-  to_material_id: Generated<number>;
+  to_material_id: number;
   to_material_qty: number;
   to_subtype_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMaterials {
   code: string;
   consumption_unit_per_distribution_unit: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  description: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  description: string | null;
   global_id: Generated<number>;
-  hierarchy_code: Generated<string | null>;
+  hierarchy_code: string | null;
   id: Generated<number>;
   is_addremove: Generated<number | null>;
   is_managed_in_batch: number;
@@ -3463,13 +3296,13 @@ export interface WsMaterials {
   material_level: string;
   material_level_id: number;
   material_subtype: string | null;
-  material_subtype_id: Generated<number | null>;
+  material_subtype_id: number | null;
   material_type: string;
   material_type_id: number;
   max_retail_price: number;
-  max_temperature: Generated<number | null>;
+  max_temperature: number | null;
   min_retail_price: number;
-  min_temperature: Generated<number | null>;
+  min_temperature: number | null;
   name: string;
   parent_global_id: number | null;
   parent_id: Generated<number | null>;
@@ -3480,823 +3313,696 @@ export interface WsMaterials {
   unit_of_distribution: string;
   unit_of_distribution_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMaterialSubstitutions {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_id: number;
   program_plan_id: number;
   substitution_material_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMaterialTargets {
   category: "bias" | "non_bias";
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  end_ideal_days: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  end_ideal_days: number | null;
   id: Generated<number>;
-  injection_month: Generated<string | null>;
+  injection_month: string | null;
   material_id: number;
-  parent_id: Generated<number | null>;
-  restricted_ideal_day: Generated<number | null>;
-  start_ideal_days: Generated<number | null>;
+  parent_id: number | null;
+  restricted_ideal_day: number | null;
+  start_ideal_days: number | null;
   type: "additional" | "immunization" | "primary";
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMicroplanAbsoluteTarget {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   is_out_of_school: Generated<number>;
-  microplan_id: Generated<number | null>;
-  province_id: Generated<number | null>;
-  qty: Generated<number | null>;
-  reff_id: Generated<number | null>;
-  reff_type: Generated<string | null>;
-  regency_id: Generated<number | null>;
-  subdistrict_id: Generated<number | null>;
-  target_group_id: Generated<number | null>;
+  microplan_id: number | null;
+  province_id: number | null;
+  qty: number | null;
+  reff_id: number | null;
+  reff_type: string | null;
+  regency_id: number | null;
+  subdistrict_id: number | null;
+  target_group_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  village_id: Generated<number | null>;
+  updated_by: number | null;
+  village_id: number | null;
 }
 
 export interface WsMicroplanning {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
   id: Generated<number>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  year: Generated<number | null>;
-}
-
-export interface WsMicroplanningActivityPlans {
-  additional_information: Generated<string | null>;
-  budget_estimation: Generated<number | null>;
-  budget_source_id: Generated<number | null>;
-  budget_source_ids: Generated<string | null>;
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  frequency: Generated<string | null>;
-  frequency_id: Generated<number | null>;
-  id: Generated<number>;
-  implementation_schedule: Generated<string | null>;
-  is_mandatory: Generated<number>;
-  location_type_ids: Generated<string | null>;
-  material_ids: Generated<string | null>;
-  microplanning_id: number;
-  number_of_vaccinator: Generated<number | null>;
-  objective: Generated<string | null>;
-  other_budget_source_name: Generated<string | null>;
-  pics: Generated<string | null>;
-  status: Generated<number>;
-  target_group_ids: Generated<string | null>;
-  title: string;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-}
-
-export interface WsMicroplanningConfig {
-  config: Generated<string | null>;
-  created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  id: Generated<number>;
-  key: string;
-  program_id: number;
-  updated_at: Generated<Date>;
-}
-
-export interface WsMicroplanningPatientTargets {
-  created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  id: Generated<number>;
-  microplanning_id: number;
-  patient_id: number;
-  province_id: Generated<number | null>;
-  reff_id: Generated<number | null>;
-  reff_type: Generated<string | null>;
-  regency_id: Generated<number | null>;
-  status: Generated<number | null>;
-  subdistrict_id: Generated<number | null>;
-  target_group_id: Generated<number | null>;
-  updated_at: Generated<Date>;
-}
-
-export interface WsMicroplanningPriorityAreas {
-  achievement_bcg: Generated<number | null>;
-  achievement_dpt1: Generated<number | null>;
-  achievement_dpt3: Generated<number | null>;
-  achievement_dpt4: Generated<number | null>;
-  achievement_mr1: Generated<number | null>;
-  achievement_mr2: Generated<number | null>;
-  achievement_prev_dpt3: Generated<number | null>;
-  achievement_prev_mr1: Generated<number | null>;
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  has_pd3i_case: Generated<number | null>;
-  has_supporting_condition: Generated<number | null>;
-  id: Generated<number>;
-  microplanning_id: number;
-  priority_rank: Generated<number | null>;
-  status: Generated<number | null>;
-  target_bayi_lahir: Generated<number | null>;
-  target_surviving_infants: Generated<number | null>;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  village_id: number;
-}
-
-export interface WsMicroplanningProblemSolutions {
-  created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  id: Generated<number>;
-  microplanning_id: number;
-  problem_category_id: Generated<number | null>;
-  problem_category_name: Generated<string | null>;
-  problem_type_id: number;
-  solution: Generated<string | null>;
-  status: Generated<number>;
-  updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  village_id: number;
-}
-
-export interface WsMicroplanningSchools {
-  entity_name: Generated<string | null>;
-  is_assigned: Generated<number>;
-  lat: Generated<string | null>;
-  lng: Generated<string | null>;
-  microplanning_id: Generated<number>;
-  name: Generated<string | null>;
-  school_id: Generated<number>;
-  sub_district_id: Generated<string | null>;
-  year: Generated<number | null>;
-}
-
-export interface WsMicroplanningVillages {
-  entity_name: Generated<string | null>;
-  is_assigned: Generated<number>;
-  microplanning_id: Generated<number>;
-  village_id: number;
-  year: Generated<number | null>;
+  updated_by: number | null;
+  year: number | null;
 }
 
 export interface WsMicroplanTargetsConsumptions {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  end_ideal_date: Generated<Date | null>;
-  end_ideal_days: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  end_ideal_date: Date | null;
+  end_ideal_days: number | null;
   id: Generated<number>;
-  ideal_date: Generated<Date | null>;
-  material_id: Generated<number | null>;
-  material_target_id: Generated<number | null>;
+  ideal_date: Date | null;
+  material_id: number | null;
+  material_target_id: number | null;
   microplanning_id: Generated<number>;
-  patient_id: Generated<number | null>;
-  start_ideal_days: Generated<number | null>;
+  start_ideal_days: number | null;
   target_group_id: Generated<number>;
   target_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMonthlyVaccineNeedDetails {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_need_id: number;
-  max_stock: Generated<number | null>;
-  min_stock: Generated<number | null>;
-  request_qty: Generated<number | null>;
+  max_stock: number | null;
+  min_stock: number | null;
+  request_qty: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMpMaterialSubstitution {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_id: number;
   mp_program_config_id: number;
   priority: Generated<number>;
-  source_ref_id: Generated<number | null>;
+  source_ref_id: number | null;
   substitution_material_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMpMaterialTargetConfig {
   category: "bias" | "non_bias";
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  end_ideal_days: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  end_ideal_days: number | null;
   id: Generated<number>;
-  injection_month: Generated<string | null>;
+  injection_month: string | null;
   ip: Generated<number>;
   material_id: number;
-  material_key: Generated<string | null>;
-  material_target_ref_id: Generated<number | null>;
-  month_distribution: Generated<string | null>;
+  material_key: string | null;
+  material_target_ref_id: number | null;
+  month_distribution: string | null;
   mp_program_config_id: number;
   number_of_dose: Generated<number>;
-  parent_id: Generated<number | null>;
-  plan_task_id: Generated<string | null>;
-  restricted_ideal_day: Generated<number | null>;
-  start_ideal_days: Generated<number | null>;
+  parent_id: number | null;
+  restricted_ideal_day: number | null;
+  start_ideal_days: number | null;
   target_group_id: number;
   type: "additional" | "immunization" | "primary";
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsMpProgramConfig {
   category: "bias" | "non_bias";
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   program_id: number;
-  seeded_at: Generated<Date>;
-  seeded_from_plan_id: Generated<number | null>;
+  seeded_at: Date | null;
+  seeded_from_plan_id: number | null;
   status: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   year: number;
 }
 
 export interface WsMpProvinceCoverage {
   coverage_number: Generated<number>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   mp_material_target_config_id: number;
   province_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsOrderAudits {
-  actual_shipment_date: Generated<Date | null>;
-  allocated_at: Generated<Date | null>;
-  allocated_by: Generated<number | null>;
-  cancelled_at: Generated<Date | null>;
-  cancelled_by: Generated<number | null>;
-  confirmed_at: Generated<Date | null>;
-  confirmed_by: Generated<number | null>;
+  actual_shipment_date: Date | null;
+  allocated_at: Date | null;
+  allocated_by: number | null;
+  cancelled_at: Date | null;
+  cancelled_by: number | null;
+  confirmed_at: Date | null;
+  confirmed_by: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  drafted_at: Generated<Date | null>;
-  drafted_by: Generated<number | null>;
-  estimated_date: Generated<Date | null>;
-  fulfilled_at: Generated<Date | null>;
-  fulfilled_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  drafted_at: Date | null;
+  drafted_by: number | null;
+  estimated_date: Date | null;
+  fulfilled_at: Date | null;
+  fulfilled_by: number | null;
   id: Generated<number>;
   order_id: number;
-  released_date: Generated<Date | null>;
-  required_date: Generated<Date | null>;
-  shipped_at: Generated<Date | null>;
-  shipped_by: Generated<number | null>;
+  released_date: Date | null;
+  required_date: Date | null;
+  shipped_at: Date | null;
+  shipped_by: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  validated_at: Generated<Date | null>;
-  validated_by: Generated<number | null>;
+  updated_by: number | null;
+  validated_at: Date | null;
+  validated_by: number | null;
 }
 
 export interface WsOrderCancelReasons {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   name: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsOrderComments {
-  comment: Generated<string | null>;
+  comment: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   order_id: number;
   order_status_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   user_id: number;
 }
 
 export interface WsOrderHistories {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   order_id: number;
   order_status_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsOrderItemProjectionCapacities {
-  capacity_asset: Generated<number | null>;
+  capacity_asset: number | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  is_confirm: Generated<number | null>;
+  is_confirm: number | null;
   order_id: number;
-  percent_capacity: Generated<number | null>;
-  total_volume: Generated<number | null>;
+  percent_capacity: number | null;
+  total_volume: number | null;
   updated_at: Generated<Date>;
 }
 
 export interface WsOrderItemStocks {
-  allocated_qty: Generated<number | null>;
-  confirmed_qty: Generated<number | null>;
+  allocated_qty: number | null;
+  confirmed_qty: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  fulfill_reason: Generated<number | null>;
-  fulfill_status: Generated<number | null>;
-  fulfill_stock_status_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  fulfill_reason: number | null;
+  fulfill_status: number | null;
+  fulfill_stock_status_id: number | null;
   id: Generated<number>;
   material_id: number;
-  metadata: Generated<string | null>;
+  metadata: string | null;
   order_id: number;
-  order_item_kfa_id: Generated<number | null>;
-  order_reason_id: Generated<number | null>;
-  order_stock_status_id: Generated<number | null>;
-  ordered_qty: Generated<number | null>;
-  parent_material_id: Generated<number | null>;
-  qrcode: Generated<string | null>;
-  qty: Generated<number | null>;
-  received_qty: Generated<number | null>;
-  recommended_stock: Generated<number | null>;
-  stock_id: Generated<number | null>;
+  order_item_kfa_id: number | null;
+  order_reason_id: number | null;
+  order_stock_status_id: number | null;
+  ordered_qty: number | null;
+  parent_material_id: number | null;
+  qrcode: string | null;
+  qty: number | null;
+  received_qty: number | null;
+  recommended_stock: number | null;
+  stock_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  validated_qty: Generated<number | null>;
+  updated_by: number | null;
+  validated_qty: number | null;
 }
 
 export interface WsOrderLists {
   activity_id: Generated<number>;
   activity_name: string;
-  allocated_at: Generated<Date | null>;
-  allocated_by: Generated<number | null>;
-  cancelled_at: Generated<Date | null>;
-  cancelled_by: Generated<number | null>;
-  confirmed_at: Generated<Date | null>;
-  confirmed_by: Generated<number | null>;
-  created_by_name: Generated<string | null>;
-  customer_entity_tag_id: Generated<number | null>;
+  allocated_at: Date | null;
+  allocated_by: number | null;
+  cancelled_at: Date | null;
+  cancelled_by: number | null;
+  confirmed_at: Date | null;
+  confirmed_by: number | null;
+  created_by_name: string | null;
+  customer_entity_tag_id: number | null;
   customer_id: Generated<number>;
-  customer_location_id: Generated<number | null>;
-  customer_name: Generated<string | null>;
-  customer_province_id: Generated<string | null>;
+  customer_location_id: number | null;
+  customer_name: string | null;
+  customer_province_id: number | null;
   customer_province_name: string | null;
-  customer_regency_id: Generated<string | null>;
+  customer_regency_id: number | null;
   customer_regency_name: string | null;
-  customer_sub_district_id: Generated<string | null>;
-  delivery_number: Generated<string | null>;
-  delivery_type_id: Generated<number | null>;
+  customer_sub_district_id: number | null;
+  delivery_number: string | null;
+  delivery_type_id: number | null;
   delivery_type_name: string | null;
-  device_type: Generated<number | null>;
-  doc_no: Generated<string | null>;
-  fulfilled_at: Generated<Date | null>;
-  fulfilled_by: Generated<number | null>;
+  device_type: number | null;
+  doc_no: string | null;
+  fulfilled_at: Date | null;
+  fulfilled_by: number | null;
   is_allocated: Generated<number | null>;
-  metadata: Generated<string | null>;
-  notes: Generated<string | null>;
+  metadata: string | null;
+  notes: string | null;
   order_created_at: Generated<Date>;
   order_id: Generated<number>;
   order_updated_at: Generated<Date>;
-  po_no: Generated<string | null>;
+  po_no: string | null;
   program_id: number;
-  purchase_ref: Generated<string | null>;
-  sales_ref: Generated<string | null>;
-  shipped_at: Generated<Date | null>;
-  shipped_by: Generated<number | null>;
+  purchase_ref: string | null;
+  sales_ref: string | null;
+  shipped_at: Date | null;
+  shipped_by: number | null;
   status_id: number;
-  status_name: Generated<string | null>;
+  status_name: string | null;
   total_order_items: Generated<number | null>;
   type_id: number;
-  type_name: Generated<string | null>;
-  updated_by_name: Generated<string | null>;
-  user_created_by: Generated<number | null>;
-  user_updated_by: Generated<number | null>;
-  vendor_entity_tag_id: Generated<number | null>;
+  type_name: string | null;
+  updated_by_name: string | null;
+  user_created_by: number | null;
+  user_updated_by: number | null;
+  vendor_entity_tag_id: number | null;
   vendor_id: Generated<number>;
-  vendor_location_id: Generated<number | null>;
-  vendor_name: Generated<string | null>;
-  vendor_province_id: Generated<string | null>;
+  vendor_location_id: number | null;
+  vendor_name: string | null;
+  vendor_province_id: number | null;
   vendor_province_name: string | null;
-  vendor_regency_id: Generated<string | null>;
+  vendor_regency_id: number | null;
   vendor_regency_name: string | null;
-  vendor_sub_district_id: Generated<string | null>;
+  vendor_sub_district_id: number | null;
 }
 
 export interface WsOrderOtherReasons {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   order_id: number;
   order_item_stock_id: number;
-  other_reason: Generated<string | null>;
+  other_reason: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsOrderReasons {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
-  order_type: Generated<string | null>;
+  name: string | null;
+  order_type: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsOrders {
-  activity_id: Generated<number | null>;
-  biofarma_changed: Generated<number | null>;
+  activity_id: number | null;
+  biofarma_changed: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
+  created_by: number | null;
   customer_id: number;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  delivery_number: Generated<string | null>;
-  delivery_type_id: Generated<number | null>;
-  device_type: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  delivery_number: string | null;
+  delivery_type_id: number | null;
+  device_type: number | null;
   id: Generated<number>;
   is_allocated: Generated<number | null>;
-  metadata: Generated<string | null>;
-  no_document: Generated<string | null>;
-  no_po: Generated<string | null>;
-  notes: Generated<string | null>;
-  order_cancel_reason_id: Generated<number | null>;
+  metadata: string | null;
+  no_document: string | null;
+  no_po: string | null;
+  notes: string | null;
+  order_cancel_reason_id: number | null;
   order_status_id: number;
   order_type_id: number;
-  purchase_ref: Generated<string | null>;
-  sales_ref: Generated<string | null>;
+  purchase_ref: string | null;
+  sales_ref: string | null;
   taken_by_customer: Generated<number | null>;
   total_order_items: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  validated_at: Generated<Date | null>;
-  validated_by: Generated<number | null>;
+  updated_by: number | null;
+  validated_at: Date | null;
+  validated_by: number | null;
   vendor_id: number;
 }
 
 export interface WsOrderStatuses {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsOrderStockStatuses {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsOrderTypes {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  name: Generated<string | null>;
+  name: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsOtherReasons {
-  content: Generated<string | null>;
+  content: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  source_id: Generated<number | null>;
-  source_type: Generated<string | null>;
+  source_id: number | null;
+  source_type: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface WsPatientDengues {
-  clinical_diagnosis_id: Generated<number | null>;
+  clinical_diagnosis_id: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: Generated<number | null>;
-  epidemiology_type: Generated<number | null>;
-  examination_type: Generated<string | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  entity_id: number | null;
+  epidemiology_type: number | null;
+  examination_type: string | null;
   id: Generated<number>;
-  input_date: Generated<Date | null>;
-  laboratory_examination: Generated<number | null>;
-  laboratory_id: Generated<number | null>;
-  laboratory_name: Generated<string | null>;
-  last_status_id: Generated<number | null>;
-  patient_id: Generated<number | null>;
-  pe_result_id: Generated<number | null>;
-  symptoms_id: Generated<string | null>;
+  input_date: Date | null;
+  laboratory_examination: number | null;
+  laboratory_id: number | null;
+  laboratory_name: string | null;
+  last_status_id: number | null;
+  patient_id: number | null;
+  pe_result_id: number | null;
+  symptoms_id: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  vector_control_id: Generated<string | null>;
+  updated_by: number | null;
+  vector_control_id: string | null;
 }
 
 export interface WsPatientImmunizationDetails {
-  batch_id: Generated<number | null>;
+  batch_id: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  ideal_schedule_date: Generated<Date | null>;
-  injection_date: Generated<Date | null>;
-  is_given: Generated<number | null>;
-  last_batch_id: Generated<number | null>;
-  last_injection_date: Generated<Date | null>;
-  last_is_given: Generated<number | null>;
-  last_status: Generated<number | null>;
+  ideal_schedule_date: Date | null;
+  injection_date: Date | null;
+  is_given: number | null;
+  last_batch_id: number | null;
+  last_injection_date: Date | null;
+  last_is_given: number | null;
+  last_status: number | null;
   material_target_id: number;
   patient_immunization_id: number;
-  status: Generated<number | null>;
+  status: number | null;
   target_group_id: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsPatientImmunizations {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  identity_type: Generated<string | null>;
-  parent_name: Generated<string | null>;
-  parent_patient_id: Generated<number | null>;
-  patient_id: Generated<number | null>;
+  identity_type: string | null;
+  parent_name: string | null;
+  parent_patient_id: number | null;
+  patient_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsPatientImportLogs {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   file: string;
   id: Generated<number>;
-  notes: string;
+  notes: Json;
   program_id: number;
   status: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsPatientMedicalHistories {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  diagnosis_date: Generated<Date | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  diagnosis_date: Date | null;
   id: Generated<number>;
   is_diagnose_before: Generated<number | null>;
-  month_before: Generated<number | null>;
-  notes: Generated<string | null>;
+  month_before: number | null;
+  notes: string | null;
   patient_id: number;
   protocol_id: number;
-  received_medicine: Generated<number | null>;
-  received_vaccine: Generated<number | null>;
+  received_medicine: number | null;
+  received_vaccine: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  year_before: Generated<number | null>;
+  updated_by: number | null;
+  year_before: number | null;
 }
 
 export interface WsPatientRabies {
   id: Generated<number>;
-  last_vaccine_at: Generated<Date | null>;
+  last_vaccine_at: Date | null;
   patient_id: number;
   stop_notification: Generated<number>;
-  vaccine_method: Generated<number | null>;
-  vaccine_sequence: Generated<number | null>;
-  vaccine_type: Generated<number | null>;
+  vaccine_method: number | null;
+  vaccine_sequence: number | null;
+  vaccine_type: number | null;
 }
 
 export interface WsPatients {
-  address: Generated<string | null>;
-  birth_date: Generated<string | null>;
+  address: string | null;
+  birth_date: string | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
-  education_id: Generated<number | null>;
-  entity_id: Generated<number | null>;
-  ethnic_id: Generated<number | null>;
+  deleted_at: Date | null;
+  education_id: number | null;
+  entity_id: number | null;
+  ethnic_id: number | null;
   gender: Generated<number>;
   id: Generated<number>;
-  identity_type: Generated<number | null>;
+  identity_type: number | null;
   marital_status: Generated<number>;
-  name: Generated<string | null>;
-  nik: string;
-  occupation_id: Generated<number | null>;
-  phone_number: Generated<string | null>;
-  pos_code: Generated<string | null>;
-  province_id: Generated<number | null>;
-  regency_id: Generated<number | null>;
-  religion_id: Generated<number | null>;
-  residential_address: Generated<string | null>;
-  residential_pos_code: Generated<string | null>;
-  residential_province_id: Generated<number | null>;
-  residential_regency_id: Generated<number | null>;
-  residential_subdistrict_id: Generated<number | null>;
-  residential_village_id: Generated<number | null>;
-  rt: Generated<string | null>;
-  rw: Generated<string | null>;
-  stop_notification: Generated<number | null>;
-  subdistrict_id: Generated<number | null>;
+  name: string | null;
+  nik: string | null;
+  occupation_id: number | null;
+  phone_number: string | null;
+  pos_code: string | null;
+  province_id: number | null;
+  regency_id: number | null;
+  religion_id: number | null;
+  residential_address: string | null;
+  residential_pos_code: string | null;
+  residential_province_id: number | null;
+  residential_regency_id: number | null;
+  residential_subdistrict_id: number | null;
+  residential_village_id: number | null;
+  rt: string | null;
+  rw: string | null;
+  stop_notification: number | null;
+  subdistrict_id: number | null;
   updated_at: Generated<Date>;
-  village_id: Generated<number | null>;
-}
-
-export interface WsPepInsertionLogs {
-  id: Generated<number>;
-  inserted_at: Generated<Date>;
-  inserted_by: number;
-  insertion_consumption_id: number;
-  patient_id: number;
-  pre_shift_state: string;
+  village_id: number | null;
 }
 
 export interface WsPlanTargetGroup {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   program_plan_id: number;
   target_group_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsPlanTasks {
   activity_id: number;
   code: string;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   ip: number;
   material_id: number;
-  month_distribution: Generated<string | null>;
+  month_distribution: string | null;
   number_of_dose: number;
   program_plan_id: number;
   target_group_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsProgramPlans {
   approach_id: number;
+  approval_status: Generated<number>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   is_active: Generated<number>;
   program_id: number;
   status: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   year: number;
 }
 
 export interface WsProgramTargetGroups {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   program_id: number;
   target_group_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   year: number;
 }
 
 export interface WsProtocols {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   is_identity_type: Generated<number | null>;
   is_kipi: Generated<number | null>;
   is_medical_history: Generated<number | null>;
   name: string;
   program_id: number;
-  status: Generated<number | null>;
+  status: Generated<number>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsPurchases {
-  budget_source_id: Generated<number | null>;
+  budget_source_id: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  price: Generated<number | null>;
-  source_id: Generated<number | null>;
-  source_type: Generated<string | null>;
-  total_price: Generated<number | null>;
-  transaction_id: Generated<number | null>;
+  price: number | null;
+  source_id: number | null;
+  source_type: string | null;
+  total_price: number | null;
+  transaction_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  year: Generated<number | null>;
+  updated_by: number | null;
+  year: number | null;
 }
 
 export interface WsReconciliationItemReasonActions {
-  action_id: Generated<number | null>;
+  action_id: number | null;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  reason_id: Generated<number | null>;
-  reconciliation_item_id: Generated<number | null>;
+  reason_id: number | null;
+  reconciliation_item_id: number | null;
   updated_at: Generated<Date>;
 }
 
 export interface WsReconciliationItems {
   actual_qty: Generated<number | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   reconciliation_category_id: number;
   reconciliation_id: number;
   recorded_qty: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsReconciliations {
   activity_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   end_date: Date;
   entity_id: number;
   id: Generated<number>;
@@ -4304,84 +4010,84 @@ export interface WsReconciliations {
   program_id: number;
   start_date: Date;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsSchoolEstimationDetails {
   available_vaccinator: Generated<number | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   microplanning_id: number;
-  notes: Generated<string | null>;
+  notes: string | null;
   required_service: Generated<number | null>;
   required_service_days: Generated<number | null>;
-  schedule_month: Generated<string | null>;
-  school_id: Generated<number | null>;
+  schedule_month: string | null;
+  school_id: number | null;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsSentinelLaboratory {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  end_date: Generated<Date | null>;
-  entity_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  end_date: Date | null;
+  entity_id: number | null;
   id: Generated<number>;
-  start_date: Generated<Date | null>;
+  start_date: Date | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsSentinelSurveillance {
   case_report_completed: Generated<number>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  duration: Generated<number | null>;
-  entity_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  duration: number | null;
+  entity_id: number | null;
   id: Generated<number>;
-  lab_result_id: Generated<string | null>;
-  patient_id: Generated<number | null>;
-  specimen_id: Generated<number | null>;
+  lab_result_id: string | null;
+  patient_id: number | null;
+  specimen_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsSpecimens {
-  collection_date: Generated<Date | null>;
+  collection_date: Date | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  equipment_id: Generated<string | null>;
-  examination_method_id: Generated<number | null>;
-  examination_result_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  equipment_id: string | null;
+  examination_method_id: number | null;
+  examination_result_id: number | null;
   id: Generated<number>;
-  patient_dengue_id: Generated<number | null>;
-  patient_id: Generated<number | null>;
-  reagent_id: Generated<string | null>;
-  release_date: Generated<Date | null>;
-  reuse_examination_result: Generated<number | null>;
-  reuse_laboratory_id: Generated<number | null>;
-  specimen_code: Generated<string | null>;
-  specimen_type_id: Generated<number | null>;
+  patient_dengue_id: number | null;
+  patient_id: number | null;
+  reagent_id: string | null;
+  release_date: Date | null;
+  reuse_examination_result: number | null;
+  reuse_laboratory_id: number | null;
+  specimen_code: string | null;
+  specimen_type_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsStockConsumptions {
   activity_id: number;
-  batch_id: Generated<number | null>;
+  batch_id: number | null;
   created_at: Generated<Date>;
   customer_id: number;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   material_id: number;
   qty: number;
@@ -4393,243 +4099,240 @@ export interface WsStockConsumptions {
 
 export interface WsStockExterminations {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   extermination_discard_qty: Generated<number | null>;
   extermination_received_qty: Generated<number | null>;
   id: Generated<number>;
-  stock_id: Generated<number | null>;
-  transaction_reason_id: Generated<number | null>;
+  stock_id: number | null;
+  transaction_reason_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsStockOpnamePeriods {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  cutoff_date: Generated<Date | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  end_date: Generated<Date | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  end_date: Date | null;
   id: Generated<number>;
-  month_period: Generated<number | null>;
-  program_id: Generated<number>;
-  start_date: Generated<Date | null>;
+  month_period: number | null;
+  program_id: number | null;
+  start_date: Date | null;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  year_period: Generated<number | null>;
+  updated_by: number | null;
+  year_period: number | null;
 }
 
 export interface WsStockOpnames {
-  activity_id: Generated<number | null>;
+  activity_id: number | null;
   actual_qty: Generated<number>;
   batch_code: Generated<string | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   entity_id: number;
-  expired_date: Generated<Date | null>;
+  expired_date: Date | null;
   id: Generated<number>;
   in_transit_qty: Generated<number>;
-  is_within_period: Generated<number | null>;
-  manufacture_id: Generated<number | null>;
-  material_id: Generated<number | null>;
-  parent_material_id: Generated<number | null>;
-  period_id: Generated<number | null>;
-  production_date: Generated<Date | null>;
+  is_within_period: number | null;
+  manufacture_id: number | null;
+  material_id: number | null;
+  parent_material_id: number | null;
+  period_id: number | null;
+  production_date: Date | null;
   recorded_qty: Generated<number>;
   stock_id: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsStockQualities {
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
-  label: Generated<string | null>;
+  label: string | null;
   updated_at: Generated<Date>;
 }
 
 export interface WsStocks {
-  activity_id: Generated<number | null>;
+  activity_id: number;
   allocated_qty: Generated<number | null>;
-  batch_code: Generated<string | null>;
-  batch_id: Generated<number | null>;
-  budget_source_id: Generated<number | null>;
+  batch_code: string | null;
+  batch_id: number | null;
+  budget_source_id: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  cutoff_qty: Generated<number>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  entity_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  entity_id: number;
   exterminated_qty: Generated<number | null>;
-  exterminations_qty: Generated<number | null>;
   id: Generated<number>;
   in_transit_qty: Generated<number | null>;
-  manufacture_id: Generated<number | null>;
-  material_id: Generated<number | null>;
+  manufacture_id: number | null;
+  material_id: number;
   open_vial_qty: Generated<number | null>;
-  parent_material_id: Generated<number | null>;
+  parent_material_id: number | null;
   price: Generated<number | null>;
-  qty: Generated<number>;
-  stock_quality_id: Generated<number | null>;
+  qty: number;
+  stock_quality_id: number | null;
   total_price: Generated<number | null>;
   unreceived_qty: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  year: Generated<number | null>;
+  updated_by: number | null;
+  year: number | null;
 }
 
 export interface WsStopNotificationHistories {
   consumption_id: number;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   reason_id: number;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsStopNotificationReasons {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   protocol_id: number;
   title: string;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsTargets {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
+  created_by: number | null;
   date_of_birth: string;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  education_id: Generated<number | null>;
-  entity_id: Generated<number | null>;
-  ethnic_id: Generated<number | null>;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  education_id: number | null;
+  entity_id: number | null;
+  ethnic_id: number | null;
   gender: number;
-  grade: Generated<number | null>;
+  grade: number | null;
   id: Generated<number>;
-  identity_type: Generated<number | null>;
+  identity_type: number | null;
   marital_status: Generated<number | null>;
   microplanning_id: number;
-  name: Generated<string | null>;
+  name: string | null;
   nik: string;
-  occupation_id: Generated<number | null>;
-  phone_number: Generated<string | null>;
-  registered_address: Generated<string | null>;
-  registered_postal_code: Generated<number | null>;
+  occupation_id: number | null;
+  phone_number: string | null;
+  registered_address: string | null;
+  registered_postal_code: number | null;
   registered_province_id: number;
   registered_regency_id: number;
   registered_subdistrict_id: number;
   registered_village_id: number;
-  religion_id: Generated<number | null>;
-  residence_address: Generated<string | null>;
-  residence_postal_code: Generated<number | null>;
+  religion_id: number | null;
+  residence_address: string | null;
+  residence_postal_code: number | null;
   residence_province_id: number;
   residence_regency_id: number;
   residence_subdistrict_id: number;
   residence_village_id: number;
   status: Generated<number | null>;
-  target_group_id: Generated<number | null>;
+  target_group_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsTaskAmountOfGiving {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   number_of_dose: number;
   plan_task_id: number;
   target_group_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsTestInventories {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   environmental_test_id: number;
   id: Generated<number>;
   inventory_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsTestResults {
-  analysis_parameter_id: Generated<number | null>;
+  analysis_parameter_id: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   environmental_test_id: number;
   id: Generated<number>;
   is_custom: Generated<number>;
   parameter_name: string;
-  quality_standard: Generated<string | null>;
-  result_value: Generated<string | null>;
+  quality_standard: string | null;
+  result_value: string | null;
   test_methods_id: number;
-  unit: Generated<string | null>;
+  unit: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsTransactionLists {
-  activity_id: Generated<number | null>;
+  activity_id: number | null;
   activity_name: string | null;
-  actual_transaction_date: Generated<Date | null>;
+  actual_transaction_date: Date | null;
   batch_code: string | null;
-  batch_expired_date: Generated<Date | null>;
+  batch_expired_date: Date | null;
   batch_id: Generated<number | null>;
-  batch_production_date: Generated<Date | null>;
+  batch_production_date: Date | null;
   batch_status: Generated<number | null>;
   budget_source_id: Generated<number | null>;
   budget_source_name: string | null;
   change_qty: Generated<number | null>;
   change_qty_open_vial: Generated<number | null>;
-  closing_qty: Generated<number | null>;
-  closing_qty_open_vial: Generated<number | null>;
-  companion_activity_id: Generated<number | null>;
+  closing_qty: number | null;
+  closing_qty_open_vial: number | null;
+  companion_activity_id: number | null;
   companion_activity_name: string | null;
-  companion_entity_id: Generated<number | null>;
-  companion_entity_name: Generated<string | null>;
-  companion_program_id: Generated<number | null>;
+  companion_entity_id: number | null;
+  companion_entity_name: string | null;
+  companion_program_id: number | null;
   companion_program_name: string | null;
   created_at: Generated<Date>;
-  created_by_firstname: Generated<string | null>;
-  created_by_id: Generated<number | null>;
-  created_by_lastname: Generated<string | null>;
-  created_by_username: Generated<string | null>;
-  customer_entity_tag_id: Generated<number | null>;
+  created_by_firstname: string | null;
+  created_by_id: number | null;
+  created_by_lastname: string | null;
+  created_by_username: string | null;
+  customer_entity_tag_id: number | null;
   customer_id: Generated<number | null>;
-  customer_name: Generated<string | null>;
-  deleted_at: Generated<Date | null>;
-  device_type: Generated<number | null>;
-  entity_id: Generated<number | null>;
+  customer_name: string | null;
+  deleted_at: Date | null;
+  device_type: number | null;
+  entity_id: number | null;
   entity_is_open_vial: Generated<number | null>;
-  entity_name: Generated<string | null>;
-  entity_tag_id: Generated<number | null>;
+  entity_name: string | null;
+  entity_tag_id: number | null;
   location_id: number | null;
-  manufacture_address: Generated<string | null>;
+  manufacture_address: string | null;
   manufacture_id: Generated<number | null>;
   manufacture_name: string | null;
-  material_description: Generated<string | null>;
+  material_description: string | null;
   material_id: Generated<number | null>;
   material_is_managed_in_batch: number | null;
   material_is_open_vial: Generated<number | null>;
@@ -4638,12 +4341,12 @@ export interface WsTransactionLists {
   material_type_name: string | null;
   opening_qty: Generated<number | null>;
   opening_qty_open_vial: Generated<number | null>;
-  order_id: Generated<number | null>;
+  order_id: number | null;
   order_status: number | null;
-  order_status_label: Generated<string | null>;
+  order_status_label: string | null;
   order_type: number | null;
-  order_type_label: Generated<string | null>;
-  other_reason: Generated<string | null>;
+  order_type_label: string | null;
+  other_reason: string | null;
   parent_material_id: Generated<number | null>;
   parent_material_name: string | null;
   patient_data: Generated<number>;
@@ -4651,90 +4354,90 @@ export interface WsTransactionLists {
   province_id: number | null;
   province_name: string | null;
   purchase_id: Generated<number | null>;
-  purchase_price: Generated<number | null>;
-  purchase_year: Generated<number | null>;
+  purchase_price: number | null;
+  purchase_year: number | null;
   regency_id: number | null;
   regency_name: string | null;
   stock_activity_id: Generated<number | null>;
   stock_activity_name: string | null;
   stock_allocated_qty: Generated<number | null>;
-  stock_close_vial: Generated<number | null>;
-  stock_id: Generated<number | null>;
+  stock_close_vial: number | null;
+  stock_id: number | null;
   stock_open_vial: Generated<number | null>;
-  transaction_change_type: Generated<string | null>;
+  transaction_change_type: string | null;
   transaction_id: Generated<number>;
-  transaction_reason_id: Generated<number | null>;
-  transaction_reason_is_other: Generated<number | null>;
-  transaction_reason_is_purchase: Generated<number | null>;
-  transaction_reason_title: Generated<string | null>;
-  transaction_type_id: Generated<number | null>;
-  transaction_type_title: Generated<string | null>;
+  transaction_reason_id: number | null;
+  transaction_reason_is_other: number | null;
+  transaction_reason_is_purchase: number | null;
+  transaction_reason_title: string | null;
+  transaction_type_id: number | null;
+  transaction_type_title: string | null;
   updated_at: Generated<Date>;
-  updated_by_firstname: Generated<string | null>;
-  updated_by_id: Generated<number | null>;
-  updated_by_lastname: Generated<string | null>;
-  updated_by_username: Generated<string | null>;
+  updated_by_firstname: string | null;
+  updated_by_id: number | null;
+  updated_by_lastname: string | null;
+  updated_by_username: string | null;
   vendor_id: Generated<number | null>;
-  vendor_name: Generated<string | null>;
+  vendor_name: string | null;
 }
 
 export interface WsTransactionReasons {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
-  is_other: Generated<number | null>;
-  is_purchase: Generated<number | null>;
+  is_other: number | null;
+  is_purchase: number | null;
   program_id: number;
   status: Generated<number>;
-  title: Generated<string | null>;
-  title_en: Generated<string | null>;
-  transaction_type_id: Generated<number | null>;
+  title: string | null;
+  title_en: string | null;
+  transaction_type_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsTransactions {
-  activity_id: Generated<number | null>;
-  actual_transaction_date: Generated<Date | null>;
-  batch_code: Generated<string | null>;
+  activity_id: number | null;
+  actual_transaction_date: Date | null;
+  batch_code: string | null;
   change_qty: Generated<number | null>;
   change_qty_open_vial: Generated<number | null>;
-  commit_datetime: Generated<Date | null>;
-  companion_activity_id: Generated<number | null>;
-  companion_entity_id: Generated<number | null>;
-  companion_program_id: Generated<number | null>;
+  commit_datetime: Date | null;
+  companion_activity_id: number | null;
+  companion_entity_id: number | null;
+  companion_program_id: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  device_type: Generated<number | null>;
-  entity_activity_id: Generated<number | null>;
-  entity_id: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  device_type: number | null;
+  entity_activity_id: number | null;
+  entity_id: number | null;
   id: Generated<number>;
   is_acknowledged: Generated<number | null>;
   opening_qty: Generated<number | null>;
   opening_qty_open_vial: Generated<number | null>;
-  order_id: Generated<number | null>;
+  order_id: number | null;
   qty_in_vial: Generated<number | null>;
   returnable: Generated<number | null>;
   returned_qty: Generated<number | null>;
   returned_qty_open_vial: Generated<number | null>;
-  status: Generated<number | null>;
-  stock_id: Generated<number | null>;
-  transaction_companion: Generated<number | null>;
-  transaction_reason_id: Generated<number | null>;
-  transaction_type_id: Generated<number | null>;
+  status: number | null;
+  stock_id: number | null;
+  transaction_companion: number | null;
+  transaction_reason_id: number | null;
+  transaction_type_id: number | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  uuid: Generated<string | null>;
+  updated_by: number | null;
+  uuid: string | null;
 }
 
 export interface WsTransactionsReturnHistories {
   consumption_transaction_id: number;
   created_at: Generated<Date>;
-  deleted_at: Generated<Date | null>;
+  deleted_at: Date | null;
   id: Generated<number>;
   qty_in_vial: Generated<number | null>;
   return_qty: number;
@@ -4744,110 +4447,110 @@ export interface WsTransactionsReturnHistories {
 }
 
 export interface WsTransactionTypes {
-  change_type: Generated<string | null>;
+  change_type: string | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  enable: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
+  enable: number | null;
   id: Generated<number>;
-  sequence: Generated<number | null>;
-  title: Generated<string | null>;
-  title_en: Generated<string | null>;
+  sequence: number | null;
+  title: string | null;
+  title_en: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
 }
 
 export interface WsUsers {
-  address: Generated<string | null>;
-  application_version: Generated<string | null>;
-  change_password: Generated<number | null>;
+  address: string | null;
+  application_version: string | null;
+  change_password: number | null;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  date_of_birth: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
-  email: Generated<string | null>;
+  created_by: number | null;
+  date_of_birth: Date | null;
+  deleted_by: number | null;
+  email: string | null;
   entity_id: Generated<number>;
-  fcm_token: Generated<string | null>;
-  firstname: Generated<string | null>;
-  gender: Generated<number | null>;
+  fcm_token: string | null;
+  firstname: string | null;
+  gender: number | null;
   global_id: Generated<number>;
   id: Generated<number>;
-  imei_number: Generated<string | null>;
-  iota_app_gui_theme: Generated<string | null>;
-  keycloak_uuid: Generated<string | null>;
-  last_device: Generated<number | null>;
+  imei_number: string | null;
+  iota_app_gui_theme: string | null;
+  keycloak_uuid: string | null;
+  last_device: number | null;
   last_login: Generated<Date>;
-  last_mobile_access: Generated<Date | null>;
-  lastname: Generated<string | null>;
+  last_mobile_access: Date | null;
+  lastname: string | null;
   manufacture_id: Generated<number | null>;
-  mobile_phone: Generated<string | null>;
-  mobile_phone_2: Generated<string | null>;
-  mobile_phone_brand: Generated<string | null>;
-  mobile_phone_model: Generated<string | null>;
-  permission: Generated<string | null>;
+  mobile_phone: string | null;
+  mobile_phone_2: string | null;
+  mobile_phone_brand: string | null;
+  mobile_phone_model: string | null;
+  permission: string | null;
   program_id: number;
-  role: Generated<number | null>;
-  sim_id: Generated<string | null>;
-  sim_provider: Generated<string | null>;
+  role: number | null;
+  sim_id: string | null;
+  sim_provider: string | null;
   status: Generated<number | null>;
-  timezone_id: Generated<number | null>;
-  token_login: Generated<string | null>;
+  timezone_id: number | null;
+  token_login: string | null;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  user_uuid: Generated<string | null>;
-  username: Generated<string | null>;
+  updated_by: number | null;
+  user_uuid: string | null;
+  username: string | null;
   view_only: Generated<number>;
-  village_id: Generated<string | null>;
+  village_id: string | null;
 }
 
 export interface WsVaccineRules {
-  before_sequence: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
+  before_sequence: number | null;
+  deleted_at: Date | null;
   id: Generated<number>;
-  next_sequence: Generated<number | null>;
-  other_sequences: Generated<string | null>;
-  prerequisite_age: Generated<number | null>;
-  prerequisite_interval: Generated<number | null>;
-  prerequisite_qty: Generated<number | null>;
-  previous_sequence: Generated<number | null>;
+  next_sequence: number | null;
+  other_sequences: string | null;
+  prerequisite_age: number | null;
+  prerequisite_interval: number | null;
+  prerequisite_qty: number | null;
+  previous_sequence: number | null;
   protocol_id: number;
 }
 
 export interface WsVaccineSequences {
-  active_duration: Generated<number | null>;
+  active_duration: number | null;
   created_at: Generated<Date>;
-  day_end: Generated<number | null>;
-  day_start: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  end_notification: Generated<number | null>;
+  day_end: number | null;
+  day_start: number | null;
+  deleted_at: Date | null;
+  end_notification: number | null;
   id: Generated<number>;
-  ideal_age: Generated<number | null>;
+  ideal_age: number | null;
   is_start_sequence: Generated<number | null>;
-  max: Generated<number | null>;
-  max_age: Generated<number | null>;
-  method_id: Generated<number | null>;
-  min: Generated<number | null>;
-  next_duration: Generated<number | null>;
+  max: number | null;
+  max_age: number | null;
+  method_id: number | null;
+  min: number | null;
+  next_duration: number | null;
   protocol_id: number;
-  restrict_duration: Generated<number | null>;
-  sort: Generated<number | null>;
-  start_notification: Generated<number | null>;
+  restrict_duration: number | null;
+  sort: number | null;
+  start_notification: number | null;
   title: string;
-  type_id: Generated<number | null>;
+  type_id: number | null;
   updated_at: Generated<Date>;
 }
 
 export interface WsVaccineUtilizationRate {
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   id: Generated<number>;
   material_need_id: number;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
-  vaccine_utilization_rate: Generated<number | null>;
+  updated_by: number | null;
+  vaccine_utilization_rate: number | null;
 }
 
 export interface WsVillageEstimationDetails {
@@ -4859,21 +4562,21 @@ export interface WsVillageEstimationDetails {
   available_outreach_service: Generated<number | null>;
   available_worker: Generated<number | null>;
   created_at: Generated<Date>;
-  created_by: Generated<number | null>;
-  deleted_at: Generated<Date | null>;
-  deleted_by: Generated<number | null>;
+  created_by: number | null;
+  deleted_at: Date | null;
+  deleted_by: number | null;
   facility_service_percentage: Generated<Decimal | null>;
   gap_health_worker: Generated<number | null>;
   health_worker_ideal_needs: Generated<number | null>;
   id: Generated<number>;
   microplanning_id: number;
-  notes: Generated<string | null>;
+  notes: string | null;
   outreach_service_percentage: Generated<Decimal | null>;
   required_monthly_facility_service: Generated<number | null>;
   required_monthly_outreach_service: Generated<number | null>;
   status: Generated<number | null>;
   updated_at: Generated<Date>;
-  updated_by: Generated<number | null>;
+  updated_by: number | null;
   village_id: number;
 }
 
@@ -4903,7 +4606,6 @@ export interface DB {
   asset_vendor_workspaces: AssetVendorWorkspaces;
   asset_vendors: AssetVendors;
   asset_working_statuses: AssetWorkingStatuses;
-  bmhp_approval_signatures: BmhpApprovalSignatures;
   bmhp_examination_methods: BmhpExaminationMethods;
   bmhp_examination_types: BmhpExaminationTypes;
   bmhp_examinations: BmhpExaminations;
@@ -4917,13 +4619,10 @@ export interface DB {
   coldstorage_materials: ColdstorageMaterials;
   coldstorage_per_temperature: ColdstoragePerTemperature;
   coldstorages: Coldstorages;
-  connection_test: ConnectionTest;
   contact_persons: ContactPersons;
-  customer_vendors: CustomerVendors;
   dashboard_configs: DashboardConfigs;
   educations: Educations;
   entities: Entities;
-  entity_entity_tags: EntityEntityTags;
   entity_prep_min_max: EntityPrepMinMax;
   entity_tags: EntityTags;
   entity_types: EntityTypes;
@@ -4967,7 +4666,6 @@ export interface DB {
   integration_ws_orders: IntegrationWsOrders;
   last_status: LastStatus;
   locations: Locations;
-  log_entity_material_imports: LogEntityMaterialImports;
   logger_status: LoggerStatus;
   login_attempts: LoginAttempts;
   manufacture_types: ManufactureTypes;
@@ -5017,7 +4715,6 @@ export interface DB {
   user_changelogs: UserChangelogs;
   user_workspaces: UserWorkspaces;
   users: Users;
-  users_backup: UsersBackup;
   vaccine_methods: VaccineMethods;
   vaccine_types: VaccineTypes;
   vector_control: VectorControl;
@@ -5041,9 +4738,7 @@ export interface DB {
   ws_asset_working_statuses: WsAssetWorkingStatuses;
   ws_batches: WsBatches;
   ws_bmhp_approval_logs: WsBmhpApprovalLogs;
-  ws_bmhp_approval_period_province: WsBmhpApprovalPeriodProvince;
   ws_bmhp_approval_periods: WsBmhpApprovalPeriods;
-  ws_bmhp_approval_signature: WsBmhpApprovalSignature;
   ws_bmhp_desk_results: WsBmhpDeskResults;
   ws_bmhp_examination_methods: WsBmhpExaminationMethods;
   ws_bmhp_examination_parameters: WsBmhpExaminationParameters;
@@ -5095,11 +4790,9 @@ export interface DB {
   ws_environmental_parameter_category_details: WsEnvironmentalParameterCategoryDetails;
   ws_environmental_test_field: WsEnvironmentalTestField;
   ws_environmental_tests: WsEnvironmentalTests;
-  ws_environmental_tests_detail: WsEnvironmentalTestsDetail;
   ws_event_report_comments: WsEventReportComments;
   ws_event_report_histories: WsEventReportHistories;
   ws_event_report_items: WsEventReportItems;
-  ws_event_report_lists: WsEventReportLists;
   ws_event_report_reasons: WsEventReportReasons;
   ws_event_report_status: WsEventReportStatus;
   ws_event_reports: WsEventReports;
@@ -5110,10 +4803,6 @@ export interface DB {
   ws_logger_histories: WsLoggerHistories;
   ws_loggers: WsLoggers;
   ws_manufactures: WsManufactures;
-  ws_map_destinations: WsMapDestinations;
-  ws_map_route_stops: WsMapRouteStops;
-  ws_map_routes: WsMapRoutes;
-  ws_map_service_points: WsMapServicePoints;
   ws_material_activities: WsMaterialActivities;
   ws_material_companions: WsMaterialCompanions;
   ws_material_manufactures: WsMaterialManufactures;
@@ -5127,13 +4816,6 @@ export interface DB {
   ws_microplan_absolute_target: WsMicroplanAbsoluteTarget;
   ws_microplan_targets_consumptions: WsMicroplanTargetsConsumptions;
   ws_microplanning: WsMicroplanning;
-  ws_microplanning_activity_plans: WsMicroplanningActivityPlans;
-  ws_microplanning_config: WsMicroplanningConfig;
-  ws_microplanning_patient_targets: WsMicroplanningPatientTargets;
-  ws_microplanning_priority_areas: WsMicroplanningPriorityAreas;
-  ws_microplanning_problem_solutions: WsMicroplanningProblemSolutions;
-  ws_microplanning_schools: WsMicroplanningSchools;
-  ws_microplanning_villages: WsMicroplanningVillages;
   ws_monthly_vaccine_need_details: WsMonthlyVaccineNeedDetails;
   ws_mp_material_substitution: WsMpMaterialSubstitution;
   ws_mp_material_target_config: WsMpMaterialTargetConfig;
@@ -5160,7 +4842,6 @@ export interface DB {
   ws_patient_medical_histories: WsPatientMedicalHistories;
   ws_patient_rabies: WsPatientRabies;
   ws_patients: WsPatients;
-  ws_pep_insertion_logs: WsPepInsertionLogs;
   ws_plan_target_group: WsPlanTargetGroup;
   ws_plan_tasks: WsPlanTasks;
   ws_program_plans: WsProgramPlans;

@@ -1,51 +1,27 @@
 import { associate } from "@smile-health/lib/utils.js"
 import { Context } from "hono"
-import { canGetRoles } from "../integration/integration.schema"
-import { GetRolesResponse } from "../integration/wms/wms.schema"
 
 export class RoleRepository {
   async getRoles(c: Context) {
-    const { client } = c.var
-    if (!client || !canGetRoles(client))
-      return await c.var.trx.selectFrom("roles").selectAll().execute()
-
-    const resp = await client.getRoles()
-    const body = resp.response.body as unknown as GetRolesResponse
-    return body.data.data.map((item) => ({
-      id: item.id,
-      name: item.name,
-      type: item.type,
-    }))
+    return await c.var.trx.selectFrom("roles").selectAll().execute()
   }
 
   async findByID(c: Context, roleID: number = 0) {
-    const { client } = c.var
-    if (!client || !canGetRoles(client))
-      return await c.var.trx
-        .selectFrom("roles")
-        .selectAll()
-        .where("id", "=", roleID)
-        .executeTakeFirst()
-
-    return (await this.getRoles(c)).filter((el) => el.id == roleID)[0]
+    return await c.var.trx
+      .selectFrom("roles")
+      .selectAll()
+      .where("id", "=", roleID)
+      .executeTakeFirst()
   }
 
   async findByIDMapped(c: Context, roleIDs: number[]) {
-    const { client } = c.var
-    if (!client || !canGetRoles(client)) {
-      const roles = await c.var.trx
-        .selectFrom("roles")
-        .selectAll()
-        .where("id", "in", roleIDs)
-        .execute()
+    const roles = await c.var.trx
+      .selectFrom("roles")
+      .selectAll()
+      .where("id", "in", roleIDs)
+      .execute()
 
-      return associate(roles, "id")
-    }
-
-    const roles = await this.getRoles(c)
-    const filteredRoles = roles.filter((el) => roleIDs.includes(el.id))
-
-    return associate(filteredRoles, "id")
+    return associate(roles, "id")
   }
 
   async getClientRole(c: Context, roleIds?: number[]) {

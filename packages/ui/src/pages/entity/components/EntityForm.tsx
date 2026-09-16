@@ -48,7 +48,6 @@ const EntityForm: React.FC<Props> = ({ isGlobal }) => {
         <EntityFormProgram
           data={detail}
           programs={detail?.programs.map((x) => x.id) || []}
-          beneficiaries={detail?.beneficiaries?.map((x) => x.id) || []}
         />
 
         <div className="ui-flex ui-justify-end">

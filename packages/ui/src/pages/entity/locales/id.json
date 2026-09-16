@@ -99,8 +99,7 @@
       "description": "Program yang dipilih tidak dapat dibatalkan (tidak dicentang) setelah data disimpan",
       "search": "Cari nama program",
       "selected": "Terpilih",
-      "logistics": "Logistik",
-      "beneficiary": "Penerima Manfaat"
+      "logistics": "Logistik"
     },
     "users": {
       "search": "Nama Penerima"
