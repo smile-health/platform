@@ -33,6 +33,41 @@ export class MasterRepository {
       .execute()
   }
 
+  // For each requested (typically leaf) id, resolves every ancestor along
+  // its materialized "#"-delimited root->self `path` (e.g. entity.repository
+  // .ts's #resolveLocationPaths uses the same column) and returns the union
+  // of {id, name, level} across all requested ids -- everything a frontend
+  // LocationPicker needs to re-seed each cascade level's label after a
+  // full page reload, when it only has raw leaf ids (e.g. from a URL
+  // query param) and no label/level/ancestor data of its own.
+  async getAncestorsByIds(c: Context, locationIDs: number[]) {
+    if (locationIDs.length === 0) return []
+
+    const leaves = await c.var.trx
+      .selectFrom("locations")
+      .select(["id", "path"])
+      .where("id", "in", locationIDs)
+      .execute()
+
+    const ancestorIds = new Set<number>()
+    for (const leaf of leaves) {
+      const chain = (leaf.path ?? String(leaf.id))
+        .split("#")
+        .map(Number)
+        .filter((id) => !isNaN(id))
+      chain.forEach((id) => ancestorIds.add(id))
+      ancestorIds.add(leaf.id)
+    }
+
+    if (ancestorIds.size === 0) return []
+
+    return c.var.trx
+      .selectFrom("locations")
+      .select(["id", "name", "level"])
+      .where("id", "in", [...ancestorIds])
+      .execute()
+  }
+
   // The hierarchy's actual depth, as a live fact rather than a hardcoded
   // constant -- adding a 5th administrative level later is a data change
   // (new rows at level 4), not a code change.

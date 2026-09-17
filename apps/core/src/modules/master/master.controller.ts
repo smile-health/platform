@@ -129,6 +129,21 @@ export class MasterController {
       return c.json(levels, 200)
     })
 
+    // Given a set of (typically leaf) location ids, returns every ancestor
+    // {id, name, level} needed to re-seed a LocationPicker's per-level
+    // dropdown labels -- used when a page reload only has raw ids to work
+    // with (e.g. restored from a URL query param) and no label/level data.
+    router.get("/locations/ancestors", async (c) => {
+      const idsParam = c.req.query("ids") ?? ""
+      const ids = idsParam
+        .split(",")
+        .map((id) => Number(id.trim()))
+        .filter((id) => !isNaN(id))
+
+      const ancestors = await this.module.getLocationAncestors(c, ids)
+      return c.json(ancestors, 200)
+    })
+
     router.get("/roles", async (c) => {
       const list = await this.module.getRoles(c)
       return c.json({ list }, 200)

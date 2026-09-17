@@ -667,24 +667,34 @@ export class EntityRepository extends BaseRepository<"entities"> {
       regency_id,
       sub_district_id,
       village_id,
+      location_id,
       ...rest
     } = data as TEntityDto & {
       province_id?: string | number | null
       regency_id?: string | number | null
       sub_district_id?: string | number | null
       village_id?: string | number | null
+      location_id?: number | null
     }
+
+    // The caller may send the new location_id directly (current frontend
+    // behavior) or one of the legacy flat province/regency/sub_district/
+    // village ids (Excel import, older clients) -- prefer the explicit
+    // location_id and only derive it from the legacy fields as a fallback.
+    const resolvedLocationId =
+      location_id ??
+      this.#deriveLocationId({
+        province_id,
+        regency_id,
+        sub_district_id,
+        village_id,
+      })
 
     const entity = await c.var.trx
       .insertInto("entities")
       .values({
         ...rest,
-        location_id: this.#deriveLocationId({
-          province_id,
-          regency_id,
-          sub_district_id,
-          village_id,
-        }),
+        location_id: resolvedLocationId,
       })
       .executeTakeFirst()
 
@@ -700,18 +710,21 @@ export class EntityRepository extends BaseRepository<"entities"> {
       regency_id,
       sub_district_id,
       village_id,
+      location_id,
       ...rest
     } = data as TEntityDto & {
       province_id?: string | number | null
       regency_id?: string | number | null
       sub_district_id?: string | number | null
       village_id?: string | number | null
+      location_id?: number | null
     }
 
-    // Only touch location_id if the caller actually supplied one of the
-    // legacy flat location fields - a partial update that doesn't mention
-    // location must not null it out.
+    // Only touch location_id if the caller actually supplied it directly or
+    // one of the legacy flat location fields - a partial update that
+    // doesn't mention location must not null it out.
     const touchesLocation =
+      "location_id" in data ||
       "province_id" in data ||
       "regency_id" in data ||
       "sub_district_id" in data ||
@@ -723,12 +736,14 @@ export class EntityRepository extends BaseRepository<"entities"> {
         ...rest,
         ...(touchesLocation
           ? {
-              location_id: this.#deriveLocationId({
-                province_id,
-                regency_id,
-                sub_district_id,
-                village_id,
-              }),
+              location_id:
+                location_id ??
+                this.#deriveLocationId({
+                  province_id,
+                  regency_id,
+                  sub_district_id,
+                  village_id,
+                }),
             }
           : {}),
       })

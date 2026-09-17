@@ -7,7 +7,7 @@ import React, {
 } from 'react'
 import { useRouter } from 'next/router'
 import { parseDate } from '@internationalized/date'
-import { useQueryClient } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { DatePicker, DateRangePicker } from '#components/date-picker'
 import {
   FormControl,
@@ -27,6 +27,7 @@ import { LocationPicker } from '#components/modules/LocationPicker'
 import { Switch } from '#components/switch'
 import { BOOLEAN } from '#constants/common'
 import cx from '#lib/cx'
+import { getLocationAncestors } from '#services/locations'
 import { getReactSelectValue } from '#utils/react-select'
 import dayjs from 'dayjs'
 import {
@@ -401,6 +402,38 @@ const LocationCascadeField = ({
   )
   const cascadeLayout = field.layout ?? 'row'
 
+  // A page reload restores this field's raw value from the URL (a number
+  // or number[]) but not the label/level/ancestor data LocationPicker needs
+  // to show each dropdown as selected -- without it, the underlying filter
+  // still applies (the ids are there) but every dropdown renders empty.
+  //
+  // The restored value doesn't land in the form synchronously on mount: the
+  // parent Filter component syncs the URL's query state into the form via
+  // resetForm() inside a useEffect gated on router.isReady, which only
+  // fires after the first render. A useState lazy initializer here would
+  // capture the still-empty default on that first render and never see the
+  // real value at all. Track it with a ref instead, updated on every
+  // render until it first sees a non-empty value -- from then on it's
+  // locked in (matching the "seed once" intent), regardless of whether that
+  // value showed up on the very first render or a few renders later.
+  const initialIdsRef = useRef<number[]>()
+  const fieldValue = watch(field.name)
+  if (!initialIdsRef.current) {
+    const ids = Array.isArray(fieldValue)
+      ? fieldValue
+      : fieldValue != null
+        ? [fieldValue]
+        : []
+    if (ids.length > 0) initialIdsRef.current = ids
+  }
+  const initialIds = initialIdsRef.current ?? []
+  const { data: defaultLocations } = useQuery({
+    queryKey: ['location-ancestors', field.name, initialIds],
+    queryFn: () => getLocationAncestors(initialIds),
+    enabled: initialIds.length > 0,
+    staleTime: Infinity,
+  })
+
   return (
     // No outer FormLabel here: LocationPicker already renders one label
     // per dropdown (province/regency/...), so a group-level label on top
@@ -425,6 +458,7 @@ const LocationCascadeField = ({
         maxLevel={field.maxLevel}
         isMulti={field.isMulti}
         layout={cascadeLayout}
+        defaultLocations={defaultLocations}
         control={control}
         watch={watch}
         setValue={setValue}
