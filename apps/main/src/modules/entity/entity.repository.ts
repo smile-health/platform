@@ -125,7 +125,29 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
     return result.includes(".label.") ? key : result
   }
 
-  #generateQueryWhereClause(
+  // Resolves the `path` of each selected location id, so callers can build
+  // an "at or under any of these nodes" predicate against `loc.path`
+  // (see #joinLocationHierarchy). Mirrors apps/core's entity.repository.ts
+  // #resolveLocationPaths -- only meaningful against the MySQL `ws_entities`
+  // path (loc.path is a real column there); the datamart/ClickHouse
+  // raw_ws_entities path joins raw_locations on flat province/regency/
+  // sub_district/village ids instead and has no path column to match
+  // against, so location_ids has no effect there yet.
+  async #resolveLocationPaths(c: Context, locationIds: (string | number)[]) {
+    const ids = locationIds.map(Number).filter((id) => !isNaN(id))
+    if (ids.length === 0) return []
+
+    const rows = await c.var.trx
+      .selectFrom("locations")
+      .select("path")
+      .where("id", "in", ids)
+      .execute()
+
+    return rows.map((r) => r.path).filter((p): p is string => !!p)
+  }
+
+  async #generateQueryWhereClause(
+    c: Context,
     query,
     params: GetEntitiesQueries,
     useSlave: boolean
@@ -134,6 +156,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       keyword,
       type_ids,
       id_satu_sehat,
+      location_ids,
       province_ids,
       regency_ids,
       sub_district_ids,
@@ -164,9 +187,30 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       query = query.where("e.is_vendor", "=", is_vendor)
     }
 
-    // Requires the caller to have joined the locations hierarchy
-    // (see #joinLocationHierarchy) so that p/r/sd/v aliases exist.
-    if (village_ids && village_ids.length > 0) {
+    // The frontend's LocationPicker cascade filter sends location_ids (an
+    // "at or under any of these nodes" match against loc.path) rather than
+    // the legacy per-level province_ids/village_ids exact-match params --
+    // prefer it when present. Requires the caller to have joined the
+    // locations hierarchy (see #joinLocationHierarchy) so the `loc`/p/r/sd/v
+    // aliases exist; only wired up for the non-slave (MySQL) path, see
+    // #resolveLocationPaths.
+    if (location_ids && location_ids.length > 0 && !useSlave) {
+      const paths = await this.#resolveLocationPaths(c, location_ids)
+
+      query =
+        paths.length > 0
+          ? query.where((eb) =>
+              eb.or(
+                paths.map(
+                  (path) =>
+                    sql<boolean>`CONCAT(loc.path, '#') LIKE CONCAT(${path}, '#%')`
+                )
+              )
+            )
+          : query.where(sql<boolean>`1 = 0`)
+    } else if (village_ids && village_ids.length > 0) {
+      // Requires the caller to have joined the locations hierarchy
+      // (see #joinLocationHierarchy) so that p/r/sd/v aliases exist.
       query = query.where("v.id", "in", village_ids)
     } else if (sub_district_ids && sub_district_ids.length > 0) {
       query = query.where("sd.id", "in", sub_district_ids)
@@ -348,7 +392,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       }
     }
 
-    query = this.#generateQueryWhereClause(query, params, useSlave)
+    query = await this.#generateQueryWhereClause(c, query, params, useSlave)
     query = query
       .where("e.program_id", "=", params.program_id! ?? 0)
       .where("e.deleted_at", "is", null)
@@ -582,7 +626,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
 
     // Apply where clause filters
     const queryParams = { ...params } as any as GetEntitiesQueries
-    query = this.#generateQueryWhereClause(query, queryParams, useSlave)
+    query = await this.#generateQueryWhereClause(c, query, queryParams, useSlave)
     query = query
       .where("e.program_id", "=", params.program_id ?? 0)
       .where("e.deleted_at", "is", null)
@@ -838,7 +882,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
         .$if(sort_by === "tag", (qb) => qb.orderBy("et.id", sort_type))
     }
 
-    query = this.#generateQueryWhereClause(query, params, false)
+    query = await this.#generateQueryWhereClause(c, query, params, false)
 
     const stream = query
       .where("e.deleted_at", "is", null)

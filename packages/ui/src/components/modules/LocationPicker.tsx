@@ -159,27 +159,50 @@ export function LocationPicker({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [levels.length])
 
-  // Seed each level's dropdown label from the ancestor chain once per
-  // distinct leaf id (e.g. once per entity loaded into an edit form) --
-  // guards against re-seeding on every render, and against clobbering a
-  // level the user has since changed by hand.
-  const seededLeafIdRef = useRef<number | null>(null)
+  // Seed each level's dropdown label from the ancestor chain(s) once per
+  // distinct set of ids (e.g. once per entity loaded into an edit form, or
+  // once per restored filter value) -- guards against re-seeding on every
+  // render, and against clobbering a level the user has since changed by
+  // hand. Grouping by level (rather than assuming one single leaf/chain)
+  // supports both the single-chain case (entity form: exactly one entry
+  // per level) and the multi-branch case (an isMulti filter restored with
+  // several independent picks: a level can end up with more than one
+  // option, e.g. two different provinces each anchoring their own branch).
+  //
+  // maxLevel defaults to 0 until the async getLocationLevels query resolves
+  // (when maxLevelProp isn't explicitly passed, e.g. the entity form and
+  // most filters). If defaultLocations arrives first, seeding used to run
+  // immediately against that temporary maxLevel=0, filter every deeper
+  // level out, and then never retry once the real depth arrived -- only
+  // the first dropdown ever got seeded. Wait for a real depth (explicit
+  // prop, or the fetch settled) before seeding, and re-run if maxLevel
+  // changes afterwards.
+  const seededKeyRef = useRef<string | null>(null)
+  const isMaxLevelResolved = maxLevelProp !== undefined || fetchedLevels != null
   useEffect(() => {
+    if (!isMaxLevelResolved) return
     if (!defaultLocations || defaultLocations.length === 0) return
-    const leaf = defaultLocations.reduce((deepest, loc) =>
-      loc.level > deepest.level ? loc : deepest
-    )
-    if (seededLeafIdRef.current === leaf.id) return
-    seededLeafIdRef.current = leaf.id
+    const key = defaultLocations
+      .map((loc) => loc.id)
+      .toSorted((a, b) => a - b)
+      .join(',')
+    if (seededKeyRef.current === key) return
+    seededKeyRef.current = key
 
+    const optionsByLevel = new Map<number, OptionType[]>()
     defaultLocations
       .filter((loc) => loc.level <= maxLevel)
       .forEach((loc) => {
-        const option: OptionType = { label: loc.name, value: loc.id }
-        setValue(levelFieldName(name, loc.level), isMulti ? [option] : option)
+        const options = optionsByLevel.get(loc.level) ?? []
+        options.push({ label: loc.name, value: loc.id })
+        optionsByLevel.set(loc.level, options)
       })
+
+    optionsByLevel.forEach((options, level) => {
+      setValue(levelFieldName(name, level), isMulti ? options : options[0])
+    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultLocations])
+  }, [defaultLocations, isMaxLevelResolved, maxLevel])
 
   // Terminology per depth ("province"/"regency"/"village" vs. a different
   // deployment's "state"/"county"/"city") comes from the same fetch as
@@ -198,17 +221,33 @@ export function LocationPicker({
   }
 
   // Multi-select mode collapses every level's selection into one flat
-  // `number[]` (union across levels), and reads back the just-changed
-  // level's own new value directly (RHF hasn't committed `fieldOnChange`
-  // to `watch` yet inside the same handler) rather than the `watch()` value.
+  // `number[]`, reading back the just-changed level's own new value
+  // directly (RHF hasn't committed `fieldOnChange` to `watch` yet inside
+  // the same handler) rather than the `watch()` value.
+  //
+  // A level's own ids are dropped whenever the next deeper level has any
+  // selection. The backend matches "at or under any selected node" and
+  // OR's across every id sent -- so an ancestor id contributes nothing once
+  // one of its own descendants is also selected (the descendant's subtree
+  // is already inside the ancestor's), it just silently widens the result
+  // back out to the ancestor's whole subtree. Cascading province -> regency
+  // -> ... -> village would otherwise send every ancestor along with the
+  // village, matching everything in the province instead of just that
+  // village. Keeping only the deepest node per cascaded branch also still
+  // supports genuinely independent picks in unrelated branches (e.g. all of
+  // province A plus one specific village in province B), since neither
+  // branch's deepest node is an ancestor of the other's.
   const resolveMultiValue = (level: number, options: OptionType[] | null) => {
-    return levels.reduce<number[]>((acc, l) => {
-      const levelValue =
-        l === level ? options : watch(levelFieldName(name, l))
-      const ids = Array.isArray(levelValue)
+    const idsByLevel = levels.map((l) => {
+      const levelValue = l === level ? options : watch(levelFieldName(name, l))
+      return Array.isArray(levelValue)
         ? levelValue.map((opt) => opt?.value).filter((v) => v != null)
         : []
-      return acc.concat(ids)
+    })
+
+    return idsByLevel.reduce<number[]>((acc, ids, l) => {
+      const deeperHasSelection = (idsByLevel[l + 1]?.length ?? 0) > 0
+      return deeperHasSelection ? acc : acc.concat(ids)
     }, [])
   }
 

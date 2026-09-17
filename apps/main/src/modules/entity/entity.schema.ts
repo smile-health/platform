@@ -76,6 +76,20 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
         .map((item) => Number(item))
     )
     .optional(),
+  location_ids: z
+    .string()
+    .refine(
+      (val) =>
+        val
+          .split(",")
+          .filter((item) => item !== "")
+          .every((num) => !isNaN(Number(num))),
+      {
+        message: "INVALID_LOCATION_ID_PARAM",
+      }
+    )
+    .transform((val) => val.split(",").filter((item) => item !== ""))
+    .optional(),
   province_ids: z
     .string()
     .refine(

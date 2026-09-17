@@ -28,6 +28,10 @@ export class MasterModule {
     return await this.roleRepo.getRoles(c)
   }
 
+  async getLocationAncestors(c: Context, ids: number[]) {
+    return await this.repository.getAncestorsByIds(c, ids)
+  }
+
   // Resolves each level's label/placeholder server-side via c.var.t (same
   // resolver every other translated field in this API already uses), so
   // the frontend never needs its own locale lookup for these strings --

@@ -138,7 +138,7 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
         ...(entity_tag_ids && {
           entity_tag_ids: getReactSelectValue(entity_tag_ids),
         }),
-        ...(location_ids?.length && { location_ids }),
+        ...(location_ids?.length && { location_ids: location_ids.join(',') }),
         ...(Array.isArray(program_ids) && program_ids.length && {
           program_ids: getReactSelectValue(program_ids),
         }),
@@ -191,7 +191,7 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
         ...(entity_tag_ids && {
           entity_tag_ids: getReactSelectValue(entity_tag_ids),
         }),
-        ...(location_ids?.length && { location_ids }),
+        ...(location_ids?.length && { location_ids: location_ids.join(',') }),
         ...(Array.isArray(program_ids) && program_ids.length && {
           program_ids: getReactSelectValue(program_ids),
         }),

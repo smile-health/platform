@@ -118,6 +118,7 @@ export const EntityDto = z.object({
   regency_id: z.string().nullish(),
   sub_district_id: z.string().nullish(),
   village_id: z.string().nullish(),
+  location_id: z.number().nullish(),
   postal_code: z.string().nullish(),
   lat: z.string().nullish(),
   lng: z.string().nullish(),
@@ -258,6 +259,7 @@ export const CreateEntityRequest = EntityDto.pick({
   regency_id: true,
   sub_district_id: true,
   village_id: true,
+  location_id: true,
   postal_code: true,
   lat: true,
   lng: true,
@@ -309,6 +311,7 @@ export type TCreateEntityRequest = {
   regency_id?: string | null
   sub_district_id?: string | null
   village_id?: string | null
+  location_id?: number | null
   postal_code?: string
   lat?: string
   lng?: string

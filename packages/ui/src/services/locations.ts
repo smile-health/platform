@@ -49,6 +49,27 @@ export async function getLocationLevels(): Promise<LocationLevel[]> {
   return response.data
 }
 
+export type LocationAncestorRecord = { id: number; name: string; level: number }
+
+// Given a set of (typically leaf) location ids, returns every ancestor
+// {id, name, level} needed to re-seed a LocationPicker's per-level dropdown
+// labels -- used to restore a cascade's display after a full page reload,
+// when only raw ids are available (e.g. from a URL query param) with no
+// label/level/ancestor data of their own. Same "plain array, no
+// handleAxiosResponse" shape as getLocationLevels above.
+export async function getLocationAncestors(
+  ids: number[]
+): Promise<LocationAncestorRecord[]> {
+  if (ids.length === 0) return []
+
+  const response = await axios.get<LocationAncestorRecord[]>(
+    '/core/master/locations/ancestors',
+    { params: { ids: ids.join(',') } }
+  )
+
+  return response.data
+}
+
 export async function loadLocations(
   keyword: string,
   _: unknown,
