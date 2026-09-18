@@ -72,7 +72,7 @@ const GlobalAssetManagementsLayout: React.FC<TProps> = ({
           ? ['monitoring-device-inventory']
           : []),
       ],
-      featureName: 'global-asset-management-menu' as FeatureName,
+      featureName: 'global-asset-managements-menu' as FeatureName,
     },
   ]
 

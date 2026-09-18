@@ -224,7 +224,12 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       query = query.where("e.status", "=", Number(status))
     }
 
-    return query
+    // Wrapped in an object because Kysely's SelectQueryBuilder overrides
+    // `.then` to throw (guarding against `await someQuery` instead of
+    // `.execute()`). Returning the builder directly from this async method
+    // would make JS's promise machinery call that `.then` while unwrapping
+    // the return value, tripping the same guard.
+    return { query }
   }
 
   async getListEntity(c: Context, params: GetEntitiesQueries) {
@@ -392,7 +397,12 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
       }
     }
 
-    query = await this.#generateQueryWhereClause(c, query, params, useSlave)
+    ;({ query } = await this.#generateQueryWhereClause(
+      c,
+      query,
+      params,
+      useSlave
+    ))
     query = query
       .where("e.program_id", "=", params.program_id! ?? 0)
       .where("e.deleted_at", "is", null)
@@ -626,7 +636,12 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
 
     // Apply where clause filters
     const queryParams = { ...params } as any as GetEntitiesQueries
-    query = await this.#generateQueryWhereClause(c, query, queryParams, useSlave)
+    ;({ query } = await this.#generateQueryWhereClause(
+      c,
+      query,
+      queryParams,
+      useSlave
+    ))
     query = query
       .where("e.program_id", "=", params.program_id ?? 0)
       .where("e.deleted_at", "is", null)
@@ -882,7 +897,7 @@ export class EntityRepository extends BaseRepository<"ws_entities"> {
         .$if(sort_by === "tag", (qb) => qb.orderBy("et.id", sort_type))
     }
 
-    query = await this.#generateQueryWhereClause(c, query, params, false)
+    ;({ query } = await this.#generateQueryWhereClause(c, query, params, false))
 
     const stream = query
       .where("e.deleted_at", "is", null)

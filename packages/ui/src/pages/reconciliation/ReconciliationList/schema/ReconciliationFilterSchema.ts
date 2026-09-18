@@ -104,10 +104,12 @@ export const reconciliationFilterSchema = ({
           value: item?.id,
         }))
       },
-      defaultValue: {
-        value: KFA_LEVEL.KFA_92.id,
-        label: KFA_LEVEL.KFA_92.label,
-      },
+      defaultValue: program?.config?.material?.is_hierarchy_enabled
+        ? {
+            value: KFA_LEVEL.KFA_92.id,
+            label: KFA_LEVEL.KFA_92.label,
+          }
+        : null,
     },
     {
       id: 'reconciliation__list__material_id',
@@ -126,7 +128,9 @@ export const reconciliationFilterSchema = ({
         is_vaccine: getReactSelectValue('material_type_id')?.toString() ?? null,
         material_activities:
           getReactSelectValue('activity_id')?.toString() ?? null,
-        material_level_id: getReactSelectValue('material_level_id') ?? null,
+        material_level_id: program?.config?.material?.is_hierarchy_enabled
+          ? (getReactSelectValue('material_level_id') ?? null)
+          : null,
       }),
     },
     {

@@ -117,10 +117,12 @@ export const stockOpnameFilterSchema = ({
           value: item?.id,
         }))
       },
-      defaultValue: {
-        value: MATERIAL_LEVEL.TEMPLATE,
-        label: t('stockOpname:others.active_substance_and_strength'),
-      },
+      defaultValue: program?.config?.material?.is_hierarchy_enabled
+        ? {
+            value: MATERIAL_LEVEL.TEMPLATE,
+            label: t('stockOpname:others.active_substance_and_strength'),
+          }
+        : null,
     },
     {
       id: 'stock__opname__list__material',
