@@ -77,7 +77,7 @@ const commonApp = new CommonController(
     authRepo,
     entityModule,
     new EntityTagModule(entityTagRepo),
-    new MasterModule(masterRepo, roleRepo),
+    new MasterModule(masterRepo, roleRepo, integrationRepo),
     new CommonRepository()  
   ),
   requestMiddleware,

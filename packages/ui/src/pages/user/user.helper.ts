@@ -164,12 +164,17 @@ export function handleDefaultValue(defaultValue?: TUserDetail) {
   const regency = defaultValue?.location?.regency
   const subdistrict = defaultValue?.location?.subdistrict
   const village = defaultValue?.location?.village
-  const roleId = defaultValue?.external_properties?.role?.id || defaultValue?.role
-  const roleLabel =
-    defaultValue?.external_properties?.role?.name || defaultValue?.role_label
+  const roleId = defaultValue?.role
+  const roleLabel = defaultValue?.role_label
+  const wmsRoleId = defaultValue?.external_properties?.role?.id
+  const wmsRoleLabel = defaultValue?.external_properties?.role?.name
   return {
     username: defaultValue?.username ?? '',
     role: roleId && roleLabel ? { label: roleLabel, value: roleId } : null,
+    wms_role:
+      wmsRoleId && wmsRoleLabel
+        ? { label: wmsRoleLabel, value: wmsRoleId }
+        : null,
     firstname: defaultValue?.firstname ?? '',
     lastname: defaultValue?.lastname ?? '',
     email: defaultValue?.email ?? '',

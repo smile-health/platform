@@ -22,6 +22,7 @@ export type CreateUserBody = {
   village_id?: string
   program_ids: number[]
   integration_client_id?: number
+  wms_role?: number
 }
 
 export async function detailUser(

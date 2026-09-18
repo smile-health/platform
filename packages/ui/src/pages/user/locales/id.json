@@ -50,6 +50,13 @@
         "required": "Role wajib diisi"
       }
     },
+    "wms_role": {
+      "label": "Role WMS",
+      "placeholder": "Pilih role WMS",
+      "validation": {
+        "required": "Role WMS wajib diisi"
+      }
+    },
     "primary_vendor": {
       "label": "Penyedia Utama",
       "placeholder": "Pilih penyedia utama"

@@ -50,6 +50,13 @@
         "required": "Role is required"
       }
     },
+    "wms_role": {
+      "label": "WMS Role",
+      "placeholder": "Select WMS role",
+      "validation": {
+        "required": "WMS role is required"
+      }
+    },
     "primary_vendor": {
       "label": "Primary Vendor",
       "placeholder": "Select primary vendor"

@@ -149,6 +149,11 @@ export class MasterController {
       return c.json({ list }, 200)
     })
 
+    router.get("/wms-roles", async (c) => {
+      const list = await this.module.getWmsRoles(c)
+      return c.json({ list }, 200)
+    })
+
     return router
   }
 }

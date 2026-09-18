@@ -81,6 +81,7 @@ export default function useUserCreate<T extends FieldValues>({
     const newValues = {
       ...formData,
       role: formData.role.value,
+      wms_role: formData.wms_role?.value,
       entity_id: formData.entity?.value,
       gender: Number(formData?.gender),
       view_only: Number(formData?.view_only),

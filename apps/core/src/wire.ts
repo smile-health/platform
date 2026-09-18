@@ -465,7 +465,7 @@ const usersModule = new UserModule(
   userPublisher
 )
 
-const masterModule = new MasterModule(masterRepo, roleRepo)
+const masterModule = new MasterModule(masterRepo, roleRepo, integrationRepo)
 const masterController = new MasterController(masterModule)
 
 const usersMiddleware = new UsersMiddleware(

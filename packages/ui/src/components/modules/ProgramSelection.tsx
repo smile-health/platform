@@ -46,13 +46,18 @@ export default function ProgramSelection({
 }: Readonly<ProgramSelectionProps>) {
   const { t } = useTranslation(['common'])
 
+  const params = useMemo(
+    () => ({
+      ...(isMaterialHierarchyEnabled !== undefined && {
+        is_hierarchy_enabled: Number(isMaterialHierarchyEnabled),
+      }),
+    }),
+    [isMaterialHierarchyEnabled]
+  )
+
   const { data, loading, hasMore, loadMore, keyword, setKeyword } =
     useProgramInfiniteList({
-      params: {
-        ...(isMaterialHierarchyEnabled !== undefined && {
-          is_hierarchy_enabled: Number(isMaterialHierarchyEnabled),
-        }),
-      },
+      params,
       isEnabled: isEnabledApi,
     })
 

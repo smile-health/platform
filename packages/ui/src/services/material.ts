@@ -424,7 +424,7 @@ export async function exportMaterial(
   isGlobal?: boolean
 ) {
   const response = await axios.get(
-    `${isGlobal ? 'core' : 'main'}/materials/xls`,
+    `/${isGlobal ? 'core' : 'main'}/materials/xls`,
     {
       responseType: 'blob',
       params,
@@ -444,7 +444,7 @@ export async function downloadTemplateMaterial(
   isGlobal?: boolean
 ) {
   const response = await axios.get(
-    `${isGlobal ? 'core' : 'main'}/materials/xls-template`,
+    `/${isGlobal ? 'core' : 'main'}/materials/xls-template`,
     {
       responseType: 'blob',
       params,
@@ -464,7 +464,7 @@ export async function importMaterial(data: FormData, isGlobal?: boolean) {
       : ''
   const file = data.get('file')
 
-  const baseUrl = isGlobal ? 'core' : 'main'
+  const baseUrl = isGlobal ? '/core' : '/main'
   const queryString = isGlobal ? '' : '?material_level_id=' + materialLevelId
   const url = baseUrl + '/materials/xls' + queryString
 
@@ -488,7 +488,7 @@ export async function createMaterial(
   isGlobal?: boolean
 ) {
   const response = await axios.post(
-    `${isGlobal ? 'core' : 'main'}/materials`,
+    `/${isGlobal ? 'core' : 'main'}/materials`,
     data
   )
 
@@ -501,7 +501,7 @@ export async function updateMaterial(
   isGlobal?: boolean
 ) {
   const response = await axios.put(
-    `${isGlobal ? 'core' : 'main'}/materials/${id}`,
+    `/${isGlobal ? 'core' : 'main'}/materials/${id}`,
     data
   )
 
