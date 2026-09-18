@@ -98,10 +98,12 @@ export const transactionFilterSchema = ({
           value: item?.id,
         }))
       },
-      defaultValue: {
-        value: MATERIAL_LEVEL.TEMPLATE,
-        label: t('transactionList:others.active_substance_and_strength'),
-      },
+      defaultValue: program?.config?.material?.is_hierarchy_enabled
+        ? {
+            value: MATERIAL_LEVEL.TEMPLATE,
+            label: t('transactionList:others.active_substance_and_strength'),
+          }
+        : null,
     },
     {
       id: 'transaction__list__material_id',
