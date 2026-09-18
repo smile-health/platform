@@ -94,7 +94,7 @@ export class IntegrationRepository {
           internal_id: id,
           client_id: clientId,
           type,
-          metadata: metadata ?? {},
+          metadata: metadata ?? null,
         }))
       )
       .onDuplicateKeyUpdate({

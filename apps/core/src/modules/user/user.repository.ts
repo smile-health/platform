@@ -180,9 +180,7 @@ export class UserRepository extends BaseRepository<"users"> {
 
     return {
       ...(result ?? {}),
-      external_properties: result?.external_properties
-        ? JSON.parse(result.external_properties)
-        : undefined,
+      external_properties: result?.external_properties || undefined,
       gender_label,
       external_roles: result?.external_roles ?? [], // Provide default empty array if missing
     } as UserResponse

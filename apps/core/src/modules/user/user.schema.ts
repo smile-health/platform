@@ -159,6 +159,7 @@ export const general = z.object({
   updated_at: z.date().optional(),
   integration_client_id: z.number().optional(),
   external_properties: z.record(z.any()).optional(),
+  wms_role: z.number().optional(),
 })
 
 export const profile = z.object({

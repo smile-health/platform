@@ -107,6 +107,15 @@ export async function listUserRoles(
   return handleAxiosResponse<ListUserRolesResponse>(response)
 }
 
+export async function listWmsRoles(
+  params: ListUserRolesParams
+): Promise<ListUserRolesResponse> {
+  const response = await axios.get('/core/master/wms-roles', {
+    params,
+  })
+  return handleAxiosResponse<ListUserRolesResponse>(response)
+}
+
 export async function loadUserRoles(
   keyword: string,
   _: unknown,
@@ -114,6 +123,43 @@ export async function loadUserRoles(
 ) {
   const result = await listUserRoles({
     paginate: 25,
+    keyword,
+    ...additional,
+  })
+
+  if (result?.statusCode === 204) {
+    return {
+      options: [],
+      hasMore: false,
+      additional: {
+        ...additional,
+        page: additional?.page,
+      },
+    }
+  }
+
+  const options = result?.list?.map((item) => ({
+    label: item?.name,
+    value: Number(item.id),
+  }))
+
+  return {
+    options,
+    hasMore: false,
+    additional: {
+      ...additional,
+      page: additional.page + 1,
+    },
+  }
+}
+
+export async function loadWmsRoles(
+  keyword: string,
+  _: unknown,
+  additional: Omit<ListUserRolesParams, 'paginate'>
+) {
+  const result = await listWmsRoles({
+    paginate: 100,
     keyword,
     ...additional,
   })

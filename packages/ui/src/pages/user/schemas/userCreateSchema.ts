@@ -65,6 +65,32 @@ export default function userCreateSchema(
       role: yup.object({
         value: yup.number().required(t('user:form.role.validation.required')),
       }),
+      wms_role: yup
+        .object({
+          value: yup.number(),
+          label: yup.string(),
+        })
+        .nullable()
+        .test(
+          'required',
+          t('user:form.wms_role.validation.required'),
+          (value, context) => {
+            const entity = context.parent.entity as
+              | { programs?: { app_type?: string; id?: number }[] }
+              | undefined
+            const wmsProgramId = entity?.programs?.find(
+              (p) => p.app_type === 'waste_management'
+            )?.id
+            const programIds = context.parent.program_ids as
+              | number[]
+              | undefined
+            const isWmsChecked = Boolean(
+              wmsProgramId && programIds?.includes(wmsProgramId)
+            )
+            if (isWmsChecked) return !!value?.value
+            return true
+          }
+        ),
       firstname: yup
         .string()
         .max(255, t('common:validation.char.max', { char: 255 }))

@@ -7,10 +7,9 @@ import {
 import { Input, InputPassword } from '#components/input'
 import { Radio } from '#components/radio'
 import { OptionType, ReactSelectAsync } from '#components/react-select'
-import { ProgramIntegrationClient } from '#constants/program'
 import { USER_ROLE } from '#constants/roles'
 import { loadManufacturers } from '#services/manufacturer'
-import { loadUserRoles } from '#services/user'
+import { loadUserRoles, loadWmsRoles } from '#services/user'
 import { getUserStorage } from '#utils/storage/user'
 import { isUserWMS } from '#utils/user'
 import { useEffect, useRef } from 'react'
@@ -28,6 +27,7 @@ export type UserFormMainInfoValues = Pick<
   manufacturer: OptionType | null
   entity: UseFormProgramValues['entity']
   role: OptionType<number>
+  wms_role: OptionType<number> | null
   gender: string
   view_only: boolean
   password_confirmation?: string
@@ -49,7 +49,7 @@ export default function UserFormMainInfo({
     register,
     watch,
     setValue,
-    formState: { errors, defaultValues },
+    formState: { errors },
   } = useFormContext<UserFormMainInfoValues>()
 
   const { role, entity } = watch()
@@ -61,13 +61,12 @@ export default function UserFormMainInfo({
   const isWmsChecked = Boolean(
     wmsProgramId && programIds?.includes(wmsProgramId)
   )
-  const isEntityIntegratedWithWMS = Boolean(wmsProgramId)
   const isWmsCheckedRef = useRef(isWmsChecked)
 
   useEffect(() => {
     if (isWmsCheckedRef.current !== isWmsChecked) {
       isWmsCheckedRef.current = isWmsChecked
-      setValue('role', null as any)
+      if (!isWmsChecked) setValue('wms_role', null)
     }
   }, [isWmsChecked, setValue])
 
@@ -75,8 +74,6 @@ export default function UserFormMainInfo({
     !isUserWMS(user) &&
     (role?.value === USER_ROLE.MANUFACTURE ||
       role?.value === USER_ROLE.VENDOR_IOT)
-
-  console.log(isEntityIntegratedWithWMS && isWmsChecked ? 'role_wms' : 'role')
 
   return (
     <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6">
@@ -100,7 +97,6 @@ export default function UserFormMainInfo({
         </FormControl>
 
         <Controller
-          key={isEntityIntegratedWithWMS && isWmsChecked ? 'role_wms' : 'role'}
           name="role"
           control={control}
           render={({
@@ -123,10 +119,6 @@ export default function UserFormMainInfo({
                 isSearchable={false}
                 additional={{
                   page: 1,
-                  ...(isWmsChecked && {
-                    integration_client_id:
-                      ProgramIntegrationClient.WasteManagement,
-                  }),
                 }}
               />
 
@@ -150,6 +142,37 @@ export default function UserFormMainInfo({
             </FormControl>
           )}
         />
+
+        {isWmsChecked && (
+          <Controller
+            name="wms_role"
+            control={control}
+            render={({ field, fieldState: { error } }) => (
+              <FormControl className="ui-col-span-2">
+                <FormLabel htmlFor="input-wms-role" required>
+                  {t('form.wms_role.label')}
+                </FormLabel>
+
+                <ReactSelectAsync
+                  {...field}
+                  data-testid="input-wms-role"
+                  placeholder={t('form.wms_role.placeholder')}
+                  loadOptions={loadWmsRoles}
+                  onChange={(option) => field.onChange(option)}
+                  menuPosition="fixed"
+                  isSearchable={false}
+                  additional={{
+                    page: 1,
+                  }}
+                />
+
+                {error?.message && (
+                  <FormErrorMessage>{error?.message}</FormErrorMessage>
+                )}
+              </FormControl>
+            )}
+          />
+        )}
 
         <FormControl>
           <FormLabel htmlFor="input-firstname" required>

@@ -27,6 +27,8 @@ import path from "path"
 import { AuthKeycloakService } from "../auth/auth.keycloak.service.js"
 import { EntityRepository } from "../entity/entity.repository.js"
 import { IntegrationRepository } from "../integration/integration.repository.js"
+import { canGetRoles, Client } from "../integration/integration.schema.js"
+import { GetRolesResponse } from "../integration/wms/wms.schema.js"
 import { LocationRepository } from "../location/location.repository.js"
 import { ManufactureRepository } from "../manufacture/manufacture.repository.js"
 import { RoleRepository } from "../role/role.repository.js"
@@ -164,7 +166,7 @@ export class UserModule {
               {
                 keycloak_uuid: authKeycloak.keycloak_uuid,
                 user_uuid: authKeycloak.user_uuid,
-                role: roleMapping[data.role]?.internal_id ?? data.role,
+                role: data.role,
               },
               { id: userExist?.id }
             ),
@@ -192,7 +194,12 @@ export class UserModule {
     const bcryptPassword = await bcrypt.hash(crte.password, 10)
     // integration_client_id is not a users column; kept only to grant the
     // matching Keycloak client role above, not persisted or read back locally
-    const { external_properties, integration_client_id: _unused, ...restCrte } = crte
+    const {
+      external_properties,
+      integration_client_id: _unused,
+      wms_role: _wmsRole,
+      ...restCrte
+    } = crte
     const result = await this.repository.create(c, {
       ...restCrte,
       password: bcryptPassword, // after integration with auth keycloak done, it will be removed
@@ -201,6 +208,7 @@ export class UserModule {
 
     const role = await this.roleRepo.findByID(c, data.role)
     const roleLabel = role?.type ?? role?.name ?? "Super Admin"
+    const wmsRole = await this.#findWmsRole(client, data.wms_role)
     const authKeycloak = await this.authKeycloakService.createUser({
       ...data,
       clients: client
@@ -221,8 +229,11 @@ export class UserModule {
         {
           keycloak_uuid: authKeycloak.keycloak_uuid,
           user_uuid: authKeycloak.user_uuid,
-          role: roleMapping[data.role]?.internal_id ?? data.role,
-          external_properties: JSON.stringify({ role, ...external_properties }),
+          role: data.role,
+          external_properties: JSON.stringify({
+            role: wmsRole,
+            ...external_properties,
+          }),
         },
         { id: userId }
       ),
@@ -296,7 +307,7 @@ export class UserModule {
       entity,
       manufacture,
       location,
-      role_label: user.external_properties?.role?.name ?? user.role_label,
+      role_label: user.role_label,
       external_roles:
         client && clientMappings
           ? clientMappings[client.getKey()]?.mappings?.map((r) => r.name)
@@ -317,6 +328,7 @@ export class UserModule {
       external_roles,
       integration_client_id: _unused,
       external_properties,
+      wms_role,
       ...user
     } = data
     const dataPrevious = await this.#existUser(c, id)
@@ -363,6 +375,7 @@ export class UserModule {
       c,
       entityClient?.getId()
     )
+    const wmsRole = await this.#findWmsRole(entityClient, wms_role)
 
     const updateUserAuthKeycloak = {
       username: user.username,
@@ -431,10 +444,12 @@ export class UserModule {
         c,
         {
           ...user,
-          role: roleMapping[user.role ?? 0]?.internal_id ?? user.role,
           password: hashPassword!,
           keycloak_uuid: userNotFound ? null : dataPrevious.keycloak_uuid, // reset keycloak uuid on user keycloak not found
-          external_properties: JSON.stringify({ role, ...external_properties }),
+          external_properties: JSON.stringify({
+            role: wmsRole,
+            ...external_properties,
+          }),
         },
         { id }
       ),
@@ -643,6 +658,8 @@ export class UserModule {
     const excelTemplate = new UserTemplateXlsx()
     const language = c.var.language
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "user",
@@ -743,6 +760,14 @@ export class UserModule {
       Number(userId),
       workspaceIds ?? []
     )
+  }
+
+  async #findWmsRole(client: Client | undefined, roleId?: number) {
+    if (!roleId || !client || !canGetRoles(client)) return undefined
+
+    const resp = await client.getRoles()
+    const body = resp.response.body as unknown as GetRolesResponse
+    return body.data.data.find((item) => item.id == roleId)
   }
   async #mapList(c: Context, data: UserResponse[]) {
     const userIDs = collect(data, "id")

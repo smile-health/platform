@@ -1,14 +1,19 @@
 import { LOCATION } from "@/common/constants/location.js"
+import { WMS_CLIENT_ID } from "@/common/constants/integration.js"
 import { ValidationError } from "@smile-health/lib/error.js"
 import { Context } from "hono"
+import { canGetRoles } from "../integration/integration.schema.js"
+import { IntegrationRepository } from "../integration/integration.repository.js"
 import { RoleRepository } from "../role/role.repository.js"
+import { GetRolesResponse } from "../integration/wms/wms.schema.js"
 import { MasterRepository } from "./master.repository.js"
 import { TLocationPageable } from "./master.schema.js"
 
 export class MasterModule {
   constructor(
     private readonly repository: MasterRepository,
-    private readonly roleRepo: RoleRepository
+    private readonly roleRepo: RoleRepository,
+    private readonly integrationRepo: IntegrationRepository
   ) {}
 
   async getLocations(c: Context, param: TLocationPageable) {
@@ -45,6 +50,19 @@ export class MasterModule {
       level,
       label: c.var.t(`location.${level}.label`),
       placeholder: c.var.t(`location.${level}.placeholder`),
+    }))
+  }
+
+  async getWmsRoles(c: Context) {
+    const client = await this.integrationRepo.getClientByKey(c, WMS_CLIENT_ID)
+    if (!client || !canGetRoles(client)) return []
+
+    const resp = await client.getRoles()
+    const body = resp.response.body as unknown as GetRolesResponse
+    return body.data.data.map((item) => ({
+      id: item.id,
+      name: item.name,
+      type: item.type,
     }))
   }
 }
