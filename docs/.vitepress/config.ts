@@ -49,11 +49,18 @@ function readTitle(absPath: string, fallback: string): string {
   return fallback
 }
 
+/** Folder and file slugs that are acronyms, so they don't render as "Prd". */
+const ACRONYMS = new Set(['api', 'erd', 'prd', 'rbac', 'sad', 'siha', 'sitb', 'sql', 'wms'])
+
 function titleCase(slug: string): string {
   return slug
     .split(/[-_.]/)
     .filter(Boolean)
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) =>
+      ACRONYMS.has(word.toLowerCase())
+        ? word.toUpperCase()
+        : word.charAt(0).toUpperCase() + word.slice(1),
+    )
     .join(' ')
 }
 
@@ -132,7 +139,10 @@ export default withMermaid({
   // Leave cleanUrls off: VitePress then emits .html links, which Next serves
   // straight out of public/ with no per-route rewrite.
   cleanUrls: false,
-  lastUpdated: true,
+  // Off deliberately: lastUpdated shells out to `git log` per page, and the
+  // builder stage of apps/web/Dockerfile (node:18-alpine3.19) has no git
+  // binary -- turning it on fails the image build with `spawn git ENOENT`.
+  lastUpdated: false,
 
   themeConfig: {
     nav: [
