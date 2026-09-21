@@ -8,6 +8,34 @@ import { ListCustomerVendorActivityDTO } from "../app-mobile-data/app-mobile-dat
 import { GetEntitiesVendorsQueries } from "./entity-vendor.schema.js"
 
 export class EntityVendorRepository {
+  // ws_entities.location_id points at the deepest locations row for an
+  // entity. locations.path is a materialized root-to-self ancestor path
+  // (e.g. "1#23#2345"), so ancestor ids/names are derived from it instead of
+  // the old flat province_id/regency_id/sub_district_id/village_id columns.
+  // Mirrors apps/main's EntityRepository#joinLocationHierarchy.
+  #joinLocationHierarchy(qb: any, entityAlias = "e") {
+    return qb
+      .leftJoin("locations as loc", "loc.id", `${entityAlias}.location_id`)
+      .leftJoin("locations as p", (join) =>
+        join.on(sql`p.id = SUBSTRING_INDEX(loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as r", (join) =>
+        join.on(
+          sql`r.id = CASE WHEN loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as sd", (join) =>
+        join.on(
+          sql`sd.id = CASE WHEN loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as v", (join) =>
+        join.on(
+          sql`v.id = CASE WHEN loc.level >= 3 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(loc.path, '#', 4), '#', -1) ELSE NULL END`
+        )
+      )
+  }
+
   async getListEntityVendor(
     c: Context<DB>,
     id: number,
@@ -46,27 +74,7 @@ export class EntityVendorRepository {
 
     let query = c.var.trx
       .selectFrom("ws_entities as e")
-      .leftJoin("locations as p", (join) =>
-        join.onRef("p.id", "=", "e.province_id").on("p.level", "=", 0)
-      )
-      .leftJoin("locations as r", (join) =>
-        join
-          .onRef("r.id", "=", "e.regency_id")
-          .onRef("r.parent_id", "=", "p.id")
-          .on("r.level", "=", 1)
-      )
-      .leftJoin("locations as sd", (join) =>
-        join
-          .onRef("sd.id", "=", "e.sub_district_id")
-          .onRef("sd.parent_id", "=", "r.id")
-          .on("sd.level", "=", 2)
-      )
-      .leftJoin("locations as v", (join) =>
-        join
-          .onRef("v.id", "=", "e.village_id")
-          .onRef("v.parent_id", "=", "sd.id")
-          .on("v.level", "=", 3)
-      )
+      .$call((qb) => this.#joinLocationHierarchy(qb))
       .leftJoin("ws_entity_activities as ead", (join) =>
         join
           .onRef("ead.entity_id", "=", "e.id")
@@ -83,50 +91,24 @@ export class EntityVendorRepository {
     if (provinceId && !regencyId && !subDistrictId) {
       query = query
         .where("e.country", "=", country ?? "ID")
-        .where((eb) => {
-          return eb.or([
-            eb("e.province_id", "is not", null),
-            eb("e.province_id", "!=", ""),
-          ])
-        })
-
-        .where((eb) => {
-          return eb.or([
-            eb("e.regency_id", "is", null),
-            eb("e.regency_id", "=", ""),
-          ])
-        })
+        .where("p.id", "is not", null)
+        .where("r.id", "is", null)
     }
 
     // For Regency
     if (provinceId && regencyId && !subDistrictId) {
       query = query
-        .where("e.province_id", "=", `${provinceId}`)
-        .where((eb) => {
-          return eb.or([
-            eb("e.regency_id", "is not", null),
-            eb("e.regency_id", "!=", ""),
-          ])
-        })
-        .where((eb) => {
-          return eb.or([
-            eb("e.sub_district_id", "is", null),
-            eb("e.sub_district_id", "=", ""),
-          ])
-        })
+        .where("p.id", "=", `${provinceId}`)
+        .where("r.id", "is not", null)
+        .where("sd.id", "is", null)
     }
 
     // For Sub District
     if (provinceId && regencyId && subDistrictId) {
       query = query
-        .where("e.province_id", "=", `${provinceId}`)
-        .where("e.regency_id", "=", `${regencyId}`)
-        .where((eb) => {
-          return eb.or([
-            eb("e.sub_district_id", "is not", null),
-            eb("e.sub_district_id", "!=", ""),
-          ])
-        })
+        .where("p.id", "=", `${provinceId}`)
+        .where("r.id", "=", `${regencyId}`)
+        .where("sd.id", "is not", null)
     }
 
     if (keyword) {
@@ -288,27 +270,7 @@ export class EntityVendorRepository {
       .innerJoin("ws_entities as e", (join) =>
         join.onRef("e.id", "=", "ven.id").on("e.deleted_at", "is", null)
       )
-      .leftJoin("locations as p", (join) =>
-        join.onRef("p.id", "=", "e.province_id").on("p.level", "=", 0)
-      )
-      .leftJoin("locations as r", (join) =>
-        join
-          .onRef("r.id", "=", "e.regency_id")
-          .onRef("r.parent_id", "=", "p.id")
-          .on("r.level", "=", 1)
-      )
-      .leftJoin("locations as sd", (join) =>
-        join
-          .onRef("sd.id", "=", "e.sub_district_id")
-          .onRef("sd.parent_id", "=", "r.id")
-          .on("sd.level", "=", 2)
-      )
-      .leftJoin("locations as v", (join) =>
-        join
-          .onRef("v.id", "=", "e.village_id")
-          .onRef("v.parent_id", "=", "sd.id")
-          .on("v.level", "=", 3)
-      )
+      .$call((qb) => this.#joinLocationHierarchy(qb))
       .leftJoin("ws_entity_activities as ead", (join) =>
         join
           .onRef("ead.entity_id", "=", "e.id")

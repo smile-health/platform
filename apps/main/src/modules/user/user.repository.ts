@@ -216,11 +216,20 @@ export class UserRepository extends BaseRepository<DB, "ws_users"> {
     if (request.province_id || request.regency_id) {
       query = query
         .innerJoin("ws_entities as e", "e.id", "ws_users.entity_id")
+        .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+        .leftJoin("locations as e_prov", (join) =>
+          join.on(sql`e_prov.id = SUBSTRING_INDEX(e_loc.path, '#', 1)`)
+        )
+        .leftJoin("locations as e_reg", (join) =>
+          join.on(
+            sql`e_reg.id = CASE WHEN e_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 2), '#', -1) ELSE NULL END`
+          )
+        )
         .$if(request.province_id != null, (q) =>
-          q.where("e.province_id", "=", `${request.province_id}`)
+          q.where("e_prov.id", "=", `${request.province_id}`)
         )
         .$if(request.regency_id != null, (q) =>
-          q.where("e.regency_id", "=", `${request.regency_id}`)
+          q.where("e_reg.id", "=", `${request.regency_id}`)
         )
     }
 
@@ -239,12 +248,21 @@ export class UserRepository extends BaseRepository<DB, "ws_users"> {
       .leftJoin("workspaces as w", (join) =>
         join.onRef("w.id", "=", "we.program_id")
       )
+      .leftJoin("locations as we_loc", "we_loc.id", "we.location_id")
+      .leftJoin("locations as we_reg", (join) =>
+        join.on(
+          sql`we_reg.id = CASE WHEN we_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(we_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as we_prov", (join) =>
+        join.on(sql`we_prov.id = SUBSTRING_INDEX(we_loc.path, '#', 1)`)
+      )
       .innerJoin("roles as r", "r.id", "wu.role")
       .selectAll("wu")
       .select([
         "we.name as entity_name",
-        "we.regency_id as entity_regency_id",
-        "we.province_id as entity_province_id",
+        "we_reg.id as entity_regency_id",
+        "we_prov.id as entity_province_id",
         "we.type as entity_type",
         "w.config as program_config",
         "we.entity_tag_id as entity_tag_id",
@@ -285,12 +303,21 @@ export class UserRepository extends BaseRepository<DB, "ws_users"> {
       .leftJoin("ws_entities as we", (join) =>
         join.onRef("we.id", "=", "wu.entity_id")
       )
+      .leftJoin("locations as we_loc", "we_loc.id", "we.location_id")
+      .leftJoin("locations as we_reg", (join) =>
+        join.on(
+          sql`we_reg.id = CASE WHEN we_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(we_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as we_prov", (join) =>
+        join.on(sql`we_prov.id = SUBSTRING_INDEX(we_loc.path, '#', 1)`)
+      )
       .innerJoin("roles as r", "r.id", "wu.role")
       .selectAll("wu")
       .select([
         "we.name as entity_name",
-        "we.regency_id as entity_regency_id",
-        "we.province_id as entity_province_id",
+        "we_reg.id as entity_regency_id",
+        "we_prov.id as entity_province_id",
         "we.entity_tag_id as entity_tag_id",
         sql`1`.as("is_vendor"),
       ])
