@@ -68,6 +68,20 @@ module.exports = {
     // the standalone wms app's own next.config.mjs used.
     ignoreBuildErrors: true,
   },
+  // VitePress builds the docs site into public/docs (see docs/.vitepress/config.ts).
+  // Next serves public/ files by exact path, so /docs/ERD.html already works but a
+  // bare /docs would fall through to the pages/[lang] dynamic route and render the
+  // app shell with lang="docs". beforeFiles runs ahead of both the filesystem and
+  // the dynamic routes, so it has to be beforeFiles -- a plain rewrites array
+  // (afterFiles) runs too late to win against [lang].
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: '/docs', destination: '/docs/index.html' },
+        { source: '/docs/', destination: '/docs/index.html' },
+      ],
+    }
+  },
   async headers() {
     return [
       {

@@ -43,6 +43,9 @@ jobs:
               - 'apps/web/**'
               - 'packages/ui/**'
               - 'turbo.json'
+              # The docs site is built into apps/web/public/docs and ships
+              # inside the web image, so editing a doc has to rebuild web.
+              - 'docs/**'
             lib:
               - 'packages/lib/**'
 
