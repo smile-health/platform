@@ -261,21 +261,25 @@ export class EntityCustomerRepository extends BaseRepository<"ws_customer_vendor
     const offset = (page - 1) * paginate
 
     let query = c.var.trx
-      .selectFrom("ws_entities")
-      .where("deleted_at", "is", null)
-      .where("program_id", "=", programId)
-      .where("id", "not in", mapIDListCustomer)
-      .where("is_vendor", "=", is_consumption === 1 ? 0 : 1)
-      .where("status", "=", 1)
+      .selectFrom("ws_entities as wse")
+      .where("wse.deleted_at", "is", null)
+      .where("wse.program_id", "=", programId)
+      .where("wse.id", "not in", mapIDListCustomer)
+      .where("wse.is_vendor", "=", is_consumption === 1 ? 0 : 1)
+      .where("wse.status", "=", 1)
 
     if (keyword) {
-      query = query.where("name", "like", `%${keyword}%`)
+      query = query.where("wse.name", "like", `%${keyword}%`)
     }
 
-    query = this.#generateQueryWhereClause(query, entityDetail)
+    query = this.#generateQueryWhereClause(query, entityDetail, "wse")
 
     const [list, totalCount] = await Promise.all([
-      query.select(["id", "name"]).limit(paginate).offset(offset).execute(),
+      query
+        .select(["wse.id", "wse.name"])
+        .limit(paginate)
+        .offset(offset)
+        .execute(),
       query.select((eb) => eb.fn.countAll().as("total")).executeTakeFirst(),
     ])
 
