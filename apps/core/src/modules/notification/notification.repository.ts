@@ -258,15 +258,24 @@ export class NotificationRepository {
   ) {
     const query = c.var.trx
       .selectFrom("ws_entities as we")
+      .leftJoin("locations as we_loc", "we_loc.id", sql`we.location_id`)
+      .leftJoin("locations as we_prov", (join) =>
+        join.on(sql`we_prov.id = SUBSTRING_INDEX(we_loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as we_reg", (join) =>
+        join.on(
+          sql`we_reg.id = CASE WHEN we_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(we_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
       .select(["we.id", "we.global_id"])
       .where((eb) => {
         const andConditions = [eb("we.deleted_at", "is", null)]
 
         if (provinceId) {
-          andConditions.push(eb("we.province_id", "=", String(provinceId)))
+          andConditions.push(eb("we_prov.id", "=", String(provinceId)))
         }
         if (regencyId) {
-          andConditions.push(eb("we.regency_id", "=", String(regencyId)))
+          andConditions.push(eb("we_reg.id", "=", String(regencyId)))
         }
 
         return eb.and(andConditions)
@@ -513,12 +522,21 @@ export class NotificationRepository {
 
     return c.var.trx
       .selectFrom("ws_entities as we")
+      .leftJoin("locations as we_loc", "we_loc.id", sql`we.location_id`)
+      .leftJoin("locations as we_prov", (join) =>
+        join.on(sql`we_prov.id = SUBSTRING_INDEX(we_loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as we_reg", (join) =>
+        join.on(
+          sql`we_reg.id = CASE WHEN we_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(we_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
       .select([
         "we.id",
         "we.global_id",
         "we.entity_tag_id",
-        "we.province_id",
-        "we.regency_id",
+        "we_prov.id as province_id",
+        "we_reg.id as regency_id",
       ])
       .where("we.global_id", "=", userEntityId)
       .where("we.deleted_at", "is", null)
