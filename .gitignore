@@ -78,3 +78,4 @@ apps/interop-service/server.pid
 apps/web/public/docs/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+docs/.vitepress/.temp/
