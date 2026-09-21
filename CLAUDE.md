@@ -112,9 +112,11 @@ Running `pnpm build` in any service regenerates the Kysely type definitions from
 
 ## Documentation
 
-ADRs and architecture docs are in `adr/`:
-- `PLATFORM_ARCHITECTURE_OVERVIEW.md` — full system design
-- `databaseModels.md` — schema reference
-- `authentication.md` — auth implementation
-- `cursor-pagination-guide.md` — pagination patterns
-- `lib-documentation.md` — `@smile-health/lib` reference
+All docs live in `docs/`, published as a VitePress site (`pnpm docs:dev`, served at `/docs`):
+- `docs/architecture/platform-overview.md` — full system design
+- `docs/ERD.md` — schema reference, generated from migration files
+- `docs/architecture/auth/` — auth implementation and RBAC
+- `docs/architecture/cursor-pagination.md` — pagination patterns
+- `docs/architecture/shared-packages/lib-documentation.md` — `@smile-health/lib` reference
+- `docs/architecture/interop-layer/` — external system integration
+- `docs/archive/` — superseded docs; describes code no longer in the repo

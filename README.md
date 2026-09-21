@@ -112,12 +112,17 @@ turbo dev
 
 ## Documentation
 
-- [Architecture Overview](adr/PLATFORM_ARCHITECTURE_OVERVIEW.md)
-- [API Documentation](adr/apitest.md)
-- [Database Models](adr/databaseModels.md)
-- [Infrastructure Monitoring](adr/INFRASTRUCTURE_MONITORING.md)
-- [Troubleshooting](adr/TIMEOUT_TROUBLESHOOTING.md)
-- [Service Statuses](adr/SERVICE_STATUSES.md)
+All documentation lives in [`docs/`](docs/) and is published as a searchable site — run
+`pnpm docs:dev` locally, or browse it at `/docs` on the web app.
+
+- [Documentation home](docs/index.md)
+- [Platform architecture overview](docs/architecture/platform-overview.md)
+- [Entity relationship diagram](docs/ERD.md)
+- [Authentication & RBAC](docs/architecture/auth/authentication-rbac.md)
+- [Interop layer](docs/architecture/interop-layer/index.md)
+- [Infrastructure monitoring](docs/architecture/operations/infrastructure-monitoring.md)
+- [Testing guidelines](docs/architecture/testing/warehouse-playwright-api-tests.md)
+- [Archive](docs/archive/index.md) — superseded docs, kept for reference
 
 ### WMS merge notes
 
@@ -167,7 +172,7 @@ This project is governed by the [SMILE Platform Backend Governance](GOVERNANCE.m
 ## Support
 
 - 📧 Email: arya@badr-interactive.com
-- 📖 Documentation: See the [adr/](adr/) directory
+- 📖 Documentation: See the [docs/](docs/) directory
 - 🐛 Issues: [GitHub Issues](https://github.com/smile-platform/backend/issues)
 
 ## Acknowledgments

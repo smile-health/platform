@@ -1,0 +1,18 @@
+import { t as _plugin_vue_export_helper_default } from "./plugin-vue_export-helper.BOaGB7Aw.js";
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+//#region archive/database-models-transaction-sequelize.md
+var __pageData = JSON.parse("{\"title\":\"Database Models Used in Transaction Controller\",\"description\":\"\",\"frontmatter\":{},\"headers\":[],\"relativePath\":\"archive/database-models-transaction-sequelize.md\",\"filePath\":\"archive/database-models-transaction-sequelize.md\",\"lastUpdated\":null}");
+var _sfc_main = { name: "archive/database-models-transaction-sequelize.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+	_push(`<div${ssrRenderAttrs(_attrs)}><h1 id="database-models-used-in-transaction-controller" tabindex="-1">Database Models Used in Transaction Controller <a class="header-anchor" href="#database-models-used-in-transaction-controller" aria-label="Permalink to &quot;Database Models Used in Transaction Controller&quot;">​</a></h1><blockquote><p><strong>ARSIP — jangan dipakai sebagai acuan implementasi.</strong> Model Sequelize dari <code>transactionController.js</code> SMILE 3.0. Sama seperti di atas. Disimpan sebagai rujukan historis saja.</p></blockquote><table tabindex="0"><thead><tr><th>Table Name</th><th>Model Name</th><th>Description</th></tr></thead><tbody><tr><td>stocks</td><td>Stock</td><td>Represents stock batches with fields like year, price, total_price, material_entity_id, batch_id, qty, allocated, and user fields.</td></tr><tr><td>batches</td><td>Batch</td><td>Represents batch information with fields like code, expired_date, production_date, manufacture_id, status.</td></tr><tr><td>transactions</td><td>Transaction</td><td>Represents stock transactions with fields like material_id, customer_id, vendor_id, stock_id, quantities, transaction types, user fields, and others.</td></tr><tr><td>transaction_injections</td><td>TransactionInjection</td><td>Represents injection details related to transactions with fields like transaction_id, dose_1, dose_2, dose_booster, dose_routine.</td></tr><tr><td>material_entity</td><td>MaterialEntity</td><td>Represents the relationship between materials and entities with fields like material_id, entity_id, pricing, stock levels, consumption rates, and user fields.</td></tr><tr><td>transaction_types</td><td>TransactionType</td><td>Represents types of transactions with fields like title, chg_type, and virtual fields indicating restock, add, or remove capabilities.</td></tr><tr><td>users</td><td>User</td><td>Represents users with fields like id, username, firstname, lastname, etc. (used for created_by, updated_by associations)</td></tr><tr><td>entities</td><td>Entity</td><td>Represents entities such as customers or vendors with fields like name, address, code, location info, type, status, and user fields.</td></tr></tbody></table><p>This table summarizes the main database tables and their corresponding Sequelize models used in the transactionController.js.</p></div>`);
+}
+var _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+	const ssrContext = useSSRContext();
+	(ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("archive/database-models-transaction-sequelize.md");
+	return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+var database_models_transaction_sequelize_default = /*#__PURE__*/ _plugin_vue_export_helper_default(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+//#endregion
+export { __pageData, database_models_transaction_sequelize_default as default };

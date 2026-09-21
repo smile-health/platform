@@ -193,7 +193,7 @@ turbo run test --filter=@smile/package-name
 
 ### Architecture Documentation
 
-- Architecture decisions should be recorded in the `adr/` directory
+- Architecture decisions should be recorded in the `docs/architecture/` directory
 - Update relevant documentation when making architectural changes
 
 ## Reporting Issues
@@ -223,7 +223,7 @@ If you discover a security vulnerability, please do not open a public issue. Ins
 
 ## Getting Help
 
-- Check existing documentation in the `adr/` directory
+- Check existing documentation in the `docs/` directory (or run `pnpm docs:dev`)
 - Search existing issues before creating new ones
 - Join our discussions for questions
 - Email: arya@badr-interactive.com for project-specific inquiries

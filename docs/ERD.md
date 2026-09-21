@@ -2,6 +2,15 @@
 
 > Generated from migration files (latest state). Grouped by feature/function/flow.
 
+> **Dua catatan sebelum membaca.**
+>
+> 1. Snapshot visual per-domain (dbdiagram, Sep 2025) ada di [ERD Snapshots](./architecture/erd/index.md).
+> 2. Karena halaman ini di-generate dari file migrasi, ia masih memuat tabel milik fitur yang
+>    kode aplikasinya sudah dicabut — paling menonjol BMHP (`ws_bmhp_*`). Migrasinya sengaja
+>    ditinggal agar riwayat migrasi tidak rusak; lihat
+>    [catatan pembersihan DB](./architecture/database/db-cleanup-indonesia-only-removal.md).
+>    Adanya tabel di sini **bukan** berarti fiturnya masih hidup.
+
 ---
 
 ## 1. Core — User, Auth & Role
