@@ -19,6 +19,6 @@ setup('authenticate as QA manager (non-admin) test account', async ({ page }) =>
   await page.locator('#password').fill(password);
   await page.getByRole('button', { name: /masuk|login/i }).click();
 
-  await expect(page).not.toHaveURL(/\/login/, { timeout: 15000 });
+  await expect(page).not.toHaveURL(/\/login/, { timeout: 30000 });
   await page.context().storageState({ path: authFile });
 });

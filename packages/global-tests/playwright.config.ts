@@ -70,16 +70,17 @@ export default defineConfig({
       name: "smile-health-setup",
       testDir: "./test/ui-smile-health",
       testMatch: /.*\.setup\.ts/,
-      timeout: 35000,
+      timeout: 50000,
       use: {
         ...devices["Desktop Chrome"],
         baseURL: process.env.SMILE_HEALTH_BASE_URL || "https://smile-health.badr.co.id",
+        navigationTimeout: 20000,
       },
     },
     {
       name: "smile-health-ui-authed",
       testDir: "./test/ui-smile-health",
-      testMatch: /\/(authenticated|order-detail-bug)\.spec\.ts$/,
+      testMatch: /\/(authenticated|order-detail-bug|orders-stock-material|navigation)\.spec\.ts$/,
       timeout: 45000,
       expect: { timeout: 20000 },
       use: {
@@ -91,6 +92,25 @@ export default defineConfig({
         storageState: "test/ui-smile-health/.auth/qa-superadmin.json",
       },
       dependencies: ["smile-health-setup"],
+    },
+    {
+      // Runs strictly after smile-health-ui-authed: logging out kills the
+      // account's server-side session, which would break every other test
+      // still relying on the same qa-superadmin.json storageState.
+      name: "smile-health-logout",
+      testDir: "./test/ui-smile-health",
+      testMatch: /\/logout\.spec\.ts$/,
+      timeout: 45000,
+      expect: { timeout: 20000 },
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: process.env.SMILE_HEALTH_BASE_URL || "https://smile-health.badr.co.id",
+        viewport: { width: 1280, height: 720 },
+        actionTimeout: 15000,
+        navigationTimeout: 20000,
+        storageState: "test/ui-smile-health/.auth/qa-superadmin.json",
+      },
+      dependencies: ["smile-health-setup", "smile-health-ui-authed"],
     },
     {
       name: "smile-health-admin-gate",

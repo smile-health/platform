@@ -9,6 +9,7 @@ const BASE_URL = process.env.SMILE_HEALTH_BASE_URL || 'https://smile-health.badr
 // the backend fix ships; a passing run here means it's fixed.
 test('clicking Detail on a real order does not 404 (currently broken)', async ({ page }) => {
   test.fail();
+  test.setTimeout(60000);
 
   await page.goto(
     `${BASE_URL}/id/malaria/v5/order/all?date_range=%7B%22start%22%3A%222026-01-01%22%2C%22end%22%3A%222026-09-22%22%7D`,
@@ -17,6 +18,12 @@ test('clicking Detail on a real order does not 404 (currently broken)', async ({
   await expect(detailLink).toBeVisible({ timeout: 20000 });
   await detailLink.click();
 
-  await expect(page).not.toHaveURL(/\/v5\/404/, { timeout: 15000 });
+  // Must actually navigate to an order detail URL (not just stay put) for
+  // the assertion below to mean anything.
+  await expect(page).toHaveURL(/\/order\/\d+$/, { timeout: 15000 });
+  // The page hangs on a loading overlay for a while before the failed
+  // GET /main/orders/:id settles into the 404 view — give it real time
+  // before asserting the 404 text is (currently) absent.
+  await page.waitForTimeout(20000);
   await expect(page.getByText('Halaman ini tidak ada')).not.toBeVisible();
 });
