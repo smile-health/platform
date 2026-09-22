@@ -9,7 +9,14 @@ export class EntityTemplate extends BaseTemplate {
   }
 
   async loadFile(fileName: string): Promise<void> {
-    const templatePath = path.resolve("public", "templates", "entity", fileName)
+    const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
+      "public",
+      "templates",
+      "entity",
+      fileName
+    )
     return this.loadFromFile(templatePath)
   }
 

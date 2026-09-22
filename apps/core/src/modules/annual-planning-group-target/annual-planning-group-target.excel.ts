@@ -18,6 +18,8 @@ export class AnnualPlanningGroupTargetExcel extends BaseTemplate {
 
   async loadFile(c: Context, fileName: string): Promise<void> {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "annual-planning",
