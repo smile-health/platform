@@ -149,7 +149,7 @@ export default withMermaid({
       { text: 'Home', link: '/' },
       { text: 'ERD', link: '/ERD' },
       { text: 'Architecture', link: '/architecture/platform-overview' },
-      { text: 'Archive', link: '/archive/documentation-audit-2025' },
+      { text: 'Archive', link: '/archive/index' },
     ],
     sidebar: sidebar(),
     search: { provider: 'local' },

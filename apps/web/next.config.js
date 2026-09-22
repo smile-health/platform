@@ -1,4 +1,43 @@
 const { headers } = require('next/headers')
+const fs = require('fs')
+const path = require('path')
+
+// VitePress renders a markdown link to a folder's index.md as a directory URL
+// (href="./interop-layer/"), and its client router puts the same form in the
+// address bar. Next strips the trailing slash and public/ has no file at
+// /docs/architecture/interop-layer, so reloading or sharing such a URL 404s.
+//
+// One parameterised rewrite (`/docs/:path(...)` -> `/docs/:path/index.html`)
+// would cover this in a single rule, and it does work under `next dev` -- but
+// under a production build it 404s: only param-free rewrite destinations reach
+// the public/ file handler. So enumerate the folders instead. This runs at
+// build time, after docs#build has populated public/docs (turbo orders it
+// first), which keeps the list in step with the docs as they grow.
+function docsDirectoryRewrites() {
+  const docsRoot = path.join(__dirname, 'public', 'docs')
+  const rewrites = []
+
+  const walk = (dir) => {
+    let entries
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true })
+    } catch {
+      return // public/docs is absent when the web app is built without the docs package
+    }
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue
+      const sub = path.join(dir, entry.name)
+      if (fs.existsSync(path.join(sub, 'index.html'))) {
+        const url = '/docs/' + path.relative(docsRoot, sub).split(path.sep).join('/')
+        rewrites.push({ source: url, destination: `${url}/index.html` })
+      }
+      walk(sub)
+    }
+  }
+
+  walk(docsRoot)
+  return rewrites
+}
 
 // On staging/prod, every service sits behind one gateway (API_BASE_URL),
 // path-routed -- so API_CORE_URL etc. default to API_BASE_URL + a suffix
@@ -79,6 +118,7 @@ module.exports = {
       beforeFiles: [
         { source: '/docs', destination: '/docs/index.html' },
         { source: '/docs/', destination: '/docs/index.html' },
+        ...docsDirectoryRewrites(),
       ],
     }
   },

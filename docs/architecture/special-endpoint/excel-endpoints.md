@@ -10,7 +10,7 @@ This document lists all endpoints in the platform that support Excel export/impo
 
 ## Quick Reference
 
-📄 **Structured Routes**: See [`excel-routes.yml`](./excel-routes.yml) for machine-readable route definitions
+📄 **Structured Routes**: See [`excel-routes.yml`](https://github.com/smile-health/platform/blob/main/docs/architecture/special-endpoint/excel-routes.yml) for machine-readable route definitions
 
 ## Overview
 

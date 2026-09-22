@@ -25,5 +25,5 @@ features:
     link: /architecture/operations/infrastructure-monitoring
   - title: Archive
     details: Superseded documents kept for reference — SMILE 3.0 integrations, Sequelize-era database models, and past audits.
-    link: /archive/documentation-audit-2025
+    link: /archive/index
 ---
