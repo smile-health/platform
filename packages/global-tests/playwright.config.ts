@@ -79,7 +79,7 @@ export default defineConfig({
     {
       name: "smile-health-ui-authed",
       testDir: "./test/ui-smile-health",
-      testMatch: /\/authenticated\.spec\.ts$/,
+      testMatch: /\/(authenticated|order-detail-bug)\.spec\.ts$/,
       timeout: 45000,
       expect: { timeout: 20000 },
       use: {
