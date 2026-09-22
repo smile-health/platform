@@ -13,6 +13,8 @@ export class AnnualPlanningMaterialSubstitutionExport extends BaseTemplate {
 
   async loadFile(): Promise<void> {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "annual-planning-material-substitution",
