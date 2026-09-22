@@ -53,6 +53,19 @@ export default defineConfig({
       },
       dependencies: ["setup"],
     },
+    /* ────── SMILE Health (smile-health.badr.co.id, dev) — BA-339 ────── */
+    {
+      name: "smile-health-ui",
+      testDir: "./test/ui-smile-health",
+      testMatch: /.*\.spec\.ts/,
+      timeout: 25000,
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: process.env.SMILE_HEALTH_BASE_URL || "https://smile-health.badr.co.id",
+        viewport: { width: 1280, height: 720 },
+        navigationTimeout: 15000,
+      },
+    },
     /* ────── Warehouse API Tests ────── */
     {
       name: "warehouse-auth",
