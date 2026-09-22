@@ -30,7 +30,7 @@ As of January 20, 2026, this project meets all FLOSS Best Practices requirements
   - Usage examples
   - Links to all important documents
 - [x] **CHANGELOG.md** - Version history and changes
-- [x] **API Documentation** - Technical documentation in adr/ directory
+- [x] **API Documentation** - Technical documentation in docs/ directory
 - [x] **Architecture Documentation** - Complete architecture overview
 
 ### ✅ Development Practices

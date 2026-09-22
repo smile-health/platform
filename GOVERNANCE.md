@@ -104,7 +104,7 @@ All participants must follow our [Code of Conduct](CODE_OF_CONDUCT.md). Violatio
 ### Communication Channels
 - Issues and Pull Requests: For technical discussions
 - Email: arya@badr-interactive.com for project inquiries
-- Documentation: In the `adr/` directory for architectural decisions
+- Documentation: In the `docs/architecture/` directory for architectural decisions
 
 ### Meetings
 - Ad-hoc meetings as needed for major decisions

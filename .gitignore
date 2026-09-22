@@ -73,3 +73,9 @@ apps/interop-service/server.pid
 
 # Encore build artifacts
 .encore*
+
+# VitePress docs site (docs/ -> built into the web app's public dir)
+apps/web/public/docs/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+docs/.vitepress/.temp/

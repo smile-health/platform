@@ -3,3 +3,4 @@ packages:
   # - "apps/3.0/*"
   - "apps/openhim-mediators/*"
   - "packages/*"
+  - "docs"
