@@ -57,7 +57,7 @@ export default defineConfig({
     {
       name: "smile-health-ui",
       testDir: "./test/ui-smile-health",
-      testMatch: /.*\.spec\.ts/,
+      testMatch: /\/auth\.spec\.ts$/,
       timeout: 25000,
       use: {
         ...devices["Desktop Chrome"],
@@ -65,6 +65,48 @@ export default defineConfig({
         viewport: { width: 1280, height: 720 },
         navigationTimeout: 15000,
       },
+    },
+    {
+      name: "smile-health-setup",
+      testDir: "./test/ui-smile-health",
+      testMatch: /.*\.setup\.ts/,
+      timeout: 35000,
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: process.env.SMILE_HEALTH_BASE_URL || "https://smile-health.badr.co.id",
+      },
+    },
+    {
+      name: "smile-health-ui-authed",
+      testDir: "./test/ui-smile-health",
+      testMatch: /\/authenticated\.spec\.ts$/,
+      timeout: 45000,
+      expect: { timeout: 20000 },
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: process.env.SMILE_HEALTH_BASE_URL || "https://smile-health.badr.co.id",
+        viewport: { width: 1280, height: 720 },
+        actionTimeout: 15000,
+        navigationTimeout: 20000,
+        storageState: "test/ui-smile-health/.auth/qa-superadmin.json",
+      },
+      dependencies: ["smile-health-setup"],
+    },
+    {
+      name: "smile-health-admin-gate",
+      testDir: "./test/ui-smile-health",
+      testMatch: /\/admin-gate\.spec\.ts$/,
+      timeout: 45000,
+      expect: { timeout: 20000 },
+      use: {
+        ...devices["Desktop Chrome"],
+        baseURL: process.env.SMILE_HEALTH_BASE_URL || "https://smile-health.badr.co.id",
+        viewport: { width: 1280, height: 720 },
+        actionTimeout: 15000,
+        navigationTimeout: 20000,
+        storageState: "test/ui-smile-health/.auth/qa-manager.json",
+      },
+      dependencies: ["smile-health-setup"],
     },
     /* ────── Warehouse API Tests ────── */
     {
