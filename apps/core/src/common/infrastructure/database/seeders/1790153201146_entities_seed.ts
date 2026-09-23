@@ -442441,7 +442441,7 @@ export async function seed(db: Kysely<Database>): Promise<void> {
 			is_puskesmas: sql<number>`VALUES (is_puskesmas)`,
 			is_vendor: sql<number>`VALUES (is_vendor)`,
 			id_satu_sehat: sql<number | null>`VALUES (id_satu_sehat)`,
-			integration_type: sql<string | null>`VALUES (integration_type)`,
+			integration_type: sql<number | null>`VALUES (integration_type)`,
 			external_properties: sql<string | null>`VALUES (external_properties)`,
 			parent_id: sql<number | null>`VALUES (parent_id)`,
 			location_id: sql<number>`VALUES (location_id)`,
