@@ -19,6 +19,22 @@ export async function seed(db: Kysely<Database>): Promise<void> {
       },
     },
     {
+      id: 2,
+      key: "immunization_beneficiaries",
+      name: "IMMUNIZATION",
+      app_type: "logistic",
+      config: {
+        color: "#680771",
+        material: {
+          is_batch_enabled: false,
+          is_hierarchy_enabled: true,
+        },
+        transaction: {
+          is_transfer_stock_restricted: false,
+        },
+      },
+    },
+    {
       id: 3,
       key: "malaria",
       name: "MALARIA",
@@ -82,26 +98,8 @@ export async function seed(db: Kysely<Database>): Promise<void> {
     },
     {
       id: 6,
-      key: "immunization",
-      name: "IMUNISASI",
-      app_type: "logistic",
-      config: {
-        color: "#004990",
-        material: {
-          is_batch_enabled: false,
-          is_hierarchy_enabled: true,
-        },
-        transaction: {
-          is_transfer_stock_restricted: false,
-        },
-        is_immunization: true,
-        is_annual_planning: true,
-      },
-    },
-    {
-      id: 7,
       key: "logistic",
-      name: "OBAT ESSENSIAL",
+      name: "ESSENTIAL MEDICHINES",
       app_type: "logistic",
       config: {
         color: "#680771",
