@@ -17,6 +17,8 @@ export class ReconciliationTemplate extends BaseTemplate {
 
   async loadFile(language: string) {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "reconciliation",

@@ -16,7 +16,6 @@
 > [`apps/interop-service/src/modules/audit/audit-log.repository.ts`](https://github.com/smile-health/platform/blob/main/apps/interop-service/src/modules/audit/audit-log.repository.ts)
 > itu audit pesan interop — hal yang berbeda, bukan implementasi dokumen ini.
 
-
 ## Executive Summary
 
 This document outlines the implementation plan for a comprehensive audit trail system in the SMILE platform backend. The system will track all user actions, maintain detailed logs for compliance and security, and enable detection of unusual activities through a scalable, non-blocking architecture.

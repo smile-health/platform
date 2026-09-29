@@ -27,6 +27,8 @@ export class OrderVARTemplate extends OrderTemplate {
 
   async loadFile(c: Context) {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "order",
@@ -47,7 +49,14 @@ export class OrderSBBKTemplate extends OrderTemplate {
     const filename = c.var.config?.material.is_hierarchy_enabled
       ? `order_detail_sbbk_logistic_${language}.xlsx`
       : `order_detail_sbbk_${language}.xlsx`
-    const templatePath = path.resolve("public", "templates", "order", filename)
+    const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
+      "public",
+      "templates",
+      "order",
+      filename
+    )
 
     await this.loadFromFile(templatePath)
   }
@@ -60,6 +69,8 @@ export class OrderNotaBatchTemplate extends OrderTemplate {
 
   async loadFile(c: Context) {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "order",
@@ -77,6 +88,8 @@ export class OrderNotaConfirmationTemplate extends OrderTemplate {
 
   async loadFile(c: Context) {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "order",
@@ -94,6 +107,8 @@ export class OrderRequestLetterTemplate extends OrderTemplate {
 
   async loadFile(c: Context) {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "order",

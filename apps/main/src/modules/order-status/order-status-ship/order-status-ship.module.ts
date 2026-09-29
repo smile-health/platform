@@ -55,6 +55,9 @@ export class OrderStatusShipModule {
       orderId,
       c.get("programId")
     )
+    if (!order) {
+      throw new ValidationError("Order not found")
+    }
     const orderItemStocks = await this.repository.getOrderItemStockByOrderId(
       c,
       orderId
@@ -85,16 +88,6 @@ export class OrderStatusShipModule {
         today
       ),
     ])
-    if (userCustomers.length === 0 && userVendors.length === 0) {
-      throw new ValidationError("User Entity Customer and Vendor not found")
-    }
-    if (userCustomers.length === 0) {
-      throw new ValidationError("User Entity Customer not found")
-    }
-    if (userVendors.length === 0) {
-      throw new ValidationError("User Entity Vendor not found")
-    }
-
     if (!entityActivity) {
       throw new ValidationError(
         c.var.t("entity.label.activity_implementation_time")

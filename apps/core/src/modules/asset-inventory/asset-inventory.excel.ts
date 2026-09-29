@@ -23,6 +23,8 @@ export class AssetInventoryExport extends BaseTemplate {
 
   async loadFile() {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "asset-inventory",

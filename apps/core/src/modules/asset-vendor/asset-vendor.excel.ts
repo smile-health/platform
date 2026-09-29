@@ -13,6 +13,8 @@ export class AssetVendorTemplate extends BaseTemplate {
 
   async loadFile(fileName: string) {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "asset-vendor",

@@ -46,7 +46,12 @@ export class NotificationRepository {
       .leftJoin("ws_entities as e", (join) =>
         join.onRef("e.id", "=", "ema.entity_id").on("e.deleted_at", "is", null)
       )
-      .leftJoin("locations as loc", "loc.id", "e.regency_id")
+      .leftJoin("locations as entity_loc", "entity_loc.id", "e.location_id")
+      .leftJoin("locations as loc", (join) =>
+        join.on(
+          sql`loc.id = CASE WHEN entity_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(entity_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
       .select([
         "ema.entity_id",
         "ema.material_id",

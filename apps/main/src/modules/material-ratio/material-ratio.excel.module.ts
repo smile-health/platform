@@ -29,6 +29,8 @@ export class MaterialRatioExcelModule {
     const language = c.var.language
     const filename = `material-ratio_${language}.xlsx`
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "material-ratio",

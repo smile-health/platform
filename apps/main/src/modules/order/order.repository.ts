@@ -2424,6 +2424,12 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
           .on("main.deleted_at", "is", null)
           .on("main.id", "=", orderId)
       )
+      .leftJoin("ws_entity_material_activities as wema", (join) =>
+        join
+          .onRef("wema.material_id", "=", "items.material_id")
+          .onRef("wema.activity_id", "=", "main.activity_id")
+          .on("wema.entity_id", "=", entityId)
+      )
       .leftJoin("ws_entities as entity", (join) =>
         join
           .on("entity.id", "=", entityId)
@@ -2492,6 +2498,9 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
         "items.ordered_qty",
         "items.confirmed_qty",
         "items.allocated_qty",
+        "items.recommended_stock",
+        "wema.min",
+        "wema.max",
         "purchase.price",
         "purchase.total_price",
         sql<number>`(
@@ -2535,6 +2544,9 @@ export class OrderRepository extends BaseRepository<"ws_orders"> {
         "items.stock_id",
         "batch.code",
         "batch.expired_date",
+        "items.recommended_stock",
+        "wema.min",
+        "wema.max",
         "purchase.price",
         "purchase.total_price",
         "transaction.transaction_type_id",

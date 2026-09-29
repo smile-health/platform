@@ -12,7 +12,9 @@ export async function up(db: Kysely<Database>): Promise<void> {
     .addColumn("parent_material_id", "bigint")
     .addColumn("activity_id", "bigint", (col) => col.notNull())
     .addColumn("budget_source_id", "bigint")
-    .addColumn("qty", "double precision", (col) => col.notNull())
+    .addColumn("qty", "double precision", (col) =>
+      col.notNull().defaultTo(0)
+    )
     .addColumn("allocated_qty", "double precision", (col) => col.defaultTo(0))
     .addColumn("in_transit_qty", "double precision", (col) => col.defaultTo(0))
     .addColumn("unreceived_qty", "double precision", (col) => col.defaultTo(0))

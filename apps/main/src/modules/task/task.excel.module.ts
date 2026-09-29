@@ -106,7 +106,14 @@ export class TaskExcelModule {
   async getExcelTemplate(c: Context) {
     const language = c.var.language
     const filename = `task_${language}.xlsx`
-    const templatePath = path.resolve("public", "templates", "task", filename)
+    const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
+      "public",
+      "templates",
+      "task",
+      filename
+    )
 
     const SHEET_PROGRAM_PLAN_DATA = c.var.t("common.program_plan")
     const SHEET_MATERIAL_DATA = c.var.t("common.material")

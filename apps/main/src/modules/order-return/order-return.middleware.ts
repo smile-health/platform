@@ -350,11 +350,18 @@ export class OrderReturnMiddleware extends BaseMiddleware {
         material.id,
         c.get("programId")
       )
+      const isHierarchyEnabled =
+        c.var.config?.material.is_hierarchy_enabled ?? false
+      const emaMaterialId =
+        isHierarchyEnabled && stock?.parent_material_id
+          ? stock.parent_material_id
+          : (stock?.material_id ?? 0)
+
       const checkEntityMaterialActivityCustomer =
         await this.repository.getEntityMaterialActivity(
           c,
           data.customer_id,
-          stock?.parent_material_id ?? 0,
+          emaMaterialId,
           stock?.activity_id ?? 0
         )
 

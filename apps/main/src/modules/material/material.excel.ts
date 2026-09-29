@@ -52,6 +52,8 @@ export class MaterialLevel2TemplateV2 extends BaseTemplate {
 
   async loadFile() {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "material",
@@ -68,6 +70,8 @@ export class MaterialLevel3TemplateV2 extends MaterialLevel2TemplateV2 {
 
   async loadFile() {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "material",

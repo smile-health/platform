@@ -33,6 +33,8 @@ export class AnnualCommitmentTemplate extends BaseTemplate {
 
   async loadFile(fileName: string) {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "annual-commitment",

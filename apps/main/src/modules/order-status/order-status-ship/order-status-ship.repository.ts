@@ -22,7 +22,7 @@ export class OrderStatusShipRepository extends BaseRepository<"ws_orders"> {
     return await c.var.trx
       .selectFrom("ws_orders as wso")
       .selectAll()
-      .leftJoin("ws_activities as wsa", (join) =>
+      .innerJoin("ws_activities as wsa", (join) =>
         join
           .onRef("wsa.id", "=", "wso.activity_id")
           .on("wsa.program_id", "=", programId)
@@ -41,7 +41,7 @@ export class OrderStatusShipRepository extends BaseRepository<"ws_orders"> {
     return await c.var.trx
       .selectFrom("ws_orders as wso")
       .selectAll()
-      .leftJoin("ws_activities as wsa", (join) =>
+      .innerJoin("ws_activities as wsa", (join) =>
         join
           .onRef("wsa.id", "=", "wso.activity_id")
           .on("wsa.program_id", "=", programId)
@@ -383,6 +383,10 @@ export class OrderStatusShipRepository extends BaseRepository<"ws_orders"> {
   }
 
   async getWsEntitiesByIds(c: Context, ids: number[], programId: number) {
+    if (ids.length === 0) {
+      return []
+    }
+
     return await c.var.trx
       .selectFrom("ws_entities")
       .select(["id", "name", "entity_tag_id", "province_id", "regency_id"])

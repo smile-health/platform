@@ -14,6 +14,8 @@ export class MaterialVolumeTemplate extends BaseTemplate {
 
   async loadTemplateFile(fileName: string) {
     const templatePath = path.resolve(
+      import.meta.dir,
+      "../../..",
       "public",
       "templates",
       "material-volume",

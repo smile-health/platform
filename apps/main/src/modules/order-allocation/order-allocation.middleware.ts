@@ -100,15 +100,24 @@ export class OrderAllocationMiddleware {
             materialIds
           )
 
-        const parentMaterialIds = stocksExist
-          .filter((stock) => stock.parent_material_id !== null)
-          .map((stock) => stock.parent_material_id!)
+        const isHierarchyEnabled =
+          c.var.config?.material.is_hierarchy_enabled ?? false
+
+        const emaMaterialIds = [
+          ...new Set(
+            stocksExist.map((stock) =>
+              isHierarchyEnabled && stock.parent_material_id !== null
+                ? stock.parent_material_id!
+                : stock.material_id
+            )
+          ),
+        ]
 
         const getEntityMaterialActivitiesCustomer =
           await this.orderAllocationRepo.getEntityMaterialActivities(
             c,
             data.customer_id,
-            parentMaterialIds,
+            emaMaterialIds,
             activityIds
           )
 
@@ -259,9 +268,15 @@ export class OrderAllocationMiddleware {
         need_relation: false,
       }
 
+    const isHierarchyEnabled = c.var.config?.material.is_hierarchy_enabled ?? false
+    const emaMaterialId =
+      isHierarchyEnabled && stock.parent_material_id !== null
+        ? stock.parent_material_id
+        : stock.material_id
+
     const isExist = entityMaterialActivities.find(
       (ema) =>
-        ema.material_id === stock.parent_material_id &&
+        ema.material_id === emaMaterialId &&
         ema.activity_id === stock.activity_id &&
         ema.entity_id === customerId
     )

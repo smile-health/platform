@@ -152,8 +152,12 @@ export class AnnualNeedRepository extends BaseRepository<"ws_annual_needs"> {
 
     const queryEntityProvince = c.var.trx
       .selectFrom("ws_entities as e")
+      .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+      .leftJoin("locations as e_prov", (join) =>
+        join.on(sql`e_prov.id = SUBSTRING_INDEX(e_loc.path, '#', 1)`)
+      )
       .select(["e.id", "e.name"])
-      .where("e.province_id", "=", provinceId.toString())
+      .where("e_prov.id", "=", provinceId.toString())
       .where("e.deleted_at", "is", null)
       .where("e.entity_tag_id", "=", 5)
       .where("program_id", "=", c.var.programId)
@@ -550,8 +554,17 @@ export class AnnualNeedRepository extends BaseRepository<"ws_annual_needs"> {
       .leftJoin("ws_entities as e", "anr.entity_id", "e.id")
       .leftJoin("ws_users as u", "anr.updated_by", "u.id")
       .leftJoin("ws_activities as a", "anr.activity_id", "a.id")
-      .leftJoin("locations as r", "r.id", "e.regency_id")
-      .leftJoin("locations as sd", "sd.id", "e.sub_district_id")
+      .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+      .leftJoin("locations as r", (join) =>
+        join.on(
+          sql`r.id = CASE WHEN e_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as sd", (join) =>
+        join.on(
+          sql`sd.id = CASE WHEN e_loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .where("anr.deleted_at", "is", null)
       .where("anr.annual_need_id", "=", annualNeedId)
 
@@ -568,9 +581,9 @@ export class AnnualNeedRepository extends BaseRepository<"ws_annual_needs"> {
         "anr.material_id",
         "m.name as material_name",
         "m.consumption_unit_per_distribution_unit as dose_per_vial",
-        "e.regency_id",
+        "r.id as regency_id",
         "r.name as regency_name",
-        "e.sub_district_id",
+        "sd.id as sub_district_id",
         "sd.name as sub_district_name",
         sql`MAX(anr.ip)`.as("ip"),
         sql`SUM(anr.yearly_need)`.as("yearly_need"),
@@ -612,13 +625,18 @@ export class AnnualNeedRepository extends BaseRepository<"ws_annual_needs"> {
       .selectFrom("ws_annual_need_populations as wanp")
       .innerJoin("ws_entities as e", "e.id", "wanp.entity_id")
       .innerJoin("target_groups as tg", "tg.id", "wanp.target_group_id")
-      .leftJoin("locations as l", "l.id", "e.sub_district_id")
+      .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+      .leftJoin("locations as l", (join) =>
+        join.on(
+          sql`l.id = CASE WHEN e_loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .leftJoin("ws_users as u", "u.id", "wanp.updated_by")
       .select([
         "wanp.id as population_id",
         "wanp.entity_id",
         "e.name as entity_name",
-        "e.sub_district_id",
+        "l.id as sub_district_id",
         "l.name as sub_district_name",
         "wanp.target_group_id",
         "tg.title as target_group_name",
@@ -2103,8 +2121,17 @@ export class AnnualNeedRepository extends BaseRepository<"ws_annual_needs"> {
       .leftJoin("ws_entities as e", "anr.entity_id", "e.id")
       .leftJoin("ws_users as u", "anr.updated_by", "u.id")
       .leftJoin("ws_activities as a", "anr.activity_id", "a.id")
-      .leftJoin("locations as r", "r.id", "e.regency_id")
-      .leftJoin("locations as sd", "sd.id", "e.sub_district_id")
+      .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+      .leftJoin("locations as r", (join) =>
+        join.on(
+          sql`r.id = CASE WHEN e_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .leftJoin("locations as sd", (join) =>
+        join.on(
+          sql`sd.id = CASE WHEN e_loc.level >= 2 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 3), '#', -1) ELSE NULL END`
+        )
+      )
       .where("anr.deleted_at", "is", null)
       .where("anr.annual_need_id", "=", annualNeedId)
 
@@ -2121,9 +2148,9 @@ export class AnnualNeedRepository extends BaseRepository<"ws_annual_needs"> {
         "m.name as material_name",
         "m.consumption_unit_per_distribution_unit as dose_per_vial",
         "m.material_subtype",
-        "e.regency_id",
+        "r.id as regency_id",
         "r.name as regency_name",
-        "e.sub_district_id",
+        "sd.id as sub_district_id",
         "sd.name as sub_district_name",
         sql`MAX(anr.ip)`.as("ip"),
         sql`SUM(anr.yearly_need)`.as("yearly_need"),
@@ -2153,15 +2180,22 @@ export class AnnualNeedRepository extends BaseRepository<"ws_annual_needs"> {
       .selectFrom("ws_annual_needs as an")
       .innerJoin("ws_program_plans as pp", "an.program_plan_id", "pp.id")
       .innerJoin("ws_entities as e", "an.entity_id", "e.id")
-      .innerJoin("locations as r", "e.regency_id", "r.id")
-      .innerJoin("locations as p", "e.province_id", "p.id")
+      .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+      .innerJoin("locations as r", (join) =>
+        join.on(
+          sql`r.id = CASE WHEN e_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
+      .innerJoin("locations as p", (join) =>
+        join.on(sql`p.id = SUBSTRING_INDEX(e_loc.path, '#', 1)`)
+      )
       .where("an.deleted_at", "is", null)
       .where("an.id", "=", annualNeedId)
       .select([
         "e.id",
         "e.name",
-        "e.regency_id",
-        "e.province_id",
+        "r.id as regency_id",
+        "p.id as province_id",
         "r.name as regency_name",
         "p.name as province_name",
         "pp.year"

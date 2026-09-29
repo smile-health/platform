@@ -55,8 +55,15 @@ export class PopulationRepository {
     const rows = await trx
       .selectFrom("populations as p")
       .innerJoin("entities as e", "e.id", "p.entity_id")
-      .leftJoin("locations as prov", "prov.id", "e.province_id")
-      .leftJoin("locations as reg", "reg.id", "e.regency_id")
+      .leftJoin("locations as e_loc", "e_loc.id", "e.location_id")
+      .leftJoin("locations as prov", (join) =>
+        join.on(sql`prov.id = SUBSTRING_INDEX(e_loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as reg", (join) =>
+        join.on(
+          sql`reg.id = CASE WHEN e_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(e_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
       .innerJoin("target_groups as tg", "tg.id", "p.target_group_id")
       .innerJoin(
         "ws_plan_target_group as wsptg",

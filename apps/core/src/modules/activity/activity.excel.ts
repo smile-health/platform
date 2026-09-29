@@ -13,7 +13,14 @@ export class ActivityExcel extends BaseTemplate {
 
   async loadFile(fileName: string) {
     await this.loadFromFile(
-      path.resolve("public", "templates", "activity", fileName)
+      path.resolve(
+        import.meta.dir,
+        "../../..",
+        "public",
+        "templates",
+        "activity",
+        fileName
+      )
     )
   }
 }

@@ -356,8 +356,15 @@ export class IntegrationRepository {
       .leftJoin("entity_tags as et", "we.entity_tag_id", "et.id")
       .leftJoin("ws_activities as wa", "wt.activity_id", "wa.id")
       .leftJoin("workspaces as w_program", "wa.program_id", "w_program.id")
-      .leftJoin("locations as l_province", "we.province_id", "l_province.id")
-      .leftJoin("locations as l_regency", "we.regency_id", "l_regency.id")
+      .leftJoin("locations as we_loc", "we_loc.id", "we.location_id")
+      .leftJoin("locations as l_province", (join) =>
+        join.on(sql`l_province.id = SUBSTRING_INDEX(we_loc.path, '#', 1)`)
+      )
+      .leftJoin("locations as l_regency", (join) =>
+        join.on(
+          sql`l_regency.id = CASE WHEN we_loc.level >= 1 THEN SUBSTRING_INDEX(SUBSTRING_INDEX(we_loc.path, '#', 2), '#', -1) ELSE NULL END`
+        )
+      )
       .leftJoin("ws_stocks as ws", "wt.stock_id", "ws.id")
       .leftJoin("ws_materials as wm", "ws.material_id", "wm.id")
       .leftJoin("ws_materials as wmp", "wm.parent_id", "wmp.id")
