@@ -1,4 +1,8 @@
 import { Hono } from "hono";
+import {
+  createAuditLogMiddleware,
+  type AuditableRoute,
+} from "./common/infrastructure/rabbitmq/audit-log-publisher";
 import { serve as honoServe } from "@hono/node-server";
 import { setupDependencies, performHealthCheck, handleShutdown } from "./wire";
 import type { Dependencies } from "./wire";
@@ -7,6 +11,25 @@ import type { Dependencies } from "./wire";
 function createServer(deps: Dependencies) {
   const app = new Hono();
   const logger = deps.logger;
+
+  // Audit trail: admin write routes only. Admin routes are unauthenticated
+  // service-to-service calls, so there is no resolvable actor (actor_id null).
+  const auditedRoutes: AuditableRoute[] = [
+    {
+      match: /^\/admin\/refresh-routes\/?$/,
+      module: "interop_route_mapping",
+      action: "refresh",
+      methods: ["POST"],
+    },
+  ];
+  app.use(
+    "*",
+    createAuditLogMiddleware(
+      () => deps.rabbitmqChannel,
+      auditedRoutes,
+      logger,
+    ),
+  );
 
   // Health check endpoint
   app.get("/health", async (c) => {

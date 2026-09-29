@@ -28,6 +28,7 @@ import storageTemperatureMonitoringDetail from '../pages/asset-managements/stora
 import storageTemperatureMonitoringList from '../pages/asset-managements/storage-temperature-monitoring/StorageTemperatureMonitoringList/locales/en.json'
 import assetType from '../pages/asset-type/locales/en.json'
 import assetVendor from '../pages/asset-vendor/locales/en.json'
+import auditTrail from '../pages/audit-trail/locales/en.json'
 import assetVendor from '../pages/asset-vendor/locales/en.json'
 import assetVendor from '../pages/asset-vendor/locales/en.json'
 import budgetSource from '../pages/budget-source/locales/en.json'
@@ -180,6 +181,7 @@ declare module 'i18next' {
       dashboardAssetTemperatureMonitoring: typeof dashboardAssetTemperatureMonitoring
       annualCommitmentDetail: typeof annualCommitmentDetail
       dashboardAnnualCommitmentVsRealization: typeof dashboardAnnualCommitmentVsRealization
+      auditTrail: typeof auditTrail
     }
   }
 }

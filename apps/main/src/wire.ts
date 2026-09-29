@@ -1,4 +1,6 @@
+import { MAP_USER_ROLE_LABEL } from "@/common/constants/user.js"
 import { db } from "@/common/infrastructure/database/index.js"
+import { AUDITED_ROUTES } from "@/modules/audit-log/audit-log.constants.js"
 import { UserController } from "@/modules/user/user.controller.js"
 import { UserModule } from "@/modules/user/user.module.js"
 import { UserRepository } from "@/modules/user/user.repository.js"
@@ -15,6 +17,8 @@ import { ExcelMiddleware } from "@smile-health/lib/middlewares/excel.middleware.
 import { RequestMiddleware } from "@smile-health/lib/middlewares/request.middleware.js"
 import { TransactionMiddleware } from "@smile-health/lib/middlewares/transaction.middleware.js"
 import { Consumer } from "@smile-health/lib/rabbitmq/consumer.js"
+import { AuditLogCaptureMiddleware } from "@smile-health/lib/audit-log/capture-middleware.js"
+import { AuditLogPublisher } from "@smile-health/lib/audit-log/publisher.js"
 import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js"
 import { TOPIC } from "@smile-health/lib/rabbitmq/topic.js"
 import { middlewareTracer, routeTracer } from "@smile-health/lib/tracing.js"
@@ -335,6 +339,34 @@ import { VillageRepository } from "./modules/village/village.repository.js"
 const mq = getConnection
 const trxManager = new TransactionManager(db)
 const publisher = new Publisher(mq)
+
+const auditLogPublisher = new AuditLogPublisher(publisher, "main")
+const auditLogCaptureMiddleware = new AuditLogCaptureMiddleware(
+  auditLogPublisher,
+  AUDITED_ROUTES,
+  (c) => {
+    // c.var.user is the ws_users workspace row; global_id is the id of the
+    // global `users` row in core, which is what the audit-log reader joins.
+    const user = c.var.user as
+      | {
+          id?: number
+          global_id?: number
+          firstname?: string | null
+          lastname?: string | null
+          username?: string | null
+        }
+      | undefined
+    const name = [user?.firstname, user?.lastname].filter(Boolean).join(" ")
+    return {
+      actorId: Number(user?.global_id ?? c.var.userId) || null,
+      actorName: name || user?.username || null,
+      actorRole:
+        MAP_USER_ROLE_LABEL[
+          c.var.roleId as keyof typeof MAP_USER_ROLE_LABEL
+        ] ?? null,
+    }
+  }
+)
 
 const userRepo = new UserRepository()
 const materialUnitRepo = new MaterialUnitRepository()
@@ -958,7 +990,8 @@ const stockConsumptionController = new StockConsumptionController(
 // Stock Opname
 const stockOpnamePeriodModule = new StockOpnamePeriodModule(
   stockOpnamePeriodRepo,
-  userRepo
+  userRepo,
+  auditLogPublisher
 )
 const stockOpnamePeriodController = new StockOpnamePeriodController(
   stockOpnamePeriodModule,
@@ -1462,6 +1495,11 @@ mainApp.use(
   "*",
   middlewareTracer.traceMiddleware("authMiddleware"),
   authMiddleware.handleAuthHeaderReinjection
+)
+mainApp.use(
+  "*",
+  middlewareTracer.traceMiddleware("auditLogCaptureMiddleware"),
+  auditLogCaptureMiddleware.handle
 )
 
 // Notifications route (with authentication)

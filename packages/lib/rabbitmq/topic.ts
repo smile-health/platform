@@ -82,4 +82,7 @@ export const TOPIC = {
   ASSET_MONITORING_TEMPERATURE_HISTORY_EXPORTED:
     "asset-monitoring-temperature-history.exported",
   ASSET_MONITORING_DEVICE_EXPORTED: "asset-monitoring-device.exported",
+
+  // Audit trail
+  AUDIT_LOG_CREATED: "audit-log.created",
 };

@@ -40,7 +40,8 @@
     "cron:asset-calibration-reminder": "bun ./src/cli.ts asset-calibration-reminder",
     "cron:asset-warranty-reminder": "bun ./src/cli.ts asset-warranty-reminder",
     "cron:asset-rtmd-unlinked-reminder": "bun ./src/cli.ts asset-rtmd-unlinked-reminder",
-    "cron:asset-defrosting-reminder": "bun ./src/cli.ts asset-defrosting-reminder"
+    "cron:asset-defrosting-reminder": "bun ./src/cli.ts asset-defrosting-reminder",
+    "cron:audit-log-retention": "bun ./src/cli.ts audit-log-retention"
   },
   "description": "",
   "dependencies": {

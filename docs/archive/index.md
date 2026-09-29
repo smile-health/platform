@@ -11,6 +11,10 @@ Tiga hal yang membuat dokumen-dokumen ini usang:
 | `apps/3.0/*` (SMILE 3.0, Sequelize) dihapus | [Database models](./database-models-sequelize.md), [Database models — transaction](./database-models-transaction-sequelize.md), [processDataColdstorage](./process-data-coldstorage-analysis.md), [Count Transaction API](./count-transaction-api.md), [Dashboard Routine API](./dashboard-routine-api.md), [Biofarma order v3](./biofarma-order-v3/biofarma-order-v3-to-v5.id.md) |
 | Modul Indonesia-only dicabut | [Monev API](./monev-api.md), [SIHA/SITB](./siha-sitb/siha-sitb-api-v1.0.md) |
 
+Rencana [audit trail berbasis ClickHouse](./audit-trail-clickhouse-plan.md) tidak pernah
+dibangun dan digantikan implementasi MySQL + RabbitMQ di
+[Audit Trail](../architecture/audit-trail/index.md).
+
 Selain itu: [audit dokumentasi 2025](./documentation-audit-2025.md) digantikan oleh konsolidasi
 `adr/` → `docs/`, dan [papan status service](./service-statuses.md) adalah snapshot manual
 tanpa sumber kebenaran.

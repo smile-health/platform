@@ -1,5 +1,6 @@
 import { Service } from "encore.dev/service";
 import { errorEnvelope } from "../shared/http/envelope";
+import { auditTrail } from "../shared/http/audit";
 
 // Home for the original's 6 real CLI-invoked jobs, now ported as Encore
 // CronJobs: notif-inactive-users (inactive-user.*), recap-email-inactive-user
@@ -15,5 +16,5 @@ import { errorEnvelope } from "../shared/http/envelope";
 // no-argument call through here added indirection without a real reason to
 // exist.
 export default new Service("jobs", {
-  middlewares: [errorEnvelope],
+  middlewares: [errorEnvelope, auditTrail],
 });

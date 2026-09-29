@@ -63,6 +63,11 @@ const tabs = (t: TFunction, lang: string): Tabs => [
     hasChildTab: true,
     childTab: ['type', 'model', 'vendor', 'pqs'],
   },
+  {
+    label: t('tab.audit_trail'),
+    url: `/${lang}/v5/global-settings/audit-trail`,
+    featureName: 'audit-trail-view',
+  },
 ]
 
 type TTabsItem = {

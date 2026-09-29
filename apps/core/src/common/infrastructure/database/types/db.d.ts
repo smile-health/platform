@@ -11,6 +11,18 @@ export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   ? ColumnType<S, I | undefined, U>
   : ColumnType<T, T | undefined, T>;
 
+export type Json = ColumnType<JsonValue, string, string>;
+
+export type JsonArray = JsonValue[];
+
+export type JsonObject = {
+  [x: string]: JsonValue | undefined;
+};
+
+export type JsonPrimitive = boolean | number | string | null;
+
+export type JsonValue = JsonArray | JsonObject | JsonPrimitive;
+
 export interface AssetCalibrationSchedules {
   created_at: Generated<Date>;
   created_by: Generated<number | null>;
@@ -373,6 +385,21 @@ export interface BudgetSources {
   name: string;
   updated_at: Generated<Date>;
   updated_by: Generated<number | null>;
+}
+
+export interface AuditLogs {
+  action: string;
+  actor_id: number | null;
+  actor_name: string | null;
+  actor_role: string | null;
+  created_at: Generated<Date>;
+  entity_id: number | null;
+  id: Generated<number>;
+  ip: string | null;
+  metadata: Json | null;
+  module: string;
+  program_id: number | null;
+  service: string | null;
 }
 
 export interface BudgetSourceWorkspaces {
@@ -1733,6 +1760,15 @@ export interface Symptoms {
   name: Generated<string | null>;
   updated_at: Generated<Date>;
   updated_by: Generated<number | null>;
+}
+
+export interface SystemSettings {
+  created_at: Generated<Date>;
+  deleted_at: Generated<Date | null>;
+  id: Generated<number>;
+  key: string;
+  updated_at: Generated<Date>;
+  value: string;
 }
 
 export interface TargetGroups {
@@ -4199,6 +4235,7 @@ export interface DB {
   asset_vendor_workspaces: AssetVendorWorkspaces;
   asset_vendors: AssetVendors;
   asset_working_statuses: AssetWorkingStatuses;
+  audit_logs: AuditLogs;
   budget_source_workspaces: BudgetSourceWorkspaces;
   budget_sources: BudgetSources;
   cceigat_descriptions: CceigatDescriptions;
@@ -4299,6 +4336,7 @@ export interface DB {
   specimen_type: SpecimenType;
   stock_adjust_log: StockAdjustLog;
   symptoms: Symptoms;
+  system_settings: SystemSettings;
   target_groups: TargetGroups;
   temperature_thresholds: TemperatureThresholds;
   user_changelogs: UserChangelogs;

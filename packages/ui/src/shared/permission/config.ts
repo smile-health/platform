@@ -30,6 +30,9 @@ const smileRolePermission: {
   [key in USER_ROLE]: Permission
 } = {
   [SUPERADMIN]: {
+    /* Audit Trail (Global Settings, superadmin only) */
+    'audit-trail-view': 'query',
+
     /* can view global asset dashboard */
     'global-asset-dashboard-view': 'query',
     /* can view global asset management */

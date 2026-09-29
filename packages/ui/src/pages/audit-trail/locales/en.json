@@ -1,0 +1,72 @@
+{
+  "title": {
+    "index": "Audit Trail"
+  },
+  "tab": {
+    "smile": "SMILE",
+    "wms": "WMS"
+  },
+  "column": {
+    "created_at": "Timestamp",
+    "actor": "Actor",
+    "module": "Module",
+    "action": "Action",
+    "entity_id": "Target",
+    "wms_waste_bag": "Waste Bag ID",
+    "wms_status": "Status",
+    "wms_source": "Source",
+    "service": "Service",
+    "detail": "Detail"
+  },
+  "form": {
+    "module": {
+      "label": "Module",
+      "placeholder": "Select module"
+    },
+    "actor": {
+      "label": "Actor",
+      "placeholder": "Search actor"
+    },
+    "program": {
+      "label": "Program",
+      "placeholder": "Select program"
+    },
+    "date_range": {
+      "label": "Date"
+    },
+    "wms_search": {
+      "placeholder": "Search waste bag ID"
+    },
+    "service": {
+      "label": "Service",
+      "placeholder": "Select service"
+    },
+    "action": {
+      "label": "Action",
+      "placeholder": "Select action"
+    }
+  },
+  "empty_state": {
+    "title": "No audit log found"
+  },
+  "action": {
+    "view_detail": "View detail"
+  },
+  "detail": {
+    "title": "Audit Log Detail",
+    "metadata": "Metadata",
+    "no_metadata": "No metadata recorded",
+    "ip": "IP Address",
+    "role": "Role"
+  },
+  "retention": {
+    "title": "Log Retention",
+    "description": "Audit logs older than this number of days are deleted automatically.",
+    "label": "Retention (days)",
+    "hint": "Between 1 and 90 days",
+    "save": "Save",
+    "success": "Retention setting saved",
+    "error": "Failed to save retention setting",
+    "invalid": "Enter a whole number between 1 and 90"
+  }
+}

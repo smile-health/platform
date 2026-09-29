@@ -1,5 +1,6 @@
 import {
   accountConsumer,
+  auditLogConsumer,
   entityConsumer,
   mainApp,
   tolgeeConsumer,
@@ -300,6 +301,7 @@ export const runWorker = async () => {
           "accountConsumer",
           "assetConsumer",
           "entityConsumer",
+          "auditLogConsumer",
         ],
         "worker.start_time": startTime,
       })
@@ -314,6 +316,22 @@ export const runWorker = async () => {
               await accountConsumer.start()
               consumerSpan.setStatus({ code: SpanStatusCode.OK })
               console.log("Account consumer started successfully")
+            } catch (err) {
+              consumerSpan.recordException(err as Error)
+              consumerSpan.setStatus({ code: SpanStatusCode.ERROR })
+              throw err
+            } finally {
+              consumerSpan.end()
+            }
+          }
+        ),
+        tracer.startActiveSpan(
+          "auditLogConsumer.start",
+          async (consumerSpan) => {
+            try {
+              await auditLogConsumer.start()
+              consumerSpan.setStatus({ code: SpanStatusCode.OK })
+              console.log("Audit log consumer started successfully")
             } catch (err) {
               consumerSpan.recordException(err as Error)
               consumerSpan.setStatus({ code: SpanStatusCode.ERROR })
