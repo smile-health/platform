@@ -11,7 +11,7 @@
     "actor": "Pelaku",
     "module": "Modul",
     "action": "Aksi",
-    "entity_id": "Target",
+    "description": "Keterangan",
     "wms_waste_bag": "ID Waste Bag",
     "wms_status": "Status",
     "wms_source": "Sumber",
@@ -57,7 +57,9 @@
     "metadata": "Metadata",
     "no_metadata": "Tidak ada metadata",
     "ip": "IP Address",
-    "role": "Peran"
+    "role": "Peran",
+    "changes": "Ringkasan Perubahan",
+    "entity_id": "ID Data"
   },
   "retention": {
     "title": "Retensi Log",
@@ -68,5 +70,63 @@
     "success": "Pengaturan retensi disimpan",
     "error": "Gagal menyimpan pengaturan retensi",
     "invalid": "Masukkan bilangan bulat antara 1 sampai 90"
+  },
+  "description": {
+    "create": "Menambahkan {{module}}",
+    "create_labeled": "Menambahkan {{module}} \"{{label}}\"",
+    "update": "Mengubah {{module}}",
+    "update_labeled": "Mengubah {{module}} \"{{label}}\"",
+    "delete": "Menghapus {{module}}",
+    "delete_labeled": "Menghapus {{module}} \"{{label}}\"",
+    "update_status": "Mengubah status {{module}}",
+    "update_status_labeled": "Mengubah status {{module}} \"{{label}}\"",
+    "activate": "Mengubah status aktif {{module}}",
+    "activate_labeled": "Mengubah status aktif {{module}} \"{{label}}\"",
+    "login": "Masuk ke sistem",
+    "login_labeled": "Masuk ke sistem",
+    "logout": "Keluar dari sistem",
+    "logout_labeled": "Keluar dari sistem",
+    "export": "Mengekspor data {{module}}",
+    "export_labeled": "Mengekspor data {{module}}",
+    "refresh": "Memperbarui {{module}}",
+    "refresh_labeled": "Memperbarui {{module}} \"{{label}}\"",
+    "more": "+{{count}} lainnya",
+    "items": "({{count}} item)",
+    "no_changes": "Tidak ada rincian perubahan"
+  },
+  "info": {
+    "title": "Tentang data audit trail",
+    "source_title": "Sumber data",
+    "source": [
+      "Setiap permintaan tambah, ubah, dan hapus yang berhasil pada modul yang terdaftar di layanan SMILE (core, main, auth, interop, WMS), ditambah login, logout, dan ekspor data.",
+      "Nilai \"sesudah\" adalah data yang dikirim oleh pengguna saat itu.",
+      "Nilai \"sebelum\" diambil dari database tepat sebelum perubahan, hanya untuk data master di core (pengguna, akun eksekutif, program, material, entitas, manufaktur, sumber dana, tipe/model/vendor aset), penghapusan material entitas, serta status pesanan (order) saat dialokasikan, dibatalkan, dikonfirmasi, dikirim, diterima, ditunda, atau divalidasi.",
+      "Kata sandi dan token disembunyikan; data pribadi seperti telepon, email, alamat, dan nomor identitas disamarkan sebagian.",
+      "Log disimpan sesuai pengaturan retensi di bawah, lalu dihapus otomatis."
+    ],
+    "excluded_title": "Tidak termasuk",
+    "excluded": [
+      "Aktivitas melihat data (kecuali ekspor), permintaan yang gagal, dan login yang gagal.",
+      "Modul yang tidak ada di pilihan filter Modul.",
+      "Nilai \"sebelum\" untuk data baru, untuk auth, interop, dan WMS, serta untuk perubahan yang ID-nya dikirim di isi permintaan (mis. relasi customer/vendor).",
+      "Tabel lain yang ikut berubah dalam permintaan yang sama (mis. riwayat, relasi workspace, material turunan) dan data pengguna di Keycloak.",
+      "Perubahan langsung di database, oleh proses latar belakang, atau oleh cron."
+    ],
+    "wms": "Data di tab ini berasal dari riwayat waste bag milik WMS sendiri, bukan dari audit log SMILE. Perubahan pengaturan dan master data WMS tercatat di tab SMILE dengan layanan WMS."
+  },
+  "field": {
+    "order_status_id": "Status Pesanan"
+  },
+  "value": {
+    "order_status_id": {
+      "1": "Ditunda",
+      "2": "Dikonfirmasi",
+      "3": "Dialokasikan",
+      "4": "Dikirim",
+      "5": "Diterima",
+      "6": "Dibatalkan",
+      "7": "Pemusnahan Mandiri",
+      "8": "Draf"
+    }
   }
 }

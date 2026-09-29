@@ -32,6 +32,7 @@ export const AUDIT_TRAIL_MODULES: Record<string, string[]> = {
     'stock',
     'order',
     'order_comment',
+    'order_item_stock',
     'reconciliation',
     'entity_customer',
     'entity_material',

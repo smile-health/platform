@@ -48,8 +48,16 @@ describe('AuditLogDetailDrawer', () => {
     expect(pre.textContent).toBe(JSON.stringify(item.metadata, null, 2))
   })
 
+  it('shows the change summary above the JSON', () => {
+    render(<AuditLogDetailDrawer item={item} onClose={jest.fn()} />)
+    const changes = screen.getByTestId('audit-log-changes')
+    expect(changes.textContent).toContain('auditTrail:description.update_labeled')
+    expect(changes.textContent).toContain('Name: a → b')
+  })
+
   it('shows empty state when metadata is null', () => {
     render(<AuditLogDetailDrawer item={{ ...item, metadata: null }} onClose={jest.fn()} />)
     expect(screen.getByText('auditTrail:detail.no_metadata')).toBeTruthy()
+    expect(screen.getByText('auditTrail:description.no_changes')).toBeTruthy()
   })
 })

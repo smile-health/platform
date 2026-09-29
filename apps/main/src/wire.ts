@@ -1,6 +1,10 @@
 import { MAP_USER_ROLE_LABEL } from "@/common/constants/user.js"
 import { db } from "@/common/infrastructure/database/index.js"
-import { AUDITED_ROUTES } from "@/modules/audit-log/audit-log.constants.js"
+import {
+  AUDIT_BEFORE_TABLES,
+  AUDITED_ROUTES,
+} from "@/modules/audit-log/audit-log.constants.js"
+import type { DB } from "@/common/infrastructure/database/types/db.js"
 import { UserController } from "@/modules/user/user.controller.js"
 import { UserModule } from "@/modules/user/user.module.js"
 import { UserRepository } from "@/modules/user/user.repository.js"
@@ -365,6 +369,18 @@ const auditLogCaptureMiddleware = new AuditLogCaptureMiddleware(
           c.var.roleId as keyof typeof MAP_USER_ROLE_LABEL
         ] ?? null,
     }
+  },
+  // Row as it was before an update/delete; table names come from AUDITED_ROUTES only.
+  // Reads through the request's transaction so the post-handler re-read of
+  // tracked columns sees the uncommitted change.
+  async (table, id, c) => {
+    if (!AUDIT_BEFORE_TABLES.has(table)) return null
+    const conn = ((c.var as { trx?: typeof db }).trx ?? db) as typeof db
+    return conn
+      .selectFrom(table as keyof DB)
+      .selectAll()
+      .where("id" as never, "=", id as never)
+      .executeTakeFirst() as Promise<Record<string, unknown> | undefined>
   }
 )
 

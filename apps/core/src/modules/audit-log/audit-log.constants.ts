@@ -33,7 +33,8 @@ export const resolveRetentionDays = (
  * audit-log constants, not here.
  *
  * `match` is tested against `c.req.path`; `module` is the value stored in
- * `audit_logs.module`. The first matching entry wins, so the export entries
+ * `audit_logs.module`. `before` loads the row by the id captured from the path
+ * (PUT/PATCH/DELETE only), so the viewer can show old → new values. The first matching entry wins, so the export entries
  * must stay first (POST /materials/export is an export, not a create).
  */
 export const AUDITED_ROUTES: AuditableRoute[] = [
@@ -55,28 +56,73 @@ export const AUDITED_ROUTES: AuditableRoute[] = [
     action: "export",
     methods: ["GET"],
   },
-  { match: /^\/users(\/|$)/, module: "user" },
-  { match: /^\/executive\/account(\/|$)/, module: "executive_account" },
+  {
+    match: /^\/users(\/|$)/,
+    module: "user",
+    before: { table: "users", idFrom: /^\/users\/(\d+)(\/status)?$/ },
+  },
+  {
+    match: /^\/executive\/account(\/|$)/,
+    module: "executive_account",
+    before: { table: "executive_users", idFrom: /^\/executive\/account\/(\d+)(\/status)?$/ },
+  },
   { match: /^\/executive\/users(\/|$)/, module: "executive_user" },
   { match: /^\/executive\/roles(\/|$)/, module: "executive_role" },
   { match: /^\/executive\/programs(\/|$)/, module: "executive_workspace" },
-  { match: /^\/programs(\/|$)/, module: "program" },
+  {
+    match: /^\/programs(\/|$)/,
+    module: "program",
+    before: { table: "workspaces", idFrom: /^\/programs\/(\d+)$/ },
+  },
   { match: /^\/workspaces(\/|$)/, module: "workspace" },
-  { match: /^\/budget-sources(\/|$)/, module: "budget_source" },
-  { match: /^\/manufactures(\/|$)/, module: "manufacture" },
-  { match: /^\/materials(\/|$)/, module: "material" },
+  {
+    match: /^\/budget-sources(\/|$)/,
+    module: "budget_source",
+    before: { table: "budget_sources", idFrom: /^\/budget-sources\/(\d+)(\/status)?$/ },
+  },
+  {
+    match: /^\/manufactures(\/|$)/,
+    module: "manufacture",
+    before: { table: "manufactures", idFrom: /^\/manufactures\/(\d+)(\/status)?$/ },
+  },
+  {
+    match: /^\/materials(\/|$)/,
+    module: "material",
+    before: { table: "materials", idFrom: /^\/materials\/(\d+)(\/status)?$/ },
+  },
   { match: /^\/material-types(\/|$)/, module: "material_type" },
   { match: /^\/material-relations(\/|$)/, module: "material_relation" },
   { match: /^\/material-levels(\/|$)/, module: "material_level" },
   { match: /^\/material-units(\/|$)/, module: "material_unit" },
-  { match: /^\/entities(\/|$)/, module: "entity" },
+  {
+    match: /^\/entities(\/|$)/,
+    module: "entity",
+    before: { table: "entities", idFrom: /^\/entities\/(\d+)(\/status)?$/ },
+  },
   { match: /^\/entity-types(\/|$)/, module: "entity_type" },
   { match: /^\/entity-tags(\/|$)/, module: "entity_tag" },
-  { match: /^\/asset-types(\/|$)/, module: "asset_type" },
-  { match: /^\/asset-models(\/|$)/, module: "asset_model" },
-  { match: /^\/asset-vendors(\/|$)/, module: "asset_vendor" },
+  {
+    match: /^\/asset-types(\/|$)/,
+    module: "asset_type",
+    before: { table: "asset_types", idFrom: /^\/asset-types\/(\d+)(\/status)?$/ },
+  },
+  {
+    match: /^\/asset-models(\/|$)/,
+    module: "asset_model",
+    before: { table: "asset_models", idFrom: /^\/asset-models\/(\d+)(\/status)?$/ },
+  },
+  {
+    match: /^\/asset-vendors(\/|$)/,
+    module: "asset_vendor",
+    before: { table: "asset_vendors", idFrom: /^\/asset-vendors\/(\d+)(\/status)?$/ },
+  },
   { match: /^\/asset-vendor-types(\/|$)/, module: "asset_vendor_type" },
 ]
+
+/** Tables `loadBefore` may read — only those named by AUDITED_ROUTES. */
+export const AUDIT_BEFORE_TABLES = new Set(
+  AUDITED_ROUTES.flatMap((route) => (route.before ? [route.before.table] : []))
+)
 
 /**
  * created_at is written from JS in UTC ('YYYY-MM-DD HH:mm:ss') so it agrees

@@ -11,6 +11,7 @@ import {
 import { useTranslation } from 'react-i18next'
 
 import useWasteBagAuditTrailTable from '../hooks/useWasteBagAuditTrailTable'
+import AuditTrailInfo from './AuditTrailInfo'
 
 export default function WasteBagAuditTrailPanel() {
   const { t } = useTranslation(['auditTrail', 'common'])
@@ -27,6 +28,7 @@ export default function WasteBagAuditTrailPanel() {
 
   return (
     <div className="ui-space-y-4 mt-6">
+      <AuditTrailInfo variant="wms" />
       <InputSearch
         placeholder={t('auditTrail:form.wms_search.placeholder')}
         defaultValue={search}

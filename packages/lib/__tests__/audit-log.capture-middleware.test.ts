@@ -4,8 +4,23 @@ import {
   AuditActor,
   AuditLogCaptureMiddleware,
   AuditableRoute,
+  LoadBefore,
 } from "../audit-log/capture-middleware";
 import { CreateAuditLogInput } from "../audit-log/types";
+
+// Row store the PUT/DELETE handlers mutate, to prove before is read first.
+const store = new Map<number, Record<string, unknown>>();
+const seedStore = () => {
+  store.clear();
+  store.set(7, { id: 7, name: "Old", status: 1, updated_at: "2026-01-01" });
+};
+const storeLoader: LoadBefore = async (_table, id) =>
+  store.has(id) ? { ...store.get(id)! } : null;
+const widgetBefore: AuditableRoute = {
+  match: /^\/widgets/,
+  module: "widget",
+  before: { table: "widgets", idFrom: /^\/widgets\/(\d+)$/ },
+};
 
 class FakePublisher {
   calls: CreateAuditLogInput[] = [];
@@ -28,12 +43,14 @@ function buildApp(
   getActor: (
     c: Context,
     body: Record<string, unknown> | null
-  ) => AuditActor = defaultActor
+  ) => AuditActor = defaultActor,
+  loadBefore?: LoadBefore
 ) {
   const middleware = new AuditLogCaptureMiddleware(
     publisher as never,
     routes,
-    getActor
+    getActor,
+    loadBefore
   );
   const app = new Hono();
 
@@ -57,6 +74,24 @@ function buildApp(
   app.post("/login", async (c) =>
     c.json({ id: 5, username: "budi", role: "ADMIN" }, 200)
   );
+
+  app.put("/widgets/:id", async (c) => {
+    const body = await c.req.json();
+    const row = store.get(Number(c.req.param("id")));
+    if (row) Object.assign(row, body);
+    return c.json({ id: Number(c.req.param("id")) }, 200);
+  });
+
+  app.put("/widgets/:id/cancel", async (c) => {
+    const row = store.get(Number(c.req.param("id")));
+    if (row) row.status = 6;
+    return c.json({ ok: true }, 200);
+  });
+
+  app.delete("/widgets/:id", async (c) => {
+    store.delete(Number(c.req.param("id")));
+    return c.json({ ok: true }, 200);
+  });
 
   app.put("/programs/:program_id/widgets/:id", async (c) => {
     const body = await c.req.json();
@@ -370,5 +405,114 @@ describe("AuditLogCaptureMiddleware", () => {
     expect(res.status).toBe(200);
     expect(publisher.calls).toHaveLength(1);
     expect(publisher.calls[0].action).toBe("export");
+  });
+
+  describe("before", () => {
+    const put = (app: Hono, path: string, body: unknown) =>
+      app.request(path, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+    test("loads the row before the handler runs, trimmed to the body keys", async () => {
+      seedStore();
+      const publisher = new FakePublisher();
+      const app = buildApp(publisher, [widgetBefore], defaultActor, storeLoader);
+
+      const res = await put(app, "/widgets/7", { name: "New" });
+      await flush();
+
+      expect(res.status).toBe(200);
+      expect(store.get(7)?.name).toBe("New");
+      expect(publisher.calls[0].metadata).toEqual({
+        before: { name: "Old" },
+        after: { name: "New" },
+      });
+    });
+
+    test("keeps the whole row on a DELETE without a body", async () => {
+      seedStore();
+      const publisher = new FakePublisher();
+      const app = buildApp(publisher, [widgetBefore], defaultActor, storeLoader);
+
+      await app.request("/widgets/7", { method: "DELETE" });
+      await flush();
+
+      expect(publisher.calls[0].metadata?.before).toEqual({
+        id: 7,
+        name: "Old",
+        status: 1,
+        updated_at: "2026-01-01",
+      });
+    });
+
+    test("does not load for a POST or when idFrom does not match", async () => {
+      seedStore();
+      const publisher = new FakePublisher();
+      let calls = 0;
+      const loader: LoadBefore = async (...args) => {
+        calls++;
+        return storeLoader(...args);
+      };
+      const app = buildApp(publisher, [widgetBefore], defaultActor, loader);
+
+      await app.request("/widgets", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ name: "W" }),
+      });
+      await put(app, "/widgets/abc", { name: "W" });
+      await flush();
+
+      expect(calls).toBe(0);
+      expect(publisher.calls.every((call) => call.metadata?.before === null)).toBe(true);
+    });
+
+    test("records before null and still responds when the loader throws", async () => {
+      seedStore();
+      const publisher = new FakePublisher();
+      const app = buildApp(publisher, [widgetBefore], defaultActor, async () => {
+        throw new Error("db down");
+      });
+
+      const res = await put(app, "/widgets/7", { name: "New" });
+      await flush();
+
+      expect(res.status).toBe(200);
+      expect(publisher.calls[0].metadata?.before).toBeNull();
+    });
+
+    test("re-reads tracked columns the body doesn't carry into after", async () => {
+      seedStore();
+      const publisher = new FakePublisher();
+      const route: AuditableRoute = {
+        match: /^\/widgets\/\d+\/cancel$/,
+        module: "widget",
+        action: "update_status",
+        before: { table: "widgets", idFrom: /^\/widgets\/(\d+)\/cancel$/, track: ["status"] },
+      };
+      const app = buildApp(publisher, [route], defaultActor, storeLoader);
+
+      const res = await put(app, "/widgets/7/cancel", { reason: "stock out" });
+      await flush();
+
+      expect(res.status).toBe(200);
+      expect(publisher.calls[0].metadata).toEqual({
+        before: { status: 1 },
+        after: { reason: "stock out", status: 6 },
+      });
+    });
+
+    test("leaves before null when the service passes no loader", async () => {
+      seedStore();
+      const publisher = new FakePublisher();
+      const app = buildApp(publisher, [widgetBefore]);
+
+      await put(app, "/widgets/7", { name: "New" });
+      await flush();
+
+      expect(publisher.calls[0].metadata?.before).toBeNull();
+    });
   });
 });

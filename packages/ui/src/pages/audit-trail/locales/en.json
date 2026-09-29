@@ -11,7 +11,7 @@
     "actor": "Actor",
     "module": "Module",
     "action": "Action",
-    "entity_id": "Target",
+    "description": "Description",
     "wms_waste_bag": "Waste Bag ID",
     "wms_status": "Status",
     "wms_source": "Source",
@@ -57,7 +57,9 @@
     "metadata": "Metadata",
     "no_metadata": "No metadata recorded",
     "ip": "IP Address",
-    "role": "Role"
+    "role": "Role",
+    "changes": "Change Summary",
+    "entity_id": "Record ID"
   },
   "retention": {
     "title": "Log Retention",
@@ -68,5 +70,63 @@
     "success": "Retention setting saved",
     "error": "Failed to save retention setting",
     "invalid": "Enter a whole number between 1 and 90"
+  },
+  "description": {
+    "create": "Created {{module}}",
+    "create_labeled": "Created {{module}} \"{{label}}\"",
+    "update": "Updated {{module}}",
+    "update_labeled": "Updated {{module}} \"{{label}}\"",
+    "delete": "Deleted {{module}}",
+    "delete_labeled": "Deleted {{module}} \"{{label}}\"",
+    "update_status": "Changed {{module}} status",
+    "update_status_labeled": "Changed status of {{module}} \"{{label}}\"",
+    "activate": "Changed {{module}} active status",
+    "activate_labeled": "Changed active status of {{module}} \"{{label}}\"",
+    "login": "Logged in",
+    "login_labeled": "Logged in",
+    "logout": "Logged out",
+    "logout_labeled": "Logged out",
+    "export": "Exported {{module}} data",
+    "export_labeled": "Exported {{module}} data",
+    "refresh": "Refreshed {{module}}",
+    "refresh_labeled": "Refreshed {{module}} \"{{label}}\"",
+    "more": "+{{count}} more",
+    "items": "({{count}} items)",
+    "no_changes": "No change details"
+  },
+  "info": {
+    "title": "About audit trail data",
+    "source_title": "Data source",
+    "source": [
+      "Every successful create, update and delete request on the listed modules in the SMILE services (core, main, auth, interop, WMS), plus login, logout and data exports.",
+      "The \"after\" value is the data the user submitted.",
+      "The \"before\" value is read from the database right before the change, only for core master data (users, executive accounts, programs, materials, entities, manufacturers, budget sources, asset types/models/vendors), entity material deletions, and order status changes (allocate, cancel, confirm, ship, fulfil, pending, validate).",
+      "Passwords and tokens are hidden; personal data such as phone, email, address and ID numbers is partially masked.",
+      "Logs are kept per the retention setting below, then deleted automatically."
+    ],
+    "excluded_title": "Not included",
+    "excluded": [
+      "Viewing data (except exports), failed requests and failed logins.",
+      "Modules that are not in the Module filter options.",
+      "The \"before\" value for new records, for auth, interop and WMS, and for changes whose ID is sent in the request body (e.g. customer/vendor relations).",
+      "Other tables changed by the same request (e.g. histories, workspace relations, child materials) and user data in Keycloak.",
+      "Changes made directly in the database, by background jobs or by crons."
+    ],
+    "wms": "This tab comes from WMS's own waste bag history, not from the SMILE audit log. WMS settings and master data changes are recorded in the SMILE tab under the WMS service."
+  },
+  "field": {
+    "order_status_id": "Order Status"
+  },
+  "value": {
+    "order_status_id": {
+      "1": "Pending",
+      "2": "Confirmed",
+      "3": "Allocated",
+      "4": "Shipped",
+      "5": "Fulfilled",
+      "6": "Cancelled",
+      "7": "Independent Extermination",
+      "8": "Draft"
+    }
   }
 }

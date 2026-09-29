@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next'
 import useAuditTrailTable from '../hooks/useAuditTrailTable'
 import auditTrailFilterFormSchema from '../schemas/auditTrailFilterFormSchema'
 import AuditLogDetailDrawer from './AuditLogDetailDrawer'
+import AuditTrailInfo from './AuditTrailInfo'
 import AuditTrailFilter from './AuditTrailFilter'
 import RetentionSettingCard from './RetentionSettingCard'
 
@@ -50,6 +51,7 @@ export default function SmileAuditTrailPanel() {
 
   return (
     <div className="ui-space-y-4 mt-6">
+      <AuditTrailInfo />
       <RetentionSettingCard />
       <AuditTrailFilter filter={filter} handleChangePage={handleChangePage} />
       <DataTable

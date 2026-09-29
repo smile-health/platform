@@ -21,7 +21,25 @@ export type AuditableRoute = {
   // HTTP methods this route is recorded for. Defaults to POST/PUT/PATCH/DELETE;
   // set e.g. ["GET"] to whitelist a read-only export endpoint.
   methods?: string[];
+  // Load the row as it was before an update/delete into metadata.before.
+  // `idFrom` must capture the row id from `c.req.path` in group 1 —
+  // c.req.param() is not populated yet before next() in a "*" middleware.
+  // `track` lists columns the body doesn't carry (e.g. a status the endpoint
+  // sets itself): they are kept in `before` and re-read into `after`.
+  before?: { table: string; idFrom: RegExp; track?: string[] };
 };
+
+// `c` is passed so the loader can read through the request's transaction
+// (c.var.trx): the post-handler re-read runs before that transaction commits.
+export type LoadBefore = (
+  table: string,
+  id: number,
+  c: Context,
+) => Promise<Record<string, unknown> | null | undefined>;
+
+type BeforeTarget = { table: string; id: number; track: string[] };
+
+const BEFORE_METHODS = ["PUT", "PATCH", "DELETE"];
 
 export type AuditActor = {
   // Null when the request has no resolvable actor (e.g. interop admin routes).
@@ -40,10 +58,13 @@ export type AuditActor = {
  * `getActor` receives the parsed JSON response body (or null), so routes like
  * login can take the actor from the response instead of the request context.
  *
- * Doesn't know a module's real "before" state — `metadata.before` is always
- * null here, `metadata.after` is the request body. A module that needs a real
- * before/after diff should call `AuditLogPublisher.record()` directly from
- * its own service layer instead of relying on this middleware.
+ * `metadata.after` is the request body. `metadata.before` is null unless the
+ * route sets `before` and the service passes `loadBefore`: then, for
+ * PUT/PATCH/DELETE, the row is read before the handler runs and trimmed to
+ * the keys present in `after` (a DELETE with no body keeps the whole row).
+ * `before.track` columns are also re-read after the handler into `after`.
+ * Endpoints whose id isn't in the path, or that need a diff across several
+ * tables, should call `AuditLogPublisher.record()` from their service layer.
  *
  * Also operates at HTTP-route granularity, not DB-table granularity: one
  * endpoint can write to several tables in a single request (e.g. an order
@@ -64,6 +85,7 @@ export class AuditLogCaptureMiddleware {
       c: Context,
       responseBody: Record<string, unknown> | null,
     ) => AuditActor,
+    private readonly loadBefore?: LoadBefore,
   ) {}
 
   handle = createMiddleware(async (c, next) => {
@@ -90,6 +112,8 @@ export class AuditLogCaptureMiddleware {
     // c.req.json(), which consumes the raw stream and makes clone() throw
     // "Body is disturbed or locked".
     const requestBody = await this.#readRequestJson(c);
+    const target = this.#beforeTarget(c, route);
+    const before = target ? await this.#loadRow(c, target) : null;
 
     await next();
 
@@ -103,6 +127,11 @@ export class AuditLogCaptureMiddleware {
       );
       const responseBody = isJson ? await this.#readJson(c.res.clone()) : null;
       const actor = this.getActor(c, responseBody);
+      const after = await this.#withTracked(
+        c,
+        target,
+        requestBody ?? responseBody ?? null,
+      );
 
       const input = {
         // Tenancy here rides on the x-program-id header (c.var.programId),
@@ -117,7 +146,10 @@ export class AuditLogCaptureMiddleware {
         action,
         module: route.module,
         entity_id: this.#extractEntityId(c, responseBody),
-        metadata: { before: null, after: requestBody ?? responseBody ?? null },
+        metadata: {
+          before: this.#trimBefore(before, requestBody, target?.track ?? []),
+          after,
+        },
       };
 
       // Fire-and-forget: publishing must never hold the response.
@@ -128,6 +160,61 @@ export class AuditLogCaptureMiddleware {
       logger.error({ err: error }, "audit-log capture failed");
     }
   });
+
+  #beforeTarget(c: Context, route: AuditableRoute): BeforeTarget | null {
+    if (!route.before || !this.loadBefore) return null;
+    if (!BEFORE_METHODS.includes(c.req.method)) return null;
+    const id = Number(route.before.idFrom.exec(c.req.path)?.[1]);
+    if (!Number.isInteger(id) || id <= 0) return null;
+    return { table: route.before.table, id, track: route.before.track ?? [] };
+  }
+
+  // Best-effort: a failed lookup yields null and never blocks the request.
+  async #loadRow(
+    c: Context,
+    target: BeforeTarget,
+  ): Promise<Record<string, unknown> | null> {
+    try {
+      return (await this.loadBefore!(target.table, target.id, c)) ?? null;
+    } catch (error) {
+      logger.error({ err: error }, "audit-log row lookup failed");
+      return null;
+    }
+  }
+
+  // Adds the tracked columns' new values, which the request body doesn't carry.
+  async #withTracked(
+    c: Context,
+    target: BeforeTarget | null,
+    after: Record<string, unknown> | null,
+  ): Promise<Record<string, unknown> | null> {
+    if (!target?.track.length) return after;
+    const current = await this.#loadRow(c, target);
+    if (!current) return after;
+    const tracked = Object.fromEntries(
+      target.track.filter((key) => key in current).map((key) => [key, current[key]]),
+    );
+    return { ...(after && !Array.isArray(after) ? after : {}), ...tracked };
+  }
+
+  // Keeps the columns the request touched; a body-less request (DELETE, or a
+  // status action with no fields) keeps the whole row, or just `track` if set.
+  #trimBefore(
+    before: Record<string, unknown> | null,
+    requestBody: Record<string, unknown> | null,
+    track: string[],
+  ): Record<string, unknown> | null {
+    if (!before) return null;
+    const body =
+      requestBody && typeof requestBody === "object" && !Array.isArray(requestBody)
+        ? requestBody
+        : null;
+    if (!body && !track.length) return before;
+    const keys = new Set([...Object.keys(body ?? {}), ...track]);
+    return Object.fromEntries(
+      [...keys].filter((key) => key in before).map((key) => [key, before[key]]),
+    );
+  }
 
   async #readRequestJson(c: Context): Promise<Record<string, unknown> | null> {
     try {
