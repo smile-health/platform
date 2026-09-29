@@ -1,4 +1,8 @@
+import { AUDITED_ROUTES } from "@/common/constants/audit-log.route-config.js"
+import { MAP_USER_ROLE_LABEL } from "@/common/constants/role.js"
 import { featureFlagsMiddleware } from "@smile-health/lib"
+import { AuditLogCaptureMiddleware } from "@smile-health/lib/audit-log/capture-middleware.js"
+import { AuditLogPublisher } from "@smile-health/lib/audit-log/publisher.js"
 import { TransactionManager } from "@smile-health/lib/database.js"
 import {
   createRefreshHandler,
@@ -206,6 +210,34 @@ const trxManager = new TransactionManager(db)
 const trxMiddleware = new TransactionMiddleware(trxManager)
 const mq = getConnection
 const publisher = new Publisher(mq)
+
+const auditLogPublisher = new AuditLogPublisher(publisher, "warehouse")
+const auditLogCaptureMiddleware = new AuditLogCaptureMiddleware(
+  auditLogPublisher,
+  AUDITED_ROUTES,
+  (c) => {
+    // c.var.user is the core /account/profile response.
+    const user = c.var.user as
+      | {
+          id?: number
+          firstname?: string | null
+          lastname?: string | null
+          username?: string | null
+        }
+      | undefined
+    const name = [user?.firstname, user?.lastname].filter(Boolean).join(" ")
+    return {
+      actorId: Number(user?.id) || null,
+      actorName: name || user?.username || null,
+      actorRole:
+        c.var.roleId != null
+          ? (MAP_USER_ROLE_LABEL[
+              Number(c.var.roleId) as keyof typeof MAP_USER_ROLE_LABEL
+            ] ?? String(c.var.roleId))
+          : null,
+    }
+  }
+)
 
 const commonMiddleware = new CommonMiddleware()
 const authKeycloakMiddleware = new AuthKeycloakMiddleware()
@@ -763,6 +795,7 @@ warehouseApp.use("*", commonMiddleware.loadSlaveDB)
 warehouseApp.use("*", commonMiddleware.loadElasticClient)
 warehouseApp.use("*", requestMiddleware.handle)
 warehouseApp.use("*", authKeycloakMiddleware.handleAuthKeycloak)
+warehouseApp.use("*", auditLogCaptureMiddleware.handle)
 warehouseApp.use("*", featureFlagsMiddleware())
 warehouseApp.use("*", trxMiddleware.handle)
 

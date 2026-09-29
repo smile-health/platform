@@ -9,6 +9,7 @@ import { AssetInventory } from './asset-inventory'
 import { AssetManagement } from './asset-management'
 import { AssetType } from './asset-type'
 import { AssetVendor } from './asset-vendor'
+import { AuditLog } from './audit-log'
 import { BudgetSource } from './budget-source'
 import { ColdchainEquipment } from './coldchain-equipment'
 import { CommunicationProvider } from './communication-provider'
@@ -88,3 +89,4 @@ export type FeatureName =
   | ProgramPlanMaterialRatio
   | AnnualCommitment
   | GlobalAsset
+  | AuditLog

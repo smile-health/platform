@@ -218,6 +218,7 @@
   },
   "show_report": "Tampilkan Laporan",
   "tab": {
+    "audit_trail": "Audit Trail",
     "assets": {
       "label": "Aset",
       "tabs": {

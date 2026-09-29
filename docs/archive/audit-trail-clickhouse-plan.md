@@ -1,4 +1,8 @@
-# Audit Trail Implementation Plan
+# Audit Trail Implementation Plan (ClickHouse)
+
+> **ARSIP — jangan dipakai sebagai acuan implementasi.**
+> Rencana ClickHouse + `AsyncLocalStorage` ini tidak pernah dibangun. Audit trail yang
+> benar-benar ada memakai MySQL + RabbitMQ — lihat [Audit Trail](/architecture/audit-trail/).
 
 **Status**: `PLANNED — NOT IMPLEMENTED`  
 **Date**: February 26, 2026 (plan) · verified still unimplemented September 2026  
@@ -11,6 +15,7 @@
 > audit ClickHouse di `apps/main` atau `apps/core`.
 > [`apps/interop-service/src/modules/audit/audit-log.repository.ts`](https://github.com/smile-health/platform/blob/main/apps/interop-service/src/modules/audit/audit-log.repository.ts)
 > itu audit pesan interop — hal yang berbeda, bukan implementasi dokumen ini.
+
 
 ## Executive Summary
 

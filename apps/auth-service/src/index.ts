@@ -9,6 +9,11 @@ import { env } from "process";
 import { AuthController } from "./controllers/authController";
 import { AuthExecutiveController } from "./controllers/authExecutiveController";
 import { UserController } from "./controllers/userController";
+import { Publisher } from "@smile-health/lib/rabbitmq/publisher.js";
+import { AuditLogPublisher } from "@smile-health/lib/audit-log/publisher.js";
+import { AuditLogCaptureMiddleware } from "@smile-health/lib/audit-log/capture-middleware.js";
+import { getConnection } from "./audit/rabbitmq";
+import { AUDITED_ROUTES, getAuditActor } from "./audit/auditLogRouteConfig";
 import { quickSetupService } from "@smile-health/lib/tracing-config";
 
 dotenv.config();
@@ -99,6 +104,14 @@ app.get("/readyz", async (c) => {
 
 // register middleware error message language
 app.use("*", new RequestMiddleware().handle);
+
+// Audit trail: whitelisted routes only, published async over RabbitMQ
+const auditLogCapture = new AuditLogCaptureMiddleware(
+  new AuditLogPublisher(new Publisher(getConnection), "auth"),
+  AUDITED_ROUTES,
+  getAuditActor,
+);
+app.use("*", auditLogCapture.handle);
 
 // Register routes from Controllers
 AuthController.registerRoutes(app);

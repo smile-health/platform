@@ -1,0 +1,72 @@
+{
+  "title": {
+    "index": "Audit Trail"
+  },
+  "tab": {
+    "smile": "SMILE",
+    "wms": "WMS"
+  },
+  "column": {
+    "created_at": "Waktu",
+    "actor": "Pelaku",
+    "module": "Modul",
+    "action": "Aksi",
+    "entity_id": "Target",
+    "wms_waste_bag": "ID Waste Bag",
+    "wms_status": "Status",
+    "wms_source": "Sumber",
+    "service": "Layanan",
+    "detail": "Detail"
+  },
+  "form": {
+    "module": {
+      "label": "Modul",
+      "placeholder": "Pilih modul"
+    },
+    "actor": {
+      "label": "Pelaku",
+      "placeholder": "Cari pelaku"
+    },
+    "program": {
+      "label": "Program",
+      "placeholder": "Pilih program"
+    },
+    "date_range": {
+      "label": "Tanggal"
+    },
+    "wms_search": {
+      "placeholder": "Cari ID waste bag"
+    },
+    "service": {
+      "label": "Layanan",
+      "placeholder": "Pilih layanan"
+    },
+    "action": {
+      "label": "Aksi",
+      "placeholder": "Pilih aksi"
+    }
+  },
+  "empty_state": {
+    "title": "Tidak ada audit log"
+  },
+  "action": {
+    "view_detail": "Lihat detail"
+  },
+  "detail": {
+    "title": "Detail Audit Log",
+    "metadata": "Metadata",
+    "no_metadata": "Tidak ada metadata",
+    "ip": "IP Address",
+    "role": "Peran"
+  },
+  "retention": {
+    "title": "Retensi Log",
+    "description": "Audit log yang lebih lama dari jumlah hari ini dihapus otomatis.",
+    "label": "Retensi (hari)",
+    "hint": "Antara 1 sampai 90 hari",
+    "save": "Simpan",
+    "success": "Pengaturan retensi disimpan",
+    "error": "Gagal menyimpan pengaturan retensi",
+    "invalid": "Masukkan bilangan bulat antara 1 sampai 90"
+  }
+}

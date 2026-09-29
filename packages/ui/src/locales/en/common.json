@@ -218,6 +218,7 @@
   },
   "show_report": "Show Report",
   "tab": {
+    "audit_trail": "Audit Trail",
     "assets": {
       "label": "Assets",
       "tabs": {

@@ -1,3 +1,5 @@
+import { logger } from "@smile-health/lib/logger.js"
+import { AuditLogPublisher } from "@smile-health/lib/audit-log/publisher.js"
 import { NotFoundError } from "@smile-health/lib/error.js"
 import { PaginatedResponse } from "@smile-health/lib/types/paginate.js"
 import {
@@ -22,7 +24,8 @@ type StockOpnamePeriodsQueries = z.infer<typeof GetStockOpnamePeriodsQueries>
 export class StockOpnamePeriodModule {
   constructor(
     protected readonly repo: StockOpnamePeriodRepository,
-    protected readonly userRepo: UserRepository
+    protected readonly userRepo: UserRepository,
+    protected readonly auditLogPublisher: AuditLogPublisher
   ) {}
 
   readonly #setStartEndDate = (data) => {
@@ -88,12 +91,51 @@ export class StockOpnamePeriodModule {
   }
 
   async updateStatus(c: Context, id: number, status: number) {
+    const before = await this.repo.findById(c, id)
+
     // only 1 period can activa at a time, so update all other status to 0
     if (status === 1) {
       await this.repo.update(c, { status: 0 }, { status: 1 })
     }
     await this.repo.update(c, { status }, { id })
-    return this.getById(c, id)
+    const result = await this.getById(c, id)
+
+    // Audited at the period level (activate/deactivate), not per stock_opname
+    // row: individual entries have no approval step and their volume is too
+    // high for the generic capture middleware.
+    const user = c.var.user as
+      | {
+          global_id?: number
+          firstname?: string | null
+          lastname?: string | null
+          username?: string | null
+        }
+      | undefined
+    const actorName = [user?.firstname, user?.lastname]
+      .filter(Boolean)
+      .join(" ")
+    // Fire-and-forget: audit publishing must never fail or delay the status change.
+    void this.auditLogPublisher
+      .record(c, {
+        program_id: c.var.programId ?? before?.program_id ?? null,
+        actor_id: Number(user?.global_id ?? c.var.userId) || null,
+        actor_name: actorName || user?.username || null,
+        actor_role: null,
+        action: "update",
+        module: "stock_opname_period",
+        entity_id: id,
+        metadata: {
+          before: before ? { status: before.status } : null,
+          after: { status },
+        },
+      })
+      .catch((error) => {
+        logger.error(
+          `Failed to record stock_opname_period audit log: ${JSON.stringify(error)}`
+        )
+      })
+
+    return result
   }
 
   async getById(c: Context, id: number) {
@@ -119,7 +161,9 @@ export class StockOpnamePeriodModule {
         item.start_date ? moment(item.start_date).format("DD/MM/YYYY") : "",
         item.end_date ? moment(item.end_date).format("DD/MM/YYYY") : "",
         item.cutoff_date
-          ? moment.utc(item.cutoff_date, "YYYY-MM-DD HH:mm:ss").format("DD/MM/YYYY HH:mm:ss")
+          ? moment
+              .utc(item.cutoff_date, "YYYY-MM-DD HH:mm:ss")
+              .format("DD/MM/YYYY HH:mm:ss")
           : "",
         item.status === 1
           ? c.var.t("stock_opname.label.active")

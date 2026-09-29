@@ -4,6 +4,7 @@
 import { Command } from "commander"
 //import { migrateEntities } from "./scripts/migrate-entity-bulk.js"
 //import { migrateEntity } from "./scripts/migrate-entity.js"
+import { runAuditLogRetention } from "./scripts/audit-log-retention.js"
 import { initiateFirstUsers } from "./scripts/migrate-first-users-smile.js"
 //import { migrateLocation } from "./scripts/migrate-location.js"
 //import { migrateManufacture } from "./scripts/migrate-manufacture.js"
@@ -30,6 +31,16 @@ program
   .name("app-cli")
   .description("CLI for worker and utility commands")
   .version("1.0.0")
+
+program
+  .command("audit-log-retention")
+  .description(
+    "Add upcoming audit_logs partition and drop partitions older than the configured retention (system_settings audit_log.retention_days)"
+  )
+  .action(async () => {
+    await runAuditLogRetention()
+    process.exit(0)
+  })
 
 program
   .command("run-migrate")

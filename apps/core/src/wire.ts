@@ -15,6 +15,9 @@ import { UserController } from "@/modules/user/user.controller.js"
 import { UsersMiddleware } from "@/modules/user/user.middleware.js"
 import { UserRepository } from "@/modules/user/user.repository.js"
 import { AuthKeycloakService as AuthKcServiceLib } from "@smile-health/lib/api"
+import { USER_ROLE } from "./common/constants/users.js"
+import { AuditLogCaptureMiddleware } from "@smile-health/lib/audit-log/capture-middleware.js"
+import { AuditLogPublisher } from "@smile-health/lib/audit-log/publisher.js"
 import { TransactionManager } from "@smile-health/lib/database.js"
 import { featureFlagsMiddleware } from "@smile-health/lib/feature-flags/middleware.js"
 import {
@@ -93,6 +96,12 @@ import { AssetWorkingStatusRepository } from "./modules/asset-working-status/ass
 import { AssetElectricityController } from "./modules/asset-electricity/asset-electricity.controller.js"
 import { AssetElectricityModule } from "./modules/asset-electricity/asset-electricity.module.js"
 import { AssetElectricityRepository } from "./modules/asset-electricity/asset-electricity.repository.js"
+import { AUDITED_ROUTES } from "./modules/audit-log/audit-log.constants.js"
+import { AuditLogController } from "./modules/audit-log/audit-log.controller.js"
+import { AuditLogMiddleware } from "./modules/audit-log/audit-log.middleware.js"
+import { AuditLogModule } from "./modules/audit-log/audit-log.module.js"
+import { AuditLogRepository } from "./modules/audit-log/audit-log.repository.js"
+import { AuditLogWorker } from "./modules/audit-log/audit-log.worker.js"
 import { AuthKeycloakService } from "./modules/auth/auth.keycloak.service.js"
 import { BudgetSourceController } from "./modules/budget-source/budget-source.controller.js"
 import { BudgetSourceMiddleware } from "./modules/budget-source/budget-source.middleware.js"
@@ -242,6 +251,7 @@ const mq = getConnection
 const trxManager = new TransactionManager(db)
 const publisher = new Publisher(mq)
 const accountConsumer = new Consumer(mq, trxManager, "account-queue")
+const auditLogConsumer = new Consumer(mq, trxManager, "audit-log-queue")
 const assetConsumer = new Consumer(mq, trxManager)
 
 const accountRepo = new AccountRepository()
@@ -264,6 +274,7 @@ const masterRepo = new MasterRepository()
 const rolesToResourceMappingRepo = new RolesToResourceMappingRepository()
 const programRepo = new ProgramRepository()
 const activityRepo = new ActivityRepository()
+const auditLogRepo = new AuditLogRepository()
 const notificationRepo = new NotificationRepository()
 const assetVendorTypeRepo = new AssetVendorTypeRepository()
 const assetVendorRepo = new AssetVendorRepository()
@@ -642,6 +653,38 @@ const activityController = new ActivityController(
   excelMiddleware
 )
 
+const auditLogPublisher = new AuditLogPublisher(publisher, "core")
+const auditLogModule = new AuditLogModule(auditLogRepo, userRepo)
+const auditLogMiddleware = new AuditLogMiddleware()
+const auditLogController = new AuditLogController(
+  roleValidationMiddleware,
+  auditLogModule,
+  auditLogMiddleware
+)
+const auditLogWorker = new AuditLogWorker(auditLogRepo)
+auditLogWorker.registerWorkers(auditLogConsumer)
+
+const AUDIT_ROLE_LABEL_BY_ID = Object.fromEntries(
+  Object.entries(USER_ROLE).map(([label, id]) => [id, label])
+)
+const auditLogCaptureMiddleware = new AuditLogCaptureMiddleware(
+  auditLogPublisher,
+  AUDITED_ROUTES,
+  (c) => {
+    const user = (c.var as { user?: { id?: number } }).user
+    // Both auth paths load the actor from the users table, so user.id and
+    // accountID are the same users.id; prefer the user row explicitly.
+    return {
+      actorId: user?.id ?? c.var.accountID ?? null,
+      // actor_name stays null: the audit-log reader resolves it via a users join.
+      actorName: null,
+      actorRole:
+        AUDIT_ROLE_LABEL_BY_ID[String(c.var.role)] ??
+        (c.var.role != null ? String(c.var.role) : null),
+    }
+  }
+)
+
 const notificationMiddleware = new NotificationMiddleware(notificationRepo)
 const notificationModule = new NotificationModule(notificationRepo)
 const notificationController = new NotificationController(
@@ -927,6 +970,12 @@ mainApp.use(
   middlewareTracer.traceMiddleware("authMiddleware"),
   authMiddleware.handleAuthHeaderReinjection
 )
+// After auth so c.var.accountID / role / programId are populated.
+mainApp.use(
+  "*",
+  middlewareTracer.traceMiddleware("auditLogCaptureMiddleware"),
+  auditLogCaptureMiddleware.handle
+)
 // Route registration with performance tracing
 const routeConfigs = [
   {
@@ -960,6 +1009,11 @@ const routeConfigs = [
     name: "executive-roles",
   },
   { path: "/account", controller: accountController, name: "account" },
+  {
+    path: "/audit-logs",
+    controller: auditLogController,
+    name: "audit-logs",
+  },
   {
     path: "/asset-models",
     controller: assetModelController,
@@ -1194,6 +1248,7 @@ mainApp.post("/tolgee/reload", async (c) => {
 export {
   assetConsumer,
   accountConsumer,
+  auditLogConsumer,
   assetMonitoringDeviceController,
   assetMonitoringDeviceModule,
   assetMonitoringTemperatureModule,

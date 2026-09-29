@@ -64,6 +64,7 @@ import storageTemperatureMonitoringDetail from '../../pages/asset-managements/st
 import storageTemperatureMonitoringList from '../../pages/asset-managements/storage-temperature-monitoring/StorageTemperatureMonitoringList/locales/id.json'
 import assetType from '../../pages/asset-type/locales/id.json'
 import assetVendor from '../../pages/asset-vendor/locales/id.json'
+import auditTrail from '../../pages/audit-trail/locales/id.json'
 import coldStorageCapacity from '../../pages/cold-storage-capacity/locales/id.json'
 import exportHistory from '../../pages/export-history/locales/id.json'
 import programGlobalSettings from '../../pages/global-settings/program/locales/id.json'
@@ -163,4 +164,5 @@ export default {
   task,
   lplpo,
   coldStorageCapacity,
+  auditTrail,
 }
