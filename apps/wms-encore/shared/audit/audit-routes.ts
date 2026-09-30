@@ -114,12 +114,5 @@ export function extractEntityId(
   return toNumber(body?.id) ?? toNumber(body?.data?.id);
 }
 
-// Right-most X-Forwarded-For hop: the one appended by our own proxy (the
-// left-most hop is client-supplied and spoofable).
-export function clientIpFromForwardedFor(header: string | string[] | undefined): string | null {
-  const hops = (Array.isArray(header) ? header.join(",") : (header ?? ""))
-    .split(",")
-    .map((h) => h.trim())
-    .filter(Boolean);
-  return hops[hops.length - 1] ?? null;
-}
+// Moved to ./client-ip (trusted-proxy aware); re-exported for existing imports.
+export { clientIpFromForwardedFor } from "./client-ip";

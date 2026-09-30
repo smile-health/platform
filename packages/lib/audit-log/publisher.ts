@@ -2,8 +2,12 @@ import { Context } from "hono";
 import { SyncPublisher } from "../base/sync-publisher.js";
 import { Publisher } from "../rabbitmq/publisher.js";
 import { TOPIC } from "../rabbitmq/topic.js";
+import { clientIpFromForwardedFor } from "./client-ip.js";
 import { maskSensitiveFields } from "./mask.js";
 import { CreateAuditLogInput } from "./types.js";
+
+// Re-exported: callers and tests import it from the publisher.
+export { clientIpFromForwardedFor };
 
 /**
  * Util to be called from the service layer of transaction modules (in any
@@ -75,18 +79,3 @@ export function stripCredentialHeaders(
   return out;
 }
 
-/**
- * Single client hop: the RIGHTMOST x-forwarded-for entry (the one appended by
- * our own proxy; earlier entries are client-controlled), trimmed, max 255.
- * Matches apps/wms-encore clientIpFromForwardedFor.
- */
-export function clientIpFromForwardedFor(
-  header: string | undefined | null,
-): string | null {
-  const hops = (header ?? "")
-    .split(",")
-    .map((h) => h.trim())
-    .filter(Boolean);
-  const last = hops[hops.length - 1];
-  return last ? last.slice(0, 255) : null;
-}

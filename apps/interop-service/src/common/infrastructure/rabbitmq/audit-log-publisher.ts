@@ -11,6 +11,7 @@
 import type { Channel } from "amqplib";
 import type { Context, MiddlewareHandler } from "hono";
 import type { Logger } from "pino";
+import { clientIpFromForwardedFor } from "./client-ip";
 
 export const AUDIT_LOG_EXCHANGE = "audit-log.created";
 
@@ -26,15 +27,6 @@ const SAFE_HEADERS = new Set([
   "traceparent",
 ]);
 
-// mirrors packages/lib/audit-log/publisher.ts: rightmost hop, trimmed, max 255.
-function clientIpFromForwardedFor(header: string | undefined): string | null {
-  const hops = (header ?? "")
-    .split(",")
-    .map((h) => h.trim())
-    .filter(Boolean);
-  const last = hops[hops.length - 1];
-  return last ? last.slice(0, 255) : null;
-}
 
 export type AuditableRoute = {
   match: RegExp;
