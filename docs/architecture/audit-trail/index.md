@@ -84,7 +84,7 @@ erDiagram
 | `service` | varchar(30) | yes | `core`, `main`, `warehouse`, `auth`, `interop`, `wms`. Stamped by the publisher. |
 | `entity_id` | bigint | yes | From the `:id` route param, else `id` / `result.id` in the response body. |
 | `metadata` | json | yes | `{ before, after }`, already masked. |
-| `ip` | varchar(255) | yes | `x-forwarded-for` header. |
+| `ip` | varchar(255) | yes | Client IP from `x-forwarded-for`: the rightmost hop that is not a trusted proxy (private/cluster ranges and Cloudflare edge ranges). See [Client IP](#client-ip). |
 | `created_at` | **datetime** | no | `datetime`, not `timestamp`: MySQL rejects `TIMESTAMP` in `PARTITION BY RANGE COLUMNS`. |
 
 Indexes: `(module, entity_id)`, `(created_at)`, `(actor_id)`, `(service, created_at)`. The table is append-only, with no soft delete and no `created_by` columns. Retention is enforced by dropping partitions.
@@ -123,6 +123,12 @@ Route entries can override two things ([`AuditableRoute`](https://github.com/smi
 ### Masking
 
 [`AuditLogPublisher.record()`](https://github.com/smile-health/platform/blob/main/packages/lib/audit-log/publisher.ts) masks `metadata.before` and `metadata.after` with [`maskSensitiveFields`](https://github.com/smile-health/platform/blob/main/packages/lib/audit-log/mask.ts) before publishing. Keys matching a sensitive-name pattern (password, token, otp, nik, npwp, phone, email, address, date of birth, and others) are masked at every leaf underneath them, up to depth 10. The masking itself uses the existing `packages/lib/masking.ts`. When you find a new sensitive field, extend `SENSITIVE_KEY_PATTERN`, and err towards masking too much.
+
+### Client IP
+
+Requests arrive as client → Cloudflare → cluster ingress → nginx `proxy` → service, and every hop appends to `X-Forwarded-For`. The rightmost entry is therefore a cluster address (for example `10.42.0.0`, the k3s pod network), not the user. [`clientIpFromForwardedFor`](https://github.com/smile-health/platform/blob/main/packages/lib/audit-log/client-ip.ts) walks the header from the right and skips trusted proxies: private and cluster ranges, plus Cloudflare's [published ranges](https://www.cloudflare.com/ips/). The first address that is not a trusted proxy is recorded. Entries to its left are client-supplied and never read, so a forged header cannot choose the IP. When every hop is trusted (in-cluster calls, local dev), the rightmost hop is kept.
+
+`CF-Connecting-IP` is deliberately not used. It can be trusted only if the ingress is reachable solely through Cloudflare. `client-ip.ts` is copied verbatim into interop-service and wms-encore, and a lib test fails if the copies drift. When Cloudflare changes its ranges, update the list in all three.
 
 ### Explicit capture
 
