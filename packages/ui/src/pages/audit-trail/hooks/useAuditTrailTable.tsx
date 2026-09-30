@@ -8,7 +8,11 @@ import { usePermission } from '#shared/permission/index'
 import { parseAsInteger, useQueryStates, Values } from 'nuqs'
 import { useTranslation } from 'react-i18next'
 
-import { formatAuditDateTime, handleFilterParams } from '../audit-trail.helper'
+import {
+  describeAuditLog,
+  formatAuditDateTime,
+  handleFilterParams,
+} from '../audit-trail.helper'
 
 type UseAuditTrailTableParams = {
   filter: Values<Record<string, any>>
@@ -81,11 +85,27 @@ export default function useAuditTrailTable({
       minSize: 80,
     },
     {
-      header: t('auditTrail:column.entity_id'),
-      accessorKey: 'entity_id',
-      size: 80,
-      minSize: 80,
-      cell: ({ row }) => row?.original?.entity_id ?? '-',
+      header: t('auditTrail:column.description'),
+      id: 'description',
+      size: 200,
+      minSize: 160,
+      cell: ({ row }) => {
+        const { summary, changes } = describeAuditLog(row.original, t)
+        const fields = changes.slice(0, 3).map((change) => change.field)
+        const rest = changes.length - fields.length
+        return (
+          <div>
+            <div className="ui-font-semibold">{summary}</div>
+            {fields.length > 0 && (
+              <div className="ui-line-clamp-2 ui-text-sm ui-text-neutral-500">
+                {fields.join(', ')}
+                {rest > 0 &&
+                  ` ${t('auditTrail:description.more', { count: rest })}`}
+              </div>
+            )}
+          </div>
+        )
+      },
     },
     {
       header: t('auditTrail:column.detail'),

@@ -96,7 +96,11 @@ import { AssetWorkingStatusRepository } from "./modules/asset-working-status/ass
 import { AssetElectricityController } from "./modules/asset-electricity/asset-electricity.controller.js"
 import { AssetElectricityModule } from "./modules/asset-electricity/asset-electricity.module.js"
 import { AssetElectricityRepository } from "./modules/asset-electricity/asset-electricity.repository.js"
-import { AUDITED_ROUTES } from "./modules/audit-log/audit-log.constants.js"
+import {
+  AUDIT_BEFORE_TABLES,
+  AUDITED_ROUTES,
+} from "./modules/audit-log/audit-log.constants.js"
+import type { DB } from "@/common/infrastructure/database/types/db.js"
 import { AuditLogController } from "./modules/audit-log/audit-log.controller.js"
 import { AuditLogMiddleware } from "./modules/audit-log/audit-log.middleware.js"
 import { AuditLogModule } from "./modules/audit-log/audit-log.module.js"
@@ -682,6 +686,18 @@ const auditLogCaptureMiddleware = new AuditLogCaptureMiddleware(
         AUDIT_ROLE_LABEL_BY_ID[String(c.var.role)] ??
         (c.var.role != null ? String(c.var.role) : null),
     }
+  },
+  // Row as it was before an update/delete; table names come from AUDITED_ROUTES only.
+  // Reads through the request's transaction so the post-handler re-read of
+  // tracked columns sees the uncommitted change.
+  async (table, id, c) => {
+    if (!AUDIT_BEFORE_TABLES.has(table)) return null
+    const conn = ((c.var as { trx?: typeof db }).trx ?? db) as typeof db
+    return conn
+      .selectFrom(table as keyof DB)
+      .selectAll()
+      .where("id" as never, "=", id as never)
+      .executeTakeFirst() as Promise<Record<string, unknown> | undefined>
   }
 )
 

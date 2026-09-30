@@ -104,9 +104,10 @@ For each request it:
 1. Finds the first route whose `match` regex hits `c.req.path` and whose `methods` include the request method. The default methods are POST, PUT, PATCH, DELETE.
 2. Derives the action: `route.action` if set, otherwise POST=create, PUT/PATCH=update, DELETE=delete.
 3. Reads the JSON request body through Hono's body cache. `c.req.raw.clone()` throws if an earlier middleware such as auth already consumed the stream.
-4. Calls `next()`. If the response is not 2xx, nothing is recorded.
-5. Calls `getActor(c, responseBody)`. The response body is passed in so a login can take its actor from the response.
-6. Calls `AuditLogPublisher.record()` with `metadata = { before: null, after: requestBody ?? responseBody }`.
+4. For PUT/PATCH/DELETE on a route with `before`, captures the row id from `c.req.path` with `before.idFrom` and calls the service's `loadBefore(table, id)`. `c.req.param()` cannot be used here: in a `"*"` middleware it is `undefined` until `next()` runs. A failed lookup is logged and leaves `before` null.
+5. Calls `next()`. If the response is not 2xx, nothing is recorded.
+6. Calls `getActor(c, responseBody)`. The response body is passed in so a login can take its actor from the response.
+7. Calls `AuditLogPublisher.record()` with `metadata = { before, after: requestBody ?? responseBody }`. `before` is trimmed to the keys present in `after`. A DELETE with no body keeps the whole row.
 
 Route entries can override two things ([`AuditableRoute`](https://github.com/smile-health/platform/blob/main/packages/lib/audit-log/capture-middleware.ts)):
 
@@ -114,6 +115,10 @@ Route entries can override two things ([`AuditableRoute`](https://github.com/smi
 |---|---|---|
 | `action` | Replaces the method-derived action | `"export"`, `"login"`, `"logout"` |
 | `methods` | Replaces the default method list | `["GET"]` for an export endpoint |
+| `before` | Loads the row before an update/delete | `{ table: "materials", idFrom: /^\/materials\/(\d+)(\/status)?$/ }` |
+| `before.track` | Columns the body doesn't carry: kept in `before` and re-read after the handler into `after` | `track: ["order_status_id"]` on `PUT /orders/:id/cancel` |
+
+`loadBefore(table, id, c)` is the constructor's fourth argument. core and main pass a Kysely `selectFrom(table).selectAll().where("id", "=", id)` on `c.var.trx` (falling back to `db`), guarded by `AUDIT_BEFORE_TABLES` (the tables named in their route list). It must use the request transaction: `trxMiddleware` wraps the audit middleware and commits only after it returns, so the `track` re-read would otherwise see the old value. A service that passes no loader records `before: null`.
 
 ### Masking
 
@@ -121,7 +126,7 @@ Route entries can override two things ([`AuditableRoute`](https://github.com/smi
 
 ### Explicit capture
 
-The generic middleware knows only HTTP routes, so it cannot give a real `before` value or per-table precision. Modules that need that call `AuditLogPublisher.record()` from their service layer. Today there is one: `StockOpnamePeriodModule.updateStatus()` in [apps/main](https://github.com/smile-health/platform/blob/main/apps/main/src/modules/stock-opname-period/stock-opname-period.module.ts). It records `module: "stock_opname_period"` with `before: { status }` and `after: { status }`. It is recorded at the period level (activate/deactivate) because individual stock opname rows have no approval step and their volume is too high for the middleware.
+The generic middleware loads `before` only when the row id is in the path and the route names a single table. It cannot give per-table precision or handle ids sent in the body. Modules that need that call `AuditLogPublisher.record()` from their service layer. Today there is one: `StockOpnamePeriodModule.updateStatus()` in [apps/main](https://github.com/smile-health/platform/blob/main/apps/main/src/modules/stock-opname-period/stock-opname-period.module.ts). It records `module: "stock_opname_period"` with `before: { status }` and `after: { status }`. It is recorded at the period level (activate/deactivate) because individual stock opname rows have no approval step and their volume is too high for the middleware.
 
 ### Per-service capture
 
@@ -249,11 +254,13 @@ All services must point at the **same RabbitMQ broker and vhost**, because core 
 3. **Order matters. The first match wins.** Keep specific entries (exports) above broad ones, otherwise `POST /materials/export` is recorded as a material create.
 4. Check the payload for PII. If a key holds something sensitive that the pattern does not catch, extend `SENSITIVE_KEY_PATTERN` in `packages/lib/audit-log/mask.ts` **and** in the manual copy in `apps/wms-encore/shared/audit/audit-log-mask.ts` (see below).
 5. Add the new `module` value to the UI module filter and locale labels.
-6. If you need a real `before` or per-table precision, skip the whitelist and call `AuditLogPublisher.record()` from the module instead.
+6. For a real `before`, add `before: { table, idFrom }` when the endpoint is `/<prefix>/:id` on one table. Otherwise, if the id is in the body or you need per-table precision, skip the whitelist and call `AuditLogPublisher.record()` from the module.
 
 ## Known limitations
 
-- **`metadata.before` is always null** for generic capture. Only explicit `record()` calls, such as the stock opname period, carry a `before`.
+- **`metadata.before` is partial.** It is filled for core master data (users, executive accounts, programs, budget sources, manufactures, materials, entities, asset types/models/vendors), for main's entity-material delete and order status actions (`order_status_id`), and for the explicit stock opname period `record()`. Creates, auth, interop, wms and body-id endpoints (e.g. `PUT/DELETE /entities/customers`) have none. It reflects the main table only: Keycloak, `*_workspaces`, child materials and other side tables are not captured.
+- **Orders:** status actions (`PUT /orders/:id/{allocate,cancel,confirm,fulfilled,pending,ship,validate}`) are `update_status` with before/after `order_status_id`; `POST /orders/{request,relocation,return,distribution,central-distribution}` are `create`; `/orders/:id/order-item-stocks` is `order_item_stock`. `POST /orders/:id/retry-integration-logs` is not recorded.
+- **`/programs/:program_id/activities/...` is labelled `program`**, because the `/programs` regex catches it.
 - **auth-service rows have `actor_id` null.** The actor is identified by name and role only, so filtering by actor id will not find login or logout events.
 - **Masking is duplicated.** wms-encore (`shared/audit/audit-log-mask.ts`) has a manual port of `packages/lib/audit-log/mask.ts`. interop-service publishes no request body today, so it has no mask, but the day it does it will need the same port. Any change to the sensitive-key pattern must be copied by hand.
 - **The wire format is duplicated** in interop and wms. A change to the lib publisher's message shape must be mirrored there.
