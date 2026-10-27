@@ -236,7 +236,7 @@ export const getProgramHref = (
 ): string => {
   if (program.href) return program.href
   if (program.config?.base_url) return program.config.base_url
-  if (program.app_type === 'waste_management') return `/${language}/wms`
+  if (program.app_type === 'waste_management') return `/wms/${language}`
   return fallbackHref(key)
 }
 
