@@ -134,7 +134,7 @@ async function getProviderType(entityId: number): Promise<string | null> {
 // row at all", not merely "the same net result restated".
 async function getProviderTypes(entityId: number): Promise<string | undefined> {
   const aggResult = await sql<{ types: string | null }>`
-    SELECT string_agg(DISTINCT provider_type, ', ' ORDER BY provider_type) AS types
+    SELECT string_agg(DISTINCT provider_type::text, ', ' ORDER BY provider_type::text) AS types
     FROM partnership
     WHERE provider_id = ${entityId} AND partnership_status = 'ACTIVE'
   `.execute(db);
