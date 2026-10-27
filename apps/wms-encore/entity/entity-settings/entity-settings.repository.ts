@@ -104,6 +104,7 @@ export async function findAllEntitySettings(
   }
 
   const countRow = await countQuery
+    .clearSelect()
     .select((eb) => eb.fn.countAll<string>().as("count"))
     .executeTakeFirst();
   const total = Number(countRow?.count ?? 0);

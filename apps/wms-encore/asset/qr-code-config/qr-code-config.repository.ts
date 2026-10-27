@@ -102,7 +102,7 @@ export async function findPaginated(params: {
   // ILIKE (not LIKE) per convention once the join column is available.
   // e.g.: query = query.where("waste_source.internal_source_name", "ilike", `%${params.search}%`)
 
-  const countRow = await query.select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
+  const countRow = await query.clearSelect().select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
 
   // Original default sort: ['updated_at', 'DESC'], with a fallback re-push

@@ -213,7 +213,7 @@ export async function findPaginated(params: {
     query = query.where("name", "ilike", `%${params.search}%`);
   }
 
-  const countRow = await query.select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
+  const countRow = await query.clearSelect().select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
 
   const rows = await query

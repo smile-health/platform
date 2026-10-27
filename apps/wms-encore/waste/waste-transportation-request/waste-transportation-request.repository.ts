@@ -174,6 +174,7 @@ export async function findPaginated(params: {
     .where("waste_transportation_request.deleted_at", "is", null);
 
   const countRow = await query
+    .clearSelect()
     .select((eb) => eb.fn.countAll<string>().as("count"))
     .executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
