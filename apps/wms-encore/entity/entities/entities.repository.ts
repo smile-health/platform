@@ -259,6 +259,7 @@ export async function getAllEntities(
   }
 
   const totalRow = await countQuery
+    .clearSelect()
     .select((eb) => eb.fn.countAll().as("total"))
     .executeTakeFirst();
   const total = Number(totalRow?.total ?? 0);

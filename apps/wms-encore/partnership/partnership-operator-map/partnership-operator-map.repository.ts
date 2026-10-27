@@ -163,6 +163,7 @@ export async function findAllPaginated(params: {
     .where("partnership_id", "in", matchingPartnershipIds);
 
   const countRow = await baseQuery
+    .clearSelect()
     .select((eb) => eb.fn.countAll<string>().as("count"))
     .executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
@@ -225,6 +226,7 @@ export async function findAllByThirdpartyAdmin(params: {
   }
 
   const countRow = await query
+    .clearSelect()
     .select((eb) => eb.fn.countAll<string>().as("count"))
     .executeTakeFirst();
   const total = Number(countRow?.count ?? 0);

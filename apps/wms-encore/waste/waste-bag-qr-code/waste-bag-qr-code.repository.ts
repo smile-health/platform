@@ -124,7 +124,7 @@ export async function findPaginated(params: {
     .where("healthcare_facility_id", "=", params.healthcareFacilityId)
     .where("deleted_at", "is", null);
 
-  const countRow = await query.select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
+  const countRow = await query.clearSelect().select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
 
   const rows = await query

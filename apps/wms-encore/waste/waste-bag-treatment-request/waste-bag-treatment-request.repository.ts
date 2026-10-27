@@ -118,7 +118,7 @@ export async function findPaginated(params: {
   // intentionally not applied to the query.
   const query = db.selectFrom("waste_treatment_request").where("deleted_at", "is", null);
 
-  const countRow = await query.select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
+  const countRow = await query.clearSelect().select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
 
   const rows = await query

@@ -290,7 +290,7 @@ export async function findPaginated(
   if (params.wasteUpdateStart) query = query.where("waste_status_updated_at", ">=", new Date(params.wasteUpdateStart));
   if (params.wasteUpdateEnd) query = query.where("waste_status_updated_at", "<=", new Date(params.wasteUpdateEnd));
 
-  const countRow = await query.select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
+  const countRow = await query.clearSelect().select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
 
   const rows = await query
@@ -1053,7 +1053,7 @@ export async function findLogBookPaginated(params: {
   let query = db.selectFrom("waste_bag").where("deleted_at", "is", null);
   if (params.healthcareId) query = query.where("healthcare_facility_id", "=", params.healthcareId);
 
-  const countRow = await query.select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
+  const countRow = await query.clearSelect().select((eb) => eb.fn.countAll<string>().as("count")).executeTakeFirst();
   const total = Number(countRow?.count ?? 0);
   const rows = await query
     .selectAll()
