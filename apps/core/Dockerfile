@@ -1,6 +1,6 @@
 # Stage 1: Prune the monorepo to only what core + its workspace deps need
-FROM node:20-alpine AS pruner
-RUN npm install -g turbo@2
+FROM node:24-alpine AS pruner
+RUN npm install -g turbo@2.11.10
 WORKDIR /app
 COPY . .
 RUN turbo prune @smile/smile-core --docker
@@ -11,10 +11,10 @@ FROM oven/bun:1 AS base
 # Install Node.js and pnpm
 RUN apt-get update && \
     apt-get install -y --no-install-recommends jq wget && \
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && \
     apt-get install -y --no-install-recommends nodejs npm && \
     rm -rf /var/lib/apt/lists/* && \
-    npm install -g pnpm@9.12.3
+    npm install -g pnpm@12.18.0
 
 # Create a non-root user
 RUN groupadd -r appuser && useradd -r -g appuser -m appuser

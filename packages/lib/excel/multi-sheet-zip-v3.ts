@@ -14,7 +14,7 @@ import { pipeline } from "stream";
 import { promisify } from "util";
 import { randomUUID } from "crypto";
 import * as JSZip from "jszip";
-import archiver from "archiver";
+import { ZipArchive } from "archiver";
 import { Client } from "minio";
 import * as ExcelJS from "exceljs";
 import { Column, Filter, PROCESSOR } from "./types.js";
@@ -856,7 +856,7 @@ export class MultiSheetZipExporter {
     console.log(`[StreamExporter] ZIP file path: ${zipFilePath}`);
 
     // OPTIMASI: Use archiver for streaming ZIP (not load all files to memory)
-    const archive = archiver("zip", { zlib: { level: 6 } });
+    const archive = new ZipArchive({ zlib: { level: 6 } });
 
     archive.pipe(output);
 
@@ -1220,7 +1220,7 @@ export class MultiSheetZipExporter {
     const parentDir = join(this.tempDir, "..");
     const zipFilePath = join(parentDir, `${cleanFilename}.zip`);
     const output = createWriteStream(zipFilePath);
-    const archive = archiver("zip", { zlib: { level: 6 } });
+    const archive = new ZipArchive({ zlib: { level: 6 } });
 
     archive.pipe(output);
 

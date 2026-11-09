@@ -1,6 +1,6 @@
 # Stage 1: Prune the monorepo to only what auth-service + its workspace deps need
-FROM node:20-alpine AS pruner
-RUN npm install -g turbo@2
+FROM node:24-alpine AS pruner
+RUN npm install -g turbo@2.11.10
 WORKDIR /app
 COPY . .
 RUN turbo prune @smile/auth-service --docker
@@ -12,10 +12,10 @@ FROM oven/bun:1 AS base
 RUN apt-get update && \
     apt-get install -y --no-install-recommends jq wget ca-certificates && \
     update-ca-certificates && \
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash && \
+    curl -fsSL https://deb.nodesource.com/setup_24.x | bash && \
     apt-get install -y --no-install-recommends nodejs npm && \
     rm -rf /var/lib/apt/lists/* && \
-    npm install -g pnpm@8.15.6
+    npm install -g pnpm@12.18.0
 
 # Create a non-root user
 RUN groupadd -r appuser && useradd -r -g appuser -m appuser

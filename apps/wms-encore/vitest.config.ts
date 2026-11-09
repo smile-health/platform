@@ -13,11 +13,9 @@ export default defineConfig({
     // Encore-managed Postgres container + daemon; the default parallel
     // worker pool previously spiked memory enough to crash the machine.
     pool: "forks",
-    poolOptions: {
-      forks: {
-        singleFork: true,
-      },
-    },
+    // Vitest 4 dropped poolOptions.forks.singleFork; one worker gives the
+    // same one-at-a-time behaviour.
+    maxWorkers: 1,
     fileParallelism: false,
   },
   resolve: {
