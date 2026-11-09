@@ -12,22 +12,22 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.840.0",
-    "@aws-sdk/s3-request-presigner": "^3.858.0",
-    "@novu/api": "^3.19.0",
-    "amqplib": "^0.10.9",
-    "encore.dev": "1.58.0",
+    "@aws-sdk/client-s3": "^3.1164.0",
+    "@aws-sdk/s3-request-presigner": "^3.1164.0",
+    "@novu/api": "^3.19.1",
+    "amqplib": "^2.3.1",
+    "encore.dev": "1.58.8",
     "exceljs": "^4.4.0",
-    "kysely": "^0.27.5",
-    "pg": "^8.13.1",
-    "zod": "^3.24.3"
+    "kysely": "^0.29.8",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@dotenvx/dotenvx": "^1.51.0",
-    "@types/amqplib": "^0.10.7",
-    "@types/pg": "^8.11.10",
-    "typescript": "^5.8.3",
-    "vite": "^5.4.11",
-    "vitest": "^2.1.9"
+    "@dotenvx/dotenvx": "^2.38.2",
+    "@types/amqplib": "^0.10.8",
+    "@types/pg": "^8.23.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
   }
 }
