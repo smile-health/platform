@@ -1,8 +1,8 @@
-FROM node:18-alpine3.19 AS base
+FROM node:24-alpine AS base
 
 FROM base AS builder
 RUN apk update && apk add --no-cache libc6-compat jq python3 make g++ && rm -rf /var/cache/apk/*
-RUN npm install -g pnpm@9.12.3 turbo
+RUN npm install -g pnpm@12.18.0 turbo@2.11.10
 
 # NEXT_PUBLIC_* vars are inlined at build time by Next.js. They MUST be present
 # here (as ARG) so the image bakes the correct values. Values are supplied via
@@ -61,8 +61,6 @@ COPY . .
 RUN find . -name package.json -not -path '*/node_modules/*' -exec sh -c \
     'jq "if .dependencies[\"@smile-health/lib\"] then .dependencies[\"@smile-health/lib\"] = \"workspace:*\" else . end" "$1" > /tmp/pkg.json && mv /tmp/pkg.json "$1"' _ {} \;
 
-# Pin nanoid to CJS-compatible version (pnpm resolves ESM-only v6 which breaks postcss)
-RUN jq '.pnpm.overrides = {nanoid: "3.3.7"}' package.json > /tmp/pkg.json && mv /tmp/pkg.json package.json
 
 # Install all workspace deps
 RUN pnpm install --frozen-lockfile=false
