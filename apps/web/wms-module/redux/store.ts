@@ -5,7 +5,7 @@ import {
   combineReducers,
   createStore,
 } from 'redux';
-import thunkMiddleware, { ThunkMiddleware } from 'redux-thunk';
+import { thunk as thunkMiddleware, ThunkMiddleware } from 'redux-thunk';
 import app from './reducers/app';
 import auth from './reducers/auth';
 

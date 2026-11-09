@@ -1,4 +1,3 @@
-const { headers } = require('next/headers')
 const fs = require('fs')
 const path = require('path')
 
@@ -98,9 +97,6 @@ module.exports = {
         hostname: '**.badr.co.id',
       },
     ],
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
   typescript: {
     // The wms-module merge hasn't been through a full tsc pass yet — same escape hatch
