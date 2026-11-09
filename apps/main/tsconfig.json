@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     /* Base Options: */
     "skipLibCheck": true, //Skip node_modules type checking
     "target": "es2022", //Compile target
