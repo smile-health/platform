@@ -26,7 +26,7 @@ jobs:
       web: ${{ steps.filter.outputs.web }}
       lib: ${{ steps.filter.outputs.lib }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: dorny/paths-filter@v3
         id: filter
         with:
@@ -61,14 +61,14 @@ jobs:
       contents: read
     if: needs.changes.outputs.auth == 'true' || needs.changes.outputs.lib == 'true' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.services == 'all' || contains(github.event.inputs.services, 'auth')))
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: docker/setup-buildx-action@v3
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         with:
           context: .
           file: apps/auth-service/Dockerfile
@@ -88,14 +88,14 @@ jobs:
       contents: read
     if: needs.changes.outputs.core == 'true' || needs.changes.outputs.lib == 'true' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.services == 'all' || contains(github.event.inputs.services, 'core')))
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: docker/setup-buildx-action@v3
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         with:
           context: .
           file: apps/core/Dockerfile
@@ -115,14 +115,14 @@ jobs:
       contents: read
     if: needs.changes.outputs.main == 'true' || needs.changes.outputs.lib == 'true' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.services == 'all' || contains(github.event.inputs.services, 'main')))
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: docker/setup-buildx-action@v3
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         with:
           context: .
           file: apps/main/Dockerfile
@@ -143,23 +143,23 @@ jobs:
       contents: read
     if: needs.changes.outputs.wms_encore == 'true' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.services == 'all' || contains(github.event.inputs.services, 'wms-encore')))
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
+      # No `cache: pnpm` here: dependencies are installed in /tmp/wms-iso, so
+      # the repo-level pnpm store never exists and the cache post-step failed
+      # the whole job after a successful build.
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
-          cache: pnpm
+          node-version: 24
 
       - name: Install Encore CLI
         run: |
-          # Pin to 1.58.0 (same as the standalone wms-encore CI). Newer encore
-          # CLI versions fail to resolve node_modules during `encore build docker`
-          # (ERR installing node_modules failed).
-          curl -L https://encore.dev/install.sh | bash -s -- 1.58.0
+          # Keep in step with the encore.dev version in apps/wms-encore/package.json.
+          curl -L https://encore.dev/install.sh | bash -s -- 1.58.8
           echo "$HOME/.encore/bin" >> "$GITHUB_PATH"
 
       # IMPORTANT: build wms-encore from an ISOLATED dir, not the monorepo root.
@@ -228,14 +228,14 @@ jobs:
       contents: read
     if: needs.changes.outputs.web == 'true' || needs.changes.outputs.lib == 'true' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.services == 'all' || contains(github.event.inputs.services, 'web')))
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: docker/setup-buildx-action@v3
       - uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         with:
           context: .
           file: apps/web/Dockerfile
@@ -273,11 +273,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && needs.build-auth.result == 'success'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Trigger deploy webhook
         env:
-          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
-          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
         run: |
           SHA="${{ github.sha }}"
           SERVICES='["auth-service"]'
@@ -296,11 +296,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && needs.build-core.result == 'success'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Trigger deploy webhook
         env:
-          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
-          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
         run: |
           SHA="${{ github.sha }}"
           SERVICES='["core"]'
@@ -319,11 +319,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && needs.build-main.result == 'success'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Trigger deploy webhook
         env:
-          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
-          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
         run: |
           SHA="${{ github.sha }}"
           SERVICES='["main"]'
@@ -342,11 +342,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && needs.build-wms-encore.result == 'success'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Trigger deploy webhook
         env:
-          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
-          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
         run: |
           SHA="${{ github.sha }}"
           SERVICES='["wms-encore"]'
@@ -365,11 +365,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && needs.build-web.result == 'success'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Trigger deploy webhook
         env:
-          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL || 'https://smile-deploy.badr.co.id/' }}
-          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET || 'smile-deploy-webhook-2026' }}
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+          WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
         run: |
           SHA="${{ github.sha }}"
           SERVICES='["web"]'
