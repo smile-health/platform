@@ -21,6 +21,7 @@ import { Hono } from "hono"
 import env from "./config/env.js"
 import { app as openapiApp } from "./openapi.js"
 import { quickSetupService } from "@smile-health/lib/tracing-config"
+import { requestBodyLimit } from "@smile-health/lib/middlewares/body-limit.middleware.js"
 
 // construct app
 const app = new Hono()
@@ -90,6 +91,7 @@ app.get("/readyz", async (c) => {
 })
 
 app.use(httpLogger)
+app.use("*", requestBodyLimit())
 const tracer = trace.getTracer("main-server")
 
 // Enhanced error handler with tracing

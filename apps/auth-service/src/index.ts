@@ -15,6 +15,7 @@ import { AuditLogCaptureMiddleware } from "@smile-health/lib/audit-log/capture-m
 import { getConnection } from "./audit/rabbitmq";
 import { AUDITED_ROUTES, getAuditActor } from "./audit/auditLogRouteConfig";
 import { quickSetupService } from "@smile-health/lib/tracing-config";
+import { requestBodyLimit } from "@smile-health/lib/middlewares/body-limit.middleware.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ const appPrefix = env.API_PREFIX ?? "";
 quickSetupService("auth-service", app);
 app.use(cors());
 app.use(httpLogger);
+app.use("*", requestBodyLimit());
 app.openAPIRegistry.registerComponent("securitySchemes", "Bearer", {
   type: "http",
   scheme: "bearer",
