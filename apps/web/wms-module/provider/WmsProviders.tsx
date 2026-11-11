@@ -16,7 +16,7 @@ import { Toaster } from 'react-hot-toast';
 import { I18nextProvider } from 'react-i18next';
 import { Provider as ReduxProvider } from 'react-redux';
 import { setAxiosLanguage } from '@/lib/axios';
-import { growthbook } from '@/lib/growthbook';
+import { growthbook, isGrowthbookEnabled } from '@/lib/growthbook';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -72,10 +72,12 @@ export function WmsProviders({
   }, [locale]);
 
   useEffect(() => {
+    if (!isGrowthbookEnabled) return;
     growthbook.init({ streaming: true });
   }, []);
 
   useEffect(() => {
+    if (!isGrowthbookEnabled) return;
     const interval = setInterval(
       () => growthbook.refreshFeatures(),
       1 * 60 * 1000
