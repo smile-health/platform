@@ -2,7 +2,7 @@ import { ButtonActionTable } from '@/components/ButtonActionTable';
 import { TEntitiesWms, TEntityDetailUser } from '@/types/entity';
 import { Badge } from '@repo/ui/components/badge';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 type DataProps = {

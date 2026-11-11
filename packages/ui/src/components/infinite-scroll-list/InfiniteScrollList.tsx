@@ -6,13 +6,14 @@ import {
 } from '@tanstack/react-query'
 import { Badge } from '#components/badge'
 import { DataTable, DataTableProps } from '#components/data-table'
+import type { RowData } from '#utils/table'
 import { InputSearch } from '#components/input'
 import { useDebounce } from '#hooks/useDebounce'
 import cx from '#lib/cx'
 import { queryClient } from '#provider/query-client'
 import { useTranslation } from 'react-i18next'
 
-export type InfiniteScrollListProps<Schema, Value> = {
+export type InfiniteScrollListProps<Schema, Value extends RowData> = {
   id: string
   title?: string
   warning_description?: string
@@ -50,7 +51,7 @@ export const reValidateQueryFetchInfiniteScroll = () => {
   }
 }
 
-export const InfiniteScrollList = <Schema, Value>({
+export const InfiniteScrollList = <Schema, Value extends RowData>({
   id,
   title,
   description,

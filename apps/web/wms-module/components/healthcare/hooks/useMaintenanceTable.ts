@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'next/navigation';
 
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import { ColumnSort } from '@tanstack/react-table';
+import { ColumnSort } from '@repo/ui/utils/table';
 
 import { getHFAssetActivity } from '@/services/hf-asset-activity';
 import { ActivityType } from '@/types/hf-asset-activity';

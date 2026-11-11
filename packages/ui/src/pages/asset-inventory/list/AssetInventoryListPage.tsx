@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { SortingState } from '@tanstack/react-table'
+import { SortingState } from '#utils/table'
 import { Button } from '#components/button'
 import {
   FilterExpandButton,

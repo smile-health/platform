@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { ColumnDef, ColumnSort } from '@tanstack/react-table'
+import { ColumnDef, ColumnSort } from '#utils/table'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { ButtonActionTable } from '#components/modules/ButtonActionTable'
 import {

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ColumnDef, SortingState } from '@tanstack/react-table'
+import { ColumnDef, SortingState } from '#utils/table'
 import { ButtonActionTable } from '#components/modules/ButtonActionTable'
 import { hasPermission } from '#shared/permission/index'
 import { getFullName } from '#utils/strings'

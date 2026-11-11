@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { CellContext } from '@tanstack/react-table'
+import { CellContext } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import DashboardOverallContainer from '#pages/dashboard/components/DashboardOverallContainer'
 import { numberFormatter } from '#utils/formatter'
@@ -55,7 +55,7 @@ const DashboardCountStockOverall = forwardRef<TDashboardIOTHandler, Props>(
     const conditionalColumns = labels?.map((label) => ({
       header: label,
       accessorKey: `${label}`,
-      cell: ({ getValue }: CellContext<unknown, unknown>) =>
+      cell: ({ getValue }: CellContext<Record<string, unknown>, unknown>) =>
         numberFormatter(getValue<number>() ?? 0, language),
       meta: {
         headerClassName: 'ui-text-center',

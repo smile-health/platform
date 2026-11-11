@@ -1,6 +1,6 @@
 import i18n from '@/locales/i18n';
 import { TWasteGroup, TWasteGroupDetail, WasteBag } from '@/types/waste-group';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 type FormatWeightFn = (value: string | number) => string;

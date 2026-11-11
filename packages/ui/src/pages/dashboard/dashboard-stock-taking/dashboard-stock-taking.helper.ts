@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { removeEmptyObject } from '#utils/object'
 import { getReactSelectLabel, getReactSelectValue } from '#utils/react-select'
 import { Values } from 'nuqs'

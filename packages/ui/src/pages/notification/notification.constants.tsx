@@ -1,5 +1,5 @@
 import { TNotification } from "#types/notification";
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef } from "#utils/table";
 import NotificationCell from "./components/NotificationCell";
 import { ActionButtonType } from "#hooks/useNotification";
 

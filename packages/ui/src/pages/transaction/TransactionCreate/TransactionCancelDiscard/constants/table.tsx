@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import { Checkbox } from '#components/checkbox'
 import { BOOLEAN } from '#constants/common'

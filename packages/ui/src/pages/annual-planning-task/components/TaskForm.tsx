@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { PlusIcon } from '@heroicons/react/24/solid'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import { Checkbox } from '#components/checkbox'
 import { DataTable } from '#components/data-table'

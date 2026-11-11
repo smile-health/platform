@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import cx from '#lib/cx'
 import DashboardDataTable from '#pages/dashboard/components/DashboardDataTable'
 

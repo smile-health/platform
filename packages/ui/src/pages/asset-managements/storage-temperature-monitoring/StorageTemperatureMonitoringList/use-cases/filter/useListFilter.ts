@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { SortingState } from '@tanstack/react-table'
+import { SortingState } from '#utils/table'
 import { useFilter } from '#components/filter'
 import { removeEmptyObject } from '#utils/object'
 import { getReactSelectValue } from '#utils/react-select'

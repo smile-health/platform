@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { AxiosError } from "axios"
 import { useRouter } from "next/router"
-import { ColumnSort } from "@tanstack/react-table"
+import { ColumnSort } from "#utils/table"
 
 import { toast } from "#components/toast"
 

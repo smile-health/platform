@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import Link from 'next/link'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import { USER_ROLE } from '#constants/roles'
 import useSmileRouter from '#hooks/useSmileRouter'

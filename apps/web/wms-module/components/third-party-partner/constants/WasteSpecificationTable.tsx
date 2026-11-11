@@ -1,7 +1,7 @@
 import { loggedAsAdmin } from '@/utils/getUserRole';
 import { Button } from '@repo/ui/components/button';
 import { DataTable } from '@repo/ui/components/data-table';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { useTranslation } from 'react-i18next';
 import { getProviderTypeOptions } from '../utils/helper';
 import { TFunction } from 'i18next';

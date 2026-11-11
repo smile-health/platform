@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CellContext, ColumnDef } from '@tanstack/react-table'
+import { CellContext, ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import { BOOLEAN } from '#constants/common'
 import { DetailStock, Stock, StockDetailStock } from '#types/stock'

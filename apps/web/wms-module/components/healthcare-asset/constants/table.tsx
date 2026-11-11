@@ -1,7 +1,7 @@
 import { ButtonActionTable } from '@/components/ButtonActionTable';
 import { loggedAsAdmin } from '@/utils/getUserRole';
 import { Badge } from '@repo/ui/components/badge';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 import { THealthcareAsset, WorkingStatusEnum } from '@/types/healthcare-asset';
 import { getWorkingStatus } from './assetHealthcare';

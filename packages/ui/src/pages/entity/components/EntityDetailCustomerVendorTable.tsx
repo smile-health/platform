@@ -1,5 +1,5 @@
 import { Checkbox } from '@repo/ui/components/checkbox'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import { BOOLEAN } from '#constants/common'
 import { TDetailEntity, TEntityCustomer } from '#types/entity'

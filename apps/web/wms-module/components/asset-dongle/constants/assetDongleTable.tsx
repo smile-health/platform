@@ -1,5 +1,5 @@
 import { loggedAsAdmin } from '@/utils/getUserRole';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 import { TDetailEntity } from '@/types/entity';
 import { ButtonActionTable } from '@/components/ButtonActionTable';

@@ -1,5 +1,5 @@
 import { Button, ButtonVariant } from "#components/button"
-import { CellContext, ColumnDef, HeaderContext } from "@tanstack/react-table"
+import { CellContext, ColumnDef, HeaderContext } from "#utils/table"
 import {
   AnnualNeedsDataProvince,
   AnnualPlanningProcessDataDistrict,

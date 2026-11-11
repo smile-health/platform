@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import { FormErrorMessage } from '#components/form-control'
 import Plus from '#components/icons/Plus'

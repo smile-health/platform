@@ -6,7 +6,7 @@ import { TWasteGroup } from '@/types/waste-group';
 import { ColumnsWasteGroupDetail } from '../../constants/columnsDisposalDetail';
 import DisposalSubDetailTable from './DisposalSubDetailTable';
 import { useFormatWasteBagWeight } from '@/utils/hooks/useFormatWeight';
-import { Row } from '@tanstack/react-table';
+import { Row } from '@repo/ui/utils/table';
 
 type TableProps = CommonType & {
   isLoading?: boolean;

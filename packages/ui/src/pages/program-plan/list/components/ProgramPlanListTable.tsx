@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { SortingState } from '@tanstack/react-table'
+import { SortingState } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import {
   Pagination,

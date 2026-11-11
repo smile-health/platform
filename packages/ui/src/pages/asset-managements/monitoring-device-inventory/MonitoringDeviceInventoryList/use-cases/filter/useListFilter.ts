@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { SortingState } from '@tanstack/react-table'
+import { SortingState } from '#utils/table'
 import { useFilter } from '#components/filter'
 import { listAssetType } from '#services/asset-type'
 import { removeEmptyObject } from '#utils/object'

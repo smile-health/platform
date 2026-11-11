@@ -1,7 +1,7 @@
 import { TOperatorThirdparty } from '@/types/partnership-operator';
 import { loggedAsAdmin } from '@/utils/getUserRole';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 import { ButtonActionTableEdit } from '../components/ButtonActionTableEdit';
 

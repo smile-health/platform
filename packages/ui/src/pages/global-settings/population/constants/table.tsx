@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { ColumnDef, Row } from '#utils/table'
 import { Button } from '#components/button'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { DetailPopulation, YearPopulation } from '#types/population'

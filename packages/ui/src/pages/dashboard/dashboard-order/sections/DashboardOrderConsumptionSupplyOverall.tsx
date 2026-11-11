@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { CellContext, ColumnDef } from '@tanstack/react-table'
+import { CellContext, ColumnDef } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import DashboardOverallContainer from '#pages/dashboard/components/DashboardOverallContainer'
 import { formatNumberShort, numberFormatter } from '#utils/formatter'

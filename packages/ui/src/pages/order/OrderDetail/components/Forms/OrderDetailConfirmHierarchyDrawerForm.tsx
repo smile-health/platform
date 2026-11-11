@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import { FormErrorMessage } from '#components/form-control'
 import { InputNumberV2 } from '#components/input-number-v2'

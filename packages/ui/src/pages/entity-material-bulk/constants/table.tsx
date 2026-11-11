@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { EntityMaterialBulk } from '#types/entity-material-bulk'
 import { parseDateTime } from '#utils/date'

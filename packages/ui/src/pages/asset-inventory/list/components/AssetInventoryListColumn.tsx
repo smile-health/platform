@@ -1,5 +1,5 @@
 import React from 'react'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { BOOLEAN } from '#constants/common'
 import dayjs from 'dayjs'
 

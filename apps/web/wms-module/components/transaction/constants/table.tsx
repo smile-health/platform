@@ -3,7 +3,7 @@ import i18n from '@/locales/i18n';
 import { TWasteTransaction } from '@/types/transaction';
 import { isFacilityAdmin, isSanitarian } from '@/utils/getUserRole';
 import { useFormatWasteBagWeight } from '@/utils/hooks/useFormatWeight';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import dayjs from 'dayjs';
 import { TFunction } from 'i18next';
 

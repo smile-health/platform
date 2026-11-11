@@ -1,7 +1,7 @@
 import { ButtonActionTable } from '@/components/ButtonActionTable';
 import { TEntityLocation } from '@/types/entity-location';
 import { loggedAsAdmin } from '@/utils/getUserRole';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 type DataProps = {

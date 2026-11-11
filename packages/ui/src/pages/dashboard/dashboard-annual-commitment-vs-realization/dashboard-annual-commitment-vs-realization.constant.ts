@@ -1,4 +1,4 @@
-import { ColumnDef } from "@tanstack/react-table"
+import { ColumnDef } from "#utils/table"
 import { TFunction } from "i18next"
 import { AnnualCommitmentVsRealizationProvinceData } from "./dashboard-annual-commitment-vs-realization.type"
 import { numberFormatter } from "#utils/formatter"

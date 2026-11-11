@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useQuery } from '@tanstack/react-query'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Badge } from '#components/badge'
 import MobileV2 from '#components/icons/MobileV2'
 import WebV2 from '#components/icons/WebV2'

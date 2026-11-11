@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import dayjs from 'dayjs'
 import { TFunction } from 'i18next'

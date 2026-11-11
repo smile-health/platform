@@ -1,5 +1,5 @@
 import { DisposalItem } from '@/types/bast';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 type DataProps = {

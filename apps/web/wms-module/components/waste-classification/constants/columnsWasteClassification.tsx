@@ -1,5 +1,5 @@
 import i18n from '@/locales/i18n';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 interface WasteClassificationRow {

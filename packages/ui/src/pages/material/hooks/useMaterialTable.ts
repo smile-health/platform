@@ -6,7 +6,7 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query'
-import { ColumnSort } from '@tanstack/react-table'
+import { ColumnSort } from '#utils/table'
 import { UseFilter, useFilter } from '#components/filter'
 import { toast } from '#components/toast'
 import { useSetLoadingPopupStore } from '#hooks/useSetLoading'

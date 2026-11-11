@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react'
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { ColumnDef, Row } from '#utils/table'
 import AssetManagementsDeviceRelation from '#pages/asset-managements/components/AssetManagementsDeviceRelationTable'
 import { numberFormatter } from '#utils/formatter'
 import { useTranslation } from 'react-i18next'

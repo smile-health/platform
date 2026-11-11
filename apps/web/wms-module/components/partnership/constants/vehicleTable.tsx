@@ -1,7 +1,7 @@
 import { formatAllowedVehicleTypes } from '@/components/waste-specification/utils/helper';
 import i18n from '@/locales/i18n';
 import { TPartnershipVehicle } from '@/types/partnership-vehicle';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 export const columnsVehicleTable = (

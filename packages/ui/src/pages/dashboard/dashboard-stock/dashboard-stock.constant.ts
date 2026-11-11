@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { parseDateTime } from '#utils/date'
 import { TFunction } from 'i18next'
 

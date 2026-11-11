@@ -1,4 +1,4 @@
-import { Row } from '@tanstack/react-table'
+import { Row } from '#utils/table'
 import { Stock } from '#types/stock'
 import { create } from 'zustand'
 

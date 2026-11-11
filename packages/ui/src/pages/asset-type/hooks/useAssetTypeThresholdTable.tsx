@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import { BOOLEAN } from '#constants/common'
 import { numberFormatter } from '#utils/formatter'

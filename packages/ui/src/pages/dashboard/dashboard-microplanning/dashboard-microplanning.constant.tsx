@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { TFunction } from 'i18next'
 import { TMicroplanning } from './dashboard-microplanning.type'
 import { TDashboardTabs } from '../dashboard.type'

@@ -2,7 +2,7 @@ import i18n from '@/locales/i18n';
 import { TWasteTrackingCharacteristicsRow } from '@/types/tracking';
 import { useFormatWasteBagWeight } from '@/utils/hooks/useFormatWeight';
 import { mapWasteStatus } from '@/utils/mappingWasteStatus';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 import { useContext } from 'react';
 import { TrackingListContext } from '../utils/tracking-list.context';

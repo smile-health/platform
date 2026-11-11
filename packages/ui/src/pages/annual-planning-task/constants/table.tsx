@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { ColumnDef, Row } from '#utils/table'
 import { Button } from '#components/button'
 import { hasPermission } from '#shared/permission/index'
 import { Task } from '#types/task'

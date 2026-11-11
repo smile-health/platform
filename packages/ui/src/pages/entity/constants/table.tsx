@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CellContext, ColumnDef } from '@tanstack/react-table'
+import { CellContext, ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { ButtonActionTable } from '#components/modules/ButtonActionTable'
