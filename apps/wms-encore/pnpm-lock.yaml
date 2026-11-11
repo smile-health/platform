@@ -18,8 +18,8 @@ importers:
         specifier: ^3.19.1
         version: 3.19.1
       amqplib:
-        specifier: ^2.3.0
-        version: 2.3.0
+        specifier: ^2.3.1
+        version: 2.3.1
       encore.dev:
         specifier: 1.58.8
         version: 1.58.8
@@ -329,8 +329,8 @@ packages:
   '@vitest/spy@5.1.0':
     resolution: {integrity: sha512-2DPO5OMHWKrBngC+fCmTQqemNF0gidRhp3lxbBmRhW+M1XJrfgPpqNqWVevXtn2f2ufD5ZaR1B6B641aAlcX5A==}
 
-  amqplib@2.3.0:
-    resolution: {integrity: sha512-xtCE2E+hIr2uPSODC3jyHZvoVszyAsJEFWln7y92jE/n8WyTawZuw+sTUuls/NzpPcagAGHJCec2eUMH4extPg==}
+  amqplib@2.3.1:
+    resolution: {integrity: sha512-0njHPLSE/xJUBeLWGgzniMuzTeyUt3o7WmAJobBlbSnvOTe9l5PxrlA+5iZW8spKteijDnkIZI81zAFV2Wzulw==}
     engines: {node: '>=18'}
 
   archiver-utils@2.1.0:
@@ -1674,7 +1674,7 @@ snapshots:
 
   '@vitest/spy@5.1.0': {}
 
-  amqplib@2.3.0: {}
+  amqplib@2.3.1: {}
 
   archiver-utils@2.1.0:
     dependencies:
