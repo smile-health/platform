@@ -1,7 +1,18 @@
-/* Tailwind di app ini hanya menyumbang preflight; semua utility datang dari
-   @repo/ui/styles.css (prefix ui). Sama dengan v3 yang content-nya kosong. */
+/* Build v3 app ini mengirim set utility default Tailwind tanpa prefix, dan
+   ratusan class lama di @repo/ui serta wms-module (font-bold, mt-6, flex, ...)
+   bergantung padanya. Di v4 utility itu dibangkitkan dari sumber yang dipindai
+   di bawah. Utility ui:* tetap datang dari @repo/ui/styles.css. */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities) source(none);
 @import './style.css' layer(base);
+
+/* Sumber class tanpa prefix (harus setelah semua @import). */
+@source '../../../packages/ui/src';
+@source '../pages';
+@source '../components';
+@source '../wms-module';
 
 /* v4: utilities ada di @layer utilities. CSS global di layer components supaya
    urutan prioritasnya sama seperti v3 (utility ui menang atas class global). */
