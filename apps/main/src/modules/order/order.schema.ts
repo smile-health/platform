@@ -1,6 +1,6 @@
 import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import { IdParamsSchema } from "@smile-health/lib/types/param.js"
-import z from "zod"
+import { z } from "zod"
 
 export const LIST_PAGINATION = [10, 25, 50, 100]
 
@@ -28,7 +28,7 @@ export const CursorPaginationQueriesSchema = z.object({
     .optional()
     .transform((val) => (val ? Number(val) : 50))
     .refine((v) => !isNaN(v!) && v > 0 && LIST_PAGINATION.includes(v), {
-      message: "invalid paginate param",
+      error: "invalid paginate param",
     }),
   cursor: z
     .string()
@@ -36,9 +36,15 @@ export const CursorPaginationQueriesSchema = z.object({
     .describe("Base64 encoded cursor for pagination"),
   keyword: z
     .string()
-    .max(255, { message: "MAX_LIMIT_CHARACTER_IS_255" })
+    .max(255, {
+      error: "MAX_LIMIT_CHARACTER_IS_255",
+    })
     .optional(),
-  status: z.enum(["0", "1"], { message: "INVALID REQUEST STATUS" }).optional(),
+  status: z
+    .enum(["0", "1"], {
+      error: "INVALID REQUEST STATUS",
+    })
+    .optional(),
 })
 
 export type ListUserOrderDTO = {
@@ -76,7 +82,7 @@ export const OrderSchema = z.object({
   ),
   device_type: z.number().positive().nullish(),
   is_allocated: z.number().min(0).max(1).default(1),
-  is_manual: z.number().min(0).max(1).default(0).nullish(),
+  is_manual: z.number().min(0).max(1).nullish(),
   taken_by_customer: z.number().min(0).max(1).default(0),
   biofarma_chanqed: z.number().min(0).max(1).nullish(),
   no_document: z.preprocess(
@@ -97,7 +103,9 @@ export const OrderSchema = z.object({
 
 const ListOrderSchema = {
   type: z
-    .enum(["1", "2", "3", "4", "7"], { message: "INVALID REQUEST TYPE" })
+    .enum(["1", "2", "3", "4", "7"], {
+      error: "INVALID REQUEST TYPE",
+    })
     .transform((val) => Number(val))
     .optional(),
   activity_id: z
@@ -106,7 +114,7 @@ const ListOrderSchema = {
   service_type: z.preprocess(preprocessToString, z.string().optional()),
   status: z
     .enum(["1", "2", "3", "4", "5", "6", "8"], {
-      message: "INVALID REQUEST STATUS",
+      error: "INVALID REQUEST STATUS",
     })
     .transform((val) => Number(val))
     .optional(),
@@ -119,35 +127,45 @@ const ListOrderSchema = {
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_ORDER_NUMBER_PARAM",
+        error: "INVALID_ORDER_NUMBER_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
     .optional(),
-  from_date: z.string().date().optional(),
-  to_date: z.string().date().optional(),
+  from_date: z.iso.date().optional(),
+  to_date: z.iso.date().optional(),
   purpose: z
-    .enum(["sales", "purchase"], { message: "INVALID REQUEST PURPOSE" })
+    .enum(["sales", "purchase"], {
+      error: "INVALID REQUEST PURPOSE",
+    })
     .optional(),
   entity_tag_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid entity_tag_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid entity_tag_id",
+    })
     .optional(),
   entity_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid entity_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid entity_id",
+    })
     .optional(),
   vendor_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid vendor_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid vendor_id",
+    })
     .optional(),
   customer_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid customer_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid customer_id",
+    })
     .optional(),
   status_ids: z.preprocess(
     (val) => {
@@ -177,11 +195,13 @@ const ListOrderSchema = {
   location_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid location_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid location_id",
+    })
     .optional(),
   is_from_ticketing: z
     .enum(["0", "1"], {
-      message: "INVALID REQUEST IS FROM TICKETING",
+      error: "INVALID REQUEST IS FROM TICKETING",
     })
     .transform((val) => Number(val))
     .optional(),
@@ -197,37 +217,45 @@ export const GetListOrderCursorSchema =
 export const GetStatusCountSchema = z.object({
   type: z
     .enum(["1", "2", "3", "4", "5", "6", "7", "8"], {
-      message: "INVALID REQUEST TYPE",
+      error: "INVALID REQUEST TYPE",
     })
     .transform((val) => Number(val))
     .optional(),
   purpose: z
     .enum(["sales", "purchase"], {
-      message: "INVALID REQUEST PURPOSE",
+      error: "INVALID REQUEST PURPOSE",
     })
     .optional(),
   order_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid order_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid order_id",
+    })
     .optional(),
   activity_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid activity_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid activity_id",
+    })
     .optional(),
   vendor_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid vendor_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid vendor_id",
+    })
     .optional(),
   customer_id: z
     .string()
     .transform((val) => Number(val))
-    .refine((v) => !isNaN(v!), { message: "invalid customer_id" })
+    .refine((v) => !isNaN(v!), {
+      error: "invalid customer_id",
+    })
     .optional(),
-  from_date: z.string().date().optional(),
-  to_date: z.string().date().optional(),
+  from_date: z.iso.date().optional(),
+  to_date: z.iso.date().optional(),
   integration: z.string().optional(),
 })
 

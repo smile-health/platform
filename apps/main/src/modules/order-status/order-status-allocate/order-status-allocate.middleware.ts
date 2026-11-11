@@ -194,7 +194,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -209,7 +209,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_empty",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -224,7 +224,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -240,7 +240,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.cannot_greater_than_available_stock",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -255,7 +255,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -271,14 +271,14 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
     if (activityListByCustomer.length === 0) {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -295,7 +295,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.duplicated",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -342,7 +342,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
     ctx.addIssue({
       path: issuePath,
       message: "validator.must_have_children",
-      code: z.ZodIssueCode.custom,
+      code: "custom",
     })
   }
 
@@ -358,7 +358,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_children_of_parent_item",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -378,7 +378,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
           field: c.var.t("order_status.label.allocated_qty"),
           format: multipleOf,
         }),
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -546,7 +546,7 @@ export class OrderStatusAllocateMiddleware extends BaseMiddleware {
         message: c.var.t("validator.not_match", {
           field: "Allocated Qty",
         }),
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
     return entityMaterialActivityNotExist

@@ -46,11 +46,8 @@ export const StockOpnameSchema = z.object({
     .preprocess((arg) => {
       if (typeof arg === "string" || arg instanceof Date) return new Date(arg)
     }, z.date())
-    .default(new Date()), // DEFAULT formatDateTime(now(), '%Y-%m-%d %H:%i:%S', 'Asia/Jakarta')
-  version: z
-    .number()
-    .int()
-    .default(Math.floor(Date.now() / 1000)), // DEFAULT toUnixTimestamp(now())
+    .prefault(new Date()), // DEFAULT formatDateTime(now(), '%Y-%m-%d %H:%i:%S', 'Asia/Jakarta')
+  version: z.int().default(Math.floor(Date.now() / 1000)), // DEFAULT toUnixTimestamp(now())
 })
 
 export const StockOpnameQueryParamsSchema = QueryParamsSchema.and(
@@ -189,9 +186,9 @@ export const MaterialItemSchema = z.object({
   name: z.string(),
   smile_stock: z.union([z.number(), z.literal("-")]),
   real_stock: z.union([z.number(), z.literal("-")]),
-  is_different: z.number().int(),
-  is_mandatory: z.number().int(),
-  is_stock_opnamed: z.number().int(),
+  is_different: z.int(),
+  is_mandatory: z.int(),
+  is_stock_opnamed: z.int(),
 })
 
 export const StockOpnameMaterialResponseDataSchema = z.array(

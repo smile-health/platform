@@ -1,4 +1,4 @@
-import z from "zod"
+import { z } from "zod"
 import { Context } from "hono"
 import { BaseMiddleware } from "@smile-health/lib/base/middleware"
 import { GetWorkspacesParamsSchema } from "./workspace.schema"
@@ -16,7 +16,7 @@ export class ExecutiveWorkspaceMiddleware extends BaseMiddleware {
 
       if (sort_by && !sortBys.includes(sort_by)) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["sort_by"],
           message: c.var.t("validator.one_of", {
             field: "sort_by",
@@ -27,7 +27,7 @@ export class ExecutiveWorkspaceMiddleware extends BaseMiddleware {
 
       if (sort_type && !sortTypes.includes(sort_type)) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["sort_type"],
           message: c.var.t("validator.one_of", {
             field: "sort_type",

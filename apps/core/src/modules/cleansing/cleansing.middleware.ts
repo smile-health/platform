@@ -11,7 +11,7 @@ import {
   cleanseAddAndRemoveStockBulkRequestSchema,
   cleaningUpUnallocatedInventoryRequestSchema,
 } from "./cleansing.schema"
-import z from "zod"
+import { z } from "zod"
 import { CleansingRepository } from "./cleansing.repository"
 
 export class CleansingMiddleware extends BaseMiddleware {
@@ -33,7 +33,7 @@ export class CleansingMiddleware extends BaseMiddleware {
 
           if (item.global_entity_id_from === item.global_entity_id_to) {
             ctx.addIssue({
-              code: z.ZodIssueCode.custom,
+              code: "custom",
               path: [i, "global_entity_id_to"],
               message:
                 "global_entity_id_from and global_entity_id_to must be different",
@@ -47,7 +47,7 @@ export class CleansingMiddleware extends BaseMiddleware {
 
           if (!fromEntity) {
             ctx.addIssue({
-              code: z.ZodIssueCode.custom,
+              code: "custom",
               path: [i, "global_entity_id_from"],
               message: `Entity with id ${item.global_entity_id_from} not found`,
             })
@@ -55,7 +55,7 @@ export class CleansingMiddleware extends BaseMiddleware {
 
           if (!toEntity) {
             ctx.addIssue({
-              code: z.ZodIssueCode.custom,
+              code: "custom",
               path: [i, "global_entity_id_to"],
               message: `Entity with id ${item.global_entity_id_to} not found`,
             })
@@ -71,7 +71,7 @@ export class CleansingMiddleware extends BaseMiddleware {
       if (data.max_edit !== undefined && data.batch_size !== undefined) {
         if (data.max_edit < data.batch_size) {
           ctx.addIssue({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             path: ["max_edit"],
             message: "max_edit must be greater than or equal to batch_size",
           })
@@ -95,7 +95,7 @@ export class CleansingMiddleware extends BaseMiddleware {
 
         if (getData.length === 0) {
           ctx.addIssue({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             path: ["period_ids"],
             message: `Stock opname period with id ${data.period_ids.join(", ")} not found`,
           })
@@ -126,7 +126,7 @@ export class CleansingMiddleware extends BaseMiddleware {
 
           if (notFoundIds.length > 0) {
             ctx.addIssue({
-              code: z.ZodIssueCode.custom,
+              code: "custom",
               path: ["period_ids"],
               message: `Stock opname period with id ${notFoundIds.join(", ")} not found`,
             })
@@ -134,7 +134,7 @@ export class CleansingMiddleware extends BaseMiddleware {
 
           if (invalidPeriodIds.length > 0) {
             ctx.addIssue({
-              code: z.ZodIssueCode.custom,
+              code: "custom",
               path: ["period_ids"],
               message: `Stock opname period with id ${invalidPeriodIds.join(
                 ", "

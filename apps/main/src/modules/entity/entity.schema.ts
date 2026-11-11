@@ -5,7 +5,7 @@ import {
 import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import { OptionalIdSchema } from "@smile-health/lib/types/param.js"
 import { Selectable } from "kysely"
-import z from "zod"
+import { z } from "zod"
 
 export const LIST_PAGINATION = [10, 25, 50, 100]
 
@@ -15,7 +15,7 @@ export const CursorPaginationQueriesSchema = z.object({
     .optional()
     .transform((val) => (val ? Number(val) : 50))
     .refine((v) => !isNaN(v!) && v > 0 && LIST_PAGINATION.includes(v), {
-      message: "invalid paginate param",
+      error: "invalid paginate param",
     }),
   cursor: z
     .string()
@@ -23,9 +23,15 @@ export const CursorPaginationQueriesSchema = z.object({
     .describe("Base64 encoded cursor for pagination"),
   keyword: z
     .string()
-    .max(255, { message: "MAX_LIMIT_CHARACTER_IS_255" })
+    .max(255, {
+      error: "MAX_LIMIT_CHARACTER_IS_255",
+    })
     .optional(),
-  status: z.enum(["0", "1"], { message: "INVALID REQUEST STATUS" }).optional(),
+  status: z
+    .enum(["0", "1"], {
+      error: "INVALID REQUEST STATUS",
+    })
+    .optional(),
 })
 
 export const GetListEntitySchema = PaginationQueriesSchema.extend({
@@ -38,7 +44,7 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_MSI_ID_PARAM",
+        error: "INVALID_MSI_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -52,7 +58,7 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_TYPE_ID_PARAM",
+        error: "INVALID_TYPE_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -66,7 +72,7 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_ENTITY_TAG_ID_PARAM",
+        error: "INVALID_ENTITY_TAG_ID_PARAM",
       }
     )
     .transform((val) =>
@@ -85,7 +91,7 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_LOCATION_ID_PARAM",
+        error: "INVALID_LOCATION_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -99,7 +105,7 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_PROVINCE_ID_PARAM",
+        error: "INVALID_PROVINCE_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -113,7 +119,7 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_REGENCY_ID_PARAM",
+        error: "INVALID_REGENCY_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -127,7 +133,7 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_SUB_DISTRICT_ID_PARAM",
+        error: "INVALID_SUB_DISTRICT_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -141,22 +147,26 @@ export const GetListEntitySchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_VILLAGE_ID_PARAM",
+        error: "INVALID_VILLAGE_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
     .optional(),
   is_vendor: z
-    .enum(["0", "1"], { message: "INVALID REQUEST is_vendor" })
+    .enum(["0", "1"], {
+      error: "INVALID REQUEST is_vendor",
+    })
     .transform((val) => Number(val))
     .optional(),
   sort_by: z
     .enum(["name", "location", "tag", "code"], {
-      message: "INVALID REQUEST SORT_BY",
+      error: "INVALID REQUEST SORT_BY",
     })
     .optional(),
   sort_type: z
-    .enum(["asc", "desc"], { message: "INVALID REQUEST SORT_TYPE" })
+    .enum(["asc", "desc"], {
+      error: "INVALID REQUEST SORT_TYPE",
+    })
     .optional(),
   is_asset: z
     .enum(["0", "1"])
@@ -179,7 +189,7 @@ export const EntityListCursorPaginatedRequestSchema =
             .filter((item) => item !== "")
             .every((num) => !isNaN(Number(num))),
         {
-          message: "INVALID_MSI_ID_PARAM",
+          error: "INVALID_MSI_ID_PARAM",
         }
       )
       .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -193,7 +203,7 @@ export const EntityListCursorPaginatedRequestSchema =
             .filter((item) => item !== "")
             .every((num) => !isNaN(Number(num))),
         {
-          message: "INVALID_TYPE_ID_PARAM",
+          error: "INVALID_TYPE_ID_PARAM",
         }
       )
       .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -207,7 +217,7 @@ export const EntityListCursorPaginatedRequestSchema =
             .filter((item) => item !== "")
             .every((num) => !isNaN(Number(num))),
         {
-          message: "INVALID_ENTITY_TAG_ID_PARAM",
+          error: "INVALID_ENTITY_TAG_ID_PARAM",
         }
       )
       .transform((val) =>
@@ -226,7 +236,7 @@ export const EntityListCursorPaginatedRequestSchema =
             .filter((item) => item !== "")
             .every((num) => !isNaN(Number(num))),
         {
-          message: "INVALID_PROVINCE_ID_PARAM",
+          error: "INVALID_PROVINCE_ID_PARAM",
         }
       )
       .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -240,7 +250,7 @@ export const EntityListCursorPaginatedRequestSchema =
             .filter((item) => item !== "")
             .every((num) => !isNaN(Number(num))),
         {
-          message: "INVALID_REGENCY_ID_PARAM",
+          error: "INVALID_REGENCY_ID_PARAM",
         }
       )
       .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -254,7 +264,7 @@ export const EntityListCursorPaginatedRequestSchema =
             .filter((item) => item !== "")
             .every((num) => !isNaN(Number(num))),
         {
-          message: "INVALID_SUB_DISTRICT_ID_PARAM",
+          error: "INVALID_SUB_DISTRICT_ID_PARAM",
         }
       )
       .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -268,22 +278,26 @@ export const EntityListCursorPaginatedRequestSchema =
             .filter((item) => item !== "")
             .every((num) => !isNaN(Number(num))),
         {
-          message: "INVALID_VILLAGE_ID_PARAM",
+          error: "INVALID_VILLAGE_ID_PARAM",
         }
       )
       .transform((val) => val.split(",").filter((item) => item !== ""))
       .optional(),
     is_vendor: z
-      .enum(["0", "1"], { message: "INVALID REQUEST is_vendor" })
+      .enum(["0", "1"], {
+        error: "INVALID REQUEST is_vendor",
+      })
       .transform((val) => Number(val))
       .optional(),
     sort_by: z
       .enum(["name", "location", "tag", "code"], {
-        message: "INVALID REQUEST SORT_BY",
+        error: "INVALID REQUEST SORT_BY",
       })
       .optional(),
     sort_type: z
-      .enum(["asc", "desc"], { message: "INVALID REQUEST SORT_TYPE" })
+      .enum(["asc", "desc"], {
+        error: "INVALID REQUEST SORT_TYPE",
+      })
       .optional(),
     is_asset: z
       .enum(["0", "1"])
@@ -305,7 +319,7 @@ export const GetInactiveEntityNotificationSchema = z.object({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_ENTITY_IDS_PARAM",
+        error: "INVALID_ENTITY_IDS_PARAM",
       }
     )
     .transform((val) =>
@@ -323,23 +337,29 @@ export type GetInactiveEntityNotificationQueries = z.infer<
 
 export const UpdateStatusEntityRequestSchema = z.object({
   status: z
-    .enum(["0", "1"], { message: "INVALID_REQUEST_STATUS" })
+    .enum(["0", "1"], {
+      error: "INVALID_REQUEST_STATUS",
+    })
     .transform((val) => Number(val)),
 })
 
 export const UpdateStatusVendorEntityRequestSchema = z
   .object({
     status: z
-      .enum(["0", "1"], { message: "INVALID_REQUEST_STATUS" })
+      .enum(["0", "1"], {
+        error: "INVALID_REQUEST_STATUS",
+      })
       .transform((val) => Number(val)),
     is_relocation: z
-      .enum(["0", "1"], { message: "INVALID_REQUEST_STATUS" })
+      .enum(["0", "1"], {
+        error: "INVALID_REQUEST_STATUS",
+      })
       .transform((val) => Number(val)),
   })
   .superRefine(({ status, is_relocation }, ctx) => {
     if (status === 0 && is_relocation === 1) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "INVALID_REQUEST_STATUS",
         path: ["is_relocation"],
       })
@@ -405,7 +425,7 @@ export const ImportEntityRequestRowSchema = (COL: ColumnImportSchema) =>
 
 export const ImportEntityRequestSchema = (COL: ColumnImportSchema) =>
   z.array(ImportEntityRequestRowSchema(COL)).min(1, {
-    message: "rows cannot be empty",
+    error: "rows cannot be empty",
   })
 
 export type EntityProgramDTO = Selectable<EntityWorkspaces>

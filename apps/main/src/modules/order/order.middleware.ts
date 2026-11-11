@@ -209,7 +209,7 @@ export class OrderMiddleware {
     if (!record) {
       const issuePath = typeof path === "string" ? [path] : path
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "validator.not_exist",
         path: issuePath,
       })
@@ -232,7 +232,7 @@ export class OrderMiddleware {
     const vendor = vendors.find((vendor) => vendor.id === data.vendor_id)
     if (!vendor) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "validator.not_exist",
         path: ["customer_vendor"],
       })
@@ -246,7 +246,7 @@ export class OrderMiddleware {
   ) => {
     if (data.customer_id === data.vendor_id) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: c.var.t("validator.not_same_value", {
           field1: "Customer",
           field2: "Vendor",
@@ -269,7 +269,7 @@ export class OrderMiddleware {
 
       if (!moment(requiredDate).isSameOrAfter(now)) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: "validator.order_required_date",
           path: ["required_date"],
         })
@@ -287,7 +287,7 @@ export class OrderMiddleware {
     for (const [index, orderItem] of data.order_items.entries()) {
       if (materialIdSet.has(orderItem.material_id)) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: "validator.duplicated",
           path: ["order_items", index, "material_id"],
         })
@@ -310,7 +310,7 @@ export class OrderMiddleware {
 
     if (!material) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "validator.inactive",
         path: ["order_items", index, "material_id"],
       })
@@ -334,7 +334,7 @@ export class OrderMiddleware {
 
     if (!record) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "validator.not_exist",
         path: ["order_items", index, "entity_material"],
       })
@@ -357,7 +357,7 @@ export class OrderMiddleware {
 
     if (material && mod !== 0) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: c.var.t("validator.order_item_qty_not_multiple_of_ucpud", {
           material: material?.name,
         }),
@@ -371,7 +371,7 @@ export class OrderMiddleware {
         Number(material?.consumption_unit_per_distribution_unit)
     ) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: c.var.t("validator.not_less_than", {
           field1: c.var.t("common.qty"),
           field2: c.var.t(
@@ -416,7 +416,7 @@ export class OrderMiddleware {
   ) => {
     if (parentMaterials.length === 0) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "validator.not_exist",
         path: ["order_items", index, "material_id"],
       })
@@ -433,7 +433,7 @@ export class OrderMiddleware {
         !childrenMaterialLevelIds.includes(item.material_id)
       ) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: "validator.not_exist",
           path: ["order_items", index, "children", subIndex, "material_id"],
         })
@@ -460,7 +460,7 @@ export class OrderMiddleware {
     for (const [subIndex, item] of orderItem.children.entries()) {
       if (childrenDuplicate.includes(item.material_id)) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: "validator.duplicated",
           path: ["order_items", index, "children", subIndex, "material_id"],
         })
@@ -492,7 +492,7 @@ export class OrderMiddleware {
 
       if (materialRelations.length === 0) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: "validator.parent_material_have_no_relation",
           path: ["order_items", index, "material_id"],
         })
@@ -507,7 +507,7 @@ export class OrderMiddleware {
         ] of childrenMaterialGlobalIds.entries()) {
           if (!fromMaterialIds.includes(childrenMaterialGlobalId)) {
             ctx.addIssue({
-              code: z.ZodIssueCode.custom,
+              code: "custom",
               message: "validator.unmatch_relation_with_parent_material",
               path: ["order_items", index, "children", subIndex, "material_id"],
             })
@@ -532,7 +532,7 @@ export class OrderMiddleware {
 
       if (!parentLessThanChild) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message:
             "validator.parent_material_level_must_be_less_than_children_material",
           path: ["order_items", index, "material_id"],
@@ -546,7 +546,7 @@ export class OrderMiddleware {
             parentMaterials[0]!.material_level_id!
         ) {
           ctx.addIssue({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message:
               "validator.children_material_level_must_be_greater_than_parent_material",
             path: ["order_items", index, "children", subIndex, "material_id"],
@@ -569,7 +569,7 @@ export class OrderMiddleware {
 
     if (orderItem.ordered_qty !== sumChildrenMaterialQty) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "validator.unmatch_quantity_with_total_children_quantity",
         path: ["order_items", index, "ordered_qty"],
       })

@@ -1,4 +1,4 @@
-import z from "zod"
+import { z } from "zod"
 
 const preprocessNumberArray = (val: any) => {
   if (typeof val === "string") {

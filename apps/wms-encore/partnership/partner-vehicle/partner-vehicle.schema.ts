@@ -17,8 +17,7 @@ export const vehicleTypeSchema = z.enum(
     "VAN",
   ],
   {
-    required_error: "vehicleType is required",
-    invalid_type_error: `vehicleType must be either 'BOX_TRUCK',
+      error: (issue) => issue.input === undefined ? "vehicleType is required" : `vehicleType must be either 'BOX_TRUCK',
         'REFRIGERATED_BOX_TRUCK',
         'OPEN_BODY_TRUCK',
         'TANKER',
@@ -27,20 +26,22 @@ export const vehicleTypeSchema = z.enum(
         'FLATBED_TRUCK',
         'LOADER_TRUCK',
         'TRAILER',
-        'VAN',`,
-  },
+        'VAN',`
+},
 );
 
 // Mirrors createPartnerVehicle.schema.ts's body shape.
 export const createPartnerVehicleBodySchema = z.object({
   vehicleType: vehicleTypeSchema,
-  vehicleNumber: z.string({ message: "vehicleNumber is required" }).min(1, {
-    message: "vehicleNumber is required",
-  }),
-  capacityInKgs: z.number({ message: "capacityInKgs is required" }).int().positive({
-    message: "capacityInKgs must be a positive integer",
-  }),
-  entityId: z.number({ message: "entityId is required" }).int().positive(),
+  vehicleNumber: z.string({
+      error: "vehicleNumber is required"
+}).min(1, {
+    error: "vehicleNumber is required"
+}),
+  capacityInKgs: z.int().positive({
+    error: "capacityInKgs must be a positive integer"
+}),
+  entityId: z.int().positive(),
 });
 
 // Mirrors updatePartnerVehicle.schema.ts's body shape (identical field set to
@@ -51,13 +52,17 @@ export const updatePartnerVehicleBodySchema = createPartnerVehicleBodySchema;
 // Mirrors createMultipleHealthcarePartnerVehicle.schema.ts's body shape.
 export const createMultipleHealthcarePartnerVehicleBodySchema = z.object({
   vehicleType: vehicleTypeSchema,
-  vehicleNumber: z.string({ message: "vehicleNumber is required" }).min(1, {
-    message: "vehicleNumber is required",
-  }),
-  capacityInKgs: z.number({ message: "capacityInKgs is required" }).int().positive({
-    message: "capacityInKgs must be a positive integer",
-  }),
-  entityIds: z.string({ message: "entityIds is required" }).min(1, {
-    message: "entityIds is required",
-  }),
+  vehicleNumber: z.string({
+      error: "vehicleNumber is required"
+}).min(1, {
+    error: "vehicleNumber is required"
+}),
+  capacityInKgs: z.int().positive({
+    error: "capacityInKgs must be a positive integer"
+}),
+  entityIds: z.string({
+      error: "entityIds is required"
+}).min(1, {
+    error: "entityIds is required"
+}),
 });

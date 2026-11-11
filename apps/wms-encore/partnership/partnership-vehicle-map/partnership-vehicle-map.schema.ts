@@ -4,12 +4,10 @@ import { z } from "zod";
 // applied manually inside partnership-vehicle-map.service.ts, not as the
 // api() request type (gotcha #3).
 export const partnershipVehicleMapBodySchema = z.object({
-  partnershipId: z
-    .number({ message: "partnershipId is required" })
-    .int()
-    .positive({ message: "partnershipId must be a positive integer" }),
-  vehicleId: z
-    .number({ message: "vehicleId is required" })
-    .int()
-    .positive({ message: "vehicleId must be a positive integer" }),
+  partnershipId: z.int().positive({
+    error: "partnershipId must be a positive integer",
+  }),
+  vehicleId: z.int().positive({
+    error: "vehicleId must be a positive integer",
+  }),
 });

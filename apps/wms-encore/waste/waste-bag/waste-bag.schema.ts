@@ -7,14 +7,14 @@ import {
 
 // Mirrors createWaste.schema.ts (request-schemas/createWaste.schema.ts).
 export const createWasteBagSchema = z.object({
-  healthcareFacilityId: z.number().int().positive(),
-  wasteSourceId: z.number().int().positive(),
-  wasteClassificationId: z.number().int().positive(),
+  healthcareFacilityId: z.int().positive(),
+  wasteSourceId: z.int().positive(),
+  wasteClassificationId: z.int().positive(),
   sourceTreatmentGroupId: z.string().optional(),
   scaleMethod: z.enum(SCALE_METHOD_VALUES),
   weightInKgs: z.number().nonnegative().optional(),
   wasteBagQrCodeId: z.string().min(1, "wasteBagQrCodeId is required"),
-  assetId: z.number().int().positive().optional(),
+  assetId: z.int().positive().optional(),
   binNumber: z.string().optional(),
   wasteGroupIds: z.string().optional(),
   bastNo: z.string().optional(),
@@ -43,13 +43,13 @@ export const treatmentActionSchema = z.object({
 export const followUpTransportSchema = z.object({
   wasteBagQrCodeIds: z.array(z.string().min(1)).min(1, "wasteBagQrCodeIds is required"),
   providerType: z.string().min(1, "providerType is required"),
-  transporterVehicleId: z.number().int().positive().optional(),
+  transporterVehicleId: z.int().positive().optional(),
   vehicleNumber: z.string().optional(),
-  treatmentProviderId: z.number().int().positive().optional(),
+  treatmentProviderId: z.int().positive().optional(),
   treatmentOperatorId: z.string().optional(),
   isReadOnly: z.boolean().optional(),
-  transporterId: z.number().int().positive().optional(),
-  thirdPartyId: z.number().int().positive().optional(),
+  transporterId: z.int().positive().optional(),
+  thirdPartyId: z.int().positive().optional(),
   // Mirrors TransportRequestDTO's startTime/endTime — carried through so the
   // WASTE_BAG_FOLLOW_UP_TO_TRANSPORTER(_EXTERNAL) scheduled follow-up can use
   // a real completion time instead of a fabricated one (see
@@ -60,7 +60,7 @@ export const followUpTransportSchema = z.object({
 
 // Mirrors handoverWasteTransport.schema.ts / handoverWasteTreatmentExternal.schema.ts.
 export const handoverTransportSchema = z.object({
-  wasteTransportationGroupIds: z.array(z.number().int().positive()).min(1),
+  wasteTransportationGroupIds: z.array(z.int().positive()).min(1),
   handoverLatitude: z.number(),
   handoverLongitude: z.number(),
   vehicleNumber: z.string().min(1),
@@ -68,18 +68,18 @@ export const handoverTransportSchema = z.object({
   manifestDocNumber: z.string().min(1),
   manifestDocPath: z.string().min(1, "manifest document is required"),
   transporterOperatorId: z.string().optional(),
-  treatmentProviderId: z.number().int().positive().optional(),
+  treatmentProviderId: z.int().positive().optional(),
   treatmentOperatorId: z.string().optional(),
   isReadOnly: z.boolean().optional(),
 });
 
 // Mirrors pickupWasteTransport.schema.ts.
 export const pickUpTransportExternalSchema = z.object({
-  wasteTransportationExternalGroupIds: z.array(z.number().int().positive()).min(1),
-  healthcareFacilityId: z.number().int().positive(),
+  wasteTransportationExternalGroupIds: z.array(z.int().positive()).min(1),
+  healthcareFacilityId: z.int().positive(),
   handoverLatitude: z.number(),
   handoverLongitude: z.number(),
-  treatmentProviderId: z.number().int().positive().optional(),
+  treatmentProviderId: z.int().positive().optional(),
   treatmentOperatorId: z.string().optional(),
   isReadOnly: z.boolean().optional(),
   startTime: z.string().optional(),
@@ -87,19 +87,19 @@ export const pickUpTransportExternalSchema = z.object({
 });
 
 export const handoverTreatmentExternalSchema = z.object({
-  wasteTransportationExternalGroupIds: z.array(z.number().int().positive()).min(1),
+  wasteTransportationExternalGroupIds: z.array(z.int().positive()).min(1),
   startTime: z.string().min(1),
   endTime: z.string().min(1),
-  treatmentLocationId: z.number().int().positive(),
-  treatmentId: z.number().int().positive().optional(),
-  entityId: z.number().int().positive().optional(),
+  treatmentLocationId: z.int().positive(),
+  treatmentId: z.int().positive().optional(),
+  entityId: z.int().positive().optional(),
 });
 
 export const receivingTreatmentExternalSchema = z.object({
   wasteBagQrCodeIds: z.array(z.string().min(1)).min(1),
   startTime: z.string().min(1),
   endTime: z.string().min(1),
-  entityId: z.number().int().positive().optional(),
+  entityId: z.int().positive().optional(),
 });
 
 export function isValidWasteStatus(value: string): boolean {

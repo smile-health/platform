@@ -5,27 +5,31 @@ import { z } from "zod";
 // user in this port (same convention as every other module) — not
 // re-validated as a body field here.
 export const createWasteSourceBodySchema = z.object({
-  healthcareFacilityId: z
-    .number({ message: "healthcareFacilityId is required" })
-    .int()
-    .positive({ message: "healthcareFacilityId must be a positive integer" })
-    .optional(),
-  sourceType: z.enum(["INTERNAL", "EXTERNAL", "INTERNAL_TREATMENT"], {
-    message: "sourceType must be one of 'INTERNAL' , 'EXTERNAL' , 'INTERNAL_TREATMENT'",
-  }),
-  internalSourceName: z.string({ message: "internalSourceName is required" }).optional(),
-  internalTreatmentName: z
-    .enum(["PYROLYSIS", "DISINFECTION"], {
-      message: "internalTreatmentName must be one of 'PYROLYSIS' , 'DISINFECTION'",
+  healthcareFacilityId: z.int()
+    .positive({
+        error: "healthcareFacilityId must be a positive integer"
     })
     .optional(),
-  externalHealthcareFacilityId: z
-    .number({ message: "externalHealthcareFacilityId is required" })
-    .int()
-    .positive({ message: "externalHealthcareFacilityId must be a positive integer" })
+  sourceType: z.enum(["INTERNAL", "EXTERNAL", "INTERNAL_TREATMENT"], {
+      error: "sourceType must be one of 'INTERNAL' , 'EXTERNAL' , 'INTERNAL_TREATMENT'"
+}),
+  internalSourceName: z.string({
+      error: "internalSourceName is required"
+}).optional(),
+  internalTreatmentName: z
+    .enum(["PYROLYSIS", "DISINFECTION"], {
+        error: "internalTreatmentName must be one of 'PYROLYSIS' , 'DISINFECTION'"
+    })
+    .optional(),
+  externalHealthcareFacilityId: z.int()
+    .positive({
+        error: "externalHealthcareFacilityId must be a positive integer"
+    })
     .optional(),
   externalHealthcareFacilityName: z
-    .string({ message: "externalHealthcareFacilityName is required" })
+    .string({
+        error: "externalHealthcareFacilityName is required"
+    })
     .optional(),
   isActive: z.boolean().optional().default(false),
   isResidue: z.boolean().optional().default(false),
@@ -37,27 +41,31 @@ export const createWasteSourceBodySchema = z.object({
 // existing row's sourceType is already 'EXTERNAL' or 'INTERNAL' (see the
 // comment on that branch in waste-source.service.ts).
 export const updateWasteSourceBodySchema = z.object({
-  healthcareFacilityId: z
-    .number({ message: "healthcareFacilityId is required" })
-    .int()
-    .positive({ message: "healthcareFacilityId must be a positive integer" })
-    .optional(),
-  sourceType: z.enum(["INTERNAL", "EXTERNAL", "INTERNAL_TREATMENT"], {
-    message: "sourceType must be one of 'INTERNAL' , 'EXTERNAL' , 'INTERNAL_TREATMENT'",
-  }),
-  internalSourceName: z.string({ message: "internalSourceName is required" }).optional(),
-  internalTreatmentName: z
-    .enum(["PYROLYSIS", "DISINFECTION"], {
-      message: "internalTreatmentName must be one of 'PYROLYSIS' , 'DISINFECTION'",
+  healthcareFacilityId: z.int()
+    .positive({
+        error: "healthcareFacilityId must be a positive integer"
     })
     .optional(),
-  externalHealthcareFacilityId: z
-    .number({ message: "externalHealthcareFacilityId is required" })
-    .int()
-    .positive({ message: "externalHealthcareFacilityId must be a positive integer" })
+  sourceType: z.enum(["INTERNAL", "EXTERNAL", "INTERNAL_TREATMENT"], {
+      error: "sourceType must be one of 'INTERNAL' , 'EXTERNAL' , 'INTERNAL_TREATMENT'"
+}),
+  internalSourceName: z.string({
+      error: "internalSourceName is required"
+}).optional(),
+  internalTreatmentName: z
+    .enum(["PYROLYSIS", "DISINFECTION"], {
+        error: "internalTreatmentName must be one of 'PYROLYSIS' , 'DISINFECTION'"
+    })
+    .optional(),
+  externalHealthcareFacilityId: z.int()
+    .positive({
+        error: "externalHealthcareFacilityId must be a positive integer"
+    })
     .optional(),
   externalHealthcareFacilityName: z
-    .string({ message: "externalHealthcareFacilityName is required" })
+    .string({
+        error: "externalHealthcareFacilityName is required"
+    })
     .optional(),
   isActive: z.boolean().optional().default(false),
 });

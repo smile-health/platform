@@ -47,7 +47,7 @@ export class ConsumptionV2Middleware {
 
   consumption = async (c: Context) => {
     return z.any().transform(async (input, ctx: RefinementCtx) => {
-      const parsed = await ConsumptionRequestSchema.safeParseAsync(input)
+      const parsed = await ConsumptionRequestSchema.safeParseAsync(input, { reportInput: true })
       if (!parsed.success) {
         c.set(
           "errors",

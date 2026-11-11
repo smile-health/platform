@@ -3,7 +3,7 @@ import { USER_ROLE } from "@/common/constants/user.js"
 import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import { IdSchema, MasterData } from "@smile-health/lib/types/param.js"
 import { isArray, isObject, isString } from "lodash"
-import z, { ZodTypeAny } from "zod"
+import { z, ZodType } from "zod"
 
 export const GetMaterialsQueriesSchema = PaginationQueriesSchema.extend({
   microplanning: z.coerce.number().optional(),
@@ -28,16 +28,18 @@ export const GetMaterialsQueriesSchema = PaginationQueriesSchema.extend({
         "updated_by",
       ],
       {
-        message: "INVALID REQUEST SORT_BY",
+        error: "INVALID REQUEST SORT_BY",
       }
     )
     .optional(),
   sort_type: z
-    .enum(["asc", "desc"], { message: "INVALID REQUEST SORT_TYPE" })
+    .enum(["asc", "desc"], {
+      error: "INVALID REQUEST SORT_TYPE",
+    })
     .optional(),
 })
 
-function toArrayOfNumbers<I extends ZodTypeAny>(schema: I) {
+function toArrayOfNumbers<I extends ZodType>(schema: I) {
   return z.preprocess((value) => {
     if (isArray(value)) {
       return value
@@ -79,10 +81,8 @@ export const UpdateMaterialRequestSchema = z
     is_addremove: z.number().default(0),
 
     addremove: z.object({
-      entity_types: toArrayOfNumbers(
-        z.array(z.nativeEnum(ENTITY_TYPE)).default([])
-      ),
-      roles: toArrayOfNumbers(z.array(z.nativeEnum(USER_ROLE)).default([])),
+      entity_types: toArrayOfNumbers(z.array(z.enum(ENTITY_TYPE)).default([])),
+      roles: toArrayOfNumbers(z.array(z.enum(USER_ROLE)).default([])),
     }),
   })
   .transform((data) => ({
@@ -135,10 +135,8 @@ export const ImportUpdateMaterialRequestSchema = z.object({
   }, z.array(z.number().positive()).min(1)),
   is_addremove: z.number().default(0),
   addremove: z.object({
-    entity_types: toArrayOfNumbers(
-      z.array(z.nativeEnum(ENTITY_TYPE)).default([])
-    ),
-    roles: toArrayOfNumbers(z.array(z.nativeEnum(USER_ROLE)).default([])),
+    entity_types: toArrayOfNumbers(z.array(z.enum(ENTITY_TYPE)).default([])),
+    roles: toArrayOfNumbers(z.array(z.enum(USER_ROLE)).default([])),
   }),
 })
 
@@ -155,7 +153,7 @@ export const ImportMaterialRequestSchema = z
         ctx.addIssue({
           path: ["roles"],
           message: "validator.not_empty",
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -166,12 +164,12 @@ export const ImportMaterialRequestSchema = z
         ctx.addIssue({
           path: ["entity_types"],
           message: "validator.not_empty",
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
     })
   )
   .min(1, {
-    message: "rows cannot be empty",
+    error: "rows cannot be empty",
   })
 export type ImportMaterialRequest = z.infer<typeof ImportMaterialRequestSchema>

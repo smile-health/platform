@@ -10,25 +10,29 @@ export const manualScaleRequestBodySchema = z.object({
   isActive: z.boolean().default(false),
   status: z
     .enum(["PENDING", "APPROVED", "REJECTED"], {
-      message: "status must be one of 'PENDING', 'APPROVED', or 'REJECTED'",
+        error: "status must be one of 'PENDING', 'APPROVED', or 'REJECTED'"
     })
     .default("PENDING"),
   approvalType: z.enum(["TIME_BOUND", "COUNT_BASED"], {
-    message: "approvalType is required and must be one of 'TIME_BOUND' or 'COUNT_BASED'",
-  }),
+      error: "approvalType is required and must be one of 'TIME_BOUND' or 'COUNT_BASED'"
+}),
   validUntil: z.coerce
     .date({
-      invalid_type_error: "Invalid end date format",
+        error: (issue) => issue.input === undefined ? undefined : "Invalid end date format"
     })
     .optional(),
-  countLimit: z.number().int().positive({ message: "countLimit must be a positive integer" }).optional(),
+  countLimit: z.int().positive({
+      error: "countLimit must be a positive integer"
+}).optional(),
 });
 
 // Mirrors activateManualScaleRequest's inline query validation (no dedicated
 // zod schema in the original — the controller hand-checks id/status itself).
 export const activateManualScaleRequestSchema = z.object({
-  id: z.number().int().positive({ message: "ID parameter is required" }),
+  id: z.int().positive({
+      error: "ID parameter is required"
+}),
   status: z.enum(["APPROVED", "REJECTED"], {
-    message: 'Invalid or missing status parameter. Must be "APPROVED" or "REJECTED".',
-  }),
+      error: 'Invalid or missing status parameter. Must be "APPROVED" or "REJECTED".'
+}),
 });

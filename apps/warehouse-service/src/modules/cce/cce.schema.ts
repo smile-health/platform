@@ -2,7 +2,7 @@ import {
   QueryParamSchema,
   stringDate,
 } from "@/common/schemas/query-param.schema.js"
-import z from "zod"
+import { z } from "zod"
 
 const preprocessNumberArray = (val: any) => {
   if (typeof val === "string") {

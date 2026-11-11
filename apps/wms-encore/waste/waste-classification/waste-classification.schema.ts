@@ -30,34 +30,44 @@ export const allowedVehicleTypesEnum = z.enum([
   "VAN",
 ]);
 
-const boolLikeSchema = z.union([z.boolean(), z.number().int().min(0).max(1)]).transform(Boolean);
+const boolLikeSchema = z.union([z.boolean(), z.int().min(0).max(1)]).transform(Boolean);
 
 export const createWasteClassificationBodySchema = z.object({
-  regionId: z.number().int().positive({ message: "regionId must be a positive integer" }).optional(),
-  effectiveFrom: z.string().date().optional(),
-  effectiveTo: z.string().date().optional(),
-  wasteTypeId: z.number().int().positive(),
-  wasteGroupId: z.number().int().positive(),
-  wasteCharacteristicsId: z.number().int().positive(),
+  regionId: z.int().positive({
+      error: "regionId must be a positive integer"
+}).optional(),
+  effectiveFrom: z.iso.date().optional(),
+  effectiveTo: z.iso.date().optional(),
+  wasteTypeId: z.int().positive(),
+  wasteGroupId: z.int().positive(),
+  wasteCharacteristicsId: z.int().positive(),
   wasteCode: z
     .string()
-    .min(1, { message: "wasteCode is required" })
-    .max(64, { message: "wasteCode max input 64 character" }),
+    .min(1, {
+        error: "wasteCode is required"
+    })
+    .max(64, {
+        error: "wasteCode max input 64 character"
+    }),
   wasteBagColorCode: wasteBagColorCodeEnum,
   storageRuleType: storageRuleTypeEnum.optional(),
   useColdStorage: boolLikeSchema,
-  coldStorageMinHours: z.number().int().positive().optional(),
-  coldStorageMaxHours: z.number().int().positive().optional(),
-  tempStorageMinHours: z.number().int().positive().optional(),
-  tempStorageMaxHours: z.number().int().nonnegative().optional(),
-  minimunDecayDay: z.number().int().positive().optional(),
+  coldStorageMinHours: z.int().positive().optional(),
+  coldStorageMaxHours: z.int().positive().optional(),
+  tempStorageMinHours: z.int().positive().optional(),
+  tempStorageMaxHours: z.int().nonnegative().optional(),
+  minimunDecayDay: z.int().positive().optional(),
   storageRule: z.string().optional(),
   allowHealthcareFacilityTreatment: boolLikeSchema,
   treatmentMethod: z.string().min(1).max(255).optional(),
   disposalMethod: z
     .string()
-    .min(1, { message: "disposalMethod is required" })
-    .max(255, { message: "disposalMethod max input 255 character" }),
+    .min(1, {
+        error: "disposalMethod is required"
+    })
+    .max(255, {
+        error: "disposalMethod max input 255 character"
+    }),
   // Original: `isActive: z.boolean().optional().default(false)`.
   isActive: z.boolean().optional().default(false),
   hasMultipleTransporters: boolLikeSchema,
@@ -67,21 +77,21 @@ export const createWasteClassificationBodySchema = z.object({
 // Update mirrors create but has no `isActive` field (the original use-case
 // preserves the existing row's isActive rather than accepting a new value).
 export const updateWasteClassificationBodySchema = z.object({
-  regionId: z.number().int().positive().optional(),
-  effectiveFrom: z.string().date().optional(),
-  effectiveTo: z.string().date().optional(),
-  wasteTypeId: z.number().int().positive(),
-  wasteGroupId: z.number().int().positive(),
-  wasteCharacteristicsId: z.number().int().positive(),
+  regionId: z.int().positive().optional(),
+  effectiveFrom: z.iso.date().optional(),
+  effectiveTo: z.iso.date().optional(),
+  wasteTypeId: z.int().positive(),
+  wasteGroupId: z.int().positive(),
+  wasteCharacteristicsId: z.int().positive(),
   wasteCode: z.string().min(1).max(64),
   wasteBagColorCode: wasteBagColorCodeEnum,
   storageRuleType: storageRuleTypeEnum.optional(),
   useColdStorage: boolLikeSchema,
-  coldStorageMinHours: z.number().int().positive().optional(),
-  coldStorageMaxHours: z.number().int().positive().optional(),
-  tempStorageMinHours: z.number().int().positive().optional(),
-  tempStorageMaxHours: z.number().int().nonnegative().optional(),
-  minimunDecayDay: z.number().int().positive().optional(),
+  coldStorageMinHours: z.int().positive().optional(),
+  coldStorageMaxHours: z.int().positive().optional(),
+  tempStorageMinHours: z.int().positive().optional(),
+  tempStorageMaxHours: z.int().nonnegative().optional(),
+  minimunDecayDay: z.int().positive().optional(),
   storageRule: z.string().optional(),
   hasMultipleTransporters: boolLikeSchema,
   allowHealthcareFacilityTreatment: boolLikeSchema,

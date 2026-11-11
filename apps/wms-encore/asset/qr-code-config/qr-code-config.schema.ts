@@ -6,16 +6,13 @@ import { z } from "zod";
 // authenticated user in this port (same convention as every other module) —
 // not re-validated as body fields here.
 export const qrCodeConfigBodySchema = z.object({
-  wasteSourceId: z
-    .number({ message: "wasteSourceId is required" })
-    .int()
-    .positive({ message: "wasteSourceId must be a positive integer" }),
-  wasteClassificationId: z
-    .number({ message: "wasteClassificationId is required" })
-    .int()
-    .positive({ message: "wasteClassificationId must be a positive integer" }),
-  labelCount: z
-    .number({ message: "labelCount is required" })
-    .int()
-    .positive({ message: "labelCount must be a positive integer" }),
+  wasteSourceId: z.int().positive({
+    error: "wasteSourceId must be a positive integer",
+  }),
+  wasteClassificationId: z.int().positive({
+    error: "wasteClassificationId must be a positive integer",
+  }),
+  labelCount: z.int().positive({
+    error: "labelCount must be a positive integer",
+  }),
 });

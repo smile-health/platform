@@ -1,4 +1,4 @@
-import z from "zod"
+import { z } from "zod"
 
 const preprocessNumberArray = (val: any) => {
   if (typeof val === "string") {
@@ -27,21 +27,30 @@ export const MaterialQueryParamsSchema = z.object({
       if (typeof val === "string") return Number(val)
       return val
     },
-    z.number({ required_error: "Year is required" })
+    z.number({
+      error: (issue) =>
+        issue.input === undefined ? "Year is required" : undefined,
+    })
   ),
   month: z.preprocess(
     (val) => {
       if (typeof val === "string") return Number(val)
       return val
     },
-    z.number({ required_error: "Month is required" })
+    z.number({
+      error: (issue) =>
+        issue.input === undefined ? "Month is required" : undefined,
+    })
   ),
   is_pqs: z.preprocess(
     (val) => {
       if (typeof val === "string") return Number(val)
       return val
     },
-    z.number({ required_error: "PQS is required" })
+    z.number({
+      error: (issue) =>
+        issue.input === undefined ? "PQS is required" : undefined,
+    })
   ),
   province_ids: z.preprocess(
     preprocessNumberArray,

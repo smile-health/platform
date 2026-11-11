@@ -86,7 +86,7 @@ export class OrderStatusCancelMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -106,7 +106,7 @@ export class OrderStatusCancelMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.required",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
     if (
@@ -117,7 +117,7 @@ export class OrderStatusCancelMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_required",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -132,7 +132,7 @@ export class OrderStatusCancelMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_required",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }

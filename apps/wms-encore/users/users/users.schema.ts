@@ -6,7 +6,7 @@ import { z } from "zod";
 // matters if a caller sends the legacy numeric form despite the declared
 // type — kept for parity with the original's leniency.
 export const isActiveSchema = z
-  .union([z.boolean(), z.number().int().min(0).max(1)])
+  .union([z.boolean(), z.int().min(0).max(1)])
   .transform((val) => Boolean(val));
 
 export const updateUsersBodySchema = z.object({

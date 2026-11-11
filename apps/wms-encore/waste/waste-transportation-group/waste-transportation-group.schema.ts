@@ -31,52 +31,64 @@ const transportationStatusEnum = z.enum([
 
 export const createWasteTransportationGroupBodySchema = z.object({
   wasteBagIds: z
-    .array(z.number().int().positive(), {
-      message: "wasteBagIds must be an array of positive integers",
+    .array(z.int().positive(), {
+      error: "wasteBagIds must be an array of positive integers",
     })
-    .nonempty({ message: "wasteBagIds is required and must not be empty" }),
-  totalBagsCount: z
-    .number({ message: "totalBagsCount is required" })
-    .int()
-    .positive({ message: "totalBagsCount must be a positive integer" }),
+    .nonempty({ error: "wasteBagIds is required and must not be empty" }),
+  totalBagsCount: z.int()
+    .positive({
+        error: "totalBagsCount must be a positive integer"
+    }),
   totalWeightInKgs: z
-    .number({ message: "totalWeightInKgs is required" })
-    .positive({ message: "totalWeightInKgs must be a positive integer" }),
-  transporterVehicleId: z
-    .number({ message: "transporterVehicleId is required" })
-    .int()
-    .positive({ message: "transporterVehicleId must be a positive integer" })
+    .number({
+        error: "totalWeightInKgs is required"
+    })
+    .positive({
+        error: "totalWeightInKgs must be a positive integer"
+    }),
+  transporterVehicleId: z.int()
+    .positive({
+        error: "transporterVehicleId must be a positive integer"
+    })
     .optional(),
-  transporterOperatorId: z
-    .number({ message: "transporterOperatorId is required" })
-    .int()
-    .positive({ message: "transporterOperatorId must be a positive integer" })
+  transporterOperatorId: z.int()
+    .positive({
+        error: "transporterOperatorId must be a positive integer"
+    })
     .optional(),
-  handoverLattitude: z.number({ message: "handoverLattitude is required" }).optional(),
-  handoverLongitude: z.number({ message: "handoverLongitude is required" }).optional(),
+  handoverLattitude: z.number({
+      error: "handoverLattitude is required"
+}).optional(),
+  handoverLongitude: z.number({
+      error: "handoverLongitude is required"
+}).optional(),
   transportationStatus: transportationStatusEnum,
 });
 
 export const updateWasteTransportationGroupBodySchema = z.object({
-  totalBagsCount: z
-    .number({ message: "totalBagsCount is required" })
-    .int()
-    .positive({ message: "totalBagsCount must be a positive integer" }),
-  totalWeightInKgs: z
-    .number({ message: "totalWeightInKgs is required" })
-    .int()
-    .positive({ message: "totalWeightInKgs must be a positive integer" }),
-  transporterVehicleId: z
-    .number({ message: "transporterVehicleId is required" })
-    .int()
-    .positive({ message: "transporterVehicleId must be a positive integer" })
+  totalBagsCount: z.int()
+    .positive({
+        error: "totalBagsCount must be a positive integer"
+    }),
+  totalWeightInKgs: z.int()
+    .positive({
+        error: "totalWeightInKgs must be a positive integer"
+    }),
+  transporterVehicleId: z.int()
+    .positive({
+        error: "transporterVehicleId must be a positive integer"
+    })
     .optional(),
-  transporterOperatorId: z
-    .number({ message: "transporterOperatorId is required" })
-    .int()
-    .positive({ message: "transporterOperatorId must be a positive integer" })
+  transporterOperatorId: z.int()
+    .positive({
+        error: "transporterOperatorId must be a positive integer"
+    })
     .optional(),
-  handoverLattitude: z.number({ message: "handoverLattitude is required" }).optional(),
-  handoverLongitude: z.number({ message: "handoverLongitude is required" }).optional(),
+  handoverLattitude: z.number({
+      error: "handoverLattitude is required"
+}).optional(),
+  handoverLongitude: z.number({
+      error: "handoverLongitude is required"
+}).optional(),
   transportationStatus: transportationStatusEnum,
 });

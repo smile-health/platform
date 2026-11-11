@@ -20,7 +20,7 @@ export const LocationItemDTOSchema = z
     province_name: z.string().nullish(),
     regency_name: z.string().nullish(),
     entity_tag_name: z.string().nullish(),
-    has_transaction_already: z.number().int(),
+    has_transaction_already: z.int(),
   })
 
 export const LocationDTOSchema = z.array(LocationItemDTOSchema)

@@ -1,8 +1,8 @@
 import { z } from "zod"
 
 export const EntityTagsQueryParamsSchema = z.object({
-  page: z.coerce.number().int().min(1).default(1),
-  item_per_page: z.coerce.number().int().min(1).max(100).default(100),
+  page: z.coerce.number().int().min(1).prefault(1),
+  item_per_page: z.coerce.number().int().min(1).max(100).prefault(100),
 })
 
 export type EntityTagsQueryParams = z.infer<typeof EntityTagsQueryParamsSchema>
