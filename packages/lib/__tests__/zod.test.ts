@@ -346,6 +346,15 @@ describe("zod error helpers", () => {
       });
     });
 
+    test("invalid record key is reported at the key path like v3", () => {
+      const schema = z.object({
+        items: z.record(z.coerce.number(), z.number()),
+      });
+      expect(formatErrors(errorsOf(schema, { items: { x: 1 } }), t)).toEqual({
+        items: { x: ['validator.number{"field":"x"}'] },
+      });
+    });
+
     test("min/max after a type error is dropped like v3", () => {
       const schema = z.object({ name: z.string().min(3) });
       expect(formatErrors(errorsOf(schema, { name: [] }), t)).toEqual({
