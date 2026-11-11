@@ -58,21 +58,21 @@ export default function RetentionSettingCard() {
   })
 
   return (
-    <div className="ui-mt-6 ui-rounded ui-border ui-border-neutral-200 ui-p-4">
-      <h3 className="ui-text-base ui-font-semibold ui-text-primary-800">
+    <div className="ui:rounded ui:border ui:border-neutral-200 ui:p-4">
+      <h3 className="ui:text-base ui:font-semibold ui:text-primary-800">
         {t('auditTrail:retention.title')}
       </h3>
-      <p className="ui-mb-3 ui-text-sm ui-text-neutral-500">
+      <p className="ui:mb-3 ui:text-sm ui:text-neutral-500">
         {t('auditTrail:retention.description')}
       </p>
       <form
-        className="ui-flex ui-items-end ui-gap-3"
+        className="ui:flex ui:items-end ui:gap-3"
         onSubmit={(e) => {
           e.preventDefault()
           if (isValid) mutate()
         }}
       >
-        <FormControl className="ui-w-48">
+        <FormControl className="ui:w-48">
           <FormLabel htmlFor="audit-retention-days">
             {t('auditTrail:retention.label')}
           </FormLabel>
@@ -94,8 +94,8 @@ export default function RetentionSettingCard() {
       <p
         className={
           value !== '' && !isValid
-            ? 'ui-mt-1 ui-text-sm ui-text-red-600'
-            : 'ui-mt-1 ui-text-sm ui-text-neutral-500'
+            ? 'ui:mt-1 ui:text-sm ui:text-red-600'
+            : 'ui:mt-1 ui:text-sm ui:text-neutral-500'
         }
       >
         {value !== '' && !isValid

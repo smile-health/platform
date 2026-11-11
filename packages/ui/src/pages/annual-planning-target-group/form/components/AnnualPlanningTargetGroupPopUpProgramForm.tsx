@@ -61,11 +61,11 @@ export default function AnnualPlanningTargetGroupPopUpProgramForm() {
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit((data) => mutate(data))}>
           <DialogCloseButton onClick={handleClose} />
-          <DialogHeader className="ui-text-center ui-text-xl" border>
+          <DialogHeader className="ui:text-center ui:text-xl" border>
             {t('annualPlanningTargetGroup:add')}
           </DialogHeader>
-          <DialogContent className="ui-px-6 ui-min-h-80 ui-overflow-auto ui-max-h-md">
-            <div className="ui-mt-4 ui-space-y-6">
+          <DialogContent className="ui:px-6 ui:min-h-80 ui:overflow-auto ui:max-h-md">
+            <div className="ui:mt-4 ui:space-y-6">
               <AnnualPlanningTargetGroupPopUpProgramFormInfo append={append} />
               {fields.length > 0 ? (
                 fields?.map((field: { id: string }, index: number) => (
@@ -87,8 +87,8 @@ export default function AnnualPlanningTargetGroupPopUpProgramForm() {
               )}
             </div>
           </DialogContent>
-          <DialogFooter className="ui-justify-center" border>
-            <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full mx-auto">
+          <DialogFooter className="ui:justify-center" border>
+            <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full mx-auto">
               <Button
                 id="btn_close_pop_up_form_annual_planning_target_group"
                 variant="default"

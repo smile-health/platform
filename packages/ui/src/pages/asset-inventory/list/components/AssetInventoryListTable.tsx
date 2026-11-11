@@ -46,7 +46,7 @@ const AssetInventoryListTable: React.FC<Props> = ({
         sorting={sorting}
         setSorting={setSorting}
       />
-      <PaginationContainer className="ui-mt-5">
+      <PaginationContainer className="ui:mt-5">
         <PaginationSelectLimit
           size={data?.item_per_page}
           perPagesOptions={data?.list_pagination ?? [10, 25, 50, 100]}

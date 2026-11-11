@@ -62,16 +62,16 @@ export const OrderDetailHistoryModal = ({
       onClose={onClose}
       cancelButton={{
         label: t('common:close'),
-        className: 'ui-w-full',
+        className: 'ui:w-full',
       }}
     >
-      <div className="ui-space-y-6 relative">
-        <div className="ui-right-0 ui-top-0 ui-absolute">
+      <div className="ui:space-y-6 relative">
+        <div className="ui:right-0 ui:top-0 ui:absolute">
           <Button variant="outline" color="primary" onClick={handleCopyHistory}>
             {t('orderDetail:button.copy_history')}
           </Button>
         </div>
-        <div className="ui-text-primary-500">
+        <div className="ui:text-primary-500">
           {data?.created_at
             ? dayjs(data?.created_at)
                 .locale(i18n.language)
@@ -80,28 +80,28 @@ export const OrderDetailHistoryModal = ({
           {t('common:by')} {data?.source ?? '-'}
         </div>
         <div>
-          <div className="ui-text-gray-500">{t('common:action')}</div>
-          <div className="ui-text-primary-500">{data?.action ?? '-'}</div>
+          <div className="ui:text-gray-500">{t('common:action')}</div>
+          <div className="ui:text-primary-500">{data?.action ?? '-'}</div>
         </div>
         <div>
-          <div className="ui-text-gray-500">URL</div>
-          <div className="ui-text-primary-500">{data?.request.url ?? '-'}</div>
+          <div className="ui:text-gray-500">URL</div>
+          <div className="ui:text-primary-500">{data?.request.url ?? '-'}</div>
         </div>
         <div>
-          <div className="ui-text-gray-500">Response Code</div>
-          <div className="ui-text-primary-500">
+          <div className="ui:text-gray-500">Response Code</div>
+          <div className="ui:text-primary-500">
             {data?.response.status ?? '-'}
           </div>
         </div>
         <div className="space-y-2">
-          <div className="ui-text-gray-500">Payload</div>
-          <pre className="ui-text-gray-500 border ui-border-gray-300 ui-bg-gray-100 ui-rounded-md ui-text-sm ui-p-2">
+          <div className="ui:text-gray-500">Payload</div>
+          <pre className="ui:text-gray-500 border ui:border-gray-300 ui:bg-gray-100 ui:rounded-md ui:text-sm ui:p-2">
             {JSON.stringify(data?.request.body, null, 2)}
           </pre>
         </div>
         <div className="space-y-2">
-          <div className="ui-text-gray-500">Response Body</div>
-          <pre className="ui-text-gray-500 border ui-border-gray-300 ui-bg-gray-100 ui-rounded-md ui-text-sm ui-p-2">
+          <div className="ui:text-gray-500">Response Body</div>
+          <pre className="ui:text-gray-500 border ui:border-gray-300 ui:bg-gray-100 ui:rounded-md ui:text-sm ui:p-2">
             {JSON.stringify(data?.response.body, null, 2)}
           </pre>
         </div>

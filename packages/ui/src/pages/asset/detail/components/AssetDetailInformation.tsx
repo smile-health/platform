@@ -51,14 +51,14 @@ const AssetDetailInformation = () => {
                     )
                   : '-'
               }]`,
-              className: 'ui-text-sm ui-font-semibold ui-text-primary-500',
+              className: 'ui:text-sm ui:font-semibold ui:text-primary-500',
             },
             {
               label: dayjs(data?.updated_at)
                 .locale(language)
                 .format('DD MMM YYYY HH:mm')
                 ?.toUpperCase(),
-              className: 'ui-text-sm ui-font-normal ui-text-gray-400 ui-my-1',
+              className: 'ui:text-sm ui:font-normal ui:text-gray-400 ui:my-1',
             },
           ]}
         />
@@ -67,7 +67,7 @@ const AssetDetailInformation = () => {
     {
       label: t('asset:detail.asset_temperature'),
       value: data?.temp ? (
-        <span className="ui-text-green-500 ui-font-semibold">
+        <span className="ui:text-green-500 ui:font-semibold">
           {formatToCelcius(data?.temp)}
         </span>
       ) : (
@@ -77,16 +77,16 @@ const AssetDetailInformation = () => {
   ]
 
   return (
-    <div className="ui-table ui-w-3/4 ui-table-fixed">
+    <div className="ui:table ui:w-3/4 ui:table-fixed">
       {displayConfig.map((item, index) => (
-        <div key={index?.toString()} className="ui-table-row">
-          <div className="ui-text-sm ui-font-semibold ui-table-cell ui-w-40 ui-py-2">
+        <div key={index?.toString()} className="ui:table-row">
+          <div className="ui:text-sm ui:font-semibold ui:table-cell ui:w-40 ui:py-2">
             {item.label}
           </div>
-          <div className="ui-table-cell ui-text-sm ui-font-normal ui-text-gray-400 ui-w-8 ui-py-2">
+          <div className="ui:table-cell ui:text-sm ui:font-normal ui:text-gray-400 ui:w-8 ui:py-2">
             :
           </div>
-          <div className="ui-text-sm ui-font-normal ui-text-gray-700 ui-table-cell ui-py-2">
+          <div className="ui:text-sm ui:font-normal ui:text-gray-700 ui:table-cell ui:py-2">
             {item.value}
           </div>
         </div>

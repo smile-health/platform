@@ -14,12 +14,12 @@ export const OrderDetailComment = () => {
     : t('comment.title')
 
   return (
-    <OrderDetailBox title={title} enableShowHide className="ui-space-y-6">
+    <OrderDetailBox title={title} enableShowHide className="ui:space-y-6">
       <OrderDetailCommentForm />
 
       {isLoading && <OrderDetailCommentItemSkeleton />}
       {!isLoading && data?.order_comments && data.order_comments.length > 0 && (
-        <div className="ui-space-y-4">
+        <div className="ui:space-y-4">
           {data.order_comments.map((item) => (
             <OrderDetailCommentItem key={item.id} {...item} />
           ))}
@@ -30,9 +30,9 @@ export const OrderDetailComment = () => {
 }
 
 const OrderDetailCommentItemSkeleton = () => (
-  <div className="ui-space-y-4">
-    <Skeleton className="ui-h-14" />
-    <Skeleton className="ui-h-14" />
-    <Skeleton className="ui-h-14" />
+  <div className="ui:space-y-4">
+    <Skeleton className="ui:h-14" />
+    <Skeleton className="ui:h-14" />
+    <Skeleton className="ui:h-14" />
   </div>
 )

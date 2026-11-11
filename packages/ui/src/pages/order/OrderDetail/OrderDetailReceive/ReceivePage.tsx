@@ -80,12 +80,12 @@ const OrderDetailReceivePage = () => {
         },
       }}
     >
-      <div className="ui-space-y-6">
-        <div className="border ui-border-secondary-700 ui-text-secondary-700 ui-bg-secondary-50 ui-px-3.5 ui-rounded-md ui-py-3 ui-font-semibold">
+      <div className="ui:space-y-6">
+        <div className="border ui:border-secondary-700 ui:text-secondary-700 ui:bg-secondary-50 ui:px-3.5 ui:rounded-md ui:py-3 ui:font-semibold">
           {t('orderDetail:info.receive')}
         </div>
 
-        <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-6">
           <OrderDetailCustomer />
           <OrderDetailVendor />
         </div>

@@ -97,11 +97,11 @@ export const columnsBast = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           <Button
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-blue-500"
+            className="ui:px-1.5! ui:text-blue-500"
             onClick={() => handleOpenDetail(original)}
           >
             {t('common:detail')}
@@ -110,7 +110,7 @@ export const columnsBast = (
             <Button
               type="button"
               variant="subtle"
-              className="!ui-px-1.5 ui-text-blue-500"
+              className="ui:px-1.5! ui:text-blue-500"
               onClick={() => handleApproval(original)}
             >
               {t('common:approval')}

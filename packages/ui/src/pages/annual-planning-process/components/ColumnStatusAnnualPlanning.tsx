@@ -13,7 +13,7 @@ const ColumnStatusAnnualPlanning: React.FC<Props> = ({ statusId }) => {
   return (
     <Badge
       id={`txt-status-${text.toLowerCase()}`}
-      className="ui-text-nowrap ui-text-sm ui-font-medium"
+      className="ui:text-nowrap ui:text-sm ui:font-medium"
       color={color}
       size="md"
       rounded="full"

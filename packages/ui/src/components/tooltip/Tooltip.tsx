@@ -127,28 +127,28 @@ export const TooltipContent = React.forwardRef<
                   opacity: 0,
                   transition: { duration: 0.1, ease: 'easeIn' },
                 }}
-                className={cx('ui-relative ui-rounded ui-px-2 ui-py-2', {
-                  'ui-bg-gray-800 ui-text-white': color === 'dark',
-                  'ui-border ui-border-gray-300 ui-bg-white ui-text-gray-700 ui-shadow':
+                className={cx('ui:relative ui:rounded ui:px-2 ui:py-2', {
+                  'ui:bg-gray-800 ui:text-white': color === 'dark',
+                  'ui:border ui:border-gray-300 ui:bg-white ui:text-gray-700 ui:shadow':
                     color === 'light',
                 })}
               >
                 <TooltipPrimitive.Arrow asChild>
-                  <div className="ui-relative ui-h-[4px] ui-w-[13px]">
+                  <div className="ui:relative ui:h-[4px] ui:w-[13px]">
                     <div
                       className={cx(
-                        'ui-absolute ui-h-2 ui-w-2 ui-rotate-45',
-                        'ui-left-0 ui-right-0 ui-ml-auto ui-mr-auto',
+                        'ui:absolute ui:h-2 ui:w-2 ui:rotate-45',
+                        'ui:left-0 ui:right-0 ui:ml-auto ui:mr-auto',
                         {
-                          'ui-top-[-4px] ui-bg-gray-800': color === 'dark',
-                          'ui-top-[-3.5px] ui-border-b ui-border-r ui-border-gray-300 ui-bg-white ui-shadow-sm':
+                          'ui:top-[-4px] ui:bg-gray-800': color === 'dark',
+                          'ui:top-[-3.5px] ui:border-b ui:border-r ui:border-gray-300 ui:bg-white ui:shadow-sm':
                             color === 'light',
                         }
                       )}
                     ></div>
                   </div>
                 </TooltipPrimitive.Arrow>
-                <span className="ui-block ui-text-sm">{children}</span>
+                <span className="ui:block ui:text-sm">{children}</span>
               </motion.div>
             </TooltipPrimitive.Content>
           </TooltipPrimitive.Portal>

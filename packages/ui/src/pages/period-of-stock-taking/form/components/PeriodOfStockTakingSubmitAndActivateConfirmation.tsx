@@ -41,14 +41,14 @@ export default function PeriodOfStockTakingSubmitAndActivateConfirmation({
   return (
     <Dialog size="lg" open={open} onOpenChange={setOpen}>
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
+      <DialogHeader className="ui:text-center ui:text-xl">
         {t('common:confirmation')}
       </DialogHeader>
-      <DialogContent className="ui-space-y-4">
-        <p className="ui-text-center ui-text-dark-teal">{confirmationText}</p>
+      <DialogContent className="ui:space-y-4">
+        <p className="ui:text-center ui:text-dark-teal">{confirmationText}</p>
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full mx-auto">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full mx-auto">
           <Button
             id="period__so__submission__confirmation__cancel"
             variant="outline"

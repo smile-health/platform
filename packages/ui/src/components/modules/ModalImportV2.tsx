@@ -112,7 +112,7 @@ export function ModalImportV2({
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
+      <DialogHeader className="ui:text-center ui:text-xl">
         {popupImportData?.data?.header}
       </DialogHeader>
       <DialogContent>
@@ -126,15 +126,15 @@ export function ModalImportV2({
             maxSize={maxSize}
           />
           {popupImportData?.data?.description && (
-            <p className="ui-text-sm ui-text-neutral-500">
+            <p className="ui:text-sm ui:text-neutral-500">
               {popupImportData?.data?.description}
             </p>
           )}
           {error && <FormErrorMessage>{error}</FormErrorMessage>}
         </FormControl>
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-9/12 mx-auto">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-9/12 mx-auto">
           <Button
             id="btn-close-modal-import"
             variant="default"

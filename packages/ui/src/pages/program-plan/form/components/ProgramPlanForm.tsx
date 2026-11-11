@@ -91,8 +91,8 @@ export default function ProgramPlanForm() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(submitProgramPlan)}>
-        <div className="ui-w-full ui-max-w-form ui-mx-auto ui-border ui-border-neutral-300 ui-rounded-md ui-p-6">
-          <FormControl className="ui-w-full ui-mb-6">
+        <div className="ui:w-full ui:max-w-form ui:mx-auto ui:border ui:border-neutral-300 ui:rounded-md ui:p-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor="target_year" required={true}>
               {t('programPlan:table.year_plan')}
             </FormLabel>
@@ -125,7 +125,7 @@ export default function ProgramPlanForm() {
               </FormErrorMessage>
             )}
           </FormControl>
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <Checkbox
               {...register('use_data_from_prev_year')}
               label={t('programPlan:use_data_from_prev_year')}
@@ -133,14 +133,14 @@ export default function ProgramPlanForm() {
           </FormControl>
           <div
             className={cx(
-              'ui-overflow-hidden ui-transition-all ui-duration-300 ui-ease-in-out',
+              'ui:overflow-hidden ui:transition-all ui:duration-300 ui:ease-in-out',
               {
-                'ui-max-h-96 ui-pb-2': takeFromPrevYear,
-                'ui-max-h-0 ui-pb-0': !takeFromPrevYear,
+                'ui:max-h-96 ui:pb-2': takeFromPrevYear,
+                'ui:max-h-0 ui:pb-0': !takeFromPrevYear,
               }
             )}
           >
-            <FormControl className="ui-w-full ui-mb-6">
+            <FormControl className="ui:w-full ui:mb-6">
               <FormLabel htmlFor="source_id">
                 {t('programPlan:table.previous_year')}
               </FormLabel>
@@ -172,11 +172,11 @@ export default function ProgramPlanForm() {
                 </FormErrorMessage>
               )}
             </FormControl>
-            <FormControl className="ui-w-full">
+            <FormControl className="ui:w-full">
               <FormLabel htmlFor="select_data_to_be_copied">
                 {t('programPlan:table.select_data_to_be_copied')}
               </FormLabel>
-              <div className="ui-flex ui-flex-col ui-gap-2 ui-px-2">
+              <div className="ui:flex ui:flex-col ui:gap-2 ui:px-2">
                 {COPY_ITEMS({ t }).map((item) => {
                   const selected = watch('copy_items') as CopyItem[]
                   const disabled = item.dependsOn
@@ -209,7 +209,7 @@ export default function ProgramPlanForm() {
           </div>
         </div>
 
-        <div className="ui-mt-2 ui-flex ui-justify-end ui-items-end ui-max-w-form ui-mx-auto ui-gap-4">
+        <div className="ui:mt-2 ui:flex ui:justify-end ui:items-end ui:max-w-form ui:mx-auto ui:gap-4">
           <Button
             id="btn_close_pop_up_form"
             variant="default"

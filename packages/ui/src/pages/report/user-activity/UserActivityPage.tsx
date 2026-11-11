@@ -54,7 +54,7 @@ export default function UserActivityPage() {
         open={openInformation}
         setOpen={setOpenInformation}
       />
-      <div className="ui-mt-6 ui-space-y-6">
+      <div className="ui:mt-6 ui:space-y-6">
         <UserActivityFilter
           filter={filter}
           isDisabledExport={tab === 'overview'}

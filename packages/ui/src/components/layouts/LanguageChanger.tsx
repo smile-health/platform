@@ -50,12 +50,12 @@ const LanguageChanger: React.FC = () => {
         {currentLang && (
           <div
             key={currentLang.value}
-            className="ui-bg-[#F5F5F4] ui-flex ui-gap-2 ui-items-center ui-p-[6px] ui-w-[80px] ui-cursor-pointer"
+            className="ui:bg-[#F5F5F4] ui:flex ui:gap-2 ui:items-center ui:p-[6px] ui:w-[80px] ui:cursor-pointer"
             id="trigger-language-changer"
           >
-            <currentLang.icon className="ui-rounded-full" />
+            <currentLang.icon className="ui:rounded-full" />
             {currentLang.value.toUpperCase()}
-            <ChevronDownIcon className="ui-w-3" />
+            <ChevronDownIcon className="ui:w-3" />
           </div>
         )}
       </DropdownMenuTrigger>
@@ -66,8 +66,8 @@ const LanguageChanger: React.FC = () => {
             onClick={() => handleLocaleChange(x.value)}
             id={`language-${x.value}`}
           >
-            <div className="ui-flex ui-gap-2 ui-items-center">
-              <x.icon className="ui-rounded-full" />
+            <div className="ui:flex ui:gap-2 ui:items-center">
+              <x.icon className="ui:rounded-full" />
               {x.value.toUpperCase()}
             </div>
           </DropdownMenuItem>

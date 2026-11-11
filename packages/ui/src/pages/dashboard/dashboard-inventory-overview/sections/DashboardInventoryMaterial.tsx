@@ -43,12 +43,12 @@ export default function DashboardInventoryMaterial({ data, isLoading }: Props) {
   return (
     <DashboardBox.Root
       id="material-activity-chart"
-      className="ui-flex ui-flex-col ui-h-full"
+      className="ui:flex ui:flex-col ui:h-full"
     >
       <DashboardBox.Header bordered>
         <H5>{t('title.material')}</H5>
       </DashboardBox.Header>
-      <DashboardBox.Body className="ui-flex-1 ui-flex ui-flex-col">
+      <DashboardBox.Body className="ui:flex-1 ui:flex ui:flex-col">
         <DashboardBox.Config
           download={{
             targetElementId: 'material-activity-chart',
@@ -56,11 +56,11 @@ export default function DashboardInventoryMaterial({ data, isLoading }: Props) {
           }}
         />
         <DashboardBox.Content
-          className="ui-flex-1 ui-max-h-[500px]"
+          className="ui:flex-1 ui:max-h-[500px]"
           isEmpty={!data?.length}
           isLoading={isLoading}
         >
-          <div className="ui-flex ui-items-center ui-justify-center ui-gap-4 ui-mb-4">
+          <div className="ui:flex ui:items-center ui:justify-center ui:gap-4 ui:mb-4">
             {LEGEND_LABELS?.map((legend, index) => (
               <DashboardInventoryCustomLegend
                 key={legend}

@@ -50,48 +50,48 @@ export function SelectCountry({
     <div
       data-error={error}
       className={cx(
-        'ui-relative ui-flex ui-self-stretch ui-items-center ui-p-2',
-        'ui-rounded ui-rounded-r-none',
-        'ui-bg-white ui-text-gray-800 ui-leading-tight',
-        'data-[error=true]:ui-border data-[error=true]:ui-border-danger-500',
-        'focus-within:ui-border-primary-500 focus-within:ui-border-r focus-within:ui-outline-none focus-within:ui-ring-primary-500 focus-within:ui-ring-opacity-25 focus-within:ui-ring-2 focus-within:ui-z-10',
+        'ui:relative ui:flex ui:self-stretch ui:items-center ui:p-2',
+        'ui:rounded ui:rounded-r-none',
+        'ui:bg-white ui:text-gray-800 ui:leading-tight',
+        'ui:data-[error=true]:border ui:data-[error=true]:border-danger-500',
+        'ui:focus-within:border-primary-500 ui:focus-within:border-r ui:focus-within:outline-hidden ui:focus-within:ring-primary-500/25 ui:focus-within:ring-2 ui:focus-within:z-10',
         {
-          'ui-bg-gray-100 ui-opacity-75': disabled,
-          'ui-h-8': size === 'sm',
-          'ui-h-10': size === 'md',
-          'ui-text-sm': size === 'md' || size === 'sm',
-          'ui-h-12 ui-text-base': size === 'lg',
-          'ui-h-14 ui-text-lg': size === 'xl',
+          'ui:bg-gray-100 ui:opacity-75': disabled,
+          'ui:h-8': size === 'sm',
+          'ui:h-10': size === 'md',
+          'ui:text-sm': size === 'md' || size === 'sm',
+          'ui:h-12 ui:text-base': size === 'lg',
+          'ui:h-14 ui:text-lg': size === 'xl',
         },
         {
-          'ui-border-0 ui-bg-gray-100 focus-within:ui-border focus-within:ui-ring-2':
+          'ui:border-0 ui:bg-gray-100 ui:focus-within:border ui:focus-within:ring-2':
             variant === 'filled',
-          'ui-bg-white-100 ui-border ui-border-gray-300 focus-within:ui-ring-2':
+          'ui-bg-white-100 ui:border ui:border-gray-300 ui:focus-within:ring-2':
             variant === 'outline',
 
-          'ui-cursor-not-allowed ui-bg-gray-100 ui-opacity-75': disabled,
+          'ui:cursor-not-allowed ui:bg-gray-100 ui:opacity-75': disabled,
         },
 
         // group
-        'group-[.is-group]:first:ui-rounded-r-none',
-        'group-[.is-group]:[&:not(:first-child):not(:last-child)]:ui-rounded-none',
-        'group-[.is-group]:last:ui-rounded-l-none',
+        'ui:first:group-[.is-group]:rounded-r-none',
+        'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:rounded-none',
+        'ui:last:group-[.is-group]:rounded-l-none',
 
-        'group-[.is-group]:[&:not(:first-child):not(:last-child)]:-ui-mr-[1px]',
-        'group-[.is-group]:last:-ui-ml-[1px]',
-        'group-[.is-group]:first:-ui-mr-[1px]',
+        'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:-mr-px',
+        'ui:last:group-[.is-group]:-ml-px',
+        'ui:first:group-[.is-group]:-mr-px',
         {
-          'group-[.is-group]:first:ui-border-r ui-border-gray-300':
+          'ui:first:group-[.is-group]:border-r ui:border-gray-300':
             variant === 'filled',
-          'group-[.is-group]:last:ui-border-l ui-border-gray-300':
+          'ui:last:group-[.is-group]:border-l ui:border-gray-300':
             variant === 'filled',
-          'data-[error=true]:ui-ring-opacity-25 data-[error=true]:ui-ring-danger-500 group-[.is-group]:ui-z-10':
+          'ui:data-[error=true]:ring-danger-500/25 ui:group-[.is-group]:z-10':
             isFocused,
         }
       )}
     >
       <div
-        className="ui-w-full ui-inline-flex ui-items-center ui-gap-2 ui-justify-between"
+        className="ui:w-full ui:inline-flex ui:items-center ui:gap-2 ui:justify-between"
         aria-hidden="true"
       >
         <FlagComponent
@@ -102,11 +102,11 @@ export function SelectCountry({
         />
 
         <ChevronDownIcon
-          className={cx('ui-text-zinc-500', {
-            'ui-size-3': size === 'sm',
-            'ui-size-4': size === 'md',
-            'ui-size-5': size === 'lg',
-            'ui-size-6': size === 'xl',
+          className={cx('ui:text-zinc-500', {
+            'ui:size-3': size === 'sm',
+            'ui:size-4': size === 'md',
+            'ui:size-5': size === 'lg',
+            'ui:size-6': size === 'xl',
           })}
           aria-hidden="true"
         />
@@ -119,8 +119,8 @@ export function SelectCountry({
         disabled={disabled}
         value={value || ''}
         onChange={handleSelect}
-        className={cx('ui-absolute ui-inset-0 ui-text-sm ui-opacity-0', {
-          'ui-cursor-not-allowed': disabled,
+        className={cx('ui:absolute ui:inset-0 ui:text-sm ui:opacity-0', {
+          'ui:cursor-not-allowed': disabled,
         })}
         aria-label="Select country"
       >

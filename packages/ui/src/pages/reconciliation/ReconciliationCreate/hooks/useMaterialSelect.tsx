@@ -19,7 +19,7 @@ export const useMaterialSelect = ({ search }: { search: string }) => {
     const selectedMaterialId = material?.id
     const materialId = item?.material?.id
     if (selectedMaterialId === materialId) {
-      return 'ui-bg-primary-100'
+      return 'ui:bg-primary-100'
     }
     return ''
   }
@@ -56,7 +56,7 @@ export const useMaterialSelect = ({ search }: { search: string }) => {
     {
       accessorKey: 'material',
       header: () => (
-        <div className="ui-text-center">{t('create.selection')}</div>
+        <div className="ui:text-center">{t('create.selection')}</div>
       ),
       size: 88,
       meta: {
@@ -64,7 +64,7 @@ export const useMaterialSelect = ({ search }: { search: string }) => {
       },
       cell: ({ row }) => {
         return (
-          <div className="ui-text-center">
+          <div className="ui:text-center">
             <Radio
               id="radio-material-reconciliation"
               value={row.original.material?.id}

@@ -71,23 +71,23 @@ export const ReactSelect = React.forwardRef<any, ReactSelectProps>(function Reac
         ...props?.classNames,
         control: ({ isFocused, ...controlProps }) =>
           cx(
-            '!ui-rounded !ui-border !ui-shadow-none',
+            'ui:rounded! ui:border! ui:shadow-none!',
             {
-              '!ui-border-gray-300': !props.error,
-              '!ui-border-danger-500': props.error,
-              '!ui-border-primary-500 !ui-outline-none !ui-ring-2 !ui-ring-primary-500 !ui-ring-opacity-25':
+              'ui:border-gray-300!': !props.error,
+              'ui:border-danger-500!': props.error,
+              'ui:border-primary-500! ui:outline-hidden! ui:ring-2! ui:ring-primary-500/25!':
                 isFocused && !props.error,
-              '!ui-border-danger-500 !ui-outline-none !ui-ring-2 !ui-ring-danger-500 !ui-ring-opacity-25':
+              'ui:border-danger-500! ui:outline-hidden! ui:ring-2! ui:ring-danger-500/25!':
                 isFocused && props.error,
-              '!ui-cursor-not-allowed !ui-bg-gray-100 !ui-opacity-75':
+              'ui:cursor-not-allowed! ui:bg-gray-100! ui:opacity-75!':
                 props.disabled,
             },
             //size style
             {
-              '!ui-min-h-8 ui-text-sm': size === 'sm',
-              '!ui-min-h-10 ui-text-base': size === 'md',
-              '!ui-min-h-12 ui-text-lg': size === 'lg',
-              '!ui-min-h-14 ui-text-xl': size === 'xl',
+              'ui:min-h-8! ui:text-sm': size === 'sm',
+              'ui:min-h-10! ui:text-base': size === 'md',
+              'ui:min-h-12! ui:text-lg': size === 'lg',
+              'ui:min-h-14! ui:text-xl': size === 'xl',
             },
             props?.classNames?.control?.({ isFocused, ...controlProps })
           ),
@@ -96,11 +96,11 @@ export const ReactSelect = React.forwardRef<any, ReactSelectProps>(function Reac
           cx(
             '',
             {
-              '!ui-bg-primary-500 !ui-text-primary-contrast':
+              'ui:bg-primary-500! ui:text-primary-contrast!':
                 isSelected && !isMultiCheckbox,
-              '!ui-bg-white': isSelected && isMultiCheckbox,
-              '!ui-bg-primary-100': isFocused && !isSelected,
-              '!ui-text-gray-400': isDisabled,
+              'ui:bg-white!': isSelected && isMultiCheckbox,
+              'ui:bg-primary-100!': isFocused && !isSelected,
+              'ui:text-gray-400!': isDisabled,
             },
             props?.classNames?.option?.({
               isSelected,

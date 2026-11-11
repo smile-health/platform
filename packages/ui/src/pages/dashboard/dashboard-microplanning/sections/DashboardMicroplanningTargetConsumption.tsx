@@ -203,14 +203,14 @@ export default function DashboardMicroplanningTargetConsumption<
   return (
     <DashboardBox.Root id={id}>
       <DashboardBox.Header bordered>
-        <div className="ui-flex ui-justify-between ui-items-center ui-w-full">
-          <div className="ui-flex-1">
+        <div className="ui:flex ui:justify-between ui:items-center ui:w-full">
+          <div className="ui:flex-1">
             <h4>{title}</h4>
             {subtitle && (
               <p
                 className={cx(
-                  'ui-text-base',
-                  'ui-text-dark-teal',
+                  'ui:text-base',
+                  'ui:text-dark-teal',
                 )}
               >
                 {subtitle}
@@ -219,15 +219,15 @@ export default function DashboardMicroplanningTargetConsumption<
           </div>
 
           {/* Appearance Switch */}
-          <div className="ui-text-start ui-flex-none ui-basis-2/8">
-            <label className="ui-text-sm ui-font-medium ui-text-gray-600">
+          <div className="ui:text-start ui:flex-none ui:basis-2/8">
+            <label className="ui:text-sm ui:font-medium ui:text-gray-600">
               {t('title.dashboard.appearance')}
             </label>
-            <div className="ui-flex ui-gap-3 ui-mt-1">
+            <div className="ui:flex ui:gap-3 ui:mt-1">
               {(['chart', 'table'] as const).map((mode) => (
                 <label
                   key={mode}
-                  className="ui-flex ui-items-center ui-gap-1 ui-cursor-pointer"
+                  className="ui:flex ui:items-center ui:gap-1 ui:cursor-pointer"
                 >
                   <input
                     type="radio"
@@ -235,9 +235,9 @@ export default function DashboardMicroplanningTargetConsumption<
                     value={mode}
                     checked={appearanceMode === mode}
                     onChange={() => setAppearanceMode(mode)}
-                    className="ui-cursor-pointer ui-mt-1"
+                    className="ui:cursor-pointer ui:mt-1"
                   />
-                  <span className="ui-text-base">
+                  <span className="ui:text-base">
                     {mode === 'chart'
                       ? t('title.dashboard.chart.chart')
                       : t('title.dashboard.table')}
@@ -249,7 +249,7 @@ export default function DashboardMicroplanningTargetConsumption<
         </div>
       </DashboardBox.Header>
 
-      <div className="ui-relative ui-p-4 ui-bg-gray-50">
+      <div className="ui:relative ui:p-4 ui:bg-gray-50">
         <TabsRoot
           variant="pills"
           value={activeTab}
@@ -261,14 +261,14 @@ export default function DashboardMicroplanningTargetConsumption<
           }}
         >
           {/* Tabs */}
-          <div className="ui-flex ui-items-center ui-gap-4 mb-5">
-            <TabsList className="ui-grid-cols-4 ui-grow">
+          <div className="ui:flex ui:items-center ui:gap-4 mb-5">
+            <TabsList className="ui:grid-cols-4 ui:grow">
               {tabList.map((item) => (
                 <TabsTrigger
                   key={item.id}
                   value={item.id}
                   disabled={isTabDisabled(item.id)}
-                  className="ui-justify-center ui-text-sm ui-px-2 ui-h-10"
+                  className="ui:justify-center ui:text-sm ui:px-2 ui:h-10"
                 >
                   {item.label}
                 </TabsTrigger>
@@ -285,8 +285,8 @@ export default function DashboardMicroplanningTargetConsumption<
               pagination={pagination}
             />
           ) : (
-            <div className="ui-w-full ui-h-[500px] ui-border-2 ui-rounded-xl ui-p-5 ui-flex ui-flex-col">
-              <div className="ui-flex-1 ui-overflow-x-auto ui-overflow-y-hidden">
+            <div className="ui:w-full ui:h-[500px] ui:border-2 ui:rounded-xl ui:p-5 ui:flex ui:flex-col">
+              <div className="ui:flex-1 ui:overflow-x-auto ui:overflow-y-hidden">
                 <div
                   style={{
                     minWidth: chartMinWidth,
@@ -317,20 +317,20 @@ export default function DashboardMicroplanningTargetConsumption<
               </div>
 
               {/* ===== TOGGLE ===== */}
-              <div className="ui-flex ui-justify-center ui-gap-4 ui-mt-3 ui-text-sm ui-shrink-0">
+              <div className="ui:flex ui:justify-center ui:gap-4 ui:mt-3 ui:text-sm ui:shrink-0">
                 {(['Target', 'Consumption'] as const).map(
                   (key) => (
                     <button
                       key={key}
                       type="button"
                       onClick={() => toggleSeries(key)}
-                      className="ui-flex ui-items-center ui-gap-1 ui-bg-transparent ui-border-0"
+                      className="ui:flex ui:items-center ui:gap-1 ui:bg-transparent ui:border-0"
                       style={{
                         opacity: visibleSeries[key] ? 1 : 0.4,
                       }}
                     >
                       <span
-                        className="ui-w-3 ui-h-3 ui-rounded-sm"
+                        className="ui:w-3 ui:h-3 ui:rounded-sm"
                         style={{
                           background:
                             colorMap[key] ?? '#D1D5DB',

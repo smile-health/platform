@@ -81,7 +81,7 @@ const useAssetTypeThresholdTableForm = ({
       type === ThresholdType.HUMIDITY ||
       (isEdit && !isAdjustable)
     ) {
-      return 'ui-bg-neutral-100 ui-cursor-not-allowed'
+      return 'ui:bg-neutral-100 ui:cursor-not-allowed'
     }
     return ''
   }
@@ -288,7 +288,7 @@ const useAssetTypeThresholdTableForm = ({
       {
         label: thresholdLabel,
         value: hasTreshold ? (
-          <div className="ui-grid ui-grid-cols-3">
+          <div className="ui:grid ui:grid-cols-3">
             <DataTable columns={schema} data={thresholdData} />
           </div>
         ) : (

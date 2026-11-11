@@ -53,8 +53,8 @@ export default function TemperatureExcursionFilter({
   ]
 
   return (
-    <div className="ui-space-y-4 ui-p-4 ui-rounded ui-bg-white border">
-      <div className="ui-grid ui-grid-cols-2 ui-gap-4">
+    <div className="ui:space-y-4 ui:p-4 ui:rounded ui:bg-white border">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-4">
         <FormControl>
           <FormLabel>
             {t('temperature_excursion.filter.duration.label')}
@@ -86,12 +86,12 @@ export default function TemperatureExcursionFilter({
         </FormControl>
       </div>
 
-      <div className="ui-flex ui-gap-4 ui-bg-white ui-p-4 ui-rounded ui-border w-full">
-        <FormControl className="ui-justify-between ui-flex ui-items-center ui-space-y-0 ui-w-full">
+      <div className="ui:flex ui:gap-4 ui:bg-white ui:p-4 ui:rounded ui:border w-full">
+        <FormControl className="ui:justify-between ui:flex ui:items-center ui:space-y-0 ui:w-full">
           <FormLabel>
             {t('temperature_excursion.filter.certification_status.label')}
           </FormLabel>
-          <RadioGroup className="ui-flex ui-items-center ui-justify-center">
+          <RadioGroup className="ui:flex ui:items-center ui:justify-center">
             <Radio
               label={t('temperature_excursion.filter.who_pqs.who_pqs')}
               value="1"

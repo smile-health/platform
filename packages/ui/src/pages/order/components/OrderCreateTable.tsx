@@ -46,8 +46,8 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
   const { order_items } = watch()
 
   return (
-    <div className="ui-border ui-border-[#d2d2d2] ui-rounded ui-mt-6 ui-p-4">
-      <div className="ui-font-bold ui-mb-4">{t('orderCreate:title.list')}</div>
+    <div className="ui:border ui:border-[#d2d2d2] ui:rounded ui:mt-6 ui:p-4">
+      <div className="ui:font-bold ui:mb-4">{t('orderCreate:title.list')}</div>
       <Table
         overflowXAuto
         stickyOffset={0}
@@ -60,7 +60,7 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
           <Tr>
             {headers.map((header) => (
               <Th
-                className="ui-px-2 ui-py-5 ui-text-left ui-text-sm ui-text-gray-700 ui-border-b ui-border-gray-300 ui-font-semibold"
+                className="ui:px-2 ui:py-5 ui:text-left ui:text-sm ui:text-gray-700 ui:border-b ui:border-gray-300 ui:font-semibold"
                 key={header.id}
                 style={{
                   width: header?.size !== 0 ? `${header?.size}px` : 'auto',
@@ -75,7 +75,7 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
           {children}
           {withDropdown && order_items && order_items?.length > 0 && (
             <Tr>
-              <Td colSpan={6} className="ui-p-2">
+              <Td colSpan={6} className="ui:p-2">
                 <ReactSelectAsync
                   loadOptions={loadStocks}
                   key={`material-select-${customer?.label}-${activity?.label}`}
@@ -89,7 +89,7 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
                     indexRow: indexRow,
                   }}
                   value={null}
-                  className="!ui-w-96"
+                  className="ui:w-96!"
                   placeholder={t(
                     'orderCreate:list.selected.column.add_material'
                   )}
@@ -100,7 +100,7 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
                   error={!!errors?.order_items?.message}
                 />
                 {errors?.order_items && (
-                  <div className="ui-mt-2">
+                  <div className="ui:mt-2">
                     <FormErrorMessage>
                       {errors?.order_items?.message as string}
                     </FormErrorMessage>
@@ -120,15 +120,15 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
       </Table>
 
       {/* Buttons  */}
-      <div className="ui-flex ui-flex-row-reverse ui-mt-8">
-        <Button color="primary" onClick={() => onSubmit()} className="ui-w-40">
+      <div className="ui:flex ui:flex-row-reverse ui:mt-8">
+        <Button color="primary" onClick={() => onSubmit()} className="ui:w-40">
           {t('orderCreate:button.send')}
         </Button>
         <Button
           color="primary"
           variant="outline"
           onClick={() => onReset()}
-          className="ui-mr-4 ui-w-40"
+          className="ui:mr-4 ui:w-40"
         >
           Reset
         </Button>

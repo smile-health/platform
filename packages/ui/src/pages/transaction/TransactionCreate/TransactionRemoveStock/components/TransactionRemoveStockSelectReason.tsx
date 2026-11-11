@@ -100,7 +100,7 @@ const TransactionRemoveStockSelectReason: React.FC<Props> = ({
           is_other?: number
         }
       )?.is_other === BOOLEAN.TRUE && (
-        <FormControl className="ui-mt-4">
+        <FormControl className="ui:mt-4">
           <Input
             id={`input_transaction_reason_other_${index}`}
             value={savedStockData?.stocks?.[index]?.other_reason ?? ''}

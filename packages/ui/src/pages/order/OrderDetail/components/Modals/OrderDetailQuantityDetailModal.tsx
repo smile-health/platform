@@ -44,10 +44,10 @@ export const OrderDetailQuantityDetailModal = ({
       onClose={handleClose}
       cancelButton={{
         label: t('common:close'),
-        className: 'ui-w-full',
+        className: 'ui:w-full',
       }}
     >
-      <div className="ui-space-y-4 ui-text-dark-blue">
+      <div className="ui:space-y-4 ui:text-dark-blue">
         {orderItemData?.[
           isHierarchyEnabled && isOrderDetailHierarchy
             ? 'children'
@@ -84,7 +84,7 @@ export const OrderDetailQuantityDetailModal = ({
               {isHierarchyEnabled && isOrderDetailHierarchy ? (
                 <div>
                   <p>{children?.material?.name}</p>
-                  <div className="ui-font-semibold">
+                  <div className="ui:font-semibold">
                     Qty:{' '}
                     {numberFormatter(
                       (children as any)?.[
@@ -112,7 +112,7 @@ export const OrderDetailQuantityDetailModal = ({
                     {t('orderDetail:data.stock_from_activity')}:{' '}
                     {stock?.activity_name ?? '-'}
                   </div>
-                  <div className="ui-font-semibold">
+                  <div className="ui:font-semibold">
                     Qty:{' '}
                     {numberFormatter(
                       (stock as any)?.[
@@ -130,7 +130,7 @@ export const OrderDetailQuantityDetailModal = ({
               ) && (
                 <div>
                   <button
-                    className="ui-text-sm ui-my-4 !ui-outline-none"
+                    className="ui:text-sm ui:my-4 ui:outline-hidden!"
                     onClick={() => handleOpenBatch(data?.id)}
                   >
                     {data?.id === isBatchOpened
@@ -138,7 +138,7 @@ export const OrderDetailQuantityDetailModal = ({
                       : t('orderDetail:modal.hierarchy.button.show')}
                   </button>
                   {isBatchOpened === data?.id && (
-                    <div className="!ui-w-full">
+                    <div className="ui:w-full!">
                       {[
                         ...(isOrderDetailHierarchy
                           ? (children?.order_stocks ?? [])
@@ -146,7 +146,7 @@ export const OrderDetailQuantityDetailModal = ({
                       ]?.map((stock) => {
                         return (
                           <div
-                            className="!ui-bg-[#F1F5F9] !ui-w-full !ui-p-4 !ui-mb-4"
+                            className="ui:bg-slate-100! ui:w-full! ui:p-4! ui:mb-4!"
                             key={stock?.batch_id}
                           >
                             <div>
@@ -165,7 +165,7 @@ export const OrderDetailQuantityDetailModal = ({
                               {t('orderDetail:data.stock_from_activity')}:{' '}
                               {stock?.activity_name ?? '-'}
                             </div>
-                            <div className="ui-font-semibold">
+                            <div className="ui:font-semibold">
                               Qty:{' '}
                               {numberFormatter(
                                 (stock as any)?.[

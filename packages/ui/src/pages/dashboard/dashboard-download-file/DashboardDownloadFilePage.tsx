@@ -35,21 +35,21 @@ export default function DashboardDownloadFilePage() {
     <Container title={t('title')} withLayout>
       <Meta title={generateMetaTitle(t('title'))} />
       <div
-        className={cx('ui-border ui-border-neutral-300 ui-rounded', {
-          'ui-divide-y ui-divide-neutral-300': dataSource?.data?.length,
-          'ui-flex ui-flex-col ui-justify-center ui-items-center ui-h-96':
+        className={cx('ui:border ui:border-neutral-300 ui:rounded', {
+          'ui:divide-y ui:divide-neutral-300': dataSource?.data?.length,
+          'ui:flex ui:flex-col ui:justify-center ui:items-center ui:h-96':
             !dataSource?.data?.length,
         })}
       >
         {dataSource?.data?.length ? (
           dataSource?.data?.map((item) => (
             <Fragment key={item?.id}>
-              <div className="ui-p-3 ui-text-center">
+              <div className="ui:p-3 ui:text-center">
                 <H4>{item?.title}</H4>
               </div>
 
               {item?.list?.length ? (
-                <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-p-4">
+                <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:p-4">
                   {item?.list?.map((file) => (
                     <DashboardDownloadFileCard
                       key={file?.code}

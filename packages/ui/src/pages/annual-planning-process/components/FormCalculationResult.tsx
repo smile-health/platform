@@ -51,14 +51,14 @@ const FormCalculationResult: React.FC = () => {
   const data = datasource?.data || []
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <ModalConfirmation
         open={openConfirmation}
         setOpen={setOpenConfirmation}
         onSubmit={handleSubmitConfirmation}
         title={t('common:confirmation')}
         description={descriptionConfirmation}
-        subDescriptionClassName="ui-text-left"
+        subDescriptionClassName="ui:text-left"
       />
 
       {dataDetail && (
@@ -68,7 +68,7 @@ const FormCalculationResult: React.FC = () => {
         />
       )}
 
-      <div className="ui-space-y-3">
+      <div className="ui:space-y-3">
         <InformationAnnualPlanning />
       </div>
 
@@ -85,9 +85,9 @@ const FormCalculationResult: React.FC = () => {
         />
       </FormProvider>
 
-      <div className="ui-p-4 ui-space-y-6 ui-border ui-border-gray-300 ui-rounded">
-        <div className="ui-flex ui-justify-between ui-items-center">
-          <p className="ui-text-base ui-font-bold">
+      <div className="ui:p-4 ui:space-y-6 ui:border ui:border-gray-300 ui:rounded">
+        <div className="ui:flex ui:justify-between ui:items-center">
+          <p className="ui:text-base ui:font-bold">
             {t('annualPlanningProcess:table_title.material_list')}
           </p>
           <Button

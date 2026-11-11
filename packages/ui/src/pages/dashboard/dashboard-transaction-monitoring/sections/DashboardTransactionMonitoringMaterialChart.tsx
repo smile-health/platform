@@ -42,7 +42,7 @@ export default function DashboardTransactionMonitoringMaterialChart({
       <DashboardBox.Content
         isLoading={isLoading}
         isEmpty={!data?.length}
-        className="ui-max-h-[500px] ui-overflow-y-auto ui-border ui-border-neutral-300 ui-rounded-md"
+        className="ui:max-h-[500px] ui:overflow-y-auto ui:border ui:border-neutral-300 ui:rounded-md"
       >
         <BarChart
           data={data}

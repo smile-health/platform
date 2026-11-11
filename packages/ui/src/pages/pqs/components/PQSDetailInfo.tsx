@@ -54,15 +54,15 @@ export default function PQSDetailInfo(props: Readonly<PQSDetailInfoProps>) {
   }
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
       {section.map((item) => (
         <Fragment key={item.id}>
-          <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
+          <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
             <Exists useIt={item?.data.some((row) => row?.value)}>
-              <h5 className="ui-font-bold">{item.title}</h5>
+              <h5 className="ui:font-bold">{item.title}</h5>
             </Exists>
             <Exists useIt={item.id === 'detail'}>
-              <div className="ui-grid ui-grid-cols-1 ui-w-[150px] ui-justify-end">
+              <div className="ui:grid ui:grid-cols-1 ui:w-[150px] ui:justify-end">
                 <Button
                   asChild
                   id={`btn-link-material-volume-edit-${item.id}`}
@@ -78,7 +78,7 @@ export default function PQSDetailInfo(props: Readonly<PQSDetailInfoProps>) {
             <Fragment>
               <RenderDetailValue data={item.data} />
               <Exists useIt={item?.data.some((row) => !row?.value)}>
-                <hr className="ui-border-neutral-300" />
+                <hr className="ui:border-neutral-300" />
               </Exists>
             </Fragment>
           ) : (
@@ -92,10 +92,10 @@ export default function PQSDetailInfo(props: Readonly<PQSDetailInfoProps>) {
               >
                 <Thead>
                   <Tr>
-                    <Th className="ui-font-semibold">
+                    <Th className="ui:font-semibold">
                       {t('pqs:detail.section.capacity.column.category')}
                     </Th>
-                    <Th className="ui-font-semibold">
+                    <Th className="ui:font-semibold">
                       {t('pqs:detail.section.capacity.column.net_capacity')}
                     </Th>
                   </Tr>

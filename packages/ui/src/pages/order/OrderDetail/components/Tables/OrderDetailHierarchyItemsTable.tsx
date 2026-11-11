@@ -49,7 +49,7 @@ export const OrderDetailHierarchyItemsTable = () => {
         <div>{numberFormatter(row.original[type], i18n.language)}</div>
         {showButton && (
           <button
-            className="ui-text-primary-500 !ui-outline-none"
+            className="ui:text-primary-500 ui:outline-hidden!"
             onClick={() => setOpenQuantityDetailModal(true, row.original)}
           >
             {type !== 'shipped_qty'
@@ -65,14 +65,14 @@ export const OrderDetailHierarchyItemsTable = () => {
     const stockCustomer = row.original.stock_customer
     const stockVendor = row.original.stock_vendor
     return (
-      <div className="ui-space-y-1">
+      <div className="ui:space-y-1">
         <div>
           {numberFormatter(
             (isVendor ? stockVendor : stockCustomer)?.total_available_qty,
             i18n.language
           )}
         </div>
-        <div className="ui-text-gray-500">
+        <div className="ui:text-gray-500">
           (min:{' '}
           {numberFormatter(
             (isVendor ? stockVendor : stockCustomer)?.min,
@@ -130,7 +130,7 @@ export const OrderDetailHierarchyItemsTable = () => {
           <Fragment>
             <div
               className={cx({
-                'ui-text-gray-500': row?.original?.reason?.id === 9,
+                'ui:text-gray-500': row?.original?.reason?.id === 9,
               })}
             >
               {data?.metadata?.client_key
@@ -219,7 +219,7 @@ export const OrderDetailHierarchyItemsTable = () => {
       cell: ({ row }) => renderAvailableStockColumn(row),
       meta: {
         headerSubComponent: (
-          <div className="ui-font-normal ui-text-gray-500">
+          <div className="ui:font-normal ui:text-gray-500">
             {t('common:at')}{' '}
             {isVendor ? data?.vendor?.name : data?.customer?.name}
           </div>
@@ -245,7 +245,7 @@ export const OrderDetailHierarchyItemsTable = () => {
       data={orderItemsData}
       columns={columns}
       isLoading={!data}
-      bodyClassName={cx({ 'ui-h-56': !data })}
+      bodyClassName={cx({ 'ui:h-56': !data })}
     />
   )
 }

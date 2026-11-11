@@ -30,16 +30,16 @@ const BastDetailInfoModal: React.FC<BastDetailProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onClose} size="xl">
-      <DialogHeader className="ui-text-center ui-w-full ui-text-xl ui-py-2">
+      <DialogHeader className="ui:text-center ui:w-full ui:text-xl ui:py-2">
         <p className="text-gray-500">
           {t('bast:title.handover_document_detail')}
         </p>
       </DialogHeader>
-      <DialogContent className="ui-flex ui-flex-col ui-text-center ui-py-6 ui-border-y">
-        <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4 ui-mb-4">
+      <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
+        <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4 ui:mb-4">
           <RenderDetailValue
-            labelsClassName="ui-text-left"
-            valuesClassName="ui-text-left"
+            labelsClassName="ui:text-left"
+            valuesClassName="ui:text-left"
             loading={isLoading}
             data={[
               {
@@ -73,13 +73,13 @@ const BastDetailInfoModal: React.FC<BastDetailProps> = ({
           isLoading={isLoading}
         />
       </DialogContent>
-      <DialogFooter className="ui-flex ui-w-full ui-items-center ui-py-6">
+      <DialogFooter className="ui:flex ui:w-full ui:items-center ui:py-6">
         <Button
           id="btn-back"
           type="button"
           variant="outline"
           onClick={() => onClose()}
-          className="ui-w-full"
+          className="ui:w-full"
         >
           {t('common:close')}
         </Button>

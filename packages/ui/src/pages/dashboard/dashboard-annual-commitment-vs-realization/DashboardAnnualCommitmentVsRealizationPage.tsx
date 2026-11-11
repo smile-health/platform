@@ -61,16 +61,16 @@ const DashboardAnnualCommitmentVsRealizationPage: React.FC = () => {
       <DashboardInformation
         open={Boolean(information?.title)}
         setOpen={handleCloseInformation}
-        contentClassName="ui-text-sm ui-text-neutral-500"
+        contentClassName="ui:text-sm ui:text-neutral-500"
         {...information}
       />
 
       <DashboardBox.Provider
         filter={filter?.query}
-        colorClass="ui-bg-gray-100"
+        colorClass="ui:bg-gray-100"
         showRegion={false}
       >
-        <div className="ui-space-y-6">
+        <div className="ui:space-y-6">
           <DashboardFilter
             expandable={false}
             filter={filter}
@@ -88,7 +88,7 @@ const DashboardAnnualCommitmentVsRealizationPage: React.FC = () => {
             }}
           />
 
-          <div className='ui-grid ui-grid-cols-2 ui-gap-6'>
+          <div className='ui:grid ui:grid-cols-2 ui:gap-6'>
             {/* metric total annual needs */}
             <DashboardAnnualCommitmentVsRealizationMetricCard
               title={t('box_title.total_annual_needs')}

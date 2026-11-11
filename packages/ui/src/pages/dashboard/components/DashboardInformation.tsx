@@ -33,11 +33,11 @@ export default function DashboardInformation({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogHeader className="ui-text-center">{title}</DialogHeader>
+      <DialogHeader className="ui:text-center">{title}</DialogHeader>
       {children ?? (
-        <DialogContent className={cx('ui-space-y-3', contentClassName)}>
+        <DialogContent className={cx('ui:space-y-3', contentClassName)}>
           {description && (
-            <p className="ui-whitespace-pre-line">
+            <p className="ui:whitespace-pre-line">
               <Trans
                 components={{
                   b: <strong />,
@@ -52,7 +52,7 @@ export default function DashboardInformation({
           )}
 
           {!!details?.length && listType === 'paragraph' && (
-            <div className="ui-space-y-1">
+            <div className="ui:space-y-1">
               {details?.map((item) => (
                 <p key={item}>
                   <Trans
@@ -68,7 +68,7 @@ export default function DashboardInformation({
           )}
 
           {!!details?.length && listType === 'list' && (
-            <ul className="ui-list-disc ui-pl-6">
+            <ul className="ui:list-disc ui:pl-6">
               {details?.map((item) => (
                 <li key={item}>
                   <Trans
@@ -85,7 +85,7 @@ export default function DashboardInformation({
           )}
         </DialogContent>
       )}
-      <DialogFooter className="ui-grid ui-grid-cols-1">
+      <DialogFooter className="ui:grid ui:grid-cols-1">
         <Button variant="outline" onClick={() => setOpen?.(!open)}>
           {t('close')}
         </Button>

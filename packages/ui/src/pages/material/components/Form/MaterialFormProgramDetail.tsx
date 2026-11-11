@@ -25,8 +25,8 @@ export const MaterialFormProgramDetail: React.FC<
   const currency = process.env.CURRENCY ?? 'IDR'
 
   return (
-    <div className="ui-p-4 ui-mb-8 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold">
+    <div className="ui:p-4 ui:mb-8 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold">
         {t('material:form.global_info')}
       </div>
 

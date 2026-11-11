@@ -43,23 +43,23 @@ export const HomeTPDetailModal: React.FC<HomeTPDetailModalProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onClose} size="xl">
-      <DialogHeader className="ui-text-center ui-w-full ui-text-lg ui-py-2">
+      <DialogHeader className="ui:text-center ui:w-full ui:text-lg ui:py-2">
         {t('home:home_hf.column.waste_group_number')}{' '}
         {wasteGroupData?.wasteGroupNumber}
       </DialogHeader>
-      <DialogContent className="ui-flex ui-flex-col ui-text-center ui-py-6 ui-border-y">
+      <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
         <DisposalDetailTable
           isLoading={isFetching}
           detailWasteGroup={wasteGroupDetail?.data?.data}
         />
       </DialogContent>
-      <DialogFooter className="ui-flex ui-w-full ui-items-center ui-py-6">
+      <DialogFooter className="ui:flex ui:w-full ui:items-center ui:py-6">
         <Button
           id="btn-back"
           type="button"
           variant="outline"
           onClick={() => onClose()}
-          className="ui-w-full"
+          className="ui:w-full"
         >
           {t('common:close')}
         </Button>

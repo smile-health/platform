@@ -32,11 +32,11 @@ export function ProgramItem({
   sizeIcon = 40,
 }: ProgramItemProps) {
   const setTextColor = (color?: string) => {
-    if (!color) return 'ui-text-black'
+    if (!color) return 'ui:text-black'
 
     const text = getReadableTextColor(color)
 
-    return text === 'light' ? 'ui-text-white' : 'ui-text-black'
+    return text === 'light' ? 'ui:text-white' : 'ui:text-black'
   }
 
   return (
@@ -46,11 +46,11 @@ export function ProgramItem({
       onClick={onClick}
       type="button"
       className={cx(
-        'ui-flex ui-items-center focus:outline-none gap-3',
+        'ui:flex ui:items-center focus:outline-none gap-3',
         {
-          'ui-flex-col': direction === 'vertical',
-          'ui-flex-row': direction === 'horizontal',
-          'ui-cursor-not-allowed': disabled,
+          'ui:flex-col': direction === 'vertical',
+          'ui:flex-row': direction === 'horizontal',
+          'ui:cursor-not-allowed': disabled,
         },
         className?.wrapper
       )}
@@ -65,7 +65,7 @@ export function ProgramItem({
       ) : (
         <div
           className={cx(
-            'ui-rounded ui-grid ui-place-items-center ui-w-10 ui-h-10',
+            'ui:rounded ui:grid ui:place-items-center ui:w-10 ui:h-10',
             className?.logo
           )}
           style={{
@@ -76,10 +76,10 @@ export function ProgramItem({
         >
           <span
             className={cx(
-              'ui-font-medium',
+              'ui:font-medium',
               setTextColor(data?.config?.color ?? data?.color),
               className?.label,
-              { 'ui-text-slate-300': disabled }
+              { 'ui:text-slate-300': disabled }
             )}
           >
             {generateInitials(data?.name || '')}
@@ -87,8 +87,8 @@ export function ProgramItem({
         </div>
       )}
       <p
-        className={cx('ui-text-lg ui-font-bold', className?.title, {
-          'ui-text-neutral-500': disabled,
+        className={cx('ui:text-lg ui:font-bold', className?.title, {
+          'ui:text-neutral-500': disabled,
         })}
       >
         {data?.name}

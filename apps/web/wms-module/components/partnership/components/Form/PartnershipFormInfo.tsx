@@ -254,9 +254,9 @@ const PartnershipFormInfo: React.FC = () => {
   });
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
           {isEdit && (
             <EditWasteSpecificationFields
               control={control}
@@ -372,7 +372,7 @@ const PartnershipFormInfo: React.FC = () => {
               type="number"
               placeholder={t('partnership:form.phone_number.placeholder')}
               error={!!errors?.picPhoneNumber}
-              className="[&::-webkit-outer-spin-button]:ui-appearance-none [&::-webkit-inner-spin-button]:ui-appearance-none"
+              className="ui:[&::-webkit-outer-spin-button]:appearance-none ui:[&::-webkit-inner-spin-button]:appearance-none"
             />
             <FormErrorMessage>
               {errors?.picPhoneNumber?.message as string}
@@ -484,7 +484,7 @@ const PartnershipFormInfo: React.FC = () => {
               isClearable
             />
             {watch('partnershipStatus') ? (
-              <p className="ui-text-blue-800">
+              <p className="ui:text-blue-800">
                 {
                   {
                     ACTIVE: t('partnership:status_partnership_info.ACTIVE'),
@@ -511,9 +511,9 @@ const PartnershipFormInfo: React.FC = () => {
           {!isEdit && (
             <>
               {/* Waste Specifications Section */}
-              <div className="ui-p-4 ui-border ui-rounded mt-6">
-                <div className="ui-flex ui-justify-between ui-items-center ui-mb-4">
-                  <h3 className="ui-text-lg">
+              <div className="ui:p-4 ui:border ui:rounded mt-6">
+                <div className="ui:flex ui:justify-between ui:items-center ui:mb-4">
+                  <h3 className="ui:text-lg">
                     {t('partnership:form.waste_specification.label')}
                   </h3>
                   <Button
@@ -521,7 +521,7 @@ const PartnershipFormInfo: React.FC = () => {
                     type="button"
                     variant="outline"
                   >
-                    <span className="ui-mr-2">+</span>
+                    <span className="ui:mr-2">+</span>
                     {t('partnership:list.button.add_specification')}
                   </Button>
                 </div>
@@ -538,7 +538,7 @@ const PartnershipFormInfo: React.FC = () => {
 
                 {/* Validation Error for Waste Specifications */}
                 {errors?.wasteClassification?.message && (
-                  <div className="ui-mt-2 ui-text-danger-500 ui-text-sm">
+                  <div className="ui:mt-2 ui:text-danger-500 ui:text-sm">
                     {errors?.wasteClassification?.message as string}
                   </div>
                 )}

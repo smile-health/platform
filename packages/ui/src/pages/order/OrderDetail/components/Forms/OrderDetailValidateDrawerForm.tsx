@@ -84,7 +84,7 @@ export const OrderDetailValidateDrawerForm = ({
                 placeholder={t('orderDetail:form.validated_qty.placeholder')}
                 value={field?.value as number}
                 minValue={0}
-                className="ui-text-sm"
+                className="ui:text-sm"
                 onChange={(e) => {
                   field.onChange(Number.isNaN(e) ? undefined : e)
                   setValue(`order_items.${row.index}`, {
@@ -102,7 +102,7 @@ export const OrderDetailValidateDrawerForm = ({
         />
       ),
       meta: {
-        cellClassName: 'ui-w-1/4',
+        cellClassName: 'ui:w-1/4',
       },
     },
     ...(isSuperAdmin
@@ -113,14 +113,14 @@ export const OrderDetailValidateDrawerForm = ({
             cell: ({ row }) => {
               const stockCustomer = row.original.stock_customer
               return (
-                <div className="ui-space-y-1">
+                <div className="ui:space-y-1">
                   <div>
                     {numberFormatter(
                       stockCustomer?.total_available_qty,
                       i18n.language
                     )}
                   </div>
-                  <div className="ui-text-gray-500">
+                  <div className="ui:text-gray-500">
                     (min: {numberFormatter(stockCustomer?.min, i18n.language)} |
                     max: {numberFormatter(stockCustomer?.max, i18n.language)})
                   </div>
@@ -129,7 +129,7 @@ export const OrderDetailValidateDrawerForm = ({
             },
             meta: {
               headerSubComponent: (
-                <div className="ui-font-normal ui-text-gray-500">
+                <div className="ui:font-normal ui:text-gray-500">
                   {t('common:at')} {data?.customer.name}
                 </div>
               ),

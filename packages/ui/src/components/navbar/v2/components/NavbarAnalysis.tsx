@@ -161,7 +161,7 @@ const NavbarAnalysis = () => {
         <NavbarList
           title={title}
           active={isActiveMenu(router as NextRouter, leftSideMenus)}
-          className="!ui-px-2"
+          className="ui:px-2!"
         />
         <NavbarSubmenuBox
           submenuTitle={title}

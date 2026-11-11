@@ -30,7 +30,7 @@ export const AssetManagementsRenderFieldWithOtherOption = ({
   return (
     <p>
       {primaryValue ?? otherValue ?? null}{' '}
-      <span className="ui-text-[#737373]">
+      <span className="ui:text-neutral-500">
         {primaryValue
           ? ''
           : t('assetManagements:columns.other_option', {

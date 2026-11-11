@@ -10,14 +10,14 @@ const StockDetailPageEntity: React.FC<Props> = ({ data }) => {
   const { t, i18n: { language } } = useTranslation('stock')
 
   return (
-    <div className="ui-p-6 ui-border ui-rounded ui-space-y-4 ui-mx-3">
-      <div className="ui-flex ui-justify-between ui-items-start">
-        <div className="ui-font-semibold">{t('detail.entity.title')}</div>
+    <div className="ui:p-6 ui:border ui:rounded ui:space-y-4 ui:mx-3">
+      <div className="ui:flex ui:justify-between ui:items-start">
+        <div className="ui:font-semibold">{t('detail.entity.title')}</div>
       </div>
 
       <RenderDetailValue
-        className="ui-gap-y-2"
-        valuesClassName="ui-text-dark-blue ui-text-base ui-font-normal"
+        className="ui:gap-y-2"
+        valuesClassName="ui:text-dark-blue ui:text-base ui:font-normal"
         data={[
           { label: t('detail.entity.name'), value: data?.name ?? '-' },
           { label: t('detail.entity.address'), value: data?.address ?? '-' },

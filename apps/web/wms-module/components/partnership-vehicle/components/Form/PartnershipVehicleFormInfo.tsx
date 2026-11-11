@@ -37,9 +37,9 @@ const PartnershipVehicleFormInfo: React.FC = () => {
   const { options: healthcarePatnerOptions } = useHealthcarePatner();
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
           <FormControl>
             <FormLabel htmlFor="select-vehicle-type" required>
               {t('partnershipVehicle:form.vehicle_type.label')}
@@ -97,7 +97,7 @@ const PartnershipVehicleFormInfo: React.FC = () => {
               type="number"
               placeholder={t('partnershipVehicle:form.capacity.placeholder')}
               error={!!errors?.capacityInKgs}
-              className="[&::-webkit-outer-spin-button]:ui-appearance-none [&::-webkit-inner-spin-button]:ui-appearance-none"
+              className="ui:[&::-webkit-outer-spin-button]:appearance-none ui:[&::-webkit-inner-spin-button]:appearance-none"
             />
             <FormErrorMessage>
               {errors?.capacityInKgs?.message as string}

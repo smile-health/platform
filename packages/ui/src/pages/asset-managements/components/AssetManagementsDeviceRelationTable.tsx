@@ -54,12 +54,12 @@ const TemperatureCell: React.FC<TemperatureCellProps> = ({
   }, [temperature, threshold])
 
   return (
-    <div className="ui-flex ui-flex-col">
+    <div className="ui:flex ui:flex-col">
       <MetricIndicator
         value={metricData?.value}
         threshold={metricData?.threshold}
       />
-      <div className="ui-text-sm ui-text-gray-500">{date}</div>
+      <div className="ui:text-sm ui:text-gray-500">{date}</div>
     </div>
   )
 }
@@ -181,7 +181,7 @@ const AssetManagementsDeviceRelation = ({
     return (
       <div>
         <p>
-          <span className="ui-font-bold ui-text-dark-teal">{serialNumber}</span>{' '}
+          <span className="ui:font-bold ui:text-dark-teal">{serialNumber}</span>{' '}
           {assetModelName} {manufactureName}
         </p>
       </div>
@@ -261,12 +261,12 @@ const AssetManagementsDeviceRelation = ({
   return (
     <div
       className={cx({
-        'ui-my-6 ui-border ui-border-gray-300 ui-rounded ui-p-4':
+        'ui:my-6 ui:border ui:border-gray-300 ui:rounded ui:p-4':
           withOuterBorder,
       })}
     >
-      <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-mx-auto ui-mb-4">
-        <div className=" ui-font-semibold ui-text-gray-900">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:mx-auto ui:mb-4">
+        <div className=" ui:font-semibold ui:text-gray-900">
           {title ?? t('assetInventory:device_relation.title.table')}
         </div>
         {withAddButton && (
@@ -274,7 +274,7 @@ const AssetManagementsDeviceRelation = ({
             <Button
               size="sm"
               type="button"
-              leftIcon={<PlusIcon className="ui-w-5" />}
+              leftIcon={<PlusIcon className="ui:w-5" />}
               variant="solid"
               onClick={() => setShowAddRelation(true)}
             >

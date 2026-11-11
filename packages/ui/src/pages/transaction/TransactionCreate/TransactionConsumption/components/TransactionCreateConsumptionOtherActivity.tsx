@@ -23,14 +23,14 @@ const TransactionCreateConsumptionOtherActivity = ({
   const { t } = useTranslation('transactionCreateConsumption')
   const { addNewBatch } = TransactionCreateConsumptionBatch()
   return (
-    <div className="ui-flex ui-flex-row ui-space-x-5">
-      <div className="ui-text-dark-teal ui-flex ui-flex-row ui-space-x-3 ui-place-items-center">
+    <div className="ui:flex ui:flex-row ui:space-x-5">
+      <div className="ui:text-dark-teal ui:flex ui:flex-row ui:space-x-3 ui:place-items-center">
         <span>
           <Plus></Plus>
         </span>
         <div>{t('take_stock_from_others_activities')}</div>
       </div>
-      <div className="ui-w-[320px]">
+      <div className="ui:w-[320px]">
         <ReactSelect
           key={`${items?.batchNonActivity?.length}`}
           menuPlacement="auto"

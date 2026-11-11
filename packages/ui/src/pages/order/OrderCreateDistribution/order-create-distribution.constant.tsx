@@ -114,7 +114,7 @@ export function tableFormColumns({
       cell: ({ row: { index } }) => index + 1,
       size: 80,
       meta: {
-        cellClassName: 'ui-align-top',
+        cellClassName: 'ui:align-top',
       },
     },
     {
@@ -122,7 +122,7 @@ export function tableFormColumns({
       accessorKey: 'material.name',
       size: 250,
       meta: {
-        cellClassName: 'ui-align-top',
+        cellClassName: 'ui:align-top',
       },
       cell: ({ getValue }) => (
         <>
@@ -144,7 +144,7 @@ export function tableFormColumns({
           const min = Number(original?.min)
           const max = Number(original?.max)
 
-          return `ui-align-top ${getBackgroundStock(total_qty, min, max)}`
+          return `ui:align-top ${getBackgroundStock(total_qty, min, max)}`
         },
       },
       cell: ({ row: { original }, getValue }) => {
@@ -157,11 +157,11 @@ export function tableFormColumns({
             <p>
               {t('label.stock.on_hand')}: {formatNumber(total_qty)}
             </p>
-            <p className="ui-mb-1">
+            <p className="ui:mb-1">
               {t('label.stock.available')}:{' '}
               {formatNumber(original?.total_available_qty)}
             </p>
-            <p className="ui-text-neutral-500">
+            <p className="ui:text-neutral-500">
               (min: {min}, max: {max})
             </p>
           </>
@@ -172,7 +172,7 @@ export function tableFormColumns({
       header: t('column.quantity'),
       accessorKey: 'qty',
       meta: {
-        cellClassName: 'ui-align-top',
+        cellClassName: 'ui:align-top',
       },
       cell: ({ row: { original, ...row } }) => {
         const batch = original?.batch?.filter((item) => !!item?.ordered_qty)
@@ -180,7 +180,7 @@ export function tableFormColumns({
           errors?.order_items?.[row?.index]?.message ??
           errors?.order_items?.[row?.index]?.batch?.message
         return (
-          <div className="ui-space-y-4">
+          <div className="ui:space-y-4">
             {batch?.map((item) => (
               <div key={item?.code}>
                 {original?.material?.is_managed_in_batch && (
@@ -202,7 +202,7 @@ export function tableFormColumns({
                 </p>
               </div>
             ))}
-            <div className="ui-space-y-1">
+            <div className="ui:space-y-1">
               {batch?.length ? (
                 <Button
                   variant="outline"
@@ -215,7 +215,7 @@ export function tableFormColumns({
               ) : (
                 <Button
                   variant="outline"
-                  leftIcon={<Plus className="ui-size-5" />}
+                  leftIcon={<Plus className="ui:size-5" />}
                   onClick={() => onClickBatch(original, row.index)}
                 >
                   {original?.material?.is_managed_in_batch
@@ -233,12 +233,12 @@ export function tableFormColumns({
       header: t('column.action'),
       accessorKey: 'action',
       meta: {
-        cellClassName: 'ui-align-top',
+        cellClassName: 'ui:align-top',
       },
       cell: ({ row: { original } }) => (
         <Button
           onClick={() => onRemove(original?.material?.id as number)}
-          className="ui-p-0 ui-h-auto"
+          className="ui:p-0 ui:h-auto"
           color="danger"
           variant="subtle"
         >

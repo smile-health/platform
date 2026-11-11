@@ -97,13 +97,13 @@ const PrintLabelListPage: React.FC = () => {
       <Meta title={`WMS | Print Label`} />
 
       <div className="mt-6">
-        <div className="ui-my-6 ui-flex ui-flex-col ui-gap-4">
-          <div className="ui-flex ui-justify-between ui-items-center">
-            <h5 className="ui-font-bold ui-text-xl">
+        <div className="ui:my-6 ui:flex ui:flex-col ui:gap-4">
+          <div className="ui:flex ui:justify-between ui:items-center">
+            <h5 className="ui:font-bold ui:text-xl">
               {t('printLabel:list.list')}
             </h5>
             {!loggedAsAdmin() && (
-              <div className="ui-flex ui-gap-2">
+              <div className="ui:flex ui:gap-2">
                 <Button
                   color="info"
                   onClick={handleOpenPrintModal}
@@ -113,7 +113,7 @@ const PrintLabelListPage: React.FC = () => {
                 </Button>
                 {!isSanitarian() && (
                   <Button
-                    leftIcon={<Plus className="ui-size-5" />}
+                    leftIcon={<Plus className="ui:size-5" />}
                     loading={false}
                     disabled={false}
                     onClick={() => route.push('/print-label/create')}
@@ -124,9 +124,9 @@ const PrintLabelListPage: React.FC = () => {
               </div>
             )}
           </div>
-          <div className="ui-flex ui-justify-start">
+          <div className="ui:flex ui:justify-start">
             <Button
-              leftIcon={<Information className="ui-size-5" />}
+              leftIcon={<Information className="ui:size-5" />}
               loading={false}
               disabled={false}
               color="info"
@@ -139,20 +139,20 @@ const PrintLabelListPage: React.FC = () => {
 
         {/* Filter Form */}
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-gap-2 ui-items-center">
+          <FilterFormBody className="ui:flex ui:gap-2 ui:items-center">
             {filter.renderField()}
-            <div className="ui-flex ui-gap-2 ui-mt-5">
+            <div className="ui:flex ui:gap-2 ui:mt-5">
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Reload className="ui-size-5" />}
+                leftIcon={<Reload className="ui:size-5" />}
                 onClick={filter.reset}
               >
                 {t('common:reset')}
               </Button>
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -162,7 +162,7 @@ const PrintLabelListPage: React.FC = () => {
           {filter.renderActiveFilter()}
         </FilterFormRoot>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           {isOverLimit && (
             <Alert type="warning" withIcon>
               {t('printLabel:message.max_characteristics', {

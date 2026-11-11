@@ -20,7 +20,7 @@ export const ColumnsWasteGroupDetail = (
             e.stopPropagation();
             row.toggleExpanded();
           }}
-          className="ui-text-gray-500 hover:ui-text-black"
+          className="ui:text-gray-500 ui:hover:text-black"
         >
           {row.getIsExpanded() ? '▼' : '▶'}
         </button>
@@ -92,7 +92,7 @@ export const ColumnsWasteGroupDetailItem = (
             e.stopPropagation();
             row.toggleExpanded();
           }}
-          className="ui-text-gray-500 hover:ui-text-black"
+          className="ui:text-gray-500 ui:hover:text-black"
         >
           {row.getIsExpanded() ? '▼' : '▶'}
         </button>

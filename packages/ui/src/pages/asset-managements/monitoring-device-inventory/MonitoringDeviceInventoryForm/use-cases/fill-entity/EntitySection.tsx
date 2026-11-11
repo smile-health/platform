@@ -21,12 +21,12 @@ export const EntitySection = () => {
   } = useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('monitoringDeviceInventoryForm:section.entity.title')}
       </div>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="entity_id" required>
           {t('monitoringDeviceInventoryForm:field.entity.label')}
         </FormLabel>
@@ -65,8 +65,8 @@ export const EntitySection = () => {
         const isRequired = index === 1
 
         return (
-          <div className="ui-grid ui-grid-cols-2 ui-gap-4" key={index}>
-            <FormControl className="ui-w-full">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-4" key={index}>
+            <FormControl className="ui:w-full">
               <FormLabel htmlFor={nameField} required={isRequired}>
                 {index === 1
                   ? t(
@@ -103,7 +103,7 @@ export const EntitySection = () => {
               )}
             </FormControl>
 
-            <FormControl className="ui-w-full">
+            <FormControl className="ui:w-full">
               <FormLabel htmlFor={phoneField} required={isRequired}>
                 {index === 1
                   ? t(

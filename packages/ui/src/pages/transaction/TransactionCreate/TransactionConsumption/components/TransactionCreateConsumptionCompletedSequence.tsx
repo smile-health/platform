@@ -51,14 +51,14 @@ const TransactionCreateConsumptionCompletedSequence: React.FC<Props> = (props) =
           closeOnOverlayClick={false}
           onOpenChange={setIsOpenCompletedSequence}
         >
-          <DrawerHeader className="ui-border">
+          <DrawerHeader className="ui:border">
             <HeaderContent
               t={t}
               onClose={() => setIsOpenCompletedSequence(false)}
             />
           </DrawerHeader>
-          <DrawerContent className="ui-p-4 ui-space-y-6">
-            <div className="ui-flex ui-flex-col">
+          <DrawerContent className="ui:p-4 ui:space-y-6">
+            <div className="ui:flex ui:flex-col">
               {materials?.map((material, indexMaterial) => (
                 <MaterialSection
                   key={`completed-material-${indexMaterial.toString()}`}
@@ -68,7 +68,7 @@ const TransactionCreateConsumptionCompletedSequence: React.FC<Props> = (props) =
               ))}
             </div>
           </DrawerContent>
-          <DrawerFooter className="ui-border">
+          <DrawerFooter className="ui:border">
             <FooterButtons
               onCancel={() => setIsOpenCompletedSequence(false)}
               onSave={handleSave}
@@ -91,13 +91,13 @@ export const HeaderContent = ({
   const description = ''
 
   return (
-    <div className="ui-flex ui-justify-between">
+    <div className="ui:flex ui:justify-between">
       <div />
-      <div className="ui-flex ui-flex-col ui-text-center">
-        <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+      <div className="ui:flex ui:flex-col ui:text-center">
+        <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
           {t('completed_sequence.confirmation')}
         </h6>
-        {description && <p className="ui-text-neutral-500">{description}</p>}
+        {description && <p className="ui:text-neutral-500">{description}</p>}
       </div>
       <Button
         id="close-completed-sequence"
@@ -126,7 +126,7 @@ export const FooterButtons = ({
     <Button
       color="danger"
       variant="default"
-      className="ui-w-48"
+      className="ui:w-48"
       id="cancel-close-completed-sequence"
       data-testid="cancel-close-completed-sequence"
       onClick={onCancel}
@@ -137,7 +137,7 @@ export const FooterButtons = ({
     <Button
       id="save-close-completed-sequence"
       data-testid="save-close-completed-sequence"
-      className="ui-w-48"
+      className="ui:w-48"
       onClick={onSave}
     >
       {t('save')}

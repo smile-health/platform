@@ -28,13 +28,13 @@ export const Loading = ({
   return (
     <div
       className={cx(props.className, {
-        'ui-bg-neutral-900/80 fixed left-0 top-0 z-50 h-full w-full ui-text-primary-contrast':
+        'ui:bg-neutral-900/80 fixed left-0 top-0 z-50 h-full w-full ui:text-primary-contrast':
           overlay,
       })}
     >
       <div
         className={cx(props.className, {
-          'ui-bg-neutral-900/70 ui-my-[20%] ui-mx-auto m-auto w-48 px-2 py-5 text-center':
+          'ui:bg-neutral-900/70 ui:my-[20%] ui:mx-auto m-auto w-48 px-2 py-5 text-center':
             overlay,
           'text-center': !overlay,
         })}

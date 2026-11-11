@@ -10,8 +10,8 @@ export const ListDownloadTemplateButton = () => {
       id="btn-download-template"
       variant="subtle"
       type="button"
-      className="ui-px-2"
-      leftIcon={<Download className="ui-size-5" />}
+      className="ui:px-2"
+      leftIcon={<Download className="ui:size-5" />}
       onClick={() => {}}
     >
       {t('common:download_template')}

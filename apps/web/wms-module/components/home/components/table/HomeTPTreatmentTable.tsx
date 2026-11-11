@@ -33,7 +33,7 @@ export default function HomeTPTreatmentTable({
     setIsTPTreatmentDetailModalOpen(true);
   };
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={wasteGroupDataSource?.data?.data}
         columns={ColumnsHomeTPTransport(t, {

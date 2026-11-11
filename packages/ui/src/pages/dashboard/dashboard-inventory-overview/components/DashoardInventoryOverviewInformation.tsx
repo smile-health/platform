@@ -20,7 +20,7 @@ export default function DashoardInventoryOverviewInformation({
           {description}
         </Trans>
       </p>
-      <ul className="ui-list-disc ui-pl-6">
+      <ul className="ui:list-disc ui:pl-6">
         {details?.map((item) => (
           <li key={item}>
             <Trans

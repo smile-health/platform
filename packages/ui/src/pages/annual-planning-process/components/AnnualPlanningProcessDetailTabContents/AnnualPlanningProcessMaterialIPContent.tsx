@@ -10,7 +10,7 @@ const AnnualPlanningProcessMaterialIPContent: React.FC<Props> = ({ data }) => {
   const { t, i18n: { language } } = useTranslation('annualPlanningProcess')
 
   return (
-    <div className="ui-space-y-6 ui-mt-3">
+    <div className="ui:space-y-6 ui:mt-3">
       <DataTable
         columns={columnsDetailMaterialList({ t, language })}
         data={data}

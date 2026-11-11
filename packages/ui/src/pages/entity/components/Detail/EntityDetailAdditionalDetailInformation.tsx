@@ -21,11 +21,11 @@ const EntityDetailAdditionalDetailInformation: React.FC<Props> = (props) => {
   const additionalDetails = generateEntityAdditionalDetail(t, entity)
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-gray-300 ui-rounded ui-space-y-4">
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold">{t('entity:detail.additional.title')}</h5>
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-gray-300 ui:rounded ui:space-y-4">
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold">{t('entity:detail.additional.title')}</h5>
         {!isViewOnly() && (
-          <div className="ui-w-auto">
+          <div className="ui:w-auto">
             <Button
               id="btn-link-entity-edit"
               variant="outline"

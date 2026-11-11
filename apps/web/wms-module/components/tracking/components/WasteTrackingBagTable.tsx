@@ -34,7 +34,7 @@ export default function WasteTrackingBagTable({
   };
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={trackingBagDataSource?.data?.data}
         columns={ColumnsWasteBag(t, {
@@ -45,7 +45,7 @@ export default function WasteTrackingBagTable({
         isLoading={isLoading}
         emptyDescription={t('tracking:list.emptyDescription')}
         bodyClassName={
-          trackingBagDataSource?.data?.data.length ? 'ui-h-auto' : 'ui-h-48'
+          trackingBagDataSource?.data?.data.length ? 'ui:h-auto' : 'ui:h-48'
         }
       />
       {isTrackingDetailModalOpen && selectedTransactionData && (

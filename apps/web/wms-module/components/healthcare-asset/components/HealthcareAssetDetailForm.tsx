@@ -100,17 +100,17 @@ const HealthcareAssetDetailForm = ({
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onValid, onInvalid)}>
         <div className="space-y-4">
-          <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+          <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
             <HealthcareAssetInfo data={defaultValues} isLoading={false} />
             {isScale && isAdmin && <HealthcareAssetFormInfo />}
           </div>
         </div>
         {isScale && !loggedAsAdmin() && isAdmin && (
-          <div className="ui-flex ui-mt-6 ui-justify-end">
+          <div className="ui:flex ui:mt-6 ui:justify-end">
             <Button
               id="btn-submit"
               type="submit"
-              className="ui-w-[150px]"
+              className="ui:w-[150px]"
               loading={isPending}
             >
               {t('common:save')}

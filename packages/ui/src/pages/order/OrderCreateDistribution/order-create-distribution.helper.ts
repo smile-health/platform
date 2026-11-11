@@ -30,10 +30,10 @@ export function handleMaterialTableClass(
   selectedMaterial: number[]
 ) {
   if (isOutOfStock(stock?.total_available_qty + Number(stock?.aggregate?.total_available_qty))) {
-    return 'ui-text-slate-300 ui-cursor-not-allowed'
+    return 'ui:text-slate-300 ui:cursor-not-allowed'
   }
   if (isSelectedStock(stock?.material?.id, selectedMaterial)) {
-    return 'ui-bg-[#E2F3FC]'
+    return 'ui:bg-[#E2F3FC]'
   }
 
   return ''

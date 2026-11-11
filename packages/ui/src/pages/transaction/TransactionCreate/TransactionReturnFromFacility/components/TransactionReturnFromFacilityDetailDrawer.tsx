@@ -22,16 +22,16 @@ const TransactionReturnFromFacilityDetailDrawer = () => {
       sizeHeight="lg"
     >
       <Button
-        className="ui-absolute ui-right-2 ui-top-2 ui-rounded ui-text-gray-800 ui-outline-none ui-border-none"
+        className="ui:absolute ui:right-2 ui:top-2 ui:rounded ui:text-gray-800 ui:outline-hidden ui:border-none"
         onClick={() => setStockData(null)}
         variant="subtle"
         type="button"
       >
-        <XMarkIcon className="ui-h-5 ui-w-5" />
+        <XMarkIcon className="ui:h-5 ui:w-5" />
       </Button>
-      <DrawerHeader title={t('common:detail')} className="ui-mx-auto" />
-      <div className="ui-border-b-zinc-300 ui-h-1 ui-border-b" />
-      <DrawerContent className="!ui-rounded-lg">
+      <DrawerHeader title={t('common:detail')} className="ui:mx-auto" />
+      <div className="ui:border-b-zinc-300 ui:h-1 ui:border-b" />
+      <DrawerContent className="ui:rounded-lg!">
         <TransactionReturnFromFacilityBatchIdentityBox />
       </DrawerContent>
     </Drawer>

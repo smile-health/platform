@@ -48,9 +48,9 @@ export const OrderDetailAllocateDrawerForm = ({
   ) => {
     if (!stock) return '-'
     return (
-      <div className="ui-space-y-1">
+      <div className="ui:space-y-1">
         <div>{numberFormatter(stock?.total_available_qty, i18n.language)}</div>
-        <div className="ui-text-gray-500">
+        <div className="ui:text-gray-500">
           (min: {numberFormatter(stock?.min, i18n.language)} | max:{' '}
           {numberFormatter(stock?.max, i18n.language)}),{' '}
           {t('orderDetail:table.column.stock_on_hand').toLowerCase()}:{' '}
@@ -84,7 +84,7 @@ export const OrderDetailAllocateDrawerForm = ({
           {isFilteredAllocationExist && (
             <div className="space-y-2">
               {filledAllocations?.map((value) => (
-                <div key={value.stock_id} className="ui-text-sm">
+                <div key={value.stock_id} className="ui:text-sm">
                   {isBatch && (
                     <>
                       <div>
@@ -105,7 +105,7 @@ export const OrderDetailAllocateDrawerForm = ({
                     {t('orderDetail:data.stock_from_activity')}:{' '}
                     {value._stock_of_detail_stock?.activity?.name}
                   </div>
-                  <div className="ui-font-semibold">
+                  <div className="ui:font-semibold">
                     Qty: {numberFormatter(value.allocated_qty, i18n.language)}
                   </div>
                 </div>
@@ -113,13 +113,13 @@ export const OrderDetailAllocateDrawerForm = ({
             </div>
           )}
 
-          <div className="ui-space-y-1">
+          <div className="ui:space-y-1">
             <Button
               size="sm"
               type="button"
               leftIcon={
                 !isFilteredAllocationExist && (
-                  <PlusIcon className="ui-w-5 ui-text-dark-blue" />
+                  <PlusIcon className="ui:w-5 ui:text-dark-blue" />
                 )
               }
               variant="outline"
@@ -175,7 +175,7 @@ export const OrderDetailAllocateDrawerForm = ({
         },
         meta: {
           headerSubComponent: (
-            <div className="ui-font-normal ui-text-gray-500">
+            <div className="ui:font-normal ui:text-gray-500">
               {t('common:at')} {orderDetailData?.customer?.name}
             </div>
           ),
@@ -189,7 +189,7 @@ export const OrderDetailAllocateDrawerForm = ({
         },
         meta: {
           headerSubComponent: (
-            <div className="ui-font-normal ui-text-gray-500">
+            <div className="ui:font-normal ui:text-gray-500">
               {t('common:at')} {orderDetailData?.vendor?.name}
             </div>
           ),
@@ -227,7 +227,7 @@ export const OrderDetailAllocateDrawerForm = ({
       disabled={Boolean(errors.order_items)}
     >
       <DataTable
-        className="ui-overflow-y-auto ui-max-h-[50vh]"
+        className="ui:overflow-y-auto ui:max-h-md"
         columns={columns}
         data={mappedOrderItem}
         isSticky

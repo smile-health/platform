@@ -39,11 +39,11 @@ const EntityMaterialBulkFormMaterial: React.FC<Props> = ({ isMaterialHierarchy }
   })
 
   return (
-    <div className="ui-grid ui-grid-cols-1 ui-gap-y-4">
-      <h6 className="ui-text-base ui-font-bold">
+    <div className="ui:grid ui:grid-cols-1 ui:gap-y-4">
+      <h6 className="ui:text-base ui:font-bold">
         {t('entityMaterialBulk:export.form.title.material')}
       </h6>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-x-4 ui-gap-y-4">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-x-4 ui:gap-y-4">
         <FormControl>
           <FormLabel>{t('entityMaterialBulk:export.form.label.material')}</FormLabel>
           <Input
@@ -84,7 +84,7 @@ const EntityMaterialBulkFormMaterial: React.FC<Props> = ({ isMaterialHierarchy }
           )}
         />
       </div>
-      <div className="ui-grid ui-grid-cols-1 ui-gap-y-4">
+      <div className="ui:grid ui:grid-cols-1 ui:gap-y-4">
         <Controller
           name="activity_id"
           control={control}
@@ -117,15 +117,15 @@ const EntityMaterialBulkFormMaterial: React.FC<Props> = ({ isMaterialHierarchy }
           )}
         />
       </div>
-      <div className="ui-bg-gray-100 ui-py-[2px] ui-px-[10px] ui-rounded-2xl ui-w-max">
-        <p className="ui-text-gray-700 ui-text-sm ui-font-medium">
+      <div className="ui:bg-gray-100 ui:py-[2px] ui:px-[10px] ui:rounded-2xl ui:w-max">
+        <p className="ui:text-gray-700 ui:text-sm ui:font-medium">
           {t('entityMaterialBulk:export.form.result.material')}
-          <span className="ui-ml-1 ui-text-xs ui-font-medium ui-bg-gray-700 ui-rounded-[100px] ui-text-white ui-py-[2px] ui-px-2">
+          <span className="ui:ml-1 ui:text-xs ui:font-medium ui:bg-gray-700 ui:rounded-[100px] ui:text-white ui:py-[2px] ui:px-2">
             {materialDatasource?.total_item || 0}
           </span>
         </p>
       </div>
-      <div className="ui-border-b-[1px]" />
+      <div className="ui:border-b" />
     </div>
   )
 }

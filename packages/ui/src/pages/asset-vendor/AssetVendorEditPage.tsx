@@ -29,7 +29,7 @@ const AssetVendorEditPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('assetVendor:form.title.edit')}`}
       />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         {isLoading ? (
           <AssetVendorSkeleton />
         ) : (

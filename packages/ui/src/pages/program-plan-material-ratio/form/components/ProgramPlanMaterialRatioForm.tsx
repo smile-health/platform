@@ -82,8 +82,8 @@ export default function ProgramPlanMaterialRatioForm({
 
   if (isLoadingDetailProgramPlan || isFetchingDetailProgramPlan) {
     return (
-      <div className="ui-flex ui-justify-center">
-        <Spinner className="ui-w-10 ui-h-10" />
+      <div className="ui:flex ui:justify-center">
+        <Spinner className="ui:w-10 ui:h-10" />
       </div>
     )
   }
@@ -91,7 +91,7 @@ export default function ProgramPlanMaterialRatioForm({
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit((data) => mutate(data))}>
-        <div className="ui-flex ui-justify-center ui-items-start ui-gap-6 ui-mb-6">
+        <div className="ui:flex ui:justify-center ui:items-start ui:gap-6 ui:mb-6">
           <ProgramPlanMaterialRatioFormInput
             title={`${t('programPlanMaterialRatio:material_a')} (${t('programPlanMaterialRatio:source_material')})`}
             inputName="from_material"
@@ -103,7 +103,7 @@ export default function ProgramPlanMaterialRatioForm({
             opponentName="from_material"
           />
         </div>
-        <div className="ui-flex ui-justify-end ui-items-center ui-gap-4">
+        <div className="ui:flex ui:justify-end ui:items-center ui:gap-4">
           <Button
             id="btn_close_pop_up_form_program_plan_material_ratio"
             variant="default"

@@ -14,7 +14,7 @@ const TransactionCreateConsumptionTableDetailCloseVialSupportingText = ({
   const { t } = useTranslation(['transactionCreateConsumption'])
   if (!value && Number(item?.open_vial_qty) > 0)
     return (
-      <span className="ui-my-1 ui-text-neutral-500 ui-block ui-w-fit">
+      <span className="ui:my-1 ui:text-neutral-500 ui:block ui:w-fit">
         {t('transactionCreateConsumption:validation.close_qty_supporting_text')}
       </span>
     )

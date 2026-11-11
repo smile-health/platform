@@ -98,7 +98,7 @@ export default function OrderCreateCentralDistributionPage() {
         <form
           ref={formRef}
           onSubmit={methods.handleSubmit(onSubmit)}
-          className="ui-grid ui-grid-cols-2 ui-gap-6"
+          className="ui:grid ui:grid-cols-2 ui:gap-6"
         >
           <OrderCreateCentralDistributionInput />
           <OrderCreateCentralDistributionTableMaterial {...childProps} />
@@ -106,7 +106,7 @@ export default function OrderCreateCentralDistributionPage() {
             {...childProps}
             setDrawerQuantity={setDrawerQuantity}
           />
-          <div className="ui-flex ui-justify-end ui-gap-2 ui-col-span-2">
+          <div className="ui:flex ui:justify-end ui:gap-2 ui:col-span-2">
             <Button
               id="btn-reset-form"
               data-testid="btn-reset-form"
@@ -118,7 +118,7 @@ export default function OrderCreateCentralDistributionPage() {
                   type: 'reset',
                 })
               }
-              className="ui-w-52"
+              className="ui:w-52"
             >
               Reset
             </Button>
@@ -126,7 +126,7 @@ export default function OrderCreateCentralDistributionPage() {
               id="btn-submit"
               data-testid="btn-submit"
               type="button"
-              className="ui-w-52"
+              className="ui:w-52"
               disabled={!order_items?.length}
               onClick={onCheckIsValid}
             >

@@ -30,7 +30,7 @@ const AnnualCommitmentListImportButton = () => {
         variant="subtle"
         type="button"
         onClick={handleImport}
-        leftIcon={<Import className="ui-size-5" />}
+        leftIcon={<Import className="ui:size-5" />}
       >
         {t('button.import')}
       </Button>

@@ -33,7 +33,7 @@ export default function DashboardDataTable<Value>({
   isLoading,
 }: DashboardTableProps<Value>) {
   return (
-    <div className="ui-space-y-4">
+    <div className="ui:space-y-4">
       <DataTable data={data} columns={columns} isLoading={isLoading} />
       <PaginationContainer>
         <PaginationSelectLimit

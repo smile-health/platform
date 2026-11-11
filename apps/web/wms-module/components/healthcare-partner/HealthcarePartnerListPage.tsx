@@ -44,23 +44,23 @@ const HealthcarePartnerListPage: React.FC = () => {
     >
       <Meta title={`WMS | HealthcarePartner`} />
       <div className="mt-6">
-        <div className="ui-my-6 ui-flex ui-items-center"></div>
+        <div className="ui:my-6 ui:flex ui:items-center"></div>
         {/* filter */}
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-gap-2 ui-items-center">
+          <FilterFormBody className="ui:flex ui:gap-2 ui:items-center">
             {filter.renderField()}
-            <div className="ui-flex ui-gap-2 ui-mt-5">
+            <div className="ui:flex ui:gap-2 ui:mt-5">
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Reload className="ui-size-5" />}
+                leftIcon={<Reload className="ui:size-5" />}
                 onClick={filter.reset}
               >
                 {t('common:reset')}
               </Button>
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -70,7 +70,7 @@ const HealthcarePartnerListPage: React.FC = () => {
           {filter.renderActiveFilter()}
         </FilterFormRoot>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <HealthcarePartnerTable
             isLoading={isLoadingHealthcarePartner}
             size={paginationHealthcarePartner.paginate}

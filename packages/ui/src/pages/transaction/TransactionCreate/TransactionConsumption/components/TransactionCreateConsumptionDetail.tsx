@@ -157,10 +157,10 @@ const TransactionCreateConsumptionDetail: React.FC<Props> = ({
         closeOnOverlayClick={false}
         onOpenChange={handleClose}
       >
-        <DrawerHeader className="ui-border">
-          <div className="ui-flex ui-justify-between">
+        <DrawerHeader className="ui:border">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('caption_detail_batch', {
                 type: items?.[idRow]?.managed_in_batch ? 'Batch' : 'Detail',
               })}
@@ -177,34 +177,34 @@ const TransactionCreateConsumptionDetail: React.FC<Props> = ({
             </Button>
           </div>
         </DrawerHeader>
-        <DrawerContent className="ui-p-4 ui-space-y-6">
-          <div className="ui-grid ui-grid-cols-[40%_40%_20%] ui-gap-4 ui-mb-1">
+        <DrawerContent className="ui:p-4 ui:space-y-6">
+          <div className="ui:grid ui:grid-cols-[40%_40%_20%] ui:gap-4 ui:mb-1">
             <div>
-              <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+              <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                 Material
               </h2>
-              <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+              <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                 {items?.[idRow]?.material_name}
               </p>
             </div>
             <div>
-              <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+              <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                 {t('table.column.stock_on_hand')}
               </h2>
-              <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+              <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                 {numberFormatter(items?.[idRow]?.on_hand_stock, language)}
 
-                <span className="ui-text-neutral-500 ui-text-xs ui-font-normal ui-ml-1">
+                <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
                   min: {numberFormatter(items?.[idRow]?.min, language)},{' '}
                   {t('max')} : {numberFormatter(items?.[idRow]?.max, language)}
                 </span>
               </p>
             </div>
             <div>
-              <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+              <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                 {t('table.column.available_stock')}
               </h2>
-              <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+              <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                 {numberFormatter(items?.[idRow]?.available_stock, language)}
               </p>
             </div>
@@ -214,7 +214,7 @@ const TransactionCreateConsumptionDetail: React.FC<Props> = ({
             items={items?.[idRow]}
           />
         </DrawerContent>
-        <DrawerFooter className="ui-border">
+        <DrawerFooter className="ui:border">
           <button
             id={`reset-batch-${idRow}`}
             data-testid={`reset-batch-${idRow}`}
@@ -228,10 +228,10 @@ const TransactionCreateConsumptionDetail: React.FC<Props> = ({
               )
               methods.clearErrors('batches')
             }}
-            className="ui-w-20 focus:outline-none"
+            className="ui:w-20 focus:outline-none"
           >
-            <div className="ui-flex ui-flex-row ui-text-sm ui-space-x-3 ui-text-primary-600">
-              <Reload className="ui-size-5" />
+            <div className="ui:flex ui:flex-row ui:text-sm ui:space-x-3 ui:text-primary-600">
+              <Reload className="ui:size-5" />
               <div>Reset</div>
             </div>
           </button>
@@ -239,7 +239,7 @@ const TransactionCreateConsumptionDetail: React.FC<Props> = ({
           <Button
             id={`save-batch-${idRow}`}
             data-testid={`save-batch-${idRow}`}
-            className="ui-w-48"
+            className="ui:w-48"
             onClick={() => {
               checkValidity()
               methods.handleSubmit(onSubmit)()

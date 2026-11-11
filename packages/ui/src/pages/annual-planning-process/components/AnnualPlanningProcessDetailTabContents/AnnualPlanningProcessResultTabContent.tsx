@@ -38,7 +38,7 @@ const AnnualPlanningProcessResultTabContent: React.FC<Props> = (props) => {
   const data = datasource?.data || []
 
   return (
-    <div className="ui-space-y-6 ui-mt-3">
+    <div className="ui:space-y-6 ui:mt-3">
       {dataDetail && (
         <FormCalculationResultModalDetail
           ref={refModalDetail}
@@ -57,8 +57,8 @@ const AnnualPlanningProcessResultTabContent: React.FC<Props> = (props) => {
         />
       </FormProvider>
 
-      <div className="ui-p-4 ui-space-y-6 ui-border ui-border-gray-300 ui-rounded">
-        <p className="ui-text-base ui-font-bold">
+      <div className="ui:p-4 ui:space-y-6 ui:border ui:border-gray-300 ui:rounded">
+        <p className="ui:text-base ui:font-bold">
           {t('table_title.needs_calculation')}
         </p>
 

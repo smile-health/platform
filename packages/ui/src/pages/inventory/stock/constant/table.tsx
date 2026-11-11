@@ -33,7 +33,7 @@ type ColumnsBatch = {
 }
 
 const setRowClassname = (stock: Stock | DetailStock) =>
-  `ui-text-dark-blue ui-content-center ${getBackgroundStock(stock.total_available_qty, stock.min, stock.max)}`
+  `ui:text-dark-blue ui:content-center ${getBackgroundStock(stock.total_available_qty, stock.min, stock.max)}`
 
 const currency = process.env.CURRENCY ?? 'IDR'
 
@@ -72,18 +72,18 @@ export const columns = ({
         original: { entity },
       },
     }) => (
-      <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+      <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {entity?.name ?? '-'}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-neutral-500">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-neutral-500">
           {entity?.location ?? '-'}
         </p>
       </div>
     ),
     meta: {
       cellClassName: ({ original }) =>
-        `ui-content-center ${getBackgroundStock(original.total_available_qty, original.min, original.max)}`,
+        `ui:content-center ${getBackgroundStock(original.total_available_qty, original.min, original.max)}`,
     },
   },
   {
@@ -113,8 +113,8 @@ export const columns = ({
       },
     }) =>
       material?.is_open_vial ? (
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-          <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+          <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
             {
               t('stock:table.column.material.vial', {
                 returnObjects: true,
@@ -122,7 +122,7 @@ export const columns = ({
               })[3]
             }
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+          <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
             {
               t('stock:table.column.material.vial', {
                 returnObjects: true,
@@ -132,14 +132,14 @@ export const columns = ({
           </p>
         </div>
       ) : (
-        <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
           {numberFormatter(total_available_qty || 0, language)}
         </p>
       ),
     size: 140,
     meta: {
       cellClassName: ({ original }) =>
-        `ui-content-center ${getBackgroundStock(original.total_available_qty, original.min, original.max)}`,
+        `ui:content-center ${getBackgroundStock(original.total_available_qty, original.min, original.max)}`,
     },
   },
   {
@@ -185,7 +185,7 @@ export const columns = ({
     accessorKey: 'action',
     meta: {
       cellClassName: ({ original }) =>
-        `ui-content-center ${getBackgroundStock(original.total_available_qty, original.min, original.max)}`,
+        `ui:content-center ${getBackgroundStock(original.total_available_qty, original.min, original.max)}`,
     },
     cell: ({ row }) => (
       <Button
@@ -216,7 +216,7 @@ export const columnsDetail = ({
     meta: {
       cellClassName: ({ original }) =>
         isHierarchical
-          ? 'ui-text-dark-blue ui-content-center'
+          ? 'ui:text-dark-blue ui:content-center'
           : setRowClassname(original),
     },
     maxSize: 250,
@@ -229,7 +229,7 @@ export const columnsDetail = ({
           meta: {
             cellClassName: ({ original }: { original: DetailStock }) =>
               isHierarchical
-                ? 'ui-text-dark-blue ui-content-center'
+                ? 'ui:text-dark-blue ui:content-center'
                 : setRowClassname(original),
           },
           maxSize: 350,
@@ -243,7 +243,7 @@ export const columnsDetail = ({
           meta: {
             cellClassName: ({ original }: { original: DetailStock }) =>
               isHierarchical
-                ? 'ui-text-dark-blue ui-content-center'
+                ? 'ui:text-dark-blue ui:content-center'
                 : setRowClassname(original),
           },
           maxSize: 300,
@@ -257,7 +257,7 @@ export const columnsDetail = ({
     meta: {
       cellClassName: ({ original }) =>
         isHierarchical
-          ? 'ui-text-dark-blue ui-content-center'
+          ? 'ui:text-dark-blue ui:content-center'
           : setRowClassname(original),
     },
   },
@@ -268,7 +268,7 @@ export const columnsDetail = ({
     meta: {
       cellClassName: ({ original }) =>
         isHierarchical
-          ? 'ui-text-dark-blue ui-content-center'
+          ? 'ui:text-dark-blue ui:content-center'
           : setRowClassname(original),
     },
   },
@@ -279,7 +279,7 @@ export const columnsDetail = ({
     meta: {
       cellClassName: ({ original }) =>
         isHierarchical
-          ? 'ui-text-dark-blue ui-content-center'
+          ? 'ui:text-dark-blue ui:content-center'
           : setRowClassname(original),
     },
   },
@@ -303,7 +303,7 @@ export const columnsDetail = ({
                 Math.abs(Number(total_available_qty)) ?? 0,
                 language
               )} ${closeVialLabel}`,
-              className: 'ui-text-dark-blue ui-text-sm',
+              className: 'ui:text-dark-blue ui:text-sm',
             },
             {
               label: isOpenVial
@@ -312,7 +312,7 @@ export const columnsDetail = ({
                     language
                   )} (${t('table.column.material.open_vial')})`
                 : '',
-              className: 'ui-text-dark-blue ui-text-sm',
+              className: 'ui:text-dark-blue ui:text-sm',
             },
           ]}
         />
@@ -321,7 +321,7 @@ export const columnsDetail = ({
     meta: {
       cellClassName: ({ original }) =>
         isHierarchical
-          ? 'ui-text-dark-blue ui-content-center'
+          ? 'ui:text-dark-blue ui:content-center'
           : setRowClassname(original),
     },
   },
@@ -335,7 +335,7 @@ export const columnsDetail = ({
           meta: {
             cellClassName: ({ original }: { original: DetailStock }) =>
               isHierarchical
-                ? 'ui-text-dark-blue ui-content-center'
+                ? 'ui:text-dark-blue ui:content-center'
                 : setRowClassname(original),
           },
         },
@@ -347,7 +347,7 @@ export const columnsDetail = ({
           meta: {
             cellClassName: ({ original }: { original: DetailStock }) =>
               isHierarchical
-                ? 'ui-text-dark-blue ui-content-center'
+                ? 'ui:text-dark-blue ui:content-center'
                 : setRowClassname(original),
           },
         },
@@ -364,7 +364,7 @@ export const columnsDetail = ({
     meta: {
       cellClassName: ({ original }) =>
         isHierarchical
-          ? 'ui-text-dark-blue ui-content-center'
+          ? 'ui:text-dark-blue ui:content-center'
           : setRowClassname(original),
     },
   },
@@ -400,7 +400,7 @@ export const columnsBatch = ({
     cell: ({ row: { index } }) => index + 1,
     size: 50,
     meta: {
-      cellClassName: 'ui-text-dark-blue',
+      cellClassName: 'ui:text-dark-blue',
     },
   },
   ...(isHierarchical
@@ -415,7 +415,7 @@ export const columnsBatch = ({
           }: CellContext<StockDetailStock, unknown>) => activity?.name || '-',
           minSize: 150,
           meta: {
-            cellClassName: 'ui-text-dark-blue',
+            cellClassName: 'ui:text-dark-blue',
           },
         },
       ]
@@ -428,11 +428,11 @@ export const columnsBatch = ({
         original: { batch },
       },
     }) => (
-      <div className="ui-flex ui-flex-col ui-gap-1">
-        <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+      <div className="ui:flex ui:flex-col ui:gap-1">
+        <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
           {batch?.code ?? '-'}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.batch.production_date', {
             value: parseDateTime(
               batch?.production_date ?? '-',
@@ -440,12 +440,12 @@ export const columnsBatch = ({
             ).toUpperCase(),
           })}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.batch.manufacturer', {
             value: batch?.manufacture.name ?? '-',
           })}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.batch.expired_date', {
             value: parseDateTime(
               batch?.expired_date ?? '-',
@@ -461,18 +461,18 @@ export const columnsBatch = ({
     header: t('table.column.batch.stock_info'),
     accessorKey: 'stock_info',
     cell: ({ row: { original } }) => (
-      <div className="ui-flex ui-flex-col ui-gap-1">
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+      <div className="ui:flex ui:flex-col ui:gap-1">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.batch.stock.on_hand', {
             value: numberFormatter(original.qty || 0, language),
           })}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.batch.stock.allocated', {
             value: numberFormatter(original.allocated_qty || 0, language),
           })}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.batch.stock.available', {
             value: isOpenVial
               ? `${
@@ -495,7 +495,7 @@ export const columnsBatch = ({
               : numberFormatter(original.available_qty || 0, language),
           })}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.batch.stock.in_transit', {
             value: numberFormatter(original.in_transit_qty || 0, language),
           })}
@@ -518,7 +518,7 @@ export const columnsBatch = ({
             ).toUpperCase(),
           minSize: 120,
           meta: {
-            cellClassName: 'ui-text-dark-blue ui-content-center',
+            cellClassName: 'ui:text-dark-blue ui:content-center',
           },
         },
       ]
@@ -527,13 +527,13 @@ export const columnsBatch = ({
     header: t('table.column.batch.budget_info'),
     accessorKey: 'budget_info',
     cell: ({ row: { original } }: CellContext<StockDetailStock, unknown>) => (
-      <div className="ui-flex ui-flex-col ui-gap-1">
-        <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+      <div className="ui:flex ui:flex-col ui:gap-1">
+        <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
           {t('table.column.budget_source.name', {
             value: original.budget_source?.name ?? '-',
           })}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.budget_source.price', {
             value: original.budget_source
               ? numberFormatter(original.price || 0, language, 'currency')
@@ -541,7 +541,7 @@ export const columnsBatch = ({
             currency,
           })}
         </p>
-        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
           {t('table.column.budget_source.total_price', {
             value: original.budget_source
               ? numberFormatter(original.total_price || 0, language, 'currency')

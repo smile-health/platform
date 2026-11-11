@@ -52,12 +52,12 @@ function createWasteSpecificationColumns(
       },
       size: 60,
       cell: ({ row: { index } }) => (
-        <div className="ui-flex ui-gap-1">
+        <div className="ui:flex ui:gap-1">
           <Button
             onClick={() => onEdit(index)}
             type="button"
             variant="subtle"
-            className="!ui-px-2"
+            className="ui:px-2!"
             size="sm"
           >
             {t('common:edit')}
@@ -66,7 +66,7 @@ function createWasteSpecificationColumns(
             onClick={() => onRemove(index)}
             type="button"
             variant="subtle"
-            className="!ui-px-2 ui-text-danger-500"
+            className="ui:px-2! ui:text-danger-500"
             size="sm"
           >
             {t('common:remove')}

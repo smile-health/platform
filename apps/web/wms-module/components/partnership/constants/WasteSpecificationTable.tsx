@@ -52,7 +52,7 @@ const PriceCell = ({
         placeholder="0"
         min={0}
         autoFocus
-        className={`${priceError ? 'ui-border-red-500 ui-border-2' : ''}`}
+        className={`${priceError ? 'ui:border-red-500 ui:border-2' : ''}`}
       />
     );
   }
@@ -60,7 +60,7 @@ const PriceCell = ({
   return (
     <button
       type="button"
-      className="ui-w-full ui-text-left ui-cursor-pointer ui-border ui-border-gray-300 ui-hover:ui-border-blue-400 ui-hover:ui-bg-blue-50 ui-p-2 ui-rounded ui-transition-all ui-duration-200 ui-bg-transparent"
+      className="ui:w-full ui:text-left ui:cursor-pointer ui:border ui:border-gray-300 ui-hover:ui-border-blue-400 ui-hover:ui-bg-blue-50 ui:p-2 ui:rounded ui:transition-all ui:duration-200 ui:bg-transparent"
       onClick={() => onPriceUpdate && onPriceClick(index, currentPrice)}
       disabled={!onPriceUpdate}
       aria-label={`Edit price: ${getCurrencySymbol()} ${numberFormatter(
@@ -80,12 +80,12 @@ interface ActionCellProps {
 }
 
 const ActionCell = ({ index, onEdit, onRemove, t }: ActionCellProps) => (
-  <div className="ui-flex">
+  <div className="ui:flex">
     <Button
       onClick={() => onEdit(index)}
       type="button"
       variant="subtle"
-      className="!ui-px-1"
+      className="ui:px-1!"
       size="sm"
     >
       {t('common:edit')}
@@ -94,7 +94,7 @@ const ActionCell = ({ index, onEdit, onRemove, t }: ActionCellProps) => (
       onClick={() => onRemove(index)}
       type="button"
       variant="subtle"
-      className="!ui-px-1 ui-text-danger-500"
+      className="ui:px-1! ui:text-danger-500"
       size="sm"
     >
       {t('common:remove')}

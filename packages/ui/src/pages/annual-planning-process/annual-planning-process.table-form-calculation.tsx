@@ -29,11 +29,11 @@ export const columnsCalculationResult = ({
       accessorKey: 'name',
       minSize: 250,
       cell: ({ row: { original: { entity, sub_district } } }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-primary-800">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
             {entity?.name ?? '-'}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-neutral-500">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-neutral-500">
             {sub_district?.name ?? '-'}
           </p>
         </div>
@@ -43,11 +43,11 @@ export const columnsCalculationResult = ({
       header: t('annualPlanningProcess:create.form.calculation_result.column.one_year'),
       accessorKey: 'year',
       cell: ({ row: { original: { yearly_need } } }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-primary-800">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
             {`${numberFormatter(yearly_need.vial, language)} (vial)`}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-primary-800">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
             {`${numberFormatter(yearly_need.dosis, language)} ${t('annualPlanningProcess:create.form.calculation_result.dose')}`}
           </p>
         </div>
@@ -57,11 +57,11 @@ export const columnsCalculationResult = ({
       header: t('annualPlanningProcess:create.form.calculation_result.column.one_month'),
       accessorKey: 'month',
       cell: ({ row: { original: { monthly_need } } }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-primary-800">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
             {`${numberFormatter(monthly_need.vial, language)} (vial)`}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-primary-800">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
             {`${numberFormatter(monthly_need.dosis, language)} ${t('annualPlanningProcess:create.form.calculation_result.dose')}`}
           </p>
         </div>
@@ -71,11 +71,11 @@ export const columnsCalculationResult = ({
       header: t('annualPlanningProcess:create.form.calculation_result.column.one_week'),
       accessorKey: 'week',
       cell: ({ row: { original: { weekly_need } } }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-primary-800">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
             {`${numberFormatter(weekly_need.vial, language)} (vial)`}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-primary-800">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
             {`${numberFormatter(weekly_need.dosis, language)} ${t('annualPlanningProcess:create.form.calculation_result.dose')}`}
           </p>
         </div>
@@ -98,8 +98,8 @@ export const columnsCalculationResult = ({
         const { monthly_need } = original
 
         return (
-          <div className="ui-flex ui-flex-col ui-gap-2 ui-justify-center">
-            <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-primary-800">
+          <div className="ui:flex ui:flex-col ui:gap-2 ui:justify-center">
+            <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
               {t('annualPlanningProcess:create.form.calculation_result.dose_distribution', {
                 dose: numberFormatter(monthly_need.dosis, language)
               })}
@@ -109,7 +109,7 @@ export const columnsCalculationResult = ({
               onClick={() => onClickRow(original)}
               variant="subtle"
               size="sm"
-              className="ui-w-max ui-p-0"
+              className="ui:w-max ui:p-0"
             >
               {t('common:detail')}
             </Button>
@@ -121,11 +121,11 @@ export const columnsCalculationResult = ({
       header: t('annualPlanningProcess:create.form.calculation_result.column.latest_updated_by'),
       accessorKey: 'updated',
       cell: ({ row: { original: { updated_at, user_updated_by } } }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
             {user_updated_by?.name ?? '-'}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-neutral-500">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-neutral-500">
             {updated_at ? parseDateTime(updated_at, 'DD MMM YYYY HH:mm', language).toUpperCase() : '-'}
           </p>
         </div>

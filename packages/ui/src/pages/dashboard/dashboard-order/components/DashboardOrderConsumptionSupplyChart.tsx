@@ -72,7 +72,7 @@ export default function DashboardOrderConsumptionSupplyChart({
             },
           },
         }}
-        className="ui-text-start"
+        className="ui:text-start"
       />
     </DashboardCommonChartContainer>
   )

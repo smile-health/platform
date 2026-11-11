@@ -36,31 +36,31 @@ export default function DashboardTabs<T extends string>({
         <DashboardBox.Header bordered>
           <h4>{title}</h4>
           {subtitle && (
-            <p className={cx('ui-text-base', 'ui-text-dark-teal')}>
+            <p className={cx('ui:text-base', 'ui:text-dark-teal')}>
               {subtitle}
             </p>
           )}
         </DashboardBox.Header>
-        <div className="ui-relative ui-p-4 ui-bg-gray-50 ui-rounded-b-[inherit]">
+        <div className="ui:relative ui:p-4 ui:bg-gray-50 ui:rounded-b-[inherit]">
           <TabsRoot
             variant="pills"
             defaultValue={defaultActiveTab}
             align="stretch"
           >
-            <div className="ui-flex ui-items-center ui-gap-4">
+            <div className="ui:flex ui:items-center ui:gap-4">
               {additionalContent}
               <TabsList
-                className={cx('ui-grow', {
-                  'ui-grid-cols-5': gridSize === 5,
-                  'ui-grid-cols-6': gridSize === 6,
-                  'ui-grid-cols-7': gridSize === 7,
+                className={cx('ui:grow', {
+                  'ui:grid-cols-5': gridSize === 5,
+                  'ui:grid-cols-6': gridSize === 6,
+                  'ui:grid-cols-7': gridSize === 7,
                 })}
               >
                 {tabList?.map((item) => (
                   <TabsTrigger
                     key={item?.id}
                     value={item?.id}
-                    className="ui-justify-center ui-text-sm ui-px-2 ui-h-10"
+                    className="ui:justify-center ui:text-sm ui:px-2 ui:h-10"
                     onClick={() => setTab(item?.id)}
                   >
                     {item?.label}
@@ -87,16 +87,16 @@ export default function DashboardTabs<T extends string>({
         <DashboardBox.Header>
           <TabsList
             className={cx({
-              'ui-grid-cols-5': gridSize === 5,
-              'ui-grid-cols-6': gridSize === 6,
-              'ui-grid-cols-7': gridSize === 7,
+              'ui:grid-cols-5': gridSize === 5,
+              'ui:grid-cols-6': gridSize === 6,
+              'ui:grid-cols-7': gridSize === 7,
             })}
           >
             {tabList?.map((item) => (
               <TabsTrigger
                 key={item?.id}
                 value={item?.id}
-                className="ui-justify-center ui-text-base ui-px-2"
+                className="ui:justify-center ui:text-base ui:px-2"
                 onClick={() => setTab(item?.id)}
               >
                 {item?.label}
@@ -106,7 +106,7 @@ export default function DashboardTabs<T extends string>({
           <h4>
             <strong>{title}</strong>
           </h4>
-          {subtitle && <p className="ui-text-base">{subtitle}</p>}
+          {subtitle && <p className="ui:text-base">{subtitle}</p>}
         </DashboardBox.Header>
         {tabList?.map((item) => {
           return (

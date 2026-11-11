@@ -41,7 +41,7 @@ export default function DashboardTransactionMonitoringMonthChart({
           }}
         />
         <DashboardBox.Content isLoading={isLoading} isEmpty={!series?.length}>
-          <div className="ui-h-96">
+          <div className="ui:h-96">
             <StackedLineChart
               labels={labels}
               series={series}
@@ -68,23 +68,23 @@ export default function DashboardTransactionMonitoringMonthChart({
                   },
                 },
               }}
-              className="ui-text-start"
+              className="ui:text-start"
             />
           </div>
           <div
-            className={cx('ui-flex ui-items-center ui-gap-4', {
-              'ui-justify-center ui-mt-1': !isUseSlider,
-              'ui-absolute ui-left-1/2 -ui-translate-x-1/2 ui-bottom-10':
+            className={cx('ui:flex ui:items-center ui:gap-4', {
+              'ui:justify-center ui:mt-1': !isUseSlider,
+              'ui:absolute ui:left-1/2 ui:-translate-x-1/2 ui:bottom-10':
                 isUseSlider,
             })}
           >
-            <div className="ui-flex ui-items-center ui-gap-1">
+            <div className="ui:flex ui:items-center ui:gap-1">
               <span>{'\u2015'}</span>
-              <span className="ui-text-sm">End-Point Transactions</span>
+              <span className="ui:text-sm">End-Point Transactions</span>
             </div>
-            <div className="ui-flex ui-items-center ui-gap-1">
+            <div className="ui:flex ui:items-center ui:gap-1">
               <span>- - -</span>
-              <span className="ui-text-sm">Order Related Transactions</span>
+              <span className="ui:text-sm">Order Related Transactions</span>
             </div>
           </div>
         </DashboardBox.Content>

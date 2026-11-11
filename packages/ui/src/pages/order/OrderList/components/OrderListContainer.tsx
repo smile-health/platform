@@ -41,7 +41,7 @@ export default function OrderListContainer({
 
   return (
     <OrderContainer title={t('title')} metaTitle={t('title')}>
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <TabsLinkRoot variant="pills" align="center">
           <TabsLinkList>
             {tabsItems?.map((item) => {
@@ -58,12 +58,12 @@ export default function OrderListContainer({
             })}
           </TabsLinkList>
         </TabsLinkRoot>
-        <div className="ui-flex ui-justify-between ui-gap-4">
+        <div className="ui:flex ui:justify-between ui:gap-4">
           <H3>{t('title')}</H3>
           <DropdownMenuRoot>
             <DropdownMenuTrigger>
               {Boolean(orderCreations?.length) && (
-                <Button leftIcon={<Plus className="ui-size-5" />}>
+                <Button leftIcon={<Plus className="ui:size-5" />}>
                   {t('create.title')}
                 </Button>
               )}
@@ -72,7 +72,7 @@ export default function OrderListContainer({
               {orderCreations?.map((item) => (
                 <DropdownMenuItem key={item?.id}>
                   <Link
-                    className="ui-inline-block ui-w-full ui-h-full"
+                    className="ui:inline-block ui:w-full ui:h-full"
                     id={item?.id}
                     data-testid={item?.id}
                     href={item?.href}

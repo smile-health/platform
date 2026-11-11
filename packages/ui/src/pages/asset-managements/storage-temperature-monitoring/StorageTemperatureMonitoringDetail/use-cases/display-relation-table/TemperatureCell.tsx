@@ -55,17 +55,17 @@ export const TemperatureCell: React.FC<TemperatureCellProps> = ({
   }
 
   return (
-    <div className="ui-flex ui-flex-col">
+    <div className="ui:flex ui:flex-col">
       {isList && isWarehouse && (
-        <p className="ui-text-sm ui-font-semibold ui-text-gray-500">
+        <p className="ui:text-sm ui:font-semibold ui:text-gray-500">
           {t(
             'storageTemperatureMonitoringDetail:relation_table.columns.asset_temperature.description'
           )}
-          : <span className="ui-text-sm">{description}</span>
+          : <span className="ui:text-sm">{description}</span>
         </p>
       )}
-      <div className="ui-flex ui-items-center ui-gap-1">
-        <span className="ui-text-sm">
+      <div className="ui:flex ui:items-center ui:gap-1">
+        <span className="ui:text-sm">
           {t(
             'storageTemperatureMonitoringDetail:relation_table.columns.asset_temperature.temperature'
           )}
@@ -77,8 +77,8 @@ export const TemperatureCell: React.FC<TemperatureCellProps> = ({
         />
       </div>
       {isWarehouse && log.humidity != null && (
-        <div className="ui-flex ui-items-center ui-gap-1">
-          <span className="ui-text-sm">
+        <div className="ui:flex ui:items-center ui:gap-1">
+          <span className="ui:text-sm">
             {t(
               'storageTemperatureMonitoringDetail:relation_table.columns.asset_temperature.humidity'
             )}
@@ -90,7 +90,7 @@ export const TemperatureCell: React.FC<TemperatureCellProps> = ({
           />
         </div>
       )}
-      <div className="ui-text-sm ui-text-gray-500">{date}</div>
+      <div className="ui:text-sm ui:text-gray-500">{date}</div>
     </div>
   )
 }

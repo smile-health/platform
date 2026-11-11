@@ -111,7 +111,7 @@ function Modal({
             animate="animate"
             exit="exit"
             className={cx(
-              'ui-fixed ui-inset-0 ui-h-screen ui-bg-black ui-bg-opacity-50',
+              'ui:fixed ui:inset-0 ui:h-screen ui:bg-black/50',
               classNameOverlay
             )}
             {...(underlayProps as HTMLMotionProps<'div'>)}
@@ -126,25 +126,25 @@ function Modal({
                 {...(overlayProps as HTMLMotionProps<'div'>)}
                 {...(modalProps as HTMLMotionProps<'div'>)}
                 className={cx(
-                  'ui-fixed ui-mx-auto ui-flex ui-w-full ui-flex-col',
-                  'ui-bottom-0 ui-left-0 ui-right-0 ui-top-0',
-                  'ui-h-min ui-rounded-md ui-bg-white',
-                  'focus:ui-outline-none focus-visible:ui-ring focus-visible:ui-ring-purple-500 focus-visible:ui-ring-opacity-75',
+                  'ui:fixed ui:mx-auto ui:flex ui:w-full ui:flex-col',
+                  'ui:bottom-0 ui:left-0 ui:right-0 ui:top-0',
+                  'ui:h-min ui:rounded-md ui:bg-white',
+                  'ui:focus:outline-hidden ui:focus-visible:ring-3 ui:focus-visible:ring-purple-500/75',
                   {
-                    'ui-my-10': !verticalCentered,
-                    'ui-my-auto': verticalCentered,
+                    'ui:my-10': !verticalCentered,
+                    'ui:my-auto': verticalCentered,
                   },
                   {
-                    'ui-max-h-[calc(100%-5rem)] ui-h-auto':
+                    'ui:max-h-[calc(100%-5rem)] ui:h-auto':
                       scrollBehavior === 'inside',
                   },
                   {
-                    'ui-max-w-[20rem]': size === 'xs',
-                    'ui-max-w-[25rem]': size === 'sm',
-                    'ui-max-w-[30rem]': size === 'md',
-                    'ui-max-w-[35rem]': size === 'lg',
-                    'ui-max-w-[45rem]': size === 'xl',
-                    'ui-max-w-[70rem]': size === '2xl',
+                    'ui:max-w-[20rem]': size === 'xs',
+                    'ui:max-w-100': size === 'sm',
+                    'ui:max-w-120': size === 'md',
+                    'ui:max-w-140': size === 'lg',
+                    'ui:max-w-180': size === 'xl',
+                    'ui:max-w-280': size === '2xl',
                   },
                   className
                 )}
@@ -214,14 +214,14 @@ export function ModalHeader({
   return (
     <div
       className={cx(
-        'ui-relative ui-px-5 ui-py-3',
-        { 'ui-border-b ui-border-gray-200': border },
+        'ui:relative ui:px-5 ui:py-3',
+        { 'ui:border-b ui:border-gray-200': border },
         containerClassName
       )}
     >
       <div
         className={cx(
-          'ui-pr-8 ui-text-lg ui-font-semibold ui-text-gray-800',
+          'ui:pr-8 ui:text-lg ui:font-semibold ui:text-gray-800',
           className
         )}
       >
@@ -238,7 +238,7 @@ type ModalContentProps = React.PropsWithChildren<{
 export function ModalContent({ children, className }: ModalContentProps) {
   return (
     <div
-      className={cx('ui-flex-1 ui-overflow-auto ui-px-5 ui-py-4', className)}
+      className={cx('ui:flex-1 ui:overflow-auto ui:px-5 ui:py-4', className)}
     >
       {children}
     </div>
@@ -253,7 +253,7 @@ export function ModalFooter({ children, className }: ModalFooterProps) {
   return (
     <div
       className={cx(
-        'ui-border-t ui-flex ui-justify-end ui-space-x-3 ui-border-gray-100 ui-px-5 ui-pb-5 ui-pt-3',
+        'ui:border-t ui:flex ui:justify-end ui:space-x-3 ui:border-gray-100 ui:px-5 ui:pb-5 ui:pt-3',
         className
       )}
     >
@@ -282,7 +282,7 @@ export function ModalCloseButton({
     <CloseButton
       onClick={handleClick}
       id="dialogCloseButton"
-      className={cx('ui-absolute ui-right-2 ui-top-2 ui-z-10', className)}
+      className={cx('ui:absolute ui:right-2 ui:top-2 ui:z-10', className)}
     />
   )
 }

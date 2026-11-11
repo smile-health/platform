@@ -47,7 +47,7 @@ export default function OrderCreateMaterialTable<
   useSetLoadingPopupStore(isFetching)
 
   return (
-    <div className="ui-ml-6 ui-w-1/2 !ui-h-full">
+    <div className="ui:ml-6 ui:w-1/2 ui:h-full!">
       {showMaterialTable ? (
         <InfiniteScrollList
           id={`${id}-material-list`}
@@ -71,8 +71,8 @@ export default function OrderCreateMaterialTable<
           }}
         />
       ) : (
-        <div className="ui-border ui-border-[#d2d2d2] ui-p-6 !ui-h-[32rem]">
-          <div className="ui-font-bold">
+        <div className="ui:border ui:border-[#d2d2d2] ui:p-6 ui:h-128!">
+          <div className="ui:font-bold">
             {t('orderCreate:title.material_in')}{' '}
             {customer?.label ?? userStorage?.entity?.name}
           </div>

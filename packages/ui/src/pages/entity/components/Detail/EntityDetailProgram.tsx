@@ -14,12 +14,12 @@ export default function EntityDetailProgram({ entity }: Readonly<Props>) {
   const programs = entity?.programs ?? []
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-gray-300 ui-rounded ui-space-y-4">
-      <h5 className="ui-font-bold">Programs</h5>
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-gray-300 ui:rounded ui:space-y-4">
+      <h5 className="ui:font-bold">Programs</h5>
 
       {/* List */}
-      <div className="ui-min-h-[200px] ui-max-h-[500px] ui-overflow-y-auto">
-        <div className="ui-grid ui-grid-cols-4 ui-gap-6">
+      <div className="ui:min-h-[200px] ui:max-h-[500px] ui:overflow-y-auto">
+        <div className="ui:grid ui:grid-cols-4 ui:gap-6">
           {programs.map((item) => (
             <ProgramItem
               key={item.id}
@@ -28,8 +28,8 @@ export default function EntityDetailProgram({ entity }: Readonly<Props>) {
               icon={getProgramIconUrl(item)}
               className={{
                 wrapper:
-                  'ui-border ui-border-neutral-300 ui-rounded-lg ui-p-4 ui-gap-4 ui-cursor-default',
-                title: 'ui-text-base ui-text-left',
+                  'ui:border ui:border-neutral-300 ui:rounded-lg ui:p-4 ui:gap-4 ui:cursor-default',
+                title: 'ui:text-base ui:text-left',
               }}
             />
           ))}
@@ -39,7 +39,7 @@ export default function EntityDetailProgram({ entity }: Readonly<Props>) {
       {programs.length === 0 && (
         <EmptyState
           withIcon
-          className="ui-h-[400px]"
+          className="ui:h-[400px]"
           title={t('common:message.empty.title')}
           description={t('common:message.empty.description')}
         />

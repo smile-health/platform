@@ -91,17 +91,17 @@ export default function ProgramSelection({
   return (
     <div
       className={cx(
-        withLayout && 'ui-p-4 ui-border ui-border-neutral-300 ui-rounded'
+        withLayout && 'ui:p-4 ui:border ui:border-neutral-300 ui:rounded'
       )}
     >
       {withLayout && (
-        <div className="ui-mb-4 ui-font-bold">{t('form.program.title')}</div>
+        <div className="ui:mb-4 ui:font-bold">{t('form.program.title')}</div>
       )}
 
-      <div className="ui-flex ui-flex-col ui-space-y-5">
+      <div className="ui:flex ui:flex-col ui:space-y-5">
         {/* Info */}
         {showInfo && (
-          <div className="ui-flex ui-gap-2 ui-bg-slate-100 ui-p-4 ui-text-xs ui-text-dark-blue ui-rounded">
+          <div className="ui:flex ui:gap-2 ui:bg-slate-100 ui:p-4 ui:text-xs ui:text-dark-blue ui:rounded">
             <Information />
             <p>{t('form.program.information')}</p>
           </div>
@@ -122,7 +122,7 @@ export default function ProgramSelection({
           loadMore={loadMore}
           loading={loading}
         >
-          <div className="ui-space-y-2">
+          <div className="ui:space-y-2">
             {activeList.map((item) => {
               const isChecked = selected.includes(item.id)
               const isForbidden = forbiddenUncheckIds.includes(item.id)
@@ -133,12 +133,12 @@ export default function ProgramSelection({
                   type="button"
                   data-testid={`btn-workspace-${item.key}`}
                   className={cx(
-                    'ui-flex ui-gap-4 ui-items-center ui-rounded-lg ui-p-4 w-full focus:outline-none',
+                    'ui:flex ui:gap-4 ui:items-center ui:rounded-lg ui:p-4 w-full focus:outline-none',
                     {
-                      'ui-bg-slate-100 ui-justify-between': isForbidden,
-                      'ui-border ui-border-neutral-300':
+                      'ui:bg-slate-100 ui:justify-between': isForbidden,
+                      'ui:border ui:border-neutral-300':
                         !isChecked && !isForbidden,
-                      'ui-border ui-border-[#004990] ui-bg-[#E2F3FC]':
+                      'ui:border ui:border-[#004990] ui:bg-[#E2F3FC]':
                         isChecked && !isForbidden,
                     }
                   )}
@@ -166,17 +166,17 @@ export default function ProgramSelection({
                     icon={getProgramIconUrl(item)}
                     sizeIcon={40}
                     className={{
-                      wrapper: 'ui-gap-4',
-                      title: 'ui-text-left',
+                      wrapper: 'ui:gap-4',
+                      title: 'ui:text-left',
                     }}
                   />
 
                   {isForbidden && (
-                    <div className="ui-flex ui-items-center ui-gap-2">
-                      <p className="ui-text-sm ui-text-neutral-500">
+                    <div className="ui:flex ui:items-center ui:gap-2">
+                      <p className="ui:text-sm ui:text-neutral-500">
                         {t('selected')}
                       </p>
-                      <Check className="ui-size-5" />
+                      <Check className="ui:size-5" />
                     </div>
                   )}
                 </button>
@@ -186,7 +186,7 @@ export default function ProgramSelection({
             {activeList.length === 0 && (
               <EmptyState
                 withIcon
-                className="ui-h-[480px]"
+                className="ui:h-[480px]"
                 title={t('common:message.empty.title')}
                 description={t('common:message.empty.description')}
               />

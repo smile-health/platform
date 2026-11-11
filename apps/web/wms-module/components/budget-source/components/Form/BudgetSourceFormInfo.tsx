@@ -17,9 +17,9 @@ const BudgetSourceFormInfo: React.FC = () => {
   const { control } = useFormContext<BudgetSourceFormData>();
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-flex ui-flex-col ui-space-y-5">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:flex ui:flex-col ui:space-y-5">
           <Controller
             name="name"
             control={control}

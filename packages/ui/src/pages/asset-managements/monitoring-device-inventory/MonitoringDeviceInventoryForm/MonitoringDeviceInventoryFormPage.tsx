@@ -55,26 +55,26 @@ export default function MonitoringDeviceInventoryFormPage({
             }}
           >
             {monitoringDeviceInventoryForm.isLoading ? (
-              <div className="ui-w-full ui-flex ui-justify-center ui-items-center ui-py-20">
-                <div className="ui-text-center">
-                  <div className="ui-animate-spin ui-rounded-full ui-h-12 ui-w-12 ui-border-b-2 ui-border-primary ui-mx-auto"></div>
-                  <p className="ui-mt-4 ui-text-gray-600">
+              <div className="ui:w-full ui:flex ui:justify-center ui:items-center ui:py-20">
+                <div className="ui:text-center">
+                  <div className="ui:animate-spin ui:rounded-full ui:h-12 ui:w-12 ui:border-b-2 ui-border-primary ui:mx-auto"></div>
+                  <p className="ui:mt-4 ui:text-gray-600">
                     {t('common:loading_popup.description')}...
                   </p>
                 </div>
               </div>
             ) : (
-              <div className="ui-w-[50%] ui-mx-auto ui-space-y-6">
+              <div className="ui:w-[50%] ui:mx-auto ui:space-y-6">
                 <AssetSpecificationSection />
                 <OperationalStatusSection />
                 <EntitySection />
                 <BudgetSection />
 
-                <div className="ui-w-full ui-mt-5">
-                  <div className="ui-flex ui-space-x-5 ui-justify-end">
+                <div className="ui:w-full ui:mt-5">
+                  <div className="ui:flex ui:space-x-5 ui:justify-end">
                     <Button
                       variant="outline"
-                      className="ui-w-48"
+                      className="ui:w-48"
                       type="button"
                       onClick={() =>
                         router.pushGlobal(
@@ -85,7 +85,7 @@ export default function MonitoringDeviceInventoryFormPage({
                       {t('common:back')}
                     </Button>
                     <Button
-                      className="ui-w-48"
+                      className="ui:w-48"
                       type="button"
                       onClick={monitoringDeviceInventoryForm.form.submit}
                     >

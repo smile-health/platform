@@ -23,7 +23,7 @@ export const createFilterHealthcareAssetGroupSchema = ({
       id: 'input-search',
       label: t('healthcareAsset:list.filter.search.label'),
       placeholder: t('healthcareAsset:list.filter.search.placeholder'),
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       defaultValue: '',
       maxLength: 255,
     },
@@ -34,7 +34,7 @@ export const createFilterHealthcareAssetGroupSchema = ({
       isMulti: false,
       label: t('healthcareAsset:list.filter.working_status.label'),
       placeholder: t('healthcareAsset:list.filter.working_status.placeholder'),
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       defaultValue: null,
       loadOptions: loadStatusAsset,
       additional: { page: 1 },
@@ -46,7 +46,7 @@ export const createFilterHealthcareAssetGroupSchema = ({
       isMulti: false,
       label: t('healthcareAsset:list.filter.status.label'),
       placeholder: t('healthcareAsset:list.filter.status.placeholder'),
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       defaultValue: null,
       options: [
         {

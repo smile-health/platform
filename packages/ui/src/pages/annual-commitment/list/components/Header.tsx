@@ -16,11 +16,11 @@ export default function AnnualCommitmentListHeader(): JSX.Element {
   }
 
   return (
-    <div className="ui-flex ui-justify-between ui-gap-4 ui-items-center">
+    <div className="ui:flex ui:justify-between ui:gap-4 ui:items-center">
       <H3>{t('table.title')}</H3>
       {hasPermission('annual-commitment-mutate') && (
         <Button
-          leftIcon={<Plus className="ui-size-5" />}
+          leftIcon={<Plus className="ui:size-5" />}
           onClick={navigateToCreate}
         >
           {t('button.create')}

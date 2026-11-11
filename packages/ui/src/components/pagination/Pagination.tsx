@@ -39,18 +39,18 @@ function Item({
       type="button"
       disabled={disabled || disabledWithoutOpacity}
       className={cx(
-        'ui-flex ui-items-center ui-justify-center ui-text-sm focus:ui-outline-none first-of-type:ui-rounded-l last-of-type:ui-rounded-r',
-        'ui-border ui-border-neutral-300 focus:ui-border-primary-300 focus:ui-ring-2 focus:ui-ring-primary-500 focus:ui-ring-opacity-25',
-        'group-[.is-group]:focus:ui-z-10',
-        'ui-min-w-[2rem] ui-px-2.5 ui-h-10 md:ui-min-w-[2.5rem]',
+        'ui:flex ui:items-center ui:justify-center ui:text-sm ui:focus:outline-hidden ui:first-of-type:rounded-l ui:last-of-type:rounded-r',
+        'ui:border ui:border-neutral-300 ui:focus:border-primary-300 ui:focus:ring-2 ui:focus:ring-primary-500/25',
+        'ui:focus:group-[.is-group]:z-10',
+        'ui:min-w-8 ui:px-2.5 ui:h-10 ui:md:min-w-10',
 
         //size,
         {
-          'ui-bg-white': !active,
-          'ui-bg-primary-500 ui-text-primary-contrast hover:ui-bg-primary-600': active,
-          'ui-cursor-not-allowed ui-opacity-50': disabled,
-          'hover:ui-bg-gray-50 active:ui-bg-gray-100': !disabled && !active,
-          'ui-pointer-events-none': disabledWithoutOpacity,
+          'ui:bg-white': !active,
+          'ui:bg-primary-500 ui:text-primary-contrast ui:hover:bg-primary-600': active,
+          'ui:cursor-not-allowed ui:opacity-50': disabled,
+          'ui:hover:bg-gray-50 ui:active:bg-gray-100': !disabled && !active,
+          'ui:pointer-events-none': disabledWithoutOpacity,
         }
       )}
     >
@@ -161,7 +161,7 @@ export function PaginationContainer({
   return (
     <div
       className={cx(
-        'ui-flex ui-justify-between ui-items-center ui-gap-2',
+        'ui:flex ui:justify-between ui:items-center ui:gap-2',
         className
       )}
     >
@@ -196,8 +196,8 @@ export function PaginationSelectLimit({
       menuPosition="fixed"
       onChange={(option: OptionType) => onChange?.(Number(option?.value))}
       classNames={{
-        dropdownIndicator: () => '!ui-text-[#073B4C]',
-        singleValue: () => '!ui-text-[#021217]',
+        dropdownIndicator: () => 'ui:text-dark-teal!',
+        singleValue: () => 'ui:text-[#021217]!',
       }}
     />
   )
@@ -222,7 +222,7 @@ export function PaginationInfo({
   const result = Intl.NumberFormat('en-US').format(total)
 
   return (
-    <p className="ui-mr-auto ui-ml-0 ui-text-sm ui-font-medium ui-leading-none ui-text-[#1D2939]">
+    <p className="ui:mr-auto ui:ml-0 ui:text-sm ui:font-medium ui:leading-none ui:text-[#1D2939]">
       {isEmpty
         ? t('pagination.empty')
         : t('pagination.data', {
@@ -281,17 +281,17 @@ export function Pagination({
   disabled = disabled || totalPages === 0
 
   return (
-    <div className="is-group ui-flex ui-text-primary-surface ui-group">
+    <div className="is-group ui:flex ui:text-primary-surface ui:group">
       <Item
         data-testid="btn-page-prev"
         onClick={previous}
         disabled={active === 1 || disabled}
       >
-        <div className="ui-flex ui-items-center ui-space-x-1 ui-px-2">
+        <div className="ui:flex ui:items-center ui:space-x-1 ui:px-2">
           <div>
             <ChevronLeft />
           </div>
-          <div className="ui-hidden md:ui-block">
+          <div className="ui:hidden ui:md:block">
             {isId ? 'Sebelumnya' : 'Prev'}
           </div>
         </div>
@@ -303,7 +303,7 @@ export function Pagination({
             return (
               <div
                 key={pageNumber}
-                className="ui-flex ui-justify-center ui-items-center ui-px-2 ui-text-gray-600 ui-border ui-border-neutral-300 ui-w-10"
+                className="ui:flex ui:justify-center ui:items-center ui:px-2 ui:text-gray-600 ui:border ui:border-neutral-300 ui:w-10"
               >
                 <DotsHorizontal />
               </div>
@@ -329,8 +329,8 @@ export function Pagination({
         onClick={next}
         disabled={active === totalPages || disabled}
       >
-        <div className="ui-flex ui-items-center ui-space-x-1 ui-px-2">
-          <div className="ui-hidden md:ui-block">
+        <div className="ui:flex ui:items-center ui:space-x-1 ui:px-2">
+          <div className="ui:hidden ui:md:block">
             {isId ? 'Selanjutnya' : 'Next'}
           </div>
 

@@ -102,8 +102,8 @@ export const OrderDetailAllocateModalFormHierarchyCustomRow: React.FC<
 
         cell: ({ row }) => {
           return (
-            <div className="ui-flex ui-flex-col ui-justify-center">
-              <p className="ui-font-bold">
+            <div className="ui:flex ui:flex-col ui:justify-center">
+              <p className="ui:font-bold">
                 {row?.original?._stock_detail?.batch?.code ?? '-'}
               </p>
               <p>
@@ -187,7 +187,7 @@ export const OrderDetailAllocateModalFormHierarchyCustomRow: React.FC<
                       }}
                     />
                     {error?.message && (
-                      <FormErrorMessage className="ui-mt-2">
+                      <FormErrorMessage className="ui:mt-2">
                         {error?.message}
                       </FormErrorMessage>
                     )}
@@ -219,17 +219,17 @@ export const OrderDetailAllocateModalFormHierarchyCustomRow: React.FC<
   }, [supportData])
 
   return (
-    <div className="!ui-bg-[#F6F6F7] !ui-w-full !ui-p-4">
-      <div className="ui-flex ui-items ui-justify-between ui-mb-4">
-        <div className="ui-flex ui-mb-4">
-          <div className="ui-mr-1">
+    <div className="ui:bg-[#F6F6F7]! ui:w-full! ui:p-4!">
+      <div className="ui:flex ui-items ui:justify-between ui:mb-4">
+        <div className="ui:flex ui:mb-4">
+          <div className="ui:mr-1">
             {isMaterialBatch ? (
               <p>{t('orderDetail:table.trademark.column.batch_from')}</p>
             ) : (
               <p>{t('orderDetail:table.trademark.column.non_batch')}</p>
             )}
           </div>
-          <div className="ui-font-bold">
+          <div className="ui:font-bold">
             {t('orderDetail:table.trademark.column.activity_name', {
               activity_name: supportData?._activity?.name,
             })}
@@ -237,23 +237,23 @@ export const OrderDetailAllocateModalFormHierarchyCustomRow: React.FC<
         </div>
         <Button
           variant="subtle"
-          className="!ui-bg-transparent"
+          className="ui:bg-transparent!"
           onClick={onClose}
-          leftIcon={<XMarkIcon className="ui-h-4 ui-w-4" />}
+          leftIcon={<XMarkIcon className="ui:h-4 ui:w-4" />}
         >
           {t('orderDetail:table.trademark.button.close')}
         </Button>
       </div>
-      <div className="ui-flex ui-flex-col">
+      <div className="ui:flex ui:flex-col">
         <DataTable
           data={data}
           columns={columnsBatchSchema}
           isSticky
-          className="ui-overflow-y-auto ui-max-h-[50vh] !ui-bg-white"
+          className="ui:overflow-y-auto ui:max-h-md ui:bg-white!"
         />
         <Button
           variant="solid"
-          className="ui-ml-auto ui-my-4"
+          className="ui:ml-auto ui:my-4"
           onClick={handleSave}
         >
           {t('orderDetail:table.trademark.button.save')}

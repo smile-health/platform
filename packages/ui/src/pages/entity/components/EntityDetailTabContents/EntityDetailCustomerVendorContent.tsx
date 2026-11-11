@@ -279,9 +279,9 @@ const EntityDetailCustomerVendorContent: React.FC<Props> = ({
         subTitle={entity?.name}
       />
 
-      <div className="ui-pt-[30px]">
-        <div className="ui-w-full ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-mb-4 ui-font-bold ui-w-auto ui-text-[20px] ui-leading-[28px]">
+      <div className="ui:pt-[30px]">
+        <div className="ui:w-full ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:mb-4 ui:font-bold ui:w-auto ui:text-[20px] ui:leading-[28px]">
             {t('entity:detail.customer_vendor.customer')}
           </h5>
           {Boolean(user?.view_only) === false ? (
@@ -314,7 +314,7 @@ const EntityDetailCustomerVendorContent: React.FC<Props> = ({
           dataKey="customer_consumption"
         />
 
-        <h5 className="ui-mb-4 ui-font-bold ui-w-auto ui-text-[20px] ui-leading-[28px] ui-mt-[24px]">
+        <h5 className="ui:mb-4 ui:font-bold ui:w-auto ui:text-[20px] ui:leading-[28px] ui:mt-[24px]">
           {t('entity:detail.information.table_title.vendor')}
         </h5>
         <EntityDetailCustomerTable

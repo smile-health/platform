@@ -38,7 +38,7 @@ export default function AnnualCommitmentDetailPage() {
           },
         }}
       >
-        <div className="ui-space-y-6">
+        <div className="ui:space-y-6">
           <AnnualCommitmentDetailInfo
             onHandleEdit={() => router.push(`/v5/annual-commitment/${id}/edit`)}
           />

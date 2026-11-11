@@ -50,15 +50,15 @@ export default function DashboardFilter(props: Props) {
     <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
       <FilterFormBody
         className={cx({
-          'ui-grid-cols-3': grid === 3,
-          'ui-grid-cols-4': grid === 4,
+          'ui:grid-cols-3': grid === 3,
+          'ui:grid-cols-4': grid === 4,
         })}
       >
         {filter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
         {expandable ? <FilterExpandButton variant="subtle" /> : <div />}
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           {onExport ? (
             <>
               <Button
@@ -67,11 +67,11 @@ export default function DashboardFilter(props: Props) {
                 type="button"
                 onClick={onExport}
                 disabled={isDisabledExport}
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
               >
                 {t('export')}
               </Button>
-              <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+              <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
             </>
           ) : (
             <div />
@@ -82,7 +82,7 @@ export default function DashboardFilter(props: Props) {
           />
           <FilterSubmitButton
             variant="outline"
-            className="ui-w-[202px]"
+            className="ui:w-[202px]"
             text={t('show_report')}
             onClick={() => {
               filter.handleSubmit()

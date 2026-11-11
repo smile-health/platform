@@ -177,7 +177,7 @@ const OrderDetailPage = () => {
   return (
     <OrderContainer
       title={
-        <div className="ui-justify-center ui-items-center ui-gap-4 ui-text-center ui-flex">
+        <div className="ui:justify-center ui:items-center ui:gap-4 ui:text-center ui:flex">
           {handlePageTitle()}{' '}
           {data?.metadata?.client_key && (
             <OrderInteroperabilityBadge
@@ -199,7 +199,7 @@ const OrderDetailPage = () => {
         },
       }}
     >
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <OrderDetailStatus />
         <OrderDetailItems />
         {Boolean(

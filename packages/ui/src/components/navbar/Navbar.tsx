@@ -8,8 +8,8 @@ import NavbarSetting from './bundles-component/NavbarSetting'
 
 const Navbar = () => {
   return (
-    <div className="main__nav ui-bg-primary-500 ui-h-10">
-      <div className="ui-container ui-mx-auto ui-flex ui-items-center ui-justify-start ui-text-primary-contrast">
+    <div className="main__nav ui:bg-primary-500 ui:h-10">
+      <div className="ui:container ui:mx-auto ui:flex ui:items-center ui:justify-start ui:text-primary-contrast">
         <NavbarDashboard />
         <NavbarLogisticManagement />
         <NavbarReport />

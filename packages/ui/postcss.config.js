@@ -3,8 +3,7 @@
 
 module.exports = {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
+    '@tailwindcss/postcss': {},
     'postcss-preset-mantine': {},
     'postcss-simple-vars': {
       variables: {

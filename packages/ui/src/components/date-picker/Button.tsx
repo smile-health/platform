@@ -20,11 +20,11 @@ export function CalendarButton(props: Readonly<AriaButtonProps<'button'>>) {
       data-testid={buttonProps.id}
       ref={ref}
       className={cx(
-        'ui-shadow-xs ui-flex ui-h-8 ui-w-8 ui-items-center ui-justify-center ui-rounded ui-border ui-border-gray-300 ui-bg-white',
+        'ui:shadow-xs ui:flex ui:h-8 ui:w-8 ui:items-center ui:justify-center ui:rounded ui:border ui:border-gray-300 ui:bg-white',
         {
-          'hover:ui-bg-primary-50 active:ui-bg-primary-100': !props.isDisabled,
-          'ui-cursor-not-allowed ui-opacity-30': props.isDisabled,
-          'ui-outline-none ui-ring-2 ui-ring-primary-500 ui-ring-opacity-20':
+          'ui:hover:bg-primary-50 ui:active:bg-primary-100': !props.isDisabled,
+          'ui:cursor-not-allowed ui:opacity-30': props.isDisabled,
+          'ui:outline-hidden ui:ring-2 ui:ring-primary-500/20':
             isFocused,
         }
       )}
@@ -45,9 +45,9 @@ export function FieldButton(props: Readonly<AriaButtonProps<'button'>>) {
       id={id}
       data-testid={id}
       ref={ref}
-      className={cx('ui-h-8 ui-rounded ui-outline-none px-2', {
-        'hover:ui-bg-gray-100 active:ui-bg-gray-200': !props.isDisabled,
-        'ui-cursor-not-allowed ui-opacity-50': props.isDisabled,
+      className={cx('ui:h-8 ui:rounded ui:outline-hidden px-2', {
+        'ui:hover:bg-gray-100 ui:active:bg-gray-200': !props.isDisabled,
+        'ui:cursor-not-allowed ui:opacity-50': props.isDisabled,
       })}
     >
       {props.children}

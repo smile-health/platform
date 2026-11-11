@@ -40,7 +40,7 @@ export function CalendarGrid({
         <tr>
           {weekDays.map((day, index) => (
             <th
-              className="ui-pb-0.5 ui-text-sm ui-font-medium ui-text-gray-500"
+              className="ui:pb-0.5 ui:text-sm ui:font-medium ui:text-gray-500"
               key={`${day}-${index}`}
             >
               {day}

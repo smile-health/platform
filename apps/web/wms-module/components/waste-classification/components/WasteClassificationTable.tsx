@@ -71,11 +71,11 @@ export function WasteClassificationTable({
   }, [rawData]);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={tableData}
         columns={columnsWasteClassification(t)}
-        className="ui-rounded ui-border ui-border-gray-200"
+        className="ui:rounded ui:border ui:border-gray-200"
       />
     </div>
   );

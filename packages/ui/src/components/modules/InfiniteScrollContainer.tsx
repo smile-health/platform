@@ -72,7 +72,7 @@ const InfiniteScrollContainer: React.FC<Props> = ({
   return (
     <div
       ref={containerRef}
-      className="ui-overflow-y-auto ui-relative"
+      className="ui:overflow-y-auto ui:relative"
       style={{
         minHeight,
         maxHeight,
@@ -89,13 +89,13 @@ const InfiniteScrollContainer: React.FC<Props> = ({
       {/* Loading overlay - positioned based on scroll position */}
       {loading && (
         <div
-          className="ui-absolute ui-left-0 ui-right-0 ui-bg-white ui-bg-opacity-40 ui-flex ui-justify-center ui-items-center ui-z-10"
+          className="ui:absolute ui:left-0 ui:right-0 ui:bg-white/40 ui:flex ui:justify-center ui:items-center ui:z-10"
           style={{
             top: scrollTop,
             height: containerHeight,
           }}
         >
-          <Spinner className="ui-w-8 ui-h-8" />
+          <Spinner className="ui:w-8 ui:h-8" />
         </div>
       )}
     </div>

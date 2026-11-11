@@ -38,7 +38,7 @@ const TransactionListTransporterButton = () => {
       <DropdownMenuRoot>
         <DropdownMenuTrigger>
           <Button
-            leftIcon={<Plus className="ui-size-5" />}
+            leftIcon={<Plus className="ui:size-5" />}
             loading={isLoading}
             disabled={isLoading}
           >
@@ -50,7 +50,7 @@ const TransactionListTransporterButton = () => {
             <DropdownMenuItem key={item.id}>
               <Link
                 href={router.getAsLink(`/v5/transaction/${item.id}/create`)}
-                className="ui-px-3 ui-py-2 ui-space-x-2 ui-block"
+                className="ui:px-3 ui:py-2 ui:space-x-2 ui:block"
               >
                 {item.title}
               </Link>

@@ -21,8 +21,8 @@ const AssetInventoryAssetTypeMoreForm = () => {
     formState: { errors },
   } = methods
   return (
-    <div className="ui-flex ui-flex-col ui-gap-4 ui-bg-[#F1F5F9] ui-p-2 ui-rounded-md">
-      <FormControl className="ui-w-full">
+    <div className="ui:flex ui:flex-col ui:gap-4 ui:bg-slate-100 ui:p-2 ui:rounded-md">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="other_asset_model_name" required>
           {t('assetInventory:other_inputs.asset_model_name')}
         </FormLabel>
@@ -45,8 +45,8 @@ const AssetInventoryAssetTypeMoreForm = () => {
           </FormErrorMessage>
         )}
       </FormControl>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-4">
-        <FormControl className="ui-w-full">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-4">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="other_gross_capacity" required>
             {t('assetInventory:other_inputs.gross_capacity')}
           </FormLabel>
@@ -76,7 +76,7 @@ const AssetInventoryAssetTypeMoreForm = () => {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-w-full">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="other_net_capacity" required>
             {t('assetInventory:other_inputs.netto_capacity')}
           </FormLabel>

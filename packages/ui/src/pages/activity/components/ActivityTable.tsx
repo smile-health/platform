@@ -22,7 +22,7 @@ export default function ActivityTable(props: ActivityTableProps) {
   const { t } = useTranslation(['common', 'activity'])
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <Table
         withBorder
         rounded
@@ -35,13 +35,13 @@ export default function ActivityTable(props: ActivityTableProps) {
       >
         <Thead>
           <Tr>
-            <Th columnKey="no" className="ui-w-20 ui-font-semibold">
+            <Th columnKey="no" className="ui:w-20 ui:font-semibold">
               No.
             </Th>
-            <Th columnKey="name" className="ui-font-semibold">
+            <Th columnKey="name" className="ui:font-semibold">
               {t('activity:column.name')}
             </Th>
-            <Th columnKey="id" className="ui-w-40 ui-font-semibold ui-pl-5">
+            <Th columnKey="id" className="ui:w-40 ui:font-semibold ui:pl-5">
               {t('common:action')}
             </Th>
           </Tr>
@@ -53,7 +53,7 @@ export default function ActivityTable(props: ActivityTableProps) {
                 <Td id="cell-no">{(page - 1) * size + (index + 1)}</Td>
                 <Td id="cell-name">{item?.name}</Td>
                 <Td id="cell-action">
-                  <div className="ui-flex ui-gap-2">
+                  <div className="ui:flex ui:gap-2">
                     <Button
                       asChild
                       id="btn-link-budget-source-detail"

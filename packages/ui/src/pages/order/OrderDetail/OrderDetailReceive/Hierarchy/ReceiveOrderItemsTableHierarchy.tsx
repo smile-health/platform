@@ -55,19 +55,19 @@ export const ReceiveOrderItemsTableHierarchy = ({
         <div className="space-y-2">
           {filledReceiveChild && (
             <div className="space-y-2">
-              <div key={row?.original?.id} className="ui-text-sm">
-                <div className="ui-font-semibold">
+              <div key={row?.original?.id} className="ui:text-sm">
+                <div className="ui:font-semibold">
                   Qty: {numberFormatter(totalReceivedQty, i18n.language)}
                 </div>
               </div>
             </div>
           )}
 
-          <div className="ui-space-y-1">
+          <div className="ui:space-y-1">
             <Button
               size="sm"
               type="button"
-              leftIcon={<PlusIcon className="ui-w-5 ui-text-dark-blue" />}
+              leftIcon={<PlusIcon className="ui:w-5 ui:text-dark-blue" />}
               variant="outline"
               onClick={handleClick}
             >
@@ -118,7 +118,7 @@ export const ReceiveOrderItemsTableHierarchy = ({
       data={orderItems}
       columns={columns}
       isLoading={!orderItems || isLoading}
-      bodyClassName={cx({ 'ui-h-56': !orderItems })}
+      bodyClassName={cx({ 'ui:h-56': !orderItems })}
     />
   )
 }

@@ -86,7 +86,7 @@ const GlobalSettings: React.FC<TProps> = ({
       hasGrandChildTab={hasGrandChildTab}
     >
       {childTabs && (
-        <div className="ui-my-4">
+        <div className="ui:my-4">
           <TabsLinkRoot variant={childTabVariant} align={childTabPosition}>
             <TabsLinkList>
               {childTabs?.map((item) => {
@@ -109,11 +109,11 @@ const GlobalSettings: React.FC<TProps> = ({
           </TabsLinkRoot>
         </div>
       )}
-      <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-        <div className={cx({ 'ui-flex ui-flex-col': !!subTitle })}>
-          <h5 className="ui-font-bold ui-text-xl">{title}</h5>
+      <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+        <div className={cx({ 'ui:flex ui:flex-col': !!subTitle })}>
+          <h5 className="ui:font-bold ui:text-xl">{title}</h5>
           {subTitle && (
-            <h6 className="ui-text-base ui-text-neutral-500">{subTitle}</h6>
+            <h6 className="ui:text-base ui:text-neutral-500">{subTitle}</h6>
           )}
         </div>
         {showButtonCreate && buttonCreate && (
@@ -122,15 +122,15 @@ const GlobalSettings: React.FC<TProps> = ({
             data-testid={`create-global-setting-${title?.toLowerCase()}`}
             type="button"
             onClick={buttonCreate.onClick}
-            className="ui-min-w-40"
-            leftIcon={<Plus className="ui-size-5" />}
+            className="ui:min-w-40"
+            leftIcon={<Plus className="ui:size-5" />}
           >
             {buttonCreate.label}
           </Button>
         )}
       </div>
       {hasGrandChildTab && (
-        <div className="ui-my-4">
+        <div className="ui:my-4">
           <TabsLinkRoot variant="default" align="start">
             <TabsLinkList>
               {grandChildTabs?.map((item) => {

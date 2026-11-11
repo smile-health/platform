@@ -27,7 +27,7 @@ const BudgetSourceEditPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('assetType:form.title.edit')}`}
       />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         {isLoading ? (
           <AssetTypeSkeleton />
         ) : (

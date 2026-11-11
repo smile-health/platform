@@ -94,7 +94,7 @@ export const columnsListTask = ({
         const suffix = lang === 'en' && total > 1 ? 's' : ''
 
         return (
-          <div className="ui-space-y-2">
+          <div className="ui:space-y-2">
             {isAll ? (
               <p>{t('task:list.all_province')}</p>
             ) : (
@@ -106,7 +106,7 @@ export const columnsListTask = ({
             <Button
               size="sm"
               variant="subtle"
-              className="ui-px-1 ui-h-6 ui-relative -ui-translate-x-1"
+              className="ui:px-1 ui:h-6 ui:relative ui:-translate-x-1"
               onClick={() => {
                 onClickDetailCoverage(row.original)
               }}
@@ -122,7 +122,7 @@ export const columnsListTask = ({
       cell: ({ row }) => (
         <div>
           <p>{row.original.user_updated_by?.fullname ?? '-'}</p>
-          <p className="ui-uppercase">
+          <p className="ui:uppercase">
             {parseDateTime(
               row.original.user_updated_at,
               'DD MMM YYYY HH:mm',
@@ -137,7 +137,7 @@ export const columnsListTask = ({
       ? [
         {
           header: () => (
-            <div className="ui-font-semibold ui-pl-3">
+            <div className="ui:font-semibold ui:pl-3">
               {t('common:action')}
             </div>
           ),
@@ -146,7 +146,7 @@ export const columnsListTask = ({
           maxSize: 40,
           cell: ({ row }: { row: Row<Task> }) => {
             return (
-              <div className="ui-flex ui-gap-2">
+              <div className="ui:flex ui:gap-2">
                 <Button
                   asChild
                   id={`btn-link-task-edit-${row.original.id}`}

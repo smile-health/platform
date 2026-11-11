@@ -16,8 +16,8 @@ const BigNameString: React.FC<Props> = (props) => {
   const value = !seeMore && limit ? name.substring(0, limit).concat('...') : name
 
   return (
-    <div className="ui-flex ui-flex-col ui-gap-2">
-      <p className={`ui-text-sm ui-text-primary-700 ${className}`}>{value}</p>
+    <div className="ui:flex ui:flex-col ui:gap-2">
+      <p className={`ui:text-sm ui:text-primary-700 ${className}`}>{value}</p>
       {limit && (
         <Button size="sm" variant="subtle" type="button" onClick={() => setSeeMore(prev => !prev)}>
           {seeMore ? t('see_less') : t('see_more')}

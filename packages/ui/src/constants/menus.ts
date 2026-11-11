@@ -11,31 +11,31 @@ export const menuDashboardCovidChilds = (t: TFunction, isExist = true) => [
   // {
   //   link: '/dashboard/covid-19/simple',
   //   title: 'Transaksi Utama',
-  //   className: 'ui-hover:ui-bg-gray-200 ui-text-left',
+  //   className: 'ui-hover:ui-bg-gray-200 ui:text-left',
   //   isExist: false,
   // },
   {
     link: '/dashboard/covid-19/big-data',
     title: t('menu.dashboard.item.transaction.item.general'),
-    className: 'ui-hover:ui-bg-gray-200 ui-text-left',
+    className: 'ui-hover:ui-bg-gray-200 ui:text-left',
     isExist,
   },
   // {
   //   link: '/dashboard/covid-19/v2',
   //   title: 'Transaksi Detail V1',
-  //   className: 'ui-hover:ui-bg-gray-200 ui-text-left',
+  //   className: 'ui-hover:ui-bg-gray-200 ui:text-left',
   //   isExist: false,
   // },
   {
     link: '/dashboard/covid-19/v3/big-data',
     title: t('menu.dashboard.item.transaction.item.detail'),
-    className: 'ui-hover:ui-bg-gray-200 ui-text-left',
+    className: 'ui-hover:ui-bg-gray-200 ui:text-left',
     isExist,
   },
   {
     link: '/dashboard/cascade-transaction/big-data',
     title: 'Cascade',
-    className: 'ui-hover:ui-bg-gray-200 ui-text-left',
+    className: 'ui-hover:ui-bg-gray-200 ui:text-left',
     isExist,
   },
 ]
@@ -44,7 +44,7 @@ export const menuConsumedChilds = (t: TFunction) => [
   // {
   //   link: '/dashboard/consumed',
   //   title: 'Consumed SMILE',
-  //   className: 'ui-hover:bg-gray-200 ui-text-left ui-hidden',
+  //   className: 'ui-hover:bg-gray-200 ui:text-left ui:hidden',
   //   isExist: false,
   // },
 ]
@@ -55,37 +55,37 @@ export const menuDashboardChilds = (t: TFunction) => {
     // {
     //   link: '/dashboard/monev/big-data',
     //   title: t('menu.dashboard.item.in_transit'),
-    //   className: 'ui-text-left',
+    //   className: 'ui:text-left',
     //   isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     // },
     // {
     //   link: '/dashboard/asset-ownership',
     //   title: t('menu.dashboard.item.asset_ownership'),
-    //   className: 'ui-text-left',
+    //   className: 'ui:text-left',
     //   isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     // },
     {
       link: '/v5/dashboard/download',
       title: t('menu.dashboard.item.download'),
-      className: 'ui-text-left',
+      className: 'ui:text-left',
       isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     },
     // {
     //   link: '/dashboard/cold-storage-capacity',
     //   title: t('menu.dashboard.item.storage_capacity'),
-    //   className: 'ui-text-left',
+    //   className: 'ui:text-left',
     //   isExist: isDevelopment({ isAlsoStaging: true }),
     // },
     {
       link: '/v5/dashboard/transaction-monitoring',
       title: t('menu.dashboard.item.monitoring'),
-      className: 'ui-text-left',
+      className: 'ui:text-left',
       isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     },
     // {
     //   link: '/dashboard/planning',
     //   title: t('menu.dashboard.item.planning'),
-    //   className: 'ui-text-left',
+    //   className: 'ui:text-left',
     //   isExist:
     //     user?.role !== USER_ROLE.DISTRIBUTOR_COVID &&
     //     isDevelopment({ isAlsoStaging: false }),
@@ -93,19 +93,19 @@ export const menuDashboardChilds = (t: TFunction) => {
     {
       link: '/v5/dashboard/stock',
       title: t('menu.dashboard.item.stock'),
-      className: 'ui-text-left',
+      className: 'ui:text-left',
       isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     },
     {
       link: '/v5/dashboard/stock-taking',
       title: t('menu.dashboard.item.stock_taking'),
-      className: 'ui-text-left',
+      className: 'ui:text-left',
       isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     },
     // {
     //   link: '/smile-vs-smdv',
     //   title: 'SMILE VS SMDV',
-    //   className: 'ui-text-left',
+    //   className: 'ui:text-left',
     //   isExist:
     //     user?.role &&
     //     [
@@ -117,7 +117,7 @@ export const menuDashboardChilds = (t: TFunction) => {
     // {
     //   link: '/dashboard/compliance-transaction-input',
     //   title: t('menu.dashboard.item.compliance_transaction_input'),
-    //   className: 'ui-text-left',
+    //   className: 'ui:text-left',
     //   isExist:
     //     user?.role &&
     //     [
@@ -134,22 +134,22 @@ export const menuInventarisChilds = (t: TFunction) => [
   {
     link: '/v5/transaction',
     title: t('menu.inventory.item.transaction'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
   },
   {
     link: '/v5/stock',
     title: t('menu.inventory.item.stock.view'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
   },
   {
     link: '/v5/reconciliation',
     title: t('menu.inventory.item.reconciliation'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
   },
   {
     link: '/v5/stock-opname',
     title: t('menu.inventory.item.stock.opname'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
   },
 ]
 
@@ -157,7 +157,7 @@ export const menuExterminationChilds = (t: TFunction) => [
   {
     link: '/v5/stock-pemusnahan',
     title: t('menu.disposal.item.view'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
   },
   {
     link: '/v5/disposal-shipment',
@@ -167,7 +167,7 @@ export const menuExterminationChilds = (t: TFunction) => [
   {
     link: '/v5/self-disposal',
     title: t('menu.disposal.item.self'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
   },
 ]
 
@@ -448,23 +448,23 @@ export const menuAssetChilds = (t: TFunction) => [
   {
     link: '/v5/asset',
     title: t('menu.asset.item.temperature'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
   },
   {
     link: '/v5/asset-inventory',
     title: t('menu.asset.item.inventory'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
   },
   {
     link: '/dashboard/cold-storage-capacity/v2',
     title: t('menu.asset.item.storage_capacity_dashboard'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
     isExist: isDevelopment({ isAlsoStaging: true }),
   },
   {
     link: '/capacity-annual-planning',
     title: t('menu.asset.item.capacity_annual_planning'),
-    className: 'ui-text-left',
+    className: 'ui:text-left',
     isExist: isDevelopment({ isAlsoStaging: true }),
   },
 ]

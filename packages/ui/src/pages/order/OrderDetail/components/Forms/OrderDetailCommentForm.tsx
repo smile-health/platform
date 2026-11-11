@@ -73,16 +73,16 @@ export const OrderDetailCommentForm = () => {
   }, [i18n.language, formState.isSubmitted])
 
   return (
-    <form className="ui-flex ui-gap-2">
+    <form className="ui:flex ui:gap-2">
       <Controller
         name="comment"
         control={control}
         render={({ field, fieldState: { error } }) => (
-          <FormControl className="ui-space-y-0 ui-w-full">
+          <FormControl className="ui:space-y-0 ui:w-full">
             <TextArea
               {...field}
               placeholder={`${t('form.comment.placeholder')}...`}
-              className="ui-min-h-[80px] ui-text-sm"
+              className="ui:min-h-[80px] ui:text-sm"
               disabled={isLoading}
               error={Boolean(error?.message)}
             />
@@ -96,7 +96,7 @@ export const OrderDetailCommentForm = () => {
         type="submit"
         variant="outline"
         size="sm"
-        className="ui-min-w-[150px]"
+        className="ui:min-w-[150px]"
         disabled={isLoading || !comment}
         onClick={handleSubmit(handleSubmitComment)}
       >

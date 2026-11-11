@@ -110,8 +110,8 @@ const ProgramPlanRatioListPage: React.FC<CommonType> = ({
 
       <Meta title={`SMILE | ${t('programPlan:status.material_ratio')}`} />
 
-      <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-        <h5 className="ui-font-bold ui-text-xl">
+      <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+        <h5 className="ui:font-bold ui:text-xl">
           {t('programPlan:status.material_ratio')}
         </h5>
         <AddRatioButton
@@ -121,17 +121,17 @@ const ProgramPlanRatioListPage: React.FC<CommonType> = ({
         />
       </div>
 
-      <div className="ui-space-y-4 ui-mt-6">
+      <div className="ui:space-y-4 ui:mt-6">
         <FilterFormRoot collapsible={false} onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid-cols-1">
-            <div className="ui-flex ui-items-end ui-gap-10">
-              <div className="ui-flex-1">{filter.renderField()}</div>
-              <div className="ui-flex ui-gap-2">
+          <FilterFormBody className="ui:grid-cols-1">
+            <div className="ui:flex ui:items-end ui:gap-10">
+              <div className="ui:flex-1">{filter.renderField()}</div>
+              <div className="ui:flex ui:gap-2">
                 <ImportRatioButton onClick={() => setShowImport(true)} />
                 <Button
                   variant="subtle"
                   type="button"
-                  leftIcon={<Export className="ui-size-5" />}
+                  leftIcon={<Export className="ui:size-5" />}
                   onClick={() => handleExport(filter.query)}
                 >
                   {t('common:export')}
@@ -139,10 +139,10 @@ const ProgramPlanRatioListPage: React.FC<CommonType> = ({
                 <DownloadTemplateRatioButton
                   onClick={() => downloadTemplate()}
                 />
-                <div className="ui-w-px ui-h-auto ui-bg-neutral-300" />
+                <div className="ui:w-px ui:h-auto ui:bg-neutral-300" />
                 <FilterResetButton onClick={filter.reset} variant="subtle" />
                 <FilterSubmitButton
-                  className="ui-w-[202px]"
+                  className="ui:w-[202px]"
                   variant="outline"
                   onClick={() => setPagination({ page: 1 })}
                 />
@@ -153,7 +153,7 @@ const ProgramPlanRatioListPage: React.FC<CommonType> = ({
         </FilterFormRoot>
       </div>
 
-      <div className="ui-space-y-6 ui-my-5 ui-rounded">
+      <div className="ui:space-y-6 ui:my-5 ui:rounded">
         <ProgramPlanRatioListTable
           data={rows}
           pagination={ratioPagination}

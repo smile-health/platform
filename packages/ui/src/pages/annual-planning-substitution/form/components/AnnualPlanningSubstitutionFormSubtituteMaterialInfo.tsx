@@ -17,11 +17,11 @@ const AnnualPlanningSubstitutionFormSubtituteMaterialInfo = ({
   const { watch } = useFormContext<AnnualPlanningSubstitutionFormData>()
 
   return (
-    <div className="ui-flex ui-justify-between ui-items-center">
-      <h5 className="ui-text-dark-teal ui-font-bold">
+    <div className="ui:flex ui:justify-between ui:items-center">
+      <h5 className="ui:text-dark-teal ui:font-bold">
         {t('annualPlanningSubstitution:substitute_material')}
       </h5>
-      <div className="ui-flex ui-justify-end ui-items-end">
+      <div className="ui:flex ui:justify-end ui:items-end">
         <Button
           type="button"
           variant="subtle"

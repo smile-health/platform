@@ -15,7 +15,7 @@ export default function ColdStorageCapacityExportButton() {
   return (
     <Button
       variant="subtle"
-      leftIcon={<Download className="ui-size-5" />}
+      leftIcon={<Download className="ui:size-5" />}
       onClick={handleExport}
       loading={exportData.isFetching}
     >

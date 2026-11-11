@@ -45,14 +45,14 @@ const CellGroup: React.FC<CellGroupProps> = (props) => {
 
   return (
     <Fragment>
-      <Td className="ui-content-start ui-text-center">{props.percentage}%</Td>
-      <Td className="ui-content-start ui-text-center">{numberFormatter(props.qty, language)}</Td>
+      <Td className="ui:content-start ui:text-center">{props.percentage}%</Td>
+      <Td className="ui:content-start ui:text-center">{numberFormatter(props.qty, language)}</Td>
       <Td
-        className={cx("ui-content-start ui-text-center", {
-          'ui-bg-[#FEF2F2]': shouldShowRevision
+        className={cx("ui:content-start ui:text-center", {
+          'ui:bg-danger-50': shouldShowRevision
         })}
       >
-        <span className={cx({ "ui-flex ui-flex-col ui-gap-1 ui-items-center": shouldShowStatus || shouldShowRevision })}>
+        <span className={cx({ "ui:flex ui:flex-col ui:gap-1 ui:items-center": shouldShowStatus || shouldShowRevision })}>
           {numberFormatter(props.changeQty, language)}
           {shouldShowRevision && (
             <span>
@@ -65,12 +65,12 @@ const CellGroup: React.FC<CellGroupProps> = (props) => {
               size="sm"
               onCheckedChange={props.onCheckedChange}
               labelInside={{
-                on: <CheckV2 className="ui-text-white ui-h-4 ui-w-4" />,
-                off: <XMarkIcon className="ui-text-white ui-h-4 ui-w-4" />,
+                on: <CheckV2 className="ui:text-white ui:h-4 ui:w-4" />,
+                off: <XMarkIcon className="ui:text-white ui:h-4 ui:w-4" />,
               }}
               colorInside={{
-                off: "data-[state=unchecked]:ui-bg-red-600",
-                on: "data-[state=checked]:ui-bg-green-700"
+                off: "ui:data-[state=unchecked]:bg-red-600",
+                on: "ui:data-[state=checked]:bg-green-700"
               }}
             />
           )}
@@ -135,14 +135,14 @@ const TablePopulationCorrection: React.FC = () => {
       verticalAlignment="center"
       withColumnBorders
     >
-      <Thead className="ui-bg-slate-100">
+      <Thead className="ui:bg-slate-100">
         <Tr>
           <Th
             id="header-no"
             columnKey="header-no"
             key="header-no"
             rowSpan={2}
-            className="ui-w-[50px]"
+            className="ui:w-[50px]"
           >
             No
           </Th>
@@ -151,7 +151,7 @@ const TablePopulationCorrection: React.FC = () => {
             columnKey="header-name"
             key="header-name"
             rowSpan={2}
-            className="ui-min-w-48"
+            className="ui:min-w-48"
           >
             {t('annualPlanningProcess:create.form.calculation_result.column.health_care_name')}
           </Th>
@@ -161,7 +161,7 @@ const TablePopulationCorrection: React.FC = () => {
               columnKey={x.key}
               key={x.key}
               colSpan={3}
-              className="ui-max-w-64 ui-font-semibold ui-text-center"
+              className="ui:max-w-64 ui:font-semibold ui:text-center"
             >
               {x.header}
             </Th>
@@ -171,7 +171,7 @@ const TablePopulationCorrection: React.FC = () => {
             columnKey="header-updated-by"
             key="header-updated-by"
             rowSpan={2}
-            className="ui-max-w-32"
+            className="ui:max-w-32"
           >
             {t('annualPlanningProcess:create.form.calculation_result.column.updated_by')}
           </Th>
@@ -184,7 +184,7 @@ const TablePopulationCorrection: React.FC = () => {
                   id={inputColumn.key}
                   columnKey={inputColumn.key}
                   key={inputColumn.key}
-                  className={cx("ui-w-10 ui-font-semibold ui-border-r", targetGroup.className)}
+                  className={cx("ui:w-10 ui:font-semibold ui:border-r", targetGroup.className)}
                 >
                   {inputColumn.header}
                 </Th>
@@ -193,10 +193,10 @@ const TablePopulationCorrection: React.FC = () => {
           ))}
         </Tr>
       </Thead>
-      <Tbody className="ui-bg-white ui-max-h-[620px]">
-        <Tr className="ui-text-sm ui-font-normal ui-bg-blue-50">
-          <Td className="ui-content-start">1</Td>
-          <Td className="ui-content-start">{central_population?.entity?.name ?? '-'}</Td>
+      <Tbody className="ui:bg-white ui:max-h-[620px]">
+        <Tr className="ui:text-sm ui:font-normal ui:bg-blue-50">
+          <Td className="ui:content-start">1</Td>
+          <Td className="ui:content-start">{central_population?.entity?.name ?? '-'}</Td>
 
           {columns.map((targetGroup) => (
             <CellGroup
@@ -207,7 +207,7 @@ const TablePopulationCorrection: React.FC = () => {
             />
           ))}
 
-          <Td className="ui-content-start ui-flex ui-flex-col ui-gap">
+          <Td className="ui:content-start ui:flex ui:flex-col ui-gap">
             <span>{central_population.user_created_by?.username}</span>
             <span>
               {parseDateTime(central_population?.updated_at || '', 'DD/MM/YYYY HH:mm', language).toUpperCase()}
@@ -217,10 +217,10 @@ const TablePopulationCorrection: React.FC = () => {
         {data.map((healthCare, i) => (
           <Tr
             key={healthCare.id}
-            className="ui-text-sm ui-font-normal"
+            className="ui:text-sm ui:font-normal"
           >
-            <Td className="ui-content-start">{i + 2}</Td>
-            <Td className="ui-content-start">{healthCare.name}</Td>
+            <Td className="ui:content-start">{i + 2}</Td>
+            <Td className="ui:content-start">{healthCare.name}</Td>
 
             {columns.map((targetGroup, idx) => {
               const value = healthCare.data?.find(hcTargetGroup => hcTargetGroup.key === targetGroup.key)
@@ -245,7 +245,7 @@ const TablePopulationCorrection: React.FC = () => {
               )
             })}
 
-            <Td className="ui-content-start ui-flex ui-flex-col ui-gap">
+            <Td className="ui:content-start ui:flex ui:flex-col ui-gap">
               <span>{healthCare.user_updated_by?.name || '-'}</span>
               <span>{parseDateTime(healthCare.updated_at || '', 'DD/MM/YYYY HH:mm', language).toUpperCase()}</span>
             </Td>

@@ -67,7 +67,7 @@ export default function EntityTable({
   }, [selectedData, mutateUpdateStatus]);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={entityDataSource?.data?.data}
         columns={columnsEntity(t, {
@@ -78,7 +78,7 @@ export default function EntityTable({
         isLoading={isLoading}
         sorting={sorting}
         setSorting={setSorting}
-        className="ui-overflow-x-auto"
+        className="ui:overflow-x-auto"
       />
       <ModalConfirmation
         open={showUpdateStatusModal}

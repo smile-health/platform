@@ -77,7 +77,7 @@ export const createFilterManualScaleGroupSchema = ({
       id: 'select-healthcare-facility-name',
       type: 'select-async-paginate',
       name: 'entityId',
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       isMulti: false,
       label: t('manualScale:list.filter.healthcare_facility_name.label'),
       placeholder: t(
@@ -97,7 +97,7 @@ export const createFilterManualScaleGroupSchema = ({
       id: 'select-status',
       type: 'select',
       name: 'status',
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       isMulti: false,
       label: t('manualScale:list.filter.status.label'),
       placeholder: t('manualScale:list.filter.status.placeholder'),

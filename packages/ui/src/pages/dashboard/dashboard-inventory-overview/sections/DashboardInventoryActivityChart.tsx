@@ -115,7 +115,7 @@ export default function DashboardInventoryActivityChart({
     <DashboardBox.Root id="activity-entities">
       <DashboardBox.Header
         bordered
-        className="ui-flex ui-items-center ui-justify-center ui-space-y-0"
+        className="ui:flex ui:items-center ui:justify-center ui:space-y-0"
       >
         <H5>{title}</H5>
         <DashboardBox.InfoModal title={title}>
@@ -130,12 +130,12 @@ export default function DashboardInventoryActivityChart({
           isLoading={isLoading}
           isEmpty={!data?.length || data?.every((item) => !item?.percent)}
         >
-          <div className="ui-flex ui-flex-col ui-items-center">
+          <div className="ui:flex ui:flex-col ui:items-center">
             <div ref={chartRef} style={{ height: 60, width: '100%' }} />
-            <span className="ui-text-sm ui-text-neutral-500 ui-mt-1 ui-mb-4">
+            <span className="ui:text-sm ui:text-neutral-500 ui:mt-1 ui:mb-4">
               {axisName}
             </span>
-            <p className="ui-text-sm ui-text-center">
+            <p className="ui:text-sm ui:text-center">
               {t('last_updated')} {parseDateTime(lastUpdated)}
             </p>
           </div>

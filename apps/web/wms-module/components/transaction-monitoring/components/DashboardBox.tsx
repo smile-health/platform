@@ -49,7 +49,7 @@ export function DashboardBoxProvider({
 
   return (
     <DashboardBoxContext.Provider value={contextValue}>
-      <div className="ui-space-y-6 mt-6">{children}</div>
+      <div className="ui:space-y-6 mt-6">{children}</div>
     </DashboardBoxContext.Provider>
   );
 }
@@ -59,7 +59,7 @@ export function DashboardBoxRoot({
   children,
 }: PropsWithChildren<{ id: string }>) {
   return (
-    <div id={id} className="ui-border ui-border-neutral-300 ui-rounded">
+    <div id={id} className="ui:border ui:border-neutral-300 ui:rounded">
       {children}
     </div>
   );
@@ -75,7 +75,7 @@ export function DashboardBoxHeader({
   return (
     <div
       className={cx(
-        'ui-p-5 ui-rounded-t-[inherit] ui-border-b ui-border-neutral-200 ui-text-center ui-text-lg ui-bg-slate-100 ui-space-y-2',
+        'ui:p-5 ui:rounded-t-[inherit] ui:border-b ui:border-neutral-200 ui:text-center ui:text-lg ui:bg-slate-100 ui:space-y-2',
         colorClass
       )}
     >
@@ -89,7 +89,7 @@ export function DashboardBoxBody({
 }: {
   readonly children: ReactNode;
 }) {
-  return <div className="ui-relative ui-p-4 ui-space-y-4">{children}</div>;
+  return <div className="ui:relative ui:p-4 ui:space-y-4">{children}</div>;
 }
 
 type DashboardBoxConfigProps = Readonly<{
@@ -122,8 +122,8 @@ export function DashboardBoxConfig({
     download?.extensions ?? DEFAULT_DOWNLOAD_EXTENSIONS;
 
   return (
-    <div className="ui-relative ui-flex ui-justify-center ui-items-center ui-min-h-10">
-      <div className="ui-relative ui-space-y-1 ui-text-center">
+    <div className="ui:relative ui:flex ui:justify-center ui:items-center ui:min-h-10">
+      <div className="ui:relative ui:space-y-1 ui:text-center">
         {isAllRegion ? (
           <h6>{t('all_regions')}</h6>
         ) : (
@@ -139,7 +139,7 @@ export function DashboardBoxConfig({
           </>
         )}
       </div>
-      <div className="ui-absolute ui-right-0 ui-flex ui-justify-end ui-items-center ui-gap-4">
+      <div className="ui:absolute ui:right-0 ui:flex ui:justify-end ui:items-center ui:gap-4">
         {sort?.show && (
           <ReactSelect
             data-testid="sort"
@@ -162,7 +162,7 @@ export function DashboardBoxConfig({
         <DropdownMenuRoot>
           <DropdownMenuTrigger>
             <ButtonIcon size="lg" variant="default">
-              <Download className="ui-size-5" />
+              <Download className="ui:size-5" />
             </ButtonIcon>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -210,16 +210,16 @@ export function DashboardBoxContent({
   return (
     <div
       className={cx(
-        'ui-min-h-40 ui-w-full ui-overflow-x-hidden',
+        'ui:min-h-40 ui:w-full ui:overflow-x-hidden',
         {
-          'ui-grid ui-place-items-center': isLoading || isEmpty,
-          'ui-text-primary-500 ui-max-h-40': isLoading,
+          'ui:grid ui:place-items-center': isLoading || isEmpty,
+          'ui:text-primary-500 ui:max-h-40': isLoading,
         },
         className
       )}
     >
       {isLoading && <GlobalSpinner />}
-      {isEmpty && <p className="ui-text-gray-500 ui-text-sm">{t('empty')}</p>}
+      {isEmpty && <p className="ui:text-gray-500 ui:text-sm">{t('empty')}</p>}
       {!isLoading && !isEmpty && children}
     </div>
   );

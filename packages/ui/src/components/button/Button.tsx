@@ -46,76 +46,76 @@ function variantStyles({
 }): object | string {  
   if (variant === 'solid') {
     return {
-      'focus:ui-ring ui-text-primary-contrast focus:ui-ring-opacity-40': true,
-      'ui-bg-primary-500 [&:not(disabled)]:hover:ui-bg-primary-600 enabled:active:ui-bg-primary-700 focus:ui-ring-primary-400':
+      'ui:focus:ring-3 ui:text-primary-contrast': true,
+      'ui:bg-primary-500 ui:[&:not(disabled)]:hover:bg-primary-600 ui:enabled:active:bg-primary-700 ui:focus:ring-primary-400/40':
         color === 'primary',
-      'ui-bg-secondary-500 [&:not(disabled)]:hover:ui-bg-secondary-600 enabled:active:ui-bg-secondary-700 focus:ui-ring-secondary-400':
+      'ui:bg-secondary-500 ui:[&:not(disabled)]:hover:bg-secondary-600 ui:enabled:active:bg-secondary-700 ui:focus:ring-secondary-400/40':
         color === 'secondary',
-      'ui-bg-success-500 [&:not(disabled)]:hover:ui-bg-success-600 enabled:active:ui-bg-success-700 focus:ui-ring-success-400':
+      'ui:bg-success-500 ui:[&:not(disabled)]:hover:bg-success-600 ui:enabled:active:bg-success-700 ui:focus:ring-success-400/40':
         color === 'success',
-      'ui-bg-warning-500 [&:not(disabled)]:hover:ui-bg-warning-600 enabled:active:ui-bg-warning-700 focus:ui-ring-warning-400':
+      'ui:bg-warning-500 ui:[&:not(disabled)]:hover:bg-warning-600 ui:enabled:active:bg-warning-700 ui:focus:ring-warning-400/40':
         color === 'warning',
-      'ui-bg-info-500 [&:not(disabled)]:hover:ui-bg-info-600 enabled:active:ui-bg-info-700 focus:ui-ring-info-400':
+      'ui:bg-info-500 ui:[&:not(disabled)]:hover:bg-info-600 ui:enabled:active:bg-info-700 ui:focus:ring-info-400/40':
         color === 'info',
-      'ui-bg-danger-500 [&:not(disabled)]:hover:ui-bg-danger-600 enabled:active:ui-bg-danger-700 focus:ui-ring-danger-400':
+      'ui:bg-danger-500 ui:[&:not(disabled)]:hover:bg-danger-600 ui:enabled:active:bg-danger-700 ui:focus:ring-danger-400/40':
         color === 'danger',
     }
   }
 
   if (variant === 'light') {
     return {
-      'focus:ui-ring-2 focus:ui-ring-offset-2 focus:ui-ring-opacity-50': true,
-      'ui-bg-primary-50 [&:not(disabled)]:hover:ui-bg-primary-100 enabled:active:ui-bg-primary-200 focus:ui-ring-primary-300 ui-text-primary-surface':
+      'ui:focus:ring-2 ui:focus:ring-offset-2': true,
+      'ui:bg-primary-50 ui:[&:not(disabled)]:hover:bg-primary-100 ui:enabled:active:bg-primary-200 ui:focus:ring-primary-300/50 ui:text-primary-surface':
         color === 'primary',
-      'ui-bg-secondary-50 [&:not(disabled)]:hover:ui-bg-secondary-100 enabled:active:ui-bg-secondary-200 focus:ui-ring-secondary-300 ui-text-primary-surface':
+      'ui:bg-secondary-50 ui:[&:not(disabled)]:hover:bg-secondary-100 ui:enabled:active:bg-secondary-200 ui:focus:ring-secondary-300/50 ui:text-primary-surface':
         color === 'secondary',
-      'ui-bg-success-50 [&:not(disabled)]:hover:ui-bg-success-100 enabled:active:ui-bg-success-200 focus:ui-ring-success-300 ui-text-success-600':
+      'ui:bg-success-50 ui:[&:not(disabled)]:hover:bg-success-100 ui:enabled:active:bg-success-200 ui:focus:ring-success-300/50 ui:text-success-600':
         color === 'success',
-      'ui-bg-warning-50 [&:not(disabled)]:hover:ui-bg-warning-100 enabled:active:ui-bg-warning-200 focus:ui-ring-warning-300 ui-text-warning-600':
+      'ui:bg-warning-50 ui:[&:not(disabled)]:hover:bg-warning-100 ui:enabled:active:bg-warning-200 ui:focus:ring-warning-300/50 ui:text-warning-600':
         color === 'warning',
-      'ui-bg-info-50 [&:not(disabled)]:hover:ui-bg-info-100 enabled:active:ui-bg-info-200 focus:ui-ring-info-300 ui-text-info-600':
+      'ui:bg-info-50 ui:[&:not(disabled)]:hover:bg-info-100 ui:enabled:active:bg-info-200 ui:focus:ring-info-300/50 ui:text-info-600':
         color === 'info',
-      'ui-bg-danger-50 [&:not(disabled)]:hover:ui-bg-danger-100 enabled:active:ui-bg-danger-200 focus:ui-ring-danger-300 ui-text-danger-600':
+      'ui:bg-danger-50 ui:[&:not(disabled)]:hover:bg-danger-100 ui:enabled:active:bg-danger-200 ui:focus:ring-danger-300/50 ui:text-danger-600':
         color === 'danger',
     }
   }
 
   if (variant === 'default') {
-    return '[&:not(disabled)]:hover:ui-bg-gray-50 enabled:active:ui-bg-gray-100 ui-bg-white focus:ui-ring-2 focus:ui-border-primary-300 focus:ui-ring-primary-500 focus:ui-ring-opacity-25 ui-text-gray-700 ui-border ui-border-gray-300 ui-shadow-xs'
+    return 'ui:[&:not(disabled)]:hover:bg-gray-50 ui:enabled:active:bg-gray-100 ui:bg-white ui:focus:ring-2 ui:focus:border-primary-300 ui:focus:ring-primary-500/25 ui:text-gray-700 ui:border ui:border-gray-300 ui:shadow-xs'
   }
 
   if (variant === 'outline') {
     return {
-      'focus:ui-ring focus:ui-ring-opacity-40 ui-bg-white': true,
-      '[&:not(disabled)]:hover:ui-bg-primary-50 enabled:active:ui-bg-primary-100 focus:ui-ring-primary-200 ui-text-primary-surface ui-border ui-border-primary-500':
+      'ui:focus:ring-3 ui:bg-white': true,
+      'ui:[&:not(disabled)]:hover:bg-primary-50 ui:enabled:active:bg-primary-100 ui:focus:ring-primary-200/40 ui:text-primary-surface ui:border ui:border-primary-500':
         color === 'primary',
-      '[&:not(disabled)]:hover:ui-bg-secondary-50 enabled:active:ui-bg-secondary-100 focus:ui-ring-secondary-200 ui-text-primary-surface ui-border ui-border-secondary-600':
+      'ui:[&:not(disabled)]:hover:bg-secondary-50 ui:enabled:active:bg-secondary-100 ui:focus:ring-secondary-200/40 ui:text-primary-surface ui:border ui:border-secondary-600':
         color === 'secondary',
-      '[&:not(disabled)]:hover:ui-bg-success-50 enabled:active:ui-bg-success-100 focus:ui-ring-success-200 ui-text-success-600 ui-border ui-border-success-600':
+      'ui:[&:not(disabled)]:hover:bg-success-50 ui:enabled:active:bg-success-100 ui:focus:ring-success-200/40 ui:text-success-600 ui:border ui:border-success-600':
         color === 'success',
-      '[&:not(disabled)]:hover:ui-bg-warning-50 enabled:active:ui-bg-warning-100 focus:ui-ring-warning-200 ui-text-warning-600 ui-border ui-border-warning-600':
+      'ui:[&:not(disabled)]:hover:bg-warning-50 ui:enabled:active:bg-warning-100 ui:focus:ring-warning-200/40 ui:text-warning-600 ui:border ui:border-warning-600':
         color === 'warning',
-      '[&:not(disabled)]:hover:ui-bg-info-50 enabled:active:ui-bg-info-100 focus:ui-ring-info-200 ui-text-info-600 ui-border ui-border-info-600':
+      'ui:[&:not(disabled)]:hover:bg-info-50 ui:enabled:active:bg-info-100 ui:focus:ring-info-200/40 ui:text-info-600 ui:border ui:border-info-600':
         color === 'info',
-      '[&:not(disabled)]:hover:ui-bg-danger-50 enabled:active:ui-bg-danger-100 focus:ui-ring-danger-200 ui-text-danger-600 ui-border ui-border-danger-600':
+      'ui:[&:not(disabled)]:hover:bg-danger-50 ui:enabled:active:bg-danger-100 ui:focus:ring-danger-200/40 ui:text-danger-600 ui:border ui:border-danger-600':
         color === 'danger',
     }
   }
 
   if (variant === 'subtle') {
     return {
-      'focus:ui-ring-2 focus:ui-ring-offset-2 focus:ui-ring-opacity-40': true,
-      '[&:not(disabled)]:hover:ui-bg-primary-50 enabled:active:ui-bg-primary-100 focus:ui-ring-primary-300 ui-text-primary-surface':
+      'ui:focus:ring-2 ui:focus:ring-offset-2': true,
+      'ui:[&:not(disabled)]:hover:bg-primary-50 ui:enabled:active:bg-primary-100 ui:focus:ring-primary-300/40 ui:text-primary-surface':
         color === 'primary',
-      '[&:not(disabled)]:hover:ui-bg-secondary-50 enabled:active:ui-bg-secondary-100 focus:ui-ring-secondary-300 ui-text-primary-surface':
+      'ui:[&:not(disabled)]:hover:bg-secondary-50 ui:enabled:active:bg-secondary-100 ui:focus:ring-secondary-300/40 ui:text-primary-surface':
         color === 'secondary',
-      '[&:not(disabled)]:hover:ui-bg-success-50 enabled:active:ui-bg-success-100 focus:ui-ring-success-300 ui-text-success-600':
+      'ui:[&:not(disabled)]:hover:bg-success-50 ui:enabled:active:bg-success-100 ui:focus:ring-success-300/40 ui:text-success-600':
         color === 'success',
-      '[&:not(disabled)]:hover:ui-bg-warning-50 enabled:active:ui-bg-warning-100 focus:ui-ring-warning-300 ui-text-warning-600':
+      'ui:[&:not(disabled)]:hover:bg-warning-50 ui:enabled:active:bg-warning-100 ui:focus:ring-warning-300/40 ui:text-warning-600':
         color === 'warning',
-      '[&:not(disabled)]:hover:ui-bg-info-50 enabled:active:ui-bg-info-100 focus:ui-ring-info-300 ui-text-info-600':
+      'ui:[&:not(disabled)]:hover:bg-info-50 ui:enabled:active:bg-info-100 ui:focus:ring-info-300/40 ui:text-info-600':
         color === 'info',
-      '[&:not(disabled)]:hover:ui-bg-danger-50 enabled:active:ui-bg-danger-100 focus:ui-ring-danger-300 ui-text-danger-600':
+      'ui:[&:not(disabled)]:hover:bg-danger-50 ui:enabled:active:bg-danger-100 ui:focus:ring-danger-300/40 ui:text-danger-600':
         color === 'danger',
     }
   }
@@ -145,30 +145,30 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const buttonStyle = cx(
       // base style
-      'ui-inline-flex ui-items-center ui-justify-center ui-rounded ui-px-3 ui-font-medium focus:ui-outline-none',
+      'ui:inline-flex ui:items-center ui:justify-center ui:rounded ui:px-3 ui:font-medium ui:focus:outline-hidden',
       {
-        'ui-cursor-not-allowed ui-opacity-50': disabled,
-        'ui-cursor-not-allowed': loading,
-        'ui-w-full': fullWidth,
+        'ui:cursor-not-allowed ui:opacity-50': disabled,
+        'ui:cursor-not-allowed': loading,
+        'ui:w-full': fullWidth,
       },
       variantStyles({ variant, color }),
       // size style
       {
-        'ui-h-9 ui-text-sm': size === 'sm',
-        'ui-h-10 ui-text-sm': size === 'md',
-        'ui-h-12 ui-text-lg': size === 'lg',
-        'ui-h-14 ui-text-xl': size === 'xl',
+        'ui:h-9 ui:text-sm': size === 'sm',
+        'ui:h-10 ui:text-sm': size === 'md',
+        'ui:h-12 ui:text-lg': size === 'lg',
+        'ui:h-14 ui:text-xl': size === 'xl',
       },
 
       //button group
-      'group-[.is-group]:focus:ui-z-10',
-      'group-[.is-group]:first:!ui-rounded-r-none',
-      'group-[.is-group]:[&:not(:first-child):not(:last-child)]:!ui-rounded-none',
-      'group-[.is-group]:last:!ui-rounded-l-none',
+      'ui:focus:group-[.is-group]:z-10',
+      'ui:first:group-[.is-group]:rounded-r-none!',
+      'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:rounded-none!',
+      'ui:last:group-[.is-group]:rounded-l-none!',
 
-      'group-[.is-group]:[&:not(:first-child):not(:last-child)]:!-ui-mr-[1px]',
-      'group-[.is-group]:last:!-ui-ml-[1px]',
-      'group-[.is-group]:first:!-ui-mr-[1px]',
+      'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:-mr-px!',
+      'ui:last:group-[.is-group]:-ml-px!',
+      'ui:first:group-[.is-group]:-mr-px!',
       className
     )
 
@@ -181,19 +181,19 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? (
           <Spinner
-            className={cx('ui-mr-2', {
-              'ui-h-4 ui-w-4': size === 'sm',
-              'ui-h-5 ui-w-5': size === 'md',
-              'ui-h-6 ui-w-6': size === 'lg',
-              'ui-h-7 ui-w-7': size === 'xl',
+            className={cx('ui:mr-2', {
+              'ui:h-4 ui:w-4': size === 'sm',
+              'ui:h-5 ui:w-5': size === 'md',
+              'ui:h-6 ui:w-6': size === 'lg',
+              'ui:h-7 ui:w-7': size === 'xl',
             })}
           ></Spinner>
         ) : null}
         {leftIcon && !loading ? (
-          <div className="ui-mr-2">{leftIcon}</div>
+          <div className="ui:mr-2">{leftIcon}</div>
         ) : null}
         {children ? <Slottable>{children}</Slottable> : null}
-        {rightIcon ? <div className="ui-ml-2">{rightIcon}</div> : null}
+        {rightIcon ? <div className="ui:ml-2">{rightIcon}</div> : null}
       </Component>
     )
   }
@@ -207,7 +207,7 @@ export function ButtonGroup({
   className?: string
 }>) {
   return (
-    <div className={`is-group ui-relative ui-flex group ${className}`}>
+    <div className={`is-group ui:relative ui:flex group ${className}`}>
       {children}
     </div>
   )

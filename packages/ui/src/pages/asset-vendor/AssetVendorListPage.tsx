@@ -55,7 +55,7 @@ const AssetVendorListPage: React.FC<CommonType> = ({ isGlobal }) => {
 
   const buttonList = useMemo(() => {
     return (
-      <div className="ui-flex ui-gap-5 ui-ml-auto">
+      <div className="ui:flex ui:gap-5 ui:ml-auto">
         {isGlobal && (
           <Button
             id="btn-import"
@@ -63,7 +63,7 @@ const AssetVendorListPage: React.FC<CommonType> = ({ isGlobal }) => {
             type="button"
             onClick={() => showModal('import')}
             loading={importMutation.isPending}
-            leftIcon={<Import className="ui-size-5" />}
+            leftIcon={<Import className="ui:size-5" />}
           >
             {t('common:import')}
           </Button>
@@ -74,7 +74,7 @@ const AssetVendorListPage: React.FC<CommonType> = ({ isGlobal }) => {
           type="button"
           onClick={() => exportQuery.refetch()}
           loading={exportQuery.isFetching || exportQuery.isLoading}
-          leftIcon={<Export className="ui-size-5" />}
+          leftIcon={<Export className="ui:size-5" />}
         >
           {t('common:export')}
         </Button>
@@ -85,19 +85,19 @@ const AssetVendorListPage: React.FC<CommonType> = ({ isGlobal }) => {
             type="button"
             onClick={() => downloadQuery.refetch()}
             loading={downloadQuery.isFetching || downloadQuery.isLoading}
-            leftIcon={<Download className="ui-size-5" />}
+            leftIcon={<Download className="ui:size-5" />}
           >
             {t('common:download_template')}
           </Button>
         )}
-        <span className="ui-w-px ui-bg-neutral-300" />
-        <div className="ui-flex ui-gap-2">
+        <span className="ui:w-px ui:bg-neutral-300" />
+        <div className="ui:flex ui:gap-2">
           <FilterResetButton onClick={filter.reset} variant="subtle" />
         </div>
         <FilterSubmitButton
           onClick={() => setPagination({ page: 1 })}
           variant="outline"
-          className="ui-w-[220px]"
+          className="ui:w-[220px]"
         ></FilterSubmitButton>
       </div>
     )
@@ -112,7 +112,7 @@ const AssetVendorListPage: React.FC<CommonType> = ({ isGlobal }) => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('assetVendor:list.title')}`}
       />
-      <div className="ui-mt-6 ui-space-y-6">
+      <div className="ui:mt-6 ui:space-y-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
           <ModalImport
             open={modalImport?.type === 'import'}
@@ -124,8 +124,8 @@ const AssetVendorListPage: React.FC<CommonType> = ({ isGlobal }) => {
             open={modalImport?.type === 'error'}
             handleClose={hideModal}
           />
-          <FilterFormBody className="ui-flex ui-items-end">
-            <div className="ui-grow ui-grid ui-grid-cols-2 ui-gap-5">
+          <FilterFormBody className="ui:flex ui:items-end">
+            <div className="ui:grow ui:grid ui:grid-cols-2 ui:gap-5">
               {filter.renderField()}
             </div>
             {buttonList}

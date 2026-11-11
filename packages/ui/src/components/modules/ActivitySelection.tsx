@@ -73,21 +73,21 @@ export default function ActivitySelection({
   }
 
   return (
-    <div className="ui-flex ui-flex-col space-y-5">
+    <div className="ui:flex ui:flex-col space-y-5">
       <InputSearch
         placeholder={t('material:form.activity.placeholder')}
         value={search}
         onInput={(e) => setSearch(e.currentTarget.value)}
       />
-      <p className="ui-text-[#737373] !ui-font-medium !ui-mt-2">
+      <p className="ui:text-neutral-500 ui:font-medium! ui:mt-2!">
         {t('material:form.activity.description')}
       </p>
 
       {!data ? (
-        <div className="ui-flex ui-justify-center">
-          {isLoading && <Spinner className="ui-my-8 ui-w-5" />}
+        <div className="ui:flex ui:justify-center">
+          {isLoading && <Spinner className="ui:my-8 ui:w-5" />}
           {isError && (
-            <p className="ui-text-[#737373] !ui-font-medium !ui-mt-2">
+            <p className="ui:text-neutral-500 ui:font-medium! ui:mt-2!">
               {t('material:form.activity.error.not_found')}
             </p>
           )}
@@ -109,7 +109,7 @@ export default function ActivitySelection({
             return (
               <Fragment>
                 <div
-                  className="ui-space-y-2 ui-max-h-72 ui-overflow-y-auto"
+                  className="ui:space-y-2 ui:max-h-72 ui:overflow-y-auto"
                   onScroll={handleScroll}
                 >
                   {sortedActivities?.map((item) => {
@@ -119,11 +119,11 @@ export default function ActivitySelection({
                       <button
                         type="button"
                         className={cx(
-                          'ui-flex ui-w-full ui-border ui-gap-4 ui-rounded-lg ui-p-4 ui-items-center ui-justify-between ui-cursor-pointer',
+                          'ui:flex ui:w-full ui:border ui:gap-4 ui:rounded-lg ui:p-4 ui:items-center ui:justify-between ui:cursor-pointer',
                           {
-                            'ui-bg-[#E2F3FC]': isChecked,
-                            'ui-border-neutral-300': !isChecked,
-                            'ui-border-[#004990]': isChecked,
+                            'ui:bg-[#E2F3FC]': isChecked,
+                            'ui:border-neutral-300': !isChecked,
+                            'ui:border-[#004990]': isChecked,
                           }
                         )}
                         onClick={(e) => {
@@ -138,7 +138,7 @@ export default function ActivitySelection({
                         }}
                         key={item?.id}
                       >
-                        <div className="ui-flex ui-flex-row">
+                        <div className="ui:flex ui:flex-row">
                           <Checkbox
                             id={`cbx-activity-${item?.id}`}
                             checked={isChecked}
@@ -150,7 +150,7 @@ export default function ActivitySelection({
                           />
                         </div>
                         {/* TO DO: unhide toggle after further information about is_patient */}
-                        {/* <div className="ui-flex ui-items-center ui-gap-2">
+                        {/* <div className="ui:flex ui:items-center ui:gap-2">
                         <p>{t('material:form.activity.is_sequence')}</p>
                         <Switch
                           onClick={(e) => e.stopPropagation()}
@@ -179,8 +179,8 @@ export default function ActivitySelection({
                     )
                   })}
                   {isFetchingNextPage && (
-                    <div className="ui-flex ui-justify-center">
-                      <Spinner className="ui-my-4 ui-w-5" />
+                    <div className="ui:flex ui:justify-center">
+                      <Spinner className="ui:my-4 ui:w-5" />
                     </div>
                   )}
                 </div>

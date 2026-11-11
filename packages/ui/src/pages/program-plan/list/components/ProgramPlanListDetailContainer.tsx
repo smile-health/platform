@@ -134,12 +134,12 @@ const ProgramPlanListDetailContainer: React.FC<TProps> = ({
         }}
       >
         {!isGlobal && (
-          <div className="ui-mt-6">
-            <div className="ui-mb-6">
+          <div className="ui:mt-6">
+            <div className="ui:mb-6">
               <ProgramPlanApproachBox />
             </div>
             <TabsLinkRoot variant="pills" align="center">
-              <TabsLinkList className="!ui-flex !ui-justify-center !ui-items-center !ui-w-full">
+              <TabsLinkList className="ui:flex! ui:justify-center! ui:items-center! ui:w-full!">
                 {tabs?.map((item) => {
                   const isActive =
                     pathname?.split('/').pop() === item?.href?.split('/').pop()
@@ -150,7 +150,7 @@ const ProgramPlanListDetailContainer: React.FC<TProps> = ({
                       data-testid={item?.id}
                       key={item?.label}
                       active={isActive}
-                      className="ui-justify-center ui-text-center !ui-w-full !ui-h-full"
+                      className="ui:justify-center ui:text-center ui:w-full! ui:h-full!"
                     >
                       {item?.label}
                     </TabsLinkTrigger>

@@ -9,13 +9,13 @@ export function ColdStorageDetailHeader() {
   const { detail } = useDashboardColdStorageCapacity()
 
   return (
-    <DashboardBox.Header className="ui-bg-gray-100 ui-pt-6 ui-border-b ui-border-gray-300 ui-w-full">
-      <div className="ui-flex ui-items-start ui-justify-between ui-w-full ui-text-left">
+    <DashboardBox.Header className="ui:bg-gray-100 ui:pt-6 ui:border-b ui:border-gray-300 ui:w-full">
+      <div className="ui:flex ui:items-start ui:justify-between ui:w-full ui:text-left">
         <div>
-          <h3 className="ui-text-base ui-font-semibold">
+          <h3 className="ui:text-base ui:font-semibold">
             {t('section.details.title')}
           </h3>
-          <p className="ui-text-base ui-text-gray-500">
+          <p className="ui:text-base ui:text-gray-500">
             {t('section.details.subtitle')}
           </p>
         </div>

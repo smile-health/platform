@@ -23,8 +23,8 @@ const AssetInventoryAssetTypeMoreForm = () => {
     formState: { errors },
   } = methods
   return (
-    <div className="ui-flex ui-flex-col ui-gap-4 ui-bg-[#F1F5F9] ui-p-2 ui-rounded-md">
-      <FormControl className="ui-w-full">
+    <div className="ui:flex ui:flex-col ui:gap-4 ui:bg-slate-100 ui:p-2 ui:rounded-md">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="other_asset_type_name" required>
           {t('assetInventory:other_inputs.asset_type_name')}
         </FormLabel>
@@ -47,8 +47,8 @@ const AssetInventoryAssetTypeMoreForm = () => {
           </FormErrorMessage>
         )}
       </FormControl>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-4">
-        <FormControl className="ui-w-full">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-4">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="other_min_temperature" required>
             {`${t('assetInventory:other_inputs.minimum_temperature')} (\u00B0${temperatureUnit})`}
           </FormLabel>
@@ -80,7 +80,7 @@ const AssetInventoryAssetTypeMoreForm = () => {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-w-full">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="other_max_temperature" required>
             {`${t('assetInventory:other_inputs.maximum_temperature')} (\u00B0${temperatureUnit})`}
           </FormLabel>

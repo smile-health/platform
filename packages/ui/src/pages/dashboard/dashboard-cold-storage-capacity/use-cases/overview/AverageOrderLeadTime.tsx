@@ -46,7 +46,7 @@ export default function AverageOrderLeadTime() {
       isLoading={overview?.isLoading}
       lastUpdated={overview?.data?.average_order_lead_time?.last_update}
     >
-      <div className="ui-w-full ui-h-[170px]">
+      <div className="ui:w-full ui:h-[170px]">
         <HorizontalGaugeChart
           data={data}
           unit={t('section.avg_order_lead_time.days')}

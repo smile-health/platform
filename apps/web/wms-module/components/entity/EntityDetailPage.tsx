@@ -16,7 +16,7 @@ const EntityDetailPage: FC<CommonType> = (): JSX.Element => {
   return (
     <AppLayout title={title} backButton={{ show: true }}>
       <Meta title={`WMS | Detail Entity`} />
-      <div className="ui-w-[1200px] ui-mx-auto">
+      <div className="ui:w-[1200px] ui:mx-auto">
         <EntityDetailInformationContent />
       </div>
     </AppLayout>

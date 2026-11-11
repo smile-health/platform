@@ -61,10 +61,10 @@ const TransactionCreateTransferStockDetail = ({
         closeOnOverlayClick={false}
         onOpenChange={handleClose}
       >
-        <DrawerHeader className="ui-border">
-          <div className="ui-flex ui-justify-between">
+        <DrawerHeader className="ui:border">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('transaction_transfer_stock.caption_detail_batch', {
                 type: items?.[idRow]?.managed_in_batch ? 'Batch' : 'Detail',
               })}
@@ -82,20 +82,20 @@ const TransactionCreateTransferStockDetail = ({
           </div>
         </DrawerHeader>
         <DrawerContent>
-          <div className="ui-grid ui-grid-cols-[40%_40%] ui-gap-4 ui-mb-1">
+          <div className="ui:grid ui:grid-cols-[40%_40%] ui:gap-4 ui:mb-1">
             <div>
-              <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+              <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                 Material
               </h2>
-              <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+              <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                 {items?.[idRow]?.material_name}
               </p>
             </div>
             <div>
-              <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+              <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                 {t('table.column.available_stock')}
               </h2>
-              <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+              <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                 {numberFormatter(items?.[idRow]?.available_stock, language)}
               </p>
             </div>
@@ -105,7 +105,7 @@ const TransactionCreateTransferStockDetail = ({
             items={items?.[idRow]}
           />
         </DrawerContent>
-        <DrawerFooter className="ui-border">
+        <DrawerFooter className="ui:border">
           <button
             id={`reset-batch-${idRow}`}
             data-testid={`reset-batch-${idRow}`}
@@ -119,10 +119,10 @@ const TransactionCreateTransferStockDetail = ({
               )
               methods.clearErrors('batches')
             }}
-            className="ui-w-20 focus:outline-none"
+            className="ui:w-20 focus:outline-none"
           >
-            <div className="ui-flex ui-flex-row ui-text-sm ui-space-x-3 ui-text-primary-600">
-              <Reload className="ui-size-5" />
+            <div className="ui:flex ui:flex-row ui:text-sm ui:space-x-3 ui:text-primary-600">
+              <Reload className="ui:size-5" />
               <div>Reset</div>
             </div>
           </button>
@@ -130,7 +130,7 @@ const TransactionCreateTransferStockDetail = ({
           <Button
             id={`save-batch-${idRow}`}
             data-testid={`save-batch-${idRow}`}
-            className="ui-w-48"
+            className="ui:w-48"
             onClick={() => {
               checkValidity()
               methods.handleSubmit(onSubmit)()

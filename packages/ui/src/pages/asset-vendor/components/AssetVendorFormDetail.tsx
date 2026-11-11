@@ -24,12 +24,12 @@ const AssetVendorFormDetail = () => {
     formState: { errors },
   } = useFormContext<CreateAssetVendorBody>()
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('form.title.detail')}
       </div>
-      <div className="ui-flex ui-flex-col ui-space-y-5">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-5">
+      <div className="ui:flex ui:flex-col ui:space-y-5">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-5">
           <FormControl>
             <FormLabel required>{t('form.detail.label.name')}</FormLabel>
             <Input

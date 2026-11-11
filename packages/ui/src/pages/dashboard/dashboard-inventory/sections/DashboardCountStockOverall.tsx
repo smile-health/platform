@@ -58,8 +58,8 @@ const DashboardCountStockOverall = forwardRef<TDashboardIOTHandler, Props>(
       cell: ({ getValue }: CellContext<Record<string, unknown>, unknown>) =>
         numberFormatter(getValue<number>() ?? 0, language),
       meta: {
-        headerClassName: 'ui-text-center',
-        cellClassName: 'ui-text-center',
+        headerClassName: 'ui:text-center',
+        cellClassName: 'ui:text-center',
       },
     }))
 

@@ -69,7 +69,7 @@ export default function WasteHierachyTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={wasteHierarchyDataSource?.data.data}
         columns={

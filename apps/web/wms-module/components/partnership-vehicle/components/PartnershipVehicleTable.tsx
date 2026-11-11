@@ -51,7 +51,7 @@ export default function PartnershipVehicleTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={partnershipVehicleDataSource?.data?.data}
         columns={columnsPartnershipVehicle(t, {

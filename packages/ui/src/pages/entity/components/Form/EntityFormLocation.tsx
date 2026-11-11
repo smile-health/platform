@@ -30,12 +30,12 @@ const EntityFormLocation = ({ defaultLocations }: Props) => {
   } = useFormContext<TFormData>()
 
   return (
-    <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded">
-      <div className="ui-mb-4 ui-font-bold">
+    <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded">
+      <div className="ui:mb-4 ui:font-bold">
         {t('entity:form.location.title')}
       </div>
 
-      <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+      <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
         {/* This form is much narrower than e.g. the entity list filter
             panel, so side-by-side dropdowns (layout="row") end up too
             cramped -- stack them instead. No maxLevel here on purpose: the
@@ -47,7 +47,7 @@ const EntityFormLocation = ({ defaultLocations }: Props) => {
           layout="column"
           defaultLocations={defaultLocations}
         />
-        <div className="ui-grid ui-grid-cols-2 ui-gap-x-6 ui-gap-y-6">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-x-6 ui:gap-y-6">
           <FormControl>
             <FormLabel>{t('entity:form.location.label.postal')}</FormLabel>
             <Input
@@ -74,7 +74,7 @@ const EntityFormLocation = ({ defaultLocations }: Props) => {
             </FormErrorMessage>
           )}
         </FormControl>
-        <div className="ui-grid ui-grid-cols-2 ui-gap-x-6">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-x-6">
           <FormControl>
             <FormLabel>Latitude</FormLabel>
             <Input

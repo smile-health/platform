@@ -116,7 +116,7 @@ const GlobalSettings: React.FC<TProps> = ({
       )}
     >
       {childTabs && (
-        <div className="ui-mt-6">
+        <div className="ui:mt-6">
           <TabsLinkRoot variant="pills" align="center">
             <TabsLinkList>
               {childTabs?.map((item) => {
@@ -137,16 +137,16 @@ const GlobalSettings: React.FC<TProps> = ({
           </TabsLinkRoot>
         </div>
       )}
-      <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-        <h5 className="ui-font-bold ui-text-xl">{title}</h5>
+      <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+        <h5 className="ui:font-bold ui:text-xl">{title}</h5>
         {showButtonCreate && buttonCreate && (
           <Button
             id={`create-global-setting-${title?.toLowerCase()}`}
             data-testid={`create-global-setting-${title?.toLowerCase()}`}
             type="button"
             onClick={buttonCreate.onClick}
-            className="ui-min-w-40"
-            leftIcon={<Plus className="ui-size-5" />}
+            className="ui:min-w-40"
+            leftIcon={<Plus className="ui:size-5" />}
           >
             {buttonCreate.label}
           </Button>

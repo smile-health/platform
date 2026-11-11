@@ -59,7 +59,7 @@ const renderFieldWithOtherOption = (
 ) => (
   <p>
     {primaryValue ?? otherValue ?? null}{' '}
-    <span className="ui-text-[#737373]">
+    <span className="ui:text-neutral-500">
       {primaryValue
         ? ''
         : t('assetInventory:columns.other_option', {
@@ -108,7 +108,7 @@ const getAssetDetailInformation = (
     ) : (
       <p>
         {`${isCapacity ? t('assetInventory:capacity.netto_capacity') : t('assetInventory:temperature_logger.minimum')}: ${numberFormatter(valueMin, language)} ${isCapacity ? t('common:litre') : celcius}, ${isCapacity ? t('assetInventory:capacity.gross_capacity') : t('assetInventory:temperature_logger.maximum')}: ${numberFormatter(valueMax, language)} ${isCapacity ? t('common:litre') : celcius}`}{' '}
-        <span className="ui-text-[#737373]">
+        <span className="ui:text-neutral-500">
           {`(${
             isCapacity
               ? t('assetInventory:other_inputs.other_asset_capacity')
@@ -236,7 +236,7 @@ const getAssetDetailInformation = (
           key={language}
           variant="light"
           rounded="xl"
-          className="ui-p-2"
+          className="ui:p-2"
           color={
             workingStatus?.[working_status?.id as WorkingStatusEnum]?.color
           }
@@ -293,7 +293,7 @@ const getOwnershipDetailInformation = (
       value: (
         <p>
           {borrowed_from?.name ?? other_borrowed_from_entity_name ?? null}{' '}
-          <span className="ui-text-[#737373]">
+          <span className="ui:text-neutral-500">
             {(() => {
               if (borrowed_from?.name) {
                 return ''
@@ -521,20 +521,20 @@ const AssetInventoryDetailInformation: React.FC<
 
   return (
     <div>
-      <div className="ui-my-6 ui-border ui-border-gray-300 ui-rounded">
-        <div className="ui-grid ui-grid-cols-1 ui-gap-4 ui-mx-auto">
+      <div className="ui:my-6 ui:border ui:border-gray-300 ui:rounded">
+        <div className="ui:grid ui:grid-cols-1 ui:gap-4 ui:mx-auto">
           {type === 'detail-information' && (
-            <div className="ui-flex ui-flex-row ui-justify-between ui-items-center ui-mt-4 ui-px-4">
+            <div className="ui:flex ui:flex-row ui:justify-between ui:items-center ui:mt-4 ui:px-4">
               <AssetInventoryTitleBlock
                 arrText={[
                   {
                     label: `${data?.serial_number}${assetModelName}${manufactureName}`,
-                    className: 'ui-text-sm ui-font-bold ui-text-dark-teal',
+                    className: 'ui:text-sm ui:font-bold ui:text-dark-teal',
                   },
                   {
                     label: data?.entity?.name as string,
                     className:
-                      'ui-text-sm ui-font-normal ui-text-dark-teal ui-my-1',
+                      'ui:text-sm ui:font-normal ui:text-dark-teal ui:my-1',
                   },
                   {
                     label: formatRegionProvinceLabel(
@@ -542,16 +542,16 @@ const AssetInventoryDetailInformation: React.FC<
                       data?.province?.name
                     ),
                     className:
-                      'ui-text-sm ui-font-normal ui-text-gray-400 ui-my-1',
+                      'ui:text-sm ui:font-normal ui:text-gray-400 ui:my-1',
                   },
                 ]}
               />
               {hasPermission('asset-inventory-mutate') ? (
-                <div className="ui-flex ui-justify-center ui-items-center ui-gap-4">
-                  <p className="ui-text-[#737373]">
+                <div className="ui:flex ui:justify-center ui:items-center ui:gap-4">
+                  <p className="ui:text-neutral-500">
                     {`${parseDateTime(data?.updated_at, 'DD/MM/YY HH:mm')} ${t('common:by')} ${data?.user_updated_by?.firstname ?? ''} ${data?.user_updated_by?.lastname ?? ''}`}
                   </p>
-                  <div className="ui-grid ui-grid-cols-3 ui-mt-4 ui-gap-4">
+                  <div className="ui:grid ui:grid-cols-3 ui:mt-4 ui:gap-4">
                     <AssetInventoryDetailDeleteAssetButton />
                     {!isLoading ? (
                       <AssetInventoryDetailChangeStatusButton />
@@ -562,29 +562,29 @@ const AssetInventoryDetailInformation: React.FC<
               ) : null}
             </div>
           )}
-          <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+          <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
             {detailValue(type)?.title}
           </div>
-          <div className="ui-px-4 ui-mb-">
+          <div className="ui:px-4 ui-mb-">
             <RenderDetailValue data={detailValue(type)?.data as DataPair[]} />
           </div>
           <hr />
-          <AccordionRoot className="!ui-p-0" type="single" collapsible>
-            <AccordionItem value="additional-form" className="ui-border-none">
-              <AccordionTrigger className="!ui-border-t-2 ui-px-4 ui-text-dark-blue ui-font-bold focus:!ui-border-none !ui-ring-transparent hover:ui-bg-transparent">
+          <AccordionRoot className="ui:p-0!" type="single" collapsible>
+            <AccordionItem value="additional-form" className="ui:border-none">
+              <AccordionTrigger className="ui:border-t-2! ui:px-4 ui:text-dark-blue ui:font-bold ui:focus:border-none! ui:ring-transparent! ui:hover:bg-transparent">
                 {t('assetInventory:detail.more_details')}
               </AccordionTrigger>
-              <AccordionContent className="ui-mx-4">
+              <AccordionContent className="ui:mx-4">
                 {sections?.map((item) => {
                   if (item === 'detail-information') {
                     return null
                   }
                   return (
                     <div
-                      className="ui-mb-4 ui-border ui-border-gray-300 ui-rounded ui-p-4"
+                      className="ui:mb-4 ui:border ui:border-gray-300 ui:rounded ui:p-4"
                       key={item}
                     >
-                      <div className="ui-font-bold ui-text-primary ui-text-dark-blue  ui-mb-4">
+                      <div className="ui:font-bold ui-text-primary ui:text-dark-blue  ui:mb-4">
                         {detailValue(item)?.title}
                       </div>
                       <RenderDetailValue

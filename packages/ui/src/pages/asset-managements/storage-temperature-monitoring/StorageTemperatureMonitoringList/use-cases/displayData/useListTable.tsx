@@ -59,8 +59,8 @@ export const useListTable = () => {
         cell: ({ row }) => {
           const item = row?.original
           return (
-            <div className="ui-text-sm space-y-1">
-              <div className="ui-text-dark-blue">
+            <div className="ui:text-sm space-y-1">
+              <div className="ui:text-dark-blue">
                 <strong>{item?.serial_number}</strong>
                 {handleOtherValue(
                   item?.asset_model?.name,
@@ -72,10 +72,10 @@ export const useListTable = () => {
                   'manufacturer'
                 )}
               </div>
-              <div className="ui-text-dark-blue">
+              <div className="ui:text-dark-blue">
                 {item?.entity?.name ?? '-'}
               </div>
-              <div className="ui-text-neutral-500">
+              <div className="ui:text-neutral-500">
                 {item?.regency?.name ? `${item?.regency?.name},` : ''}
                 {item?.province?.name ? ` ${item?.province?.name}` : ''}
               </div>
@@ -99,7 +99,7 @@ export const useListTable = () => {
           />
         ),
         meta: {
-          cellClassName: 'ui-content-start',
+          cellClassName: 'ui:content-start',
         },
       },
       {
@@ -111,11 +111,11 @@ export const useListTable = () => {
         size: 150,
         minSize: 150,
         meta: {
-          cellClassName: 'ui-content-start',
+          cellClassName: 'ui:content-start',
         },
         cell: ({ row }) => {
           return (
-            <div className="ui-min-h-[60px]">
+            <div className="ui:min-h-[60px]">
               <AssetManagementsOperationalStatusBadge
                 working_status={row.original.working_status}
               />
@@ -135,7 +135,7 @@ export const useListTable = () => {
         cell: ({ row }) => {
           if (row?.original?.rtmd_devices?.length === 0) {
             return (
-              <div className="ui-min-h-[60px] ui-text-neutral-500 ui-content-start">
+              <div className="ui:min-h-[60px] ui:text-neutral-500 ui:content-start">
                 <NotDetectedCell
                   message={t(
                     'storageTemperatureMonitoringList:table.column.not_detected'
@@ -161,9 +161,9 @@ export const useListTable = () => {
                     <div
                       key={rtmdDevice.id}
                       className={cx(
-                        'ui-min-h-[104px] ui-mb-2 last:ui-mb-0 ui-text-neutral-500',
+                        'ui:min-h-[104px] ui:mb-2 ui:last:mb-0 ui:text-neutral-500',
                         {
-                          'ui-min-h-[60px]': !rtmdDevice?.latest_log,
+                          'ui:min-h-[60px]': !rtmdDevice?.latest_log,
                         }
                       )}
                     >
@@ -179,10 +179,10 @@ export const useListTable = () => {
                 return (
                   <div
                     key={rtmdDevice.id}
-                    className="ui-min-h-[104px] ui-mb-2 last:ui-mb-0"
+                    className="ui:min-h-[104px] ui:mb-2 ui:last:mb-0"
                   >
                     {isVendorIot && (
-                      <div className="ui-text-dark-blue ui-mb-1">
+                      <div className="ui:text-dark-blue ui:mb-1">
                         <strong>
                           {rtmdDevice?.serial_number}
                           {handleOtherValue(
@@ -221,7 +221,7 @@ export const useListTable = () => {
         cell: ({ row }) => {
           if (row?.original?.rtmd_devices?.length === 0) {
             return (
-              <div className="ui-min-h-[60px] ui-text-neutral-500 ui-content-start">
+              <div className="ui:min-h-[60px] ui:text-neutral-500 ui:content-start">
                 <NotDetectedCell
                   message={t(
                     'storageTemperatureMonitoringList:table.column.not_detected'
@@ -236,8 +236,8 @@ export const useListTable = () => {
                   return (
                     <div
                       key={rtmdDevice.id}
-                      className={cx('ui-min-h-[104px] ui-mb-2 last:ui-mb-0', {
-                        'ui-min-h-[60px]':
+                      className={cx('ui:min-h-[104px] ui:mb-2 ui:last:mb-0', {
+                        'ui:min-h-[60px]':
                           !rtmdDevice?.latest_log?.temperature &&
                           !rtmdDevice?.latest_log?.humidity,
                       })}
@@ -269,7 +269,7 @@ export const useListTable = () => {
           const item = row?.original
 
           return (
-            <div className="ui-flex ui-gap-2 -ml-3">
+            <div className="ui:flex ui:gap-2 -ml-3">
               <Button
                 asChild
                 id="btn-link-asset-vendor-detail"
@@ -282,7 +282,7 @@ export const useListTable = () => {
           )
         },
         meta: {
-          cellClassName: 'ui-content-start',
+          cellClassName: 'ui:content-start',
         },
       },
     ],

@@ -61,7 +61,7 @@ export function DashboardBoxProvider({
 
   return (
     <DashboardBoxContext.Provider value={contextValue}>
-      <div className="ui-space-y-6 mt-6">{children}</div>
+      <div className="ui:space-y-6 mt-6">{children}</div>
     </DashboardBoxContext.Provider>
   )
 }
@@ -78,7 +78,7 @@ export function DashboardBoxRoot({
   return (
     <div
       id={id}
-      className={cx('ui-border ui-border-neutral-300 ui-rounded', className)}
+      className={cx('ui:border ui:border-neutral-300 ui:rounded', className)}
     >
       {children}
     </div>
@@ -101,11 +101,11 @@ export function DashboardBoxHeader({
   return (
     <div
       className={cx(
-        ' ui-rounded-t-[inherit] ui-text-center ui-bg-primary-500 ui-space-y-2',
+        ' ui:rounded-t-[inherit] ui:text-center ui:bg-primary-500 ui:space-y-2',
         {
-          'ui-border-b ui-border-neutral-300': bordered,
-          'ui-p-5 ui-text-lg': size === 'normal',
-          'ui-p-3': size === 'small',
+          'ui:border-b ui:border-neutral-300': bordered,
+          'ui:p-5 ui:text-lg': size === 'normal',
+          'ui:p-3': size === 'small',
         },
         colorClass,
         className
@@ -132,12 +132,12 @@ export function DashboardBoxBody({
   return (
     <div
       className={cx(
-        'ui-relative ui-space-y-4 ui-bg-white',
+        'ui:relative ui:space-y-4 ui:bg-white',
         {
-          ' ui-p-4': padded,
-          'ui-border ui-border-neutral-300': bordered,
-          'ui-rounded-md': rounded,
-          'ui-rounded-b-[inherit]': !rounded,
+          ' ui:p-4': padded,
+          'ui:border ui:border-neutral-300': bordered,
+          'ui:rounded-md': rounded,
+          'ui:rounded-b-[inherit]': !rounded,
         },
         className
       )}
@@ -187,10 +187,10 @@ export function DashboardBoxConfig({
 
   return (
     <>
-      <div className="ui-relative ui-flex ui-justify-center ui-items-center ui-min-h-10">
+      <div className="ui:relative ui:flex ui:justify-center ui:items-center ui:min-h-10">
         {withRegionSection ||
           (showRegion && (
-            <div className="ui-relative ui-space-y-1 ui-text-center ui-z-10">
+            <div className="ui:relative ui:space-y-1 ui:text-center ui:z-10">
               {isAllRegion ? (
                 <h6>{t('all_regions')}</h6>
               ) : (
@@ -207,7 +207,7 @@ export function DashboardBoxConfig({
               )}
             </div>
           ))}
-        <div className="ui-absolute ui-right-0 ui-flex ui-justify-end ui-items-center ui-gap-4">
+        <div className="ui:absolute ui:right-0 ui:flex ui:justify-end ui:items-center ui:gap-4">
           {sort?.show && (
             <ReactSelect
               data-testid="sort"
@@ -233,7 +233,7 @@ export function DashboardBoxConfig({
                 <ButtonIcon
                   size="lg"
                   variant="subtle"
-                  className="ui-text-zinc-500"
+                  className="ui:text-zinc-500"
                 >
                   <DownloadV2Icon />
                 </ButtonIcon>
@@ -292,17 +292,17 @@ export function DashboardBoxContent({
   return (
     <div
       className={cx(
-        'ui-w-full ui-overflow-x-hidden',
+        'ui:w-full ui:overflow-x-hidden',
         {
-          'ui-grid ui-place-items-center ui-min-h-40': isLoading || isEmpty,
-          'ui-text-primary-500': isLoading,
+          'ui:grid ui:place-items-center ui:min-h-40': isLoading || isEmpty,
+          'ui:text-primary-500': isLoading,
         },
         className
       )}
     >
       {isLoading && <GlobalSpinner />}
       {!isLoading && isEmpty && (
-        <p className="ui-text-gray-500 ui-text-sm">{t('empty')}</p>
+        <p className="ui:text-gray-500 ui:text-sm">{t('empty')}</p>
       )}
       {!isLoading && !isEmpty && children}
     </div>
@@ -326,19 +326,19 @@ export function DashboardBoxInfoModal({
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="ui-ml-2"
+        className="ui:ml-2"
         aria-label="Info"
       >
-        <InformationCircleIcon className="ui-size-5 ui-text-neutral-500 ui-fill-dark-blue" />
+        <InformationCircleIcon className="ui:size-5 ui:text-neutral-500 ui:fill-dark-blue" />
       </button>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogCloseButton />
         <DialogHeader>{title}</DialogHeader>
         <DialogContent>{children}</DialogContent>
-        <DialogFooter className="ui-justify-center ui-border-t-0">
+        <DialogFooter className="ui:justify-center ui:border-t-0">
           <Button
             variant="outline"
-            className="ui-w-full"
+            className="ui:w-full"
             onClick={() => setIsOpen(false)}
           >
             {t('close')}

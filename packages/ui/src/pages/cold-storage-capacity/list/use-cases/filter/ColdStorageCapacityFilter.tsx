@@ -24,18 +24,18 @@ export default function ColdStorageCapacityFilter() {
       onSubmit={coldStorageCapacityFilter.handleSubmit}
       collapsible
     >
-      <FilterFormBody className="ui-grid-cols-4">
+      <FilterFormBody className="ui:grid-cols-4">
         {coldStorageCapacityFilter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
         <div>
           <FilterExpandButton />
         </div>
-        <div className="ui-flex ui-gap-3 ui-items-center">
+        <div className="ui:flex ui:gap-3 ui:items-center">
           <ColdStorageCapacityExportButton />
-          <span className="ui-h-[24px] ui-w-px ui-bg-neutral-300" />
+          <span className="ui:h-[24px] ui:w-px ui:bg-neutral-300" />
           <FilterResetButton variant="subtle" onClick={handleReset} />
-          <Button type="submit" variant="outline" className="ui-w-[202px]">
+          <Button type="submit" variant="outline" className="ui:w-[202px]">
             {t('button.showReport')}
           </Button>
         </div>

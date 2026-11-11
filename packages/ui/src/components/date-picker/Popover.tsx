@@ -54,7 +54,7 @@ export function Popover({ children, state, ...props }: Readonly<PopoverProps>) {
     <Overlay>
       <div
         {...underlayProps}
-        className="ui-fixed ui-inset-0 ui-date-picker-popover"
+        className="ui:fixed ui:inset-0 ui-date-picker-popover"
       />
       <motion.div
         {...(popoverProps as any)}
@@ -63,7 +63,7 @@ export function Popover({ children, state, ...props }: Readonly<PopoverProps>) {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="ui-date-picker-popover ui-pointer-events-auto ui-mt-2 ui-rounded ui-bg-white ui-shadow-lg ui-outline-none ui-ring-1 ui-ring-black ui-ring-opacity-10"
+        className="ui-date-picker-popover ui:pointer-events-auto ui:mt-2 ui:rounded ui:bg-white ui:shadow-lg ui:outline-hidden ui:ring-1 ui:ring-black/10"
       >
         <DismissButton onDismiss={state.close} />
         {children}

@@ -16,11 +16,11 @@ const FormPopulationCorrection: React.FC = () => {
   const shouldReview = userTag === ENTITY_TYPE.PROVINSI || userTag === ENTITY_TYPE.PRIMARY_VENDOR
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <FormPopulationCorrectionContext.Provider
         value={contextValue}
       >
-        <div className="ui-space-y-3">
+        <div className="ui:space-y-3">
           <InformationAnnualPlanning />
 
           {shouldShowSectionKota && <InformationPopulationTarget />}

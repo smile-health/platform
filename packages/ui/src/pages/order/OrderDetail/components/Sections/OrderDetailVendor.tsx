@@ -12,7 +12,7 @@ export const OrderDetailVendor = () => {
     <OrderDetailBox title={t('vendor.title')}>
       <RenderDetailValue
         showColon={false}
-        className="ui-grid-cols-[200px_1fr]"
+        className="ui:grid-cols-[200px_1fr]"
         loading={!data}
         data={[
           { label: `${t('data.vendor_name')} :`, value: data?.vendor?.name },

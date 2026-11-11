@@ -16,7 +16,7 @@ import { ENTITY_TYPE } from '@/types/entity';
 import { getAuthTokenCookies } from '@/utils/storage/auth';
 
 const styleHover =
-  'hover:ui-text-primary-300 ui-flex ui-flex-row ui-text-white ui-cursor-pointer ui-items-center ui-px-[2px]';
+  'ui:hover:text-primary-300 ui:flex ui:flex-row ui:text-white ui:cursor-pointer ui:items-center ui:px-[2px]';
 
 const Navbar: React.FC = () => {
   const {
@@ -46,8 +46,8 @@ const Navbar: React.FC = () => {
   const token = getAuthTokenCookies();
 
   return (
-    <div className="ui-bg-primary-500 ui-h-10">
-      <ButtonGroup className="ui-gap-x-3 ui-container ui-mx-auto ui-px-6 ui-h-full">
+    <div className="ui:bg-primary-500 ui:h-10">
+      <ButtonGroup className="ui:gap-x-3 ui:container ui:mx-auto ui:px-6 ui:h-full">
         {filteredStaticMenu.map((item) => {
           const linkTarget = isThirdParty ? undefined : '_blank';
           const linkHref = isThirdParty

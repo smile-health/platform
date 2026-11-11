@@ -50,12 +50,12 @@ const ReviewPopulationCorrectionDistrict: React.FC = () => {
   }, [parentForm?.population_correction])
 
   return (
-    <div className="ui-border ui-border-neutral-300 ui-p-6 ui-space-y-6">
-      <div className="ui-flex ui-justify-between ui-items-center">
-        <p className="ui-text-base ui-font-bold">
+    <div className="ui:border ui:border-neutral-300 ui:p-6 ui:space-y-6">
+      <div className="ui:flex ui:justify-between ui:items-center">
+        <p className="ui:text-base ui:font-bold">
           {t('annualPlanningProcess:create.form.drawer_correction_data.health_care_list')}
         </p>
-        <div className="ui-flex ui-gap-6 ui-items-center">
+        <div className="ui:flex ui:gap-6 ui:items-center">
           <Button
             type="button"
             variant="subtle"
@@ -63,7 +63,7 @@ const ReviewPopulationCorrectionDistrict: React.FC = () => {
             leftIcon={<Eraser />}
             onClick={() => handleSetStatusAll(ProcessStatus.REJECT)}
             size="sm"
-            className="ui-p-1"
+            className="ui:p-1"
           >
             {t('annualPlanningProcess:create.form.district_ip.drawer.revise_all')}
           </Button>
@@ -73,12 +73,12 @@ const ReviewPopulationCorrectionDistrict: React.FC = () => {
             leftIcon={<FileCheck />}
             onClick={() => handleSetStatusAll(ProcessStatus.APPROVED)}
             size="sm"
-            className="ui-p-1"
+            className="ui:p-1"
           >
             {t('annualPlanningProcess:create.form.district_ip.drawer.approve_all')}
           </Button>
           <span
-            className="ui-h-6 ui-w-px ui-bg-neutral-300"
+            className="ui:h-6 ui:w-px ui:bg-neutral-300"
           />
           <Button
             type="button"

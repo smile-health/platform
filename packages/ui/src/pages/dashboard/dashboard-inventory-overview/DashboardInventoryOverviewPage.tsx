@@ -103,7 +103,7 @@ export default function DashboardInventoryOverviewPage() {
       <Meta title={generateMetaTitle(t('title.page'))} />
       <DashboardBox.Provider
         filter={filter?.query}
-        colorClass="ui-bg-white"
+        colorClass="ui:bg-white"
         showRegion={false}
       >
         <DashboardFilter
@@ -122,9 +122,9 @@ export default function DashboardInventoryOverviewPage() {
           }}
         />
         <div
-          className={cx('ui-grid ui-gap-4', {
-            'ui-grid-cols-1': !isImmun,
-            'ui-grid-cols-2': isImmun,
+          className={cx('ui:grid ui:gap-4', {
+            'ui:grid-cols-1': !isImmun,
+            'ui:grid-cols-2': isImmun,
           })}
         >
           <DashboardInventoryEMAChart filter={filter?.query} />
@@ -140,20 +140,20 @@ export default function DashboardInventoryOverviewPage() {
               <H5>{title}</H5>
             </DashboardBox.Header>
             <DashboardBox.Body>
-              <DashboardBox.Content className="ui-space-y-4">
-                <p className="ui-space-x-2 ui-text-center">
-                  <span className="ui-text-xs">
+              <DashboardBox.Content className="ui:space-y-4">
+                <p className="ui:space-x-2 ui:text-center">
+                  <span className="ui:text-xs">
                     <strong>Status</strong>: {status}
                   </span>
-                  <span className="ui-text-xs">
+                  <span className="ui:text-xs">
                     <strong>Tag</strong>:{' '}
                     {filter?.query?.entity_tag?.label ?? t('all')}
                   </span>
                 </p>
-                <div className="ui-grid ui-grid-cols-5 ui-gap-4">
+                <div className="ui:grid ui:grid-cols-5 ui:gap-4">
                   <div
-                    className={cx('ui-col-span-3', {
-                      'ui-col-start-2': !params?.transaction_type,
+                    className={cx('ui:col-span-3', {
+                      'ui:col-start-2': !params?.transaction_type,
                     })}
                   >
                     <DashboardInventoryLocation
@@ -162,7 +162,7 @@ export default function DashboardInventoryOverviewPage() {
                     />
                   </div>
                   {!!params?.transaction_type && (
-                    <div className="ui-col-span-2">
+                    <div className="ui:col-span-2">
                       <DashboardInventoryMaterial
                         data={dataMaterial?.data ?? []}
                         isLoading={isLoading || isFetching}

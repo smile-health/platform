@@ -140,11 +140,11 @@ const ModelAssetFormEdit = ({
 
   return (
     <Fragment>
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-mb-4 ui-font-bold ui-text-primary ui-text-dark-blue">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:mb-4 ui:font-bold ui-text-primary ui:text-dark-blue">
           {t('form.title.detail')}
         </div>
-        <div className="ui-flex ui-flex-col ui-space-y-5">
+        <div className="ui:flex ui:flex-col ui:space-y-5">
           <FormControl>
             <FormLabel required>{t('form.detail.label.name')}</FormLabel>
             <Input
@@ -161,9 +161,9 @@ const ModelAssetFormEdit = ({
               <FormErrorMessage>{errors?.name?.message}</FormErrorMessage>
             )}
             {isNameDuplicate && (
-              <div className="ui-border ui-rounded ui-border-grey-200 ui-py-3 ui-px-4 ui-bg-[#F1F5F9] ui-mb-6 ui-flex ui-flex-row">
-                <ExclamationCircleIcon className="ui-h-5 ui-w-5 ui-text-grey-500 ui-inline-block ui-mr-2 ui-font-bold" />
-                <p className="ui-text-sm">
+              <div className="ui:border ui:rounded ui-border-grey-200 ui:py-3 ui:px-4 ui:bg-slate-100 ui:mb-6 ui:flex ui:flex-row">
+                <ExclamationCircleIcon className="ui:h-5 ui:w-5 ui-text-grey-500 ui:inline-block ui:mr-2 ui:font-bold" />
+                <p className="ui:text-sm">
                   {t('form.detail.validation.name.duplicate')}
                 </p>
               </div>
@@ -179,10 +179,10 @@ const ModelAssetFormEdit = ({
                   <FormLabel required>
                     {t('form.detail.label.asset_utilization.label')}
                   </FormLabel>
-                  <div className="ui-flex ui-flex-row ui-gap-4">
+                  <div className="ui:flex ui:flex-row ui:gap-4">
                     {assetUtilizationSelections(t)?.map((data) => {
                       return (
-                        <RadioGroup className="ui-mt-2" key={data?.id}>
+                        <RadioGroup className="ui:mt-2" key={data?.id}>
                           <Radio
                             key={data?.id}
                             id={`${data?.id}`}
@@ -226,7 +226,7 @@ const ModelAssetFormEdit = ({
           />
 
           {asset_utilization?.id && (
-            <div className="ui-grid ui-grid-cols-2 ui-gap-4">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-4">
               <Controller
                 control={control}
                 name="asset_type_id"
@@ -326,9 +326,9 @@ const ModelAssetFormEdit = ({
           )}
         </div>
         {!!defaultValues?.is_related_asset && (
-          <div className="ui-rounded ui-bg-slate-100 ui-px-4 ui-py-[9px] ui-flex ui-gap-2 ui-items-center mt-4">
+          <div className="ui:rounded ui:bg-slate-100 ui:px-4 ui:py-[9px] ui:flex ui:gap-2 ui:items-center mt-4">
             <Warning />
-            <p className="ui-text-xs ui-font-normal">
+            <p className="ui:text-xs ui:font-normal">
               {t('form.detail.capacity.warning')}
             </p>
           </div>
@@ -336,12 +336,12 @@ const ModelAssetFormEdit = ({
         {asset_type_id &&
           !isAssetTypeCCE &&
           asset_utilization?.id !== AssetUtilization.Warehouse && (
-            <div className="ui-my-4">
+            <div className="ui:my-4">
               <Controller
                 control={control}
                 name="is_capacity"
                 render={({ field: { value, onChange, ...field } }) => (
-                  <FormControl className="ui-flex ui-flex-row ui-items-center ui-space-y-0">
+                  <FormControl className="ui:flex ui:flex-row ui:items-center ui:space-y-0">
                     <Checkbox
                       {...field}
                       checked={Boolean(value)}
@@ -353,7 +353,7 @@ const ModelAssetFormEdit = ({
                     />
                     <FormLabel
                       htmlFor="select-manufacturer"
-                      className="ui-ml-2 ui-text-dark-blue"
+                      className="ui:ml-2 ui:text-dark-blue"
                     >
                       {t('form.detail.label.is_capacity_required')}
                     </FormLabel>
@@ -365,19 +365,19 @@ const ModelAssetFormEdit = ({
       </div>
 
       {showIsCapacity && (
-        <div className="ui-p-4 ui-border ui-rounded">
-          <div className="ui-mb-4 ui-font-bold ui-text-primary ui-text-dark-blue">
+        <div className="ui:p-4 ui:border ui:rounded">
+          <div className="ui:mb-4 ui:font-bold ui-text-primary ui:text-dark-blue">
             {t('form.title.capacity')}
           </div>
           {!!defaultValues?.is_related_asset && (
-            <div className="ui-rounded ui-bg-slate-100 ui-px-4 ui-py-[9px] ui-flex ui-gap-2 ui-items-center my-4">
+            <div className="ui:rounded ui:bg-slate-100 ui:px-4 ui:py-[9px] ui:flex ui:gap-2 ui:items-center my-4">
               <Warning />
-              <p className="ui-text-xs ui-font-normal">
+              <p className="ui:text-xs ui:font-normal">
                 {t('form.detail.capacity.warning')}
               </p>
             </div>
           )}
-          <div className="ui-flex ui-flex-col ui-space-y-5">
+          <div className="ui:flex ui:flex-col ui:space-y-5">
             {!isAssetTypeCCE && (
               <ModelAssetFormEditCapacity
                 isEdit={isEdit}

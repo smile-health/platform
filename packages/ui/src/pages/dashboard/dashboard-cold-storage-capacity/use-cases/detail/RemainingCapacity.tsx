@@ -131,9 +131,9 @@ export default function RemainingCapacity() {
       onDownloadCSV={handleDownloadCSV}
       isLoading={detail.isLoading}
       isEmpty={!detail.data?.capacity_remaining?.data?.length}
-      contentClassName={cx('ui-justify-start')}
+      contentClassName={cx('ui:justify-start')}
     >
-      <div className="ui-w-full">
+      <div className="ui:w-full">
         <StackedBarChart
           data={chartData}
           layout="horizontal"

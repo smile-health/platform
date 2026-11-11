@@ -41,17 +41,17 @@ export default function AssetInventoryDetailModalDeleteConfirmation({
     <Dialog size="lg" open={open} onOpenChange={setOpen}>
       <DialogCloseButton />
       <form onSubmit={handleSubmit(onSubmit)} {...methods}>
-        <DialogHeader className="ui-text-center ui-text-xl">
+        <DialogHeader className="ui:text-center ui:text-xl">
           {t('common:confirmation')}
         </DialogHeader>
-        <DialogContent className="ui-space-y-4">
-          <p className="ui-text-center ui-text-neutral-500">
+        <DialogContent className="ui:space-y-4">
+          <p className="ui:text-center ui:text-neutral-500">
             {t('assetInventory:deletion.delete_confirmation')}
           </p>
           {children}
         </DialogContent>
-        <DialogFooter className="ui-justify-center">
-          <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full mx-auto">
+        <DialogFooter className="ui:justify-center">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full mx-auto">
             <Button
               id="delete__asset__confirmation__cancel"
               color="primary"

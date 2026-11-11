@@ -18,7 +18,7 @@ export const createFilterPrintLabelGroupSchema = ({ t }: Params): UseFilter => [
     id: 'input-search',
     label: t('printLabel:list.filter.search.label'),
     placeholder: t('printLabel:list.filter.search.placeholder'),
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     defaultValue: '',
     maxLength: 255,
   },
@@ -32,6 +32,6 @@ export const createFilterPrintLabelGroupSchema = ({ t }: Params): UseFilter => [
     options: getSourceTypeOptions(),
     defaultValue: null,
     isUsingReactQuery: false,
-    className: 'ui-w-full',
+    className: 'ui:w-full',
   },
 ];

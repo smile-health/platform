@@ -22,7 +22,7 @@ const ThirdPartyPartnerDetailPage: React.FC = () => {
       backButton={{ show: true }}
     >
       <Meta title={`WMS | ThirdPartyPartner`} />
-      <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+      <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
         <ThirdPartyPartnerDetail
           data={partnershipDetail}
           isLoading={isLoading}

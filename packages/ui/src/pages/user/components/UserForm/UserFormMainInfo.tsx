@@ -76,10 +76,10 @@ export default function UserFormMainInfo({
       role?.value === USER_ROLE.VENDOR_IOT)
 
   return (
-    <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6">
+    <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-6">
       <h5 className="font-bold">{t('title.main')}</h5>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-x-4 ui-gap-y-6">
-        <FormControl className="ui-col-span-2">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-x-4 ui:gap-y-6">
+        <FormControl className="ui:col-span-2">
           <FormLabel htmlFor="input-username" required>
             {t('form.username.label')}
           </FormLabel>
@@ -103,7 +103,7 @@ export default function UserFormMainInfo({
             field: { value, onChange, ...field },
             fieldState: { error },
           }) => (
-            <FormControl className="ui-col-span-2">
+            <FormControl className="ui:col-span-2">
               <FormLabel htmlFor="input-role" required>
                 {t('form.role.label')}
               </FormLabel>
@@ -126,9 +126,9 @@ export default function UserFormMainInfo({
                 {...register('view_only')}
                 data-testid="cbx-view-only"
                 label={
-                  <div className="ui-flex ui-gap-2">
+                  <div className="ui:flex ui:gap-2">
                     <span>{t('form.view_only.label')}</span>
-                    <span className="ui-text-neutral-500 ui-text-sm ui-italic">
+                    <span className="ui:text-neutral-500 ui:text-sm ui:italic">
                       ({t('form.view_only.disabled_information')})
                     </span>
                   </div>
@@ -148,7 +148,7 @@ export default function UserFormMainInfo({
             name="wms_role"
             control={control}
             render={({ field, fieldState: { error } }) => (
-              <FormControl className="ui-col-span-2">
+              <FormControl className="ui:col-span-2">
                 <FormLabel htmlFor="input-wms-role" required>
                   {t('form.wms_role.label')}
                 </FormLabel>
@@ -204,7 +204,7 @@ export default function UserFormMainInfo({
             <FormErrorMessage>{errors?.lastname?.message}</FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-col-span-2">
+        <FormControl className="ui:col-span-2">
           <FormLabel htmlFor="input-email" required>
             Email
           </FormLabel>
@@ -222,9 +222,9 @@ export default function UserFormMainInfo({
           />
           <FormErrorMessage>{errors?.email?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl className="ui-col-span-2">
+        <FormControl className="ui:col-span-2">
           <FormLabel required>{t('form.gender.label')}</FormLabel>
-          <div className="ui-flex ui-items-center ui-gap-4">
+          <div className="ui:flex ui:items-center ui:gap-4">
             <Radio
               {...register('gender')}
               data-testid="radio-male"

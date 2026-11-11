@@ -33,14 +33,14 @@ export function ButtonActionTable({
   };
 
   return (
-    <div className="ui-flex ui-gap-0.5 ui-items-center">
+    <div className="ui:flex ui:gap-0.5 ui:items-center">
       {isShow('detail') && (
         <Button
           asChild
           data-testid="btn-link-detail"
           size="sm"
           variant="subtle"
-          className="ui-px-1.5 ui-text-[#0069D2]"
+          className="ui:px-1.5 ui:text-[#0069D2]"
         >
           <Link href={getMainLink()}>Detail</Link>
         </Button>
@@ -51,7 +51,7 @@ export function ButtonActionTable({
           data-testid="btn-link-edit"
           size="sm"
           variant="subtle"
-          className="ui-px-1.5 ui-text-[#0069D2]"
+          className="ui:px-1.5 ui:text-[#0069D2]"
         >
           <Link href={`${getMainLink()}/edit`}>{t('edit')}</Link>
         </Button>
@@ -64,7 +64,7 @@ export function ButtonActionTable({
           color={isActive ? 'danger' : 'success'}
           disabled={isLoadingActivation}
           onClick={onActivationClick}
-          className="ui-px-1.5"
+          className="ui:px-1.5"
         >
           {isActive ? t('status.deactivate') : t('status.activate')}
         </Button>

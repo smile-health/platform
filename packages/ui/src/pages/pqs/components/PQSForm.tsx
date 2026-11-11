@@ -17,12 +17,12 @@ const PQSForm: React.FC<PQSFormProps> = ({ defaultValues, isGlobal }) => {
     <FormProvider {...methods}>
       <form
         onSubmit={onSubmit}
-        className="ui-mt-6 ui-space-y-6 ui-max-w-form ui-mx-auto"
+        className="ui:mt-6 ui:space-y-6 ui:max-w-form ui:mx-auto"
       >
         <PQSFormDetail />
         <PQSFormCapacity defaultValue={defaultValues} isEdit={isEdit} />
-        <div className="ui-flex ui-justify-end">
-          <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+        <div className="ui:flex ui:justify-end">
+          <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
             <Button asChild id="btn-back-pqs" type="button" variant="outline">
               <Link href={backUrl()}>{t('back')}</Link>
             </Button>

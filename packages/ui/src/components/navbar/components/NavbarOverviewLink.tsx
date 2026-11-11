@@ -7,10 +7,10 @@ const NavbarOverviewLink = () => {
     <>
       <Link
         href={`/v5/dashboard/inventory-overview`}
-        className="ui-block ui-h-full ui-w-full"
+        className="ui:block ui:h-full ui:w-full"
       >
-        <div className="ui-text-dark-teal menu__overview ui-mt-2 ui-flex ui-cursor-pointer ui-items-center ui-justify-start ui-p-2">
-          <div className="ui-h-full ui-w-full ui-text-lg">Overview</div>
+        <div className="ui:text-dark-teal menu__overview ui:mt-2 ui:flex ui:cursor-pointer ui:items-center ui:justify-start ui:p-2">
+          <div className="ui:h-full ui:w-full ui:text-lg">Overview</div>
           <ChevronRight />
         </div>
       </Link>

@@ -19,15 +19,15 @@ export function Divider({
   return (
     <div
       className={cx(
-        'ui-my-8 ui-flex ui-items-center',
+        'ui:my-8 ui:flex ui:items-center',
         {
-          'ui-h-px ui-border-0 ui-bg-gray-300': !children,
-          'ui-gap-4': withGap,
-          'after:ui-h-px after:ui-flex-1 after:ui-bg-gray-300 after:content-[""]':
+          'ui:h-px ui:border-0 ui:bg-gray-300': !children,
+          'ui:gap-4': withGap,
+          'ui:after:h-px ui:after:flex-1 ui:after:bg-gray-300 after:content-[""]':
             position === 'left',
-          'before:ui-h-px before:ui-flex-1 before:ui-bg-gray-300 before:content-[""]':
+          'ui:before:h-px ui:before:flex-1 ui:before:bg-gray-300 before:content-[""]':
             position === 'right',
-          'before:ui-h-px before:ui-flex-1 before:ui-bg-gray-300 before:content-[""] after:ui-h-px after:ui-flex-1 after:ui-bg-gray-300 after:content-[""]':
+          'ui:before:h-px ui:before:flex-1 ui:before:bg-gray-300 before:content-[""] ui:after:h-px ui:after:flex-1 ui:after:bg-gray-300 after:content-[""]':
             position === 'center',
         },
         className

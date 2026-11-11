@@ -58,7 +58,7 @@ export default function NumberOfEntity() {
       isLoading={overview?.isLoading}
       isEmpty={!buffer && !ideal && !max}
     >
-      <div className="ui-w-full ui-h-[350px]">
+      <div className="ui:w-full ui:h-[350px]">
         <PieChart
           data={data.filter((d) => d.value > 0)}
           radius="60%"

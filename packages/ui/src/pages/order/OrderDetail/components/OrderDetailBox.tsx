@@ -34,22 +34,22 @@ export const OrderDetailBox = forwardRef<HTMLDivElement, OrderDetailBoxProps>(
     const [isShow, setIsShow] = useState(true)
 
     return (
-      <div ref={ref} className="ui-border ui-rounded">
-        <div className={cx('ui-p-6 ui-space-y-4', className)}>
-          <div className="ui-flex ui-justify-between ui-items-start">
-            <div className="ui-font-semibold">{title}</div>
+      <div ref={ref} className="ui:border ui:rounded">
+        <div className={cx('ui:p-6 ui:space-y-4', className)}>
+          <div className="ui:flex ui:justify-between ui:items-start">
+            <div className="ui:font-semibold">{title}</div>
 
             {enableShowHide && (
-              <div className="ui-flex ui-items-center gap-4">
+              <div className="ui:flex ui:items-center gap-4">
                 <button
                   onClick={() => setIsShow(!isShow)}
-                  className="ui-py-1 ui-px-1.5"
+                  className="ui:py-1 ui:px-1.5"
                 >
                   <ChevronDownIcon
                     className={cx(
-                      'ui-h-5 ui-transition-all ui-stroke-2 ui-stroke-dark-blue',
+                      'ui:h-5 ui:transition-all ui:stroke-2 ui:stroke-dark-blue',
                       {
-                        '-ui-rotate-180 ui-transform': isShow,
+                        'ui:-rotate-180 ui:transform': isShow,
                       }
                     )}
                   />
@@ -64,7 +64,7 @@ export const OrderDetailBox = forwardRef<HTMLDivElement, OrderDetailBoxProps>(
         {data && Boolean(buttons?.length) && (
           <>
             <hr />
-            <div className="ui-p-6 ui-space-x-2">
+            <div className="ui:p-6 ui:space-x-2">
               {buttons?.map((button) => (
                 <Button
                   key={button.label}
@@ -72,11 +72,11 @@ export const OrderDetailBox = forwardRef<HTMLDivElement, OrderDetailBoxProps>(
                   data-testid={button.id}
                   variant="outline"
                   size="sm"
-                  className="ui-px-[14px]"
+                  className="ui:px-[14px]"
                   leftIcon={
                     button.leftIcon || (
                       <DocumentArrowDownIcon
-                        className="ui-h-5 ui-w-5"
+                        className="ui:h-5 ui:w-5"
                         strokeWidth={2}
                       />
                     )

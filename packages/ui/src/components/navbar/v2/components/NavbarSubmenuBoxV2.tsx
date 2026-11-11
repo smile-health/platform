@@ -17,12 +17,12 @@ const NavbarSubmenuBoxV2: React.FC<NavbarSubmenuBoxV2Props> = ({
   return (
     <HoverCardContent
       align="start"
-      className="!ui-p-0 !ui-w-[250px] ui-shadow-lg"
+      className="ui:p-0! ui:w-[250px]! ui:shadow-lg"
     >
-      <nav className="ui-flex ui-items-start ui-justify-start ui-overflow-hidden ui-z-20 ui-text-sm">
-        <div className="menu__left__submenu ui-h-full ui-py-4 ui-bg-[#FFFFFF] ui-w-60">
+      <nav className="ui:flex ui:items-start ui:justify-start ui:overflow-hidden ui:z-20 ui:text-sm">
+        <div className="menu__left__submenu ui:h-full ui:py-4 ui:bg-[#FFFFFF] ui:w-60">
           {leftSideMenus.length > 0 && (
-            <ul className="ui-px-2">
+            <ul className="ui:px-2">
               {leftSideMenus.length > 0 &&
                 leftSideMenus?.map((menu, index) => (
                   <li key={index?.toString()}>

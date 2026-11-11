@@ -17,9 +17,9 @@ const TransactionCreateConsumptionFormInputPatient: React.FC<Props> = (props) =>
 
   return (
     <div
-      className={cx("ui-flex ui-flex-col ui-space-y-5 ui-w-full ui-min-h-52", {
-        "ui-min-h-96": historyVaccination === undefined || !isValidPatient,
-        "ui-min-h-max": !protocolId && historyVaccination !== undefined,
+      className={cx("ui:flex ui:flex-col ui:space-y-5 ui:w-full ui:min-h-52", {
+        "ui:min-h-96": historyVaccination === undefined || !isValidPatient,
+        "ui:min-h-max": !protocolId && historyVaccination !== undefined,
       })}
     >
       {!protocolId && (

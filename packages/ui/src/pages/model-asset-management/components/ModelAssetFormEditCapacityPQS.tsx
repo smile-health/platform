@@ -156,7 +156,7 @@ function ModelAssetFormEditCapacityPQS({
   ])
 
   return (
-    <div className="ui-grid ui-grid-cols-2 ui-gap-4">
+    <div className="ui:grid ui:grid-cols-2 ui:gap-4">
       {capacityForms?.map((field, index) => {
         return (
           <Fragment key={field.temperature_threshold_id}>

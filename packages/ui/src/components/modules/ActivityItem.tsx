@@ -25,13 +25,13 @@ export function ActivityItem({
       key={key}
       id={id}
       className={cx(
-        'ui-flex ui-items-center ui-flex-col gap-3',
+        'ui:flex ui:items-center ui:flex-col gap-3',
         className?.wrapper
       )}
     >
       <p
-        className={cx('ui-text-lg ui-font-bold ui-ml-4', className?.title, {
-          'ui-text-[#737373]': disabled,
+        className={cx('ui:text-lg ui:font-bold ui:ml-4', className?.title, {
+          'ui:text-neutral-500': disabled,
         })}
       >
         {data?.name}

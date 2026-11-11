@@ -45,7 +45,7 @@ export default function UserActivityPage() {
       onClickInformation={() => setOpenInformation(true)}
     >
       <Meta title={`WMS | User activity`} />
-      <div className="ui-mt-6 ui-space-y-6">
+      <div className="ui:mt-6 ui:space-y-6">
         <TooltipModal
           open={openInformation}
           setOpen={setOpenInformation}

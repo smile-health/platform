@@ -29,14 +29,14 @@ export const columnsListProtocol = (
   },
   {
     header: () => (
-      <div className="ui-font-semibold ui-pl-3">{t('common:action')}</div>
+      <div className="ui:font-semibold ui:pl-3">{t('common:action')}</div>
     ),
     size: 130,
     maxSize: 200,
     accessorKey: 'action',
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <Button
             asChild
             id="btn-configure-protocol"
@@ -106,14 +106,14 @@ export const columnsListActivityMaterial = (
   },
   {
     header: () => (
-      <div className="ui-font-semibold ui-pl-3">{t('common:action')}</div>
+      <div className="ui:font-semibold ui:pl-3">{t('common:action')}</div>
     ),
     size: 130,
     maxSize: 200,
     accessorKey: 'action',
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <Button
             id="btn-delete"
             size="sm"

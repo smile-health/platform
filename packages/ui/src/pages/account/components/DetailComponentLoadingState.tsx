@@ -18,14 +18,14 @@ export default function DetailComponentLoadingState({
 }: Readonly<DetailComponentProps>) {
   return (
     <div>
-      <div className="border rounded ui-border-[#d2d2d2] mt-6 p-4" id={id}>
+      <div className="border rounded ui:border-[#d2d2d2] mt-6 p-4" id={id}>
         {fields?.showLatestLoginInfo && (
           <div className="flex justify-start space-x-1">
             <div>
-              <Skeleton className="ui-h-[24px] ui-w-[20px] mb-5" />
+              <Skeleton className="ui:h-[24px] ui:w-[20px] mb-5" />
             </div>
             <div className="text-label-dark">
-              <Skeleton className="ui-h-[24px] ui-w-[355px] mb-5" />
+              <Skeleton className="ui:h-[24px] ui:w-[355px] mb-5" />
             </div>
           </div>
         )}
@@ -34,14 +34,14 @@ export default function DetailComponentLoadingState({
             Array.from({ length: fields?.buttons.length }, (_, i) => i + 1).map(
               (_, index) => {
                 return (
-                  <Skeleton key={index + 1} className="ui-h-[40px] mb-5 w-40" />
+                  <Skeleton key={index + 1} className="ui:h-[40px] mb-5 w-40" />
                 )
               }
             )}
         </div>
 
         <div className="mb-4 font-bold">
-          <Skeleton className="ui-h-[24px] ui-w-[355px] mb-5" />
+          <Skeleton className="ui:h-[24px] ui:w-[355px] mb-5" />
         </div>
 
         {(fields?.fields || amount) &&
@@ -53,7 +53,7 @@ export default function DetailComponentLoadingState({
             (_, i) => i + 1
           ).map((_, index) => {
             return (
-              <Skeleton key={index + 1} className="ui-h-[24px] ui-w-3/4 mb-5" />
+              <Skeleton key={index + 1} className="ui:h-[24px] ui:w-3/4 mb-5" />
             )
           })}
       </div>

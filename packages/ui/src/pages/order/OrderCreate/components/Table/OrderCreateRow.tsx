@@ -119,12 +119,12 @@ export const OrderCreateRow: React.FC<OrderCreateRowProps> = ({
 
   return (
     <Tr>
-      <Td className="ui-align-top ui-text-sm" id={`cell-${headers?.[0]?.id}`}>
+      <Td className="ui:align-top ui:text-sm" id={`cell-${headers?.[0]?.id}`}>
         {index + 1}
       </Td>
-      <Td className="ui-align-top ui-text-sm" id={`cell-${headers?.[1]?.id}`}>
+      <Td className="ui:align-top ui:text-sm" id={`cell-${headers?.[1]?.id}`}>
         <div
-          className="ui-text-dark-blue ui-font-bold"
+          className="ui:text-dark-blue ui:font-bold"
           id={`cell-${headers?.[1]?.id}-material_name`}
         >
           {item?.label || '-'}
@@ -135,18 +135,18 @@ export const OrderCreateRow: React.FC<OrderCreateRowProps> = ({
           })}
         </div>
       </Td>
-      <Td className="ui-align-top ui-text-sm" id={`cell-${headers?.[2]?.id}`}>
-        <div className="ui-flex ui-flex-col ui-text-dark-blue ui-text-sm">
+      <Td className="ui:align-top ui:text-sm" id={`cell-${headers?.[2]?.id}`}>
+        <div className="ui:flex ui:flex-col ui:text-dark-blue ui:text-sm">
           <p id={`cell-${headers?.[2]?.id}-on_hand_stock`}>
             {numberFormatter(item?.value?.total_qty || 0, language)}
           </p>
           <p
-            className="ui-text-[#737373] ui-text-sm"
+            className="ui:text-neutral-500 ui:text-sm"
             id={`cell-${headers?.[2]?.id}-min_max`}
           >{`(min: ${numberFormatter(item?.value?.min || 0, language)}, max: ${numberFormatter(item?.value?.max || 0, language)})`}</p>
         </div>
       </Td>
-      <Td className="ui-align-top" id={`cell-${headers?.[3]?.id}`}>
+      <Td className="ui:align-top" id={`cell-${headers?.[3]?.id}`}>
         <Controller
           control={control}
           name={`order_items.${index}.value.ordered_qty`}
@@ -198,7 +198,7 @@ export const OrderCreateRow: React.FC<OrderCreateRowProps> = ({
             {recommendationQty !== 0 && (
               <div>
                 <p
-                  className="ui-mt-2 ui- ui-break-words ui-text-[#737373] ui-text-sm"
+                  className="ui:mt-2 ui- ui:wrap-break-word ui:text-neutral-500 ui:text-sm"
                   id={`cell-${headers?.[3]?.id}-${index}-recommendation_qty`}
                 >
                   {t(
@@ -209,7 +209,7 @@ export const OrderCreateRow: React.FC<OrderCreateRowProps> = ({
                   )}
                 </p>
                 <p
-                  className="ui-mt-2 ui-text-[#737373] ui-break-words ui-text-sm"
+                  className="ui:mt-2 ui:text-neutral-500 ui:wrap-break-word ui:text-sm"
                   id={`cell-${headers?.[3]?.id}-${index}-recommendation_message`}
                 >
                   {t('orderCreate:list.selected.column.quantity.input')}
@@ -220,7 +220,7 @@ export const OrderCreateRow: React.FC<OrderCreateRowProps> = ({
         )}
       </Td>
       <Td
-        className="ui-align-top"
+        className="ui:align-top"
         id={`cell-${headers?.[4]?.id}-${index}-order_reason`}
       >
         <Controller
@@ -232,7 +232,7 @@ export const OrderCreateRow: React.FC<OrderCreateRowProps> = ({
                 {...field}
                 key={`order_items.${index}.value.order_reason_id-${language}-${item?.value?.ordered_qty}`}
                 id={`cell-${headers?.[4]?.id}-${index}-order_reason_id`}
-                className="!ui-mb-2"
+                className="ui:mb-2!"
                 disabled={!enableReasons}
                 placeholder={t(
                   'orderCreate:list.selected.column.reason.placeholder'
@@ -285,7 +285,7 @@ export const OrderCreateRow: React.FC<OrderCreateRowProps> = ({
           </div>
         )}
       </Td>
-      <Td className="ui-align-top">
+      <Td className="ui:align-top">
         <Button
           id={`cell-${headers?.[5]?.id}-${index}-${item?.value?.material_id}-delete`}
           variant="subtle"

@@ -15,9 +15,9 @@ export default function UserDetailMainInfo(props: UserDetailMainInfoProps) {
   const { t } = useTranslation(['userSetting', 'common']);
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold">{t('title.details')}</h5>
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold">{t('title.details')}</h5>
       </div>
       <Badge
         rounded="full"
@@ -29,8 +29,8 @@ export default function UserDetailMainInfo(props: UserDetailMainInfoProps) {
           : t('filter.status.inactive')}
       </Badge>
       <RenderDetailValue
-        labelsClassName="ui-text-left"
-        valuesClassName="ui-text-left"
+        labelsClassName="ui:text-left"
+        valuesClassName="ui:text-left"
         loading={isLoading}
         data={[
           {

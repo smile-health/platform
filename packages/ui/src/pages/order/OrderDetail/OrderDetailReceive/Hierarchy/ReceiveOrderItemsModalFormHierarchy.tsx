@@ -117,8 +117,8 @@ const ReceiveOrderItemsModalFormHierarchy = ({
 
         cell: ({ row }) => {
           return (
-            <div className="ui-flex ui-flex-col ui-justify-center">
-              <p className="ui-font-bold">
+            <div className="ui:flex ui:flex-col ui:justify-center">
+              <p className="ui:font-bold">
                 {row?.original?._order_stock?.batch?.code ?? '-'}
               </p>
               <p>
@@ -193,7 +193,7 @@ const ReceiveOrderItemsModalFormHierarchy = ({
                       }}
                     />
                     {error?.message && (
-                      <FormErrorMessage className="ui-mt-2">
+                      <FormErrorMessage className="ui:mt-2">
                         {error?.message}
                       </FormErrorMessage>
                     )}
@@ -234,18 +234,18 @@ const ReceiveOrderItemsModalFormHierarchy = ({
         disabled: Boolean(errors.receives),
       }}
     >
-      <div className="ui-flex ui-flex-rows ui-space-x-5">
-        <FormControl className="ui-space-y-1 ui-max-w-3/4">
+      <div className="ui:flex ui-flex-rows ui:space-x-5">
+        <FormControl className="ui:space-y-1 ui:max-w-3/4">
           <FormLabel className="text-sm">Material</FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {receiveOrderItemsModalForm?.material}
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1 ui-w-1/4">
+        <FormControl className="ui:space-y-1 ui:w-1/4">
           <FormLabel className="text-sm">
             {t('orderDetail:data.activity')}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold ui-flex ui-items-baseline ui-gap-1">
+          <div className="ui:text-dark-blue ui:font-bold ui:flex ui:items-baseline ui:gap-1">
             {receiveOrderItemsModalForm?.activity}
           </div>
         </FormControl>
@@ -254,7 +254,7 @@ const ReceiveOrderItemsModalFormHierarchy = ({
         data={watch('receives')}
         columns={columnsBatchSchema}
         isSticky
-        className="ui-overflow-y-auto ui-max-h-[50vh] !ui-bg-white"
+        className="ui:overflow-y-auto ui:max-h-md ui:bg-white!"
       />
     </OrderDetailModal>
   )

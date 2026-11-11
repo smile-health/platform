@@ -67,23 +67,23 @@ const ManualScaleListPage: React.FC = () => {
       />
       <div className="mt-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid ui-grid-cols-4 ui-gap-4 ">
+          <FilterFormBody className="ui:grid ui:grid-cols-4 ui:gap-4 ">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-flex ui-space-x-3 ui-items-center">
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:flex ui:space-x-3 ui:items-center">
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Reload className="ui-size-5" />}
+                leftIcon={<Reload className="ui:size-5" />}
                 onClick={filter.reset}
               >
                 {t('common:reset')}
               </Button>
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -91,7 +91,7 @@ const ManualScaleListPage: React.FC = () => {
           </FilterFormFooter>
           {filter.renderActiveFilter()}
         </FilterFormRoot>
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <DataTable
             data={manualScaleDataSource?.data.data}
             withHeader={false}
@@ -101,7 +101,7 @@ const ManualScaleListPage: React.FC = () => {
                 header: '',
                 accessorKey: 'type',
                 meta: {
-                  cellClassName: '!ui-p-0',
+                  cellClassName: 'ui:p-0!',
                 },
                 cell: renderManualApprovalCell,
               },

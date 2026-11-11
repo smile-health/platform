@@ -35,10 +35,10 @@ export const StatusSwitch = React.forwardRef<
   ref
 ) {
   const sizeClasses = {
-    sm: 'ui-h-[20px] ui-w-[36px]',
-    md: 'ui-h-[24px] ui-w-[44px]',
-    lg: 'ui-h-[29px] ui-w-[53px]',
-    xl: 'ui-h-[34px] ui-w-[62px]',
+    sm: 'ui:h-[20px] ui:w-[36px]',
+    md: 'ui:h-[24px] ui:w-[44px]',
+    lg: 'ui:h-[29px] ui:w-[53px]',
+    xl: 'ui:h-[34px] ui:w-[62px]',
   }
 
   const thumbSizes = {
@@ -49,7 +49,7 @@ export const StatusSwitch = React.forwardRef<
   }
 
   return (
-    <div className="ui-inline-flex ui-items-center">
+    <div className="ui:inline-flex ui:items-center">
       <SwitchPrimitive.Root
         {...props}
         ref={ref}
@@ -64,28 +64,28 @@ export const StatusSwitch = React.forwardRef<
           backgroundColor: checked ? '#16a34a' : '#dc2626',
         }}
         className={cx(
-          'ui-relative ui-rounded-full ui-shadow-inner',
-          'focus:ui-outline-none',
-          "ui-flex ui-items-center data-[state='unchecked']:ui-justify-start data-[state='checked']:ui-justify-end",
-          'ui-transition-colors ui-duration-150',
+          'ui:relative ui:rounded-full ui:shadow-inner',
+          'ui:focus:outline-hidden',
+          "ui:flex ui:items-center ui:data-[state='unchecked']:justify-start ui:data-[state='checked']:justify-end",
+          'ui:transition-colors ui:duration-150',
           {
-            'ui-cursor-not-allowed ui-opacity-50': disabled,
+            'ui:cursor-not-allowed ui:opacity-50': disabled,
           },
           sizeClasses[size]
         )}
       >
         {/* Status Icons inside track */}
-        <div className="ui-absolute ui-inset-0 ui-flex ui-items-center ui-justify-between ui-px-1.5 ui-pointer-events-none ui-z-10">
+        <div className="ui:absolute ui:inset-0 ui:flex ui:items-center ui:justify-between ui:px-1.5 ui:pointer-events-none ui:z-10">
           <CheckIcon
             className={cx(
-              'ui-w-3 ui-h-3 ui-text-white transition-opacity duration-150',
-              checked ? 'ui-opacity-100' : 'ui-opacity-0'
+              'ui:w-3 ui:h-3 ui:text-white transition-opacity duration-150',
+              checked ? 'ui:opacity-100' : 'ui:opacity-0'
             )}
           />
           <XMarkIcon
             className={cx(
-              'ui-w-3 ui-h-3 ui-text-white transition-opacity duration-150',
-              !checked ? 'ui-opacity-100' : 'ui-opacity-0'
+              'ui:w-3 ui:h-3 ui:text-white transition-opacity duration-150',
+              !checked ? 'ui:opacity-100' : 'ui:opacity-0'
             )}
           />
         </div>
@@ -101,7 +101,7 @@ export const StatusSwitch = React.forwardRef<
               marginRight: '4px',
               marginLeft: '4px',
             }}
-            className="ui-shadow-sm ui-rounded-full ui-bg-white ui-ring-1 ui-ring-black/5"
+            className="ui:shadow-sm ui:rounded-full ui:bg-white ui:ring-1 ui:ring-black/5"
           />
         </SwitchPrimitive.Thumb>
       </SwitchPrimitive.Root>

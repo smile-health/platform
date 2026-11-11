@@ -23,26 +23,26 @@ export function InputTime(props: InputTimeProps) {
   const { fieldProps } = useTimeField(props, state, ref)
   const allError = state.isInvalid || props.error
   return (
-    <div className="ui-relative ui-flex ui-w-full ui-flex-col ui-text-left">
+    <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-left">
       <div
         {...fieldProps}
         ref={ref}
         className={cx(
-          'ui-flex ui-items-center ui-justify-start ui-rounded ui-border ui-px-2',
-          'ui-h-10',
-          'focus-within:ui-ring-2 focus-within:ui-ring-opacity-25',
+          'ui:flex ui:items-center ui:justify-start ui:rounded ui:border ui:px-2',
+          'ui:h-10',
+          'ui:focus-within:ring-2',
           {
-            'ui-cursor-not-allowed ui-bg-gray-100 ui-opacity-75':
+            'ui:cursor-not-allowed ui:bg-gray-100 ui:opacity-75':
               props.isDisabled,
           },
           {
-            'ui-border-gray-300': !allError,
-            'ui-border-danger-500': allError,
+            'ui:border-gray-300': !allError,
+            'ui:border-danger-500': allError,
           },
           {
-            'focus-within:ui-border-danger-500 focus-within:ui-ring-danger-500':
+            'ui:focus-within:border-danger-500 ui:focus-within:ring-danger-500/25':
               allError,
-            'focus-within:ui-border-primary-500 focus-within:ui-ring-primary-500':
+            'ui:focus-within:border-primary-500 ui:focus-within:ring-primary-500/25':
               !allError,
           }
         )}

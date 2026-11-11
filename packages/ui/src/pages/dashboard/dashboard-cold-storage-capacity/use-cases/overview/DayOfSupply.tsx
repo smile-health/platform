@@ -25,11 +25,11 @@ export default function DayOfSupply() {
       isLoading={overview?.isLoading}
       isEmpty={!value}
     >
-      <div className="ui-flex ui-flex-col ui-items-center ui-justify-center ui-py-6">
-        <span className="ui-text-4xl ui-font-bold ui-text-[#0C3045]">
+      <div className="ui:flex ui:flex-col ui:items-center ui:justify-center ui:py-6">
+        <span className="ui:text-4xl ui:font-bold ui:text-dark-blue">
           {numberFormatter(value, language)}
         </span>
-        <span className="ui-text-sm ui-text-gray-500 ui-mt-1">
+        <span className="ui:text-sm ui:text-gray-500 ui:mt-1">
           {t('section.day_of_supply.unit')}
         </span>
       </div>

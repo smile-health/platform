@@ -50,10 +50,10 @@ const AnnualPlanningSubstitutionFormSubtituteMaterialInput = ({
 
   return (
     <div
-      className="ui-flex ui-justify-start ui-items-start ui-gap-4 ui-mb-6"
+      className="ui:flex ui:justify-start ui:items-start ui:gap-4 ui:mb-6"
       key={field.id}
     >
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel
           htmlFor={`substitution_materials.${index}.substitution_material_child_id`}
           required
@@ -90,7 +90,7 @@ const AnnualPlanningSubstitutionFormSubtituteMaterialInput = ({
       </FormControl>
       <Button
         type="button"
-        className="ui-mt-5"
+        className="ui:mt-5"
         variant="subtle"
         color="danger"
         rightIcon={<XMark />}

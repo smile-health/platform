@@ -41,9 +41,9 @@ const overlayMotion = {
 
 function IconSection() {
   return (
-    <div className="ui-flex ui-h-11 ui-w-11 ui-flex-shrink-0 ui-items-center ui-justify-center ui-rounded-full ui-bg-danger-50">
-      <div className="ui-flex ui-h-8 ui-w-8 ui-flex-shrink-0 ui-items-center ui-justify-center ui-rounded-full ui-bg-danger-100">
-        <ExclamationTriangleIcon className="ui-h-5 ui-w-5 ui-text-danger-600" />
+    <div className="ui:flex ui:h-11 ui:w-11 ui:shrink-0 ui:items-center ui:justify-center ui:rounded-full ui:bg-danger-50">
+      <div className="ui:flex ui:h-8 ui:w-8 ui:shrink-0 ui:items-center ui:justify-center ui:rounded-full ui:bg-danger-100">
+        <ExclamationTriangleIcon className="ui:h-5 ui:w-5 ui:text-danger-600" />
       </div>
     </div>
   )
@@ -53,7 +53,7 @@ export function AlertDialogCloseButton() {
   return (
     <AlertDialogPrimitive.Cancel asChild>
       <CloseButton
-        className={cx('ui-absolute ui-right-2 ui-top-2')}
+        className={cx('ui:absolute ui:right-2 ui:top-2')}
       ></CloseButton>
     </AlertDialogPrimitive.Cancel>
   )
@@ -76,7 +76,7 @@ export function AlertDialogFooter({
   readonly children: React.ReactNode
 }) {
   return (
-    <div className="ui-flex ui-flex-col-reverse ui-justify-end ui-gap-3 ui-bg-gray-50 ui-px-4 ui-py-3 sm:ui-flex-row">
+    <div className="ui:flex ui:flex-col-reverse ui:justify-end ui:gap-3 ui:bg-gray-50 ui:px-4 ui:py-3 ui:sm:flex-row">
       {children}
     </div>
   )
@@ -90,14 +90,14 @@ export function AlertDialogContent({
   description?: string
 }>) {
   return (
-    <div className="ui-px-4 ui-py-4">
-      <div className="ui-flex ui-flex-col ui-items-center ui-gap-3 ui-text-center sm:ui-flex-row sm:ui-items-start sm:ui-text-left">
+    <div className="ui:px-4 ui:py-4">
+      <div className="ui:flex ui:flex-col ui:items-center ui:gap-3 ui:text-center ui:sm:flex-row ui:sm:items-start ui:sm:text-left">
         <IconSection></IconSection>
         <div>
-          <AlertDialogPrimitive.Title className="ui-text-lg ui-font-semibold ui-leading-6 ui-text-gray-800">
+          <AlertDialogPrimitive.Title className="ui:text-lg ui:font-semibold ui:leading-6 ui:text-gray-800">
             {title}
           </AlertDialogPrimitive.Title>
-          <AlertDialogPrimitive.Description className="ui-mt-2 ui-text-base ui-text-gray-600">
+          <AlertDialogPrimitive.Description className="ui:mt-2 ui:text-base ui:text-gray-600">
             {description}
           </AlertDialogPrimitive.Description>
         </div>
@@ -135,24 +135,24 @@ export function AlertDialog(props: Readonly<AlertDialogProps>) {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="ui-fixed ui-inset-0 ui-bg-black ui-bg-opacity-50"
+                className="ui:fixed ui:inset-0 ui:bg-black/50"
               ></motion.div>
             </AlertDialogPrimitive.Overlay>
 
             <AlertDialogPrimitive.Content
               forceMount
-              className="ui-fixed ui-inset-0 ui-flex ui-items-center ui-overflow-y-auto sm:ui-items-start"
+              className="ui:fixed ui:inset-0 ui:flex ui:items-center ui:overflow-y-auto ui:sm:items-start"
             >
-              <div className="ui-mt-[3.75rem] ui-flex ui-w-full ui-justify-center">
+              <div className="ui:mt-15 ui:flex ui:w-full ui:justify-center">
                 <motion.div
                   variants={panelMotion}
                   initial="initial"
                   animate="animate"
                   exit="exit"
                   className={cx(
-                    'ui-relative ui-top-0',
-                    'ui-w-11/12 ui-rounded-md ui-bg-white ui-shadow-xl sm:ui-w-4/5 md:ui-w-4/6 lg:ui-w-1/3',
-                    'ui-overflow-hidden ui-text-left'
+                    'ui:relative ui:top-0',
+                    'ui:w-11/12 ui:rounded-md ui:bg-white ui:shadow-xl ui:sm:w-4/5 ui:md:w-4/6 ui:lg:w-1/3',
+                    'ui:overflow-hidden ui:text-left'
                   )}
                 >
                   {props.children}

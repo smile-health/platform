@@ -34,7 +34,7 @@ export default function DisposalSubDetailTable({
   const renderSubComponent = ({ row }: { row: any }) => {
     const bag = row.original.wasteBags;
     return (
-      <div className="ui-p-4 ui-bg-gray-50 ui-border-t ui-border-gray-200">
+      <div className="ui:p-4 ui:bg-gray-50 ui:border-t ui:border-gray-200">
         <DataTable
           data={bag}
           columns={ColumnsWasteBagDetailItem(t, formatWasteBagWeight, unit)}
@@ -45,14 +45,14 @@ export default function DisposalSubDetailTable({
   };
 
   return (
-    <div className="ui-p-4 ui-bg-gray-50 ui-border-t ui-border-gray-200">
+    <div className="ui:p-4 ui:bg-gray-50 ui:border-t ui:border-gray-200">
       <DataTable
         data={wasteBags}
         columns={ColumnsWasteGroupDetailItem(t, formatWasteBagWeight, unit)}
         isLoading={isLoading}
         handleExpand={() => true}
         renderSubComponent={renderSubComponent}
-        bodyClassName="ui-h-auto"
+        bodyClassName="ui:h-auto"
         onClickRow={(row) => {
           row.toggleExpanded();
         }}

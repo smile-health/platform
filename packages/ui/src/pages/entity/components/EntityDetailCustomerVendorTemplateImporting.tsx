@@ -93,16 +93,16 @@ const EntityDetailCustomerVendorTemplateImporting: React.FC<Props> = ({
         accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"
         maxSize={10}
       />
-      <div className="ui-flex ui-justify-end ui-items-center">
+      <div className="ui:flex ui:justify-end ui:items-center">
         <Button
           type="button"
-          className="ui-px-[18.5px]"
+          className="ui:px-[18.5px]"
           variant="outline"
           disabled={entity?.status === BOOLEAN.FALSE}
           onClick={() => downloadQuery.refetch()}
         >
-          <div className="ui-flex ui-justify-between ui-items-center">
-            <div className="ui-mr-2">
+          <div className="ui:flex ui:justify-between ui:items-center">
+            <div className="ui:mr-2">
               <Download />
             </div>
             {t('common:download_template')}
@@ -110,13 +110,13 @@ const EntityDetailCustomerVendorTemplateImporting: React.FC<Props> = ({
         </Button>
         <Button
           type="button"
-          className="ui-px-[18px] ui-ml-[16px]"
+          className="ui:px-[18px] ui:ml-[16px]"
           color="primary"
           disabled={entity?.status === BOOLEAN.FALSE}
           onClick={() => setShowImport(true)}
         >
-          <div className="ui-flex ui-justify-between ui-items-center">
-            <div className="ui-mr-2">
+          <div className="ui:flex ui:justify-between ui:items-center">
+            <div className="ui:mr-2">
               <UploadIcon />
             </div>
             {t('entity:detail.customer_vendor.import_data_customer')}

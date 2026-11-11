@@ -16,7 +16,7 @@ export function ClearButton(props: ButtonProps) {
       {...buttonProps}
       id={id}
       data-testid={id}
-      className="ui-absolute ui-right-0 ui-rounded-full ui-items-center ui-justify-center ui-top-1/2 -ui-translate-y-1/2 mr-1 flex h-5 w-5"
+      className="ui:absolute ui:right-0 ui:rounded-full ui:items-center ui:justify-center ui:top-1/2 ui:-translate-y-1/2 mr-1 flex h-5 w-5"
       type="button"
       ref={ref}
     >

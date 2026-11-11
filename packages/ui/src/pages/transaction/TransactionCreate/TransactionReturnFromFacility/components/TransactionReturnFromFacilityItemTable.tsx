@@ -40,10 +40,10 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
 
   return (
     <>
-      <h3 className="ui-text-base ui-text-dark-teal ui-font-bold">
+      <h3 className="ui:text-base ui:text-dark-teal ui:font-bold">
         {t('transactionCreate:transaction_return_from_facility.title_table')}
       </h3>
-      <div className="ui-mt-6">
+      <div className="ui:mt-6">
         <TransactionReturnFromFacilityDetailDrawer />
         <TransactionReturnFromFacilityDiscardFormDialog />
         <Table
@@ -55,32 +55,32 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
         >
           <Thead>
             <Tr>
-              <Th className="ui-w-12">
-                <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+              <Th className="ui:w-12">
+                <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                   SI.No
                 </div>
               </Th>
-              <Th className="ui-w-36">
-                <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+              <Th className="ui:w-36">
+                <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                   {t(
                     'transactionCreate:transaction_return_from_facility.input_table.column.material'
                   )}
                 </div>
               </Th>
-              <Th className="ui-w-36">
-                <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+              <Th className="ui:w-36">
+                <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                   {t('transactionCreate:table.column.activity')}
                 </div>
               </Th>
-              <Th className="ui-w-36">
-                <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+              <Th className="ui:w-36">
+                <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                   {t(
                     'transactionCreate:transaction_return_from_facility.input_table.detail_column.batch_info'
                   )}
                 </div>
               </Th>
-              <Th className="ui-w-48">
-                <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+              <Th className="ui:w-48">
+                <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                   {t(
                     'transactionCreate:transaction_return_from_facility.input_table.column.quantity_info'
                   )}
@@ -92,15 +92,15 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                   data?.customer_is_open_vial
               ) ? (
                 <>
-                  <Th className="ui-w-36">
-                    <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+                  <Th className="ui:w-36">
+                    <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                       {t(
                         'transactionCreate:transaction_return_from_facility.input_table.column.open_vial'
                       )}
                     </div>
                   </Th>
-                  <Th className="ui-w-36">
-                    <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+                  <Th className="ui:w-36">
+                    <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                       {t(
                         'transactionCreate:transaction_return_from_facility.input_table.column.close_vial'
                       )}
@@ -108,29 +108,29 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                   </Th>
                 </>
               ) : (
-                <Th className="ui-w-36">
-                  <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+                <Th className="ui:w-36">
+                  <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                     {t(
                       'transactionCreate:transaction_return_from_facility.input_table.detail_column.return_amount'
                     )}
                   </div>
                 </Th>
               )}
-              <Th className="ui-w-36">
-                <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+              <Th className="ui:w-36">
+                <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                   {t(
                     'transactionCreate:transaction_return_from_facility.input_table.detail_column.is_anything_discarded'
                   )}
                 </div>
               </Th>
-              <Th className="ui-w-36">
-                <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+              <Th className="ui:w-36">
+                <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                   {t('common:action')}
                 </div>
               </Th>
             </Tr>
           </Thead>
-          <Tbody className="ui-bg-white ui-group ui-text-sm ui-font-normal">
+          <Tbody className="ui:bg-white ui:group ui:text-sm ui:font-normal">
             {fields?.map((data, index) => {
               const thousand = (
                 value?: number,
@@ -191,14 +191,14 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                         {
                           label: data?.activity?.name ?? '',
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-bold',
+                            'ui:text-dark-teal ui:text-sm ui:font-bold',
                         },
                         {
                           label: `${t(
                             'transactionCreate:transaction_return_from_facility.taken_from'
                           )}: ${data?.stock?.activity?.name ?? '-'}`,
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-normal',
+                            'ui:text-dark-teal ui:text-sm ui:font-normal',
                         },
                       ]}
                     />
@@ -209,21 +209,21 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                         {
                           label: data?.stock?.batch?.code ?? '-',
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-bold',
+                            'ui:text-dark-teal ui:text-sm ui:font-bold',
                         },
                         {
                           label: `${t(
                             'transactionCreate:transaction_return_from_facility.input_table.detail_column.manufacturer'
                           )}: ${data?.stock?.batch?.manufacture?.name ?? '-'}`,
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-normal',
+                            'ui:text-dark-teal ui:text-sm ui:font-normal',
                         },
                         {
                           label: `${t(
                             'transactionCreate:transaction_return_from_facility.input_table.detail_column.expired_date'
                           )}: ${parseDateTime(data?.stock?.batch?.expired_date as string, 'DD MMM YYYY', locale)?.toUpperCase()}`,
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-normal',
+                            'ui:text-dark-teal ui:text-sm ui:font-normal',
                         },
                       ]}
                     />
@@ -236,14 +236,14 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                             data?.max_return ?? 0
                           )}`,
                           className:
-                            'ui-text-sm ui-font-bold ui-text-dark-teal',
+                            'ui:text-sm ui:font-bold ui:text-dark-teal',
                         },
                         {
                           label: `${t('transactionCreate:transaction_return_from_facility.input_table.column.max_consumption_qty')}: ${thousand(
                             Math.abs(data?.change_qty ?? 0)
                           )}`,
                           className:
-                            'ui-text-sm ui-font-normal ui-text-dark-teal',
+                            'ui:text-sm ui:font-normal ui:text-dark-teal',
                         },
                       ]}
                     />
@@ -310,7 +310,7 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                   </Td>
                   <Td>
                     {appearDiscardQty ? (
-                      <div className="ui-flex ui-flex-col">
+                      <div className="ui:flex ui:flex-col">
                         <TransactionReturnFromFacilityTitleBlock
                           arrText={[
                             ...(isOpenVial
@@ -327,7 +327,7 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                                       separator: ': ',
                                     }),
                                     className:
-                                      'ui-text-dark-teal ui-text-sm ui-font-normal',
+                                      'ui:text-dark-teal ui:text-sm ui:font-normal',
                                   },
                                 ]
                               : []),
@@ -346,7 +346,7 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                                 separator: ': ',
                               }),
                               className:
-                                'ui-text-dark-teal ui-text-sm ui-font-normal',
+                                'ui:text-dark-teal ui:text-sm ui:font-normal',
                             },
                             {
                               label: textGrouper({
@@ -359,7 +359,7 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                                 separator: ': ',
                               }),
                               className:
-                                'ui-text-dark-teal ui-text-sm ui-font-normal ui-mb-4',
+                                'ui:text-dark-teal ui:text-sm ui:font-normal ui:mb-4',
                             },
                             {
                               label: textGrouper({
@@ -374,7 +374,7 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                                 separator: ': ',
                               }),
                               className:
-                                'ui-text-dark-teal ui-text-sm ui-font-normal ui-mb-4',
+                                'ui:text-dark-teal ui:text-sm ui:font-normal ui:mb-4',
                             },
                           ]}
                         />
@@ -384,7 +384,7 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                           }
                           type="button"
                           variant="subtle"
-                          className="ui-p-0 ui-w-fit"
+                          className="ui:p-0 ui:w-fit"
                           disabled={!returnQty || Number(returnQty) <= 0}
                         >
                           {t('common:edit')}
@@ -403,10 +403,10 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                     )}
                   </Td>
                   <Td>
-                    <div className="ui-flex ui-justify-start ui-items-center ui-gap-4">
+                    <div className="ui:flex ui:justify-start ui:items-center ui:gap-4">
                       <Button
                         variant="subtle"
-                        className="ui-p-0 ui-w-fit"
+                        className="ui:p-0 ui:w-fit"
                         type="button"
                         onClick={() => setStockData({ ...data, index })}
                       >
@@ -416,7 +416,7 @@ const TransactionReturnFromFacilityItemTable = (): JSX.Element => {
                         variant="subtle"
                         color="danger"
                         type="button"
-                        className="ui-p-0 ui-w-fit"
+                        className="ui:p-0 ui:w-fit"
                         onClick={() => handleDeleteTransaction(index)}
                       >
                         {t('common:remove')}

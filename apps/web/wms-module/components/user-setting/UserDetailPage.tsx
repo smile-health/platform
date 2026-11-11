@@ -44,7 +44,7 @@ const UserDetailPage: React.FC = () => {
       backButton={{ show: true }}
     >
       <Meta title={`WMS | User Detail`} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <UserDetailMainInfo
           detailData={userData}
           isLoading={userDetail.isFetching}

@@ -111,9 +111,9 @@ const MaterialFormGlobalInformation: React.FC<Props> = ({ isEdit = false }) => {
   }, [])
 
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold">{t('material:form.title')}</div>
-      <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold">{t('material:form.title')}</div>
+      <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
         <FormControl>
           <FormLabel htmlFor="material_name" required>
             {t('material:form.material_name.label')}
@@ -234,7 +234,7 @@ const MaterialFormGlobalInformation: React.FC<Props> = ({ isEdit = false }) => {
                 }}
               />
             )}
-            <div className="ui-grid ui-grid-cols-2 ui-gap-x-6">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-x-6">
               <FormControl>
                 <FormLabel htmlFor={handleKFALabel().id} required>
                   {handleKFALabel().label as string}
@@ -281,7 +281,7 @@ const MaterialFormGlobalInformation: React.FC<Props> = ({ isEdit = false }) => {
             <FormErrorMessage>{errors?.code?.message}</FormErrorMessage>
           </FormControl>
         )}
-        <div className="ui-grid ui-grid-cols-2 ui-gap-x-6">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-x-6">
           <Controller
             name="unit_of_consumption_id"
             control={control}
@@ -393,7 +393,7 @@ const MaterialFormGlobalInformation: React.FC<Props> = ({ isEdit = false }) => {
             </FormControl>
           )}
         />
-        <div className="ui-grid ui-grid-cols-2 ui-gap-x-6">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-x-6">
           <Controller
             name="min_retail_price"
             control={control}
@@ -448,13 +448,13 @@ const MaterialFormGlobalInformation: React.FC<Props> = ({ isEdit = false }) => {
           />
         </div>
         <div
-          className="ui-grid ui-grid-cols-8 ui-gap-x-6 !ui-h-[70px]"
+          className="ui:grid ui:grid-cols-8 ui:gap-x-6 ui:h-[70px]!"
           style={{
             marginBottom:
               errors?.min_temperature || errors?.max_temperature ? '3rem' : '',
           }}
         >
-          <div className="ui-col-start-1 ui-col-span-4">
+          <div className="ui:col-start-1 ui:col-span-4">
             <FormControl>
               <FormLabel>
                 {t('material:form.temperature_sensitive.label')}
@@ -481,7 +481,7 @@ const MaterialFormGlobalInformation: React.FC<Props> = ({ isEdit = false }) => {
           </div>
           {isTemperatureSensitive === DEFAULT_VALUE.YES && (
             <Fragment>
-              <div className="ui-col-start-5 ui-col-span-2">
+              <div className="ui:col-start-5 ui:col-span-2">
                 <Controller
                   name="min_temperature"
                   control={control}
@@ -512,7 +512,7 @@ const MaterialFormGlobalInformation: React.FC<Props> = ({ isEdit = false }) => {
                   )}
                 />
               </div>
-              <div className="ui-col-start-7 ui-col-span-2">
+              <div className="ui:col-start-7 ui:col-span-2">
                 <Controller
                   name="max_temperature"
                   control={control}

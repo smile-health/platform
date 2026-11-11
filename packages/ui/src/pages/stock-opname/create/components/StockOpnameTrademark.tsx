@@ -30,16 +30,16 @@ const StockOpnameTrademark: React.FC = () => {
   }, [debounceSearch, trademarks]);
 
   return (
-    <div className="ui-mt-6 ui-space-y-4">
-      <div className="ui-flex ui-items-center ui-justify-between">
+    <div className="ui:mt-6 ui:space-y-4">
+      <div className="ui:flex ui:items-center ui:justify-between">
         <InputSearch
           id="input-search-activity-program"
           placeholder={t('stockOpnameCreate:form.trademark.table.search')}
           onChange={(e) => setSearch(e.target.value)}
-          className="ui-w-1/2"
+          className="ui:w-1/2"
         />
         <p>
-          <strong className="ui-text-dark-blue ui-text-sm">
+          <strong className="ui:text-dark-blue ui:text-sm">
             {filteredTrademarks.length}
           </strong>
           &nbsp;
@@ -56,7 +56,7 @@ const StockOpnameTrademark: React.FC = () => {
         })}
         isSticky
         onClickRow={(row) => handleSelectMaterial(row.original)}
-        className="ui-overflow-x-auto ui-max-h-[425px]"
+        className="ui:overflow-x-auto ui:max-h-[425px]"
       />
     </div >
   )

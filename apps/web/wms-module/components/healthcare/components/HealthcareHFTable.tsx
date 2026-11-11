@@ -49,7 +49,7 @@ export default function HealthcareHFTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={healthcareDataSource?.data?.data}
         columns={columnsHealthcareHF(tCommon, tHealthCare, {

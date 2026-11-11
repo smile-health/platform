@@ -122,21 +122,21 @@ export const OrderDetailFloatingBar = () => {
   return (
     <div
       className={cx(
-        'ui-fixed ui-bottom-0 ui-left-0 ui-w-full ui-shadow-lg ui-bg-white ui-border-t ui-transition-all ui-transform',
+        'ui:fixed ui:bottom-0 ui:left-0 ui:w-full ui:shadow-lg ui:bg-white ui:border-t ui:transition-all ui:transform',
         {
-          'ui-translate-y-full': !isShowFloatingBar,
-          'ui-translate-y-0': isShowFloatingBar,
+          'ui:translate-y-full': !isShowFloatingBar,
+          'ui:translate-y-0': isShowFloatingBar,
         }
       )}
     >
-      <div className="ui-container ui-mx-auto ui-flex ui-justify-end ui-items-center ui-py-4 ui-px-6 ui-gap-3">
+      <div className="ui:container ui:mx-auto ui:flex ui:justify-end ui:items-center ui:py-4 ui:px-6 ui:gap-3">
         {hasPermission('order-mutate') &&
           buttons
             .filter((button) => button.isShow)
             .map((button) => (
               <Button
                 key={button.label}
-                className="ui-min-w-[200px]"
+                className="ui:min-w-[200px]"
                 variant={button.variant}
                 onClick={button.onClick}
               >

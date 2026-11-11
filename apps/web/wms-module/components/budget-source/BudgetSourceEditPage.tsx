@@ -41,7 +41,7 @@ const BudgetSourceEdit = (): JSX.Element => {
       <Meta title={generateMetaTitle('BudgetSource', true, true)} />
       <div className="mt-6 space-y-6">
         {isLoading ? (
-          <Spinner className="ui-w-full ui-h-10" />
+          <Spinner className="ui:w-full ui:h-10" />
         ) : (
           <Fragment>
             <BudgetSourceForm defaultValues={data?.data} />

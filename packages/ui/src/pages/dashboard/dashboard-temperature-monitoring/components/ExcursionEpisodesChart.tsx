@@ -54,12 +54,12 @@ export default function ExcursionEpisodesChart({
   return (
     <DashboardBox.Root
       id="excursion-episodes-chart"
-      className="ui-flex ui-flex-col ui-flex-1"
+      className="ui:flex ui:flex-col ui:flex-1"
     >
-      <DashboardBox.Header className="ui-bg-white ui-border-b ui-border-gray-200">
-        <div className="ui-flex ui-flex-col ui-items-center ui-justify-center">
-          <div className="ui-flex ui-items-center ui-gap-1">
-            <h3 className="ui-font-semibold ui-text-sm">
+      <DashboardBox.Header className="ui:bg-white ui:border-b ui:border-gray-200">
+        <div className="ui:flex ui:flex-col ui:items-center ui:justify-center">
+          <div className="ui:flex ui:items-center ui:gap-1">
+            <h3 className="ui:font-semibold ui:text-sm">
               {t('temperature_excursion.charts.excursion_episodes.title')}
             </h3>
             <DashboardBox.InfoModal
@@ -73,17 +73,17 @@ export default function ExcursionEpisodesChart({
                 </p>
               }
             >
-              <p className="ui-text-gray-500">
+              <p className="ui:text-gray-500">
                 {t('temperature_excursion.charts.excursion_episodes.info')}
               </p>
             </DashboardBox.InfoModal>
           </div>
-          <p className="ui-text-xs ui-text-gray-500">
+          <p className="ui:text-xs ui:text-gray-500">
             {t('temperature_excursion.charts.excursion_episodes.subtitle')}
           </p>
         </div>
       </DashboardBox.Header>
-      <DashboardBox.Body className="ui-flex ui-flex-col ui-flex-1">
+      <DashboardBox.Body className="ui:flex ui:flex-col ui:flex-1">
         <DashboardBox.Config
           download={{
             targetElementId: 'excursion-episodes-chart',
@@ -96,9 +96,9 @@ export default function ExcursionEpisodesChart({
         <DashboardBox.Content
           isLoading={isLoading}
           isEmpty={!items.length}
-          className="ui-flex-1"
+          className="ui:flex-1"
         >
-          <div className="ui-h-[300px] ui-flex-1">
+          <div className="ui:h-[300px] ui:flex-1">
             <StackedLineChart
               labels={labels}
               series={series}
@@ -140,7 +140,7 @@ export default function ExcursionEpisodesChart({
               }}
             />
           </div>
-          <p className="ui-text-xs ui-text-gray-500 ui-text-center ui-mt-2 ui-pb-2">
+          <p className="ui:text-xs ui:text-gray-500 ui:text-center ui:mt-2 ui:pb-2">
             {t('summary.last_updated_at', { time: lastUpdated })}
           </p>
         </DashboardBox.Content>

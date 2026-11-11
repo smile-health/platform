@@ -56,7 +56,7 @@ export const columnsUserOperator = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-danger-500"
+            className="ui:px-1.5! ui:text-danger-500"
           >
             {t('common:remove')}
           </Button>

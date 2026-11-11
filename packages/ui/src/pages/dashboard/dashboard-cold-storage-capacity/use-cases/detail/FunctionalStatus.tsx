@@ -262,7 +262,7 @@ export default function FunctionalStatus() {
       isLoading={detail.isLoading}
       isEmpty={!detail.data?.function_status?.data?.length}
     >
-      <div className="ui-relative ui-w-full">
+      <div className="ui:relative ui:w-full">
         <StackedBarChart
           data={chartData}
           layout="horizontal"
@@ -275,7 +275,7 @@ export default function FunctionalStatus() {
         {iconPositions.map((pos) => (
           <div
             key={pos.index}
-            className="ui-absolute"
+            className="ui:absolute"
             style={{
               left: pos.x,
               top: pos.y,
@@ -287,7 +287,7 @@ export default function FunctionalStatus() {
               <TooltipTrigger>
                 <button
                   type="button"
-                  className="ui-flex ui-h-4 ui-w-4 ui-items-center ui-justify-center ui-rounded-full ui-bg-gray-400 ui-text-[10px] ui-font-bold ui-leading-none ui-text-white hover:ui-bg-gray-500"
+                  className="ui:flex ui:h-4 ui:w-4 ui:items-center ui:justify-center ui:rounded-full ui:bg-gray-400 ui:text-[10px] ui:font-bold ui:leading-none ui:text-white ui:hover:bg-gray-500"
                 >
                   i
                 </button>
@@ -296,7 +296,7 @@ export default function FunctionalStatus() {
                 side="right"
                 style={{ zIndex: 999, maxWidth: 250 }}
               >
-                <p className="ui-text-sm">
+                <p className="ui:text-sm">
                   {t('section.functional_status.temp_not_set_info')}
                 </p>
               </TooltipContent>

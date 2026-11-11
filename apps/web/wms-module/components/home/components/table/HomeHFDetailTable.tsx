@@ -17,7 +17,7 @@ export default function HomeHFDetailTable({
   const { t } = useTranslation(['common', 'home']);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={detailTransaction}
         columns={ColumnsHomeHFDetail(t)}

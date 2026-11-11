@@ -118,7 +118,7 @@ export const SummaryListBatch = ({
   }
 
   return (
-    <div key={key} className="ui-flex ui-flex-col ui-gap-1">
+    <div key={key} className="ui:flex ui:flex-col ui:gap-1">
       <div>
         {t('table.column.batch_code')}: {batchName}
       </div>
@@ -132,9 +132,9 @@ export const SummaryListBatch = ({
         </div>
       ) : null}
       {!isOpenVial ? (
-        <div className="ui-font-bold">Qty: {numberFormatter(qty, lang)}</div>
+        <div className="ui:font-bold">Qty: {numberFormatter(qty, lang)}</div>
       ) : (
-        <div className="ui-font-bold">
+        <div className="ui:font-bold">
           Qty: {numberFormatter(openVial, lang)} {`(${t('open_vial')})`}{' '}
           {numberFormatter(closeVial, lang)} {`(${t('close_vial')})`}
         </div>

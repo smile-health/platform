@@ -56,12 +56,12 @@ export const columns = ({ t, handleAction, page = 1, size = 10 }: ColumnProps): 
     accessorKey: 'action',
     size: 160,
     cell: ({ row: { original } }) => (
-      <div className="ui-flex ui-gap-2">
+      <div className="ui:flex ui:gap-2">
         <Button
           id="btn-detail-program"
           size="sm"
           variant="subtle"
-          className="ui-text-polynesianblue-600 ui-px-1.5"
+          className="ui:text-polynesianblue-600 ui:px-1.5"
           onClick={() => handleAction('detail', original.id)}
         >
           {t('common:detail')}
@@ -70,7 +70,7 @@ export const columns = ({ t, handleAction, page = 1, size = 10 }: ColumnProps): 
           id="btn-edit-program"
           size="sm"
           variant="subtle"
-          className="ui-text-polynesianblue-600 ui-px-1.5"
+          className="ui:text-polynesianblue-600 ui:px-1.5"
           onClick={() => handleAction('edit', original.id)}
         >
           {t('common:edit')}
@@ -121,12 +121,12 @@ export const columnsActivity = ({ t, handleAction, page, size }: ColumnProps & {
     size: 123,
     minSize: 123,
     cell: ({ row: { original } }) => (
-      <div className="ui-flex ui-gap-2">
+      <div className="ui:flex ui:gap-2">
         <Button
           id="btn-detail-activity-programdetail"
           size="sm"
           variant="subtle"
-          className="ui-text-polynesianblue-600"
+          className="ui:text-polynesianblue-600"
           onClick={() => handleAction('detail', original.id)}
         >
           {t('common:detail')}
@@ -135,7 +135,7 @@ export const columnsActivity = ({ t, handleAction, page, size }: ColumnProps & {
           id="btn-edit-activity-program"
           size="sm"
           variant="subtle"
-          className="ui-text-polynesianblue-600"
+          className="ui:text-polynesianblue-600"
           onClick={() => handleAction('edit', original.id)}
         >
           {t('common:edit')}

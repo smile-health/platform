@@ -42,7 +42,7 @@ const TransactionCreateConsumptionTableDetail = ({
   return (
     <>
       <Table withBorder key={indexData} hightlightOnHover rounded>
-        <Thead className="ui-bg-slate-100 ui-text-sm">
+        <Thead className="ui:bg-slate-100 ui:text-sm">
           <Tr>
             {columns(
               batches?.some((i) => i.managed_in_batch === 1),
@@ -54,7 +54,7 @@ const TransactionCreateConsumptionTableDetail = ({
                 key={`header-${item.id}`}
                 id={`header-${item.id}`}
                 columnKey={item.id}
-                className="ui-text-sm ui-text-dark-blue ui-font-bold"
+                className="ui:text-sm ui:text-dark-blue ui:font-bold"
                 style={{
                   ...(item.size && { width: item.size }),
                 }}
@@ -64,16 +64,16 @@ const TransactionCreateConsumptionTableDetail = ({
             ))}
           </Tr>
         </Thead>
-        <Tbody className="ui-bg-white  ui-font-normal ui-text-sm">
+        <Tbody className="ui:bg-white  ui:font-normal ui:text-sm">
           {batches?.map((item, index) => (
             <Tr
               key={`item-material-batch-${index.toString()}`}
-              className={!item.batch_id ? 'ui-bg-info-50' : ''}
+              className={!item.batch_id ? 'ui:bg-info-50' : ''}
             >
               <Td id="no">{index + 1}</Td>
               <Td id="batch_info">
-                <div className="ui-flex ui-flex-col ui-space-y-1">
-                  <div className="ui-font-bold">{item.code}</div>
+                <div className="ui:flex ui:flex-col ui:space-y-1">
+                  <div className="ui:font-bold">{item.code}</div>
                   <div>
                     {t('table.column.production_date')}:{' '}
                     {parseDateTime(
@@ -97,7 +97,7 @@ const TransactionCreateConsumptionTableDetail = ({
                 </div>
               </Td>
               <Td id="stock_info">
-                <div className="ui-flex ui-flex-col ui-space-y-1">
+                <div className="ui:flex ui:flex-col ui:space-y-1">
                   <div>
                     {t('table.column.stock_on_hand')}:{' '}
                     {numberFormatter(item.on_hand_stock || 0, language)}
@@ -120,7 +120,7 @@ const TransactionCreateConsumptionTableDetail = ({
               </Td>
               <Td id="activity">{item.activity_name}</Td>
               <Exists useIt={!!items?.is_vaccine}>
-                <Td id="patient_identity" className="ui-p-0">
+                <Td id="patient_identity" className="ui:p-0">
                   <TransactionCreateConsumptionPatientIdentity
                     item={item}
                     setValueBatch={setValue}
@@ -180,7 +180,7 @@ const TransactionCreateConsumptionTableDetail = ({
               </Exists>
               <Exists useIt={Boolean(item?.is_open_vial)}>
                 <>
-                  <Td id="open_vial" className="ui-w-96">
+                  <Td id="open_vial" className="ui:w-96">
                     <Controller
                       key={`${indexData}-${index}`}
                       control={control}
@@ -222,7 +222,7 @@ const TransactionCreateConsumptionTableDetail = ({
                       )}
                     />
                   </Td>
-                  <Td id="close_vial" className="ui-w-96">
+                  <Td id="close_vial" className="ui:w-96">
                     <Controller
                       key={`${indexData}-${index}`}
                       control={control}
@@ -269,7 +269,7 @@ const TransactionCreateConsumptionTableDetail = ({
                   </Td>
                 </>
               </Exists>
-              <Td id="material_status" className="ui-w-auto">
+              <Td id="material_status" className="ui:w-auto">
                 <Controller
                   key={`${indexData}-${index}`}
                   control={control}

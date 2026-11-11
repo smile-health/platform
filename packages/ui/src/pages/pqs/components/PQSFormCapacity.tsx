@@ -44,21 +44,21 @@ const PQSFormCapacity = ({
   ]
 
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('detail.section.capacity.header')}
       </div>
       {!!defaultValue?.is_related_asset && (
-        <div className="ui-rounded ui-bg-slate-100 ui-px-4 ui-py-[9px] ui-flex ui-gap-2 ui-items-center my-4">
+        <div className="ui:rounded ui:bg-slate-100 ui:px-4 ui:py-[9px] ui:flex ui:gap-2 ui:items-center my-4">
           <Warning />
-          <p className="ui-text-xs ui-font-normal">
+          <p className="ui:text-xs ui:font-normal">
             {t('detail.section.detail.warning')}
           </p>
         </div>
       )}
-      <div className="ui-grid ui-grid-cols-3 ui-gap-5">
+      <div className="ui:grid ui:grid-cols-3 ui:gap-5">
         {fields.map(({ label, name, placeholder }) => (
-          <FormControl className="ui-w-full" key={name}>
+          <FormControl className="ui:w-full" key={name}>
             <FormLabel htmlFor={name}>{label}</FormLabel>
             <Controller
               name={name as keyof CreatePQSFormCapacityInput}

@@ -59,7 +59,7 @@ const AssetDetailLoggerActivityTable = () => {
         columns={AssetDetailLoggerActivityColumns(t, language)}
         data={loggerActivity?.data ?? []}
       />
-      <PaginationContainer className="ui-mt-5">
+      <PaginationContainer className="ui:mt-5">
         <PaginationSelectLimit
           size={loggerActivity?.item_per_page}
           perPagesOptions={loggerActivity?.list_pagination}

@@ -51,7 +51,7 @@ export default function ThirdPartyPartnerTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={partnershipDataSource?.data?.data}
         columns={columnsThirdPartyPartner(t, {

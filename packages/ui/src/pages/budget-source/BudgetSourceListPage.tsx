@@ -55,37 +55,37 @@ const BudgetSourceListPage: React.FC<CommonType> = ({ isGlobal }) => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('budgetSource:list.title')}`}
       />
-      <div className="ui-mt-6 ui-space-y-6">
+      <div className="ui:mt-6 ui:space-y-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-items-end">
+          <FilterFormBody className="ui:flex ui:items-end">
             <div
               className={
                 !isGlobal
-                  ? `ui-w-2/3`
-                  : `ui-grow ui-grid ui-grid-cols-2 ui-items-end ui-gap-4`
+                  ? `ui:w-2/3`
+                  : `ui:grow ui:grid ui:grid-cols-2 ui:items-end ui:gap-4`
               }
             >
               {filter.renderField()}
             </div>
-            <div className="ui-flex ui-gap-5 w-1/3">
+            <div className="ui:flex ui:gap-5 w-1/3">
               <Button
                 id="btn-export"
                 variant="subtle"
                 type="button"
                 onClick={() => exportQuery.refetch()}
                 loading={exportQuery.isFetching || exportQuery.isLoading}
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
               >
                 {t('common:export')}
               </Button>
-              <span className="ui-w-px ui-bg-neutral-300" />
-              <div className="ui-flex ui-gap-2">
+              <span className="ui:w-px ui:bg-neutral-300" />
+              <div className="ui:flex ui:gap-2">
                 <FilterResetButton onClick={filter.reset} variant="subtle" />
               </div>
               <FilterSubmitButton
                 onClick={() => setPagination({ page: 1 })}
                 variant="outline"
-                className="ui-w-[220px]"
+                className="ui:w-[220px]"
               ></FilterSubmitButton>
             </div>
           </FilterFormBody>

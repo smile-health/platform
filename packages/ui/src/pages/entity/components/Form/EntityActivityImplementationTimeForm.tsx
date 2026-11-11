@@ -88,7 +88,7 @@ const EntityActivityImplementationTimeForm: React.FC<Props> = ({
           title={t('entity:detail.tabs_title.activity_implementation_time')}
           isSubmitting={isPending}
         />
-        <div className="ui-mt-6 ui-space-y-4 ui-w-full ui-flex ui-flex-col">
+        <div className="ui:mt-6 ui:space-y-4 ui:w-full ui:flex ui:flex-col">
           {renderActivityFields()}
         </div>
         {(isFetchingNextPage || isLoadingActivities) && (
@@ -104,12 +104,12 @@ const ActivityField: React.FC<{
   idx: number
 }> = ({ field, idx }) => {
   return (
-    <div className="ui-border ui-border-neutral-300 ui-rounded-md ui-p-4">
-      <div className="ui-flex ui-justify-between ui-items-start ui-w-auto ui-text-base">
-        <div className="ui-w-64 ui-mr-4 ui-text-neutral-500 ui-text-base">
+    <div className="ui:border ui:border-neutral-300 ui:rounded-md ui:p-4">
+      <div className="ui:flex ui:justify-between ui:items-start ui:w-auto ui:text-base">
+        <div className="ui:w-64 ui:mr-4 ui:text-neutral-500 ui:text-base">
           {field[0]?.name}
         </div>
-        <div className="ui-w-auto ui-mr-4">:</div>
+        <div className="ui:w-auto ui:mr-4">:</div>
         <EntityActivityImplementationTimeInputDates
           id={field[0]?.id as number}
           idx={idx}
@@ -121,8 +121,8 @@ const ActivityField: React.FC<{
 }
 
 const LoadingSpinner: React.FC = () => (
-  <div className="ui-my-4 ui-h-5 ui-w-full ui-flex ui-justify-center ui-items-center ui-text-dark-blue">
-    <Spinner className="ui-h-8 ui-w-8" />
+  <div className="ui:my-4 ui:h-5 ui:w-full ui:flex ui:justify-center ui:items-center ui:text-dark-blue">
+    <Spinner className="ui:h-8 ui:w-8" />
   </div>
 )
 

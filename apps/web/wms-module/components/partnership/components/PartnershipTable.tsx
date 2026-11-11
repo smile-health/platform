@@ -52,7 +52,7 @@ export default function PartnershipTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={partnershipDataSource?.data?.data}
         columns={columnsPartnership(tCommon, tPartnership, {

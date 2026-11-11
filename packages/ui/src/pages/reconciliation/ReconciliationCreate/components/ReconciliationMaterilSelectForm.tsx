@@ -18,7 +18,7 @@ const ReconciliationMaterilSelectForm = () => {
     handleChangeMaterial,
   } = useMaterialSelect({ search })
   return (
-    <div className="ui-w-full">
+    <div className="ui:w-full">
       <InfiniteScrollList
         id="list-material-reconciliation-create"
         title={handleTitle()}

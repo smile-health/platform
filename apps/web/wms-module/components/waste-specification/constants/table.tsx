@@ -146,7 +146,7 @@ export const columnsWasteSpecification = (
     enableSorting: true,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-flex-col ui-gap-0.5">
+        <div className="ui:flex ui:flex-col ui:gap-0.5">
           <p>{original.userName}</p>
           <p>
             {original.updatedAt

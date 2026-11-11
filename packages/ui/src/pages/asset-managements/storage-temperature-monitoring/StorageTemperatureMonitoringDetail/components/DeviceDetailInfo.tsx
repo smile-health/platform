@@ -51,7 +51,7 @@ export const DeviceDetailInfo = () => {
         return (
           <p>
             {otherValue}{' '}
-            <span className="ui-text-gray-500">
+            <span className="ui:text-gray-500">
               {t('assetManagements:columns.other_option', {
                 option: otherLabel,
               })}
@@ -77,12 +77,12 @@ export const DeviceDetailInfo = () => {
         max: number,
         metric: string
       ) => (
-        <span className="ui-font-bold ui-text-dark-teal">
+        <span className="ui:font-bold ui:text-dark-teal">
           (Min: {min} {metric}) - (Max: {max} {metric})
         </span>
       )
       const otherInformation = (
-        <span className="ui-text-sm ui-text-[#787878]">
+        <span className="ui:text-sm ui:text-[#787878]">
           {parseDateTime(
             data?.updated_at,
             'DD MMM YYYY HH:mm'
@@ -165,7 +165,7 @@ export const DeviceDetailInfo = () => {
   )
 
   return (
-    <div className="ui-border-b ui-border-gray-300 ui-pb-4">
+    <div className="ui:border-b ui:border-gray-300 ui:pb-4">
       <RenderDetailValue
         data={[
           {

@@ -92,7 +92,7 @@ export const ButtonWithDropdown: React.FC<ButtonWithDropdownProps> = ({
             <DropdownMenuItem key={item?.id} disabled={item?.disabled ?? false}>
               <div
                 id={item.id}
-                className="ui-w-full ui-text-left ui-h-full"
+                className="ui:w-full ui:text-left ui:h-full"
                 onClick={
                   isDownloadTemplate ? item.onDownloadTemplate : item.onClick
                 }
@@ -147,7 +147,7 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
           onClick={onReset}
           {...configButtonFilterProps?.reset}
         >
-          <Reload className="ui-size-5" />
+          <Reload className="ui:size-5" />
         </Button>
       ) : null,
     },
@@ -159,7 +159,7 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
             <ButtonWithDropdown
               id="btn-impor"
               label={t('import')}
-              leftIcon={<Import className="ui-size-5" />}
+              leftIcon={<Import className="ui:size-5" />}
               dropdownList={dropdownList}
             />
           ) : (
@@ -169,7 +169,7 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
               loading={importLoading}
               variant="outline"
               type="button"
-              leftIcon={<Import className="ui-size-5" />}
+              leftIcon={<Import className="ui:size-5" />}
               {...configButtonFilterProps?.import}
             >
               {t('import')}
@@ -187,7 +187,7 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
           loading={exportLoading}
           variant="outline"
           type="button"
-          leftIcon={<Export className="ui-size-5" />}
+          leftIcon={<Export className="ui:size-5" />}
           {...configButtonFilterProps?.export}
         >
           {t('export')}
@@ -201,7 +201,7 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
           {isDropdownDownloadTemplateButton ? (
             <ButtonWithDropdown
               id="btn-download-template"
-              leftIcon={<Download className="ui-size-5" />}
+              leftIcon={<Download className="ui:size-5" />}
               label={t('download_template')}
               dropdownList={dropdownList}
               isDownloadTemplate={isDropdownDownloadTemplateButton}
@@ -213,7 +213,7 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
               loading={downloadLoading}
               variant="outline"
               type="button"
-              leftIcon={<Download className="ui-size-5" />}
+              leftIcon={<Download className="ui:size-5" />}
               {...configButtonFilterProps?.download}
             >
               {t('download_template')}
@@ -264,14 +264,14 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
   return (
     <div
       className={cx(
-        'ui-flex ui-gap-2',
+        'ui:flex ui:gap-2',
         {
-          'ui-justify-between': layout === 'column',
+          'ui:justify-between': layout === 'column',
         },
         classNameButtonGroup
       )}
     >
-      <div className="ui-flex ui-gap-2">
+      <div className="ui:flex ui:gap-2">
         {resultOrder.map((x, i) => i < 1 && x?.component)}
         {collapsible && (
           <Button
@@ -281,9 +281,9 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
             onClick={onToggle}
             leftIcon={
               show ? (
-                <XMarkIcon className="ui-size-5" />
+                <XMarkIcon className="ui:size-5" />
               ) : (
-                <Filter className="ui-size-5" />
+                <Filter className="ui:size-5" />
               )
             }
           >
@@ -293,8 +293,8 @@ export function ButtonGroupFilter(props: Readonly<ButtonGroupFilterProps>) {
       </div>
       <div
         className={cx(
-          'ui-grid ui-gap-2',
-          classNameLayout ?? 'ui-grid-cols-[auto_auto_195px_202px]'
+          'ui:grid ui:gap-2',
+          classNameLayout ?? 'ui:grid-cols-[auto_auto_195px_202px]'
         )}
       >
         {resultOrder.map((x, i) => i > 0 && x?.component)}

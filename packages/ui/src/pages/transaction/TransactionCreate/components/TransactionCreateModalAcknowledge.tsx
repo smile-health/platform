@@ -27,19 +27,19 @@ function TransactionCreateModalAcknowledge({
   return (
     <Dialog open={open} onOpenChange={handleClose} verticalCentered>
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
-        <p className="ui-text-xl ui-text-primary-800 ui-font-medium">
+      <DialogHeader className="ui:text-center ui:text-xl">
+        <p className="ui:text-xl ui:text-primary-800 ui:font-medium">
           {t('common:confirmation')}
         </p>
       </DialogHeader>
       <DialogContent>
-        <div className="ui-flex ui-flex-col  ui-space-y-5">
-          <div className="ui-text-dark-blue ui-font-medium ui-text-center">
+        <div className="ui:flex ui:flex-col  ui:space-y-5">
+          <div className="ui:text-dark-blue ui:font-medium ui:text-center">
             {t(
               'transactionCreate:transaction_transfer_stock.desc_acknowledge_one'
             )}
           </div>
-          <div className="ui-text-dark-blue ui-text-sm">
+          <div className="ui:text-dark-blue ui:text-sm">
             <Checkbox
               checked={checkAcknowledge}
               defaultChecked={false}
@@ -52,8 +52,8 @@ function TransactionCreateModalAcknowledge({
           </div>
         </div>
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full">
           <Button
             id="btn-close-modal-confirmation"
             onClick={handleClose}

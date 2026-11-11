@@ -25,8 +25,8 @@ type Props = {
 }
 
 const styleProtocol = {
-  container: 'ui-py-1 ui-px-2 ui-bg-[#E2E8F0] ui-rounded-3xl',
-  content: 'ui-flex ui-items-center ui-text-sm ui-font-medium ui-text-[#CBD5E1]'
+  container: 'ui:py-1 ui:px-2 ui:bg-slate-200 ui:rounded-3xl',
+  content: 'ui:flex ui:items-center ui:text-sm ui:font-medium ui:text-slate-300'
 }
 
 const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
@@ -87,14 +87,14 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
   const shouldShowKipiForm = !!item.is_kipi && history_vaccination !== undefined && !!vaccination?.is_valid_patient
 
   return (
-    <DialogContent className="!ui-p-0">
-      <div className="ui-flex ui-flex-row ui-border-t ui-border-[#D2D2D2]">
-        <div className="ui-w-56 ui-border-r ui-border-[#D2D2D2]">
-          <div className="ui-flex ui-flex-col">
+    <DialogContent className="ui:p-0!">
+      <div className="ui:flex ui:flex-row ui:border-t ui:border-[#D2D2D2]">
+        <div className="ui:w-56 ui:border-r ui:border-[#D2D2D2]">
+          <div className="ui:flex ui:flex-col">
             {data?.map((item, index) => (
               <div
-                className={cx("ui-flex ui-justify-between", {
-                  'ui-bg-[#FEE2E2]': !!errors?.data?.[index] && selectedIndex !== index
+                className={cx("ui:flex ui:justify-between", {
+                  'ui:bg-danger-100': !!errors?.data?.[index] && selectedIndex !== index
                 })}
                 key={`${item.vaccination.patient_id}-${index.toString()}`}
               >
@@ -112,8 +112,8 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
                 {index !== 0 ? (
                   <button
                     id={`btn-delete ${item.vaccination.patient_id}-${index.toString()}`}
-                    className={cx("ui-text-dark-teal ui-pr-3", {
-                      'ui-text-danger-500': !!errors?.data?.[index] && selectedIndex !== index
+                    className={cx("ui:text-dark-teal ui:pr-3", {
+                      'ui:text-danger-500': !!errors?.data?.[index] && selectedIndex !== index
                     })}
                     type="button"
                     onClick={() => {
@@ -123,7 +123,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
                     }}
                   >
                     <span>
-                      <Trash className="ui-w-3"></Trash>
+                      <Trash className="ui:w-3"></Trash>
                     </span>
                   </button>
                 ) : null}
@@ -132,7 +132,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
             {data[0]?.vaccination?.vaccine_method?.value === VACCINE_METHOD.INTRA_DERMAL && data.length < 5 ? (
               <Button
                 variant="subtle"
-                className="ui-mt-5 ui-pl-2"
+                className="ui:mt-5 ui:pl-2"
                 type="button"
                 onClick={() => {
                   setValue('data', addNewPatient(data))
@@ -140,7 +140,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
                 id={`add-new-patient-batch-${indexItem}`}
                 disabled={isDisabledAddPatient(data)}
               >
-                <div className="ui-text-dark-teal ui-flex ui-flex-row ui-space-x-1 ui-place-items-center">
+                <div className="ui:text-dark-teal ui:flex ui:flex-row ui:space-x-1 ui:place-items-center">
                   <span>
                     <Plus></Plus>
                   </span>
@@ -151,12 +151,12 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
           </div>
         </div>
         <div
-          className="ui-w-full ui-p-0"
+          className="ui:w-full ui:p-0"
           style={{ backgroundColor: '#FAFAFA' }}
         >
           <ProtocolContext.Provider value={contextValue}>
-            <div className='ui-p-5 ui-space-y-5'>
-              <h6 className="ui-text-primary-800 ui-text-base ui-font-bold">
+            <div className='ui:p-5 ui:space-y-5'>
+              <h6 className="ui:text-primary-800 ui:text-base ui:font-bold">
                 {t('patient_identity.tab', { returnObjects: true })[0]}
               </h6>
               <TransactionCreateConsumptionFormInputPatient 
@@ -165,7 +165,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
 
               {shouldShowPatientForm && (
                 <Fragment>
-                  <h6 className="ui-text-primary-800 ui-text-base ui-font-bold">
+                  <h6 className="ui:text-primary-800 ui:text-base ui:font-bold">
                     {t('patient_identity.tab', { returnObjects: true })[1]}
                   </h6>
                   <TransactionCreateConsumptionFormInputIdentityPatient />
@@ -174,7 +174,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
 
               {shouldShowKipiForm && (
                 <Fragment>
-                  <h6 className="ui-text-primary-800 ui-text-base ui-font-bold">
+                  <h6 className="ui:text-primary-800 ui:text-base ui:font-bold">
                     {t('patient_identity.tab', { returnObjects: true })[2]}
                   </h6>
                   <TransactionCreateConsumptionFormInputDiseaseHistory />
@@ -183,30 +183,30 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
             </div>
           </ProtocolContext.Provider>
 
-          <div className="ui-sticky ui-bottom-0 ui-bg-[#F1F5F9] ui-border-t ui-p-3 ui-flex ui-justify-between ui-items-center">
-            <p className='ui-text-sm ui-font-normal ui-text-neutral-500'>
+          <div className="ui:sticky ui:bottom-0 ui:bg-slate-100 ui:border-t ui:p-3 ui:flex ui:justify-between ui:items-center">
+            <p className='ui:text-sm ui:font-normal ui:text-neutral-500'>
               {t('patient_identity.form_completion')}
             </p>
-            <div className="ui-flex ui-gap-1 ui-items-center">
-              <div className={cx(styleProtocol.container, { 'ui-bg-[#15803D]': validateFormVaccine() })}>
-                <p className={cx(styleProtocol.content, { 'ui-text-white': validateFormVaccine() })}>
+            <div className="ui:flex ui:gap-1 ui:items-center">
+              <div className={cx(styleProtocol.container, { 'ui:bg-[#15803D]': validateFormVaccine() })}>
+                <p className={cx(styleProtocol.content, { 'ui:text-white': validateFormVaccine() })}>
                   {t('patient_identity.tab', { returnObjects: true })[0]}
-                  <span className='ui-ml-1'><CheckV2 /></span>
+                  <span className='ui:ml-1'><CheckV2 /></span>
                 </p>
               </div>
               {!!item.is_vaccine && (
-                <div className={cx(styleProtocol.container, { 'ui-bg-[#15803D]': validateFormIdentity() })}>
-                  <p className={cx(styleProtocol.content, { 'ui-text-white': validateFormIdentity() })}>
+                <div className={cx(styleProtocol.container, { 'ui:bg-[#15803D]': validateFormIdentity() })}>
+                  <p className={cx(styleProtocol.content, { 'ui:text-white': validateFormIdentity() })}>
                     {t('patient_identity.tab', { returnObjects: true })[1]}
-                    <span className='ui-ml-1'><CheckV2 /></span>
+                    <span className='ui:ml-1'><CheckV2 /></span>
                   </p>
                 </div>
               )}
               {!!item.is_kipi && (
-                <div className={cx(styleProtocol.container, { 'ui-bg-[#15803D]': validateFormDiseasesHistory() })}>
-                  <p className={cx(styleProtocol.content, { 'ui-text-white': validateFormDiseasesHistory() })}>
+                <div className={cx(styleProtocol.container, { 'ui:bg-[#15803D]': validateFormDiseasesHistory() })}>
+                  <p className={cx(styleProtocol.content, { 'ui:text-white': validateFormDiseasesHistory() })}>
                     {t('patient_identity.tab', { returnObjects: true })[2]}
-                    <span className='ui-ml-1'><CheckV2 /></span>
+                    <span className='ui:ml-1'><CheckV2 /></span>
                   </p>
                 </div>
               )}

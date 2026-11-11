@@ -31,9 +31,9 @@ export const useStockOpnameModalControl = ({ t }: Props) => {
     setModalConfirmation({
       open: true,
       message: (
-        <div className="ui-flex ui-justify-center ui-items-center ui-flex-col ui-gap-4">
-          <p className="ui-text-base ui-text-neutral-500 ui-font-normal">{message[0]}</p>
-          <p className="ui-text-base ui-text-primary-800 ui-font-medium">{message[1]}</p>
+        <div className="ui:flex ui:justify-center ui:items-center ui:flex-col ui:gap-4">
+          <p className="ui:text-base ui:text-neutral-500 ui:font-normal">{message[0]}</p>
+          <p className="ui:text-base ui:text-primary-800 ui:font-medium">{message[1]}</p>
         </div>
       ),
       payload: value,

@@ -12,7 +12,7 @@ const AnnualPlanningProcessRevision: React.FC = () => {
   } = useContext(AnnualPlanningProcessCreateContext)
 
   return (
-    <div className="ui-w-full ui-mt-6">
+    <div className="ui:w-full ui:mt-6">
       {currentStep === 0 && <FormPopulationCorrection />}
       {currentStep === 1 && <FormDefineDistrictIP />}
       {currentStep === 2 && <FormCalculationResult />}

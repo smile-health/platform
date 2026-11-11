@@ -382,27 +382,27 @@ export const OrderDetailItemForm = () => {
 
         {(isEditForm || (isAddForm && Boolean(watch('material_id')))) && (
           <>
-            <div className="ui-flex ui-gap-10">
-              <FormControl className="ui-space-y-1">
+            <div className="ui:flex ui:gap-10">
+              <FormControl className="ui:space-y-1">
                 <FormLabel className="text-sm">Material</FormLabel>
-                <div className="ui-text-dark-blue ui-font-bold">
+                <div className="ui:text-dark-blue ui:font-bold">
                   {selectedMaterialStockData?.material?.name ??
                     orderItemData?.material.name}
                 </div>
               </FormControl>
-              <FormControl className="ui-space-y-1">
+              <FormControl className="ui:space-y-1">
                 <FormLabel className="text-sm">
                   {t('orderDetail:table.column.available_stock')}{' '}
                   {t('common:at').toLowerCase()}{' '}
                   {orderDetailData?.customer?.name}
                 </FormLabel>
-                <div className="ui-text-dark-blue ui-font-bold ui-flex ui-items-baseline ui-gap-1">
+                <div className="ui:text-dark-blue ui:font-bold ui:flex ui:items-baseline ui:gap-1">
                   {numberFormatter(
                     selectedMaterialStockData?.total_available_qty ??
                       stockCustomer?.total_available_qty,
                     i18n.language
                   )}
-                  <div className="ui-text-gray-500 ui-font-normal ui-text-xs ui-relative ui-bottom-0.5">
+                  <div className="ui:text-gray-500 ui:font-normal ui:text-xs ui:relative ui:bottom-0.5">
                     (min:
                     {numberFormatter(
                       selectedMaterialStockData?.min ?? stockCustomer?.min,
@@ -426,7 +426,7 @@ export const OrderDetailItemForm = () => {
                 field: { onChange, value, ...field },
                 fieldState,
               }) => (
-                <FormControl className="ui-space-y-1.5">
+                <FormControl className="ui:space-y-1.5">
                   <FormLabel
                     className="text-sm"
                     required
@@ -468,7 +468,7 @@ export const OrderDetailItemForm = () => {
                         ? numberFormatter(recommendedStockQty, i18n.language)
                         : t('orderDetail:form.ordered_qty.placeholder')
                     }
-                    className="ui-text-sm"
+                    className="ui:text-sm"
                     min={0}
                     error={Boolean(fieldState.error?.message)}
                     disabled={
@@ -480,7 +480,7 @@ export const OrderDetailItemForm = () => {
                     }
                   />
                   {fieldState.error?.message && (
-                    <FormErrorMessage className="ui-leading-none">
+                    <FormErrorMessage className="ui:leading-none">
                       {fieldState.error.message}
                     </FormErrorMessage>
                   )}
@@ -500,14 +500,14 @@ export const OrderDetailItemForm = () => {
             {isHierarchyEnabled &&
               isOrderDetailHierarchy &&
               renderSelectedMaterialCondition() && (
-                <div className="!ui-mt-3">
+                <div className="ui:mt-3!">
                   {selectedMaterialChildren?.map((child) => (
                     <div
                       key={child?.material_id}
-                      className="!ui-bg-[#F1F5F9] ui-px-4 ui-py-2 ui-rounded ui-w-full ui-mb-2"
+                      className="ui:bg-slate-100! ui:px-4 ui:py-2 ui:rounded ui:w-full ui:mb-2"
                     >
                       <div>{child?.material?.name}</div>
-                      <div className="ui-font-semibold">
+                      <div className="ui:font-semibold">
                         Qty:{' '}
                         {numberFormatter(
                           child?.ordered_qty || 0,
@@ -522,10 +522,10 @@ export const OrderDetailItemForm = () => {
                     size="sm"
                     disabled={isAddForm && !Boolean(watch('material_id'))}
                     onClick={() => setOpenHierarchyDrawerForm(true)}
-                    className="ui-mt-3"
+                    className="ui:mt-3"
                     leftIcon={
                       !selectedMaterialChildren && (
-                        <PlusIcon className="ui-w-5 ui-text-dark-blue" />
+                        <PlusIcon className="ui:w-5 ui:text-dark-blue" />
                       )
                     }
                   >
@@ -544,7 +544,7 @@ export const OrderDetailItemForm = () => {
               name="order_reason_id"
               control={control}
               render={({ field, fieldState }) => (
-                <FormControl className="ui-space-y-1.5">
+                <FormControl className="ui:space-y-1.5">
                   <FormLabel className="text-sm" required>
                     {t('orderDetail:form.reason.label')}
                   </FormLabel>
@@ -565,7 +565,7 @@ export const OrderDetailItemForm = () => {
                     placeholder={t('orderDetail:form.reason.placeholder')}
                     menuPosition="fixed"
                     classNames={{
-                      control: () => 'ui-text-sm',
+                      control: () => 'ui:text-sm',
                     }}
                     disabled={
                       editItemMutation.isPending ||
@@ -575,7 +575,7 @@ export const OrderDetailItemForm = () => {
                     error={Boolean(fieldState.error?.message)}
                   />
                   {fieldState.error?.message && (
-                    <FormErrorMessage className="ui-leading-none">
+                    <FormErrorMessage className="ui:leading-none">
                       {fieldState.error.message}
                     </FormErrorMessage>
                   )}
@@ -588,7 +588,7 @@ export const OrderDetailItemForm = () => {
                 name="other_reason"
                 control={control}
                 render={({ field, fieldState }) => (
-                  <FormControl className="ui-space-y-1.5">
+                  <FormControl className="ui:space-y-1.5">
                     <FormLabel className="text-sm" required>
                       {t('orderDetail:form.other_reason.label')}
                     </FormLabel>
@@ -598,12 +598,12 @@ export const OrderDetailItemForm = () => {
                       placeholder={t(
                         'orderDetail:form.other_reason.placeholder'
                       )}
-                      className="ui-text-sm"
+                      className="ui:text-sm"
                       disabled={editItemMutation.isPending}
                       error={Boolean(fieldState.error?.message)}
                     />
                     {fieldState.error?.message && (
-                      <FormErrorMessage className="ui-leading-none">
+                      <FormErrorMessage className="ui:leading-none">
                         {fieldState.error.message}
                       </FormErrorMessage>
                     )}

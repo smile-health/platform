@@ -45,14 +45,14 @@ const columns = ({
       accessorKey: 'group_target.label',
       cell: ({ row: { original } }) => {
         return (
-          <div className="ui-flex ui-flex-col ui-gap-8">
+          <div className="ui:flex ui:flex-col ui:gap-8">
             <p>{original.group_target.label}</p>
             {isEdit && (
               <Button
                 type="button"
                 variant="subtle"
                 onClick={() => onClickNumberOfDoses()}
-                className="ui-w-max"
+                className="ui:w-max"
               >
                 {t('task:form.group_target.edit')}
               </Button>
@@ -70,7 +70,7 @@ const columns = ({
       accessorKey: 'national_ip',
       cell: ({ row: { original } }) => {
         return (
-          <div className="ui-flex ui-flex-col ui-gap-2">
+          <div className="ui:flex ui:flex-col ui:gap-2">
             <p>{original.national_ip}</p>
           </div>
         )
@@ -94,7 +94,7 @@ const columns = ({
         }
 
         return (
-          <div className="ui-flex ui-flex-col ui-gap-8">
+          <div className="ui:flex ui:flex-col ui:gap-8">
             <p>
               {t('task:form.coverage.saved', {
                 coverage: original.target_coverage.length,
@@ -105,7 +105,7 @@ const columns = ({
             <Button
               type="button"
               variant={isEdit ? 'subtle' : 'outline'}
-              className="ui-w-max"
+              className="ui:w-max"
               onClick={() => onClickCoverage(original)}
             >
               {isEdit
@@ -181,9 +181,9 @@ export default function TaskForm({
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="ui-mt-6 ui-space-y-6 ui-max-w-2xl ui-mx-auto"
+        className="ui:mt-6 ui:space-y-6 ui:max-w-2xl ui:mx-auto"
       >
-        <div className="ui-flex ui-flex-col ui-space-y-5 ui-border ui-border-gray-300 ui-p-6 ui-rounded">
+        <div className="ui:flex ui:flex-col ui:space-y-5 ui:border ui:border-gray-300 ui:p-6 ui:rounded">
           <FormControl>
             <FormLabel htmlFor="name" required>
               {t('form.activity.label')}
@@ -234,13 +234,13 @@ export default function TaskForm({
             </FormErrorMessage>
           </FormControl>
 
-          <div className="ui-space-y-2">
-            <div className="ui-flex ui-justify-between ui-items-center ui-w-full">
-              <FormLabel className="!ui-mt-0" required>
+          <div className="ui:space-y-2">
+            <div className="ui:flex ui:justify-between ui:items-center ui:w-full">
+              <FormLabel className="ui:mt-0!" required>
                 {t('task:list.columns.monthly_distribution')}
               </FormLabel>
 
-              <FormControl className="ui-flex ui-items-center ui-gap-2">
+              <FormControl className="ui:flex ui:items-center ui:gap-2">
                 <Checkbox
                   checked={monthlyDistribution.length > 0}
                   indeterminate={
@@ -249,7 +249,7 @@ export default function TaskForm({
                   }
                   onChange={onToggleAllMonthlyDistribution}
                 />
-                <FormLabel htmlFor="monthly_distribution" className="!ui-mt-0">
+                <FormLabel htmlFor="monthly_distribution" className="ui:mt-0!">
                   {t('task:form.select_all_month')}
                 </FormLabel>
               </FormControl>
@@ -260,16 +260,16 @@ export default function TaskForm({
                 values={monthlyDistribution as number[]}
                 onClick={onToggleMonthlyDistribution}
               />
-              <FormErrorMessage className="ui-mt-2">
+              <FormErrorMessage className="ui:mt-2">
                 {errors?.monthly_distribution?.message}
               </FormErrorMessage>
             </div>
           </div>
         </div>
 
-        <div className="ui-flex ui-flex-col ui-space-y-5 ui-border ui-border-gray-300 ui-p-6 ui-rounded">
-          <div className="ui-flex ui-justify-between ui-items-center">
-            <h5 className="ui-text-base ui-font-bold ui-text-[#0C3045]">
+        <div className="ui:flex ui:flex-col ui:space-y-5 ui:border ui:border-gray-300 ui:p-6 ui:rounded">
+          <div className="ui:flex ui:justify-between ui:items-center">
+            <h5 className="ui:text-base ui:font-bold ui:text-dark-blue">
               {t('task:form.amount_of_giving.title')}
             </h5>
             {!isEdit && (
@@ -294,16 +294,16 @@ export default function TaskForm({
                 onClickCoverageButton(isEdit ? 'edit' : 'add', amountOfGiving),
             })}
             bodyClassName={cx({
-              'ui-h-[260px]': watch('amount_of_giving')?.length === 0,
+              'ui:h-[260px]': watch('amount_of_giving')?.length === 0,
             })}
           />
-          <FormErrorMessage className="!ui-mt-2">
+          <FormErrorMessage className="ui:mt-2!">
             {errors?.amount_of_giving?.message}
           </FormErrorMessage>
         </div>
 
-        <div className="ui-flex ui-justify-end">
-          <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+        <div className="ui:flex ui:justify-end">
+          <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
             <Button asChild variant="outline">
               <Link
                 href={router.getAsLink(

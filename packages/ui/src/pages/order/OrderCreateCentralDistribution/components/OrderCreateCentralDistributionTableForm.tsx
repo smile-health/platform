@@ -47,22 +47,22 @@ export default function OrderCreateCentralDistributionTableForm({
   })
 
   return (
-    <div className="ui-p-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6 ui-col-span-2">
+    <div className="ui:p-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-6 ui:col-span-2">
       <H5>{t('section.distribution_table')}</H5>
 
       <DataTable
         withCustomRow={Boolean(order_items?.length)}
         data={order_items}
-        bodyClassName={cx({ 'ui-h-60': !order_items?.length })}
+        bodyClassName={cx({ 'ui:h-60': !order_items?.length })}
         emptyDescription={t('info.empty.description.material')}
         customRow={
-          <Tr className="ui-border-t ui-border-gray-300">
+          <Tr className="ui:border-t ui:border-gray-300">
             <Td colSpan={3}>
               <ReactSelectAsync
                 key={selectedMaterial?.toString()}
                 id="select-material-dropdown"
                 value={null}
-                className="ui-w-96"
+                className="ui:w-96"
                 loadOptions={loadListStockByEntities}
                 onChange={(option) => {
                   handleAddItem(option?.value as Stock)

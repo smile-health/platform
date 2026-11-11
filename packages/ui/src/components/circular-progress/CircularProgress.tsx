@@ -81,7 +81,7 @@ export const CircularProgress = React.forwardRef<
 
     return (
       <div
-        className={cx('ui-relative', disabled && 'ui-opacity-50')}
+        className={cx('ui:relative', disabled && 'ui:opacity-50')}
         style={{ width: svgSize, height: svgSize }}
       >
         <svg
@@ -90,14 +90,14 @@ export const CircularProgress = React.forwardRef<
           height={svgSize}
           viewBox={`0 0 ${svgSize} ${svgSize}`}
           className={cx(
-            'ui-scale-100 ui-fill-none ui-stroke-gray-100',
+            'ui:scale-100 ui:fill-none ui:stroke-gray-100',
             {
-              'ui-text-primary-500': color === 'primary',
-              'ui-text-secondary-500': color === 'secondary',
-              'ui-text-success-500': color === 'success',
-              'ui-text-info-500': color === 'info',
-              'ui-text-warning-500': color === 'warning',
-              'ui-text-danger-500': color === 'danger',
+              'ui:text-primary-500': color === 'primary',
+              'ui:text-secondary-500': color === 'secondary',
+              'ui:text-success-500': color === 'success',
+              'ui:text-info-500': color === 'info',
+              'ui:text-warning-500': color === 'warning',
+              'ui:text-danger-500': color === 'danger',
             },
             className
           )}
@@ -138,9 +138,9 @@ export const CircularProgress = React.forwardRef<
             strokeDashoffset={circumference - (value / 100) * circumference}
             strokeLinecap="round"
             className={cx(
-              'ui-h-full',
+              'ui:h-full',
               !disableAnimation &&
-                'ui-transition-all ui-duration-300 ui-ease-linear'
+                'ui:transition-all ui:duration-300 ui:ease-linear'
             )}
             transform={`rotate(-90 ${svgSize / 2} ${svgSize / 2})`} // Rotate the circle to start from 12 o'clock
             fill="none"
@@ -150,10 +150,10 @@ export const CircularProgress = React.forwardRef<
         {['xl', 'lg', 'md'].includes(size) ? (
           <span
             className={cx(
-              'ui-absolute ui-inset-0 ui-flex ui-items-center ui-justify-center',
-              size === 'xl' && 'ui-text-2xl',
-              size === 'lg' && 'ui-text-base',
-              size === 'md' && 'ui-text-xs'
+              'ui:absolute ui:inset-0 ui:flex ui:items-center ui:justify-center',
+              size === 'xl' && 'ui:text-2xl',
+              size === 'lg' && 'ui:text-base',
+              size === 'md' && 'ui:text-xs'
             )}
           >
             {labelValue}

@@ -34,16 +34,16 @@ const ReconciliationDetailModal = ({
         onClick={() => setOpenModal(true)}
         variant="subtle"
         type="button"
-        className="!ui-p-0 !ui-h-fit"
+        className="ui:p-0! ui:h-fit!"
         id={`reconciliation__detail__${id}`}
       >
         {t('list.table.view_history')}
       </Button>
       <Dialog open={openModal} closeOnOverlayClick={false} size="xl">
         <DialogHeader border>
-          <div className="ui-flex ui-justify-between">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('list.table.view_history')}
             </h6>
             <Button
@@ -60,16 +60,16 @@ const ReconciliationDetailModal = ({
           </div>
         </DialogHeader>
         <DialogContent>
-          <div className="ui-flex ui-flex-col ui-space-y-5">
+          <div className="ui:flex ui:flex-col ui:space-y-5">
             <TitleBlock
               arrText={[
                 {
                   label: t('list.table.column.entity'),
-                  className: 'ui-text-neutral-500 ui-text-sm',
+                  className: 'ui:text-neutral-500 ui:text-sm',
                 },
                 {
                   label: data?.entity?.name ?? '-',
-                  className: 'ui-font-bold ui-text-dark-blue',
+                  className: 'ui:font-bold ui:text-dark-blue',
                   isLoading: isLoading,
                 },
               ]}
@@ -78,14 +78,14 @@ const ReconciliationDetailModal = ({
               arrText={[
                 {
                   label: 'Material',
-                  className: 'ui-text-neutral-500 ui-text-sm',
+                  className: 'ui:text-neutral-500 ui:text-sm',
                 },
                 {
                   label:
                     !data?.material_parent?.name && !data?.material?.name
                       ? '-'
                       : `${data?.material_parent?.name ? data?.material_parent?.name + '/' : ''}${data?.material?.name ?? ''}`,
-                  className: 'ui-font-bold ui-text-dark-blue',
+                  className: 'ui:font-bold ui:text-dark-blue',
                   isLoading: isLoading,
                 },
               ]}
@@ -94,14 +94,14 @@ const ReconciliationDetailModal = ({
               arrText={[
                 {
                   label: t('list.table.column.period'),
-                  className: 'ui-text-neutral-500 ui-text-sm',
+                  className: 'ui:text-neutral-500 ui:text-sm',
                 },
                 {
                   label:
                     data?.start_date && data?.end_date
                       ? `${parseDateTime(data?.start_date, 'DD MMMM YYYY', locale)} - ${parseDateTime(data?.end_date, 'DD MMMM YYYY', locale)}`
                       : '-',
-                  className: 'ui-font-bold ui-text-dark-blue',
+                  className: 'ui:font-bold ui:text-dark-blue',
                   isLoading: isLoading,
                 },
               ]}
@@ -110,13 +110,13 @@ const ReconciliationDetailModal = ({
             <DataTable
               data={data?.items}
               columns={schema}
-              className="ui-max-h-[425px]"
+              className="ui:max-h-[425px]"
               id={`reconciliation__detail__table__${id}`}
               isLoading={isLoading}
             />
           </div>
         </DialogContent>
-        <DialogFooter className="ui-border">
+        <DialogFooter className="ui:border">
           <Button
             color="danger"
             variant="default"

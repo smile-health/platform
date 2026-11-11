@@ -51,11 +51,11 @@ export function formatNumberShort(value: number, language = 'en') {
 }
 
 export const getBackgroundStock = (stock: number, min: number, max: number) => {
-  if (!stock) return 'ui-bg-red-50'
-  if (stock < min) return 'ui-bg-warning-50'
-  if (!min || !max || (min <= stock && stock <= max)) return 'ui-bg-green-50'
-  if (stock > max) return 'ui-bg-blue-50'
-  return 'ui-bg-white'
+  if (!stock) return 'ui:bg-red-50'
+  if (stock < min) return 'ui:bg-warning-50'
+  if (!min || !max || (min <= stock && stock <= max)) return 'ui:bg-green-50'
+  if (stock > max) return 'ui:bg-blue-50'
+  return 'ui:bg-white'
 }
 
 export const formatPhoneNumber = (phoneNumber?: string | null) => {

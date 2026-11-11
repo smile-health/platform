@@ -27,10 +27,10 @@ export default function DashboardAnnualContainer({
   const [view, setView] = useState<View>('chart')
 
   return (
-    <div className="ui-space-y-3">
-      <div className="ui-flex ui-justify-between ui-bg-[#F8FAFC] ui-space-y-2 ui-border-b ui-border-neutral-300 ui-p-3">
+    <div className="ui:space-y-3">
+      <div className="ui:flex ui:justify-between ui:bg-slate-50 ui:space-y-2 ui:border-b ui:border-neutral-300 ui:p-3">
         {component ?? <div />}
-        <div className="ui-flex ui-gap-1">
+        <div className="ui:flex ui:gap-1">
           {buttons.map((button) => (
             <ButtonIcon
               key={button.type}
@@ -38,10 +38,10 @@ export default function DashboardAnnualContainer({
               variant="default"
               onClick={() => setView(button.type)}
               className={cx({
-                'ui-bg-gray-300 ui-pointer-events-none': button.type === view,
+                'ui:bg-gray-300 ui:pointer-events-none': button.type === view,
               })}
             >
-              <button.Icon className="ui-size-5" />
+              <button.Icon className="ui:size-5" />
             </ButtonIcon>
           ))}
         </div>

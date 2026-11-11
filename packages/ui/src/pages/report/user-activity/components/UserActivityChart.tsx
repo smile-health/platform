@@ -47,13 +47,13 @@ const UserActivityChart = forwardRef(function UserActivityChart(
   }))
 
   return (
-    <div className="ui-relative ui-p-4 ui-space-y-4 ui-border ui-border-neutral-300 ui-rounded">
+    <div className="ui:relative ui:p-4 ui:space-y-4 ui:border ui:border-neutral-300 ui:rounded">
       {!isLoading && (
-        <div className="ui-flex ui-justify-end">
+        <div className="ui:flex ui:justify-end">
           <DropdownMenuRoot>
             <DropdownMenuTrigger>
               <ButtonIcon size="lg" variant="default">
-                <Download className="ui-size-5" />
+                <Download className="ui:size-5" />
               </ButtonIcon>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -75,18 +75,18 @@ const UserActivityChart = forwardRef(function UserActivityChart(
           </DropdownMenuRoot>
         </div>
       )}
-      <div className="ui-space-y-10">
+      <div className="ui:space-y-10">
         {!isLoading && (
-          <div className="ui-flex ui-justify-center">
-            <div className="ui-border ui-border-neutral-400 ui-p-2">
-              <p className="ui-space-x-1 ui-text-gray-500">
+          <div className="ui:flex ui:justify-center">
+            <div className="ui:border ui:border-neutral-400 ui:p-2">
+              <p className="ui:space-x-1 ui:text-gray-500">
                 <strong>
                   {entityLabel ?? regencyLabel ?? provinceLabel ?? 'Indonesia'}
                 </strong>
                 <span>({total})</span>
               </p>
               {data?.map((item) => (
-                <p key={item?.name} className="ui-space-x-1 ui-text-gray-500">
+                <p key={item?.name} className="ui:space-x-1 ui:text-gray-500">
                   <strong>{item?.name}</strong>
                   <span>({item?.value})</span>
                 </p>
@@ -96,15 +96,15 @@ const UserActivityChart = forwardRef(function UserActivityChart(
         )}
         <div
           id="user-activity-overview"
-          className={cx('ui-h-[450px]', {
-            'ui-grid ui-place-items-center': isLoading || isEmpty,
-            'ui-text-primary-500 ui-max-h-64': isLoading,
-            'ui-max-h-96': isEmpty,
+          className={cx('ui:h-[450px]', {
+            'ui:grid ui:place-items-center': isLoading || isEmpty,
+            'ui:text-primary-500 ui:max-h-64': isLoading,
+            'ui:max-h-96': isEmpty,
           })}
         >
           {isLoading && <GlobalSpinner />}
           {isEmpty && (
-            <p className="ui-text-gray-500 ui-text-sm">{t('empty')}</p>
+            <p className="ui:text-gray-500 ui:text-sm">{t('empty')}</p>
           )}
           {!isLoading && !isEmpty && (
             <PieChart

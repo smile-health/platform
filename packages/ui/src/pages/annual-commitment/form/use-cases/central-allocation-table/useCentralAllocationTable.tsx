@@ -47,7 +47,7 @@ export const useCentralAllocationTable = () => {
       {
         accessorKey: 'no',
         header: t('annualCommitmentForm:table.column.no'),
-        cell: ({ row }) => <div className="ui-my-2">{row.index + 1}</div>,
+        cell: ({ row }) => <div className="ui:my-2">{row.index + 1}</div>,
         size: 60,
       },
       {
@@ -55,7 +55,7 @@ export const useCentralAllocationTable = () => {
         header: t('annualCommitmentForm:table.column.materialName'),
         cell: ({ row }) => {
           return (
-            <div className="ui-my-2">{row.original.material?.label ?? '-'}</div>
+            <div className="ui:my-2">{row.original.material?.label ?? '-'}</div>
           )
         },
       },
@@ -81,7 +81,7 @@ export const useCentralAllocationTable = () => {
                   menuPosition="fixed"
                   additional={{ page: 1 }}
                   menuPortalTarget={document.body}
-                  className="ui-min-w-48"
+                  className="ui:min-w-48"
                   error={!!fieldState.error?.message}
                 />
                 {fieldState.error && (
@@ -115,11 +115,11 @@ export const useCentralAllocationTable = () => {
                         )
                       }}
                       placeholder="0"
-                      className="ui-w-32"
+                      className="ui:w-32"
                       error={!!fieldState.error?.message}
                     />
                     {fieldState.error && (
-                      <FormErrorMessage className="ui-mt-2">
+                      <FormErrorMessage className="ui:mt-2">
                         {fieldState.error.message}
                       </FormErrorMessage>
                     )}
@@ -135,7 +135,7 @@ export const useCentralAllocationTable = () => {
         accessorKey: 'numberDose',
         header: t('annualCommitmentForm:table.column.numberDose'),
         cell: ({ row }) => (
-          <div className="ui-my-2">
+          <div className="ui:my-2">
             {numberFormatter(
               form.methods.watch(`centralAllocations.${row.index}.numberDose`),
               i18n.language
@@ -150,7 +150,7 @@ export const useCentralAllocationTable = () => {
         cell: ({ row }) => (
           <Button
             variant="subtle"
-            className="ui-text-danger-500"
+            className="ui:text-danger-500"
             onClick={() => removeCentralAllocation(row.index)}
           >
             {t('annualCommitmentForm:button.remove')}

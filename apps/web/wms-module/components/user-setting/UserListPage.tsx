@@ -44,17 +44,17 @@ const UserListPage: React.FC = () => {
       <Meta title={`WMS | User`} />
       <div className="mt-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid-cols-4">
+          <FilterFormBody className="ui:grid-cols-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-flex ui-gap-2">
-              <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:flex ui:gap-2">
+              <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
               <FilterResetButton variant="subtle" onClick={filter.reset} />
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-[220px]"
+                className="ui:w-[220px]"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               ></FilterSubmitButton>
@@ -64,7 +64,7 @@ const UserListPage: React.FC = () => {
           {filter.renderActiveFilter()}
         </FilterFormRoot>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <UserTable
             isLoading={isLoadingUser}
             size={paginationUser.paginate}

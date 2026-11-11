@@ -14,24 +14,24 @@ const FormCalculationResultInformation: React.FC = () => {
 
   return (
     <Dialog open={openCalculationInformation} onOpenChange={setOpenCalculationInformation} size="lg">
-      <DialogHeader className="ui-text-center">
+      <DialogHeader className="ui:text-center">
         {t('annualPlanningProcess:create.form.calculation_result.information.title')}
       </DialogHeader>
-      <DialogContent className="ui-text-start ui-space-y-6 ui-text-neutral-500 ui-px-6">
+      <DialogContent className="ui:text-start ui:space-y-6 ui:text-neutral-500 ui:px-6">
         <div
-          className='ui-space-y-2'
+          className='ui:space-y-2'
           dangerouslySetInnerHTML={{ __html: t("annualPlanningProcess:information.description.column").replace(/\\/g, '') }}
         />
         <div
-          className='ui-space-y-2'
+          className='ui:space-y-2'
           dangerouslySetInnerHTML={{ __html: t("annualPlanningProcess:information.description.formula").replace(/\\/g, '') }}
         />
         <div
-          className='ui-space-y-2'
+          className='ui:space-y-2'
           dangerouslySetInnerHTML={{ __html: t("annualPlanningProcess:information.description.note").replace(/\\/g, '') }}
         />
       </DialogContent>
-      <DialogFooter className="ui-grid ui-grid-cols-1">
+      <DialogFooter className="ui:grid ui:grid-cols-1">
         <Button variant="outline" onClick={() => setOpenCalculationInformation(!openCalculationInformation)}>
           {t('common:close')}
         </Button>

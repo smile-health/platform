@@ -22,7 +22,7 @@ export const createFilterPartnershipVehicleGroupSchema = ({
     id: 'input-search',
     label: t('partnershipVehicle:list.filter.search.label'),
     placeholder: t('partnershipVehicle:list.filter.search.placeholder'),
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     defaultValue: '',
     maxLength: 255,
   },
@@ -30,7 +30,7 @@ export const createFilterPartnershipVehicleGroupSchema = ({
     id: 'select-healthcare-patner',
     type: 'select',
     name: 'healthcareFacilityId',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('partnershipVehicle:list.filter.healthcare_partner.label'),
     placeholder: t(

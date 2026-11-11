@@ -30,16 +30,16 @@ export const DetailDeleteModal = ({
   return (
     <Dialog size="md" open={open} onOpenChange={setOpen}>
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
+      <DialogHeader className="ui:text-center ui:text-xl">
         {t('common:confirmation')}
       </DialogHeader>
-      <DialogContent className="ui-space-y-4">
-        <p className="ui-text-center ui-text-neutral-500">
+      <DialogContent className="ui:space-y-4">
+        <p className="ui:text-center ui:text-neutral-500">
           {t('monitoringDeviceInventoryDetail:modal.delete_confirmation')}
         </p>
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full ui-mx-auto">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full ui:mx-auto">
           <Button
             variant="outline"
             onClick={() => setOpen(false)}

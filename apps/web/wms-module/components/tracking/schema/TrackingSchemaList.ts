@@ -31,7 +31,7 @@ export const createFilterTrackingGroupSchema = ({
       id: 'input-search',
       label: t('tracking:list.filter.search.label'),
       placeholder: t('tracking:list.filter.search.placeholder'),
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       defaultValue: '',
       maxLength: 255,
     },
@@ -83,7 +83,7 @@ export const createFilterTrackingGroupSchema = ({
       id: 'select-healthcare-facility-name',
       type: 'select-async-paginate',
       name: 'healthcareId',
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       isMulti: false,
       label: t('tracking:list.filter.healthcare_facility_name.label'),
       placeholder: t(

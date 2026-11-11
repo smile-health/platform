@@ -37,7 +37,7 @@ const FileUpload: React.FC<Props> = ({
   }
 
   return (
-    <div className="ui-flex ui-flex-col ui-gap-[10px]">
+    <div className="ui:flex ui:flex-col ui:gap-[10px]">
       <input
         type="file"
         id={id || 'fileUpload'}
@@ -45,11 +45,11 @@ const FileUpload: React.FC<Props> = ({
         onChange={handleFileChange}
         accept={accept}
       />
-      <div className="ui-flex">
+      <div className="ui:flex">
         <Button
           asChild
           className={cx(
-            'ui-border ui-border-gray-300 ui-rounded-e-none ui-cursor-pointer ui-m-0 ui-text-sm ui-text-neutral-500 ui-bg-gray-100 hover:!ui-bg-gray-100'
+            'ui:border ui:border-gray-300 ui:rounded-e-none ui:cursor-pointer ui:m-0 ui:text-sm ui:text-neutral-500 ui:bg-gray-100 ui:hover:bg-gray-100!'
           )}
           variant="subtle"
         >
@@ -57,7 +57,7 @@ const FileUpload: React.FC<Props> = ({
         </Button>
         <Button
           asChild
-          className="ui-border-r-[1px] ui-border-y-[1px] ui-rounded-s-none ui-border-gray-300 ui-flex-grow ui-cursor-pointer ui-m-0 ui-text-sm ui-text-neutral-500 ui-justify-start hover:!ui-bg-white"
+          className="ui:border-r ui:border-y ui:rounded-s-none ui:border-gray-300 ui:grow ui:cursor-pointer ui:m-0 ui:text-sm ui:text-neutral-500 ui:justify-start ui:hover:bg-white!"
           variant="subtle"
         >
           <label htmlFor="fileUpload">{fileName}</label>

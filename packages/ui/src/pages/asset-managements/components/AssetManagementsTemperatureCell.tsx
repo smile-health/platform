@@ -25,12 +25,12 @@ const AssetManagementsTemperatureCell: React.FC<
   }, [temperature, threshold])
 
   return (
-    <div className="ui-flex ui-flex-col">
+    <div className="ui:flex ui:flex-col">
       <MetricIndicator
         value={metricData?.value}
         threshold={metricData?.threshold}
       />
-      <div className="ui-text-sm ui-text-gray-500">{date}</div>
+      <div className="ui:text-sm ui:text-gray-500">{date}</div>
     </div>
   )
 }

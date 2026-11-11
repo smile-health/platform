@@ -112,8 +112,8 @@ export const ReceiveOrderItemsDrawerForm = ({
         header: t('orderDetail:table.column.batch_info'),
         cell: ({ row }) => {
           return (
-            <div className="ui-flex ui-flex-col ui-justify-center">
-              <p className="ui-font-bold">
+            <div className="ui:flex ui:flex-col ui:justify-center">
+              <p className="ui:font-bold">
                 {row?.original?.batch?.code ?? '-'}
               </p>
               <p>
@@ -150,7 +150,7 @@ export const ReceiveOrderItemsDrawerForm = ({
               cell: ({ row }) =>
                 numberFormatter(row.original?.ordered_qty, i18n.language),
               meta: {
-                cellClassName: 'ui-w-[400px]',
+                cellClassName: 'ui:w-[400px]',
               },
             },
           ] as ColumnDef<StockDetailStock>[])
@@ -206,7 +206,7 @@ export const ReceiveOrderItemsDrawerForm = ({
                 <div className="space-y-1">
                   <ReactSelectAsync
                     id={`fulfill_stock_status_id_${row.index}`}
-                    className="ui-text-sm"
+                    className="ui:text-sm"
                     placeholder={t(
                       'orderDetail:form.material_status.placeholder'
                     )}
@@ -262,18 +262,18 @@ export const ReceiveOrderItemsDrawerForm = ({
       }}
       disabled={Boolean(errors.receives)}
     >
-      <div className="ui-grid ui-grid-cols-3 ui-gap-10">
-        <FormControl className="ui-space-y-1">
+      <div className="ui:grid ui:grid-cols-3 ui:gap-10">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">Material</FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {orderItem?._order_item?.material.name}
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.column.shipped')}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {numberFormatter(
               orderItem?._order_item?.confirmed_qty,
               i18n.language
@@ -287,7 +287,7 @@ export const ReceiveOrderItemsDrawerForm = ({
           data={tableData}
           columns={columns}
           isSticky
-          className="ui-overflow-y-auto ui-max-h-[50vh]"
+          className="ui:overflow-y-auto ui:max-h-md"
         />
       </div>
     </OrderDetailDrawer>

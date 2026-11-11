@@ -41,7 +41,7 @@ const NavbarDashboard = () => {
       <NavbarList
         title={title}
         active={isActiveSingleMenu(router as NextRouter, leftSideMenus)}
-        className="!ui-px-2"
+        className="ui:px-2!"
       />
       <NavbarSubmenuBoxV2 leftSideMenus={leftSideMenus} />
     </HoverCardRoot>

@@ -69,7 +69,7 @@ export const columnsDistrict = ({
             id={`action-detail-${row.id}`}
             size="sm"
             className={cx({
-              "ui-px-0": buttonConfig.variant === "subtle"
+              "ui:px-0": buttonConfig.variant === "subtle"
             })}
             disabled={isViewOnly}
           >
@@ -167,7 +167,7 @@ export const columnsProvince = ({
       header: t('annualPlanningProcess:list.column.min_max_status'),
       accessorKey: 'min_max_status',
       cell: ({ getValue, row: { original: { min_max_updated_at } } }) => (
-        <div className="ui-flex ui-flex-col ui-gap-2">
+        <div className="ui:flex ui:flex-col ui:gap-2">
           <span>
             {getValue() === MinMaxStatus.ACTIVE ? t('annualPlanningProcess:list.min_max.already_activated') : t('common:status.inactive')}
           </span>
@@ -206,7 +206,7 @@ export const columnsProvince = ({
             id={`action-detail-${row.id}`}
             size="sm"
             className={cx({
-              "ui-px-0": buttonConfig.variant === "subtle"
+              "ui:px-0": buttonConfig.variant === "subtle"
             })}
             disabled={isViewOnly}
           >

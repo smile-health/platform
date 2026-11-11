@@ -17,7 +17,7 @@ export const createFilterSchema = ({ t, operatorList }: Params): UseFilter => [
     id: 'select-operator',
     type: 'select',
     name: 'operator',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('userOperator:form.operator.label'),
     placeholder: t('userOperator:form.operator.placeholder'),

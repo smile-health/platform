@@ -132,7 +132,7 @@ export const OrderDetailConfirmHierarchyDrawerForm = ({
                         ? totalQtyChildren
                         : (value as number)
                     }
-                    className="ui-text-sm"
+                    className="ui:text-sm"
                     onValueChange={(e) => {
                       const numValue =
                         e.value === '' ? null : Number(e.floatValue)
@@ -157,7 +157,7 @@ export const OrderDetailConfirmHierarchyDrawerForm = ({
                     <div>
                       <button
                         type="button"
-                        className="ui-text-primary-500"
+                        className="ui:text-primary-500"
                         onClick={() => {
                           setOpenModalConfirmHierarchyChildren(true)
                           setRowIndex(row?.index)
@@ -174,7 +174,7 @@ export const OrderDetailConfirmHierarchyDrawerForm = ({
           />
         ),
         meta: {
-          cellClassName: 'ui-w-1/4',
+          cellClassName: 'ui:w-1/4',
         },
       },
       {
@@ -183,14 +183,14 @@ export const OrderDetailConfirmHierarchyDrawerForm = ({
         cell: ({ row }) => {
           const stockVendor = row.original.stock_vendor
           return (
-            <div className="ui-space-y-1">
+            <div className="ui:space-y-1">
               <div>
                 {numberFormatter(
                   stockVendor?.total_available_qty,
                   i18n.language
                 )}
               </div>
-              <div className="ui-text-gray-500">
+              <div className="ui:text-gray-500">
                 (min: {numberFormatter(stockVendor?.min, i18n.language)} | max:{' '}
                 {numberFormatter(stockVendor?.max, i18n.language)})
               </div>
@@ -199,7 +199,7 @@ export const OrderDetailConfirmHierarchyDrawerForm = ({
         },
         meta: {
           headerSubComponent: (
-            <div className="ui-font-normal ui-text-gray-500">
+            <div className="ui:font-normal ui:text-gray-500">
               {t('common:at')} {data?.vendor?.name}
             </div>
           ),

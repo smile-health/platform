@@ -31,7 +31,7 @@ const ColumnStatusMaterial: React.FC<Props> = (props) => {
   return (
     <Badge
       id={`txt-status-${temp.text?.toLowerCase()}`}
-      className="ui-text-nowrap ui-text-sm ui-font-medium"
+      className="ui:text-nowrap ui:text-sm ui:font-medium"
       color={temp.color}
       size="md"
       rounded="full"

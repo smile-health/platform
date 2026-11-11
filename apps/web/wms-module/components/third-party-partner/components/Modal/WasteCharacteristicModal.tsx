@@ -103,16 +103,16 @@ export const WasteCharacteristicModal = ({
 
   return (
     <Dialog open={showModal} onOpenChange={setShowModal} size="lg">
-      <DialogHeader className="ui-text-center ui-pr-0">
-        <span className="ui-font-medium">
+      <DialogHeader className="ui:text-center ui:pr-0">
+        <span className="ui:font-medium">
           {editIndex !== null
             ? t('thirdPartyPartner:list.button.edit_characteristic')
             : t('thirdPartyPartner:list.button.add_characteristic')}
         </span>
       </DialogHeader>
-      <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-      <DialogContent className="ui-overflow-visible ui-my-2 ui-py-2 styled-scroll ui-scroll-pr-2">
-        <div className="ui-space-y-6">
+      <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+      <DialogContent className="ui:overflow-visible ui:my-2 ui:py-2 styled-scroll ui:scroll-pr-2">
+        <div className="ui:space-y-6">
           <Controller
             name="modalSpecification.characteristicId"
             control={control}
@@ -136,7 +136,7 @@ export const WasteCharacteristicModal = ({
                   }
                   onChange={handleWasteCharacteristicChange}
                   isClearable
-                  className="ui-z-300"
+                  className="ui:z-300"
                   menuPosition="fixed"
                 />
               </FormControl>
@@ -166,18 +166,18 @@ export const WasteCharacteristicModal = ({
               )}
               isClearable
               disabled={isSameCompany}
-              className="ui-z-300"
+              className="ui:z-300"
               menuPosition="fixed"
             />
           </FormControl>
         </div>
       </DialogContent>
-      <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-      <DialogFooter className="ui-flex ui-justify-center ui-py-4">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-3 ui-w-full ui-pb-2">
+      <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+      <DialogFooter className="ui:flex ui:justify-center ui:py-4">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-3 ui:w-full ui:pb-2">
           <Button
             variant="outline"
-            className="ui-w-full"
+            className="ui:w-full"
             onClick={() => setShowModal(false)}
           >
             {t('common:cancel')}
@@ -185,7 +185,7 @@ export const WasteCharacteristicModal = ({
           <Button
             onClick={handleSaveSpecification}
             disabled={!modalForm.characteristicId || !modalForm.providerType}
-            className="ui-w-full"
+            className="ui:w-full"
           >
             {t('common:save')}
           </Button>

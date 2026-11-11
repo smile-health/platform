@@ -41,11 +41,11 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
           arrText={[
             {
               label: name?.toUpperCase() ?? '',
-              className: 'ui-text-sm ui-font-bold ui-text-dark-blue ui-mb-1',
+              className: 'ui:text-sm ui:font-bold ui:text-dark-blue ui:mb-1',
             },
             {
               label: location ?? '',
-              className: 'ui-text-sm ui-font-thin ui-text-neutral-500',
+              className: 'ui:text-sm ui:font-thin ui:text-neutral-500',
             },
           ]}
         />
@@ -64,11 +64,11 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
             arrText={[
               {
                 label: parent_material?.name ?? '-',
-                className: 'ui-text-sm ui-font-bold ui-text-dark-blue ui-mb-1',
+                className: 'ui:text-sm ui:font-bold ui:text-dark-blue ui:mb-1',
               },
               {
                 label: material?.name ?? '-',
-                className: 'ui-text-sm ui-font-thin ui-text-neutral-500',
+                className: 'ui:text-sm ui:font-thin ui:text-neutral-500',
               },
             ]}
           />
@@ -91,7 +91,7 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
               {
                 label: batch?.code ?? '',
                 className:
-                  'ui-text-sm ui-font-normal ui-text-dark-blue ui-mb-2',
+                  'ui:text-sm ui:font-normal ui:text-dark-blue ui:mb-2',
               },
               {
                 label: batch?.expired_date
@@ -103,9 +103,9 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
                       .format('DD MMM YYYY')
                   : '-',
                 className:
-                  'ui-text-sm ui-text-dark-blue ui-font-bold ui-w-fit ui-p-2 ui-border ui-border-neutral-300 ui-rounded-xs ui-bg-stone-100',
+                  'ui:text-sm ui:text-dark-blue ui:font-bold ui:w-fit ui:p-2 ui:border ui:border-neutral-300 ui:rounded-xs ui:bg-stone-100',
                 className2:
-                  'ui-text-sm ui-text-dark-blue ui-font-normal ui-block',
+                  'ui:text-sm ui:text-dark-blue ui:font-normal ui:block',
               },
             ]}
           />
@@ -122,7 +122,7 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
       header: t('stockOpname:columns.remaining_stock_in_smile'),
       accessorKey: 'recorded_qty',
       meta: {
-        cellClassName: 'ui-bg-neutral-300',
+        cellClassName: 'ui:bg-neutral-300',
       },
       cell: ({
         row: {
@@ -151,7 +151,7 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
       header: t('stockOpname:columns.remaining_stock_real'),
       accessorKey: 'actual_qty',
       meta: {
-        cellClassName: 'ui-bg-primary-100',
+        cellClassName: 'ui:bg-primary-100',
       },
       cell: ({
         row: {
@@ -177,7 +177,7 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
               {
                 label: period?.name ?? '',
                 className:
-                  'ui-text-sm ui-font-normal ui-text-dark-blue ui-mb-2',
+                  'ui:text-sm ui:font-normal ui:text-dark-blue ui:mb-2',
               },
               {
                 label: period?.cutoff_date
@@ -187,9 +187,9 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
                   ? `${dayjs(period?.cutoff_date.replace('Z', '')).locale(locale).format('DD MMM YYYY HH:mm')?.toUpperCase()}`
                   : '-',
                 className:
-                  'ui-text-sm ui-text-dark-blue ui-font-bold ui-w-fit ui-p-2 ui-border ui-border-neutral-300 ui-rounded-xs ui-bg-stone-100',
+                  'ui:text-sm ui:text-dark-blue ui:font-bold ui:w-fit ui:p-2 ui:border ui:border-neutral-300 ui:rounded-xs ui:bg-stone-100',
                 className2:
-                  'ui-text-sm ui-text-dark-blue ui-font-normal ui-block',
+                  'ui:text-sm ui:text-dark-blue ui:font-normal ui:block',
               },
             ]}
           />
@@ -223,13 +223,13 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
                   text2: user_updated_by?.lastname ?? '',
                   separator: ' ',
                 }) ?? '',
-              className: 'ui-text-sm ui-font-normal ui-text-dark-blue ui-mb-2',
+              className: 'ui:text-sm ui:font-normal ui:text-dark-blue ui:mb-2',
             },
             {
               label: updated_at
                 ? dayjs(updated_at).locale(locale).format('DD MMM YYYY HH:mm')
                 : '',
-              className: 'ui-text-sm ui-text-neutral-500 ui-font-normal',
+              className: 'ui:text-sm ui:text-neutral-500 ui:font-normal',
             },
           ]}
         />

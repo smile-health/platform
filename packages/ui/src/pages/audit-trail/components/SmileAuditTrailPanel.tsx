@@ -50,7 +50,7 @@ export default function SmileAuditTrailPanel() {
   useSetLoadingPopupStore(isLoading)
 
   return (
-    <div className="ui-space-y-4 mt-6">
+    <div className="ui:space-y-4 mt-6">
       <AuditTrailInfo />
       <RetentionSettingCard />
       <AuditTrailFilter filter={filter} handleChangePage={handleChangePage} />

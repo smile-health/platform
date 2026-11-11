@@ -31,11 +31,11 @@ const EntityDetailActivityImplementationTimeTopStickedButton: React.FC<
   return (
     <>
       <div
-        className={`${isAppear ? 'appear' : ''} ui-fixed ui-w-full ui-left-0 ui-bg-white ui-h-20 ui-z-10 ui-shadow-md sliding-div ui-flex ui-justify-between ui-items-center ui-px-40`}
+        className={`${isAppear ? 'appear' : ''} ui:fixed ui:w-full ui:left-0 ui:bg-white ui:h-20 ui:z-10 ui:shadow-md sliding-div ui:flex ui:justify-between ui:items-center ui:px-40`}
       >
-        <p className="ui-font-bold ">{title}</p>
-        <div className="ui-w-auto ui-flex ui-justify-end ui-items-center">
-          <div className="ui-mr-[16px]">
+        <p className="ui:font-bold ">{title}</p>
+        <div className="ui:w-auto ui:flex ui:justify-end ui:items-center">
+          <div className="ui:mr-[16px]">
             <Button
               id="btn__link__entity__cancel__2"
               variant="outline"

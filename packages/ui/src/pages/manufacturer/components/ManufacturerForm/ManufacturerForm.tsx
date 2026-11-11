@@ -47,7 +47,7 @@ export default function ManufacturerForm({
 
       <form
         onSubmit={onSubmit}
-        className="ui-w-full ui-space-y-6 ui-max-w-form ui-mx-auto"
+        className="ui:w-full ui:space-y-6 ui:max-w-form ui:mx-auto"
       >
         <ManufacturerFormMainInfo />
         <ProgramSelection
@@ -55,11 +55,11 @@ export default function ManufacturerForm({
           onChange={(ids) => setValue('program_ids', ids)}
           forbiddenUncheckIds={checkedPrograms}
         />
-        <div className="ui-flex ui-justify-end ui-mt-10 ui-space-x-5">
+        <div className="ui:flex ui:justify-end ui:mt-10 ui:space-x-5">
           <Button
             asChild
             variant="outline"
-            className="ui-w-32"
+            className="ui:w-32"
             data-testid="btn-back"
           >
             <Link href={`/${language}/v5/global-settings/manufacturer`}>
@@ -68,7 +68,7 @@ export default function ManufacturerForm({
           </Button>
           <Button
             type="submit"
-            className="ui-w-32"
+            className="ui:w-32"
             loading={isPending}
             data-testid="btn-submit"
           >

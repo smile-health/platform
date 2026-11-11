@@ -23,20 +23,20 @@ const TransactionCreateConsumptionIntraMuscular = ({
     })
   return (
     <DialogContent>
-      <div className="ui-flex ui-flex-row ui-mb-5">
+      <div className="ui:flex ui:flex-row ui:mb-5">
         <div>
-          <div className="ui-text-neutral-500 ui-text-sm">
+          <div className="ui:text-neutral-500 ui:text-sm">
             {t('table.column.vaccine_type.label')}
           </div>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {item?.vaccine_type?.label ?? '-'}
           </div>
         </div>
         <div>
-          <div className="ui-text-neutral-500 ui-text-sm">
+          <div className="ui:text-neutral-500 ui:text-sm">
             {t('table.column.method.label')}
           </div>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {item?.vaccine_method?.label ?? '-'}
           </div>
         </div>

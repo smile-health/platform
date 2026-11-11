@@ -19,8 +19,8 @@ export default function UserDetailLogInfo(props: UserDetailLogInfoProps) {
   }
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-      <h5 className="ui-font-bold">{t('title.log')}</h5>
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+      <h5 className="ui:font-bold">{t('title.log')}</h5>
       <RenderDetailValue data={data} />
     </div>
   )

@@ -110,25 +110,25 @@ const TransactionReturnFromFacilityDiscardFormDialog = () => {
         classNameOverlay="z-10"
       >
         <Button
-          className="ui-absolute ui-right-2 ui-top-2 ui-rounded ui-text-gray-800 ui-outline-none ui-border-none"
+          className="ui:absolute ui:right-2 ui:top-2 ui:rounded ui:text-gray-800 ui:outline-hidden ui:border-none"
           onClick={handleCancel}
           variant="subtle"
           type="button"
         >
-          <XMarkIcon className="ui-h-5 ui-w-5" />
+          <XMarkIcon className="ui:h-5 ui:w-5" />
         </Button>
-        <DialogHeader className="ui-my-2">
-          <h3 className="ui-text-center ui-text-xl ui-font-medium">
+        <DialogHeader className="ui:my-2">
+          <h3 className="ui:text-center ui:text-xl ui:font-medium">
             {t(
               'transactionCreate:transaction_return_from_facility.input_table.detail_column.is_anything_discarded'
             )}
           </h3>
         </DialogHeader>
-        <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-        <DialogContent className="ui-overflow-auto ui-my-2 ui-py-2 styled-scroll ui-scroll-pr-2">
+        <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+        <DialogContent className="ui:overflow-auto ui:my-2 ui:py-2 styled-scroll ui:scroll-pr-2">
           {isOpenVial && (
-            <FormControl className="ui-my-4">
-              <FormLabel className="ui-text-sm">
+            <FormControl className="ui:my-4">
+              <FormLabel className="ui:text-sm">
                 {t(
                   'transactionCreate:transaction_return_from_facility.input_table.column.open_vial'
                 )}
@@ -159,8 +159,8 @@ const TransactionReturnFromFacilityDiscardFormDialog = () => {
               </FormErrorMessage>
             </FormControl>
           )}
-          <FormControl className="ui-my-4">
-            <FormLabel className="ui-text-sm">
+          <FormControl className="ui:my-4">
+            <FormLabel className="ui:text-sm">
               {isOpenVial
                 ? t(
                     'transactionCreate:transaction_return_from_facility.input_table.column.close_vial'
@@ -191,8 +191,8 @@ const TransactionReturnFromFacilityDiscardFormDialog = () => {
             />
             <FormErrorMessage>{errorForms?.discard_qty}</FormErrorMessage>
           </FormControl>
-          <FormControl className="ui-my-4">
-            <FormLabel className="ui-text-sm">
+          <FormControl className="ui:my-4">
+            <FormLabel className="ui:text-sm">
               {t(
                 'transactionCreate:transaction_return_from_facility.input_table.detail_column.discard_reason'
               )}
@@ -202,17 +202,17 @@ const TransactionReturnFromFacilityDiscardFormDialog = () => {
             />
           </FormControl>
         </DialogContent>
-        <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-        <DialogFooter className="ui-w-full ui-grid ui-grid-cols-2 ui-py-6">
+        <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+        <DialogFooter className="ui:w-full ui:grid ui:grid-cols-2 ui:py-6">
           <Button
             color="primary"
             variant="outline"
-            className="ui-px-16"
+            className="ui:px-16"
             onClick={handleCancel}
           >
             {t('common:cancel')}
           </Button>
-          <Button variant="solid" onClick={handleSave} className="ui-px-16">
+          <Button variant="solid" onClick={handleSave} className="ui:px-16">
             {t('common:save')}
           </Button>
         </DialogFooter>

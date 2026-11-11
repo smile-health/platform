@@ -18,13 +18,13 @@ export default function DashboardTotalWasteBag({
   exportFileName,
 }: Props) {
   return (
-    <div className="ui-col-span-3">
+    <div className="ui:col-span-3">
       <DashboardBox.Root id={id}>
         <DashboardBox.Header>
           <h4>
             <strong>{title}</strong>
           </h4>
-          {subtitle && <p className="ui-text-base">{subtitle}</p>}
+          {subtitle && <p className="ui:text-base">{subtitle}</p>}
         </DashboardBox.Header>
         <DashboardBox.Body>
           <DashboardBox.Config
@@ -34,8 +34,8 @@ export default function DashboardTotalWasteBag({
             }}
           />
           <DashboardBox.Content isLoading={isLoading}>
-            <div className="ui-text-center ui-p-20">
-              <p className="ui-text-3xl">
+            <div className="ui:text-center ui:p-20">
+              <p className="ui:text-3xl">
                 <strong>{value}</strong>
               </p>
             </div>

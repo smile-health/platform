@@ -51,7 +51,7 @@ export const OrderCreateReturnBatchTable = ({
         <Tr>
           {headers.map((header) => (
             <Th
-              className="ui-px-2 ui-py-5 ui-text-left ui-text-sm ui-text-gray-700 ui-border-b ui-border-gray-300 ui-font-semibold"
+              className="ui:px-2 ui:py-5 ui:text-left ui:text-sm ui:text-gray-700 ui:border-b ui:border-gray-300 ui:font-semibold"
               key={header.id}
               style={{
                 width: header?.size !== 0 ? `${header?.size}px` : 'auto',
@@ -68,7 +68,7 @@ export const OrderCreateReturnBatchTable = ({
             <Tr>
               <Td
                 colSpan={totalCols}
-                className="ui-font-semibold ui-text-xs ui-bg-[#E2E8F0]"
+                className="ui:font-semibold ui:text-xs ui:bg-slate-200"
               >
                 {t('orderCreateReturn:drawer.table.valid_material')}
               </Td>
@@ -76,7 +76,7 @@ export const OrderCreateReturnBatchTable = ({
             {validMaterials.map((stock, index) => (
               <Tr
                 key={`valid-${stock?.batch_code}-${indexRow}-${index}`}
-                className="ui-text-sm ui-text-dark-blue ui-font-normal ui-leading-6"
+                className="ui:text-sm ui:text-dark-blue ui:font-normal ui:leading-6"
               >
                 <Td>{index + 1}</Td>
                 <OrderCreateReturnBatchInformation
@@ -120,7 +120,7 @@ export const OrderCreateReturnBatchTable = ({
             <Tr>
               <Td
                 colSpan={totalCols}
-                className="ui-font-semibold ui-text-xs ui-bg-[#E2E8F0]"
+                className="ui:font-semibold ui:text-xs ui:bg-slate-200"
               >
                 {t('orderCreateReturn:drawer.table.expired_material')}
               </Td>
@@ -128,7 +128,7 @@ export const OrderCreateReturnBatchTable = ({
             {expiredMaterials.map((stock, index) => (
               <Tr
                 key={`expired-${stock?.batch_code}-${indexRow}-${index}`}
-                className="ui-text-sm ui-text-dark-blue ui-font-normal ui-leading-6"
+                className="ui:text-sm ui:text-dark-blue ui:font-normal ui:leading-6"
               >
                 <Td>{index + 1}</Td>
                 <OrderCreateReturnBatchInformation

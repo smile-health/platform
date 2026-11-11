@@ -34,7 +34,7 @@ const EntityForm: React.FC<Props> = ({ isGlobal }) => {
     <FormProvider {...methodsForm}>
       <form
         onSubmit={handleSubmit(onSubmitForm)}
-        className="ui-mt-6 ui-space-y-6 ui-max-w-form ui-mx-auto"
+        className="ui:mt-6 ui:space-y-6 ui:max-w-form ui:mx-auto"
       >
         <EntityFormInformation
           materialTagList={materialTagList}
@@ -50,8 +50,8 @@ const EntityForm: React.FC<Props> = ({ isGlobal }) => {
           programs={detail?.programs.map((x) => x.id) || []}
         />
 
-        <div className="ui-flex ui-justify-end">
-          <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+        <div className="ui:flex ui:justify-end">
+          <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
             <Button
               id="btn-back-entity"
               type="button"

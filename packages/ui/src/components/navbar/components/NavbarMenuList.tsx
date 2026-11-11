@@ -26,21 +26,21 @@ const NavbarMenuList = ({ title = '', onClick = () => {} }) => {
   const isActive = title === menuClicked?.title
 
   const titleStyle = cx(
-    'menu__list ui-w-full ui-my-1 ui-flex ui-items-center ui-justify-start ui-gap-2 ui-bg-transparent ui-transition-colors ui-duration-300 ui-ease-in-out ui-p-2 ui-font-bold ui-text-primary-500 hover:ui-bg-primary-500/20 hover:ui-text-primary-500 hover:ui-brightness-200 ui-outline-none focus:ui-outline-none focus:ui-ring-0 focus-visible:outline-none',
+    'menu__list ui:w-full ui:my-1 ui:flex ui:items-center ui:justify-start ui:gap-2 ui:bg-transparent ui:transition-colors ui:duration-300 ui:ease-in-out ui:p-2 ui:font-bold ui:text-primary-500 ui:hover:bg-primary-500/20 ui:hover:text-primary-500 ui:hover:brightness-200 ui:outline-hidden ui:focus:outline-hidden ui:focus:ring-0 focus-visible:outline-none',
     {
-      'ui-text-primary-500 ui-brightness-200': isActive,
-      'ui-cursor-default ui-text-primary-contrast hover:ui-text-primary-contrast hover:ui-bg-primary-500/60':
+      'ui:text-primary-500 ui:brightness-200': isActive,
+      'ui:cursor-default ui:text-primary-contrast ui:hover:text-primary-contrast ui:hover:bg-primary-500/60':
         isActive && textColor === 'dark',
-      'ui-text-dark-teal ui-cursor-pointer hover:ui-bg-primary-500/60 hover:ui-text-primary-contrast':
+      'ui:text-dark-teal ui:cursor-pointer ui:hover:bg-primary-500/60 ui:hover:text-primary-contrast':
         !isActive && textColor === 'dark',
     }
   )
 
   const chevronRightStyle = cx(
-    'ui-transition-opacity ui-duration-300 ui-ease-in-out',
+    'ui:transition-opacity ui:duration-300 ui:ease-in-out',
     {
-      'ui-opacity-100': show,
-      'ui-opacity-0': !show,
+      'ui:opacity-100': show,
+      'ui:opacity-0': !show,
     }
   )
 

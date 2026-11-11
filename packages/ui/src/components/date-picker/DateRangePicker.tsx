@@ -173,7 +173,7 @@ function Preset({
   onClick: (item: Preset) => void
 }>) {
   return (
-    <div className="ui-border-r ui-border-gray-300 ui-p-2 ui-space-y-1">
+    <div className="ui:border-r ui:border-gray-300 ui:p-2 ui:space-y-1">
       {presets.map((item) => (
         <button
           id={item?.id}
@@ -181,10 +181,10 @@ function Preset({
           key={item.label}
           onClick={() => onClick(item)}
           className={cx(
-            'ui-w-full ui-text-sm ui-text-gray-700 ui-text-left ui-px-2 ui-py-1 rounded',
-            'focus:ui-outline-none focus:ui-ring-2  focus:ui-ring-opacity-40',
+            'ui:w-full ui:text-sm ui:text-gray-700 ui:text-left ui:px-2 ui:py-1 rounded',
+            'ui:focus:outline-hidden ui:focus:ring-2 ui:focus:ring-blue-500/40',
             {
-              'ui-bg-primary-500 ui-text-white ': selectedPreset === item.label,
+              'ui:bg-primary-500 ui:text-white ': selectedPreset === item.label,
             }
           )}
         >
@@ -265,34 +265,34 @@ export function DateRangePicker(
 
   return (
     <I18nProvider locale={props.locale ?? 'en-UK'}>
-      <div className="ui-relative ui-flex ui-w-full ui-flex-col ui-text-left">
+      <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-left">
         <div
           {...groupProps}
           ref={ref}
           className={cx(
-            'ui-flex ui-items-center ui-justify-center ui-rounded ui-border ui-pr-1',
-            'ui-h-10',
-            'group-[.is-group]:first:!ui-rounded-l-none',
-            'focus-within:ui-ring-2 focus-within:ui-ring-opacity-25',
+            'ui:flex ui:items-center ui:justify-center ui:rounded ui:border ui:pr-1',
+            'ui:h-10',
+            'ui:first:group-[.is-group]:rounded-l-none!',
+            'ui:focus-within:ring-2',
             {
-              'ui-cursor-not-allowed ui-bg-gray-100 ui-opacity-75':
+              'ui:cursor-not-allowed ui:bg-gray-100 ui:opacity-75':
                 props.isDisabled,
             },
             {
-              'ui-border-gray-300': !allError,
-              'ui-border-danger-500': allError,
+              'ui:border-gray-300': !allError,
+              'ui:border-danger-500': allError,
             },
             {
-              'focus-within:ui-border-danger-500 focus-within:ui-ring-danger-500':
+              'ui:focus-within:border-danger-500 ui:focus-within:ring-danger-500/25':
                 allError,
-              'focus-within:ui-border-primary-500 focus-within:ui-ring-primary-500':
+              'ui:focus-within:border-primary-500 ui:focus-within:ring-primary-500/25':
                 !allError,
             }
           )}
         >
-          <div className="ui-flex ui-flex-1 ui-px-2 ui-relative">
+          <div className="ui:flex ui:flex-1 ui:px-2 ui:relative">
             <DateField {...startFieldProps} id={`${props.id}-start`} />
-            <span aria-hidden="true" className="ui-px-2">
+            <span aria-hidden="true" className="ui:px-2">
               –
             </span>
             <DateField {...endFieldProps} id={`${props.id}-end`} />
@@ -305,7 +305,7 @@ export function DateRangePicker(
                 aria-label="Clear"
                 onPress={() => state.setValue(null)}
               >
-                <XMarkIcon className="ui-size-4"></XMarkIcon>
+                <XMarkIcon className="ui:size-4"></XMarkIcon>
               </ClearButton>
             ) : null}
           </div>
@@ -314,7 +314,7 @@ export function DateRangePicker(
             {...buttonProps}
             id={props.id}
           >
-            <CalendarIcon className="ui-h-4 ui-w-4 ui-text-gray-800"></CalendarIcon>
+            <CalendarIcon className="ui:h-4 ui:w-4 ui:text-gray-800"></CalendarIcon>
           </FieldButton>
         </div>
         <AnimatePresence>
@@ -323,7 +323,7 @@ export function DateRangePicker(
               <Dialog {...dialogProps}>
                 <div
                   className={cx({
-                    'ui-grid ui-grid-cols-[150px_1fr]': props.withPreset,
+                    'ui:grid ui:grid-cols-[150px_1fr]': props.withPreset,
                   })}
                 >
                   {props.withPreset ? (

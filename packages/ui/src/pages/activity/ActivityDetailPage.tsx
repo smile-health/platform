@@ -21,7 +21,7 @@ export default function ActivityDetailPage(): JSX.Element {
       withLayout={true}
     >
       <Meta title={`Smile | ${t('title.information')}`} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <ActivityDetailInfo
           data={data}
           isLoading={isLoading}

@@ -47,7 +47,7 @@ export default function OrderCreateCentralDistributionTableMaterial(
   })
 
   return (
-    <div className="ui-p-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6 !ui-h-full">
+    <div className="ui:p-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-6 ui:h-full!">
       {vendor && customer && activity ? (
         <InfiniteScrollList
           id="order-create-material-list"
@@ -68,7 +68,7 @@ export default function OrderCreateCentralDistributionTableMaterial(
       ) : (
         <div>
           <H5>{title}</H5>
-          <p className="ui-text-neutral-500">{t('info.material.empty')}</p>
+          <p className="ui:text-neutral-500">{t('info.material.empty')}</p>
         </div>
       )}
     </div>

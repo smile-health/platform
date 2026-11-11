@@ -74,7 +74,7 @@ const useColdStorageCapacityTable = () => {
           return (pagination.page - 1) * pagination.paginate + (row.index + 1)
         },
         meta: {
-          cellClassName: 'ui-text-center',
+          cellClassName: 'ui:text-center',
         },
       },
       {
@@ -95,7 +95,7 @@ const useColdStorageCapacityTable = () => {
         size: 200,
         minSize: 180,
         meta: {
-          cellClassName: 'ui-text-left',
+          cellClassName: 'ui:text-left',
         },
       },
       {
@@ -105,7 +105,7 @@ const useColdStorageCapacityTable = () => {
         size: 220,
         minSize: 200,
         meta: {
-          cellClassName: 'ui-text-left',
+          cellClassName: 'ui:text-left',
         },
         cell: ({ row }) => {
           const item = row.original
@@ -124,7 +124,7 @@ const useColdStorageCapacityTable = () => {
           const showWarning = percentage > 100
 
           return (
-            <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui:flex ui:items-center ui:gap-2">
               <span className={colorClass}>{percentage.toFixed(1)}%</span>
               {showWarning && (
                 <TooltipRoot delayDuration={100}>
@@ -134,11 +134,11 @@ const useColdStorageCapacityTable = () => {
                         fill="none"
                         stroke="red"
                         strokeWidth={2}
-                        className="ui-size-4"
+                        className="ui:size-4"
                       />
                     </div>
                   </TooltipTrigger>
-                  <TooltipContent color="dark" className="ui-z-50" side="right">
+                  <TooltipContent color="dark" className="ui:z-50" side="right">
                     {t('tooltip.capacityWarning')}
                   </TooltipContent>
                 </TooltipRoot>
@@ -147,7 +147,7 @@ const useColdStorageCapacityTable = () => {
           )
         },
         meta: {
-          cellClassName: 'ui-text-left',
+          cellClassName: 'ui:text-left',
         },
       },
       {
@@ -162,14 +162,14 @@ const useColdStorageCapacityTable = () => {
               onClick={() =>
                 router.pushGlobal(`/v5/cold-storage-capacity/${item.id}`)
               }
-              className="ui-text-primary-500 hover:ui-underline"
+              className="ui:text-primary-500 ui:hover:underline"
             >
               {t('button.detail')}
             </button>
           )
         },
         meta: {
-          cellClassName: 'ui-text-center',
+          cellClassName: 'ui:text-center',
         },
       },
     ],

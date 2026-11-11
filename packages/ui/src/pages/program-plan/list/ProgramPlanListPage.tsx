@@ -127,20 +127,20 @@ const ProgramPlanListPage: React.FC<CommonType> = () => {
     <Container title={t('programPlan:title')} withLayout>
       <Meta title={`SMILE | ${t('programPlan:title')}`} />
       <ProgramPlanListContext.Provider value={contextValueList}>
-        <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-font-bold ui-text-xl">
+        <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:font-bold ui:text-xl">
             {t('programPlan:list_program_plan')}
           </h5>
           {hasPermission('program-plan-mutate') &&
             (isCopyProgramPlan ? (
               <Link
                 href={router.getAsLink(`/v5/program-plan/create`)}
-                className="ui-block"
+                className="ui:block"
               >
                 <Button
                   variant="solid"
                   type="button"
-                  leftIcon={<Plus className="ui-size-5" />}
+                  leftIcon={<Plus className="ui:size-5" />}
                 >
                   {t('programPlan:add_program_plan')}
                 </Button>
@@ -151,7 +151,7 @@ const ProgramPlanListPage: React.FC<CommonType> = () => {
                 <Button
                   variant="solid"
                   type="button"
-                  leftIcon={<Plus className="ui-size-5" />}
+                  leftIcon={<Plus className="ui:size-5" />}
                   onClick={() => setOpenCreateModal(true)}
                 >
                   {t('programPlan:add_program_plan')}
@@ -159,15 +159,15 @@ const ProgramPlanListPage: React.FC<CommonType> = () => {
               </>
             ))}
         </div>
-        <div className="ui-space-y-4 ui-mt-6">
+        <div className="ui:space-y-4 ui:mt-6">
           <FilterFormRoot collapsible={false} onSubmit={filter.handleSubmit}>
-            <FilterFormBody className="ui-grid-cols-1">
-              <div className="ui-flex ui-items-end ui-gap-3">
-                <div className="ui-flex-1">{filter.renderField()}</div>
-                <div className="ui-flex ui-gap-3">
+            <FilterFormBody className="ui:grid-cols-1">
+              <div className="ui:flex ui:items-end ui:gap-3">
+                <div className="ui:flex-1">{filter.renderField()}</div>
+                <div className="ui:flex ui:gap-3">
                   <FilterResetButton onClick={filter.reset} variant="subtle" />
                   <FilterSubmitButton
-                    className="ui-w-40"
+                    className="ui:w-40"
                     variant="outline"
                     onClick={() => setPagination({ page: 1 })}
                   />
@@ -178,7 +178,7 @@ const ProgramPlanListPage: React.FC<CommonType> = () => {
           </FilterFormRoot>
         </div>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <ProgramPlanListTable
             data={listProgramPlanData}
             sorting={sorting}

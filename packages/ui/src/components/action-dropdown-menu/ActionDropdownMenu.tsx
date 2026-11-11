@@ -34,14 +34,14 @@ export function ActionDropdownMenu({
   return (
     <DropdownMenuRoot>
       <DropdownMenuTrigger>
-        <Button variant="subtle" size="sm" className="ui-px-2">
-          <DotsHorizontal className="ui-h-4 ui-w-4" />
+        <Button variant="subtle" size="sm" className="ui:px-2">
+          <DotsHorizontal className="ui:h-4 ui:w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {onView && (
           <DropdownMenuItem
-            leftIcon={<EyeIcon className="ui-h-4 ui-w-4" />}
+            leftIcon={<EyeIcon className="ui:h-4 ui:w-4" />}
             onSelect={onView}
             disabled={disabled?.view}
           >
@@ -50,7 +50,7 @@ export function ActionDropdownMenu({
         )}
         {onEdit && (
           <DropdownMenuItem
-            leftIcon={<PencilIcon className="ui-h-4 ui-w-4" />}
+            leftIcon={<PencilIcon className="ui:h-4 ui:w-4" />}
             onSelect={onEdit}
             disabled={disabled?.edit}
           >
@@ -60,7 +60,7 @@ export function ActionDropdownMenu({
         {onDelete && (
           <DropdownMenuItem
             color="danger"
-            leftIcon={<TrashIcon className="ui-h-4 ui-w-4" />}
+            leftIcon={<TrashIcon className="ui:h-4 ui:w-4" />}
             onSelect={onDelete}
             disabled={disabled?.delete}
           >

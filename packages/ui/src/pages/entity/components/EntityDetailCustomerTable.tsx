@@ -132,9 +132,9 @@ const EntityDetailCustomerTable: React.FC<Props> = ({
         onSubmit={() => mutateCustomerDeletion(deleteCustomerIds)}
       />
 
-      <div className="ui-p-4 ui-mt-6 ui-border ui-rounded ui-border-neutral-300">
-        <div className="ui-flex ui-justify-between ui-items-center">
-          <p className="ui-mb-4 ui-font-bold ui-w-auto">{title}</p>
+      <div className="ui:p-4 ui:mt-6 ui:border ui:rounded ui:border-neutral-300">
+        <div className="ui:flex ui:justify-between ui:items-center">
+          <p className="ui:mb-4 ui:font-bold ui:w-auto">{title}</p>
           <EntityDetailCustomerFilter
             buttonTitle={t('entity:detail.customer_vendor.customer_add', {
               type: entityCustomerConsumptionType(t, isConsumption),
@@ -166,7 +166,7 @@ const EntityDetailCustomerTable: React.FC<Props> = ({
           isLoading={isLoading}
         />
         {dataFetched?.data.length > 0 ? (
-          <div className="ui-mt-4">
+          <div className="ui:mt-4">
             <PaginationContainer>
               <PaginationSelectLimit
                 onChange={onSizeChange}

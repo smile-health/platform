@@ -91,11 +91,11 @@ const TransactionCreateTransactionDetailForm = ({
   }
 
   return (
-    <div className="ui-w-full ui-p-4 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
-      <div className="ui-font-bold">
+    <div className="ui:w-full ui:p-4 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
+      <div className="ui:font-bold">
         {t('transactionCreate:transaction_detail')}
       </div>
-      <div className="ui-mt-6 ui-flex ui-flex-col ui-space-y-6">
+      <div className="ui:mt-6 ui:flex ui:flex-col ui:space-y-6">
         <Controller
           control={control}
           name="entity"
@@ -183,7 +183,7 @@ const TransactionCreateTransactionDetailForm = ({
                 {error?.message && (
                   <FormErrorMessage>{error?.message}</FormErrorMessage>
                 )}
-                <div className="ui-text-sm ui-italic ui-text-neutral-500">
+                <div className="ui:text-sm ui:italic ui:text-neutral-500">
                   {t('transactionCreate:caption_activity')}
                 </div>
               </FormControl>

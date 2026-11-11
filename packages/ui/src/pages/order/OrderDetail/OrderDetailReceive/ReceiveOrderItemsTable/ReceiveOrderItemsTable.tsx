@@ -68,7 +68,7 @@ export const ReceiveOrderItemsTable = ({
           {hasOrderStocks && (
             <div className="space-y-2">
               {filledReceiveItems?.map((item) => (
-                <div key={item.stock_id} className="ui-text-sm">
+                <div key={item.stock_id} className="ui:text-sm">
                   {isOrderItemBatch && (
                     <>
                       <div>
@@ -87,7 +87,7 @@ export const ReceiveOrderItemsTable = ({
                     {t('orderDetail:data.stock_from_activity')}:{' '}
                     {item._order_item_stock?.activity_name}
                   </div>
-                  <div className="ui-font-semibold">
+                  <div className="ui:font-semibold">
                     Qty: {numberFormatter(item.received_qty, i18n.language)}
                   </div>
                 </div>
@@ -95,11 +95,11 @@ export const ReceiveOrderItemsTable = ({
             </div>
           )}
 
-          <div className="ui-space-y-1">
+          <div className="ui:space-y-1">
             <Button
               size="sm"
               type="button"
-              leftIcon={<PlusIcon className="ui-w-5 ui-text-dark-blue" />}
+              leftIcon={<PlusIcon className="ui:w-5 ui:text-dark-blue" />}
               variant="outline"
               onClick={handleClick}
             >
@@ -152,7 +152,7 @@ export const ReceiveOrderItemsTable = ({
       data={orderItems}
       columns={columns}
       isLoading={!orderItems || isLoading}
-      bodyClassName={cx({ 'ui-h-56': !orderItems })}
+      bodyClassName={cx({ 'ui:h-56': !orderItems })}
     />
   )
 }

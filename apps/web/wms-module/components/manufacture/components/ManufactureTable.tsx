@@ -51,7 +51,7 @@ export default function ManufactureTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={manufactureDataSource?.data.data}
         columns={columnsManufacture(t, {

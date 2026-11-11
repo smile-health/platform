@@ -26,11 +26,11 @@ const Progress = React.forwardRef<
     <ProgressPrimitive.Root
       ref={ref}
       value={value}
-      className={cx('ui-w-full ui-overflow-hidden ui-rounded ui-bg-gray-200', {
-        'ui-h-2': size === 'sm',
-        'ui-h-3': size === 'md',
-        'ui-h-4': size === 'lg',
-        'ui-h-5': size === 'xl',
+      className={cx('ui:w-full ui:overflow-hidden ui:rounded ui:bg-gray-200', {
+        'ui:h-2': size === 'sm',
+        'ui:h-3': size === 'md',
+        'ui:h-4': size === 'lg',
+        'ui:h-5': size === 'xl',
       })}
       {...props}
     >
@@ -40,7 +40,7 @@ const Progress = React.forwardRef<
           ...style,
         }}
         className={cx(
-          'ui-h-full ui-bg-primary-500 ui-duration-300 ui-ease-in-out'
+          'ui:h-full ui:bg-primary-500 ui:duration-300 ui:ease-in-out'
         )}
       />
     </ProgressPrimitive.Root>

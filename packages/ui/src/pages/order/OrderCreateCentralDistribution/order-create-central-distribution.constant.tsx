@@ -86,7 +86,7 @@ export function tableFormColumns({
         const stocks = original?.stocks?.filter((item) => !!item?.ordered_qty)
         const errorMsg = errors?.order_items?.[row?.index]?.stocks?.message
         return (
-          <div className="ui-space-y-4">
+          <div className="ui:space-y-4">
             {stocks?.map((item) => (
               <div key={item?.batch_code}>
                 {Boolean(original?.is_managed_in_batch) && (
@@ -117,7 +117,7 @@ export function tableFormColumns({
                 </p>
               </div>
             ))}
-            <div className="ui-space-y-1">
+            <div className="ui:space-y-1">
               {stocks?.length ? (
                 <Button
                   variant="outline"
@@ -130,7 +130,7 @@ export function tableFormColumns({
               ) : (
                 <Button
                   variant="outline"
-                  leftIcon={<Plus className="ui-size-5" />}
+                  leftIcon={<Plus className="ui:size-5" />}
                   onClick={() => onClickBatch(original, row.index)}
                 >
                   {original?.is_managed_in_batch
@@ -151,7 +151,7 @@ export function tableFormColumns({
       cell: ({ row }) => (
         <Button
           onClick={() => onRemove(row?.index)}
-          className="ui-p-0 ui-h-auto"
+          className="ui:p-0 ui:h-auto"
           color="danger"
           variant="subtle"
         >

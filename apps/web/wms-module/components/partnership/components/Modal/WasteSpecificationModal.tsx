@@ -115,16 +115,16 @@ export const WasteSpecificationModal = ({
 
   return (
     <Dialog open={showModal} onOpenChange={setShowModal} size="lg">
-      <DialogHeader className="ui-text-center ui-pr-0">
-        <span className="ui-font-medium">
+      <DialogHeader className="ui:text-center ui:pr-0">
+        <span className="ui:font-medium">
           {editIndex !== null
             ? t('partnership:list.button.edit_specification')
             : t('partnership:list.button.add_specification')}
         </span>
       </DialogHeader>
-      <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-      <DialogContent className="ui-overflow-visible ui-my-2 ui-py-2 styled-scroll ui-scroll-pr-2">
-        <div className="ui-space-y-6">
+      <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+      <DialogContent className="ui:overflow-visible ui:my-2 ui:py-2 styled-scroll ui:scroll-pr-2">
+        <div className="ui:space-y-6">
           <Controller
             name="modalSpecification.type"
             control={control}
@@ -204,7 +204,7 @@ export const WasteSpecificationModal = ({
                   disabled={!modalForm.group}
                 />
                 {editIndex === null && (
-                  <div className="ui-text-sm ui-text-blue-700 ui-mt-1">
+                  <div className="ui:text-sm ui:text-blue-700 ui:mt-1">
                     {t('partnership:form.help_text_characteristic')}
                   </div>
                 )}
@@ -231,12 +231,12 @@ export const WasteSpecificationModal = ({
           </FormControl>
         </div>
       </DialogContent>
-      <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-      <DialogFooter className="ui-flex ui-justify-center ui-py-4">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-3 ui-w-full ui-pb-2">
+      <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+      <DialogFooter className="ui:flex ui:justify-center ui:py-4">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-3 ui:w-full ui:pb-2">
           <Button
             variant="outline"
-            className="ui-w-full"
+            className="ui:w-full"
             onClick={() => setShowModal(false)}
           >
             {t('common:cancel')}
@@ -246,7 +246,7 @@ export const WasteSpecificationModal = ({
             disabled={
               !modalForm.type || !modalForm.group || !modalForm.pricePerKg
             }
-            className="ui-w-full"
+            className="ui:w-full"
           >
             {t('common:save')}
           </Button>

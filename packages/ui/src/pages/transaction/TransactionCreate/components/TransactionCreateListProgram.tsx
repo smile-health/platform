@@ -56,7 +56,7 @@ const TransactionCreateListProgram = () => {
             loadMore={() => {}}
             loading={isLoading}
           >
-            <div className="ui-grid ui-grid-cols-1 ui-gap-2 ui-mt-4">
+            <div className="ui:grid ui:grid-cols-1 ui:gap-2 ui:mt-4">
               {data?.map((item: TProgram) => {
                 const isChecked = value === item.id
 
@@ -66,9 +66,9 @@ const TransactionCreateListProgram = () => {
                     data-testid={`btn-workspace-${item.key}`}
                     type="button"
                     className={cx(
-                      'ui-flex ui-justify-between ui-border ui-rounded-lg ui-rounded-lg ui-p-4 ui-items-center ui-cursor-pointer focus:outline-none w-full',
+                      'ui:flex ui:justify-between ui:border ui:rounded-lg ui:rounded-lg ui:p-4 ui:items-center ui:cursor-pointer focus:outline-none w-full',
                       {
-                        'ui-bg-primary-100': isChecked,
+                        'ui:bg-primary-100': isChecked,
                       }
                     )}
                     onClick={() => {
@@ -96,8 +96,8 @@ const TransactionCreateListProgram = () => {
                       key={item?.id}
                       data={item}
                       className={{
-                        wrapper: 'ui-gap-4',
-                        title: 'ui-text-left'
+                        wrapper: 'ui:gap-4',
+                        title: 'ui:text-left'
                       }}
                       icon={getProgramIconUrl(item)}
                     />
@@ -128,7 +128,7 @@ const TransactionCreateListProgram = () => {
                         )
                   }
                   withIcon
-                  className="ui-h-[480px]"
+                  className="ui:h-[480px]"
                 />
               ) : null}
             </div>

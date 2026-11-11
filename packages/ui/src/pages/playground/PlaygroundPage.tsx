@@ -357,7 +357,7 @@ const PlaygroundPage = () => {
           Show Loading
         </Button>
       </div>
-      <div className="ui-space-y-2">
+      <div className="ui:space-y-2">
         <h1 className="text-2xl font-bold">Date Picker</h1>
         <Button onClick={() => setOpen(true)}>Open</Button>
         <ModalRoot open={open} setOpen={setOpen} closeOnOverlayClick={false}>

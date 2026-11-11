@@ -95,21 +95,21 @@ export function PushNotificationProvider({
       <Dialog
         open={showPopup}
         onOpenChange={setShowPopup}
-        className="ui-z-30"
+        className="ui:z-30"
         classNameOverlay="ui-z-60"
         verticalCentered
         size="lg"
       >
         <DialogCloseButton onClick={handleBlockOrClose} />
-        <DialogHeader className="ui-text-center ui-text-xl ui-text-dark-teal">
+        <DialogHeader className="ui:text-center ui:text-xl ui:text-dark-teal">
           {t('information.title')}
         </DialogHeader>
-        <DialogContent className="ui-text-center ui-text-[#737373] ui-pt-0 ui-pb-4">
+        <DialogContent className="ui:text-center ui:text-neutral-500 ui:pt-0 ui:pb-4">
           {t('information.description')}
         </DialogContent>
         <DialogFooter>
           <Button
-            className="ui-w-full"
+            className="ui:w-full"
             variant="outline"
             onClick={handleBlockOrClose}
           >

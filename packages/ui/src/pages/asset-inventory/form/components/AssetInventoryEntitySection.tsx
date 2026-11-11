@@ -27,11 +27,11 @@ export const AssetInventoryEntitySection = ({
     profile?.role === USER_ROLE.SUPERADMIN || profile?.role === USER_ROLE.ADMIN
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('assetInventory:form.title.entity')}
       </div>
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="entity" required>
           {t('common:tab.entity')}
         </FormLabel>
@@ -65,8 +65,8 @@ export const AssetInventoryEntitySection = ({
       </FormControl>
       {['first', 'second', 'third'].map((val: string, index) => {
         return (
-          <div className="ui-grid ui-grid-cols-2 ui-gap-4" key={val}>
-            <FormControl className="ui-w-full">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-4" key={val}>
+            <FormControl className="ui:w-full">
               <FormLabel
                 htmlFor={`contact_person_user_${index + 1}_name`}
                 required={val === 'first'}
@@ -96,7 +96,7 @@ export const AssetInventoryEntitySection = ({
                   </FormErrorMessage>
                 )}
             </FormControl>
-            <FormControl className="ui-w-full">
+            <FormControl className="ui:w-full">
               <FormLabel htmlFor="phone-number" required={val === 'first'}>
                 {t('assetInventory:columns.phone_number.label', {
                   number: index + 1,

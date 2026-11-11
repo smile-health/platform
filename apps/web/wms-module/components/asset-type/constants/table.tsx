@@ -11,7 +11,7 @@ type DataProps = {
 
 const ActionCell = ({ row: { original } }: { row: { original: TAssetType } }) => {
   return (
-    <div className="ui-flex">
+    <div className="ui:flex">
       <ButtonActionTable
         id={original?.id}
         path={'/asset-type'}

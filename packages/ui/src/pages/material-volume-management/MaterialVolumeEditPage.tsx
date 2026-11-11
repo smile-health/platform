@@ -27,7 +27,7 @@ const MaterialVolumeEditPage: FC<CommonType> = ({
       }}
     >
       <Meta title={`Smile | Global ${t('materialVolume:title.edit')}`} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         {isLoading ? (
           <MaterialVolumeSkeleton />
         ) : (

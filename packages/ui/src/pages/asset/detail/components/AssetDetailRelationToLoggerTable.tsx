@@ -14,10 +14,10 @@ const AssetDetailRelationToLoggerTable = () => {
 
   return (
     <div>
-      <h2 className="ui-text-sm ui-font-bold">
+      <h2 className="ui:text-sm ui:font-bold">
         {t('asset:detail.asset_logger_relation')}
       </h2>
-      <div className="ui-my-4">
+      <div className="ui:my-4">
         <DataTable
           columns={AssetLoggerRelationColumns(t, language)}
           data={childData ?? []}

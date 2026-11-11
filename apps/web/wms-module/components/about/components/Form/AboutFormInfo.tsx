@@ -25,9 +25,9 @@ const AboutFormInfo: React.FC = () => {
   const gender = useWatch({ name: 'gender' });
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-flex ui-flex-col ui-space-y-5">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:flex ui:flex-col ui:space-y-5">
           {isThirdPartyEntity() && (
             <FormControl>
               <FormLabel>{t('about:form.nib.label')}</FormLabel>
@@ -58,7 +58,7 @@ const AboutFormInfo: React.FC = () => {
           </FormControl>
           <FormControl>
             <FormLabel required>{t('about:form.gender.label')}</FormLabel>
-            <RadioGroup className="ui-py-2">
+            <RadioGroup className="ui:py-2">
               <Radio
                 {...register('gender', {
                   onChange: (e) => {
@@ -106,7 +106,7 @@ const AboutFormInfo: React.FC = () => {
               type="number"
               placeholder={t('about:form.phone.placeholder')}
               error={!!errors?.phone}
-              className="[&::-webkit-outer-spin-button]:ui-appearance-none [&::-webkit-inner-spin-button]:ui-appearance-none"
+              className="ui:[&::-webkit-outer-spin-button]:appearance-none ui:[&::-webkit-inner-spin-button]:appearance-none"
             />
             <FormErrorMessage>
               {errors?.phone?.message as string}
@@ -123,7 +123,7 @@ const AboutFormInfo: React.FC = () => {
                   min={0}
                   placeholder={t('about:form.total_bad_room.placeholder')}
                   error={!!errors?.totalBedroom}
-                  className="[&::-webkit-outer-spin-button]:ui-appearance-none [&::-webkit-inner-spin-button]:ui-appearance-none"
+                  className="ui:[&::-webkit-outer-spin-button]:appearance-none ui:[&::-webkit-inner-spin-button]:appearance-none"
                 />
                 <FormErrorMessage>
                   {errors?.totalBedroom?.message as string}
@@ -144,7 +144,7 @@ const AboutFormInfo: React.FC = () => {
                     const value = e.target.value.replace(',', '.');
                     e.target.value = value;
                   }}
-                  className="[&::-webkit-outer-spin-button]:ui-appearance-none [&::-webkit-inner-spin-button]:ui-appearance-none"
+                  className="ui:[&::-webkit-outer-spin-button]:appearance-none ui:[&::-webkit-inner-spin-button]:appearance-none"
                 />
                 <FormErrorMessage>
                   {errors?.percentageBedroom?.message as string}

@@ -102,19 +102,19 @@ export default function DashboardTransactionMonitoringV2Page() {
       <Meta title={generateMetaTitle(t('title.page'))} />
       <DashboardBox.Provider
         filter={filter?.query}
-        colorClass="ui-bg-gray-100"
+        colorClass="ui:bg-gray-100"
         onDownloadAsCSV={onExport}
       >
         <Dialog
           open={openInformation}
           onOpenChange={setOpenInformation}
-          className="ui-z-20"
+          className="ui:z-20"
           scrollBehavior="inside"
         >
-          <DialogHeader className="ui-text-center">
+          <DialogHeader className="ui:text-center">
             {t('title.page')}
           </DialogHeader>
-          <DialogContent className="ui-space-y-3">
+          <DialogContent className="ui:space-y-3">
             {informations?.map((info) => (
               <div key={info?.title}>
                 <H5>{info?.title}</H5>
@@ -122,7 +122,7 @@ export default function DashboardTransactionMonitoringV2Page() {
               </div>
             ))}
           </DialogContent>
-          <DialogFooter className="ui-grid ui-grid-cols-1">
+          <DialogFooter className="ui:grid ui:grid-cols-1">
             <Button variant="outline" onClick={() => setOpenInformation(!open)}>
               {tDashboard('close')}
             </Button>
@@ -158,7 +158,7 @@ export default function DashboardTransactionMonitoringV2Page() {
               value={transactionType}
               onChange={setTransactionType}
               options={transactionTypeList}
-              className="ui-w-40"
+              className="ui:w-40"
             />
           }
           renderChild={(item) => {

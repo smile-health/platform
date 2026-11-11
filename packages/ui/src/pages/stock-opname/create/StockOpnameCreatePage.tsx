@@ -73,7 +73,7 @@ const StockOpnameCreatePage: React.FC = () => {
         description={t('stockOpnameCreate:form.reset.description')}
       />
 
-      <div className="ui-mt-6">
+      <div className="ui:mt-6">
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
             <StockOpnameMaterialContext.Provider
@@ -86,14 +86,14 @@ const StockOpnameCreatePage: React.FC = () => {
                 reValidateQueryFetchInfiniteScroll,
               }}
             >
-              <div className="ui-flex ui-space-x-5">
+              <div className="ui:flex ui:space-x-5">
                 <StockOpameDetail isNotAdmin={isNotAdmin} />
                 <StockOpameMaterial />
               </div>
 
               {isHierarchical && (
-                <div className="ui-mt-5 ui-w-full ui-p-4 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
-                  <h1 className="ui-font-bold">
+                <div className="ui:mt-5 ui:w-full ui:p-4 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
+                  <h1 className="ui:font-bold">
                     {t('stockOpnameCreate:form.trademark.title')}
                   </h1>
                   <StockOpnameTrademark />
@@ -101,25 +101,25 @@ const StockOpnameCreatePage: React.FC = () => {
               )}
             </StockOpnameMaterialContext.Provider>
 
-            <div className="ui-mt-5 ui-w-full ui-p-4 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
-              <h1 className="ui-font-bold">
+            <div className="ui:mt-5 ui:w-full ui:p-4 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
+              <h1 className="ui:font-bold">
                 {t('stockOpnameCreate:form.transaction.title')}
               </h1>
               <StockOpnameStock />
             </div>
 
-            <div className="ui-w-full ui-mt-5">
-              <div className="ui-flex ui-space-x-5 ui-justify-end">
+            <div className="ui:w-full ui:mt-5">
+              <div className="ui:flex ui:space-x-5 ui:justify-end">
                 <Button
                   variant="outline"
-                  className="ui-w-48"
+                  className="ui:w-48"
                   type="button"
                   onClick={() => setOpenModalReset(true)}
                 >
                   Reset
                 </Button>
                 <Button
-                  className="ui-w-48"
+                  className="ui:w-48"
                   type="submit"
                   disabled={methods.watch('new_opname_items').length === 0}
                 >

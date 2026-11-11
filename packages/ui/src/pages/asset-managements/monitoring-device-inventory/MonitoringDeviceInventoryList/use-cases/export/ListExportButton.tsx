@@ -15,7 +15,7 @@ export const ListExportButton = () => {
       variant="subtle"
       type="button"
       onClick={listExport.fetch}
-      leftIcon={<Export className="ui-size-5" />}
+      leftIcon={<Export className="ui:size-5" />}
     >
       {t('export')}
     </Button>

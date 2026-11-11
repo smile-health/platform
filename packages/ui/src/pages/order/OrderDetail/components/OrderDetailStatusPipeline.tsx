@@ -80,33 +80,33 @@ export const OrderDetailStatusPipeline = () => {
   }
 
   return (
-    <div className="ui-inline-flex ui-items-start ui-gap-10 relative">
+    <div className="ui:inline-flex ui:items-start ui:gap-10 relative">
       {!data && <OrderDetailStatusPipelineSkeleton />}
 
       {data && (
         <>
-          <div className="ui-absolute -ui-z-10 ui-left-0 ui-top-[15px] ui-h-[1.25px] ui-w-full ui-bg-gray-300" />
+          <div className="ui:absolute ui:-z-10 ui:left-0 ui:top-[15px] ui:h-[1.25px] ui:w-full ui:bg-gray-300" />
 
           {orderStatusList
             .filter((statusItem) => getStatusVisibility(statusItem.value))
             .map((statusItem) => (
               <div
                 key={statusItem.value}
-                className="ui-flex ui-flex-col ui-items-center ui-min-w-[160px]"
+                className="ui:flex ui:flex-col ui:items-center ui:min-w-[160px]"
               >
                 <Badge
                   rounded="full"
                   color={getStatusColor(statusItem.value)}
                   variant="light"
-                  className="ui-w-full ui-py-2"
+                  className="ui:w-full ui:py-2"
                 >
                   {statusItem.label}
                 </Badge>
-                <div className="ui-p-2 ui-text-center ui-text-sm">
-                  <div className="ui-text-gray-500 ui-uppercase">
+                <div className="ui:p-2 ui:text-center ui:text-sm">
+                  <div className="ui:text-gray-500 ui:uppercase">
                     {getStatusDate(statusItem.value) ?? '-'}
                   </div>
-                  <div className="ui-text-dark-blue">
+                  <div className="ui:text-dark-blue">
                     {getStatusUser(statusItem.value) ?? '-'}
                   </div>
                 </div>
@@ -119,9 +119,9 @@ export const OrderDetailStatusPipeline = () => {
 }
 
 export const OrderDetailStatusPipelineSkeleton = () => (
-  <div className="ui-flex ui-gap-6 ui-relative">
-    <Skeleton className="ui-w-[160px] ui-h-16" />
-    <Skeleton className="ui-w-[160px] ui-h-16" />
-    <Skeleton className="ui-w-[160px] ui-h-16" />
+  <div className="ui:flex ui:gap-6 ui:relative">
+    <Skeleton className="ui:w-[160px] ui:h-16" />
+    <Skeleton className="ui:w-[160px] ui:h-16" />
+    <Skeleton className="ui:w-[160px] ui:h-16" />
   </div>
 )

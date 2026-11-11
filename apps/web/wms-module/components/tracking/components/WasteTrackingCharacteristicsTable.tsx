@@ -21,13 +21,13 @@ export default function WasteTrackingCharacteristicsTable({
   );
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={transformedData}
         columns={ColumnsWasteCharacteristics(t)}
         isLoading={isLoading}
         emptyDescription={t('tracking:list.emptyDescription')}
-        bodyClassName={transformedData.length ? 'ui-h-auto' : 'ui-h-48'}
+        bodyClassName={transformedData.length ? 'ui:h-auto' : 'ui:h-48'}
       />
     </div>
   );

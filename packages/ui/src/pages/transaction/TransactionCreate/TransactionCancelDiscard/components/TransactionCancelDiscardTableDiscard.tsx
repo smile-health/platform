@@ -29,12 +29,12 @@ const TransactionCancelDiscardTableDiscard: React.FC = () => {
     useCreateTransactionCancelDiscardTableDiscard()
 
   return (
-    <div className="ui-flex ui-flex-col ui-gap-6 ui-mt-2">
-      <p className="ui-text-base ui-font-normal ui-text-neutral-500">
+    <div className="ui:flex ui:flex-col ui:gap-6 ui:mt-2">
+      <p className="ui:text-base ui:font-normal ui:text-neutral-500">
         {t('cancel_transaction_discard.table.discard.description')}
       </p>
 
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <DataTable
           data={datasource?.data || []}
           columns={createColumnDiscard({
@@ -44,7 +44,7 @@ const TransactionCancelDiscardTableDiscard: React.FC = () => {
             selected: items.flatMap((x) => x.transaction_ids),
           })}
           isLoading={isFetching}
-          className="ui-max-h-[464px]"
+          className="ui:max-h-[464px]"
           isSticky
           onClickRow={(row) => handleSelectDiscardTransaction(row.original)}
         />

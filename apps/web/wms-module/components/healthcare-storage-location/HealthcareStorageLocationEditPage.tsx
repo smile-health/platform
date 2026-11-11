@@ -154,8 +154,8 @@ const HealthcareStorageLocationEditPage = (): JSX.Element => {
         <form onSubmit={handleSubmit(onValid, onInvalid)}>
           <div className="mt-6 space-y-6">
             {isLoading ? (
-              <div className="ui-w-full ui-flex ui-items-center ui-justify-center ui-my-20">
-                <Spinner className="ui-h-8 ui-w-8" />
+              <div className="ui:w-full ui:flex ui:items-center ui:justify-center ui:my-20">
+                <Spinner className="ui:h-8 ui:w-8" />
               </div>
             ) : (
               <HealthcareStorageLocationFormInfo

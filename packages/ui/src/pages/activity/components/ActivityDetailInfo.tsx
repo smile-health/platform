@@ -33,7 +33,7 @@ function ActivityDetailInfo(props: Readonly<ActivityDetailInfoProps>) {
 
   if (isLoading) return <ActivitySkeleton />
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
       <ModalConfirmation
         open={openModalStatus}
         setOpen={setOpenModalStatus}
@@ -44,10 +44,10 @@ function ActivityDetailInfo(props: Readonly<ActivityDetailInfoProps>) {
         onSubmit={() => onChangeStatus()}
         type="delete"
       />
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold">Details</h5>
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold">Details</h5>
         {!isViewOnly() && (
-          <div className="ui-grid ui-grid-cols-2 ui-w-[250px] ui-justify-end ui-gap-2">
+          <div className="ui:grid ui:grid-cols-2 ui:w-[250px] ui:justify-end ui:gap-2">
             <Button
               id="btn-program-activation"
               loading={isLoadingUpdateStatus}
@@ -55,7 +55,7 @@ function ActivityDetailInfo(props: Readonly<ActivityDetailInfoProps>) {
               onClick={() => setOpenModalStatus(true)}
               color={data?.status ? 'danger' : 'success'}
               variant="outline"
-              className="ui-w-full"
+              className="ui:w-full"
             >
               {data?.status
                 ? t('common:status.deactivate')

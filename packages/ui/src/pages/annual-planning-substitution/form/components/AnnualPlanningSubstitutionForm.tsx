@@ -88,9 +88,9 @@ export default function AnnualPlanningSubstitutionForm({
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit((data) => mutate(data))}
-        className="ui-mt-6 ui-w-1/2 ui-mx-auto ui-p-6 ui-border ui-border-neutral-300 ui-rounded-lg mx-auto"
+        className="ui:mt-6 ui:w-1/2 ui:mx-auto ui:p-6 ui:border ui:border-neutral-300 ui:rounded-lg mx-auto"
       >
-        <FormControl className="ui-mb-6">
+        <FormControl className="ui:mb-6">
           <FormLabel htmlFor="select_material" required>
             {t('annualPlanningSubstitution:table.planned_material')}
           </FormLabel>
@@ -119,11 +119,11 @@ export default function AnnualPlanningSubstitutionForm({
             <FormErrorMessage>{errors?.material?.message}</FormErrorMessage>
           )}
         </FormControl>
-        <div className="ui-my-4 ui-space-y-6 ui-p-6 ui-border ui-border-neutral-300 ui-rounded-lg">
+        <div className="ui:my-4 ui:space-y-6 ui:p-6 ui:border ui:border-neutral-300 ui:rounded-lg">
           <AnnualPlanningSubstitutionFormSubtituteMaterialInfo
             append={append}
           />
-          <div className="ui-min-h-64 ui-overflow-auto ui-max-h-sm ui-w-full">
+          <div className="ui:min-h-64 ui:overflow-auto ui:max-h-sm ui:w-full">
             {fields.length > 0 ? (
               fields?.map((field: { id: string }, index: number) => (
                 <AnnualPlanningSubstitutionFormSubtituteMaterialInput
@@ -142,7 +142,7 @@ export default function AnnualPlanningSubstitutionForm({
             )}
           </div>
         </div>
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4">
           <Button
             id="btn_close_pop_up_form_annual_planning_substitution"
             variant="default"

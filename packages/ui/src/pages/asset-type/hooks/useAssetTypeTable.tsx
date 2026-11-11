@@ -56,8 +56,8 @@ const useAssetTypeTable = ({
       enableSorting: true,
       cell: ({ row }) => {
         return (
-          <div className="ui-flex ui-flex-col">
-            <p className="ui-font-semibold ui-uppercase">
+          <div className="ui:flex ui:flex-col">
+            <p className="ui:font-semibold ui:uppercase">
               {parseDateTime(
                 row.original.updated_at || '',
                 'DD MMM YYYY HH:mm'
@@ -80,7 +80,7 @@ const useAssetTypeTable = ({
       minSize: 200,
       cell: ({ row }) => {
         return (
-          <div className="ui-flex ui-gap-2 -ml-3">
+          <div className="ui:flex ui:gap-2 -ml-3">
             <Button
               asChild
               id="btn-link-asset-type-detail"

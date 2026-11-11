@@ -89,7 +89,7 @@ export const OrderDetailHierachyDrawerForm = ({
         size: 240,
         header: t('orderCreate:list.selected.column.material_info.label'),
         meta: {
-          cellClassName: 'ui-font-bold',
+          cellClassName: 'ui:font-bold',
         },
       },
       {
@@ -97,7 +97,7 @@ export const OrderDetailHierachyDrawerForm = ({
         size: 200,
         meta: {
           cellClassName: (row) =>
-            `ui-flex-row ui-align-top ${getBackgroundStock(
+            `ui:flex-row ui:align-top ${getBackgroundStock(
               row?.original?.stock_customer?.total_allocated_qty ?? 0,
               row?.original?.stock_customer?.min ?? 0,
               row?.original?.stock_customer?.max ?? 0
@@ -108,7 +108,7 @@ export const OrderDetailHierachyDrawerForm = ({
           return (
             <div>
               <div>{numberFormatter(customerStock?.total_qty, language)}</div>
-              <div className="ui-text-[#737373] ui-text-sm">
+              <div className="ui:text-neutral-500 ui:text-sm">
                 {`(min: ${numberFormatter(customerStock?.min || 0, language)}, max: ${numberFormatter(customerStock?.max || 0, language)})`}
               </div>
             </div>
@@ -133,7 +133,7 @@ export const OrderDetailHierachyDrawerForm = ({
                       'orderDetail:form.confirmed_qty.placeholder'
                     )}
                     value={value ?? ''}
-                    className="ui-text-sm"
+                    className="ui:text-sm"
                     onValueChange={(value) => {
                       const numValue =
                         value.value === '' ? null : Number(value.floatValue)
@@ -206,13 +206,13 @@ export const OrderDetailHierachyDrawerForm = ({
         size="full"
         sizeHeight="lg"
         closeOnOverlayClick={false}
-        drawerClassName="!ui-z-40"
-        overlayClassName="!ui-z-30"
+        drawerClassName="ui:z-40!"
+        overlayClassName="ui:z-30!"
       >
-        <DrawerHeader className="ui-border">
-          <div className="ui-flex ui-justify-between">
+        <DrawerHeader className="ui:border">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('orderCreate:drawer.header')}
             </h6>
             <Button
@@ -226,25 +226,25 @@ export const OrderDetailHierachyDrawerForm = ({
             </Button>
           </div>
         </DrawerHeader>
-        <div className="ui-flex ui-items-center ui-gap-10 ui-px-8 ui-pt-6">
-          <div className="ui-max-w-60">
-            <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+        <div className="ui:flex ui:items-center ui:gap-10 ui:px-8 ui:pt-6">
+          <div className="ui:max-w-60">
+            <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
               Material
             </h2>
-            <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-truncate">
+            <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:truncate">
               {selectedMaterialStockData?.material?.name}
             </p>
           </div>
-          <div className="ui-max-w-60">
-            <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+          <div className="ui:max-w-60">
+            <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
               {t('orderCreate:drawer.stock_on_hand')}
             </h2>
-            <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+            <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
               {numberFormatter(
                 handleValueByFormType(selectedMaterialStockData).total_qty,
                 language
               )}
-              <span className="ui-text-neutral-500 ui-text-xs ui-font-normal ui-ml-1">
+              <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
                 {minMax(
                   handleValueByFormType(selectedMaterialStockData).min,
                   handleValueByFormType(selectedMaterialStockData).max,
@@ -253,11 +253,11 @@ export const OrderDetailHierachyDrawerForm = ({
               </span>
             </p>
           </div>
-          <div className="ui-max-w-60">
-            <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+          <div className="ui:max-w-60">
+            <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
               {t('orderCreate:drawer.available_stock')}
             </h2>
-            <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+            <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
               {numberFormatter(
                 handleValueByFormType(selectedMaterialStockData)
                   .total_available_qty,
@@ -266,18 +266,18 @@ export const OrderDetailHierachyDrawerForm = ({
             </p>
           </div>
         </div>
-        <div className="ui-px-6 ui-py-8  ui-overflow-auto">
+        <div className="ui:px-6 ui:py-8  ui:overflow-auto">
           <DataTable
-            bodyClassName="ui-p-0"
+            bodyClassName="ui:p-0"
             columns={columns}
             data={watch('children')}
             isSticky
           />
         </div>
-        <DrawerFooter className="ui-border">
+        <DrawerFooter className="ui:border">
           <div
-            className={cx('ui-grid ui-w-full', {
-              'ui-grid-cols-2': Boolean(errors?.children?.root?.message),
+            className={cx('ui:grid ui:w-full', {
+              'ui:grid-cols-2': Boolean(errors?.children?.root?.message),
             })}
           >
             {errors?.children?.root?.message && (
@@ -285,7 +285,7 @@ export const OrderDetailHierachyDrawerForm = ({
                 {errors?.children?.root?.message}
               </Alert>
             )}
-            <div className="ui-ml-auto ui-grid ui-grid-cols-2 ui-gap-5">
+            <div className="ui:ml-auto ui:grid ui:grid-cols-2 ui:gap-5">
               <Button
                 id={`reset-batch-w}`}
                 variant="subtle"
@@ -297,8 +297,8 @@ export const OrderDetailHierachyDrawerForm = ({
                   trigger('children')
                 }}
               >
-                <div className="ui-flex ui-flex-row ui-text-sm ui-space-x-3 ui-text-primary-600">
-                  <Reload className="ui-size-5" />
+                <div className="ui:flex ui:flex-row ui:text-sm ui:space-x-3 ui:text-primary-600">
+                  <Reload className="ui:size-5" />
                   <div>Reset</div>
                 </div>
               </Button>

@@ -38,8 +38,8 @@ const FormCalculationResultFilter: React.FC<Props> = (props) => {
   const isHierarchical = getProgramStorage()?.config?.material?.is_hierarchy_enabled
 
   return (
-    <div className="ui-p-4 ui-border ui-border-gray-300 ui-rounded ui-space-y-4">
-      <div className="ui-grid ui-grid-cols-3 ui-gap-4">
+    <div className="ui:p-4 ui:border ui:border-gray-300 ui:rounded ui:space-y-4">
+      <div className="ui:grid ui:grid-cols-3 ui:gap-4">
         <Controller
           control={control}
           name="activity"
@@ -142,25 +142,25 @@ const FormCalculationResultFilter: React.FC<Props> = (props) => {
           )}
         />
       </div>
-      <div className="ui-flex ui-justify-end ui-items-center ui-gap-2">
+      <div className="ui:flex ui:justify-end ui:items-center ui:gap-2">
         <Button
           id="btn-download-template"
           variant="subtle"
           type="button"
-          className="ui-px-2"
-          leftIcon={<Export className="ui-size-5" />}
+          className="ui:px-2"
+          leftIcon={<Export className="ui:size-5" />}
           onClick={handleExport}
         >
           {t('common:export')}
         </Button>
-        <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+        <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
         <Button
           id="btn-activity-refresh"
           data-testid="btn-activity-refresh"
           type="button"
           variant="subtle"
           onClick={handleReset}
-          leftIcon={<Reload className="ui-size-5" />}
+          leftIcon={<Reload className="ui:size-5" />}
         >
           {t('common:reset')}
         </Button>
@@ -168,7 +168,7 @@ const FormCalculationResultFilter: React.FC<Props> = (props) => {
           id="btn-activity-submit"
           data-testid="btn-activity-submit"
           type="submit"
-          className="ui-w-[220px]"
+          className="ui:w-[220px]"
           variant="outline"
           onClick={handleSearch}
         >

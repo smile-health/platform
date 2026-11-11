@@ -74,12 +74,12 @@ export const AssetInventorySpecificationSection = ({
   }, [asset_model])
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('assetInventory:form.title.asset_specifications')}
       </div>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="asset_type" required>
           {t('assetInventory:columns.asset_type.label')}
         </FormLabel>
@@ -123,7 +123,7 @@ export const AssetInventorySpecificationSection = ({
           <FormErrorMessage>{errors?.asset_type?.message}</FormErrorMessage>
         )}
         {datasource?.data?.length === 0 && (
-          <p className="ui-text-sm ui-leading-[20px] !ui-mb-4 !ui-text-[#737373]">
+          <p className="ui:text-sm ui:leading-[20px] ui:mb-4! ui:text-neutral-500!">
             {t('assetInventory:form.information.other_option.no_model')}
           </p>
         )}
@@ -165,7 +165,7 @@ export const AssetInventorySpecificationSection = ({
         )}
       </FormControl>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="asset_model" required>
           {t('assetInventory:columns.asset_model')}
         </FormLabel>
@@ -249,9 +249,9 @@ export const AssetInventorySpecificationSection = ({
       )}
       {watch('asset_type')?.value !== 'other' &&
         watch('manufacture')?.value === 'other' && (
-          <FormControl className="ui-w-full" />
+          <FormControl className="ui:w-full" />
         )}
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="manufacture" required>
           {t('assetInventory:columns.manufacture.label')}
         </FormLabel>
@@ -285,18 +285,18 @@ export const AssetInventorySpecificationSection = ({
       {watch('manufacture')?.value === 'other' && (
         <AssetInventoryManufactureMoreForm />
       )}
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="serial_number" required>
           {t('assetInventory:columns.serial_number')}
         </FormLabel>
-        <div className="ui-border ui-rounded ui-border-grey-200 ui-py-3 ui-px-4 ui-bg-[#F1F5F9]">
-          <div className="ui-flex ui-flex-row ui-items-center ui-mb-1">
-            <InformationCircleIcon className="ui-h-5 ui-w-5 ui-text-grey-500 ui-inline-block ui-mr-1 ui-font-bold" />
-            <p className="ui-text-xs ui-font-bold">
+        <div className="ui:border ui:rounded ui-border-grey-200 ui:py-3 ui:px-4 ui:bg-slate-100">
+          <div className="ui:flex ui:flex-row ui:items-center ui:mb-1">
+            <InformationCircleIcon className="ui:h-5 ui:w-5 ui-text-grey-500 ui:inline-block ui:mr-1 ui:font-bold" />
+            <p className="ui:text-xs ui:font-bold">
               {t('form.information.serial_number.title')}
             </p>
           </div>
-          <p className="ui-text-xs ui-text-grey-500">
+          <p className="ui:text-xs ui-text-grey-500">
             {t('form.information.serial_number.description')}
           </p>
         </div>

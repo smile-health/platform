@@ -52,15 +52,15 @@ export function FilterFormRoot({
       <div
         id="filter-form-container"
         ref={collapsible ? ref : null}
-        className="ui-relative"
+        className="ui:relative"
       >
         <form
           onSubmit={onSubmit}
           data-expanded={collapsible ? expanded : false}
           className={cx(
-            'ui-group ui-border ui-border-gray-300 ui-p-5 ui-space-y-4 ui-rounded ui-w-full ui-bg-white',
+            'ui:group ui:border ui:border-gray-300 ui:p-5 ui:space-y-4 ui:rounded ui:w-full ui:bg-white',
             {
-              'data-[expanded=true]:ui-shadow-2xl ui-transition-all':
+              'ui:data-[expanded=true]:shadow-2xl ui:transition-all':
                 collapsible,
             },
             className
@@ -78,7 +78,7 @@ export function FilterFormFooter({
 }: {
   readonly children: React.ReactNode
 }) {
-  return <div className="ui-flex ui-gap-2 ui-justify-between">{children}</div>
+  return <div className="ui:flex ui:gap-2 ui:justify-between">{children}</div>
 }
 
 export function FilterFormBody({
@@ -94,10 +94,10 @@ export function FilterFormBody({
     <div
       ref={ref}
       className={cx(
-        'ui-grid ui-grid-cols-2 ui-gap-4 ui-transition-all',
+        'ui:grid ui:grid-cols-2 ui:gap-4 ui:transition-all',
         {
-          'group-data-[expanded=false]:ui-h-[65px] ui-px-[1.5px]': collapsible,
-          'group-data-[expanded=false]:ui-overflow-y-hidden': collapsible,
+          'ui:group-data-[expanded=false]:h-[65px] ui:px-[1.5px]': collapsible,
+          'ui:group-data-[expanded=false]:overflow-y-hidden': collapsible,
         },
         className
       )}
@@ -133,9 +133,9 @@ export function FilterExpandButton({
       onClick={toggleExpand}
       leftIcon={
         expanded ? (
-          <XMarkIcon className="ui-size-5" />
+          <XMarkIcon className="ui:size-5" />
         ) : (
-          <Filter className="ui-size-5" />
+          <Filter className="ui:size-5" />
         )
       }
     >
@@ -202,8 +202,8 @@ export function FilterResetButton({
       variant={variant}
       onClick={handleClick}
       disabled={disabled}
-      leftIcon={<Reload className="ui-size-5" />}
-      className="[&.ui-focus-none]:!ui-ring-0 [&.ui-focus-none]:!ui-ring-transparent [&.ui-focus-none]:!ui-outline-none [&.ui-focus-none]:!ui-shadow-none"
+      leftIcon={<Reload className="ui:size-5" />}
+      className="ui:[&.ui-focus-none]:ring-0! ui:[&.ui-focus-none]:ring-transparent! ui:[&.ui-focus-none]:outline-hidden! ui:[&.ui-focus-none]:shadow-none!"
     >
       Reset
     </Button>

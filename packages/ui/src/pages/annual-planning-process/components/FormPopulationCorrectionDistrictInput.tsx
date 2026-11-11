@@ -73,12 +73,12 @@ const FormPopulationCorrectionDistrictInput = (props: Props) => {
       placement="bottom"
       sizeHeight="xl"
       size="full"
-      className="ui-rounded-t-lg"
+      className="ui:rounded-t-lg"
     >
       <DrawerHeader>
-        <div className="ui-flex ui-justify-between">
+        <div className="ui:flex ui:justify-between">
           <div />
-          <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+          <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
             {t('annualPlanningProcess:create.form.drawer_correction_data.title')}
           </h6>
           <Button
@@ -91,39 +91,39 @@ const FormPopulationCorrectionDistrictInput = (props: Props) => {
           </Button>
         </div>
       </DrawerHeader>
-      <DrawerContent className="ui-border-y ui-border-b-zinc-300">
-        <div className="ui-px-1 ui-py-2">
-          <div className="ui-space-y-6 ui-mb-6">
-            <div className="ui-grid ui-grid-cols-4 ui-gap-4">
+      <DrawerContent className="ui:border-y ui:border-b-zinc-300">
+        <div className="ui:px-1 ui:py-2">
+          <div className="ui:space-y-6 ui:mb-6">
+            <div className="ui:grid ui:grid-cols-4 ui:gap-4">
               <div>
-                <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                   {t('common:form.province.label')}
                 </h2>
-                <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-break-normal">
+                <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:break-normal">
                   {parentForm.area_program_plan?.province?.label || '-'}
                 </p>
               </div>
               <div>
-                <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                   {t('common:form.city.label')}
                 </h2>
-                <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-break-normal">
+                <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:break-normal">
                   {parentForm.area_program_plan?.regency?.label || '-'}
                 </p>
               </div>
               <div>
-                <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                   {t('annualPlanningProcess:create.form.area_program_plan.program_plan.label')}
                 </h2>
-                <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-break-normal">
+                <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:break-normal">
                   {parentForm.area_program_plan?.program_plan?.label || '-'}
                 </p>
               </div>
               <div>
-                <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                   {t('annualPlanningProcess:create.form.drawer_correction_data.health_care_name')}
                 </h2>
-                <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-break-normal">
+                <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:break-normal">
                   {dataPopulation?.name ?? '-'}
                 </p>
               </div>
@@ -141,26 +141,26 @@ const FormPopulationCorrectionDistrictInput = (props: Props) => {
                 empty={data.length === 0}
                 verticalAlignment="center"
               >
-                <Thead className="ui-bg-slate-100">
+                <Thead className="ui:bg-slate-100">
                   <Tr>
-                    <Th id="header-no" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-no" className="ui:w-10 ui:font-semibold">
                       No
                     </Th>
-                    <Th id="header-name" className="ui-w-1/2 ui-font-semibold">
+                    <Th id="header-name" className="ui:w-1/2 ui:font-semibold">
                       {nameColumn}
                     </Th>
-                    <Th id="header-percentage" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-percentage" className="ui:w-10 ui:font-semibold">
                       {percentageColumn}
                     </Th>
-                    <Th id="header-qty" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-qty" className="ui:w-10 ui:font-semibold">
                       {qtyColumn}
                     </Th>
-                    <Th id="header-change-qty" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-change-qty" className="ui:w-10 ui:font-semibold">
                       {changeQtyColumn}
                     </Th>
                   </Tr>
                 </Thead>
-                <Tbody className="ui-bg-white">
+                <Tbody className="ui:bg-white">
                   {data.map((populationTarget, index) => (
                     <FormPopulationCorrectionDistrictInputTBody
                       key={`cell-input-${populationTarget.key}-${index}`}
@@ -188,7 +188,7 @@ const FormPopulationCorrectionDistrictInput = (props: Props) => {
         <Button
           type="submit"
           form="FormPopulationCorrectionDistrictInput"
-          className="ui-w-48"
+          className="ui:w-48"
           disabled={!isValid}
         >
           {t('common:save')}

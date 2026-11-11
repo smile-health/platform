@@ -46,17 +46,17 @@ const AssetDongleListPage: React.FC = () => {
       <div className="mt-6">
         {/* Filter Form */}
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid-cols-4">
+          <FilterFormBody className="ui:grid-cols-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-flex ui-gap-2 ui-mt-5">
-              <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:flex ui:gap-2 ui:mt-5">
+              <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
               <FilterResetButton variant="subtle" onClick={filter.reset} />
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               ></FilterSubmitButton>
@@ -66,7 +66,7 @@ const AssetDongleListPage: React.FC = () => {
           {filter.renderActiveFilter()}
         </FilterFormRoot>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <AssetDongleTable
             isLoading={isLoadingHealthcare}
             size={paginationHealthcare.paginate}

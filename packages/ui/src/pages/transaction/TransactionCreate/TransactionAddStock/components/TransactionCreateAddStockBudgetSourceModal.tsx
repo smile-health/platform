@@ -68,9 +68,9 @@ const TransactionCreateAddStockBudgetSourceModal = ({
         size="lg"
       >
         <DialogHeader border>
-          <div className="ui-flex ui-justify-between">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('table.column.budget_info')}
             </h6>
             <Button
@@ -87,10 +87,10 @@ const TransactionCreateAddStockBudgetSourceModal = ({
           </div>
         </DialogHeader>
         <DialogContent>
-          <div className="ui-flex ui-flex-col ui-space-y-5">
+          <div className="ui:flex ui:flex-col ui:space-y-5">
             <div>
               <FormLabel>{t('table.column.unit')}</FormLabel>
-              <div className="ui-font-bold">{unit}</div>
+              <div className="ui:font-bold">{unit}</div>
             </div>
             <Controller
               key={`${index.indexItems}-${index.indexBatch}`}
@@ -218,22 +218,22 @@ const TransactionCreateAddStockBudgetSourceModal = ({
                 </FormControl>
               )}
             />
-            <div className="ui-flex ui-flex-col ui-space-y-1">
+            <div className="ui:flex ui:flex-col ui:space-y-1">
               <FormLabel>
                 {t('table.column.purchase_per_unit')}
                 {` (${currency})`}
               </FormLabel>
-              <div className="ui-font-bold">
+              <div className="ui:font-bold">
                 {`${numberFormatter(watch()?.total_price_input || 0, language, 'currency')} `}
                 /{unit}
               </div>
-              <div className="ui-text-xs ui-text-neutral-500">
+              <div className="ui:text-xs ui:text-neutral-500">
                 {t('info_purchase_price')}
               </div>
             </div>
           </div>
         </DialogContent>
-        <DialogFooter className="ui-border ui-flex ui-flex-row">
+        <DialogFooter className="ui:border ui:flex ui:flex-row">
           <Button
             color="danger"
             variant="default"

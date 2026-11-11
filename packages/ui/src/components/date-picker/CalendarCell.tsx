@@ -84,8 +84,8 @@ export function CalendarCell({
   return (
     <td
       {...cellProps}
-      className={cx('ui-relative ui-py-0.5', {
-        'ui-z-10': isFocusVisible || isFocused,
+      className={cx('ui:relative ui:py-0.5', {
+        'ui:z-10': isFocusVisible || isFocused,
       })}
     >
       <div
@@ -93,32 +93,32 @@ export function CalendarCell({
         id={id}
         data-testid={id}
         ref={ref}
-        className={cx('ui-h-8 ui-w-8 ui-outline-none ui-group', {
-          'ui-bg-primary-100': isSelected,
-          '!ui-hidden': isOutsideVisibleRange || isOutsideMonth,
-          'ui-rounded-l': isRoundedLeft,
-          'ui-rounded-r': isRoundedRight,
+        className={cx('ui:h-8 ui:w-8 ui:outline-hidden ui:group', {
+          'ui:bg-primary-100': isSelected,
+          'ui:hidden!': isOutsideVisibleRange || isOutsideMonth,
+          'ui:rounded-l': isRoundedLeft,
+          'ui:rounded-r': isRoundedRight,
         })}
       >
         <div
           className={cx(
-            'ui-flex ui-h-full ui-w-full ui-items-center ui-justify-center ui-rounded ui-text-sm',
+            'ui:flex ui:h-full ui:w-full ui:items-center ui:justify-center ui:rounded ui:text-sm',
             {
-              'ui-ring-2 ui-ring-primary-300 ui-ring-offset-1 group-focus:ui-z-10':
+              'ui:ring-2 ui:ring-primary-300 ui:ring-offset-1 ui:group-focus:z-10':
                 isFocusVisible || isFocused,
 
               //selected but not in start or end
-              'hover:ui-bg-primary-200':
+              'ui:hover:bg-primary-200':
                 isSelected && isRange && !(isSelectionStart || isSelectionEnd),
 
-              'ui-text-gray-700 hover:ui-bg-gray-100':
+              'ui:text-gray-700 ui:hover:bg-gray-100':
                 !allDisabled && !isSelected,
-              'ui-cursor-default ui-text-gray-300': allDisabled,
+              'ui:cursor-default ui:text-gray-300': allDisabled,
 
-              'ui-text-red-600': isWeekend(date, locale) && !allDisabled,
+              'ui:text-red-600': isWeekend(date, locale) && !allDisabled,
 
               //selected in start or end
-              'ui-bg-primary-500 ui-text-white hover:ui-bg-primary-600':
+              'ui:bg-primary-500 ui:text-white ui:hover:bg-primary-600':
                 (isSelected && !isRange) || isSelectionStart || isSelectionEnd,
             }
           )}

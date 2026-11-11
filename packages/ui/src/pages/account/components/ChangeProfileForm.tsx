@@ -161,10 +161,10 @@ export const ChangeProfileFrom: React.FC<ChangeProfileFormProps> = ({
   return (
     <form onSubmit={handleSubmit(onValid)}>
       {isPending && <Loading overlay />}
-      <div className="ui-max-w-[800px] ui-mx-auto">
-        <div className="ui-border ui-rounded ui-border-[#d2d2d2] ui-mt-8 ui-p-6  ui-grid ui-grid-cols-1 ui-gap-x-4">
+      <div className="ui:max-w-[800px] ui:mx-auto">
+        <div className="ui:border ui:rounded ui:border-[#d2d2d2] ui:mt-8 ui:p-6  ui:grid ui:grid-cols-1 ui:gap-x-4">
           <h5 className="mb-6 font-bold">{t('account:title.main_info')}</h5>
-          <div className="ui-grid ui-grid-cols-2 ui-gap-x-4">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-x-4">
             <FormControl className="relative mb-6">
               <FormLabel id="labelFirstname" htmlFor="firstname" required>
                 {t('account:form.label.firstname')}
@@ -221,7 +221,7 @@ export const ChangeProfileFrom: React.FC<ChangeProfileFormProps> = ({
             )}
           </FormControl>
 
-          <FormControl className="ui-relative ui-mb-6">
+          <FormControl className="ui:relative ui:mb-6">
             <FormLabel id="labelEmail" htmlFor="email" required>
               {t('account:form.label.email')}
             </FormLabel>
@@ -239,11 +239,11 @@ export const ChangeProfileFrom: React.FC<ChangeProfileFormProps> = ({
           </FormControl>
         </div>
 
-        <div className="ui-border ui-rounded ui-border-[#d2d2d2] ui-mt-8 ui-p-6  ui-grid ui-grid-cols-1 ui-gap-x-4">
+        <div className="ui:border ui:rounded ui:border-[#d2d2d2] ui:mt-8 ui:p-6  ui:grid ui:grid-cols-1 ui:gap-x-4">
           <h5 className="mb-6 font-bold">
             {t('account:title.additional_info')}
           </h5>
-          <FormControl className="ui-relative ui-mb-6">
+          <FormControl className="ui:relative ui:mb-6">
             <FormLabel id="labelAddress" htmlFor="address">
               {t('account:form.label.address')}
             </FormLabel>
@@ -294,7 +294,7 @@ export const ChangeProfileFrom: React.FC<ChangeProfileFormProps> = ({
               }}
             />
           </FormControl>
-          <FormControl className="ui-relative ui-mb-6">
+          <FormControl className="ui:relative ui:mb-6">
             <Controller
               name="mobile_phone"
               control={control}
@@ -302,7 +302,7 @@ export const ChangeProfileFrom: React.FC<ChangeProfileFormProps> = ({
                 field: { value, onChange, ...field },
                 fieldState: { error },
               }) => (
-                <FormControl className="ui-col-span-2">
+                <FormControl className="ui:col-span-2">
                   <FormLabel htmlFor="input-phone-number">
                     {t('account:form.label.mobile_phone')}
                   </FormLabel>
@@ -322,10 +322,10 @@ export const ChangeProfileFrom: React.FC<ChangeProfileFormProps> = ({
             />
           </FormControl>
         </div>
-        <div className="ui-flex ui-justify-end ui-mt-6 ui-gap-4">
+        <div className="ui:flex ui:justify-end ui:mt-6 ui:gap-4">
           <Button
             type="button"
-            className="ui-w-40 ui-h-10"
+            className="ui:w-40 ui:h-10"
             id="btnBack"
             variant="outline"
             onClick={() => router.back()}
@@ -333,7 +333,7 @@ export const ChangeProfileFrom: React.FC<ChangeProfileFormProps> = ({
             {t('common:back')}
           </Button>
           <Button
-            className="ui-w-40 ui-h-10"
+            className="ui:w-40 ui:h-10"
             disabled={!isValid}
             type="submit"
             id="btnSave"

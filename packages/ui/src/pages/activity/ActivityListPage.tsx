@@ -82,13 +82,13 @@ export default function ActivityListPage(): JSX.Element {
         handleClose={() => setShowImport(false)}
       />
       <Meta title={`Smile | ${t('activity:title.activity')}`} />
-      <div className="ui-my-6 ui-flex ui-justify-end ui-items-center">
+      <div className="ui:my-6 ui:flex ui:justify-end ui:items-center">
         {!isViewOnly() && (
           <Button
             id={`create-activity`}
             asChild
-            className="ui-min-w-40"
-            leftIcon={<Plus className="ui-size-5" />}
+            className="ui:min-w-40"
+            leftIcon={<Plus className="ui:size-5" />}
           >
             <Link href={router.getAsLink('/v5/activity/create')}>
               {t('activity:title.create')}
@@ -98,26 +98,26 @@ export default function ActivityListPage(): JSX.Element {
       </div>
       <div className="mt-6 space-y-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-items-end ui-gap-4">
-            <div className="ui-flex-1">{filter.renderField()}</div>
-            <div className="ui-space-x-3 ui-flex ui-mt-5">
+          <FilterFormBody className="ui:flex ui:items-end ui:gap-4">
+            <div className="ui:flex-1">{filter.renderField()}</div>
+            <div className="ui:space-x-3 ui:flex ui:mt-5">
               <Button
                 id="btn-export"
                 variant="subtle"
                 type="button"
                 onClick={() => exportQuery.refetch()}
                 loading={exportQuery.isFetching || exportQuery.isLoading}
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
               >
                 {t('export')}
               </Button>
-              <span className="ui-w-px ui-bg-neutral-300" />
-              <div className="ui-flex ui-gap-2">
+              <span className="ui:w-px ui:bg-neutral-300" />
+              <div className="ui:flex ui:gap-2">
                 <FilterResetButton variant="subtle" onClick={filter.reset} />
               </div>
               <FilterSubmitButton
                 onClick={() => setPagination({ page: 1 })}
-                className="ui-w-48"
+                className="ui:w-48"
                 variant="outline"
               ></FilterSubmitButton>
             </div>

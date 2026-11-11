@@ -62,7 +62,7 @@ export default function AnnualCommitmentDetailInfo({
         hasPermission('annual-commitment-mutate') && (
           <Button
             variant="outline"
-            leftIcon={<Pencil className="ui-size-4" />}
+            leftIcon={<Pencil className="ui:size-4" />}
             onClick={handleEdit}
           >
             {t('button.edit')}

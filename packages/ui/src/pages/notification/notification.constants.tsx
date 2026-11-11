@@ -13,7 +13,7 @@ export const createColumns = ({ handleNotificationItemClick, handleActionButtonC
     header: '',
     accessorKey: 'type',
     meta: {
-      cellClassName: '!ui-p-0',
+      cellClassName: 'ui:p-0!',
     },
     cell: ({ row }) => (
       <NotificationCell

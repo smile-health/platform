@@ -169,7 +169,7 @@ export const LoggerActivityCharts = ({
           isLoading={isLoadingChartData}
           isEmpty={!series?.length}
         >
-          <div className="ui-h-96">
+          <div className="ui:h-96">
             {isEmpty ? (
               <EmptyState
                 title={t('common:message.empty.title')}
@@ -257,7 +257,7 @@ export const LoggerActivityCharts = ({
                     },
                   },
                 }}
-                className="ui-text-start"
+                className="ui:text-start"
               />
             )}
           </div>

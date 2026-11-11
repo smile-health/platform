@@ -124,10 +124,10 @@ export const useCreateMaterialSelect = ({ search }: { search: string }) => {
       setDisabledMaterialStockZero(item?.aggregate?.total_available_qty ?? 0) ||
       setDisabledMaterialActivityIsNotAvailable(item)
     ) {
-      return 'ui-bg-neutral-300 ui-cursor-not-allowed'
+      return 'ui:bg-neutral-300 ui:cursor-not-allowed'
     }
     if (checkStatusMaterial(item)) {
-      return 'ui-bg-primary-100'
+      return 'ui:bg-primary-100'
     }
     return ''
   }

@@ -28,12 +28,12 @@ export const AssetInventoryBudgetSection = ({
   const { control, setValue, trigger, watch } = useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('assetInventory:form.title.budget')}
       </div>
-      <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4">
-        <FormControl className="ui-w-full">
+      <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="production_year" required>
             {t('assetInventory:columns.production_year')}
           </FormLabel>
@@ -63,7 +63,7 @@ export const AssetInventoryBudgetSection = ({
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-w-full">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="budget_year" required>
             {t('assetInventory:columns.budget_year')}
           </FormLabel>
@@ -92,7 +92,7 @@ export const AssetInventoryBudgetSection = ({
             <FormErrorMessage>{errors?.budget_year?.message}</FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-w-full">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="budget_source" required>
             {t('assetInventory:columns.budget_source')}
           </FormLabel>

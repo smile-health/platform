@@ -59,32 +59,32 @@ const ProgramDetailsActivity: React.FC = () => {
         handleClose={() => setShowImport(false)}
       />
 
-      <div className="ui-space-y-6">
-        <div className="ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-text-xl ui-font-bold">
+      <div className="ui:space-y-6">
+        <div className="ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:text-xl ui:font-bold">
             {t('programGlobalSettings:details.title.activity')}
           </h5>
           <Button
             id="btn-program-activity-add"
             variant="solid"
-            leftIcon={<Plus className="ui-size-5" />}
+            leftIcon={<Plus className="ui:size-5" />}
             onClick={() =>
               router.push(
                 `/${language}/v5/global-settings/program/${id}/activity/create`
               )
             }
-            className="ui-min-w-36"
+            className="ui:min-w-36"
           >
             {t('common:add')}
           </Button>
         </div>
         <form
-          className="ui-p-4 ui-border ui-border-gray-300 ui-rounded ui-flex ui-gap-4"
+          className="ui:p-4 ui:border ui:border-gray-300 ui:rounded ui:flex ui:gap-4"
           onSubmit={(e) => {
             e.preventDefault()
           }}
         >
-          <div className="ui-flex-1">
+          <div className="ui:flex-1">
             <InputSearch
               id="input-search-activity-program"
               placeholder={t('common:search')}
@@ -98,14 +98,14 @@ const ProgramDetailsActivity: React.FC = () => {
               }
             />
           </div>
-          <div className="ui-flex ui-items-center ui-gap-2">
+          <div className="ui:flex ui:items-center ui:gap-2">
             {/* <Button
               id="btn-import"
               variant="subtle"
               type="button"
               onClick={() => setShowImport(true)}
               loading={isPendingImport}
-              leftIcon={<Import className="ui-size-5" />}
+              leftIcon={<Import className="ui:size-5" />}
             >
               {t('import')}
             </Button> */}
@@ -113,8 +113,8 @@ const ProgramDetailsActivity: React.FC = () => {
               id="btn-export"
               variant="subtle"
               type="button"
-              className="ui-px-2"
-              leftIcon={<Export className="ui-size-5" />}
+              className="ui:px-2"
+              leftIcon={<Export className="ui:size-5" />}
               onClick={() => exportQuery.refetch()}
             >
               {t('common:export')}
@@ -125,18 +125,18 @@ const ProgramDetailsActivity: React.FC = () => {
               type="button"
               onClick={() => refetchTemplate()}
               loading={isDownloadingTemplate}
-              leftIcon={<Download className="ui-size-5" />}
+              leftIcon={<Download className="ui:size-5" />}
             >
               {t('download_template')}
             </Button> */}
-            <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+            <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
             <Button
               id="btn-activity-refresh"
               data-testid="btn-activity-refresh"
               type="button"
               variant="subtle"
               onClick={() => handleReset()}
-              leftIcon={<Reload className="ui-size-5" />}
+              leftIcon={<Reload className="ui:size-5" />}
             >
               Reset
             </Button>
@@ -144,7 +144,7 @@ const ProgramDetailsActivity: React.FC = () => {
               id="btn-activity-submit"
               data-testid="btn-activity-submit"
               type="submit"
-              className="ui-w-[220px]"
+              className="ui:w-[220px]"
               variant="outline"
               onClick={() => handleSearch()}
             >

@@ -30,60 +30,60 @@ const HealthcarePartnerFormInfo: React.FC = () => {
   );
 
   return (
-    <div className="ui-grid ui-grid-cols-[264px_3px_1fr] ui-gap-x-2 ui-gap-y-4">
-      <p className="ui-text-[#787878] ui-content-center">
+    <div className="ui:grid ui:grid-cols-[264px_3px_1fr] ui:gap-x-2 ui:gap-y-4">
+      <p className="ui:text-[#787878] ui:content-center">
         {t('healthcarePartner:form.pic_name.label')}
       </p>
       <span></span>
-      <div className="ui-flex ui-flex-col">
+      <div className="ui:flex ui:flex-col">
         <Input
           {...register('picName')}
           type="text"
           placeholder={t('healthcarePartner:form.pic_name.placeholder')}
           error={!!errors?.picName}
-          className="ui-min-w-[20px]"
+          className="ui:min-w-[20px]"
         />
         <FormErrorMessage>
           {errors?.picName?.message as string}
         </FormErrorMessage>
       </div>
-      <p className="ui-text-[#787878] ui-content-center">
+      <p className="ui:text-[#787878] ui:content-center">
         {t('healthcarePartner:form.position.label')}
       </p>
       <span></span>
-      <div className="ui-flex ui-flex-col">
+      <div className="ui:flex ui:flex-col">
         <Input
           {...register('picPosition')}
           type="text"
           placeholder={t('healthcarePartner:form.position.placeholder')}
           error={!!errors?.picPosition}
-          className="ui-min-w-[20px]"
+          className="ui:min-w-[20px]"
         />
         <FormErrorMessage>
           {errors?.picPosition?.message as string}
         </FormErrorMessage>
       </div>
-      <p className="ui-text-[#787878] ui-content-center">
+      <p className="ui:text-[#787878] ui:content-center">
         {t('healthcarePartner:form.phone_number.label')}
       </p>
       <span></span>
-      <div className="ui-flex ui-flex-col">
+      <div className="ui:flex ui:flex-col">
         <Input
           {...register('picPhoneNumber')}
           type="number"
           placeholder={t('healthcarePartner:form.phone_number.placeholder')}
           error={!!errors?.picPhoneNumber}
-          className="ui-min-w-[200px] [&::-webkit-outer-spin-button]:ui-appearance-none [&::-webkit-inner-spin-button]:ui-appearance-none"
+          className="ui:min-w-[200px] ui:[&::-webkit-outer-spin-button]:appearance-none ui:[&::-webkit-inner-spin-button]:appearance-none"
         />
         <FormErrorMessage>
           {errors?.picPhoneNumber?.message as string}
         </FormErrorMessage>
       </div>
-      <p className="ui-text-[#787878] ui-content-center ui-content-center">
+      <p className="ui:text-[#787878] ui:content-center ui:content-center">
         {t('healthcarePartner:form.partnership_status.label')}
       </p>
       <span></span>
-      <div className="ui-flex ui-flex-col">
+      <div className="ui:flex ui:flex-col">
         <ReactSelect
           {...register('partnershipStatus')}
           id="select-asset-status"
@@ -97,7 +97,7 @@ const HealthcarePartnerFormInfo: React.FC = () => {
           }}
           value={selectedValue}
           isClearable
-          className="ui-min-w-[20px]"
+          className="ui:min-w-[20px]"
         />
         {errors?.partnershipStatus?.message && (
           <FormErrorMessage>

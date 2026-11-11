@@ -56,7 +56,7 @@ function OrderCreateDistributionTableBatchBody({
         <Tr>
           <Td
             colSpan={6}
-            className="ui-font-semibold ui-text-xs ui-bg-[#E2E8F0]"
+            className="ui:font-semibold ui:text-xs ui:bg-slate-200"
           >
             {isValid && isManagedInBatch && t('label.material_batch.valid')}
             {!isValid && t('label.material_batch.expired')}
@@ -87,7 +87,7 @@ function OrderCreateDistributionTableBatchBody({
                 </p>
                 <p>
                   {t('label.date.expired')}:{' '}
-                  <span className={isValid ? undefined : 'ui-text-red-600'}>
+                  <span className={isValid ? undefined : 'ui:text-red-600'}>
                     {parseDate(item?.expired_date)}
                   </span>
                 </p>
@@ -108,8 +108,8 @@ function OrderCreateDistributionTableBatchBody({
               </p>
             </Td>
             <Td>{item?.activity?.name}</Td>
-            <Td className="ui-min-w-64">
-              <FormControl className="ui-space-y-1">
+            <Td className="ui:min-w-64">
+              <FormControl className="ui:space-y-1">
                 <InputNumberV2
                   data-testid={`input-quantity-${key}-${index}`}
                   placeholder={t('form.ordered_qty.placeholder')}
@@ -129,7 +129,7 @@ function OrderCreateDistributionTableBatchBody({
                 )}
               </FormControl>
             </Td>
-            <Td className="ui-w-52">
+            <Td className="ui:w-52">
               <Controller
                 control={control}
                 name={`${key}.${index}.order_stock_status`}
@@ -137,7 +137,7 @@ function OrderCreateDistributionTableBatchBody({
                   field: { ref, ...field },
                   fieldState: { error },
                 }) => (
-                  <FormControl className="ui-space-y-1">
+                  <FormControl className="ui:space-y-1">
                     <ReactSelectAsync
                       {...field}
                       data-testid={`select-status-${key}-${index}`}
@@ -200,7 +200,7 @@ export default function OrderCreateDistributionTableBatch() {
           <OrderCreateDistributionTableBatchBody data={expiredBatch} />
         )}
       </Tbody>
-      <TableEmpty className="ui-h-52">
+      <TableEmpty className="ui:h-52">
         <EmptyState
           title={t('info.empty.title')}
           description={t('info.empty.description.stock')}

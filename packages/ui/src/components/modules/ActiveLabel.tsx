@@ -32,7 +32,7 @@ export default function ActiveLabel({ isActive, type = '1' }: Readonly<Props>) {
   return (
     <Badge
       id={`txt-status-${textValue?.toLowerCase()}`}
-      className="ui-text-nowrap"
+      className="ui:text-nowrap"
       color={isActive ? 'success' : 'danger'}
       size="md"
       rounded="full"

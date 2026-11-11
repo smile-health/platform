@@ -66,13 +66,13 @@ export default function OrderCreateDistributionTableMaterial(
           onClickRow={handleClickTableRow}
           columns={tableSchema}
           isLoading={isFetching}
-          className="ui-max-h-[384px]"
-          bodyClassName={cx({ 'ui-h-[199px]': !stocks?.length })}
+          className="ui:max-h-[384px]"
+          bodyClassName={cx({ 'ui:h-[199px]': !stocks?.length })}
         />
       ) : (
-        <div className="ui-p-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6">
+        <div className="ui:p-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-6">
           <H5>{title}</H5>
-          <p className="ui-text-neutral-500">{t('info.material.empty')}</p>
+          <p className="ui:text-neutral-500">{t('info.material.empty')}</p>
         </div>
       )}
     </>

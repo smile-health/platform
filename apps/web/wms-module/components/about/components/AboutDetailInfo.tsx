@@ -25,9 +25,9 @@ const AboutDetailInfo: React.FC<PartnershipProps> = ({ data, isLoading }) => {
     router.push(`/${language}/about/edit`);
   };
   return (
-    <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold ui-text-dark-blue">
+    <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold ui:text-dark-blue">
           {t('about:title.list')}
         </h5>
         {!isSanitarian() && (

@@ -28,7 +28,7 @@ const StockOpnameStock: React.FC = () => {
   const columns = createColumnStockOpname({ t })
 
   return (
-    <div className="ui-mt-6">
+    <div className="ui:mt-6">
       {openDetail.open && (
         <StockOpnameStockDetail
           open={openDetail.open}
@@ -53,7 +53,7 @@ const StockOpnameStock: React.FC = () => {
                 id={`header-${column.id}`}
                 key={column.id}
                 columnKey={column.id}
-                className="ui-w-10 ui-font-semibold"
+                className="ui:w-10 ui:font-semibold"
                 style={{
                   ...column.minSize && { minWidth: column.minSize },
                   ...column.size && { width: column.size },
@@ -69,25 +69,25 @@ const StockOpnameStock: React.FC = () => {
             const isUpdate = item.new_opname_stocks?.some(x => x.actual_qty)
             return (
               <Fragment key={`material-selected-${item.material_id}`}>
-                <Tr className="ui-text-sm ui-font-normal">
-                  <Td id={`cell-${columns[0].id}`} className="ui-content-start">{index + 1}</Td>
-                  <Td id={`cell-${columns[1].id}`} className="ui-content-start">{item.material?.name}</Td>
+                <Tr className="ui:text-sm ui:font-normal">
+                  <Td id={`cell-${columns[0].id}`} className="ui:content-start">{index + 1}</Td>
+                  <Td id={`cell-${columns[1].id}`} className="ui:content-start">{item.material?.name}</Td>
                   <Td id={`cell-${columns[2].id}`}>
-                    <div className="ui-flex ui-flex-col ui-gap-4">
+                    <div className="ui:flex ui:flex-col ui:gap-4">
                       {item.new_opname_stocks?.map(
                         (x, i) =>
                           typeof x.actual_qty === 'number' && (
                             <div
-                              className="ui-space-y-1"
+                              className="ui:space-y-1"
                               key={`detail-${x.id}-${i}`}
                             >
-                              <p className="ui-text-dark-teal ui-text-sm">
+                              <p className="ui:text-dark-teal ui:text-sm">
                                 {t(
                                   'stockOpnameCreate:form.transaction.description.stock.remaining_stock',
                                   { value: numberFormatter(x.recorded_qty, language) }
                                 )}
                               </p>
-                              <p className="ui-text-dark-teal ui-text-sm ui-font-bold">
+                              <p className="ui:text-dark-teal ui:text-sm ui:font-bold">
                                 {t(
                                   'stockOpnameCreate:form.transaction.description.stock.real_stock',
                                   { value: numberFormatter(x.actual_qty, language) }
@@ -102,24 +102,24 @@ const StockOpnameStock: React.FC = () => {
                         leftIcon={isUpdate ? undefined : <Plus className="h-5 w-5" />}
                         type="button"
                         variant="outline"
-                        className="ui-w-max"
+                        className="ui:w-max"
                       >
                         {createTitleActionBatch(item.is_batch, isUpdate)}
                       </Button>
                     </div>
                     {getErrorMessage(index) && (
-                      <FormErrorMessage className="ui-mt-2">
+                      <FormErrorMessage className="ui:mt-2">
                         {getErrorMessage(index)}
                       </FormErrorMessage>
                     )}
                   </Td>
-                  <Td id={`cell-${columns[3].id}`} className="ui-content-start">
+                  <Td id={`cell-${columns[3].id}`} className="ui:content-start">
                     <Button
                       id={`btn-delete-${index}`}
                       size="sm"
                       variant="subtle"
                       color="danger"
-                      className="ui-p-[6px]"
+                      className="ui:p-[6px]"
                       onClick={() => handleRemove(index)}
                     >
                       {t('common:remove')}

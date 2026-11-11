@@ -35,7 +35,7 @@ export function ModalChangeHistory({
   return (
     <Dialog size="xl" open={open} onOpenChange={handleOpenChange}>
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
+      <DialogHeader className="ui:text-center ui:text-xl">
         {t('account:title.history_change_data')}
       </DialogHeader>
       <DialogContent>
@@ -57,11 +57,11 @@ export function ModalChangeHistory({
           })}
         </div>
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
+      <DialogFooter className="ui:justify-center">
         <Button
           id="btnCloseModalChangeHistory"
           variant="outline"
-          className="ui-w-full"
+          className="ui:w-full"
           onClick={() => {
             handleClose?.()
           }}

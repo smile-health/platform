@@ -27,10 +27,10 @@ const NavbarSubChildList = ({ title = '', url = '/', isGlobal = false }) => {
 
   return (
     <Link href={targetUrl}>
-      <div className="ui-block ui-h-full ui-w-full">
-        <div className="ui-my-1 ui-flex ui-cursor-pointer ui-items-center ui-justify-start ui-p-2 ui-will-change-transform ui-duration-300 ui-ease-in-out hover:ui-bg-primary-500/30 hover:ui-scale-[1.02]">
-          <div className="ui-bg-neutral-500 ui-h-2 ui-w-2" />
-          <div className="ui-text-dark-teal ui-ml-2 ui-h-full ui-w-full">
+      <div className="ui:block ui:h-full ui:w-full">
+        <div className="ui:my-1 ui:flex ui:cursor-pointer ui:items-center ui:justify-start ui:p-2 ui:will-change-transform ui:duration-300 ui:ease-in-out ui:hover:bg-primary-500/30 ui:hover:scale-[1.02]">
+          <div className="ui:bg-neutral-500 ui:h-2 ui:w-2" />
+          <div className="ui:text-dark-teal ui:ml-2 ui:h-full ui:w-full">
             {title}
           </div>
         </div>

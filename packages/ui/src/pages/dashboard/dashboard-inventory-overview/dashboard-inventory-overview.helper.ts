@@ -93,7 +93,7 @@ export function locationProcessed(
       tooltip: {
         confine: true,
         show: Boolean(item?.percent),
-        formatter: `<span class="ui-whitespace-pre-wrap">${item.tooltip}</span>`,
+        formatter: `<span class="ui:whitespace-pre-wrap">${item.tooltip}</span>`,
       },
     }
   })

@@ -41,14 +41,14 @@ export const OrderCreateHierarchySelectedMaterial: React.FC<Props> = ({
   return (
     <Exists useIt={showCondition}>
       <div
-        className="ui-flex ui-flex-col ui-mb-3"
+        className="ui:flex ui:flex-col ui:mb-3"
         key={`${index}-${indexBatch}`}
       >
         {Object.values(defaultContent).map((item) => {
           return (
             <div
-              className={clsx('ui-mb-1', {
-                'ui-font-bold': item === defaultContent.qty,
+              className={clsx('ui:mb-1', {
+                'ui:font-bold': item === defaultContent.qty,
               })}
               key={`${index}-${indexBatch}-detail_qty`}
             >

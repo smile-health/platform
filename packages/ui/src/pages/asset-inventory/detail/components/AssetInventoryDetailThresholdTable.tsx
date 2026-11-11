@@ -10,7 +10,7 @@ import { numberFormatter } from '#utils/formatter'
 import { useTranslation } from 'react-i18next'
 
 const CheckIconCell: React.FC = () => (
-  <CheckCircleIcon className="ui-text-green-500 ui-w-5 ui-h-5" />
+  <CheckCircleIcon className="ui:text-green-500 ui:w-5 ui:h-5" />
 )
 
 const renderCheckIconCell = (isActive: boolean) => {
@@ -39,7 +39,7 @@ const AssetInventoryDetailThresholdTable: React.FC<
   const classRow = (item: TemperatureThreshold) => {
     const isActive = item?.is_active
     if (!isActive) {
-      return 'ui-bg-neutral-100 ui-cursor-not-allowed'
+      return 'ui:bg-neutral-100 ui:cursor-not-allowed'
     }
     return ''
   }
@@ -48,7 +48,7 @@ const AssetInventoryDetailThresholdTable: React.FC<
     item: TemperatureThreshold,
     isActive: boolean
   ) => {
-    return cx('ui-bg-white', { [classRow(item)]: isActive })
+    return cx('ui:bg-white', { [classRow(item)]: isActive })
   }
 
   const columns: ColumnDef<TCapacity>[] = useMemo(() => {
@@ -125,11 +125,11 @@ const AssetInventoryDetailThresholdTable: React.FC<
 
   return (
     <div
-      className={cx('ui-border-none ui-rounded-sm ui-border ui-bg-white', {
-        'ui-table !ui-w-full': isEditPage,
+      className={cx('ui:border-none ui:rounded-sm ui:border ui:bg-white', {
+        'ui:table ui:w-full!': isEditPage,
       })}
     >
-      <div className="ui-bg-gray-100 ui-table-header-group">
+      <div className="ui:bg-gray-100 ui:table-header-group">
         <DataTable columns={columns} data={data} />
       </div>
     </div>

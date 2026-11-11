@@ -52,36 +52,36 @@ export default function AnnualPlanningPopulationListPage() {
     <ProgramPlanListDetailContainer>
       <Meta title={`SMILE | ${t('population:title')}`} />
 
-      <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-        <h5 className="ui-font-bold ui-text-xl">{t('population:title')}</h5>
+      <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+        <h5 className="ui:font-bold ui:text-xl">{t('population:title')}</h5>
       </div>
 
       <div className="mt-6">
         <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-items-end">
-            <div className="ui-w-full">{filter.renderField()}</div>
-            <div className="ui-flex ui-gap-2">
-              <span className="ui-h-auto ui-w-px ui-bg-neutral-300" />
+          <FilterFormBody className="ui:flex ui:items-end">
+            <div className="ui:w-full">{filter.renderField()}</div>
+            <div className="ui:flex ui:gap-2">
+              <span className="ui:h-auto ui:w-px ui:bg-neutral-300" />
               <FilterResetButton variant="subtle" onClick={filter.reset} />
-              <FilterSubmitButton className="ui-w-[200px]" variant="outline" />
+              <FilterSubmitButton className="ui:w-[200px]" variant="outline" />
             </div>
           </FilterFormBody>
         </FilterFormRoot>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           {!isFilterActive && (
-            <div className="ui-border ui-border-gray-300 ui-rounded ui-h-80">
+            <div className="ui:border ui:border-gray-300 ui:rounded ui:h-80">
               <EmptyState
-                emptyIcon={<HourGlass className="ui-size-6" />}
+                emptyIcon={<HourGlass className="ui:size-6" />}
                 title={t('population:empty.no_filter.title')}
                 description={t('population:empty.no_filter.description')}
               />
             </div>
           )}
           {isPopulationNotExist && (
-            <div className="ui-border ui-border-gray-300 ui-rounded ui-h-80">
+            <div className="ui:border ui:border-gray-300 ui:rounded ui:h-80">
               <EmptyState
-                emptyIcon={<HourGlass className="ui-size-6" />}
+                emptyIcon={<HourGlass className="ui:size-6" />}
                 title={t('message.empty.title')}
                 description={t('message.empty.description')}
               />
@@ -89,11 +89,11 @@ export default function AnnualPlanningPopulationListPage() {
           )}
           {isPopulationExist && (
             <DataTable
-              firstRowClassName="ui-bg-[#EFF7FF]"
+              firstRowClassName="ui:bg-[#EFF7FF]"
               data={dataDetailPopulation?.data}
               columns={columnsDetailPopulation({ t, targetGroups })}
               isLoading={isFetchingDetailPopulation}
-              className="ui-overflow-x-auto"
+              className="ui:overflow-x-auto"
             />
           )}
         </div>

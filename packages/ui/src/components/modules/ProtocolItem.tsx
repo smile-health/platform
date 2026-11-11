@@ -29,16 +29,16 @@ export function ProtocolItem({
       onClick={onClick}
       type="button"
       className={cx(
-        'ui-flex ui-items-center gap-3 focus:outline-none',
+        'ui:flex ui:items-center gap-3 focus:outline-none',
         {
-          'ui-cursor-not-allowed': disabled,
+          'ui:cursor-not-allowed': disabled,
         },
         className?.wrapper
       )}
     >
       <p
-        className={cx('ui-text-lg ui-font-bold', className?.title, {
-          'ui-text-neutral-500': disabled,
+        className={cx('ui:text-lg ui:font-bold', className?.title, {
+          'ui:text-neutral-500': disabled,
         })}
       >
         {protocol?.name}

@@ -58,7 +58,7 @@ const FormDefineDistrictIP: React.FC = () => {
   }
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       {dataSelected.open && (
         <FormDefineDistrictIPInput
           dataIP={dataSelected.data}
@@ -69,15 +69,15 @@ const FormDefineDistrictIP: React.FC = () => {
           }}
         />
       )}
-      <div className="ui-space-y-3">
+      <div className="ui:space-y-3">
         <InformationAnnualPlanning />
 
-        <div className="ui-border ui-border-neutral-300 ui-p-6 ui-space-y-6">
-          <div className="ui-flex ui-justify-between ui-items-center">
-            <p className="ui-text-base ui-font-bold">
+        <div className="ui:border ui:border-neutral-300 ui:p-6 ui:space-y-6">
+          <div className="ui:flex ui:justify-between ui:items-center">
+            <p className="ui:text-base ui:font-bold">
               {t('table_title.material_list')}
             </p>
-            <div className="ui-flex ui-gap-2">
+            <div className="ui:flex ui:gap-2">
               <Button
                 type="button"
                 variant="outline"

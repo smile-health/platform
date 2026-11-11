@@ -21,8 +21,8 @@ export default function UserDetailChangeHistory({
   if (!data) return null
 
   return (
-    <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-      <h5 className="ui-font-bold">{t('title.change_history')}</h5>
+    <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+      <h5 className="ui:font-bold">{t('title.change_history')}</h5>
       {!!dataShow && (
         <UserChangeHistoryModal
           open
@@ -31,19 +31,19 @@ export default function UserDetailChangeHistory({
         />
       )}
 
-      <div className="ui-space-y-4">
+      <div className="ui:space-y-4">
         {data?.map((item, index) => {
           const count = Object.keys(item?.new_value)?.length
           const isLast = data?.length - 1 === index
 
           return (
             <Fragment key={item?.id + item?.user_id}>
-              <div className="ui-flex ui-justify-between ui-gap-4 ui-items-center">
-                <div className="ui-space-y-2">
-                  <p className="ui-text-dark-blue ui-font-medium">
+              <div className="ui:flex ui:justify-between ui:gap-4 ui:items-center">
+                <div className="ui:space-y-2">
+                  <p className="ui:text-dark-blue ui:font-medium">
                     {count} {t('history.information')?.toLowerCase()}
                   </p>
-                  <p className="ui-text-neutral-500 ui-text-sm">
+                  <p className="ui:text-neutral-500 ui:text-sm">
                     {getUpdatedHistory(item)}
                   </p>
                 </div>
@@ -53,8 +53,8 @@ export default function UserDetailChangeHistory({
               </div>
 
               <Divider
-                className={cx('ui-bg-[#D2D2D2]', {
-                  'ui-hidden': isLast,
+                className={cx('ui:bg-[#D2D2D2]', {
+                  'ui:hidden': isLast,
                 })}
               />
             </Fragment>

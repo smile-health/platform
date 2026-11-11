@@ -78,8 +78,8 @@ export const LoggerActivity = () => {
     const startOfMonthForNinetyDaysAgo = ninetyDaysAgo.startOf('month')
 
     return (
-      <div className="ui-flex ui-flex-row ui-gap-4 ui-w-full">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full">
+      <div className="ui:flex ui:flex-row ui:gap-4 ui:w-full">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full">
           <FormControl>
             <FormLabel>
               {t(
@@ -142,11 +142,11 @@ export const LoggerActivity = () => {
             />
           </FormControl>
         </div>
-        <div className="ui-flex ui-flex-row ui-items-center ui-mt-5 ui-justify-end ui-space-x-2 ui-col-span-1 ui-right-0">
+        <div className="ui:flex ui:flex-row ui:items-center ui:mt-5 ui:justify-end ui:space-x-2 ui:col-span-1 ui:right-0">
           <Button
             variant="subtle"
-            className="ui-w-32"
-            leftIcon={<Export className="ui-w-4 ui-h-4" />}
+            className="ui:w-32"
+            leftIcon={<Export className="ui:w-4 ui:h-4" />}
             loading={exportHistory.isLoading}
             disabled={exportHistory.isLoading}
             onClick={() => exportHistory.refetch()}
@@ -158,7 +158,7 @@ export const LoggerActivity = () => {
           <Button
             variant="solid"
             disabled={isLoading}
-            className="ui-w-32"
+            className="ui:w-32"
             onClick={() => refetchHistory()}
           >
             {t(
@@ -190,20 +190,20 @@ export const LoggerActivity = () => {
   const tabs = useMemo(() => tabList(t), [t])
 
   return (
-    <div className="ui-gap-4 ui-mx-auto ui-mb-4 ui-space-y-4">
-      <div className=" ui-font-semibold ui-text-gray-900">
+    <div className="ui:gap-4 ui:mx-auto ui:mb-4 ui:space-y-4">
+      <div className=" ui:font-semibold ui:text-gray-900">
         {t('storageTemperatureMonitoringDetail:logger_activity.title')}
       </div>
       <HistoryFilter />
       {isWarehouse && (
         <TabsRoot variant="default" value={activeTab}>
-          <div className="ui-flex ui-items-center ui-gap-4 mb-5">
-            <TabsList className="ui-grid-cols-4 ui-grow">
+          <div className="ui:flex ui:items-center ui:gap-4 mb-5">
+            <TabsList className="ui:grid-cols-4 ui:grow">
               {tabs?.map((item) => (
                 <TabsTrigger
                   key={item?.value}
                   value={item?.value}
-                  className="ui-justify-center ui-text-sm ui-px-2 ui-h-10 ui-outline-none focus:ui-outline-none focus-visible:ui-outline-none focus:ui-ring-0 focus-visible:ui-ring-0"
+                  className="ui:justify-center ui:text-sm ui:px-2 ui:h-10 ui:outline-hidden ui:focus:outline-hidden ui:focus-visible:outline-hidden ui:focus:ring-0 ui:focus-visible:ring-0"
                   onClick={() => handleTabChange(item?.value)}
                 >
                   {item?.label}

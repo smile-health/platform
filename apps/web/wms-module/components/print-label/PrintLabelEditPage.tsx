@@ -35,7 +35,7 @@ const PrintLabelEditPage = (): JSX.Element => {
       <Meta title={generateMetaTitle(t('title.edit'), false, false)} />
       <div className="mt-6">
         {isFetching ? (
-          <Spinner className="ui-w-full ui-h-10" />
+          <Spinner className="ui:w-full ui:h-10" />
         ) : (
           <PrintLabelForm defaultValues={dataPrintLabel?.data} />
         )}

@@ -74,14 +74,14 @@ export default function FinishedVaccineModal({
   return (
     <Dialog open={isOpen} size="md">
       <DialogCloseButton onClick={handleClose} />
-      <DialogHeader className="ui-my-2">
-        <h3 className="ui-text-center ui-text-xl ui-font-medium">
+      <DialogHeader className="ui:my-2">
+        <h3 className="ui:text-center ui:text-xl ui:font-medium">
           {t('common:confirmation')}
         </h3>
       </DialogHeader>
-      <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-      <DialogContent className="ui-overflow-visible ui-my-2 ui-py-2 styled-scroll ui-scroll-pr-2">
-        <p className="ui-font-normal ui-text-base ui-text-center ui-mb-5">
+      <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+      <DialogContent className="ui:overflow-visible ui:my-2 ui:py-2 styled-scroll ui:scroll-pr-2">
+        <p className="ui:font-normal ui:text-base ui:text-center ui:mb-5">
           <Trans
             t={t}
             // i18nKey={`notification:finishedVaccine.${descriptionKey}`}
@@ -94,7 +94,7 @@ export default function FinishedVaccineModal({
             }}
           />
         </p>
-        <div className="ui-space-y-4">
+        <div className="ui:space-y-4">
           <FormControl>
             <FormLabel htmlFor="reaction-type" required>
               {t('notification:finishedVaccine.form.reason.label')}
@@ -120,9 +120,9 @@ export default function FinishedVaccineModal({
           </FormControl>
         </div>
       </DialogContent>
-      <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
+      <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
       <DialogFooter>
-        <div className="ui-grid ui-grid-cols-2 ui-gap-3 ui-w-full">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-3 ui:w-full">
           <Button
             type="button"
             color="primary"

@@ -30,7 +30,7 @@ export const OrderDetailItemsTable = () => {
         </div>
         {showViewDetailButton && row.original.order_stocks.length > 0 && (
           <button
-            className="ui-text-primary-500"
+            className="ui:text-primary-500"
             onClick={() => setOpenQuantityDetailModal(true, row.original)}
           >
             {t('common:view_detail')}
@@ -43,11 +43,11 @@ export const OrderDetailItemsTable = () => {
   const renderAvailableStockColumn = (row: Row<OrderDetailItem>) => {
     const stockCustomer = row.original.stock_customer
     return (
-      <div className="ui-space-y-1">
+      <div className="ui:space-y-1">
         <div>
           {numberFormatter(stockCustomer?.total_available_qty, i18n.language)}
         </div>
-        <div className="ui-text-gray-600">
+        <div className="ui:text-gray-600">
           (min: {numberFormatter(stockCustomer?.min, i18n.language)} | max:{' '}
           {numberFormatter(stockCustomer?.max, i18n.language)})
         </div>
@@ -137,7 +137,7 @@ export const OrderDetailItemsTable = () => {
       cell: ({ row }) => renderAvailableStockColumn(row),
       meta: {
         headerSubComponent: (
-          <div className="ui-font-normal ui-text-gray-500">
+          <div className="ui:font-normal ui:text-gray-500">
             {t('common:at')} {data?.customer?.name}
           </div>
         ),
@@ -158,7 +158,7 @@ export const OrderDetailItemsTable = () => {
       data={orderItemsData}
       columns={columns}
       isLoading={!data}
-      bodyClassName={cx({ 'ui-h-56': !data })}
+      bodyClassName={cx({ 'ui:h-56': !data })}
     />
   )
 }

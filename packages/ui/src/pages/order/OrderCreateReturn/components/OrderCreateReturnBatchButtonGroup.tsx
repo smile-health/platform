@@ -54,8 +54,8 @@ export const OrderCreateReturnBatchButtonGroup: React.FC<Props> = ({
           setResetKey((prev) => prev + 1)
         }}
       >
-        <div className="ui-flex ui-flex-row ui-text-sm ui-space-x-3 ui-text-primary-600">
-          <Reload className="ui-size-5" />
+        <div className="ui:flex ui:flex-row ui:text-sm ui:space-x-3 ui:text-primary-600">
+          <Reload className="ui:size-5" />
           <div>Reset</div>
         </div>
       </Button>

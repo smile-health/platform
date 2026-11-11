@@ -37,7 +37,7 @@ const WasteClassificationListPage: React.FC = () => {
       <Meta title={`WMS | Waste Classification`} />
       <div className="mt-6">
         {isLoading ? (
-          <Spinner className="ui-w-full ui-h-10" />
+          <Spinner className="ui:w-full ui:h-10" />
         ) : (
           <WasteClassificationTable rawData={rawData} />
         )}

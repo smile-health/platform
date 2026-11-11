@@ -250,19 +250,19 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
 
       <div className="mt-6">
         <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid-cols-4">
+          <FilterFormBody className="ui:grid-cols-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
             <FilterExpandButton />
-            <div className="ui-flex ui-gap-2">
+            <div className="ui:flex ui:gap-2">
               {canEdit && isRoleWhitelisted && (
                 <Button
                   id="btn-import"
                   variant="subtle"
                   type="button"
-                  className="ui-px-2"
-                  leftIcon={<Import className="ui-size-5" />}
+                  className="ui:px-2"
+                  leftIcon={<Import className="ui:size-5" />}
                   onClick={() => setShowImport(true)}
                 >
                   {t('common:import')}
@@ -273,8 +273,8 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
                   id="btn-export"
                   variant="subtle"
                   type="button"
-                  className="ui-px-2"
-                  leftIcon={<Export className="ui-size-5" />}
+                  className="ui:px-2"
+                  leftIcon={<Export className="ui:size-5" />}
                   onClick={() => mutateExport()}
                 >
                   {t('common:export')}
@@ -285,27 +285,27 @@ const EntityListPage: React.FC<CommonType> = ({ isGlobal }) => {
                   id="btn-download-template"
                   variant="subtle"
                   type="button"
-                  className="ui-px-2"
-                  leftIcon={<Download className="ui-size-5" />}
+                  className="ui:px-2"
+                  leftIcon={<Download className="ui:size-5" />}
                   onClick={() => downloadQuery.refetch()}
                 >
                   {t('common:download_template')}
                 </Button>
               )}
               {isRoleWhitelisted && (
-                <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+                <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
               )}
               <FilterResetButton variant="subtle" onClick={filter.reset} />
               <FilterSubmitButton
                 onClick={() => setPagination({ page: 1 })}
                 variant="outline"
-                className="ui-w-[220px]"
+                className="ui:w-[220px]"
               ></FilterSubmitButton>
             </div>
           </FilterFormFooter>
           {filter.renderActiveFilter()}
         </FilterFormRoot>
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <EntityTable
             data={datasource?.data}
             isLoading={isFetching}

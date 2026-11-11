@@ -25,11 +25,11 @@ export const OrderDetailDetails = () => {
   }
 
   return (
-    <OrderDetailBox title={t('details.title')} className="ui-space-y-6">
-      <div className="ui-grid ui-grid-cols-2 ui-gap-4">
+    <OrderDetailBox title={t('details.title')} className="ui:space-y-6">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-4">
         <RenderDetailValue
-          className="ui-grid-cols-[200px_1px_1fr] ui-auto-rows-min ui-border ui-rounded ui-p-4 ui-text-sm ui-gap-2 ui-place-items-start"
-          valuesClassName="ui-text-dark-blue ui-font-semibold ui-min-h-6"
+          className="ui:grid-cols-[200px_1px_1fr] ui:auto-rows-min ui:border ui:rounded ui:p-4 ui:text-sm ui:gap-2 ui:place-items-start"
+          valuesClassName="ui:text-dark-blue ui:font-semibold ui:min-h-6"
           loading={isLoading || !data}
           data={[
             { label: t('data.delivery_number'), value: data?.delivery_number },
@@ -43,8 +43,8 @@ export const OrderDetailDetails = () => {
           ]}
         />
         <RenderDetailValue
-          className="ui-grid-cols-[200px_1px_1fr] ui-auto-rows-min ui-border ui-rounded ui-p-4 ui-text-sm ui-gap-2 ui-place-items-start"
-          valuesClassName="ui-text-dark-blue ui-font-semibold ui-min-h-6"
+          className="ui:grid-cols-[200px_1px_1fr] ui:auto-rows-min ui:border ui:rounded ui:p-4 ui:text-sm ui:gap-2 ui:place-items-start"
+          valuesClassName="ui:text-dark-blue ui:font-semibold ui:min-h-6"
           loading={isLoading || !data}
           data={[
             {

@@ -19,7 +19,7 @@ const IconBox: React.FC<IconBoxProps> = ({
   return (
     <div className="flex items-center justify-start">
       <div className={className}>{icon}</div>
-      <span className={`${className} ui-ml-2`}>{text}</span>
+      <span className={`${className} ui:ml-2`}>{text}</span>
     </div>
   )
 }
@@ -40,7 +40,7 @@ const AssetListDeviceStatusBox: React.FC<AssetListDeviceStatusBoxProps> = ({
   const { t } = useTranslation(['common', 'asset'])
 
   const textColor = (condition: boolean) =>
-    condition ? 'ui-text-primary-500' : 'ui-text-danger-600'
+    condition ? 'ui:text-primary-500' : 'ui:text-danger-600'
 
   const percentageText = (value: number) => (value ? `${value}%` : 'N/A')
 
@@ -51,7 +51,7 @@ const AssetListDeviceStatusBox: React.FC<AssetListDeviceStatusBoxProps> = ({
           label: status_device
             ? t('asset:columns.online')
             : t('asset:columns.offline'),
-          className: `${textColor(Boolean(status_device))} ui-text-sm`,
+          className: `${textColor(Boolean(status_device))} ui:text-sm`,
         },
         {
           label: (
@@ -60,7 +60,7 @@ const AssetListDeviceStatusBox: React.FC<AssetListDeviceStatusBoxProps> = ({
               text={percentageText(Number(battery))}
             />
           ),
-          className: `${textColor(Number(battery) > 20)} ui-text-sm`,
+          className: `${textColor(Number(battery) > 20)} ui:text-sm`,
         },
         {
           label: (
@@ -69,14 +69,14 @@ const AssetListDeviceStatusBox: React.FC<AssetListDeviceStatusBoxProps> = ({
               text={percentageText(Number(signal))}
             />
           ),
-          className: `${textColor(Number(signal) > 20)} ui-text-sm`,
+          className: `${textColor(Number(signal) > 20)} ui:text-sm`,
         },
         {
           label:
             power && status_device
               ? t('asset:columns.connected')
               : t('asset:columns.disconnected'),
-          className: `${textColor(Boolean(power && status_device))} ui-text-sm`,
+          className: `${textColor(Boolean(power && status_device))} ui:text-sm`,
         },
       ]}
     />

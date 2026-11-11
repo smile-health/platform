@@ -55,7 +55,7 @@ export function ReactSelectCustomDropdownIndicator({
   return (
     <components.DropdownIndicator
       {...props}
-      className={cx(props.className, { '!ui-p-1': size === 'sm' })}
+      className={cx(props.className, { 'ui:p-1!': size === 'sm' })}
     />
   )
 }

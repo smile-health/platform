@@ -49,13 +49,13 @@ const DashboardDiscardMaterial = forwardRef<TDashboardIOTHandler, Props>(
         {
           label: 'SI.NO',
           class: periodLabels?.length
-            ? 'ui-sticky ui-left-0 ui-min-w-14 ui-w-14'
+            ? 'ui:sticky ui:left-0 ui:min-w-14 ui:w-14'
             : '',
         },
         {
           label: 'Material',
           class: periodLabels?.length
-            ? 'ui-sticky ui-left-14 ui-min-w-60 ui-w-60 ui-border-r ui-border-gray-300'
+            ? 'ui:sticky ui:left-14 ui:min-w-60 ui:w-60 ui:border-r ui:border-gray-300'
             : '',
         },
         ...periodLabels,
@@ -66,7 +66,7 @@ const DashboardDiscardMaterial = forwardRef<TDashboardIOTHandler, Props>(
               label: '',
               colSpan: 2,
               class:
-                'ui-sticky ui-left-0 ui-min-w-14 ui-w-14 ui-border-r ui-border-gray-300',
+                'ui:sticky ui:left-0 ui:min-w-14 ui:w-14 ui:border-r ui:border-gray-300',
             },
             ...types,
           ]

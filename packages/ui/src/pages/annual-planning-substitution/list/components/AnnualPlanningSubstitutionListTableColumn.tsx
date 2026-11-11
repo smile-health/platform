@@ -26,15 +26,15 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
     header: t('common:action'),
     accessorKey: 'id',
     meta: {
-      cellClassName: 'ui-w-2/12',
+      cellClassName: 'ui:w-2/12',
     },
     cell: ({ row: { original } }) => (
-      <div className="ui-flex ui-justify-start ui-items-center ui-gap-2">
+      <div className="ui:flex ui:justify-start ui:items-center ui:gap-2">
         <Button
           type="button"
           variant="subtle"
           color="primary"
-          className="ui-px-1"
+          className="ui:px-1"
         >
           <Link
             href={router.getAsLink(
@@ -48,7 +48,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
           type="button"
           variant="subtle"
           color="danger"
-          className="ui-px-1"
+          className="ui:px-1"
           onClick={() => setOpenedRow(original)}
         >
           {t('common:delete')}
@@ -62,7 +62,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       header: 'No.',
       accessorKey: 'no',
       meta: {
-        cellClassName: 'ui-w-1/12',
+        cellClassName: 'ui:w-1/12',
       },
       cell: ({
         row: {
@@ -78,7 +78,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       header: t('annualPlanningSubstitution:table.planned_material'),
       accessorKey: 'material',
       meta: {
-        cellClassName: 'ui-w-3/12',
+        cellClassName: 'ui:w-3/12',
       },
       cell: ({
         row: {
@@ -90,7 +90,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       header: t('annualPlanningSubstitution:table.substitute_material'),
       accessorKey: 'substitution_materials',
       meta: {
-        cellClassName: 'ui-w-3/12',
+        cellClassName: 'ui:w-3/12',
       },
       cell: ({
         row: {
@@ -101,7 +101,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
           arrText={
             substitution_materials?.map((item) => ({
               firstLabel: item.name,
-              firstClassName: 'ui-text-sm ui-font-normal ui-text-dark-teal',
+              firstClassName: 'ui:text-sm ui:font-normal ui:text-dark-teal',
             })) || []
           }
         />
@@ -111,7 +111,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       header: t('common:updated_by'),
       accessorKey: 'updated_by',
       meta: {
-        cellClassName: 'ui-w-4/12',
+        cellClassName: 'ui:w-4/12',
       },
       cell: ({
         row: {
@@ -122,14 +122,14 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
           arrText={[
             {
               firstLabel: `${user_updated_by?.firstname} ${user_updated_by?.lastname ?? ''}`,
-              firstClassName: 'ui-text-sm ui-font-normal ui-text-dark-teal',
+              firstClassName: 'ui:text-sm ui:font-normal ui:text-dark-teal',
             },
             {
               firstLabel: dayjs(updated_at)
                 .locale(locale)
                 .format('DD MMM YYYY HH:mm'),
               firstClassName:
-                'ui-text-sm ui-font-normal ui-text-dark-teal ui-my-1',
+                'ui:text-sm ui:font-normal ui:text-dark-teal ui:my-1',
             },
           ]}
         />

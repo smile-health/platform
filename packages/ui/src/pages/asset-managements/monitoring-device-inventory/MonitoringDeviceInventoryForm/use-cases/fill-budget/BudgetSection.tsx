@@ -21,12 +21,12 @@ export const BudgetSection = () => {
   } = useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('monitoringDeviceInventoryForm:section.budget.title')}
       </div>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="production_year" required>
           {t('monitoringDeviceInventoryForm:field.production_year.label')}
         </FormLabel>
@@ -59,7 +59,7 @@ export const BudgetSection = () => {
         )}
       </FormControl>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="budget_year" required>
           {t('monitoringDeviceInventoryForm:field.budget_year.label')}
         </FormLabel>
@@ -92,7 +92,7 @@ export const BudgetSection = () => {
         )}
       </FormControl>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="budget_source_id" required>
           {t('monitoringDeviceInventoryForm:field.budget_source.label')}
         </FormLabel>

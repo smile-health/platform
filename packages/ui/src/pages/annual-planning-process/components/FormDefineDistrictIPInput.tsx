@@ -49,12 +49,12 @@ const FormDefineDistrictIPInput = (props: Props) => {
       placement="bottom"
       sizeHeight="xl"
       size="full"
-      className="ui-rounded-t-lg"
+      className="ui:rounded-t-lg"
     >
       <DrawerHeader>
-        <div className="ui-flex ui-justify-between">
+        <div className="ui:flex ui:justify-between">
           <div />
-          <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+          <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
             {t('annualPlanningProcess:create.form.district_ip.drawer.title')}
           </h6>
           <Button
@@ -67,41 +67,41 @@ const FormDefineDistrictIPInput = (props: Props) => {
           </Button>
         </div>
       </DrawerHeader>
-      <DrawerContent className="ui-border-y ui-border-b-zinc-300">
-        <div className="ui-px-1 ui-py-2">
-          <div className="ui-space-y-6 ui-mb-6">
+      <DrawerContent className="ui:border-y ui:border-b-zinc-300">
+        <div className="ui:px-1 ui:py-2">
+          <div className="ui:space-y-6 ui:mb-6">
             <div
-              className={cx("ui-grid ui-grid-cols-3 ui-gap-4", {
-                "ui-grid-cols-4": isReview
+              className={cx("ui:grid ui:grid-cols-3 ui:gap-4", {
+                "ui:grid-cols-4": isReview
               })}
             >
               <div>
-                <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                   {t('common:form.province.label')}
                 </h2>
-                <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-break-normal">
+                <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:break-normal">
                   {parentForm.area_program_plan?.province?.label || '-'}
                 </p>
               </div>
               <div>
-                <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                   {t('common:form.city.label')}
                 </h2>
-                <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-break-normal">
+                <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:break-normal">
                   {parentForm.area_program_plan?.regency?.label || '-'}
                 </p>
               </div>
               <div>
-                <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                   {t('annualPlanningProcess:create.form.area_program_plan.program_plan.label')}
                 </h2>
-                <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-break-normal">
+                <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:break-normal">
                   {parentForm.area_program_plan?.program_plan?.label || '-'}
                 </p>
               </div>
 
               {isReview && (
-                <div className="ui-flex ui-justify-end ui-gap-4 ui-items-center">
+                <div className="ui:flex ui:justify-end ui:gap-4 ui:items-center">
                   <Button
                     type="button"
                     variant="subtle"
@@ -109,7 +109,7 @@ const FormDefineDistrictIPInput = (props: Props) => {
                     leftIcon={<Eraser />}
                     onClick={() => handleSetStatusAll(ProcessStatus.REJECT)}
                     size="sm"
-                    className="ui-p-1"
+                    className="ui:p-1"
                   >
                     {t('annualPlanningProcess:create.form.district_ip.drawer.revise_all')}
                   </Button>
@@ -119,7 +119,7 @@ const FormDefineDistrictIPInput = (props: Props) => {
                     leftIcon={<FileCheck />}
                     onClick={() => handleSetStatusAll(ProcessStatus.APPROVED)}
                     size="sm"
-                    className="ui-p-1"
+                    className="ui:p-1"
                   >
                     {t('annualPlanningProcess:create.form.district_ip.drawer.approve_all')}
                   </Button>
@@ -137,66 +137,66 @@ const FormDefineDistrictIPInput = (props: Props) => {
                 empty={data.length === 0}
                 verticalAlignment="center"
               >
-                <Thead className="ui-bg-slate-100">
+                <Thead className="ui:bg-slate-100">
                   <Tr>
-                    <Th id="header-no" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-no" className="ui:w-10 ui:font-semibold">
                       No
                     </Th>
-                    <Th id="header-name" className="ui-w-1/3 ui-font-semibold">
+                    <Th id="header-name" className="ui:w-1/3 ui:font-semibold">
                       {t('create.form.district_ip.column.material_name')}
                     </Th>
-                    <Th id="header-activity" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-activity" className="ui:w-10 ui:font-semibold">
                       {t('create.form.district_ip.column.activity')}
                     </Th>
-                    <Th id="header-target-group" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-target-group" className="ui:w-10 ui:font-semibold">
                       {t('create.form.district_ip.column.target_group')}
                     </Th>
-                    <Th id="header-sku" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-sku" className="ui:w-10 ui:font-semibold">
                       SKU
                     </Th>
-                    <Th id="header-national-ip" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-national-ip" className="ui:w-10 ui:font-semibold">
                       {t('create.form.district_ip.column.national_ip')}
                     </Th>
                     {isRevision && (
-                      <Th id="header-data-status" className="ui-w-24 ui-font-semibold">
+                      <Th id="header-data-status" className="ui:w-24 ui:font-semibold">
                         {t('create.form.district_ip.column.data_status')}
                       </Th>
                     )}
-                    <Th id="header-district-ip" className="ui-w-10 ui-font-semibold">
+                    <Th id="header-district-ip" className="ui:w-10 ui:font-semibold">
                       {t('create.form.district_ip.column.district_ip')}
                     </Th>
                     {isReview && (
-                      <Th id="header-data-status" className="ui-w-24 ui-font-semibold">
+                      <Th id="header-data-status" className="ui:w-24 ui:font-semibold">
                         {t('create.form.district_ip.column.data_status')}
                       </Th>
                     )}
                   </Tr>
                 </Thead>
-                <Tbody className="ui-bg-white">
+                <Tbody className="ui:bg-white">
                   {data.map((x, i) => (
                     <Tr
-                      className={cx("ui-text-sm ui-font-normal", {
-                        "ui-bg-[#FEF2F2]": isRevision && x.status === ProcessStatus.REJECT,
+                      className={cx("ui:text-sm ui:font-normal", {
+                        "ui:bg-danger-50": isRevision && x.status === ProcessStatus.REJECT,
                       })}
                       key={`cell-input-${x.material?.id}`}
                     >
-                      <Td className="ui-content-start">{i + 1}</Td>
-                      <Td className="ui-content-start">{x.material?.name || '-'}</Td>
-                      <Td className="ui-content-start">{x.activity?.name || '-'}</Td>
-                      <Td className="ui-content-start">{x.target_group?.name || '-'}</Td>
-                      <Td className="ui-content-start">{x.sku || '-'}</Td>
-                      <Td className="ui-content-start">{numberFormatter(x.national_ip, language)}</Td>
+                      <Td className="ui:content-start">{i + 1}</Td>
+                      <Td className="ui:content-start">{x.material?.name || '-'}</Td>
+                      <Td className="ui:content-start">{x.activity?.name || '-'}</Td>
+                      <Td className="ui:content-start">{x.target_group?.name || '-'}</Td>
+                      <Td className="ui:content-start">{x.sku || '-'}</Td>
+                      <Td className="ui:content-start">{numberFormatter(x.national_ip, language)}</Td>
                       {isRevision && (
-                        <Td className="ui-content-start">
+                        <Td className="ui:content-start">
                           <ColumnStatusMaterial status={x.status} t={t} />
                         </Td>
                       )}
                       {isReview && (
-                        <Td className="ui-content-start">
+                        <Td className="ui:content-start">
                           {numberFormatter(x.district_ip, language)}
                         </Td>
                       )}
-                      <Td className="ui-content-start">
+                      <Td className="ui:content-start">
                         {isReview ? (
                           <Controller
                             control={control}
@@ -204,19 +204,19 @@ const FormDefineDistrictIPInput = (props: Props) => {
                             render={({
                               field: { value, onChange, ...field },
                             }) => (
-                              <FormControl className='!ui-h-[29px]'>
+                              <FormControl className='ui:h-[29px]!'>
                                 <Switch
                                   {...field}
                                   checked={value === ProcessStatus.APPROVED}
                                   size="lg"
                                   onCheckedChange={checked => onChange(checked ? ProcessStatus.APPROVED : ProcessStatus.REJECT)}
                                   labelInside={{
-                                    on: <CheckV2 className="ui-text-white ui-h-5 ui-w-5" />,
-                                    off: <XMarkIcon className="ui-text-white ui-h-5 ui-w-5" />,
+                                    on: <CheckV2 className="ui:text-white ui:h-5 ui:w-5" />,
+                                    off: <XMarkIcon className="ui:text-white ui:h-5 ui:w-5" />,
                                   }}
                                   colorInside={{
-                                    off: "data-[state=unchecked]:ui-bg-red-600",
-                                    on: "data-[state=checked]:ui-bg-green-700"
+                                    off: "ui:data-[state=unchecked]:bg-red-600",
+                                    on: "ui:data-[state=checked]:bg-green-700"
                                   }}
                                 />
                               </FormControl>
@@ -269,7 +269,7 @@ const FormDefineDistrictIPInput = (props: Props) => {
         <Button
           type="submit"
           form="FormDefineDistrictIPInput"
-          className="ui-w-48"
+          className="ui:w-48"
           disabled={!isValid}
         >
           {t('common:save')}

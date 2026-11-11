@@ -21,9 +21,9 @@ export const OperationalStatusSection = () => {
   } = useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-items-center ui-justify-between flex">
-        <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:items-center ui:justify-between flex">
+        <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
           {t('monitoringDeviceInventoryForm:section.operational_status.title')}
         </div>
 
@@ -35,7 +35,7 @@ export const OperationalStatusSection = () => {
         )}
       </div>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="asset_rtmd_status_id" required>
           {t('monitoringDeviceInventoryForm:field.operational_status.label')}
         </FormLabel>

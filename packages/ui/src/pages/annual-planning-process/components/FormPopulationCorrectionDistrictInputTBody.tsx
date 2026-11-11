@@ -42,16 +42,16 @@ const FormPopulationCorrectionDistrictInputTBody: React.FC<Props> = (props) => {
 
   return (
     <Tr
-      className={cx("ui-text-sm ui-font-normal", {
-        "ui-bg-[#FEF2F2]": isRevision && data.status === ProcessStatus.REJECT,
+      className={cx("ui:text-sm ui:font-normal", {
+        "ui:bg-danger-50": isRevision && data.status === ProcessStatus.REJECT,
       })}
       key={data.id}
     >
-      <Td className="ui-content-start">{index + 1}</Td>
-      <Td className="ui-content-start">{data.name || '-'}</Td>
-      <Td className="ui-content-start">{resultPercentageRounded}%</Td>
-      <Td className="ui-content-start">{numberFormatter(resultQty, language)}</Td>
-      <Td className="ui-content-start">
+      <Td className="ui:content-start">{index + 1}</Td>
+      <Td className="ui:content-start">{data.name || '-'}</Td>
+      <Td className="ui:content-start">{resultPercentageRounded}%</Td>
+      <Td className="ui:content-start">{numberFormatter(resultQty, language)}</Td>
+      <Td className="ui:content-start">
         <Controller
           control={control}
           name={`data.${index}.change_qty`}

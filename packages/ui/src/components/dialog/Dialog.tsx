@@ -54,14 +54,14 @@ export function DialogHeader({
   return (
     <div
       className={cx(
-        'ui-px-5 ui-py-3',
-        { 'ui-border-b': border },
+        'ui:px-5 ui:py-3',
+        { 'ui:border-b': border },
         containerClassName
       )}
     >
       <div
         className={cx(
-          'ui-text-lg ui-font-semibold ui-text-gray-800',
+          'ui:text-lg ui:font-semibold ui:text-gray-800',
           className
         )}
       >
@@ -92,7 +92,7 @@ export function DialogContent({
         {contentTitle}
       </DialogPrimitive.Title>
       <div
-        className={cx('ui-grow ui-overflow-auto ui-px-5 ui-py-2', className)}
+        className={cx('ui:grow ui:overflow-auto ui:px-5 ui:py-2', className)}
       >
         {children}
       </div>
@@ -113,8 +113,8 @@ export function DialogFooter({
   return (
     <div
       className={cx(
-        'ui-flex ui-justify-end ui-space-x-3 ui-px-5 ui-pt-3 ui-pb-5',
-        { 'ui-border-t': border },
+        'ui:flex ui:justify-end ui:space-x-3 ui:px-5 ui:pt-3 ui:pb-5',
+        { 'ui:border-t': border },
         className
       )}
     >
@@ -137,7 +137,7 @@ export function DialogCloseButton({
       <CloseButton
         onClick={onClick}
         id="dialogCloseButton"
-        className={cx('ui-absolute ui-right-2 ui-top-2', className)}
+        className={cx('ui:absolute ui:right-2 ui:top-2', className)}
       ></CloseButton>
     </DialogPrimitive.Close>
   )
@@ -197,7 +197,7 @@ export function Dialog({
                     animate="animate"
                     exit="exit"
                     className={cx(
-                      'ui-fixed ui-inset-0 ui-h-screen ui-bg-black ui-bg-opacity-50',
+                      'ui:fixed ui:inset-0 ui:h-screen ui:bg-black/50',
                       classNameOverlay
                     )}
                   ></motion.div>
@@ -218,25 +218,25 @@ export function Dialog({
                     animate="animate"
                     exit="exit"
                     className={cx(
-                      'ui-fixed ui-mx-auto ui-flex ui-w-full ui-flex-col',
-                      'ui-bottom-0 ui-left-0 ui-right-0 ui-top-0',
-                      'ui-h-min ui-rounded-md ui-bg-white',
-                      'focus:ui-outline-none focus-visible:ui-ring focus-visible:ui-ring-purple-500 focus-visible:ui-ring-opacity-75',
+                      'ui:fixed ui:mx-auto ui:flex ui:w-full ui:flex-col',
+                      'ui:bottom-0 ui:left-0 ui:right-0 ui:top-0',
+                      'ui:h-min ui:rounded-md ui:bg-white',
+                      'ui:focus:outline-hidden ui:focus-visible:ring-3 ui:focus-visible:ring-purple-500/75',
                       {
-                        'ui-my-10': !verticalCentered,
-                        'ui-my-auto': verticalCentered,
+                        'ui:my-10': !verticalCentered,
+                        'ui:my-auto': verticalCentered,
                       },
                       {
-                        'ui-max-h-[calc(100%-5rem)]':
+                        'ui:max-h-[calc(100%-5rem)]':
                           scrollBehavior === 'inside',
                       },
                       {
-                        'ui-max-w-[20rem]': size === 'xs',
-                        'ui-max-w-[25rem]': size === 'sm',
-                        'ui-max-w-[30rem]': size === 'md',
-                        'ui-max-w-[35rem]': size === 'lg',
-                        'ui-max-w-[45rem]': size === 'xl',
-                        'ui-max-w-[70rem]': size === '2xl',
+                        'ui:max-w-[20rem]': size === 'xs',
+                        'ui:max-w-100': size === 'sm',
+                        'ui:max-w-120': size === 'md',
+                        'ui:max-w-140': size === 'lg',
+                        'ui:max-w-180': size === 'xl',
+                        'ui:max-w-280': size === '2xl',
                       },
                       className
                     )}
@@ -253,8 +253,8 @@ export function Dialog({
                   animate="animate"
                   exit="exit"
                   className={cx(
-                    'ui-absolute ui-top-0 ui-overflow-y-auto ui-bg-black ui-bg-opacity-50',
-                    'ui-flex ui-h-screen ui-w-screen ui-justify-center ui-py-10'
+                    'ui:absolute ui:top-0 ui:overflow-y-auto ui:bg-black/50',
+                    'ui:flex ui:h-screen ui:w-screen ui:justify-center ui:py-10'
                   )}
                 >
                   <DialogPrimitive.Content
@@ -273,18 +273,18 @@ export function Dialog({
                       animate="animate"
                       exit="exit"
                       className={cx(
-                        'ui-relative ui-mx-auto ui-w-full',
-                        'ui-h-min ui-rounded-md ui-bg-white',
-                        'focus:ui-outline-none focus-visible:ui-ring focus-visible:ui-ring-purple-500 focus-visible:ui-ring-opacity-75',
+                        'ui:relative ui:mx-auto ui:w-full',
+                        'ui:h-min ui:rounded-md ui:bg-white',
+                        'ui:focus:outline-hidden ui:focus-visible:ring-3 ui:focus-visible:ring-purple-500/75',
                         {
-                          'ui-my-auto': verticalCentered,
+                          'ui:my-auto': verticalCentered,
                         },
                         {
-                          'ui-max-w-[20rem]': size === 'xs',
-                          'ui-max-w-[25rem]': size === 'sm',
-                          'ui-max-w-[30rem]': size === 'md',
-                          'ui-max-w-[35rem]': size === 'lg',
-                          'ui-max-w-[45rem]': size === 'xl',
+                          'ui:max-w-[20rem]': size === 'xs',
+                          'ui:max-w-100': size === 'sm',
+                          'ui:max-w-120': size === 'md',
+                          'ui:max-w-140': size === 'lg',
+                          'ui:max-w-180': size === 'xl',
                         }
                       )}
                     >

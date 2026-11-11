@@ -152,16 +152,16 @@ export const backgroundColor = (
       !capacityGross &&
       !capacityNett &&
       !otherCapacityGross:
-      return isNumberColumn ? 'ui-bg-red-500 ui-text-white' : 'ui-bg-red-100'
+      return isNumberColumn ? 'ui:bg-red-500 ui:text-white' : 'ui:bg-red-100'
     case isColdStorage &&
       !capacityNett &&
       !otherCapacityNett &&
       (otherCapacityGross || otherCapacityNett):
       return isNumberColumn
-        ? 'ui-bg-orange-500 ui-text-white'
-        : 'ui-bg-orange-100'
+        ? 'ui:bg-orange-500 ui:text-white'
+        : 'ui:bg-orange-100'
     default:
-      return 'ui-bg-white'
+      return 'ui:bg-white'
   }
 }
 

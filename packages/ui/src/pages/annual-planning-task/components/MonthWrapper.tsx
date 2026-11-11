@@ -42,18 +42,18 @@ export const MonthWrapper = ({ values, onClick }: MonthlyWrapperProps) => {
   const months = i18n.language === 'id' ? MONTHS_IN : MONTHS_EN
 
   return (
-    <div className="ui-grid ui-grid-cols-3 ui-gap-1">
+    <div className="ui:grid ui:grid-cols-3 ui:gap-1">
       {months.map((month, index) => (
         <button
           key={month}
           type="button"
           className={cx(
-            'ui-border ui-rounded ui-text-sm ui-font-bold ui-text-center ui-px-4 ui-py-[10px] ui-transition',
+            'ui:border ui:rounded ui:text-sm ui:font-bold ui:text-center ui:px-4 ui:py-[10px] ui:transition',
             {
-              'ui-border-gray-300 hover:ui-bg-[#effaff]': !values.includes(
+              'ui:border-gray-300 ui:hover:bg-[#effaff]': !values.includes(
                 index + 1
               ),
-              'ui-border-[#004990] ui-bg-[#E2F3FC]': values.includes(index + 1),
+              'ui:border-[#004990] ui:bg-[#E2F3FC]': values.includes(index + 1),
             }
           )}
           onClick={() => onClick(index + 1)}

@@ -140,16 +140,16 @@ const StockOpnameListPage: React.FC = () => {
     <Container title={t('stockOpname:stock_opname')} withLayout>
       <Meta title={`SMILE | ${t('stockOpname:stock_opname_list')}`} />
       <StockOpnameListContext.Provider value={contextValue}>
-        <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-font-bold ui-text-xl">
+        <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:font-bold ui:text-xl">
             {t('stockOpname:stock_opname_list')}
           </h5>
           {hasPermission('stock-opname-mutate') && (
             <Button
               id="create__stock__opname"
               asChild
-              className="ui-min-w-40"
-              leftIcon={<Plus className="ui-size-5" />}
+              className="ui:min-w-40"
+              leftIcon={<Plus className="ui:size-5" />}
             >
               <Link href={router.getAsLink('/v5/stock-opname/create')}>
                 {t('stockOpname:stock_opname_create')}
@@ -157,21 +157,21 @@ const StockOpnameListPage: React.FC = () => {
             </Button>
           )}
         </div>
-        <div className="ui-space-y-4 ui-mt-6">
+        <div className="ui:space-y-4 ui:mt-6">
           <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-            <FilterFormBody className="ui-grid-cols-4">
+            <FilterFormBody className="ui:grid-cols-4">
               {filter.renderField()}
             </FilterFormBody>
             <FilterFormFooter>
-              <div className="ui-flex">
+              <div className="ui:flex">
                 <FilterExpandButton variant="subtle" />
               </div>
-              <div className="ui-space-x-3 ui-flex ui-gap-2">
+              <div className="ui:space-x-3 ui:flex ui:gap-2">
                 <Button
                   id="btn-export"
                   variant="subtle"
                   type="button"
-                  leftIcon={<Export className="ui-size-5" />}
+                  leftIcon={<Export className="ui:size-5" />}
                   onClick={() => {
                     if (checkIfRequiredFieldsAreFilled().filterValue) {
                       exportQuery.refetch()
@@ -183,11 +183,11 @@ const StockOpnameListPage: React.FC = () => {
                       })
                     }
                   }}
-                  className="!ui-m-0"
+                  className="ui:m-0!"
                 >
                   {t('common:export')}
                 </Button>
-                <div className="ui-w-px ui-h-auto ui-bg-neutral-300" />
+                <div className="ui:w-px ui:h-auto ui:bg-neutral-300" />
                 <FilterResetButton onClick={filter.reset} variant="subtle" />
                 <FilterSubmitButton
                   variant="outline"
@@ -202,14 +202,14 @@ const StockOpnameListPage: React.FC = () => {
                       })
                     }
                   }}
-                  className="ui-w-56 !ui-m-0"
+                  className="ui:w-56 ui:m-0!"
                 ></FilterSubmitButton>
               </div>
             </FilterFormFooter>
             {filter.renderActiveFilter()}
           </FilterFormRoot>
         </div>
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <StockOpnameListTable data={data} />
         </div>
       </StockOpnameListContext.Provider>

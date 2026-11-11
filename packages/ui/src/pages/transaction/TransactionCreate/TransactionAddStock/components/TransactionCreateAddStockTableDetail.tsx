@@ -61,10 +61,10 @@ const TransactionCreateAddStockTableDetail: React.FC<ModalBatchDetail> = ({
         id="drawer-batch"
         closeOnOverlayClick={false}
       >
-        <DrawerHeader className="ui-border">
-          <div className="ui-flex ui-justify-between">
+        <DrawerHeader className="ui:border">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('caption_detail_batch', {
                 type: item?.managed_in_batch ? 'Batch' : 'Detail',
               })}
@@ -83,34 +83,34 @@ const TransactionCreateAddStockTableDetail: React.FC<ModalBatchDetail> = ({
           </div>
         </DrawerHeader>
         <DrawerContent>
-          <div className="ui-p-4" id="transaction-detail-table">
-            <div className="ui-space-y-6">
-              <div className="ui-grid ui-grid-cols-[40%_40%_20%] ui-gap-4 ui-mb-1">
+          <div className="ui:p-4" id="transaction-detail-table">
+            <div className="ui:space-y-6">
+              <div className="ui:grid ui:grid-cols-[40%_40%_20%] ui:gap-4 ui:mb-1">
                 <div>
-                  <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                  <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                     Material
                   </h2>
-                  <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+                  <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                     {item?.material_name}
                   </p>
                 </div>
                 <div>
-                  <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                  <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                     {t('table.column.stock_on_hand')}
                   </h2>
-                  <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+                  <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                     {numberFormatter(item?.on_hand_stock, language)}
-                    <span className="ui-text-neutral-500 ui-text-xs ui-font-normal ui-ml-1">
+                    <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
                       min: {numberFormatter(item?.min, language)}, {t('max')} :{' '}
                       {numberFormatter(item?.max, language)}
                     </span>
                   </p>
                 </div>
                 <div>
-                  <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                  <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                     {t('table.column.available_stock')}
                   </h2>
-                  <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+                  <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                     {numberFormatter(item?.available_stock, language)}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ const TransactionCreateAddStockTableDetail: React.FC<ModalBatchDetail> = ({
             </div>
           </div>
         </DrawerContent>
-        <DrawerFooter className="ui-border">
+        <DrawerFooter className="ui:border">
           <button
             id={`reset-batch-${idRow}`}
             data-testid={`reset-batch-${idRow}`}
@@ -136,10 +136,10 @@ const TransactionCreateAddStockTableDetail: React.FC<ModalBatchDetail> = ({
               methods.setValue('batches', resetBatch())
               methods.clearErrors('batches')
             }}
-            className="ui-w-20 focus:outline-none"
+            className="ui:w-20 focus:outline-none"
           >
-            <div className="ui-flex ui-flex-row ui-text-sm ui-space-x-3 ui-text-primary-600">
-              <Reload className="ui-size-5" />
+            <div className="ui:flex ui:flex-row ui:text-sm ui:space-x-3 ui:text-primary-600">
+              <Reload className="ui:size-5" />
               <div>Reset</div>
             </div>
           </button>
@@ -147,7 +147,7 @@ const TransactionCreateAddStockTableDetail: React.FC<ModalBatchDetail> = ({
           <Button
             id={`save-batch-${idRow}`}
             data-testid={`save-batch-${idRow}`}
-            className="ui-w-48"
+            className="ui:w-48"
             onClick={() => {
               checkValidity()
               methods.handleSubmit(onSubmit)()

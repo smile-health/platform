@@ -41,14 +41,14 @@ export const useBufferTable = () => {
         accessorKey: 'no',
         header: t('annualCommitmentForm:table.column.no'),
 
-        cell: ({ row }) => <div className="ui-my-2">{row.index + 1}</div>,
+        cell: ({ row }) => <div className="ui:my-2">{row.index + 1}</div>,
         size: 60,
       },
       {
         accessorKey: 'materialName',
         header: t('annualCommitmentForm:table.column.materialName'),
         cell: ({ row }) => (
-          <div className="ui-my-2">{row.original.material?.label ?? '-'}</div>
+          <div className="ui:my-2">{row.original.material?.label ?? '-'}</div>
         ),
       },
       {
@@ -72,13 +72,13 @@ export const useBufferTable = () => {
                         )
                       }
                       placeholder="0"
-                      className="ui-w-32"
+                      className="ui:w-32"
                       error={
                         !!form?.errors?.bufferItems?.[row.index]?.numberVial
                       }
                     />
                     {form?.errors?.bufferItems?.[row.index]?.numberVial && (
-                      <FormErrorMessage className="ui-mt-2">
+                      <FormErrorMessage className="ui:mt-2">
                         {
                           form?.errors?.bufferItems?.[row.index]?.numberVial
                             ?.message
@@ -97,7 +97,7 @@ export const useBufferTable = () => {
         accessorKey: 'numberDose',
         header: t('annualCommitmentForm:table.column.numberDose'),
         cell: ({ row }) => (
-          <div className="ui-my-2">
+          <div className="ui:my-2">
             {numberFormatter(
               form.methods.watch(`bufferItems.${row.index}.numberDose`),
               i18n.language
@@ -112,7 +112,7 @@ export const useBufferTable = () => {
         cell: ({ row }) => (
           <Button
             variant="subtle"
-            className="ui-text-danger-500"
+            className="ui:text-danger-500"
             onClick={() => removeBufferItem(row.index)}
           >
             {t('annualCommitmentForm:button.remove')}

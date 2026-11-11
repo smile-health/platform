@@ -158,14 +158,14 @@ const EntityMaterialBulkListPage = () => {
 
       <div className="mt-6">
         <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-items-end">
-            <div className="ui-w-full">{filter.renderField()}</div>
-            <div className="ui-flex ui-gap-2">
+          <FilterFormBody className="ui:flex ui:items-end">
+            <div className="ui:w-full">{filter.renderField()}</div>
+            <div className="ui:flex ui:gap-2">
               <Button
                 id="btn-import"
                 variant="subtle"
                 type="button"
-                leftIcon={<Import className="ui-size-5" />}
+                leftIcon={<Import className="ui:size-5" />}
                 onClick={() => setShowImport(true)}
               >
                 {t('common:import')}
@@ -174,28 +174,28 @@ const EntityMaterialBulkListPage = () => {
                 id="btn-download-template"
                 variant="subtle"
                 type="button"
-                leftIcon={<Download className="ui-size-5" />}
+                leftIcon={<Download className="ui:size-5" />}
                 onClick={() => setModalExport(true)}
-                className="ui-w-[180px]"
+                className="ui:w-[180px]"
               >
                 {t('common:download_template')}
               </Button>
-              <span className="ui-h-auto ui-w-px ui-bg-neutral-300" />
+              <span className="ui:h-auto ui:w-px ui:bg-neutral-300" />
               <FilterResetButton variant="subtle" onClick={filter.reset} />
               <FilterSubmitButton
-                className="ui-w-[200px]"
+                className="ui:w-[200px]"
                 variant="outline"
               ></FilterSubmitButton>
             </div>
           </FilterFormBody>
           {filter.renderActiveFilter()}
         </FilterFormRoot>
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <DataTable
             data={datasource?.data}
             columns={columns(t, handleSeeMore)}
             isLoading={isFetching}
-            className="ui-overflow-x-auto"
+            className="ui:overflow-x-auto"
           />
           <PaginationContainer>
             <PaginationSelectLimit

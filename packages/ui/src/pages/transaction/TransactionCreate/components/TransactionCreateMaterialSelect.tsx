@@ -24,7 +24,7 @@ export const TransactionCreateMaterialSelect = () => {
   } = useCreateMaterialSelect({ search })
 
   return (
-    <div className="ui-w-full">
+    <div className="ui:w-full">
       <InfiniteScrollList
         id="list-material-transaction-create"
         title={handleTitle()}

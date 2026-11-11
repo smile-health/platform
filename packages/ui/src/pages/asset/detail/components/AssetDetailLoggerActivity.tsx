@@ -51,7 +51,7 @@ const AssetDetailLoggerActivity = () => {
   return (
     <AssetDetailLoggerActivityContext.Provider value={contextValue}>
       <AssetDetailLoggerActivityFilter loggerOptions={loggerOptions} />
-      <div className="ui-mt-4">
+      <div className="ui:mt-4">
         <AssetDetailLoggerActivityTable />
       </div>
     </AssetDetailLoggerActivityContext.Provider>

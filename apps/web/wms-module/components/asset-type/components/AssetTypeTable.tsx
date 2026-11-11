@@ -21,7 +21,7 @@ export default function AssetTypeTable({
   const { t } = useTranslation(['common', 'assetType']);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={assetTypeData}
         columns={columnsAssetType(t, {

@@ -49,10 +49,10 @@ const EntityDetailUser: React.FC<CommonType> = ({ isGlobal }) => {
   useSetLoadingPopupStore(isLoadingPopup)
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-gray-300 ui-rounded ui-space-y-4">
-      <div className="ui-flex ui-justify-between ui-items-center">
-        <h5 className="ui-font-bold">{t('entity:detail.users.title')}</h5>
-        <div className="ui-w-[378px]">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-gray-300 ui:rounded ui:space-y-4">
+      <div className="ui:flex ui:justify-between ui:items-center">
+        <h5 className="ui:font-bold">{t('entity:detail.users.title')}</h5>
+        <div className="ui:w-[378px]">
           <InputSearch
             id="input-search-entity-user"
             placeholder={t('entity:detail.users.placeholder')}

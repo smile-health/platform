@@ -53,27 +53,27 @@ const GlobalSettingProgramListPage = () => {
     >
       <Meta title="SMILE | Global Program Management" />
 
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid-cols-3 ui-items-end">
+          <FilterFormBody className="ui:grid-cols-3 ui:items-end">
             {filter.renderField()}
-            <div className="ui-flex ui-gap-2 ui-justify-end">
+            <div className="ui:flex ui:gap-2 ui:justify-end">
               <Button
                 id="btn-export"
                 variant="subtle"
                 type="button"
-                className="ui-px-2"
-                leftIcon={<Export className="ui-size-5" />}
+                className="ui:px-2"
+                leftIcon={<Export className="ui:size-5" />}
                 onClick={() => refetchExport()}
               >
                 {t('common:export')}
               </Button>
-              <span className="ui-h-auto ui-w-px ui-bg-neutral-300" />
+              <span className="ui:h-auto ui:w-px ui:bg-neutral-300" />
               <FilterResetButton variant="subtle" onClick={filter.reset} />
               <FilterSubmitButton
                 onClick={() => handleChangePage(1)}
                 variant="outline"
-                className="ui-w-[220px]"
+                className="ui:w-[220px]"
               ></FilterSubmitButton>
             </div>
           </FilterFormBody>

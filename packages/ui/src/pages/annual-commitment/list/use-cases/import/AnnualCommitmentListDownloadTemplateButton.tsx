@@ -27,7 +27,7 @@ const AnnualCommitmentListDownloadTemplateButton = () => {
       variant="subtle"
       type="button"
       onClick={handleDownloadTemplate}
-      leftIcon={<Download className="ui-size-5" />}
+      leftIcon={<Download className="ui:size-5" />}
     >
       {t('button.downloadTemplate')}
     </Button>

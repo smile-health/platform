@@ -61,9 +61,9 @@ const AnnualPlanningProcessListPage: React.FC = () => {
           onSubmit={mutateActivateMinMaxProvince}
         />
 
-        <div className="ui-space-y-6">
-          <div className="ui-flex ui-justify-between ui-items-center">
-            <h5 className="ui-font-bold ui-text-xl">
+        <div className="ui:space-y-6">
+          <div className="ui:flex ui:justify-between ui:items-center">
+            <h5 className="ui:font-bold ui:text-xl">
               {t('annualPlanningProcess:list.title')}
             </h5>
             {userTag === ENTITY_TYPE.KOTA && (
@@ -72,8 +72,8 @@ const AnnualPlanningProcessListPage: React.FC = () => {
                 data-testid="create-annual-planning-process"
                 type="button"
                 onClick={handleCreate}
-                className="ui-min-w-40"
-                leftIcon={<Plus className="ui-size-5" />}
+                className="ui:min-w-40"
+                leftIcon={<Plus className="ui:size-5" />}
               >
                 {t('annualPlanningProcess:list.create')}
               </Button>
@@ -89,7 +89,7 @@ const AnnualPlanningProcessListPage: React.FC = () => {
               isLoading={isFetchingProvince}
               emptyTitle={emptyMessage?.title}
               emptyDescription={emptyMessage?.description}
-              emptyIcon={<EmptyFilter className="ui-size-6 ui-text-[#52525B]" />}
+              emptyIcon={<EmptyFilter className="ui:size-6 ui:text-[#52525B]" />}
             />
           )}
 

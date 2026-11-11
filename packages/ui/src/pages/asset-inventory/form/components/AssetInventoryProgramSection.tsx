@@ -20,22 +20,22 @@ export const AssetInventoryProgramSection = ({
   const { control } = useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('assetInventory:form.title.program')}
       </div>
-      <div className="ui-border ui-rounded ui-border-grey-200 ui-py-3 ui-px-4 ui-bg-[#F1F5F9]">
-        <div className="ui-flex ui-flex-row ui-items-center ui-mb-1">
-          <InformationCircleIcon className="ui-h-5 ui-w-5 ui-text-grey-500 ui-inline-block ui-mr-1 ui-font-bold" />
-          <p className="ui-text-xs ui-font-bold">
+      <div className="ui:border ui:rounded ui-border-grey-200 ui:py-3 ui:px-4 ui:bg-slate-100">
+        <div className="ui:flex ui:flex-row ui:items-center ui:mb-1">
+          <InformationCircleIcon className="ui:h-5 ui:w-5 ui-text-grey-500 ui:inline-block ui:mr-1 ui:font-bold" />
+          <p className="ui:text-xs ui:font-bold">
             {t('assetInventory:form.information.program.title')}
           </p>
         </div>
-        <p className="ui-text-xs ui-text-grey-500">
+        <p className="ui:text-xs ui-text-grey-500">
           {t('assetInventory:form.information.program.description')}
         </p>
       </div>
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="program_ids">
           {t('assetInventory:columns.related_program.label')}
         </FormLabel>

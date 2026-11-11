@@ -10,11 +10,11 @@ const StockOpnameStatusBox: FC<StockOpnameStatusBoxProps> = ({ status }) => {
   const { t } = useTranslation(['common', 'stockOpname'])
 
   const boxStyle = cx(
-    'ui-text-sm ui-font-normal ui-text-center',
-    'ui-py-1 ui-px-4 ui-w-fit ui-rounded-full',
+    'ui:text-sm ui:font-normal ui:text-center',
+    'ui:py-1 ui:px-4 ui:w-fit ui:rounded-full',
     {
-      'ui-text-green-700 ui-bg-green-50': status === BOOLEAN.TRUE,
-      'ui-text-neutral-500 ui-bg-stone-100': status === BOOLEAN.FALSE,
+      'ui:text-green-700 ui:bg-green-50': status === BOOLEAN.TRUE,
+      'ui:text-neutral-500 ui:bg-stone-100': status === BOOLEAN.FALSE,
     }
   )
 

@@ -26,14 +26,14 @@ export default function EntityFormProgram({ programs }: Props) {
     useProgramInfiniteList()
 
   return (
-    <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded">
+    <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded">
       {/* Header */}
-      <div className="ui-flex ui-flex-col ui-gap-4">
-        <div className="ui-font-bold">Programs</div>
+      <div className="ui:flex ui:flex-col ui:gap-4">
+        <div className="ui:font-bold">Programs</div>
 
-        <div className="ui-flex ui-items-center ui-gap-2 ui-rounded ui-bg-slate-100 ui-px-4 ui-py-[9px]">
+        <div className="ui:flex ui:items-center ui:gap-2 ui:rounded ui:bg-slate-100 ui:px-4 ui:py-[9px]">
           <Warning />
-          <p className="ui-text-xs">{t('entity:form.programs.description')}</p>
+          <p className="ui:text-xs">{t('entity:form.programs.description')}</p>
         </div>
 
         {/* Search */}
@@ -54,7 +54,7 @@ export default function EntityFormProgram({ programs }: Props) {
             loadMore={loadMore}
             loading={loading}
           >
-            <div className="ui-grid ui-grid-cols-1 ui-gap-2 ui-mt-4">
+            <div className="ui:grid ui:grid-cols-1 ui:gap-2 ui:mt-4">
               {data?.map((item) => {
                 if (!item) return null
 
@@ -80,7 +80,7 @@ export default function EntityFormProgram({ programs }: Props) {
               {data?.length === 0 && (
                 <EmptyState
                   withIcon
-                  className="ui-h-[480px]"
+                  className="ui:h-[480px]"
                   title={t('common:message.empty.title')}
                   description={t('common:message.empty.description')}
                 />

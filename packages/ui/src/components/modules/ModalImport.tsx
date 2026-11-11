@@ -116,7 +116,7 @@ export function ModalImport({
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
+      <DialogHeader className="ui:text-center ui:text-xl">
         {handlePopupTitle()}
       </DialogHeader>
       <DialogContent>
@@ -130,13 +130,13 @@ export function ModalImport({
             maxSize={maxSize}
           />
           {description && (
-            <p className="ui-text-sm ui-text-neutral-500">{description}</p>
+            <p className="ui:text-sm ui:text-neutral-500">{description}</p>
           )}
           {error && <FormErrorMessage>{error}</FormErrorMessage>}
         </FormControl>
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-9/12 mx-auto">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-9/12 mx-auto">
           <Button
             id="btn-close-modal-import"
             variant="default"

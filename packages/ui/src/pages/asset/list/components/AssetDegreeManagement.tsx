@@ -22,9 +22,9 @@ export const colorClass = (
   value: number,
   parent: AssetDegreeManagementProps['parent']
 ) => {
-  if (value < parent?.min_temp) return 'ui-text-blue-700'
-  if (value > parent?.max_temp) return 'ui-text-rose-500'
-  return 'ui-text-green-500'
+  if (value < parent?.min_temp) return 'ui:text-blue-700'
+  if (value > parent?.max_temp) return 'ui:text-rose-500'
+  return 'ui:text-green-500'
 }
 const AssetDegreeManagement: React.FC<AssetDegreeManagementProps> = ({
   latestLog,
@@ -38,9 +38,9 @@ const AssetDegreeManagement: React.FC<AssetDegreeManagementProps> = ({
 
   if (!statusDevice || (!latestLog && !temp)) return '-'
   return (
-    <div className="ui-flex ui-justify-start ui-items-start ui-gap-2">
+    <div className="ui:flex ui:justify-start ui:items-start ui:gap-2">
       <div
-        className={`${colorClass(latestLog?.temp ?? temp, parent)} ui-font-bold`}
+        className={`${colorClass(latestLog?.temp ?? temp, parent)} ui:font-bold`}
       >
         {formatToCelcius(
           thousandFormatter({
@@ -49,8 +49,8 @@ const AssetDegreeManagement: React.FC<AssetDegreeManagementProps> = ({
           })
         )}
       </div>
-      <div className="ui-flex ui-flex-col ui-gap-1">
-        <div className="ui-text-dark-teal">
+      <div className="ui:flex ui:flex-col ui:gap-1">
+        <div className="ui:text-dark-teal">
           {dayjs(latestLog?.updated_at)
             .locale(language)
             .format('DD MMM YYYY')
@@ -59,7 +59,7 @@ const AssetDegreeManagement: React.FC<AssetDegreeManagementProps> = ({
         {assetType?.id === ASSET_TYPE.REMOTE_TEMPERATURE_MONITORING && (
           <Button
             variant="subtle"
-            className="ui-text-blue-400"
+            className="ui:text-blue-400"
             onClick={() => {}}
           >
             {t('asset:columns.view_temperature')}

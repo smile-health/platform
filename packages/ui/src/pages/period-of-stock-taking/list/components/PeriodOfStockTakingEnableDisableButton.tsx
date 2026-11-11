@@ -36,11 +36,11 @@ const PeriodOfStockTakingEnableDisableButton: FC<
 
   return (
     <>
-      <div className="ui-h-auto ui-w-fit div__switch">
+      <div className="ui:h-auto ui:w-fit div__switch">
         <Switch
           checked={data?.status === BOOLEAN.TRUE}
           onCheckedChange={handleChangeStatus}
-          className="ui-w-10 ui-h-6 ui-rounded-full ui-bg-gray-200 ui-relative ui-transition-colors ui-duration-200 ui-ease-in-out"
+          className="ui:w-10 ui:h-6 ui:rounded-full ui:bg-gray-200 ui:relative ui:transition-colors ui:duration-200 ui:ease-in-out"
           size="xl"
           labelInside={{
             on: t('periodOfStockTaking:active'),

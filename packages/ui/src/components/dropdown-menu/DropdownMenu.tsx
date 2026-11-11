@@ -117,7 +117,7 @@ export const DropdownMenuContent = React.forwardRef<
             align={align}
             sideOffset={sideOffset}
             ref={ref}
-            className="ui-rounded ui-border ui-border-gray-300 ui-bg-white ui-px-0.5 ui-py-0.5 ui-shadow-lg"
+            className="ui:rounded ui:border ui:border-gray-300 ui:bg-white ui:px-0.5 ui:py-0.5 ui:shadow-lg"
           >
             <motion.div
               variants={motionVariants}
@@ -158,22 +158,22 @@ export function DropdownMenuItem({
       disabled={disabled}
       onSelect={onSelect}
       className={cx(
-        'ui-relative ui-flex ui-items-center ui-space-x-2 ui-rounded ui-px-3 ui-py-2',
-        'ui-cursor-pointer ui-text-sm focus:ui-outline-none',
-        'data-[disabled]:ui-pointer-events-none data-[disabled]:ui-opacity-50',
+        'ui:relative ui:flex ui:items-center ui:space-x-2 ui:rounded ui:px-3 ui:py-2',
+        'ui:cursor-pointer ui:text-sm ui:focus:outline-hidden',
+        'ui:data-disabled:pointer-events-none ui:data-disabled:opacity-50',
         color === 'primary' && [
-          'ui-text-gray-700',
-          'data-[highlighted]:ui-bg-gray-100',
+          'ui:text-gray-700',
+          'ui:data-highlighted:bg-gray-100',
         ],
         color === 'danger' && [
-          'ui-text-danger-600',
-          'data-[highlighted]:ui-bg-danger-50',
+          'ui:text-danger-600',
+          'ui:data-highlighted:bg-danger-50',
         ],
         className
       )}
     >
       {leftIcon ? <div>{leftIcon}</div> : null}
-      <div className="ui-flex-1">{props.children}</div>
+      <div className="ui:flex-1">{props.children}</div>
       {rightIcon ? <div>{rightIcon}</div> : null}
     </DropdownMenuPrimitive.Item>
   )
@@ -185,7 +185,7 @@ export function DropdownMenuLabel({
   readonly children?: React.ReactNode
 }) {
   return (
-    <DropdownMenuPrimitive.Label className="ui-flex ui-items-center ui-px-3 ui-text-xs ui-text-gray-500 mb-2 mt-1.5 font-semibold ">
+    <DropdownMenuPrimitive.Label className="ui:flex ui:items-center ui:px-3 ui:text-xs ui:text-gray-500 mb-2 mt-1.5 font-semibold ">
       {children}
     </DropdownMenuPrimitive.Label>
   )
@@ -193,7 +193,7 @@ export function DropdownMenuLabel({
 
 export function DropdownMenuSeparator() {
   return (
-    <DropdownMenuPrimitive.Separator className="ui-border-b ui-border-gray-300 mx-[-2px] my-2"></DropdownMenuPrimitive.Separator>
+    <DropdownMenuPrimitive.Separator className="ui:border-b ui:border-gray-300 mx-[-2px] my-2"></DropdownMenuPrimitive.Separator>
   )
 }
 
@@ -233,16 +233,16 @@ export function DropdownMenuSubTrigger({
     <DropdownMenuPrimitive.SubTrigger
       disabled={disabled}
       className={cx(
-        'ui-relative ui-flex ui-items-center ui-space-x-2 ui-rounded ui-px-3 ui-py-2',
-        'ui-cursor-pointer ui-text-sm focus:ui-outline-none',
-        'data-[disabled]:ui-pointer-events-none data-[disabled]:ui-opacity-50',
-        'ui-text-gray-700',
-        'data-[highlighted]:ui-bg-gray-100'
+        'ui:relative ui:flex ui:items-center ui:space-x-2 ui:rounded ui:px-3 ui:py-2',
+        'ui:cursor-pointer ui:text-sm ui:focus:outline-hidden',
+        'ui:data-disabled:pointer-events-none ui:data-disabled:opacity-50',
+        'ui:text-gray-700',
+        'ui:data-highlighted:bg-gray-100'
       )}
     >
       {leftIcon ? <div>{leftIcon}</div> : null}
-      <div className="ui-flex-1">{children}</div>
-      <div className="ui-h-3.5 ui-w-3.5">
+      <div className="ui:flex-1">{children}</div>
+      <div className="ui:h-3.5 ui:w-3.5">
         <ChevronRightIcon></ChevronRightIcon>
       </div>
     </DropdownMenuPrimitive.SubTrigger>
@@ -265,7 +265,7 @@ export const DropdownMenuSubContent = React.forwardRef<
             {...props}
             asChild
             ref={ref}
-            className="ui-rounded ui-bg-white ui-px-0.5 ui-py-0.5 ui-shadow-lg ui-ring-1 ui-ring-black ui-ring-opacity-10 focus:ui-outline-none"
+            className="ui:rounded ui:bg-white ui:px-0.5 ui:py-0.5 ui:shadow-lg ui:ring-1 ui:ring-black/10 ui:focus:outline-hidden"
           >
             <motion.div
               variants={motionVariants}

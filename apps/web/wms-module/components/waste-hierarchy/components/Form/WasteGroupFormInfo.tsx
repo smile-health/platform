@@ -40,9 +40,9 @@ const WasteGroupFormInfo: React.FC = () => {
   } = useFormContext<WasteGroupFormData>();
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
           <Controller
             name="waste_type"
             control={control}

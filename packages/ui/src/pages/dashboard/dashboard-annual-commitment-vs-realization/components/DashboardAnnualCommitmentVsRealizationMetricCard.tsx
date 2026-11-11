@@ -29,30 +29,30 @@ const DashboardAnnualCommitmentVsRealizationMetricCard: React.FC<Props> = ({
   return (
     <DashboardBox.Root id="dashboard-annual-commitment-vs-realization-total-annual">
       <DashboardBox.Header bordered size="small">
-        <div className="ui-flex ui-justify-center ui-items-center ui-gap-1.5">
+        <div className="ui:flex ui:justify-center ui:items-center ui:gap-1.5">
           <h4><strong>{title}</strong></h4>
 
           <button
             type="button"
             onClick={setInformation}
           >
-            <InformationCircleIcon className="ui-size-5" />
+            <InformationCircleIcon className="ui:size-5" />
           </button>
         </div>
       </DashboardBox.Header>
       <DashboardBox.Body>
         <DashboardBox.Content
-          className="ui-py-3 ui-text-center"
+          className="ui:py-3 ui:text-center"
           isLoading={isLoading}
           isEmpty={isEmpty}
         >
-          <div className="ui-space-y-2">
-            <p className="ui-text-4xl ui-font-bold ui-text-primary-800">
+          <div className="ui:space-y-2">
+            <p className="ui:text-4xl ui:font-bold ui:text-primary-800">
               {numberFormatter(data?.value, language)}
             </p>
 
             {data?.deviation ? (
-              <p className="ui-text-xs ui-font-bold ui-text-primary-800">
+              <p className="ui:text-xs ui:font-bold ui:text-primary-800">
                 {data?.deviation > 0 ? '+' : ''}{numberFormatter(data?.deviation, language)}
               </p>
             ) : <br />}

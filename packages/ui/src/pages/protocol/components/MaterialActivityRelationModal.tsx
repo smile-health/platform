@@ -89,25 +89,25 @@ const MaterialActivityRelationModal: React.FC<Props> = ({
         <Dialog open={open} onOpenChange={handleClose} size="2xl">
           <DialogCloseButton />
           <DialogHeader>
-            <h3 className="ui-text-center ui-text-[20px] ui-font-semibold">
+            <h3 className="ui:text-center ui:text-[20px] ui:font-semibold">
               {t('protocol:detail.material_activity.relation.add.button')}
             </h3>
           </DialogHeader>
-          <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-          <DialogContent className="ui-overflow-auto ui-my-[8px]">
-            <div className="ui-flex ui-items-end ui-justify-between">
-              <div className="ui-flex ui-flex-col">
-                <h4 className="ui-text-[14px] ui-leading-[20px] ui-text-neutral-500">
+          <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+          <DialogContent className="ui:overflow-auto ui:my-[8px]">
+            <div className="ui:flex ui:items-end ui:justify-between">
+              <div className="ui:flex ui:flex-col">
+                <h4 className="ui:text-[14px] ui:leading-[20px] ui:text-neutral-500">
                   {t('protocol:column.name')}:
                 </h4>
-                <h5 className="ui-text-[16px] ui-leading-[20px] ui-text-[#0C3045] ui-font-bold">
+                <h5 className="ui:text-[16px] ui:leading-[20px] ui:text-dark-blue ui:font-bold">
                   {protocolName}
                 </h5>
               </div>
-              <div className="ui-flex ui-justify-end ui-items-center ui-w-[325px]">
+              <div className="ui:flex ui:justify-end ui:items-center ui:w-[325px]">
                 <Button
                   variant="light"
-                  className="ui-mr-[16px] ui-p-0 ui-bg-transparent hover:!ui-bg-transparent"
+                  className="ui:mr-[16px] ui:p-0 ui:bg-transparent ui:hover:bg-transparent!"
                   onClick={() =>
                     setValue('relations', [
                       ...watch('relations'),
@@ -119,7 +119,7 @@ const MaterialActivityRelationModal: React.FC<Props> = ({
                   }
                   type="button"
                 >
-                  <div className="ui-mr-[4.16px]">
+                  <div className="ui:mr-[4.16px]">
                     <Plus />
                   </div>
                   {t('protocol:detail.material_activity.relation.add.button')}
@@ -129,10 +129,10 @@ const MaterialActivityRelationModal: React.FC<Props> = ({
             {inputFields.length > 0
               ? inputFields.map((item: TRelationSelected, idx: number) => (
                   <div
-                    className="ui-my-[16px] ui-flex ui-justify-center ui-items-start"
+                    className="ui:my-[16px] ui:flex ui:justify-center ui:items-start"
                     key={idx?.toString()}
                   >
-                    <FormControl className="ui-mr-[16px] ui-w-full">
+                    <FormControl className="ui:mr-[16px] ui:w-full">
                       <FormLabel>
                         {t(
                           'protocol:detail.material_activity.relation.activity.label'
@@ -182,7 +182,7 @@ const MaterialActivityRelationModal: React.FC<Props> = ({
                         </FormErrorMessage>
                       )}
                     </FormControl>
-                    <FormControl className="ui-w-full">
+                    <FormControl className="ui:w-full">
                       <FormLabel>
                         {t(
                           'protocol:detail.material_activity.relation.material.label'
@@ -239,7 +239,7 @@ const MaterialActivityRelationModal: React.FC<Props> = ({
                     <Button
                       variant="light"
                       color="danger"
-                      className="ui-bg-transparent ui-p-0 ui-h-auto hover:!ui-bg-transparent ui-ml-4 ui-mt-[28px]"
+                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent! ui:ml-4 ui:mt-[28px]"
                       onClick={() =>
                         setValue(
                           'relations',
@@ -254,7 +254,7 @@ const MaterialActivityRelationModal: React.FC<Props> = ({
                       type="button"
                     >
                       {t('common:delete')}
-                      <div className="ui-ml-[4.16px] ui-rotate-45 ui-mt-1">
+                      <div className="ui:ml-[4.16px] ui:rotate-45 ui:mt-1">
                         <Plus />
                       </div>
                     </Button>
@@ -262,20 +262,20 @@ const MaterialActivityRelationModal: React.FC<Props> = ({
                 ))
               : null}
           </DialogContent>
-          <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
+          <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
           <DialogFooter>
-            <div className="ui-flex ui-justify-center ui-items-end ui-w-full ui-mb-[8px]">
+            <div className="ui:flex ui:justify-center ui:items-end ui:w-full ui:mb-[8px]">
               <Button
                 variant="outline"
                 onClick={handleClose}
-                className="ui-mr-[12px] ui-w-full"
+                className="ui:mr-[12px] ui:w-full"
                 type="button"
               >
                 {t('common:cancel')}
               </Button>
               <Button
                 variant="solid"
-                className="ui-w-full"
+                className="ui:w-full"
                 type="button"
                 onClick={() => handleSubmit(onSubmit)}
                 disabled={isDisabledSubmitButton}

@@ -64,7 +64,7 @@ export default function DashboardStockTakingDataDisplay({
   const isLoadingSummary = loadingSummaryProps || loadingSummary
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       {isLoadingSummary && tab && (
         <DashboardStockTakingSummarySkeleton type={tab} />
       )}
@@ -75,8 +75,8 @@ export default function DashboardStockTakingDataDisplay({
             key={item?.name}
             title={item?.name}
             gridColsClass={cx({
-              'ui-grid-cols-3': tab === 'entity',
-              'ui-grid-cols-5': tab === 'result',
+              'ui:grid-cols-3': tab === 'entity',
+              'ui:grid-cols-5': tab === 'result',
             })}
             list={item?.list}
           />

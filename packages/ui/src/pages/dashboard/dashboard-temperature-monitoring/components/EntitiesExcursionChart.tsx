@@ -38,10 +38,10 @@ export default function EntitiesExcursionChart({
 
   return (
     <DashboardBox.Root id="entities-excursion-chart">
-      <DashboardBox.Header className="ui-bg-white ui-border-b ui-border-gray-200">
-        <div className="ui-flex ui-flex-col ui-items-center ui-justify-center">
-          <div className="ui-flex ui-items-center ui-gap-1">
-            <h3 className="ui-font-semibold ui-text-sm">
+      <DashboardBox.Header className="ui:bg-white ui:border-b ui:border-gray-200">
+        <div className="ui:flex ui:flex-col ui:items-center ui:justify-center">
+          <div className="ui:flex ui:items-center ui:gap-1">
+            <h3 className="ui:font-semibold ui:text-sm">
               {t('temperature_excursion.charts.entities_excursion.title')}
             </h3>
             <DashboardBox.InfoModal
@@ -55,12 +55,12 @@ export default function EntitiesExcursionChart({
                 </p>
               }
             >
-              <p className="ui-text-gray-500">
+              <p className="ui:text-gray-500">
                 {t('temperature_excursion.charts.entities_excursion.info')}
               </p>
             </DashboardBox.InfoModal>
           </div>
-          <p className="ui-text-xs ui-text-gray-500">
+          <p className="ui:text-xs ui:text-gray-500">
             {t('temperature_excursion.charts.entities_excursion.subtitle')}
           </p>
         </div>
@@ -79,7 +79,7 @@ export default function EntitiesExcursionChart({
           isLoading={isLoading}
           isEmpty={!data || data?.total === 0}
         >
-          <div className="ui-h-[250px]">
+          <div className="ui:h-[250px]">
             <PieChart
               data={chartData}
               color={COLORS}
@@ -91,7 +91,7 @@ export default function EntitiesExcursionChart({
             />
           </div>
           {lastUpdated && (
-            <p className="ui-text-xs ui-text-gray-500 ui-text-center ui-mt-2 ui-pb-2">
+            <p className="ui:text-xs ui:text-gray-500 ui:text-center ui:mt-2 ui:pb-2">
               {t('summary.last_updated_at', { time: lastUpdated })}
             </p>
           )}

@@ -90,25 +90,25 @@ export const ChangeHistoryCard: React.FC<ChangeHistoryCardProps> = ({
       )}
 
       <div
-        className="ui-flex ui-justify-between"
+        className="ui:flex ui:justify-between"
         id={`changeHistory-${history.id}`}
       >
-        <div className="ui-flex ui-flex-col ui-justify-start">
+        <div className="ui:flex ui:flex-col ui:justify-start">
           <div
-            className="ui-text-dark-blue"
+            className="ui:text-dark-blue"
             id={`changeHistoryTitle-${history.id}`}
           >
             {updateCount} {t('account:information_updated')}
           </div>
           <div
-            className="ui-text-gray-600"
+            className="ui:text-gray-600"
             id={`changeHistoryUpdateDate-${history.id}`}
           >
             {parseDateTime(history.created_at, 'DD MMMM YYYY HH:mm')}{' '}
             {t('common:by')} {history.updated_by}
           </div>
         </div>
-        <div className="ui-text-dark-blue ui-flex ui-justify-end">
+        <div className="ui:text-dark-blue ui:flex ui:justify-end">
           <button
             onClick={() => setShowDetailChangeHistory(history.id)}
             id={`changeHistoryButtonSeeChanges-${history.id}`}

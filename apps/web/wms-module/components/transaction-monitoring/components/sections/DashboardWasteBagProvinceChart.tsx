@@ -43,7 +43,7 @@ export default function DashboardWasteBagProvinceChart({
       <DashboardBox.Content
         isLoading={isLoading}
         isEmpty={!data?.length}
-        className="ui-overflow-y-auto"
+        className="ui:overflow-y-auto"
       >
         <BarChart
           data={data}

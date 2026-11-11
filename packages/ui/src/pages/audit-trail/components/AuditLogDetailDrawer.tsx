@@ -21,10 +21,10 @@ type AuditLogDetailDrawerProps = {
 function Field({ label, value }: { label: string; value?: string | null }) {
   return (
     <div>
-      <div className="ui-text-sm ui-font-medium ui-text-neutral-500">
+      <div className="ui:text-sm ui:font-medium ui:text-neutral-500">
         {label}
       </div>
-      <div className="ui-break-all ui-font-semibold ui-text-primary-800">
+      <div className="ui:break-all ui:font-semibold ui:text-primary-800">
         {value || '-'}
       </div>
     </div>
@@ -37,27 +37,27 @@ function ChangeSummary({ item }: { item: TAuditLog }) {
 
   return (
     <div data-testid="audit-log-changes">
-      <div className="ui-mb-1 ui-text-sm ui-font-medium ui-text-neutral-500">
+      <div className="ui:mb-1 ui:text-sm ui:font-medium ui:text-neutral-500">
         {t('auditTrail:detail.changes')}
       </div>
-      <p className="ui-font-semibold ui-text-primary-800">{summary}</p>
+      <p className="ui:font-semibold ui:text-primary-800">{summary}</p>
       {changes.length > 0 ? (
-        <ul className="ui-mt-2 ui-space-y-1 ui-text-sm">
+        <ul className="ui:mt-2 ui:space-y-1 ui:text-sm">
           {changes.map((change) => (
-            <li key={change.field} className="ui-break-all">
-              <span className="ui-text-neutral-500">{change.field}: </span>
+            <li key={change.field} className="ui:break-all">
+              <span className="ui:text-neutral-500">{change.field}: </span>
               {change.before !== undefined && (
-                <span className="ui-line-through ui-text-neutral-500">
+                <span className="ui:line-through ui:text-neutral-500">
                   {change.before}
                 </span>
               )}
               {change.before !== undefined && ' → '}
-              <span className="ui-font-medium">{change.after}</span>
+              <span className="ui:font-medium">{change.after}</span>
             </li>
           ))}
         </ul>
       ) : (
-        <p className="ui-mt-1 ui-text-sm ui-text-neutral-500">
+        <p className="ui:mt-1 ui:text-sm ui:text-neutral-500">
           {t('auditTrail:description.no_changes')}
         </p>
       )}
@@ -81,8 +81,8 @@ export default function AuditLogDetailDrawer({
       <DrawerHeader title={t('auditTrail:detail.title')} />
       <DrawerContent>
         {item && (
-          <div className="ui-space-y-4">
-            <div className="ui-grid ui-grid-cols-2 ui-gap-4">
+          <div className="ui:space-y-4">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-4">
               <Field
                 label={t('auditTrail:column.created_at')}
                 value={formatAuditDateTime(item.created_at, 'DD/MM/YYYY HH:mm:ss')}
@@ -97,18 +97,18 @@ export default function AuditLogDetailDrawer({
             </div>
             <ChangeSummary item={item} />
             <div>
-              <div className="ui-mb-1 ui-text-sm ui-font-medium ui-text-neutral-500">
+              <div className="ui:mb-1 ui:text-sm ui:font-medium ui:text-neutral-500">
                 {t('auditTrail:detail.metadata')}
               </div>
               {item.metadata ? (
                 <pre
                   data-testid="audit-log-metadata"
-                  className="ui-max-h-[60vh] ui-overflow-auto ui-rounded ui-bg-neutral-100 ui-p-3 ui-text-xs"
+                  className="ui:max-h-[60vh] ui:overflow-auto ui:rounded ui:bg-neutral-100 ui:p-3 ui:text-xs"
                 >
                   {JSON.stringify(item.metadata, null, 2)}
                 </pre>
               ) : (
-                <p className="ui-text-sm ui-text-neutral-500">
+                <p className="ui:text-sm ui:text-neutral-500">
                   {t('auditTrail:detail.no_metadata')}
                 </p>
               )}

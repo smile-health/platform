@@ -29,7 +29,7 @@ const StockOpnameListTable: React.FC<Props> = ({ data }): JSX.Element => {
             locale: i18n.language,
           })}
         />
-        <PaginationContainer className="ui-mt-5">
+        <PaginationContainer className="ui:mt-5">
           <PaginationSelectLimit
             size={data?.item_per_page}
             perPagesOptions={data?.list_pagination}

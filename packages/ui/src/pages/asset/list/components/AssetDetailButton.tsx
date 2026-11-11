@@ -14,12 +14,12 @@ const AssetDetailButton: React.FC<AssetDetailButtonProps> = ({ id }) => {
   return (
     <Link
       href={router.getAsLink(`/v5/asset/${id}`)}
-      className="ui-p-0 ui-space-x-2 ui-block ui-my-2 ui-w-fit"
+      className="ui:p-0 ui:space-x-2 ui:block ui:my-2 ui:w-fit"
     >
       <Button
         type="button"
         variant="subtle"
-        className="ui-w-fit ui-p-0 hover:!ui-bg-transparent hover:ui-font-semibold"
+        className="ui:w-fit ui:p-0 ui:hover:bg-transparent! ui:hover:font-semibold"
       >
         {t('common:detail')}
       </Button>

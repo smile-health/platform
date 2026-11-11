@@ -55,12 +55,12 @@ export const availabilityIndicatorColor = ({
   minQty: number
   maxQty: number
 }) => {
-  if (availableQty === 0) return 'ui-bg-red-50'
-  if (availableQty < minQty) return 'ui-bg-orange-50'
+  if (availableQty === 0) return 'ui:bg-red-50'
+  if (availableQty < minQty) return 'ui:bg-orange-50'
   if (availableQty >= minQty && (availableQty <= maxQty || maxQty === 0))
-    return 'ui-bg-green-50'
-  if (availableQty > maxQty) return 'ui-bg-blue-50'
-  return 'ui-bg-white'
+    return 'ui:bg-green-50'
+  if (availableQty > maxQty) return 'ui:bg-blue-50'
+  return 'ui:bg-white'
 }
 
 // Submitter

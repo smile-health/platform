@@ -57,8 +57,8 @@ const DashboardOrderDifferenceOverall = forwardRef<TDashboardIOTHandler, Props>(
       cell: ({ getValue }: { getValue: VoidFunction }) =>
         numberFormatter(getValue() ?? 0, language),
       meta: {
-        headerClassName: 'ui-text-center',
-        cellClassName: 'ui-text-center',
+        headerClassName: 'ui:text-center',
+        cellClassName: 'ui:text-center',
       },
     }))
 

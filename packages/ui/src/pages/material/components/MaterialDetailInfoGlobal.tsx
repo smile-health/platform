@@ -50,16 +50,16 @@ const MaterialDetailInfoGlobal = ({
       {isHierarchyEnabled &&
         isKFA93 &&
         (!relationData || isRelationLoading) && (
-          <div className="ui-grid ui-grid-cols-4 ui-gap-4">
-            <Skeleton className="ui-h-32 ui-w-full" />
-            <Skeleton className="ui-h-32 ui-w-full" />
-            <Skeleton className="ui-h-32 ui-w-full" />
-            <Skeleton className="ui-h-32 ui-w-full" />
+          <div className="ui:grid ui:grid-cols-4 ui:gap-4">
+            <Skeleton className="ui:h-32 ui:w-full" />
+            <Skeleton className="ui:h-32 ui:w-full" />
+            <Skeleton className="ui:h-32 ui:w-full" />
+            <Skeleton className="ui:h-32 ui:w-full" />
           </div>
         )}
 
       {isHierarchyEnabled && relationData && !isRelationLoading && (
-        <div className="ui-grid ui-grid-cols-4 ui-gap-2">
+        <div className="ui:grid ui:grid-cols-4 ui:gap-2">
           {relationData.material_hierarchy.map((item) => {
             let label = ''
             let value = item.materials

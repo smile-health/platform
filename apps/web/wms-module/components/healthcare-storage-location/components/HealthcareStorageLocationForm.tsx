@@ -157,10 +157,10 @@ const HealthcareStorageLocationForm = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onValid, onInvalid)}>
-        <div className="ui-w-full">
+        <div className="ui:w-full">
           {isLoadingEntitySettings ? (
-            <div className="ui-w-full ui-flex ui-items-center ui-justify-center ui-my-20">
-              <Spinner className="ui-h-8 ui-w-8" />
+            <div className="ui:w-full ui:flex ui:items-center ui:justify-center ui:my-20">
+              <Spinner className="ui:h-8 ui:w-8" />
             </div>
           ) : (
             <HealthcareStorageLocationFormInfo

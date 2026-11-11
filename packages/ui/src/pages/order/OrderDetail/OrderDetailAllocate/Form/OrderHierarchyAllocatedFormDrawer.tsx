@@ -167,16 +167,16 @@ const OrderHierarchyAllocatedFormDrawer = ({
                 const error = childErrors?.allocations?.[originalIndex]?.order_stock_status_id
                 const itemHeightClass = isBatch
                   ? error
-                    ? 'ui-h-[120px]'
-                    : 'ui-h-24'
+                    ? 'ui:h-[120px]'
+                    : 'ui:h-24'
                   : error
-                    ? 'ui-h-[72px]'
-                    : 'ui-h-12'
+                    ? 'ui:h-[72px]'
+                    : 'ui:h-12'
 
                 return (
                   <div
                     key={value.stock_id}
-                    className={`ui-text-sm ui-flex ui-flex-col ui-justify-center ${itemHeightClass}`}
+                    className={`ui:text-sm ui:flex ui:flex-col ui:justify-center ${itemHeightClass}`}
                   >
                     {Boolean(value?._stock_material?.is_managed_in_batch) && (
                       <>
@@ -197,7 +197,7 @@ const OrderHierarchyAllocatedFormDrawer = ({
                       {t('orderDetail:data.stock_from_activity')}:{' '}
                       {value?._stock_detail?.activity?.name ?? '-'}
                     </div>
-                    <div className="ui-font-semibold">
+                    <div className="ui:font-semibold">
                       Qty: {numberFormatter(value.allocated_qty, i18n.language)}
                     </div>
                   </div>
@@ -206,13 +206,13 @@ const OrderHierarchyAllocatedFormDrawer = ({
             </div>
           )}
 
-          <div className="ui-space-y-1">
+          <div className="ui:space-y-1">
             <Button
               size="sm"
               type="button"
               leftIcon={
                 !isFilteredAllocationExist && (
-                  <PlusIcon className="ui-w-5 ui-text-dark-blue" />
+                  <PlusIcon className="ui:w-5 ui:text-dark-blue" />
                 )
               }
               variant="outline"
@@ -259,7 +259,7 @@ const OrderHierarchyAllocatedFormDrawer = ({
     )
 
     if (filteredAllocations.length === 0) {
-      return <div className="ui-h-12 ui-flex ui-items-center">-</div>
+      return <div className="ui:h-12 ui:flex ui:items-center">-</div>
     }
 
     return (
@@ -272,16 +272,16 @@ const OrderHierarchyAllocatedFormDrawer = ({
           const error = childErrors?.allocations?.[originalIndex]?.order_stock_status_id
           const itemHeightClass = isBatch
             ? error
-              ? 'ui-h-[120px]'
-              : 'ui-h-24'
+              ? 'ui:h-[120px]'
+              : 'ui:h-24'
             : error
-              ? 'ui-h-[72px]'
-              : 'ui-h-12'
+              ? 'ui:h-[72px]'
+              : 'ui:h-12'
 
           return (
             <div
               key={allocation.stock_id}
-              className={`ui-flex ui-flex-col ui-justify-center ${itemHeightClass}`}
+              className={`ui:flex ui:flex-col ui:justify-center ${itemHeightClass}`}
             >
               <Controller
                 control={control}
@@ -289,10 +289,10 @@ const OrderHierarchyAllocatedFormDrawer = ({
                 name={`children.${childIndex}.allocations.${originalIndex}.order_stock_status_id`}
                 render={({ field }) => {
                   return (
-                    <div className="space-y-1 ui-w-full">
+                    <div className="space-y-1 ui:w-full">
                       <ReactSelectAsync
                         id={`order_stock_status_${childIndex}_${originalIndex}`}
-                        className="ui-text-sm"
+                        className="ui:text-sm"
                         placeholder={t(
                           'orderDetail:form.material_status.placeholder'
                         )}
@@ -713,34 +713,34 @@ const OrderHierarchyAllocatedFormDrawer = ({
         label: t('common:save'),
       }}
     >
-      <div className="ui-grid ui-grid-cols-[repeat(auto-fit,minmax(5%,1fr))] ui-gap-4">
-        <FormControl className="ui-space-y-1">
+      <div className="ui:grid ui:grid-cols-[repeat(auto-fit,minmax(5%,1fr))] ui:gap-4">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.trademark.column.material_active_substance')}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {selectedRowData?.order_item?.material.name}
             {selectedRowData?.order_item?.material?.id}
           </div>
         </FormControl>
         {!isTrademarkMaterial && (
           <>
-            <FormControl className="ui-space-y-1">
+            <FormControl className="ui:space-y-1">
               <FormLabel className="text-sm">
                 {t('orderDetail:table.column.ordered')}
               </FormLabel>
-              <div className="ui-text-dark-blue ui-font-bold">
+              <div className="ui:text-dark-blue ui:font-bold">
                 {numberFormatter(
                   selectedRowData?.order_item?.ordered_qty,
                   i18n.language
                 )}
               </div>
             </FormControl>
-            <FormControl className="ui-space-y-1">
+            <FormControl className="ui:space-y-1">
               <FormLabel className="text-sm">
                 {t('orderDetail:table.column.confirmed')}
               </FormLabel>
-              <div className="ui-text-dark-blue ui-font-bold">
+              <div className="ui:text-dark-blue ui:font-bold">
                 {numberFormatter(
                   selectedRowData?.order_item?.confirmed_qty,
                   i18n.language
@@ -749,17 +749,17 @@ const OrderHierarchyAllocatedFormDrawer = ({
             </FormControl>
           </>
         )}
-        <FormControl className="ui-space-y-1">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.column.stock_on_hand')}{' '}
             {t('common:at').toLowerCase()} {orderDetailData?.customer?.name}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold ui-flex ui-items-baseline ui-gap-1">
+          <div className="ui:text-dark-blue ui:font-bold ui:flex ui:items-baseline ui:gap-1">
             {numberFormatter(
               selectedRowCustomerStock?.total_qty,
               i18n.language
             )}
-            <div className="ui-text-gray-500 ui-font-normal ui-text-xs ui-relative ui-bottom-0.5">
+            <div className="ui:text-gray-500 ui:font-normal ui:text-xs ui:relative ui:bottom-0.5">
               (min:{' '}
               {numberFormatter(selectedRowCustomerStock?.min, i18n.language)} ,
               max:{' '}
@@ -767,18 +767,18 @@ const OrderHierarchyAllocatedFormDrawer = ({
             </div>
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.column.available_stock')}{' '}
             {t('common:at').toLowerCase()} {orderDetailData?.vendor?.name}
           </FormLabel>
           {selectedRowVendorStock ? (
-            <div className="ui-text-dark-blue ui-font-bold ui-flex ui-items-baseline ui-gap-1">
+            <div className="ui:text-dark-blue ui:font-bold ui:flex ui:items-baseline ui:gap-1">
               {numberFormatter(
                 selectedRowVendorStock?.total_qty,
                 i18n.language
               )}
-              <div className="ui-text-gray-500 ui-font-normal ui-text-xs ui-relative ui-bottom-0.5">
+              <div className="ui:text-gray-500 ui:font-normal ui:text-xs ui:relative ui:bottom-0.5">
                 (min:{' '}
                 {numberFormatter(selectedRowVendorStock?.min, i18n.language)} ,
                 max:{' '}
@@ -796,14 +796,14 @@ const OrderHierarchyAllocatedFormDrawer = ({
         </FormControl>
       </div>
       <DataTable
-        className="ui-overflow-y-auto ui-max-h-[50vh]"
+        className="ui:overflow-y-auto ui:max-h-md"
         columns={columns}
         data={tableData}
         isSticky
       />
-      <div className="ui-flex ui-items-center ui-gap-4">
-        <div className="ui-text-dark-blue ui-flex ui-items-center ui-gap-2">
-          <PlusIcon className="ui-w-5" />
+      <div className="ui:flex ui:items-center ui:gap-4">
+        <div className="ui:text-dark-blue ui:flex ui:items-center ui:gap-2">
+          <PlusIcon className="ui:w-5" />
           {t('orderDetail:modal.allocate.add_stock_from_other_activity')}:
         </div>
         <ReactSelect
@@ -819,7 +819,7 @@ const OrderHierarchyAllocatedFormDrawer = ({
           value={null}
           onChange={handleSelectStockFromOtherActivities}
           menuPosition="fixed"
-          className="ui-w-[250px] ui-max-w-full"
+          className="ui:w-[250px] ui:max-w-full"
         />
       </div>
     </OrderDetailDrawer>

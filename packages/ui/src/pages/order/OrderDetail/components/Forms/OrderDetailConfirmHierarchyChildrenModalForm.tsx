@@ -106,7 +106,7 @@ export const OrderDetailConfirmHierarchyChildrenModalForm = ({
                       'orderDetail:form.confirmed_qty.placeholder'
                     )}
                     value={row.original?.confirmed_qty ?? undefined}
-                    className="ui-text-sm ui-w-full"
+                    className="ui:text-sm ui:w-full"
                     onValueChange={(e) => {
                       onChange(e.floatValue)
                       setValue(`children.${row.index}`, {
@@ -128,7 +128,7 @@ export const OrderDetailConfirmHierarchyChildrenModalForm = ({
           />
         ),
         meta: {
-          cellClassName: 'ui-w-1/4',
+          cellClassName: 'ui:w-1/4',
         },
       },
     ],
@@ -183,11 +183,11 @@ export const OrderDetailConfirmHierarchyChildrenModalForm = ({
       withCancelButton={false}
       size="xl"
     >
-      <div className="ui-flex ui-flex-col">
-        <div className="ui-text-sm ui-text-neutral-500">
+      <div className="ui:flex ui:flex-col">
+        <div className="ui:text-sm ui:text-neutral-500">
           {t('orderDetail:modal.confirm_order.product_template')}:
         </div>
-        <div className="ui-font-bold ui-text-dark-blue">
+        <div className="ui:font-bold ui:text-dark-blue">
           {data?.order_items?.[Number(indexRow ?? null)].material.name}
         </div>
       </div>

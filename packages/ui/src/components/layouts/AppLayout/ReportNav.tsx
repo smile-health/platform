@@ -17,8 +17,8 @@ type Props = {
 }
 
 const Group = ({ children, title }: Props) => (
-  <div className="ui-p-6" id={`navbar-group-${title}`}>
-    <div className="ui-text-dark ui-font-bold mb-2">{title}</div>
+  <div className="ui:p-6" id={`navbar-group-${title}`}>
+    <div className="ui-text-dark ui:font-bold mb-2">{title}</div>
     <div>{children}</div>
   </div>
 )
@@ -29,7 +29,7 @@ const Item = ({ children, link }: { children: ReactNode; link: string }) => {
   return (
     <Link
       id={`navbar-${link}`}
-      className="ui-text-left ui-block ui-cursor-pointer ui-py-1 ui-text-black hover:ui-text-primary-surface"
+      className="ui:text-left ui:block ui:cursor-pointer ui:py-1 ui:text-black ui:hover:text-primary-surface"
       href={router.getAsLink(link)}
     >
       {children}
@@ -48,7 +48,7 @@ const ItemLink = ({
 
   if (!link) {
     return (
-      <button className="ui-text-left ui-block ui-cursor-pointer ui-py-1 ui-active:ui-outline-none ui-focus:ui-outline-none">
+      <button className="ui:text-left ui:block ui:cursor-pointer ui:py-1 ui-active:ui-outline-none ui-focus:ui-outline-none">
         {children}
       </button>
     )
@@ -57,7 +57,7 @@ const ItemLink = ({
   return (
     <Link
       id={`navbar-${link}`}
-      className="ui-text-left ui-block ui-cursor-pointer ui-py-1 ui-active:ui-outline-none ui-focus:ui-outline-none hover:ui-text-primary-surface"
+      className="ui:text-left ui:block ui:cursor-pointer ui:py-1 ui-active:ui-outline-none ui-focus:ui-outline-none ui:hover:text-primary-surface"
       href={router.getAsLink(link)}
     >
       {children}
@@ -72,15 +72,15 @@ const ReportNav: React.FC<{ className?: string }> = ({ className }) => {
     <DropdownMenuRoot>
       <DropdownMenuTrigger>
         <div className={className} id="trigger-Laporan">
-          <div className="ui-text-primary-contrast">{t('menu.report.title')}</div>
-          <div className="ui-py-1 ui-pl-2">
-            <ChevronDownIcon className="ui-h-3 ui-w-3 ui-text-primary-contrast" />
+          <div className="ui:text-primary-contrast">{t('menu.report.title')}</div>
+          <div className="ui:py-1 ui:pl-2">
+            <ChevronDownIcon className="ui:h-3 ui:w-3 ui:text-primary-contrast" />
           </div>
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-w-screen ui-shadow-sm">
-          <div className="ui-relative ui-bg-white ui-flex ui-z-50 ui-pt-2 ui-pb-4 ui-px-6 ui-flex-wrap">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:w-screen ui:shadow-sm">
+          <div className="ui:relative ui:bg-white ui:flex ui:z-50 ui:pt-2 ui:pb-4 ui:px-6 ui:flex-wrap">
             <Group title={menu.activity.title}>
               {menu.activity.menus.map((x) =>
                 x.variant === 'item' ? (

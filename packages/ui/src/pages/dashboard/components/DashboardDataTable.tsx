@@ -35,13 +35,13 @@ export default function DashboardDataTable<Value>({
   stickyColumns,
 }: DashboardTableProps<Value>) {
   return (
-    <div className="ui-space-y-4">
+    <div className="ui:space-y-4">
       <DataTable
         data={data}
         columns={columns}
         isLoading={isLoading}
         stickyColumns={stickyColumns}
-        className="ui-bg-white"
+        className="ui:bg-white"
       />
       <PaginationContainer>
         <PaginationSelectLimit

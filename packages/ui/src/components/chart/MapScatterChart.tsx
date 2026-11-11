@@ -203,30 +203,30 @@ export default function MapScatterChart<T>({
   }
 
   return (
-    <div className="ui-relative ui-size-full">
+    <div className="ui:relative ui:size-full">
       <div ref={chartRef} style={{ width: '100%', height: '100%' }} />
       {showToolbox && (
         <div
-          className="ui-absolute ui-right-0 ui-bottom-10 ui-flex ui-flex-col ui-rounded-md ui-bg-white ui-divide-y ui-divide-[#EAEAEA] ui-shadow-sm ui-border ui-border-[#EAEAEA]/80
+          className="ui:absolute ui:right-0 ui:bottom-10 ui:flex ui:flex-col ui:rounded-md ui:bg-white ui:divide-y ui:divide-[#EAEAEA] ui:shadow-xs ui:border ui:border-[#EAEAEA]/80
       "
         >
           <button
             onClick={() => zoomMap('in')}
-            className="ui-p-[5px] focus:ui-outline-none"
+            className="ui:p-[5px] ui:focus:outline-hidden"
           >
-            <Plus className="ui-size-3.5" />
+            <Plus className="ui:size-3.5" />
           </button>
           <button
             onClick={resetMap}
-            className="ui-p-[5px] focus:ui-outline-none"
+            className="ui:p-[5px] ui:focus:outline-hidden"
           >
-            <FullScreen className="ui-size-3.5" />
+            <FullScreen className="ui:size-3.5" />
           </button>
           <button
             onClick={() => zoomMap('out')}
-            className="ui-p-[5px] focus:ui-outline-none"
+            className="ui:p-[5px] ui:focus:outline-hidden"
           >
-            <Minus className="ui-size-3.5" />
+            <Minus className="ui:size-3.5" />
           </button>
         </div>
       )}

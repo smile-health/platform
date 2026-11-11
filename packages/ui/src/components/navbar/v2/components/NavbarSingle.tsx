@@ -13,9 +13,9 @@ type NavbarSingleProps = {
 const NavbarSingle = forwardRef<HTMLButtonElement, NavbarSingleProps>(
   ({ title = '', active = false, url = '', isGlobal = false }, ref) => {
     const titleStyle = cx(
-      'menu__main ui-font-thin ui-relative ui-h-full ui-w-auto ui-px-2 ui-py-2 ui-cursor-default hover:ui-text-primary-contrast ui-outline-none focus:ui-outline-none focus:ui-ring-0 focus-visible:outline-none',
+      'menu__main ui:font-thin ui:relative ui:h-full ui:w-auto ui:px-2 ui:py-2 ui:cursor-default ui:hover:text-primary-contrast ui:outline-hidden ui:focus:outline-hidden ui:focus:ring-0 focus-visible:outline-none',
       {
-        'ui-font-bold': active,
+        'ui:font-bold': active,
       }
     )
 
@@ -49,7 +49,7 @@ const NavbarSingle = forwardRef<HTMLButtonElement, NavbarSingleProps>(
           tabIndex={0}
           aria-label={title}
         >
-          <div className="ui-flex ui-items-center ui-justify-start">
+          <div className="ui:flex ui:items-center ui:justify-start">
             {title}
           </div>
         </button>

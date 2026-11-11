@@ -49,7 +49,7 @@ export default function AssetDongleTables({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={assetDongleDataSource?.data.data}
         columns={columnsAssetDongle(t, {

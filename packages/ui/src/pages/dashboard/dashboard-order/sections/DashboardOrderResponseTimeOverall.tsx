@@ -53,8 +53,8 @@ const DashboardOrderResponseTimeOverall = forwardRef<
     header: label,
     accessorKey: `${label}`,
     meta: {
-      headerClassName: 'ui-text-center',
-      cellClassName: 'ui-text-center',
+      headerClassName: 'ui:text-center',
+      cellClassName: 'ui:text-center',
     },
   }))
 

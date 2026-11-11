@@ -261,8 +261,8 @@ const AllocateFormHierarcy = () => {
           {isFilteredAllocationExist && (
             <div className="space-y-2">
               {isFilteredAllocationExist && (
-                <div className="ui-text-sm">
-                  <div className="ui-font-semibold">
+                <div className="ui:text-sm">
+                  <div className="ui:font-semibold">
                     Qty:{' '}
                     {numberFormatter(totalFilteredAllocations, i18n.language)}
                   </div>
@@ -271,14 +271,14 @@ const AllocateFormHierarcy = () => {
             </div>
           )}
 
-          <div className="ui-space-y-1">
+          <div className="ui:space-y-1">
             <Button
               size="sm"
               type="button"
               disabled={!vendorStock?.aggregate?.total_available_qty}
               leftIcon={
                 !isFilteredAllocationExist && (
-                  <PlusIcon className="ui-w-5 ui-text-dark-blue" />
+                  <PlusIcon className="ui:w-5 ui:text-dark-blue" />
                 )
               }
               variant="outline"
@@ -446,7 +446,7 @@ const AllocateFormHierarcy = () => {
       enableShowHide
     >
       <DataTable
-        className="ui-overflow-y-auto ui-max-h-[50vh]"
+        className="ui:overflow-y-auto ui:max-h-md"
         columns={columns}
         data={mappedOrderItems}
         isSticky
@@ -469,11 +469,11 @@ const AllocateFormHierarcy = () => {
         list={needRelationData.list}
       />
 
-      <div className="ui-fixed ui-bottom-0 ui-left-0 ui-w-full ui-shadow-lg ui-bg-white ui-border-t ui-transition-all ui-transform ui-translate-y-0">
-        <div className="ui-container ui-mx-auto ui-flex ui-justify-end ui-items-center ui-py-4 ui-px-6 ui-gap-3">
+      <div className="ui:fixed ui:bottom-0 ui:left-0 ui:w-full ui:shadow-lg ui:bg-white ui:border-t ui:transition-all ui:transform ui:translate-y-0">
+        <div className="ui:container ui:mx-auto ui:flex ui:justify-end ui:items-center ui:py-4 ui:px-6 ui:gap-3">
           <Button
             key={'test'}
-            className="ui-min-w-[200px]"
+            className="ui:min-w-[200px]"
             variant="outline"
             onClick={() => router.push(`/v5/order/${orderId}`)}
             loading={isPending}
@@ -482,7 +482,7 @@ const AllocateFormHierarcy = () => {
           </Button>
           <Button
             key={'test'}
-            className="ui-min-w-[200px]"
+            className="ui:min-w-[200px]"
             onClick={handleSubmit(handleSubmitForm)}
             loading={isPending}
           >

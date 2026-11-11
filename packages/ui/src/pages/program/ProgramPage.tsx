@@ -25,11 +25,11 @@ const ProgramPage: React.FC = () => {
       <Meta title="SMILE | Program" />
       <AppLayout title="SMILE App">
         {isLoading && (
-          <div className="ui-flex ui-justify-center">
-            <Spinner className="ui-my-8 ui-w-5" />
+          <div className="ui:flex ui:justify-center">
+            <Spinner className="ui:my-8 ui:w-5" />
           </div>
         )}
-        <div className="ui-mx-auto ui-max-w-[564px]">
+        <div className="ui:mx-auto ui:max-w-[564px]">
           {!isUserWMS(user) && (
             <InputSearch
               id="input-search-program"
@@ -40,7 +40,7 @@ const ProgramPage: React.FC = () => {
           )}
         </div>
         {data && data.length > 0 ? (
-          <div className="ui-grid ui-grid-cols-4 ui-gap-6 ui-mt-6">
+          <div className="ui:grid ui:grid-cols-4 ui:gap-6 ui:mt-6">
             {data?.map((x, i) => (
               <ProgramItemLink
                 id={x.key}
@@ -50,23 +50,23 @@ const ProgramPage: React.FC = () => {
                 href={getProgramHref(x, i18n.language, getHref, x.key)}
                 className={{
                   wrapper:
-                    'ui-border ui-border-neutral-300 ui-rounded-lg ui-py-8 ui-cursor-pointer ui-gap-4',
-                  logo: 'ui-w-16 ui-h-16',
-                  label: 'ui-text-2xl',
-                  title: 'ui-text-center ui-px-2',
+                    'ui:border ui:border-neutral-300 ui:rounded-lg ui:py-8 ui:cursor-pointer ui:gap-4',
+                  logo: 'ui:w-16 ui:h-16',
+                  label: 'ui:text-2xl',
+                  title: 'ui:text-center ui:px-2',
                 }}
                 icon={getProgramIconUrl(x)}
               />
             ))}
           </div>
         ) : (
-          <div className="ui-flex ui-flex-col ui-justify-center ui-items-center ui-gap-5 ui-text-center ui-my-20">
+          <div className="ui:flex ui:flex-col ui:justify-center ui:items-center ui:gap-5 ui:text-center ui:my-20">
             <SearchProgram />
-            <div className="ui-flex ui-flex-col ui-gap-3">
-              <p className="ui-font-bold ui-text-base">
+            <div className="ui:flex ui:flex-col ui:gap-3">
+              <p className="ui:font-bold ui:text-base">
                 {t('program:no_data.title')}
               </p>
-              <p className="ui-text-sm ui-text-gray-500">
+              <p className="ui:text-sm ui:text-gray-500">
                 {t('program:no_data.description', { returnObjects: true })[0]}
                 <br />{' '}
                 {t('program:no_data.description', { returnObjects: true })[1]}

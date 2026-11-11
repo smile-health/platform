@@ -69,21 +69,21 @@ export const OrderDetailValidateModalForm = ({
         name="letter_number"
         control={control}
         render={({ field }) => (
-          <FormControl className="ui-space-y-2">
-            <div className="ui-space-y-1.5">
-              <FormLabel className="ui-text-sm" required>
+          <FormControl className="ui:space-y-2">
+            <div className="ui:space-y-1.5">
+              <FormLabel className="ui:text-sm" required>
                 {t('form.letter_number.label')}
               </FormLabel>
               <Input
                 {...field}
                 placeholder={t('form.letter_number.placeholder')}
-                className="ui-text-sm"
+                className="ui:text-sm"
                 disabled={isLoading}
                 error={Boolean(errors?.letter_number?.message)}
               />
             </div>
             {errors?.letter_number?.message && (
-              <FormErrorMessage className="ui-leading-none">
+              <FormErrorMessage className="ui:leading-none">
                 {errors.letter_number.message}
               </FormErrorMessage>
             )}
@@ -94,22 +94,22 @@ export const OrderDetailValidateModalForm = ({
         name="comment"
         control={control}
         render={({ field, fieldState: { error } }) => (
-          <FormControl className="ui-space-y-0">
-            <div className="ui-space-y-1.5">
-              <FormLabel className="ui-text-sm">
+          <FormControl className="ui:space-y-0">
+            <div className="ui:space-y-1.5">
+              <FormLabel className="ui:text-sm">
                 {t('form.comment.label')}
               </FormLabel>
               <TextArea
                 {...field}
                 placeholder={`${t('form.comment.placeholder')}...`}
-                className="ui-text-sm"
+                className="ui:text-sm"
                 disabled={isLoading}
                 style={{ height: 154 }}
                 error={Boolean(error?.message)}
               />
             </div>
             {error?.message && (
-              <FormErrorMessage className="ui-leading-none">
+              <FormErrorMessage className="ui:leading-none">
                 {error.message}
               </FormErrorMessage>
             )}

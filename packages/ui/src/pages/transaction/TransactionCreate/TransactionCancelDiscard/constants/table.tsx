@@ -31,7 +31,7 @@ export const createColumnDiscard = ({
   selected,
 }: CreateColumnDiscard): ColumnDef<TTransactionData>[] => {
   const getIsSelected = (data: TTransactionData) =>
-    selected.includes(data.id) ? 'ui-bg-[#E2F3FC]' : ''
+    selected.includes(data.id) ? 'ui:bg-[#E2F3FC]' : ''
 
   return [
     {
@@ -41,7 +41,7 @@ export const createColumnDiscard = ({
       size: 50,
       meta: {
         cellClassName: ({ original }) =>
-          `ui-text-dark-blue ${getIsSelected(original)}`,
+          `ui:text-dark-blue ${getIsSelected(original)}`,
       },
     },
     {
@@ -49,7 +49,7 @@ export const createColumnDiscard = ({
       accessorKey: 'material.name',
       meta: {
         cellClassName: ({ original }) =>
-          `ui-text-dark-blue ${getIsSelected(original)}`,
+          `ui:text-dark-blue ${getIsSelected(original)}`,
       },
       cell: ({ getValue }) => getValue() ?? '-',
       minSize: 200,
@@ -61,7 +61,7 @@ export const createColumnDiscard = ({
       accessorKey: 'created_at',
       meta: {
         cellClassName: ({ original }) =>
-          `ui-text-dark-blue ${getIsSelected(original)}`,
+          `ui:text-dark-blue ${getIsSelected(original)}`,
       },
       cell: ({
         row: {
@@ -78,11 +78,11 @@ export const createColumnDiscard = ({
           original: { activity },
         },
       }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1">
-          <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+        <div className="ui:flex ui:flex-col ui:gap-1">
+          <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
             {activity?.name ?? '-'}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
             {t('cancel_transaction_discard.table.discard.column.taken', {
               value: activity?.name ?? '-',
             })}
@@ -99,7 +99,7 @@ export const createColumnDiscard = ({
       accessorKey: 'transaction_reason.title',
       meta: {
         cellClassName: ({ original }) =>
-          `ui-text-dark-blue ${getIsSelected(original)}`,
+          `ui:text-dark-blue ${getIsSelected(original)}`,
       },
       cell: ({ row: { original } }) =>
         original.transaction_reason?.title ?? '-',
@@ -110,7 +110,7 @@ export const createColumnDiscard = ({
       accessorKey: 'change_qty',
       meta: {
         cellClassName: ({ original }) =>
-          `ui-text-dark-blue ${getIsSelected(original)}`,
+          `ui:text-dark-blue ${getIsSelected(original)}`,
       },
       cell: ({
         row: {
@@ -121,13 +121,13 @@ export const createColumnDiscard = ({
         if (isOpenVialMaterial)
           return (
             <>
-              <p className="ui-mb-1 ui-text-sm ui-font-semibold ui-text-dark-blue">
+              <p className="ui:mb-1 ui:text-sm ui:font-semibold ui:text-dark-blue">
                 {`${numberFormatter(
                   change_qty_open_vial ?? 0,
                   language
                 )} (${t('transaction_discard.form.table.column.open_vial')})`}
               </p>
-              <p className="ui-mb-0 ui-text-sm ui-font-semibold ui-text-dark-blue">
+              <p className="ui:mb-0 ui:text-sm ui:font-semibold ui:text-dark-blue">
                 {`${numberFormatter(
                   change_qty ?? 0,
                   language
@@ -147,16 +147,16 @@ export const createColumnDiscard = ({
           original: { stock },
         },
       }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1">
-          <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+        <div className="ui:flex ui:flex-col ui:gap-1">
+          <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
             {stock?.batch?.code ?? '-'}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
             {t('cancel_transaction_discard.table.discard.column.manufacture', {
               value: stock?.batch?.manufacture?.name ?? '-',
             })}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
             {t('cancel_transaction_discard.table.discard.column.expired_date', {
               value: parseDateTime(
                 stock?.batch?.expired_date ?? '-',
@@ -176,7 +176,7 @@ export const createColumnDiscard = ({
       accessorKey: 'selection',
       meta: {
         cellClassName: ({ original }) =>
-          `ui-text-dark-blue ${getIsSelected(original)}`,
+          `ui:text-dark-blue ${getIsSelected(original)}`,
       },
       cell: ({
         row: {
@@ -243,7 +243,7 @@ export const createColumnCancelDiscardDetail = ({
     ),
     accessorKey: 'created_at',
     meta: {
-      cellClassName: 'ui-text-dark-blue',
+      cellClassName: 'ui:text-dark-blue',
     },
     cell: ({
       row: {
@@ -256,7 +256,7 @@ export const createColumnCancelDiscardDetail = ({
     header: t('cancel_transaction_discard.table.discard.column.reason'),
     accessorKey: 'transaction_reason.title',
     meta: {
-      cellClassName: 'ui-text-dark-blue',
+      cellClassName: 'ui:text-dark-blue',
     },
     cell: ({ row: { original } }) => original.transaction_reason?.title ?? '-',
     minSize: 200,
@@ -265,7 +265,7 @@ export const createColumnCancelDiscardDetail = ({
     header: t('cancel_transaction_discard.table.discard.column.quantity'),
     accessorKey: 'change_qty',
     meta: {
-      cellClassName: 'ui-text-dark-blue',
+      cellClassName: 'ui:text-dark-blue',
     },
     cell: ({
       row: {
@@ -276,13 +276,13 @@ export const createColumnCancelDiscardDetail = ({
       if (isOpenVialMaterial)
         return (
           <>
-            <p className="ui-mb-1 ui-text-sm ui-font-normal ui-text-dark-blue">
+            <p className="ui:mb-1 ui:text-sm ui:font-normal ui:text-dark-blue">
               {`${numberFormatter(
                 change_qty_open_vial ?? 0,
                 language
               )} (${t('transaction_discard.form.table.column.open_vial')})`}
             </p>
-            <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+            <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
               {`${numberFormatter(
                 change_qty ?? 0,
                 language
@@ -298,7 +298,7 @@ export const createColumnCancelDiscardDetail = ({
     header: t('cancel_transaction_discard.table.discard.column.taken_activity'),
     accessorKey: 'activity.name',
     meta: {
-      cellClassName: 'ui-text-dark-blue',
+      cellClassName: 'ui:text-dark-blue',
     },
     cell: ({ getValue }) => getValue() ?? '-',
     minSize: 200,

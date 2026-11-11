@@ -48,7 +48,7 @@ export const reconciliationTableSchema = ({
                   row.original?.entity?.entity?.province?.name ?? ''
                 ),
               }),
-              className: 'ui-text-neutral-500 ui-text-sm',
+              className: 'ui:text-neutral-500 ui:text-sm',
             },
           ]}
         />
@@ -62,11 +62,11 @@ export const reconciliationTableSchema = ({
           arrText={[
             {
               label: row.original?.material_parent?.name ?? '',
-              className: 'ui-font-bold',
+              className: 'ui:font-bold',
             },
             {
               label: row.original?.material?.name ?? '',
-              className: 'ui-text-neutral-500 ui-text-sm',
+              className: 'ui:text-neutral-500 ui:text-sm',
             },
           ]}
         />
@@ -97,7 +97,7 @@ export const reconciliationTableSchema = ({
       header: t('list.table.column.remaining_stock'),
       accessorKey: 'remaining_stock',
       meta: {
-        cellClassName: () => 'ui-bg-primary-100',
+        cellClassName: () => 'ui:bg-primary-100',
       },
       cell: ({ row }) => (
         <TitleBlock
@@ -178,10 +178,10 @@ export const detailReconciliationTableSchema = ({
       accessorKey: 'reason_action',
       cell: ({ row }) => {
         return (
-          <div className="ui-flex ui-flex-col ui-space-y-3">
+          <div className="ui:flex ui:flex-col ui:space-y-3">
             {row.original?.reasons?.map((item, index) => (
               <div
-                className="ui-flex ui-flex-col ui-space-y-1 ui-text-dark-blue"
+                className="ui:flex ui:flex-col ui:space-y-1 ui:text-dark-blue"
                 key={`${index.toString()}`}
               >
                 <TitleBlock

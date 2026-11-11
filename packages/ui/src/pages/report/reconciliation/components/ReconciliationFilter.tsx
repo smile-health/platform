@@ -20,16 +20,16 @@ export default function ReconciliationFilter(props: Props) {
 
   return (
     <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-      <FilterFormBody className="ui-grid-cols-4">
+      <FilterFormBody className="ui:grid-cols-4">
         {filter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
         <FilterExpandButton variant="subtle" />
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <FilterResetButton onClick={filter.reset} variant="subtle" />
           <FilterSubmitButton
             variant="outline"
-            className="ui-w-[202px]"
+            className="ui:w-[202px]"
             text={t('show_report')}
             onClick={onSearch}
           />

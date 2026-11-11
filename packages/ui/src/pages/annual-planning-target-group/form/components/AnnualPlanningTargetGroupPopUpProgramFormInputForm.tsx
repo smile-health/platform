@@ -42,10 +42,10 @@ const AnnualPlanningTargetGroupPopUpProgramFormInputForm = ({
 
   return (
     <div
-      className="ui-flex ui-justify-start ui-items-start ui-gap-4"
+      className="ui:flex ui:justify-start ui:items-start ui:gap-4"
       key={field.id}
     >
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor={`target_group.${index}.target_group_child_id`}>
           {t('annualPlanningTargetGroup:target_group')}
         </FormLabel>
@@ -87,7 +87,7 @@ const AnnualPlanningTargetGroupPopUpProgramFormInputForm = ({
       </FormControl>
       <Button
         type="button"
-        className="ui-mt-5"
+        className="ui:mt-5"
         variant="subtle"
         color="danger"
         rightIcon={<XMark />}

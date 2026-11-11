@@ -38,21 +38,21 @@ const DistanceFormInfo: React.FC<DistanceFormInfoProps> = ({
   } = useFormContext<DistanceSchemaFormData>();
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-        <div className="ui-w-1/5" style={{ marginTop: '-4vh' }}>
-          <p className="ui-w-fit ui-text-gray-400">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+        <div className="ui:w-1/5" style={{ marginTop: '-4vh' }}>
+          <p className="ui:w-fit ui:text-gray-400">
             {t('distance:form.distance.label')}
           </p>
         </div>
         <span style={{ marginTop: '-4vh' }}>:</span>
 
         <div
-          className="ui-flex ui-flex-col ui-gap-3"
+          className="ui:flex ui:flex-col ui:gap-3"
           style={{ marginTop: '5vh', maxWidth: '35vw' }}
         >
           {isEditMode ? (
-            <div className="ui-flex ui-flex-row ui-gap-4 ui-items-center">
+            <div className="ui:flex ui:flex-row ui:gap-4 ui:items-center">
               <FormControl>
                 <Input
                   {...register('distance_limit')}
@@ -90,17 +90,17 @@ const DistanceFormInfo: React.FC<DistanceFormInfoProps> = ({
               </Button>
             </div>
           ) : (
-            <div className="ui-flex ui-flex-row ui-gap-4 ui-items-center">
+            <div className="ui:flex ui:flex-row ui:gap-4 ui:items-center">
               <p>{isFound ? entitySettings?.settingValue : '0'} </p>
               {(isFacilityAdmin() || isSuperAdmin()) && (
                 <Pencil
                   onClick={() => setIsEditMode(true)}
-                  className="hover:ui-cursor-pointer ui-text-blue-800 ui-w-4 ui-h-4"
+                  className="ui:hover:cursor-pointer ui:text-blue-800 ui:w-4 ui:h-4"
                 />
               )}
             </div>
           )}
-          <div className="ui-text-sm ui-leading-none ui-text-gray-500 ui-mb-10">
+          <div className="ui:text-sm ui:leading-none ui:text-gray-500 ui:mb-10">
             {t('distance:form.distance.helper_text')}
           </div>
         </div>

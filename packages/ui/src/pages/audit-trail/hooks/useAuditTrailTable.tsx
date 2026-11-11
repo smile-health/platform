@@ -95,9 +95,9 @@ export default function useAuditTrailTable({
         const rest = changes.length - fields.length
         return (
           <div>
-            <div className="ui-font-semibold">{summary}</div>
+            <div className="ui:font-semibold">{summary}</div>
             {fields.length > 0 && (
-              <div className="ui-line-clamp-2 ui-text-sm ui-text-neutral-500">
+              <div className="ui:line-clamp-2 ui:text-sm ui:text-neutral-500">
                 {fields.join(', ')}
                 {rest > 0 &&
                   ` ${t('auditTrail:description.more', { count: rest })}`}

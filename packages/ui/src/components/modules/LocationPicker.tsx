@@ -290,8 +290,8 @@ export function LocationPicker({
     <div
       className={
         layout === 'row'
-          ? 'ui-grid ui-gap-x-6 ui-gap-y-6'
-          : 'ui-grid ui-grid-cols-1 ui-gap-y-6'
+          ? 'ui:grid ui:gap-x-6 ui:gap-y-6'
+          : 'ui:grid ui:grid-cols-1 ui:gap-y-6'
       }
       style={
         layout === 'row'

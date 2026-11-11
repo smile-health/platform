@@ -27,14 +27,14 @@ export default function DashboardStockTakingInformation({
 
   return (
     <Dialog open={open} onOpenChange={setOpen} size="lg">
-      <DialogHeader className="ui-text-center">
+      <DialogHeader className="ui:text-center">
         {t('information.title')}
       </DialogHeader>
-      <DialogContent className="ui-space-y-3">
+      <DialogContent className="ui:space-y-3">
         <p>{t('information.description')}</p>
-        <div className="ui-space-y-1">
+        <div className="ui:space-y-1">
           <H5>{t('information.item.title')}</H5>
-          <ul className="ui-list-disc ui-pl-8">
+          <ul className="ui:list-disc ui:pl-8">
             {tableDescription?.map((item) => (
               <li key={item}>
                 <Trans
@@ -51,64 +51,64 @@ export default function DashboardStockTakingInformation({
         <Table withBorder withColumnBorders rounded layout="fixed">
           <Thead>
             <Tr>
-              <Th className="ui-text-center ui-font-semibold" colSpan={2}>
+              <Th className="ui:text-center ui:font-semibold" colSpan={2}>
                 {t('column.entity.condition')}
               </Th>
-              <Th className="ui-text-center ui-font-semibold" colSpan={3}>
+              <Th className="ui:text-center ui:font-semibold" colSpan={3}>
                 {t('column.display_in_dashboard')}
               </Th>
             </Tr>
             <Tr>
-              <Th className="ui-text-center ui-font-semibold">
+              <Th className="ui:text-center ui:font-semibold">
                 {t('column.entity.have_transaction')}
               </Th>
-              <Th className="ui-text-center ui-font-semibold">
+              <Th className="ui:text-center ui:font-semibold">
                 {t('column.entity.done')}
               </Th>
-              <Th className="ui-text-center ui-font-semibold">
+              <Th className="ui:text-center ui:font-semibold">
                 {t('column.entity.not_yet')}
               </Th>
-              <Th className="ui-text-center ui-font-semibold">
+              <Th className="ui:text-center ui:font-semibold">
                 {t('column.entity.done')}
               </Th>
-              <Th className="ui-text-center ui-font-semibold">
+              <Th className="ui:text-center ui:font-semibold">
                 {t('column.entity.total')}
               </Th>
             </Tr>
           </Thead>
           <Tbody>
             <Tr>
-              <Td className="ui-text-center">{tCommon('no')}</Td>
-              <Td className="ui-text-center">{tCommon('no')}</Td>
-              <Td className="ui-text-center">{tCommon('yes')}</Td>
-              <Td className="ui-text-center">{tCommon('no')}</Td>
-              <Td className="ui-text-center">0</Td>
+              <Td className="ui:text-center">{tCommon('no')}</Td>
+              <Td className="ui:text-center">{tCommon('no')}</Td>
+              <Td className="ui:text-center">{tCommon('yes')}</Td>
+              <Td className="ui:text-center">{tCommon('no')}</Td>
+              <Td className="ui:text-center">0</Td>
             </Tr>
             <Tr>
-              <Td className="ui-text-center">{tCommon('no')}</Td>
-              <Td className="ui-text-center">{tCommon('yes')}</Td>
-              <Td className="ui-text-center">{tCommon('no')}</Td>
-              <Td className="ui-text-center">{tCommon('yes')}</Td>
-              <Td className="ui-text-center">0</Td>
+              <Td className="ui:text-center">{tCommon('no')}</Td>
+              <Td className="ui:text-center">{tCommon('yes')}</Td>
+              <Td className="ui:text-center">{tCommon('no')}</Td>
+              <Td className="ui:text-center">{tCommon('yes')}</Td>
+              <Td className="ui:text-center">0</Td>
             </Tr>
             <Tr>
-              <Td className="ui-text-center">{tCommon('yes')}</Td>
-              <Td className="ui-text-center">{tCommon('no')}</Td>
-              <Td className="ui-text-center">{tCommon('yes')}</Td>
-              <Td className="ui-text-center">{tCommon('no')}</Td>
-              <Td className="ui-text-center">1</Td>
+              <Td className="ui:text-center">{tCommon('yes')}</Td>
+              <Td className="ui:text-center">{tCommon('no')}</Td>
+              <Td className="ui:text-center">{tCommon('yes')}</Td>
+              <Td className="ui:text-center">{tCommon('no')}</Td>
+              <Td className="ui:text-center">1</Td>
             </Tr>
             <Tr>
-              <Td className="ui-text-center">{tCommon('yes')}</Td>
-              <Td className="ui-text-center">{tCommon('yes')}</Td>
-              <Td className="ui-text-center">{tCommon('no')}</Td>
-              <Td className="ui-text-center">{tCommon('yes')}</Td>
-              <Td className="ui-text-center">1</Td>
+              <Td className="ui:text-center">{tCommon('yes')}</Td>
+              <Td className="ui:text-center">{tCommon('yes')}</Td>
+              <Td className="ui:text-center">{tCommon('no')}</Td>
+              <Td className="ui:text-center">{tCommon('yes')}</Td>
+              <Td className="ui:text-center">1</Td>
             </Tr>
           </Tbody>
         </Table>
       </DialogContent>
-      <DialogFooter className="ui-grid ui-grid-cols-1">
+      <DialogFooter className="ui:grid ui:grid-cols-1">
         <Button variant="outline" onClick={() => setOpen?.(!open)}>
           {tDashboard('close')}
         </Button>

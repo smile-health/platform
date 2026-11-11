@@ -62,8 +62,8 @@ const TransactionCreateAddStockModalAddBatch = ({
       <ModalRoot
         open={isOpen}
         closeOnOverlayClick={false}
-        className="ui-z-10"
-        classNameOverlay="ui-z-10"
+        className="ui:z-10"
+        classNameOverlay="ui:z-10"
         verticalCentered
         size="lg"
         portalContainer={modalRoot}
@@ -74,13 +74,13 @@ const TransactionCreateAddStockModalAddBatch = ({
             setIsOpen?.(!isOpen)
           }}
         />
-        <ModalHeader border className="ui-text-center ui-pr-0">
-          <span className="ui-font-medium ui-text-xl ui-text-primary-800">
+        <ModalHeader border className="ui:text-center ui:pr-0">
+          <span className="ui:font-medium ui:text-xl ui:text-primary-800">
             {t('add_new_batch')}
           </span>
         </ModalHeader>
         <ModalContent>
-          <div className="ui-flex ui-flex-col ui-space-y-5">
+          <div className="ui:flex ui:flex-col ui:space-y-5">
             <Controller
               key={`${itemIndex}-${batchIndex}-code`}
               control={control}
@@ -204,7 +204,7 @@ const TransactionCreateAddStockModalAddBatch = ({
             />
           </div>
         </ModalContent>
-        <ModalFooter className="ui-border ui-flex ui-flex-row">
+        <ModalFooter className="ui:border ui:flex ui:flex-row">
           <Button
             color="danger"
             variant="default"

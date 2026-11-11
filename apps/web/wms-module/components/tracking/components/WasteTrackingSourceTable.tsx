@@ -17,13 +17,13 @@ export default function WasteTrackingSourceTable({
   const { t } = useTranslation(['common', 'tracking']);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={trackingWasteSourceDataSource}
         columns={ColumnsWasteSource(t)}
         isLoading={isLoading}
         bodyClassName={
-          trackingWasteSourceDataSource?.length ? 'ui-h-auto' : 'ui-h-48'
+          trackingWasteSourceDataSource?.length ? 'ui:h-auto' : 'ui:h-48'
         }
       />
     </div>

@@ -267,21 +267,21 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(formMaterialSubmit)}>
             <DialogCloseButton />
-            <DialogHeader className="ui-my-[8px]">
-              <h3 className="ui-text-center ui-text-[20px] ui-font-semibold">
+            <DialogHeader className="ui:my-[8px]">
+              <h3 className="ui:text-center ui:text-[20px] ui:font-semibold">
                 {title}
               </h3>
             </DialogHeader>
-            <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-            <DialogContent className="ui-overflow-auto ui-my-[8px]">
+            <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+            <DialogContent className="ui:overflow-auto ui:my-[8px]">
               <div
-                className={cx('ui-flex ui-items-start', {
-                  'ui-justify-between': createMode,
-                  'ui-justify-start': !createMode,
+                className={cx('ui:flex ui:items-start', {
+                  'ui:justify-between': createMode,
+                  'ui:justify-start': !createMode,
                 })}
               >
                 {!createMode ? (
-                  <div className="ui-mr-[24px]">
+                  <div className="ui:mr-[24px]">
                     <EntityDetailLabel
                       title={t('material:title.material')}
                       subTitle={modalData?.name}
@@ -301,7 +301,7 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                       fieldState: { error },
                     }) => {
                       return (
-                        <FormControl className="ui-w-[325px]">
+                        <FormControl className="ui:w-[325px]">
                           <FormLabel>
                             {t('material:form.material_name.label')}
                           </FormLabel>
@@ -341,8 +341,8 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                   />
                 ) : null}
               </div>
-              <div className="ui-py-[16px]">
-                <div className="ui-border ui-border-neutral-300 ui-rounded-md ui-overflow-auto">
+              <div className="ui:py-[16px]">
+                <div className="ui:border ui:border-neutral-300 ui:rounded-md ui:overflow-auto">
                   <Table
                     hightlightOnHover
                     overflowXAuto
@@ -357,35 +357,35 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                       <Tr>
                         <Th
                           columnKey="activity_name"
-                          className="ui-font-semibold ui-w-[300px]"
+                          className="ui:font-semibold ui:w-[300px]"
                         >
                           {t('entity:detail.customer_vendor.activity')}
                         </Th>
-                        <Th columnKey="min" className="ui-font-semibold">
+                        <Th columnKey="min" className="ui:font-semibold">
                           {t('entity:detail.material_entity.min')}
                         </Th>
-                        <Th columnKey="max" className="ui-font-semibold">
+                        <Th columnKey="max" className="ui:font-semibold">
                           {t('entity:detail.material_entity.max')}
                         </Th>
                         <Th
                           columnKey="consumption_rate"
-                          className="ui-font-semibold"
+                          className="ui:font-semibold"
                         >
                           {t('entity:detail.material_entity.consumption_rate')}
                         </Th>
                         <Th
                           columnKey="retailer_price"
-                          className="ui-font-semibold"
+                          className="ui:font-semibold"
                         >
                           {t('entity:detail.material_entity.retailer_price')}
                         </Th>
-                        <Th columnKey="tax" className="ui-font-semibold">
+                        <Th columnKey="tax" className="ui:font-semibold">
                           {t('entity:detail.material_entity.tax')}
                         </Th>
                         {!createMode ? (
                           <Th
                             columnKey="action"
-                            className="ui-font-semibold ui-w-auto"
+                            className="ui:font-semibold ui:w-auto"
                           >
                             {t('common:action')}
                           </Th>
@@ -444,11 +444,11 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                                   : numberFormatter(item?.tax, language)}
                               </Td>
                               <Td>
-                                <div className="ui-flex ui-justify-start ui-items-center">
+                                <div className="ui:flex ui:justify-start ui:items-center">
                                   <Button
                                     id={`edit_${item?.activity?.id}`}
                                     variant="light"
-                                    className="ui-bg-transparent ui-p-0 ui-h-auto ui-mr-[18px] ui-text-[#0069D2] hover:!ui-bg-transparent"
+                                    className="ui:bg-transparent ui:p-0 ui:h-auto ui:mr-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
                                     type="button"
                                     disabled={entity?.status === BOOLEAN.FALSE}
                                     onClick={() => setEditData(item)}
@@ -462,7 +462,7 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                                     id={`delete_${item?.activity?.id}`}
                                     variant="light"
                                     color="danger"
-                                    className="ui-bg-transparent ui-p-0 ui-h-auto hover:!ui-bg-transparent"
+                                    className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent!"
                                     type="button"
                                     disabled={entity?.status === BOOLEAN.FALSE}
                                     loading={
@@ -497,15 +497,15 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
 
             {createMode ? (
               <>
-                <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
+                <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
                 <DialogFooter>
-                  <div className="ui-flex ui-justify-end ui-mb-[8px]">
+                  <div className="ui:flex ui:justify-end ui:mb-[8px]">
                     <Button
                       id="cancel_add_material_entity"
                       variant="light"
                       type="button"
                       onClick={handleClose}
-                      className="ui-mr-[12px]"
+                      className="ui:mr-[12px]"
                       disabled={onLoadingUpdateMaterialEntity}
                     >
                       {t('common:cancel')}

@@ -52,7 +52,7 @@ export const OrderDetailItems = () => {
       title={
         data?.order_items?.length ? `Item (${data.order_items.length})` : 'Item'
       }
-      className="ui-space-y-4"
+      className="ui:space-y-4"
     >
       {isHierarchyEnabled && isOrderDetailHierarchy ? (
         <OrderDetailHierarchyItemsTable />
@@ -61,10 +61,10 @@ export const OrderDetailItems = () => {
       )}
 
       {data?.status === Pending && !isVendor && !isThirdPartyOrder && (
-        <div className="ui-flex gap-2">
+        <div className="ui:flex gap-2">
           <Button
             size="sm"
-            leftIcon={<PlusIcon className="ui-w-5 ui-text-dark-blue" />}
+            leftIcon={<PlusIcon className="ui:w-5 ui:text-dark-blue" />}
             variant="outline"
             onClick={() => setOpenItemForm(true, 'add')}
           >

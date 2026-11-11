@@ -38,7 +38,7 @@ export const useOrderCreateMaterialSelect = ({
 
   const classRow = (item: Stock) => {
     if (checkStatusMaterial(item)) {
-      return 'ui-bg-[#E2F3FC]'
+      return 'ui:bg-[#E2F3FC]'
     }
     return ''
   }
@@ -89,7 +89,7 @@ export const useOrderCreateMaterialSelect = ({
         return (
           <Checkbox
             checked={statusChecked}
-            className="!ui-cursor-pointer"
+            className="ui:cursor-pointer!"
             value={statusChecked ? 1 : 0}
           />
         )

@@ -45,10 +45,10 @@ const ProgramForm: React.FC = () => {
     <FormProvider {...methodsForm}>
       <form
         onSubmit={handleSubmit(onSubmitForm)}
-        className="ui-mt-6 ui-space-y-6 ui-max-w-form ui-mx-auto"
+        className="ui:mt-6 ui:space-y-6 ui:max-w-form ui:mx-auto"
       >
-        <div className="ui-p-4 ui-border ui-rounded">
-          <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+        <div className="ui:p-4 ui:border ui:rounded">
+          <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
             <FormControl>
               <FormLabel required>
                 {t('programGlobalSettings:form.label.key')}
@@ -78,7 +78,7 @@ const ProgramForm: React.FC = () => {
                 placeholder={`${t('common:example')} : Immunization`}
                 maxLength={100}
                 error={!!errors?.name?.message}
-                className="ui-uppercase"
+                className="ui:uppercase"
               />
               {errors?.name?.message && (
                 <FormErrorMessage>
@@ -90,7 +90,7 @@ const ProgramForm: React.FC = () => {
               <FormLabel>
                 {t('programGlobalSettings:form.label.description')}
               </FormLabel>
-              <div className="ui-w-full">
+              <div className="ui:w-full">
                 <TextArea
                   {...register('description')}
                   id="input-program-description"
@@ -99,7 +99,7 @@ const ProgramForm: React.FC = () => {
                   )}
                   maxLength={150}
                 />
-                <p className="ui-justify-self-end ui-text-sm ui-font-normal ui-text-neutral-500">
+                <p className="ui:justify-self-end ui:text-sm ui:font-normal ui:text-neutral-500">
                   {watch('description')?.length}/150
                 </p>
               </div>
@@ -153,8 +153,8 @@ const ProgramForm: React.FC = () => {
           </div>
         </div>
 
-        <div className="ui-flex ui-justify-end">
-          <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+        <div className="ui:flex ui:justify-end">
+          <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
             <Button
               id="btn-back-program"
               type="button"

@@ -146,20 +146,20 @@ export default function DashboardMicroplanningPage() {
 
       <DashboardBox.Provider
         filter={filter.query}
-        colorClass="ui-bg-gray-100"
+        colorClass="ui:bg-gray-100"
         onDownloadAsCSV={() => { }}
       >
         {/* Information Dialog */}
         <Dialog
           open={openInformation}
           onOpenChange={setOpenInformation}
-          className="ui-z-20"
+          className="ui:z-20"
           scrollBehavior="inside"
         >
-          <DialogHeader className="ui-text-center">
+          <DialogHeader className="ui:text-center">
             {t('title.page')}
           </DialogHeader>
-          <DialogFooter className="ui-grid ui-grid-cols-1">
+          <DialogFooter className="ui:grid ui:grid-cols-1">
             <Button
               variant="outline"
               onClick={() => setOpenInformation(false)}

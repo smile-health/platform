@@ -107,16 +107,16 @@ export default function StoredMaterials() {
       isLoading={detail?.isLoading}
       isEmpty={data.length === 0}
     >
-      <div className="ui-grid ui-grid-cols-[1fr_250px] w-full">
-        <div className="ui-w-full ui-bg-primary-50 flex items-center justify-center p-2 text-center text-sm">
+      <div className="ui:grid ui:grid-cols-[1fr_250px] w-full">
+        <div className="ui:w-full ui:bg-primary-50 flex items-center justify-center p-2 text-center text-sm">
           {t('section.stored_materials.has_volume')}
         </div>
         {zeroValueData.length > 0 && (
-          <div className="ui-bg-primary-50 flex items-center justify-center border border-white p-2 text-center text-sm">
+          <div className="ui:bg-primary-50 flex items-center justify-center border border-white p-2 text-center text-sm">
             {t('section.stored_materials.no_volume')}
           </div>
         )}
-        <div className="ui-w-full ui-h-[400px] flex-1">
+        <div className="ui:w-full ui:h-[400px] flex-1">
           <TreeMapChart
             data={treeMapData}
             tooltipFormatter={tooltipFormatter}
@@ -124,7 +124,7 @@ export default function StoredMaterials() {
         </div>
         {zeroValueData.length > 0 && (
           <div
-            className="ui-max-h-[400px] h-full overflow-y-auto border border-white p-4 text-sm"
+            className="ui:max-h-[400px] h-full overflow-y-auto border border-white p-4 text-sm"
             style={{ backgroundColor: zeroValueBgColor }}
           >
             <ul className="list-inside list-disc space-y-1">

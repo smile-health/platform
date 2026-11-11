@@ -199,7 +199,7 @@ export const ReceiveForm = () => {
       title={mappedOrderItems ? `Item (${mappedOrderItems.length})` : 'Item'}
       enableShowHide
     >
-      <form className="ui-space-y-6">
+      <form className="ui:space-y-6">
         <ReceiveOrderItemsTable
           errors={formState.errors}
           onRowClick={handleRowClick}
@@ -208,7 +208,7 @@ export const ReceiveForm = () => {
           isLoading={isLoading}
         />
 
-        <div className="ui-space-y-6 ui-w-1/2">
+        <div className="ui:space-y-6 ui:w-1/2">
           <Controller
             name="fulfilled_at"
             control={control}
@@ -217,9 +217,9 @@ export const ReceiveForm = () => {
               fieldState: { error },
             }) => {
               return (
-                <FormControl className="ui-space-y-0">
-                  <div className="ui-space-y-1.5">
-                    <FormLabel className="ui-text-sm" required>
+                <FormControl className="ui:space-y-0">
+                  <div className="ui:space-y-1.5">
+                    <FormLabel className="ui:text-sm" required>
                       {t('orderDetail:form.received_date.label')}
                     </FormLabel>
                     <DatePicker
@@ -253,15 +253,15 @@ export const ReceiveForm = () => {
             name="comment"
             control={control}
             render={({ field, fieldState: { error } }) => (
-              <FormControl className="ui-space-y-0 ui-w-full">
-                <div className="ui-space-y-1.5">
-                  <FormLabel className="ui-text-sm">
+              <FormControl className="ui:space-y-0 ui:w-full">
+                <div className="ui:space-y-1.5">
+                  <FormLabel className="ui:text-sm">
                     {t('orderDetail:form.comment.label')}
                   </FormLabel>
                   <TextArea
                     {...field}
                     placeholder={`${t('orderDetail:form.comment.placeholder')}...`}
-                    className="ui-min-h-[150px] ui-text-sm"
+                    className="ui:min-h-[150px] ui:text-sm"
                     disabled={isLoading}
                     error={Boolean(error?.message)}
                   />
@@ -274,12 +274,12 @@ export const ReceiveForm = () => {
           />
         </div>
 
-        <div className="ui-flex ui-justify-end ui-gap-2">
+        <div className="ui:flex ui:justify-end ui:gap-2">
           <Button
             type="button"
             variant="outline"
             size="sm"
-            className="ui-min-w-[100px]"
+            className="ui:min-w-[100px]"
             disabled={isLoading || isPending}
             onClick={handleCancel}
           >
@@ -289,7 +289,7 @@ export const ReceiveForm = () => {
             type="submit"
             variant="solid"
             size="sm"
-            className="ui-min-w-[100px]"
+            className="ui:min-w-[100px]"
             disabled={isLoading || isPending}
             onClick={handleSubmit(handleReceiveFormSubmit)}
           >

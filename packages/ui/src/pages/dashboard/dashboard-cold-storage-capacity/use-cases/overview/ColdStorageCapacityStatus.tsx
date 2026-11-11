@@ -27,7 +27,7 @@ export default function ColdStorageCapacityStatus() {
       isLoading={overview?.isLoading}
       isEmpty={!value}
     >
-      <div className="ui-w-full ui-h-[300px]">
+      <div className="ui:w-full ui:h-[300px]">
         <GaugeChart
           total={total || 0}
           value={value || 0}

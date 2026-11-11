@@ -42,32 +42,32 @@ export const TrackingDetailModal: React.FC<TrackingDetailModalProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onClose} size="xl">
-      <DialogHeader className="ui-text-center ui-w-full ui-text-xl ui-py-2">
+      <DialogHeader className="ui:text-center ui:w-full ui:text-xl ui:py-2">
         <p className="text-gray-500">{t('tracking:modal.title')}</p>
       </DialogHeader>
-      <DialogContent className="ui-flex ui-flex-col ui-text-center ui-py-6 ui-border-y">
-        <div className="ui-grid ui-grid-cols-3 ui-gap-4 ui-text-left ui-mb-4">
+      <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
+        <div className="ui:grid ui:grid-cols-3 ui:gap-4 ui:text-left ui:mb-4">
           <div>
-            <p className="ui-text-sm ui-text-gray-500">
+            <p className="ui:text-sm ui:text-gray-500">
               {t('tracking:modal.info.transaction_code')}
             </p>
-            <p className="ui-font-semibold ui-text-base ui-text-gray-900">
+            <p className="ui:font-semibold ui:text-base ui:text-gray-900">
               {transactionData?.qrCode}
             </p>
           </div>
           <div>
-            <p className="ui-text-sm ui-text-gray-500">
+            <p className="ui:text-sm ui:text-gray-500">
               {t('tracking:modal.info.healthcare_facility')}
             </p>
-            <p className="ui-font-semibold ui-text-base ui-text-gray-900">
+            <p className="ui:font-semibold ui:text-base ui:text-gray-900">
               {transactionData?.healthcareFacilityName}
             </p>
           </div>
           <div>
-            <p className="ui-text-sm ui-text-gray-500">
+            <p className="ui:text-sm ui:text-gray-500">
               {t('tracking:modal.info.waste_characteristic')}
             </p>
-            <p className="ui-font-semibold ui-text-base ui-text-gray-900">
+            <p className="ui:font-semibold ui:text-base ui:text-gray-900">
               {transactionData?.wasteCharacteristicsName}
             </p>
           </div>
@@ -77,13 +77,13 @@ export const TrackingDetailModal: React.FC<TrackingDetailModalProps> = ({
           isLoading={isFetching}
         />
       </DialogContent>
-      <DialogFooter className="ui-flex ui-w-full ui-items-center ui-py-6">
+      <DialogFooter className="ui:flex ui:w-full ui:items-center ui:py-6">
         <Button
           id="btn-back"
           type="button"
           variant="outline"
           onClick={() => onClose()}
-          className="ui-w-full"
+          className="ui:w-full"
         >
           {t('common:close')}
         </Button>

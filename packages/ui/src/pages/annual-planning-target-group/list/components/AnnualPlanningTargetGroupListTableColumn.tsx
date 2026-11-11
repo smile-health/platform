@@ -86,12 +86,12 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
         : t('annualPlanningTargetGroup:table.activate')
 
       return (
-        <div className="ui-flex ui-justify-start ui-items-center ui-gap-2">
+        <div className="ui:flex ui:justify-start ui:items-center ui:gap-2">
           {isGloballyCanEdit && (
             <Button
               type="button"
               variant="subtle"
-              className="ui-px-1"
+              className="ui:px-1"
               onClick={() => setOpenedRow({ ...original, opened_for: 'edit' })}
             >
               {t('common:edit')}
@@ -101,7 +101,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
             type="button"
             variant="subtle"
             color={!original.is_active && isGlobal ? 'success' : 'danger'}
-            className="ui-px-1"
+            className="ui:px-1"
             onClick={() =>
               setOpenedRow({ ...original, opened_for: 'activation' })
             }
@@ -151,14 +151,14 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
           arrText={[
             {
               firstLabel: `${user_updated_by?.firstname} ${user_updated_by?.lastname ?? ''}`,
-              firstClassName: 'ui-text-sm ui-font-normal ui-text-dark-teal',
+              firstClassName: 'ui:text-sm ui:font-normal ui:text-dark-teal',
             },
             {
               firstLabel: dayjs(updated_at)
                 .locale(locale)
                 .format('DD MMM YYYY HH:mm'),
               firstClassName:
-                'ui-text-sm ui-font-normal ui-text-dark-teal ui-my-1',
+                'ui:text-sm ui:font-normal ui:text-dark-teal ui:my-1',
             },
           ]}
         />

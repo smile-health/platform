@@ -25,7 +25,7 @@ const StockOpnameMaterialDropdown: React.FC<Props> = (props) => {
 
   return (
     <Tr>
-      <Td id="cell-material-dropdown" colSpan={colSpan} className="ui-m-2">
+      <Td id="cell-material-dropdown" colSpan={colSpan} className="ui:m-2">
         <div className={className}>
           <ReactSelectAsync
             key={new_opname_items.length}

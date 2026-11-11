@@ -16,13 +16,13 @@ const AnnualPlanningTargetGroupTitleBlock = ({
         item.firstLabel && (
           <div
             key={`_${index.toString()}`}
-            className={`${item.firstClassName ?? 'ui-text-dark-teal'} ui-text-sm`}
+            className={`${item.firstClassName ?? 'ui:text-dark-teal'} ui:text-sm`}
           >
             {item.firstLabel}
             {item.secondLabel && (
               <span
                 className={` ${
-                  item.secondClassName ?? 'ui-text-dark-teal ui-text-sm'
+                  item.secondClassName ?? 'ui:text-dark-teal ui:text-sm'
                 }`}
               >
                 {item.secondLabel}

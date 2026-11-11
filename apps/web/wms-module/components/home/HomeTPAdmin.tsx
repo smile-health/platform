@@ -89,28 +89,28 @@ export default function HomeTPAdmin() {
     <Container title={t('home:title')} hideTabs={false} withLayout={true}>
       <Meta title={`WMS | ${t('home:title')}`} />
 
-      <div className="ui-mt-6">
-        <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-font-semibold ui-text-lg">{t('home:title')}</h5>
+      <div className="ui:mt-6">
+        <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:font-semibold ui:text-lg">{t('home:title')}</h5>
         </div>
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid ui-grid-cols-4 ui-gap-4">
+          <FilterFormBody className="ui:grid ui:grid-cols-4 ui:gap-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-flex ui-space-x-3 ui-items-center">
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:flex ui:space-x-3 ui:items-center">
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Reload className="ui-size-5" />}
+                leftIcon={<Reload className="ui:size-5" />}
                 onClick={filter.reset}
               >
                 {t('common:reset')}
               </Button>
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -121,7 +121,7 @@ export default function HomeTPAdmin() {
         </FilterFormRoot>
       </div>
 
-      <div className="ui-w-full ui-mx-auto ui-border ui-border-gray-200 ui-rounded-lg ui-mt-5">
+      <div className="ui:w-full ui:mx-auto ui:border ui:border-gray-200 ui:rounded-lg ui:mt-5">
         <TabsRoot
           value={query.tab}
           variant="pills"
@@ -137,7 +137,7 @@ export default function HomeTPAdmin() {
             ) && (
               <TabsTrigger
                 value={ProviderTypeTP.TRANSPORTER}
-                className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
               >
                 {t('home:home_tp.tab.transport')}
               </TabsTrigger>
@@ -150,7 +150,7 @@ export default function HomeTPAdmin() {
                 <TabsTrigger
                   value={ProviderTypeTP.TREATMENT}
                   hidden={true}
-                  className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+                  className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
                 >
                   {t('home:home_tp.tab.treatment')}
                 </TabsTrigger>
@@ -158,7 +158,7 @@ export default function HomeTPAdmin() {
             {providerTypesArray.some((item) => item.includes('LANDFILL')) && (
               <TabsTrigger
                 value={ProviderTypeTP.LANDFILLER}
-                className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
               >
                 {t('home:home_tp.tab.landfill')}
               </TabsTrigger>
@@ -166,7 +166,7 @@ export default function HomeTPAdmin() {
             {providerTypesArray.some((item) => item.includes('RECYCLER')) && (
               <TabsTrigger
                 value={ProviderTypeTP.RECYCLER}
-                className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
               >
                 {t('home:home_tp.tab.recycle')}
               </TabsTrigger>
@@ -174,7 +174,7 @@ export default function HomeTPAdmin() {
             {providerTypesArray.includes('SPECIALIZED_TREATMENT_PROVIDER') && (
               <TabsTrigger
                 value={ProviderTypeTP.SPECIALIZED}
-                className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
               >
                 {t('home:home_tp.tab.specialized')}
               </TabsTrigger>
@@ -182,7 +182,7 @@ export default function HomeTPAdmin() {
             {providerTypesArray.includes('TRANSPORTER_GOVERNMENT') && (
               <TabsTrigger
                 value={ProviderTypeTP.GOVERNMENT}
-                className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
               >
                 {t('home:home_tp.tab.government')}
               </TabsTrigger>
@@ -191,7 +191,7 @@ export default function HomeTPAdmin() {
               !providerTypesArray.includes('TRANSPORTER_GOVERNMENT') && (
                 <TabsTrigger
                   value={ProviderTypeTP.GOVERNMENT_WASTE_BANK}
-                  className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+                  className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
                 >
                   {t('home:home_tp.tab.waste_bank')}
                 </TabsTrigger>
@@ -200,7 +200,7 @@ export default function HomeTPAdmin() {
         </TabsRoot>
       </div>
 
-      <div className="ui-mt-5">
+      <div className="ui:mt-5">
         {query.tab === ProviderTypeTP.TRANSPORTER ? (
           <HomeTPTransportTable
             activeTab={query.tab}
@@ -216,7 +216,7 @@ export default function HomeTPAdmin() {
             size={pagination.paginate}
           />
         )}
-        <PaginationContainer className="ui-mt-5">
+        <PaginationContainer className="ui:mt-5">
           <PaginationSelectLimit
             size={pagination.paginate}
             onChange={(paginate) => handleChangePaginate(paginate)}

@@ -52,12 +52,12 @@ export default function MaterialVolumeDetailInfo(
       {section.map((item) => (
         <div
           key={item.title}
-          className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4"
+          className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4"
         >
-          <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-            <h5 className="ui-font-bold">{item.title}</h5>
+          <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+            <h5 className="ui:font-bold">{item.title}</h5>
             <Exists useIt={item.id === 'detail'}>
-              <div className="ui-grid ui-grid-cols-1 ui-w-[150px] ui-justify-end">
+              <div className="ui:grid ui:grid-cols-1 ui:w-[150px] ui:justify-end">
                 <Button
                   asChild
                   id={`btn-link-material-volume-edit-${item.id}`}

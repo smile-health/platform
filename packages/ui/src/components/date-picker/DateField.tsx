@@ -28,7 +28,7 @@ export function DateField(props: Readonly<AriaDateFieldProps<DateValue>>) {
   const { fieldProps } = useDateField(props, state, ref)
 
   return (
-    <div {...fieldProps} ref={ref} className="ui-flex">
+    <div {...fieldProps} ref={ref} className="ui:flex">
       {state.segments.map((segment, i) => (
         <DateSegment
           key={i + 1}
@@ -62,12 +62,12 @@ function DateSegment({
         ...segmentProps.style,
       }}
       className={cx(
-        'ui-box-content ui-leading-none ui-outline-none group ',
-        'ui-py-1 focus:ui-bg-primary-500 focus:ui-text-primary-contrast',
-        'ui-text-right ui-text-sm ui-tabular-nums',
+        'ui:box-content ui:leading-none ui:outline-hidden group ',
+        'ui:py-1 ui:focus:bg-primary-500 ui:focus:text-primary-contrast',
+        'ui:text-right ui:text-sm ui:tabular-nums',
         {
-          '!ui-text-gray-500': !segment.isEditable || segment.isPlaceholder,
-          'ui-text-gray-800': segment.isEditable,
+          'ui:text-gray-500!': !segment.isEditable || segment.isPlaceholder,
+          'ui:text-gray-800': segment.isEditable,
         }
       )}
     >

@@ -31,9 +31,9 @@ const TreatmentLocationFormInfo: React.FC = () => {
   const { province } = watch();
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
           <Controller
             name="locationName"
             control={control}
@@ -69,7 +69,7 @@ const TreatmentLocationFormInfo: React.FC = () => {
             }}
           />
 
-          <div className="ui-flex ui-flex-row ui-gap-2 ui-justify-between">
+          <div className="ui:flex ui:flex-row ui:gap-2 ui:justify-between">
             <Controller
               name="latitude"
               control={control}
@@ -78,7 +78,7 @@ const TreatmentLocationFormInfo: React.FC = () => {
                 fieldState: { error },
               }) => {
                 return (
-                  <FormControl className="ui-flex-1">
+                  <FormControl className="ui:flex-1">
                     <FormLabel required>
                       {t('treatmentLocation:form.latitude.label')}
                     </FormLabel>
@@ -112,7 +112,7 @@ const TreatmentLocationFormInfo: React.FC = () => {
                 fieldState: { error },
               }) => {
                 return (
-                  <FormControl className="ui-flex-1">
+                  <FormControl className="ui:flex-1">
                     <FormLabel required>
                       {t('treatmentLocation:form.longitude.label')}
                     </FormLabel>

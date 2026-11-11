@@ -163,26 +163,26 @@ const AnnualPlanningTargetGroupListPage: React.FC<CommonType> = ({
           </>
         )}
 
-        <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-font-bold ui-text-xl">
+        <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:font-bold ui:text-xl">
             {t('annualPlanningTargetGroup:title')}
           </h5>
           <AnnualPlanningTargetGroupAddButton handleAdd={handleAdd} />
         </div>
         {isGlobal && (
-          <div className="ui-space-y-4 ui-mt-6">
+          <div className="ui:space-y-4 ui:mt-6">
             <FilterFormRoot collapsible={false} onSubmit={filter.handleSubmit}>
-              <FilterFormBody className="ui-grid-cols-1">
-                <div className="ui-flex ui-items-end ui-gap-3">
-                  <div className="ui-flex-1">{filter.renderField()}</div>
-                  <div className="ui-flex ui-gap-2">
+              <FilterFormBody className="ui:grid-cols-1">
+                <div className="ui:flex ui:items-end ui:gap-3">
+                  <div className="ui:flex-1">{filter.renderField()}</div>
+                  <div className="ui:flex ui:gap-2">
                     {hasGlobalMutatePermission && (
                       <Button
                         id="annual_planning_target_group_import"
                         variant="subtle"
                         type="button"
                         onClick={() => setShowImportModal(true)}
-                        leftIcon={<Import className="ui-size-5" />}
+                        leftIcon={<Import className="ui:size-5" />}
                       >
                         {t('common:import')}
                       </Button>
@@ -192,7 +192,7 @@ const AnnualPlanningTargetGroupListPage: React.FC<CommonType> = ({
                       variant="subtle"
                       type="button"
                       onClick={() => exportQuery.refetch()}
-                      leftIcon={<Export className="ui-size-5" />}
+                      leftIcon={<Export className="ui:size-5" />}
                     >
                       {t('common:export')}
                     </Button>
@@ -200,22 +200,22 @@ const AnnualPlanningTargetGroupListPage: React.FC<CommonType> = ({
                       <Button
                         data-testid="annual_planning_target_group_download_template"
                         id="annual_planning_target_group_download_template"
-                        className="ui-shrink-0"
+                        className="ui:shrink-0"
                         variant="subtle"
                         type="button"
                         onClick={() => downloadTemplateQuery.refetch()}
-                        leftIcon={<Download className="ui-size-5" />}
+                        leftIcon={<Download className="ui:size-5" />}
                       >
                         {t('common:download_template')}
                       </Button>
                     )}
-                    <div className="ui-w-px ui-h-auto ui-bg-neutral-300" />
+                    <div className="ui:w-px ui:h-auto ui:bg-neutral-300" />
                     <FilterResetButton
                       onClick={filter.reset}
                       variant="subtle"
                     />
                     <FilterSubmitButton
-                      className="ui-w-full"
+                      className="ui:w-full"
                       variant="outline"
                       onClick={() => setPagination({ page: 1 })}
                     />
@@ -227,7 +227,7 @@ const AnnualPlanningTargetGroupListPage: React.FC<CommonType> = ({
           </div>
         )}
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <AnnualPlanningTargetGroupListTable
             data={listAnnualPlanningTargetGroupData}
           />

@@ -65,22 +65,22 @@ export const OrderDetailConfirmHierarchyModalForm = ({
         name="comment"
         control={control}
         render={({ field, fieldState: { error } }) => (
-          <FormControl className="ui-space-y-0">
-            <div className="ui-space-y-1.5">
-              <FormLabel className="ui-text-sm">
+          <FormControl className="ui:space-y-0">
+            <div className="ui:space-y-1.5">
+              <FormLabel className="ui:text-sm">
                 {t('form.comment.label')}
               </FormLabel>
               <TextArea
                 {...field}
                 placeholder={`${t('form.comment.placeholder')}...`}
-                className="ui-text-sm"
+                className="ui:text-sm"
                 disabled={isLoading}
                 style={{ height: 154 }}
                 error={Boolean(error?.message)}
               />
             </div>
             {error?.message && (
-              <FormErrorMessage className="ui-leading-none">
+              <FormErrorMessage className="ui:leading-none">
                 {error.message}
               </FormErrorMessage>
             )}

@@ -55,9 +55,9 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
           size="full"
         >
           <DrawerHeader>
-            <div className="ui-flex ui-justify-between">
+            <div className="ui:flex ui:justify-between">
               <div />
-              <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+              <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
                 {is_batch ? tTransactionCreate('transaction_discard.form.table.title.batch') : tTransactionCreate('transaction_discard.form.table.title.detail')}
               </h6>
               <Button
@@ -73,32 +73,32 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
               </Button>
             </div>
           </DrawerHeader>
-          <DrawerContent className="ui-border-y ui-border-b-zinc-300">
-            <div className="ui-px-1 ui-py-2" id="transaction-detail-table">
-              <div className="ui-space-y-6">
-                <div className="ui-grid ui-grid-cols-[40%_40%_20%] ui-gap-4 ui-mb-1">
+          <DrawerContent className="ui:border-y ui:border-b-zinc-300">
+            <div className="ui:px-1 ui:py-2" id="transaction-detail-table">
+              <div className="ui:space-y-6">
+                <div className="ui:grid ui:grid-cols-[40%_40%_20%] ui:gap-4 ui:mb-1">
                   <div>
-                    <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                    <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                       Material
                     </h2>
-                    <p className="ui-font-bold ui-text-primary-800 ui-mb-1 ui-break-normal">{details?.material?.name || '-'}</p>
+                    <p className="ui:font-bold ui:text-primary-800 ui:mb-1 ui:break-normal">{details?.material?.name || '-'}</p>
                   </div>
                   <div>
-                    <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                    <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                       {tTransactionCreate('transaction_discard.form.table.description.stock.on_hand', { returnObjects: true })[1]}
                     </h2>
-                    <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+                    <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                       {getValueNumber(details?.total_qty || 0, language)}
-                      <span className="ui-text-neutral-500 ui-text-xs ui-font-normal ui-ml-1">
+                      <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
                         {`(min:${getValueNumber(details?.min, language)}, max:${getValueNumber(details?.max, language)})`}
                       </span>
                     </p>
                   </div>
                   <div>
-                    <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                    <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                       {tTransactionCreate('transaction_discard.form.table.description.stock.available', { returnObjects: true })[1]}
                     </h2>
-                    <p className="ui-font-bold ui-text-primary-800 ui-mb-1">{getValueNumber(details?.total_available_qty || 0, language)}</p>
+                    <p className="ui:font-bold ui:text-primary-800 ui:mb-1">{getValueNumber(details?.total_available_qty || 0, language)}</p>
                   </div>
                 </div>
                 <Table
@@ -110,14 +110,14 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
                   empty={data?.stocks.length === 0}
                   verticalAlignment="center"
                 >
-                  <Thead className="ui-bg-slate-100">
+                  <Thead className="ui:bg-slate-100">
                     <Tr>
                       {columns.map(column => (
                         <Th
                           id={`header-${column.id}`}
                           columnKey={column.id}
                           key={column.id}
-                          className="ui-w-10 ui-font-semibold"
+                          className="ui:w-10 ui:font-semibold"
                           style={{
                             ...column.minSize && { minWidth: column.minSize },
                           }}
@@ -127,45 +127,45 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
                       ))}
                     </Tr>
                   </Thead>
-                  <Tbody className="ui-bg-white">
+                  <Tbody className="ui:bg-white">
                     {details?.stocks?.map((item, index) => (
                       <Tr
                         key={`material-detail-${item.id}`}
-                        className="ui-text-sm ui-font-normal"
+                        className="ui:text-sm ui:font-normal"
                       >
-                        <Td id={`cell-${columns[0].id}`} className="ui-content-start">{index + 1}</Td>
-                        <Td id={`cell-${columns[1].id}`} className="ui-content-start">
-                          <p className="ui-font-bold ui-text-dark-blue ui-mb-1">{item.batch?.code || '-'}</p>
-                          <p className="ui-mb-1">
+                        <Td id={`cell-${columns[0].id}`} className="ui:content-start">{index + 1}</Td>
+                        <Td id={`cell-${columns[1].id}`} className="ui:content-start">
+                          <p className="ui:font-bold ui:text-dark-blue ui:mb-1">{item.batch?.code || '-'}</p>
+                          <p className="ui:mb-1">
                             {tTransactionCreate('transaction_discard.form.table.description.batch.production_date', {
                               value: parseDateTime(item.batch?.production_date || '-', 'DD MMM YYYY').toUpperCase()
                             })}
                           </p>
-                          <p className="ui-mb-1">
+                          <p className="ui:mb-1">
                             {tTransactionCreate('transaction_discard.form.table.description.batch.manufacturer', {
                               value: item.batch?.manufacture.name || '-'
                             })}
                           </p>
-                          <p className="ui-mb-1">
+                          <p className="ui:mb-1">
                             {tTransactionCreate('transaction_discard.form.table.description.batch.expired_date', {
                               value: parseDateTime(item.batch?.expired_date || '-', 'DD MMM YYYY').toUpperCase()
                             })}
                           </p>
                         </Td>
-                        <Td id={`cell-${columns[2].id}`} className="ui-content-start">
-                          <p className="ui-mb-1">
+                        <Td id={`cell-${columns[2].id}`} className="ui:content-start">
+                          <p className="ui:mb-1">
                             {tTransactionCreate('transaction_discard.form.table.description.stock.on_hand', { value: getValueNumber(item.qty || 0, language), returnObjects: true })[0]}
                           </p>
-                          <p className="ui-mb-1">
+                          <p className="ui:mb-1">
                             {tTransactionCreate('transaction_discard.form.table.description.stock.allocated', { value: getValueNumber(item.allocated_qty || 0, language) })}
                           </p>
-                          <p className="ui-mb-1">
+                          <p className="ui:mb-1">
                             {tTransactionCreate('transaction_discard.form.table.description.stock.available', {
                               value: is_open_vial ? '' : getValueNumber(item.available_qty || 0, language), returnObjects: true
                             })[0]}
                           </p>
                           {is_open_vial && (
-                            <p className="ui-mb-1">
+                            <p className="ui:mb-1">
                               {tTransactionCreate('transaction_discard.form.table.column.open_close_vial', {
                                 open: getValueNumber(item.open_vial_qty || 0, language),
                                 close: getValueNumber(item.qty || 0, language),
@@ -173,7 +173,7 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
                             </p>
                           )}
                         </Td>
-                        <Td id={`cell-${columns[3].id}`} className="ui-content-start">
+                        <Td id={`cell-${columns[3].id}`} className="ui:content-start">
                           {item.activity.name}
                         </Td>
                         <TransactionDiscardInputQuantity
@@ -184,7 +184,7 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
                           is_sensitive={is_sensitive}
                         />
                         {is_sensitive && (
-                          <Td id={`cell-${columns[5 + getValueBoolean(is_open_vial)].id}`} className="ui-content-start">
+                          <Td id={`cell-${columns[5 + getValueBoolean(is_open_vial)].id}`} className="ui:content-start">
                             <TransactionCreateSelectMaterialStatus
                               control={methods.control}
                               id={String(index)}
@@ -194,7 +194,7 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
                         )}
                         <Td
                           id={`cell-${columns[5 + getValueBoolean(is_sensitive) + getValueBoolean(is_open_vial)].id}`}
-                          className="ui-content-start"
+                          className="ui:content-start"
                         >
                           <TransactionCreateSelectReason
                             id={String(index)}
@@ -217,11 +217,11 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
             </div>
           </DrawerContent>
           <DrawerFooter>
-            <div className="ui-flex ui-gap-3">
+            <div className="ui:flex ui:gap-3">
               <Button
                 variant="subtle"
                 type="button"
-                className="ui-mr-2"
+                className="ui:mr-2"
                 onClick={handleReset}
                 leftIcon={<Reload />}
               >
@@ -229,7 +229,7 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
               </Button>
               <Button
                 type="button"
-                className="ui-w-48"
+                className="ui:w-48"
                 onClick={handleUpdateItems}
               >
                 {tCommon('save')}

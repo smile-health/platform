@@ -15,11 +15,11 @@ export default function UserDetailEntityInfo(props: UserDetailEntityInfoProps) {
   const { t } = useTranslation('userSetting');
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-      <h5 className="ui-font-bold">{t('title.detail')}</h5>
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+      <h5 className="ui:font-bold">{t('title.detail')}</h5>
       <RenderDetailValue
-        labelsClassName="ui-text-left"
-        valuesClassName="ui-text-left"
+        labelsClassName="ui:text-left"
+        valuesClassName="ui:text-left"
         loading={isLoading}
         data={[
           {

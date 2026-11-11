@@ -136,13 +136,13 @@ export default function DashboardMicroplanningTabs<T extends string>({
             <DashboardBox.Header bordered>
                 <h4>{title}</h4>
                 {subtitle && (
-                    <p className={cx('ui-text-base', 'ui-text-dark-teal')}>
+                    <p className={cx('ui:text-base', 'ui:text-dark-teal')}>
                         {subtitle}
                     </p>
                 )}
             </DashboardBox.Header>
 
-            <div className="ui-relative ui-p-4 ui-bg-gray-50">
+            <div className="ui:relative ui:p-4 ui:bg-gray-50">
                 <TabsRoot
                     variant="pills"
                     value={activeTab}
@@ -154,8 +154,8 @@ export default function DashboardMicroplanningTabs<T extends string>({
                         setTab?.(value as T)
                     }}
                 >
-                    <div className="ui-flex ui-items-center ui-gap-4 mb-5">
-                        <TabsList className="ui-grid-cols-4 ui-grow">
+                    <div className="ui:flex ui:items-center ui:gap-4 mb-5">
+                        <TabsList className="ui:grid-cols-4 ui:grow">
                             {tabList.map((item) => {
                                 const disabled = isTabDisabled(item.id)
 
@@ -164,7 +164,7 @@ export default function DashboardMicroplanningTabs<T extends string>({
                                         key={item.id}
                                         value={item.id}
                                         disabled={disabled}
-                                        className="ui-justify-center ui-text-sm ui-px-2 ui-h-10"
+                                        className="ui:justify-center ui:text-sm ui:px-2 ui:h-10"
                                     >
                                         {item.label}
                                     </TabsTrigger>

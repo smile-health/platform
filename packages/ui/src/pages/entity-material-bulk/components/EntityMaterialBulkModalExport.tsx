@@ -80,39 +80,39 @@ const EntityMaterialBulkModalExport: React.FC<Props> = (props) => {
   }, [methods.reset])
 
   return (
-    <Dialog open={open} onOpenChange={setOpen} className="ui-max-w-[828px]">
+    <Dialog open={open} onOpenChange={setOpen} className="ui:max-w-[828px]">
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
+      <DialogHeader className="ui:text-center ui:text-xl">
         {t("entityMaterialBulk:export.title")}
       </DialogHeader>
-      <div className="ui-border-b-[1px]" />
-      <DialogContent className="ui-py-4 ui-overflow-y-auto ui-max-h-[calc(100vh-200px)]">
-        <div className="ui-space-y-10">
-          <div className="ui-bg-primary-50 ui-rounded ui-px-4 ui-py-3">
-            <div className="ui-flex ui-gap-2 ui-items-center">
+      <div className="ui:border-b" />
+      <DialogContent className="ui:py-4 ui:overflow-y-auto ui:max-h-[calc(100vh-200px)]">
+        <div className="ui:space-y-10">
+          <div className="ui:bg-primary-50 ui:rounded ui:px-4 ui:py-3">
+            <div className="ui:flex ui:gap-2 ui:items-center">
               <Warning />
-              <p className="ui-text-xs">{t("entityMaterialBulk:export.description")}</p>
+              <p className="ui:text-xs">{t("entityMaterialBulk:export.description")}</p>
             </div>
           </div>
           <form
             id="export-entity-material-bulk"
             onSubmit={methods.handleSubmit(values => mutate(values as FilterFormData))}
-            className="ui-grid ui-grid-cols-1 ui-gap-y-4"
+            className="ui:grid ui:grid-cols-1 ui:gap-y-4"
           >
             <FormProvider {...methods}>
               <EntityMaterialBulkFormEntity />
-              <div className="ui-border-b-[1px] ui-mt-2" />
+              <div className="ui:border-b ui:mt-2" />
               <EntityMaterialBulkFormMaterial isMaterialHierarchy={isMaterialHierarchy} />
             </FormProvider>
           </form>
         </div>
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full">
           <Button
             id="btn-close-modal-export"
             variant="default"
-            className="ui-w-full"
+            className="ui:w-full"
             loading={isPending}
             onClick={() => {
               setOpen?.(!open)
@@ -124,9 +124,9 @@ const EntityMaterialBulkModalExport: React.FC<Props> = (props) => {
           <Button
             id="btn-submit-modal-download"
             type="submit"
-            className="ui-w-full"
+            className="ui:w-full"
             form="export-entity-material-bulk"
-            leftIcon={<Download className="ui-size-5" />}
+            leftIcon={<Download className="ui:size-5" />}
             loading={isPending}
           >
             {t('common:download_template')}

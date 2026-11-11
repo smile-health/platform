@@ -138,7 +138,7 @@ export function getDashboardIOTHeaders(
       label: category?.label,
       colSpan: dataTypes?.length,
       class:
-        '[&:not(:last-child)]:ui-border-r ui-border-gray-300 ui-text-center',
+        'ui:not-last:border-r ui:border-gray-300 ui:text-center',
     })) || []
 
   const types = periodLabels?.flatMap(() => {
@@ -146,7 +146,7 @@ export function getDashboardIOTHeaders(
       label: type?.label,
       colSpan: 1,
       class:
-        '[&:not(:last-child)]:ui-border-r ui-border-gray-300 ui-text-center',
+        'ui:not-last:border-r ui:border-gray-300 ui:text-center',
     }))
   })
 
@@ -172,12 +172,12 @@ export function getDashboardIOTDataTable({
     let rows = [
       {
         value: (page - 1) * paginate + (index + 1),
-        class: 'ui-sticky ui-left-0 ui-min-w-14 ui-w-14',
+        class: 'ui:sticky ui:left-0 ui:min-w-14 ui:w-14',
       },
       {
         value: item?.name,
         class:
-          'ui-sticky ui-left-14 ui-min-w-60 ui-w-60 ui-border-r ui-border-gray-300',
+          'ui:sticky ui:left-14 ui:min-w-60 ui:w-60 ui:border-r ui:border-gray-300',
       },
     ]
 
@@ -185,8 +185,8 @@ export function getDashboardIOTDataTable({
       const p = item?.period?.[i]
       const values = types?.map((type) => ({
         value: formatter(p?.[type?.key]),
-        class: cx('ui-text-center', {
-          'ui-bg-sky-100': p?.[type?.key] > 0.099,
+        class: cx('ui:text-center', {
+          'ui:bg-sky-100': p?.[type?.key] > 0.099,
         }),
       }))
 

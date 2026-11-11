@@ -77,22 +77,22 @@ const EntityMaterialManagementList: React.FC<Props> = ({
       >
         <Thead>
           <Tr>
-            <Th columnKey="name" className="ui-font-semibold">
+            <Th columnKey="name" className="ui:font-semibold">
               {t('material:column.name', { defaultValue: 'Name' })}
             </Th>
-            <Th columnKey="activity_name" className="ui-font-semibold">
+            <Th columnKey="activity_name" className="ui:font-semibold">
               {t('entity:detail.customer_vendor.activity')}
             </Th>
-            <Th columnKey="temperature_min" className="ui-font-semibold">
+            <Th columnKey="temperature_min" className="ui:font-semibold">
               {t('entity:detail.material_entity.temp_min')}
             </Th>
-            <Th columnKey="temperature_max" className="ui-font-semibold">
+            <Th columnKey="temperature_max" className="ui:font-semibold">
               {t('entity:detail.material_entity.temp_max')}
             </Th>
-            <Th columnKey="updated_by" className="ui-font-semibold">
+            <Th columnKey="updated_by" className="ui:font-semibold">
               {t('common:updated_by')}
             </Th>
-            <Th columnKey="action" className="ui-font-semibold ui-w-[140px]">
+            <Th columnKey="action" className="ui:font-semibold ui:w-[140px]">
               {t('common:action')}
             </Th>
           </Tr>
@@ -109,7 +109,7 @@ const EntityMaterialManagementList: React.FC<Props> = ({
                 </Td>
                 <Td>{numberFormatter(item?.min_temperature, language)}</Td>
                 <Td>{numberFormatter(item?.max_temperature, language)}</Td>
-                <Td className="ui-capitalize">
+                <Td className="ui:capitalize">
                   {item?.entity_master_materials &&
                   item?.entity_master_materials.length > 0
                     ? combinedTextByDash({
@@ -129,11 +129,11 @@ const EntityMaterialManagementList: React.FC<Props> = ({
                     : ''}
                 </Td>
                 <Td>
-                  <div className="ui-flex ui-justify-start ui-items-center">
+                  <div className="ui:flex ui:justify-start ui:items-center">
                     <Button
                       id={`view_details_${item?.material_id}`}
                       variant="light"
-                      className="ui-bg-transparent ui-p-0 ui-h-auto ui-mr-[18px] ui-text-[#0069D2] hover:!ui-bg-transparent"
+                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:mr-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
                       type="button"
                       onClick={() => handleOpenMaterialActivityModal(item)}
                     >
@@ -154,7 +154,7 @@ const EntityMaterialManagementList: React.FC<Props> = ({
         </TableEmpty>
       </Table>
       {!!dataSource?.total_item && (
-        <PaginationContainer className="ui-flex ui-justify-between ui-mt-6">
+        <PaginationContainer className="ui:flex ui:justify-between ui:mt-6">
           <PaginationSelectLimit
             onChange={handleChangeSize}
             size={dataSource?.item_per_page}

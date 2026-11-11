@@ -47,19 +47,19 @@ export function ModalConfirmation({
   return (
     <Dialog size="lg" open={open} onOpenChange={setOpen}>
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
+      <DialogHeader className="ui:text-center ui:text-xl">
         {title ?? t('confirmation')}
       </DialogHeader>
-      <DialogContent className="ui-space-y-4">
-        <p className="ui-text-center ui-text-neutral-500">{description}</p>
+      <DialogContent className="ui:space-y-4">
+        <p className="ui:text-center ui:text-neutral-500">{description}</p>
         {subDescription && (
-          <p className={cx("ui-text-center ui-text-dark-blue ui-font-medium", subDescriptionClassName)}>
+          <p className={cx("ui:text-center ui:text-dark-blue ui:font-medium", subDescriptionClassName)}>
             {subDescription}
           </p>
         )}
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full mx-auto">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full mx-auto">
           <Button
             id="btn-close-modal-confirmation"
             type="button"

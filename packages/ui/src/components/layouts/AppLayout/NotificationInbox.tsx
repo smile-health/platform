@@ -74,11 +74,11 @@ const NotificationInbox = () => {
       renderBell={() => (
         <NotificationBell
           renderIcon={(unreadCount) => (
-            <div className="ui-relative ui-inline-flex ui-cursor-pointer">
-              <Bell className="ui-text-blue-800" />
+            <div className="ui:relative ui:inline-flex ui:cursor-pointer">
+              <Bell className="ui:text-blue-800" />
               {unreadCount > 0 && (
                 <div
-                  className="ui-absolute ui-top-[-6px] ui-right-[-6px] ui-flex ui-items-center ui-justify-center ui-min-w-[16px] ui-h-4 ui-px-[3px] ui-text-[10px] ui-leading-none ui-font-semibold ui-text-white ui-bg-red-600 ui-rounded-full"
+                  className="ui:absolute ui:top-[-6px] ui:right-[-6px] ui:flex ui:items-center ui:justify-center ui:min-w-[16px] ui:h-4 ui:px-[3px] ui:text-[10px] ui:leading-none ui:font-semibold ui:text-white ui:bg-red-600 ui:rounded-full"
                 >
                   {unreadCount > 99 ? '99+' : unreadCount}
                 </div>

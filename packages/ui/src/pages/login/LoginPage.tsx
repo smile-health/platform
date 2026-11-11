@@ -122,7 +122,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isPoc } = {}) => {
   return (
     <AuthLayout>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormControl className="ui-mb-6">
+        <FormControl className="ui:mb-6">
           <FormLabel required>Username</FormLabel>
           <Input
             placeholder="Username"
@@ -130,12 +130,12 @@ const LoginPage: React.FC<LoginPageProps> = ({ isPoc } = {}) => {
             id="username"
           />
           {errors?.username?.message && (
-            <FormErrorMessage className="ui-max-w-sm">
+            <FormErrorMessage className="ui:max-w-sm">
               {errors?.username?.message}
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-mb-6">
+        <FormControl className="ui:mb-6">
           <FormLabel required>{t('password')}</FormLabel>
           <InputPassword
             placeholder={t('password')}
@@ -150,7 +150,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isPoc } = {}) => {
           type="submit"
           variant="solid"
           id="btnLogin"
-          className="ui-mb-10 ui-rounded-lg ui-mt-2 ui-w-full"
+          className="ui:mb-10 ui:rounded-lg ui:mt-2 ui:w-full"
           disabled={!isValid}
           loading={isPending}
         >

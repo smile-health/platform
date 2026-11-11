@@ -39,31 +39,31 @@ const TransactionCreateConsumptionIntraDermal = ({
   } = methods
   const { data } = watch()
   return (
-    <DialogContent className="!ui-p-0">
-      <div className="ui-flex ui-flex-row ui-space-x-5 ui-p-5">
+    <DialogContent className="ui:p-0!">
+      <div className="ui:flex ui:flex-row ui:space-x-5 ui:p-5">
         <div>
-          <div className="ui-text-neutral-500 ui-text-sm">
+          <div className="ui:text-neutral-500 ui:text-sm">
             {t('table.column.vaccine_type.label')}
           </div>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {item?.vaccine_type?.label ?? '-'}
           </div>
         </div>
         <div>
-          <div className="ui-text-neutral-500 ui-text-sm">
+          <div className="ui:text-neutral-500 ui:text-sm">
             {t('table.column.method.label')}
           </div>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {item?.vaccine_method?.label ?? '-'}
           </div>
         </div>
       </div>
-      <div className="ui-flex ui-flex-row ui-border-t ui-border-[#D2D2D2]">
-        <div className="ui-w-56 ui-border-r ui-border-[#D2D2D2]">
-          <div className="ui-flex ui-flex-col">
+      <div className="ui:flex ui:flex-row ui:border-t ui:border-[#D2D2D2]">
+        <div className="ui:w-56 ui:border-r ui:border-[#D2D2D2]">
+          <div className="ui:flex ui:flex-col">
             {data?.map((item, index) => (
               <div
-                className="ui-flex ui-justify-between"
+                className="ui:flex ui:justify-between"
                 key={`${item.vaccination.patient_id}-${index.toString()}`}
               >
                 <ButtonPatient
@@ -77,7 +77,7 @@ const TransactionCreateConsumptionIntraDermal = ({
                 {index !== 0 ? (
                   <button
                     id={`btn-delete ${item.vaccination.patient_id}-${index.toString()}`}
-                    className="ui-text-dark-teal ui-pr-3"
+                    className="ui:text-dark-teal ui:pr-3"
                     type="button"
                     onClick={() => {
                       setValue('data', removePatient(index, data))
@@ -85,7 +85,7 @@ const TransactionCreateConsumptionIntraDermal = ({
                     }}
                   >
                     <span>
-                      <Trash className="ui-w-3"></Trash>
+                      <Trash className="ui:w-3"></Trash>
                     </span>
                   </button>
                 ) : null}
@@ -94,13 +94,13 @@ const TransactionCreateConsumptionIntraDermal = ({
             {data.length < 5 ? (
               <Button
                 variant="subtle"
-                className="ui-mt-5 ui-pl-2"
+                className="ui:mt-5 ui:pl-2"
                 type="button"
                 onClick={() => setValue('data', addNewPatient(data))}
                 id={`add-new-patient-batch-${indexItem}`}
                 disabled={isDisabledAddPatient(data)}
               >
-                <div className="ui-text-dark-teal ui-flex ui-flex-row ui-space-x-1 ui-place-items-center">
+                <div className="ui:text-dark-teal ui:flex ui:flex-row ui:space-x-1 ui:place-items-center">
                   <span>
                     <Plus></Plus>
                   </span>
@@ -111,7 +111,7 @@ const TransactionCreateConsumptionIntraDermal = ({
           </div>
         </div>
         <div
-          className="ui-w-full ui-p-5"
+          className="ui:w-full ui:p-5"
           style={{ backgroundColor: '#FAFAFA' }}
         >
           <TransactionCreateConsumptionFormInputPatient />

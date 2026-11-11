@@ -44,7 +44,7 @@ export const TemperatureColumns = (
                   locale: language,
                 })
               ),
-              className: `ui-text-sm ui-font-bold ${colorClass(
+              className: `ui:text-sm ui:font-bold ${colorClass(
                 latest_log?.temp as number,
                 latest_log
               )}`,
@@ -53,7 +53,7 @@ export const TemperatureColumns = (
               label: dayjs(latest_log?.updated_at)
                 ?.locale(language)
                 ?.format('DD/MM/YYYY HH:mm'),
-              className: 'ui-text-sm ui-font-normal ui-text-gray-400 ui-my-1',
+              className: 'ui:text-sm ui:font-normal ui:text-gray-400 ui:my-1',
             },
           ]}
         />

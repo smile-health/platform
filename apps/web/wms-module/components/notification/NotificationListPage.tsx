@@ -29,7 +29,7 @@ function getNotificationColumns(
       header: '',
       accessorKey: 'type',
       meta: {
-        cellClassName: '!ui-p-0',
+        cellClassName: 'ui:p-0!',
       },
       cell: ({ row }: { row: Row<TNotification> }) => (
         <NotificationWithRequestApproval
@@ -71,7 +71,7 @@ export default function NotificationListPage({
     >
       <Meta title="WMS | Notification" />
 
-      <div className="ui-mt-6 ui-space-y-4">
+      <div className="ui:mt-6 ui:space-y-4">
         <NotificationFilter
           page={data?.page ?? 1}
           paginate={data?.item_per_page ?? 10}
@@ -81,7 +81,7 @@ export default function NotificationListPage({
         />
 
         {(data?.data?.data ?? []).length > 0 && (
-          <div className="ui-flex ui-items-center ui-justify-end ui-gap-4">
+          <div className="ui:flex ui:items-center ui:justify-end ui:gap-4">
             <Button variant="subtle" onClick={() => setOpenReadAll(true)}>
               {t('notification:button.mark_all_as_read')}
             </Button>

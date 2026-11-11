@@ -15,26 +15,26 @@ const TransactionListPatientBox: React.FC<TTransactionListPatientBoxProps> = ({
   return (
     <>
       <div aria-labelledby="header-patient">
-        <section className="ui-border ui-border-zinc-300 ui-p-6 ui-rounded">
+        <section className="ui:border ui:border-zinc-300 ui:p-6 ui:rounded">
           <details
             id="patient"
             aria-details="content-patient"
-            className="ui-group ui-transition-all ui-cursor-pointer ui-overflow-hidden ui-h-5"
+            className="ui:group ui:transition-all ui:cursor-pointer ui:overflow-hidden ui:h-5"
           >
-            <summary className="ui-w-full ui-flex ui-justify-between ui-items-center marker:ui-content-none marker:ui-hidden">
+            <summary className="ui:w-full ui:flex ui:justify-between ui:items-center ui:marker:content-none ui:marker:hidden">
               <h5
                 id="header-patient"
-                className="ui-text-base ui-font-bold ui-text-dark-teal"
+                className="ui:text-base ui:font-bold ui:text-dark-teal"
               >
                 {t('transactionList:detail.patient_identity.title')}
               </h5>
-              <div className="ui-w-3 ui-h-3 ui-text-dark-teal ui-transition-transform ui-duration-500 ui-ease-in-out group-open:ui-rotate-180">
+              <div className="ui:w-3 ui:h-3 ui:text-dark-teal ui:transition-transform ui:duration-500 ui:ease-in-out ui:group-open:rotate-180">
                 <ChevronDownIcon />
               </div>
             </summary>
           </details>
           <div
-            className="content ui-overflow-hidden ui-space-y-1"
+            className="content ui:overflow-hidden ui:space-y-1"
             id="content-patient"
           >
             {generatePatientIdentitySchema({
@@ -44,15 +44,15 @@ const TransactionListPatientBox: React.FC<TTransactionListPatientBoxProps> = ({
             }).map((patient, index) => (
               <div
                 key={index?.toString()}
-                className="ui-grid ui-grid-cols-[1fr_4px_2fr] ui-gap-1"
+                className="ui:grid ui:grid-cols-[1fr_4px_2fr] ui:gap-1"
               >
-                <h6 className="ui-text-dark-teal ui-text-base ui-font-medium">
+                <h6 className="ui:text-dark-teal ui:text-base ui:font-medium">
                   {patient.label}
                 </h6>
-                <h6 className="ui-text-neutral-500 ui-text-base ui-font-medium">
+                <h6 className="ui:text-neutral-500 ui:text-base ui:font-medium">
                   :
                 </h6>
-                <h6 className="ui-text-neutral-500 ui-text-base ui-font-medium">
+                <h6 className="ui:text-neutral-500 ui:text-base ui:font-medium">
                   {patient.value || '-'}
                 </h6>
               </div>

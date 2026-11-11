@@ -38,7 +38,7 @@ const TransactionCreateTransferStockTable = () => {
     useTransactionCreateTransferStock()
   const { setIsOpenDrawer, isOpenDrawer } = useOpenDrawerStore()
   return (
-    <div className="ui-mt-5">
+    <div className="ui:mt-5">
       <Table
         withBorder
         rounded
@@ -47,14 +47,14 @@ const TransactionCreateTransferStockTable = () => {
         stickyOffset={0}
         empty={!items || items?.length === 0}
       >
-        <Thead className="ui-bg-slate-100 ui-text-sm">
+        <Thead className="ui:bg-slate-100 ui:text-sm">
           <Tr>
             {columns.map((item) => (
               <Th
                 key={`header-${item.id}`}
                 id={`header-${item.id}`}
                 columnKey={item.id}
-                className="ui-text-sm ui-text-dark-blue ui-font-bold"
+                className="ui:text-sm ui:text-dark-blue ui:font-bold"
                 style={{
                   ...(item.size && { width: item.size }),
                 }}
@@ -64,26 +64,26 @@ const TransactionCreateTransferStockTable = () => {
             ))}
           </Tr>
         </Thead>
-        <Tbody className="ui-bg-white ui-text-sm">
+        <Tbody className="ui:bg-white ui:text-sm">
           {items?.map((item, index) => (
             <Tr
-              className="ui-text-sm ui-font-normal"
+              className="ui:text-sm ui:font-normal"
               key={`item-material-${index.toString()}`}
             >
               <Td id={`cell-${columns[0].id}`}>{index + 1}</Td>
               <Td id={`cell-${columns[1].id}`}>
-                <div className="ui-font-bold">{item.material_name}</div>
+                <div className="ui:font-bold">{item.material_name}</div>
               </Td>
               <Td id={`cell-${columns[2].id}`}>
                 {numberFormatter(item.available_stock, language)}
               </Td>
               <Td id={`cell-${columns[3].id}`}>
                 <Exists useIt={checkIsHaveQty(item?.batches)}>
-                  <div className="ui-flex ui-flex-col ui-space-y-5 ui-mb-5">
+                  <div className="ui:flex ui:flex-col ui:space-y-5 ui:mb-5">
                     {item?.batches?.map((itemBatch, indexBatch) => (
                       <Exists useIt={!!itemBatch?.change_qty}>
                         <div
-                          className="ui-flex ui-flex-col ui-space-y-1"
+                          className="ui:flex ui:flex-col ui:space-y-1"
                           key={`preview-batches-${indexBatch.toString()}`}
                         >
                           <div>
@@ -112,7 +112,7 @@ const TransactionCreateTransferStockTable = () => {
                               ? itemBatch?.activity_name
                               : '-'}
                           </div>
-                          <div className="ui-font-bold">
+                          <div className="ui:font-bold">
                             Qty:{' '}
                             {itemBatch?.change_qty
                               ? numberFormatter(itemBatch?.change_qty, language)
@@ -132,13 +132,13 @@ const TransactionCreateTransferStockTable = () => {
                     setIndexRow(index)
                   }}
                   id={`see-detail-material-add-stock-${index}`}
-                  className="ui-w-28"
+                  className="ui:w-28"
                 >
-                  <div className="ui-flex ui-space-x-2">
+                  <div className="ui:flex ui:space-x-2">
                     <span>
                       <Plus />
                     </span>
-                    <div className="ui-text-sm">
+                    <div className="ui:text-sm">
                       {item.managed_in_batch ? 'Batch' : 'Detail'}
                     </div>
                   </div>

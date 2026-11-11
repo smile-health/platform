@@ -81,8 +81,8 @@ const useModelAssetTable = ({ page, size }: ModelAssetTableProps) => {
     return noCapacities
       ? '-'
       : capacities?.map((data) => (
-          <div key={data.label} className="ui-flex ui-gap-1">
-            <SingleValue valueClassName="ui-font-semibold" {...data} />
+          <div key={data.label} className="ui:flex ui:gap-1">
+            <SingleValue valueClassName="ui:font-semibold" {...data} />
           </div>
         ))
   }
@@ -101,14 +101,14 @@ const useModelAssetTable = ({ page, size }: ModelAssetTableProps) => {
       minSize: 380,
       enableSorting: true,
       cell: ({ row }) => (
-        <div className="ui-flex ui-flex-col">
-          <p className="ui-font-semibold ui-text-sm">{row?.original?.name}</p>
-          <p className="ui-text-sm">
+        <div className="ui:flex ui:flex-col">
+          <p className="ui:font-semibold ui:text-sm">{row?.original?.name}</p>
+          <p className="ui:text-sm">
             {t('list.column.type', {
               type: row?.original?.asset_type_name,
             })}
           </p>
-          <p className="ui-text-sm ui-text-[#737373]">
+          <p className="ui:text-sm ui:text-neutral-500">
             {t('list.column.manufacturer', {
               manufacturer: row?.original?.manufacture_name,
             })}
@@ -137,8 +137,8 @@ const useModelAssetTable = ({ page, size }: ModelAssetTableProps) => {
       minSize: 220,
       enableSorting: true,
       cell: ({ row }) => (
-        <div className="ui-flex ui-flex-col">
-          <p className="ui-uppercase ui-font-semibold">
+        <div className="ui:flex ui:flex-col">
+          <p className="ui:uppercase ui:font-semibold">
             {parseDateTime(row.original.updated_at || '', 'DD MMM YYYY HH:mm')}
           </p>
           <p>
@@ -157,7 +157,7 @@ const useModelAssetTable = ({ page, size }: ModelAssetTableProps) => {
       minSize: 123,
       cell: ({ row }) => {
         return (
-          <div className="ui-flex ui-gap-2 -ml-3">
+          <div className="ui:flex ui:gap-2 -ml-3">
             <Button
               asChild
               id={`btn-link-model-asset-detail-${row.original.id}`}

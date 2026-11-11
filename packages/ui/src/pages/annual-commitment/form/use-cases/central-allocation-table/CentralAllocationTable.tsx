@@ -20,11 +20,11 @@ export const CentralAllocationTable = () => {
 
   return (
     <div
-      className={`ui-p-6 ui-border ui-rounded ui-space-y-6 ${
-        hasError ? 'ui-border-danger-500' : 'ui-border-gray-300'
+      className={`ui:p-6 ui:border ui:rounded-sm ui:space-y-6 ${
+        hasError ? 'ui:border-danger-500' : 'ui:border-gray-300'
       }`}
     >
-      <div className="ui-font-semibold ui-text-gray-800">
+      <div className="ui:font-semibold ui:text-gray-800">
         {t('annualCommitmentForm:section.centralAllocation.title')}
       </div>
 
@@ -34,12 +34,12 @@ export const CentralAllocationTable = () => {
         columns={columns}
         emptyDescription={t('common:notification.no_data')}
         customRow={
-          <Tr className="ui-border-t ui-border-gray-300">
+          <Tr className="ui:border-t ui:border-gray-300">
             <Td colSpan={columns.length}>
               <ReactSelectAsync
                 id="add-central-allocation-material"
                 value={null}
-                className="ui-w-96"
+                className="ui:w-96"
                 loadOptions={loadMaterial}
                 onChange={(
                   option: OptionTypeWithData<TMaterial | TMaterialList>

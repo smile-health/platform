@@ -18,7 +18,7 @@ const renderRadioCell = (
 ) => {
   return (
     <Radio
-      className="!ui-bg-gray-100"
+      className="ui:bg-gray-100!"
       checked={Boolean(row?.is_active ?? 0)}
       disabled={!isEditing}
       value={(row?.is_active ?? 0) ? 1 : 0}
@@ -65,10 +65,10 @@ const ThresholdTable: React.FC<ThresholdTableProps> = ({
     (item: TemperatureThreshold) => {
       const isActive = Boolean(item?.is_active ?? 0)
       if (isEditing || isActive) {
-        return 'ui-bg-white'
+        return 'ui:bg-white'
       }
       if (!isEditing) {
-        return 'ui-bg-neutral-100'
+        return 'ui:bg-neutral-100'
       }
       return ''
     },
@@ -77,7 +77,7 @@ const ThresholdTable: React.FC<ThresholdTableProps> = ({
 
   const handleThresholdActiveStyling = useCallback(
     (item: TemperatureThreshold, isActive?: boolean) => {
-      return cx('ui-bg-white', { [classRow(item)]: isActive })
+      return cx('ui:bg-white', { [classRow(item)]: isActive })
     },
     []
   )
@@ -180,19 +180,19 @@ const ThresholdTable: React.FC<ThresholdTableProps> = ({
         onConfirm={() => handleUpdateActiveThreshold(thresholds)}
         isUpdating={isUpdatingActiveThreshold}
       />
-      <div className="ui-border-none ui-rounded-sm ui-border ui-bg-white ui-grid ui-grid-cols-4 ui-w-full">
-        <div className="ui-table-header-group !ui-w-100">
-          <div className="ui-bg-gray-100">
+      <div className="ui:border-none ui:rounded-sm ui:border ui:bg-white ui:grid ui:grid-cols-4 ui:w-full">
+        <div className="ui:table-header-group ui:w-100!">
+          <div className="ui:bg-gray-100">
             <DataTable columns={columns} data={thresholds} />
           </div>
-          <div className="ui-mt-2">{otherInformation}</div>
+          <div className="ui:mt-2">{otherInformation}</div>
           {!isWarehouse && (
-            <div className="!ui-w-full ui-mt-2">
-              <div className="ui-w-full">
+            <div className="ui:w-full! ui:mt-2">
+              <div className="ui:w-full">
                 {isEditing ? (
-                  <div className="ui-grid ui-grid-cols-2 ui-gap-2 ui-w-full">
+                  <div className="ui:grid ui:grid-cols-2 ui:gap-2 ui:w-full">
                     <Button
-                      className="!ui-w-full"
+                      className="ui:w-full!"
                       type="button"
                       variant="outline"
                       disabled={isUpdatingActiveThreshold}
@@ -201,7 +201,7 @@ const ThresholdTable: React.FC<ThresholdTableProps> = ({
                       {buttonLabels?.[1] ?? t('common:cancel')}
                     </Button>
                     <Button
-                      className="!ui-w-full"
+                      className="ui:w-full!"
                       type="button"
                       variant="solid"
                       loading={isUpdatingActiveThreshold}
@@ -214,7 +214,7 @@ const ThresholdTable: React.FC<ThresholdTableProps> = ({
                   <>
                     {thresholds.length > 1 && (
                       <Button
-                        className="!ui-w-full"
+                        className="ui:w-full!"
                         type="button"
                         variant="outline"
                         onClick={() => {

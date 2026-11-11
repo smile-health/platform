@@ -30,9 +30,9 @@ const ReconciliationCreateModalWarningItem = () => {
       size="lg"
     >
       <DialogHeader>
-        <div className="ui-flex ui-justify-between">
+        <div className="ui:flex ui:justify-between">
           <div />
-          <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+          <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
             {t('common:confirmation')}
           </h6>
           <Button
@@ -46,13 +46,13 @@ const ReconciliationCreateModalWarningItem = () => {
         </div>
       </DialogHeader>
       <DialogContent>
-        <div className="ui-text-center">
-          <div className="ui-text-neutral-500 ui-mb-5">
+        <div className="ui:text-center">
+          <div className="ui:text-neutral-500 ui:mb-5">
             {content
               ? content?.title
               : t('reconciliation:create.change_dialog.question_detail')}
           </div>
-          <div className="ui-text-dark-blue">
+          <div className="ui:text-dark-blue">
             {content
               ? content?.description
               : t('reconciliation:create.change_dialog.description')}
@@ -60,12 +60,12 @@ const ReconciliationCreateModalWarningItem = () => {
         </div>
       </DialogContent>
       <DialogFooter>
-        <div className="ui-w-full ui-flex ui-flex-row ui-space-x-5">
+        <div className="ui:w-full ui:flex ui:flex-row ui:space-x-5">
           <Button
             color="primary"
             variant="outline"
             onClick={handleClose}
-            className="ui-w-full"
+            className="ui:w-full"
           >
             {t('common:cancel')}
           </Button>
@@ -74,7 +74,7 @@ const ReconciliationCreateModalWarningItem = () => {
             variant="solid"
             color="danger"
             onClick={handleConfirm}
-            className="ui-w-full"
+            className="ui:w-full"
           >
             {t('common:yes')}
           </Button>

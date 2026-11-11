@@ -53,10 +53,10 @@ export const useOrderCreateMaterialTable = <T extends { order_items?: any[] }>({
 
   const classRow = (item: Stock) => {
     if (setDisabledTransactionStockZero(item.total_qty)) {
-      return 'ui-bg-neutral-300 ui-cursor-not-allowed'
+      return 'ui:bg-neutral-300 ui:cursor-not-allowed'
     }
     if (checkStatusMaterial(item)) {
-      return 'ui-bg-[#E2F3FC]'
+      return 'ui:bg-[#E2F3FC]'
     }
     return ''
   }

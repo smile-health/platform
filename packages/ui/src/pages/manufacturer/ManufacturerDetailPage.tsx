@@ -36,7 +36,7 @@ export default function ManufacturerDetailPage({
   return (
     <AppLayout title={t('title.detail')}>
       <Meta title={title} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <ManufacturerDetaiInfo
           isGlobal={isGlobal}
           isLoading={isFetching}

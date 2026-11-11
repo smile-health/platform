@@ -71,13 +71,13 @@ const EntityActivityImplementationTimeInputDates: React.FC<Props> = ({
 
   return (
     <FormProvider {...methods}>
-      <div className="ui-flex ui-flex-col ui-flex-1">
+      <div className="ui:flex ui:flex-col ui:flex-1">
         {fieldObj.map((val: TDetailActivityDate, index: number) => (
           <div
-            className="ui-flex ui-justify-start ui-items-start ui-gap-4 mb-4"
+            className="ui:flex ui:justify-start ui:items-start ui:gap-4 mb-4"
             key={index?.toString()}
           >
-            <div className="ui-w-full">
+            <div className="ui:w-full">
               <Controller
                 control={control}
                 name={`activities.${idx}.${index}.start_date`}
@@ -132,7 +132,7 @@ const EntityActivityImplementationTimeInputDates: React.FC<Props> = ({
                 )}
               />
             </div>
-            <div className="ui-w-full">
+            <div className="ui:w-full">
               <Controller
                 control={control}
                 name={`activities.${idx}.${index}.end_date`}
@@ -212,16 +212,16 @@ const EntityActivityImplementationTimeInputDates: React.FC<Props> = ({
                 )}
               />
             </div>
-            <div className="ui-w-full">
+            <div className="ui:w-full">
               {index > 0 && !val?.entity_activity_id && (
                 <ButtonIcon
                   type="button"
                   variant="outline"
                   color="danger"
                   onClick={() => handleRemoveDate(index)}
-                  className="ui-w-fit ui-mt-6 ui-py-4 ui-px-2 ui-bg-neutral-100 ui-rounded-md ui-border ui-border-red-600 ui-transition-transform ui-duration-200 ui-ease-in-out hover:ui-scale-110"
+                  className="ui:w-fit ui:mt-6 ui:py-4 ui:px-2 ui:bg-neutral-100 ui:rounded-md ui:border ui:border-red-600 ui:transition-transform ui:duration-200 ui:ease-in-out ui:hover:scale-110"
                 >
-                  <TrashIcon className="ui-w-5 ui-h-5" />
+                  <TrashIcon className="ui:w-5 ui:h-5" />
                 </ButtonIcon>
               )}
             </div>
@@ -243,9 +243,9 @@ const EntityActivityImplementationTimeInputDates: React.FC<Props> = ({
                 },
               ])
             }
-            className="ui-w-fit"
+            className="ui:w-fit"
           >
-            <Plus className="ui-w-4 ui-h-4 ui-mr-2" />
+            <Plus className="ui:w-4 ui:h-4 ui:mr-2" />
             {t('common:add')}
           </Button>
         )}

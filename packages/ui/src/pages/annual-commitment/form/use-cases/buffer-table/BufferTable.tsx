@@ -22,11 +22,11 @@ export const BufferTable = () => {
 
   return (
     <div
-      className={`ui-p-6 ui-border ui-rounded ui-space-y-6 ${
-        hasError ? 'ui-border-danger-500' : 'ui-border-gray-300'
+      className={`ui:p-6 ui:border ui:rounded-sm ui:space-y-6 ${
+        hasError ? 'ui:border-danger-500' : 'ui:border-gray-300'
       }`}
     >
-      <div className="ui-font-semibold ui-text-gray-800">
+      <div className="ui:font-semibold ui:text-gray-800">
         {t('annualCommitmentForm:section.buffer.title')}
       </div>
 
@@ -36,13 +36,13 @@ export const BufferTable = () => {
         columns={columns}
         emptyDescription={t('common:notification.no_data')}
         customRow={
-          <Tr className="ui-border-t ui-border-gray-300">
+          <Tr className="ui:border-t ui:border-gray-300">
             <Td colSpan={columns.length}>
               <ReactSelectAsync
                 key={selectedMaterialIds?.toString()}
                 id="add-buffer-material"
                 value={null}
-                className="ui-w-96"
+                className="ui:w-96"
                 loadOptions={loadMaterial}
                 onChange={(
                   option: OptionTypeWithData<TMaterial | TMaterialList>

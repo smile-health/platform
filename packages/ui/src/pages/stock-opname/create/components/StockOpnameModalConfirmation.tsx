@@ -35,18 +35,18 @@ function StockOpnameModalConfirmation({
       open={open}
       onOpenChange={handleClose}
       verticalCentered
-      classNameOverlay="ui-z-10"
-      className="ui-z-10"
+      classNameOverlay="ui:z-10"
+      className="ui:z-10"
     >
       <DialogCloseButton />
-      <DialogHeader className="ui-text-center ui-text-xl">
-        <p className="ui-text-xl ui-text-primary-800 ui-font-medium">
+      <DialogHeader className="ui:text-center ui:text-xl">
+        <p className="ui:text-xl ui:text-primary-800 ui:font-medium">
           {t('confirmation')}
         </p>
       </DialogHeader>
       <DialogContent>{description}</DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full">
           <Button
             id="btn-close-modal-confirmation"
             onClick={handleClose}

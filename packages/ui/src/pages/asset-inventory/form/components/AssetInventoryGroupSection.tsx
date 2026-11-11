@@ -69,7 +69,7 @@ export default function AssetInventoryGroupSection({
     switch (type) {
       case 'select-async-paginate':
         return (
-          <FormControl className="ui-w-full">
+          <FormControl className="ui:w-full">
             <FormLabel htmlFor={name}>{label}</FormLabel>
             <Controller
               name={name}
@@ -101,7 +101,7 @@ export default function AssetInventoryGroupSection({
         )
       case 'date-picker':
         return (
-          <FormControl className="ui-w-full">
+          <FormControl className="ui:w-full">
             <FormLabel htmlFor={name}>{label}</FormLabel>
             <Controller
               name={name}
@@ -134,11 +134,11 @@ export default function AssetInventoryGroupSection({
     }
   }
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {title}
       </div>
-      <div className="ui-w-full ui-grid ui-grid-cols-2 ui-gap-4">
+      <div className="ui:w-full ui:grid ui:grid-cols-2 ui:gap-4">
         {nonVendorFields.map((field) => (
           <Fragment key={field.id}>
             {!field?.isVendor && renderField(field)}
@@ -146,7 +146,7 @@ export default function AssetInventoryGroupSection({
         ))}
       </div>
       {vendorField.map((field) => (
-        <div key={field.id} className="ui-w-full">
+        <div key={field.id} className="ui:w-full">
           {renderField(field)}
         </div>
       ))}
