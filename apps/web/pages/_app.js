@@ -11,6 +11,7 @@ import { Provider as PlatformProvider } from '@repo/ui/provider'
 import { useOnlineStatus } from '../hooks/useOnlineStatus'
 import CustomError from '@repo/ui/components/modules/CustomError'
 import { useRouter } from 'next/router'
+import { NuqsAdapter } from 'nuqs/adapters/next/pages'
 
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
@@ -39,16 +40,20 @@ const MyApp = ({ Component, pageProps }) => {
     <CustomError withLayout error="connection" />
   )
 
+  // nuqs 2 butuh adapter router; tanpa ini setiap useQueryState melempar
+  // NUQS-404 dan seluruh halaman crash.
   return (
-    <Dynamic>
-      {isWmsRoute ? (
-        <WmsRouteWrapper>{page}</WmsRouteWrapper>
-      ) : (
-        <PlatformProvider locale={query?.lang ? query.lang : 'id'}>
-          {page}
-        </PlatformProvider>
-      )}
-    </Dynamic>
+    <NuqsAdapter>
+      <Dynamic>
+        {isWmsRoute ? (
+          <WmsRouteWrapper>{page}</WmsRouteWrapper>
+        ) : (
+          <PlatformProvider locale={query?.lang ? query.lang : 'id'}>
+            {page}
+          </PlatformProvider>
+        )}
+      </Dynamic>
+    </NuqsAdapter>
   )
 }
 
