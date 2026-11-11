@@ -17,11 +17,11 @@ const config = z.object({
   color: z
     .string()
     .refine((value) => /^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(value), {
-      message: "validator.invalid_color",
+      error: "validator.invalid_color",
     })
     .optional(),
-  icon_url: z.string().url().optional(),
-  base_url: z.string().url().optional(),
+  icon_url: z.url().optional(),
+  base_url: z.url().optional(),
 })
 
 export const ProgramSchema = z.object({
@@ -29,7 +29,7 @@ export const ProgramSchema = z.object({
   name: z.string(),
   description: z.string().nullish().optional(),
   config: config,
-  protocol_ids: z.array(z.number().int()).optional(),
+  protocol_ids: z.array(z.int()).optional(),
 })
 
 export const ProgramParamsSchema = PaginationQueriesSchema.extend({
@@ -48,7 +48,6 @@ export const DetailSchema = z.object({
       return value
     },
     z
-      .number()
       .int()
       .nonnegative()
       .refine((v) => !isNaN(v))

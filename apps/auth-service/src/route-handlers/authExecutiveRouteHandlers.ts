@@ -136,10 +136,10 @@ export const validateTokenExecutiveHandler = async (
 
   if (!reqValidationResult.success) {
     logger.warn(
-      `AuthExecutiveRouteHandlers.validateTokenExecutiveHandler: Auth Token Validation failed: ${JSON.stringify(reqValidationResult.error.errors)}`,
+      `AuthExecutiveRouteHandlers.validateTokenExecutiveHandler: Auth Token Validation failed: ${JSON.stringify(reqValidationResult.error.issues)}`,
     );
     const errorResponse = {
-      message: reqValidationResult.error.errors,
+      message: reqValidationResult.error.issues,
       code: 400,
     };
     return c.json(errorResponse, 400);
@@ -185,10 +185,10 @@ export const logoutExecutiveHandler = async (
 
   if (!reqValidationResult.success) {
     logger.warn(
-      `AuthExecutiveRouteHandlers.logoutExecutiveHandler: Auth Token Validation failed: ${JSON.stringify(reqValidationResult.error.errors)}`,
+      `AuthExecutiveRouteHandlers.logoutExecutiveHandler: Auth Token Validation failed: ${JSON.stringify(reqValidationResult.error.issues)}`,
     );
     const errorResponse = {
-      message: reqValidationResult.error.errors,
+      message: reqValidationResult.error.issues,
       code: 400,
     };
     return c.json(errorResponse, 400);
@@ -231,10 +231,10 @@ export const resetPasswordEmailExecutiveHandler = async (
 
   if (!reqValidationResult.success) {
     logger.warn(
-      `AuthExecutiveRouteHandlers.resetPasswordEmailExecutiveHandler: Request Validation failed: ${JSON.stringify(reqValidationResult.error.errors)}`,
+      `AuthExecutiveRouteHandlers.resetPasswordEmailExecutiveHandler: Request Validation failed: ${JSON.stringify(reqValidationResult.error.issues)}`,
     );
     const errorResponse = {
-      message: reqValidationResult.error.errors,
+      message: reqValidationResult.error.issues,
       code: 400,
     };
     return c.json(errorResponse, 400);

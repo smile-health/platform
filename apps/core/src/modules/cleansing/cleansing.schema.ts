@@ -1,4 +1,4 @@
-import z from "zod"
+import { z } from "zod"
 
 export const switchTransactionEntityItemSchema = z.object({
   global_entity_id_from: z.number().positive(),
@@ -17,7 +17,7 @@ export type SwitchTransactionEntityRequest = z.infer<
 >
 
 export const cleanseUnreceivedQtyRequestSchema = z.object({
-  batch_size: z.number().positive().max(10000).default(1000).optional(),
+  batch_size: z.number().positive().max(10000).optional(),
   limit: z.number().positive().optional(),
   max_edit: z.number().positive().optional(),
 })
@@ -91,7 +91,7 @@ export type CleanseAddAndRemoveStockBulkRequest = z.infer<
 
 export const cleaningUpUnallocatedInventoryRequestSchema = z
   .object({
-    batch_size: z.number().positive().max(10000).default(1000).optional(),
+    batch_size: z.number().positive().max(10000).optional(),
     limit: z.number().positive().optional(),
     limit_update_data: z.number().positive().optional(),
     start_expired_date: z.coerce.date().optional(),
@@ -101,7 +101,7 @@ export const cleaningUpUnallocatedInventoryRequestSchema = z
     if (data.start_expired_date && data.end_expired_date) {
       if (data.start_expired_date > data.end_expired_date) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["end_expired_date"],
           message:
             "end_expired_date must be greater than or equal to start_expired_date",
@@ -112,7 +112,7 @@ export const cleaningUpUnallocatedInventoryRequestSchema = z
     if (data.limit && data.batch_size) {
       if (data.limit < data.batch_size) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["limit"],
           message: "limit must be greater than or equal to batch_size",
         })

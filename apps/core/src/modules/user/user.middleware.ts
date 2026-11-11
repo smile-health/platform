@@ -80,13 +80,13 @@ export class UsersMiddleware {
         role: true,
         manufacture_id: true,
       })
-      .safeParse(input)
+      .safeParse(input, { reportInput: true })
 
     if (parsed.success) {
       const { role, manufacture_id } = parsed.data
       if (role === USER_ROLE.MANUFACTURE && !manufacture_id) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["manufacture_id"],
           message: "validator.not_empty",
         })
@@ -133,7 +133,7 @@ export class UsersMiddleware {
           ]?.superRefine(async (val, cfx) => {
             if (duplicateUsername.has(rows[index]![userColumnExcel.Username])) {
               cfx.addIssue({
-                code: z.ZodIssueCode.custom,
+                code: "custom",
                 message: "validator.duplicated",
                 path: [userColumnExcel.Username],
               })
@@ -147,7 +147,7 @@ export class UsersMiddleware {
           ]?.superRefine(async (val, cfx) => {
             if (duplicateEmail.has(rows[index]![userColumnExcel.Email])) {
               cfx.addIssue({
-                code: z.ZodIssueCode.custom,
+                code: "custom",
                 message: "validator.duplicated",
                 path: [userColumnExcel.Email],
               })
@@ -171,7 +171,7 @@ export class UsersMiddleware {
               c.set("role_label", checkRole?.name)
             } else {
               cfx.addIssue({
-                code: z.ZodIssueCode.custom,
+                code: "custom",
                 message: "validator.unmatch",
                 path: [userColumnExcel.IDRole],
               })
@@ -185,7 +185,7 @@ export class UsersMiddleware {
               entities[Number(rows[index]![userColumnExcel.IDEntity])]
             if (!checkEntity) {
               cfx.addIssue({
-                code: z.ZodIssueCode.custom,
+                code: "custom",
                 message: "validator.unmatch",
                 path: [userColumnExcel.IDEntity],
               })
@@ -200,7 +200,7 @@ export class UsersMiddleware {
             const uniqueProgramIds = [...new Set(programIds)]
             if (programIds.length !== uniqueProgramIds.length) {
               cfx.addIssue({
-                code: z.ZodIssueCode.custom,
+                code: "custom",
                 message: "validator.duplicated",
                 path: [userColumnExcel.IDProgram],
               })
@@ -210,7 +210,7 @@ export class UsersMiddleware {
               const checkProgram = workspaces[id]
               if (!checkProgram) {
                 cfx.addIssue({
-                  code: z.ZodIssueCode.custom,
+                  code: "custom",
                   message: "validator.unmatch",
                   path: [userColumnExcel.IDProgram],
                 })
@@ -224,14 +224,14 @@ export class UsersMiddleware {
             !rows[index]![userColumnExcel.IDManufacture]
           ) {
             cfx.addIssue({
-              code: z.ZodIssueCode.custom,
+              code: "custom",
               message: "validator.not_empty",
               path: [userColumnExcel.IDManufacture],
             })
           }
         })
         .transform((row) => transformImportUserRowSchema(c, row))
-        .safeParseAsync(rows[index])
+        .safeParseAsync(rows[index], { reportInput: true })
 
       // if error push to errors list
       if (!parseToSchema.success) {
@@ -276,7 +276,7 @@ export class UsersMiddleware {
           )
           if (!roleExist) {
             ctx.addIssue({
-              code: z.ZodIssueCode.custom,
+              code: "custom",
               message: "validator.not_exist",
             })
           }
@@ -305,7 +305,7 @@ export class UsersMiddleware {
             )
             if (!roleExist) {
               ctx.addIssue({
-                code: z.ZodIssueCode.custom,
+                code: "custom",
                 message: "validator.not_exist",
               })
             }

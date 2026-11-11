@@ -5,7 +5,7 @@ import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import { IdSchema } from "@smile-health/lib/types/param.js"
 import { transformStringNumbersToArrayNumbers } from "@smile-health/lib/utils"
 import { Selectable } from "kysely"
-import z from "zod"
+import { z } from "zod"
 
 export const generalMultipleIdSchema = z
   .string()
@@ -22,7 +22,7 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_SATUSAHAT_ID_PARAM",
+        error: "INVALID_SATUSAHAT_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -36,7 +36,7 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_LOCATION_ID_PARAM",
+        error: "INVALID_LOCATION_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -50,7 +50,7 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_ENTITY_TAG_ID_PARAM",
+        error: "INVALID_ENTITY_TAG_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
@@ -64,7 +64,7 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_PROGRAM_ID_PARAM",
+        error: "INVALID_PROGRAM_ID_PARAM",
       }
     )
     .transform((val) =>
@@ -84,24 +84,28 @@ export const GetEntitiesParamsSchema = PaginationQueriesSchema.extend({
           .filter((item) => item !== "")
           .every((num) => !isNaN(Number(num))),
       {
-        message: "INVALID_TYPE_ID_PARAM",
+        error: "INVALID_TYPE_ID_PARAM",
       }
     )
     .transform((val) => val.split(",").filter((item) => item !== ""))
     .optional(),
   sort_by: z
     .enum(["name", "location", "tag", "code", "id_satu_sehat"], {
-      message: "INVALID REQUEST SORT_BY",
+      error: "INVALID REQUEST SORT_BY",
     })
     .optional(),
   sort_type: z
-    .enum(["asc", "desc"], { message: "INVALID REQUEST SORT_TYPE" })
+    .enum(["asc", "desc"], {
+      error: "INVALID REQUEST SORT_TYPE",
+    })
     .optional(),
   is_asset: z
-    .enum(["0", "1"], { message: "INVALID_IS_ASSET_PARAM" })
+    .enum(["0", "1"], {
+      error: "INVALID_IS_ASSET_PARAM",
+    })
     .transform((val) => Number(val))
     .optional(),
-  is_vendor: z.preprocess(Number, z.nativeEnum(FLAG)).optional(),
+  is_vendor: z.preprocess(Number, z.enum(FLAG)).optional(),
   entity_id: z.string().optional(),
 })
 
@@ -129,7 +133,7 @@ export const EntityDto = z.object({
   created_at: z.date().optional(),
   updated_at: z.date().optional(),
   integration_type: z.coerce.number().nullish(),
-  external_properties: z.record(z.any()).nullish(),
+  external_properties: z.record(z.string(), z.any()).nullish(),
   id_satu_sehat: z.number().nullable().optional(),
 })
 
@@ -216,7 +220,7 @@ export const ImportEntityRequestRowSchema = (COL: ColumnImportSchema) =>
 
 export const ImportEntityRequestSchema = (COL: ColumnImportSchema) =>
   z.array(ImportEntityRequestRowSchema(COL)).min(1, {
-    message: "rows cannot be empty",
+    error: "rows cannot be empty",
   })
 
 export type ImportEntityRequest = {
@@ -265,7 +269,11 @@ export const CreateEntityRequest = EntityDto.pick({
   lng: true,
   entity_tag_id: true,
 }).extend({
-  program_ids: z.array(z.number(), { message: "validator.array" }).nullish(),
+  program_ids: z
+    .array(z.number(), {
+      error: "validator.array",
+    })
+    .nullish(),
   is_sentinel_lab: z.boolean().optional().default(false),
   sentinel_lab_start_date: z.string().nullable().optional(),
   sentinel_lab_end_date: z.string().nullable().optional(),

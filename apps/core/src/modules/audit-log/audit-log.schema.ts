@@ -1,5 +1,5 @@
 import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
-import z from "zod"
+import { z } from "zod"
 import {
   AUDIT_LOG_RETENTION_MAX_DAYS,
   AUDIT_LOG_RETENTION_MIN_DAYS,
@@ -25,7 +25,6 @@ export type GetAuditLogsQuery = z.infer<typeof GetAuditLogsQuerySchema>
 
 export const UpdateAuditLogSettingsSchema = z.object({
   retention_days: z
-    .number()
     .int()
     .min(AUDIT_LOG_RETENTION_MIN_DAYS)
     .max(AUDIT_LOG_RETENTION_MAX_DAYS),

@@ -12,11 +12,23 @@ import { isValidDateString } from "../../shared/utils/date-range";
 // way MySQL did.
 export const exportDateRangeSchema = z.object({
   startDate: z
-    .string({ message: "startDate and endDate are required." })
-    .min(1, { message: "startDate and endDate are required." })
-    .refine(isValidDateString, { message: "startDate and endDate are required." }),
+    .string({
+        error: "startDate and endDate are required."
+    })
+    .min(1, {
+        error: "startDate and endDate are required."
+    })
+    .refine(isValidDateString, {
+        error: "startDate and endDate are required."
+    }),
   endDate: z
-    .string({ message: "startDate and endDate are required." })
-    .min(1, { message: "startDate and endDate are required." })
-    .refine(isValidDateString, { message: "startDate and endDate are required." }),
+    .string({
+        error: "startDate and endDate are required."
+    })
+    .min(1, {
+        error: "startDate and endDate are required."
+    })
+    .refine(isValidDateString, {
+        error: "startDate and endDate are required."
+    }),
 });

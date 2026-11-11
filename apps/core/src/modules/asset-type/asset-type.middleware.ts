@@ -106,7 +106,9 @@ export class AssetTypeMiddleware extends BaseMiddleware {
       )
     )
 
-    const result = await usedSchema.safeParseAsync(rowsResult)
+    const result = await usedSchema.safeParseAsync(rowsResult, {
+      reportInput: true,
+    })
 
     if (!result.success) {
       const newError: any = { issues: [] }
@@ -118,7 +120,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.required", {
               field: c.var.t(`asset_type.label.${err.path[1]}`),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         } else {
           newError.issues.push({
@@ -126,7 +128,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t(err.message, {
               field: c.var.t(`asset_type.label.${err.path[1]}`),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         }
       }
@@ -164,7 +166,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
       message: c.var.t("validator.not_empty", {
         field: c.var.t("common.rows"),
       }),
-      code: z.ZodIssueCode.custom,
+      code: "custom",
     })
   }
 
@@ -251,7 +253,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: c.var.t("asset_type.label.humidity_thresholds"),
             value: 1,
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       } else {
         humidityThresholdIds = collect(data.humidity_thresholds, "id")
@@ -281,12 +283,12 @@ export class AssetTypeMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: ["is_warehouse"],
         message: c.var.t("validator.asset_type.between-wirehouse-or-not"),
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
       ctx.addIssue({
         path: ["is_cce"],
         message: c.var.t("validator.asset_type.between-wirehouse-or-not"),
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
 
@@ -302,7 +304,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
           message: c.var.t("validator.required", {
             field: "temperature_thresholds",
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -317,7 +319,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: "is_cce",
             value: "1",
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -332,7 +334,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: c.var.t("asset_type.label.temperature_thresholds"),
             value: 1,
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -348,7 +350,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: c.var.t("asset_type.label.temperature_thresholds"),
             value: 1,
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -363,7 +365,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: "is_temperature_adjustable",
             value: "0",
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
     }
@@ -379,7 +381,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
           message: c.var.t("validator.required", {
             field: "temperature_thresholds",
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -394,7 +396,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: "is_cce_warehouse",
             value: "1",
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -409,7 +411,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: c.var.t("asset_type.label.temperature_thresholds"),
             value: 1,
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -425,7 +427,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: c.var.t("asset_type.label.temperature_thresholds"),
             value: 1,
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
 
@@ -440,7 +442,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             field: "is_temperature_adjustable",
             value: "0",
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
     }
@@ -457,7 +459,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
           message: c.var.t("validator.required", {
             field: "humidity_thresholds",
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
     } else {
@@ -471,7 +473,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
           message: c.var.t("validator.not_required", {
             field: "humidity_thresholds",
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
     }
@@ -489,7 +491,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
           message: c.var.t("validator.exist", {
             field: c.var.t("asset_type.label.name"),
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
     }
@@ -519,7 +521,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
         message: c.var.t("validator.must_be_filled", {
           field: c.var.t("common.sort_type"),
         }),
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
 
@@ -529,7 +531,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
         message: c.var.t("validator.must_be_filled", {
           field: c.var.t("common.sort_by"),
         }),
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -553,7 +555,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
       )
       if (!threshold) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", {
             field: "id",
           }),
@@ -572,7 +574,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
     for (const [index, item] of data.entries()) {
       if (seenIds.has(item.id)) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.duplicated", {
             field: "id",
           }),
@@ -597,7 +599,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
       const threshold = getListHumidityThresholds.find((t) => t.id === item.id)
       if (!threshold) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", {
             field: "id",
           }),
@@ -757,7 +759,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.duplicated", {
               field: c.var.t("asset_type.label.name"),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         } else {
           seenNames.add(normalizedName)
@@ -771,7 +773,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.exist", {
               field: c.var.t("asset_type.label.name"),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         }
       }
@@ -786,7 +788,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.required", {
               field: c.var.t("asset_type.label.temperature_thresholds"),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         }
 
@@ -799,7 +801,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.not_required", {
               field: c.var.t("asset_type.label.temperature_thresholds"),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         }
 
@@ -816,7 +818,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
               message: c.var.t("validator.duplicated", {
                 field: c.var.t("asset_type.label.temperature_thresholds"),
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
 
@@ -835,7 +837,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 message: c.var.t("validator.has_value_not_exist", {
                   field: c.var.t("asset_type.label.temperature_thresholds"),
                 }),
-                code: z.ZodIssueCode.custom,
+                code: "custom",
               })
             }
           }
@@ -851,7 +853,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 row: c.var.t("asset_type.label.temperature_thresholds"),
                 value: "1",
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
 
@@ -866,7 +868,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 row: c.var.t("asset_type.label.temperature_thresholds"),
                 value: "1",
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
 
@@ -880,7 +882,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 row: c.var.t("asset_type.label.is_cce"),
                 value: "1",
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
         }
@@ -891,7 +893,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.not_required", {
               field: c.var.t("asset_type.label.humidity_thresholds"),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         }
       } else {
@@ -902,7 +904,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.required", {
               field: c.var.t("asset_type.label.temperature_thresholds"),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         }
 
@@ -912,7 +914,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.required", {
               field: c.var.t("asset_type.label.humidity_thresholds"),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         }
 
@@ -927,7 +929,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 row: c.var.t("asset_type.label.humidity_thresholds"),
                 value: "1",
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
 
@@ -944,7 +946,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
               message: c.var.t("validator.has_value_not_exist", {
                 field: c.var.t("asset_type.label.humidity_thresholds"),
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
         }
@@ -958,7 +960,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
             message: c.var.t("validator.not_required", {
               field: c.var.t("asset_type.label.temperature_thresholds"),
             }),
-            code: z.ZodIssueCode.custom,
+            code: "custom",
           })
         }
 
@@ -975,7 +977,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
               message: c.var.t("validator.duplicated", {
                 field: c.var.t("asset_type.label.temperature_thresholds"),
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
 
@@ -998,7 +1000,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 message: c.var.t("validator.has_value_not_exist", {
                   field: c.var.t("asset_type.label.temperature_thresholds"),
                 }),
-                code: z.ZodIssueCode.custom,
+                code: "custom",
               })
             }
           }
@@ -1014,7 +1016,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 row: c.var.t("asset_type.label.temperature_thresholds"),
                 value: "1",
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
 
@@ -1029,7 +1031,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 row: c.var.t("asset_type.label.temperature_thresholds"),
                 value: "1",
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
 
@@ -1043,7 +1045,7 @@ export class AssetTypeMiddleware extends BaseMiddleware {
                 row: c.var.t("asset_type.label.is_cce_warehouse"),
                 value: "1",
               }),
-              code: z.ZodIssueCode.custom,
+              code: "custom",
             })
           }
         }

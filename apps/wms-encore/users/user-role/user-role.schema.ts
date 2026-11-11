@@ -7,8 +7,8 @@ import { z } from "zod";
 // equivalent of a rejecting validator to port; this schema exists purely to
 // document/mirror that sanitization step for reuse inside user-role.service.ts.
 export const paginationParamsSchema = z.object({
-  limit: z.number().int().positive().optional(),
-  page: z.number().int().positive().optional(),
+  limit: z.int().positive().optional(),
+  page: z.int().positive().optional(),
   search: z.string().optional(),
 });
 

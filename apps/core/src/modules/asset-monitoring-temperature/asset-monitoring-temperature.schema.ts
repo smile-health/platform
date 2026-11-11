@@ -1,7 +1,7 @@
 import { FLAG } from "@/common/constants/general.js"
 import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import { IdParamsSchema } from "@smile-health/lib/types/param.js"
-import z from "zod"
+import { z } from "zod"
 
 export const PushTemperatureHistoryDTOSchema = z.array(
   z.object({
@@ -76,9 +76,7 @@ export type TemperatureHistoryResultItem = TemperatureHistoryItem & {
 }
 
 export const UpdateTemperatureThresholdDTOSchema = z.object({
-  asset_model_temperature_capacity_id: z
-    .number()
-    .int()
+  asset_model_temperature_capacity_id: z.int()
     .positive("Asset model temperature capacity ID is required"),
 })
 
@@ -96,8 +94,8 @@ export const GetTemperatureCapacityQueriesSchema =
     asset_id: z.string().optional(),
     asset_model_id: z.string().optional(),
     serial_number: z.string().optional(),
-    page: z.coerce.number().optional().default(1),
-    paginate: z.coerce.number().optional().default(10),
+    page: z.coerce.number().optional().prefault(1),
+    paginate: z.coerce.number().optional().prefault(10),
   })
 
 export const GetTemperatureHistoryQueriesSchema = PaginationQueriesSchema.extend({
@@ -105,9 +103,9 @@ export const GetTemperatureHistoryQueriesSchema = PaginationQueriesSchema.extend
   asset_id: z.string().optional(),
   from_date: z.string().optional(),
   to_date: z.string().optional(),
-  page: z.coerce.number().optional().default(1),
-  paginate: z.coerce.number().optional().default(10),
-  is_warehouse: z.preprocess(Number, z.nativeEnum(FLAG)).optional(),
+  page: z.coerce.number().optional().prefault(1),
+  paginate: z.coerce.number().optional().prefault(10),
+  is_warehouse: z.preprocess(Number, z.enum(FLAG)).optional(),
 })
 
 export const GetTemperatureHistoryChartsQueriesSchema = z.object({
@@ -115,7 +113,7 @@ export const GetTemperatureHistoryChartsQueriesSchema = z.object({
   asset_id: z.string().optional(),
   from_date: z.string().optional(),
   to_date: z.string().optional(),
-  is_warehouse: z.preprocess(Number, z.nativeEnum(FLAG)).optional(),
+  is_warehouse: z.preprocess(Number, z.enum(FLAG)).optional(),
 })
 
 export const UpdateTemperatureThresholdParamSchema = IdParamsSchema
@@ -128,8 +126,8 @@ export const PushTemperatureHistoryResponseSchema = z.object({
       lat: z.number().optional(),
       lon: z.number().optional(),
       curr_temp: z.number(),
-      battery: z.number().int().optional(),
-      signal: z.number().int().optional(),
+      battery: z.int().optional(),
+      signal: z.int().optional(),
       humidity: z.number().optional(),
       message: z.string(),
       result: z.enum(["success", "error"]),
@@ -153,7 +151,7 @@ export const UpdateAuditTimestampDTOSchema = AuditTimestampSchema.pick({
 export const UpdateOperationalStatusDTOSchema =
   UpdateOperationalStatusRequestSchema.pick({
     working_status_id: true,
-  }).merge(UpdateAuditTimestampDTOSchema)
+  }).extend(UpdateAuditTimestampDTOSchema.shape)
 
 export type PushTemperatureHistoryDTO = z.infer<
   typeof PushTemperatureHistoryDTOSchema
@@ -277,10 +275,10 @@ export const GetAssetMonitoringTemperatureQuerySchema = PaginationQueriesSchema.
     regency_id: z.string().optional(),
     health_center_id: z.coerce.number().optional(),
     working_status_id: z.coerce.number().optional(),
-    is_device_related: z.preprocess(Number, z.nativeEnum(FLAG)).optional(),
-    is_warehouse: z.preprocess(Number, z.nativeEnum(FLAG)).default(FLAG.FALSE),
-    is_cce: z.preprocess(Number, z.nativeEnum(FLAG)).optional(),
-    is_other: z.preprocess(Number, z.nativeEnum(FLAG)).optional(),
+    is_device_related: z.preprocess(Number, z.enum(FLAG)).optional(),
+    is_warehouse: z.preprocess(Number, z.enum(FLAG)).prefault(FLAG.FALSE),
+    is_cce: z.preprocess(Number, z.enum(FLAG)).optional(),
+    is_other: z.preprocess(Number, z.enum(FLAG)).optional(),
     asset_type_ids: z.preprocess(
       (val) => {
         if (typeof val === "string") {
@@ -331,7 +329,7 @@ export const GetAssetMonitoringTemperatureQuerySchema = PaginationQueriesSchema.
       .optional(),
     sort_type: z.enum(["asc", "desc"]).optional(),
     temperature_filter: z.enum(["normal", "below", "above"]).optional(),
-    is_range_temperature: z.preprocess(Number, z.nativeEnum(FLAG)).optional(),
+    is_range_temperature: z.preprocess(Number, z.enum(FLAG)).optional(),
   }
 )
 

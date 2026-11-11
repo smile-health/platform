@@ -1,7 +1,7 @@
 import { NotFoundError, ValidationError } from "@smile-health/lib/error.js"
 import { formatErrors } from "@smile-health/lib/zod.js"
 import { Context } from "hono"
-import z from "zod"
+import { z } from "zod"
 import { ActivityRepository } from "../activity/activity.repository.js"
 import { AnnualPlanningProgramPlanRepository } from "../annual-planning-program-plan/annual-planning-program-plan.repository.js"
 import { LocationRepository } from "../location/location.repository.js"
@@ -54,7 +54,7 @@ export class TaskMiddleware {
       group.coverages?.forEach((coverage, coverageIndex) => {
         if (!provinceMap[coverage.province_id]) {
           issues.push({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             path: [
               "target_groups",
               index,
@@ -77,7 +77,7 @@ export class TaskMiddleware {
     targetGroups?.forEach((group, index) => {
       if (group.ip <= 0 || group.ip > perUnit)
         issues.push({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["target_groups", index, "ip"],
           message: "validator.task.ip_invalid_range",
         })
@@ -106,7 +106,7 @@ export class TaskMiddleware {
 
         if (!Number.isInteger(n)) {
           issues.push({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             path: [
               "target_groups",
               index,
@@ -121,7 +121,7 @@ export class TaskMiddleware {
 
         if (n < min || n > max) {
           issues.push({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             path: [
               "target_groups",
               index,
@@ -138,7 +138,7 @@ export class TaskMiddleware {
 
   create = (c: Context) => {
     return z.preprocess(async (input) => {
-      const parsed = createSchema.safeParse(input)
+      const parsed = createSchema.safeParse(input, { reportInput: true })
       const issues: z.ZodIssue[] = parsed.success
         ? []
         : [...parsed.error.issues]
@@ -170,7 +170,7 @@ export class TaskMiddleware {
 
       if (!materialMap[item.material_id]) {
         issues.push({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["material_id"],
           message: "validator.not_exist",
         })
@@ -178,7 +178,7 @@ export class TaskMiddleware {
 
       if (!activityMap[item.activity_id]) {
         issues.push({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["activity_id"],
           message: "validator.not_exist",
         })
@@ -186,7 +186,7 @@ export class TaskMiddleware {
 
       if (!programPlanMap[item.program_plan_id]) {
         issues.push({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["program_plan_id"],
           message: "validator.not_exist",
         })
@@ -195,7 +195,7 @@ export class TaskMiddleware {
       item.target_groups?.forEach((group, index) => {
         if (!targetGroupMap[group.target_group_id]) {
           issues.push({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             path: ["target_groups", index, "target_group_id"],
             message: "validator.not_exist",
           })
@@ -221,7 +221,7 @@ export class TaskMiddleware {
 
   update = (c: Context) => {
     return z.preprocess(async (input) => {
-      const parsed = updateSchema.safeParse(input)
+      const parsed = updateSchema.safeParse(input, { reportInput: true })
       const issues: z.ZodIssue[] = parsed.success
         ? []
         : [...parsed.error.issues]

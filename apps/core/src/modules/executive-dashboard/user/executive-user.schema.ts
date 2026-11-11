@@ -1,4 +1,4 @@
-import z from "zod"
+import { z } from "zod"
 import {
   containsOnlyUnderscoresPeriod,
   hasWhiteSpace,
@@ -11,7 +11,9 @@ export const UpdateLastLoginSchema = z.object({
   last_device: z.coerce.string().nullish(),
   last_login: z.coerce
     .date()
-    .refine((value) => value, { message: "validate.date" })
+    .refine((value) => value, {
+      error: "validate.date",
+    })
     .nullish(),
 })
 

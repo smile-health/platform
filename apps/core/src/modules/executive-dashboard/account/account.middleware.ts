@@ -1,4 +1,4 @@
-import z from "zod"
+import { z } from "zod"
 import { Context } from "hono"
 import { BaseMiddleware } from "@smile-health/lib/base/middleware"
 import {
@@ -28,7 +28,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (!REGEX_PASS.test(data.new_password) || data.new_password.length < 8) {
         ctx.addIssue({
           path: ["new_password"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.password", {
             field: c.var.t("account.label.new_password"),
           }),
@@ -40,7 +40,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       ) {
         ctx.addIssue({
           path: ["password_confirmation"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.password", {
             field: c.var.t("account.label.password_confirmation"),
           }),
@@ -49,7 +49,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (data.new_password !== data.password_confirmation) {
         ctx.addIssue({
           path: ["password_confirmation"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("account.label.update_password_unmatch", {
             new_password: c.var.t("account.label.new_password"),
             password_confirmation: c.var.t(
@@ -72,7 +72,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (!user) {
         return ctx.addIssue({
           path: ["id"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", { field: "id" }),
         })
       }
@@ -89,21 +89,21 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (!role && typeof data.role === "number") {
         ctx.addIssue({
           path: ["role"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", { field: "role" }),
         })
       }
       if (userUsernameExist) {
         ctx.addIssue({
           path: ["username"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.exist", { field: "username" }),
         })
       }
       if (userEmailExist) {
         ctx.addIssue({
           path: ["email"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.exist", { field: "email" }),
         })
       }
@@ -119,7 +119,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (!user) {
         return ctx.addIssue({
           path: ["id"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", { field: "id" }),
         })
       }
@@ -141,7 +141,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (userUsernameExist) {
         ctx.addIssue({
           path: ["username"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.exist", { field: "username" }),
         })
       }
@@ -149,7 +149,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (userEmailExist) {
         ctx.addIssue({
           path: ["email"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.exist", { field: "email" }),
         })
       }
@@ -157,21 +157,21 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (!data.program_ids || data.program_ids.length === 0) {
         ctx.addIssue({
           path: ["program_ids"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_empty", { field: "program_ids" }),
         })
       }
       if (data.program_ids && workspaces.length !== data.program_ids.length) {
         ctx.addIssue({
           path: ["program_ids"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", { field: "program_ids" }),
         })
       }
       if (!role) {
         ctx.addIssue({
           path: ["role"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", { field: "role" }),
         })
       }
@@ -186,7 +186,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
 
       if (sort_by && !sortBys.includes(sort_by)) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["sort_by"],
           message: c.var.t("validator.one_of", {
             field: "sort_by",
@@ -197,7 +197,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
 
       if (sort_type && !sortTypes.includes(sort_type)) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["sort_type"],
           message: c.var.t("validator.one_of", {
             field: "sort_type",
@@ -208,7 +208,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
 
       if (!data.start_date && data.end_date) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["start_date"],
           message: c.var.t("validator.not_empty", {
             field: c.var.t("common.start_date"),
@@ -218,7 +218,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
 
       if (data.start_date && !data.end_date) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["end_date"],
           message: c.var.t("validator.not_empty", {
             field: c.var.t("common.end_date"),
@@ -228,7 +228,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
 
       if (data.start_date && data.end_date && data.start_date > data.end_date) {
         ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           path: ["end_date"],
           message: c.var.t("validator.end_date_before_start_date"),
         })
@@ -244,14 +244,14 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
       if (data.program_ids && workspaces.length !== data.program_ids.length) {
         ctx.addIssue({
           path: ["program_ids"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", { field: "program_ids" }),
         })
       }
       if (data.role && !role) {
         ctx.addIssue({
           path: ["role"],
-          code: z.ZodIssueCode.custom,
+          code: "custom",
           message: c.var.t("validator.not_exist", { field: "role" }),
         })
       }
@@ -267,7 +267,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
         if (!data.id || isNaN(Number(data.id))) {
           ctx.addIssue({
             path: ["id"],
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: c.var.t("validator.number", { field: "id" }),
           })
         }
@@ -275,7 +275,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
         if (!user) {
           ctx.addIssue({
             path: ["id"],
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: c.var.t("validator.not_exist", { field: "id" }),
           })
         }
@@ -322,7 +322,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
         ) {
           ctx.addIssue({
             path: ["email"],
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: c.var.t("validator.exist", { field: "email" }),
           })
         }
@@ -332,7 +332,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
         ) {
           ctx.addIssue({
             path: ["username"],
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: c.var.t("validator.exist", { field: "username" }),
           })
         }
@@ -340,7 +340,7 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
         if (!REGEX_PASS.test(data.password) || data.password.length < 8) {
           ctx.addIssue({
             path: ["password"],
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: c.var.t("validator.password", {
               field: c.var.t("account.label.password"),
             }),
@@ -350,21 +350,21 @@ export class ExecutiveAccountMiddleware extends BaseMiddleware {
         if (!data.program_ids || data.program_ids.length === 0) {
           ctx.addIssue({
             path: ["program_ids"],
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: c.var.t("validator.not_empty", { field: "program_ids" }),
           })
         }
         if (data.program_ids && workspaces.length !== data.program_ids.length) {
           ctx.addIssue({
             path: ["program_ids"],
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: c.var.t("validator.not_exist", { field: "program_ids" }),
           })
         }
         if (!role) {
           ctx.addIssue({
             path: ["role"],
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: c.var.t("validator.not_exist", { field: "role" }),
           })
         }

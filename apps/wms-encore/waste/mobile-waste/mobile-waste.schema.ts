@@ -26,17 +26,17 @@ export const mobileWasteFollowUpSchema = z.object({
   actionType: z.enum(MOBILE_WASTE_FOLLOW_UP_ACTION_TYPES),
   startTime: z.string().optional(),
   endTime: z.string().optional(),
-  transporterVehicleId: z.number().int().positive().optional(),
-  transporterId: z.number().int().positive().optional(),
-  thirdPartyId: z.number().int().positive().optional(),
+  transporterVehicleId: z.int().positive().optional(),
+  transporterId: z.int().positive().optional(),
+  thirdPartyId: z.int().positive().optional(),
 });
 
 // Mirrors mobileWastePostTreatment.schema.ts.
 export const mobileWastePostTreatmentSchema = z.object({
   wasteBagQrCodeIds: z.array(z.string().min(1, "wasteBagQrCodeId is required")),
   actionType: z.enum(MOBILE_WASTE_POST_TREATMENT_ACTION_TYPES),
-  healthcareFacilityId: z.number().int().positive(),
+  healthcareFacilityId: z.int().positive(),
   startTime: z.string().optional(),
   endTime: z.string().optional(),
-  transporterVehicleId: z.number().int().positive().optional(),
+  transporterVehicleId: z.int().positive().optional(),
 });

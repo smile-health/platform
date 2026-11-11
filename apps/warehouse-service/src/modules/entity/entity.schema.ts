@@ -11,7 +11,7 @@ export const EntitySchema = z.object({
   code: z.string().nullish(),
   global_id: IdSchema,
   program_id: IdSchema,
-  status: z.number().int().nullish(),
+  status: z.int().nullish(),
   id_satu_sehat: IdSchema.nullish(),
   address: z.string().nullish(),
   country: z.string().nullish(),
@@ -22,10 +22,10 @@ export const EntitySchema = z.object({
   postal_code: z.string().nullish(),
   lat: z.string().nullish(),
   lng: z.string().nullish(),
-  is_puskesmas: z.number().int(),
-  is_vendor: z.number().int().nullish(),
-  created_by: z.number().int().nullish(),
-  updated_by: z.number().int().nullish(),
+  is_puskesmas: z.int(),
+  is_vendor: z.int().nullish(),
+  created_by: z.int().nullish(),
+  updated_by: z.int().nullish(),
   created_at: DateSchema,
   updated_at: DateSchema,
   deleted_at: DateSchema.nullish(),
@@ -51,7 +51,7 @@ export const EntityItemDTOSchema = EntitySchema.pick({
   province_name: z.string().nullish(),
   regency_name: z.string().nullish(),
   entity_tag_name: z.string().nullish(),
-  has_transaction_already: z.number().int(),
+  has_transaction_already: z.int(),
 })
 
 export const EntityDTOSchema = z.array(EntityItemDTOSchema)

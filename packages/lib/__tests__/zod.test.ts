@@ -6,6 +6,7 @@ import {
   formatErrors,
   formatExcelErrors,
   translateError,
+  PARSE_OPTIONS,
 } from "../zod";
 
 // Fake translator: echoes the key and the interpolation values so the tests
@@ -24,7 +25,7 @@ const tLabels = ((key: string, opts?: Record<string, unknown>) => {
 }) as unknown as TFunction;
 
 const errorsOf = (schema: z.ZodTypeAny, value: unknown) => {
-  const result = schema.safeParse(value);
+  const result = schema.safeParse(value, PARSE_OPTIONS);
   if (result.success) throw new Error("expected validation to fail");
   return result.error;
 };
@@ -58,7 +59,7 @@ describe("zod error helpers", () => {
           tags: "x",
           meta: 5,
         }),
-        t
+        t,
       );
       expect(errors).toEqual({
         name: ['validator.string{"field":"name"}'],
@@ -81,12 +82,12 @@ describe("zod error helpers", () => {
         name: z.string().min(1),
         items: z.array(z.number()).min(1),
       });
-      expect(formatErrors(errorsOf(schema, { name: "", items: [] }), t)).toEqual(
-        {
-          name: ['validator.not_empty{"field":"name"}'],
-          items: ['validator.not_empty{"field":"items"}'],
-        }
-      );
+      expect(
+        formatErrors(errorsOf(schema, { name: "", items: [] }), t),
+      ).toEqual({
+        name: ['validator.not_empty{"field":"name"}'],
+        items: ['validator.not_empty{"field":"items"}'],
+      });
     });
 
     test("too_small with minimum > 1 -> greater_than", () => {
@@ -109,8 +110,8 @@ describe("zod error helpers", () => {
       expect(
         formatErrors(
           errorsOf(schema, { name: "abcdef", qty: 11, items: [1, 2, 3] }),
-          t
-        )
+          t,
+        ),
       ).toEqual({
         name: ['validator.not_greater_than{"field1":"name","field2":3}'],
         qty: ['validator.not_greater_than{"field1":"qty","field2":10}'],
@@ -158,7 +159,9 @@ describe("zod error helpers", () => {
 
     test("custom free-text message is returned as is", () => {
       const schema = z.object({
-        email: z.string().refine(() => false, { message: "Email sudah dipakai" }),
+        email: z
+          .string()
+          .refine(() => false, { message: "Email sudah dipakai" }),
       });
       expect(formatErrors(errorsOf(schema, { email: "x" }), t)).toEqual({
         email: ["Email sudah dipakai"],
@@ -184,8 +187,8 @@ describe("zod error helpers", () => {
       expect(
         formatErrors(
           errorsOf(schema, { detail: {}, items: [{ qty: 1 }, { qty: "a" }] }),
-          t
-        )
+          t,
+        ),
       ).toEqual({
         detail: { name: ['validator.not_empty{"field":"name"}'] },
         items: { 1: { qty: ['validator.number{"field":"qty"}'] } },
@@ -193,7 +196,11 @@ describe("zod error helpers", () => {
     });
 
     test("module labels are used to translate the field name", () => {
-      const schema = z.object({ name: z.string(), code: z.string(), x: z.string() });
+      const schema = z.object({
+        name: z.string(),
+        code: z.string(),
+        x: z.string(),
+      });
       expect(formatErrors(errorsOf(schema, {}), tLabels, "materials")).toEqual({
         name: ['validator.not_empty{"field":"Nama Material"}'],
         code: ['validator.not_empty{"field":"Kode"}'],
@@ -217,8 +224,8 @@ describe("zod error helpers", () => {
       expect(
         translateError(
           { code: "custom", message: "validator.unique", path: ["x", "name"] },
-          t
-        )
+          t,
+        ),
       ).toBe('validator.unique{"field":"name"}');
     });
   });
@@ -231,7 +238,7 @@ describe("zod error helpers", () => {
       const errors = formatExcelErrors(
         errorsOf(schema, [{ name: "a", qty: 1 }, { qty: 9 }]),
         3,
-        t
+        t,
       );
       expect(errors).toEqual({
         4: [
@@ -243,10 +250,49 @@ describe("zod error helpers", () => {
       const general = formatExcelErrors(
         errorsOf(schema, [{ name: "a", qty: 1 }]),
         3,
-        t
+        t,
       );
       expect(general).toEqual({
         general: ["validator.duplicate{}"],
+      });
+    });
+  });
+  describe("zod 4 specifics", () => {
+    test("missing field without reportInput falls back to the default message", () => {
+      const schema = z.object({ name: z.string(), qty: z.number() });
+      const result = schema.safeParse({ qty: "a" });
+      if (result.success) throw new Error("expected validation to fail");
+      expect(formatErrors(result.error, t)).toEqual({
+        name: ['validator.not_empty{"field":"name"}'],
+        qty: ['validator.number{"field":"qty"}'],
+      });
+    });
+
+    test("codemod-style error function (ex required_error) still maps to not_empty", () => {
+      const schema = z.object({
+        name: z.string({
+          error: (issue) =>
+            issue.input === undefined
+              ? "Name is required"
+              : "Name must be text",
+        }),
+      });
+      expect(formatErrors(errorsOf(schema, {}), t)).toEqual({
+        name: ['validator.not_empty{"field":"name"}'],
+      });
+      expect(formatErrors(errorsOf(schema, { name: 5 }), t)).toEqual({
+        name: ['validator.string{"field":"name"}'],
+      });
+    });
+
+    test("z.enum built from a native enum reports the received value", () => {
+      enum Kind {
+        A = "a",
+        B = "b",
+      }
+      const schema = z.object({ kind: z.enum(Kind) });
+      expect(formatErrors(errorsOf(schema, { kind: "x" }), t)).toEqual({
+        kind: ['validator.not_exist{"field":"kind x"}'],
       });
     });
   });

@@ -112,7 +112,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -130,14 +130,14 @@ export class OrderReturnMiddleware extends BaseMiddleware {
         ctx.addIssue({
           path: issuePath,
           message: "validator.not_allowed",
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
     } else {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -153,7 +153,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -171,7 +171,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.cannot_less_than_current_date",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -186,7 +186,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -201,7 +201,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_empty",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -219,7 +219,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
         message: c.var.t("validator.not_exist", {
           field: "Stock",
         }),
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -240,7 +240,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_allowed",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
     if (isStockMultiples === 0) {
@@ -248,14 +248,14 @@ export class OrderReturnMiddleware extends BaseMiddleware {
         ctx.addIssue({
           path: issuePath,
           message: "validator.cannot_greater_than_available_stock",
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
       }
     } else {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_multiples",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -270,7 +270,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.not_exist",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -287,7 +287,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.duplicated",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -304,7 +304,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
       ctx.addIssue({
         path: issuePath,
         message: "validator.duplicated",
-        code: z.ZodIssueCode.custom,
+        code: "custom",
       })
     }
   }
@@ -372,7 +372,7 @@ export class OrderReturnMiddleware extends BaseMiddleware {
           message: c.var.t("validator.not_exist", {
             field: `Material ${stock?.material_name} Activity Customer`,
           }),
-          code: z.ZodIssueCode.custom,
+          code: "custom",
         })
         return {
           need_relation: true,

@@ -1,4 +1,4 @@
-import z from "zod"
+import { z } from "zod"
 import { IdParamsSchema } from "@smile-health/lib/types/param.js"
 import { PaginationQueriesSchema } from "@smile-health/lib/types/paginate.js"
 import { TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL } from "@/common/constants/assets"
@@ -63,7 +63,7 @@ export const AddAssetModelDTOSchema = AssetModelSchema.pick({
   asset_type_id: true,
   manufacture_id: true,
   pqs_code_id: true,
-}).merge(AuditAssetModelDTOSchema)
+}).extend(AuditAssetModelDTOSchema.shape)
 
 export const EditAssetModelDTOSchema = AssetModelSchema.pick({
   name: true,
@@ -71,19 +71,19 @@ export const EditAssetModelDTOSchema = AssetModelSchema.pick({
   manufacture_id: true,
   net_capacity: true,
   gross_capacity: true,
-}).merge(PartialAuditAssetModelDTOSchema)
+}).extend(PartialAuditAssetModelDTOSchema.shape)
 
 export const AddAssetModelWorkspaceDTOSchema = AssetModelSchema.pick({
   asset_model_id: true,
   workspace_id: true,
-}).merge(AuditAssetModelDTOSchema)
+}).extend(AuditAssetModelDTOSchema.shape)
 
 export const AssetModelsTemperatureCapacityDTOSchema = AssetModelSchema.pick({
   asset_model_id: true,
   asset_type_temperature_id: true,
   net_capacity: true,
   gross_capacity: true,
-}).merge(AuditAssetModelDTOSchema)
+}).extend(AuditAssetModelDTOSchema.shape)
 
 export const AssetModelsTemperatureCapacityDTOUpdateSchema =
   AssetModelsTemperatureCapacityDTOSchema.pick({
@@ -91,7 +91,7 @@ export const AssetModelsTemperatureCapacityDTOUpdateSchema =
     asset_type_temperature_id: true,
     net_capacity: true,
     gross_capacity: true,
-  }).merge(PartialAuditAssetModelDTOSchema)
+  }).extend(PartialAuditAssetModelDTOSchema.shape)
 
 /* Request Body Schema */
 export const AddAssetModelRequestSchema = AssetModelSchema.pick({
@@ -146,7 +146,7 @@ export const AddAssetModelRequestSchema = AssetModelSchema.pick({
 
     if (val.is_capacity === 1 && hasCapacities === false) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "validator.required",
         path: ["asset_model_capacity"],
       })
@@ -157,7 +157,7 @@ export const AddAssetModelRequestSchema = AssetModelSchema.pick({
       hasCapacities === true
     ) {
       ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         message: "validator.not_required",
         path: ["asset_model_capacity"],
       })
@@ -208,15 +208,15 @@ export const DownloadTemplateSchema = z.object({
   type: z
     .preprocess(
       (val) => (typeof val === "string" ? Number(val) : val),
-      z.nativeEnum(TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL)
+      z.enum(TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL)
     )
-    .default(TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL.IS_CCE_WITH_PQS),
+    .prefault(TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL.IS_CCE_WITH_PQS),
 })
 
 export const ImportTemplateSchema = z.object({
   type: z.preprocess(
     (val) => (typeof val === "string" ? Number(val) : val),
-    z.nativeEnum(TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL)
+    z.enum(TYPE_DOWNLOAD_TEMPLATE_ASSET_MODEL)
   ),
 })
 
@@ -251,7 +251,9 @@ export const GetAssetModelsQueryParamsSchema = PaginationQueriesSchema.extend({
   sort_by: z.enum(["name", "updated_at"]).default("updated_at"),
   sort_type: z.enum(["asc", "desc"]).default("desc"),
   is_cce: z
-    .enum(["0", "1"], { message: "INVALID REQUEST IS_CCE" })
+    .enum(["0", "1"], {
+      error: "INVALID REQUEST IS_CCE",
+    })
     .transform((val) => {
       if (val === "0") return 0
       if (val === "1") return 1

@@ -15,9 +15,8 @@ export const consumerTypeSchema = z.enum(
     "TRANSPORTER_TREATMENT_PROVIDER",
   ],
   {
-    message:
-      "consumerType must be one of 'HEALTHCARE_FACILITY', 'TRANSPORTER', 'TRANSPORTER_RECYCLER', 'TRANSPORTER_SPECIALIZED_TREATMENT_PROVIDER', 'TRANSPORTER_LANDFILL', 'TRANSPORTER_TREATMENT', 'TRANSPORTER_TREATMENT_PROVIDER'.",
-  },
+      error: "consumerType must be one of 'HEALTHCARE_FACILITY', 'TRANSPORTER', 'TRANSPORTER_RECYCLER', 'TRANSPORTER_SPECIALIZED_TREATMENT_PROVIDER', 'TRANSPORTER_LANDFILL', 'TRANSPORTER_TREATMENT', 'TRANSPORTER_TREATMENT_PROVIDER'."
+},
 );
 
 // updatePartnership.schema.ts's consumerType enum, preserved verbatim
@@ -34,9 +33,8 @@ export const updateConsumerTypeSchema = z.enum(
     "TRANSPORTER_TREATMENT_PROVIDER",
   ],
   {
-    message:
-      "consumerType must be one of 'HEALTHCARE_FACILITY', 'TRANSPORTER', 'TRANSPORTER_RECYCLER', 'TRANSPORTER_SPECIALIZED_TREATMENT_PROVIDER', 'TRANSPORTER_LANDFILL', 'TRANSPORTER_TREATMENT_PROVIDER'.",
-  },
+      error: "consumerType must be one of 'HEALTHCARE_FACILITY', 'TRANSPORTER', 'TRANSPORTER_RECYCLER', 'TRANSPORTER_SPECIALIZED_TREATMENT_PROVIDER', 'TRANSPORTER_LANDFILL', 'TRANSPORTER_TREATMENT_PROVIDER'."
+},
 );
 
 export const providerTypeSchema = z.enum(
@@ -56,16 +54,15 @@ export const providerTypeSchema = z.enum(
     "TRANSPORTER_GOVERNMENT_WASTE_BANK",
   ],
   {
-    message:
-      "providerType must be one of 'LANDFILLER', 'TREATMENT_PROVIDER', 'RECYCLER', 'TREATMENT', 'SPECIALIZED_TREATMENT_PROVIDER', 'TRANSPORTER', 'TRANSPORTER_RECYCLER', 'TRANSPORTER_SPECIALIZED_TREATMENT_PROVIDER', 'TRANSPORTER_LANDFILL', 'TRANSPORTER_TREATMENT', 'TRANSPORTER_TREATMENT_PROVIDER', 'TRANSPORTER_GOVERNMENT', 'TRANSPORTER_GOVERNMENT_WASTE_BANK'.",
-  },
+      error: "providerType must be one of 'LANDFILLER', 'TREATMENT_PROVIDER', 'RECYCLER', 'TREATMENT', 'SPECIALIZED_TREATMENT_PROVIDER', 'TRANSPORTER', 'TRANSPORTER_RECYCLER', 'TRANSPORTER_SPECIALIZED_TREATMENT_PROVIDER', 'TRANSPORTER_LANDFILL', 'TRANSPORTER_TREATMENT', 'TRANSPORTER_TREATMENT_PROVIDER', 'TRANSPORTER_GOVERNMENT', 'TRANSPORTER_GOVERNMENT_WASTE_BANK'."
+},
 );
 
 export const partnershipStatusSchema = z.enum(
   ["PENDING", "ACTIVE", "SUSPENDED", "TERMINATED", "EXPIRED"],
   {
-    message: "partnershipStatus must be one of 'PENDING','ACTIVE','SUSPENDED','TERMINATED','EXPIRED'",
-  },
+      error: "partnershipStatus must be one of 'PENDING','ACTIVE','SUSPENDED','TERMINATED','EXPIRED'"
+},
 );
 
 // Mirrors createPartnership.schema.ts's body shape.
@@ -75,28 +72,34 @@ export const createPartnershipBodySchema = z.object({
   contractId: z.string().min(1).optional(),
   partnershipStatus: partnershipStatusSchema,
   providerType: providerTypeSchema.optional(),
-  hasIncinerator: z.boolean({ message: "hasIncinerator is required" }).default(false),
-  hasAutoclave: z.boolean({ message: "hasAutoclave is required" }).default(false),
-  consumerId: z.number({ message: "consumerId is required" }).int().positive(),
+  hasIncinerator: z.boolean({
+      error: "hasIncinerator is required"
+}).default(false),
+  hasAutoclave: z.boolean({
+      error: "hasAutoclave is required"
+}).default(false),
+  consumerId: z.int().positive(),
   consumerType: consumerTypeSchema,
-  providerId: z.number({ message: "providerId is required" }).int().positive(),
+  providerId: z.int().positive(),
   picName: z.string().optional(),
   picPosition: z.string().optional(),
   picPhoneNumber: z.string().optional(),
-  pricePerKg: z.number().int().positive().optional(),
+  pricePerKg: z.int().positive().optional(),
   wasteClassification: z
     .array(
       z.object({
-        wasteClassificationId: z.number({ message: "wasteClassificationId is required" }).int().positive(),
-        price: z.number().int().positive().optional(),
+        wasteClassificationId: z.int().positive(),
+        price: z.int().positive().optional(),
         providerTypes: z
           .enum(["LANDFILLER", "RECYCLER", "TREATMENT"], {
-            message: "providerType must be one of 'LANDFILLER','RECYCLER', 'TREATMENT'",
-          })
+              error: "providerType must be one of 'LANDFILLER','RECYCLER', 'TREATMENT'"
+        })
           .optional(),
       }),
     )
-    .min(1, { message: "At least one wasteClassification is required" })
+    .min(1, {
+        error: "At least one wasteClassification is required"
+    })
     .optional(),
 });
 
@@ -109,14 +112,18 @@ export const updatePartnershipBodySchema = z.object({
   contractId: z.string().min(1).optional(),
   partnershipStatus: partnershipStatusSchema,
   providerType: providerTypeSchema,
-  hasIncinerator: z.boolean({ message: "hasIncinerator is required" }).default(false),
-  hasAutoclave: z.boolean({ message: "hasAutoclave is required" }).default(false),
-  consumerId: z.number({ message: "consumerId is required" }).int().positive(),
+  hasIncinerator: z.boolean({
+      error: "hasIncinerator is required"
+}).default(false),
+  hasAutoclave: z.boolean({
+      error: "hasAutoclave is required"
+}).default(false),
+  consumerId: z.int().positive(),
   consumerType: updateConsumerTypeSchema,
-  wasteClassificationId: z.number().int().positive().optional(),
-  providerId: z.number({ message: "providerId is required" }).int().positive(),
+  wasteClassificationId: z.int().positive().optional(),
+  providerId: z.int().positive(),
   picName: z.string().optional(),
   picPosition: z.string().optional(),
   picPhoneNumber: z.string().optional(),
-  pricePerKg: z.number().int().positive().optional(),
+  pricePerKg: z.int().positive().optional(),
 });

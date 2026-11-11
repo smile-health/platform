@@ -9,17 +9,23 @@ import {
   transformStringNumbersToArrayNumbers,
 } from "@smile-health/lib/utils"
 import { conditionsMessage } from "@smile-health/lib/zod.js"
-import z from "zod"
+import { z } from "zod"
 
 export const LoginSchema = z.object({
   username: z
-    .string({ required_error: "Username field is required" })
+    .string({
+      error: (issue) =>
+        issue.input === undefined ? "Username field is required" : undefined,
+    })
     .min(4, "Invalid username or password")
     .superRefine((val, c) => {
       conditionsMessage(c, "Username field is required", val.length == 0)
     }),
   password: z
-    .string({ required_error: "Password field is required" })
+    .string({
+      error: (issue) =>
+        issue.input === undefined ? "Password field is required" : undefined,
+    })
     .min(8, "Invalid username or password")
     .max(255, "Password provided exceeds the maximum length of 255 characters.")
     .superRefine((val, c) => {
@@ -109,7 +115,7 @@ export const generalScema = z.object({
   updated_by: z.number().nullish(),
   created_at: z.date().optional(),
   updated_at: z.date().optional(),
-  external_properties: z.record(z.any()).optional(),
+  external_properties: z.record(z.string(), z.any()).optional(),
   program_ids: z.array(z.number()).optional(),
 })
 

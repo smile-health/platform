@@ -3,24 +3,26 @@ import { z } from "zod";
 // Mirrors createWasteBagQrCode.schema.ts's createWasteBagQrCodeSchemaBody.
 export const createWasteBagQrCodeItemSchema = z.object({
   healthcareFacilityId: z
-    .number()
     .int()
-    .positive({ message: "healthcareFacilityId must be a positive integer" })
+    .positive({
+      error: "healthcareFacilityId must be a positive integer",
+    })
     .optional(),
   wasteSourceId: z
-    .number()
     .int()
-    .positive({ message: "wasteSourceId must be a positive integer" })
+    .positive({
+      error: "wasteSourceId must be a positive integer",
+    })
     .optional(),
   wasteClassificationId: z
-    .number()
     .int()
-    .positive({ message: "wasteClassificationId must be a positive integer" })
+    .positive({
+      error: "wasteClassificationId must be a positive integer",
+    })
     .optional(),
-  labelCount: z
-    .number({ message: "labelCount is required" })
-    .int()
-    .positive({ message: "labelCount must be a positive integer" }),
+  labelCount: z.int().positive({
+    error: "labelCount must be a positive integer",
+  }),
 });
 
 export const createWasteBagQrCodeSchema = z.object({
@@ -32,17 +34,23 @@ export const createWasteBagQrCodeSchema = z.object({
 // reads — see waste-bag-qr-code.types.ts's UpdateWasteBagQrCodeRequest note).
 export const updateWasteBagQrCodeSchema = z.object({
   wasteSourceId: z
-    .number()
     .int()
-    .positive({ message: "wasteSourceId must be a positive integer" })
+    .positive({
+      error: "wasteSourceId must be a positive integer",
+    })
     .optional(),
   wasteClassificationId: z
-    .number()
     .int()
-    .positive({ message: "wasteClassificationId must be a positive integer" })
+    .positive({
+      error: "wasteClassificationId must be a positive integer",
+    })
     .optional(),
   qrCode: z
     .string()
-    .min(1, { message: "qrCode is required" })
-    .max(255, { message: "qrCode max input 255 character" }),
+    .min(1, {
+      error: "qrCode is required",
+    })
+    .max(255, {
+      error: "qrCode max input 255 character",
+    }),
 });

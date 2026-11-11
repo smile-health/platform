@@ -17,21 +17,22 @@ import { z } from "zod";
 export const wasteTransportationRequestBodySchema = z.object({
   requestStatus: z
     .enum(["PENDING", "ACCEPTED", "REJECTED"], {
-      message: "requestStatus must be one of PENDING, ACCEPTED, or REJECTED",
+      error: "requestStatus must be one of PENDING, ACCEPTED, or REJECTED",
     })
     .optional(),
-  transportationGroupId: z
-    .number({ message: "transportationGroupId is required" })
-    .int()
-    .positive({ message: "transportationGroupId must be a positive integer" }),
+  transportationGroupId: z.int().positive({
+    error: "transportationGroupId must be a positive integer",
+  }),
   requestCreatorId: z
-    .number({ message: "requestCreatorId is required" })
     .int()
-    .positive({ message: "requestCreatorId must be a positive integer" })
+    .positive({
+      error: "requestCreatorId must be a positive integer",
+    })
     .optional(),
   requestApproverId: z
-    .number({ message: "requestApproverId is required" })
     .int()
-    .positive({ message: "requestApproverId must be a positive integer" })
+    .positive({
+      error: "requestApproverId must be a positive integer",
+    })
     .optional(),
 });

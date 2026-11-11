@@ -23,26 +23,36 @@ const ASSET_STATUS_VALUES = [
 
 export const createHealthcareFacilityAssetBodySchema = z.object({
   assetStatus: z.enum(ASSET_STATUS_VALUES, {
-    message: "asset_status must be one of 'OPERATIONAL', 'UNDER_MAINTAINENCE', 'OUT_OF_SERVICE', 'IDLE', 'RETIRED'.",
-  }),
+      error: "asset_status must be one of 'OPERATIONAL', 'UNDER_MAINTAINENCE', 'OUT_OF_SERVICE', 'IDLE', 'RETIRED'."
+}),
   assetId: z
-    .string({ message: "asset_id must be a positive integer" })
-    .min(3, { message: "asset_id must be at least 3 characters long" }),
-  modelId: z.number().int().positive({ message: "model_id must be a positive integer" }),
-  healthcareFacilityId: z
-    .number({ message: "Heathcare facility id is required" })
-    .int()
-    .positive({ message: "healthcare_facility_id must be a positive integer" })
+    .string({
+        error: "asset_id must be a positive integer"
+    })
+    .min(3, {
+        error: "asset_id must be at least 3 characters long"
+    }),
+  modelId: z.int().positive({
+      error: "model_id must be a positive integer"
+}),
+  healthcareFacilityId: z.int()
+    .positive({
+        error: "healthcare_facility_id must be a positive integer"
+    })
     .optional(),
   isIotEnable: z.boolean(),
-  warrantyStartDate: z.string().date().min(1).optional(),
-  warrantyEndDate: z.string().date().min(1).optional(),
-  yearOfProduction: z
-    .number()
-    .int()
-    .min(1000, { message: "yearOfProduction must be a 4-digit year" })
-    .max(9999, { message: "yearOfProduction must be a 4-digit year" })
-    .positive({ message: "yearOfProduction must be a positive integer" })
+  warrantyStartDate: z.iso.date().min(1).optional(),
+  warrantyEndDate: z.iso.date().min(1).optional(),
+  yearOfProduction: z.int()
+    .min(1000, {
+        error: "yearOfProduction must be a 4-digit year"
+    })
+    .max(9999, {
+        error: "yearOfProduction must be a 4-digit year"
+    })
+    .positive({
+        error: "yearOfProduction must be a positive integer"
+    })
     .optional(),
 });
 
@@ -56,25 +66,35 @@ export const createHealthcareFacilityAssetBodySchema = z.object({
 // service.ts.
 export const updateHealthcareFacilityAssetBodySchema = z.object({
   assetStatus: z.enum(ASSET_STATUS_VALUES, {
-    message: "asset_status must be one of 'OPERATIONAL', 'UNDER_MAINTAINENCE', 'OUT_OF_SERVICE', 'IDLE', 'RETIRED'.",
-  }),
+      error: "asset_status must be one of 'OPERATIONAL', 'UNDER_MAINTAINENCE', 'OUT_OF_SERVICE', 'IDLE', 'RETIRED'."
+}),
   assetId: z
-    .string({ message: "asset_id must be a positive integer" })
-    .min(3, { message: "asset_id must be at least 3 characters long" }),
-  modelId: z.number().int().positive({ message: "model_id must be a positive integer" }),
-  healthcareFacilityId: z
-    .number({ message: "Heathcare facility id is required" })
-    .int()
-    .positive({ message: "healthcare_facility_id must be a positive integer" })
+    .string({
+        error: "asset_id must be a positive integer"
+    })
+    .min(3, {
+        error: "asset_id must be at least 3 characters long"
+    }),
+  modelId: z.int().positive({
+      error: "model_id must be a positive integer"
+}),
+  healthcareFacilityId: z.int()
+    .positive({
+        error: "healthcare_facility_id must be a positive integer"
+    })
     .optional(),
   isIotEnable: z.boolean(),
-  warrantyStartDate: z.string().date().min(1).optional(),
-  warrantyEndDate: z.string().date().min(1).optional(),
-  yearOfProduction: z
-    .number()
-    .int()
-    .min(1000, { message: "yearOfProduction must be a 4-digit year" })
-    .max(9999, { message: "yearOfProduction must be a 4-digit year" })
-    .positive({ message: "yearOfProduction must be a positive integer" })
+  warrantyStartDate: z.iso.date().min(1).optional(),
+  warrantyEndDate: z.iso.date().min(1).optional(),
+  yearOfProduction: z.int()
+    .min(1000, {
+        error: "yearOfProduction must be a 4-digit year"
+    })
+    .max(9999, {
+        error: "yearOfProduction must be a 4-digit year"
+    })
+    .positive({
+        error: "yearOfProduction must be a positive integer"
+    })
     .optional(),
 });
