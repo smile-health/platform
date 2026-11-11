@@ -244,7 +244,7 @@ export default function MapChart<T>({
     <div className="ui:relative ui:size-full">
       {isPending && (
         <div className="ui:size-full ui:grid ui:place-items-center">
-          <Spinner className="size-10" />
+          <Spinner className="ui:size-10" />
         </div>
       )}
       <div

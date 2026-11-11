@@ -155,15 +155,15 @@ function AuthProvider({ children }: { readonly children: React.ReactNode }) {
 
   if (query.isLoading) {
     return (
-      <div className="flex h-screen w-screen items-center justify-center">
-        <Spinner className="text-primary-600 h-10 w-10" />
+      <div className="ui:flex ui:h-screen ui:w-screen ui:items-center ui:justify-center">
+        <Spinner className="ui:text-primary-600 ui:h-10 ui:w-10" />
       </div>
     )
   }
 
   if (query.isError) {
     return (
-      <div className="flex h-screen w-screen items-center justify-center">
+      <div className="ui:flex ui:h-screen ui:w-screen ui:items-center ui:justify-center">
         Error fetching profile
       </div>
     )
