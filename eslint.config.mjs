@@ -21,6 +21,16 @@ export default [
       "prefer-const": "warn",
       "no-unused-vars": "warn",
       "@typescript-eslint/ban-ts-comment": "warn",
+      // Rules that only started failing once the Lint job actually ran (BA-723):
+      // two are new in ESLint 10's recommended set, the rest flag existing code.
+      "no-useless-assignment": "warn",
+      "preserve-caught-error": "warn",
+      "no-unused-private-class-members": "warn",
+      "no-extra-boolean-cast": "warn",
+      "no-empty": "warn",
+      "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
+      "@typescript-eslint/no-empty-object-type": "warn",
+      "@typescript-eslint/no-unsafe-function-type": "warn",
     },
   },
 ];
