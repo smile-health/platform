@@ -6,7 +6,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import ExportAsyncPopup from '#components/modules/ExportAsyncPopup'
 import LoadingPopup from '#components/modules/LoadingPopup'
 import { setAxiosLanguage } from '#lib/axios'
-import { growthbook } from '#lib/growthbook'
+import { growthbook, isGrowthbookEnabled } from '#lib/growthbook'
 import { Toaster } from 'react-hot-toast'
 import { I18nextProvider } from 'react-i18next'
 
@@ -37,12 +37,14 @@ export function Provider({
   }, [locale])
 
   useEffect(() => {
+    if (!isGrowthbookEnabled) return
     growthbook.init({
       streaming: true,
     })
   }, [])
 
   useEffect(() => {
+    if (!isGrowthbookEnabled) return
     const interval = setInterval(
       () => growthbook.refreshFeatures(),
       1 * 60 * 1000

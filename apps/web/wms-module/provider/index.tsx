@@ -14,7 +14,7 @@ import { Toaster } from 'react-hot-toast';
 import { I18nextProvider } from 'react-i18next';
 import { setAxiosLanguage } from 'src/lib/axios';
 import { GrowthBookProvider } from '@growthbook/growthbook-react';
-import { growthbook } from 'src/lib/growthbook';
+import { growthbook, isGrowthbookEnabled } from 'src/lib/growthbook';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -69,12 +69,14 @@ export function Provider({
   }, [locale]);
 
   useEffect(() => {
+    if (!isGrowthbookEnabled) return;
     growthbook.init({
       streaming: true,
     });
   }, []);
 
   useEffect(() => {
+    if (!isGrowthbookEnabled) return;
     const interval = setInterval(
       () => growthbook.refreshFeatures(),
       1 * 60 * 1000
