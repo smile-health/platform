@@ -105,7 +105,7 @@ export const translateError = (
     case "invalid_type":
       return isMissing(error)
         ? t(`validator.not_empty`, { field: field })
-        : t(`validator.${expectedType(error.expected)}`, {
+        : t(`validator.${expectedType(error)}`, {
             field: field,
           })
 
