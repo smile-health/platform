@@ -170,6 +170,20 @@ const isFatal = (issue: ZodIssue): boolean =>
 // v3: kalau semua opsi union gagal tapi ada opsi yang hanya gagal di check,
 // issue opsi itu yang dilaporkan, bukan invalid_union.
 const expandUnion = (issue: ZodIssue): ZodIssue[] => {
+  // v3 melaporkan error key record / elemen map-set langsung di path-nya;
+  // v4 membungkusnya dalam invalid_key / invalid_element.
+  if (
+    (issue.code === "invalid_key" || issue.code === "invalid_element") &&
+    "issues" in issue
+  ) {
+    const inner = (issue as { issues: ZodIssue[] }).issues;
+    return inner.flatMap((child) =>
+      expandUnion({
+        ...child,
+        path: [...issue.path, ...child.path],
+      } as ZodIssue),
+    );
+  }
   if (issue.code !== "invalid_union" || !("errors" in issue)) return [issue];
   const branches = (issue as { errors: ZodIssue[][] }).errors;
   const dirty = branches.find(
