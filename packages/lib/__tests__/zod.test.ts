@@ -296,4 +296,61 @@ describe("zod error helpers", () => {
       });
     });
   });
+  describe("v3 default messages (z.config customError)", () => {
+    const messages = (schema: z.ZodType, value: unknown) => {
+      const result = schema.safeParse(value);
+      if (result.success) throw new Error("expected validation to fail");
+      return result.error.issues.map((issue) => issue.message);
+    };
+
+    test("type, size, enum and literal messages keep the zod 3 text", () => {
+      expect(messages(z.string(), undefined)).toEqual(["Required"]);
+      expect(messages(z.string(), [])).toEqual([
+        "Expected string, received array",
+      ]);
+      expect(messages(z.number().int(), 1.5)).toEqual([
+        "Expected integer, received float",
+      ]);
+      expect(messages(z.string().min(3), "a")).toEqual([
+        "String must contain at least 3 character(s)",
+      ]);
+      expect(messages(z.array(z.any()).max(1), [1, 2])).toEqual([
+        "Array must contain at most 1 element(s)",
+      ]);
+      expect(messages(z.number().positive(), 0)).toEqual([
+        "Number must be greater than 0",
+      ]);
+      expect(messages(z.enum(["a", "b"]), "c")).toEqual([
+        "Invalid enum value. Expected 'a' | 'b', received 'c'",
+      ]);
+      expect(messages(z.literal(1), 2)).toEqual([
+        "Invalid literal value, expected 1",
+      ]);
+      expect(messages(z.date(), new Date("x"))).toEqual(["Invalid date"]);
+      expect(messages(z.string().email(), "x")).toEqual(["Invalid email"]);
+      expect(messages(z.object({}).strict(), { x: 1 })).toEqual([
+        "Unrecognized key(s) in object: 'x'",
+      ]);
+    });
+
+    test("schema-level messages are not overridden", () => {
+      expect(messages(z.string().email("Invalid email address"), "x")).toEqual([
+        "Invalid email address",
+      ]);
+    });
+
+    test("float on an int field translates to validator.integer like v3", () => {
+      const schema = z.object({ qty: z.number().int() });
+      expect(formatErrors(errorsOf(schema, { qty: 1.5 }), t)).toEqual({
+        qty: ['validator.integer{"field":"qty"}'],
+      });
+    });
+
+    test("min/max after a type error is dropped like v3", () => {
+      const schema = z.object({ name: z.string().min(3) });
+      expect(formatErrors(errorsOf(schema, { name: [] }), t)).toEqual({
+        name: ['validator.string{"field":"name"}'],
+      });
+    });
+  });
 });

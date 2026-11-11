@@ -13,7 +13,9 @@ const hasInput = (issue: ZodIssue): issue is ZodIssue & { input: unknown } =>
 
 export const isMissing = (issue: ZodIssue): boolean => {
   if (hasInput(issue)) return issue.input === undefined;
-  return /received undefined$/.test(issue.message);
+  return (
+    issue.message === "Required" || /received undefined$/.test(issue.message)
+  );
 };
 
 // Nama tipe di zod 4 yang di v3 bernama lain; kunci terjemahan tetap pakai nama v3.
@@ -23,8 +25,30 @@ const V3_EXPECTED: Record<string, string> = {
   int: "number",
 };
 
-export const expectedType = (expected: unknown): string => {
-  const name = String(expected);
+// Tipe input versi v3 (ZodParsedType), dipakai di teks "Expected X, received Y".
+const v3ParsedType = (input: unknown): string => {
+  if (input === null) return "null";
+  if (Array.isArray(input)) return "array";
+  if (input instanceof Date) return "date";
+  if (input instanceof Map) return "map";
+  if (input instanceof Set) return "set";
+  if (input instanceof Promise) return "promise";
+  if (typeof input === "number") return Number.isNaN(input) ? "nan" : "number";
+  return typeof input;
+};
+
+// z.number().int() dengan angka pecahan: v4 melapor invalid_type expected "int",
+// v3 melapor expected "integer" received "float".
+const isFloatForInt = (issue: ZodIssue): boolean =>
+  issue.code === "invalid_type" &&
+  issue.expected === "int" &&
+  ((hasInput(issue) && typeof issue.input === "number") ||
+    issue.message === "Expected integer, received float");
+
+export const expectedType = (issue: ZodIssue): string => {
+  if (issue.code !== "invalid_type") return "";
+  if (isFloatForInt(issue)) return "integer";
+  const name = String(issue.expected);
   return V3_EXPECTED[name] ?? name;
 };
 
@@ -44,18 +68,86 @@ const V3_FORMAT_MESSAGES: Record<string, string> = {
 
 type RawIssue = z.core.$ZodRawIssue;
 
+const v3Value = (value: unknown): string =>
+  typeof value === "string" ? `'${value}'` : String(value);
+
+const v3SizeMessage = (
+  issue: RawIssue & { code: "too_small" | "too_big" },
+): string | undefined => {
+  const small = issue.code === "too_small";
+  const bound = small
+    ? (issue as { minimum: number | bigint }).minimum
+    : (issue as { maximum: number | bigint }).maximum;
+  const exact = (issue as { exact?: boolean }).exact;
+  const inclusive = (issue as { inclusive?: boolean }).inclusive;
+  switch (issue.origin) {
+    case "string":
+    case "array": {
+      const noun = issue.origin === "string" ? "String" : "Array";
+      const unit = issue.origin === "string" ? "character(s)" : "element(s)";
+      if (exact) return `${noun} must contain exactly ${bound} ${unit}`;
+      const word = small
+        ? inclusive
+          ? "at least"
+          : "over"
+        : inclusive
+          ? "at most"
+          : "under";
+      return `${noun} must contain ${word} ${bound} ${unit}`;
+    }
+    case "number":
+    case "bigint": {
+      const noun = issue.origin === "number" ? "Number" : "BigInt";
+      if (exact) return `${noun} must be exactly ${bound}`;
+      const word = small
+        ? inclusive
+          ? "greater than or equal to"
+          : "greater than"
+        : inclusive
+          ? "less than or equal to"
+          : "less than";
+      return `${noun} must be ${word} ${bound}`;
+    }
+    default:
+      return undefined;
+  }
+};
+
 export const v3DefaultMessage = (issue: RawIssue): string | undefined => {
-  if (issue.code === "invalid_type" && issue.input instanceof Date) {
-    return "Invalid date";
+  switch (issue.code) {
+    case "invalid_type": {
+      if (issue.input === undefined) return "Required";
+      if (issue.input instanceof Date) return "Invalid date";
+      if (issue.expected === "int" && typeof issue.input === "number") {
+        return "Expected integer, received float";
+      }
+      const expected = V3_EXPECTED[issue.expected] ?? issue.expected;
+      return `Expected ${expected}, received ${v3ParsedType(issue.input)}`;
+    }
+    case "too_small":
+    case "too_big":
+      return v3SizeMessage(issue);
+    case "invalid_value": {
+      const type = (issue.inst as { _zod?: { def?: { type?: string } } })?._zod
+        ?.def?.type;
+      if (type === "literal" && issue.values.length === 1) {
+        return `Invalid literal value, expected ${JSON.stringify(issue.values[0])}`;
+      }
+      if (type === "enum") {
+        const options = issue.values.map(v3Value).join(" | ");
+        return `Invalid enum value. Expected ${options}, received '${String(issue.input)}'`;
+      }
+      return undefined;
+    }
+    case "unrecognized_keys": {
+      const keys = issue.keys.map((key) => `'${key}'`).join(", ");
+      return `Unrecognized key(s) in object: ${keys}`;
+    }
+    case "invalid_format":
+      return V3_FORMAT_MESSAGES[issue.format];
+    default:
+      return undefined;
   }
-  if (issue.code === "unrecognized_keys") {
-    const keys = issue.keys.map((key) => `'${key}'`).join(", ");
-    return `Unrecognized key(s) in object: ${keys}`;
-  }
-  if (issue.code === "invalid_format") {
-    return V3_FORMAT_MESSAGES[issue.format];
-  }
-  return undefined;
 };
 
 z.config({ customError: v3DefaultMessage });
@@ -67,20 +159,46 @@ export const isInvalidDate = (issue: ZodIssue): boolean =>
   ((hasInput(issue) && issue.input instanceof Date) ||
     issue.message === "Invalid date");
 
+// Issue yang di v3 menghentikan parsing (status "aborted"). Selain ini, v3
+// tetap menjalankan check berikutnya (status "dirty"). .int() termasuk check
+// biasa di v3, sedangkan v4 melaporkannya sebagai invalid_type.
+const isFatal = (issue: ZodIssue): boolean =>
+  (issue.code === "invalid_type" && !isFloatForInt(issue)) ||
+  issue.code === "invalid_value" ||
+  issue.code === "invalid_union";
+
+// v3: kalau semua opsi union gagal tapi ada opsi yang hanya gagal di check,
+// issue opsi itu yang dilaporkan, bukan invalid_union.
+const expandUnion = (issue: ZodIssue): ZodIssue[] => {
+  if (issue.code !== "invalid_union" || !("errors" in issue)) return [issue];
+  const branches = (issue as { errors: ZodIssue[][] }).errors;
+  const dirty = branches.find(
+    (branch) => branch.length > 0 && !branch.some(isFatal),
+  );
+  if (!dirty) return [issue];
+  return dirty.map((inner) => ({
+    ...inner,
+    path: [...issue.path, ...inner.path],
+  })) as ZodIssue[];
+};
+
 // zod 3 berhenti di error tipe; zod 4 masih menjalankan cek panjang (min/max)
 // pada input yang tipenya salah. Buang issue lanjutan di path yang sudah punya
-// invalid_type supaya pesan validasi sama dengan v3.
+// error tipe supaya pesan validasi sama dengan v3.
 export const v3Issues = <T extends ZodIssue>(issues: readonly T[]): T[] => {
+  const expanded = issues.flatMap((issue) => expandUnion(issue)) as T[];
+  const pathKey = (issue: ZodIssue) => issue.path.map(String).join("\u0000");
   const typeFailed = new Set(
-    issues
-      .filter((issue) => issue.code === "invalid_type")
-      .map((issue) => issue.path.map(String).join("\u0000"))
+    expanded
+      .filter((issue) => issue.code === "invalid_type" && !isFloatForInt(issue))
+      .map(pathKey),
   );
   // .nonempty().min(1) menghasilkan dua issue identik di v4, satu di v3.
   const seen = new Set<string>();
-  return issues.filter((issue) => {
-    const path = issue.path.map(String).join("\u0000");
-    if (issue.code !== "invalid_type" && typeFailed.has(path)) return false;
+  return expanded.filter((issue) => {
+    const path = pathKey(issue);
+    const isTypeError = issue.code === "invalid_type" && !isFloatForInt(issue);
+    if (!isTypeError && typeFailed.has(path)) return false;
     const key = `${path}|${issue.code}|${issue.message}`;
     if (seen.has(key)) return false;
     seen.add(key);
@@ -96,7 +214,7 @@ export const receivedValue = (issue: ZodIssue): string | undefined => {
 export const formatErrors = (
   error: ZodError,
   t: TFunction,
-  module?: string
+  module?: string,
 ) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const errorObject: Record<string, any> = {};
@@ -126,7 +244,7 @@ export const formatErrors = (
 export const formatExcelErrors = (
   error: ZodError,
   startRow: number,
-  t: TFunction
+  t: TFunction,
 ) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const errorObject: Record<string, any> = {};
@@ -156,7 +274,7 @@ export const formatExcelErrors = (
 export const translateError = (
   error: ZodIssue,
   t: TFunction,
-  module?: string
+  module?: string,
 ): string => {
   const errMessage = error.message.split("^");
   const msg = errMessage[0] ?? "validator.string";
@@ -182,7 +300,7 @@ export const translateError = (
     case "invalid_type":
       return isMissing(error)
         ? t(`validator.not_empty`, { field: field })
-        : t(`validator.${expectedType(error.expected)}`, {
+        : t(`validator.${expectedType(error)}`, {
             field: field,
           });
 
@@ -245,7 +363,7 @@ export const conditionsMessage = (
   c: z.RefinementCtx,
   message: string,
   conds: boolean,
-  path?: (string | number)[]
+  path?: (string | number)[],
 ) => {
   if (conds) {
     c.addIssue({
