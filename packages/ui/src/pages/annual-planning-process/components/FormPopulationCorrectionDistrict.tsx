@@ -28,7 +28,7 @@ const FormPopulationCorrectionDistrict: React.FC = () => {
   } = useFormPopulationCorrectionDistrict()
 
   return (
-    <div className="ui-border ui-border-neutral-300 ui-p-6 ui-space-y-6">
+    <div className="ui:border ui:border-neutral-300 ui:p-6 ui:space-y-6">
       <FormProvider {...methods}>
         <PreviewPopulationCorrection ref={refPreview} />
 
@@ -48,11 +48,11 @@ const FormPopulationCorrectionDistrict: React.FC = () => {
         )}
       </FormProvider>
 
-      <div className="ui-flex ui-justify-between ui-items-center">
-        <p className="ui-text-base ui-font-bold">
+      <div className="ui:flex ui:justify-between ui:items-center">
+        <p className="ui:text-base ui:font-bold">
           {t('annualPlanningProcess:create.form.drawer_correction_data.health_care_list')}
         </p>
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <Button
             type="button"
             variant="outline"
@@ -73,7 +73,7 @@ const FormPopulationCorrectionDistrict: React.FC = () => {
         columns={columnsPopulationTargetHealthCare({ t, language, onClickRow, isRevision })}
         data={data || []}
         isSticky
-        className="ui-max-h-[660px]"
+        className="ui:max-h-[660px]"
       />
     </div>
   )

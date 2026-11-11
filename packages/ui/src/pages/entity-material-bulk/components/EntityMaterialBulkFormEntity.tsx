@@ -88,8 +88,8 @@ const EntityMaterialBulkFormEntity = () => {
   })
 
   return (
-    <div className="ui-grid ui-grid-cols-1 ui-gap-x-4 ui-gap-y-4">
-      <h6 className="ui-text-base ui-font-bold">
+    <div className="ui:grid ui:grid-cols-1 ui:gap-x-4 ui:gap-y-4">
+      <h6 className="ui:text-base ui:font-bold">
         {t('entityMaterialBulk:export.form.title.entity')}
       </h6>
       <FormControl>
@@ -102,7 +102,7 @@ const EntityMaterialBulkFormEntity = () => {
           placeholder={t('entityMaterialBulk:export.form.placeholder.entity')}
         />
       </FormControl>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-x-4">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-x-4">
         <FormControl>
           <FormLabel>
             {t('entityMaterialBulk:export.form.label.entity_type')}
@@ -164,7 +164,7 @@ const EntityMaterialBulkFormEntity = () => {
           )}
         />
       </div>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-x-4">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-x-4">
         <Controller
           name="province"
           control={control}
@@ -252,7 +252,7 @@ const EntityMaterialBulkFormEntity = () => {
           )}
         />
       </div>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-x-4">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-x-4">
         <Controller
           name="sub_district"
           control={control}
@@ -324,10 +324,10 @@ const EntityMaterialBulkFormEntity = () => {
           )}
         />
       </div>
-      <div className="ui-bg-gray-100 ui-py-[2px] ui-px-[10px] ui-rounded-2xl ui-w-max">
-        <p className="ui-text-gray-700 ui-text-sm ui-font-medium">
+      <div className="ui:bg-gray-100 ui:py-[2px] ui:px-[10px] ui:rounded-2xl ui:w-max">
+        <p className="ui:text-gray-700 ui:text-sm ui:font-medium">
           {t('entityMaterialBulk:export.form.result.entity')}
-          <span className="ui-ml-1 ui-text-xs ui-font-medium ui-bg-gray-700 ui-rounded-[100px] ui-text-white ui-py-[2px] ui-px-2">
+          <span className="ui:ml-1 ui:text-xs ui:font-medium ui:bg-gray-700 ui:rounded-[100px] ui:text-white ui:py-[2px] ui:px-2">
             {entityDatasource.data?.total_item ?? 0}
           </span>
         </p>

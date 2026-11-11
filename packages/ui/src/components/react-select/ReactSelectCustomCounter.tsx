@@ -15,7 +15,7 @@ export default function ReactSelectCustomCounter<
   return (
     <components.ValueContainer
       {...props}
-      className={cx('ui-flex ui-gap-2', className)}
+      className={cx('ui:flex ui:gap-2', className)}
     >
       {count > 0 ? (
         <>

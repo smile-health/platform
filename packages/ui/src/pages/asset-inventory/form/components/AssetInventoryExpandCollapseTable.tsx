@@ -13,27 +13,27 @@ const AssetInventoryExpandCollapseTable: React.FC<
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="ui-bg-[#F1F5F9] ui-mt-2 ui-rounded-md ui-px-2 ui-py-2">
+    <div className="ui:bg-slate-100 ui:mt-2 ui:rounded-md ui:px-2 ui:py-2">
       <Button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
         variant="default"
-        className="ui-flex ui-items-center ui-justify-between ui-w-full !ui-bg-gray-100 focus:!ui-ring-0 focus:!ui-ring-offset-0"
+        className="ui:flex ui:items-center ui:justify-between ui:w-full ui:bg-gray-100! ui:focus:ring-0! ui:focus:ring-offset-0!"
         style={{ border: 'none' }}
       >
-        <span className="ui-font-bold">{title}</span>
+        <span className="ui:font-bold">{title}</span>
         <ChevronDownIcon
-          className={`ui-w-4 ui-h-4 ui-transition-transform ${
-            isOpen ? 'ui-rotate-180' : ''
+          className={`ui:w-4 ui:h-4 ui:transition-transform ${
+            isOpen ? 'ui:rotate-180' : ''
           }`}
         />
       </Button>
       <div
-        className={`ui-transition-all ui-overflow-hidden ${
-          isOpen ? 'ui-max-h-screen ui-opacity-100' : 'ui-max-h-0 ui-opacity-0'
+        className={`ui:transition-all ui:overflow-hidden ${
+          isOpen ? 'ui:max-h-screen ui:opacity-100' : 'ui:max-h-0 ui:opacity-0'
         }`}
       >
-        <div className="ui-mt-2">{children}</div>
+        <div className="ui:mt-2">{children}</div>
       </div>
     </div>
   )

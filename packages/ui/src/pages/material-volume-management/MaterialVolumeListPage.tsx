@@ -76,7 +76,7 @@ const MaterialVolumeListPage: React.FC<CommonType> = ({ isGlobal }) => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('materialVolume:title.list')}`}
       />
-      <div className="ui-mt-6 ui-space-y-6">
+      <div className="ui:mt-6 ui:space-y-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
           <ModalImport
             open={modalImport?.type === 'import'}
@@ -91,18 +91,18 @@ const MaterialVolumeListPage: React.FC<CommonType> = ({ isGlobal }) => {
             }
           />
 
-          <FilterFormBody className="ui-grid ui-grid-cols-3 ui-gap-4">
+          <FilterFormBody className="ui:grid ui:grid-cols-3 ui:gap-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-ml-auto ui-gap-2">
+            <div className="ui:flex ui:ml-auto ui:gap-2">
               <Button
                 id="btn-import"
                 variant="subtle"
                 type="button"
                 onClick={() => showModal('import')}
                 loading={importMutation.isPending}
-                leftIcon={<Import className="ui-size-5" />}
+                leftIcon={<Import className="ui:size-5" />}
               >
                 {t('common:import')}
               </Button>
@@ -112,7 +112,7 @@ const MaterialVolumeListPage: React.FC<CommonType> = ({ isGlobal }) => {
                 type="button"
                 onClick={() => exportQuery.refetch()}
                 loading={exportQuery.isFetching || exportQuery.isLoading}
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
               >
                 {t('common:export')}
               </Button>
@@ -122,18 +122,18 @@ const MaterialVolumeListPage: React.FC<CommonType> = ({ isGlobal }) => {
                 type="button"
                 onClick={() => downloadQuery.refetch()}
                 loading={downloadQuery.isFetching || downloadQuery.isLoading}
-                leftIcon={<Download className="ui-size-5" />}
+                leftIcon={<Download className="ui:size-5" />}
               >
                 {t('common:download_template')}
               </Button>
-              <span className="ui-w-px ui-bg-neutral-300" />
-              <div className="ui-flex ui-gap-2">
+              <span className="ui:w-px ui:bg-neutral-300" />
+              <div className="ui:flex ui:gap-2">
                 <FilterResetButton onClick={filter.reset} variant="subtle" />
               </div>
               <FilterSubmitButton
                 onClick={() => setPagination({ page: 1 })}
                 variant="outline"
-                className="ui-w-[220px]"
+                className="ui:w-[220px]"
               ></FilterSubmitButton>
             </div>
           </FilterFormFooter>

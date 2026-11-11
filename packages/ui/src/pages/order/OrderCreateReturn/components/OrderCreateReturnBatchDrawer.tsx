@@ -53,10 +53,10 @@ const OrderCreateReturnBatchDrawer: React.FC<
         sizeHeight="lg"
         closeOnOverlayClick={false}
       >
-        <DrawerHeader className="ui-border">
-          <div className="ui-flex ui-justify-between">
+        <DrawerHeader className="ui:border">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('orderCreateReturn:drawer.header')}
             </h6>
             <Button
@@ -70,8 +70,8 @@ const OrderCreateReturnBatchDrawer: React.FC<
           </div>
         </DrawerHeader>
         <DrawerContent>
-          <div className="ui-p-4" id="transaction-detail-table">
-            <div className="ui-space-y-6">
+          <div className="ui:p-4" id="transaction-detail-table">
+            <div className="ui:space-y-6">
               <OrderCreateReturnBatchTableInformation
                 order_items={parentOrderItems}
                 indexRow={indexRow}
@@ -92,7 +92,7 @@ const OrderCreateReturnBatchDrawer: React.FC<
             </div>
           </div>
         </DrawerContent>
-        <DrawerFooter className="ui-border">
+        <DrawerFooter className="ui:border">
           <OrderCreateReturnBatchButtonGroup
             activity={activity_id?.value}
             indexRow={indexRow}

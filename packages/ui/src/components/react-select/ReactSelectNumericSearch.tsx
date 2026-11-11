@@ -14,7 +14,7 @@ export default function ReactSelectNumericSearch<
       id={props.id}
       data-testid={props.id}
       value={props.value?.toString()}
-      className="ui-min-w-0.5 ui-outline-0 ui-outline-none ui-p-0 ui-bg-transparent ui-cursor-default w-full border-0"
+      className="ui:min-w-0.5 ui:outline-0 ui:outline-hidden ui:p-0 ui:bg-transparent ui:cursor-default w-full border-0"
       style={{
         gridArea: '1 / 1',
         marginLeft: '2px',

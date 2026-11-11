@@ -27,12 +27,12 @@ export const AssetSpecificationSection = () => {
   } = useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('monitoringDeviceInventoryForm:section.asset_specification.title')}
       </div>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="asset_type_id" required>
           {t('monitoringDeviceInventoryForm:field.asset_type.label')}
         </FormLabel>
@@ -65,7 +65,7 @@ export const AssetSpecificationSection = () => {
         )}
       </FormControl>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="asset_model_id" required>
           {t('monitoringDeviceInventoryForm:field.asset_model.label')}
         </FormLabel>
@@ -113,7 +113,7 @@ export const AssetSpecificationSection = () => {
         )}
       </FormControl>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="manufacture_id" required>
           {t('monitoringDeviceInventoryForm:field.manufacturer.label')}
         </FormLabel>
@@ -149,7 +149,7 @@ export const AssetSpecificationSection = () => {
         )}
       </FormControl>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="asset_vendor_id" required>
           {t('monitoringDeviceInventoryForm:field.vendor.label')}
         </FormLabel>
@@ -182,7 +182,7 @@ export const AssetSpecificationSection = () => {
         )}
       </FormControl>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="asset_communication_provider" required>
           {t(
             'monitoringDeviceInventoryForm:field.communication_provider.label'
@@ -217,7 +217,7 @@ export const AssetSpecificationSection = () => {
         )}
       </FormControl>
 
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="serial_number" required>
           {t('monitoringDeviceInventoryForm:field.serial_number.label')}
         </FormLabel>

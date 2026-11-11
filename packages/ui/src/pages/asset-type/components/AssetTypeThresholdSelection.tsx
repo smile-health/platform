@@ -108,9 +108,9 @@ export default function AssetTypeThresholdSelection({
           <FormLabel required>
             {t('form.detail.temperature_threshold.label')}
           </FormLabel>
-          <div className="ui-rounded ui-bg-slate-100 ui-px-4 ui-py-[9px] ui-flex ui-gap-2 ui-items-center">
+          <div className="ui:rounded ui:bg-slate-100 ui:px-4 ui:py-[9px] ui:flex ui:gap-2 ui:items-center">
             <Warning />
-            <p className="ui-text-xs ui-font-normal">
+            <p className="ui:text-xs ui:font-normal">
               {t('form.detail.temperature_threshold.warning')}
             </p>
           </div>
@@ -135,9 +135,9 @@ export default function AssetTypeThresholdSelection({
           <FormLabel required>
             {t('form.detail.humidity_threshold.label')}
           </FormLabel>
-          <div className="ui-rounded ui-bg-slate-100 ui-px-4 ui-py-[9px] ui-flex ui-gap-2 ui-items-center">
+          <div className="ui:rounded ui:bg-slate-100 ui:px-4 ui:py-[9px] ui:flex ui:gap-2 ui:items-center">
             <Warning />
-            <p className="ui-text-xs ui-font-normal">
+            <p className="ui:text-xs ui:font-normal">
               {t('form.detail.humidity_threshold.warning')}
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function AssetTypeThresholdSelection({
   }, [humidityTresholdData, isWarehouse])
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       {type === ThresholdType.TEMPERATURE && renderTemperatureTable()}
       {type === ThresholdType.HUMIDITY && renderHumidityTable()}
     </div>

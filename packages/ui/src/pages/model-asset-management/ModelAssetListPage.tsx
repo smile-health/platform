@@ -74,7 +74,7 @@ const ModelAssetListPage: React.FC<CommonType> = ({ isGlobal }) => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('modelAsset:list.title')}`}
       />
-      <div className="ui-mt-6 ui-space-y-6">
+      <div className="ui:mt-6 ui:space-y-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
           <ModalImportV2
             open={Boolean(importType)}
@@ -90,20 +90,20 @@ const ModelAssetListPage: React.FC<CommonType> = ({ isGlobal }) => {
               setModalImportErrors({ open: false, errors: undefined })
             }
           />
-          <FilterFormBody className="ui-flex ui-items-end">
+          <FilterFormBody className="ui:flex ui:items-end">
             <div
-              className={`ui-grow ui-grid ui-grid-cols-3 ui-items-end ui-gap-4`}
+              className={`ui:grow ui:grid ui:grid-cols-3 ui:items-end ui:gap-4`}
             >
               {filter.renderField()}
             </div>
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-space-x-3 flex-end flex">
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:space-x-3 flex-end flex">
               <ButtonWithDropdown
                 id="btn-import"
                 variant="subtle"
-                leftIcon={<Import className="ui-size-5" />}
+                leftIcon={<Import className="ui:size-5" />}
                 label={t('common:import')}
                 dropdownList={dropdownList}
               />
@@ -113,7 +113,7 @@ const ModelAssetListPage: React.FC<CommonType> = ({ isGlobal }) => {
                 type="button"
                 onClick={() => exportQuery.refetch()}
                 loading={exportQuery.isFetching || exportQuery.isLoading}
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
               >
                 {t('common:export')}
               </Button>
@@ -122,17 +122,17 @@ const ModelAssetListPage: React.FC<CommonType> = ({ isGlobal }) => {
                 variant="subtle"
                 label={t('common:download_template')}
                 dropdownList={dropdownList}
-                leftIcon={<Download className="ui-size-5" />}
+                leftIcon={<Download className="ui:size-5" />}
                 isDownloadTemplate
               />
-              <span className="ui-w-px ui-bg-neutral-300" />
-              <div className="ui-flex ui-gap-2">
+              <span className="ui:w-px ui:bg-neutral-300" />
+              <div className="ui:flex ui:gap-2">
                 <FilterResetButton onClick={filter.reset} variant="subtle" />
               </div>
               <FilterSubmitButton
                 onClick={() => setPagination({ page: 1 })}
                 variant="outline"
-                className="ui-w-[220px]"
+                className="ui:w-[220px]"
               ></FilterSubmitButton>
             </div>
           </FilterFormFooter>

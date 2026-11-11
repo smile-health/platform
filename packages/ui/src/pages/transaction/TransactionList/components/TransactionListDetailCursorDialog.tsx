@@ -55,13 +55,13 @@ const TransactionListDetailCursorDialog = () => {
 
       <Dialog open={isOpenDetail} size="lg">
         <DialogCloseButton onClick={handleCloseDetail} />
-        <DialogHeader className="ui-my-2">
-          <h3 className="ui-text-center ui-text-xl ui-font-medium">
+        <DialogHeader className="ui:my-2">
+          <h3 className="ui:text-center ui:text-xl ui:font-medium">
             {t('transactionList:transaction_detail')}
           </h3>
         </DialogHeader>
-        <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-        <DialogContent className="ui-overflow-auto ui-my-2 ui-py-2 styled-scroll ui-scroll-pr-2">
+        <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+        <DialogContent className="ui:overflow-auto ui:my-2 ui:py-2 styled-scroll ui:scroll-pr-2">
           {isFetchingDetailTransaction && <TransactionDetailSkeleton />}
 
           {detailTransactionData?.data?.transaction && (
@@ -71,7 +71,7 @@ const TransactionListDetailCursorDialog = () => {
           )}
 
           {detailTransactionData?.data?.transaction && (
-            <div className="ui-my-6">
+            <div className="ui:my-6">
               <TransactionListBatchBox
                 transaction={detailTransactionData.data.transaction}
                 stock={detailTransactionData.data.stock}
@@ -86,9 +86,9 @@ const TransactionListDetailCursorDialog = () => {
                   <button
                     key={patient.identity?.patient_id}
                     className={cx(
-                      'ui-text-base ui-font-bold ui-py-2 ui-px-4 ui-border-black',
+                      'ui:text-base ui:font-bold ui:py-2 ui:px-4 ui:border-black',
                       {
-                        'ui-border-b-4':
+                        'ui:border-b-4':
                           patientData?.identity?.patient_id ===
                           patient.identity?.patient_id,
                       }
@@ -104,7 +104,7 @@ const TransactionListDetailCursorDialog = () => {
             )}
 
           {patientData?.vaccination && (
-            <div className="ui-my-6">
+            <div className="ui:my-6">
               <TransactionListVaccineBox
                 vaccination={patientData.vaccination}
                 protocol={detailTransactionData?.data.protocol}
@@ -113,7 +113,7 @@ const TransactionListDetailCursorDialog = () => {
           )}
 
           {detailTransactionData?.data?.protocol.is_kipi && (
-            <div className="ui-my-6">
+            <div className="ui:my-6">
               <TransactionListSideEffectBox
                 onAddSideEffect={() => setIsOpenSideEffect(true)}
                 sideEffects={
@@ -124,13 +124,13 @@ const TransactionListDetailCursorDialog = () => {
           )}
 
           {patientData && (
-            <div className="ui-my-6">
+            <div className="ui:my-6">
               <TransactionListPatientBox patient={patientData} />
             </div>
           )}
 
           {detailTransactionData?.data?.protocol.is_medical_history && (
-            <div className="ui-my-6">
+            <div className="ui:my-6">
               <TransactionListDiseaseHistoryBox
                 diseaseHistory={
                   detailTransactionData?.data.consumption
@@ -146,12 +146,12 @@ const TransactionListDetailCursorDialog = () => {
             />
           )}
         </DialogContent>
-        <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
+        <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
         <DialogFooter>
           <Button
             color="primary"
             variant="outline"
-            className="ui-w-full"
+            className="ui:w-full"
             onClick={handleCloseDetail}
           >
             {t('common:close')}

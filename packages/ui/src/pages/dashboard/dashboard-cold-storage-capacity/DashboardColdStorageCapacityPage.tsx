@@ -32,22 +32,22 @@ export const DashboardColdStorageCapacityPage = () => {
       />
       <DashboardColdStorageCapacityFilter />
 
-      <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-6">
         <ColdStorageCapacityStatus />
         <NumberOfEntity />
       </div>
-      <div className="ui-grid ui-grid-cols-3 ui-gap-6 ui-mt-6">
+      <div className="ui:grid ui:grid-cols-3 ui:gap-6 ui:mt-6">
         <AverageOrderLeadTime />
         <AverageMonthlyConsumption />
         <DayOfSupply />
       </div>
 
-      <div className="ui-mt-6">
+      <div className="ui:mt-6">
         <ColdStorageDetailBox>
           <ColdStorageDetailHeader />
           <ColdStorageDetailBody>
             <ColdStorageDetailFilter />
-            <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-6">
               <FunctionalStatus />
               <RemainingCapacity />
             </div>
@@ -56,9 +56,9 @@ export const DashboardColdStorageCapacityPage = () => {
           </ColdStorageDetailBody>
         </ColdStorageDetailBox>
       </div>
-      <div className="ui-mt-6">
+      <div className="ui:mt-6">
         <AnnualCapacityColdStorageBox>
-          <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-6">
             <FacilitiesByCapacityStatusDistInterval />
             <FacilitiesByCapacityStatusTemp />
           </div>

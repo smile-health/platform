@@ -32,18 +32,18 @@ export default function StockBookPage() {
     <Container title={t('title.page')} withLayout>
       <Meta title={generateMetaTitle(t('title.page'))} />
       <FilterFormRoot onSubmit={filter.handleSubmit}>
-        <FilterFormBody className="ui-grid-cols-3">
+        <FilterFormBody className="ui:grid-cols-3">
           {filter.renderField()}
         </FilterFormBody>
         <FilterFormFooter>
           <div />
-          <div className="ui-flex ui-gap-2">
+          <div className="ui:flex ui:gap-2">
             <Button
               data-testid="btn-export"
               variant="subtle"
               disabled={isLoading}
               onClick={onExport}
-              leftIcon={<Export className="ui-size-5" />}
+              leftIcon={<Export className="ui:size-5" />}
             >
               {t('action.export')}
             </Button>
@@ -52,11 +52,11 @@ export default function StockBookPage() {
               variant="subtle"
               disabled={isLoading}
               onClick={onExportAll}
-              leftIcon={<Export className="ui-size-5" />}
+              leftIcon={<Export className="ui:size-5" />}
             >
               {t('action.export_all')}
             </Button>
-            <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+            <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
             <FilterResetButton onClick={filter.reset} variant="subtle" />
           </div>
         </FilterFormFooter>

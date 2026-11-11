@@ -25,8 +25,8 @@ const WasteSpecificationDetailInfo: React.FC<WasteSpecificationDetailProps> = ({
   return (
     <div className="space-y-4">
       {isLoading ? (
-        <div className="ui-w-full ui-flex ui-items-center ui-justify-center ui-my-20">
-          <Spinner className="ui-h-8 ui-w-8" />
+        <div className="ui:w-full ui:flex ui:items-center ui:justify-center ui:my-20">
+          <Spinner className="ui:h-8 ui:w-8" />
         </div>
       ) : (
         <RenderDetailValue

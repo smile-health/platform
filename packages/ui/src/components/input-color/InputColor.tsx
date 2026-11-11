@@ -69,23 +69,23 @@ export const InputColor = (props: ColorInputProps) => {
   return (
     <div
       className={cx(
-        "ui-relative ui-flex ui-w-full ui-items-center space-x-3 ui-bg-white-100 ui-border ui-border-gray-300 focus:ui-ring-2 ui-px-3",
-        "focus:ui-border-primary-500 focus:ui-outline-none focus:ui-ring-primary-500 focus:ui-ring-opacity-25 ui-rounded",
+        "ui:relative ui:flex ui:w-full ui:items-center space-x-3 ui-bg-white-100 ui:border ui:border-gray-300 ui:focus:ring-2 ui:px-3",
+        "ui:focus:border-primary-500 ui:focus:outline-hidden ui:focus:ring-primary-500/25 ui:rounded",
         {
-          'ui-h-8': size === 'sm',
-          'ui-h-10': size === 'md',
-          'ui-h-12': size === 'lg',
-          'ui-h-14': size === 'xl',
-          'ui-border ui-border-danger-500 focus:ui-ring-danger-500 focus:ui-ring-opacity-25': error,
-          'ui-cursor-pointer': !disabled,
-          'ui-cursor-not-allowed': disabled,
+          'ui:h-8': size === 'sm',
+          'ui:h-10': size === 'md',
+          'ui:h-12': size === 'lg',
+          'ui:h-14': size === 'xl',
+          'ui:border ui:border-danger-500 ui:focus:ring-danger-500/25': error,
+          'ui:cursor-pointer': !disabled,
+          'ui:cursor-not-allowed': disabled,
         })
       }
       ref={dropdownRef}
       onClick={openPicker}
     >
       <button
-        className="ui-h-4 ui-w-4 ui-rounded-full ui-border ui-border-gray-300 ui-shadow-sm"
+        className="ui:h-4 ui:w-4 ui:rounded-full ui:border ui:border-gray-300 ui:shadow-sm"
         style={{ backgroundColor: value }}
         aria-label="Pick a color"
         disabled={disabled}
@@ -93,15 +93,15 @@ export const InputColor = (props: ColorInputProps) => {
       />
       <span
         className={cx(
-          "text-sm font-medium ui-text-gray-800",
+          "text-sm font-medium ui:text-gray-800",
           {
-            "ui-text-gray-500": !value || disabled,
+            "ui:text-gray-500": !value || disabled,
 
             // size 
-            'ui-text-sm': size === 'sm',
-            'ui-text-base': size === 'md',
-            'ui-text-lg': size === 'lg',
-            'ui-text-xl': size === 'xl',
+            'ui:text-sm': size === 'sm',
+            'ui:text-base': size === 'md',
+            'ui:text-lg': size === 'lg',
+            'ui:text-xl': size === 'xl',
           }
         )
         }
@@ -116,13 +116,13 @@ export const InputColor = (props: ColorInputProps) => {
         disabled={disabled}
       />
       {open && (
-        <div className="ui-absolute ui-z-10 ui-mt-2 ui-w-max ui-p-4 ui-bg-white ui-rounded-xl ui-border ui-border-gray-200 -ui-top-[160px]">
-          <div className="ui-grid ui-grid-cols-4 ui-gap-2 ui-max-h-36 ui-overflow-y-auto">
+        <div className="ui:absolute ui:z-10 ui:mt-2 ui:w-max ui:p-4 ui:bg-white ui:rounded-xl ui:border ui:border-gray-200 ui:top-[-160px]">
+          <div className="ui:grid ui:grid-cols-4 ui:gap-2 ui:max-h-36 ui:overflow-y-auto">
             {presetColors.map((color, index) => (
               <button
                 key={index}
-                className={cx('ui-w-6 ui-h-6 ui-rounded-full ui-border hover:scale-110 transition', {
-                  'ui-border-2 ui-border-primary-800': value === color
+                className={cx('ui:w-6 ui:h-6 ui:rounded-full ui:border hover:scale-110 transition', {
+                  'ui:border-2 ui:border-primary-800': value === color
                 })}
                 style={{ backgroundColor: color }}
                 onClick={(e) => {

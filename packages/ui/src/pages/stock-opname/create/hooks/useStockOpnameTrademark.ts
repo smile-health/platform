@@ -21,7 +21,7 @@ export const useStockOpnameTrademark = ({ handleShowWarningChange }: Props) => {
 
   const classRow = (item: DetailStock) => {
     if (checkStatusMaterial(item)) {
-      return 'ui-bg-[#E2F3FC]'
+      return 'ui:bg-[#E2F3FC]'
     }
     return ''
   }

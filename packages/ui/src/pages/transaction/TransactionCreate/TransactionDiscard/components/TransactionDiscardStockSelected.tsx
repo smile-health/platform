@@ -21,16 +21,16 @@ const TransactionDiscardStockSelected: React.FC<Props> = (props) => {
 
   return (
     <div
-      className="ui-space-y-1"
+      className="ui:space-y-1"
       key={`detail-${stock.stock_id}`}
     >
-      <p className="ui-text-dark-teal ui-text-sm">
+      <p className="ui:text-dark-teal ui:text-sm">
         {t(
           'transaction_discard.form.table.description.batch.code',
           { value: batch_code }
         )}
       </p>
-      <p className="ui-text-dark-teal ui-text-sm">
+      <p className="ui:text-dark-teal ui:text-sm">
         {t(
           'transaction_discard.form.table.description.batch.expired_date',
           {
@@ -38,13 +38,13 @@ const TransactionDiscardStockSelected: React.FC<Props> = (props) => {
           }
         )}
       </p>
-      <p className="ui-text-dark-teal ui-text-sm">
+      <p className="ui:text-dark-teal ui:text-sm">
         {t(
           'transaction_discard.form.table.description.batch.reason',
           { value: stock.transaction_reason?.label ?? '-' }
         )}
       </p>
-      <p className="ui-font-bold ui-text-dark-teal">
+      <p className="ui:font-bold ui:text-dark-teal">
         Qty: {!stock.is_open_vial ? numberFormatter(stock.qty || 0, language) : t('transaction_discard.form.table.column.open_close_vial', {
           open: numberFormatter(stock.open_vial || 0, language),
           close: numberFormatter(stock.close_vial || 0, language),

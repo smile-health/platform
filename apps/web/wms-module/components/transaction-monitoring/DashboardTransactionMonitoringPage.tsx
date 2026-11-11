@@ -163,7 +163,7 @@ export default function DashboardTransactionMonitoringPage() {
           onExport={handleExport}
           isLoadingExport={isLoadingExport}
         />
-        <div className="ui-grid ui-gap-x-4 ui-gap-y-6 ui-grid-cols-7">
+        <div className="ui:grid ui:gap-x-4 ui:gap-y-6 ui:grid-cols-7">
           <DashboardTotalWasteBag
             id="dashboard-transaction-monitoring-total"
             value={

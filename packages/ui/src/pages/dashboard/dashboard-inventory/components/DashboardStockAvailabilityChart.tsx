@@ -83,7 +83,7 @@ export default function DashboardStockAvailabilityChart({
             },
           },
         }}
-        className="ui-text-start"
+        className="ui:text-start"
       />
     </DashboardCommonChartContainer>
   )

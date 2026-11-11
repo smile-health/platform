@@ -39,11 +39,11 @@ export const Slider = React.forwardRef<
         value={_value}
         onValueChange={_onValueChange}
         className={cx(
-          'ui-relative ui-flex ui-w-full ui-touch-none ui-select-none ui-items-center data-[disabled]:ui-opacity-50'
+          'ui:relative ui:flex ui:w-full ui:touch-none ui:select-none ui:items-center ui:data-disabled:opacity-50'
         )}
       >
-        <SliderPrimitive.Track className="ui-relative ui-h-2 ui-w-full ui-grow ui-overflow-hidden ui-rounded-full ui-bg-gray-200 ui-shadow-inner">
-          <SliderPrimitive.Range className="ui-absolute ui-h-full ui-bg-primary-500" />
+        <SliderPrimitive.Track className="ui:relative ui:h-2 ui:w-full ui:grow ui:overflow-hidden ui:rounded-full ui:bg-gray-200 ui:shadow-inner">
+          <SliderPrimitive.Range className="ui:absolute ui:h-full ui:bg-primary-500" />
         </SliderPrimitive.Track>
 
         {_value.map((value) => (
@@ -61,13 +61,13 @@ export const Slider = React.forwardRef<
                 }
                 setShowTooltip(false)
               }}
-              className="ui-relative ui-block ui-h-5 ui-w-5 ui-rounded-full ui-border-[3px] ui-border-primary-500 ui-bg-white ui-text-gray-700 ui-shadow-lg focus:ui-outline-none focus:ui-ring-2 focus:ui-ring-primary-500 focus:ui-ring-opacity-25 focus:ui-ring-offset-1"
+              className="ui:relative ui:block ui:h-5 ui:w-5 ui:rounded-full ui:border-[3px] ui:border-primary-500 ui:bg-white ui:text-gray-700 ui:shadow-lg ui:focus:outline-hidden ui:focus:ring-2 ui:focus:ring-primary-500/25 ui:focus:ring-offset-1/25"
             >
               <div
                 data-show={showTooltip || showLabel === 'always'}
-                className="ui-absolute ui-inset-0 -ui-top-7 ui-flex ui-justify-center ui-opacity-0 ui-transition-opacity ui-duration-150 data-[show=true]:ui-opacity-100"
+                className="ui:absolute ui:inset-0 ui:-top-7 ui:flex ui:justify-center ui:opacity-0 ui:transition-opacity ui:duration-150 ui:data-[show=true]:opacity-100"
               >
-                <div className="ui-flex ui-h-5 min-w-max ui-items-center ui-rounded ui-bg-black ui-px-1 ui-text-center ui-text-xs ui-leading-none ui-text-white ui-ring-1 ui-ring-white">
+                <div className="ui:flex ui:h-5 min-w-max ui:items-center ui:rounded ui:bg-black ui:px-1 ui:text-center ui:text-xs ui:leading-none ui:text-white ui:ring-1 ui:ring-white">
                   {formatLabel ? formatLabel(value) : value}
                 </div>
               </div>

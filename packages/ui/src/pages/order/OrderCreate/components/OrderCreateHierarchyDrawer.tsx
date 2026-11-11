@@ -73,10 +73,10 @@ const OrderCreateHierarchyBatchDrawer: React.FC<
         sizeHeight="lg"
         closeOnOverlayClick={false}
       >
-        <DrawerHeader className="ui-border">
-          <div className="ui-flex ui-justify-between">
+        <DrawerHeader className="ui:border">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('orderCreate:drawer.header')}
             </h6>
             <Button
@@ -90,27 +90,27 @@ const OrderCreateHierarchyBatchDrawer: React.FC<
           </div>
         </DrawerHeader>
         <DrawerContent>
-          <div className="ui-p-4" id="transaction-detail-table">
-            <div className="ui-space-y-6">
-              <div className="ui-flex ui-items-center ui-gap-10">
-                <div className="ui-max-w-72">
-                  <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+          <div className="ui:p-4" id="transaction-detail-table">
+            <div className="ui:space-y-6">
+              <div className="ui:flex ui:items-center ui:gap-10">
+                <div className="ui:max-w-72">
+                  <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                     Material
                   </h2>
-                  <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+                  <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                     {order_items?.[indexRow]?.label}
                   </p>
                 </div>
-                <div className="ui-max-w-60">
-                  <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                <div className="ui:max-w-60">
+                  <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                     {t('orderCreate:drawer.stock_on_hand')}
                   </h2>
-                  <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+                  <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                     {numberFormatter(
                       order_items?.[indexRow]?.value?.total_qty ?? 0,
                       language
                     )}
-                    <span className="ui-text-neutral-500 ui-text-xs ui-font-normal ui-ml-1">
+                    <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
                       {minMax(
                         order_items?.[indexRow]?.value?.min ?? 0,
                         order_items?.[indexRow]?.value?.max ?? 0,
@@ -119,11 +119,11 @@ const OrderCreateHierarchyBatchDrawer: React.FC<
                     </span>
                   </p>
                 </div>
-                {/* <div className="ui-max-w-60">
-                  <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                {/* <div className="ui:max-w-60">
+                  <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                     {t('orderCreate:drawer.available_stock')}
                   </h2>
-                  <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+                  <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                     {numberFormatter(
                       order_items?.[indexRow]?.value?.total_available_qty ?? 0,
                       language
@@ -140,7 +140,7 @@ const OrderCreateHierarchyBatchDrawer: React.FC<
             </div>
           </div>
         </DrawerContent>
-        <DrawerFooter className="ui-border">
+        <DrawerFooter className="ui:border">
           <Button
             id={`reset-batch-${indexRow}`}
             variant="subtle"
@@ -160,8 +160,8 @@ const OrderCreateHierarchyBatchDrawer: React.FC<
               setResetKey((prev) => prev + 1)
             }}
           >
-            <div className="ui-flex ui-flex-row ui-text-sm ui-space-x-3 ui-text-primary-600">
-              <Reload className="ui-size-5" />
+            <div className="ui:flex ui:flex-row ui:text-sm ui:space-x-3 ui:text-primary-600">
+              <Reload className="ui:size-5" />
               <div>Reset</div>
             </div>
           </Button>

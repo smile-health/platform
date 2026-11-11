@@ -62,14 +62,14 @@ const TransactionCreatePage: React.FC<CommonType> = () => {
         <Meta title={`SMILE | ${t('transactionCreate:transaction_form')}`} />
         <TransactionCreateModalWarningRemoveMaterial />
         <TransactionCreateModalWarningItem />
-        <div className="ui-my-6">
-          <h1 className="ui-text-lg ui-font-bold">
+        <div className="ui:my-6">
+          <h1 className="ui:text-lg ui:font-bold">
             {t('transaction:transaction_create')}
           </h1>
         </div>
         <FormProvider {...methods}>
           <form onSubmit={onSubmit}>
-            <div className="ui-flex ui-space-x-5">
+            <div className="ui:flex ui:space-x-5">
               <TransactionCreateTransactionDetailForm
                 isSuperAdmin={isSuperAdmin}
               />
@@ -83,8 +83,8 @@ const TransactionCreatePage: React.FC<CommonType> = () => {
               )}
             </div>
 
-            <div className="ui-mt-5 ui-w-full ui-p-6 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
-              <h1 className="ui-font-bold">
+            <div className="ui:mt-5 ui:w-full ui:p-6 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
+              <h1 className="ui:font-bold">
                 {titleTable}
                 <TransactionCreateTransactionTable />
               </h1>
@@ -92,18 +92,18 @@ const TransactionCreatePage: React.FC<CommonType> = () => {
 
             <TransactionCreateAdditionalTransactionTable />
 
-            <div className="ui-w-full ui-mt-5">
-              <div className="ui-flex ui-space-x-5 ui-justify-end">
+            <div className="ui:w-full ui:mt-5">
+              <div className="ui:flex ui:space-x-5 ui:justify-end">
                 <Button
                   variant="outline"
-                  className="ui-w-48"
+                  className="ui:w-48"
                   type="button"
                   onClick={() => setOpenModalReset(true)}
                 >
                   Reset
                 </Button>
                 <Button
-                  className="ui-w-48"
+                  className="ui:w-48"
                   type="submit"
                   disabled={!items || items?.length === 0}
                 >

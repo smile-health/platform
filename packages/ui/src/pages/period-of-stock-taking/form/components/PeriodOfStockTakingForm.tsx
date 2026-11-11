@@ -118,11 +118,11 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
           setOpen={setIsConfirmationOpen}
           onSubmit={handleSubmit(onSubmit as any)}
         />
-        <div className="ui-w-full ui-space-y-6 ui-max-w-form ui-mx-auto ui-border ui-border-neutral-300 ui-rounded-md ui-p-6">
-          <h2 className="ui-text-lg ui-font-semibold ui-text-dark-teal ui-mb-6 ui-block">
+        <div className="ui:w-full ui:space-y-6 ui:max-w-form ui:mx-auto ui:border ui:border-neutral-300 ui:rounded-md ui:p-6">
+          <h2 className="ui:text-lg ui:font-semibold ui:text-dark-teal ui:mb-6 ui:block">
             {t('periodOfStockTaking:form.stock_taking_period_details')}
           </h2>
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor="month_period" required={action !== 'edit'}>
               {t('periodOfStockTaking:form.month')}
             </FormLabel>
@@ -181,7 +181,7 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
               </FormErrorMessage>
             )}
           </FormControl>
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor="year_period" required={action !== 'edit'}>
               {t('periodOfStockTaking:form.year')}
             </FormLabel>
@@ -227,7 +227,7 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
               </FormErrorMessage>
             )}
           </FormControl>
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor="period_range" required>
               {t('periodOfStockTaking:form.period_range')}
             </FormLabel>
@@ -282,12 +282,12 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
               </FormErrorMessage>
             )}
           </FormControl>
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor="cutoff_date" required>
               {t('periodOfStockTaking:cut_off_time')}
             </FormLabel>
-            <div className="ui-flex ui-items-center ui-gap-4">
-              <div className="ui-flex-1">
+            <div className="ui:flex ui:items-center ui:gap-4">
+              <div className="ui:flex-1">
                 <Controller
                   name="cutoff_date"
                   control={control}
@@ -311,11 +311,11 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
               </div>
               {!isHideTime && (
                 <>
-                  <span className="ui-text-sm ui-text-gray-500">
+                  <span className="ui:text-sm ui:text-gray-500">
                     {' '}
                     {t('periodOfStockTaking:at')}
                   </span>
-                  <div className="ui-w-32">
+                  <div className="ui:w-32">
                     <Controller
                       name="cutoff_time"
                       control={control}
@@ -352,7 +352,7 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
               </FormErrorMessage>
             )}
           </FormControl>
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor="status">
               {t('periodOfStockTaking:form.period_activation')}
             </FormLabel>
@@ -369,7 +369,7 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
                       e.target.checked ? BOOLEAN.TRUE : BOOLEAN.FALSE
                     )
                   }}
-                  className="ui-text-sm ui-font-normal"
+                  className="ui:text-sm ui:font-normal"
                   label={t(
                     'periodOfStockTaking:form.activate_period_automatically'
                   )}
@@ -381,11 +381,11 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
             )}
           </FormControl>
         </div>
-        <div className="ui-mt-2 ui-flex ui-justify-end ui-items-end ui-max-w-form ui-mx-auto ui-gap-4">
+        <div className="ui:mt-2 ui:flex ui:justify-end ui:items-end ui:max-w-form ui:mx-auto ui:gap-4">
           <Button
             type="button"
             variant="outline"
-            className="ui-mt-4 ui-w-40 ui-text-primary-500 hover:!ui-bg-gray-100"
+            className="ui:mt-4 ui:w-40 ui:text-primary-500 ui:hover:bg-gray-100!"
             onClick={() => {
               router.push('/v5/period-of-stock-taking')
             }}
@@ -395,7 +395,7 @@ const PeriodOfStockTakingForm: React.FC<PeriodOfStockTakingFormProps> = ({
           <Button
             type={shouldConfirm ? 'button' : 'submit'}
             variant="solid"
-            className="ui-mt-4 ui-w-40 ui-bg-primary-500 ui-text-white hover:ui-bg-primary-600"
+            className="ui:mt-4 ui:w-40 ui:bg-primary-500 ui:text-white ui:hover:bg-primary-600"
             onClick={() => {
               if (shouldConfirm) {
                 setIsConfirmationOpen(true)

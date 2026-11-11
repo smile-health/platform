@@ -91,7 +91,7 @@ export default function DashboardAssetOwnershipInventoryPage({
   return (
     <div>
       <Meta title={generateMetaTitle(t('title.page'))} />
-      <DashboardBox.Provider filter={filter?.query} colorClass="ui-bg-gray-100">
+      <DashboardBox.Provider filter={filter?.query} colorClass="ui:bg-gray-100">
         <DashboardFilter
           filter={filter}
           onResetFilter={() => {
@@ -150,7 +150,7 @@ export default function DashboardAssetOwnershipInventoryPage({
               </strong>
             </h4>
           </DashboardBox.Header>
-          <div className="ui-relative ui-p-4 ui-bg-gray-50">
+          <div className="ui:relative ui:p-4 ui:bg-gray-50">
             {(() => {
               const cols = Array.isArray(columns) ? columns : []
               const sticky = cols.length >= 3 ? [0, 1, cols.length - 1] : []

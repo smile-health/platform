@@ -33,37 +33,37 @@ const DropdownProgram = () => {
         onClick={() => setOpen(true)}
         id="trigger-drawer-program-open"
       >
-        <DotsGrid className="ui-text-blue-800" />
+        <DotsGrid className="ui:text-blue-800" />
       </ButtonIcon>
 
       <Drawer open={open} onOpenChange={setOpen} placement="left">
         <DrawerHeader>
-          <div className="ui-flex ui-justify-between ui-items-center">
+          <div className="ui:flex ui:justify-between ui:items-center">
             <ButtonIcon
               size="sm"
               variant="subtle"
               onClick={() => setOpen(false)}
               id="trigger-drawer-program-close"
             >
-              <DotsGrid className="ui-text-blue-800" />
+              <DotsGrid className="ui:text-blue-800" />
             </ButtonIcon>
             <Button
               variant="subtle"
-              rightIcon={<Home className="ui-w-5" />}
+              rightIcon={<Home className="ui:w-5" />}
               onClick={() => {
                 const baseUrl = process.env.NEXT_PUBLIC_URL_FE_SMILE;
                 window.location.replace(`${baseUrl}/${language}/v5/program`);
               }}
               id="navbar-program"
-              className="ui-text-blue-800"
+              className="ui:text-blue-800"
             >
               {t('dropdown_setting.back_to_smile')}
             </Button>
           </div>
         </DrawerHeader>
         <DrawerContent>
-          <div className="ui-flex ui-flex-col ui-gap-3">
-            <h4 className="ui-text-base ui-font-bold">SMILE App</h4>
+          <div className="ui:flex ui:flex-col ui:gap-3">
+            <h4 className="ui:text-base ui:font-bold">SMILE App</h4>
             {programs?.map((program) => (
               <ProgramItemLink
                 id={`navbar-program-${program.key}`}
@@ -73,9 +73,9 @@ const DropdownProgram = () => {
                 href={getProgramHref(program, language, getHref, program.key)}
                 className={{
                   wrapper:
-                    'ui-py-2 ui-cursor-pointer ui-gap-2 hover:ui-bg-gray-100',
-                  logo: 'ui-w-8 ui-h-8',
-                  title: 'ui-text-sm ui-m-2',
+                    'ui:py-2 ui:cursor-pointer ui:gap-2 ui:hover:bg-gray-100',
+                  logo: 'ui:w-8 ui:h-8',
+                  title: 'ui:text-sm ui:m-2',
                 }}
                 icon={getProgramIconUrl(program)}
                 sizeIcon={32}

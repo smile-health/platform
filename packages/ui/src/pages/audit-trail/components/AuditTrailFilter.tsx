@@ -24,16 +24,16 @@ export default function AuditTrailFilter({
 
   return (
     <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-      <FilterFormBody className="ui-grid-cols-4">
+      <FilterFormBody className="ui:grid-cols-4">
         {filter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <FilterResetButton variant="subtle" onClick={handleReset} />
           <FilterSubmitButton
             variant="outline"
             onClick={() => handleChangePage(1)}
-            className="ui-w-[202px]"
+            className="ui:w-[202px]"
           />
         </div>
       </FilterFormFooter>

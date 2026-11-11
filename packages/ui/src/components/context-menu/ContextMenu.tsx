@@ -101,7 +101,7 @@ export const ContextMenuContent = React.forwardRef<
             asChild
             {...props}
             ref={ref}
-            className="ui-rounded ui-border ui-border-gray-300 ui-bg-white ui-px-0.5 ui-py-0.5 ui-shadow-lg"
+            className="ui:rounded ui:border ui:border-gray-300 ui:bg-white ui:px-0.5 ui:py-0.5 ui:shadow-lg"
           >
             <motion.div
               variants={motionVariants}
@@ -139,16 +139,16 @@ export function ContextMenuItem({
       disabled={disabled}
       onSelect={onSelect}
       className={cx(
-        'ui-relative ui-flex ui-items-center ui-space-x-2 ui-rounded ui-px-3 ui-py-2',
-        'ui-cursor-pointer ui-text-sm focus:outline-none',
-        'data-[disabled]:ui-pointer-events-none data-[disabled]:ui-opacity-50',
+        'ui:relative ui:flex ui:items-center ui:space-x-2 ui:rounded ui:px-3 ui:py-2',
+        'ui:cursor-pointer ui:text-sm focus:outline-none',
+        'ui:data-disabled:pointer-events-none ui:data-disabled:opacity-50',
         color === 'primary' && [
-          'ui-text-gray-700',
-          'data-[highlighted]:ui-bg-gray-100',
+          'ui:text-gray-700',
+          'ui:data-highlighted:bg-gray-100',
         ],
         color === 'danger' && [
-          'ui-text-danger-600',
-          'data-[highlighted]:ui-bg-danger-50',
+          'ui:text-danger-600',
+          'ui:data-highlighted:bg-danger-50',
         ]
       )}
     >
@@ -163,7 +163,7 @@ export function ContextMenuLabel(props: {
   readonly children: React.ReactNode
 }) {
   return (
-    <ContextMenuPrimitive.Label className="ui-mb-2 ui-mt-1.5 ui-flex ui-items-center ui-px-3 ui-text-xs ui-font-semibold ui-text-gray-500 ">
+    <ContextMenuPrimitive.Label className="ui:mb-2 ui:mt-1.5 ui:flex ui:items-center ui:px-3 ui:text-xs ui:font-semibold ui:text-gray-500 ">
       {props.children}
     </ContextMenuPrimitive.Label>
   )
@@ -171,7 +171,7 @@ export function ContextMenuLabel(props: {
 
 export function ContextMenuSeparator() {
   return (
-    <ContextMenuPrimitive.Separator className="ui-mx-[-2ui-px] ui-my-2 ui-border-b ui-border-gray-300"></ContextMenuPrimitive.Separator>
+    <ContextMenuPrimitive.Separator className="ui:mx-[-2ui-px] ui:my-2 ui:border-b ui:border-gray-300"></ContextMenuPrimitive.Separator>
   )
 }
 
@@ -211,16 +211,16 @@ export function ContextMenuSubTrigger({
     <ContextMenuPrimitive.SubTrigger
       disabled={disabled}
       className={cx(
-        'ui-relative ui-flex ui-items-center ui-space-x-2 ui-rounded ui-px-3 ui-py-2',
-        'ui-cursor-pointer ui-ui-text-sm focus:ui-outline-none',
-        'data-[disabled]:ui-pointer-events-none data-[disabled]:ui-opacity-50',
-        'ui-text-gray-700',
-        'data-[highlighted]:ui-bg-gray-100'
+        'ui:relative ui:flex ui:items-center ui:space-x-2 ui:rounded ui:px-3 ui:py-2',
+        'ui:cursor-pointer ui-ui-text-sm ui:focus:outline-hidden',
+        'ui:data-disabled:pointer-events-none ui:data-disabled:opacity-50',
+        'ui:text-gray-700',
+        'ui:data-highlighted:bg-gray-100'
       )}
     >
       {leftIcon ? <div>{leftIcon}</div> : null}
-      <div className="ui-flex-1">{props.children}</div>
-      <div className="ui-h-3.5 ui-w-3.5">
+      <div className="ui:flex-1">{props.children}</div>
+      <div className="ui:h-3.5 ui:w-3.5">
         <ChevronRightIcon />
       </div>
     </ContextMenuPrimitive.SubTrigger>
@@ -245,7 +245,7 @@ export const ContextMenuSubContent = React.forwardRef<
             {...props}
             asChild
             ref={ref}
-            className="ui-rounded ui-bg-white ui-px-0.5 ui-py-0.5 ui-shadow-lg ui-ring-1 ui-ring-black ui-ring-opacity-5 focus:ui-outline-none"
+            className="ui:rounded ui:bg-white ui:px-0.5 ui:py-0.5 ui:shadow-lg ui:ring-1 ui:ring-black/5 ui:focus:outline-hidden"
           >
             <motion.div
               variants={motionVariants}

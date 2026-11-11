@@ -22,7 +22,7 @@ const NotificationList: React.FC<NotificationListProps> = (props) => {
 
   if (isLoading && data?.length === 0) {
     return (
-      <div className="ui-flex ui-items-center ui-justify-center ui-h-24 ui-text-gray-700">
+      <div className="ui:flex ui:items-center ui:justify-center ui:h-24 ui:text-gray-700">
         {t('notification.loading')}
       </div>
     );
@@ -30,7 +30,7 @@ const NotificationList: React.FC<NotificationListProps> = (props) => {
 
   if (isError) {
     return (
-      <div className="ui-flex ui-items-center ui-justify-center ui-h-24 ui-text-gray-700">
+      <div className="ui:flex ui:items-center ui:justify-center ui:h-24 ui:text-gray-700">
         {t('notification.error')}
       </div>
     );
@@ -38,7 +38,7 @@ const NotificationList: React.FC<NotificationListProps> = (props) => {
 
   if (isSuccess && data?.length === 0) {
     return (
-      <div className="ui-flex ui-items-center ui-justify-center ui-h-24 ui-text-gray-700">
+      <div className="ui:flex ui:items-center ui:justify-center ui:h-24 ui:text-gray-700">
         {t('notification.no_data')}
       </div>
     );

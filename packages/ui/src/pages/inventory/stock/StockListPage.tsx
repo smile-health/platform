@@ -63,7 +63,7 @@ const StockListPage: React.FC = () => {
       <StockListContext.Provider value={value}>
         <div className="mt-6">
           <StockFilter />
-          <div className="ui-space-y-6 ui-my-5 ui-rounded">
+          <div className="ui:space-y-6 ui:my-5 ui:rounded">
             <DataTable
               data={datasource?.data}
               columns={columns({

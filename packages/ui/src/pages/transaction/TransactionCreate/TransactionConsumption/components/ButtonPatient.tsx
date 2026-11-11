@@ -44,16 +44,16 @@ function ButtonPatient({
       </style>
 
       <button
-        className={`focus:outline-none focus:ring-0 patient-button focus:border-transparent ${!isActive && isError ? '!ui-text-red-600 !ui-bg-[#FEE2E2]' : ''} ${isActive ? 'active' : ''}`}
+        className={`focus:outline-none focus:ring-0 patient-button focus:border-transparent ${!isActive && isError ? 'ui:text-red-600! ui:bg-danger-100!' : ''} ${isActive ? 'active' : ''}`}
         type="button"
         onClick={onClick}
         id={id}
         {...props}
       >
-        <div className="ui-flex">
+        <div className="ui:flex">
           {children}
           {shouldShowIcon ? (
-            <span className="ui-pl-1 ui-pt-1">
+            <span className="ui:pl-1 ui:pt-1">
               <Information></Information>
             </span>
           ) : null}

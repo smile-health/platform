@@ -27,7 +27,7 @@ export const OrderCreateReturnTableDropdownMaterial: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation(['orderCreateReturn', 'common'])
   return (
-    <Td colSpan={6} className="ui-p-2">
+    <Td colSpan={6} className="ui:p-2">
       <ReactSelectAsync
         key={order_items?.length}
         loadOptions={(keyword, _, additional) =>
@@ -46,7 +46,7 @@ export const OrderCreateReturnTableDropdownMaterial: React.FC<Props> = ({
           return option.value?.material_available_qty <= 0
         }}
         value={null}
-        className="!ui-w-96"
+        className="ui:w-96!"
         placeholder={t('orderCreateReturn:list.selected.column.add_material')}
         menuPortalTarget={document.documentElement}
         styles={{
@@ -55,7 +55,7 @@ export const OrderCreateReturnTableDropdownMaterial: React.FC<Props> = ({
         error={!!errors?.order_items?.message}
       />
       {errors?.order_items && (
-        <div className="ui-mt-2">
+        <div className="ui:mt-2">
           <FormErrorMessage>
             {errors?.order_items?.message as string}
           </FormErrorMessage>

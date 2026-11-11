@@ -51,7 +51,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
       return (
         <Button
           onClick={() => handleActionButtonItemClick?.('action', item)}
-          className="ui-text-xs"
+          className="ui:text-xs"
         >
           {t('button.action')}
         </Button>
@@ -62,7 +62,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
       return (
         <Button
           onClick={() => handleActionButtonItemClick?.('download', item)}
-          className="ui-text-xs"
+          className="ui:text-xs"
         >
           {t('button.download')}
         </Button>
@@ -75,14 +75,14 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
         item?.data?.show_mark_finished_button
 
       return (
-        <div className="ui-flex ui-items-center ui-justify-between ui-text-xs ui-gap-2">
+        <div className="ui:flex ui:items-center ui:justify-between ui:text-xs ui:gap-2">
           {shouldShowFinishedButton && (
             <Button
               onClick={() =>
                 handleActionButtonItemClick?.('finishedVaccine', item)
               }
               variant="outline"
-              className="ui-text-xs"
+              className="ui:text-xs"
             >
               {t('button.mark_as_finished')}
             </Button>
@@ -90,10 +90,10 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
           {item?.data?.show_contact_button && (
             <Button
               onClick={() => handleActionButtonItemClick?.('whatsapp', item)}
-              className="ui-text-xs"
+              className="ui:text-xs"
             >
               <Whatsapp />
-              <span className="ui-text-xs ui-ml-2">
+              <span className="ui:text-xs ui:ml-2">
                 {t('button.contact_patient')}
               </span>
             </Button>
@@ -112,44 +112,44 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
         e.preventDefault()
         handleNotificationItemClick?.(item)
       }}
-      className={cx('ui-p-3 ui-text-xs ui-w-full ui-space-y-2', {
-        'ui-bg-[#E2F3FC] ui-cursor-pointer': !isToast && item?.read_at === null,
-        'ui-cursor-pointer': item?.download_url || !item?.read_at,
-        ' ui-border ui-border-gray-300': withBorder,
-        'ui-bg-white ui-rounded ui-shadow-lg': isToast,
+      className={cx('ui:p-3 ui:text-xs ui:w-full ui:space-y-2', {
+        'ui:bg-[#E2F3FC] ui:cursor-pointer': !isToast && item?.read_at === null,
+        'ui:cursor-pointer': item?.download_url || !item?.read_at,
+        ' ui:border ui:border-gray-300': withBorder,
+        'ui:bg-white ui:rounded ui:shadow-lg': isToast,
       })}
     >
-      <div className="ui-flex ui-items-center ui-justify-between">
+      <div className="ui:flex ui:items-center ui:justify-between">
         {item?.data?.show_finished_label ? (
           <FlagFinishedNotificationVaccine />
         ) : (
-          <div className="ui-text-primary ui-text-sm ui-font-bold ui-text-left">
+          <div className="ui-text-primary ui:text-sm ui:font-bold ui:text-left">
             {item?.type?.title ?? item?.title}
           </div>
         )}
-        <div className="ui-text-[10px] ui-text-semibold ui-text-gray-700 ui-text-right">
+        <div className="ui:text-[10px] ui-text-semibold ui:text-gray-700 ui:text-right">
           {!isToast ? (
             parseDateTime(item?.created_at, 'DD/MMM/YYYY HH:mm')
               .toUpperCase()
               .replaceAll('/', ' ')
           ) : (
             <Button
-              className="ui-p-1 ui-h-7 ui-w-7 ui-text-gray-700"
+              className="ui:p-1 ui:h-7 ui:w-7 ui:text-gray-700"
               variant="subtle"
               onClick={handleClose}
             >
-              <XMarkIcon className="ui-h-5 ui-w-5" />
+              <XMarkIcon className="ui:h-5 ui:w-5" />
             </Button>
           )}
         </div>
       </div>
       {item?.data?.show_finished_label && (
-        <div className="ui-text-primary ui-text-sm ui-font-bold ui-text-left">
+        <div className="ui-text-primary ui:text-sm ui:font-bold ui:text-left">
           {item?.type?.title ?? item?.title}
         </div>
       )}
       <div
-        className="ui-text-dark ui-text-left ui-text-sm"
+        className="ui-text-dark ui:text-left ui:text-sm"
         dangerouslySetInnerHTML={{
           __html:
             (item?.action_url ?? '')
@@ -157,7 +157,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
               : item?.message || '',
         }}
       />
-      <div className="ui-text-xs ui-text-gray-700 ui-text-left">
+      <div className="ui:text-xs ui:text-gray-700 ui:text-left">
         {[
           item?.entity?.name,
           item?.user?.username,
@@ -166,10 +166,10 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
           .filter(Boolean)
           .join(' • ')}
       </div>
-      <div className="ui-flex ui-items-center ui-justify-between ui-text-xs ui-text-gray-700 ui-text-left">
-        <div className="ui-flex ui-items-center ui-justify-start ui-gap-2 ui-mt-2">
+      <div className="ui:flex ui:items-center ui:justify-between ui:text-xs ui:text-gray-700 ui:text-left">
+        <div className="ui:flex ui:items-center ui:justify-start ui:gap-2 ui:mt-2">
           {isToast && (
-            <div className="ui-text-[10px] ui-text-semibold ui-text-gray-700">
+            <div className="ui:text-[10px] ui-text-semibold ui:text-gray-700">
               <SmileIcon />
             </div>
           )}
@@ -179,15 +179,15 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
               data={item?.program}
               className={{
                 wrapper: cx(
-                  'ui-p-1 ui-border ui-border-gray-300 ui-bg-white !ui-gap-1',
+                  'ui:p-1 ui:border ui:border-gray-300 ui:bg-white ui:gap-1!',
                   {
-                    'ui-rounded': !isToast,
-                    'ui-rounded !ui-w-3 !ui-h-3': isToast,
+                    'ui:rounded': !isToast,
+                    'ui:rounded ui:w-3! ui:h-3!': isToast,
                   }
                 ),
-                logo: cx('ui-w-6 ui-h-6', { '!ui-w-3 !ui-h-3': isToast }),
-                label: 'ui-text-xs',
-                title: 'ui-text-xs',
+                logo: cx('ui:w-6 ui:h-6', { 'ui:w-3! ui:h-3!': isToast }),
+                label: 'ui:text-xs',
+                title: 'ui:text-xs',
               }}
               icon={getProgramIconUrl(item.program)}
               sizeIcon={24}
@@ -195,7 +195,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
           )}
         </div>
         {isToast && (
-          <div className="ui-text-[10px] ui-text-semibold ui-text-gray-700">
+          <div className="ui:text-[10px] ui-text-semibold ui:text-gray-700">
             {parseDateTime(item?.created_at, 'DD/MMM/YYYY HH:mm')
               .toUpperCase()
               .replaceAll('/', ' ')}
@@ -211,9 +211,9 @@ const FlagFinishedNotificationVaccine = () => {
   const { t } = useTranslation(['common', 'notification'])
 
   return (
-    <div className="ui-flex ui-gap-1 ui-items-center">
-      <CheckCircleIcon className="ui-text-[#15803D] h-4 w-4" />
-      <p className="ui-text-xs ui-text-[#15803D]">
+    <div className="ui:flex ui:gap-1 ui:items-center">
+      <CheckCircleIcon className="ui:text-[#15803D] h-4 w-4" />
+      <p className="ui:text-xs ui:text-[#15803D]">
         {t('notification:finishedVaccine.finished' as any)}
       </p>
     </div>

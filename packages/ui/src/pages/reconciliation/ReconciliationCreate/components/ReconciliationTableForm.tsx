@@ -32,21 +32,21 @@ const ReconciliationTableForm = () => {
   useSetLoadingPopupStore(isLoading)
   const { setModalRemove, setCustomFunction } = useModalWarningItemStore()
   return (
-    <div className="ui-mt-5 ui-w-full ui-p-6 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
-      <div className="ui-font-bold ui-text-dark-blue ui-mb-5">
+    <div className="ui:mt-5 ui:w-full ui:p-6 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
+      <div className="ui:font-bold ui:text-dark-blue ui:mb-5">
         {t('reconciliation:create.table.title')}
       </div>
       <Exists useIt={!!material?.id}>
-        <div className="ui-flex ui-flex-col ui-space-y-5 ui-w-1/2 ui-mb-5">
+        <div className="ui:flex ui:flex-col ui:space-y-5 ui:w-1/2 ui:mb-5">
           <TitleBlock
             arrText={[
               {
                 label: t('reconciliation:create.table.material_selected'),
-                className: 'ui-text-neutral-500 ui-text-sm',
+                className: 'ui:text-neutral-500 ui:text-sm',
               },
               {
                 label: material?.name ?? '-',
-                className: 'ui-font-bold ui-text-dark-blue',
+                className: 'ui:font-bold ui:text-dark-blue',
               },
             ]}
           />
@@ -93,14 +93,14 @@ const ReconciliationTableForm = () => {
         loading={isLoading}
         empty={!opname_stock_items || opname_stock_items?.length === 0}
       >
-        <Thead className="ui-bg-slate-100 ui-text-sm">
+        <Thead className="ui:bg-slate-100 ui:text-sm">
           <Tr>
             {columns.map((item) => (
               <Th
                 key={`header-${item.id}`}
                 id={`header-${item.id}`}
                 columnKey={item.id}
-                className="ui-text-sm ui-text-dark-blue ui-font-bold"
+                className="ui:text-sm ui:text-dark-blue ui:font-bold"
                 style={{
                   ...(item.size && { width: item.size }),
                 }}
@@ -110,10 +110,10 @@ const ReconciliationTableForm = () => {
             ))}
           </Tr>
         </Thead>
-        <Tbody className="ui-bg-white ui-text-sm">
+        <Tbody className="ui:bg-white ui:text-sm">
           {opname_stock_items?.map((item, index) => (
             <Tr
-              className="ui-text-sm ui-font-normal"
+              className="ui:text-sm ui:font-normal"
               key={`item-reconciliation-${index.toString()}`}
             >
               <Td id={`cell-${columns[0].id}`}>{index + 1}</Td>

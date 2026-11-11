@@ -14,7 +14,7 @@ const PreviewPatiens: React.FC<Props> = (props) => {
 
   return (
     <Fragment>
-      <div className="ui-flex ui-flex-col ui-gap-1">
+      <div className="ui:flex ui:flex-col ui:gap-1">
         <div>
           {item.vaccination.identity_type?.label} : {item.vaccination?.patient_id ?? '-'}
         </div>

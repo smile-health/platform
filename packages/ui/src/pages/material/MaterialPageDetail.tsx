@@ -114,18 +114,18 @@ const MaterialPageDetail: React.FC<CommonType> = ({ isGlobal = false }) => {
             setOpen={(open) => setShowActivation(open)}
             onSubmit={() => onChangeStatus(materialId?.toString())}
           />
-          <div className="ui-space-y-6">
-            <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-              <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-                <h5 className="ui-font-bold ui-text-dark-blue">Details</h5>
+          <div className="ui:space-y-6">
+            <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+              <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+                <h5 className="ui:font-bold ui:text-dark-blue">Details</h5>
 
                 {!isLoading && data && (
                   <div
                     className={cx(
-                      'ui-grid ui-justify-end ui-gap-2',
+                      'ui:grid ui:justify-end ui:gap-2',
                       isGlobal
-                        ? 'ui-w-[150px] ui-grid-cols-1'
-                        : 'ui-w-[250px] ui-grid-cols-2'
+                        ? 'ui:w-[150px] ui:grid-cols-1'
+                        : 'ui:w-[250px] ui:grid-cols-2'
                     )}
                   >
                     {!isGlobal && (

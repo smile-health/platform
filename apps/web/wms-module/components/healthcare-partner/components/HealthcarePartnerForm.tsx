@@ -102,17 +102,17 @@ const HealthcarePartnerForm = ({
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onValid, onInvalid)}>
         <div className="space-y-4">
-          <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-            <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-              <h5 className="ui-font-bold ui-text-dark-blue">
+          <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+            <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+              <h5 className="ui:font-bold ui:text-dark-blue">
                 {t('healthcarePartner:detail.healthcare_partner_info')}
               </h5>
             </div>
             <HealthcarePartnerDetail data={defaultValues} />
           </div>
         </div>
-        <div className="ui-flex ui-mt-6 ui-justify-end">
-          <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+        <div className="ui:flex ui:mt-6 ui:justify-end">
+          <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
             <Button
               id="btn-back"
               type="button"

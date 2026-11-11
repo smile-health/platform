@@ -53,7 +53,7 @@ export default function UserDetailMainInfo(props: UserDetailMainInfoProps) {
   }
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
       <ModalConfirmation
         open={changeStatusState?.show}
         setOpen={handleResetChangeStatusState}
@@ -70,13 +70,13 @@ export default function UserDetailMainInfo(props: UserDetailMainInfoProps) {
         }
         onSubmit={onChangeStatus}
       />
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold">Details</h5>
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold">Details</h5>
         {isGlobal && (
           <Button
             asChild
             data-testid="btn-link-user-edit"
-            className="ui-w-28"
+            className="ui:w-28"
             variant="outline"
           >
             <Link href={editUrl}>{t('common:edit')}</Link>
@@ -89,7 +89,7 @@ export default function UserDetailMainInfo(props: UserDetailMainInfoProps) {
             disabled={isLoadingUpdateStatus}
             variant="outline"
             color={status ? 'danger' : 'success'}
-            className="ui-w-28"
+            className="ui:w-28"
             onClick={() => {
               setChangeStatusState({
                 show: true,

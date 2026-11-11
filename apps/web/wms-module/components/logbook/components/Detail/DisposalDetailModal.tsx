@@ -43,22 +43,22 @@ export const DisposalDetailModal: React.FC<DisposalDetailModalProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onClose} size="xl">
-      <DialogHeader className="ui-text-center ui-w-full ui-text-lg ui-py-2">
+      <DialogHeader className="ui:text-center ui:w-full ui:text-lg ui:py-2">
         {t('logbook:modal.title')} {disposalData?.wasteGroupNumber}
       </DialogHeader>
-      <DialogContent className="ui-flex ui-flex-col ui-text-center ui-py-6 ui-border-y">
+      <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
         <DisposalDetailTable
           detailWasteGroup={wasteGroupDetail?.data?.data}
           isLoading={isFetching}
         />
       </DialogContent>
-      <DialogFooter className="ui-flex ui-w-full ui-items-center ui-py-6">
+      <DialogFooter className="ui:flex ui:w-full ui:items-center ui:py-6">
         <Button
           id="btn-back"
           type="button"
           variant="outline"
           onClick={() => onClose()}
-          className="ui-w-full"
+          className="ui:w-full"
         >
           {t('common:close')}
         </Button>

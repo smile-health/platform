@@ -37,8 +37,8 @@ const TitleBlock = ({
           <div
             key={`_${index.toString()}`}
             className={`${
-              item.className ? item.className : 'ui-text-dark-teal'
-            } ui-text-sm`}
+              item.className ? item.className : 'ui:text-dark-teal'
+            } ui:text-sm`}
           >
             {item.label}
           </div>
@@ -132,32 +132,32 @@ const TransactionRemoveStockItemDetailBatchTable: React.FC = () => {
     >
       <Table layout="fixed" overflowXAuto withBorder>
         <Thead>
-          <Th className="ui-w-12">
-            <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+          <Th className="ui:w-12">
+            <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
               SI.No
             </div>
           </Th>
-          <Th className="ui-w-36">
-            <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+          <Th className="ui:w-36">
+            <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
               {t(
                 'transactionCreate:transaction_remove_stock.input_table.detail_column.batch_info'
               )}
             </div>
           </Th>
-          <Th className="ui-w-36">
-            <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+          <Th className="ui:w-36">
+            <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
               {t(
                 'transactionCreate:transaction_remove_stock.input_table.detail_column.stock_info'
               )}
             </div>
           </Th>
-          <Th className="ui-w-36">
-            <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+          <Th className="ui:w-36">
+            <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
               {t('transactionCreate:table.column.activity')}
             </div>
           </Th>
-          <Th className="ui-w-36">
-            <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+          <Th className="ui:w-36">
+            <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
               {t(
                 'transactionCreate:transaction_remove_stock.input_table.column.quantity'
               )}
@@ -168,23 +168,23 @@ const TransactionRemoveStockItemDetailBatchTable: React.FC = () => {
               is_temperature_sensitive: number
             }
           )?.is_temperature_sensitive === BOOLEAN.TRUE && (
-            <Th className="ui-w-52">
-              <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+            <Th className="ui:w-52">
+              <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
                 {t(
                   'transactionCreate:transaction_remove_stock.input_table.detail_column.material_status'
                 )}
               </div>
             </Th>
           )}
-          <Th className="ui-w-52">
-            <div className="ui-text-sm ui-text-dark-blue ui-font-bold">
+          <Th className="ui:w-52">
+            <div className="ui:text-sm ui:text-dark-blue ui:font-bold">
               {t(
                 'transactionCreate:transaction_remove_stock.input_table.column.reason'
               )}
             </div>
           </Th>
         </Thead>
-        <Tbody className="ui-bg-white ui-group ui-text-sm ui-font-normal">
+        <Tbody className="ui:bg-white ui:group ui:text-sm ui:font-normal">
           {savedStockData?.stocks?.map((data, index) => {
             const dataBatch = data?.batch
             const thousand = (value: number) =>
@@ -202,28 +202,28 @@ const TransactionRemoveStockItemDetailBatchTable: React.FC = () => {
                         {
                           label: dataBatch?.code ?? '-',
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-bold',
+                            'ui:text-dark-teal ui:text-sm ui:font-bold',
                         },
                         {
                           label: `${t(
                             'transactionCreate:transaction_remove_stock.input_table.detail_column.production_date'
                           )}: ${formatDate(dataBatch?.production_date as string)}`,
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-normal',
+                            'ui:text-dark-teal ui:text-sm ui:font-normal',
                         },
                         {
                           label: `${t(
                             'transactionCreate:transaction_remove_stock.input_table.detail_column.manufacturer'
                           )}: ${dataBatch?.manufacture?.name ?? '-'}`,
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-normal',
+                            'ui:text-dark-teal ui:text-sm ui:font-normal',
                         },
                         {
                           label: `${t(
                             'transactionCreate:transaction_remove_stock.input_table.detail_column.expired_date'
                           )}: ${formatDate(dataBatch?.expired_date as string)}`,
                           className:
-                            'ui-text-dark-teal ui-text-sm ui-font-normal',
+                            'ui:text-dark-teal ui:text-sm ui:font-normal',
                         },
                       ]}
                     />
@@ -239,28 +239,28 @@ const TransactionRemoveStockItemDetailBatchTable: React.FC = () => {
                           'transactionCreate:transaction_remove_stock.input_table.column.stock_on_hand'
                         )}: ${thousand(data?.qty)}`,
                         className:
-                          'ui-text-dark-teal ui-text-sm ui-font-normal',
+                          'ui:text-dark-teal ui:text-sm ui:font-normal',
                       },
                       {
                         label: `${t(
                           'transactionCreate:transaction_remove_stock.input_table.detail_column.allocated'
                         )}: ${thousand(data?.allocated_qty)}`,
                         className:
-                          'ui-text-dark-teal ui-text-sm ui-font-normal',
+                          'ui:text-dark-teal ui:text-sm ui:font-normal',
                       },
                       {
                         label: `${t(
                           'transactionCreate:transaction_remove_stock.input_table.column.available_stock'
                         )}: ${thousand(data?.available_qty)}`,
                         className:
-                          'ui-text-dark-teal ui-text-sm ui-font-normal',
+                          'ui:text-dark-teal ui:text-sm ui:font-normal',
                       },
                       {
                         label: `${t(
                           'transactionCreate:transaction_remove_stock.input_table.column.budget_source'
                         )}: ${data?.budget_source?.name ?? '-'}`,
                         className:
-                          'ui-text-dark-teal ui-text-sm ui-font-normal',
+                          'ui:text-dark-teal ui:text-sm ui:font-normal',
                       },
                     ]}
                   />
@@ -294,7 +294,7 @@ const TransactionRemoveStockItemDetailBatchTable: React.FC = () => {
                     }
                   />
                   {data?.budget_source?.is_restricted === BOOLEAN.TRUE && (
-                    <p className="ui-text-neutral-500 ui-text-sm ui-font-normal">
+                    <p className="ui:text-neutral-500 ui:text-sm ui:font-normal">
                       {t(
                         'transactionCreate:transaction_remove_stock.input_table.column.restricted_budget_source'
                       )}

@@ -22,7 +22,7 @@ export const ColumnsWasteCharacteristics = (
     meta: {
       rowSpan: (row) => row.original.facilityRowSpan ?? 0,
       cellClassName: ({ original }) =>
-        original.facilityRowSpan ? '' : 'ui-hidden',
+        original.facilityRowSpan ? '' : 'ui:hidden',
     },
     cell: ({ row }) => row.original?.healthcareFacilityName ?? '-',
   };
@@ -37,7 +37,7 @@ export const ColumnsWasteCharacteristics = (
       size: 250,
       meta: {
         rowSpan: (row) => row.original.rowSpan ?? 0,
-        cellClassName: ({ original }) => (original.rowSpan ? '' : 'ui-hidden'),
+        cellClassName: ({ original }) => (original.rowSpan ? '' : 'ui:hidden'),
       },
       cell: ({ row }) =>
         row.original.rowSpan ? (

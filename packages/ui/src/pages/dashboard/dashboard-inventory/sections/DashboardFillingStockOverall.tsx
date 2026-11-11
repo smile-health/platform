@@ -51,8 +51,8 @@ const DashboardFillingStockOverall = forwardRef<TDashboardIOTHandler, Props>(
         cell: ({ getValue }: CellContext<DataTableRow, unknown>) =>
           numberFormatter(getValue<number>() ?? 0, language),
         meta: {
-          headerClassName: 'ui-text-center',
-          cellClassName: 'ui-text-center',
+          headerClassName: 'ui:text-center',
+          cellClassName: 'ui:text-center',
         },
       },
     ]

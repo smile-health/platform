@@ -76,8 +76,8 @@ export function WmsAuthGate({ children }: { children: React.ReactNode }) {
 
   if (redirecting || !isAuthReady) {
     return (
-      <div className="ui-h-screen ui-w-full ui-flex ui-items-center ui-justify-center">
-        <Spinner className="ui-h-8 ui-w-8" />
+      <div className="ui:h-screen ui:w-full ui:flex ui:items-center ui:justify-center">
+        <Spinner className="ui:h-8 ui:w-8" />
       </div>
     )
   }

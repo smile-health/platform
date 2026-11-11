@@ -28,13 +28,13 @@ export default function DashboardTemperatureMonitoringBox({
   return (
     <DashboardBox.Root
       id={id}
-      className="ui-content-stretch ui-flex ui-w-full ui-flex-col ui-items-center"
+      className="ui:content-stretch ui:flex ui:w-full ui:flex-col ui:items-center"
     >
       <DashboardBox.Header
-        className={cx('ui-bg-gray-100 w-full', headerClassName)}
+        className={cx('ui:bg-gray-100 w-full', headerClassName)}
       >
-        <div className="ui-flex ui-items-center ui-justify-center">
-          <h3 className="ui-font-semibold">{title}</h3>
+        <div className="ui:flex ui:items-center ui:justify-center">
+          <h3 className="ui:font-semibold">{title}</h3>
           {info && (
             <DashboardBox.InfoModal title={title}>
               {info}
@@ -44,7 +44,7 @@ export default function DashboardTemperatureMonitoringBox({
       </DashboardBox.Header>
       <DashboardBox.Body
         className={cx(
-          'ui-flex ui-flex-col ui-flex-1 ui-w-full ui-overflow-y-hidden max-h-[100px]',
+          'ui:flex ui:flex-col ui:flex-1 ui:w-full ui:overflow-y-hidden max-h-[100px]',
           bodyClassName
         )}
       >
@@ -60,8 +60,8 @@ export default function DashboardTemperatureMonitoringBox({
         <DashboardBox.Content
           isLoading={isLoading}
           isEmpty={isEmpty}
-          className="ui-flex-1 ui-flex ui-justify-center ui-items-center
-          ui-flex-col"
+          className="ui:flex-1 ui:flex ui:justify-center ui:items-center
+          ui:flex-col"
         >
           {children}
         </DashboardBox.Content>

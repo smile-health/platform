@@ -67,7 +67,7 @@ export const OrderCreateTable: React.FC<OrderCreateTableProps> = (props) => {
         <Tr>
           {headers.map((header) => (
             <Th
-              className="ui-px-2 ui-py-5 ui-text-left ui-text-sm ui-text-gray-700 ui-border-b ui-border-gray-300 ui-font-semibold"
+              className="ui:px-2 ui:py-5 ui:text-left ui:text-sm ui:text-gray-700 ui:border-b ui:border-gray-300 ui:font-semibold"
               key={header.id}
               style={{
                 width: header?.size !== 0 ? `${header?.size}px` : 'auto',
@@ -111,7 +111,7 @@ export const OrderCreateTable: React.FC<OrderCreateTableProps> = (props) => {
         )}
         {order_items?.length > 0 && (
           <Tr>
-            <Td colSpan={6} className="ui-p-2">
+            <Td colSpan={6} className="ui:p-2">
               <ReactSelectAsync
                 loadOptions={loadStockEntites}
                 key={order_items?.length}
@@ -130,7 +130,7 @@ export const OrderCreateTable: React.FC<OrderCreateTableProps> = (props) => {
                   }),
                 }}
                 value={null}
-                className="!ui-w-96"
+                className="ui:w-96!"
                 placeholder={t('orderCreate:list.selected.column.add_material')}
                 menuPortalTarget={document.body}
                 styles={{
@@ -139,7 +139,7 @@ export const OrderCreateTable: React.FC<OrderCreateTableProps> = (props) => {
                 error={!!errors?.order_items?.message}
               />
               {errors?.order_items && (
-                <div className="ui-mt-2">
+                <div className="ui:mt-2">
                   <FormErrorMessage>
                     {errors?.order_items?.message}
                   </FormErrorMessage>

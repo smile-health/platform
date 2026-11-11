@@ -21,7 +21,7 @@ export default function HealthcarePartnerTable({
   const { partnershipDataSource } = useHealthcarePartnerTable();
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={partnershipDataSource?.data?.data}
         columns={columnsHealthcarePartner(t, {

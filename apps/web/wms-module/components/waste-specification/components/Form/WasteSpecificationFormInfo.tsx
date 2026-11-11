@@ -133,9 +133,9 @@ const WasteSpecificationFormInfo: React.FC<WasteSpecificationFormInfoParams> = (
   }, [wasteExternalTreatment, setValue, externalTreatmentOptions]);
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
           <Controller
             name="wasteTypeId"
             control={control}
@@ -304,9 +304,9 @@ const WasteSpecificationFormInfo: React.FC<WasteSpecificationFormInfoParams> = (
             }}
           />
           {wasteCharacteristicsId === 54 && (
-            <div className="ui-flex ui-flex-row ui-justify-between ui-items-start">
-              <div className="ui-w-[300px]">
-                <FormControl className="ui-mt-3">
+            <div className="ui:flex ui:flex-row ui:justify-between ui:items-start">
+              <div className="ui:w-[300px]">
+                <FormControl className="ui:mt-3">
                   <FormLabel required>
                     {t(
                       'wasteSpecification:form.minimum_decay_time_process.label'
@@ -314,7 +314,7 @@ const WasteSpecificationFormInfo: React.FC<WasteSpecificationFormInfoParams> = (
                   </FormLabel>
                 </FormControl>
               </div>
-              <FormControl className="ui-flex-1">
+              <FormControl className="ui:flex-1">
                 <Input
                   {...register('minimunDecayDay')}
                   id="input-minimun-decay-day"
@@ -393,9 +393,9 @@ const WasteSpecificationFormInfo: React.FC<WasteSpecificationFormInfoParams> = (
               />
             </RadioGroup>
           </FormControl>
-          <div className="ui-flex ui-flex-row ui-justify-between ui-items-start">
-            <div className="ui-w-[300px]">
-              <FormControl className="ui-mt-3">
+          <div className="ui:flex ui:flex-row ui:justify-between ui:items-start">
+            <div className="ui:w-[300px]">
+              <FormControl className="ui:mt-3">
                 <FormLabel
                   required={Number(useColdStorage) === DEFAULT_VALUE.YES}
                 >
@@ -405,7 +405,7 @@ const WasteSpecificationFormInfo: React.FC<WasteSpecificationFormInfoParams> = (
                 </FormLabel>
               </FormControl>
             </div>
-            <FormControl className="ui-flex-1">
+            <FormControl className="ui:flex-1">
               <Input
                 {...register('coldStorageMaxProcessingTime')}
                 id="input-cold-storage-max-processing-time"
@@ -422,9 +422,9 @@ const WasteSpecificationFormInfo: React.FC<WasteSpecificationFormInfoParams> = (
               </FormErrorMessage>
             </FormControl>
           </div>
-          <div className="ui-flex ui-flex-row ui-justify-between ui-items-start">
-            <div className="ui-w-[300px]">
-              <FormControl className="ui-mt-3">
+          <div className="ui:flex ui:flex-row ui:justify-between ui:items-start">
+            <div className="ui:w-[300px]">
+              <FormControl className="ui:mt-3">
                 <FormLabel required={wasteCharacteristicsId !== 54}>
                   {t(
                     'wasteSpecification:form.temporary_storage_max_processing_type.label'
@@ -432,7 +432,7 @@ const WasteSpecificationFormInfo: React.FC<WasteSpecificationFormInfoParams> = (
                 </FormLabel>
               </FormControl>
             </div>
-            <FormControl className="ui-flex-1">
+            <FormControl className="ui:flex-1">
               <Input
                 {...register('temporaryStorageMaxProcessingTime')}
                 id="input-cold-storage-max-processing-time"
@@ -592,7 +592,7 @@ const WasteSpecificationFormInfo: React.FC<WasteSpecificationFormInfoParams> = (
                     <FormErrorMessage>{error?.message}</FormErrorMessage>
                   )}
                   {hasTreatmentOptions && hasTransport && (
-                    <div className="ui-text-sm ui-text-blue-600 ui-mt-1">
+                    <div className="ui:text-sm ui:text-blue-600 ui:mt-1">
                       {t(
                         'wasteSpecification:form.waste_external_treatment.transport_auto_selected'
                       )}

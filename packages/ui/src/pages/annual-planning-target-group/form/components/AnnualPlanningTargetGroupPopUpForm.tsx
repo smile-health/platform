@@ -128,13 +128,13 @@ export default function AnnualPlanningTargetGroupPopUpForm() {
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit((data) => mutate(data))}>
           <DialogCloseButton onClick={handleClose} />
-          <DialogHeader className="ui-text-center ui-text-xl">
+          <DialogHeader className="ui:text-center ui:text-xl">
             {openedRow?.opened_for === 'edit'
               ? t('annualPlanningTargetGroup:edit')
               : t('annualPlanningTargetGroup:add')}
           </DialogHeader>
           <DialogContent>
-            <FormControl className="ui-w-full ui-mb-6">
+            <FormControl className="ui:w-full ui:mb-6">
               <FormLabel htmlFor="title" required={true}>
                 {t('annualPlanningTargetGroup:table.target_group_name')}
               </FormLabel>
@@ -151,11 +151,11 @@ export default function AnnualPlanningTargetGroupPopUpForm() {
                 <FormErrorMessage>{errors?.title?.message}</FormErrorMessage>
               )}
             </FormControl>
-            <div className="ui-mb-6">
-              <h5 className="ui-font-bold ui-text-sm ui-mb-4 ui-text-dark-teal">
+            <div className="ui:mb-6">
+              <h5 className="ui:font-bold ui:text-sm ui:mb-4 ui:text-dark-teal">
                 {t('annualPlanningTargetGroup:age')}
               </h5>
-              <div className="ui-flex ui-justify-between ui-items-start ui-gap-6">
+              <div className="ui:flex ui:justify-between ui:items-start ui:gap-6">
                 <AnnualPlanningTargetGroupPopUpFormInputAge
                   title={t('annualPlanningTargetGroup:from')}
                   inputName="from_age"
@@ -169,8 +169,8 @@ export default function AnnualPlanningTargetGroupPopUpForm() {
               </div>
             </div>
           </DialogContent>
-          <DialogFooter className="ui-justify-center">
-            <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full mx-auto">
+          <DialogFooter className="ui:justify-center">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full mx-auto">
               <Button
                 id="btn_close_pop_up_form_annual_planning_target_group"
                 variant="default"

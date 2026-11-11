@@ -26,9 +26,9 @@ export default function ManufacturerFormMainInfo() {
   const manufacturerTypes = useManufacturerTypeOptions()
 
   return (
-    <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6">
+    <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-6">
       <h5 className="font-bold">{t('manufacturer:title.detail')}</h5>
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <FormControl>
           <FormLabel htmlFor="input-name" required>
             {t('manufacturer:form.name.label')}

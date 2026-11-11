@@ -96,7 +96,7 @@ const TransactionCreateAddStockSelectReason = ({
             field: { value, onChange, ...field },
             fieldState: { error },
           }) => (
-            <FormControl className="ui-mt-4">
+            <FormControl className="ui:mt-4">
               <Input
                 {...field}
                 id={`others-transaction-reason-${index}-${indexBatch}`}

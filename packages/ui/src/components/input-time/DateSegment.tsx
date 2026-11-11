@@ -24,13 +24,13 @@ export function DateSegment({
         ...segmentProps.style,
       }}
       className={cx(
-        'ui-box-content ui-leading-none ui-outline-none ui-group ',
-        'ui-py-1 focus:ui-bg-primary-500 focus:ui-text-white',
-        'ui-text-right ui-text-sm ui-tabular-nums',
+        'ui:box-content ui:leading-none ui:outline-hidden ui:group ',
+        'ui:py-1 ui:focus:bg-primary-500 ui:focus:text-white',
+        'ui:text-right ui:text-sm ui:tabular-nums',
         {
-          'ui-text-gray-400': segment.isPlaceholder,
-          'ui-text-gray-500': !segment.isEditable && !segment.isPlaceholder,
-          'ui-text-gray-800': segment.isEditable && !segment.isPlaceholder,
+          'ui:text-gray-400': segment.isPlaceholder,
+          'ui:text-gray-500': !segment.isEditable && !segment.isPlaceholder,
+          'ui:text-gray-800': segment.isEditable && !segment.isPlaceholder,
         }
       )}
     >

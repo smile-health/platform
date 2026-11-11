@@ -49,7 +49,7 @@ export default function EntityTable(props: EntityTableProps) {
   useSetLoadingPopupStore(isLoadingUpdateStatus)
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <ModalConfirmation
         key={changeStatusState?.id}
         open={changeStatusState?.show}
@@ -75,7 +75,7 @@ export default function EntityTable(props: EntityTableProps) {
         isLoading={isLoading}
         sorting={sorting}
         setSorting={setSorting}
-        className="ui-overflow-x-auto"
+        className="ui:overflow-x-auto"
       />
     </div>
   )

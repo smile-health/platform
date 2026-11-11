@@ -161,7 +161,7 @@ export const ColumnsWasteBag = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-blue-800"
+            className="ui:px-1.5! ui:text-blue-800"
           >
             {t('common:detail')}
           </Button>

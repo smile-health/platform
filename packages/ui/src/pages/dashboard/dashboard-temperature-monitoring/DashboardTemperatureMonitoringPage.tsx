@@ -72,7 +72,7 @@ export default function DashboardTemperatureMonitoringPage() {
           }}
           isLoading={isColdStorageLoading}
         />
-        <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-6">
           <RtmdStatusSection
             data={{
               items: coldStorageData?.rtmd_status.sort(
@@ -100,9 +100,9 @@ export default function DashboardTemperatureMonitoringPage() {
               whoPqsStatus={whoPqsStatus}
               onWhoPqsChange={setWhoPqsStatus}
             />
-            <div className="ui-flex ui-items-center ui-justify-between ui-p-4 ui-bg-gray-200 ui-text-dark-blue ui-rounded-lg">
-              <div className="ui-flex ui-items-center ui-gap-2 ui-text-sm">
-                <QuestionMarkCircleIcon className="ui-size-5" />
+            <div className="ui:flex ui:items-center ui:justify-between ui:p-4 ui:bg-gray-200 ui:text-dark-blue ui:rounded-lg">
+              <div className="ui:flex ui:items-center ui:gap-2 ui:text-sm">
+                <QuestionMarkCircleIcon className="ui:size-5" />
                 <span>{t('temperature_excursion.filter.hint')}</span>
               </div>
               <Button
@@ -113,7 +113,7 @@ export default function DashboardTemperatureMonitoringPage() {
                 {t('temperature_excursion.filter.reset')}
               </Button>
             </div>
-            <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-6">
               <ExcursionEpisodesChart
                 data={excursionData?.total_events_by_category}
                 isLoading={isExcursionLoading}
@@ -125,7 +125,7 @@ export default function DashboardTemperatureMonitoringPage() {
                 lastUpdated={excursionData?.updated_at}
               />
             </div>
-            <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-6">
               <ExcursionByColdStorageTypeChart
                 data={excursionData?.total_events_by_asset}
                 isLoading={isExcursionLoading}

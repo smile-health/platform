@@ -48,7 +48,7 @@ export const AssetInventoryMainColumn = ({
       size: 400,
       minSize: 400,
       meta: {
-        cellClassName: 'ui-content-start',
+        cellClassName: 'ui:content-start',
       },
       cell: ({
         row: {
@@ -81,26 +81,26 @@ export const AssetInventoryMainColumn = ({
               {
                 label: (
                   <p>
-                    <span className="ui-font-bold ui-text-dark-blue">
+                    <span className="ui:font-bold ui:text-dark-blue">
                       {serial_number}
                     </span>
                     {assetModelName}
                     <span>{manufactureName}</span>
                   </p>
                 ),
-                className: 'ui-text-sm ui-font-normal ui-text-dark-blue',
+                className: 'ui:text-sm ui:font-normal ui:text-dark-blue',
               },
               {
                 label: entity?.name,
                 className:
-                  'ui-text-sm ui-font-normal ui-text-dark-blue ui-my-1',
+                  'ui:text-sm ui:font-normal ui:text-dark-blue ui:my-1',
               },
               {
                 label:
                   provinceRegency.length > 1
                     ? provinceRegency.join(', ')
                     : provinceRegency[0],
-                className: 'ui-text-xs ui-font-thin ui-text-gray-700',
+                className: 'ui:text-xs ui:font-thin ui:text-gray-700',
               },
             ]}
           />
@@ -112,7 +112,7 @@ export const AssetInventoryMainColumn = ({
       accessorKey: 'asset_type_name',
       enableSorting: true,
       meta: {
-        cellClassName: 'ui-content-start',
+        cellClassName: 'ui:content-start',
       },
       size: 200,
       minSize: 200,
@@ -133,7 +133,7 @@ export const AssetInventoryMainColumn = ({
       header: t('assetInventory:columns.related_program.label'),
       accessorKey: 'program_name',
       meta: {
-        cellClassName: 'ui-content-start',
+        cellClassName: 'ui:content-start',
       },
       size: 200,
       minSize: 200,
@@ -151,7 +151,7 @@ export const AssetInventoryMainColumn = ({
       header: t('assetInventory:columns.working_status.label'),
       accessorKey: 'working_status',
       meta: {
-        cellClassName: 'ui-content-start',
+        cellClassName: 'ui:content-start',
       },
       cell: ({
         row: {
@@ -175,7 +175,7 @@ export const AssetInventoryMainColumn = ({
       accessorKey: 'status',
       enableSorting: true,
       meta: {
-        cellClassName: 'ui-content-start',
+        cellClassName: 'ui:content-start',
       },
       cell: ({
         row: {
@@ -195,7 +195,7 @@ export const AssetInventoryMainColumn = ({
       accessorKey: 'updated_at',
       enableSorting: true,
       meta: {
-        cellClassName: 'ui-min-h-[60px] ui-content-start',
+        cellClassName: 'ui:min-h-[60px] ui:content-start',
       },
       cell: ({
         row: {
@@ -203,7 +203,7 @@ export const AssetInventoryMainColumn = ({
         },
       }) => (
         <>
-          <p className="ui-font-bold">
+          <p className="ui:font-bold">
             {`${user_updated_by?.firstname ?? ''}
             ${user_updated_by?.lastname ?? ''}`}
           </p>
@@ -222,10 +222,10 @@ export const AssetInventoryMainColumn = ({
       size: 150,
       minSize: 150,
       meta: {
-        cellClassName: 'ui-content-start',
+        cellClassName: 'ui:content-start',
       },
       cell: ({ row }) => (
-        <div className="ui-grid ui-grid-cols-2 ui-gap-2">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-2">
           <AssetInventoryDetailButton id={row.original?.id} />
           {hasPermission('asset-inventory-mutate') ? (
             <AssetInventoryEditButton id={row.original?.id} />

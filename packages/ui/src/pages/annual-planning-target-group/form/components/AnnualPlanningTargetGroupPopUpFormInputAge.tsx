@@ -25,9 +25,9 @@ const AnnualPlanningTargetGroupPopUpFormInputAge = ({
     formState: { errors },
   } = useFormContext()
   return (
-    <div className="ui-w-full">
-      <div className="ui-flex ui-justify-start ui-items-start ui-gap-2 ui-mb-2">
-        <h6 className="ui-mb-2 ui-font-normal ui-text-neutral-500">{title}</h6>
+    <div className="ui:w-full">
+      <div className="ui:flex ui:justify-start ui:items-start ui:gap-2 ui:mb-2">
+        <h6 className="ui:mb-2 ui:font-normal ui:text-neutral-500">{title}</h6>
         {errors?.[inputName]?.message && (
           <FormErrorMessage>
             {errors?.[inputName]?.message as string}
@@ -42,9 +42,9 @@ const AnnualPlanningTargetGroupPopUpFormInputAge = ({
           field: { value, onChange, ...field },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-w-full ui-mb-2">
-            <div className="ui-flex ui-justify-start ui-items-center ui-gap-2">
-              <div className="ui-w-2/3">
+          <FormControl className="ui:w-full ui:mb-2">
+            <div className="ui:flex ui:justify-start ui:items-center ui:gap-2">
+              <div className="ui:w-2/3">
                 <InputNumberV2
                   {...field}
                   value={value || ''}
@@ -54,12 +54,12 @@ const AnnualPlanningTargetGroupPopUpFormInputAge = ({
                   }}
                   id={`input_${inputName}_year`}
                   placeholder="0"
-                  className="ui-w-full"
+                  className="ui:w-full"
                   allowNegative={false}
                   isPlainFormat={true}
                 />
               </div>
-              <FormLabel htmlFor={`${inputName}.year`} className="ui-w-1/3">
+              <FormLabel htmlFor={`${inputName}.year`} className="ui:w-1/3">
                 {t('annualPlanningTargetGroup:years')}
               </FormLabel>
             </div>
@@ -76,9 +76,9 @@ const AnnualPlanningTargetGroupPopUpFormInputAge = ({
           field: { value, onChange, ...field },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-w-full ui-mb-2">
-            <div className="ui-flex ui-justify-start ui-items-center ui-gap-2">
-              <div className="ui-w-2/3">
+          <FormControl className="ui:w-full ui:mb-2">
+            <div className="ui:flex ui:justify-start ui:items-center ui:gap-2">
+              <div className="ui:w-2/3">
                 <InputNumberV2
                   {...field}
                   value={value || ''}
@@ -88,12 +88,12 @@ const AnnualPlanningTargetGroupPopUpFormInputAge = ({
                   }}
                   id={`input_${inputName}_month`}
                   placeholder="0"
-                  className="ui-w-full"
+                  className="ui:w-full"
                   allowNegative={false}
                   isPlainFormat={true}
                 />
               </div>
-              <FormLabel htmlFor={`${inputName}.month`} className="ui-w-1/3">
+              <FormLabel htmlFor={`${inputName}.month`} className="ui:w-1/3">
                 {t('annualPlanningTargetGroup:months')}
               </FormLabel>
             </div>
@@ -110,9 +110,9 @@ const AnnualPlanningTargetGroupPopUpFormInputAge = ({
           field: { value, onChange, ...field },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-w-full ui-mb-2">
-            <div className="ui-flex ui-justify-start ui-items-center ui-gap-2">
-              <div className="ui-w-2/3">
+          <FormControl className="ui:w-full ui:mb-2">
+            <div className="ui:flex ui:justify-start ui:items-center ui:gap-2">
+              <div className="ui:w-2/3">
                 <InputNumberV2
                   {...field}
                   value={value || ''}
@@ -122,12 +122,12 @@ const AnnualPlanningTargetGroupPopUpFormInputAge = ({
                   }}
                   id={`input_${inputName}_day`}
                   placeholder="0"
-                  className="ui-w-full"
+                  className="ui:w-full"
                   allowNegative={false}
                   isPlainFormat={true}
                 />
               </div>
-              <FormLabel htmlFor={`${inputName}.day`} className="ui-w-1/3">
+              <FormLabel htmlFor={`${inputName}.day`} className="ui:w-1/3">
                 {t('annualPlanningTargetGroup:days')}
               </FormLabel>
             </div>

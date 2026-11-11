@@ -21,9 +21,9 @@ const AssetTypeFormInfo: React.FC = () => {
   } = useFormContext<AssetTypeFormData>();
 
   return (
-    <div className="ui-flex ui-flex-col">
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-flex ui-flex-col ui-space-y-5">
+    <div className="ui:flex ui:flex-col">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:flex ui:flex-col ui:space-y-5">
           <Controller
             name="name"
             control={control}
@@ -89,7 +89,7 @@ const AssetTypeFormInfo: React.FC = () => {
             }}
           />
         </div>
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-mt-3">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:mt-3">
           <FormControl>
             <FormLabel htmlFor="input-min-temperature">
               {t('assetType:form.min_temperature.label')}

@@ -33,46 +33,46 @@ const ReconciliationDetailPage = () => {
       withLayout
     >
       <Meta title={t('reconciliation:title.reconciliation')} />
-      <div className="ui-border ui-border-gray-300 ui-px-5 ui-py-3">
-        <div className="ui-text-dark-teal ui-font-semibold">
+      <div className="ui:border ui:border-gray-300 ui:px-5 ui:py-3">
+        <div className="ui:text-dark-teal ui:font-semibold">
           {t('reconciliationDetail:reconciliation_period.title')}
         </div>
-        <div className="ui-mt-3 ui-flex ui-space-x-16">
+        <div className="ui:mt-3 ui:flex ui:space-x-16">
           <div>
-            <div className="ui-text-gray-700">
+            <div className="ui:text-gray-700">
               {t('reconciliationDetail:reconciliation_period.from')}
             </div>
-            <div className="ui-text-dark-teal ui-font-semibold">
+            <div className="ui:text-dark-teal ui:font-semibold">
               {parseDateTime(detail?.start_date ?? '', 'DD MMM YYYY')}
             </div>
           </div>
           <div>
-            <div className="ui-text-gray-700">
+            <div className="ui:text-gray-700">
               {t('reconciliationDetail:reconciliation_period.to')}
             </div>
-            <div className="ui-text-dark-teal ui-font-semibold">
+            <div className="ui:text-dark-teal ui:font-semibold">
               {parseDateTime(detail?.end_date ?? '', 'DD MMM YYYY')}
             </div>
           </div>
         </div>
       </div>
-      <div className="ui-border ui-border-gray-300 ui-px-5 ui-py-3 mt-5">
-        <div className="ui-text-dark-teal ui-font-semibold">
+      <div className="ui:border ui:border-gray-300 ui:px-5 ui:py-3 mt-5">
+        <div className="ui:text-dark-teal ui:font-semibold">
           {t('reconciliationDetail:list.title')}
         </div>
-        <div className="ui-mt-3">
+        <div className="ui:mt-3">
           <DataTable
             data={detail?.reconciliation_items}
             columns={columsDetailReconciliation(t)}
             isLoading={isLoading}
           />
         </div>
-        <div className="ui-flex ui-flex-row ui-justify-end ui-mt-5">
+        <div className="ui:flex ui:flex-row ui:justify-end ui:mt-5">
           <Button
             color="primary"
             variant="outline"
             onClick={() => router.back()}
-            className="ui-min-w-28"
+            className="ui:min-w-28"
           >
             {t('common:back')}
           </Button>

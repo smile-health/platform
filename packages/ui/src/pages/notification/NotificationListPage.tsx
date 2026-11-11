@@ -107,8 +107,8 @@ export default function NotificationListPage({
             filter={filter}
             isGlobal={isGlobal}
           />
-          <div className="ui-flex ui-items-center ui-justify-end ui-gap-4">
-            <div className="ui-flex ui-items-center ui-gap-4">
+          <div className="ui:flex ui:items-center ui:justify-end ui:gap-4">
+            <div className="ui:flex ui:items-center ui:gap-4">
               <Button variant="subtle" onClick={() => setOpenReadAll(true)}>
                 {t('notification:button.mark_all_as_read')}
               </Button>

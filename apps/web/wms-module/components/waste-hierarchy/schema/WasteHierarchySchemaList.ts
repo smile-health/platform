@@ -32,7 +32,7 @@ export const createFilterWasteTypeSchema = ({ t, tab }: Params): UseFilter => [
           : t(
               'wasteHierarchy:list.filter.waste_characteristic.search.placeholder'
             ),
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     defaultValue: '',
     maxLength: 255,
   },
@@ -40,7 +40,7 @@ export const createFilterWasteTypeSchema = ({ t, tab }: Params): UseFilter => [
     id: 'select-waste-type',
     type: 'select-async-paginate',
     name: 'wasteTypeId',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('wasteHierarchy:list.filter.waste_type.waste_type.label'),
     placeholder: t(
@@ -55,7 +55,7 @@ export const createFilterWasteTypeSchema = ({ t, tab }: Params): UseFilter => [
     id: 'select-waste-group',
     type: 'select-async-paginate',
     name: 'wasteGroupId',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('wasteHierarchy:list.filter.waste_group.waste_group.label'),
     placeholder: t(
@@ -76,7 +76,7 @@ export const createFilterWasteTypeSchema = ({ t, tab }: Params): UseFilter => [
     id: 'select-status',
     type: 'select',
     name: 'isActive',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('wasteHierarchy:list.filter.is_active.label'),
     placeholder: t('wasteHierarchy:list.filter.is_active.placeholder'),

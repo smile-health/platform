@@ -89,15 +89,15 @@ const StockOpnameModalAddBatch: React.FC<Props> = (props) => {
     <FormProvider {...methods}>
       <ModalRoot
         open={open}
-        className="ui-z-10"
-        classNameOverlay="ui-z-10"
+        className="ui:z-10"
+        classNameOverlay="ui:z-10"
         verticalCentered
         closeOnOverlayClick={false}
         portalContainer={modalRoot}
       >
         <ModalCloseButton onClick={handleClose} />
-        <ModalHeader border className="ui-text-center ui-pr-0">
-          <span className="ui-font-medium">
+        <ModalHeader border className="ui:text-center ui:pr-0">
+          <span className="ui:font-medium">
             {
               t('stockOpnameCreate:form.new_batch.title', {
                 returnObjects: true,
@@ -106,7 +106,7 @@ const StockOpnameModalAddBatch: React.FC<Props> = (props) => {
           </span>
         </ModalHeader>
         <ModalContent>
-          <div className="ui-flex ui-flex-col ui-space-y-5">
+          <div className="ui:flex ui:flex-col ui:space-y-5">
             {data.is_batch && (
               <Fragment>
                 <Controller
@@ -211,7 +211,7 @@ const StockOpnameModalAddBatch: React.FC<Props> = (props) => {
             />
           </div>
         </ModalContent>
-        <ModalFooter className="ui-border ui-flex ui-flex-row">
+        <ModalFooter className="ui:border ui:flex ui:flex-row">
           <Button
             color="danger"
             variant="default"

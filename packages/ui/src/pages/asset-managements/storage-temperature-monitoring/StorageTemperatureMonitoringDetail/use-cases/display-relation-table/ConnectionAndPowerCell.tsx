@@ -29,13 +29,13 @@ export const ConnectionAndPowerCell: React.FC<ConnectionAndPowerCellProps> = ({
         label: t(
           'storageTemperatureMonitoringDetail:relation_table.columns.connection_and_power.connection_status.online'
         ),
-        color: 'ui-text-green-500',
+        color: 'ui:text-green-500',
       }
     : {
         label: t(
           'storageTemperatureMonitoringDetail:relation_table.columns.connection_and_power.connection_status.offline'
         ),
-        color: 'ui-text-red-500',
+        color: 'ui:text-red-500',
       }
 
   const powerStatus = {
@@ -46,19 +46,19 @@ export const ConnectionAndPowerCell: React.FC<ConnectionAndPowerCellProps> = ({
       : t(
           'storageTemperatureMonitoringDetail:relation_table.columns.connection_and_power.power_status.off'
         ),
-    color: 'ui-text-gray-500',
+    color: 'ui:text-gray-500',
     colorHex: '#737373',
   }
 
   return (
-    <div className="ui-flex ui-flex-col ui-font-bold">
-      <div className={cx('ui-text-sm', deviceStatus.color)}>
+    <div className="ui:flex ui:flex-col ui:font-bold">
+      <div className={cx('ui:text-sm', deviceStatus.color)}>
         {deviceStatus.label}
       </div>
 
       <MetricIndicator
         type="connection"
-        icon={<Battery50Icon className="ui-w-4 ui-h-4" />}
+        icon={<Battery50Icon className="ui:w-4 ui:h-4" />}
         value={log.battery === null ? 'N/A' : log.battery}
         unit="%"
       />
@@ -66,7 +66,7 @@ export const ConnectionAndPowerCell: React.FC<ConnectionAndPowerCellProps> = ({
       {!isWarehouse && (
         <MetricIndicator
           type="connection"
-          icon={<SignalIcon className="ui-w-4 ui-h-4" />}
+          icon={<SignalIcon className="ui:w-4 ui:h-4" />}
           value={log.signal === null ? 'N/A' : log.signal}
           unit="%"
         />
@@ -74,12 +74,12 @@ export const ConnectionAndPowerCell: React.FC<ConnectionAndPowerCellProps> = ({
 
       <div
         className={cx(
-          'ui-text-sm ui-flex ui-items-center ui-gap-1',
+          'ui:text-sm ui:flex ui:items-center ui:gap-1',
           powerStatus.color
         )}
       >
-        <PlugIcon className={cx('ui-w-4 ui-h-4', powerStatus.color)} />
-        <p className="ui-font-semibold">{powerStatus.label}</p>
+        <PlugIcon className={cx('ui:w-4 ui:h-4', powerStatus.color)} />
+        <p className="ui:font-semibold">{powerStatus.label}</p>
       </div>
     </div>
   )

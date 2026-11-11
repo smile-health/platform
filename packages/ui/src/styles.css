@@ -1,6 +1,245 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Sumber class dibatasi ke src/ seperti content di config v3. */
+@import 'tailwindcss' prefix(ui) source('.');
+
+@plugin '@tailwindcss/forms' {
+  strategy: 'class';
+}
+
+@theme {
+  /* Default v3: ring tanpa warna = blue-500 50%, lebar 3px. v4 memakai
+     currentColor dan 1px. */
+  --default-ring-color: rgb(59 130 246 / 0.5);
+  --default-ring-width: 3px;
+
+  --color-primary-50: rgb(var(--color-primary-50));
+  --color-primary-100: rgb(var(--color-primary-100));
+  --color-primary-200: rgb(var(--color-primary-200));
+  --color-primary-300: rgb(var(--color-primary-300));
+  --color-primary-400: rgb(var(--color-primary-400));
+  --color-primary-500: rgb(var(--color-primary-500));
+  --color-primary-600: rgb(var(--color-primary-600));
+  --color-primary-700: rgb(var(--color-primary-700));
+  --color-primary-800: rgb(var(--color-primary-800));
+  --color-primary-900: rgb(var(--color-primary-900));
+  --color-primary-950: rgb(var(--color-primary-950));
+  --color-primary-contrast: rgb(var(--color-primary-contrast));
+  --color-primary-surface: rgb(var(--color-primary-surface));
+
+  --color-secondary-50: #fff7ed;
+  --color-secondary-100: #ffedd5;
+  --color-secondary-200: #fed7aa;
+  --color-secondary-300: #fdba74;
+  --color-secondary-400: #fb923c;
+  --color-secondary-500: #f97316;
+  --color-secondary-600: #ea580c;
+  --color-secondary-700: #c2410c;
+  --color-secondary-800: #9a3412;
+  --color-secondary-900: #7c2d12;
+  --color-secondary-950: #431407;
+  --color-secondary-contrast: rgb(var(--color-orange-contrast));
+
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
+  --color-success-950: #022c22;
+  --color-success-contrast: rgb(var(--color-emerald-contrast));
+
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+  --color-danger-800: #991b1b;
+  --color-danger-900: #7f1d1d;
+  --color-danger-950: #450a0a;
+  --color-danger-contrast: rgb(var(--color-red-contrast));
+
+  --color-info-50: #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-200: #bfdbfe;
+  --color-info-300: #93c5fd;
+  --color-info-400: #60a5fa;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --color-info-700: #1d4ed8;
+  --color-info-800: #1e40af;
+  --color-info-900: #1e3a8a;
+  --color-info-950: #172554;
+  --color-info-contrast: rgb(var(--color-blue-contrast));
+
+  --color-warning-50: #fefce8;
+  --color-warning-100: #fef9c3;
+  --color-warning-200: #fef08a;
+  --color-warning-300: #fde047;
+  --color-warning-400: #facc15;
+  --color-warning-500: #eab308;
+  --color-warning-600: #ca8a04;
+  --color-warning-700: #a16207;
+  --color-warning-800: #854d0e;
+  --color-warning-900: #713f12;
+  --color-warning-950: #422006;
+  --color-warning-contrast: rgb(var(--color-yellow-contrast));
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+  --color-gray-contrast: rgb(var(--color-gray-contrast));
+
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+  --color-slate-contrast: rgb(var(--color-slate-contrast));
+
+  --color-dark-teal: #073b4c;
+  --color-dark-blue: #0c3045;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+  --color-polynesianblue-50: rgb(var(--color-polynesianblue-50));
+  --color-polynesianblue-100: rgb(var(--color-polynesianblue-100));
+  --color-polynesianblue-200: rgb(var(--color-polynesianblue-200));
+  --color-polynesianblue-300: rgb(var(--color-polynesianblue-300));
+  --color-polynesianblue-400: rgb(var(--color-polynesianblue-400));
+  --color-polynesianblue-500: rgb(var(--color-polynesianblue-500));
+  --color-polynesianblue-600: rgb(var(--color-polynesianblue-600));
+  --color-polynesianblue-700: rgb(var(--color-polynesianblue-700));
+  --color-polynesianblue-800: rgb(var(--color-polynesianblue-800));
+  --color-polynesianblue-900: rgb(var(--color-polynesianblue-900));
+  --color-polynesianblue-950: rgb(var(--color-polynesianblue-950));
+  --color-polynesianblue-contrast: rgb(var(--color-polynesianblue-contrast));
+
+  --container-form: 612px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-enter: enter 200ms ease-out;
+  --animate-slide-in: slide-in 1.2s cubic-bezier(0.41, 0.73, 0.51, 1.02);
+  --animate-leave: leave 150ms ease-in forwards;
+
+  --height-xs: 10vh;
+  --height-sm: 25vh;
+  --height-md: 50vh;
+  --height-lg: 75vh;
+  --height-xl: 90vh;
+
+  --max-height-xs: 10vh;
+  --max-height-sm: 25vh;
+  --max-height-md: 50vh;
+  --max-height-lg: 75vh;
+  --max-height-xl: 90vh;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes enter {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes leave {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-in {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    /* Dengan prefix(ui) variabel tema menjadi --ui-*; --color-gray-200 di
+       :root hanya berisi channel RGB, bukan warna. */
+    border-color: var(--ui-color-gray-200, currentcolor);
+  }
+
+  /* Default v3 lain yang berubah di v4: warna placeholder dan cursor tombol. */
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--ui-color-gray-400);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 .input-color > div > div[data-position='right'] {
   right: 0 !important;

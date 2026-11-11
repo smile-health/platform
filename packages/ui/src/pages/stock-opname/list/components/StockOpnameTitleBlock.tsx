@@ -17,13 +17,13 @@ const StockOpnameTitleBlock = ({
         item.label && (
           <div
             key={`_${index.toString()}`}
-            className={`${item.className ?? 'ui-text-dark-teal'} ui-text-sm`}
+            className={`${item.className ?? 'ui:text-dark-teal'} ui:text-sm`}
           >
             {item.label}
             {item.label2 && (
               <span
                 className={` ${
-                  item.className2 ?? 'ui-text-dark-teal ui-text-sm'
+                  item.className2 ?? 'ui:text-dark-teal ui:text-sm'
                 }`}
               >
                 {item.label2}

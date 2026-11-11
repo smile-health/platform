@@ -59,7 +59,7 @@ export default function PrintLabelTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={printLabelDataSource?.data?.data}
         columns={columnsPrintLabel(t, {

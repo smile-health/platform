@@ -41,7 +41,7 @@ const base = ({
         <div
           id={id}
           data-testid="toast-push-notification"
-          className="ui-max-w-[376px]"
+          className="ui:max-w-[376px]"
         >
           <NotificationItem
             type="toast"
@@ -57,41 +57,41 @@ const base = ({
           id={id}
           data-testid={`toast-${status}`}
           className={cx(
-            'ui-pointer-events-auto ui-relative',
-            'ui-w-full lg:ui-w-[360px]',
-            'ui-rounded ui-py-3 ui-pl-3 ui-pr-9',
+            'ui:pointer-events-auto ui:relative',
+            'ui:w-full ui:lg:w-[360px]',
+            'ui:rounded ui:py-3 ui:pl-3 ui:pr-9',
             {
-              'ui-bg-success-600 ui-text-white': status === 'success',
-              'ui-bg-danger-600 ui-text-white': status === 'danger',
-              'ui-bg-warning-600 ui-text-white': status === 'warning',
-              'ui-bg-info-600 ui-text-white': status === 'info',
+              'ui:bg-success-600 ui:text-white': status === 'success',
+              'ui:bg-danger-600 ui:text-white': status === 'danger',
+              'ui:bg-warning-600 ui:text-white': status === 'warning',
+              'ui:bg-info-600 ui:text-white': status === 'info',
             },
             {
-              'ui-animate-enter': t.visible,
-              'ui-animate-leave': !t.visible,
+              'ui:animate-enter': t.visible,
+              'ui:animate-leave': !t.visible,
             }
           )}
         >
-          <div className="ui-flex">
-            <div className="ui-flex ui-justify-center ui-pr-2">
+          <div className="ui:flex">
+            <div className="ui:flex ui:justify-center ui:pr-2">
               {status === 'success' ? (
-                <CheckCircleIcon className="ui-h-5 ui-w-5"></CheckCircleIcon>
+                <CheckCircleIcon className="ui:h-5 ui:w-5"></CheckCircleIcon>
               ) : null}
               {status === 'danger' ? (
-                <XCircleIcon className="ui-h-5 ui-w-5"></XCircleIcon>
+                <XCircleIcon className="ui:h-5 ui:w-5"></XCircleIcon>
               ) : null}
               {status === 'warning' ? (
-                <ExclamationCircleIcon className="ui-h-5 ui-w-5"></ExclamationCircleIcon>
+                <ExclamationCircleIcon className="ui:h-5 ui:w-5"></ExclamationCircleIcon>
               ) : null}
               {status === 'info' ? (
-                <InformationCircleIcon className="ui-h-5 ui-w-5"></InformationCircleIcon>
+                <InformationCircleIcon className="ui:h-5 ui:w-5"></InformationCircleIcon>
               ) : null}
             </div>
             <div className="p-0">
               {title && (
                 <div
                   data-testid={`toast-${status}-title`}
-                  className="ui-font-semibold ui-leading-tight"
+                  className="ui:font-semibold ui:leading-tight"
                 >
                   {title}
                 </div>
@@ -99,7 +99,7 @@ const base = ({
               {description && (
                 <div
                   data-testid={`toast-${status}-description`}
-                  className="ui-leading-tight"
+                  className="ui:leading-tight"
                 >
                   {description}
                 </div>
@@ -109,21 +109,21 @@ const base = ({
 
           <button
             className={cx(
-              'ui-absolute ui-right-1.5 ui-top-1.5 ui-rounded ui-p-0.5',
+              'ui:absolute ui:right-1.5 ui:top-1.5 ui:rounded ui:p-0.5',
               {
-                'hover:ui-bg-success-700 active:ui-bg-success-800':
+                'ui:hover:bg-success-700 ui:active:bg-success-800':
                   status === 'success',
-                'hover:ui-bg-danger-700 active:ui-bg-danger-800':
+                'ui:hover:bg-danger-700 ui:active:bg-danger-800':
                   status === 'danger',
-                'hover:ui-bg-warning-700 active:ui-bg-warning-800':
+                'ui:hover:bg-warning-700 ui:active:bg-warning-800':
                   status === 'warning',
-                'hover:ui-bg-info-700 active:ui-bg-info-800': status === 'info',
+                'ui:hover:bg-info-700 ui:active:bg-info-800': status === 'info',
               }
             )}
             data-testid={`toast-${status}-button-close`}
             onClick={() => originalToast.dismiss(t.id)}
           >
-            <XMarkIcon className="ui-h-4 ui-w-4"></XMarkIcon>
+            <XMarkIcon className="ui:h-4 ui:w-4"></XMarkIcon>
           </button>
         </div>
       ),

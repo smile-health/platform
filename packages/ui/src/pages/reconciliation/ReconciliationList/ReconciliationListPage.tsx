@@ -49,25 +49,25 @@ const ReconciliationListPage = () => {
           handleSearch()
         }}
       >
-        <FilterFormBody className="ui-grid-cols-4">
+        <FilterFormBody className="ui:grid-cols-4">
           {filter.renderField()}
         </FilterFormBody>
         <FilterFormFooter>
           <FilterExpandButton variant="subtle" />
-          <div className="ui-flex ui-gap-2">
+          <div className="ui:flex ui:gap-2">
             <Button
               id="btn-export"
               variant="subtle"
               type="button"
               onClick={() => exportQuery.refetch()}
-              leftIcon={<Export className="ui-size-5" />}
+              leftIcon={<Export className="ui:size-5" />}
             >
               {t('filter.export')}
             </Button>
-            <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+            <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
             <FilterResetButton onClick={filter.reset} variant="subtle" />
             <FilterSubmitButton
-              className="ui-w-[202px]"
+              className="ui:w-[202px]"
               variant="outline"
               onClick={handleSearch}
             />
@@ -75,7 +75,7 @@ const ReconciliationListPage = () => {
         </FilterFormFooter>
         {filter.renderActiveFilter()}
       </FilterFormRoot>
-      <div className="ui-space-y-6 ui-my-5 ui-rounded">
+      <div className="ui:space-y-6 ui:my-5 ui:rounded">
         <DataTable
           columns={schemaTable}
           data={data?.data}

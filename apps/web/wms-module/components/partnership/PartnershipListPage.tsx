@@ -60,13 +60,13 @@ const PartnershipListPage: React.FC = () => {
         description={t('partnership:information.description')}
       />
       <div className="mt-6">
-        <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-font-bold ui-text-xl">
+        <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:font-bold ui:text-xl">
             {t('partnership:list.list')}
           </h5>
           {isFacilityAdmin() && (
             <Button
-              leftIcon={<Plus className="ui-size-5" />}
+              leftIcon={<Plus className="ui:size-5" />}
               loading={false}
               disabled={false}
               onClick={() => route.push('/partnership/create')}
@@ -77,23 +77,23 @@ const PartnershipListPage: React.FC = () => {
         </div>
         {/* filter */}
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid ui-grid-cols-3 ui-gap-4">
+          <FilterFormBody className="ui:grid ui:grid-cols-3 ui:gap-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-flex ui-space-x-3 ui-items-center">
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:flex ui:space-x-3 ui:items-center">
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Reload className="ui-size-5" />}
+                leftIcon={<Reload className="ui:size-5" />}
                 onClick={filter.reset}
               >
                 {t('common:reset')}
               </Button>
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -103,7 +103,7 @@ const PartnershipListPage: React.FC = () => {
           {filter.renderActiveFilter()}
         </FilterFormRoot>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <PartnershipTable
             isLoading={isLoadingPartnership}
             size={paginationPartnership.paginate}

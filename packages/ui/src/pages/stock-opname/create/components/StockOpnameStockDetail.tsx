@@ -81,11 +81,11 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
           handleClose={() => setModalConfirmationStock(false)}
           handleSubmit={handleFinalSubmit}
           description={
-            <div className="ui-flex ui-flex-col ui-space-y-3 ui-items-center ui-text-center">
-              <div className="ui-text-neutral-500">
+            <div className="ui:flex ui:flex-col ui:space-y-3 ui:items-center ui:text-center">
+              <div className="ui:text-neutral-500">
                 {t('stockOpnameCreate:modal_confirmation_stock.desc_one')}
               </div>
-              <div className="ui-text-dark-blue ui-font-medium">
+              <div className="ui:text-dark-blue ui:font-medium">
                 {t('stockOpnameCreate:modal_confirmation_stock.desc_two')}
               </div>
             </div>
@@ -105,12 +105,12 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
             placement="bottom"
             sizeHeight="lg"
             size="full"
-            className="ui-z-10"
+            className="ui:z-10"
           >
             <DrawerHeader>
-              <div className="ui-flex ui-justify-between">
+              <div className="ui:flex ui:justify-between">
                 <div />
-                <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+                <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
                   {data?.is_batch ? title[0] : title[1]}
                 </h6>
                 <Button
@@ -126,18 +126,18 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                 </Button>
               </div>
             </DrawerHeader>
-            <DrawerContent className="ui-border-y ui-border-b-zinc-300">
+            <DrawerContent className="ui:border-y ui:border-b-zinc-300">
               <div
-                className="ui-px-1 ui-py-2"
+                className="ui:px-1 ui:py-2"
                 id="transaction-detail-table-stock-opname"
               >
-                <div className="ui-space-y-6">
-                  <div className="ui-grid ui-grid-cols-[40%_40%_20%] ui-gap-4 ui-mb-1">
+                <div className="ui:space-y-6">
+                  <div className="ui:grid ui:grid-cols-[40%_40%_20%] ui:gap-4 ui:mb-1">
                     <div>
-                      <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                      <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                         {isHierarchical ? description[0] : 'Material'}
                       </h2>
-                      <p className="ui-font-bold ui-text-primary-800 ui-break-normal">
+                      <p className="ui:font-bold ui:text-primary-800 ui:break-normal">
                         {isHierarchical
                           ? data?.parent_material?.name || '-'
                           : data?.material?.name || '-'}
@@ -145,19 +145,19 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                     </div>
                     {isHierarchical && (
                       <div>
-                        <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                        <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                           {description[1]}
                         </h2>
-                        <p className="ui-font-bold ui-text-primary-800 ui-break-normal">
+                        <p className="ui:font-bold ui:text-primary-800 ui:break-normal">
                           {data?.material?.name || '-'}
                         </p>
                       </div>
                     )}
                     <div>
-                      <h2 className="ui-text-sm ui-font-medium ui-text-neutral-500">
+                      <h2 className="ui:text-sm ui:font-medium ui:text-neutral-500">
                         {description[2]}
                       </h2>
-                      <p className="ui-font-bold ui-text-primary-800">
+                      <p className="ui:font-bold ui:text-primary-800">
                         {numberFormatter(data?.total_available_qty, language)}
                       </p>
                     </div>
@@ -171,14 +171,14 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                     empty={new_opname_stocks.length === 0}
                     verticalAlignment="center"
                   >
-                    <Thead className="ui-bg-slate-100">
+                    <Thead className="ui:bg-slate-100">
                       <Tr>
                         {columns.map((column) => (
                           <Th
                             id={`header-${column.id}`}
                             columnKey={column.id}
                             key={column.id}
-                            className="ui-w-10 ui-font-semibold"
+                            className="ui:w-10 ui:font-semibold"
                             style={{
                               ...(column.minSize && {
                                 minWidth: column.minSize,
@@ -190,26 +190,26 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                         ))}
                       </Tr>
                     </Thead>
-                    <Tbody className="ui-bg-white">
+                    <Tbody className="ui:bg-white">
                       {new_opname_stocks?.map((item, index) => (
                         <Tr
                           key={`material-detail-${item.material_id}`}
-                          className="ui-text-sm ui-font-normal"
+                          className="ui:text-sm ui:font-normal"
                         >
                           <Td
                             id={`cell-${columns[0].id}`}
-                            className="ui-content-start"
+                            className="ui:content-start"
                           >
                             {index + 1}
                           </Td>
                           <Td
                             id={`cell-${columns[1].id}`}
-                            className="ui-content-start"
+                            className="ui:content-start"
                           >
-                            <p className="ui-font-bold ui-text-primary-800 ui-mb-1">
+                            <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                               {item.batch?.code || '-'}
                             </p>
-                            <p className="ui-mb-1">
+                            <p className="ui:mb-1">
                               {t(
                                 'stockOpnameCreate:form.transaction.description.batch.production_date',
                                 {
@@ -220,7 +220,7 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                                 }
                               )}
                             </p>
-                            <p className="ui-mb-1">
+                            <p className="ui:mb-1">
                               {t(
                                 'stockOpnameCreate:form.transaction.description.batch.manufacturer',
                                 {
@@ -228,7 +228,7 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                                 }
                               )}
                             </p>
-                            <p className="ui-mb-1">
+                            <p className="ui:mb-1">
                               {t(
                                 'stockOpnameCreate:form.transaction.description.batch.expired_date',
                                 {
@@ -242,19 +242,19 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                           </Td>
                           <Td
                             id={`cell-${columns[2].id}`}
-                            className="ui-content-start"
+                            className="ui:content-start"
                           >
                             {item?.activity?.name || '-'}
                           </Td>
                           <Td
                             id={`cell-${columns[3].id}`}
-                            className="ui-content-start"
+                            className="ui:content-start"
                           >
                             {numberFormatter(item.recorded_qty || 0, language)}
                           </Td>
                           <Td
                             id={`cell-${columns[4].id}`}
-                            className="ui-content-start"
+                            className="ui:content-start"
                           >
                             {numberFormatter(
                               item.in_transit_qty || 0,
@@ -263,7 +263,7 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                           </Td>
                           <Td
                             id={`cell-${columns[5].id}`}
-                            className="ui-content-start"
+                            className="ui:content-start"
                           >
                             <Controller
                               control={methods.control}
@@ -304,7 +304,7 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                               size="sm"
                               variant="subtle"
                               color="primary"
-                              className="ui-p-[6px] ui-text-polynesianblue-600"
+                              className="ui:p-[6px] ui:text-polynesianblue-600"
                               onClick={() => handleDeleteStock(index)}
                             >
                               {t('common:delete')}
@@ -322,8 +322,8 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                     </TableEmpty>
                   </Table>
                   <div
-                    className={cx('ui-flex', {
-                      'ui-justify-between': data?.is_batch,
+                    className={cx('ui:flex', {
+                      'ui:justify-between': data?.is_batch,
                     })}
                   >
                     <Button
@@ -339,11 +339,11 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
               </div>
             </DrawerContent>
             <DrawerFooter>
-              <div className="ui-flex ui-gap-3">
+              <div className="ui:flex ui:gap-3">
                 <Button
                   variant="subtle"
                   type="button"
-                  className="ui-mr-2"
+                  className="ui:mr-2"
                   onClick={handleReset}
                   leftIcon={<Reload />}
                 >
@@ -351,7 +351,7 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                 </Button>
                 <Button
                   type="button"
-                  className="ui-w-48"
+                  className="ui:w-48"
                   onClick={handleSubmit}
                 >
                   {t('common:save')}

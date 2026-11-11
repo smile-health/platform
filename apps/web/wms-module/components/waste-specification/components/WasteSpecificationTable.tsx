@@ -22,7 +22,7 @@ export default function WasteSpecificationTable({
     useWasteSpecificationTable();
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={wasteSpecificationDataSource?.data.data}
         columns={columnsWasteSpecification(t, {

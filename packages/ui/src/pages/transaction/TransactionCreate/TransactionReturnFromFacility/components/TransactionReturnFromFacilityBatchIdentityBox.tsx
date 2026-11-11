@@ -30,8 +30,8 @@ const TransactionReturnFromFacilityBatchIdentityBox = () => {
 
   return (
     <>
-      <div className="ui-grid ui-grid-cols-[40%_20%_20%_20%] ui-gap-4 ui-my-4">
-        <div className="ui-w-96">
+      <div className="ui:grid ui:grid-cols-[40%_20%_20%_20%] ui:gap-4 ui:my-4">
+        <div className="ui:w-96">
           <TransactionReturnFromFacilityFieldBox
             title={t(
               'transactionCreate:transaction_return_from_facility.input_table.column.material'
@@ -39,7 +39,7 @@ const TransactionReturnFromFacilityBatchIdentityBox = () => {
             subTitle={stockData?.material?.name ?? '-'}
           />
         </div>
-        <div className="ui-w-auto">
+        <div className="ui:w-auto">
           <TransactionReturnFromFacilityFieldBox
             title={t(
               'transactionCreate:transaction_return_from_facility.input_table.detail_column.batch_code'
@@ -47,7 +47,7 @@ const TransactionReturnFromFacilityBatchIdentityBox = () => {
             subTitle={stockData?.stock?.batch?.code ?? '-'}
           />
         </div>
-        <div className="ui-w-auto">
+        <div className="ui:w-auto">
           <TransactionReturnFromFacilityFieldBox
             title={t(
               'transactionCreate:transaction_return_from_facility.input_table.detail_column.manufacturer'
@@ -55,7 +55,7 @@ const TransactionReturnFromFacilityBatchIdentityBox = () => {
             subTitle={stockData?.stock?.batch?.manufacture?.name ?? '-'}
           />
         </div>
-        <div className="ui-w-auto">
+        <div className="ui:w-auto">
           <TransactionReturnFromFacilityFieldBox
             title={t(
               'transactionCreate:transaction_return_from_facility.input_table.detail_column.expired_date'
@@ -80,7 +80,7 @@ const TransactionReturnFromFacilityBatchIdentityBox = () => {
             Number(stockData?.material?.is_open_vial) === BOOLEAN.TRUE,
           handleRemoveData,
         })}
-        className="ui-max-h-[464px]"
+        className="ui:max-h-[464px]"
         isSticky
       />
     </>

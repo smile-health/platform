@@ -27,13 +27,13 @@ export default function WasteBagAuditTrailPanel() {
   } = useWasteBagAuditTrailTable()
 
   return (
-    <div className="ui-space-y-4 mt-6">
+    <div className="ui:space-y-4 mt-6">
       <AuditTrailInfo variant="wms" />
       <InputSearch
         placeholder={t('auditTrail:form.wms_search.placeholder')}
         defaultValue={search}
         onChange={(e) => handleChangeSearch(e.target.value)}
-        className="ui-max-w-sm"
+        className="ui:max-w-sm"
       />
       <DataTable
         isLoading={isLoading}

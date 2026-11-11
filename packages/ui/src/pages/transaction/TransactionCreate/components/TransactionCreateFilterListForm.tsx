@@ -101,11 +101,11 @@ const TransactionCreateFilterListForm: React.FC = () => {
   ]
 
   return (
-    <div className="ui-w-full ui-border ui-border-gray-300 ui-rounded">
-      <div className={cx('ui-border ui-rounded ui-p-6 space-y-4')}>
+    <div className="ui:w-full ui:border ui:border-gray-300 ui:rounded">
+      <div className={cx('ui:border ui:rounded ui:p-6 space-y-4')}>
         <div className="space-y-4">
-          <div className={cx('ui-text-dark-blue ui-font-bold')}>Filter</div>
-          <div className={cx('ui-text-gray-500')}>
+          <div className={cx('ui:text-dark-blue ui:font-bold')}>Filter</div>
+          <div className={cx('ui:text-gray-500')}>
             {Number(transactionType) ===
             TRANSACTION_TYPE.CANCELLATION_OF_DISCARD
               ? t('transactionCreate:cancel_transaction_discard.description')
@@ -113,7 +113,7 @@ const TransactionCreateFilterListForm: React.FC = () => {
                   'transactionCreate:transaction_return_from_facility.description_select_transaction'
                 )}
           </div>
-          <div className="ui-flex ui-flex-col ui-gap-4">
+          <div className="ui:flex ui:flex-col ui:gap-4">
             <FormControl>
               <FormLabel htmlFor="select-material-type">
                 {t('transactionList:filter.material_type.label')}
@@ -237,7 +237,7 @@ const TransactionCreateFilterListForm: React.FC = () => {
               </FormControl>
             )}
           </div>
-          <div className="ui-flex ui-justify-end ui-gap-2">
+          <div className="ui:flex ui:justify-end ui:gap-2">
             <FilterResetButton
               variant="subtle"
               id="button__reset"
@@ -260,7 +260,7 @@ const TransactionCreateFilterListForm: React.FC = () => {
               disabled={!disabled}
             />
             <Button
-              className="ui-w-48"
+              className="ui:w-48"
               type="button"
               onClick={() => handleSearch(localFilter)}
               disabled={!disabled}
@@ -269,16 +269,16 @@ const TransactionCreateFilterListForm: React.FC = () => {
             </Button>
           </div>
           <hr />
-          <div className="ui-flex ui-flex-col ui-gap-2">
-            <div className="ui-text-gray-500 ui-font-semibold ui-text-sm">
+          <div className="ui:flex ui:flex-col ui:gap-2">
+            <div className="ui:text-gray-500 ui:font-semibold ui:text-sm">
               {t('common:active_filter')}
             </div>
-            <div className="ui-leading-normal">
+            <div className="ui:leading-normal">
               {filterMap.map(
                 (item, index) =>
                   item?.existsIn?.includes(Number(transactionType)) && (
                     <Fragment key={index?.toString()}>
-                      <span className="ui-font-semibold mr-1">
+                      <span className="ui:font-semibold mr-1">
                         {item?.label}:
                       </span>
                       {item?.value?.length > 20 ? (
@@ -292,7 +292,7 @@ const TransactionCreateFilterListForm: React.FC = () => {
                         <span>{item?.value}</span>
                       )}
                       {index < filterMap.length - 1 && (
-                        <span className="ui-mx-2 last:ui-hidden">|</span>
+                        <span className="ui:mx-2 ui:last:hidden">|</span>
                       )}
                     </Fragment>
                   )

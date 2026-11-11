@@ -51,7 +51,7 @@ export default function WasteSourceTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={wasteSourceDataSource?.data.data}
         columns={columnsWasteSource(t, {

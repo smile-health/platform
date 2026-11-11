@@ -31,7 +31,7 @@ const PartnershipDetailPage: React.FC = () => {
       backButton={{ show: true }}
     >
       <Meta title={`WMS | Partnership`} />
-      <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+      <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
         <PartnershipDetail
           data={partnershipDetail}
           classification={classification}

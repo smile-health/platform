@@ -25,13 +25,13 @@ export default function DashboardBigNumberSummarize({
 }: Props) {
   if (withContainer) {
     return (
-      <div className="ui-col-span-3">
+      <div className="ui:col-span-3">
         <DashboardBox.Root id={id}>
           <DashboardBox.Header>
             <h4>
               <strong>{title}</strong>
             </h4>
-            {subtitle && <p className="ui-text-base">{subtitle}</p>}
+            {subtitle && <p className="ui:text-base">{subtitle}</p>}
           </DashboardBox.Header>
           <Component
             id={id}
@@ -79,12 +79,12 @@ function Component({
         isLoading={isLoading}
         isEmpty={typeof value !== 'number'}
       >
-        <div className="ui-text-center ui-p-16 ui-space-y-1">
-          <p className="ui-text-3xl ui-text-neutral-800">
+        <div className="ui:text-center ui:p-16 ui:space-y-1">
+          <p className="ui:text-3xl ui:text-neutral-800">
             <strong>{numberFormatter(value ?? 0, language)}</strong>
           </p>
           {description && (
-            <p className="ui-text-sm ui-text-neutral-600 ui-font-semibold">
+            <p className="ui:text-sm ui:text-neutral-600 ui:font-semibold">
               {description}
             </p>
           )}

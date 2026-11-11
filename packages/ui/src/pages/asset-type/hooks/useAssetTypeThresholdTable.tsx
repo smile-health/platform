@@ -96,7 +96,7 @@ const useAssetTypeThresholdTable = () => {
       {
         label: t('form.detail.label.temperature_threshold'),
         value: hasTemperatureTreshold ? (
-          <div className="ui-grid ui-grid-cols-2">
+          <div className="ui:grid ui:grid-cols-2">
             <DataTable
               columns={temperatureSchema}
               data={detail?.temperature_thresholds}
@@ -111,7 +111,7 @@ const useAssetTypeThresholdTable = () => {
             {
               label: t('form.detail.label.humidity_threshold.label'),
               value: hasHumidityTreshold ? (
-                <div className="ui-grid ui-grid-cols-2">
+                <div className="ui:grid ui:grid-cols-2">
                   <DataTable
                     columns={humiditySchema}
                     data={detail?.humidity_thresholds}

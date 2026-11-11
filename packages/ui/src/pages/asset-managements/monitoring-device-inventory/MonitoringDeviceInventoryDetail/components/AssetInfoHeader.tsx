@@ -22,20 +22,20 @@ export const AssetInfoHeader = () => {
   }
 
   return (
-    <div className="ui-flex ui-items-start ui-justify-between ui-gap-4">
+    <div className="ui:flex ui:items-start ui:justify-between ui:gap-4">
       <div>
-        <div className="ui-text-primary-700 ui-font-semibold">
+        <div className="ui:text-primary-700 ui:font-semibold">
           {data?.serial_number} - {data?.asset_model?.name} (
           {data?.manufacturer?.name || '-'})
         </div>
-        <div className="ui-text-primary-700">{data?.entity?.name}</div>
-        <div className="ui-text-neutral-500">
+        <div className="ui:text-primary-700">{data?.entity?.name}</div>
+        <div className="ui:text-neutral-500">
           {data?.entity?.regency_name ? `${data?.entity?.regency_name},` : ''}
           {data?.entity?.province_name ? ` ${data?.entity?.province_name}` : ''}
         </div>
       </div>
-      <div className="ui-flex ui-items-center ui-gap-8">
-        <div className="ui-text-neutral-500">
+      <div className="ui:flex ui:items-center ui:gap-8">
+        <div className="ui:text-neutral-500">
           {data?.updated_at
             ? parseDateTime(data.updated_at, 'DD MMM YYYY HH:mm')
             : '-'}

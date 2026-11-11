@@ -52,12 +52,12 @@ export default function UserFilter({
         open={modalImport?.type === 'error'}
         handleClose={hideModal}
       />
-      <FilterFormBody className="ui-grid-cols-4">
+      <FilterFormBody className="ui:grid-cols-4">
         {filter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
         <FilterExpandButton variant="subtle" />
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           {isGlobal && (
             <>
               <Button
@@ -65,7 +65,7 @@ export default function UserFilter({
                 variant="subtle"
                 type="button"
                 onClick={() => showModal('import')}
-                leftIcon={<Import className="ui-size-5" />}
+                leftIcon={<Import className="ui:size-5" />}
               >
                 {t('import')}
               </Button>
@@ -74,7 +74,7 @@ export default function UserFilter({
                 variant="subtle"
                 type="button"
                 onClick={onExport}
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
               >
                 {t('export')}
               </Button>
@@ -83,18 +83,18 @@ export default function UserFilter({
                 variant="subtle"
                 type="button"
                 onClick={onDownloadTemplate}
-                leftIcon={<Download className="ui-size-5" />}
+                leftIcon={<Download className="ui:size-5" />}
               >
                 {t('download_template')}
               </Button>
-              <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+              <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
             </>
           )}
           <FilterResetButton variant="subtle" onClick={handleReset} />
           <FilterSubmitButton
             variant="outline"
             onClick={() => handleChangePage(1)}
-            className="ui-w-[202px]"
+            className="ui:w-[202px]"
           />
         </div>
       </FilterFormFooter>

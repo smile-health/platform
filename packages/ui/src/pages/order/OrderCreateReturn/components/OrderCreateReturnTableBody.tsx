@@ -47,13 +47,13 @@ export const OrderCreateReturnTableBody = ({
           <Tr
             id={`row-material-${item?.material_id}`}
             key={item?.material_id}
-            className="ui-text-sm ui-text-dark-blue ui-font-normal"
+            className="ui:text-sm ui:text-dark-blue ui:font-normal"
           >
-            <Td id={`cell-${columns[0].id}`} className="ui-align-top">
+            <Td id={`cell-${columns[0].id}`} className="ui:align-top">
               {index + 1}
             </Td>
-            <Td id={`cell-${columns[1].id}`} className="ui-align-top">
-              <div className="ui-font-bold ui-mb-1 ui-align-top">
+            <Td id={`cell-${columns[1].id}`} className="ui:align-top">
+              <div className="ui:font-bold ui:mb-1 ui:align-top">
                 {item?.material_name}
               </div>
               <div>
@@ -65,7 +65,7 @@ export const OrderCreateReturnTableBody = ({
 
             <Td
               id={`cell-${columns[2].id}`}
-              className={`ui-flex-row ui-align-top ${getBackgroundStock(item.material_total_qty ?? 0, item.material_min ?? 0, item.material_max ?? 0)}`}
+              className={`ui:flex-row ui:align-top ${getBackgroundStock(item.material_total_qty ?? 0, item.material_min ?? 0, item.material_max ?? 0)}`}
             >
               <div>
                 {t(
@@ -89,7 +89,7 @@ export const OrderCreateReturnTableBody = ({
                   }
                 )}
               </div>
-              <div className="ui-text-gray-500">
+              <div className="ui:text-gray-500">
                 (
                 {t('orderCreateReturn:list.selected.column.stock_info.min', {
                   value: numberFormatter(item.material_min ?? 0, language),
@@ -104,26 +104,26 @@ export const OrderCreateReturnTableBody = ({
             <Td
               id={`cell-${columns[3].id}`}
               key={`cell-${index}-${allMaterialStocks?.length}`}
-              className="ui-align-top"
+              className="ui:align-top"
             >
               <Exists useIt={isHasQty(item?.material_stocks)}>
-                <div className="ui-flex ui-flex-col">
+                <div className="ui:flex ui:flex-col">
                   {allMaterialStocks?.map((stock, indexBatch) => (
                     <Exists
                       key={JSON.stringify(stock)}
                       useIt={!!stock?.batch_ordered_qty}
                     >
                       <div
-                        className="ui-flex ui-flex-col ui-mb-5"
+                        className="ui:flex ui:flex-col ui:mb-5"
                         key={`${index}-${indexBatch}`}
                       >
-                        <div className="ui-mb-1">
+                        <div className="ui:mb-1">
                           {t(
                             'orderCreateReturn:list.selected.column.quantity.detail.batch_code',
                             { code: stock?.batch_code ?? '-' }
                           )}
                         </div>
-                        <div className="ui-mb-1">
+                        <div className="ui:mb-1">
                           {t(
                             'orderCreateReturn:list.selected.column.quantity.detail.expired_date',
                             {
@@ -136,7 +136,7 @@ export const OrderCreateReturnTableBody = ({
                             }
                           )}
                         </div>
-                        <div className="ui-mb-1">
+                        <div className="ui:mb-1">
                           {t(
                             'orderCreateReturn:list.selected.column.quantity.detail.stock_from_activity',
                             {
@@ -144,7 +144,7 @@ export const OrderCreateReturnTableBody = ({
                             }
                           )}
                         </div>
-                        <div className="ui-font-bold">
+                        <div className="ui:font-bold">
                           {t(
                             'orderCreateReturn:list.selected.column.quantity.detail.qty',
                             {
@@ -166,14 +166,14 @@ export const OrderCreateReturnTableBody = ({
                 onClick={() => onOpenBatch(index)}
                 id={`see-detail-material-add-stock-${index}`}
               >
-                <div className="ui-flex ui-space-x-2">
+                <div className="ui:flex ui:space-x-2">
                   {!isHasQty(item?.material_stocks) && (
                     <span>
                       <Plus />
                     </span>
                   )}
 
-                  <div className="ui-text-sm">
+                  <div className="ui:text-sm">
                     {handleButtonName(
                       Boolean(item?.material_is_managed_in_batch),
                       item?.material_stocks,
@@ -183,14 +183,14 @@ export const OrderCreateReturnTableBody = ({
                 </div>
               </Button>
               {errors?.order_items?.[index] && (
-                <div className="ui-mt-1">
+                <div className="ui:mt-1">
                   <FormErrorMessage>
                     {errors?.order_items?.[index]?.material_stocks?.message}
                   </FormErrorMessage>
                 </div>
               )}
             </Td>
-            <Td id={`cell-${columns[4].id}`} className="ui-align-top">
+            <Td id={`cell-${columns[4].id}`} className="ui:align-top">
               <Button
                 variant="subtle"
                 color="danger"

@@ -15,7 +15,7 @@ export const programPlanRatioFilterSchema = ({
       type: 'select-async-paginate',
       name: 'material',
       label: 'Material',
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       placeholder: 'Select material',
       isMulti: true,
       multiSelectCounterStyle: 'normal',

@@ -142,7 +142,7 @@ export default function FacilitiesByCapacityStatusTemp() {
       isLoading={annual?.isLoading}
       isEmpty={!data.belowInterval.qty.length && !data.aboveInterval.qty.length}
     >
-      <div className="ui-w-full ui-h-[300px]">
+      <div className="ui:w-full ui:h-[300px]">
         <StackedBarChart
           data={chartData}
           layout="horizontal"

@@ -93,15 +93,15 @@ const useMaterialVolumeTable = ({
           },
         ]
         return dimensions.map((v) => (
-          <div className="ui-flex">
+          <div className="ui:flex">
             <SingleValue
               key={v.label as string}
               label={v.label as string}
               value={t('materialVolume:list.column.box_dimension.cm', {
                 value: v.value,
               })}
-              labelClassName="ui-text-[#OC3045]"
-              valueClassName="ui-ml-1"
+              labelClassName="ui:text-[#OC3045]"
+              valueClassName="ui:ml-1"
             />
           </div>
         ))
@@ -113,8 +113,8 @@ const useMaterialVolumeTable = ({
       size: 220,
       minSize: 220,
       cell: ({ row }) => (
-        <div className="ui-flex ui-flex-col">
-          <div className="ui-font-bold ui-mb-1">
+        <div className="ui:flex ui:flex-col">
+          <div className="ui:font-bold ui:mb-1">
             {parseDateTime(
               row.original.updated_at ?? '',
               'DD MMM YYYY HH:mm'
@@ -136,7 +136,7 @@ const useMaterialVolumeTable = ({
       size: 123,
       minSize: 123,
       cell: ({ row }) => (
-        <div className="ui-flex ui-gap-2 -ml-3">
+        <div className="ui:flex ui:gap-2 -ml-3">
           <Button
             asChild
             id={`btn-link-material-volume-detail-${row.original.id}`}

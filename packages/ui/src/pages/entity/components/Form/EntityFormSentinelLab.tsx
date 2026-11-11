@@ -25,9 +25,9 @@ const EntityFormSentinelLab = () => {
     const isSentinelLabActive = watch('is_sentinel_lab')
 
     return (
-        <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded">
-            <div className="ui-flex ui-items-center ui-justify-between ui-mb-4">
-                <div className="ui-font-bold">Sentinel Lab</div>
+        <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded">
+            <div className="ui:flex ui:items-center ui:justify-between ui:mb-4">
+                <div className="ui:font-bold">Sentinel Lab</div>
                 <Switch
                     id="switch-sentinel-lab"
                     checked={isSentinelLabActive === true}
@@ -43,7 +43,7 @@ const EntityFormSentinelLab = () => {
             </div>
 
             {isSentinelLabActive && (
-                <div className="ui-grid ui-grid-cols-2 ui-gap-x-6 ui-gap-y-6">
+                <div className="ui:grid ui:grid-cols-2 ui:gap-x-6 ui:gap-y-6">
                     <Controller
                         control={control}
                         name="sentinel_lab_start_date"

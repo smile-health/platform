@@ -50,25 +50,25 @@ const ListExportFile = ({
   }
   return (
     <div
-      className="ui-w-full ui-h-28 ui-bg-white ui-rounded ui-border ui-border-gray-300"
+      className="ui:w-full ui:h-28 ui:bg-white ui:rounded ui:border ui:border-gray-300"
       key={`item-history-file-${index.toString()}`}
     >
-      <div className="ui-flex ui-pl-5 ui-py-5">
-        <div className="ui-flex ui-flex-row ui-space-x-5 ui-w-4/5">
+      <div className="ui:flex ui:pl-5 ui:py-5">
+        <div className="ui:flex ui:flex-row ui:space-x-5 ui:w-4/5">
           <div>
             <ExcelFile />
           </div>
-          <div className="ui-flex ui-flex-col ui-space-y-4">
-            <div className="ui-flex ui-flex-col ui-space-y-2">
-              <div className="ui-text-dark-blue ui-text-sm ui-font-bold">
+          <div className="ui:flex ui:flex-col ui:space-y-4">
+            <div className="ui:flex ui:flex-col ui:space-y-2">
+              <div className="ui:text-dark-blue ui:text-sm ui:font-bold">
                 {item?.filename ?? '-'}
               </div>
-              <div className="ui-text-xs ui-text-neutral-500">
+              <div className="ui:text-xs ui:text-neutral-500">
                 {t('filter.request_date.label')}:{' '}
                 {parseDateTime(item?.created_at, 'DD MMM YYYY HH:mm', language)}
               </div>
             </div>
-            <div className="ui-flex ui-gap-2">
+            <div className="ui:flex ui:gap-2">
               <Badge
                 variant="light"
                 color={LabelStatus(item?.status)}
@@ -77,19 +77,19 @@ const ListExportFile = ({
               >
                 {item?.status_label ?? '-'}
               </Badge>
-              <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
-              <div className="ui-text-xs ui-text-dark-blue ui-p-1">
+              <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
+              <div className="ui:text-xs ui:text-dark-blue ui:p-1">
                 {item?.program?.name ?? 'Global'}
               </div>
             </div>
           </div>
         </div>
-        <div className="ui-w-1/5 ui-flex ui-justify-end ui-pr-5">
+        <div className="ui:w-1/5 ui:flex ui:justify-end ui:pr-5">
           <Exists useIt={item?.status === STATUS.DONE && !!item?.download_url}>
             <Button
               id={`download-link-file-${index.toString()}`}
               size="sm"
-              className="ui-w-[120px]"
+              className="ui:w-[120px]"
               leftIcon={<Download />}
               variant="outline"
               onClick={() =>

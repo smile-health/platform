@@ -66,7 +66,7 @@ export const columnsPartnershipVehicle = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           <ButtonActionTable
             id={original?.id}
             path={`partnership-vehicle`}
@@ -79,7 +79,7 @@ export const columnsPartnershipVehicle = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-danger-500"
+            className="ui:px-1.5! ui:text-danger-500"
           >
             {t('common:remove')}
           </Button>

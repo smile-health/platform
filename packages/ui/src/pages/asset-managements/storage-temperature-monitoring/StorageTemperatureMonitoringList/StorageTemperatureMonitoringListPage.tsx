@@ -27,7 +27,7 @@ export default function StorageTemperatureMonitoringListPage({
         title={t('storageTemperatureMonitoringList:table.title')}
         hideTabs={isGlobal}
       >
-        <div className="ui-space-y-6">
+        <div className="ui:space-y-6">
           <ListFilter />
           <ListTable />
         </div>

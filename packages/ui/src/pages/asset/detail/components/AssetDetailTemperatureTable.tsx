@@ -14,10 +14,10 @@ const AssetDetailTemperatureTable = () => {
 
   return (
     <div>
-      <h2 className="ui-text-sm ui-font-normal">
+      <h2 className="ui:text-sm ui:font-normal">
         {t('asset:detail.asset_temperature')}
       </h2>
-      <div className="ui-my-4">
+      <div className="ui:my-4">
         <DataTable
           columns={TemperatureColumns(t, language)}
           data={childData ?? []}

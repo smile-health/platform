@@ -77,7 +77,7 @@ const ModelAssetFormEditCapacity = ({
 
         return (
           <div
-            className="ui-grid ui-grid-cols-2 ui-gap-4"
+            className="ui:grid ui:grid-cols-2 ui:gap-4"
             key={item.id_temperature_threshold}
           >
             <FormControl>
@@ -130,8 +130,8 @@ const ModelAssetFormEditCapacity = ({
               >{`${t('form.detail.label.netto_capacity')} - ${index + 1}`}</FormLabel>
               <div
                 className={cx({
-                  'ui-flex ui-flex-row ui-items-center ui-gap-1': index > 0,
-                  'ui-grid ui-grid-cols-1 ui-gap-1': index === 0,
+                  'ui:flex ui:flex-row ui:items-center ui:gap-1': index > 0,
+                  'ui:grid ui:grid-cols-1 ui:gap-1': index === 0,
                 })}
               >
                 <Controller

@@ -18,9 +18,9 @@ export default function DashboardStockTakingSummaryGroup(props: Props) {
   const { title, list = [], gridColsClass } = props
 
   return (
-    <div className="ui-space-y-1">
+    <div className="ui:space-y-1">
       <H5>{title}</H5>
-      <div className={cx('ui-grid ui-gap-4', gridColsClass)}>
+      <div className={cx('ui:grid ui:gap-4', gridColsClass)}>
         {list.map((item) => (
           <DashboardStockTakingSummaryBox
             key={item?.title}

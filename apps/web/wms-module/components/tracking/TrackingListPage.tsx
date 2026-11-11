@@ -129,32 +129,32 @@ const TrackingListPage: React.FC = () => {
         <div className="mt-6">
           {/* Filter Form Characteristics*/}
           <FilterFormRoot onSubmit={filter.handleSubmit}>
-            <FilterFormBody className="ui-grid ui-grid-cols-4 ui-gap-4 ">
+            <FilterFormBody className="ui:grid ui:grid-cols-4 ui:gap-4 ">
               {renderFilterCharacteristics()}
             </FilterFormBody>
             <FilterFormFooter>
-              <div className="ui-flex ui-gap-2" />
-              <div className="ui-flex ui-space-x-3 ui-items-center">
+              <div className="ui:flex ui:gap-2" />
+              <div className="ui:flex ui:space-x-3 ui:items-center">
                 <Button
                   variant="subtle"
                   type="button"
                   loading={isLoadingDownloadTrackingAll}
                   onClick={() => handleExportTrackingAll()}
-                  leftIcon={<Export className="ui-size-5" />}
+                  leftIcon={<Export className="ui:size-5" />}
                 >
                   {t('common:export')}
                 </Button>
                 <Button
                   variant="subtle"
                   type="button"
-                  leftIcon={<Reload className="ui-size-5" />}
+                  leftIcon={<Reload className="ui:size-5" />}
                   onClick={filter.reset}
                 >
                   {t('common:reset')}
                 </Button>
                 <FilterSubmitButton
                   variant="outline"
-                  className="ui-w-48"
+                  className="ui:w-48"
                   text={t('common:search')}
                   onClick={() => handleChangePageCharacteristics(1)}
                 />
@@ -166,15 +166,15 @@ const TrackingListPage: React.FC = () => {
           {!isHealthBureaucrat && (
             <>
               {/* Recap per Waste Source */}
-              <div className="ui-space-y-6 ui-my-5 ui-rounded">
-                <div className="ui-flex ui-items-center ui-justify-between">
-                  <h5 className="ui-font-bold ui-text-md">
+              <div className="ui:space-y-6 ui:my-5 ui:rounded">
+                <div className="ui:flex ui:items-center ui:justify-between">
+                  <h5 className="ui:font-bold ui-text-md">
                     {t('tracking:list.waste_source')}
                   </h5>
                   <Button
                     variant="subtle"
                     type="button"
-                    leftIcon={<Export className="ui-size-5" />}
+                    leftIcon={<Export className="ui:size-5" />}
                     onClick={() => handleExportTrackingSource()}
                     loading={isLoadingDownloadTrackingSource}
                   >
@@ -216,9 +216,9 @@ const TrackingListPage: React.FC = () => {
           )}
 
           {/* Recap per Waste Characteristics */}
-          <div className="ui-space-y-6 ui-my-5 ui-rounded">
-            <div className="ui-flex ui-items-center ui-justify-between">
-              <h5 className="ui-font-bold ui-text-md">
+          <div className="ui:space-y-6 ui:my-5 ui:rounded">
+            <div className="ui:flex ui:items-center ui:justify-between">
+              <h5 className="ui:font-bold ui-text-md">
                 {t('tracking:list.waste_characteristic')}
               </h5>
               {!isHealthBureaucrat && (
@@ -227,7 +227,7 @@ const TrackingListPage: React.FC = () => {
                   type="button"
                   onClick={() => handleExportTrackingCharacteristics()}
                   loading={isLoadingDownloadTrackingCharacteristics}
-                  leftIcon={<Export className="ui-size-5" />}
+                  leftIcon={<Export className="ui:size-5" />}
                 >
                   {t('common:export') +
                     ' ' +
@@ -268,14 +268,14 @@ const TrackingListPage: React.FC = () => {
             <>
               {/* Filter Form Bag */}
               <FilterFormRoot onSubmit={() => {}}>
-                <FilterFormBody className="ui-flex ui-gap-2 ui-items-center">
+                <FilterFormBody className="ui:flex ui:gap-2 ui:items-center">
                   {renderFilterBag()}
-                  <div className="ui-flex ui-gap-2 ui-mt-5">
+                  <div className="ui:flex ui:gap-2 ui:mt-5">
                     <Button
                       variant="subtle"
                       type="button"
-                      className="ui-whitespace-nowrap !ui-mx-4"
-                      leftIcon={<Export className="ui-size-5" />}
+                      className="ui:whitespace-nowrap ui:mx-4!"
+                      leftIcon={<Export className="ui:size-5" />}
                       onClick={() => handleExportTrackingWasteBag()}
                       loading={isLoadingDownloadTrackingWasteBag}
                     >
@@ -284,7 +284,7 @@ const TrackingListPage: React.FC = () => {
                     <Button
                       variant="subtle"
                       type="button"
-                      leftIcon={<Reload className="ui-size-5" />}
+                      leftIcon={<Reload className="ui:size-5" />}
                       onClick={() => {
                         filter.setValue('search', '');
                         handleSearchFilter();
@@ -295,7 +295,7 @@ const TrackingListPage: React.FC = () => {
                     <Button
                       variant="outline"
                       type="button"
-                      className="ui-w-48"
+                      className="ui:w-48"
                       onClick={handleSearchFilter}
                     >
                       {t('common:search')}
@@ -306,8 +306,8 @@ const TrackingListPage: React.FC = () => {
                 {filter.renderActiveFilter()}
               </FilterFormRoot>
               {/* Recap per Waste Bag */}
-              <div className="ui-space-y-6 ui-my-5 ui-rounded">
-                <h5 className="ui-font-bold ui-text-md">
+              <div className="ui:space-y-6 ui:my-5 ui:rounded">
+                <h5 className="ui:font-bold ui-text-md">
                   {t('tracking:list.waste_bag')}
                 </h5>
                 <WasteBagTrackingTable

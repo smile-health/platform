@@ -104,11 +104,11 @@ const MaterialFormPrograms: React.FC<Props> = ({ detailProgram }) => {
   }
 
   return (
-    <div className="ui-flex ui-flex-col ui-">
+    <div className="ui:flex ui:flex-col ui-">
       <MaterialFormProgramDetail detailProgram={detailProgram} />
 
-      <div className="ui-p-4 ui-border ui-rounded">
-        <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+      <div className="ui:p-4 ui:border ui:rounded">
+        <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
           <Controller
             name="manufactures"
             control={control}
@@ -169,7 +169,7 @@ const MaterialFormPrograms: React.FC<Props> = ({ detailProgram }) => {
                   {error?.message && (
                     <FormErrorMessage>{error?.message}</FormErrorMessage>
                   )}
-                  <div className="ui-grid ui-grid-cols-1 ui-gap-2 ui-mt-4 ui-max-h-96 ui-overflow-auto">
+                  <div className="ui:grid ui:grid-cols-1 ui:gap-2 ui:mt-4 ui:max-h-96 ui:overflow-auto">
                     {filteredActivities?.map((activity) => {
                       const activitySelected = activities.find(
                         (item) => item.value === activity.id
@@ -190,7 +190,7 @@ const MaterialFormPrograms: React.FC<Props> = ({ detailProgram }) => {
                         title={t('common:message.empty.title')}
                         description={t('common:message.empty.description')}
                         withIcon
-                        className="ui-h-[480px]"
+                        className="ui:h-[480px]"
                       />
                     ) : null}
                   </div>

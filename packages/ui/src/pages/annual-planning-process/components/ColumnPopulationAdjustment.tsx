@@ -22,8 +22,8 @@ const ColumnPopulationAdjustment: React.FC<Props> = (props) => {
 
     if (isAllApproved) {
       return (
-        <div className="ui-flex ui-flex-col ui-gap-4">
-          <p className="ui-text-sm ui-font-normal ui-text-primary-800">
+        <div className="ui:flex ui:flex-col ui:gap-4">
+          <p className="ui:text-sm ui:font-normal ui:text-primary-800">
             {t(
               'annualPlanningProcess:create.form.info_data_column.all_approved'
             )}
@@ -34,7 +34,7 @@ const ColumnPopulationAdjustment: React.FC<Props> = (props) => {
             variant="subtle"
             onClick={onClickRow}
             size="sm"
-            className="ui-px-0 ui-w-max"
+            className="ui:px-0 ui:w-max"
           >
             {t('common:view')}
           </Button>
@@ -62,15 +62,15 @@ const ColumnPopulationAdjustment: React.FC<Props> = (props) => {
     )
 
     return (
-      <div className="ui-flex ui-flex-col ui-gap-4">
-        <p className="ui-text-sm ui-font-normal">
-          <span className="ui-text-green-700">
+      <div className="ui:flex ui:flex-col ui:gap-4">
+        <p className="ui:text-sm ui:font-normal">
+          <span className="ui:text-green-700">
             {t('annualPlanningProcess:create.form.info_data_column.approved', {
               value: dataRevision?.approved,
             })}
           </span>
           <br />
-          <span className="ui-text-red-600">
+          <span className="ui:text-red-600">
             {t('annualPlanningProcess:create.form.info_data_column.revision', {
               value: dataRevision?.revision,
             })}
@@ -78,7 +78,7 @@ const ColumnPopulationAdjustment: React.FC<Props> = (props) => {
         </p>
 
         {!!dataRevision?.revised && (
-          <p className="ui-text-sm ui-font-bold">
+          <p className="ui:text-sm ui:font-bold">
             {t('annualPlanningProcess:create.form.info_data_column.revised', {
               revised: dataRevision?.revised,
               revision: dataRevision?.revision,
@@ -90,8 +90,8 @@ const ColumnPopulationAdjustment: React.FC<Props> = (props) => {
           type="button"
           variant="outline"
           onClick={onClickRow}
-          leftIcon={<Plus className="ui-size-5" />}
-          className=" ui-w-max"
+          leftIcon={<Plus className="ui:size-5" />}
+          className=" ui:w-max"
         >
           {t('annualPlanningProcess:create.form.button.update')}
         </Button>
@@ -104,9 +104,9 @@ const ColumnPopulationAdjustment: React.FC<Props> = (props) => {
       .length || 0
 
   return (
-    <div className="ui-flex ui-flex-col ui-gap-4">
+    <div className="ui:flex ui:flex-col ui:gap-4">
       {data && filledField > 0 && (
-        <p className="ui-font-bold ui-text-sm ui-text-primary-800">
+        <p className="ui:font-bold ui:text-sm ui:text-primary-800">
           {t('annualPlanningProcess:create.form.info_correction', {
             filled: filledField,
             total: data.length,
@@ -118,10 +118,10 @@ const ColumnPopulationAdjustment: React.FC<Props> = (props) => {
         type="button"
         variant="outline"
         leftIcon={
-          filledField === 0 ? <Plus className="ui-size-5" /> : undefined
+          filledField === 0 ? <Plus className="ui:size-5" /> : undefined
         }
         onClick={onClickRow}
-        className="ui-w-max"
+        className="ui:w-max"
       >
         {filledField > 0
           ? t('annualPlanningProcess:create.form.button.update_correction')

@@ -18,13 +18,13 @@ const AssetInventoryTitleBlock = ({
         item.label && (
           <div
             key={`_${index.toString()}`}
-            className={`${item.className ?? 'ui-text-dark-teal'} ui-text-sm`}
+            className={`${item.className ?? 'ui:text-dark-teal'} ui:text-sm`}
           >
             {item.label}
             {item.label2 && (
               <span
                 className={` ${
-                  item.className2 ?? 'ui-text-dark-teal ui-text-sm'
+                  item.className2 ?? 'ui:text-dark-teal ui:text-sm'
                 }`}
               >
                 {item.label2}
@@ -33,7 +33,7 @@ const AssetInventoryTitleBlock = ({
             {item.label3 && (
               <span
                 className={` ${
-                  item.className3 ?? 'ui-text-dark-teal ui-text-sm'
+                  item.className3 ?? 'ui:text-dark-teal ui:text-sm'
                 }`}
               >
                 {item.label3}

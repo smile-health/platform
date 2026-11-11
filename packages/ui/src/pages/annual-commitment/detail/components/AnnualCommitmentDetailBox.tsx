@@ -14,12 +14,12 @@ export const AnnualCommitmentDetailBox = ({
   className,
 }: AnnualCommitmentDetailBoxProps) => {
   return (
-    <div className="ui-border ui-border-gray-300 ui-rounded">
-      <div className="ui-p-6">
+    <div className="ui:border ui:border-gray-300 ui:rounded">
+      <div className="ui:p-6">
         {(title || action) && (
-          <div className="ui-flex ui-justify-between ui-items-center ui-mb-4">
+          <div className="ui:flex ui:justify-between ui:items-center ui:mb-4">
             {title && (
-              <div className="ui-font-bold ui-text-dark-blue">{title}</div>
+              <div className="ui:font-bold ui:text-dark-blue">{title}</div>
             )}
             {action && <div>{action}</div>}
           </div>

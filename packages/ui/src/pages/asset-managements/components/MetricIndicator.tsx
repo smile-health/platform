@@ -21,14 +21,14 @@ const getTemperatureColor = (
 
   if (single_value !== undefined) {
     return numValue > Number(single_value)
-      ? 'ui-text-red-500'
-      : 'ui-text-green-500'
+      ? 'ui:text-red-500'
+      : 'ui:text-green-500'
   }
 
   if (min_value !== undefined && max_value !== undefined) {
     const isOutOfRange =
       numValue < Number(min_value) || numValue > Number(max_value)
-    return isOutOfRange ? 'ui-text-red-500' : 'ui-text-green-500'
+    return isOutOfRange ? 'ui:text-red-500' : 'ui:text-green-500'
   }
 
   return undefined
@@ -36,9 +36,9 @@ const getTemperatureColor = (
 
 const getConnectionColor = (value: number | string) => {
   if (value === 'N/A') {
-    return 'ui-text-gray-500'
+    return 'ui:text-gray-500'
   }
-  return Number(value) <= 20 ? 'ui-text-red-500' : 'ui-text-green-500'
+  return Number(value) <= 20 ? 'ui:text-red-500' : 'ui:text-green-500'
 }
 
 export const MetricIndicator: React.FC<MetricIndicatorProps> = ({
@@ -62,7 +62,7 @@ export const MetricIndicator: React.FC<MetricIndicatorProps> = ({
   return (
     <div
       className={cx(
-        'ui-text-sm ui-font-bold ui-flex ui-items-center ui-gap-1',
+        'ui:text-sm ui:font-bold ui:flex ui:items-center ui:gap-1',
         color
       )}
     >

@@ -118,17 +118,17 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
       {!hideNavbar && <NavbarV2 />}
       <div
         className={cx(
-          'ui-p-6 ui-min-h-[500px]',
+          'ui:p-6 ui:min-h-[500px]',
           {
-            'ui-p-0': isExecutiveDashboard,
-            'ui-container ui-mx-auto': !isExecutiveDashboard,
+            'ui:p-0': isExecutiveDashboard,
+            'ui:container ui:mx-auto': !isExecutiveDashboard,
           },
           className
         )}
       >
         {backButton?.show && (
           <Button
-            leftIcon={<ArrowLeftIcon className="ui-h-5" />}
+            leftIcon={<ArrowLeftIcon className="ui:h-5" />}
             variant="subtle"
             onClick={handleClickBack}
           >
@@ -137,26 +137,26 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
         )}
         {title && (
           <div
-            className={cx('ui-mx-auto', {
-              'ui-flex ui-justify-between ui-flex-wrap': showActionButton,
+            className={cx('ui:mx-auto', {
+              'ui:flex ui:justify-between ui:flex-wrap': showActionButton,
             })}
           >
-            {showActionButton && <div className="ui-w-1/4" />}
+            {showActionButton && <div className="ui:w-1/4" />}
             <div
-              className={cx('ui-mx-auto ui-mt-2', {
-                'ui-flex ui-items-center ui-justify-center ui-gap-2':
+              className={cx('ui:mx-auto ui:mt-2', {
+                'ui:flex ui:items-center ui:justify-center ui:gap-2':
                   showInformation,
-                'ui-mb-6': !!tabs,
-                'ui-mb-8': !tabs,
-                '!ui-flex-grow': showActionButton,
+                'ui:mb-6': !!tabs,
+                'ui:mb-8': !tabs,
+                'ui:grow!': showActionButton,
               })}
             >
-              <h2 className="ui-font-bold ui-text-2xl ui-text-center">
+              <h2 className="ui:font-bold ui:text-2xl ui:text-center">
                 {title}
               </h2>
               {showInformation && (
                 <InformationCircleIcon
-                  className="ui-size-7 ui-text-dark-blue ui-cursor-pointer"
+                  className="ui:size-7 ui:text-dark-blue ui:cursor-pointer"
                   onClick={onClickInformation}
                 />
               )}
@@ -164,11 +164,11 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
             {subTitle && (
               <h2
                 className={cx(
-                  'ui-font-bold ui-text-xl ui-text-center ui-text-dark-teal',
+                  'ui:font-bold ui:text-xl ui:text-center ui:text-dark-teal',
                   {
-                    'ui-mb-6': !!tabs,
-                    'ui-mb-8': !tabs,
-                    '!ui-flex-grow': showActionButton,
+                    'ui:mb-6': !!tabs,
+                    'ui:mb-8': !tabs,
+                    'ui:grow!': showActionButton,
                   }
                 )}
               >
@@ -176,7 +176,7 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
               </h2>
             )}
             {showActionButton && (
-              <div className="ui-flex ui-justify-end ui-space-x-3">
+              <div className="ui:flex ui:justify-end ui:space-x-3">
                 {actionButtons?.map((item) => {
                   return (
                     <Button
@@ -185,7 +185,7 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
                       onClick={() => router.push(item.url)}
                       color="primary"
                       variant="outline"
-                      className="!ui-mt-[5px]"
+                      className="ui:mt-[5px]!"
                     >
                       {item.label}
                     </Button>
@@ -229,7 +229,7 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
         )}
       </div>
       {showFooter && (
-        <div className="ui-py-20 ui-text-center">
+        <div className="ui:py-20 ui:text-center">
           &copy; {new Date().getFullYear()} SMILE | UNDP
         </div>
       )}

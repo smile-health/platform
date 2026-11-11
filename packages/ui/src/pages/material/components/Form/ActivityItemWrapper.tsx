@@ -28,10 +28,10 @@ const ActivityItemWrapper: React.FC<ActivityItemWrapperProps> = ({
       onClick={handleClick}
       type="button"
       className={cx(
-        'ui-flex ui-gap-4 ui-border ui-rounded-lg ui-p-4 ui-items-center',
+        'ui:flex ui:gap-4 ui:border ui:rounded-lg ui:p-4 ui:items-center',
         {
-          'ui-bg-[#E2F3FC] ui-border-[#004990]': isChecked,
-          'ui-border-gray-300': !isChecked,
+          'ui:bg-[#E2F3FC] ui:border-[#004990]': isChecked,
+          'ui:border-gray-300': !isChecked,
         }
       )}
     >
@@ -40,8 +40,8 @@ const ActivityItemWrapper: React.FC<ActivityItemWrapperProps> = ({
         id={activity.id}
         activity={activity}
         className={{
-          wrapper: 'ui-gap-4 ui-flex-auto',
-          title: 'ui-text-base',
+          wrapper: 'ui:gap-4 ui:flex-auto',
+          title: 'ui:text-base',
         }}
       />
     </button>

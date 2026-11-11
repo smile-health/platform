@@ -57,14 +57,14 @@ export default function ReconciliationTable({ filter }: Props) {
   useSetLoadingPopupStore(exportQuery?.isLoading || exportQuery?.isFetching)
 
   return (
-    <div className="ui-space-y-6">
-      <div className="ui-flex ui-justify-end">
+    <div className="ui:space-y-6">
+      <div className="ui:flex ui:justify-end">
         <Button
           data-testid="btn-export"
           variant="outline"
           type="button"
           onClick={() => exportQuery?.refetch()}
-          leftIcon={<Export className="ui-size-5" />}
+          leftIcon={<Export className="ui:size-5" />}
         >
           {t('export')}
         </Button>

@@ -281,16 +281,16 @@ export default function GaugeChartComponent({
   }, [value])
 
   return (
-    <div className="ui-relative ui-w-full ui-h-full">
+    <div className="ui:relative ui:w-full ui:h-full">
       <div ref={chartRef} style={{ width: '100%', height: '100%' }} />
-      <div className="ui-absolute ui-bottom-0 ui-w-full ui-flex ui-items-center ui-justify-center ui-gap-4">
+      <div className="ui:absolute ui:bottom-0 ui:w-full ui:flex ui:items-center ui:justify-center ui:gap-4">
         {legendItems?.map(({ background, text }, i) => (
-          <div key={i} className="ui-flex ui-items-center ui-gap-1">
+          <div key={i} className="ui:flex ui:items-center ui:gap-1">
             <div
-              className="ui-size-3.5 ui-rounded-full"
+              className="ui:size-3.5 ui:rounded-full"
               style={{ background: background }}
             />
-            <span className="ui-text-sm ui-font-sans">
+            <span className="ui:text-sm ui:font-sans">
               {label} {text}
             </span>
           </div>

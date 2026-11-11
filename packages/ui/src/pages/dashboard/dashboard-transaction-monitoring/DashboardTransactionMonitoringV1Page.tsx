@@ -84,13 +84,13 @@ export default function DashboardTransactionMonitoringV1Page() {
         <Dialog
           open={openInformation}
           onOpenChange={setOpenInformation}
-          className="ui-z-20"
+          className="ui:z-20"
           scrollBehavior="inside"
         >
-          <DialogHeader className="ui-text-center">
+          <DialogHeader className="ui:text-center">
             {t('title.page')}
           </DialogHeader>
-          <DialogContent className="ui-space-y-3">
+          <DialogContent className="ui:space-y-3">
             {informations?.map((info) => (
               <div key={info?.title}>
                 <H5>{info?.title}</H5>
@@ -98,14 +98,14 @@ export default function DashboardTransactionMonitoringV1Page() {
               </div>
             ))}
           </DialogContent>
-          <DialogFooter className="ui-grid ui-grid-cols-1">
+          <DialogFooter className="ui:grid ui:grid-cols-1">
             <Button variant="outline" onClick={() => setOpenInformation(!open)}>
               {tDashboard('close')}
             </Button>
           </DialogFooter>
         </Dialog>
         <DashboardFilter filter={filter} onExport={onExport} />
-        <div className="ui-grid ui-gap-x-4 ui-gap-y-6 ui-grid-cols-7">
+        <div className="ui:grid ui:gap-x-4 ui:gap-y-6 ui:grid-cols-7">
           <DashboardBigNumberSummarize
             id="dashboard-transaction-monitoring-number"
             value={chart?.number}

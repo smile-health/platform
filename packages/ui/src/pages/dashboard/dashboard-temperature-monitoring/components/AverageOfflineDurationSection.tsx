@@ -84,11 +84,11 @@ export default function AverageOfflineDurationSection({
     <DashboardTemperatureMonitoringBox
       id="average-offline-duration-chart"
       title={t('offline_duration.title')}
-      info={<p className="ui-text-gray-500">{t('offline_duration.info')}</p>}
+      info={<p className="ui:text-gray-500">{t('offline_duration.info')}</p>}
       isLoading={isLoading}
       isEmpty={!items.length}
     >
-      <div className="ui-h-[450px] ui-w-full">
+      <div className="ui:h-[450px] ui:w-full">
         <StackedLineChart
           labels={labels}
           series={series}
@@ -154,7 +154,7 @@ export default function AverageOfflineDurationSection({
         />
       </div>
       {data?.lastUpdated && (
-        <p className="ui-text-xs ui-text-gray-500 ui-text-center ui-mt-4 py-2">
+        <p className="ui:text-xs ui:text-gray-500 ui:text-center ui:mt-4 py-2">
           {t('summary.last_updated_at', { time: data.lastUpdated })}
         </p>
       )}

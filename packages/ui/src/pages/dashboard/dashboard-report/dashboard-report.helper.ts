@@ -30,7 +30,7 @@ export function handleTableColumns(
       meta: {
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50'
+            ? 'ui:bg-slate-50'
             : ''
         },
       },
@@ -41,7 +41,7 @@ export function handleTableColumns(
       meta: {
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50'
+            ? 'ui:bg-slate-50'
             : ''
         },
       },
@@ -51,11 +51,11 @@ export function handleTableColumns(
       accessorKey: 'opening_qty',
       cell: ({ getValue }) => format(getValue<number>()),
       meta: {
-        headerClassName: 'ui-text-center',
+        headerClassName: 'ui:text-center',
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50 ui-text-center'
-            : 'ui-text-center'
+            ? 'ui:bg-slate-50 ui:text-center'
+            : 'ui:text-center'
         },
       },
     },
@@ -64,11 +64,11 @@ export function handleTableColumns(
       accessorKey: 'received_qty',
       cell: ({ getValue }) => format(getValue<number>()),
       meta: {
-        headerClassName: 'ui-text-center',
+        headerClassName: 'ui:text-center',
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50 ui-text-center'
-            : 'ui-text-center'
+            ? 'ui:bg-slate-50 ui:text-center'
+            : 'ui:text-center'
         },
       },
     },
@@ -83,11 +83,11 @@ export function handleTableColumns(
           : ''
       },
       meta: {
-        headerClassName: 'ui-text-center',
+        headerClassName: 'ui:text-center',
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50 ui-text-center'
-            : 'ui-text-center'
+            ? 'ui:bg-slate-50 ui:text-center'
+            : 'ui:text-center'
         },
       },
     },
@@ -98,8 +98,8 @@ export function handleTableColumns(
       meta: {
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50 ui-text-center'
-            : 'ui-text-center'
+            ? 'ui:bg-slate-50 ui:text-center'
+            : 'ui:text-center'
         },
       },
     },
@@ -110,8 +110,8 @@ export function handleTableColumns(
       meta: {
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50 ui-text-center'
-            : 'ui-text-center'
+            ? 'ui:bg-slate-50 ui:text-center'
+            : 'ui:text-center'
         },
       },
     },
@@ -120,11 +120,11 @@ export function handleTableColumns(
       accessorKey: 'closing_qty',
       cell: ({ getValue }) => format(getValue<number>()),
       meta: {
-        headerClassName: 'ui-text-center',
+        headerClassName: 'ui:text-center',
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50 ui-text-center'
-            : 'ui-text-center'
+            ? 'ui:bg-slate-50 ui:text-center'
+            : 'ui:text-center'
         },
       },
     },
@@ -132,10 +132,10 @@ export function handleTableColumns(
       header: t('column.total'),
       accessorKey: 'scope_total',
       meta: {
-        headerClassName: 'ui-text-center',
+        headerClassName: 'ui:text-center',
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50'
+            ? 'ui:bg-slate-50'
             : ''
         },
       },
@@ -144,10 +144,10 @@ export function handleTableColumns(
       header: t('column.vaccine_ip'),
       accessorKey: 'vaccine_ip',
       meta: {
-        headerClassName: 'ui-text-center',
+        headerClassName: 'ui:text-center',
         cellClassName: (row) => {
           return typeof row?.original?.number === 'string'
-            ? 'ui-bg-slate-50'
+            ? 'ui:bg-slate-50'
             : ''
         },
       },

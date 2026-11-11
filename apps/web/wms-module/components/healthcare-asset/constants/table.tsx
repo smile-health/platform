@@ -99,7 +99,7 @@ export const columnsHealthcareAsset = (
         const {id} = useParams()
         const pathLink = isAdmin ? `asset-dongle/${id}`: 'healthcare-asset'
         return (
-          <div className="ui-flex ui-gap-0.5">
+          <div className="ui:flex ui:gap-0.5">
             <ButtonActionTable
               id={original?.id}
               path={pathLink}

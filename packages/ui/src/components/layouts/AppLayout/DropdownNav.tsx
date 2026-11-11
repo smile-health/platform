@@ -42,14 +42,14 @@ const DropdownNav: React.FC<Props> = ({
     <DropdownMenuRoot>
       <DropdownMenuTrigger>
         <div className={className} id={`trigger-${title}`}>
-          <div className="ui-text-primary-contrast">{title}</div>
-          <div className="ui-py-1 ui-pl-2">
-            <ChevronDownIcon className="ui-h-3 ui-w-3 ui-text-primary-contrast" />
+          <div className="ui:text-primary-contrast">{title}</div>
+          <div className="ui:py-1 ui:pl-2">
+            <ChevronDownIcon className="ui:h-3 ui:w-3 ui:text-primary-contrast" />
           </div>
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent hidden={!show}>
-        <div className="ui-flex ui-flex-col ui-gap-1">
+        <div className="ui:flex ui:flex-col ui:gap-1">
           {navChild.map((item) => {
             if (item?.rNavChild) {
               return (
@@ -63,7 +63,7 @@ const DropdownNav: React.FC<Props> = ({
             }
             return (
               <Link
-                className={`${item.className} ui-text-left ui-block ui-text-primary-surface ui-cursor-pointer hover:ui-bg-gray-100 ui-px-6 ui-py-1`}
+                className={`${item.className} ui:text-left ui:block ui:text-primary-surface ui:cursor-pointer ui:hover:bg-gray-100 ui:px-6 ui:py-1`}
                 id={`navbar-${item.link}`}
                 key={`navbar-${item.link}`}
                 href={router.getAsLink(item.link ?? '')}

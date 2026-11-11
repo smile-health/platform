@@ -63,7 +63,7 @@ const contentMotionVariants = {
 
 export function DrawerTitle({ value }: { readonly value: string }) {
   return (
-    <div className="ui-text-lg ui-text-gray-800 font-semibold">{value}</div>
+    <div className="ui:text-lg ui:text-gray-800 font-semibold">{value}</div>
   )
 }
 
@@ -77,7 +77,7 @@ export function DrawerHeader({
   title?: string
 }>) {
   return (
-    <div className={cx('ui-px-5 ui-py-3', className)}>
+    <div className={cx('ui:px-5 ui:py-3', className)}>
       {title && <DrawerTitle value={title} />}
       {children}
     </div>
@@ -96,7 +96,7 @@ export function DrawerContent({
   return (
     <div
       id={id}
-      className={cx('ui-flex-1 ui-overflow-auto ui-px-5 ui-py-2', className)}
+      className={cx('ui:flex-1 ui:overflow-auto ui:px-5 ui:py-2', className)}
     >
       {children}
     </div>
@@ -113,7 +113,7 @@ export function DrawerFooter({
   return (
     <div
       className={cx(
-        'ui-flex ui-justify-end ui-space-x-3 ui-px-5 ui-py-3',
+        'ui:flex ui:justify-end ui:space-x-3 ui:px-5 ui:py-3',
         className
       )}
     >
@@ -126,10 +126,10 @@ export function DrawerCloseButton() {
     <DialogPrimitive.Close asChild>
       <button
         className={cx(
-          'ui-absolute ui-right-2 ui-top-2 ui-rounded ui-p-0.5 ui-text-gray-800 hover:ui-bg-gray-200 active:ui-bg-gray-300'
+          'ui:absolute ui:right-2 ui:top-2 ui:rounded ui:p-0.5 ui:text-gray-800 ui:hover:bg-gray-200 ui:active:bg-gray-300'
         )}
       >
-        <XMarkIcon className="ui-h-5 ui-w-5"></XMarkIcon>
+        <XMarkIcon className="ui:h-5 ui:w-5"></XMarkIcon>
       </button>
     </DialogPrimitive.Close>
   )
@@ -178,26 +178,26 @@ export function Drawer({
 
   const classConfig = {
     height: {
-      xs: 'ui-max-h-xs',
-      sm: 'ui-max-h-sm',
-      md: 'ui-max-h-md',
-      lg: 'ui-max-h-lg',
-      xl: 'ui-max-h-xl',
-      full: 'ui-h-full',
+      xs: 'ui:max-h-xs',
+      sm: 'ui:max-h-sm',
+      md: 'ui:max-h-md',
+      lg: 'ui:max-h-lg',
+      xl: 'ui:max-h-xl',
+      full: 'ui:h-full',
     },
     width: {
-      xs: 'ui-w-[20rem]',
-      sm: 'ui-w-[25rem]',
-      md: 'ui-w-[30rem]',
-      lg: 'ui-w-[35rem]',
-      xl: 'ui-w-[45rem]',
-      full: 'ui-w-full',
+      xs: 'ui:w-[20rem]',
+      sm: 'ui:w-100',
+      md: 'ui:w-120',
+      lg: 'ui:w-140',
+      xl: 'ui:w-180',
+      full: 'ui:w-full',
     },
     placement: {
-      left: 'ui-left-0',
-      right: 'ui-right-0',
-      top: 'ui-top-0',
-      bottom: 'ui-bottom-0',
+      left: 'ui:left-0',
+      right: 'ui:right-0',
+      top: 'ui:top-0',
+      bottom: 'ui:bottom-0',
     },
   }
 
@@ -216,7 +216,7 @@ export function Drawer({
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="ui-fixed ui-inset-0 ui-bg-black ui-bg-opacity-50"
+                className="ui:fixed ui:inset-0 ui:bg-black/50"
               ></motion.div>
             </DialogPrimitive.Overlay>
             <DialogPrimitive.Content
@@ -231,7 +231,7 @@ export function Drawer({
             >
               <div
                 className={cx(
-                  'ui-fixed ui-left-0 ui-top-0 ui-flex ui-w-screen ui-justify-center ui-overflow-y-auto z-10',
+                  'ui:fixed ui:left-0 ui:top-0 ui:flex ui:w-screen ui:justify-center ui:overflow-y-auto z-10',
                   drawerClassName
                 )}
               >
@@ -242,8 +242,8 @@ export function Drawer({
                   animate="animate"
                   exit="exit"
                   className={cx(
-                    'ui-fixed ui-flex ui-flex-col ui-bg-white',
-                    'focus:ui-outline-none focus-visible:ui-ring focus-visible:ui-ring-purple-500 focus-visible:ui-ring-opacity-75',
+                    'ui:fixed ui:flex ui:flex-col ui:bg-white',
+                    'ui:focus:outline-hidden ui:focus-visible:ring-3 ui:focus-visible:ring-purple-500/75',
                     className,
                     {
                       [classConfig.placement[placement]]:

@@ -38,32 +38,32 @@ export default function HomeSuperAdmin() {
     <Container title={t('home:title')} hideTabs={false} withLayout={true}>
       <Meta title={`WMS | ${t('home:title')}`} />
 
-      <div className="ui-mt-6">
+      <div className="ui:mt-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid ui-grid-cols-4 ui-gap-4">
+          <FilterFormBody className="ui:grid ui:grid-cols-4 ui:gap-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-flex ui-gap-2 ui-mt-5">
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:flex ui:gap-2 ui:mt-5">
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
               >
                 {t('common:export')}
               </Button>
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Reload className="ui-size-5" />}
+                leftIcon={<Reload className="ui:size-5" />}
                 onClick={filter.reset}
               >
                 {t('common:reset')}
               </Button>
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -74,7 +74,7 @@ export default function HomeSuperAdmin() {
         </FilterFormRoot>
       </div>
 
-      <div className="ui-mt-5">
+      <div className="ui:mt-5">
         <HomeSuperadminTable
           page={pagination.page}
           size={pagination.paginate}

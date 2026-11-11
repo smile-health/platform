@@ -14,9 +14,9 @@ type CapacityCardProps = {
 
 function CapacityCard({ title, children }: CapacityCardProps) {
   return (
-    <div className="ui-flex-1 ui-rounded ui-border ui-border-gray-200 ui-bg-white ui-p-4">
-      <h3 className="ui-mb-4 ui-font-semibold ui-text-gray-900">{title}</h3>
-      <div className="ui-divide-y ui-divide-gray-100">{children}</div>
+    <div className="ui:flex-1 ui:rounded ui:border ui:border-gray-200 ui:bg-white ui:p-4">
+      <h3 className="ui:mb-4 ui:font-semibold ui:text-gray-900">{title}</h3>
+      <div className="ui:divide-y ui:divide-gray-100">{children}</div>
     </div>
   )
 }
@@ -27,21 +27,21 @@ export default function CapacityCards() {
 
   if (isLoading) {
     return (
-      <div className="ui-flex ui-gap-6">
-        <div className="ui-flex-1 ui-animate-pulse ui-rounded ui-border ui-border-gray-200 ui-bg-white ui-p-4">
-          <div className="ui-mb-4 ui-h-6 ui-w-48 ui-rounded ui-bg-gray-200" />
-          <div className="ui-space-y-3">
-            <Skeleton className="ui-h-4 ui-w-full ui-rounded ui-bg-gray-200" />
-            <Skeleton className="ui-h-4 ui-w-full ui-rounded ui-bg-gray-200" />
-            <Skeleton className="ui-h-4 ui-w-full ui-rounded ui-bg-gray-200" />
+      <div className="ui:flex ui:gap-6">
+        <div className="ui:flex-1 ui:animate-pulse ui:rounded ui:border ui:border-gray-200 ui:bg-white ui:p-4">
+          <div className="ui:mb-4 ui:h-6 ui:w-48 ui:rounded ui:bg-gray-200" />
+          <div className="ui:space-y-3">
+            <Skeleton className="ui:h-4 ui:w-full ui:rounded ui:bg-gray-200" />
+            <Skeleton className="ui:h-4 ui:w-full ui:rounded ui:bg-gray-200" />
+            <Skeleton className="ui:h-4 ui:w-full ui:rounded ui:bg-gray-200" />
           </div>
         </div>
-        <div className="ui-flex-1 ui-animate-pulse ui-rounded ui-border ui-border-gray-200 ui-bg-white ui-p-4">
-          <div className="ui-mb-4 ui-h-6 ui-w-48 ui-rounded ui-bg-gray-200" />
-          <div className="ui-space-y-3">
-            <Skeleton className="ui-h-4 ui-w-full ui-rounded ui-bg-gray-200" />
-            <Skeleton className="ui-h-4 ui-w-full ui-rounded ui-bg-gray-200" />
-            <Skeleton className="ui-h-4 ui-w-full ui-rounded ui-bg-gray-200" />
+        <div className="ui:flex-1 ui:animate-pulse ui:rounded ui:border ui:border-gray-200 ui:bg-white ui:p-4">
+          <div className="ui:mb-4 ui:h-6 ui:w-48 ui:rounded ui:bg-gray-200" />
+          <div className="ui:space-y-3">
+            <Skeleton className="ui:h-4 ui:w-full ui:rounded ui:bg-gray-200" />
+            <Skeleton className="ui:h-4 ui:w-full ui:rounded ui:bg-gray-200" />
+            <Skeleton className="ui:h-4 ui:w-full ui:rounded ui:bg-gray-200" />
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function CapacityCards() {
   }
 
   return (
-    <div className="ui-flex ui-gap-6">
+    <div className="ui:flex ui:gap-6">
       <CapacityCard title={t('detail.realCapacity.title')}>
         <RenderDetailValue
           data={[
@@ -95,8 +95,8 @@ export default function CapacityCards() {
           ]}
           loading={isLoading}
           skipEmptyValue={false}
-          className="ui-grid-cols-[300px_3px_1fr]"
-          labelsClassName="ui-text-nowrap ui-whitespace-nowrap"
+          className="ui:grid-cols-[300px_3px_1fr]"
+          labelsClassName="ui:text-nowrap ui:whitespace-nowrap"
         />
       </CapacityCard>
     </div>

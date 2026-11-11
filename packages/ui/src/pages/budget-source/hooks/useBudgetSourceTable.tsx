@@ -118,7 +118,7 @@ const useBudgetSourceTable = ({
       size: 123,
       minSize: 123,
       cell: ({ row }) => (
-        <div className="ui-flex ui-gap-2 -ml-3">
+        <div className="ui:flex ui:gap-2 -ml-3">
           <Button
             asChild
             id="btn-link-budget-source-detail"

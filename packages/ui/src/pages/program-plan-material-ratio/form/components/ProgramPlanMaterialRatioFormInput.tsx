@@ -38,15 +38,15 @@ const ProgramPlanMaterialRatioFormInput = ({
   const materialOpponent = `${opponentName}.material`
 
   return (
-    <div className="ui-w-full ui-p-6 ui-border ui-border-neutral-300 ui-rounded-lg">
-      <h5 className="ui-font-bold ui-text-base ui-text-dark-teal ui-mb-6">
+    <div className="ui:w-full ui:p-6 ui:border ui:border-neutral-300 ui:rounded-lg">
+      <h5 className="ui:font-bold ui:text-base ui:text-dark-teal ui:mb-6">
         {title}
       </h5>
       <Controller
         name={subTypeName}
         control={control}
         render={({ field, fieldState: { error } }) => (
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor={subTypeName} required>
               {t('programPlanMaterialRatio:subtype')}
             </FormLabel>
@@ -79,7 +79,7 @@ const ProgramPlanMaterialRatioFormInput = ({
         name={materialName}
         control={control}
         render={({ field, fieldState: { error } }) => (
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor={materialName} required>
               {t('programPlanMaterialRatio:material')}
             </FormLabel>
@@ -118,7 +118,7 @@ const ProgramPlanMaterialRatioFormInput = ({
           field: { value, onChange, ...field },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-w-full">
+          <FormControl className="ui:w-full">
             <FormLabel htmlFor={amountName} required>
               {t('programPlanMaterialRatio:ratio_number')}
             </FormLabel>

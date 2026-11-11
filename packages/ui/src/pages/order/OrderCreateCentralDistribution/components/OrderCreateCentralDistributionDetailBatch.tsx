@@ -102,10 +102,10 @@ export default function OrderCreateCentralDistributionDetailBatch({
         size="full"
         sizeHeight="lg"
       >
-        <DrawerHeader className="ui-text-center">
-          <div className="ui-flex ui-justify-between">
+        <DrawerHeader className="ui:text-center">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('section.batch.list')}
             </h6>
             <Button
@@ -118,10 +118,10 @@ export default function OrderCreateCentralDistributionDetailBatch({
             </Button>
           </div>
         </DrawerHeader>
-        <DrawerContent className="ui-p-4 ui-space-y-6 ui-border-y ui-border-zinc-200">
+        <DrawerContent className="ui:p-4 ui:space-y-6 ui:border-y ui:border-zinc-200">
           <FormProvider {...methods}>
             <div>
-              <p className="ui-text-neutral-500">Material</p>
+              <p className="ui:text-neutral-500">Material</p>
               <p>
                 <strong>{data?.name ?? '-'}</strong>
               </p>
@@ -146,7 +146,7 @@ export default function OrderCreateCentralDistributionDetailBatch({
               onClick={() => {
                 setModalBatch({ open: true, data: null, index: null })
               }}
-              leftIcon={<Plus className="ui-size-5" />}
+              leftIcon={<Plus className="ui:size-5" />}
             >
               {t('action.new_batch')}
             </Button>
@@ -159,7 +159,7 @@ export default function OrderCreateCentralDistributionDetailBatch({
             type="button"
             variant="subtle"
             onClick={handleReset}
-            leftIcon={<Reload className="ui-size-5" />}
+            leftIcon={<Reload className="ui:size-5" />}
           >
             Reset
           </Button>
@@ -168,7 +168,7 @@ export default function OrderCreateCentralDistributionDetailBatch({
             data-testid="btn-save-batch"
             type="button"
             onClick={handleSubmit}
-            className="ui-w-52"
+            className="ui:w-52"
           >
             {t('action.save')}
           </Button>

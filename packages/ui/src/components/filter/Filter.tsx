@@ -1013,7 +1013,7 @@ export function useFilter(schema: UseFilter) {
             <FormLabel required={field?.required ?? false}>
               {field.label}
             </FormLabel>
-            <div className="ui-w-full ui-flex ui-items-center ui-gap-4 ui-h-10">
+            <div className="ui:w-full ui:flex ui:items-center ui:gap-4 ui:h-10">
               {field.options.map((item) => {
                 return (
                   <Radio
@@ -1201,12 +1201,12 @@ export function useFilter(schema: UseFilter) {
     return (
       <>
         <hr />
-        <div id="active-filter" className="ui-leading-tight ui-space-y-2">
-          <div className="ui-justify-between ui-flex">
-            <div className="ui-text-gray-500 ui-font-semibold ui-text-sm">
+        <div id="active-filter" className="ui:leading-tight ui:space-y-2">
+          <div className="ui:justify-between ui:flex">
+            <div className="ui:text-gray-500 ui:font-semibold ui:text-sm">
               {params?.activeFilterLabel ?? t('common:active_filter')}
             </div>
-            <div className="ui-text-gray-500 ui-text-sm">
+            <div className="ui:text-gray-500 ui:text-sm">
               {params?.filteredTime?.label ?? t('common:filtered_at')}:{' '}
               {params?.filteredTime?.value ?? dayjs().format('DD/MM/YY HH:mm')}
             </div>
@@ -1215,12 +1215,12 @@ export function useFilter(schema: UseFilter) {
           <div
             ref={activeFilterContainerRef}
             id="active-filter-container"
-            className="ui-items-end flex"
+            className="ui:items-end flex"
           >
             <div
               id="active-filter-content"
-              className={cx('ui-leading-normal', {
-                'ui-line-clamp-3': isExpandable && !expandedActiveFilter,
+              className={cx('ui:leading-normal', {
+                'ui:line-clamp-3': isExpandable && !expandedActiveFilter,
               })}
             >
               {queryArray.map(([key, value]) => {
@@ -1237,9 +1237,9 @@ export function useFilter(schema: UseFilter) {
 
                 return (
                   <Fragment key={key}>
-                    <span className="ui-font-semibold ui-mr-1">{label}: </span>
+                    <span className="ui:font-semibold ui:mr-1">{label}: </span>
                     <span>{displayValue}</span>
-                    <span className="last:ui-hidden ui-mx-2">|</span>
+                    <span className="ui:last:hidden ui:mx-2">|</span>
                   </Fragment>
                 )
               })}
@@ -1248,7 +1248,7 @@ export function useFilter(schema: UseFilter) {
               <button
                 id="btn-active-filter-expand-show"
                 type="button"
-                className="ui-text-primary-500 ui-whitespace-nowrap -ui-top-0.5 ui-relative"
+                className="ui:text-primary-500 ui:whitespace-nowrap ui:-top-0.5 ui:relative"
                 onClick={() => setExpandedActiveFilter(true)}
               >
                 {t('common:expand_active_filter.show')}
@@ -1257,11 +1257,11 @@ export function useFilter(schema: UseFilter) {
           </div>
 
           {isExpandable && expandedActiveFilter && (
-            <div className="ui-justify-end flex">
+            <div className="ui:justify-end flex">
               <button
                 id="btn-active-filter-expand-less"
                 type="button"
-                className="ui-text-primary-500 ui-whitespace-nowrap"
+                className="ui:text-primary-500 ui:whitespace-nowrap"
                 onClick={() => setExpandedActiveFilter(false)}
               >
                 {t('common:expand_active_filter.less')}

@@ -17,8 +17,8 @@ const AssetInventoryBudgetSourceMoreForm = () => {
     formState: { errors },
   } = methods
   return (
-    <div className="ui-flex ui-flex-col ui-gap-4">
-      <FormControl className="ui-w-full">
+    <div className="ui:flex ui:flex-col ui:gap-4">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="other_budget_source_name" required>
           {t('assetInventory:other_inputs.budget_source_name')}
         </FormLabel>

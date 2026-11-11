@@ -144,16 +144,16 @@ export const columns = (
           }}
         />
       ) : (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           <Button
             asChild
             id="btn-link-entity-detail"
             size="sm"
             variant="subtle"
-            className="ui-px-1.5"
+            className="ui:px-1.5"
           >
             <Link
-              className="ui-text-polynesianblue-600"
+              className="ui:text-polynesianblue-600"
               href={handleButtonTableAction('', original?.id)}
             >
               {t('entity:list.column.configuration')}
@@ -166,8 +166,8 @@ export const columns = (
               variant="subtle"
               color={isActive ? 'danger' : 'primary'}
               disabled={isLoadingUpdateStatus}
-              className={cx('ui-px-1.5', {
-                'ui-text-polynesianblue-600': !isActive,
+              className={cx('ui:px-1.5', {
+                'ui:text-polynesianblue-600': !isActive,
               })}
               onClick={() => {
                 setChangeStatusState({

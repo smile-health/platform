@@ -97,25 +97,25 @@ const AssetListPage: React.FC = () => {
     <Container title={t('asset:asset_temperature')} withLayout>
       <Meta title={`SMILE | ${t('asset:asset_temperature_list')}`} />
       <AssetListContext.Provider value={contextValue}>
-        <div className="ui-mx-24">
-          <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-            <h5 className="ui-font-bold ui-text-xl">
+        <div className="ui:mx-24">
+          <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+            <h5 className="ui:font-bold ui:text-xl">
               {t('asset:asset_temperature_list')}
             </h5>
           </div>
-          <div className="ui-space-y-4 ui-mt-6">
+          <div className="ui:space-y-4 ui:mt-6">
             <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-              <FilterFormBody className="ui-grid-cols-4">
+              <FilterFormBody className="ui:grid-cols-4">
                 {filter.renderField()}
               </FilterFormBody>
               <FilterFormFooter>
                 <FilterExpandButton variant="subtle" />
-                <div className="ui-space-x-3 ui-flex ui-gap-2">
+                <div className="ui:space-x-3 ui:flex ui:gap-2">
                   <Button
                     id="btn-export"
                     variant="subtle"
                     type="button"
-                    leftIcon={<Export className="ui-size-5" />}
+                    leftIcon={<Export className="ui:size-5" />}
                     onClick={() => exportQuery.refetch()}
                   >
                     {t('common:export')}
@@ -124,14 +124,14 @@ const AssetListPage: React.FC = () => {
                   <FilterSubmitButton
                     onClick={() => setPagination({ page: 1 })}
                     variant="outline"
-                    className="ui-w-56"
+                    className="ui:w-56"
                   ></FilterSubmitButton>
                 </div>
               </FilterFormFooter>
               {filter.renderActiveFilter()}
             </FilterFormRoot>
           </div>
-          <div className="ui-space-y-6 ui-my-5 ui-rounded">
+          <div className="ui:space-y-6 ui:my-5 ui:rounded">
             <AssetListTable data={data} />
           </div>
         </div>

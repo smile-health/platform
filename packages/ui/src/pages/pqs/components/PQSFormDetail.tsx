@@ -19,12 +19,12 @@ const PQSFormDetail = () => {
   } = useFormContext<CreatePQSFormInput>()
 
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('detail.section.detail.header')}
       </div>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-5">
-        <FormControl className="ui-w-full">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-5">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="code" required>
             {t('form.pqs_code.label')}
           </FormLabel>
@@ -44,7 +44,7 @@ const PQSFormDetail = () => {
             <FormErrorMessage>{errors?.code?.message}</FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-w-full">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="pqs_type_id" required>
             {t('form.pqs_type.label')}
           </FormLabel>
@@ -83,8 +83,8 @@ const PQSFormDetail = () => {
           )}
         </FormControl>
       </div>
-      <div className="ui-grid ui-grid-cols-1 ui-mt-5">
-        <FormControl className="ui-w-full">
+      <div className="ui:grid ui:grid-cols-1 ui:mt-5">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="cceigat_description_id">
             {t('form.cceigat_desc.label')}
           </FormLabel>

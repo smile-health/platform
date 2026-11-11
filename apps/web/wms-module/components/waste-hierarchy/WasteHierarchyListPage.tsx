@@ -94,7 +94,7 @@ const WasteHierarchyListPage: React.FC = () => {
         title={t('wasteHierarchy:information.title')}
         description={t('wasteHierarchy:information.description')}
       />
-      <div className="ui-w-full ui-space-y-6 ui-max-w-form ui-mx-auto ui-border ui-border-gray-200 ui-rounded-lg">
+      <div className="ui:w-full ui:space-y-6 ui:max-w-form ui:mx-auto ui:border ui:border-gray-200 ui:rounded-lg">
         <TabsRoot
           value={query.tab}
           variant="pills"
@@ -109,19 +109,19 @@ const WasteHierarchyListPage: React.FC = () => {
           <TabsList>
             <TabsTrigger
               value="waste_type"
-              className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+              className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
             >
               {t('wasteHierarchy:list.tab.waste_type')}
             </TabsTrigger>
             <TabsTrigger
               value="waste_group"
-              className="ui-flex ui-items-center ui-justify-center ui-border-r ui-border-gray-200 ui-rounded-r-none"
+              className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
             >
               {t('wasteHierarchy:list.tab.waste_group')}
             </TabsTrigger>
             <TabsTrigger
               value="waste_characteristic"
-              className="ui-flex ui-items-center ui-justify-center"
+              className="ui:flex ui:items-center ui:justify-center"
             >
               {t('wasteHierarchy:list.tab.waste_characteristic')}
             </TabsTrigger>
@@ -130,12 +130,12 @@ const WasteHierarchyListPage: React.FC = () => {
       </div>
 
       <div className="mt-6">
-        <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-font-bold ui-text-xl">{getPageTitle()}</h5>
-          <div className="ui-flex ui-flex-col ui-gap-2">
+        <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:font-bold ui:text-xl">{getPageTitle()}</h5>
+          <div className="ui:flex ui:flex-col ui:gap-2">
             {!loggedAsAdmin() && (
               <Button
-                leftIcon={<Plus className="ui-size-5" />}
+                leftIcon={<Plus className="ui:size-5" />}
                 loading={false}
                 disabled={false}
                 onClick={() =>
@@ -146,7 +146,7 @@ const WasteHierarchyListPage: React.FC = () => {
               </Button>
             )}
             <Button
-              leftIcon={<Information className="ui-size-5" />}
+              leftIcon={<Information className="ui:size-5" />}
               loading={false}
               color="info"
               disabled={false}
@@ -159,21 +159,21 @@ const WasteHierarchyListPage: React.FC = () => {
 
         {/* Filter Form */}
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-gap-2 ui-items-center">
+          <FilterFormBody className="ui:flex ui:gap-2 ui:items-center">
             {filter.renderField()}
             {query.tab !== 'waste_characteristic' && (
-              <div className="ui-space-x-3 ui-flex ui-mt-5">
+              <div className="ui:space-x-3 ui:flex ui:mt-5">
                 <Button
                   variant="subtle"
                   type="button"
-                  leftIcon={<Reload className="ui-size-5" />}
+                  leftIcon={<Reload className="ui:size-5" />}
                   onClick={filter.reset}
                 >
                   {t('common:reset')}
                 </Button>
                 <FilterSubmitButton
                   variant="outline"
-                  className="ui-w-48"
+                  className="ui:w-48"
                   text={t('common:search')}
                   onClick={() => setPagination({ page: 1 })}
                 />
@@ -182,18 +182,18 @@ const WasteHierarchyListPage: React.FC = () => {
           </FilterFormBody>
           {query.tab === 'waste_characteristic' && (
             <FilterFormFooter>
-              <div className="ui-flex ui-justify-end ui-gap-2 ui-w-full">
+              <div className="ui:flex ui:justify-end ui:gap-2 ui:w-full">
                 <Button
                   variant="subtle"
                   type="button"
-                  leftIcon={<Reload className="ui-size-5" />}
+                  leftIcon={<Reload className="ui:size-5" />}
                   onClick={filter.reset}
                 >
                   {t('common:reset')}
                 </Button>
                 <FilterSubmitButton
                   variant="outline"
-                  className="ui-w-48"
+                  className="ui:w-48"
                   text={t('common:search')}
                   onClick={() => setPagination({ page: 1 })}
                 />
@@ -204,7 +204,7 @@ const WasteHierarchyListPage: React.FC = () => {
           {filter.renderActiveFilter()}
         </FilterFormRoot>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <WasteHierachyTable
             isLoading={isLoadingWasteHierarchy}
             size={paginationWasteHierarchy.paginate}

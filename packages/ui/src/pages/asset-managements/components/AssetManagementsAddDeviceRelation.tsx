@@ -193,8 +193,8 @@ const AssetManagementsAddDeviceRelation = ({
       size="lg"
       open={open}
       setOpen={onClose}
-      className="ui-z-10"
-      classNameOverlay="ui-z-10"
+      className="ui:z-10"
+      classNameOverlay="ui:z-10"
       closeOnOverlayClick={false}
       portalContainer={modalRoot}
       scrollBehavior="outside"
@@ -202,16 +202,16 @@ const AssetManagementsAddDeviceRelation = ({
       <form onSubmit={handleSubmit} noValidate {...methods}>
         <ModalHeader
           className={cx('ui-space-2 relative')}
-          containerClassName={cx('ui-p-6 ui-pb-0 ui-mb-4')}
+          containerClassName={cx('ui:p-6 ui:pb-0 ui:mb-4')}
         >
-          <div className="ui-text-xl ui-font-semibold ui-text-dark-blue">
+          <div className="ui:text-xl ui:font-semibold ui:text-dark-blue">
             {t('assetInventory:device_relation.title.form')}
           </div>
-          <ModalCloseButton className="ui-top-0 ui-right-0" />
+          <ModalCloseButton className="ui:top-0 ui:right-0" />
         </ModalHeader>
         <hr />
 
-        <ModalContent className="ui-space-y-6 ui-px-6 ui-pt-4 ui-pb-8">
+        <ModalContent className="ui:space-y-6 ui:px-6 ui:pt-4 ui:pb-8">
           {fields.map((formField) => {
             return (
               <Controller
@@ -262,10 +262,10 @@ const AssetManagementsAddDeviceRelation = ({
 
         <ModalFooter
           className={cx(
-            'ui-flex ui-p-6 ui-justify-between ui-items-center ui-gap-4'
+            'ui:flex ui:p-6 ui:justify-between ui:items-center ui:gap-4'
           )}
         >
-          <div className="ui-flex ui-justify-end ui-gap-2 ui-w-full">
+          <div className="ui:flex ui:justify-end ui:gap-2 ui:w-full">
             <Button
               type="button"
               id="btnCancelItemModalForm"

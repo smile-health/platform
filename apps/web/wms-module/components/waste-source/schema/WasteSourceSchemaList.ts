@@ -22,7 +22,7 @@ export const createFilterWasteSourceGroupSchema = ({
     id: 'input-search',
     label: t('wasteSource:list.filter.waste_source.search.label'),
     placeholder: t('wasteSource:list.filter.waste_source.search.placeholder'),
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     defaultValue: '',
     maxLength: 255,
   },
@@ -38,6 +38,6 @@ export const createFilterWasteSourceGroupSchema = ({
     options: getSourceTypeOptions(),
     defaultValue: null,
     isUsingReactQuery: false,
-    className: 'ui-w-full',
+    className: 'ui:w-full',
   },
 ];

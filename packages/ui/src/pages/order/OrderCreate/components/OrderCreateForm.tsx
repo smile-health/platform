@@ -173,8 +173,8 @@ export default function OrderCreateForm() {
       </div>
 
       {/* Order Table  */}
-      <div className="ui-border ui-border-[#d2d2d2] ui-rounded ui-mt-6 ui-p-4">
-        <div className="ui-font-bold ui-mb-4">
+      <div className="ui:border ui:border-[#d2d2d2] ui:rounded ui:mt-6 ui:p-4">
+        <div className="ui:font-bold ui:mb-4">
           {t('orderCreate:title.list')}
         </div>
         <OrderCreateTable
@@ -187,13 +187,13 @@ export default function OrderCreateForm() {
         <div className="mt-6">&nbsp;</div>
 
         {/* Buttons  */}
-        <div className="ui-flex ui-flex-row-reverse">
+        <div className="ui:flex ui:flex-row-reverse">
           <Button
             id="order-create-button-send"
             color="primary"
             disabled={!order_items.length}
             onClick={() => handleSubmit(onValid)()}
-            className="ui-w-40"
+            className="ui:w-40"
           >
             {t('orderCreate:button.send')}
           </Button>
@@ -202,7 +202,7 @@ export default function OrderCreateForm() {
             color="primary"
             variant="outline"
             onClick={() => setShowModalReset(true)}
-            className="ui-mr-4 ui-w-40"
+            className="ui:mr-4 ui:w-40"
           >
             Reset
           </Button>

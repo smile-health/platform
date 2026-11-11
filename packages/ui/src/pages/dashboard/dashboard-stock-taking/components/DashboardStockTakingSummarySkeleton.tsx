@@ -16,9 +16,9 @@ export default function DashboardStockTakingSummarySkeleton(props: Props) {
 
   return (
     <div
-      className={cx('ui-grid ui-gap-4', {
-        'ui-grid-cols-3': isEntity,
-        'ui-grid-cols-5': !isEntity,
+      className={cx('ui:grid ui:gap-4', {
+        'ui:grid-cols-3': isEntity,
+        'ui:grid-cols-5': !isEntity,
       })}
     >
       {loadingLength?.map((_, i) => {
@@ -29,13 +29,13 @@ export default function DashboardStockTakingSummarySkeleton(props: Props) {
           <Fragment key={index}>
             {i % divided === 0 && (
               <Skeleton
-                className={cx('ui-h-5 ui-w-40', {
-                  'ui-col-span-3': isEntity,
-                  'ui-col-span-5': !isEntity,
+                className={cx('ui:h-5 ui:w-40', {
+                  'ui:col-span-3': isEntity,
+                  'ui:col-span-5': !isEntity,
                 })}
               />
             )}
-            <Skeleton className="ui-h-[120px] ui-mb-2" />
+            <Skeleton className="ui:h-[120px] ui:mb-2" />
           </Fragment>
         )
       })}

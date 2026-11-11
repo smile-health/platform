@@ -24,8 +24,8 @@ export const ListImportButton = () => {
         id="btn-import"
         variant="subtle"
         type="button"
-        className="ui-px-2"
-        leftIcon={<Import className="ui-size-5" />}
+        className="ui:px-2"
+        leftIcon={<Import className="ui:size-5" />}
         onClick={() => listImport.modal.set(true)}
       >
         {t('common:import')}

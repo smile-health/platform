@@ -71,15 +71,15 @@ export default function ProtocolListPage(): JSX.Element {
 
         <div className="mt-6 space-y-6">
           <FilterFormRoot onSubmit={filter.handleSubmit}>
-            <FilterFormBody className="ui-flex ui-items-end ui-gap-4">
-              <div className="ui-flex-1">{filter.renderField()}</div>
-              <div className="ui-space-x-3 ui-flex ui-mt-5">
-                <div className="ui-flex ui-gap-2">
+            <FilterFormBody className="ui:flex ui:items-end ui:gap-4">
+              <div className="ui:flex-1">{filter.renderField()}</div>
+              <div className="ui:space-x-3 ui:flex ui:mt-5">
+                <div className="ui:flex ui:gap-2">
                   <FilterResetButton variant="subtle" onClick={filter.reset} />
                 </div>
                 <FilterSubmitButton
                   onClick={() => setPagination({ page: 1 })}
-                  className="ui-w-48"
+                  className="ui:w-48"
                   variant="outline"
                 />
               </div>

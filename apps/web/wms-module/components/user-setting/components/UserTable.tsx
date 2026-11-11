@@ -67,7 +67,7 @@ export default function UserTable({
   }, [selectedData, mutateUpdateStatus]);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={userDataSource?.data?.data}
         columns={columnsUser(t, {
@@ -78,7 +78,7 @@ export default function UserTable({
         isLoading={isLoading}
         sorting={sorting}
         setSorting={setSorting}
-        className="ui-overflow-x-auto"
+        className="ui:overflow-x-auto"
       />
       <ModalConfirmation
         open={showUpdateStatusModal}

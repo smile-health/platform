@@ -71,7 +71,7 @@ export const columnsManufacture = (
     enableSorting: false,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-flex-col ui-gap-0.5">
+        <div className="ui:flex ui:flex-col ui:gap-0.5">
           <p>{original.userName}</p>
           <p>
             {original.updatedAt
@@ -92,7 +92,7 @@ export const columnsManufacture = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex">
+        <div className="ui:flex">
           <ButtonActionTable
             id={original?.id}
             path={'/manufacture'}
@@ -104,7 +104,7 @@ export const columnsManufacture = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-danger-200"
+            className="ui:px-1.5! ui:text-danger-200"
           >
             {t('common:remove')}
           </Button>

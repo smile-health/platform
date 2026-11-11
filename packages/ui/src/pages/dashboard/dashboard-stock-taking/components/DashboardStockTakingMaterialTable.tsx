@@ -66,23 +66,23 @@ export default function DashboardStockTakingMaterialTable({
       >
         <Thead>
           <Tr>
-            <Th rowSpan={2} className="ui-sticky ui-left-0 ui-bg-slate-100">
+            <Th rowSpan={2} className="ui:sticky ui:left-0 ui:bg-slate-100">
               No
             </Th>
-            <Th rowSpan={2} className="ui-sticky ui-left-9 ui-bg-slate-100">
+            <Th rowSpan={2} className="ui:sticky ui:left-9 ui:bg-slate-100">
               {t('column.entity.main')}
             </Th>
             {materials?.map((item) => (
               <Th
                 key={item?.id}
                 colSpan={2}
-                className="ui-text-center ui-text-nowrap"
+                className="ui:text-center ui:text-nowrap"
               >
                 {item?.name}
               </Th>
             ))}
             {Boolean(table?.data?.length) && (
-              <Th rowSpan={2} className="ui-text-center">
+              <Th rowSpan={2} className="ui:text-center">
                 {t('column.opname_recap')}
               </Th>
             )}
@@ -90,10 +90,10 @@ export default function DashboardStockTakingMaterialTable({
           <Tr>
             {materials?.map((item, index) => (
               <Fragment key={item?.id}>
-                <Th className="ui-text-center">SMILE</Th>
+                <Th className="ui:text-center">SMILE</Th>
                 <Th
-                  className={cx('ui-text-center ui-border-r', {
-                    'ui-border-gray-300': index === materials?.length - 1,
+                  className={cx('ui:text-center ui:border-r', {
+                    'ui:border-gray-300': index === materials?.length - 1,
                   })}
                 >
                   {t('column.material.real')}
@@ -105,10 +105,10 @@ export default function DashboardStockTakingMaterialTable({
         <Tbody>
           {table?.data?.map((item, index) => (
             <Tr key={item?.row}>
-              <Td className="ui-sticky ui-left-0 ui-bg-white">
+              <Td className="ui:sticky ui:left-0 ui:bg-white">
                 {(page - 1) * paginate + (index + 1)}
               </Td>
-              <Td className="ui-sticky ui-left-9 ui-bg-white ui-text-nowrap">
+              <Td className="ui:sticky ui:left-9 ui:bg-white ui:text-nowrap">
                 {item?.entity?.name}
               </Td>
 
@@ -120,27 +120,27 @@ export default function DashboardStockTakingMaterialTable({
                 return (
                   <Fragment key={item?.id}>
                     <Td
-                      className={cx('ui-text-center', {
-                        'ui-bg-yellow-200': isStockOpnamed && isDifferent,
-                        'ui-bg-red-50': !isStockOpnamed && isMandatory,
+                      className={cx('ui:text-center', {
+                        'ui:bg-yellow-200': isStockOpnamed && isDifferent,
+                        'ui:bg-red-50': !isStockOpnamed && isMandatory,
                       })}
                     >
                       <span>{formatNumber(item?.smile_stock)}</span>
                       {isMandatory && (
-                        <span className="ui-text-danger-600 ui-text-lg ui-ml-1">
+                        <span className="ui:text-danger-600 ui:text-lg ui:ml-1">
                           *
                         </span>
                       )}
                     </Td>
                     <Td
-                      className={cx('ui-text-center', {
-                        'ui-bg-yellow-200': isStockOpnamed && isDifferent,
-                        'ui-bg-red-50': !isStockOpnamed && isMandatory,
+                      className={cx('ui:text-center', {
+                        'ui:bg-yellow-200': isStockOpnamed && isDifferent,
+                        'ui:bg-red-50': !isStockOpnamed && isMandatory,
                       })}
                     >
                       <span>{formatNumber(item?.real_stock)}</span>
                       {isMandatory && (
-                        <span className="ui-text-danger-600 ui-text-lg ui-ml-1">
+                        <span className="ui:text-danger-600 ui:text-lg ui:ml-1">
                           *
                         </span>
                       )}
@@ -148,7 +148,7 @@ export default function DashboardStockTakingMaterialTable({
                   </Fragment>
                 )
               })}
-              <Td className="ui-text-center">{item?.opname_recap}</Td>
+              <Td className="ui:text-center">{item?.opname_recap}</Td>
             </Tr>
           ))}
         </Tbody>

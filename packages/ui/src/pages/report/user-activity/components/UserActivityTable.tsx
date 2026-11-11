@@ -33,7 +33,7 @@ export default function UserActivityTable({ filter }: Props) {
   } = useGetEntityTable(filter)
 
   return (
-    <div className="ui-relative ui-space-y-6">
+    <div className="ui:relative ui:space-y-6">
       <Table
         withBorder
         rounded
@@ -49,8 +49,8 @@ export default function UserActivityTable({ filter }: Props) {
                   key={item.label}
                   colSpan={item.colSpan}
                   className={cx(item.class, {
-                    'ui-bg-slate-100': index === 0,
-                    'ui-bg-slate-200': index > 0,
+                    'ui:bg-slate-100': index === 0,
+                    'ui:bg-slate-200': index > 0,
                   })}
                 >
                   {item.label}
@@ -65,7 +65,7 @@ export default function UserActivityTable({ filter }: Props) {
               {data?.map((item) => (
                 <Td
                   key={JSON.stringify(item?.value)}
-                  className={cx(' ui-bg-white', item?.class)}
+                  className={cx(' ui:bg-white', item?.class)}
                 >
                   {item?.value}
                 </Td>

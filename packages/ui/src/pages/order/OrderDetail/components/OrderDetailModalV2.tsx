@@ -62,66 +62,66 @@ export const OrderDetailModalV2 = ({
       size={size}
       open={open}
       setOpen={onClose}
-      className="ui-z-10"
-      classNameOverlay="ui-z-10"
+      className="ui:z-10"
+      classNameOverlay="ui:z-10"
       closeOnOverlayClick={false}
       portalContainer={modalRoot}
     >
       <form
         onSubmit={handleSubmit}
         noValidate
-        className={cx('ui-contents', { 'ui-space-y-2': !children })}
+        className={cx('ui:contents', { 'ui:space-y-2': !children })}
       >
         <ModalHeader
           className={cx('ui-space-2 relative', {
-            'ui-text-center': children,
+            'ui:text-center': children,
           })}
-          containerClassName={cx('ui-p-6 ui-pb-0', {
-            'ui-border-b ui-pb-[21px]': children,
+          containerClassName={cx('ui:p-6 ui:pb-0', {
+            'ui:border-b ui:pb-[21px]': children,
           })}
         >
-          <div className="ui-text-xl ui-font-medium ui-text-dark-blue">
+          <div className="ui:text-xl ui:font-medium ui:text-dark-blue">
             {title}
           </div>
           {description && (
-            <div className="ui-text-base ui-font-normal ui-text-gray-500">
+            <div className="ui:text-base ui:font-normal ui:text-gray-500">
               {description}
             </div>
           )}
-          <ModalCloseButton className="ui-top-0 ui-right-0" />
+          <ModalCloseButton className="ui:top-0 ui:right-0" />
         </ModalHeader>
 
         {children && (
-          <ModalContent className="ui-space-y-6 ui-px-6 ui-pt-4 ui-pb-8 ui-max-h-[650px]">
+          <ModalContent className="ui:space-y-6 ui:px-6 ui:pt-4 ui:pb-8 ui:max-h-[650px]">
             {children}
           </ModalContent>
         )}
 
         <ModalFooter
           className={cx(
-            'ui-flex ui-p-6 ui-justify-between ui-items-center ui-gap-4',
+            'ui:flex ui:p-6 ui:justify-between ui:items-center ui:gap-4',
             {
-              'ui-border-t': children,
+              'ui:border-t': children,
             }
           )}
         >
           {error && (
-            <div className="ui-w-full">
+            <div className="ui:w-full">
               <Alert type="danger" withIcon>
                 {error}
               </Alert>
             </div>
           )}
-          <div className="ui-flex ui-justify-end ui-gap-2 ui-w-full">
+          <div className="ui:flex ui:justify-end ui:gap-2 ui:w-full">
             <Button
               type="button"
               id="btnCancelItemModalForm"
               variant="outline"
               onClick={onClose}
               className={cx(
-                'ui-text-sm ui-w-full',
+                'ui:text-sm ui:w-full',
                 {
-                  'ui-w-[250px]': size === 'xl' || size === '2xl',
+                  'ui:w-[250px]': size === 'xl' || size === '2xl',
                 },
                 cancelButton?.className
               )}
@@ -134,9 +134,9 @@ export const OrderDetailModalV2 = ({
                 type="submit"
                 id="btnSaveItemModalForm"
                 className={cx(
-                  'ui-text-sm ui-w-full',
+                  'ui:text-sm ui:w-full',
                   {
-                    'ui-w-[250px]': size === 'xl' || size === '2xl',
+                    'ui:w-[250px]': size === 'xl' || size === '2xl',
                   },
                   submitButton?.className
                 )}

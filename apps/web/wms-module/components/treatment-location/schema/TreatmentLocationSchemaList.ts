@@ -17,7 +17,7 @@ export const createFilterSchema = ({ t }: Params): UseFilter => [
     id: 'input-search',
     label: t('treatmentLocation:list.filter.search.label'),
     placeholder: t('treatmentLocation:list.filter.search.placeholder'),
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     defaultValue: '',
     maxLength: 255,
   },

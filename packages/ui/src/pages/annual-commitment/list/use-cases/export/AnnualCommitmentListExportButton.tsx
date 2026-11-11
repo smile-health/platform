@@ -22,7 +22,7 @@ const AnnualCommitmentListExportButton = () => {
       variant="subtle"
       type="button"
       onClick={handleExport}
-      leftIcon={<Export className="ui-size-5" />}
+      leftIcon={<Export className="ui:size-5" />}
     >
       {t('button.export')}
     </Button>

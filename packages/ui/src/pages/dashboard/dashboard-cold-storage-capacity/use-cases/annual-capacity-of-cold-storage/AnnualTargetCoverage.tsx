@@ -100,7 +100,7 @@ export default function AnnualTargetCoverage() {
       isLoading={annual?.isLoading}
       isEmpty={!data.achievement && !data.annualTarget}
     >
-      <div className="ui-w-full ui-h-[200px]">
+      <div className="ui:w-full ui:h-[200px]">
         <StackedBarChart
           data={chartData}
           layout="horizontal"

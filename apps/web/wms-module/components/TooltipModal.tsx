@@ -27,12 +27,12 @@ export default function TooltipModal({
 
   return (
     <Dialog open={open} onOpenChange={setOpen} size="lg">
-      <DialogHeader className="ui-text-center">{title}</DialogHeader>
-      <DialogContent className="ui-space-y-3">
+      <DialogHeader className="ui:text-center">{title}</DialogHeader>
+      <DialogContent className="ui:space-y-3">
         <p>{description}</p>
         {children}
       </DialogContent>
-      <DialogFooter className="ui-grid ui-grid-cols-1 ui-mb-6">
+      <DialogFooter className="ui:grid ui:grid-cols-1 ui:mb-6">
         <Button variant="outline" onClick={() => setOpen?.(!open)}>
           {t('close')}
         </Button>

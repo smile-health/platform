@@ -29,7 +29,7 @@ export default function DetailComponent({
 }: Readonly<DetailComponentProps>) {
   return (
     <div>
-      <div className="border rounded ui-border-[#d2d2d2] mt-6 p-4" id={id}>
+      <div className="border rounded ui:border-[#d2d2d2] mt-6 p-4" id={id}>
         <div className="mb-4 font-bold">{fields.title}</div>
         <RenderDetailValue data={fields.fields} />
       </div>

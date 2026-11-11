@@ -45,7 +45,7 @@ export const AssetDetailLoggerActivityColumns = (
               label: formatToCelcius(
                 thousandFormatter({ value: temp, locale: language })
               ),
-              className: `ui-text-sm ui-font-bold ${colorClass(temp, {
+              className: `ui:text-sm ui:font-bold ${colorClass(temp, {
                 temp,
               })}`,
             },

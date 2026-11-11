@@ -47,14 +47,14 @@ export function SingleValue({
   }
   return hidden ? null : (
     <Fragment>
-      <p id={id} className={cx('ui-text-[#787878]', labelClassName)}>
+      <p id={id} className={cx('ui:text-[#787878]', labelClassName)}>
         {label}
       </p>
       {showColon && <span className={valueClassName}>{separator}</span>}
       {loading ? (
-        <Skeleton className="ui-w-full ui-h-5 ui-bg-gray-200" />
+        <Skeleton className="ui:w-full ui:h-5 ui:bg-gray-200" />
       ) : (
-        <p className={cx('ui-break-all', valueClassName)}>
+        <p className={cx('ui:break-all', valueClassName)}>
           {Array.isArray(value) ? renderArray(value) : (value ?? '-')}
         </p>
       )}
@@ -76,9 +76,9 @@ export function RenderDetailValue({
   return (
     <div
       className={cx(
-        'ui-gap-y-4',
-        { 'ui-grid ui-grid-cols-[264px_3px_1fr] ui-gap-x-2 ': showColon },
-        { 'ui-grid ui-grid-cols-[230px_1fr] ui-gap-x-2 ': !showColon },
+        'ui:gap-y-4',
+        { 'ui:grid ui:grid-cols-[264px_3px_1fr] ui:gap-x-2 ': showColon },
+        { 'ui:grid ui:grid-cols-[230px_1fr] ui:gap-x-2 ': !showColon },
         className
       )}
     >

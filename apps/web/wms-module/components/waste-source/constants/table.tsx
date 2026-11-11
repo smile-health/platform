@@ -78,7 +78,7 @@ export const columnsWasteSource = (
     enableSorting: false,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-flex-col ui-gap-0.5">
+        <div className="ui:flex ui:flex-col ui:gap-0.5">
           <p>{original.userName}</p>
           <p>
             {original.updatedAt
@@ -99,7 +99,7 @@ export const columnsWasteSource = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           {original.sourceType !== SourceType.INTERNAL_TREATMENT && (
             <ButtonActionTable
               id={original?.id}
@@ -113,7 +113,7 @@ export const columnsWasteSource = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-danger-500"
+            className="ui:px-1.5! ui:text-danger-500"
           >
             {t('common:remove')}
           </Button>

@@ -67,11 +67,11 @@ export const columnsMaterialList = ({
       header: t('create.form.district_ip.column.latest_updated_by'),
       accessorKey: 'updated',
       cell: ({ row: { original: { updated_at, user_updated_by } } }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
             {user_updated_by?.name ?? '-'}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-neutral-500">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-neutral-500">
             {updated_at ? parseDateTime(updated_at, 'DD MMM YYYY HH:mm', language).toUpperCase() : '-'}
           </p>
         </div>
@@ -125,11 +125,11 @@ export const columnsDetailMaterialList = ({
       header: t('create.form.district_ip.column.latest_updated_by'),
       accessorKey: 'updated',
       cell: ({ row: { original: { user_updated_by, updated_at } } }) => (
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-justify-center">
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
             {user_updated_by?.name ?? '-'}
           </p>
-          <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-neutral-500">
+          <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-neutral-500">
             {updated_at ? parseDateTime(updated_at, 'DD MMM YYYY HH:mm', language).toUpperCase() : '-'}
           </p>
         </div>

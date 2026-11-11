@@ -53,37 +53,37 @@ export function DatePicker(props: DatePickerProps) {
 
   return (
     <I18nProvider locale={props.locale ?? 'en-UK'}>
-      <div className="ui-relative ui-flex ui-w-full ui-flex-col ui-text-left">
+      <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-left">
         <div
           {...groupProps}
           ref={ref}
           className={cx(
-            'ui-flex ui-items-center ui-justify-center ui-rounded ui-border ui-pr-1',
+            'ui:flex ui:items-center ui:justify-center ui:rounded ui:border ui:pr-1',
             //size style
             {
-              'ui-h-8 ui-text-sm': size === 'sm',
-              'ui-h-10 ui-text-base': size === 'md',
-              'ui-h-12 ui-text-lg': size === 'lg',
-              'ui-h-14 ui-text-xl': size === 'xl',
+              'ui:h-8 ui:text-sm': size === 'sm',
+              'ui:h-10 ui:text-base': size === 'md',
+              'ui:h-12 ui:text-lg': size === 'lg',
+              'ui:h-14 ui:text-xl': size === 'xl',
             },
-            'focus-within:ui-ring-2 focus-within:ui-ring-opacity-25',
+            'ui:focus-within:ring-2',
             {
-              'ui-cursor-not-allowed ui-bg-gray-100 ui-opacity-75':
+              'ui:cursor-not-allowed ui:bg-gray-100 ui:opacity-75':
                 props.isDisabled,
             },
             {
-              'ui-border-gray-300': !allError,
-              'ui-border-danger-500': allError,
+              'ui:border-gray-300': !allError,
+              'ui:border-danger-500': allError,
             },
             {
-              'focus-within:ui-border-danger-500 focus-within:ui-ring-danger-500':
+              'ui:focus-within:border-danger-500 ui:focus-within:ring-danger-500/25':
                 allError,
-              'focus-within:ui-border-primary-500 focus-within:ui-ring-primary-500':
+              'ui:focus-within:border-primary-500 ui:focus-within:ring-primary-500/25':
                 !allError,
             }
           )}
         >
-          <div className="ui-flex-1 ui-px-2 ui-relative">
+          <div className="ui:flex-1 ui:px-2 ui:relative">
             <DateField {...fieldProps} id={props.id} />
             {state.value !== null && props.clearable ? (
               <ClearButton
@@ -92,7 +92,7 @@ export function DatePicker(props: DatePickerProps) {
                 type="button"
                 onPress={() => state.setValue(null)}
               >
-                <XMarkIcon className="ui-size-4"></XMarkIcon>
+                <XMarkIcon className="ui:size-4"></XMarkIcon>
               </ClearButton>
             ) : null}
           </div>
@@ -101,7 +101,7 @@ export function DatePicker(props: DatePickerProps) {
             {...buttonProps}
             id={props.id}
           >
-            <CalendarIcon className="ui-h-4 ui-w-4 ui-text-gray-800"></CalendarIcon>
+            <CalendarIcon className="ui:h-4 ui:w-4 ui:text-gray-800"></CalendarIcon>
           </FieldButton>
         </div>
         <AnimatePresence>

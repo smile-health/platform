@@ -27,7 +27,7 @@ const EntityDetailPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
   return (
     <AppLayout title={title}>
       <Meta title={`SMILE | ${titleMeta}`} />
-      <div className="ui-w-[1200px] ui-mx-auto">
+      <div className="ui:w-[1200px] ui:mx-auto">
         {!isGlobal ? (
           <TabsRoot value={query.tab} variant="default" onValueChange={e => setQuery({ tab: e })}>
             <TabsList>

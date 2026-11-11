@@ -95,13 +95,13 @@ const columns: ColumnDef<UserSchema>[] = [
     meta: {
       cellClassName: (row) =>
         cx({
-          'ui-bg-red-200': row.original.age >= 40,
-          'ui-bg-yellow-200': row.original.age >= 30 && row.original.age < 40,
-          'ui-bg-green-200': row.original.age < 30,
+          'ui:bg-red-200': row.original.age >= 40,
+          'ui:bg-yellow-200': row.original.age >= 30 && row.original.age < 40,
+          'ui:bg-green-200': row.original.age < 30,
         }),
-      headerClassName: 'ui-italic',
+      headerClassName: 'ui:italic',
       headerSubComponent: (
-        <div className="ui-font-normal ui-text-gray-500">
+        <div className="ui:font-normal ui:text-gray-500">
           Custom Header Sub Component
         </div>
       ),
@@ -144,25 +144,25 @@ const columns: ColumnDef<UserSchema>[] = [
 
 const DataTablePage = () => {
   return (
-    <div className="ui-px-20 p-5">
-      <div className="ui-border ui-rounded-lg ui-p-4 ui-space-y-4">
-        <div className="ui-font-semibold">Regular Table</div>
+    <div className="ui:px-20 p-5">
+      <div className="ui:border ui:rounded-lg ui:p-4 ui:space-y-4">
+        <div className="ui:font-semibold">Regular Table</div>
         <DataTable
           id="regular-table"
           columns={columns}
           data={data}
-          className="ui-h-[400px]"
+          className="ui:h-[400px]"
         />
       </div>
-      <div className="ui-border ui-rounded-lg ui-p-4 ui-space-y-4">
-        <div className="ui-font-semibold">Sticky & Clickable Table</div>
+      <div className="ui:border ui:rounded-lg ui:p-4 ui:space-y-4">
+        <div className="ui:font-semibold">Sticky & Clickable Table</div>
         <DataTable
           id="sticky-clickable-table"
           columns={columns}
           data={data}
           isSticky
           onClickRow={(row) => console.log({ row })}
-          className="ui-h-[400px]"
+          className="ui:h-[400px]"
         />
       </div>
     </div>

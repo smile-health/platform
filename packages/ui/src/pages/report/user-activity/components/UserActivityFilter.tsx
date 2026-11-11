@@ -42,27 +42,27 @@ export default function UserActivityFilter(props: Props) {
 
   return (
     <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-      <FilterFormBody className="ui-grid-cols-4">
+      <FilterFormBody className="ui:grid-cols-4">
         {filter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
         <FilterExpandButton variant="subtle" />
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <Button
             data-testid="btn-export"
             variant="subtle"
             type="button"
             disabled={isDisabledExport}
             onClick={onExport}
-            leftIcon={<Export className="ui-size-5" />}
+            leftIcon={<Export className="ui:size-5" />}
           >
             {t('export')}
           </Button>
-          <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+          <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
           <FilterResetButton onClick={filter.reset} variant="subtle" />
           <FilterSubmitButton
             variant="outline"
-            className="ui-w-[202px]"
+            className="ui:w-[202px]"
             text={t('show_report')}
             onClick={onSearch}
           />

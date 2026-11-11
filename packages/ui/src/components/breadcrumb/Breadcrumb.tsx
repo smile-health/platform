@@ -19,7 +19,7 @@ export function Breadcrumb({
   return (
     <BreadcrumbCtx.Provider value={value}>
       <nav aria-label="breadcrumb">
-        <ol className="ui-flex ui-items-center">{children}</ol>
+        <ol className="ui:flex ui:items-center">{children}</ol>
       </nav>
     </BreadcrumbCtx.Provider>
   )
@@ -38,17 +38,17 @@ export function BreadcrumbItem({
   return (
     <li
       className={cx(
-        'ui-group ui-inline-flex ui-items-center hover:ui-cursor-pointer',
-        'ui-text-neutral-500 last:ui-text-dark-blue last:ui-font-bold last:ui-pointer-events-none'
+        'ui:group ui:inline-flex ui:items-center ui:hover:cursor-pointer',
+        'ui:text-neutral-500 ui:last:text-dark-blue ui:last:font-bold ui:last:pointer-events-none'
       )}
     >
       <Component
         {...props}
-        className="hover:ui-text-primary-700 hover:ui-underline"
+        className="ui:hover:text-primary-700 ui:hover:underline"
       >
         <Slottable>{children}</Slottable>
       </Component>
-      <div className="ui-pointer-events-none ui-mx-1 group-last:ui-hidden">
+      <div className="ui:pointer-events-none ui:mx-1 ui:group-last:hidden">
         {separator}
       </div>
     </li>

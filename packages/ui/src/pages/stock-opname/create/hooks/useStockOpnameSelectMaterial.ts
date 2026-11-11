@@ -55,7 +55,7 @@ export const useStockOpnameSelectMaterial = ({ isHierarchical }: Props) => {
 
   const classRow = (item: Stock) => {
     if (checkStatusMaterial(item)) {
-      return 'ui-bg-[#E2F3FC]'
+      return 'ui:bg-[#E2F3FC]'
     }
     return ''
   }

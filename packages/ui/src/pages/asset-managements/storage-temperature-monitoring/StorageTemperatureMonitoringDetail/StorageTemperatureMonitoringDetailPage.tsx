@@ -50,7 +50,7 @@ export default function StorageTemperatureMonitoringDetailPage({
                   },
                 }}
               >
-                <div className="ui-space-y-6">
+                <div className="ui:space-y-6">
                   <AssetManagementsDetailBox className="space-y-6">
                     <AssetInfoHeader />
                     <DeviceDetailInfo />

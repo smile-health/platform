@@ -23,12 +23,12 @@ const MaterialVolumeFormDetail = () => {
   const { consumption_unit_per_distribution_unit } = watch()
 
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('detail.section.detail.header')}
       </div>
-      <div className="ui-grid ui-grid-cols-2 ui-gap-5">
-        <FormControl className="ui-w-full">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-5">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="material_id" required>
             {t('form.material.label')}
           </FormLabel>
@@ -72,7 +72,7 @@ const MaterialVolumeFormDetail = () => {
             <FormErrorMessage>{errors?.material_id?.message}</FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-w-full">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="manufacturer_id" required>
             {t('form.manufacturer.label')}
           </FormLabel>
@@ -111,7 +111,7 @@ const MaterialVolumeFormDetail = () => {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-w-full">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="consumption_unit_per_distribution_unit">
             {t('form.pieces_per_unit.label')}
           </FormLabel>
@@ -138,7 +138,7 @@ const MaterialVolumeFormDetail = () => {
             </FormErrorMessage>
           )}
         </FormControl>
-        <FormControl className="ui-w-full">
+        <FormControl className="ui:w-full">
           <FormLabel htmlFor="unit_per_box" required>
             {t('form.unit_per_box.label')}
           </FormLabel>

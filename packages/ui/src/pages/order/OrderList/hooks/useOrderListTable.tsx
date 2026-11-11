@@ -89,8 +89,8 @@ export default function useOrderListTable(params: UseOrderListTableParams) {
       cell: ({ row }) => {
         const item = row?.original
         return (
-          <div className="ui-flex ui-items-center">
-            <div className="ui-space-y-1">
+          <div className="ui:flex ui:items-center">
+            <div className="ui:space-y-1">
               <div className="flex items-center gap-3">
                 <p>{item?.id}</p>
                 {item?.metadata?.client_key && (
@@ -99,7 +99,7 @@ export default function useOrderListTable(params: UseOrderListTableParams) {
                   />
                 )}
               </div>
-              <p className="ui-text-neutral-500">
+              <p className="ui:text-neutral-500">
                 ({getOrderType(item?.type, t)})
               </p>
             </div>
@@ -157,9 +157,9 @@ export default function useOrderListTable(params: UseOrderListTableParams) {
         ).toUpperCase()
 
         return (
-          <div className="ui-space-y-1">
+          <div className="ui:space-y-1">
             <p>{fullname}</p>
-            <p className="ui-text-neutral-500">{date}</p>
+            <p className="ui:text-neutral-500">{date}</p>
           </div>
         )
       },
@@ -178,10 +178,10 @@ export default function useOrderListTable(params: UseOrderListTableParams) {
       cell: ({ row }) => {
         const device = row?.original?.device_type
         if (device === 1) {
-          return <WebV2 className="ui-text-primary-surface" />
+          return <WebV2 className="ui:text-primary-surface" />
         }
 
-        return <MobileV2 className="ui-text-primary-surface" />
+        return <MobileV2 className="ui:text-primary-surface" />
       },
     },
     {

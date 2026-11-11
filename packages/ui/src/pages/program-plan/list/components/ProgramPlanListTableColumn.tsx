@@ -25,7 +25,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       accessorKey: 'no',
       size: 20,
       meta: {
-        cellClassName: 'ui-w-1/12',
+        cellClassName: 'ui:w-1/12',
       },
       cell: ({
         row: {
@@ -42,7 +42,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       accessorKey: 'year',
       enableSorting: true,
       meta: {
-        cellClassName: 'ui-w-2/12',
+        cellClassName: 'ui:w-2/12',
       },
       cell: ({
         row: {
@@ -55,7 +55,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       accessorKey: 'is_final',
       enableSorting: true,
       meta: {
-        cellClassName: 'ui-w-3/12',
+        cellClassName: 'ui:w-3/12',
       },
       cell: ({
         row: {
@@ -68,7 +68,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       accessorKey: 'updated_at',
       enableSorting: true,
       meta: {
-        cellClassName: 'ui-w-3/12',
+        cellClassName: 'ui:w-3/12',
       },
       cell: ({
         row: {
@@ -79,14 +79,14 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
           arrText={[
             {
               firstLabel: `${user_updated_by?.firstname} ${user_updated_by?.lastname ?? ''}`,
-              firstClassName: 'ui-text-sm ui-font-normal ui-text-dark-teal',
+              firstClassName: 'ui:text-sm ui:font-normal ui:text-dark-teal',
             },
             {
               firstLabel: dayjs(updated_at)
                 .locale(locale)
                 .format('DD MMM YYYY HH:mm'),
               firstClassName:
-                'ui-text-sm ui-font-normal ui-text-dark-teal ui-my-1',
+                'ui:text-sm ui:font-normal ui:text-dark-teal ui:my-1',
             },
           ]}
         />
@@ -96,10 +96,10 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
       header: t('common:action'),
       accessorKey: 'actions',
       meta: {
-        cellClassName: 'ui-w-3/12',
+        cellClassName: 'ui:w-3/12',
       },
       cell: ({ row: { original } }) => (
-        <div className="ui-flex ui-justify-start ui-items-center ui-gap-2">
+        <div className="ui:flex ui:justify-start ui:items-center ui:gap-2">
           <ProgramPlanDetailButton id={original.id} />
         </div>
       ),

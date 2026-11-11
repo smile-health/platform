@@ -12,9 +12,9 @@ type NavbarListProps = {
 const NavbarList = forwardRef<HTMLButtonElement, NavbarListProps>(
   ({ title = '', active = false, className = '' }, ref) => {
     const titleStyle = cx(
-      'menu__main ui-font-thin ui-relative ui-h-full ui-w-auto ui-px-6 ui-py-2 ui-cursor-default hover:ui-text-primary-contrast ui-outline-none focus:ui-outline-none focus:ui-ring-0 focus-visible:outline-none',
+      'menu__main ui:font-thin ui:relative ui:h-full ui:w-auto ui:px-6 ui:py-2 ui:cursor-default ui:hover:text-primary-contrast ui:outline-hidden ui:focus:outline-hidden ui:focus:ring-0 focus-visible:outline-none',
       {
-        'ui-font-bold': active,
+        'ui:font-bold': active,
       },
       className
     )
@@ -27,10 +27,10 @@ const NavbarList = forwardRef<HTMLButtonElement, NavbarListProps>(
           tabIndex={0}
           aria-label={title}
         >
-          <div className="ui-flex ui-items-center ui-justify-start">
+          <div className="ui:flex ui:items-center ui:justify-start">
             {title}
-            <div className="ui-ml-2">
-              <ChevronRight className="ui-w-4 ui-h-4 ui-rotate-90" />
+            <div className="ui:ml-2">
+              <ChevronRight className="ui:w-4 ui:h-4 ui:rotate-90" />
             </div>
           </div>
         </button>

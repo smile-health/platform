@@ -27,17 +27,17 @@ export const OrderDetailHistory = () => {
       <OrderDetailBox
         title={t('orderDetail:history.title')}
         enableShowHide
-        className="ui-space-y-6"
+        className="ui:space-y-6"
       >
         {orderDetailHistory.isLoading && <OrderDetailHistorySkeleton />}
         {!orderDetailHistory.isLoading && (
-          <div className="ui-space-y-4 ">
+          <div className="ui:space-y-4 ">
             {orderDetailHistory.data?.data.map((history, index) => (
               <>
-                <div className="ui-flex ui-items-center ui-justify-between">
+                <div className="ui:flex ui:items-center ui:justify-between">
                   <div className="space-y-1">
-                    <div className="ui-text-primary-500">{history.action}</div>
-                    <div className="ui-text-gray-500">
+                    <div className="ui:text-primary-500">{history.action}</div>
+                    <div className="ui:text-gray-500">
                       {history.created_at
                         ? dayjs(history.created_at).format('DD MMMM YYYY HH:mm')
                         : '-'}{' '}
@@ -56,7 +56,7 @@ export const OrderDetailHistory = () => {
                   </div>
                 </div>
                 {orderDetailHistory.data?.data.length !== index + 1 && (
-                  <hr className="ui-h-0.5 ui-my-12 ui-border-t-0 ui-bg-gray-100" />
+                  <hr className="ui:h-0.5 ui:my-12 ui:border-t-0 ui:bg-gray-100" />
                 )}
               </>
             ))}
@@ -69,10 +69,10 @@ export const OrderDetailHistory = () => {
 
 export const OrderDetailHistorySkeleton = () => {
   return (
-    <div className="ui-space-y-4">
-      <Skeleton className="ui-h-14" />
-      <Skeleton className="ui-h-14" />
-      <Skeleton className="ui-h-14" />
+    <div className="ui:space-y-4">
+      <Skeleton className="ui:h-14" />
+      <Skeleton className="ui:h-14" />
+      <Skeleton className="ui:h-14" />
     </div>
   )
 }

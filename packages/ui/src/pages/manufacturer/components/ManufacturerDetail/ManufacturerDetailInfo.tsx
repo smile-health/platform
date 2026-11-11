@@ -46,7 +46,7 @@ export default function ManufacturerDetaiInfo(props: UserDetailMainInfoProps) {
   const detail = generateManufacturerDetail(t, data)
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
       <ModalConfirmation
         open={changeStatusState?.show}
         setOpen={handleResetChangeStatusState}
@@ -57,9 +57,9 @@ export default function ManufacturerDetaiInfo(props: UserDetailMainInfoProps) {
         }
         onSubmit={onChangeStatus}
       />
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold">Details</h5>
-        <div className="ui-grid ui-grid-cols-1 ui-w-[150px] ui-justify-end">
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold">Details</h5>
+        <div className="ui:grid ui:grid-cols-1 ui:w-[150px] ui:justify-end">
           <Exists
             useIt={!isGlobal && hasPermission('manufacturer-change-status')}
           >

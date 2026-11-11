@@ -31,7 +31,7 @@ const PQSDetailPage: FC = (): JSX.Element => {
       }}
     >
       <Meta title={`Smile | Global ${t('pqs:title.detail')}`} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <PQSDetailInfo data={data} isLoading={isLoading} />
       </div>
     </AppLayout>

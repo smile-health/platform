@@ -96,33 +96,33 @@ const AnnualPlanningSubstitutionListPage: React.FC<CommonType> = () => {
     <ProgramPlanListDetailContainer isGlobal={false}>
       <Meta title={`SMILE | ${t('annualPlanningSubstitution:title')}`} />
       <AnnualPlanningSubstitutionListContext.Provider value={contextValueList}>
-        <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-          <h5 className="ui-font-bold ui-text-xl">
+        <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+          <h5 className="ui:font-bold ui:text-xl">
             {t('annualPlanningSubstitution:title')}
           </h5>
           <AnnualPlanningAddButton />
         </div>
-        <div className="ui-space-y-4 ui-mt-6">
+        <div className="ui:space-y-4 ui:mt-6">
           <FilterFormRoot collapsible={false} onSubmit={filter.handleSubmit}>
-            <FilterFormBody className="ui-grid-cols-1">
-              <div className="ui-flex ui-items-end ui-gap-10">
-                <div className="ui-flex-1">{filter.renderField()}</div>
-                <div className="ui-flex ui-gap-2">
+            <FilterFormBody className="ui:grid-cols-1">
+              <div className="ui:flex ui:items-end ui:gap-10">
+                <div className="ui:flex-1">{filter.renderField()}</div>
+                <div className="ui:flex ui:gap-2">
                   <AnnualPlanningImportButton />
                   <Button
                     id="annual_planning_substitution_export"
                     variant="subtle"
                     type="button"
                     onClick={() => exportQuery.refetch()}
-                    leftIcon={<Export className="ui-size-5" />}
+                    leftIcon={<Export className="ui:size-5" />}
                   >
                     {t('common:export')}
                   </Button>
                   <AnnualPlanningDownloadTemplateButton />
-                  <div className="ui-w-px ui-h-auto ui-bg-neutral-300" />
+                  <div className="ui:w-px ui:h-auto ui:bg-neutral-300" />
                   <FilterResetButton onClick={filter.reset} variant="subtle" />
                   <FilterSubmitButton
-                    className="ui-w-full"
+                    className="ui:w-full"
                     variant="outline"
                     onClick={() => setPagination({ page: 1 })}
                   />
@@ -132,7 +132,7 @@ const AnnualPlanningSubstitutionListPage: React.FC<CommonType> = () => {
             {filter.renderActiveFilter()}
           </FilterFormRoot>
         </div>
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <AnnualPlanningSubstitutionListTable
             data={listAnnualPlanningSubstitutionData}
           />

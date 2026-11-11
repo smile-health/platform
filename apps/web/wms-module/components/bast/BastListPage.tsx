@@ -44,20 +44,20 @@ const BastListPage: React.FC = () => {
       <div className="mt-6">
         {/* Filter Form */}
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-gap-2 ui-items-center">
+          <FilterFormBody className="ui:flex ui:gap-2 ui:items-center">
             {filter.renderField()}
-            <div className="ui-space-x-3 ui-flex ui-mt-5">
+            <div className="ui:space-x-3 ui:flex ui:mt-5">
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Reload className="ui-size-5" />}
+                leftIcon={<Reload className="ui:size-5" />}
                 onClick={filter.reset}
               >
                 {t('common:reset')}
               </Button>
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -67,7 +67,7 @@ const BastListPage: React.FC = () => {
           {filter.renderActiveFilter()}
         </FilterFormRoot>
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <BastTable
             bastDataSource={bastDataSource?.data.data}
             isLoading={isLoadingBast}

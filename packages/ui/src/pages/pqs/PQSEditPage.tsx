@@ -26,7 +26,7 @@ const PQSEditPage: FC<CommonType> = ({ isGlobal = true }): JSX.Element => {
       }}
     >
       <Meta title={`Smile | Global ${t('pqs:title.edit')}`} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         {isLoading ? (
           <PQSSkeleton />
         ) : (

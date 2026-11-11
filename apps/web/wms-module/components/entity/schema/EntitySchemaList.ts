@@ -67,7 +67,7 @@ export const createFilterSchema = ({ t }: Params): UseFilter => [
     id: 'select-status',
     type: 'select',
     name: 'isActive',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('entityWMS:list.filter.status.label'),
     placeholder: t('entityWMS:list.filter.status.placeholder'),

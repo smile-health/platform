@@ -69,12 +69,12 @@ export function PopoverRoot({
 export function PopoverArrow() {
   return (
     <PopoverPrimitive.Arrow asChild>
-      <div className="ui-relative ui-h-[4px] ui-w-[13px]">
+      <div className="ui:relative ui:h-[4px] ui:w-[13px]">
         <div
           className={cx(
-            'ui-absolute ui-h-2 ui-w-2 ui-rotate-45',
-            'ui-left-0 ui-right-0 ui-ml-auto ui-mr-auto',
-            'ui-top-[-4px] ui-border-b ui-border-r ui-border-gray-300 ui-bg-white ui-shadow-sm'
+            'ui:absolute ui:h-2 ui:w-2 ui:rotate-45',
+            'ui:left-0 ui:right-0 ui:ml-auto ui:mr-auto',
+            'ui:top-[-4px] ui:border-b ui:border-r ui:border-gray-300 ui:bg-white ui:shadow-sm'
           )}
         ></div>
       </div>
@@ -135,7 +135,7 @@ export function PopoverContent({
                 transition: { duration: 0.1, ease: 'easeIn' },
               }}
               className={cx(
-                'ui-rounded ui-border ui-border-gray-300 ui-bg-white ui-p-3 ui-text-gray-700 ui-shadow',
+                'ui:rounded ui:border ui:border-gray-300 ui:bg-white ui:p-3 ui:text-gray-700 ui:shadow',
                 className
               )}
             >

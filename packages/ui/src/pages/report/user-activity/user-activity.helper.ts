@@ -81,53 +81,53 @@ export function handleEntityTableData(
       {
         value: (page - 1) * paginate + (index + 1),
         class:
-          'ui-sticky ui-left-0 ui-min-w-14 ui-w-14 ui-border-r ui-border-gray-300',
+          'ui:sticky ui:left-0 ui:min-w-14 ui:w-14 ui:border-r ui:border-gray-300',
       },
       {
         value: curr?.name,
         class:
-          'ui-sticky ui-left-14 ui-min-w-48 ui-w-48 ui-border-r ui-border-gray-300',
+          'ui:sticky ui:left-14 ui:min-w-48 ui:w-48 ui:border-r ui:border-gray-300',
       },
       ...(isShowCustomerActivity
         ? [
             {
               value: curr?.customer_name ?? '-',
               class:
-                'ui-sticky ui-left-[248px] ui-min-w-48 ui-w-48 ui-border-r ui-border-gray-300',
+                'ui:sticky ui:left-[248px] ui:min-w-48 ui:w-48 ui:border-r ui:border-gray-300',
             },
           ]
         : []),
       ...overview.map((item) => ({
         value: item,
-        class: cx('ui-text-center', {
-          'ui-bg-sky-100': item > 0,
+        class: cx('ui:text-center', {
+          'ui:bg-sky-100': item > 0,
         }),
       })),
       {
         value: curr?.total_active_days,
-        class: cx('ui-sticky ui-border-l ui-border-gray-300 ui-text-center', {
-          'ui-right-[225px]': lang === 'en',
-          'ui-right-[210px]': lang === 'id',
+        class: cx('ui:sticky ui:border-l ui:border-gray-300 ui:text-center', {
+          'ui:right-[225px]': lang === 'en',
+          'ui:right-[210px]': lang === 'id',
         }),
       },
       {
         value: curr?.total_inactive_days,
-        class: cx('ui-sticky ui-border-l ui-border-gray-300 ui-text-center', {
-          'ui-right-[160px]': lang === 'en',
-          'ui-right-[150px]': lang === 'id',
+        class: cx('ui:sticky ui:border-l ui:border-gray-300 ui:text-center', {
+          'ui:right-[160px]': lang === 'en',
+          'ui:right-[150px]': lang === 'id',
         }),
       },
       {
         value: curr?.total_frequency,
-        class: cx('ui-sticky ui-border-l ui-border-gray-300 ui-text-center', {
-          'ui-right-[80px]': lang === 'en',
-          'ui-right-[75px]': lang === 'id',
+        class: cx('ui:sticky ui:border-l ui:border-gray-300 ui:text-center', {
+          'ui:right-[80px]': lang === 'en',
+          'ui:right-[75px]': lang === 'id',
         }),
       },
       {
         value: curr?.average_frequency,
         class:
-          'ui-sticky ui-right-0 ui-border-l ui-border-gray-300 ui-text-center',
+          'ui:sticky ui:right-0 ui:border-l ui:border-gray-300 ui:text-center',
       },
     ]
 

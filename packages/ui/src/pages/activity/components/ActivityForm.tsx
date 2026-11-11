@@ -39,13 +39,13 @@ export default function ActivityForm({
   return (
     <form
       onSubmit={handleSubmit(onValid)}
-      className="ui-mt-6 ui-space-y-6 ui-max-w-form ui-mx-auto"
+      className="ui:mt-6 ui:space-y-6 ui:max-w-form ui:mx-auto"
     >
-      <div className="ui-p-4 ui-pb-4 ui-mt-6 ui-border ui-border-gray-300 ui-rounded">
-        <div className="ui-mb-5 ui-font-bold ui-text-primary ui-text-dark-blue">
+      <div className="ui:p-4 ui:pb-4 ui:mt-6 ui:border ui:border-gray-300 ui:rounded">
+        <div className="ui:mb-5 ui:font-bold ui-text-primary ui:text-dark-blue">
           {t('activity:title.information')}
         </div>
-        <div className="ui-flex ui-flex-col ui-space-y-5">
+        <div className="ui:flex ui:flex-col ui:space-y-5">
           <FormControl>
             <FormLabel htmlFor="name" required>
               {t('activity:form.name.label')}
@@ -61,7 +61,7 @@ export default function ActivityForm({
           </FormControl>
           <FormControl>
             <FormLabel required>{t('activity:form.process.label')}</FormLabel>
-            <div className="ui-flex ui-gap-4">
+            <div className="ui:flex ui:gap-4">
               <Checkbox {...register('is_ordered_sales')} label="Top Down" />
               <Checkbox {...register('is_ordered_purchase')} label="Bottom Up" />
             </div>
@@ -104,8 +104,8 @@ export default function ActivityForm({
           )}
         </div>
       </div>
-      <div className="ui-flex ui-justify-end">
-        <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+      <div className="ui:flex ui:justify-end">
+        <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
           <Button asChild variant="outline">
             <Link href={pathBack ?? router.getAsLink('/v5/activity')}>
               {t('common:back')}

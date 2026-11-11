@@ -159,7 +159,7 @@ export const OrderDetailAllocateModalForm = ({
             placeholder={t('orderDetail:form.confirmed_qty.placeholder')}
             value={field?.value ?? undefined}
             minValue={0}
-            className="ui-text-sm"
+            className="ui:text-sm"
             onChange={(value) => {
               field.onChange(Number.isNaN(value) ? null : value)
               trigger('allocations')
@@ -186,7 +186,7 @@ export const OrderDetailAllocateModalForm = ({
           <div className="space-y-1">
             <ReactSelectAsync
               id={`order_stock_status_${row.index}`}
-              className="ui-text-sm"
+              className="ui:text-sm"
               placeholder={t('orderDetail:form.material_status.placeholder')}
               isClearable
               value={field.value as OptionType}
@@ -364,32 +364,32 @@ export const OrderDetailAllocateModalForm = ({
           (isLoading && isDirty && !isValid) || Boolean(errors.allocations),
       }}
     >
-      <div className="ui-grid ui-grid-cols-[100px_100px_1fr_1fr] ui-gap-10">
-        <FormControl className="ui-space-y-1">
+      <div className="ui:grid ui:grid-cols-[100px_100px_1fr_1fr] ui:gap-10">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">Material</FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {selectedRowData?.order_item?.material.name}
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.column.confirmed')}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {selectedRowData?.order_item?.confirmed_qty}
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.column.stock_on_hand')}{' '}
             {t('common:at').toLowerCase()} {orderDetailData?.customer?.name}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold ui-flex ui-items-baseline ui-gap-1">
+          <div className="ui:text-dark-blue ui:font-bold ui:flex ui:items-baseline ui:gap-1">
             {numberFormatter(
               selectedRowCustomerStock?.total_qty,
               i18n.language
             )}
-            <div className="ui-text-gray-500 ui-font-normal ui-text-xs ui-relative ui-bottom-0.5">
+            <div className="ui:text-gray-500 ui:font-normal ui:text-xs ui:relative ui:bottom-0.5">
               (min:{' '}
               {numberFormatter(selectedRowCustomerStock?.min, i18n.language)} ,
               max:{' '}
@@ -397,18 +397,18 @@ export const OrderDetailAllocateModalForm = ({
             </div>
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.column.available_stock')}{' '}
             {t('common:at').toLowerCase()} {orderDetailData?.vendor?.name}
           </FormLabel>
           {selectedRowVendorStock ? (
-            <div className="ui-text-dark-blue ui-font-bold ui-flex ui-items-baseline ui-gap-1">
+            <div className="ui:text-dark-blue ui:font-bold ui:flex ui:items-baseline ui:gap-1">
               {numberFormatter(
                 selectedRowVendorStock?.total_qty,
                 i18n.language
               )}
-              <div className="ui-text-gray-500 ui-font-normal ui-text-xs ui-relative ui-bottom-0.5">
+              <div className="ui:text-gray-500 ui:font-normal ui:text-xs ui:relative ui:bottom-0.5">
                 (min:{' '}
                 {numberFormatter(selectedRowVendorStock?.min, i18n.language)} ,
                 max:{' '}
@@ -432,13 +432,13 @@ export const OrderDetailAllocateModalForm = ({
           data={tableData}
           isSticky
           isLoading={!isSelectedRowManagedInBatch && isLoadingOtherActivity}
-          className="ui-overflow-y-auto ui-max-h-[50vh]"
+          className="ui:overflow-y-auto ui:max-h-md"
         />
       </div>
 
-      <div className="ui-flex ui-items-center ui-gap-4">
-        <div className="ui-text-dark-blue ui-flex ui-items-center ui-gap-2">
-          <PlusIcon className="ui-w-5" />
+      <div className="ui:flex ui:items-center ui:gap-4">
+        <div className="ui:text-dark-blue ui:flex ui:items-center ui:gap-2">
+          <PlusIcon className="ui:w-5" />
           {t('orderDetail:modal.allocate.add_stock_from_other_activity')}:
         </div>
         <ReactSelect
@@ -455,7 +455,7 @@ export const OrderDetailAllocateModalForm = ({
           value={null}
           onChange={handleSelectStockFromOtherActivities}
           menuPosition="fixed"
-          className="ui-w-[250px] ui-max-w-full"
+          className="ui:w-[250px] ui:max-w-full"
         />
       </div>
     </OrderDetailModal>

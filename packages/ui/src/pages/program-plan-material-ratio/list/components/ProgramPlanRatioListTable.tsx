@@ -50,9 +50,9 @@ const ProgramPlanRatioListTable: React.FC<ProgramPlanRatioListTableProps> = ({
         })}
         isHighlightedOnHover
         withBorder
-        bodyClassName="ui-bg-white"
+        bodyClassName="ui:bg-white"
       />
-      <PaginationContainer className="ui-mt-5">
+      <PaginationContainer className="ui:mt-5">
         <PaginationSelectLimit
           size={itemPerPage}
           perPagesOptions={perPagesOptions}

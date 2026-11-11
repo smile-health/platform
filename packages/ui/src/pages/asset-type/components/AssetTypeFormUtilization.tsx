@@ -79,20 +79,20 @@ const AssetTypeFormUtilization: React.FC<{
   const isWarehouseChecked = useMemo(() => Boolean(isWarehouse), [isWarehouse])
 
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('form.detail.header.asset_utilization')}
       </div>
-      <div className="ui-flex ui-flex-col ui-space-y-5">
+      <div className="ui:flex ui:flex-col ui:space-y-5">
         {Boolean(defaultValues?.is_related_asset) && (
-          <div className="ui-rounded ui-bg-slate-100 ui-px-4 ui-py-[9px] ui-flex ui-gap-2 ui-items-center">
+          <div className="ui:rounded ui:bg-slate-100 ui:px-4 ui:py-[9px] ui:flex ui:gap-2 ui:items-center">
             <Warning />
-            <p className="ui-text-xs ui-font-normal">
+            <p className="ui:text-xs ui:font-normal">
               {t('form.detail.header.warning')}
             </p>
           </div>
         )}
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4">
           {cceOptions?.map((data) => {
             if (
               data?.field_name === 'is_temperature_adjustable' &&
@@ -103,7 +103,7 @@ const AssetTypeFormUtilization: React.FC<{
             return (
               <FormControl key={data.id}>
                 <FormLabel>{data.label}</FormLabel>
-                <RadioGroup className="!ui-mt-5">
+                <RadioGroup className="ui:mt-5!">
                   {data?.options?.map((option) => (
                     <Radio
                       key={option.id}

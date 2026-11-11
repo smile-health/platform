@@ -27,11 +27,11 @@ export function ActivityItem({
       onClick={onClick}
       type="button"
       className={cx(
-        'ui-flex ui-items-center gap-3 focus:outline-none',
+        'ui:flex ui:items-center gap-3 focus:outline-none',
         className?.wrapper
       )}
     >
-      <p className={cx('ui-text-lg ui-font-bold', className?.title)}>
+      <p className={cx('ui:text-lg ui:font-bold', className?.title)}>
         {activity?.name}
       </p>
     </button>

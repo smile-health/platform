@@ -67,30 +67,30 @@ const AssetDetailPage = () => {
     >
       <Meta title={`SMILE | ${t('asset:asset_temperature_detail')}`} />
       <AssetDetailContext.Provider value={contextValue}>
-        <div className="ui-mx-24">
-          <div className="ui-my-6 ui-border ui-border-gray-300 ui-rounded ui-p-4">
+        <div className="ui:mx-24">
+          <div className="ui:my-6 ui:border ui:border-gray-300 ui:rounded ui:p-4">
             <AssetTitleBlock
               arrText={[
                 {
                   label: `${data?.serial_number}${assetModelName}${manufactureName}`,
-                  className: 'ui-text-sm ui-font-bold ui-text-dark-teal',
+                  className: 'ui:text-sm ui:font-bold ui:text-dark-teal',
                 },
                 {
                   label: data?.entity?.name as string,
                   className:
-                    'ui-text-sm ui-font-normal ui-text-gray-400 ui-my-1',
+                    'ui:text-sm ui:font-normal ui:text-gray-400 ui:my-1',
                 },
               ]}
             />
-            <div className="ui-h-1 ui-border-b ui-border-gray-300 ui-my-4" />
+            <div className="ui:h-1 ui:border-b ui:border-gray-300 ui:my-4" />
             <AssetDetailInformation />
-            <div className="ui-h-1 ui-border-b ui-border-gray-300 ui-my-4" />
+            <div className="ui:h-1 ui:border-b ui:border-gray-300 ui:my-4" />
             <AssetDetailTemperatureTable />
           </div>
-          <div className="ui-my-6 ui-border ui-border-gray-300 ui-rounded ui-p-4">
+          <div className="ui:my-6 ui:border ui:border-gray-300 ui:rounded ui:p-4">
             <AssetDetailLoggerActivity />
           </div>
-          <div className="ui-my-6 ui-border ui-border-gray-300 ui-rounded ui-p-4">
+          <div className="ui:my-6 ui:border ui:border-gray-300 ui:rounded ui:p-4">
             <AssetDetailRelationToLoggerTable />
           </div>
         </div>

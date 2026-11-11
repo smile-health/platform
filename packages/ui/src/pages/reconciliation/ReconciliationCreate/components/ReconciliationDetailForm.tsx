@@ -49,9 +49,9 @@ const ReconciliationDetailForm = ({
   }
   const { setModalRemove, setCustomFunction } = useModalWarningItemStore()
   return (
-    <div className="ui-w-full ui-p-4 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
-      <div className="ui-font-bold">{t('create.reconciliation_detail')}</div>
-      <div className="ui-mt-6 ui-flex ui-flex-col ui-space-y-6">
+    <div className="ui:w-full ui:p-4 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
+      <div className="ui:font-bold">{t('create.reconciliation_detail')}</div>
+      <div className="ui:mt-6 ui:flex ui:flex-col ui:space-y-6">
         <Controller
           control={control}
           name="entity"

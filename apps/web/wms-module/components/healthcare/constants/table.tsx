@@ -123,7 +123,7 @@ export const columnsHealthcare = (
       size: 160,
       cell: ({ row: { original } }) => {
         return (
-          <div className="ui-flex ui-gap-0.5">
+          <div className="ui:flex ui:gap-0.5">
             <ButtonActionTable
               id={original?.id}
               path={`healthcare`}
@@ -135,7 +135,7 @@ export const columnsHealthcare = (
               }
               type="button"
               variant="subtle"
-              className="!ui-px-1.5 ui-text-danger-500"
+              className="ui:px-1.5! ui:text-danger-500"
             >
               {tCommon('remove')}
             </Button>

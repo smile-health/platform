@@ -138,26 +138,26 @@ export default function FiltersPage() {
   const filter = useFilter(filterSchema)
 
   return (
-    <div className="ui-px-20 p-5">
+    <div className="ui:px-20 p-5">
       <div>
-        <pre className="ui-bg-gray-100 ui-p-3 ui-rounded ui-shadow-inner ui-text-gray-600 my-5 text-xs">
+        <pre className="ui:bg-gray-100 ui:p-3 ui:rounded ui:shadow-inner ui:text-gray-600 my-5 text-xs">
           {JSON.stringify({ ...filter.query, ...pagination }, null, 2)}
         </pre>
         <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid-cols-4">
+          <FilterFormBody className="ui:grid-cols-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2">
+            <div className="ui:flex ui:gap-2">
               <FilterResetButton onClick={filter.reset} />
               <FilterExpandButton />
             </div>
-            <div className="ui-space-x-3 flex">
+            <div className="ui:space-x-3 flex">
               <Button
                 id="btn-import"
                 variant="outline"
                 type="button"
-                leftIcon={<Import className="ui-size-5" />}
+                leftIcon={<Import className="ui:size-5" />}
               >
                 {t('import')}
               </Button>
@@ -165,7 +165,7 @@ export default function FiltersPage() {
                 id="btn-export"
                 variant="outline"
                 type="button"
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
               >
                 {t('export')}
               </Button>
@@ -173,18 +173,18 @@ export default function FiltersPage() {
                 id="btn-download-template"
                 variant="outline"
                 type="button"
-                leftIcon={<Download className="ui-size-5" />}
+                leftIcon={<Download className="ui:size-5" />}
               >
                 {t('download_template')}
               </Button>
-              <FilterSubmitButton className="ui-w-[220px]"></FilterSubmitButton>
+              <FilterSubmitButton className="ui:w-[220px]"></FilterSubmitButton>
             </div>
           </FilterFormFooter>
           {filter.renderActiveFilter()}
         </FilterFormRoot>
 
-        <div className="ui-border ui-border-gray-300 ui-h-[300px] rounded my-5"></div>
-        <div className="ui-justify-end flex">
+        <div className="ui:border ui:border-gray-300 ui:h-[300px] rounded my-5"></div>
+        <div className="ui:justify-end flex">
           <div></div>
           <Pagination
             totalPages={100}

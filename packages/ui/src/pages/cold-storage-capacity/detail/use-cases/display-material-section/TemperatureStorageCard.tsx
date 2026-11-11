@@ -36,17 +36,17 @@ function MaterialCell({
     row.original.material?.manufacture_material_volumes?.length > 1
 
   return (
-    <div className="ui-flex ui-items-center ui-gap-1">
+    <div className="ui:flex ui:items-center ui:gap-1">
       {material}
       {hasInfo && (
         <TooltipRoot delayDuration={100}>
           <TooltipTrigger>
-            <InformationCircleIcon className="ui-size-4 ui-text-gray-400" />
+            <InformationCircleIcon className="ui:size-4 ui:text-gray-400" />
           </TooltipTrigger>
           <TooltipContent
             color="dark"
             side="right"
-            className="ui-max-w-[350px]"
+            className="ui:max-w-[350px]"
           >
             {t('coldStorageCapacity:detail.temperatureStorage.table.tooltip')}
           </TooltipContent>
@@ -73,7 +73,7 @@ export default function TemperatureStorageCard({
         size: 100,
         cell: ({ row }) => row.index + 1,
         meta: {
-          cellClassName: 'ui-text-left',
+          cellClassName: 'ui:text-left',
         },
       },
       {
@@ -87,17 +87,17 @@ export default function TemperatureStorageCard({
           const material = row.original.material
           const hasInfo = material.name.includes('@')
           return (
-            <div className="ui-flex ui-items-center ui-gap-1">
+            <div className="ui:flex ui:items-center ui:gap-1">
               {material?.name}
               {hasInfo && (
                 <TooltipRoot delayDuration={100}>
                   <TooltipTrigger>
-                    <InformationCircleIcon className="ui-size-4 ui-text-gray-400" />
+                    <InformationCircleIcon className="ui:size-4 ui:text-gray-400" />
                   </TooltipTrigger>
                   <TooltipContent
                     color="dark"
                     side="right"
-                    className="ui-max-w-[350px]"
+                    className="ui:max-w-[350px]"
                   >
                     {t(
                       'coldStorageCapacity:detail.temperatureStorage.table.tooltip'
@@ -202,17 +202,17 @@ export default function TemperatureStorageCard({
   )
 
   return (
-    <div className="ui-rounded ui-border ui-border-gray-200 ui-overflow-hidden space-y-6 py-6">
-      <div className="ui-px-6">
-        <h4 className="ui-font-semibold ui-text-primary-700">
+    <div className="ui:rounded ui:border ui:border-gray-200 ui:overflow-hidden space-y-6 py-6">
+      <div className="ui:px-6">
+        <h4 className="ui:font-semibold ui:text-primary-700">
           {t('coldStorageCapacity:detail.temperatureStorage.temperature')}{' '}
           {data.temperature_range.min_temp}°C{' '}
-          <span className="ui-lowercase">{t('common:to')}</span>{' '}
+          <span className="ui:lowercase">{t('common:to')}</span>{' '}
           {data.temperature_range.max_temp}°C
         </h4>
       </div>
 
-      <div className="ui-bg-white ui-px-6 ui-space-y-2">
+      <div className="ui:bg-white ui:px-6 ui:space-y-2">
         {data.assets.map((asset, index) => (
           <RenderDetailValue
             key={asset.id}
@@ -226,13 +226,13 @@ export default function TemperatureStorageCard({
                     : '',
                 value: (
                   <div>
-                    <div className="ui-font-semibold ui-text-primary-700">
+                    <div className="ui:font-semibold ui:text-primary-700">
                       {asset.name}
                     </div>
                     {asset.items.map((item) => (
                       <div
                         key={item.id}
-                        className="ui-text-sm ui-text-gray-600"
+                        className="ui:text-sm ui:text-gray-600"
                       >
                         {item.serial_number} - {item.asset_model.name} (
                         {item.manufacture.name}) {item.capacity_nett}{' '}
@@ -249,10 +249,10 @@ export default function TemperatureStorageCard({
         ))}
       </div>
 
-      <hr className="ui-border-gray-200" />
+      <hr className="ui:border-gray-200" />
 
-      <div className="ui-border-gray-200 ui-px-6 space-y-6">
-        <h5 className="ui-font-semibold ui-text-primary-700">
+      <div className="ui:border-gray-200 ui:px-6 space-y-6">
+        <h5 className="ui:font-semibold ui:text-primary-700">
           {t('coldStorageCapacity:detail.temperatureStorage.capacity')}
         </h5>
         <RenderDetailValue
@@ -279,7 +279,7 @@ export default function TemperatureStorageCard({
           ]}
           skipEmptyValue={false}
         />
-        <div className="ui-bg-white">
+        <div className="ui:bg-white">
           <DataTable
             columns={columns}
             data={data.coldstorage_materials}

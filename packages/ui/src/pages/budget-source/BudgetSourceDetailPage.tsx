@@ -21,7 +21,7 @@ const BudgetSourceDetailPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('budgetSource:detail.title')}`}
       />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <BudgetSourceDetailInfo
           data={data}
           isGlobal={isGlobal}

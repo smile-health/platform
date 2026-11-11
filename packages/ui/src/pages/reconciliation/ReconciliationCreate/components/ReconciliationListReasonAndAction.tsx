@@ -13,11 +13,11 @@ export default function ReconciliationListReasonAndAction({
 }) {
   const { t } = useTranslation(['reconciliation', 'common'])
   return (
-    <div className="ui-flex ui-flex-col ui-space-y-5">
-      <div className="ui-flex ui-flex-col ui-space-y-3">
+    <div className="ui:flex ui:flex-col ui:space-y-5">
+      <div className="ui:flex ui:flex-col ui:space-y-3">
         {item?.reasons?.map((itemReason, indexReason) => (
           <div
-            className="ui-flex ui-flex-col ui-space-y-1 ui-text-dark-blue"
+            className="ui:flex ui:flex-col ui:space-y-1 ui:text-dark-blue"
             key={`${indexReason.toString()}`}
           >
             <div>
@@ -30,7 +30,7 @@ export default function ReconciliationListReasonAndAction({
           </div>
         ))}
       </div>
-      <div className="ui-text-left">
+      <div className="ui:text-left">
         <Button
           variant="subtle"
           color="primary"

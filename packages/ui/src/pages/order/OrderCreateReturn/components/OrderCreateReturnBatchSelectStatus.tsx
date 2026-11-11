@@ -54,7 +54,7 @@ export const OrderCreateReturnBatchSelectStatus: React.FC<Props> = ({
                 disabled={
                   !material_stocks?.[index]?.batch_is_temperature_sensitive
                 }
-                className="ui-text-sm"
+                className="ui:text-sm"
                 placeholder={t(
                   'orderCreateReturn:drawer.table.column.material_status.placeholder'
                 )}

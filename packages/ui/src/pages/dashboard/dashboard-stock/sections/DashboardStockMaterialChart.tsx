@@ -35,7 +35,7 @@ export default function DashboardStockMaterialChart({
           <strong>{t('title.stock.by', { title: 'Material' })}</strong>
         </h4>
         {materialLevelLabel && (
-          <p className="ui-text-base">
+          <p className="ui:text-base">
             Level KFA Material: {materialLevelLabel}
           </p>
         )}
@@ -52,7 +52,7 @@ export default function DashboardStockMaterialChart({
         <DashboardBox.Content
           isLoading={isLoading}
           isEmpty={!data?.length}
-          className="ui-max-h-[500px] ui-overflow-y-auto"
+          className="ui:max-h-[500px] ui:overflow-y-auto"
         >
           <BarChart
             data={materials}

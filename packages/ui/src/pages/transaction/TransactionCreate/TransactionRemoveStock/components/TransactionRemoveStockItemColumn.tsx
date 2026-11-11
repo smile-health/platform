@@ -46,7 +46,7 @@ const TitleBlock = ({
           item.label && (
             <div
               key={`_${index.toString()}`}
-              className={`${item.className ?? 'ui-text-dark-teal'} ui-text-sm`}
+              className={`${item.className ?? 'ui:text-dark-teal'} ui:text-sm`}
             >
               {item.label}
             </div>
@@ -56,7 +56,7 @@ const TitleBlock = ({
 )
 
 export const TextBox = ({ text }: { text: string }) => (
-  <div className="ui-text-neutral-500 ui-border ui-border-neutral-300 ui-text-sm ui-py-[10px] ui-px-[14px] ui-rounded-md ui-bg-[#1018280D]">
+  <div className="ui:text-neutral-500 ui:border ui:border-neutral-300 ui:text-sm ui:py-[10px] ui:px-[14px] ui:rounded-md ui:bg-[#1018280D]">
     {text}
   </div>
 )
@@ -88,7 +88,7 @@ export const MainColumn = ({
           arrText={[
             {
               label: row?.original?.material?.name ?? '',
-              className: 'ui-text-dark-blue ui-text-sm ui-font-bold',
+              className: 'ui:text-dark-blue ui:text-sm ui:font-bold',
             },
             {
               label: textGrouper({
@@ -98,7 +98,7 @@ export const MainColumn = ({
                 text2: row?.original?.activity?.name ?? '',
                 separator: ': ',
               }),
-              className: 'ui-text-dark-blue ui-text-sm',
+              className: 'ui:text-dark-blue ui:text-sm',
             },
           ]}
         />
@@ -112,7 +112,7 @@ export const MainColumn = ({
       cell: ({ row }) => (
         <div
           id="stock_on_hand_td"
-          className={`ui-px-2 ui-py-3 ${availabilityIndicatorColor({
+          className={`ui:px-2 ui:py-3 ${availabilityIndicatorColor({
             availableQty: Number(row.original.total_qty),
             minQty: Number(row.original.min),
             maxQty: Number(row.original.max),
@@ -131,7 +131,7 @@ export const MainColumn = ({
                   }),
                   separator: ': ',
                 }),
-                className: 'ui-text-dark-blue ui-text-sm',
+                className: 'ui:text-dark-blue ui:text-sm',
               },
               {
                 label: textGrouper({
@@ -144,7 +144,7 @@ export const MainColumn = ({
                   }),
                   separator: ': ',
                 }),
-                className: 'ui-text-dark-blue ui-text-sm',
+                className: 'ui:text-dark-blue ui:text-sm',
               },
               {
                 label: textGrouper({
@@ -158,7 +158,7 @@ export const MainColumn = ({
                   })})`,
                   separator: ', ',
                 }),
-                className: 'ui-text-neutral-500 ui-text-sm',
+                className: 'ui:text-neutral-500 ui:text-sm',
               },
             ]}
           />
@@ -189,7 +189,7 @@ export const MainColumn = ({
                       text2: stock?.batch?.code ?? '',
                       separator: ': ',
                     }),
-                    className: 'ui-text-dark-blue ui-text-sm',
+                    className: 'ui:text-dark-blue ui:text-sm',
                   },
                   {
                     label: textGrouper({
@@ -202,7 +202,7 @@ export const MainColumn = ({
                           .format('DD MMM YYYY') ?? '',
                       separator: ': ',
                     }),
-                    className: 'ui-text-dark-blue ui-text-sm',
+                    className: 'ui:text-dark-blue ui:text-sm',
                   },
                   {
                     label: textGrouper({
@@ -215,7 +215,7 @@ export const MainColumn = ({
                         '',
                       separator: ': ',
                     }),
-                    className: 'ui-text-dark-blue ui-text-sm',
+                    className: 'ui:text-dark-blue ui:text-sm',
                   },
                   {
                     label: textGrouper({
@@ -226,7 +226,7 @@ export const MainColumn = ({
                         (stock?.material_status as OptionType)?.label ?? '',
                       separator: ': ',
                     }),
-                    className: 'ui-text-dark-blue ui-text-sm',
+                    className: 'ui:text-dark-blue ui:text-sm',
                     isNotExists: !stock?.material_status,
                   },
                   {
@@ -241,7 +241,7 @@ export const MainColumn = ({
                       separator: ': ',
                     }),
                     className:
-                      'ui-text-dark-blue ui-text-sm ui-font-bold ui-mb-4',
+                      'ui:text-dark-blue ui:text-sm ui:font-bold ui:mb-4',
                   },
                 ]}
               />
@@ -270,7 +270,7 @@ export const MainColumn = ({
           onClick={() => handleDeleteMaterial && handleDeleteMaterial(index)}
           type="button"
           variant="subtle"
-          className="!ui-p-0 ui-text-danger-500"
+          className="ui:p-0! ui:text-danger-500"
         >
           {t('common:remove')}
         </Button>

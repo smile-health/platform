@@ -21,7 +21,7 @@ const TransactionRemoveStockItemTable = (): JSX.Element => {
 
   return (
     <>
-      <div className="ui-mt-6">
+      <div className="ui:mt-6">
         <TransactionRemoveStockInputBatchDrawer />
         <DataTable
           id="transaction__remove__stock__input__table"
@@ -32,13 +32,13 @@ const TransactionRemoveStockItemTable = (): JSX.Element => {
             handleDeleteMaterial,
             methods,
           })}
-          className="ui-overflow-hidden"
+          className="ui:overflow-hidden"
         />
         {fields.length > 0 && (
           <TransactionCreateMaterialDropdown
             colSpan={1}
             onSelect={(stock) => handleAddItemRemoveStock({ item: stock })}
-            className="ui-w-[294px] ui-font-normal"
+            className="ui:w-[294px] ui:font-normal"
           />
         )}
       </div>

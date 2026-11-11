@@ -61,11 +61,11 @@ export default function ProgramPlanPopUpForm() {
     <Dialog open={openCreateModal}>
       <form onSubmit={handleSubmit(submitProgramPlan)}>
         <DialogCloseButton onClick={handleClose} />
-        <DialogHeader className="ui-text-center ui-text-xl">
+        <DialogHeader className="ui:text-center ui:text-xl">
           {t('programPlan:add_program_plan')}
         </DialogHeader>
         <DialogContent>
-          <FormControl className="ui-w-full ui-mb-6">
+          <FormControl className="ui:w-full ui:mb-6">
             <FormLabel htmlFor="target_year" required={true}>
               {t('programPlan:table.year')}
             </FormLabel>
@@ -94,8 +94,8 @@ export default function ProgramPlanPopUpForm() {
             )}
           </FormControl>
         </DialogContent>
-        <DialogFooter className="ui-justify-center">
-          <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full mx-auto">
+        <DialogFooter className="ui:justify-center">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full mx-auto">
             <Button
               id="btn_close_pop_up_form"
               variant="default"

@@ -68,15 +68,15 @@ export const MainColumn = ({ t, language }: TAssetMainColumn) => {
             arrText={[
               {
                 label: `${serial_number}${assetModelName}${manufactureName}`,
-                className: 'ui-text-sm ui-font-normal ui-text-dark-teal',
+                className: 'ui:text-sm ui:font-normal ui:text-dark-teal',
               },
               {
                 label: entity?.name,
-                className: 'ui-text-sm ui-font-bold ui-text-sky-500 ui-my-1',
+                className: 'ui:text-sm ui:font-bold ui:text-sky-500 ui:my-1',
               },
               {
                 label: `${regencyName}${entity?.province?.name}`,
-                className: 'ui-text-xs ui-font-thin ui-text-gray-700',
+                className: 'ui:text-xs ui:font-thin ui:text-gray-700',
               },
             ]}
           />

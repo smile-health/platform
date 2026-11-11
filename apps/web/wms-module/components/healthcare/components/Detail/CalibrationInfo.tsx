@@ -35,9 +35,9 @@ const CalibrationInfo: React.FC<CalibrationInfoProps> = ({}) => {
   };
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-      <div className="ui-flex ui-mt-1 ui-justify-between ui-items-center ui-gap-4">
-        <h5 className="ui-font-bold ui-text-dark-blue">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+      <div className="ui:flex ui:mt-1 ui:justify-between ui:items-center ui:gap-4">
+        <h5 className="ui:font-bold ui:text-dark-blue">
           {t('healthCare:detail.calibration_act')}
         </h5>
         <Button
@@ -56,7 +56,7 @@ const CalibrationInfo: React.FC<CalibrationInfoProps> = ({}) => {
           size: pagination.paginateCalibration,
         })}
         isLoading={isLoading}
-        className="ui-overflow-x-auto"
+        className="ui:overflow-x-auto"
       />
       <PaginationContainer>
         <PaginationSelectLimit

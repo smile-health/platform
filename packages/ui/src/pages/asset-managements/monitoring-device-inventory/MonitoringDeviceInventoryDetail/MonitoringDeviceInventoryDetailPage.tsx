@@ -59,12 +59,12 @@ export default function MonitoringDeviceInventoryDetailPage({
                     ),
                 }}
               >
-                <div className="ui-space-y-6">
+                <div className="ui:space-y-6">
                   <MonitoringDeviceInventoryDetailBox
                     className="space-y-6"
                     showMoreDetails
                     moreDetailsContent={
-                      <div className="ui-space-y-4">
+                      <div className="ui:space-y-4">
                         <EntitySection />
                         <BudgetSection />
                       </div>

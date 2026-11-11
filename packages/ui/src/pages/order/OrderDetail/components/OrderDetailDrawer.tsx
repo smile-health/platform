@@ -54,16 +54,16 @@ export const OrderDetailDrawer = ({
       size="full"
       sizeHeight="lg"
     >
-      <form id={id} onSubmit={handleSubmit} noValidate className="ui-contents">
+      <form id={id} onSubmit={handleSubmit} noValidate className="ui:contents">
         <DrawerHeader
           title={title}
-          className="ui-text-center ui-p-6 ui-relative"
+          className="ui:text-center ui:p-6 ui:relative"
         >
           <Button
             variant="subtle"
             type="button"
             color="neutral"
-            className="ui-absolute ui-top-2 ui-right-2"
+            className="ui:absolute ui:top-2 ui:right-2"
             onClick={() => onClose()}
           >
             <XMark />
@@ -71,13 +71,13 @@ export const OrderDetailDrawer = ({
         </DrawerHeader>
         <DrawerContent
           className={cx(
-            'ui-pt-4 ui-pb-8 ui-px-6 ui-space-y-6 ui-border-y ui-border-zinc-200',
+            'ui:pt-4 ui:pb-8 ui:px-6 ui:space-y-6 ui:border-y ui:border-zinc-200',
             drawerContentClassName
           )}
         >
           {children}
         </DrawerContent>
-        <DrawerFooter className="ui-px-6">
+        <DrawerFooter className="ui:px-6">
           <Button
             id="btn-reset-confirm-order"
             data-testid="btn-reset-batch"
@@ -85,7 +85,7 @@ export const OrderDetailDrawer = ({
             variant="subtle"
             onClick={onReset}
             disabled={disabled ?? isLoading}
-            leftIcon={<Reload className="ui-size-5" />}
+            leftIcon={<Reload className="ui:size-5" />}
           >
             Reset
           </Button>
@@ -95,7 +95,7 @@ export const OrderDetailDrawer = ({
             type="submit"
             disabled={disabled ?? isLoading}
             loading={isLoading}
-            className="ui-w-52"
+            className="ui:w-52"
           >
             {submitButton?.label ?? t('common:submit')}
           </Button>

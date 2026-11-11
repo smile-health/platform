@@ -63,34 +63,34 @@ const Header: React.FC = () => {
   const isVendorIot = user?.role === USER_ROLE.VENDOR_IOT;
 
   return (
-    <div className="ui-flex ui-items-center ui-justify-between ui-px-4 ui-py-4 ui-mx-auto ui-border ui-border-neutral-200">
-      <div className="ui-flex ui-flex-row ui-space-x-4 ui-divide-x-2 ui-divide-[#D9D9D9] ui-items-center">
-        <div className="ui-flex ui-gap-4 ui-items-center">
+    <div className="ui:flex ui:items-center ui:justify-between ui:px-4 ui:py-4 ui:mx-auto ui:border ui:border-neutral-200">
+      <div className="ui:flex ui:flex-row ui:*:not-first:ml-4 ui:*:not-first:border-l-2 ui:*:not-first:border-[#D9D9D9] ui:items-center">
+        <div className="ui:flex ui:gap-4 ui:items-center">
           <DropdownProgram />
-          <p className="ui-text-base font-bold">
+          <p className="ui:text-base font-bold">
             {program?.activeProgram?.name ?? "SMILE"}
           </p>
         </div>
-        <div className="ui-flex ui-gap-6 ui-pl-4 ui-items-center">
+        <div className="ui:flex ui:gap-6 ui:pl-4 ui:items-center">
           <img
-            className="ui-h-7 ui-w-auto"
+            className="ui:h-7 ui:w-auto"
             src="/images/logo-smile.svg"
             alt="smile-logo"
           />
           <img
-            className="ui-h-7 ui-w-auto"
+            className="ui:h-7 ui:w-auto"
             src="/images/logo-undp.png"
             alt="undp-logo"
           />
           {user?.entity?.name && (
-            <p className="ui-text-base ui-font-bold">
+            <p className="ui:text-base ui:font-bold">
               {truncateText(user.entity.name, 75)}
             </p>
           )}
         </div>
       </div>
-      <div className="ui-flex ui-items-center ui-space-x-4 ui-divide-x-2 ui-divide-[#D9D9D9]">
-        <div className="ui-flex ui-items-center ui-gap-4">
+      <div className="ui:flex ui:items-center ui:*:not-first:ml-4 ui:*:not-first:border-l-2 ui:*:not-first:border-[#D9D9D9]">
+        <div className="ui:flex ui:items-center ui:gap-4">
           {hasPermission("global-asset-managements-menu") && (
             <div>
               <Link
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
                       : "operational-asset-inventory"
                   }`,
                 )}
-                className="ui-flex ui-items-center ui-space-x-3 ui-text-blue-800"
+                className="ui:flex ui:items-center ui:space-x-3 ui:text-blue-800"
                 rel="noreferrer"
               >
                 <Inventory />
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
           <div>
             <Link
               href={router.getAsLinkGlobal(`/v5/export-history`)}
-              className="hover:ui-text-blue-700 ui-relative ui-text-blue-800 ui-cursor-pointer"
+              className="ui:hover:text-blue-700 ui:relative ui:text-blue-800 ui:cursor-pointer"
               rel="noreferrer"
             >
               <ExportHistory />
@@ -124,11 +124,11 @@ const Header: React.FC = () => {
           <LanguageChanger />
         </div>
 
-        <div className="ui-flex ui-gap-4 ui-pl-4 ui-items-center">
+        <div className="ui:flex ui:gap-4 ui:pl-4 ui:items-center">
           <DropdownMenuRoot>
             <DropdownMenuTrigger>
               <button
-                className="ui-items-center flex flex-row focus:outline-none"
+                className="ui:items-center flex flex-row focus:outline-none"
                 id="trigger-dropdown-header"
               >
                 {user && (
@@ -136,7 +136,7 @@ const Header: React.FC = () => {
                     name={`${user?.firstname} ${user?.lastname}`}
                   ></Avatar>
                 )}
-                <div className="ui-min-w-[140px] ui-tex-[#414042] px-2 py-1 text-left">
+                <div className="ui:min-w-[140px] ui-tex-[#414042] px-2 py-1 text-left">
                   {user?.firstname ?? ""} {user?.lastname ?? ""}
                 </div>
                 <div className="py-2">
@@ -150,7 +150,7 @@ const Header: React.FC = () => {
                 id="dropdown-header-account"
               >
                 <DropdownMenuItem>
-                  <div className="ui-my-1 ui-flex ui-gap-3 ui-items-center ui-min-w-60 focus:outline-none">
+                  <div className="ui:my-1 ui:flex ui:gap-3 ui:items-center ui:min-w-60 focus:outline-none">
                     <Account />
                     {t("common:dropdown_setting.view_profile")}
                   </div>
@@ -162,7 +162,7 @@ const Header: React.FC = () => {
                   id="dropdown-header-global-settings/entity"
                 >
                   <DropdownMenuItem>
-                    <div className="ui-my-1 ui-flex ui-gap-3 ui-items-center ui-min-w-60 focus:outline-none">
+                    <div className="ui:my-1 ui:flex ui:gap-3 ui:items-center ui:min-w-60 focus:outline-none">
                       <Setting />
                       {t("common:dropdown_setting.global_settings")}
                     </div>
@@ -173,7 +173,7 @@ const Header: React.FC = () => {
                 onSelect={() => handleLogout()}
                 id="dropdown-header-logout"
               >
-                <div className="ui-my-1 ui-flex ui-gap-3 ui-items-center ui-min-w-60 focus:outline-none">
+                <div className="ui:my-1 ui:flex ui:gap-3 ui:items-center ui:min-w-60 focus:outline-none">
                   <Logout />
                   {t("common:dropdown_setting.logout")}
                 </div>

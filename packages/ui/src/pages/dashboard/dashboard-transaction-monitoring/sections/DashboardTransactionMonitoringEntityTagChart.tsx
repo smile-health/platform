@@ -40,7 +40,7 @@ export default function DashboardTransactionMonitoringEntityTagChart({
         <DashboardBox.Content
           isLoading={isLoading}
           isEmpty={!data?.datasets?.length}
-          className="ui-h-96"
+          className="ui:h-96"
         >
           <StackedBarChart
             data={data}

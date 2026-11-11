@@ -35,22 +35,22 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     const id = React.useId()
 
     const iconStyle = cx(
-      'ui-pointer-events-none ui-absolute ui-inset-0 ui-m-auto',
-      'ui-opacity-0',
+      'ui:pointer-events-none ui:absolute ui:inset-0 ui:m-auto',
+      'ui:opacity-0',
       {
-        'ui-text-white peer-checked:ui-opacity-100': !disabled,
-        'ui-text-gray-600 peer-checked:ui-opacity-50': disabled,
+        'ui:text-white ui:peer-checked:opacity-100': !disabled,
+        'ui:text-gray-600 ui:peer-checked:opacity-50': disabled,
       },
       {
-        'ui-h-3 ui-w-3': size === 'sm',
-        'ui-h-3.5 ui-w-3.5': size === 'md',
-        'ui-h-4 ui-w-4': size === 'lg',
-        'ui-h-5 ui-w-5': size === 'xl',
+        'ui:h-3 ui:w-3': size === 'sm',
+        'ui:h-3.5 ui:w-3.5': size === 'md',
+        'ui:h-4 ui:w-4': size === 'lg',
+        'ui:h-5 ui:w-5': size === 'xl',
       }
     )
     return (
-      <div className="ui-inline-flex ui-items-center ui-space-x-3">
-        <div className="ui-relative ui-leading-[0]">
+      <div className="ui:inline-flex ui:items-center ui:space-x-3">
+        <div className="ui:relative ui:leading-0">
           <input
             {...props}
             ref={ref}
@@ -60,17 +60,17 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             disabled={disabled}
             onChange={onChange}
             className={cx(
-              'ui-shadow-xs ui-peer ui-form-checkbox ui-appearance-none ui-rounded !ui-bg-none',
-              'ui-border-2 ui-border-gray-300 focus:ui-ring-2 focus:!ui-ring-primary-500 focus:!ui-ring-opacity-40',
-              'disabled:ui-text-gray-200 disabled:checked:ui-border-gray-300',
-              'ui-bg-white checked:ui-border-current checked:ui-bg-current',
-              'ui-text-primary-surface',
-              disabled ? 'ui-cursor-not-allowed' : 'ui-cursor-pointer',
+              'ui:shadow-xs ui:peer ui:form-checkbox ui:appearance-none ui:rounded ui:bg-none!',
+              'ui:border-2 ui:border-gray-300 ui:focus:ring-2 ui:focus:ring-primary-500/40!',
+              'ui:disabled:text-gray-200 ui:disabled:checked:border-gray-300',
+              'ui:bg-white ui:checked:border-current ui:checked:bg-current',
+              'ui:text-primary-surface',
+              disabled ? 'ui:cursor-not-allowed' : 'ui:cursor-pointer',
               {
-                'ui-h-5 ui-w-5': size === 'sm',
-                'ui-h-6 ui-w-6': size === 'md',
-                'ui-h-7 ui-w-7': size === 'lg',
-                'ui-h-8 ui-w-8': size === 'xl',
+                'ui:h-5 ui:w-5': size === 'sm',
+                'ui:h-6 ui:w-6': size === 'md',
+                'ui:h-7 ui:w-7': size === 'lg',
+                'ui:h-8 ui:w-8': size === 'xl',
               },
               className
             )}
@@ -108,15 +108,15 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           <div>
             <label
               className={cx(
-                'ui-leading-tight ui-text-gray-700',
+                'ui:leading-tight ui:text-gray-700',
                 {
-                  'ui-text-sm': size === 'sm',
-                  'ui-text-base': size === 'md',
-                  'ui-text-lg': size === 'lg',
-                  'ui-text-xl': size === 'xl',
+                  'ui:text-sm': size === 'sm',
+                  'ui:text-base': size === 'md',
+                  'ui:text-lg': size === 'lg',
+                  'ui:text-xl': size === 'xl',
                 },
                 {
-                  'ui-cursor-not-allowed ui-text-gray-400': disabled,
+                  'ui:cursor-not-allowed ui:text-gray-400': disabled,
                 }
               )}
               htmlFor={id}

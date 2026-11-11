@@ -31,7 +31,7 @@ export default function ReconciliationPage() {
   return (
     <Container title={t('title.page')} withLayout>
       <Meta title={generateMetaTitle(t('title.page'))} />
-      <div className="ui-mt-6 ui-space-y-6">
+      <div className="ui:mt-6 ui:space-y-6">
         <ReconciliationFilter filter={filter} />
         <TabsRoot variant="pills" align="center" defaultValue="all">
           <TabsList>
@@ -39,7 +39,7 @@ export default function ReconciliationPage() {
               <TabsTrigger
                 key={item.id}
                 value={item.id}
-                buttonClassName="ui-w-40 ui-justify-center"
+                buttonClassName="ui:w-40 ui:justify-center"
               >
                 {item.label}
               </TabsTrigger>

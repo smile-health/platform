@@ -37,13 +37,13 @@ const MaterialVolumeFormBoxDimension = () => {
   ]
 
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('detail.section.box_dimension.header')}
       </div>
-      <div className="ui-grid ui-grid-cols-3 ui-gap-5">
+      <div className="ui:grid ui:grid-cols-3 ui:gap-5">
         {fields.map(({ label, name, placeholder }) => (
-          <FormControl className="ui-w-full" key={name}>
+          <FormControl className="ui:w-full" key={name}>
             <FormLabel htmlFor={name} required>
               {label}
             </FormLabel>

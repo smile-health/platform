@@ -19,17 +19,17 @@ export const getBackgroundStock = ({
   minQty: number
   maxQty: number
 }) => {
-  if (onHandStock === 0) return 'ui-bg-red-50'
-  if (onHandStock && onHandStock < minQty) return 'ui-bg-orange-50'
+  if (onHandStock === 0) return 'ui:bg-red-50'
+  if (onHandStock && onHandStock < minQty) return 'ui:bg-orange-50'
   if (
     onHandStock &&
     minQty &&
     onHandStock >= minQty &&
     (onHandStock <= maxQty || maxQty === 0)
   )
-    return 'ui-bg-green-50'
-  if (onHandStock > maxQty) return 'ui-bg-blue-50'
-  return 'ui-bg-white'
+    return 'ui:bg-green-50'
+  if (onHandStock > maxQty) return 'ui:bg-blue-50'
+  return 'ui:bg-white'
 }
 
 export const setIntialBatch = ({
@@ -117,7 +117,7 @@ export const SummaryListBatch = ({
   qty: number | null | undefined
 }) => {
   return (
-    <div key={key} className="ui-flex ui-flex-col">
+    <div key={key} className="ui:flex ui:flex-col">
       <div>
         {t('table.column.batch_code')}: {batchName ?? '-'}
       </div>
@@ -135,7 +135,7 @@ export const SummaryListBatch = ({
           {t('table.column.budget_info')}: {budgetSource}
         </div>
       )}
-      <div className="ui-font-bold">Qty: {numberFormatter(qty, lang)}</div>
+      <div className="ui:font-bold">Qty: {numberFormatter(qty, lang)}</div>
     </div>
   )
 }

@@ -42,25 +42,25 @@ export const HomeHFDetailModal: React.FC<HomeHFDetailModalProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onClose} size="xl">
-      <DialogHeader className="ui-text-center ui-w-full ui-text-lg ui-py-2">
+      <DialogHeader className="ui:text-center ui:w-full ui:text-lg ui:py-2">
         {t('home:home_hf.modal.title')}
       </DialogHeader>
-      <DialogContent className="ui-flex ui-flex-col ui-text-center ui-py-6 ui-border-y">
-        <div className="ui-grid ui-grid-cols-3 ui-gap-x-6 ui-gap-y-4 ui-text-left ui-mb-4">
+      <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
+        <div className="ui:grid ui:grid-cols-3 ui:gap-x-6 ui:gap-y-4 ui:text-left ui:mb-4">
           <div>
-            <p className="ui-text-sm ui-text-gray-500">
+            <p className="ui:text-sm ui:text-gray-500">
               {t('home:home_hf.column.waste_code')}
             </p>
-            <p className="ui-text-base ui-text-gray-900">
+            <p className="ui:text-base ui:text-gray-900">
               {transactionData?.qrCode}
             </p>
           </div>
 
-          <div className="ui-col-span-2">
-            <p className="ui-text-sm ui-text-gray-500">
+          <div className="ui:col-span-2">
+            <p className="ui:text-sm ui:text-gray-500">
               {t('home:home_hf.column.waste_hierarchy')}
             </p>
-            <p className="ui-text-base ui-text-gray-900">
+            <p className="ui:text-base ui:text-gray-900">
               {i18n.language === 'id'
                 ? transactionData?.wasteTypeName
                 : transactionData?.wasteTypeNameEn}{' '}
@@ -80,13 +80,13 @@ export const HomeHFDetailModal: React.FC<HomeHFDetailModalProps> = ({
           detailTransaction={detailTransacion?.data || []}
         />
       </DialogContent>
-      <DialogFooter className="ui-flex ui-w-full ui-items-center ui-py-6">
+      <DialogFooter className="ui:flex ui:w-full ui:items-center ui:py-6">
         <Button
           id="btn-back"
           type="button"
           variant="outline"
           onClick={() => onClose()}
-          className="ui-w-full"
+          className="ui:w-full"
         >
           {t('common:close')}
         </Button>

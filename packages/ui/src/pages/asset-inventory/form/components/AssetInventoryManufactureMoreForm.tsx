@@ -17,8 +17,8 @@ const AssetInventoryManufactureMoreForm = () => {
     formState: { errors },
   } = methods
   return (
-    <div className="ui-flex ui-flex-col ui-gap-4 ui-bg-[#F1F5F9] ui-p-2 ui-rounded-md">
-      <FormControl className="ui-w-full">
+    <div className="ui:flex ui:flex-col ui:gap-4 ui:bg-slate-100 ui:p-2 ui:rounded-md">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="other_manufacture_name" required>
           {t('assetInventory:other_inputs.manufacture_name')}
         </FormLabel>

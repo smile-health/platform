@@ -168,20 +168,20 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
           data-testid={`btn-trigger-${id}`}
           disabled={isDisabled}
           className={cx(
-            'ui-inline-flex ui-items-center ui-justify-between ui-w-full ui-px-3 ui-bg-white',
-            'ui-border ui-border-gray-300 ui-rounded ui-shadow-xs',
-            'focus:ui-outline-none focus:ui-ring-2 focus:ui-ring-primary-500 focus:ui-ring-opacity-25 focus:ui-border-primary-300',
+            'ui:inline-flex ui:items-center ui:justify-between ui:w-full ui:px-3 ui:bg-white',
+            'ui:border ui:border-gray-300 ui:rounded ui:shadow-xs',
+            'ui:focus:outline-hidden ui:focus:ring-2 ui:focus:ring-primary-500/25 ui:focus:border-primary-300',
             {
-              'ui-h-8 ui-text-sm': size === 'sm',
-              'ui-h-10 ui-text-base': size === 'md',
-              'ui-h-12 ui-text-lg': size === 'lg',
-              'ui-h-14 ui-text-xl': size === 'xl',
+              'ui:h-8 ui:text-sm': size === 'sm',
+              'ui:h-10 ui:text-base': size === 'md',
+              'ui:h-12 ui:text-lg': size === 'lg',
+              'ui:h-14 ui:text-xl': size === 'xl',
             }
           )}
         >
           <span
-            className={cx('ui-text-gray-500 ui-font-medium', {
-              'ui-text-gray-800': !!value?.start,
+            className={cx('ui:text-gray-500 ui:font-medium', {
+              'ui:text-gray-800': !!value?.start,
             })}
           >
             {displayText}
@@ -190,7 +190,7 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
             <XMark
               id={`btn-clear-${id}`}
               data-testid={`btn-clear-${id}`}
-              className="ui-text-gray-400 hover:ui-text-gray-600 focus:ui-outline-none ui-transition-colors"
+              className="ui:text-gray-400 ui:hover:text-gray-600 ui:focus:outline-hidden ui:transition-colors"
               onClick={handleClear}
             />
           )}
@@ -200,11 +200,11 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
       <PopoverContent
         align="start"
         container={container ?? undefined}
-        className="ui-z-20"
+        className="ui:z-20"
       >
         <PopoverArrow />
 
-        <div className="ui-mb-4 ui-flex ui-items-center ui-justify-between ui-gap-2 ui-text-sm ui-font-medium ui-text-gray-700">
+        <div className="ui:mb-4 ui:flex ui:items-center ui:justify-between ui:gap-2 ui:text-sm ui:font-medium ui:text-gray-700">
           <ButtonIcon
             id={`btn-prev-${id}`}
             data-testid={`btn-prev-${id}`}
@@ -213,7 +213,7 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
             onClick={() => setViewYear((y) => Math.max(minYear, y - 1))}
             disabled={isPrevDisabled}
           >
-            <ChevronLeftIcon className="ui-size-4 ui-text-gray-600" />
+            <ChevronLeftIcon className="ui:size-4 ui:text-gray-600" />
           </ButtonIcon>
 
           <ReactSelect
@@ -224,7 +224,7 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
             options={yearOptions}
             disabled={Boolean(rangeStart)}
             onChange={(option: OptionType) => setViewYear(option.value)}
-            className="ui-z-20"
+            className="ui:z-20"
           />
 
           <ButtonIcon
@@ -235,11 +235,11 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
             onClick={() => setViewYear((y) => Math.min(maxYear, y + 1))}
             disabled={isNextDisabled}
           >
-            <ChevronRightIcon className="ui-size-4 ui-text-gray-600" />
+            <ChevronRightIcon className="ui:size-4 ui:text-gray-600" />
           </ButtonIcon>
         </div>
 
-        <div className="ui-grid ui-grid-cols-3 ui-gap-y-1 ui-items-center ui-text-sm">
+        <div className="ui:grid ui:grid-cols-3 ui:gap-y-1 ui:items-center ui:text-sm">
           {months.map(({ year, month, label }) => {
             const key = `${year}-${month.toString().padStart(2, '0')}`
             const currentMonth = dayjs(key)
@@ -268,20 +268,20 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
 
             // Class name conditions
             const buttonClasses = cx(
-              'ui-w-full ui-h-full ui-rounded ui-px-2 ui-py-1 ui-transition-all focus:ui-outline-none',
+              'ui:w-full ui:h-full ui:rounded ui:px-2 ui:py-1 ui:transition-all ui:focus:outline-hidden',
               {
-                'ui-bg-primary-500 hover:ui-bg-primary-600 ui-text-white ui-relative ui-z-10':
+                'ui:bg-primary-500 ui:hover:bg-primary-600 ui:text-white ui:relative ui:z-10':
                   isSelected || isSameStart,
-                'ui-ring-2 ui-ring-primary-300 ui-ring-offset-1':
+                'ui:ring-2 ui:ring-primary-300 ui:ring-offset-1':
                   isSelected && isEnd,
-                'ui-bg-primary-100 hover:ui-bg-primary-200 ui-text-primary-700 ui-rounded-none':
+                'ui:bg-primary-100 ui:hover:bg-primary-200 ui:text-primary-700 ui:rounded-none':
                   isInRange || highlight,
-                'hover:ui-bg-primary-500 hover:ui-text-white hover:ui-ring-2 hover:ui-ring-primary-300 hover:ui-ring-offset-1 hover:ui-rounded':
+                'ui:hover:bg-primary-500 ui:hover:text-white ui:hover:ring-2 ui:hover:ring-primary-300 ui:hover:ring-offset-1 ui:hover:rounded':
                   rangeStart && !isSameStart,
-                'ui-text-gray-700': !isSelected && !isInRange && !isSameStart,
-                'hover:ui-bg-gray-100':
+                'ui:text-gray-700': !isSelected && !isInRange && !isSameStart,
+                'ui:hover:bg-gray-100':
                   !isSameStart && !rangeStart && !isInRange,
-                'ui-pointer-events-none ui-text-gray-300': isDisabled,
+                'ui:pointer-events-none ui:text-gray-300': isDisabled,
               }
             )
 
@@ -289,7 +289,7 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
               <div
                 key={key}
                 className={cx({
-                  'ui-bg-primary-100': isSameStart,
+                  'ui:bg-primary-100': isSameStart,
                 })}
               >
                 <button

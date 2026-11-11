@@ -40,15 +40,15 @@ const ExportHistoryListPage = ({ isGlobal = true }: Readonly<CommonType>) => {
       <Meta title={titlePage} />
       <div className="mt-6 space-y-5">
         <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid-cols-3">
+          <FilterFormBody className="ui:grid-cols-3">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
             <div></div>
-            <div className="ui-flex ui-gap-2">
+            <div className="ui:flex ui:gap-2">
               <FilterResetButton onClick={filter.reset} variant="subtle" />
               <FilterSubmitButton
-                className="ui-w-[202px]"
+                className="ui:w-[202px]"
                 variant="outline"
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -56,8 +56,8 @@ const ExportHistoryListPage = ({ isGlobal = true }: Readonly<CommonType>) => {
           </FilterFormFooter>
           {filter.renderActiveFilter()}
         </FilterFormRoot>
-        <div className="ui-w-full ui-bg-[#F5F5F4] ui-rounded ui-border ui-border-gray-300 ui-h-14 ui-pl-5 ui-pt-4">
-          <div className="ui-text-left ui-text-sm ui-text-neutral-500 ui-font-bold">
+        <div className="ui:w-full ui:bg-[#F5F5F4] ui:rounded ui:border ui:border-gray-300 ui:h-14 ui:pl-5 ui:pt-4">
+          <div className="ui:text-left ui:text-sm ui:text-neutral-500 ui:font-bold">
             {t('note')}
           </div>
         </div>
@@ -67,7 +67,7 @@ const ExportHistoryListPage = ({ isGlobal = true }: Readonly<CommonType>) => {
           </div>
         )}
         {!isLoading && (
-          <div className="ui-flex ui-flex-col ui-space-y-3">
+          <div className="ui:flex ui:flex-col ui:space-y-3">
             {!data?.data || data?.total_item === 0 ? (
               <EmptyState
                 title={t('empty.title')}

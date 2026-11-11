@@ -24,7 +24,7 @@ export const createFilterThirdPartyPartnerGroupSchema = ({
     id: 'input-search',
     label: t('thirdPartyPartner:list.filter.search.label'),
     placeholder: t('thirdPartyPartner:list.filter.search.placeholder'),
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     defaultValue: '',
     maxLength: 255,
   },
@@ -32,7 +32,7 @@ export const createFilterThirdPartyPartnerGroupSchema = ({
     id: 'select-third-party-patner',
     type: 'select',
     name: 'providerId',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('thirdPartyPartner:list.filter.third_party_patner.label'),
     placeholder: t(
@@ -46,7 +46,7 @@ export const createFilterThirdPartyPartnerGroupSchema = ({
     id: 'select-healthcare-patner',
     type: 'select',
     name: 'consumerId',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('thirdPartyPartner:list.filter.healthcare_partner.label'),
     placeholder: t(

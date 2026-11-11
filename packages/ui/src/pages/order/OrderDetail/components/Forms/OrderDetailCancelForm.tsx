@@ -102,7 +102,7 @@ export const OrderDetailCancelForm = () => {
         name="cancel_reason_id"
         control={control}
         render={({ field, fieldState: { error } }) => (
-          <FormControl className="ui-space-y-1.5">
+          <FormControl className="ui:space-y-1.5">
             <FormLabel className="text-sm" required>
               {t('form.reason.label')}
             </FormLabel>
@@ -121,7 +121,7 @@ export const OrderDetailCancelForm = () => {
               error={Boolean(error?.message)}
             />
             {error?.message && (
-              <FormErrorMessage className="ui-leading-none">
+              <FormErrorMessage className="ui:leading-none">
                 {error.message}
               </FormErrorMessage>
             )}
@@ -134,7 +134,7 @@ export const OrderDetailCancelForm = () => {
           name="other_reason"
           control={control}
           render={({ field, fieldState: { error } }) => (
-            <FormControl className="ui-space-y-1.5">
+            <FormControl className="ui:space-y-1.5">
               <FormLabel className="text-sm" required={isOtherReasonNeeded}>
                 {t('form.other_reason.label')}
               </FormLabel>
@@ -142,12 +142,12 @@ export const OrderDetailCancelForm = () => {
                 {...field}
                 maxLength={255}
                 placeholder={t('form.other_reason.placeholder')}
-                className="ui-text-sm"
+                className="ui:text-sm"
                 disabled={isPending}
                 error={Boolean(error?.message)}
               />
               {error?.message && (
-                <FormErrorMessage className="ui-leading-none">
+                <FormErrorMessage className="ui:leading-none">
                   {error.message}
                 </FormErrorMessage>
               )}
@@ -160,15 +160,15 @@ export const OrderDetailCancelForm = () => {
         name="comment"
         control={control}
         render={({ field, fieldState: { error } }) => (
-          <FormControl className="ui-space-y-0">
-            <div className="ui-space-y-1.5">
-              <FormLabel className="ui-text-sm" required>
+          <FormControl className="ui:space-y-0">
+            <div className="ui:space-y-1.5">
+              <FormLabel className="ui:text-sm" required>
                 {t('form.comment.label')}
               </FormLabel>
               <TextArea
                 {...field}
                 placeholder={`${t('form.comment.placeholder')}...`}
-                className="ui-text-sm"
+                className="ui:text-sm"
                 disabled={isPending}
                 maxLength={255}
                 style={{ height: 154 }}
@@ -176,7 +176,7 @@ export const OrderDetailCancelForm = () => {
               />
             </div>
             {error?.message && (
-              <FormErrorMessage className="ui-leading-none">
+              <FormErrorMessage className="ui:leading-none">
                 {error.message}
               </FormErrorMessage>
             )}

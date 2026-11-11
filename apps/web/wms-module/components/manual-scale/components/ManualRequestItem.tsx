@@ -35,15 +35,15 @@ const ManualRequestItem: React.FC<ManualRequestItemProps> = ({
     <button
       id={`trigger-notification-item-${item?.id}`}
       onClick={handleClick}
-      className={cx('ui-p-3 ui-w-full ui-bg-white ui-rounded', {
-        'ui-bg-blue-100 ui-cursor-pointer':
+      className={cx('ui:p-3 ui:w-full ui:bg-white ui:rounded', {
+        'ui:bg-blue-100 ui:cursor-pointer':
           item?.status === ManualScaleStatus.WAITING_FOR_APPROVAL,
-        'ui-cursor-default':
+        'ui:cursor-default':
           item?.status !== ManualScaleStatus.WAITING_FOR_APPROVAL,
       })}
     >
-      <div className="ui-flex ui-items-center ui-justify-between ui-mb-2">
-        <div className="ui-text-primary ui-text-[16px] ui-font-bold">
+      <div className="ui:flex ui:items-center ui:justify-between ui:mb-2">
+        <div className="ui-text-primary ui:text-[16px] ui:font-bold">
           {t('manualScale:list.column.title')}
         </div>
         <Badge
@@ -55,8 +55,8 @@ const ManualRequestItem: React.FC<ManualRequestItemProps> = ({
           {status?.label ?? '-'}
         </Badge>
       </div>
-      <div className="ui-flex ui-items-center ui-justify-between ui-mb-2">
-        <div className="ui-text-sm ui-text-gray-700 ui-text-left ui-mb-2">
+      <div className="ui:flex ui:items-center ui:justify-between ui:mb-2">
+        <div className="ui:text-sm ui:text-gray-700 ui:text-left ui:mb-2">
           {item?.entityName +
             ' ' +
             t('manualScale:list.by') +
@@ -65,28 +65,28 @@ const ManualRequestItem: React.FC<ManualRequestItemProps> = ({
         </div>
         {(item?.status === ManualScaleStatus.APPROVED ||
           item?.status === ManualScaleStatus.REJECTED) && (
-          <div className="ui-text-sm">{item?.processedName}</div>
+          <div className="ui:text-sm">{item?.processedName}</div>
         )}
       </div>
 
-      <div className="ui-flex ui-items-center ui-justify-between ui-text-sm ui-text-gray-700 ui-text-left ui-mb-2">
-        <div className="ui-flex ui-items-center ui-justify-start ui-gap-2 ui-mt-2">
+      <div className="ui:flex ui:items-center ui:justify-between ui:text-sm ui:text-gray-700 ui:text-left ui:mb-2">
+        <div className="ui:flex ui:items-center ui:justify-start ui:gap-2 ui:mt-2">
           <button
             type="button"
-            className="ui-flex ui-items-center ui-rounded ui-bg-white ui-p-1 ui-border ui-border-gray-300 ui-gap-1"
+            className="ui:flex ui:items-center ui:rounded ui:bg-white ui:p-1 ui:border ui:border-gray-300 ui:gap-1"
           >
             <div
-              className="ui-grid ui-place-items-center ui-w-6 ui-h-6 ui-rounded"
+              className="ui:grid ui:place-items-center ui:w-6 ui:h-6 ui:rounded"
               style={{ background: '#064E3B' }}
             >
-              <span className="ui-text-xs ui-text-white">
+              <span className="ui:text-xs ui:text-white">
                 {generateInitial('WMS')}
               </span>
             </div>
-            <p className="ui-text-sm ui-font-bold">WMS</p>
+            <p className="ui:text-sm ui:font-bold">WMS</p>
           </button>
         </div>
-        <div className="ui-text-[12px] ui-text-semibold ui-text-gray-700">
+        <div className="ui:text-[12px] ui-text-semibold ui:text-gray-700">
           {parseDateTime(item?.createdAt, 'DD/MMM/YYYY HH:mm')
             .toUpperCase()
             .replaceAll('/', ' ')}

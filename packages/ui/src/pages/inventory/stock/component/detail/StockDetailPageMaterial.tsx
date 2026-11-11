@@ -40,14 +40,14 @@ const StockDetailPageMaterial: React.FC<Props> = (props) => {
         handleClose={handleClose}
       />
 
-      <div className="ui-p-6 ui-border ui-rounded ui-space-y-4 ui-mx-3">
-        <div className="ui-flex ui-justify-between ui-items-start">
-          <div className="ui-font-semibold">Material</div>
+      <div className="ui:p-6 ui:border ui:rounded ui:space-y-4 ui:mx-3">
+        <div className="ui:flex ui:justify-between ui:items-start">
+          <div className="ui:font-semibold">Material</div>
         </div>
 
         <RenderDetailValue
-          className="ui-gap-y-2"
-          valuesClassName="ui-text-neutral-500 ui-text-base ui-font-bold"
+          className="ui:gap-y-2"
+          valuesClassName="ui:text-neutral-500 ui:text-base ui:font-bold"
           data={[
             {
               label: t('detail.material.name', { returnObjects: true })[
@@ -96,8 +96,8 @@ const StockDetailPageMaterial: React.FC<Props> = (props) => {
           ]}
         />
 
-        <div className="ui-flex ui-justify-between ui-items-start">
-          <div className="ui-font-semibold">
+        <div className="ui:flex ui:justify-between ui:items-start">
+          <div className="ui:font-semibold">
             {isHierarchical
               ? t('table.title.trademark')
               : t('table.title.activity')}
@@ -112,8 +112,8 @@ const StockDetailPageMaterial: React.FC<Props> = (props) => {
             isHierarchical,
             language,
           })}
-          className="ui-overflow-x-auto"
-          bodyClassName="ui-bg-white"
+          className="ui:overflow-x-auto"
+          bodyClassName="ui:bg-white"
         />
       </div>
     </Fragment>

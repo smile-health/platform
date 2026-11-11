@@ -12,7 +12,7 @@ const StockDetailPage = () => {
     <Container title={t('detail.title')} withLayout backButton={{ show: true }}>
       <Meta title={`SMILE | ${t('detail.title')}`} />
 
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <StockDetailPageEntity data={dataStock?.entity} />
         <StockDetailPageMaterial data={dataStock} />
       </div>

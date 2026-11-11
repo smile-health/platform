@@ -27,13 +27,13 @@ export const AssetManagementsDetailBox = ({
   const { t } = useTranslation(['common', 'assetManagements'])
 
   return (
-    <div className="ui-border ui-border-gray-300 ui-rounded">
-      <div className="ui-p-6">
+    <div className="ui:border ui:border-gray-300 ui:rounded">
+      <div className="ui:p-6">
         {title && (
-          <div className="ui-font-bold ui-text-dark-blue ui-mb-4">{title}</div>
+          <div className="ui:font-bold ui:text-dark-blue ui:mb-4">{title}</div>
         )}
         {subtitle && (
-          <div className="ui-text-sm ui-text-gray-600 ui-mb-4">{subtitle}</div>
+          <div className="ui:text-sm ui:text-gray-600 ui:mb-4">{subtitle}</div>
         )}
         <div className={className}>{children}</div>
       </div>
@@ -41,12 +41,12 @@ export const AssetManagementsDetailBox = ({
       {showMoreDetails && moreDetailsContent && (
         <>
           <hr />
-          <AccordionRoot className="!ui-p-0" type="single" collapsible>
-            <AccordionItem value="more-details" className="ui-border-none">
-              <AccordionTrigger className="ui-px-6 ui-py-4 ui-text-dark-blue ui-font-bold focus:!ui-border-none !ui-ring-transparent hover:ui-bg-transparent">
+          <AccordionRoot className="ui:p-0!" type="single" collapsible>
+            <AccordionItem value="more-details" className="ui:border-none">
+              <AccordionTrigger className="ui:px-6 ui:py-4 ui:text-dark-blue ui:font-bold ui:focus:border-none! ui:ring-transparent! ui:hover:bg-transparent">
                 {t('assetManagements:detail.more_details')}
               </AccordionTrigger>
-              <AccordionContent className="ui-p-6 ui-pt-0 ui-text-base">
+              <AccordionContent className="ui:p-6 ui:pt-0 ui:text-base">
                 {moreDetailsContent}
               </AccordionContent>
             </AccordionItem>

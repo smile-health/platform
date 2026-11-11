@@ -40,12 +40,12 @@ const TransactionCreateConsumptionPatientIdentity = ({
   } = methods
 
   const buttonEdit = (
-    <div className='ui-flex ui-justify-center ui-items-center'>
+    <div className='ui:flex ui:justify-center ui:items-center'>
       <Button
         data-testid={`add-patient-batch-${indexItem}`}
         size="sm"
         variant="subtle"
-        className="!ui-p-1"
+        className="ui:p-1!"
         onClick={() => setOpenModal(true)}
       >
         {vaccineMethod?.is_multi_patient
@@ -58,12 +58,12 @@ const TransactionCreateConsumptionPatientIdentity = ({
   return (
     <>
       {item.patients ? (
-        <div className="ui-grid">
+        <div className="ui:grid">
           {item.patients.map((x, index) => (
             <div
-              className={cx("ui-grid ui-grid-cols-[48%_30%_22%] ui-gap-3 ui-px-2 ui-py-3", {
-                'ui-bg-[#F5F5F4]': (item.patients?.length ?? 0) > 1 && index % 2 === 0,
-                'ui-grid-cols-[60%_40%]': !item.protocol_id,
+              className={cx("ui:grid ui:grid-cols-[48%_30%_22%] ui:gap-3 ui:px-2 ui:py-3", {
+                'ui:bg-[#F5F5F4]': (item.patients?.length ?? 0) > 1 && index % 2 === 0,
+                'ui:grid-cols-[60%_40%]': !item.protocol_id,
               })}
               key={`patient-${indexItem}-${index}`}
             >
@@ -77,14 +77,14 @@ const TransactionCreateConsumptionPatientIdentity = ({
           ))}
         </div>
       ) : (
-        <div className="ui-flex ui-flex-col ui-px-2 ui-py-3">
+        <div className="ui:flex ui:flex-col ui:px-2 ui:py-3">
           <Button
-            className="ui-w-52"
+            className="ui:w-52"
             variant="outline"
             onClick={() => setOpenModal(true)}
             id={`add-patient-batch-${indexItem}`}
           >
-            <div className="ui-text-dark-teal ui-flex ui-flex-row ui-space-x-3 ui-place-items-center">
+            <div className="ui:text-dark-teal ui:flex ui:flex-row ui:space-x-3 ui:place-items-center">
               <span>
                 <Plus></Plus>
               </span>
@@ -106,13 +106,13 @@ const TransactionCreateConsumptionPatientIdentity = ({
           size="xl"
         >
           <DialogHeader border>
-            <div className="ui-flex ui-justify-between">
+            <div className="ui:flex ui:justify-between">
               <div />
-              <div className="ui-flex ui-flex-col ui-text-center ui-gap-2">
-                <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+              <div className="ui:flex ui:flex-col ui:text-center ui:gap-2">
+                <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
                   {t('patient_identity.label')}
                 </h6>
-                <p className="ui-text-base ui-text-neutral-500 ui-font-normal">
+                <p className="ui:text-base ui:text-neutral-500 ui:font-normal">
                   {t('patient_identity.description')}
                 </p>
               </div>
@@ -138,7 +138,7 @@ const TransactionCreateConsumptionPatientIdentity = ({
             indexParent={indexParent}
           />
 
-          <DialogFooter className="ui-border ui-flex ui-flex-row">
+          <DialogFooter className="ui:border ui:flex ui:flex-row">
             <Button
               color="danger"
               variant="default"

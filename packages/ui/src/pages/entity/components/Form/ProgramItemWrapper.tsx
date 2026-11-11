@@ -33,15 +33,15 @@ const ProgramItemWrapper: React.FC<ProgramItemWrapperProps> = (props) => {
       onClick={handleClick}
       type="button"
       className={cx(
-        'ui-flex ui-gap-4 ui-border ui-rounded-lg ui-p-4 ui-items-center',
+        'ui:flex ui:gap-4 ui:border ui:rounded-lg ui:p-4 ui:items-center',
         {
-          'ui-bg-[#E2F3FC]': isChecked,
-          'ui-border-gray-300': !isChecked,
-          'ui-border-[#004990]': isChecked,
-          'ui-cursor-pointer': !disabled,
-          'ui-cursor-not-allowed': disabled,
-          'ui-border-slate-100': disabled,
-          'ui-bg-slate-100': disabled,
+          'ui:bg-[#E2F3FC]': isChecked,
+          'ui:border-gray-300': !isChecked,
+          'ui:border-[#004990]': isChecked,
+          'ui:cursor-pointer': !disabled,
+          'ui:cursor-not-allowed': disabled,
+          'ui:border-slate-100': disabled,
+          'ui:bg-slate-100': disabled,
         }
       )}
     >
@@ -56,10 +56,10 @@ const ProgramItemWrapper: React.FC<ProgramItemWrapperProps> = (props) => {
             data={item}
             disabled={disabled}
             className={{
-              wrapper: 'ui-gap-4 ui-flex-auto',
-              title: 'ui-text-base',
+              wrapper: 'ui:gap-4 ui:flex-auto',
+              title: 'ui:text-base',
               ...(disabled && {
-                title: 'ui-text-base ui-text-left',
+                title: 'ui:text-base ui:text-left',
               }),
             }}
             icon={getProgramIconUrl(item)}
@@ -68,8 +68,8 @@ const ProgramItemWrapper: React.FC<ProgramItemWrapperProps> = (props) => {
       )}
 
       {disabled && (
-        <div className="ui-flex ui-gap-2 ui-items-center">
-          <p className="ui-text-xs ui-font-normal ui-italic ui-text-neutral-500">
+        <div className="ui:flex ui:gap-2 ui:items-center">
+          <p className="ui:text-xs ui:font-normal ui:italic ui:text-neutral-500">
             {t('form.programs.selected')}
           </p>
           <Check />

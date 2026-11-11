@@ -117,19 +117,19 @@ const MaterialPageList: React.FC<CommonType> = ({ isGlobal = false }) => {
       />
       <div className="mt-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid-cols-4">
+          <FilterFormBody className="ui:grid-cols-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-space-x-3 flex">
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:space-x-3 flex">
               {hasPermission('material-mutate') && (
                 <>
                   {isGlobal ? (
                     <ButtonWithDropdown
                       id="btn-import"
                       variant="subtle"
-                      leftIcon={<Import className="ui-size-5" />}
+                      leftIcon={<Import className="ui:size-5" />}
                       label={t('common:import')}
                       dropdownList={dropdownList}
                     />
@@ -138,7 +138,7 @@ const MaterialPageList: React.FC<CommonType> = ({ isGlobal = false }) => {
                       id="btn-import"
                       variant="subtle"
                       type="button"
-                      leftIcon={<Import className="ui-size-5" />}
+                      leftIcon={<Import className="ui:size-5" />}
                       onClick={() => {
                         setShowImport(true)
                         setShowImportType(
@@ -158,7 +158,7 @@ const MaterialPageList: React.FC<CommonType> = ({ isGlobal = false }) => {
                 id="btn-export"
                 variant="subtle"
                 type="button"
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
                 onClick={() => exportQuery.refetch()}
               >
                 {t('common:export')}
@@ -169,7 +169,7 @@ const MaterialPageList: React.FC<CommonType> = ({ isGlobal = false }) => {
                     <ButtonWithDropdown
                       id="btn-download-template"
                       variant="subtle"
-                      leftIcon={<Download className="ui-size-5" />}
+                      leftIcon={<Download className="ui:size-5" />}
                       label={t('common:download_template')}
                       dropdownList={dropdownList}
                       isDownloadTemplate
@@ -179,7 +179,7 @@ const MaterialPageList: React.FC<CommonType> = ({ isGlobal = false }) => {
                       id="btn-export"
                       variant="subtle"
                       type="button"
-                      leftIcon={<Download className="ui-size-5" />}
+                      leftIcon={<Download className="ui:size-5" />}
                       onClick={() => {
                         setLevelId(filter.getValues('material_level_id'))
                         setTimeout(() => {
@@ -192,18 +192,18 @@ const MaterialPageList: React.FC<CommonType> = ({ isGlobal = false }) => {
                   )}
                 </>
               )}
-              <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+              <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
               <FilterResetButton variant="subtle" onClick={filter.reset} />
               <FilterSubmitButton
                 onClick={() => setPagination({ page: 1 })}
                 variant="outline"
-                className="ui-w-[220px]"
+                className="ui:w-[220px]"
               ></FilterSubmitButton>
             </div>
           </FilterFormFooter>
           {filter.renderActiveFilter()}
         </FilterFormRoot>
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <MaterialTable
             isLoading={isLoading}
             isGlobal={isGlobal}

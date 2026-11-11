@@ -47,7 +47,7 @@ export default function DashboardInventoryChart({
       : { show: false },
     tooltip: {
       confine: true,
-      formatter: `<span class="ui-whitespace-pre-wrap">${item.tooltip}</span>`,
+      formatter: `<span class="ui:whitespace-pre-wrap">${item.tooltip}</span>`,
     },
   }))
 
@@ -57,7 +57,7 @@ export default function DashboardInventoryChart({
     <DashboardBox.Root id={id}>
       <DashboardBox.Header
         bordered
-        className="ui-flex ui-items-center ui-justify-center ui-space-y-0"
+        className="ui:flex ui:items-center ui:justify-center ui:space-y-0"
       >
         <H5>{title}</H5>
         {information && (
@@ -77,7 +77,7 @@ export default function DashboardInventoryChart({
           }}
         />
         <DashboardBox.Content
-          className="ui-relative ui-h-96"
+          className="ui:relative ui:h-96"
           isLoading={isLoading}
           isEmpty={isEmpty}
         >
@@ -88,7 +88,7 @@ export default function DashboardInventoryChart({
             radius="40%"
             center={['50%', '35%']}
           />
-          <p className="ui-absolute ui-bottom-12 ui-w-full ui-text-sm ui-text-center">
+          <p className="ui:absolute ui:bottom-12 ui:w-full ui:text-sm ui:text-center">
             {t('last_updated')} {parseDateTime(lastUpdated)}
           </p>
         </DashboardBox.Content>

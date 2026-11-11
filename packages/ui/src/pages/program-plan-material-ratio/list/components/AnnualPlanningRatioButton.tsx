@@ -29,7 +29,7 @@ export const AddRatioButton = ({ href }: { href: string }) => {
   if (!isAllowMutate(detailProgramPlanData)) return null
 
   return (
-    <Button asChild leftIcon={<Plus className="ui-size-5" />}>
+    <Button asChild leftIcon={<Plus className="ui:size-5" />}>
       <Link href={href}>{t('add')}</Link>
     </Button>
   )
@@ -46,7 +46,7 @@ export const ImportRatioButton = ({ onClick }: { onClick: () => void }) => {
       data-testid="btn-import"
       variant="subtle"
       type="button"
-      leftIcon={<Import className="ui-size-5" />}
+      leftIcon={<Import className="ui:size-5" />}
       onClick={onClick}
     >
       {t('import')}
@@ -69,8 +69,8 @@ export const DownloadTemplateRatioButton = ({
       data-testid="btn-download-template"
       variant="subtle"
       type="button"
-      className="ui-w-max"
-      leftIcon={<Download className="ui-size-5" />}
+      className="ui:w-max"
+      leftIcon={<Download className="ui:size-5" />}
       onClick={onClick}
     >
       {t('download_template')}

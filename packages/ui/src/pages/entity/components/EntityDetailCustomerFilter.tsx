@@ -33,10 +33,10 @@ const EntityDetailCustomerFilter: React.FC<Props> = ({
     useContext(EntityDetailCustomerVendorContext)
 
   return (
-    <div className="ui-mb-6 ui-flex ui-justify-end ui-items-center">
+    <div className="ui:mb-6 ui:flex ui:justify-end ui:items-center">
       {selectedRows.length > 0 ? (
-        <div className="ui-flex ui-justify-end ui-items-end">
-          <p className="ui-mr-4 ui-text-[14px] ui-italic ui-leading-[20px]">
+        <div className="ui:flex ui:justify-end ui:items-end">
+          <p className="ui:mr-4 ui:text-[14px] ui:italic ui:leading-[20px]">
             {t('common:data_has_been_selected', {
               selectedRows: selectedRows.length.toString(),
             })}
@@ -53,7 +53,7 @@ const EntityDetailCustomerFilter: React.FC<Props> = ({
         </div>
       ) : (
         <>
-          <div className="ui-mr-[18px] ui-w-[378.67px]">
+          <div className="ui:mr-[18px] ui:w-[378.67px]">
             <InputSearch
               id={`search_${dataKey}`}
               placeholder={`${t('common:search')} ${
@@ -78,8 +78,8 @@ const EntityDetailCustomerFilter: React.FC<Props> = ({
                 variant="outline"
                 disabled={buttonLoading}
               >
-                <div className="ui-flex ui-justify-center ui-items-center">
-                  <Export className="ui-mr-2 ui-mt-[2px]" />
+                <div className="ui:flex ui:justify-center ui:items-center">
+                  <Export className="ui:mr-2 ui:mt-[2px]" />
                   {t('common:export')}
                 </div>
               </Button>
@@ -97,7 +97,7 @@ const EntityDetailCustomerFilter: React.FC<Props> = ({
                   }
                   disabled={buttonLoading || entity?.status === BOOLEAN.FALSE}
                   loading={isSubmittingCustomer}
-                  className="ui-ml-[16px]"
+                  className="ui:ml-[16px]"
                 >
                   {buttonTitle}
                 </Button>

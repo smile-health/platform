@@ -65,12 +65,12 @@ export default function DashboardStockPage() {
         filter={filter?.query}
         onDownloadAsCSV={onExport}
         colorClass={cx({
-          'ui-bg-green-500 ui-text-white': !isInTransitStock,
-          'ui-bg-yellow-500 ui-text-dark-blue': isInTransitStock,
+          'ui:bg-green-500 ui:text-white': !isInTransitStock,
+          'ui:bg-yellow-500 ui:text-dark-blue': isInTransitStock,
         })}
       >
         <DashboardFilter filter={filter} onExport={onExport} />
-        <div className="ui-grid ui-gap-x-4 ui-gap-y-6 ui-grid-cols-7">
+        <div className="ui:grid ui:gap-x-4 ui:gap-y-6 ui:grid-cols-7">
           <DashboardBigNumberSummarize
             id="dashboard-stock-number"
             value={chart?.number}

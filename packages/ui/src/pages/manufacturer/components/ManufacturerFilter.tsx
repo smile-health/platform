@@ -54,7 +54,7 @@ export default function ManufacturerFilter({
 
   const renderButtonFilter = () => {
     return (
-      <div className="ui-flex ui-ml-auto ui-gap-2">
+      <div className="ui:flex ui:ml-auto ui:gap-2">
         {isGlobal && (
           <>
             <Button
@@ -62,7 +62,7 @@ export default function ManufacturerFilter({
               variant="subtle"
               type="button"
               onClick={() => showModal('import')}
-              leftIcon={<Import className="ui-size-5" />}
+              leftIcon={<Import className="ui:size-5" />}
             >
               {t('import')}
             </Button>
@@ -71,7 +71,7 @@ export default function ManufacturerFilter({
               variant="subtle"
               type="button"
               onClick={onExport}
-              leftIcon={<Export className="ui-size-5" />}
+              leftIcon={<Export className="ui:size-5" />}
             >
               {t('export')}
             </Button>
@@ -80,17 +80,17 @@ export default function ManufacturerFilter({
               variant="subtle"
               type="button"
               onClick={onDownloadTemplate}
-              leftIcon={<Download className="ui-size-5" />}
+              leftIcon={<Download className="ui:size-5" />}
             >
               {t('download_template')}
             </Button>
-            <span className="ui-h-10 ui-w-px ui-bg-neutral-300" />
+            <span className="ui:h-10 ui:w-px ui:bg-neutral-300" />
           </>
         )}
         <FilterResetButton onClick={handleReset} variant="subtle" />
         <FilterSubmitButton
           onClick={() => handleChangePage(1)}
-          className="ui-w-[202px]"
+          className="ui:w-[202px]"
           variant="outline"
           data-testid="btn-filter-manufacturer"
         />
@@ -112,14 +112,14 @@ export default function ManufacturerFilter({
       />
       <FilterFormBody
         className={cx({
-          'ui-grid-cols-3': isGlobal,
-          'ui-flex ui-gap-4 ui-items-end': !isGlobal,
+          'ui:grid-cols-3': isGlobal,
+          'ui:flex ui:gap-4 ui:items-end': !isGlobal,
         })}
       >
         {isGlobal ? (
           filter.renderField()
         ) : (
-          <div className="ui-grow ui-grid ui-grid-cols-2 ui-items-end ui-gap-4">
+          <div className="ui:grow ui:grid ui:grid-cols-2 ui:items-end ui:gap-4">
             {filter.renderField()}
           </div>
         )}

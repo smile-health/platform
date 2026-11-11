@@ -107,13 +107,13 @@ const useAnnualCommitmentListTable = () => {
         cell: ({ row }) => {
           const item = row.original
           return (
-            <div className="ui-space-y-1">
+            <div className="ui:space-y-1">
               <div>
                 {dayjs(item.updated_at)
                   .format('DD MMM YYYY HH:mm')
                   .toUpperCase()}
               </div>
-              <div className="ui-text-gray-500">
+              <div className="ui:text-gray-500">
                 {getFullName(item.user_updated_by?.fullname)}
               </div>
             </div>
@@ -140,7 +140,7 @@ const useAnnualCommitmentListTable = () => {
           )
         },
         meta: {
-          cellClassName: 'ui-text-center',
+          cellClassName: 'ui:text-center',
         },
       },
     ],

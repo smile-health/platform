@@ -35,11 +35,11 @@ export function ProgramItemLink({
   sizeIcon = 64,
 }: ProgramItemLinkProps) {
   const setTextColor = (color?: string) => {
-    if (!color) return 'ui-text-black'
+    if (!color) return 'ui:text-black'
 
     const text = getReadableTextColor(color)
 
-    return text === 'light' ? 'ui-text-white' : 'ui-text-black'
+    return text === 'light' ? 'ui:text-white' : 'ui:text-black'
   }
 
   return (
@@ -49,11 +49,11 @@ export function ProgramItemLink({
       href={href}
       onClick={onClick}
       className={cx(
-        'ui-flex ui-items-center focus:outline-none gap-3',
+        'ui:flex ui:items-center focus:outline-none gap-3',
         {
-          'ui-flex-col': direction === 'vertical',
-          'ui-flex-row': direction === 'horizontal',
-          'ui-cursor-not-allowed': disabled,
+          'ui:flex-col': direction === 'vertical',
+          'ui:flex-row': direction === 'horizontal',
+          'ui:cursor-not-allowed': disabled,
         },
         className?.wrapper
       )}
@@ -69,17 +69,17 @@ export function ProgramItemLink({
       ) : (
         <div
           className={cx(
-            'ui-rounded ui-grid ui-place-items-center ui-w-10 ui-h-10',
+            'ui:rounded ui:grid ui:place-items-center ui:w-10 ui:h-10',
             className?.logo
           )}
           style={{ background: disabled ? '#e2e8f0' : data?.config?.color }}
         >
           <span
             className={cx(
-              'ui-font-medium',
+              'ui:font-medium',
               setTextColor(data?.config?.color),
               className?.label,
-              { 'ui-text-slate-300': disabled }
+              { 'ui:text-slate-300': disabled }
             )}
           >
             {generateInitials(data.name)}
@@ -87,8 +87,8 @@ export function ProgramItemLink({
         </div>
       )}
       <p
-        className={cx('ui-text-lg ui-font-bold', className?.title, {
-          'ui-text-neutral-500': disabled,
+        className={cx('ui:text-lg ui:font-bold', className?.title, {
+          'ui:text-neutral-500': disabled,
         })}
       >
         {data?.name}

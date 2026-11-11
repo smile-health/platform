@@ -33,8 +33,8 @@ const AssetDetailLoggerActivityFilter: React.FC<
   }, [filter])
 
   return (
-    <div className="ui-flex ui-justify-start ui-items-center ui-gap-4">
-      <FormControl className="ui-w-1/4">
+    <div className="ui:flex ui:justify-start ui:items-center ui:gap-4">
+      <FormControl className="ui:w-1/4">
         <FormLabel htmlFor="logger_options">
           {t('asset:detail.logger')}
         </FormLabel>
@@ -52,7 +52,7 @@ const AssetDetailLoggerActivityFilter: React.FC<
           }}
         />
       </FormControl>
-      <FormControl className="ui-w-full ui-flex-1">
+      <FormControl className="ui:w-full ui:flex-1">
         <FormLabel htmlFor="logger_input_date_picker">
           {t('common:form.date_range.label')}
         </FormLabel>
@@ -86,22 +86,22 @@ const AssetDetailLoggerActivityFilter: React.FC<
           hideTimeZone
         />
       </FormControl>
-      <div className="ui-flex ui-gap-2 ui-shrink ui-pt-4 ui-justify-end">
+      <div className="ui:flex ui:gap-2 ui:shrink ui:pt-4 ui:justify-end">
         <Button
           id="btn-export"
           variant="subtle"
           type="button"
           onClick={() => {}}
-          leftIcon={<Export className="ui-size-5" />}
+          leftIcon={<Export className="ui:size-5" />}
         >
           {t('common:export')}
         </Button>
-        <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+        <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
 
         <Button
           id="search__logger"
           variant="outline"
-          className="ui-w-56"
+          className="ui:w-56"
           type="button"
           onClick={() => {
             setFilter(localFilter)

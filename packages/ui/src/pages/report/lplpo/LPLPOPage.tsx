@@ -63,7 +63,7 @@ const LPLPOPage = () => {
   return (
     <Container title={t('title')} withLayout>
       <Meta title={generateMetaTitle(t('title'))} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <LPLPOFilter
           filter={filter}
           onSubmit={() => {

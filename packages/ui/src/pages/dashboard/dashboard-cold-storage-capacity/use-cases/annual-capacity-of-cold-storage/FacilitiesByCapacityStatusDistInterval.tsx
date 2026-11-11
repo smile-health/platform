@@ -68,7 +68,7 @@ export default function FacilitiesByCapacityStatusDistInterval() {
       isLoading={annual?.isLoading}
       isEmpty={!belowInterval && !aboveInterval}
     >
-      <div className="ui-w-full ui-h-[350px]">
+      <div className="ui:w-full ui:h-[350px]">
         <PieChart
           data={data.filter((d) => d.value > 0)}
           color={PIE_COLORS}

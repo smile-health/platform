@@ -86,7 +86,7 @@ const MaterialDetailInfoProgram: React.FC<MaterialDetailInfoProgramProps> = ({
       <ActiveLabel isActive={data.status === STATUS.ACTIVE} />
 
       {isKFA93AndHaveHierarchy && (
-        <div className="ui-grid ui-grid-cols-4 ui-gap-2">
+        <div className="ui:grid ui:grid-cols-4 ui:gap-2">
           <MaterialKfaCard
             label={t('material:detail.active_substance')}
             value={mapMaterialHierarchy(MATERIAL_HIERARCHY.INGREDIENT)}

@@ -17,22 +17,22 @@ const TransactionListBatchBox = ({
   }, [transaction, t, i18n.language])
 
   return (
-    <div className="ui-p-3 ui-bg-stone-100">
-      <h6 className="ui-font-bold ui-text-sm ui-text-dark-blue">
+    <div className="ui:p-3 ui:bg-stone-100">
+      <h6 className="ui:font-bold ui:text-sm ui:text-dark-blue">
         {t('transactionList:batch_columns.taken_from_activity_stock')}{' '}
         {stock?.activity?.name ?? transaction.activity_name ?? ''}
       </h6>
-      <div className="ui-space-y-1 ui-mt-1">
+      <div className="ui:space-y-1 ui:mt-1">
         {batchSchema.map(
           (detail, index) => (
             <div
               key={`${detail.label}-${index}`}
-              className="ui-grid ui-grid-cols-[1fr_2fr]"
+              className="ui:grid ui:grid-cols-[1fr_2fr]"
             >
-              <h6 className="ui-font-normal ui-text-dark-blue ui-text-sm">
+              <h6 className="ui:font-normal ui:text-dark-blue ui:text-sm">
                 {detail.label}
               </h6>
-              <h6 className="ui-font-normal ui-text-neutral-500 ui-text-sm">
+              <h6 className="ui:font-normal ui:text-neutral-500 ui:text-sm">
                 : {detail.value}
               </h6>
             </div>

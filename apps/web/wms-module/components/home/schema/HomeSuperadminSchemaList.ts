@@ -32,7 +32,7 @@ export const createFilterSchema = ({ t }: Params): UseFilter => {
         start: dayjs().toISOString(),
         end: dayjs().toISOString(),
       },
-      className: 'ui-w-full',
+      className: 'ui:w-full',
     },
     {
       id: 'select-province',
@@ -69,7 +69,7 @@ export const createFilterSchema = ({ t }: Params): UseFilter => {
       id: 'select-healthcare-facility-name',
       type: 'select-async-paginate',
       name: 'healthcareFacilityName',
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       isMulti: false,
       label: t('home:home_superadmin.filter.healthcare_facility.label'),
       placeholder: t(

@@ -95,20 +95,20 @@ const useModelAssetCapacityTable = (data?: DetailModelAssetResponse) => {
       .filter((item) => item.type === type)
       .map((item) => (
         <div
-          className="ui-flex ui-flex-col ui-justify-between ui-items-start ui-gap-4"
+          className="ui:flex ui:flex-col ui:justify-between ui:items-start ui:gap-4"
           key={item.header}
         >
-          <hr className="ui-border ui-border-neutral-100 ui-my-2 ui-w-full" />
-          <h5 className="ui-font-bold">{item.header}</h5>
+          <hr className="ui:border ui:border-neutral-100 ui:my-2 ui:w-full" />
+          <h5 className="ui:font-bold">{item.header}</h5>
           {item.type === 'capacity_pqs' && (
-            <div className="ui-flex ui-flex-row ui-gap-2">
+            <div className="ui:flex ui:flex-row ui:gap-2">
               <SingleValue
                 label={t('form.detail.label.pqs_code')}
                 value={data?.pqs_code ?? '-'}
               />
             </div>
           )}
-          <div className="ui-grid ui-grid-cols-2">
+          <div className="ui:grid ui:grid-cols-2">
             <DataTable columns={getSchema(item.type)} data={item.data} />
           </div>
         </div>

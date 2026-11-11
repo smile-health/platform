@@ -42,7 +42,7 @@ const TransactionCreateConsumptionFormInputDiseaseHistory: React.FC = () => {
   const memoizedYearOptions = useMemo(() => optionsYears(), [])
 
   return (
-    <div className="ui-flex ui-flex-col ui-space-y-5 ui-w-full">
+    <div className="ui:flex ui:flex-col ui:space-y-5 ui:w-full">
       <Controller
         key={`is-dengue-before-${indexItem}-${index}`}
         control={control}
@@ -51,8 +51,8 @@ const TransactionCreateConsumptionFormInputDiseaseHistory: React.FC = () => {
           field: { value, onChange },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-space-y-3">
-            <FormLabel required className="ui-leading-5">
+          <FormControl className="ui:space-y-3">
+            <FormLabel required className="ui:leading-5">
               {t('patient_identity.history_medical.is_dengue_before.label')}
             </FormLabel>
             <RadioGroup>
@@ -84,14 +84,14 @@ const TransactionCreateConsumptionFormInputDiseaseHistory: React.FC = () => {
         )}
       />
 
-      <FormControl className={cx('ui-space-y-3', { 'ui-hidden': !historyMedical?.is_dengue_before })}>
-        <FormLabel required className="ui-leading-5">
+      <FormControl className={cx('ui:space-y-3', { 'ui:hidden': !historyMedical?.is_dengue_before })}>
+        <FormLabel required className="ui:leading-5">
           {t('patient_identity.history_medical.last_dengue_diagnosis.label')}
         </FormLabel>
-        <div className="ui-flex ui-items-center ui-gap-4">
+        <div className="ui:flex ui:items-center ui:gap-4">
           <ReactSelect
             key={`select-month-${historyMedical?.is_dengue_before}-${indexItem}-${index}`}
-            className="ui-w-full"
+            className="ui:w-full"
             placeholder={t('patient_identity.history_medical.last_dengue_diagnosis.placeholder', { returnObjects: true })[0]}
             options={memoizedOptionsMonths}
             onChange={(e: OptionType) => {
@@ -105,7 +105,7 @@ const TransactionCreateConsumptionFormInputDiseaseHistory: React.FC = () => {
           />
           <ReactSelect
             key={`select-year-${historyMedical?.is_dengue_before}-${indexItem}-${index}`}
-            className="ui-w-full"
+            className="ui:w-full"
             placeholder={t('patient_identity.history_medical.last_dengue_diagnosis.placeholder', { returnObjects: true })[1]}
             options={memoizedYearOptions}
             onChange={(e: OptionType) => {
@@ -128,8 +128,8 @@ const TransactionCreateConsumptionFormInputDiseaseHistory: React.FC = () => {
           field: { value, onChange },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-space-y-3">
-            <FormLabel required className="ui-leading-5">
+          <FormControl className="ui:space-y-3">
+            <FormLabel required className="ui:leading-5">
               {t('patient_identity.history_medical.dengue_received_vaccine.label')}
             </FormLabel>
             <RadioGroup>

@@ -36,7 +36,7 @@ const EntityDetailMaterialManagementEditForm: React.FC<Props> = ({
     <Tr>
       <Td>
         {watch('activity_id') && !createMode ? (
-          <div className="ui-pt-2">
+          <div className="ui:pt-2">
             <span>{getValues('activity_id')?.label}</span>
           </div>
         ) : (
@@ -162,16 +162,16 @@ const EntityDetailMaterialManagementEditForm: React.FC<Props> = ({
       </Td>
       {!createMode ? (
         <Td>
-          <div className="ui-flex ui-justify-start ui-items-center ui-mt-2">
+          <div className="ui:flex ui:justify-start ui:items-center ui:mt-2">
             <Button
               id={`save_${getValues('id')}`}
               variant="light"
-              className="ui-bg-transparent ui-p-0 ui-h-auto ui-mr-[18px]  hover:!ui-bg-transparent"
+              className="ui:bg-transparent ui:p-0 ui:h-auto ui:mr-[18px]  ui:hover:bg-transparent!"
               type="submit"
               loading={isLoading}
             >
-              <div className="ui-flex ui-justify-center ui-items-center !ui-text-[#004990]">
-                <div className="ui-mr-[8px]">
+              <div className="ui:flex ui:justify-center ui:items-center ui:text-[#004990]!">
+                <div className="ui:mr-[8px]">
                   <CheckIcon className="h-4 w-4" />
                 </div>
                 {t('common:save')}
@@ -181,11 +181,11 @@ const EntityDetailMaterialManagementEditForm: React.FC<Props> = ({
               id={`cancel_${getValues('id')}`}
               variant="light"
               color="danger"
-              className="ui-bg-transparent ui-p-0 ui-h-auto hover:!ui-bg-transparent"
+              className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent!"
               type="button"
               onClick={() => setEditData(null)}
             >
-              <div className="ui-ml-[4.16px] ui-rotate-45 ui-mt-1">
+              <div className="ui:ml-[4.16px] ui:rotate-45 ui:mt-1">
                 <Plus />
               </div>
             </Button>

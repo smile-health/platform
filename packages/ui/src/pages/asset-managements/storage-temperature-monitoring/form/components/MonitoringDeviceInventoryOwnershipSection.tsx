@@ -36,16 +36,16 @@ export const MonitoringDeviceInventoryOwnershipSection = ({
     useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('monitoringDeviceInventory:form.title.ownership')}
       </div>
-      <div className="ui-w-full ui-grid ui-grid-cols-2 ui-gap-4">
+      <div className="ui:w-full ui:grid ui:grid-cols-2 ui:gap-4">
         <FormControl>
           <FormLabel required>
             {t('monitoringDeviceInventory:columns.own_status')}
           </FormLabel>
-          <RadioGroup className="!ui-mt-5">
+          <RadioGroup className="ui:mt-5!">
             {assetOpnameOwnershipStatus(t).map((option) => (
               <Radio
                 {...register('ownership_status')}
@@ -127,7 +127,7 @@ export const MonitoringDeviceInventoryOwnershipSection = ({
           )}
         </FormControl>
       </div>
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="ownership_qty" required>
           {t('monitoringDeviceInventory:columns.owned_amount.label', {
             type:

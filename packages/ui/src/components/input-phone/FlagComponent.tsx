@@ -17,11 +17,11 @@ export function FlagComponent({ country, size = 'md' }: FlagComponentProps) {
 
   return (
     <span
-      className={cx('ui-overflow-hidden', {
-        'ui-w-4': size === 'sm',
-        'ui-w-5 ': size === 'md',
-        'ui-w-6': size === 'lg',
-        'ui-w-7': size === 'xl',
+      className={cx('ui:overflow-hidden', {
+        'ui:w-4': size === 'sm',
+        'ui:w-5 ': size === 'md',
+        'ui:w-6': size === 'lg',
+        'ui:w-7': size === 'xl',
       })}
     >
       {country ? (
@@ -32,10 +32,10 @@ export function FlagComponent({ country, size = 'md' }: FlagComponentProps) {
       ) : (
         <PhoneIcon
           className={cx({
-            'ui-size-4': size === 'sm',
-            'ui-size-5 ': size === 'md',
-            'ui-size-6': size === 'lg',
-            'ui-size-7': size === 'xl',
+            'ui:size-4': size === 'sm',
+            'ui:size-5 ': size === 'md',
+            'ui:size-6': size === 'lg',
+            'ui:size-7': size === 'xl',
           })}
           aria-hidden="true"
         />

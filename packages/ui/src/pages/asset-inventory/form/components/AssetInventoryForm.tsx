@@ -41,7 +41,7 @@ const AssetInventoryForm: React.FC<AssetInventoryFormProps> = ({ data }) => {
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="ui-mt-6 ui-w-[50%] ui-mx-auto"
+        className="ui:mt-6 ui:w-[50%] ui:mx-auto"
       >
         <AssetInventorySpecificationSection
           errors={errors}
@@ -180,11 +180,11 @@ const AssetInventoryForm: React.FC<AssetInventoryFormProps> = ({ data }) => {
             },
           ]}
         />
-        <div className="ui-flex ui-justify-end">
+        <div className="ui:flex ui:justify-end">
           <Button
             type="submit"
             variant="solid"
-            className="ui-mt-4 ui-w-auto ui-px-10 ui-bg-primary-500 ui-text-white hover:ui-bg-primary-600"
+            className="ui:mt-4 ui:w-auto ui:px-10 ui:bg-primary-500 ui:text-white ui:hover:bg-primary-600"
           >
             {t('common:save')}
           </Button>

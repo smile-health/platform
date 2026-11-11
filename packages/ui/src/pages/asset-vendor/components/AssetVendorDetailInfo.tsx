@@ -48,7 +48,7 @@ export default function AssetVendorDetailInfo(
 
   const status = data?.status?.id
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
       <ModalConfirmation
         open={updateItem}
         setOpen={setUpdateItem}
@@ -64,10 +64,10 @@ export default function AssetVendorDetailInfo(
           })
         }
       />
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold">Details</h5>
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold">Details</h5>
         <Exists useIt={!isViewOnly()}>
-          <div className="ui-grid ui-grid-cols-1 ui-w-[150px] ui-justify-end">
+          <div className="ui:grid ui:grid-cols-1 ui:w-[150px] ui:justify-end">
             <Exists useIt={isGlobal ?? false}>
               <Button
                 asChild

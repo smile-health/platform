@@ -58,7 +58,7 @@ export const columnsWasteType = (
     enableSorting: false,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-flex-col ui-gap-0.5">
+        <div className="ui:flex ui:flex-col ui:gap-0.5">
           <p>{original.userName}</p>
           <p>
             {original.updatedAt
@@ -79,7 +79,7 @@ export const columnsWasteType = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           <ButtonActionTable
             id={original?.id}
             path={`waste-hierarchy/${tab}`}
@@ -92,7 +92,7 @@ export const columnsWasteType = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-danger-500"
+            className="ui:px-1.5! ui:text-danger-500"
           >
             {t('common:remove')}
           </Button>
@@ -152,7 +152,7 @@ export const columnsWasteGroup = (
     enableSorting: false,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-flex-col ui-gap-0.5">
+        <div className="ui:flex ui:flex-col ui:gap-0.5">
           <p>{original.userName}</p>
           <p>
             {original.updatedAt
@@ -173,7 +173,7 @@ export const columnsWasteGroup = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           <ButtonActionTable
             id={original?.id}
             path={`waste-hierarchy/${tab}`}
@@ -186,7 +186,7 @@ export const columnsWasteGroup = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-danger-500"
+            className="ui:px-1.5! ui:text-danger-500"
           >
             {t('common:remove')}
           </Button>
@@ -257,7 +257,7 @@ export const columnsWasteCharacteristic = (
     enableSorting: false,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-flex-col ui-gap-0.5">
+        <div className="ui:flex ui:flex-col ui:gap-0.5">
           <p>{original.userName}</p>
           <p>
             {original.updatedAt
@@ -298,7 +298,7 @@ export const columnsWasteCharacteristic = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           <ButtonActionTable
             id={original?.id}
             path={`waste-hierarchy/${tab}`}

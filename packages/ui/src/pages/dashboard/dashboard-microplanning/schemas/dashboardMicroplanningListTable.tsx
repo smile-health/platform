@@ -69,8 +69,8 @@ function withRegionColumnMeta(meta?: any) {
             row.original?.regionRowSpan ?? 1,
         cellClassName: (row: any) =>
             row.original?.regionRowSpan === 0
-                ? 'ui-hidden'
-                : 'ui-text-left ui-font-semibold ui-align-middle',
+                ? 'ui:hidden'
+                : 'ui:text-left ui:font-semibold ui:align-middle',
     }
 }
 
@@ -78,7 +78,7 @@ function withTypeColumnMeta(meta?: any) {
     return {
         ...(meta ?? {}),
         headerClassName:
-            meta?.headerClassName ?? 'ui-text-left',
+            meta?.headerClassName ?? 'ui:text-left',
     }
 }
 
@@ -86,7 +86,7 @@ function withCenteredColumnMeta(meta?: any) {
     return {
         ...(meta ?? {}),
         headerClassName:
-            meta?.headerClassName ?? 'ui-text-center',
+            meta?.headerClassName ?? 'ui:text-center',
     }
 }
 
@@ -161,7 +161,7 @@ export default function MicroplanningDashboardTable({
                 stickyColumns={stickyColumns}
             />
 
-            <PaginationContainer className="ui-mt-4">
+            <PaginationContainer className="ui:mt-4">
                 <PaginationSelectLimit
                     size={paginate}
                     onChange={onChangePaginate}

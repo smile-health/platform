@@ -41,11 +41,11 @@ const WeightChanger: React.FC = () => {
       <DropdownMenuTrigger>
         {currentWeight && (
           <div
-            className="ui-bg-[#F5F5F4] ui-flex ui-gap-2 ui-items-center ui-p-[6px] ui-w-[80px] ui-cursor-pointer"
+            className="ui:bg-[#F5F5F4] ui:flex ui:gap-2 ui:items-center ui:p-[6px] ui:w-[80px] ui:cursor-pointer"
             id="trigger-weight-changer"
           >
             {currentWeight.value.toUpperCase()}
-            <ChevronDownIcon className="ui-w-3" />
+            <ChevronDownIcon className="ui:w-3" />
           </div>
         )}
       </DropdownMenuTrigger>
@@ -56,7 +56,7 @@ const WeightChanger: React.FC = () => {
             onClick={() => handleWeightUnitChange(option.value as 'kg' | 'ton')}
             id={`weight-${option.value}`}
           >
-            <div className="ui-flex ui-gap-2 ui-items-center ui-font-semibold">
+            <div className="ui:flex ui:gap-2 ui:items-center ui:font-semibold">
               {option.label}
             </div>
           </DropdownMenuItem>

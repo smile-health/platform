@@ -30,7 +30,7 @@ export default function OrderCreateBatchModalWarning({
       <DialogCloseButton />
       <DialogHeader>{t('batch_warning.title')}</DialogHeader>
       <DialogContent>{t('batch_warning.description')}</DialogContent>
-      <DialogFooter className="ui-grid ui-grid-cols-1">
+      <DialogFooter className="ui:grid ui:grid-cols-1">
         <Button variant="outline" onClick={() => setOpen(!open)}>
           {t('close')}
         </Button>

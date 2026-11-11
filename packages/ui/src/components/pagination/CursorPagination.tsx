@@ -60,11 +60,11 @@ const CursorPagination: React.FC<Props> = ({
   const totalCountLabel = getTotalCountLabel()
 
   return (
-    <div className="ui-flex ui-justify-between ui-items-center ui-gap-2 ui-mt-5 ui-w-full">
+    <div className="ui:flex ui:justify-between ui:items-center ui:gap-2 ui:mt-5 ui:w-full">
       <PaginationContainer>
         {/* Left Section */}
-        <div className="ui-flex ui-items-center ui-gap-2">
-          <span className="ui-text-sm ui-font-medium ui-text-gray-700">
+        <div className="ui:flex ui:items-center ui:gap-2">
+          <span className="ui:text-sm ui:font-medium ui:text-gray-700">
             {t('common:pagination.showing')}
           </span>
 
@@ -79,33 +79,33 @@ const CursorPagination: React.FC<Props> = ({
               onChangePagination({ paginate: Number(option?.value) })
             }
             menuPosition="fixed"
-            className="ui-w-20"
+            className="ui:w-20"
           />
 
-          <span className="ui-text-sm ui-font-medium ui-text-gray-700">
+          <span className="ui:text-sm ui:font-medium ui:text-gray-700">
             {t('common:pagination.items_per_page')}.
           </span>
         </div>
 
         {/* Total Section */}
-        <div className="ui-flex ui-items-center ui-gap-2">
-          <span className="ui-text-sm ui-font-medium ui-text-gray-700">
+        <div className="ui:flex ui:items-center ui:gap-2">
+          <span className="ui:text-sm ui:font-medium ui:text-gray-700">
             {totalCountLabel}
           </span>
         </div>
       </PaginationContainer>
 
       {/* Navigation Buttons */}
-      <div className="ui-flex ui-items-center ui-gap-1">
+      <div className="ui:flex ui:items-center ui:gap-1">
         <Button
           variant="outline"
           size="sm"
           onClick={() => onChangePagination({ cursor: prevCursor ?? null })}
           disabled={!prevCursor}
         >
-          <div className="ui-flex ui-items-center ui-space-x-1 ui-px-2">
+          <div className="ui:flex ui:items-center ui:space-x-1 ui:px-2">
             <ChevronLeft />
-            <div className="ui-hidden md:ui-block">
+            <div className="ui:hidden ui:md:block">
               {t('common:pagination.previous')}
             </div>
           </div>
@@ -118,7 +118,7 @@ const CursorPagination: React.FC<Props> = ({
           disabled={!nextCursor}
         >
           <ChevronRight />
-          <div className="ui-hidden md:ui-block">
+          <div className="ui:hidden ui:md:block">
             {t('common:pagination.next')}
           </div>
         </Button>

@@ -48,23 +48,23 @@ export default function AnnualCommitmentFormPage() {
                 onClick: () => router.push('/v5/annual-commitment'),
               }}
             >
-              <div className="ui-space-y-6">
+              <div className="ui:space-y-6">
                 <AnnualCommitmentDetailForm />
                 <CentralAllocationTable />
                 <BufferTable />
 
-                <div className="ui-w-full ui-mt-5">
-                  <div className="ui-flex ui-space-x-5 ui-justify-end">
+                <div className="ui:w-full ui:mt-5">
+                  <div className="ui:flex ui:space-x-5 ui:justify-end">
                     <Button
                       variant="outline"
-                      className="ui-w-48"
+                      className="ui:w-48"
                       type="button"
                       onClick={() => router.push('/v5/annual-commitment')}
                     >
                       {t('annualCommitmentForm:button.back')}
                     </Button>
                     <Button
-                      className="ui-w-48"
+                      className="ui:w-48"
                       type="button"
                       onClick={form.submit}
                     >

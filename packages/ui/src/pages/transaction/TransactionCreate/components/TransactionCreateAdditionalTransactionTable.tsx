@@ -12,8 +12,8 @@ const TransactionCreateAdditionalTransactionTable: React.FC = () => {
 
   if (Number(type) === TRANSACTION_TYPE.CANCELLATION_OF_DISCARD)
     return (
-      <div className="ui-mt-5 ui-w-full ui-p-6 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
-        <h1 className="ui-font-bold">
+      <div className="ui:mt-5 ui:w-full ui:p-6 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
+        <h1 className="ui:font-bold">
           {t('cancel_transaction_discard.table.cancel.title')}
           <TransactionCancelDiscardSelectedDiscard />
         </h1>
@@ -22,7 +22,7 @@ const TransactionCreateAdditionalTransactionTable: React.FC = () => {
 
   if (Number(type) === TRANSACTION_TYPE.RETURN_FROM_HEALTH_FACILITIES)
     return (
-      <div className="ui-mt-5 ui-w-full ui-p-6 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
+      <div className="ui:mt-5 ui:w-full ui:p-6 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
         <TransactionReturnFromFacilityDetailTable />
       </div>
     )

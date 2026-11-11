@@ -108,7 +108,7 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
   }
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-gray-300 ui-rounded ui-space-y-4">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-gray-300 ui:rounded ui:space-y-4">
       <ModalConfirmation
         open={changeStatusState?.show}
         description={
@@ -124,7 +124,7 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
         title={t('entity:modal_relocation.title')}
         buttonTitle={t('entity:modal_relocation.submit')}
         description={
-          <p className="ui-text-base ui-font-medium">
+          <p className="ui:text-base ui:font-medium">
             <Trans t={t} i18nKey="entity:modal_relocation.description" />
           </p>
         }
@@ -134,10 +134,10 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
         }}
         setOpen={setModalRelocation}
       />
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold">{t('entity:detail.details.title')}</h5>
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold">{t('entity:detail.details.title')}</h5>
         {!isViewOnly() && (
-          <div className="ui-grid ui-grid-cols-1 ui-w-[125px] ui-justify-end ui-gap-2">
+          <div className="ui:grid ui:grid-cols-1 ui:w-[125px] ui:justify-end ui:gap-2">
             {isGlobal ? (
               <Button
                 id="btn-link-entity-edit"
@@ -177,7 +177,7 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
       </div>
 
       {renderActiveLabel()}
-      <div className="ui-grid ui-grid-cols-[264px_3px_1fr] ui-gap-x-2 ui-gap-y-4">
+      <div className="ui:grid ui:grid-cols-[264px_3px_1fr] ui:gap-x-2 ui:gap-y-4">
         {details?.map(({ label, value, id }) => (
           <SingleValue
             id={id}
@@ -189,13 +189,13 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
         ))}
         {!isGlobal && (
           <Fragment>
-            <p key="entity-vendor-status" className="ui-text-[#787878]">
+            <p key="entity-vendor-status" className="ui:text-[#787878]">
               {t('entity:detail.additional.active_transaction')}
             </p>
             {!isEdit ? (
               <Fragment>
                 <span>:</span>
-                <div className="ui-flex ui-gap-6 ui-items-center">
+                <div className="ui:flex ui:gap-6 ui:items-center">
                   <p>{t(`common:${entity?.is_vendor ? 'yes' : 'no'}`)}</p>
                   {hasPermission('entity-mutate') && (
                     <ButtonIcon
@@ -211,7 +211,7 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
               </Fragment>
             ) : (
               <Fragment>
-                <div className="ui-flex ui-gap-6 ui-items-center">
+                <div className="ui:flex ui:gap-6 ui:items-center">
                   <Switch
                     onCheckedChange={(is_vendor) =>
                       setEntityFlag((prev) => ({ ...prev, is_vendor }))
@@ -225,7 +225,7 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
                   />
                   <Button
                     variant="subtle"
-                    className="ui-text-sm"
+                    className="ui:text-sm"
                     onClick={handleChangeVendor}
                   >
                     {t('common:save')}
@@ -245,17 +245,17 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
                     <XMark />
                   </ButtonIcon>
                 </div>
-                <div className="ui-w-0" />
+                <div className="ui:w-0" />
               </Fragment>
             )}
 
-            <p key="entity-relocation-status" className="ui-text-[#787878]">
+            <p key="entity-relocation-status" className="ui:text-[#787878]">
               {t('entity:detail.additional.relocation')}
             </p>
             {!isEditRelocation ? (
               <Fragment>
                 <span>:</span>
-                <div className="ui-flex ui-gap-6 ui-items-center">
+                <div className="ui:flex ui:gap-6 ui:items-center">
                   <p>{t(`common:${entity?.is_relocation ? 'yes' : 'no'}`)}</p>
                   {hasPermission('entity-mutate') && (
                     <ButtonIcon
@@ -271,7 +271,7 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
               </Fragment>
             ) : (
               <Fragment>
-                <div className="ui-flex ui-gap-6 ui-items-center">
+                <div className="ui:flex ui:gap-6 ui:items-center">
                   <Switch
                     onCheckedChange={(is_relocation) =>
                       setEntityFlag((prev) => ({ ...prev, is_relocation }))
@@ -285,7 +285,7 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
                   />
                   <Button
                     variant="subtle"
-                    className="ui-text-sm"
+                    className="ui:text-sm"
                     onClick={() => mutate()}
                   >
                     {t('common:save')}
@@ -305,7 +305,7 @@ const EntityDetailInformation: React.FC<Props> = (props) => {
                     <XMark />
                   </ButtonIcon>
                 </div>
-                <div className="ui-w-0" />
+                <div className="ui:w-0" />
               </Fragment>
             )}
           </Fragment>

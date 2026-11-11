@@ -56,34 +56,34 @@ export default function DashboardCardSummary({
     <DashboardBox.Content
       isLoading={isLoading}
       isEmpty={!cards?.length}
-      className="ui-max-h-[524px] ui-overflow-y-auto !ui-px-0"
+      className="ui:max-h-[524px] ui:overflow-y-auto ui:px-0!"
     >
       <div
-        className="ui-pt-1"
+        className="ui:pt-1"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(6, minmax(0, 1fr))',
           gap: '1rem',
         }}
       >
-        <div className="ui-bg-slate-100 ui-rounded ui-p-4">
-          <p className="ui-font-medium ui-text-neutral-700 ui-text-base">
+        <div className="ui:bg-slate-100 ui:rounded ui:p-4">
+          <p className="ui:font-medium ui:text-neutral-700 ui:text-base">
             {t('title.total_asset')}
           </p>
-          <p className="ui-text-[18px] ui-font-bold ui-text-neutral-900">
+          <p className="ui:text-[18px] ui:font-bold ui:text-neutral-900">
             {numberFormatter(totalAsset ?? 0, language)}
           </p>
         </div>
         {cards?.map((c: any) => (
           <div
             key={c.title}
-            className="ui-rounded ui-p-4 ui-h-[131px]"
+            className="ui:rounded ui:p-4 ui:h-[131px]"
             style={{ backgroundColor: c.color }}
           >
-            <p className="ui-font-medium ui-text-neutral-700 ui-text-base ui-line-clamp-3">
+            <p className="ui:font-medium ui:text-neutral-700 ui:text-base ui:line-clamp-3">
               {c.title}
             </p>
-            <p className="ui-text-[18px] ui-font-bold ui-text-neutral-900">
+            <p className="ui:text-[18px] ui:font-bold ui:text-neutral-900">
               {numberFormatter(c.total ?? 0, language)}
             </p>
           </div>

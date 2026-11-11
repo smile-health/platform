@@ -89,7 +89,7 @@ export default function OrderCreateCentralDistributionTableBatch({
             <Tr key={field?.id}>
               <Td>{index + 1}</Td>
               {isManagedInBatch ? (
-                <Td className="ui-space-y-0.5">
+                <Td className="ui:space-y-0.5">
                   <p>
                     <strong>{field?.batch_code ?? '-'}</strong>
                   </p>
@@ -115,7 +115,7 @@ export default function OrderCreateCentralDistributionTableBatch({
                 <Td>-</Td>
               )}
               <Td>
-                <FormControl className="ui-space-y-1">
+                <FormControl className="ui:space-y-1">
                   <InputNumberV2
                     data-testid={`input-quantity-batch-${index}`}
                     placeholder={t('form.ordered_qty.placeholder')}
@@ -145,7 +145,7 @@ export default function OrderCreateCentralDistributionTableBatch({
                         field: { value, onChange, ...field },
                         fieldState: { error },
                       }) => (
-                        <FormControl className="ui-space-y-1">
+                        <FormControl className="ui:space-y-1">
                           <ReactSelect
                             {...field}
                             isClearable
@@ -181,7 +181,7 @@ export default function OrderCreateCentralDistributionTableBatch({
                         field: { ref, ...field },
                         fieldState: { error },
                       }) => (
-                        <FormControl className="ui-space-y-1">
+                        <FormControl className="ui:space-y-1">
                           <ReactSelectAsync
                             {...field}
                             id="select-source"
@@ -208,7 +208,7 @@ export default function OrderCreateCentralDistributionTableBatch({
                 </>
               )}
               <Td>
-                <FormControl className="ui-space-y-1">
+                <FormControl className="ui:space-y-1">
                   <InputNumberV2
                     data-testid={`input-total-batch-${index}`}
                     placeholder={t('form.price.total.placeholder')}
@@ -238,17 +238,17 @@ export default function OrderCreateCentralDistributionTableBatch({
                 />
               </Td>
               {isManagedInBatch && (
-                <Td className="ui-flex ui-gap-4">
+                <Td className="ui:flex ui:gap-4">
                   <Button
                     onClick={() => onShowEdit(field, index)}
-                    className="ui-p-1 ui-h-auto"
+                    className="ui:p-1 ui:h-auto"
                     variant="subtle"
                   >
                     {t('action.edit')}
                   </Button>
                   <Button
                     onClick={() => onRemove(index)}
-                    className="ui-p-1 ui-h-auto"
+                    className="ui:p-1 ui:h-auto"
                     color="danger"
                     variant="subtle"
                   >
@@ -260,7 +260,7 @@ export default function OrderCreateCentralDistributionTableBatch({
           )
         })}
       </Tbody>
-      <TableEmpty className="ui-h-52">
+      <TableEmpty className="ui:h-52">
         <EmptyState
           title={t('info.empty.title')}
           description={t('info.empty.description.batch')}

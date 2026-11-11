@@ -23,13 +23,13 @@ export default function DashboardEntityTagChart({
   exportFileName,
 }: Props) {
   return (
-    <div className="ui-col-span-4">
+    <div className="ui:col-span-4">
       <DashboardBox.Root id={id}>
         <DashboardBox.Header>
           <h4>
             <strong>{title}</strong>
           </h4>
-          {subtitle && <p className="ui-text-base">{subtitle}</p>}
+          {subtitle && <p className="ui:text-base">{subtitle}</p>}
         </DashboardBox.Header>
         <DashboardBox.Body>
           <DashboardBox.Config
@@ -39,7 +39,7 @@ export default function DashboardEntityTagChart({
             }}
           />
           <DashboardBox.Content
-            className="ui-h-96"
+            className="ui:h-96"
             isLoading={isLoading}
             isEmpty={!data?.length}
           >

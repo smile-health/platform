@@ -83,7 +83,7 @@ export const OrderDetailConfirmDrawerForm = ({
                 placeholder={t('orderDetail:form.confirmed_qty.placeholder')}
                 value={field?.value as number}
                 minValue={0}
-                className="ui-text-sm"
+                className="ui:text-sm"
                 onChange={(e) => {
                   field.onChange(Number.isNaN(e) ? undefined : e)
                   setValue(`order_items.${row.index}`, {
@@ -101,7 +101,7 @@ export const OrderDetailConfirmDrawerForm = ({
         />
       ),
       meta: {
-        cellClassName: 'ui-w-1/4',
+        cellClassName: 'ui:w-1/4',
       },
     },
     {
@@ -110,11 +110,11 @@ export const OrderDetailConfirmDrawerForm = ({
       cell: ({ row }) => {
         const stockVendor = row.original.stock_vendor
         return (
-          <div className="ui-space-y-1">
+          <div className="ui:space-y-1">
             <div>
               {numberFormatter(stockVendor?.total_available_qty, i18n.language)}
             </div>
-            <div className="ui-text-gray-500">
+            <div className="ui:text-gray-500">
               (min: {numberFormatter(stockVendor?.min, i18n.language)} | max:{' '}
               {numberFormatter(stockVendor?.max, i18n.language)})
             </div>
@@ -123,7 +123,7 @@ export const OrderDetailConfirmDrawerForm = ({
       },
       meta: {
         headerSubComponent: (
-          <div className="ui-font-normal ui-text-gray-500">
+          <div className="ui:font-normal ui:text-gray-500">
             {t('common:at')} {data?.vendor?.name}
           </div>
         ),

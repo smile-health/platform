@@ -49,11 +49,11 @@ export default function OrderCreateReturnDetailForm({
   const entityActivities = useEntityActivitesOption(customer_id?.value)
 
   return (
-    <div className="ui-border ui-border-[#d2d2d2] ui-w-1/2 ui-p-6 !ui-h-[32 rem]">
-      <div className="ui-mb-4 ui-font-bold !ui-text-[#0C3045]">
+    <div className="ui:border ui:border-[#d2d2d2] ui:w-1/2 ui:p-6 !ui-h-[32 rem]">
+      <div className="ui:mb-4 ui:font-bold ui:text-dark-blue!">
         {t('orderCreateReturn:title.form')}
       </div>
-      <FormControl className="ui-mb-4">
+      <FormControl className="ui:mb-4">
         <FormLabel required>
           {t('orderCreateReturn:form.vendor_id.label')}
         </FormLabel>
@@ -68,7 +68,7 @@ export default function OrderCreateReturnDetailForm({
               <Fragment>
                 <ReactSelectAsync
                   {...field}
-                  className="!ui-text-[#0C3045]"
+                  className="ui:text-dark-blue!"
                   id="select-customer_id"
                   key={customer_id?.value}
                   loadOptions={loadEntity}
@@ -105,7 +105,7 @@ export default function OrderCreateReturnDetailForm({
         />
       </FormControl>
 
-      <FormControl className="ui-mb-4">
+      <FormControl className="ui:mb-4">
         <Controller
           control={control}
           name="activity_id"
@@ -121,7 +121,7 @@ export default function OrderCreateReturnDetailForm({
                 {...field}
                 key={`${customer_id?.value}`}
                 id="select-transaction-activity"
-                className="!ui-text-[#0C3045]"
+                className="ui:text-dark-blue!"
                 placeholder={t(
                   'orderCreateReturn:form.activity_id.placeholder'
                 )}
@@ -147,7 +147,7 @@ export default function OrderCreateReturnDetailForm({
         />
       </FormControl>
 
-      <FormControl className="ui-mb-4">
+      <FormControl className="ui:mb-4">
         <FormLabel required>
           {t('orderCreateReturn:form.customer_id.label')}
         </FormLabel>
@@ -162,7 +162,7 @@ export default function OrderCreateReturnDetailForm({
               <Fragment>
                 <ReactSelectAsync
                   {...field}
-                  className="!ui-text-[#0C3045]"
+                  className="ui:text-dark-blue!"
                   id="select-vendor_id"
                   key={`${customer_id?.value}-${activity_id?.value}`}
                   loadOptions={loadVendor}
@@ -192,7 +192,7 @@ export default function OrderCreateReturnDetailForm({
         />
       </FormControl>
 
-      <FormControl className="ui-mb-4">
+      <FormControl className="ui:mb-4">
         <FormLabel>{t('orderCreateReturn:form.required_date.label')}</FormLabel>
         <Controller
           name="required_date"
@@ -223,7 +223,7 @@ export default function OrderCreateReturnDetailForm({
         />
       </FormControl>
 
-      <FormControl className="ui-mb-4">
+      <FormControl className="ui:mb-4">
         <FormLabel>{t('orderCreateReturn:form.order_comment.label')}</FormLabel>
         <Input
           {...register('order_comment')}

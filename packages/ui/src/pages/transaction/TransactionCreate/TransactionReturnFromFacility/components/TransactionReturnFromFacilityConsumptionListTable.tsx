@@ -30,14 +30,14 @@ const TransactionReturnFromFacilityConsumptionListTable = () => {
     useTransactionCreateReturnFromFacility(t)
 
   return (
-    <div className="ui-flex ui-flex-col ui-gap-6 ui-mt-2">
-      <p className="ui-text-base ui-font-normal ui-text-neutral-500">
+    <div className="ui:flex ui:flex-col ui:gap-6 ui:mt-2">
+      <p className="ui:text-base ui:font-normal ui:text-neutral-500">
         {t(
           'transactionCreate:transaction_return_from_facility.description_consumption_table'
         )}
       </p>
 
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <DataTable
           data={datasource?.data ?? []}
           columns={consumptionColumn({
@@ -51,7 +51,7 @@ const TransactionReturnFromFacilityConsumptionListTable = () => {
             ),
           })}
           isLoading={isFetching}
-          className="ui-max-h-[464px]"
+          className="ui:max-h-[464px]"
           isSticky
           onClickRow={(row) => handleSelectConsumptionTransaction(row.original)}
         />

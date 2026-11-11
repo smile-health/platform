@@ -19,8 +19,8 @@ const DistanceIndexPage: React.FC = () => {
     <AppLayout title={t('distance:index.title')}>
       <Meta title={`WMS | Distance`} />
 
-      <div className="ui-space-y-6">
-        <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
+      <div className="ui:space-y-6">
+        <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
           <DistanceForm />
         </div>
       </div>

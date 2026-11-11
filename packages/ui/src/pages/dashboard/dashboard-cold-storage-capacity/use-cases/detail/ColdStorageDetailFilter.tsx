@@ -9,10 +9,10 @@ export default function ColdStorageDetailFilter() {
   const { detail } = useDashboardColdStorageCapacity()
 
   return (
-    <div className="ui-flex ui-gap-4 ui-bg-white ui-p-4 ui-rounded ui-border ui-w-full">
-      <FormControl className="ui-justify-between ui-flex ui-items-center ui-space-y-0 ui-w-full">
+    <div className="ui:flex ui:gap-4 ui:bg-white ui:p-4 ui:rounded ui:border ui:w-full">
+      <FormControl className="ui:justify-between ui:flex ui:items-center ui:space-y-0 ui:w-full">
         <FormLabel>{t('section.details.certification_status.label')}</FormLabel>
-        <RadioGroup className="ui-flex ui-items-center ui-justify-center">
+        <RadioGroup className="ui:flex ui:items-center ui:justify-center">
           <Radio
             label={t('section.details.certification_status.who_pqs')}
             value="1"

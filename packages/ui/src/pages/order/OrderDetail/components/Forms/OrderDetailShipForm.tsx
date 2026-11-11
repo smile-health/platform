@@ -134,7 +134,7 @@ export const OrderDetailShipForm = () => {
         name="sales_ref"
         control={control}
         render={({ field, fieldState }) => (
-          <FormControl className="ui-space-y-1.5">
+          <FormControl className="ui:space-y-1.5">
             <FormLabel className="text-sm">
               {t('orderDetail:form.sales_ref.label')}
             </FormLabel>
@@ -142,11 +142,11 @@ export const OrderDetailShipForm = () => {
               {...field}
               value={field.value ?? ''}
               placeholder={t('orderDetail:form.sales_ref.placeholder')}
-              className="ui-text-sm"
+              className="ui:text-sm"
               error={Boolean(fieldState.error?.message)}
             />
             {fieldState.error?.message && (
-              <FormErrorMessage className="ui-leading-none">
+              <FormErrorMessage className="ui:leading-none">
                 {fieldState.error.message}
               </FormErrorMessage>
             )}
@@ -162,9 +162,9 @@ export const OrderDetailShipForm = () => {
           fieldState: { error },
         }) => {
           return (
-            <FormControl className="ui-space-y-0">
-              <div className="ui-space-y-1.5">
-                <FormLabel className="ui-text-sm">
+            <FormControl className="ui:space-y-0">
+              <div className="ui:space-y-1.5">
+                <FormLabel className="ui:text-sm">
                   {t('orderDetail:form.estimated_date.label')}
                 </FormLabel>
                 <DatePicker
@@ -195,12 +195,12 @@ export const OrderDetailShipForm = () => {
           fieldState: { error },
         }) => {
           return (
-            <FormControl className="ui-space-y-0">
-              <div className="ui-space-y-1.5">
-                <FormLabel className="ui-text-sm">
+            <FormControl className="ui:space-y-0">
+              <div className="ui:space-y-1.5">
+                <FormLabel className="ui:text-sm">
                   {t('orderDetail:form.taken_by_customer.label')}
                 </FormLabel>
-                <RadioGroup className="ui-py-2.5">
+                <RadioGroup className="ui:py-2.5">
                   <Radio
                     {...field}
                     label={t('common:yes')}
@@ -235,9 +235,9 @@ export const OrderDetailShipForm = () => {
           fieldState: { error },
         }) => {
           return (
-            <FormControl className="ui-space-y-0">
-              <div className="ui-space-y-1.5">
-                <FormLabel className="ui-text-sm" required>
+            <FormControl className="ui:space-y-0">
+              <div className="ui:space-y-1.5">
+                <FormLabel className="ui:text-sm" required>
                   {t('orderDetail:form.actual_shipment_date.label')}
                 </FormLabel>
                 <DatePicker
@@ -265,23 +265,23 @@ export const OrderDetailShipForm = () => {
         name="comment"
         control={control}
         render={({ field, fieldState: { error } }) => (
-          <FormControl className="ui-space-y-0">
-            <div className="ui-space-y-1.5">
-              <FormLabel className="ui-text-sm">
+          <FormControl className="ui:space-y-0">
+            <div className="ui:space-y-1.5">
+              <FormLabel className="ui:text-sm">
                 {t('orderDetail:form.comment.label')}
               </FormLabel>
               <TextArea
                 {...field}
                 value={field.value ?? ''}
                 placeholder={`${t('orderDetail:form.comment.placeholder')}...`}
-                className="ui-text-sm"
+                className="ui:text-sm"
                 disabled={isLoading}
                 style={{ height: 154 }}
                 error={Boolean(error?.message)}
               />
             </div>
             {error?.message && (
-              <FormErrorMessage className="ui-leading-none">
+              <FormErrorMessage className="ui:leading-none">
                 {error.message}
               </FormErrorMessage>
             )}

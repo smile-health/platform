@@ -104,7 +104,7 @@ const EntityDetailActivityImplementationTimeContent: React.FC<Props> = ({
         title={t('entity:list.column.name')}
         subTitle={entity?.name}
       />
-      <div className="ui-p-4 ui-mt-6 ui-border ui-rounded ui-border-neutral-300">
+      <div className="ui:p-4 ui:mt-6 ui:border ui:rounded ui:border-neutral-300">
         {renderContent()}
       </div>
     </EntityDetailToEditContext.Provider>

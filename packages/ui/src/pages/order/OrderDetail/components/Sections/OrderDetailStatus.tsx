@@ -23,12 +23,12 @@ export const OrderDetailStatus = () => {
   return (
     <OrderDetailBox
       title={t('order_status.title')}
-      className="ui-space-y-6"
+      className="ui:space-y-6"
       buttons={downloadButtons}
     >
       <OrderDetailStatusPipeline />
 
-      <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-6">
         <OrderDetailCustomer />
         <OrderDetailVendor />
       </div>

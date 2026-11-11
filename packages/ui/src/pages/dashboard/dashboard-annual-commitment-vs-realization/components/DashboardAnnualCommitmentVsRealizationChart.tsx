@@ -35,20 +35,20 @@ const DashboardAnnualCommitmentVsRealizationChart: React.FC<Props> = ({
   return (
     <DashboardBox.Root id={download.targetElementId}>
       <DashboardBox.Header bordered size="small">
-        <div className="ui-flex ui-justify-center ui-items-center ui-gap-1.5">
+        <div className="ui:flex ui:justify-center ui:items-center ui:gap-1.5">
           <h4>
             <strong>{title}</strong>
           </h4>
 
           <button type="button" onClick={setInformation}>
-            <InformationCircleIcon className="ui-size-5" />
+            <InformationCircleIcon className="ui:size-5" />
           </button>
         </div>
       </DashboardBox.Header>
       <DashboardBox.Body>
         <DashboardBox.Config download={download} />
         <DashboardBox.Content
-          className="ui-relative ui-h-72"
+          className="ui:relative ui:h-72"
           isLoading={isLoading}
           isEmpty={isEmpty}
         >

@@ -90,22 +90,22 @@ const CustomError: React.FC<Props> = ({
     <Container title="" withLayout={withLayout} hideTabs={hideTabs}>
       <Meta title={`WMS | ${errorState[currentError].title}`} />
 
-      <main className="ui-bg-white ui-grid ui-place-items-center ui-my-28">
-        <div className="ui-flex ui-flex-col ui-gap-6 ui-items-center ui-max-w-[560px]">
+      <main className="ui:bg-white ui:grid ui:place-items-center ui:my-28">
+        <div className="ui:flex ui:flex-col ui:gap-6 ui:items-center ui:max-w-[560px]">
           {currentError && errorState[currentError].icon}
-          <h1 className="ui-text-2xl ui-font-semibold ui-text-primary-700">
+          <h1 className="ui:text-2xl ui:font-semibold ui:text-primary-700">
             {t(`error.${currentError}.title`)}
           </h1>
-          <div className="ui-space-y-4">
+          <div className="ui:space-y-4">
             <Trans i18nKey={`error.${currentError}.description`} />
             <br />
             <br />
             <div>
-              <p className="ui-text-base ui-text-primary-700">
+              <p className="ui:text-base ui:text-primary-700">
                 {t(`error.${currentError}.list.title`)}
               </p>
               <Trans>
-                <ul className="ui-text-primary-700 ui-list-disc ui-ml-6">
+                <ul className="ui:text-primary-700 ui:list-disc ui:ml-6">
                   {(
                     t(`error.${currentError}.list.content`, {
                       returnObjects: true,
@@ -117,12 +117,12 @@ const CustomError: React.FC<Props> = ({
               </Trans>
             </div>
             {t(`error.${currentError}.list.description`) && (
-              <p className="ui-text-base ui-text-primary-700">
+              <p className="ui:text-base ui:text-primary-700">
                 {t(`error.${currentError}.list.description`)}
               </p>
             )}
             <Button
-              className="ui-w-full"
+              className="ui:w-full"
               type="button"
               variant="solid"
               onClick={handleAction}

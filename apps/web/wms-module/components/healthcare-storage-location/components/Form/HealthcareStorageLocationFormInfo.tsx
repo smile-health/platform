@@ -51,22 +51,22 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
   return (
     <>
       {!isEditMode && (
-        <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-          <div className="ui-flex ui-flex-col ui-gap-5">
+        <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+          <div className="ui:flex ui:flex-col ui:gap-5">
             {isFacilityAdmin() && (
               <Button
                 variant="outline"
                 type="button"
-                className="ui-self-end ui-w-fit"
+                className="ui:self-end ui:w-fit"
                 onClick={() => setIsEditMode(true)}
               >
                 Edit
               </Button>
             )}
 
-            <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-              <div className="ui-w-1/5">
-                <p className="ui-w-fit ui-text-gray-400">
+            <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+              <div className="ui:w-1/5">
+                <p className="ui:w-fit ui:text-gray-400">
                   {t('healthcareStorageLocation:form.facility_name.label')}
                 </p>
               </div>
@@ -78,9 +78,9 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
                   : '-'}
               </p>
             </div>
-            <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-              <div className="ui-w-1/5">
-                <p className="ui-w-fit ui-text-gray-400">
+            <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+              <div className="ui:w-1/5">
+                <p className="ui:w-fit ui:text-gray-400">
                   {t('healthcareStorageLocation:form.location_name.label')}
                 </p>
               </div>
@@ -88,9 +88,9 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
 
               <p>{isFound ? entityLocation?.locationName : '-'}</p>
             </div>
-            <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-              <div className="ui-w-1/5">
-                <p className="ui-w-fit ui-text-gray-400">
+            <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+              <div className="ui:w-1/5">
+                <p className="ui:w-fit ui:text-gray-400">
                   {t('healthcareStorageLocation:form.latitude.label')}
                 </p>
               </div>
@@ -98,9 +98,9 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
 
               <p>{isFound ? entityLocation?.latitude : '-'}</p>
             </div>
-            <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-              <div className="ui-w-1/5">
-                <p className="ui-w-fit ui-text-gray-400">
+            <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+              <div className="ui:w-1/5">
+                <p className="ui:w-fit ui:text-gray-400">
                   {t('healthcareStorageLocation:form.longitude.label')}
                 </p>
               </div>
@@ -108,9 +108,9 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
 
               <p>{isFound ? entityLocation?.longitude : '-'}</p>
             </div>
-            <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-              <div className="ui-w-1/5">
-                <p className="ui-w-fit ui-text-gray-400">
+            <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+              <div className="ui:w-1/5">
+                <p className="ui:w-fit ui:text-gray-400">
                   {t('healthcareStorageLocation:form.address.label')}
                 </p>
               </div>
@@ -118,9 +118,9 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
 
               <p>{isFound ? entityLocation?.address : '-'}</p>
             </div>
-            <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-              <div className="ui-w-1/5">
-                <p className="ui-w-fit ui-text-gray-400">
+            <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+              <div className="ui:w-1/5">
+                <p className="ui:w-fit ui:text-gray-400">
                   {t('healthcareStorageLocation:form.province.label')}
                 </p>
               </div>
@@ -128,9 +128,9 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
 
               <p>{isFound ? entityLocation?.provinceName : '-'}</p>
             </div>
-            <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-              <div className="ui-w-1/5">
-                <p className="ui-w-fit ui-text-gray-400">
+            <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+              <div className="ui:w-1/5">
+                <p className="ui:w-fit ui:text-gray-400">
                   {t('healthcareStorageLocation:form.city.label')}
                 </p>
               </div>
@@ -138,9 +138,9 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
 
               <p>{isFound ? entityLocation?.cityName : '-'}</p>
             </div>
-            <div className="ui-flex ui-flex-row ui-gap-10 ui-items-center">
-              <div className="ui-w-1/5">
-                <p className="ui-w-fit ui-text-gray-400">
+            <div className="ui:flex ui:flex-row ui:gap-10 ui:items-center">
+              <div className="ui:w-1/5">
+                <p className="ui:w-fit ui:text-gray-400">
                   {t('healthcareStorageLocation:form.distance_limit.label')}
                 </p>
               </div>
@@ -157,10 +157,10 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
       )}
 
       {isEditMode && (
-        <div className="ui-w-full ui-space-y-6 ui-max-w-form ui-mx-auto">
-          <div className="ui-flex ui-flex-col">
-            <div className="ui-p-4 ui-border ui-rounded">
-              <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+        <div className="ui:w-full ui:space-y-6 ui:max-w-form ui:mx-auto">
+          <div className="ui:flex ui:flex-col">
+            <div className="ui:p-4 ui:border ui:rounded">
+              <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
                 <Controller
                   name="facilityName"
                   control={control}
@@ -226,7 +226,7 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
                   }}
                 />
 
-                <div className="ui-flex ui-flex-row ui-gap-2 ui-justify-between">
+                <div className="ui:flex ui:flex-row ui:gap-2 ui:justify-between">
                   <Controller
                     name="latitude"
                     control={control}
@@ -235,7 +235,7 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
                       fieldState: { error },
                     }) => {
                       return (
-                        <FormControl className="ui-flex-1">
+                        <FormControl className="ui:flex-1">
                           <FormLabel required>
                             {t('healthcareStorageLocation:form.latitude.label')}
                           </FormLabel>
@@ -269,7 +269,7 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
                       fieldState: { error },
                     }) => {
                       return (
-                        <FormControl className="ui-flex-1">
+                        <FormControl className="ui:flex-1">
                           <FormLabel required>
                             {t(
                               'healthcareStorageLocation:form.longitude.label'
@@ -448,8 +448,8 @@ const HealthcareStorageLocationFormInfo: React.FC<HealthcareStorageLocationFormI
             </div>
           </div>
 
-          <div className="ui-flex ui-justify-end">
-            <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+          <div className="ui:flex ui:justify-end">
+            <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
               <Button
                 id="btn-back"
                 type="button"

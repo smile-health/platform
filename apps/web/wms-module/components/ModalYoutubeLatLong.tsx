@@ -43,7 +43,7 @@ export function ModalYoutubeLatLong({
         <div className="w-full aspect-video mb-3 relative">
           {!isIframeLoaded && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded">
-              <Spinner className="ui-w-full ui-h-10" />
+              <Spinner className="ui:w-full ui:h-10" />
             </div>
           )}
           <iframe

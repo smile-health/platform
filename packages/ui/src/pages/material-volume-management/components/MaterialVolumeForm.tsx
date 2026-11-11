@@ -20,13 +20,13 @@ const MaterialVolumeForm: React.FC<MaterialVolumeFormProps> = ({
     <FormProvider {...methods}>
       <form
         onSubmit={onSubmit}
-        className="ui-mt-6 ui-space-y-6 ui-max-w-form ui-mx-auto"
+        className="ui:mt-6 ui:space-y-6 ui:max-w-form ui:mx-auto"
       >
         <MaterialVolumeFormDetail />
         <MaterialVolumeFormBoxDimension />
 
-        <div className="ui-flex ui-justify-end">
-          <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+        <div className="ui:flex ui:justify-end">
+          <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
             <Button
               asChild
               id="btn-back-material-volume"

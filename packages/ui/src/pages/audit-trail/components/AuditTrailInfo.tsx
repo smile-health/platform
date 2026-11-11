@@ -11,8 +11,8 @@ type AuditTrailInfoProps = {
 function InfoList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <div className="ui-font-semibold">{title}</div>
-      <ul className="ui-list-disc ui-space-y-0.5 ui-pl-5">
+      <div className="ui:font-semibold">{title}</div>
+      <ul className="ui:list-disc ui:space-y-0.5 ui:pl-5">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
@@ -39,7 +39,7 @@ export default function AuditTrailInfo({ variant = 'smile' }: AuditTrailInfoProp
 
   return (
     <Alert type="info" withIcon title={t('info.title')}>
-      <div className="ui-space-y-2" data-testid="audit-trail-info">
+      <div className="ui:space-y-2" data-testid="audit-trail-info">
         <InfoList title={t('info.source_title')} items={list('info.source')} />
         <InfoList
           title={t('info.excluded_title')}

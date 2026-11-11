@@ -14,7 +14,7 @@ export const AccordionItem = React.forwardRef<
   return (
     <AccordionPrimitive.Item
       {...props}
-      className={cx('ui-border-b ui-border-gray-200', props?.className)}
+      className={cx('ui:border-b ui:border-gray-200', props?.className)}
       ref={ref}
     >
       {props.children}
@@ -27,18 +27,18 @@ export const AccordionTrigger = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(function AccordionItem(props, ref) {
   return (
-    <AccordionPrimitive.Header className="ui-flex">
+    <AccordionPrimitive.Header className="ui:flex">
       <AccordionPrimitive.Trigger
         {...props}
         className={cx(
-          'ui-flex ui-flex-1 ui-items-center ui-justify-between ui-p-3 ui-font-medium ui-text-gray-700 ui-transition-all hover:ui-bg-gray-50 focus:ui-outline-none focus:ui-ring-2 focus:ui-ring-primary-400 focus:ui-ring-opacity-40 [&[data-state=open]>svg]:ui-rotate-180',
+          'ui:flex ui:flex-1 ui:items-center ui:justify-between ui:p-3 ui:font-medium ui:text-gray-700 ui:transition-all ui:hover:bg-gray-50 ui:focus:outline-hidden ui:focus:ring-2 ui:focus:ring-primary-400/40 ui:[&[data-state=open]>svg]:rotate-180',
           props?.className
         )}
         ref={ref}
       >
         {props.children}
         <ChevronDownIcon
-          className="ui-h-4 ui-w-4 ui-transition-transform ui-duration-200"
+          className="ui:h-4 ui:w-4 ui:transition-transform ui:duration-200"
           aria-hidden
         />
       </AccordionPrimitive.Trigger>
@@ -54,11 +54,11 @@ export const AccordionContent = React.forwardRef<
     <AccordionPrimitive.Content
       {...props}
       className={cx(
-        'ui-overflow-hidden ui-text-sm ui-text-gray-700 ui-transition-all data-[state=closed]:ui-animate-accordion-up data-[state=open]:ui-animate-accordion-down'
+        'ui:overflow-hidden ui:text-sm ui:text-gray-700 ui:transition-all ui:data-[state=closed]:animate-accordion-up ui:data-[state=open]:animate-accordion-down'
       )}
       ref={ref}
     >
-      <div className={cx('ui-p-3', props.className)}>{props.children}</div>
+      <div className={cx('ui:p-3', props.className)}>{props.children}</div>
     </AccordionPrimitive.Content>
   )
 })

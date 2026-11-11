@@ -38,10 +38,10 @@ export const createColumnMaterial = ({
       <div>
         {original?.material?.name ?? ''}
         {original?.last_opname_date && (
-          <div className="ui-flex ui-space-x-1 ui-items-center">
-            <CheckOpnamed className="ui-h-4 ui-w-4 ui-text-green-700" />
+          <div className="ui:flex ui:space-x-1 ui:items-center">
+            <CheckOpnamed className="ui:h-4 ui:w-4 ui:text-green-700" />
 
-            <p className="ui-text-green-700">
+            <p className="ui:text-green-700">
               {t('form.material.table.column.last_update', {
                 date: parseDateTime(
                   original.last_opname_date,
@@ -112,10 +112,10 @@ export const createColumnTrademark = ({
       !original.last_opname_date ? (
         '-'
       ) : (
-        <div className="ui-flex ui-space-x-1 ui-items-center">
-          <CheckOpnamed className="ui-h-4 ui-w-4 ui-text-green-700" />
+        <div className="ui:flex ui:space-x-1 ui:items-center">
+          <CheckOpnamed className="ui:h-4 ui:w-4 ui:text-green-700" />
 
-          <p className="ui-text-green-700">
+          <p className="ui:text-green-700">
             {parseDateTime(original.last_opname_date, 'DD/MM/YYYY HH:mm')}
           </p>
         </div>

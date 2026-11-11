@@ -47,10 +47,10 @@ const WasteSpecificationDetailPage: React.FC = () => {
     >
       <Meta title={`WMS | Waste Specification`} />
 
-      <div className="ui-space-y-6">
-        <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-          <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-            <h5 className="ui-font-bold ui-text-dark-blue">Details</h5>
+      <div className="ui:space-y-6">
+        <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+          <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+            <h5 className="ui:font-bold ui:text-dark-blue">Details</h5>
           </div>
 
           <WasteSpecificationDetailInfo

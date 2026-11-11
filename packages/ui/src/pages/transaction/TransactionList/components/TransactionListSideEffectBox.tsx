@@ -21,28 +21,28 @@ const TransactionListSideEffectBox: React.FC<
 
   return (
     <div aria-labelledby="header-side-effect">
-      <section className="ui-border ui-border-zinc-300 ui-p-6 ui-rounded">
+      <section className="ui:border ui:border-zinc-300 ui:p-6 ui:rounded">
         <h5
           id="header-side-effect"
-          className="ui-text-base ui-font-bold ui-text-dark-teal"
+          className="ui:text-base ui:font-bold ui:text-dark-teal"
         >
           {t('transactionList:detail.side_effect.title')}
         </h5>
         <div
-          className="content ui-overflow-hidden ui-space-y-1 ui-mt-4"
+          className="content ui:overflow-hidden ui:space-y-1 ui:mt-4"
           id="content-side-effect"
         >
           {sideEffects.map((effect, index) => (
             <div
               key={index?.toString()}
-              className="ui-flex ui-justify-between ui-items-center ui-border-b ui-border-neutral-300 ui-py-2"
+              className="ui:flex ui:justify-between ui:items-center ui:border-b ui:border-neutral-300 ui:py-2"
             >
-              <h6 className="ui-text-dark-teal ui-text-base ui-font-medium">
+              <h6 className="ui:text-dark-teal ui:text-base ui:font-medium">
                 {t('transactionList:detail.side_effect.reaction')}:{' '}
                 {effect.other_reaction || effect.reaction} (
                 {effect.sequence_name})
               </h6>
-              <h6 className="ui-text-neutral-500 ui-text-base ui-font-medium">
+              <h6 className="ui:text-neutral-500 ui:text-base ui:font-medium">
                 {formatDate(effect.reaction_date, 'DD MMM YYYY')}
               </h6>
             </div>
@@ -52,8 +52,8 @@ const TransactionListSideEffectBox: React.FC<
           <Button
             variant="subtle"
             onClick={onAddSideEffect}
-            leftIcon={<Plus className="ui-size-4" />}
-            className="ui-py-1 ui-px-2 ui-h-8"
+            leftIcon={<Plus className="ui:size-4" />}
+            className="ui:py-1 ui:px-2 ui:h-8"
           >
             {t('transactionList:detail.side_effect.add.button_add')}
           </Button>

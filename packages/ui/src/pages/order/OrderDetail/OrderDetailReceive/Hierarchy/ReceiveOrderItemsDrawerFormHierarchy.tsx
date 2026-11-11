@@ -199,16 +199,16 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
                 )
                 const heightClass = isManagedInBatch
                   ? hasItemError
-                    ? 'ui-h-[120px]'
-                    : 'ui-h-24'
+                    ? 'ui:h-[120px]'
+                    : 'ui:h-24'
                   : hasItemError
-                    ? 'ui-h-[72px]'
-                    : 'ui-h-12'
+                    ? 'ui:h-[72px]'
+                    : 'ui:h-12'
 
                 return (
                   <div
                     key={item.stock_id}
-                    className={`ui-text-sm ui-flex ui-flex-col ui-justify-center ${heightClass}`}
+                    className={`ui:text-sm ui:flex ui:flex-col ui:justify-center ${heightClass}`}
                   >
                     {Boolean(
                       item?._order_item_children?.material?.is_managed_in_batch
@@ -230,7 +230,7 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
                       {t('orderDetail:data.stock_from_activity')}:{' '}
                       {item._order_stock?.activity_name}
                     </div>
-                    <div className="ui-font-semibold">
+                    <div className="ui:font-semibold">
                       Qty: {numberFormatter(item.received_qty, i18n.language)}
                     </div>
                   </div>
@@ -239,11 +239,11 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
             </div>
           )}
 
-          <div className="ui-space-y-1">
+          <div className="ui:space-y-1">
             <Button
               size="sm"
               type="button"
-              leftIcon={<PlusIcon className="ui-w-5 ui-text-dark-blue" />}
+              leftIcon={<PlusIcon className="ui:w-5 ui:text-dark-blue" />}
               variant="outline"
               onClick={() => {
                 setIsReceiveOrderItemsModalForm(true, {
@@ -345,16 +345,16 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
                 )
                 const heightClass = isManagedInBatch
                   ? error
-                    ? 'ui-h-[120px]'
-                    : 'ui-h-24'
+                    ? 'ui:h-[120px]'
+                    : 'ui:h-24'
                   : error
-                    ? 'ui-h-[72px]'
-                    : 'ui-h-12'
+                    ? 'ui:h-[72px]'
+                    : 'ui:h-12'
 
                 return (
                   <div
                     key={`container-${item.stock_id}`}
-                    className={`ui-flex ui-flex-col ui-justify-center ${heightClass}`}
+                    className={`ui:flex ui:flex-col ui:justify-center ${heightClass}`}
                   >
                     <Controller
                       control={control}
@@ -365,7 +365,7 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
                           <div className="space-y-1">
                             <ReactSelectAsync
                               id={`fulfill_stock_status_id_${childIndex}_${receiveIndex}`}
-                              className="ui-text-sm"
+                              className="ui:text-sm"
                               placeholder={t(
                                 'orderDetail:form.material_status.placeholder'
                               )}
@@ -427,27 +427,27 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
       }}
       disabled={Boolean(errors.children)}
     >
-      <div className="ui-grid ui-grid-cols-3 ui-gap-10">
-        <FormControl className="ui-space-y-1">
+      <div className="ui:grid ui:grid-cols-3 ui:gap-10">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.trademark.column.material_active_substance')}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {orderItem?._order_item?.material.name}
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.trademark.column.stock_on_hand_at', {
               name: orderItem?._customer?.name,
             })}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {numberFormatter(
               orderItem?._order_item?.stock_customer?.total_qty,
               i18n.language
             )}
-            <span className="ui-text-gray-500 ui-font-normal ui-text-sm">
+            <span className="ui:text-gray-500 ui:font-normal ui:text-sm">
               {' '}
               (min:{' '}
               {numberFormatter(
@@ -463,18 +463,18 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
             </span>
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1">
+        <FormControl className="ui:space-y-1">
           <FormLabel className="text-sm">
             {t('orderDetail:table.trademark.column.available_stock_at', {
               name: orderItem?._vendor?.name,
             })}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {numberFormatter(
               orderItem?._vendor_stock?.total_available_qty,
               i18n.language
             )}
-            <span className="ui-text-gray-500 ui-font-normal ui-text-sm">
+            <span className="ui:text-gray-500 ui:font-normal ui:text-sm">
               {' '}
               (min:{' '}
               {numberFormatter(orderItem?._vendor_stock?.min, i18n.language)},
@@ -494,7 +494,7 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
           data={tableData}
           columns={columns}
           isSticky
-          className="ui-overflow-y-auto ui-max-h-[50vh] ui-bg-white"
+          className="ui:overflow-y-auto ui:max-h-md ui:bg-white"
         />
       </div>
     </OrderDetailDrawer>

@@ -26,7 +26,7 @@ export default function DisposalDetailTable({
   };
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={detailWasteGroup}
         columns={ColumnsWasteGroupDetail(t, formatWasteBagWeight, unit)}

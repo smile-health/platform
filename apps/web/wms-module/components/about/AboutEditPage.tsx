@@ -30,7 +30,7 @@ const AboutEdit = (): JSX.Element => {
       <Meta title={generateMetaTitle('AssetType', true, true)} />
       <div className="mt-6 space-y-6">
         {isFetchingEntity ? (
-          <Spinner className="ui-w-full ui-h-10" />
+          <Spinner className="ui:w-full ui:h-10" />
         ) : (
           <Fragment>
             <AboutForm defaultValues={entityDetail?.data} />

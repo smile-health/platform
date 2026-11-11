@@ -56,24 +56,24 @@ export default function UserFormAdditionalInfo() {
   const { province, regency, sub_district } = watch()
 
   return (
-    <div className="ui-border ui-border-neutral-300 ui-rounded ui-space-y-6">
+    <div className="ui:border ui:border-neutral-300 ui:rounded ui:space-y-6">
       <AccordionRoot
         className="additional-form-accordtion"
         type="single"
         collapsible
       >
-        <AccordionItem value="additional-form" className="ui-border-none">
+        <AccordionItem value="additional-form" className="ui:border-none">
           <AccordionTrigger
-            className="ui-rounded"
+            className="ui:rounded"
             data-testid="btn-additional-form"
           >
-            <h5 className="ui-p-1 ui-pb-0 font-bold">
+            <h5 className="ui:p-1 ui:pb-0 font-bold">
               {t('user:title.additional')}
             </h5>
           </AccordionTrigger>
           <AccordionContent>
-            <div className="ui-grid ui-grid-cols-2 ui-gap-x-4 ui-gap-y-6 ui-p-1 ui-pt-0">
-              <FormControl className="ui-col-span-2">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-x-4 ui:gap-y-6 ui:p-1 ui:pt-0">
+              <FormControl className="ui:col-span-2">
                 <FormLabel htmlFor="textarea-address">
                   {t('user:form.address.label')}
                 </FormLabel>
@@ -225,7 +225,7 @@ export default function UserFormAdditionalInfo() {
                   fieldState: { error },
                 }) => {
                   return (
-                    <FormControl className="ui-col-span-2">
+                    <FormControl className="ui:col-span-2">
                       <FormLabel htmlFor="datepicker-birthday">
                         {t('user:form.birthdate.label')}
                       </FormLabel>
@@ -258,7 +258,7 @@ export default function UserFormAdditionalInfo() {
                   field: { value, onChange, ...field },
                   fieldState: { error },
                 }) => (
-                  <FormControl className="ui-col-span-2">
+                  <FormControl className="ui:col-span-2">
                     <FormLabel htmlFor="input-phone-number">
                       {t('user:form.mobile_phone.label')}
                     </FormLabel>

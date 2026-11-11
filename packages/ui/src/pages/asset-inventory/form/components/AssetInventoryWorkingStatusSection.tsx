@@ -27,18 +27,18 @@ export const AssetInventoryWorkingStatusSection = ({
   const { control, watch } = useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-w-full ui-grid ui-grid-cols-2 ui-gap-4">
-        <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:w-full ui:grid ui:grid-cols-2 ui:gap-4">
+        <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
           {t('assetInventory:form.title.working_status')}
         </div>
-        <div className="ui-ml-auto">
+        <div className="ui:ml-auto">
           {watch('asset_status')?.value && (
             <Badge
               key={language}
               variant="light"
               rounded="xl"
-              className="ui-p-2"
+              className="ui:p-2"
               color={
                 workingStatus?.[
                   Number(watch('asset_status')?.value) as WorkingStatusEnum
@@ -50,7 +50,7 @@ export const AssetInventoryWorkingStatusSection = ({
           )}
         </div>
       </div>
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="asset_status" required>
           {t('assetInventory:columns.asset_status')}
         </FormLabel>

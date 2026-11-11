@@ -72,10 +72,10 @@ export default function OrderCreateDistributionDetailBatch({
         size="full"
         sizeHeight="lg"
       >
-        <DrawerHeader className="ui-text-center">
-          <div className="ui-flex ui-justify-between">
+        <DrawerHeader className="ui:text-center">
+          <div className="ui:flex ui:justify-between">
             <div />
-            <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+            <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
               {t('section.batch')}
             </h6>
             <Button
@@ -88,28 +88,28 @@ export default function OrderCreateDistributionDetailBatch({
             </Button>
           </div>
         </DrawerHeader>
-        <DrawerContent className="ui-p-4 ui-space-y-6 ui-border-y ui-border-zinc-200">
+        <DrawerContent className="ui:p-4 ui:space-y-6 ui:border-y ui:border-zinc-200">
           <FormProvider {...methods}>
-            <div className="ui-flex ui-gap-10">
+            <div className="ui:flex ui:gap-10">
               <div>
-                <p className="ui-text-neutral-500">Material</p>
+                <p className="ui:text-neutral-500">Material</p>
                 <p>
                   <strong>{data?.material?.name ?? '-'}</strong>
                 </p>
               </div>
               <div>
-                <p className="ui-text-neutral-500">
+                <p className="ui:text-neutral-500">
                   {t('label.stock.on_hand')}
                 </p>
-                <p className="ui-flex ui-items-center ui-gap-1">
+                <p className="ui:flex ui:items-center ui:gap-1">
                   <strong>{formatNumber(data?.total_qty)}</strong>
-                  <span className="ui-text-neutral-500">
+                  <span className="ui:text-neutral-500">
                     (min: {min}, max: {max})
                   </span>
                 </p>
               </div>
               <div>
-                <p className="ui-text-neutral-500">
+                <p className="ui:text-neutral-500">
                   {t('label.stock.available')}
                 </p>
                 <p>
@@ -128,7 +128,7 @@ export default function OrderCreateDistributionDetailBatch({
             type="button"
             variant="subtle"
             onClick={handleReset}
-            leftIcon={<Reload className="ui-size-5" />}
+            leftIcon={<Reload className="ui:size-5" />}
           >
             Reset
           </Button>
@@ -137,7 +137,7 @@ export default function OrderCreateDistributionDetailBatch({
             data-testid="btn-save-batch"
             type="button"
             onClick={handleSubmit}
-            className="ui-w-52"
+            className="ui:w-52"
           >
             {t('action.save')}
           </Button>

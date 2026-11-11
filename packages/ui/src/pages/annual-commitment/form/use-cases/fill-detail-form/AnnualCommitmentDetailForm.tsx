@@ -26,14 +26,14 @@ export const AnnualCommitmentDetailForm = () => {
   const isEditMode = mode === 'edit'
 
   return (
-    <div className="ui-w-full ui-px-6 ui-py-6 ui-border ui-border-gray-300 ui-rounded ui-flex ui-flex-col ui-space-y-6">
-      <div className="ui-font-semibold ui-text-gray-800">
+    <div className="ui:w-full ui:px-6 ui:py-6 ui:border ui:border-gray-300 ui:rounded ui:flex ui:flex-col ui:space-y-6">
+      <div className="ui:font-semibold ui:text-gray-800">
         {t('annualCommitmentForm:section.detail.title')}
       </div>
 
-      <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+      <div className="ui:grid ui:grid-cols-2 ui:gap-6">
         {/* Contract Number */}
-        <FormControl className="ui-space-y-2">
+        <FormControl className="ui:space-y-2">
           <FormLabel required>
             {t('annualCommitmentForm:field.contract_number.label')}
           </FormLabel>
@@ -84,7 +84,7 @@ export const AnnualCommitmentDetailForm = () => {
         </FormControl>
 
         {/* Year */}
-        <FormControl className="ui-space-y-2">
+        <FormControl className="ui:space-y-2">
           <FormLabel required>
             {t('annualCommitmentForm:field.year.label')}
           </FormLabel>
@@ -111,7 +111,7 @@ export const AnnualCommitmentDetailForm = () => {
         </FormControl>
 
         {/* Contract Start Date */}
-        <FormControl className="ui-space-y-2">
+        <FormControl className="ui:space-y-2">
           <FormLabel required>
             {t('annualCommitmentForm:field.contract_start_date.label')}
           </FormLabel>
@@ -137,7 +137,7 @@ export const AnnualCommitmentDetailForm = () => {
         </FormControl>
 
         {/* Contract End Date */}
-        <FormControl className="ui-space-y-2">
+        <FormControl className="ui:space-y-2">
           <FormLabel required>
             {t('annualCommitmentForm:field.contract_end_date.label')}
           </FormLabel>
@@ -164,7 +164,7 @@ export const AnnualCommitmentDetailForm = () => {
         </FormControl>
 
         {/* Supplier */}
-        <FormControl className="ui-space-y-2">
+        <FormControl className="ui:space-y-2">
           <FormLabel required>
             {t('annualCommitmentForm:field.supplier.label')}
           </FormLabel>
@@ -196,7 +196,7 @@ export const AnnualCommitmentDetailForm = () => {
         </FormControl>
 
         {/* Description */}
-        <FormControl className="ui-space-y-2">
+        <FormControl className="ui:space-y-2">
           <FormLabel>
             {t('annualCommitmentForm:field.description.label')}
           </FormLabel>

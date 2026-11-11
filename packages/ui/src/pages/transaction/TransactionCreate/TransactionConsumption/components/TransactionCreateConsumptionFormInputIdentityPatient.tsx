@@ -49,7 +49,7 @@ const TransactionCreateConsumptionFormInputIdentityPatient: React.FC = () => {
   })
 
   return (
-    <div className="ui-flex ui-flex-col ui-space-y-5 ui-w-full">
+    <div className="ui:flex ui:flex-col ui:space-y-5 ui:w-full">
       <TransactionCreateConsumptionExistDataPatientIdentity data={watch(`data.${index}`)} />
 
       <Controller

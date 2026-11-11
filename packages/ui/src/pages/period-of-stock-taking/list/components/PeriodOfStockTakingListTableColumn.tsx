@@ -82,7 +82,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
           original: { user_updated_by, updated_at },
         },
       }) => (
-        <div className="ui-text-sm ui-font-normal ui-text-dark-blue">
+        <div className="ui:text-sm ui:font-normal ui:text-dark-blue">
           {`${user_updated_by?.firstname} ${user_updated_by?.lastname ?? ''} ${t('common:on_for_date')} ${dayjs(
             updated_at
           )
@@ -102,7 +102,7 @@ export const MainColumn = ({ t, locale }: TMainColumn) => {
         hasPermission('period-of-stock-taking-mutate') ? (
           <PeriodOfStockTakingEnableDisableButton data={original} />
         ) : (
-          <div className="ui-w-20">
+          <div className="ui:w-20">
             <PeriodOfStockTakingStatusBox status={original?.status} />
           </div>
         ),

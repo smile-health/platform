@@ -37,10 +37,10 @@ export const TitleBlock = ({
         item.label && (
           <div
             key={`_${index.toString()}`}
-            className={`${item.className ?? 'ui-text-dark-teal'} ui-text-sm`}
+            className={`${item.className ?? 'ui:text-dark-teal'} ui:text-sm`}
           >
             {item.isLoading ? (
-              <Skeleton className="ui-w-1/2 ui-h-5" />
+              <Skeleton className="ui:w-1/2 ui:h-5" />
             ) : (
               item.label
             )}

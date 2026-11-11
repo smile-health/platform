@@ -19,7 +19,7 @@ export const createFilterBastGroupSchema = ({ t }: Params): UseFilter => [
     id: 'input-search',
     label: t('bast:list.filter.handover_document.search.label'),
     placeholder: t('bast:list.filter.handover_document.search.placeholder'),
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     defaultValue: '',
     maxLength: 255,
   },

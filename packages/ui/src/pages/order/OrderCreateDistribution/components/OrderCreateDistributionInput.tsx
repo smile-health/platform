@@ -40,7 +40,7 @@ export default function OrderCreateDistributionInput() {
   const today = new Date()
 
   return (
-    <div className="ui-p-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6">
+    <div className="ui:p-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-6">
       <H5>{t('section.detail')}</H5>
       <Controller
         name="vendor"
@@ -49,7 +49,7 @@ export default function OrderCreateDistributionInput() {
           field: { ref, onChange, ...field },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-space-y-1">
+          <FormControl className="ui:space-y-1">
             <FormLabel htmlFor="select-vendor" required>
               {t('form.vendor.label')}
             </FormLabel>
@@ -95,7 +95,7 @@ export default function OrderCreateDistributionInput() {
           field: { onChange, value, ...field },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-space-y-1">
+          <FormControl className="ui:space-y-1">
             <FormLabel htmlFor="select-activity" required>
               {t('form.activity.label')}
             </FormLabel>
@@ -126,7 +126,7 @@ export default function OrderCreateDistributionInput() {
               isClearable
             />
             {error && <FormErrorMessage>{error?.message}</FormErrorMessage>}
-            <p className="ui-text-neutral-500 ui-text-sm ui-italic">
+            <p className="ui:text-neutral-500 ui:text-sm ui:italic">
               {t('form.activity.info')}
             </p>
           </FormControl>
@@ -140,7 +140,7 @@ export default function OrderCreateDistributionInput() {
           field: { ref, onChange, ...field },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-space-y-1">
+          <FormControl className="ui:space-y-1">
             <FormLabel htmlFor="select-customer" required>
               {t('form.customer.label')}
             </FormLabel>
@@ -184,7 +184,7 @@ export default function OrderCreateDistributionInput() {
           field: { value, onChange, ...field },
           fieldState: { error },
         }) => (
-          <FormControl className="ui-space-y-1">
+          <FormControl className="ui:space-y-1">
             <FormLabel htmlFor="date-picker">{t('form.date.label')}</FormLabel>
             <DatePicker
               {...field}
@@ -203,7 +203,7 @@ export default function OrderCreateDistributionInput() {
           </FormControl>
         )}
       />
-      <FormControl className="ui-space-y-1">
+      <FormControl className="ui:space-y-1">
         <FormLabel htmlFor="input-comment">{t('form.comment.label')}</FormLabel>
         <Input
           {...register('order_comment')}

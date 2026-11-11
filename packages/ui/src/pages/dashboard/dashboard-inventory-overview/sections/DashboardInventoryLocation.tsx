@@ -76,18 +76,18 @@ export default function DashboardInventoryLocation({ onClick, filter }: Props) {
   return (
     <DashboardBox.Root
       id="location-map"
-      className="ui-flex ui-flex-col ui-h-full"
+      className="ui:flex ui:flex-col ui:h-full"
     >
       <DashboardBox.Header bordered>
         <H5>{t('title.location')}</H5>
-        <div className="ui-absolute ui-right-4 ui-top-1 ui-flex ui-gap-1 ui-ml-auto">
+        <div className="ui:absolute ui:right-4 ui:top-1 ui:flex ui:gap-1 ui:ml-auto">
           {map?.type !== 'entity' && (
             <ButtonIcon
               size="md"
               onClick={() => setView('map')}
               variant={view === 'map' ? 'outline' : 'default'}
             >
-              <GlobeIcon className="ui-size-5" />
+              <GlobeIcon className="ui:size-5" />
             </ButtonIcon>
           )}
           <ButtonIcon
@@ -95,11 +95,11 @@ export default function DashboardInventoryLocation({ onClick, filter }: Props) {
             onClick={() => setView('list')}
             variant={view === 'list' ? 'outline' : 'default'}
           >
-            <BurgerIcon className="ui-size-5" />
+            <BurgerIcon className="ui:size-5" />
           </ButtonIcon>
         </div>
       </DashboardBox.Header>
-      <DashboardBox.Body className="ui-flex-1 ui-flex ui-flex-col">
+      <DashboardBox.Body className="ui:flex-1 ui:flex ui:flex-col">
         <DashboardBox.Config
           download={{
             targetElementId: 'location-map',
@@ -113,7 +113,7 @@ export default function DashboardInventoryLocation({ onClick, filter }: Props) {
             isLoading ||
             (!isEmpty && map?.type === 'location' && !map?.name)
           }
-          className="ui-flex-1 ui-min-h-96 ui-max-h-[500px]"
+          className="ui:flex-1 ui:min-h-96 ui:max-h-[500px]"
         >
           {view === 'map' && (
             <MapChart<TMapItem>
@@ -125,9 +125,9 @@ export default function DashboardInventoryLocation({ onClick, filter }: Props) {
           )}
 
           {view === 'list' && (
-            <div className="ui-space-y-4">
+            <div className="ui:space-y-4">
               {(filter?.material?.length ?? 0) > 1 && (
-                <div className="ui-flex ui-items-center ui-justify-center ui-gap-4">
+                <div className="ui:flex ui:items-center ui:justify-center ui:gap-4">
                   {LEGEND_LABELS?.map((legend, index) => (
                     <DashboardInventoryCustomLegend
                       key={legend}

@@ -54,7 +54,7 @@ const AssetInventoryDetailChangeStatusButton = () => {
       <Button
         variant="outline"
         color={Number(data?.status?.id) === BOOLEAN.TRUE ? 'danger' : 'success'}
-        className="ui-mb-4 ui-w-auto"
+        className="ui:mb-4 ui:w-auto"
         onClick={() => setIsOpen(true)}
       >
         {Number(data?.status?.id) === BOOLEAN.TRUE

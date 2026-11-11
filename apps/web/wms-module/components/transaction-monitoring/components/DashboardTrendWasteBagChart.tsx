@@ -56,30 +56,30 @@ export default function DashboardTrendWasteBagChart({
           <Dialog
             open={open && information?.show}
             onOpenChange={setOpen}
-            className="ui-z-20"
+            className="ui:z-20"
           >
-            <DialogHeader className="ui-text-center">
+            <DialogHeader className="ui:text-center">
               {information?.title}
             </DialogHeader>
             <DialogContent>{information?.description}</DialogContent>
-            <DialogFooter className="ui-grid ui-grid-cols-1">
+            <DialogFooter className="ui:grid ui:grid-cols-1">
               <Button variant="outline" onClick={() => setOpen(!open)}>
                 {t('close')}
               </Button>
             </DialogFooter>
           </Dialog>
         )}
-        <div className="ui-flex ui-justify-center ui-items-center ui-gap-2">
+        <div className="ui:flex ui:justify-center ui:items-center ui:gap-2">
           <h4>
             <strong>{title}</strong>
           </h4>
           {information?.show && (
             <button onClick={() => setOpen(true)}>
-              <InformationCircleIcon className="ui-size-6" />
+              <InformationCircleIcon className="ui:size-6" />
             </button>
           )}
         </div>
-        {subtitle && <p className="ui-text-base">{subtitle}</p>}
+        {subtitle && <p className="ui:text-base">{subtitle}</p>}
       </DashboardBox.Header>
       <DashboardBox.Body>
         <DashboardBox.Config

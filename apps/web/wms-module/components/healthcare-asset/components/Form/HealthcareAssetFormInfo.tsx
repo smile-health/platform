@@ -15,18 +15,18 @@ const HealthcareAssetFormInfo: React.FC = () => {
   } = useFormContext<HealthcareAssetFormData>();
 
   return (
-    <div className="ui-grid ui-grid-cols-[264px_3px_1fr] ui-gap-x-2 ui-gap-y-4">
-      <p className="ui-text-[#787878] ui-content-center">
+    <div className="ui:grid ui:grid-cols-[264px_3px_1fr] ui:gap-x-2 ui:gap-y-4">
+      <p className="ui:text-[#787878] ui:content-center">
         {t('healthcareAsset:form.dongle_id.label')}
       </p>
-      <span className="ui-mt-1">:</span>
-      <div className="ui-flex ui-flex-col gap-1">
+      <span className="ui:mt-1">:</span>
+      <div className="ui:flex ui:flex-col gap-1">
         <Input
           {...register('assetId')}
           type="text"
           placeholder={t('healthcareAsset:form.dongle_id.placeholder')}
           error={!!errors?.assetId}
-          className="ui-min-w-[20px] ui-uppercase"
+          className="ui:min-w-[20px] ui:uppercase"
           disabled={loggedAsAdmin()}
         />
         <FormErrorMessage>

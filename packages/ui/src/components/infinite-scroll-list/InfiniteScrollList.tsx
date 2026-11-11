@@ -110,14 +110,14 @@ export const InfiniteScrollList = <Schema, Value extends RowData>({
       id={id}
       data-testid={id}
       className={cx(
-        'ui-border ui-border-neutral-300 ui-rounded ui-p-6 space-y-4'
+        'ui:border ui:border-neutral-300 ui:rounded ui:p-6 space-y-4'
       )}
     >
       {title && (
         <div className="space-y-4">
-          <div className={cx('ui-text-dark-blue ui-font-bold')}>{title}</div>
+          <div className={cx('ui:text-dark-blue ui:font-bold')}>{title}</div>
           {description && (
-            <div className={cx('ui-text-gray-500')}>{description}</div>
+            <div className={cx('ui:text-gray-500')}>{description}</div>
           )}
           {warning_description && (
             <Badge
@@ -142,9 +142,9 @@ export const InfiniteScrollList = <Schema, Value extends RowData>({
       )}
 
       {config.totalItems?.show && (
-        <div className={cx('ui-text-gray-500 ui-text-right')}>
+        <div className={cx('ui:text-gray-500 ui:text-right')}>
           <p>
-            <strong className="ui-text-dark-blue ui-text-sm">
+            <strong className="ui:text-dark-blue ui:text-sm">
               {!isLoading ? (totalItems ?? 0) : '-'}
             </strong>
             &nbsp;
@@ -160,7 +160,7 @@ export const InfiniteScrollList = <Schema, Value extends RowData>({
         columns={columns}
         isLoading={isLoading}
         isSticky
-        className={cx('ui-max-h-[425px]', className)}
+        className={cx('ui:max-h-[425px]', className)}
         bodyClassName={bodyClassName}
         onClickRow={onClickRow ? (row) => onClickRow(row.original) : undefined}
         emptyDescription={emptyDescription}

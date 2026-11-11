@@ -46,7 +46,7 @@ export const AnnualPlanningImportButton = () => {
         variant="subtle"
         type="button"
         onClick={() => setShowImportModal(true)}
-        leftIcon={<Import className="ui-size-5" />}
+        leftIcon={<Import className="ui:size-5" />}
       >
         {t('common:import')}
       </Button>
@@ -63,11 +63,11 @@ export const AnnualPlanningDownloadTemplateButton = () => {
     <Button
       data-testid="annual_planning_substitution_download_template"
       id="annual_planning_substitution_download_template"
-      className="ui-shrink-0"
+      className="ui:shrink-0"
       variant="subtle"
       type="button"
       onClick={() => downloadTemplateQuery.refetch()}
-      leftIcon={<Download className="ui-size-5" />}
+      leftIcon={<Download className="ui:size-5" />}
     >
       {t('common:download_template')}
     </Button>
@@ -85,7 +85,7 @@ export const AnnualPlanningAddButton = () => {
       asChild
       variant="solid"
       type="button"
-      leftIcon={<Plus className="ui-size-5" />}
+      leftIcon={<Plus className="ui:size-5" />}
     >
       <Link
         href={router.getAsLink(

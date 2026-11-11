@@ -75,7 +75,7 @@ const UserListPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
         onSubmit={changeStatus?.submit}
       />
 
-      <div className="ui-space-y-4 mt-6">
+      <div className="ui:space-y-4 mt-6">
         <UserFilter
           filter={filter}
           isGlobal={isGlobal}

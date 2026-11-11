@@ -28,7 +28,7 @@ const HealthcareStorageLocationIndexPage: React.FC = () => {
         title={t('healthcareStorageLocation:information.title')}
         description={t('healthcareStorageLocation:information.description')}
       />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         {isSuperAdmin() ? (
           <HealthcareStorageLocationTable />
         ) : (

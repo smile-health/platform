@@ -51,7 +51,7 @@ export const OrderCreateHierarchyDrawerTable = ({
         <Tr>
           {headers.map((header) => (
             <Th
-              className="ui-px-2 ui-py-5 ui-text-left ui-text-sm ui-text-gray-700 ui-border-b ui-border-gray-300 ui-font-semibold"
+              className="ui:px-2 ui:py-5 ui:text-left ui:text-sm ui:text-gray-700 ui:border-b ui:border-gray-300 ui:font-semibold"
               key={header.id}
               style={{
                 width: header?.size !== 0 ? `${header?.size}px` : 'auto',
@@ -68,25 +68,25 @@ export const OrderCreateHierarchyDrawerTable = ({
             <Tr
               id={`row-material-${index}-${indexRow}-batch-${stock?.material_id}`}
               key={`material-${stock?.material_id}-${indexRow}-${index}`}
-              className="ui-text-sm ui-text-dark-blue ui-font-normal ui-leading-6"
+              className="ui:text-sm ui:text-dark-blue ui:font-normal ui:leading-6"
             >
               <Td id={`cell-${headers?.[0]?.id}`}>{index + 1}</Td>
               <Td id={`cell-${headers?.[1]?.id}`}>
-                <div className="ui-text-dark-blue">
+                <div className="ui:text-dark-blue">
                   <strong>{stock?.name ?? '-'}</strong>
                 </div>
               </Td>
 
               <Td
                 id={`cell-${headers?.[2]?.id}`}
-                className={`ui-flex-row ui-align-top ${getBackgroundStock(stock?.available_qty ?? 0, stock?.min ?? 0, stock?.max ?? 0)}`}
+                className={`ui:flex-row ui:align-top ${getBackgroundStock(stock?.available_qty ?? 0, stock?.min ?? 0, stock?.max ?? 0)}`}
               >
-                <div className="ui-flex ui-flex-col ui-text-dark-blue ui-text-sm">
+                <div className="ui:flex ui:flex-col ui:text-dark-blue ui:text-sm">
                   <p id={`cell-${headers?.[2]?.id}-on_hand_stock`}>
                     {numberFormatter(stock?.available_qty ?? 0, language)}
                   </p>
                   <p
-                    className="ui-text-[#737373] ui-text-sm"
+                    className="ui:text-neutral-500 ui:text-sm"
                     id={`cell-${headers?.[2]?.id}-min_max`}
                   >{`(min: ${numberFormatter(stock?.min ?? 0, language)}, max: ${numberFormatter(stock?.max ?? 0, language)})`}</p>
                 </div>

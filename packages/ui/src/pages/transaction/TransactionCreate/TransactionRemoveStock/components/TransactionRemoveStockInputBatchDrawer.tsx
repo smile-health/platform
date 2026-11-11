@@ -93,16 +93,16 @@ const TransactionRemoveStockInputBatchDrawer = () => {
       sizeHeight="md"
     >
       <Button
-        className="ui-absolute ui-right-2 ui-top-2 ui-rounded ui-text-gray-800 ui-outline-none ui-border-none"
+        className="ui:absolute ui:right-2 ui:top-2 ui:rounded ui:text-gray-800 ui:outline-hidden ui:border-none"
         onClick={() => setStockData(null)}
         variant="subtle"
         type="button"
       >
-        <XMarkIcon className="ui-h-5 ui-w-5" />
+        <XMarkIcon className="ui:h-5 ui:w-5" />
       </Button>
-      <DrawerHeader title={drawerTitle} className="ui-mx-auto" />
-      <div className="ui-border-b-zinc-300 ui-h-1 ui-border-b" />
-      <DrawerContent className="!ui-rounded-lg">
+      <DrawerHeader title={drawerTitle} className="ui:mx-auto" />
+      <div className="ui:border-b-zinc-300 ui:h-1 ui:border-b" />
+      <DrawerContent className="ui:rounded-lg!">
         <TransactionCreateModalWarningItem />
         <TransactionRemoveStockBatchIdentityBox />
         <TransactionRemoveStockItemDetailBatchTable />
@@ -111,12 +111,12 @@ const TransactionRemoveStockInputBatchDrawer = () => {
         <Button
           variant="subtle"
           onClick={handleReset}
-          className="ui-px-4"
-          leftIcon={<Reload className="ui-w-5 ui-h-5 ui-mr-2" />}
+          className="ui:px-4"
+          leftIcon={<Reload className="ui:w-5 ui:h-5 ui:mr-2" />}
         >
           {t('common:reset')}
         </Button>
-        <Button variant="solid" onClick={handleSave} className="ui-px-16">
+        <Button variant="solid" onClick={handleSave} className="ui:px-16">
           {t('common:save')}
         </Button>
       </DrawerFooter>

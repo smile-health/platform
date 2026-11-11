@@ -25,18 +25,18 @@ function ColdStorageCapacityDetailContent() {
   const showWarning = data && data.projected_capacity.percentage_used > 100
 
   return (
-    <div className="ui-space-y-6">
-      <div className="ui-border ui-border-gray-200 ui-rounded ui-overflow-hidden">
+    <div className="ui:space-y-6">
+      <div className="ui:border ui:border-gray-200 ui:rounded ui:overflow-hidden">
         <HeaderInfo />
-        <div className="ui-p-6 space-y-6">
+        <div className="ui:p-6 space-y-6">
           <CapacityCards />
           {showWarning && (
-            <Alert type="danger" className="ui-border-danger-500 ui-border">
+            <Alert type="danger" className="ui:border-danger-500 ui:border">
               <div className="flex items-center gap-2">
                 <ExclamationTriangleIcon
                   fill="none"
                   strokeWidth={2}
-                  className="ui-size-4 ui-stroke-danger-500"
+                  className="ui:size-4 ui:stroke-danger-500"
                 />
                 {t('detail.warning.message')}
               </div>

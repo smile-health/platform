@@ -23,7 +23,7 @@ const StockOpameMaterial: React.FC = () => {
   } = useStockOpnameSelectMaterial({ isHierarchical })
 
   return (
-    <div className="ui-w-full ui-border ui-border-gray-300 ui-rounded">
+    <div className="ui:w-full ui:border ui:border-gray-300 ui:rounded">
       <InfiniteScrollList
         id="list-material-stock-opname-create"
         title={isHierarchical ? t('form.material.title') : 'Material'}

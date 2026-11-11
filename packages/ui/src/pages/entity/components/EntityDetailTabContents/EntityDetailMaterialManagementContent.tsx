@@ -75,9 +75,9 @@ const EntityDetailMaterialManagementContent: React.FC<Props> = ({ entity }) => {
         subTitle={entity?.name}
       />
 
-      <div className="ui-flex ui-justify-between ui-items-center ui-mb-[24px] ui-mt-[16px]">
-        <div className="ui-flex ui-gap-3">
-          <h5 className="ui-font-bold ui-leading-[28px] ui-text-[20px]">
+      <div className="ui:flex ui:justify-between ui:items-center ui:mb-[24px] ui:mt-[16px]">
+        <div className="ui:flex ui:gap-3">
+          <h5 className="ui:font-bold ui:leading-[28px] ui:text-[20px]">
             {t('entity:detail.material_entity.title')}
           </h5>
           {hasPermission('entity-mutate') && (
@@ -86,7 +86,7 @@ const EntityDetailMaterialManagementContent: React.FC<Props> = ({ entity }) => {
               size="sm"
               variant="subtle"
               leftIcon={<UpRight />}
-              className="ui-text-sm"
+              className="ui:text-sm"
               asChild
             >
               <Link href={router.getAsLink('/v5/entity-material-bulk')}>
@@ -95,8 +95,8 @@ const EntityDetailMaterialManagementContent: React.FC<Props> = ({ entity }) => {
             </Button>
           )}
         </div>
-        <div className="ui-flex ui-justify-end ui-items-center">
-          <div className="ui-mr-[18px] ui-w-[378.67px]">
+        <div className="ui:flex ui:justify-end ui:items-center">
+          <div className="ui:mr-[18px] ui:w-[378.67px]">
             <InputSearch
               id="search_material_entity"
               placeholder={`${t('common:search')} ${t('material:form.material_name.label')?.toLowerCase()}`}
@@ -111,8 +111,8 @@ const EntityDetailMaterialManagementContent: React.FC<Props> = ({ entity }) => {
               type="button"
               variant="solid"
             >
-              <div className="ui-flex ui-justify-center ui-items-center">
-                <div className="ui-mr-[4.16px]">
+              <div className="ui:flex ui:justify-center ui:items-center">
+                <div className="ui:mr-[4.16px]">
                   <Plus />
                 </div>
                 {t('entity:detail.material_entity.add_relation')}

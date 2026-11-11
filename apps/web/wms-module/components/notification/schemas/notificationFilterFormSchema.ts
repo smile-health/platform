@@ -38,7 +38,7 @@ export const notificationFilterFormSchema = ({
       multicalendar: true,
       label: t('notification:filter.receive_date.label'),
       defaultValue: null,
-      className: 'ui-w-full',
+      className: 'ui:w-full',
     },
     {
       id: 'select-province',
@@ -75,7 +75,7 @@ export const notificationFilterFormSchema = ({
       id: 'select-healthcare-facility-name',
       type: 'select-async-paginate',
       name: 'entityId',
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       isMulti: false,
       label: t('common:form.healthcare_facility_name.label'),
       placeholder: t('common:form.healthcare_facility_name.placeholder'),

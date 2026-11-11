@@ -137,10 +137,10 @@ const WasteCharacteristicForm = ({
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onValid, onInvalid)}>
-        <div className="ui-w-full ui-space-y-6 ui-max-w-form ui-mx-auto">
+        <div className="ui:w-full ui:space-y-6 ui:max-w-form ui:mx-auto">
           <WasteCharacteristicFormInfo />
-          <div className="ui-flex ui-justify-end">
-            <div className="ui-grid ui-grid-cols-2 ui-w-[300px] ui-gap-2">
+          <div className="ui:flex ui:justify-end">
+            <div className="ui:grid ui:grid-cols-2 ui:w-[300px] ui:gap-2">
               <Button
                 id="btn-back"
                 type="button"

@@ -35,7 +35,7 @@ const ModelAssetDetailPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('modelAsset:detail.title')}`}
       />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <ModelAssetDetailInfo
           data={data}
           isGlobal={isGlobal}

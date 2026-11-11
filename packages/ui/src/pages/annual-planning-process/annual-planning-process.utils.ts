@@ -130,8 +130,8 @@ export const toKeyValueMap = (data: DataCentralPopulation['population_data']): R
   }, {} as Record<string, number>) ?? {};
 }
 
-const headerClassName = 'ui-px-1 ui-py-4 ui-bg-neutral-100 ui-border-r ui-border-gray-300'
-const cellClassName = (index: number) => `ui-border-r ui-border-gray-300 ui-text-center ${index > 0 ? 'ui-bg-primary-50 ui-bg-opacity-30' : ''}`
+const headerClassName = 'ui:px-1 ui:py-4 ui:bg-neutral-100 ui:border-r ui:border-gray-300'
+const cellClassName = (index: number) => `ui:border-r ui:border-gray-300 ui:text-center ${index > 0 ? 'ui:bg-primary-50/30' : ''}`
 export const setColumnInformationPopulationAdjustment = (
   group_target: ListGroupTargetResponse['data'],
   language: string
@@ -142,7 +142,7 @@ export const setColumnInformationPopulationAdjustment = (
     size: 90,
     meta: {
       headerClassName: headerClassName,
-      cellClassName: cellClassName(0) + ` !ui-text-left !ui-bg-neutral-100`
+      cellClassName: cellClassName(0) + ` ui:text-left! ui:bg-neutral-100!`
     },
   }]
   if (group_target && group_target.length > 0) {
@@ -151,7 +151,7 @@ export const setColumnInformationPopulationAdjustment = (
       accessorKey: toSnakeCase(x.name),
       size: 90,
       meta: {
-        headerClassName: headerClassName + ' ui-text-center',
+        headerClassName: headerClassName + ' ui:text-center',
         cellClassName: ({ index }: { index: number }) => cellClassName(index)
       },
       cell: ({ getValue }: { getValue: () => unknown }) => {

@@ -15,7 +15,7 @@ export function useOnClickOutside(
       if (
         ignoredElements.includes(target.tagName.toLowerCase()) ||
         target.closest('button') ||
-        target.closest('.ui-form-select') ||
+        target.closest('.ui\\:form-select') ||
         target.closest('.ui-date-picker-popover') ||
         target.id?.includes('date-picker') ||
         target.id?.includes('month-picker')

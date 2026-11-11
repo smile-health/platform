@@ -13,9 +13,9 @@ const AssetInventoryDetailEditButton = () => {
       href={router.getAsLinkGlobal(
         `/v5/global-asset/management/operational-asset-inventory/${id}/edit?fromPage=detail`
       )}
-      className="ui-block ui-mb-4"
+      className="ui:block ui:mb-4"
     >
-      <Button variant="outline" className="hover:!ui-bg-blue-100">
+      <Button variant="outline" className="ui:hover:bg-blue-100!">
         {t('common:edit')}
       </Button>
     </Link>

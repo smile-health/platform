@@ -22,7 +22,7 @@ export function handleMaterialTableClass(
   selectedMaterial: number[]
 ) {
   if (isSelectedStock(data?.material?.id, selectedMaterial)) {
-    return 'ui-bg-[#E2F3FC]'
+    return 'ui:bg-[#E2F3FC]'
   }
 
   return ''

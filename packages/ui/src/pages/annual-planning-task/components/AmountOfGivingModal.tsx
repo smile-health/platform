@@ -97,38 +97,38 @@ const AmountOfGivingModal: React.FC<Props> = ({
         <Dialog open={open} onOpenChange={handleClose} size="2xl">
           <DialogCloseButton />
           <DialogHeader>
-            <h3 className="ui-text-center ui-text-[20px] ui-font-semibold">
+            <h3 className="ui:text-center ui:text-[20px] ui:font-semibold">
               {isEdit
                 ? t('task:form.amount_of_giving.edit')
                 : t('task:form.amount_of_giving.add')}
             </h3>
           </DialogHeader>
-          <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-          <DialogContent className="ui-overflow-visible ui-my-[8px] ui-px-0">
-            <div className="ui-flex ui-items-end ui-justify-between ui-px-4">
-              <div className="ui-flex ui-gap-8">
-                <div className="ui-flex ui-flex-col ui-min-w-36">
-                  <h4 className="ui-text-[14px] ui-leading-[20px] ui-text-neutral-500">
+          <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+          <DialogContent className="ui:overflow-visible ui:my-[8px] ui:px-0">
+            <div className="ui:flex ui:items-end ui:justify-between ui:px-4">
+              <div className="ui:flex ui:gap-8">
+                <div className="ui:flex ui:flex-col ui:min-w-36">
+                  <h4 className="ui:text-[14px] ui:leading-[20px] ui:text-neutral-500">
                     {t('common:form.activity.label')}:
                   </h4>
-                  <h5 className="ui-text-[16px] ui-leading-[20px] ui-text-[#0C3045] ui-font-bold">
+                  <h5 className="ui:text-[16px] ui:leading-[20px] ui:text-dark-blue ui:font-bold">
                     {activity}
                   </h5>
                 </div>
-                <div className="ui-flex ui-flex-col">
-                  <h4 className="ui-text-[14px] ui-leading-[20px] ui-text-neutral-500">
+                <div className="ui:flex ui:flex-col">
+                  <h4 className="ui:text-[14px] ui:leading-[20px] ui:text-neutral-500">
                     {t('common:form.material.label')}:
                   </h4>
-                  <h5 className="ui-text-[16px] ui-leading-[20px] ui-text-[#0C3045] ui-font-bold">
+                  <h5 className="ui:text-[16px] ui:leading-[20px] ui:text-dark-blue ui:font-bold">
                     {material}
                   </h5>
                 </div>
               </div>
               {!isEdit && (
-                <div className="ui-flex ui-justify-end ui-items-center ui-w-[325px]">
+                <div className="ui:flex ui:justify-end ui:items-center ui:w-[325px]">
                   <Button
                     variant="light"
-                    className="ui-mr-[16px] ui-p-0 ui-bg-transparent hover:!ui-bg-transparent"
+                    className="ui:mr-[16px] ui:p-0 ui:bg-transparent ui:hover:bg-transparent!"
                     onClick={() =>
                       setValue('amount_of_giving', [
                         ...watch('amount_of_giving'),
@@ -142,7 +142,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                     }
                     type="button"
                   >
-                    <div className="ui-mr-[4.16px]">
+                    <div className="ui:mr-[4.16px]">
                       <Plus />
                     </div>
                     {t('task:form.group_target.add')}
@@ -153,10 +153,10 @@ const AmountOfGivingModal: React.FC<Props> = ({
             {inputFields.length > 0 ? (
               inputFields.map((item, idx: number) => (
                 <div
-                  className="ui-my-[16px] ui-flex ui-justify-center ui-items-start ui-border-t ui-border-neutral-300 ui-pt-4 ui-px-4"
+                  className="ui:my-[16px] ui:flex ui:justify-center ui:items-start ui:border-t ui:border-neutral-300 ui:pt-4 ui:px-4"
                   key={item.id}
                 >
-                  <FormControl className="ui-mr-[16px] ui-w-full">
+                  <FormControl className="ui:mr-[16px] ui:w-full">
                     <FormLabel>{t('task:list.columns.group_target')}</FormLabel>
                     <Controller
                       name={`amount_of_giving.${idx}.group_target`}
@@ -189,7 +189,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                       </FormErrorMessage>
                     )}
                   </FormControl>
-                  <FormControl className="ui-mr-[16px] ui-w-full">
+                  <FormControl className="ui:mr-[16px] ui:w-full">
                     <FormLabel>
                       {t('task:list.columns.number_of_doses')}
                     </FormLabel>
@@ -229,7 +229,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                     )}
                   </FormControl>
 
-                  <FormControl className="ui-min-w-52">
+                  <FormControl className="ui:min-w-52">
                     <FormLabel htmlFor="national_ip">
                       {t('task:form.national_ip.label')}
                     </FormLabel>
@@ -259,7 +259,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                     <Button
                       variant="light"
                       color="danger"
-                      className="ui-bg-transparent ui-p-0 ui-h-auto hover:!ui-bg-transparent ui-ml-4 ui-mt-[28px]"
+                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent! ui:ml-4 ui:mt-[28px]"
                       onClick={() => {
                         setValue(
                           'amount_of_giving',
@@ -272,7 +272,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                       type="button"
                     >
                       {t('common:delete')}
-                      <div className="ui-ml-[4.16px] ui-rotate-45 ui-mt-1">
+                      <div className="ui:ml-[4.16px] ui:rotate-45 ui:mt-1">
                         <Plus />
                       </div>
                     </Button>
@@ -280,30 +280,30 @@ const AmountOfGivingModal: React.FC<Props> = ({
                 </div>
               ))
             ) : (
-              <div className="ui-border ui-border-neutral-300 ui-mt-4">
+              <div className="ui:border ui:border-neutral-300 ui:mt-4">
                 <EmptyState
                   withIcon
                   title={t('common:message.empty.title')}
                   description={t('common:message.empty.description')}
-                  className="ui-mt-8 ui-pb-16"
+                  className="ui:mt-8 ui:pb-16"
                 />
               </div>
             )}
           </DialogContent>
-          <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
+          <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
           <DialogFooter>
-            <div className="ui-flex ui-justify-center ui-items-end ui-w-full ui-mb-[8px]">
+            <div className="ui:flex ui:justify-center ui:items-end ui:w-full ui:mb-[8px]">
               <Button
                 variant="outline"
                 onClick={handleClose}
-                className="ui-mr-[12px] ui-w-full"
+                className="ui:mr-[12px] ui:w-full"
                 type="button"
               >
                 {t('common:cancel')}
               </Button>
               <Button
                 variant="solid"
-                className="ui-w-full"
+                className="ui:w-full"
                 type="button"
                 onClick={() => handleSubmit(onSubmit)}
                 disabled={isDisabledSubmitButton}

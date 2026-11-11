@@ -24,7 +24,7 @@ const HealthcarePartnerDetailPage: React.FC = () => {
       <Meta title={`WMS | HealthcarePartner`} />
       <div className="mt-6 space-y-6">
         {isLoading ? (
-          <Spinner className="ui-w-full ui-h-10" />
+          <Spinner className="ui:w-full ui:h-10" />
         ) : (
           <HealthcarePartnerForm defaultValues={partnershipDetail} />
         )}

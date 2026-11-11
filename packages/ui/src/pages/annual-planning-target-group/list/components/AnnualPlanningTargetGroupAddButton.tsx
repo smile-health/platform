@@ -45,7 +45,7 @@ const AnnualPlanningTargetGroupAddButton = ({
         <Button
           variant="solid"
           type="button"
-          leftIcon={<Plus className="ui-size-5" />}
+          leftIcon={<Plus className="ui:size-5" />}
           onClick={handleAdd}
         >
           {t('annualPlanningTargetGroup:add')}

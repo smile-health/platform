@@ -46,7 +46,7 @@ export const columnsBudgetSource = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex">
+        <div className="ui:flex">
           <ButtonActionTable
             id={original?.id}
             path={'/budget-source'}

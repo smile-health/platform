@@ -22,7 +22,7 @@ export const createFilterHealthcarePartnerGroupSchema = ({
     id: 'select-partnership-status',
     type: 'select',
     name: 'partnershipStatus',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('healthcarePartner:list.filter.partnership_status.label'),
     placeholder: t(
@@ -36,7 +36,7 @@ export const createFilterHealthcarePartnerGroupSchema = ({
     id: 'select-healthcare-partner',
     type: 'select',
     name: 'consumerId',
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     isMulti: false,
     label: t('healthcarePartner:list.filter.healthcare_partner.label'),
     placeholder: t(

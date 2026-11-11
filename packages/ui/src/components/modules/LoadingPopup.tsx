@@ -11,15 +11,15 @@ const LoadingPopup = () => {
   if (!loadingPopup) return null
 
   return (
-    <Dialog open={loadingPopup} closeOnOverlayClick={false} classNameOverlay="ui-z-[20]" className="ui-z-[20]">
-      <DialogContent className="ui-text-center ui-py-6">
-        <div className="ui-flex ui-justify-center ui-mb-4 ui-text-primary-500">
+    <Dialog open={loadingPopup} closeOnOverlayClick={false} classNameOverlay="ui:z-[20]" className="ui:z-20">
+      <DialogContent className="ui:text-center ui:py-6">
+        <div className="ui:flex ui:justify-center ui:mb-4 ui:text-primary-500">
           <GlobalSpinner />
         </div>
-        <p className="ui-text-xl ui-font-medium ui-text-primary-700 ui-mb-2">
+        <p className="ui:text-xl ui:font-medium ui:text-primary-700 ui:mb-2">
           {t('loading_popup.title')}
         </p>
-        <p className="ui-text-base ui-font-normal ui-text-neutral-500">
+        <p className="ui:text-base ui:font-normal ui:text-neutral-500">
           {t('loading_popup.description')}
         </p>
       </DialogContent>

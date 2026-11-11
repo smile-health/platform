@@ -35,7 +35,7 @@ const TransactionCraeteTransferStockTableDetail = ({
   } = useTranslation('transactionCreate')
   return (
     <Table withBorder key={indexData} hightlightOnHover rounded>
-      <Thead className="ui-bg-slate-100 ui-text-sm">
+      <Thead className="ui:bg-slate-100 ui:text-sm">
         <Tr>
           {columnsBatch(batches?.some((i) => i.managed_in_batch === 1)).map(
             (item) => (
@@ -43,7 +43,7 @@ const TransactionCraeteTransferStockTableDetail = ({
                 key={`header-${item.id}`}
                 id={`header-${item.id}`}
                 columnKey={item.id}
-                className="ui-text-sm ui-text-dark-blue ui-font-bold"
+                className="ui:text-sm ui:text-dark-blue ui:font-bold"
                 style={{
                   ...(item.size && { maxWidth: item.size }),
                 }}
@@ -54,16 +54,16 @@ const TransactionCraeteTransferStockTableDetail = ({
           )}
         </Tr>
       </Thead>
-      <Tbody className="ui-bg-white ui-text-sm ui-font-normal ui-text-sm">
+      <Tbody className="ui:bg-white ui:text-sm ui:font-normal ui:text-sm">
         {batches?.map((item, index) => (
           <Tr
             key={`item-material-batch-${index.toString()}`}
-            className={!item.batch_id ? 'ui-bg-info-50' : ''}
+            className={!item.batch_id ? 'ui:bg-info-50' : ''}
           >
             <Td id="si-no">{index + 1}</Td>
             <Td id="batch_info">
-              <div className="ui-flex ui-flex-col ui-space-y-1">
-                <div className="ui-font-bold">{item.code}</div>
+              <div className="ui:flex ui:flex-col ui:space-y-1">
+                <div className="ui:font-bold">{item.code}</div>
                 <div>
                   {t('transaction_transfer_stock.table_batch.production_date')}:{' '}
                   {parseDateTime(
@@ -91,8 +91,8 @@ const TransactionCraeteTransferStockTableDetail = ({
               {numberFormatter(item.available_qty, language)}
             </Td>
             <Td id="budget_info">
-              <div className="ui-flex ui-flex-col ui-space-y-1">
-                <div className="ui-font-bold">
+              <div className="ui:flex ui:flex-col ui:space-y-1">
+                <div className="ui:font-bold">
                   {t('transaction_transfer_stock.table_batch.budget_source')}:{' '}
                   {item.budget_source?.label ? item.budget_source?.label : '-'}
                 </div>

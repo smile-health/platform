@@ -59,7 +59,7 @@ const UserDetailPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
   return (
     <AppLayout title={t('user:title.detail')}>
       <Meta title={generateMetaTitle(t('user:title.user'), isGlobal)} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <UserDetailMainInfo
           id={detail?.id}
           status={detail?.status}

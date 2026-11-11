@@ -45,7 +45,7 @@ const DropdownNav: React.FC<Props> = ({
       <DropdownMenuTrigger>
         <div className={className} id={`trigger-${title}`}>
           <div>{title}</div>
-          <div className="ui-py-1 ui-pl-2">
+          <div className="ui:py-1 ui:pl-2">
             <Image
               src="/images/ic-expand-more-gray.png"
               alt="expand-icon"
@@ -56,7 +56,7 @@ const DropdownNav: React.FC<Props> = ({
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent hidden={!show}>
-        <div className="ui-flex ui-flex-col ui-gap-1">
+        <div className="ui:flex ui:flex-col ui:gap-1">
           {navChild
             .filter((item) => item.isExist)
             .map((item) => {
@@ -72,7 +72,7 @@ const DropdownNav: React.FC<Props> = ({
               }
               return (
                 <Link
-                  className={`${item.className} ui-text-left ui-block ui-text-primary-500 ui-cursor-pointer hover:ui-text-primary-700 hover:ui-bg-gray-100 ui-px-6 ui-py-1`}
+                  className={`${item.className} ui:text-left ui:block ui:text-primary-500 ui:cursor-pointer ui:hover:text-primary-700 ui:hover:bg-gray-100 ui:px-6 ui:py-1`}
                   id={`navbar-${item.link}`}
                   key={`navbar-${item.link}`}
                   href={router.getAsLink(item.link ?? '')}

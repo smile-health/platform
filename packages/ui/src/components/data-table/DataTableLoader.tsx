@@ -6,7 +6,7 @@ function DataTableLoader({ show = true }: Readonly<{ show?: boolean }>) {
   return (
     <AnimatePresence>
       {show ? (
-        <div className="ui-absolute ui-inset-0 ui-flex ui-justify-center">
+        <div className="ui:absolute ui:inset-0 ui:flex ui:justify-center">
           <motion.div
             initial={{
               opacity: 0,
@@ -20,9 +20,9 @@ function DataTableLoader({ show = true }: Readonly<{ show?: boolean }>) {
               transition: { duration: 0.15, ease: 'easeIn' },
             }}
             className={cx(
-              'ui-absolute ui-inset-0',
-              'ui-bg-white',
-              'ui-flex ui-h-full ui-w-full ui-justify-center'
+              'ui:absolute ui:inset-0',
+              'ui:bg-white',
+              'ui:flex ui:h-full ui:w-full ui:justify-center'
             )}
           ></motion.div>
           <motion.div
@@ -37,7 +37,7 @@ function DataTableLoader({ show = true }: Readonly<{ show?: boolean }>) {
               opacity: 0,
               transition: { duration: 0.15, ease: 'easeIn' },
             }}
-            className="ui-z-10 ui-my-auto ui-h-8 ui-w-8 ui-text-primary-500 ui-opacity-100"
+            className="ui:z-10 ui:my-auto ui:h-8 ui:w-8 ui:text-primary-500 ui:opacity-100"
           >
             <Spinner />
           </motion.div>

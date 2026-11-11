@@ -57,11 +57,11 @@ const ForgotPassword: React.FC = () => {
       <AuthLayout>
         {!isSuccess ? (
           <Fragment>
-            <h6 className="ui-font-bold ui-text-xl ui-mb-11">
+            <h6 className="ui:font-bold ui:text-xl ui:mb-11">
               {t('forgot:title')}
             </h6>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <FormControl className="ui-mb-6">
+              <FormControl className="ui:mb-6">
                 <FormLabel required>Username</FormLabel>
                 <Input
                   placeholder="Username"
@@ -78,7 +78,7 @@ const ForgotPassword: React.FC = () => {
                 type="submit"
                 variant="solid"
                 id="btnForgotPassword"
-                className="ui-mb-10 ui-rounded-full ui-mt-2 w-full"
+                className="ui:mb-10 ui:rounded-full ui:mt-2 w-full"
                 disabled={!isValid}
                 loading={isPending}
               >
@@ -87,15 +87,15 @@ const ForgotPassword: React.FC = () => {
             </form>
           </Fragment>
         ) : (
-          <div className="ui-flex ui-flex-col ui-gap-2 ui-my-24">
-            <p className="ui-font-bold ui-text-xl">
+          <div className="ui:flex ui:flex-col ui:gap-2 ui:my-24">
+            <p className="ui:font-bold ui:text-xl">
               {t('forgot:success.description', { returnObjects: true })[0]}
             </p>
-            <p className="ui-text-xs">
+            <p className="ui:text-xs">
               {t('forgot:success.description', { returnObjects: true })[1]}
             </p>
             <button
-              className="ui-font-bold ui-text-xs ui-mt-2 ui-text-success-500 ui-cursor-pointer"
+              className="ui:font-bold ui:text-xs ui:mt-2 ui:text-success-500 ui:cursor-pointer"
               onClick={() => mutate({ username })}
             >
               {t('forgot:success.description', { returnObjects: true })[2]}

@@ -7,7 +7,7 @@ import { TableSchemaTransactionDetail } from '../transaction-create.constant'
 export const TransactionCreateDefaultTransactionTable = () => {
   const { t } = useTranslation('transactionCreate')
   return (
-    <div className="ui-mt-5">
+    <div className="ui:mt-5">
       <DataTable columns={TableSchemaTransactionDetail(t)} />
     </div>
   )

@@ -31,7 +31,7 @@ const AssetVendorDetailPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
       <Meta
         title={`Smile | ${isGlobal ? 'Global' : ''} ${t('assetVendor:detail.title')}`}
       />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <AssetVendorDetailInfo
           data={data}
           isGlobal={isGlobal}

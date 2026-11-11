@@ -23,7 +23,7 @@ const DashboardAnnualCommitmentVsRealizationFilterProvince: React.FC<Props> = ({
       menuPosition="fixed"
       additional={{ page: 1 }}
       menuPortalTarget={document.body}
-      className="ui-w-1/3"
+      className="ui:w-1/3"
       placeholder={t('form.province.placeholder')}
     />
   )

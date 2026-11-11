@@ -134,11 +134,11 @@ export default function HomeSuperadminTable({
   };
 
   return (
-    <div className="ui-space-y-6 ui-mb-4">
+    <div className="ui:space-y-6 ui:mb-4">
       {viewDetail ? (
         <>
           <Button
-            leftIcon={<ArrowLeftIcon className="ui-h-5" />}
+            leftIcon={<ArrowLeftIcon className="ui:h-5" />}
             variant="subtle"
             onClick={() => {
               setSelectedHealthcareId(undefined);
@@ -157,21 +157,21 @@ export default function HomeSuperadminTable({
             {!isEmpty && (
               <Thead>
                 <Tr>
-                  <Th className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300">
+                  <Th className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300">
                     No
                   </Th>
-                  <Th className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300">
+                  <Th className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300">
                     {t(
                       'home:home_superadmin.column_transaction.waste_group_number'
                     )}
                   </Th>
-                  <Th className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300">
+                  <Th className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300">
                     {t(
                       'home:home_superadmin.column_transaction.waste_transporter'
                     )}
                   </Th>
                   <Th
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     rowSpan={2}
                   >
                     {t(
@@ -179,7 +179,7 @@ export default function HomeSuperadminTable({
                     )}
                   </Th>
                   <Th
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     rowSpan={2}
                   >
                     {t(
@@ -187,25 +187,25 @@ export default function HomeSuperadminTable({
                     )}
                   </Th>
                   <Th
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     rowSpan={2}
                   >
                     {t('home:home_superadmin.column_transaction.waste_source')}
                   </Th>
                   <Th
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     rowSpan={2}
                   >
                     {t('home:home_superadmin.column_transaction.waste_in_date')}
                   </Th>
                   <Th
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     rowSpan={2}
                   >
                     {t('home:home_superadmin.column_transaction.storage_limit')}
                   </Th>
                   <Th
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     rowSpan={2}
                   >
                     {t(
@@ -213,7 +213,7 @@ export default function HomeSuperadminTable({
                     )}
                   </Th>
                   <Th
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     rowSpan={2}
                   >
                     {t('home:home_superadmin.column_transaction.waste_weight', {
@@ -221,7 +221,7 @@ export default function HomeSuperadminTable({
                     })}
                   </Th>
                   <Th
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     rowSpan={2}
                   >
                     {t('home:home_superadmin.column_transaction.action')}
@@ -232,7 +232,7 @@ export default function HomeSuperadminTable({
 
             <Tbody>
               {isLoadingSummary && (
-                <div className="ui-absolute ui-inset-0 ui-flex ui-justify-center">
+                <div className="ui:absolute ui:inset-0 ui:flex ui:justify-center">
                   <Spinner />
                 </div>
               )}
@@ -240,42 +240,42 @@ export default function HomeSuperadminTable({
               {dataTransaction &&
                 dataTransaction.map((row, idx) => (
                   <Tr key={idx}>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {(page - 1) * size + (idx + 1)}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {row.wasteGroupNumber ?? '-'}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {row.transporterOperatorName ?? '-'}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {row.treatmentOperatorName ?? '-'}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {row.wasteTypeName} / {row.wasteGroupName} /{' '}
                       {row.wasteCharacteristicsName}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {row.wasteSource ?? '-'}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {row.wasteInDate
                         ? parseDateTime(row.wasteInDate, 'DD MMM YYYY')
                         : '-'}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {row.storageDateLimit ?? '-'}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {row.lastFollowUp ?? '-'}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       {formatWasteBagWeight(row.totalWeightInKgs ?? 0)}
                     </Td>
-                    <Td className="ui-border-r ui-border-gray-300">
+                    <Td className="ui:border-r ui:border-gray-300">
                       <p
-                        className="ui-text-sm ui-text-green-700 ui-cursor-pointer"
+                        className="ui:text-sm ui:text-green-700 ui:cursor-pointer"
                         onClick={() => handleOpenModalHistory(row)}
                         onKeyDown={(e) => {
                           if (e.key === 'Enter' || e.key === ' ') {
@@ -307,19 +307,19 @@ export default function HomeSuperadminTable({
             <Thead>
               <Tr>
                 <Th
-                  className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                  className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                   rowSpan={2}
                 >
                   No
                 </Th>
                 <Th
-                  className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                  className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                   rowSpan={2}
                 >
                   {locationColumnTitle}
                 </Th>
                 <Th
-                  className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                  className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                   rowSpan={2}
                 >
                   {t('home:home_superadmin.column.total_transaction')}
@@ -327,14 +327,14 @@ export default function HomeSuperadminTable({
                 {Object.entries(grouped).map(([parent, children]) => (
                   <Th
                     key={parent}
-                    className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                    className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     colSpan={children.length}
                   >
                     {parent.split('_')[1]}
                   </Th>
                 ))}
                 <Th
-                  className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                  className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                   rowSpan={2}
                 >
                   {t('home:home_superadmin.column.total_weight', {
@@ -348,7 +348,7 @@ export default function HomeSuperadminTable({
                   children.map((child) => (
                     <Th
                       key={parent + child}
-                      className="ui-sticky ui-left-0 ui-bg-slate-100 ui-font-semibold ui-text-center ui-border-r ui-border-gray-300"
+                      className="ui:sticky ui:left-0 ui:bg-slate-100 ui:font-semibold ui:text-center ui:border-r ui:border-gray-300"
                     >
                       {child}
                     </Th>
@@ -362,14 +362,14 @@ export default function HomeSuperadminTable({
             {dataSummary &&
               dataSummary.map((row, idx) => (
                 <Tr key={idx}>
-                  <Td className="ui-border-r ui-border-gray-300">
+                  <Td className="ui:border-r ui:border-gray-300">
                     {(page - 1) * size + (idx + 1)}
                   </Td>
-                  <Td className="ui-border-r ui-border-gray-300">
+                  <Td className="ui:border-r ui:border-gray-300">
                     {locationKey ? row[locationKey] || '-' : '-'}
                     {/* {locationKey === 'healthcareName' && (
 											<p
-												className="ui-text-green-700 ui-text-sm ui-cursor-pointer ui-mt-2"
+												className="ui:text-green-700 ui:text-sm ui:cursor-pointer ui:mt-2"
 												onClick={() => {
 													setSelectedHealthcareId(row.healthcareFacilityId);
 													setViewDetail(true);
@@ -382,7 +382,7 @@ export default function HomeSuperadminTable({
 										)} */}
                     {locationKey === 'provinceName' && (
                       <p
-                        className="ui-text-green-700 ui-text-sm ui-cursor-pointer ui-mt-2"
+                        className="ui:text-green-700 ui:text-sm ui:cursor-pointer ui:mt-2"
                         onClick={() => {
                           filter.setValue('provinceId', {
                             value: row.provinceId,
@@ -408,7 +408,7 @@ export default function HomeSuperadminTable({
                     )}
                     {locationKey === 'cityName' && (
                       <p
-                        className="ui-text-green-700 ui-text-sm ui-cursor-pointer ui-mt-2"
+                        className="ui:text-green-700 ui:text-sm ui:cursor-pointer ui:mt-2"
                         onClick={() => {
                           filter.setValue('regencyId', {
                             value: row.cityId,
@@ -435,7 +435,7 @@ export default function HomeSuperadminTable({
                       </p>
                     )}
                   </Td>
-                  <Td className="ui-border-r ui-border-gray-300">
+                  <Td className="ui:border-r ui:border-gray-300">
                     {row.totalWasteBag}
                   </Td>
                   {Object.keys(grouped).map((parent) =>
@@ -445,7 +445,7 @@ export default function HomeSuperadminTable({
                         return (
                           <Td
                             key={key}
-                            className="ui-border-r ui-border-gray-300"
+                            className="ui:border-r ui:border-gray-300"
                           >
                             {row[key]}
                           </Td>
@@ -454,11 +454,11 @@ export default function HomeSuperadminTable({
                     ) : (
                       <Td
                         key={parent}
-                        className="ui-border-r ui-border-gray-300"
+                        className="ui:border-r ui:border-gray-300"
                       >
                         {row[parent]}
                         <p
-                          className="ui-text-green-700 ui-text-sm ui-cursor-pointer ui-mt-2"
+                          className="ui:text-green-700 ui:text-sm ui:cursor-pointer ui:mt-2"
                           onClick={() => {
                             setSelectedWaste({
                               provinceName: row.provinceName,
@@ -502,7 +502,7 @@ export default function HomeSuperadminTable({
                       </Td>
                     )
                   )}
-                  <Td className="ui-border-r ui-border-gray-300">
+                  <Td className="ui:border-r ui:border-gray-300">
                     {formatWasteBagWeight(row.totalWeight)}
                   </Td>
                 </Tr>

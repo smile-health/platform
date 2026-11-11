@@ -99,41 +99,41 @@ const PeriodOfStockTakingListPage: React.FC<CommonType> = () => {
     <Container title={t('periodOfStockTaking:title')} withLayout>
       <Meta title={`SMILE | ${t('periodOfStockTaking:list_of_period')}`} />
       <PeriodOfStockTakingListContext.Provider value={contextValueList}>
-        <div className="ui-my-6 ui-flex ui-justify-end ui-items-center">
+        <div className="ui:my-6 ui:flex ui:justify-end ui:items-center">
           {hasPermission('period-of-stock-taking-mutate') && (
             <Link
               href={router.getAsLink(`/v5/period-of-stock-taking/create`)}
-              className="ui-block"
+              className="ui:block"
             >
               <Button
                 variant="solid"
                 type="button"
-                leftIcon={<Plus className="ui-size-5" />}
+                leftIcon={<Plus className="ui:size-5" />}
               >
                 {t('periodOfStockTaking:add_period')}
               </Button>
             </Link>
           )}
         </div>
-        <div className="ui-space-y-4 ui-mt-6">
+        <div className="ui:space-y-4 ui:mt-6">
           <FilterFormRoot collapsible={false} onSubmit={filter.handleSubmit}>
-            <FilterFormBody className="ui-grid-cols-1">
-              <div className="ui-flex ui-justify-between ui-items-end ui-gap-10">
-                <div className="ui-flex-1">{filter.renderField()}</div>
-                <div className="ui-flex ui-gap-2 ui-w-1/4">
+            <FilterFormBody className="ui:grid-cols-1">
+              <div className="ui:flex ui:justify-between ui:items-end ui:gap-10">
+                <div className="ui:flex-1">{filter.renderField()}</div>
+                <div className="ui:flex ui:gap-2 ui:w-1/4">
                   <Button
                     id="btn-export"
                     variant="subtle"
                     type="button"
                     onClick={() => exportQuery.refetch()}
-                    leftIcon={<Export className="ui-size-5" />}
+                    leftIcon={<Export className="ui:size-5" />}
                   >
                     {t('common:export')}
                   </Button>
-                  <div className="ui-w-px ui-h-auto ui-bg-neutral-300" />
+                  <div className="ui:w-px ui:h-auto ui:bg-neutral-300" />
                   <FilterResetButton onClick={filter.reset} variant="subtle" />
                   <FilterSubmitButton
-                    className="ui-w-full"
+                    className="ui:w-full"
                     variant="outline"
                     onClick={() => setPagination({ page: 1 })}
                   />
@@ -144,12 +144,12 @@ const PeriodOfStockTakingListPage: React.FC<CommonType> = () => {
           </FilterFormRoot>
         </div>
         {activePeriodData && (
-          <div className="ui-space-y-6 ui-my-5">
+          <div className="ui:space-y-6 ui:my-5">
             <PeriodOfStockTakingActivePeriodBox />
           </div>
         )}
 
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <PeriodOfStockTakingListTable data={listPeriodOfStockTakingData} />
         </div>
       </PeriodOfStockTakingListContext.Provider>

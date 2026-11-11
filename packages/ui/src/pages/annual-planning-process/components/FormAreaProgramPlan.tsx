@@ -41,9 +41,9 @@ const FormAreaProgramPlan: React.FC = () => {
   }, [parentForm.area_program_plan?.id])
 
   return (
-    <div className="ui-justify-self-center ui-w-[480px] ui-border ui-p-6">
+    <div className="ui:justify-self-center ui:w-[480px] ui:border ui:p-6">
       <form
-        className="ui-space-y-6"
+        className="ui:space-y-6"
         onSubmit={handleSubmit(onSubmit)}
         id="FormAreaProgramPlan"
       >
@@ -126,7 +126,7 @@ const FormAreaProgramPlan: React.FC = () => {
 
         <Button
           type="submit"
-          className="ui-w-full"
+          className="ui:w-full"
           form="FormAreaProgramPlan"
         >
           {t('annualPlanningProcess:create.form.button.process')}

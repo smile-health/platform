@@ -50,13 +50,13 @@ export default function ReconciliationChart({ filter }: Props) {
   const isLoading = loading || isFetching
 
   return (
-    <div className="ui-relative">
+    <div className="ui:relative">
       {!isLoading && (
-        <div className="ui-absolute ui-right-0 ui-flex ui-justify-end">
+        <div className="ui:absolute ui:right-0 ui:flex ui:justify-end">
           <DropdownMenuRoot>
             <DropdownMenuTrigger>
               <ButtonIcon size="lg" variant="default">
-                <Download className="ui-size-5" />
+                <Download className="ui:size-5" />
               </ButtonIcon>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -80,8 +80,8 @@ export default function ReconciliationChart({ filter }: Props) {
       )}
       <div
         id="reconciliation-activity-report"
-        className={cx('ui-h-[500px]', {
-          'ui-grid ui-place-items-center ui-text-primary-500 ui-max-h-64':
+        className={cx('ui:h-[500px]', {
+          'ui:grid ui:place-items-center ui:text-primary-500 ui:max-h-64':
             isLoading,
         })}
       >

@@ -58,7 +58,7 @@ export default function UserOperatorTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={userOperatorDataSource?.data.data}
         columns={columnsUserOperator(t, {

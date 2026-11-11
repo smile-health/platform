@@ -27,19 +27,19 @@ export const InputPassword = React.forwardRef<
           {type === 'password' ? (
             <EyeIcon
               className={cx({
-                'ui-h-3.5 ui-w-3.5': size === 'sm',
-                'ui-h-4 ui-w-4': size === 'md',
-                'ui-h-5 ui-w-5': size === 'lg',
-                'ui-h-6 ui-w-6': size === 'xl',
+                'ui:h-3.5 ui:w-3.5': size === 'sm',
+                'ui:h-4 ui:w-4': size === 'md',
+                'ui:h-5 ui:w-5': size === 'lg',
+                'ui:h-6 ui:w-6': size === 'xl',
               })}
             />
           ) : (
             <EyeSlashIcon
               className={cx({
-                'ui-h-3.5 ui-w-3.5': size === 'sm',
-                'ui-h-4 ui-w-4': size === 'md',
-                'ui-h-5 ui-w-5': size === 'lg',
-                'ui-h-6 ui-w-6': size === 'xl',
+                'ui:h-3.5 ui:w-3.5': size === 'sm',
+                'ui:h-4 ui:w-4': size === 'md',
+                'ui:h-5 ui:w-5': size === 'lg',
+                'ui:h-6 ui:w-6': size === 'xl',
               })}
             />
           )}

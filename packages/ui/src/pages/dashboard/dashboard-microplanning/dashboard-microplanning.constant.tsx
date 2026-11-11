@@ -51,7 +51,7 @@ export const tableTargetConsumptionVaccineColumns = (
         header: c.header,
         accessorKey: c.accessorKey,
         meta: {
-          headerClassName: 'ui-bg-slate-200'
+          headerClassName: 'ui:bg-slate-200'
         }
       })),
     },
@@ -72,9 +72,9 @@ export const tableTotalTargetColumns = (
         header: vaccine.name,       // nama vaksin
         accessorKey: vaccine.key,   // key sesuai API
         meta: {
-          headerClassName: 'ui-bg-slate-200',
+          headerClassName: 'ui:bg-slate-200',
           headerSubComponent: (
-            <div className="ui-text-xs ui-text-gray-500 ui-font-normal" >
+            <div className="ui:text-xs ui:text-gray-500 ui:font-normal" >
               {t(`column.group.${vaccine.ageGroup}` as unknown as any)}
             </div>
           ),

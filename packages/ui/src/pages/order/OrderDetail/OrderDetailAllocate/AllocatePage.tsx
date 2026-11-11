@@ -66,8 +66,8 @@ const AllocatePage = () => {
         },
       }}
     >
-      <div className="ui-space-y-6">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+      <div className="ui:space-y-6">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-6">
           <OrderDetailCustomer />
           <OrderDetailVendor />
         </div>

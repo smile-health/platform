@@ -17,7 +17,7 @@ export const createFilterSchema = ({ t }: Params): UseFilter => [
     id: 'input-search',
     label: t('healthcareStorageLocation:filter.search.label'),
     placeholder: t('healthcareStorageLocation:filter.search.placeholder'),
-    className: 'ui-w-full',
+    className: 'ui:w-full',
     defaultValue: '',
     maxLength: 255,
   },

@@ -18,22 +18,22 @@ const ExportAsyncPopup: React.FC = () => {
       open={exportAsyncPopup}
       onOpenChange={() => setExportAsyncPopup(false)}
     >
-      <DialogContent className="ui-flex ui-flex-col ui-gap-6 ui-items-center ui-p-6">
-        <div className="ui-flex ui-flex-col ui-gap-1 ui-items-center">
-          <p className="ui-text-sm ui-font-normal ui-text-primary-700">
+      <DialogContent className="ui:flex ui:flex-col ui:gap-6 ui:items-center ui:p-6">
+        <div className="ui:flex ui:flex-col ui:gap-1 ui:items-center">
+          <p className="ui:text-sm ui:font-normal ui:text-primary-700">
             {t('modal_export_async_popup.title')}
           </p>
-          <p className="ui-text-xs ui-font-normal ui-text-neutral-500">
+          <p className="ui:text-xs ui:font-normal ui:text-neutral-500">
             {t('modal_export_async_popup.description')}
           </p>
         </div>
         <Link
-          className="ui-text-sm ui-font-normal ui-text-primary-500"
+          className="ui:text-sm ui:font-normal ui:text-primary-500"
           href={getAsLinkGlobal('/v5/export-history')}
           target="_blank"
         >
           <Button
-            className="ui-w-max"
+            className="ui:w-max"
             type="button"
             variant="light"
             size="sm"

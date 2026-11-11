@@ -8,7 +8,7 @@ const getBackground = (isDisabled: boolean, isFocused: boolean) => {
 
 const getColor = (isDisabled: boolean, isFocused: boolean) => {
   if (isDisabled) return 'current'
-  if (isFocused) return '!ui-text-primary-contrast'
+  if (isFocused) return 'ui:text-primary-contrast!'
   return 'current'
 }
 

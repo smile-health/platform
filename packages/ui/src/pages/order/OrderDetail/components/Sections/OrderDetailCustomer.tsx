@@ -13,7 +13,7 @@ export const OrderDetailCustomer = () => {
     <OrderDetailBox title={t('customer.title')}>
       <RenderDetailValue
         showColon={false}
-        className="ui-grid-cols-[200px_1fr]"
+        className="ui:grid-cols-[200px_1fr]"
         loading={!data}
         data={[
           {
@@ -29,7 +29,7 @@ export const OrderDetailCustomer = () => {
             value:
               data?.required_date &&
               dayjs(data?.required_date).format('DD MMM YYYY'),
-            valueClassName: 'ui-uppercase',
+            valueClassName: 'ui:uppercase',
           },
         ]}
       />

@@ -25,17 +25,17 @@ export default function ReconciliationContainer({
   return (
     <Container title={t('title.reconciliation')} withLayout>
       <Meta title={generateMetaTitle(metaTitle)} />
-      <div className="ui-space-y-6">
-        <div className="ui-flex ui-justify-between ui-gap-4">
+      <div className="ui:space-y-6">
+        <div className="ui:flex ui:justify-between ui:gap-4">
           <H3>{metaTitle}</H3>
           {hasPermission('reconciliation-mutate') && (
             <Link href={router.getAsLink('v5/reconciliation/create')}>
               <Button variant="solid">
-                <div className="ui-flex ui-flex-row ui-space-x-2">
+                <div className="ui:flex ui:flex-row ui:space-x-2">
                   <span>
                     <Plus></Plus>
                   </span>
-                  <div className="ui-text-sm">
+                  <div className="ui:text-sm">
                     {t('list.table.add_reconciliation')}
                   </div>
                 </div>

@@ -63,33 +63,33 @@ export function ModalConfirmation({
       size="lg"
       open={open}
       onOpenChange={setOpen}
-      className="ui-fixed ui-z-50"
-      classNameOverlay="ui-fixed ui-z-50"
+      className="ui:fixed ui:z-50"
+      classNameOverlay="ui:fixed ui:z-50"
     >
       <DialogCloseButton />
-      <DialogHeader className={cx('ui-text-center ui-text-xl', titleClassName)}>
+      <DialogHeader className={cx('ui:text-center ui:text-xl', titleClassName)}>
         {title ?? t('confirmation')}
       </DialogHeader>
       <DialogContent
-        className={cx('ui-space-y-4', contentClassName)}
+        className={cx('ui:space-y-4', contentClassName)}
         aria-describedby="dialog-description"
       >
-        <p className="ui-text-center ui-text-neutral-500">{description}</p>
+        <p className="ui:text-center ui:text-neutral-500">{description}</p>
         {subDescription && (
-          <p className="ui-text-center ui-text-dark-blue ui-font-medium">
+          <p className="ui:text-center ui:text-dark-blue ui:font-medium">
             {subDescription}
           </p>
         )}
       </DialogContent>
 
-      <DialogFooter className="ui-flex ui-justify-center ui-py-4">
+      <DialogFooter className="ui:flex ui:justify-center ui:py-4">
         {type === 'info' && (
-          <div className="ui-w-full">
+          <div className="ui:w-full">
             <Button
               id="btn-close-info-modal"
               type="button"
               variant="outline"
-              className="ui-w-full"
+              className="ui:w-full"
               onClick={handleClose}
             >
               {cancelText ?? t('close')}
@@ -98,12 +98,12 @@ export function ModalConfirmation({
         )}
 
         {type === 'dual-action' && (
-          <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full ui-mx-auto">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full ui:mx-auto">
             <Button
               id="btn-reject-modal"
               type="button"
               variant="outline"
-              className="ui-w-full"
+              className="ui:w-full"
               loading={loadingReject}
               onClick={handleReject}
             >
@@ -113,7 +113,7 @@ export function ModalConfirmation({
               id="btn-accept-modal"
               type="button"
               color="primary"
-              className="ui-w-full"
+              className="ui:w-full"
               loading={loadingSubmit}
               onClick={handleSubmit}
             >
@@ -123,7 +123,7 @@ export function ModalConfirmation({
         )}
 
         {(type === 'update' || type === 'delete') && (
-          <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full ui-mx-auto">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full ui:mx-auto">
             <Button
               id="btn-cancel-modal"
               type="button"

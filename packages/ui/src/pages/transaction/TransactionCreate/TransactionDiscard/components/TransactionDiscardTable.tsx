@@ -31,7 +31,7 @@ const TransactionDiscardTable: React.FC = () => {
 
   const columns = createColumnDiscard({ t })
   return (
-    <div className="ui-mt-6">
+    <div className="ui:mt-6">
       <TransactionDiscardTableDetail
         open={openDetail.open}
         index={openDetail.index}
@@ -55,7 +55,7 @@ const TransactionDiscardTable: React.FC = () => {
                 id={`header-${column.id}`}
                 columnKey={column.id}
                 key={column.id}
-                className="ui-w-10 ui-font-semibold"
+                className="ui:w-10 ui:font-semibold"
                 style={{
                   ...(column.minSize && { minWidth: column.minSize }),
                 }}
@@ -68,18 +68,18 @@ const TransactionDiscardTable: React.FC = () => {
         <Tbody>
           {items?.map((item, index) => (
             <Fragment key={`material-selected-${item.material_id}`}>
-              <Tr className="ui-text-sm ui-font-normal">
+              <Tr className="ui:text-sm ui:font-normal">
                 <Td
                   id={`cell-${columns[0].id}`}
-                  className="ui-content-start ui-p-2"
+                  className="ui:content-start ui:p-2"
                 >
                   {index + 1}
                 </Td>
                 <Td
                   id={`cell-${columns[1].id}`}
-                  className="ui-content-start ui-p-2"
+                  className="ui:content-start ui:p-2"
                 >
-                  <p className="ui-font-bold ui-text-dark-blue ui-mb-[6px]">
+                  <p className="ui:font-bold ui:text-dark-blue ui:mb-[6px]">
                     {item.material?.name ?? '-'}
                   </p>
                   <p>
@@ -91,13 +91,13 @@ const TransactionDiscardTable: React.FC = () => {
                 </Td>
                 <Td
                   id={`cell-${columns[2].id}`}
-                  className={`ui-content-start ui-p-2 ${getBackgroundStock(
+                  className={`ui:content-start ui:p-2 ${getBackgroundStock(
                     item.total_qty,
                     item.min,
                     item.max
                   )}`}
                 >
-                  <p className="ui-text-dark-blue ui-text-sm">
+                  <p className="ui:text-dark-blue ui:text-sm">
                     {
                       t(
                         'transactionCreate:transaction_discard.form.table.description.stock.on_hand',
@@ -108,7 +108,7 @@ const TransactionDiscardTable: React.FC = () => {
                       )[0]
                     }
                   </p>
-                  <p className="ui-text-dark-blue ui-text-sm ui-mb-1">
+                  <p className="ui:text-dark-blue ui:text-sm ui:mb-1">
                     {
                       t(
                         'transactionCreate:transaction_discard.form.table.description.stock.available',
@@ -122,15 +122,15 @@ const TransactionDiscardTable: React.FC = () => {
                       )[0]
                     }
                   </p>
-                  <p className="ui-text-[#737373] ui-text-sm">
+                  <p className="ui:text-neutral-500 ui:text-sm">
                     {`(min: ${getValueNumber(item.min, language)}, max: ${getValueNumber(item.max, language)})`}
                   </p>
                 </Td>
                 <Td
                   id={`cell-${columns[3].id}`}
-                  className="ui-content-start ui-p-2"
+                  className="ui:content-start ui:p-2"
                 >
-                  <div className="ui-flex ui-flex-col ui-gap-4">
+                  <div className="ui:flex ui:flex-col ui:gap-4">
                     {item.details?.map(
                       (x, i) => (
                         <TransactionDiscardStockSelected
@@ -147,7 +147,7 @@ const TransactionDiscardTable: React.FC = () => {
                       leftIcon={<Plus className="h-5 w-5" />}
                       type="button"
                       variant="outline"
-                      className="ui-w-28"
+                      className="ui:w-28"
                     >
                       {item.stocks?.some((stock) => stock.batch)
                         ? t(
@@ -164,14 +164,14 @@ const TransactionDiscardTable: React.FC = () => {
                 </Td>
                 <Td
                   id={`cell-${columns[4].id}`}
-                  className="ui-content-start ui-p-2"
+                  className="ui:content-start ui:p-2"
                 >
                   <Button
                     id={`btn-delete-${index}`}
                     size="sm"
                     variant="subtle"
                     color="danger"
-                    className="ui-p-[6px]"
+                    className="ui:p-[6px]"
                     type="button"
                     onClick={() => handleRemove(index)}
                   >
@@ -185,7 +185,7 @@ const TransactionDiscardTable: React.FC = () => {
             <TransactionCreateMaterialDropdown
               colSpan={columns.length}
               onSelect={handleAddItemDiscard}
-              className="ui-max-w-[280px]"
+              className="ui:max-w-[280px]"
             />
           )}
         </Tbody>

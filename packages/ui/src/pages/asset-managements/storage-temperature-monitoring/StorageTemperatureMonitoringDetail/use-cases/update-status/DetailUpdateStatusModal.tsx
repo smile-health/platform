@@ -67,18 +67,18 @@ export const DetailUpdateStatusModal = ({
     <ModalRoot
       open={open}
       closeOnOverlayClick={false}
-      className="ui-z-10"
-      classNameOverlay="ui-z-10"
+      className="ui:z-10"
+      classNameOverlay="ui:z-10"
       size="md"
       scrollBehavior="outside"
     >
       <form onSubmit={handleSubmit(onValid)} {...methods}>
         <ModalCloseButton onClick={() => setOpen(false)} />
-        <ModalHeader className="ui-text-center ui-text-xl">
+        <ModalHeader className="ui:text-center ui:text-xl">
           {t('storageTemperatureMonitoringDetail:modal.change_status.title')}
         </ModalHeader>
-        <ModalContent className="ui-space-y-4">
-          <FormControl className="ui-w-full">
+        <ModalContent className="ui:space-y-4">
+          <FormControl className="ui:w-full">
             <FormLabel htmlFor="working_status">
               {t(
                 'storageTemperatureMonitoringDetail:modal.change_status.fields.operational_status.label'
@@ -112,8 +112,8 @@ export const DetailUpdateStatusModal = ({
             )}
           </FormControl>
         </ModalContent>
-        <ModalFooter className="ui-justify-center">
-          <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full ui-mx-auto">
+        <ModalFooter className="ui:justify-center">
+          <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full ui:mx-auto">
             <Button
               variant="outline"
               type="button"

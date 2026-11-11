@@ -19,31 +19,31 @@ const TransactionCreateConsumptionExistDataPatientIdentity: React.FC<Props> = (p
   }
 
   return (
-    <div className="ui-space-y-2">
+    <div className="ui:space-y-2">
       {!!data.patient && (
-        <div className="ui-border-[#FFF7ED] ui-bg-[#FFF7ED] ui-flex ui-items-center ui-gap-2 ui-p-2 ui-rounded-sm">
-          <ExclamationCircleIcon className='ui-text-primary-800 ui-h-5 ui-w-5' strokeWidth={2.5} />
-          <p className="ui-text-xs ui-font-normal ui-text-primary-800">{t('patient_identity.warning_exist')}</p>
+        <div className="ui:border-secondary-50 ui:bg-secondary-50 ui:flex ui:items-center ui:gap-2 ui:p-2 ui:rounded-sm">
+          <ExclamationCircleIcon className='ui:text-primary-800 ui:h-5 ui:w-5' strokeWidth={2.5} />
+          <p className="ui:text-xs ui:font-normal ui:text-primary-800">{t('patient_identity.warning_exist')}</p>
         </div>
       )}
       {data.vaccination.identity_type?.value === IDENTITY_TYPE_VALUE.NIK && (
-        <div className="ui-border-[#E5E5E5] ui-bg-[#F5F5F4] ui-flex ui-flex-col ui-gap-2 ui-p-2 ui-rounded-[4px]">
-          <p className="ui-font-bold ui-text-neutral-500 ui-text-sm">
+        <div className="ui:border-neutral-200 ui:bg-[#F5F5F4] ui:flex ui:flex-col ui:gap-2 ui:p-2 ui:rounded-[4px]">
+          <p className="ui:font-bold ui:text-neutral-500 ui:text-sm">
             {t('patient_identity.identity.generate_from_nik')}
           </p>
-          <div className='ui-flex ui-justify-between'>
-            <p className="ui-font-normal ui-text-neutral-500 ui-text-sm">
+          <div className='ui:flex ui:justify-between'>
+            <p className="ui:font-normal ui:text-neutral-500 ui:text-sm">
               {t('patient_identity.identity.gender.label')}
             </p>
-            <p className="ui-font-normal ui-text-dark-blue ui-text-sm">
+            <p className="ui:font-normal ui:text-dark-blue ui:text-sm">
               {data?.generate_from_nik?.gender?.label ?? data.identity.gender?.label ?? '-'}
             </p>
           </div>
-          <div className='ui-flex ui-justify-between'>
-            <p className="ui-font-normal ui-text-neutral-500 ui-text-sm">
+          <div className='ui:flex ui:justify-between'>
+            <p className="ui:font-normal ui:text-neutral-500 ui:text-sm">
               {t('patient_identity.identity.birth_date.label')}
             </p>
-            <p className="ui-font-normal ui-text-dark-blue ui-text-sm">
+            <p className="ui:font-normal ui:text-dark-blue ui:text-sm">
               {data?.generate_from_nik?.birth_date ?? parseBirthDate(data.identity.birth_date) ?? '-'}
             </p>
           </div>

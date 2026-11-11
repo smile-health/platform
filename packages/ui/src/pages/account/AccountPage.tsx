@@ -80,14 +80,14 @@ export default function AccountPage(): JSX.Element {
         />
 
         <div
-          className="ui-border ui-rounded ui-border-[#d2d2d2] ui-mt-6 ui-w-full ui-p-4"
+          className="ui:border ui:rounded ui:border-[#d2d2d2] ui:mt-6 ui:w-full ui:p-4"
           id="workspacesDetailInfo"
         >
-          <div className="ui-mb-4 ui-font-bold">
+          <div className="ui:mb-4 ui:font-bold">
             {workspacesDetailFields?.title}
           </div>
 
-          <div className="ui-grid ui-grid-cols-4 ui-gap-4 ui-mb-4">
+          <div className="ui:grid ui:grid-cols-4 ui:gap-4 ui:mb-4">
             {data?.user?.programs?.map((item) => {
               return (
                 <ProgramItem
@@ -96,9 +96,9 @@ export default function AccountPage(): JSX.Element {
                   data={item}
                   className={{
                     wrapper:
-                      'ui-border ui-border-neutral-300 ui-rounded-lg ui-p-4 ui-gap-4 !ui-cursor-default',
-                    logo: 'ui-w-8 ui-h-8',
-                    title: 'ui-text-left'
+                      'ui:border ui:border-neutral-300 ui:rounded-lg ui:p-4 ui:gap-4 ui:cursor-default!',
+                    logo: 'ui:w-8 ui:h-8',
+                    title: 'ui:text-left'
                   }}
                   icon={getProgramIconUrl(item)}
                   sizeIcon={32}
@@ -113,14 +113,14 @@ export default function AccountPage(): JSX.Element {
 
         {data?.userHistory && data?.userHistory?.length > 0 ? (
           <div
-            className="ui-border ui-rounded ui-border-[#d2d2d2] ui-mt-6 ui-p-4"
+            className="ui:border ui:rounded ui:border-[#d2d2d2] ui:mt-6 ui:p-4"
             id="userChangeHistoryInfo"
           >
-            <div className="ui-mb-4 ui-font-bold">
+            <div className="ui:mb-4 ui:font-bold">
               {t('account:title.history_change_data')}
             </div>
 
-            <div className="ui-space-y-4">
+            <div className="ui:space-y-4">
               {data?.userHistory?.map((item) => (
                 <ChangeHistoryCard key={item.id} history={item} />
               ))}

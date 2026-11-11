@@ -65,8 +65,8 @@ export default function UseFormProgram({ isEdit }: Readonly<Props>) {
   }, [isSameEntity, integration_client_id, wmsId, defaultProgramIds])
 
   return (
-    <div className="ui-p-4 ui-border ui-border-neutral-300 ui-rounded ui-space-y-6">
-      <h5 className="ui-font-bold">{t('programs')}</h5>
+    <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-6">
+      <h5 className="ui:font-bold">{t('programs')}</h5>
 
       {/* Entity */}
       <Controller
@@ -125,13 +125,13 @@ export default function UseFormProgram({ isEdit }: Readonly<Props>) {
       ) : (
         <div
           className={cx(
-            'ui-flex ui-items-center ui-gap-2 ui-px-6 ui-py-2.5',
-            'ui-bg-stone-100 ui-text-neutral-500',
-            'ui-border ui-border-neutral-300 ui-rounded'
+            'ui:flex ui:items-center ui:gap-2 ui:px-6 ui:py-2.5',
+            'ui:bg-stone-100 ui:text-neutral-500',
+            'ui:border ui:border-neutral-300 ui:rounded'
           )}
         >
-          <InformationCircleIcon className="ui-size-4" />
-          <p className="ui-text-sm">{t('user:form.entity.program')}</p>
+          <InformationCircleIcon className="ui:size-4" />
+          <p className="ui:text-sm">{t('user:form.entity.program')}</p>
         </div>
       )}
     </div>

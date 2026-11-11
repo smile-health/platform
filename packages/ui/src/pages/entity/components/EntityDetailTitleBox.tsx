@@ -22,14 +22,14 @@ const EntityDetailTitleBox: React.FC<Props> = ({
   const { setIsEdit, isEdit, entity } = useContext(EntityDetailToEditContext)
 
   return (
-    <div className="ui-mb-[16px] ui-flex ui-justify-between ui-items-center">
-      <p className="ui-font-bold ">{title}</p>
+    <div className="ui:mb-[16px] ui:flex ui:justify-between ui:items-center">
+      <p className="ui:font-bold ">{title}</p>
       {hasPermission('entity-mutate') && useEditButton ? (
-        <div className="ui-w-auto ui-flex ui-justify-end ui-items-center">
+        <div className="ui:w-auto ui:flex ui:justify-end ui:items-center">
           {isEdit ? (
             <>
-              <div className="ui-w-auto ui-flex ui-justify-end ui-items-center">
-                <div className="ui-mr-[16px]">
+              <div className="ui:w-auto ui:flex ui:justify-end ui:items-center">
+                <div className="ui:mr-[16px]">
                   <Button
                     id="btn__link__entity__cancel"
                     variant="outline"

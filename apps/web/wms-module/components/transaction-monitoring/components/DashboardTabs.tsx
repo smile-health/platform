@@ -35,13 +35,13 @@ export default function DashboardTabs<T extends string>({
           <h4>
             <strong>{title}</strong>
           </h4>
-          {subtitle && <p className="ui-text-base">{subtitle}</p>}
-          <TabsList className="ui-grid auto-cols-fr ui-grid-flow-col">
+          {subtitle && <p className="ui:text-base">{subtitle}</p>}
+          <TabsList className="ui:grid auto-cols-fr ui:grid-flow-col">
             {tabList?.map((item) => (
               <TabsTrigger
                 key={item?.id}
                 value={item?.id}
-                className="ui-justify-center ui-text-base ui-px-2"
+                className="ui:justify-center ui:text-base ui:px-2"
                 onClick={() => setTab(item?.id)}
               >
                 {item?.label}

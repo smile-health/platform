@@ -36,10 +36,10 @@ const TransactionListCursorPagination: React.FC<Props> = ({ data }) => {
   } = useContext(TransactionListCursorContext)
 
   return (
-    <div className="ui-flex ui-justify-between ui-items-center ui-gap-2 ui-mt-5">
+    <div className="ui:flex ui:justify-between ui:items-center ui:gap-2 ui:mt-5">
       <PaginationContainer>
-        <div className="ui-flex ui-items-center ui-gap-2">
-          <span className="ui-text-sm ui-font-medium ui-text-gray-700">
+        <div className="ui:flex ui:items-center ui:gap-2">
+          <span className="ui:text-sm ui:font-medium ui:text-gray-700">
             {t('common:pagination.showing')}
           </span>
           <ReactSelect
@@ -57,15 +57,15 @@ const TransactionListCursorPagination: React.FC<Props> = ({ data }) => {
               })
             }
             menuPosition="fixed"
-            className="ui-w-30"
+            className="ui:w-30"
           />
-          <span className="ui-text-sm ui-font-medium ui-text-gray-700">
+          <span className="ui:text-sm ui:font-medium ui:text-gray-700">
             {t('common:pagination.items_per_page')}.
           </span>
         </div>
 
-        <div className="ui-flex ui-items-center ui-gap-2">
-          <span className="ui-text-sm ui-font-medium ui-text-gray-700">
+        <div className="ui:flex ui:items-center ui:gap-2">
+          <span className="ui:text-sm ui:font-medium ui:text-gray-700">
             {isLoadingCount
               ? 'Loading...'
               : totalCountData
@@ -75,7 +75,7 @@ const TransactionListCursorPagination: React.FC<Props> = ({ data }) => {
         </div>
       </PaginationContainer>
 
-      <div className="ui-flex ui-items-center ui-gap-1">
+      <div className="ui:flex ui:items-center ui:gap-1">
         <Button
           variant="outline"
           size="sm"
@@ -87,11 +87,11 @@ const TransactionListCursorPagination: React.FC<Props> = ({ data }) => {
           }
           disabled={!prevCursor}
         >
-          <div className="ui-flex ui-items-center ui-space-x-1 ui-px-2">
+          <div className="ui:flex ui:items-center ui:space-x-1 ui:px-2">
             <div>
               <ChevronLeft />
             </div>
-            <div className="ui-hidden md:ui-block">
+            <div className="ui:hidden ui:md:block">
               {t('common:pagination.previous')}
             </div>
           </div>
@@ -107,7 +107,7 @@ const TransactionListCursorPagination: React.FC<Props> = ({ data }) => {
           <div>
             <ChevronRight />
           </div>
-          <div className="ui-hidden md:ui-block">
+          <div className="ui:hidden ui:md:block">
             {t('common:pagination.next')}
           </div>
         </Button>

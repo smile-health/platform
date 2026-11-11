@@ -29,7 +29,7 @@ const TransactionCancelDiscardSelectedDiscard: React.FC = () => {
 
   const columns = createColumnCancelDiscard({ t })
   return (
-    <div className="ui-mt-6">
+    <div className="ui:mt-6">
       <TransactionCancelDiscardSelectedTableDetail
         data={detailSelected !== null ? items[detailSelected] : null}
         handleClose={() => setDetailSelected(null)}
@@ -58,7 +58,7 @@ const TransactionCancelDiscardSelectedDiscard: React.FC = () => {
                 id={`header-${column.id}`}
                 columnKey={column.id}
                 key={column.id}
-                className="ui-w-10 ui-font-semibold"
+                className="ui:w-10 ui:font-semibold"
                 style={{
                   ...(column.minSize && { minWidth: column.minSize }),
                   ...(column.size && { width: column.size }),
@@ -75,29 +75,29 @@ const TransactionCancelDiscardSelectedDiscard: React.FC = () => {
               item.material?.is_open_vial === BOOLEAN.TRUE
             return (
               <Fragment key={`tx-discard-selected-${item.material?.id}`}>
-                <Tr className="ui-text-sm ui-font-normal">
+                <Tr className="ui:text-sm ui:font-normal">
                   <Td
                     id={`cell-${columns[0].id}`}
-                    className="ui-content-start ui-p-2"
+                    className="ui:content-start ui:p-2"
                   >
-                    <p className="ui-text-dark-blue">{index + 1}</p>
+                    <p className="ui:text-dark-blue">{index + 1}</p>
                   </Td>
                   <Td
                     id={`cell-${columns[1].id}`}
-                    className="ui-content-start ui-p-2"
+                    className="ui:content-start ui:p-2"
                   >
-                    <p className="ui-text-dark-blue">
+                    <p className="ui:text-dark-blue">
                       {item.material?.name ?? '-'}
                     </p>
                   </Td>
                   <Td
                     id={`cell-${columns[2].id}`}
-                    className="ui-content-start ui-p-2"
+                    className="ui:content-start ui:p-2"
                   >
-                    <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+                    <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
                       {item.activity?.name ?? '-'}
                     </p>
-                    <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+                    <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
                       {t(
                         'cancel_transaction_discard.table.discard.column.taken',
                         { value: item.activity?.name ?? '-' }
@@ -106,19 +106,19 @@ const TransactionCancelDiscardSelectedDiscard: React.FC = () => {
                   </Td>
                   <Td
                     id={`cell-${columns[3].id}`}
-                    className="ui-content-start ui-p-2"
+                    className="ui:content-start ui:p-2"
                   >
-                    <div className="ui-flex ui-flex-col ui-gap-1">
-                      <p className="ui-mb-0 ui-text-sm ui-font-bold ui-text-dark-blue">
+                    <div className="ui:flex ui:flex-col ui:gap-1">
+                      <p className="ui:mb-0 ui:text-sm ui:font-bold ui:text-dark-blue">
                         {item.stock?.batch?.code ?? '-'}
                       </p>
-                      <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+                      <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
                         {t(
                           'cancel_transaction_discard.table.discard.column.manufacture',
                           { value: item.stock?.batch?.manufacture?.name ?? '-' }
                         )}
                       </p>
-                      <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+                      <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
                         {t(
                           'cancel_transaction_discard.table.discard.column.expired_date',
                           {
@@ -133,26 +133,26 @@ const TransactionCancelDiscardSelectedDiscard: React.FC = () => {
                   </Td>
                   <Td
                     id={`cell-${columns[4].id}`}
-                    className="ui-content-start ui-p-2"
+                    className="ui:content-start ui:p-2"
                   >
                     {isOpenVialMaterial ? (
                       <>
-                        <p className="ui-mb-1 ui-text-sm ui-font-normal ui-text-dark-blue">
+                        <p className="ui:mb-1 ui:text-sm ui:font-normal ui:text-dark-blue">
                           {`${numberFormatter(item.change_qty_open_vial, language)} (${t('transaction_discard.form.table.column.open_vial')})`}
                         </p>
-                        <p className="ui-mb-0 ui-text-sm ui-font-normal ui-text-dark-blue">
+                        <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-dark-blue">
                           {`${numberFormatter(item.change_qty, language)} (${t('transaction_discard.form.table.column.close_vial')})`}
                         </p>
                       </>
                     ) : (
-                      <p className="ui-text-dark-teal">
+                      <p className="ui:text-dark-teal">
                         {numberFormatter(item.change_qty, language)}
                       </p>
                     )}
                   </Td>
                   <Td
                     id={`cell-${columns[5].id}`}
-                    className="ui-content-start ui-p-2"
+                    className="ui:content-start ui:p-2"
                   >
                     <TransactionCreateSelectReason
                       control={control}
@@ -163,9 +163,9 @@ const TransactionCancelDiscardSelectedDiscard: React.FC = () => {
                   </Td>
                   <Td
                     id={`cell-${columns[6].id}`}
-                    className="ui-content-start ui-p-2"
+                    className="ui:content-start ui:p-2"
                   >
-                    <div className="ui-flex ui-gap-4">
+                    <div className="ui:flex ui:gap-4">
                       <Button
                         type="button"
                         variant="subtle"

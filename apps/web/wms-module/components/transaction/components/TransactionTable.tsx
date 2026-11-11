@@ -21,7 +21,7 @@ export default function TransactionTable({
   const { transactionDataSource } = useTransactionTable();
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={transactionDataSource?.data?.data}
         columns={ColumnsTransaction(t, {

@@ -11,7 +11,7 @@ export function FormControl({
   readonly style?: React.CSSProperties
 }) {
   return (
-    <div className={cx('ui-relative ui-space-y-2', className)} style={style}>
+    <div className={cx('ui:relative ui:space-y-2', className)} style={style}>
       {children}
     </div>
   )
@@ -29,12 +29,12 @@ export function FormLabel({
     <label
       {...props}
       className={cx(
-        'ui-block ui-text-sm ui-font-medium ui-leading-none ui-text-gray-500',
+        'ui:block ui:text-sm ui:font-medium ui:leading-none ui:text-gray-500',
         props.className
       )}
     >
       {children}
-      {required ? <span className="ui-ml-1 ui-text-danger-500">*</span> : null}
+      {required ? <span className="ui:ml-1 ui:text-danger-500">*</span> : null}
     </label>
   )
 }
@@ -53,7 +53,7 @@ export function FormErrorMessage({
       {...props}
       id={id}
       className={cx(
-        'ui-text-sm ui-leading-[20px] ui-text-danger-500',
+        'ui:text-sm ui:leading-[20px] ui:text-danger-500',
         props.className
       )}
     >
@@ -66,7 +66,7 @@ export function FormDescription({
   children,
 }: Readonly<{ children?: React.ReactNode }>) {
   return (
-    <div className="ui-text-sm ui-leading-none ui-text-gray-500">
+    <div className="ui:text-sm ui:leading-none ui:text-gray-500">
       {children}
     </div>
   )

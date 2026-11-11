@@ -44,7 +44,7 @@ export default function DashboardTable({
   const { t } = useTranslation()
 
   return (
-    <div className="ui-relative ui-space-y-6">
+    <div className="ui:relative ui:space-y-6">
       <Table
         withBorder
         rounded
@@ -60,8 +60,8 @@ export default function DashboardTable({
                   key={item.label + i}
                   colSpan={item.colSpan}
                   className={cx(item.class, {
-                    'ui-bg-slate-100': index === 0,
-                    'ui-bg-slate-200': index > 0,
+                    'ui:bg-slate-100': index === 0,
+                    'ui:bg-slate-200': index > 0,
                   })}
                 >
                   {item.label}
@@ -83,7 +83,7 @@ export default function DashboardTable({
               {data?.map((item) => (
                 <Td
                   key={JSON.stringify(item?.value)}
-                  className={cx(' ui-bg-white', item?.class)}
+                  className={cx(' ui:bg-white', item?.class)}
                 >
                   {item?.value}
                 </Td>

@@ -120,21 +120,21 @@ export default function OrderCreateCentralDistributionBatchForm({
     <ModalRoot
       open={open}
       setOpen={setOpen}
-      className="ui-z-10"
-      classNameOverlay="ui-z-10"
+      className="ui:z-10"
+      classNameOverlay="ui:z-10"
       verticalCentered
       closeOnOverlayClick={false}
       portalContainer={modalRoot}
     >
       <ModalCloseButton />
-      <ModalHeader className="ui-text-center">
+      <ModalHeader className="ui:text-center">
         {isEdit ? t('section.batch.edit') : t('section.batch.add')}
       </ModalHeader>
       <ModalContent>
         <form
           ref={formRef}
           onSubmit={handleSubmit(onValid)}
-          className="ui-space-y-6"
+          className="ui:space-y-6"
         >
           <Controller
             control={control}
@@ -143,7 +143,7 @@ export default function OrderCreateCentralDistributionBatchForm({
               field: { value, onChange, ...field },
               fieldState: { error },
             }) => (
-              <FormControl className="ui-space-y-1">
+              <FormControl className="ui:space-y-1">
                 <FormLabel htmlFor="input-batch-code" required>
                   {t('form.batch.id.label')}
                 </FormLabel>
@@ -172,7 +172,7 @@ export default function OrderCreateCentralDistributionBatchForm({
               field: { value, onChange, ...field },
               fieldState: { error },
             }) => (
-              <FormControl className="ui-space-y-1">
+              <FormControl className="ui:space-y-1">
                 <FormLabel htmlFor="production-date">
                   {t('form.date.production.label')}
                 </FormLabel>
@@ -196,7 +196,7 @@ export default function OrderCreateCentralDistributionBatchForm({
               field: { onChange, ...field },
               fieldState: { error },
             }) => (
-              <FormControl className="ui-space-y-1">
+              <FormControl className="ui:space-y-1">
                 <FormLabel htmlFor="select-manufacturer" required>
                   {t('form.manufacturer.label')}
                 </FormLabel>
@@ -234,7 +234,7 @@ export default function OrderCreateCentralDistributionBatchForm({
               field: { value, onChange, ...field },
               fieldState: { error },
             }) => (
-              <FormControl className="ui-space-y-1">
+              <FormControl className="ui:space-y-1">
                 <FormLabel htmlFor="expired-date" required>
                   {t('form.date.expired.label')}
                 </FormLabel>
@@ -258,7 +258,7 @@ export default function OrderCreateCentralDistributionBatchForm({
               field: { value, onChange, ...field },
               fieldState: { error },
             }) => (
-              <FormControl className="ui-space-y-1">
+              <FormControl className="ui:space-y-1">
                 <FormLabel htmlFor="select-batch-year" required>
                   {t('form.plan.year.label')}
                 </FormLabel>
@@ -283,7 +283,7 @@ export default function OrderCreateCentralDistributionBatchForm({
             control={control}
             name="budget_source"
             render={({ field: { ref, ...field }, fieldState: { error } }) => (
-              <FormControl className="ui-space-y-1">
+              <FormControl className="ui:space-y-1">
                 <FormLabel htmlFor="select-source" required>
                   {t('form.plan.source.label')}
                 </FormLabel>
@@ -307,7 +307,7 @@ export default function OrderCreateCentralDistributionBatchForm({
           />
         </form>
       </ModalContent>
-      <ModalFooter className="ui-grid ui-grid-cols-2">
+      <ModalFooter className="ui:grid ui:grid-cols-2">
         <Button variant="outline" onClick={() => setOpen(!open)}>
           {t('action.cancel')}
         </Button>

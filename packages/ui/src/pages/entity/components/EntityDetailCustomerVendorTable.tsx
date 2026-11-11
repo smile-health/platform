@@ -155,10 +155,10 @@ export const columnCustomer = ({
       accessorKey: 'action',
       size: 50,
       cell: ({ row }) => (
-        <div className="ui-flex ui-justify-start ui-items-center">
+        <div className="ui:flex ui:justify-start ui:items-center">
           <Button
             variant="light"
-            className="ui-bg-transparent ui-p-0 ui-h-auto ui-mr-[18px] ui-text-[#0069D2] hover:!ui-bg-transparent"
+            className="ui:bg-transparent ui:p-0 ui:h-auto ui:mr-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
             type="button"
             disabled={deletingCustomer || entity?.status === BOOLEAN.FALSE}
             onClick={() =>
@@ -173,7 +173,7 @@ export const columnCustomer = ({
           <Button
             variant="light"
             color="danger"
-            className="ui-bg-transparent ui-p-0 ui-h-auto hover:!ui-bg-transparent"
+            className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent!"
             type="button"
             onClick={() => handleOpenDeleteModal(row.original?.id?.toString())}
             disabled={deletingCustomer || entity?.status === BOOLEAN.FALSE}

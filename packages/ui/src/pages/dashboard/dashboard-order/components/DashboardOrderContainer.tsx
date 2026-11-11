@@ -127,7 +127,7 @@ export default function DashboardOrderContainer({
         description={informationDescription}
         details={informationDetails as string[]}
       />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <DashboardFilter
           filter={filter}
           isDisabledSubmit={isDisabled}
@@ -149,7 +149,7 @@ export default function DashboardOrderContainer({
               <TabsTrigger
                 key={item?.id}
                 value={item?.id}
-                buttonClassName="ui-justify-center"
+                buttonClassName="ui:justify-center"
               >
                 {item?.label}
               </TabsTrigger>

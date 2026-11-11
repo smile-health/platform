@@ -17,7 +17,7 @@ export default function HomeHistoryWasteTransactionTable({
   const { t } = useTranslation(['common', 'home']);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={historyTransactionWaste}
         columns={columnsHistoryTransaction(t)}

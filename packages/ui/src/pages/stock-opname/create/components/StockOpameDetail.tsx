@@ -26,9 +26,9 @@ const StockOpameDetail: React.FC<Props> = ({ isNotAdmin }) => {
     returnObjects: true,
   })
   return (
-    <div className="ui-w-full ui-p-4 ui-pb-4 ui-border ui-border-gray-300 ui-rounded">
-      <div className="ui-font-bold">{t('form.detail.title')}</div>
-      <div className="ui-mt-6 ui-flex ui-flex-col ui-space-y-6">
+    <div className="ui:w-full ui:p-4 ui:pb-4 ui:border ui:border-gray-300 ui:rounded">
+      <div className="ui:font-bold">{t('form.detail.title')}</div>
+      <div className="ui:mt-6 ui:flex ui:flex-col ui:space-y-6">
         <Controller
           control={control}
           name="entity"
@@ -125,21 +125,21 @@ const StockOpameDetail: React.FC<Props> = ({ isNotAdmin }) => {
         {coldStorage && (
           <div>
             <hr />
-            <div className="ui-flex ui-flex-wrap ui-items-center ui-justify-between ui-gap-4 ui-py-3 ui-px-2">
-              <div className="ui-space-y-1">
-                <div className="ui-font-semibold ui-text-gray-800">
+            <div className="ui:flex ui:flex-wrap ui:items-center ui:justify-between ui:gap-4 ui:py-3 ui:px-2">
+              <div className="ui:space-y-1">
+                <div className="ui:font-semibold ui:text-gray-800">
                   {descriptionColdStorage[0]}
                 </div>
                 <div>{coldStorage?.total_volume || 0} liter</div>
               </div>
-              <div className="ui-space-y-1">
-                <div className="ui-font-semibold ui-text-gray-800">
+              <div className="ui:space-y-1">
+                <div className="ui:font-semibold ui:text-gray-800">
                   {descriptionColdStorage[1]}
                 </div>
                 <div>{coldStorage?.volume_asset || 0} liter</div>
               </div>
-              <div className="ui-space-y-1">
-                <div className="ui-font-semibold ui-text-gray-800">
+              <div className="ui:space-y-1">
+                <div className="ui:font-semibold ui:text-gray-800">
                   {descriptionColdStorage[2]}
                 </div>
                 <div className="text-myorange">

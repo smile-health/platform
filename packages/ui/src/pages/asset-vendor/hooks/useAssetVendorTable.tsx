@@ -79,8 +79,8 @@ const useAssetVendorTable = ({
       size: 250,
       enableSorting: true,
       cell: ({ row }) => (
-        <div className="ui-flex ui-flex-col">
-          <div className="ui-font-bold ui-mb-1">
+        <div className="ui:flex ui:flex-col">
+          <div className="ui:font-bold ui:mb-1">
             {parseDateTime(
               row.original.updated_at ?? '',
               'DD MMM YYYY HH:mm'
@@ -102,7 +102,7 @@ const useAssetVendorTable = ({
       minSize: 100,
       cell: ({ row }) => {
         return (
-          <div className="ui-flex ui-gap-2 -ml-3">
+          <div className="ui:flex ui:gap-2 -ml-3">
             <Button
               asChild
               id="btn-link-asset-vendor-detail"

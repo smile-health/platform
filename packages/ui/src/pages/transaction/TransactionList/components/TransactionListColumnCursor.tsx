@@ -35,13 +35,13 @@ const TitleBlock = ({
         item.firstLabel && (
           <div
             key={`_${index.toString()}`}
-            className={`${item?.firstClassName ?? 'ui-text-dark-teal'} ui-text-sm`}
+            className={`${item?.firstClassName ?? 'ui:text-dark-teal'} ui:text-sm`}
           >
             {item.firstLabel}
             {item.secondLabel && (
               <span
                 className={` ${
-                  item.secondClassName ?? 'ui-text-dark-teal ui-text-sm'
+                  item.secondClassName ?? 'ui:text-dark-teal ui:text-sm'
                 }`}
               >
                 {item.secondLabel}
@@ -77,7 +77,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
       header: t('transactionList:columns.entity_name'),
       accessorKey: 'entity',
       meta: {
-        cellClassName: 'ui-w-60',
+        cellClassName: 'ui:w-60',
       },
       cell: ({ row }) => (
         <TitleBlock
@@ -90,7 +90,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
                 text1: capitalize(row.original?.entity?.regency?.name ?? ''),
                 text2: capitalize(row.original?.entity?.province?.name ?? ''),
               }),
-              firstClassName: 'ui-text-neutral-500 ui-text-sm',
+              firstClassName: 'ui:text-neutral-500 ui:text-sm',
             },
           ]}
         />
@@ -100,7 +100,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
       header: t('transactionList:columns.transaction_type'),
       accessorKey: 'transaction_type',
       meta: {
-        cellClassName: 'ui-w-60',
+        cellClassName: 'ui:w-60',
       },
       cell: ({ row }) => {
         // Transactions that should have a customer
@@ -139,21 +139,21 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
             arrText={[
               {
                 firstLabel: row.original?.transaction_type?.title ?? '',
-                firstClassName: 'ui-text-dark-blue ui-text-sm ui-font-bold',
+                firstClassName: 'ui:text-dark-blue ui:text-sm ui:font-bold',
               },
               {
                 firstLabel:
                   row.original?.customer?.name && shouldHaveCustomer
                     ? `${toOrFromLabel} ${row.original?.customer?.name} (${row.original?.activity?.name})`
                     : '',
-                firstClassName: 'ui-text-dark-blue ui-text-sm',
+                firstClassName: 'ui:text-dark-blue ui:text-sm',
               },
               {
                 firstLabel:
                   row.original?.customer?.name && shouldHaveVendor
                     ? `${toOrFromLabel} ${row.original?.vendor?.name} (${row.original?.activity?.name})`
                     : '',
-                firstClassName: 'ui-text-dark-blue ui-text-sm',
+                firstClassName: 'ui:text-dark-blue ui:text-sm',
               },
               {
                 firstLabel: otherTransactionType
@@ -163,14 +163,14 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
                       ''
                     } (${row.original?.activity?.name})`
                   : '',
-                firstClassName: 'ui-text-dark-blue ui-text-sm',
+                firstClassName: 'ui:text-dark-blue ui:text-sm',
               },
               {
                 firstLabel:
                   row.original?.companion_program && transferStock
                     ? transferStockDescription
                     : '',
-                firstClassName: 'ui-text-dark-blue ui-text-sm',
+                firstClassName: 'ui:text-dark-blue ui:text-sm',
               },
             ]}
           />
@@ -181,7 +181,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
       header: t('transactionList:columns.material'),
       accessorKey: 'material',
       meta: {
-        cellClassName: 'ui-w-60',
+        cellClassName: 'ui:w-60',
       },
       cell: ({
         row: {
@@ -193,11 +193,11 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
             arrText={[
               {
                 firstLabel: parent_material?.name ?? '',
-                firstClassName: 'ui-text-dark-blue ui-text-sm ui-font-bold',
+                firstClassName: 'ui:text-dark-blue ui:text-sm ui:font-bold',
               },
               {
                 firstLabel: material?.name ?? '',
-                firstClassName: 'ui-text-neutral-500 ui-text-sm',
+                firstClassName: 'ui:text-neutral-500 ui:text-sm',
               },
             ]}
           />
@@ -209,7 +209,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
       header: t('transactionList:columns.quantity'),
       accessorKey: 'quantity',
       meta: {
-        cellClassName: 'ui-w-60',
+        cellClassName: 'ui:w-60',
       },
       cell: ({
         row: {
@@ -242,7 +242,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
                   value: Math.abs(Number(change_qty)),
                   locale,
                 })} ${closeVialLabel}`,
-                firstClassName: 'ui-text-dark-blue ui-text-sm ui-font-bold',
+                firstClassName: 'ui:text-dark-blue ui:text-sm ui:font-bold',
               },
               {
                 firstLabel: isOpenVial
@@ -251,11 +251,11 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
                       locale,
                     })} (${t('transactionList:columns.open_vial')})`
                   : '',
-                firstClassName: 'ui-text-dark-blue ui-text-sm ui-font-bold',
+                firstClassName: 'ui:text-dark-blue ui:text-sm ui:font-bold',
               },
               {
                 firstLabel: stock?.batch?.code ?? '',
-                firstClassName: 'ui-text-neutral-500 ui-text-sm',
+                firstClassName: 'ui:text-neutral-500 ui:text-sm',
               },
             ]}
           />
@@ -266,7 +266,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
       header: t('transactionList:columns.stock_history'),
       accessorKey: 'stock_history',
       meta: {
-        cellClassName: 'ui-w-60',
+        cellClassName: 'ui:w-60',
       },
       cell: ({
         row: {
@@ -294,7 +294,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
             arrText={[
               {
                 firstLabel: t('transactionList:columns.opening_stock'),
-                firstClassName: 'ui-font-bold',
+                firstClassName: 'ui:font-bold',
               },
               {
                 firstLabel: isOpenVialMaterial
@@ -303,7 +303,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
                       locale,
                     })} ${t('transactionList:columns.open_vial')}`
                   : null,
-                firstClassName: 'ui-font-normal',
+                firstClassName: 'ui:font-normal',
               },
               {
                 firstLabel: `${
@@ -312,11 +312,11 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
                     locale,
                   }) ?? ''
                 } ${isOpenVialMaterial ? t('transactionList:columns.close_vial') : ''}`,
-                firstClassName: 'ui-font-normal ui-mb-2',
+                firstClassName: 'ui:font-normal ui:mb-2',
               },
               {
                 firstLabel: t('transactionList:columns.closing_stock'),
-                firstClassName: 'ui-font-bold',
+                firstClassName: 'ui:font-bold',
               },
               {
                 firstLabel: isOpenVialMaterial
@@ -325,7 +325,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
                       locale,
                     })} ${t('transactionList:columns.open_vial')}`
                   : null,
-                firstClassName: 'ui-font-normal',
+                firstClassName: 'ui:font-normal',
               },
               {
                 firstLabel: `${
@@ -334,7 +334,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
                     locale,
                   }) ?? ''
                 } ${isOpenVialMaterial ? t('transactionList:columns.close_vial') : ''}`,
-                firstClassName: 'ui-font-normal',
+                firstClassName: 'ui:font-normal',
               },
             ]}
           />
@@ -345,7 +345,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
       header: t('transactionList:columns.created_at'),
       accessorKey: 'created_at',
       meta: {
-        cellClassName: 'ui-w-40',
+        cellClassName: 'ui:w-40',
       },
       cell: ({ row }) =>
         row.original?.created_at
@@ -359,7 +359,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
       header: t('transactionList:columns.action'),
       accessorKey: 'action',
       meta: {
-        cellClassName: 'ui-w-40',
+        cellClassName: 'ui:w-40',
       },
       cell: ({ row }) =>
         row.original?.stock ? (
@@ -367,7 +367,7 @@ export const MainColumnCursor = ({ t, locale, program }: TMainColumn) => {
             onClick={() => setTransactionData(row.original)}
             variant="subtle"
             type="button"
-            className="!ui-p-0 !ui-h-fit"
+            className="ui:p-0! ui:h-fit!"
           >
             {t('common:detail')}
           </Button>

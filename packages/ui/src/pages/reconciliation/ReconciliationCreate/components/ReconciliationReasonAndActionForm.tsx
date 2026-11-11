@@ -89,10 +89,10 @@ const ReconciliationReasonAndActionForm = ({
           }}
           id={`add__reason_create__reconciliation__${indexItem}`}
           data-testid={`add__reason_create__reconciliation__${indexItem}`}
-          className="ui-w-28"
+          className="ui:w-28"
           disabled={item.actual_qty === item.recorded_qty}
         >
-          <div className="ui-text-primary ui-flex ui-flex-row ui-space-x-3 ui-place-items-center">
+          <div className="ui-text-primary ui:flex ui:flex-row ui:space-x-3 ui:place-items-center">
             <span>
               <Plus></Plus>
             </span>
@@ -107,10 +107,10 @@ const ReconciliationReasonAndActionForm = ({
       <FormProvider {...methods}>
         <Dialog open={openModal} closeOnOverlayClick={false} size="xl">
           <DialogHeader border>
-            <div className="ui-flex ui-justify-between">
+            <div className="ui:flex ui:justify-between">
               <div />
-              <div className="ui-flex ui-flex-col ui-text-center">
-                <h6 className="ui-text-xl ui-text-primary-800 ui-font-medium">
+              <div className="ui:flex ui:flex-col ui:text-center">
+                <h6 className="ui:text-xl ui:text-primary-800 ui:font-medium">
                   {t('list.table.reason_action')}
                 </h6>
               </div>
@@ -127,13 +127,13 @@ const ReconciliationReasonAndActionForm = ({
               </Button>
             </div>
           </DialogHeader>
-          <DialogContent className="!ui-p-0 !ui-overflow-hidden">
-            <div className="ui-flex ui-flex-row ui-border-t ui-border-[#D2D2D2]">
-              <div className="ui-w-64 ui-border-r ui-border-[#D2D2D2]">
-                <div className="ui-flex ui-flex-col ui-max-h-[168px] ui-overflow-auto">
+          <DialogContent className="ui:p-0! ui:overflow-hidden!">
+            <div className="ui:flex ui:flex-row ui:border-t ui:border-[#D2D2D2]">
+              <div className="ui:w-64 ui:border-r ui:border-[#D2D2D2]">
+                <div className="ui:flex ui:flex-col ui:max-h-[168px] ui:overflow-auto">
                   {data?.map((item, index) => (
                     <div
-                      className="ui-flex ui-justify-between"
+                      className="ui:flex ui:justify-between"
                       key={`reason-action-${index.toString()}`}
                     >
                       <ButtonPatient
@@ -150,12 +150,12 @@ const ReconciliationReasonAndActionForm = ({
                       {index !== 0 ? (
                         <button
                           id={`btn-delete-reason-action-${index.toString()}`}
-                          className="ui-text-dark-teal ui-pr-3"
+                          className="ui:text-dark-teal ui:pr-3"
                           type="button"
                           onClick={() => removeReason(index)}
                         >
                           <span>
-                            <Trash className="ui-w-3"></Trash>
+                            <Trash className="ui:w-3"></Trash>
                           </span>
                         </button>
                       ) : null}
@@ -164,24 +164,24 @@ const ReconciliationReasonAndActionForm = ({
                 </div>
                 <Button
                   variant="subtle"
-                  className="ui-my-5"
+                  className="ui:my-5"
                   type="button"
                   onClick={() => addNewReason()}
                   id={`add-new-patient-batch-${indexItem}`}
                   disabled={!!errors?.data}
                 >
-                  <div className="ui-flex ui-flex-row ui-space-x-1 ui-place-items-center">
+                  <div className="ui:flex ui:flex-row ui:space-x-1 ui:place-items-center">
                     <span className="ui-text-primary">
                       <Plus></Plus>
                     </span>
-                    <div className="ui-text-dark-teal">
+                    <div className="ui:text-dark-teal">
                       {t('create.add_new_reason')}
                     </div>
                   </div>
                 </Button>
               </div>
               <div
-                className="ui-w-full ui-p-5 ui-flex ui-flex-col ui-space-y-5"
+                className="ui:w-full ui:p-5 ui:flex ui:flex-col ui:space-y-5"
                 style={{ backgroundColor: '#FAFAFA' }}
               >
                 <Controller
@@ -272,7 +272,7 @@ const ReconciliationReasonAndActionForm = ({
               </div>
             </div>
           </DialogContent>
-          <DialogFooter className="ui-border ui-flex ui-flex-row">
+          <DialogFooter className="ui:border ui:flex ui:flex-row">
             <Button
               color="danger"
               variant="default"

@@ -39,20 +39,20 @@ const OrderDetailStatusItem = ({
   }
 
   return (
-    <div className="ui-flex ui-flex-col ui-items-center ui-min-w-[160px]">
+    <div className="ui:flex ui:flex-col ui:items-center ui:min-w-[160px]">
       <Badge
         rounded="full"
         color={getStatusColor()}
         variant="light"
-        className="ui-w-full ui-py-2"
+        className="ui:w-full ui:py-2"
       >
         {orderStatus[status].label}
       </Badge>
-      <div className="ui-p-2 ui-text-center ui-text-sm">
-        <div className="ui-text-gray-500 ui-uppercase">
+      <div className="ui:p-2 ui:text-center ui:text-sm">
+        <div className="ui:text-gray-500 ui:uppercase">
           {date ? dayjs(date).format('YYYY MMM DD HH:mm') : '-'}
         </div>
-        <div className="ui-text-dark-blue">
+        <div className="ui:text-dark-blue">
           {user
             ? `${t('by')} ${getFullName(user?.firstname, user?.lastname)}`
             : '-'}

@@ -27,29 +27,29 @@ const TransactionCreateConsumptionWarningPopup: React.FC<Props> = (props) => {
       open={open}
       onOpenChange={handleClose}
       verticalCentered
-      classNameOverlay="ui-z-[19]"
-      className="ui-z-[19]"
+      classNameOverlay="ui:z-[19]"
+      className="ui:z-19"
     >
       <DialogCloseButton />
       <DialogHeader
         className={
-          isDanger ? 'ui-text-left ui-text-xl' : 'ui-text-center ui-text-xl'
+          isDanger ? 'ui:text-left ui:text-xl' : 'ui:text-center ui:text-xl'
         }
       >
         {isDanger ? (
-          <div className="ui-flex ui-flex-col ui-gap-4">
-            <div className="ui-bg-[#FEF2F2] ui-rounded-full ui-w-10 ui-h-10 ui-flex ui-items-center ui-justify-center">
+          <div className="ui:flex ui:flex-col ui:gap-4">
+            <div className="ui:bg-danger-50 ui:rounded-full ui:w-10 ui:h-10 ui:flex ui:items-center ui:justify-center">
               <ExclamationCircleIcon
-                className="ui-text-[#DC2626] ui-w-6 ui-h-6"
+                className="ui:text-danger-600 ui:w-6 ui:h-6"
                 strokeWidth={2}
               />
             </div>
-            <p className="ui-text-xl ui-text-[#DC2626] ui-font-medium">
+            <p className="ui:text-xl ui:text-danger-600 ui:font-medium">
               {t('confirmation')}
             </p>
           </div>
         ) : (
-          <p className="ui-text-xl ui-text-primary-800 ui-font-medium">
+          <p className="ui:text-xl ui:text-primary-800 ui:font-medium">
             {t('confirmation')}
           </p>
         )}
@@ -58,14 +58,14 @@ const TransactionCreateConsumptionWarningPopup: React.FC<Props> = (props) => {
         <p
           className={`${
             isDanger
-              ? 'ui-text-[#0C3045] ui-text-left'
-              : 'ui-text-primary-800 ui-text-justify'
-          } ui-text-base`}
+              ? 'ui:text-dark-blue ui:text-left'
+              : 'ui:text-primary-800 ui:text-justify'
+          } ui:text-base`}
           dangerouslySetInnerHTML={{ __html: description }}
         />
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full">
           <Button
             id="btn-close-modal-confirmation"
             onClick={handleClose}

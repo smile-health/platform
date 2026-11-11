@@ -34,13 +34,13 @@ export const AssetInventoryOwnershipSection = ({
     useFormContext()
 
   return (
-    <div className="ui-w-full ui-grid ui-grid-cols-1 ui-gap-4 ui-border ui-rounded-md ui-p-6 ui-mb-6">
-      <div className="ui-font-bold ui-text-primary ui-text-dark-blue">
+    <div className="ui:w-full ui:grid ui:grid-cols-1 ui:gap-4 ui:border ui:rounded-md ui:p-6 ui:mb-6">
+      <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
         {t('assetInventory:form.title.ownership')}
       </div>
       <FormControl>
         <FormLabel required>{t('assetInventory:columns.own_status')}</FormLabel>
-        <RadioGroup className="!ui-mt-5">
+        <RadioGroup className="ui:mt-5!">
           {assetOpnameOwnershipStatus(t).map((option) => (
             <Radio
               {...register('ownership_status')}
@@ -70,7 +70,7 @@ export const AssetInventoryOwnershipSection = ({
           </FormErrorMessage>
         )}
       </FormControl>
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel
           htmlFor="borrowed_from"
           required={
@@ -112,7 +112,7 @@ export const AssetInventoryOwnershipSection = ({
           <AssetInventoryBorrowedEntityMoreForm />
         )}
       </FormControl>
-      <FormControl className="ui-w-full">
+      <FormControl className="ui:w-full">
         <FormLabel htmlFor="ownership_qty" required>
           {t('assetInventory:columns.owned_amount.label', {
             type:

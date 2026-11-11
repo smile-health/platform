@@ -156,7 +156,7 @@ export const columnsPrintLabel = (
     enableSorting: false,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-flex-col ui-gap-0.5">
+        <div className="ui:flex ui:flex-col ui:gap-0.5">
           <p>{original.userName}</p>
           <p>
             {original.updatedAt
@@ -177,7 +177,7 @@ export const columnsPrintLabel = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           <ButtonActionTable
             id={original?.id}
             path={`print-label`}
@@ -189,7 +189,7 @@ export const columnsPrintLabel = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-danger-500"
+            className="ui:px-1.5! ui:text-danger-500"
           >
             {t('common:remove')}
           </Button>

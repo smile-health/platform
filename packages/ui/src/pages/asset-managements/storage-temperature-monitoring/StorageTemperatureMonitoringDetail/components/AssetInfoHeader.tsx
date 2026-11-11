@@ -11,9 +11,9 @@ export const AssetInfoHeader = () => {
   const { data } = useStorageTemperatureMonitoringDetail()
 
   return (
-    <div className="ui-flex ui-items-start ui-justify-between ui-gap-4">
+    <div className="ui:flex ui:items-start ui:justify-between ui:gap-4">
       <div>
-        <div className="ui-text-primary-700 ui-font-semibold">
+        <div className="ui:text-primary-700 ui:font-semibold">
           {data?.serial_number}
           {handleOtherValue(
             data?.asset_model?.name,
@@ -25,14 +25,14 @@ export const AssetInfoHeader = () => {
             'manufacturer'
           )}
         </div>
-        <div className="ui-text-primary-700">{data?.entity?.name}</div>
-        <div className="ui-text-neutral-500">
+        <div className="ui:text-primary-700">{data?.entity?.name}</div>
+        <div className="ui:text-neutral-500">
           {data?.regency?.name ? `${data?.regency?.name},` : ''}
           {data?.province?.name ? ` ${data?.province?.name}` : ''}
         </div>
       </div>
-      <div className="ui-flex ui-items-center ui-gap-8">
-        <div className="ui-text-neutral-500">
+      <div className="ui:flex ui:items-center ui:gap-8">
+        <div className="ui:text-neutral-500">
           {data?.updated_at
             ? parseDateTime(data.updated_at, 'DD MMM YYYY HH:mm').toUpperCase()
             : '-'}

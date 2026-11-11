@@ -76,8 +76,8 @@ const NotificationWithRequestApproval: React.FC<
         open={showInfoModal}
         setOpen={setShowInfoModal}
         type="info"
-        titleClassName="ui-flex ui-justify-start"
-        contentClassName="ui-flex ui-justify-start"
+        titleClassName="ui:flex ui:justify-start"
+        contentClassName="ui:flex ui:justify-start"
         title={infoModalData?.title}
         description={infoModalData?.description}
         onSubmit={() => setShowInfoModal((prev) => !prev)}

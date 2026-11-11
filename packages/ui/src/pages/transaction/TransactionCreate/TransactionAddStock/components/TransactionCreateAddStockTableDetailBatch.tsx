@@ -60,14 +60,14 @@ const TransactionCreateAddStockTableDetailBatch = ({
   return (
     <>
       <Table withBorder key={indexData} hightlightOnHover rounded>
-        <Thead className="ui-bg-slate-100 ui-text-sm">
+        <Thead className="ui:bg-slate-100 ui:text-sm">
           <Tr>
             {columns(isManageInBatch).map((item) => (
               <Th
                 key={`header-${item.id}`}
                 id={`header-${item.id}`}
                 columnKey={item.id}
-                className="ui-text-sm ui-text-dark-blue ui-font-bold"
+                className="ui:text-sm ui:text-dark-blue ui:font-bold"
                 style={{
                   ...(item.size && { maxWidth: item.size }),
                 }}
@@ -77,12 +77,12 @@ const TransactionCreateAddStockTableDetailBatch = ({
             ))}
           </Tr>
         </Thead>
-        <Tbody className="ui-bg-white ui-text-sm ui-font-normal ui-text-sm">
+        <Tbody className="ui:bg-white ui:text-sm ui:font-normal ui:text-sm">
           {batches?.map((item, index) => (
             <Tr
               key={`item-material-batch-${indexData}-${index}`}
               id={`item-material-batch-${indexData}-${index}`}
-              className={!item.batch_id ? 'ui-bg-info-50' : ''}
+              className={!item.batch_id ? 'ui:bg-info-50' : ''}
             >
               <Td id="no">{index + 1}</Td>
               <Td id="batch_info">
@@ -90,8 +90,8 @@ const TransactionCreateAddStockTableDetailBatch = ({
                   -
                 </Exists>
                 <Exists useIt={item.managed_in_batch === STATUS.ACTIVE}>
-                  <div className="ui-flex ui-flex-col ui-space-y-1">
-                    <div className="ui-font-bold">{item.code}</div>
+                  <div className="ui:flex ui:flex-col ui:space-y-1">
+                    <div className="ui:font-bold">{item.code}</div>
                     <div>
                       {t('table.column.production_date')}:{' '}
                       {parseDateTime(
@@ -122,7 +122,7 @@ const TransactionCreateAddStockTableDetailBatch = ({
                   <Button
                     variant="subtle"
                     type="button"
-                    className="!ui-p-0 ui-justify-start ui-text-sm"
+                    className="ui:p-0! ui:justify-start ui:text-sm"
                     onClick={() => {
                       setBatchIndex(index)
                       setOpenModalNewBatch(true)
@@ -139,7 +139,7 @@ const TransactionCreateAddStockTableDetailBatch = ({
                 </Exists>
               </Td>
               <Td id="stock_info">
-                <div className="ui-flex ui-flex-col ui-space-y-1">
+                <div className="ui:flex ui:flex-col ui:space-y-1">
                   <div>
                     {t('table.column.stock_on_hand')}:{' '}
                     {numberFormatter(item.on_hand_stock ?? 0, language)}
@@ -242,7 +242,7 @@ const TransactionCreateAddStockTableDetailBatch = ({
               </Td>
 
               <Td id="budget-info">
-                <div className="ui-flex ui-flex-col ui-space-y-1">
+                <div className="ui:flex ui:flex-col ui:space-y-1">
                   <div>
                     {t('table.column.unit')}: {unit ?? '-'}
                   </div>
@@ -274,7 +274,7 @@ const TransactionCreateAddStockTableDetailBatch = ({
                   <Button
                     variant="subtle"
                     type="button"
-                    className="!ui-p-0 ui-justify-start ui-text-sm"
+                    className="ui:p-0! ui:justify-start ui:text-sm"
                     onClick={() => {
                       setIndex({
                         indexBatch: index,
@@ -299,7 +299,7 @@ const TransactionCreateAddStockTableDetailBatch = ({
           ))}
         </Tbody>
       </Table>
-      <div className="ui-w-full ui-flex ui-justify-between ui-mt-4">
+      <div className="ui:w-full ui:flex ui:justify-between ui:mt-4">
         <div>
           <Exists useIt={isManageInBatch === STATUS.ACTIVE || false}>
             <Button
@@ -311,11 +311,11 @@ const TransactionCreateAddStockTableDetailBatch = ({
                 setBatchIndex(null)
               }}
             >
-              <div className="ui-flex ui-space-x-2">
+              <div className="ui:flex ui:space-x-2">
                 <span>
                   <Plus />
                 </span>
-                <div className="ui-text-sm">{t('batch')}</div>
+                <div className="ui:text-sm">{t('batch')}</div>
               </div>
             </Button>
           </Exists>
@@ -338,11 +338,11 @@ const TransactionCreateAddStockTableDetailBatch = ({
                 )
               }
             >
-              <div className="ui-flex ui-space-x-2">
+              <div className="ui:flex ui:space-x-2">
                 <span>
                   <Plus />
                 </span>
-                <div className="ui-text-sm">Detail</div>
+                <div className="ui:text-sm">Detail</div>
               </div>
             </Button>
           </Exists>

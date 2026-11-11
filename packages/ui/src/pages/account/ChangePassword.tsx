@@ -143,9 +143,9 @@ export default function ChangePassword(): JSX.Element {
       <Meta title={generateMetaTitle(t('account:title.edit_password'))} />
       <form onSubmit={handleSubmit(onValid)}>
         {isPendingMutatePassword && <Loading overlay />}
-        <div className="ui-max-w-[800px] ui-mx-auto">
-          <div className="ui-border ui-rounded ui-border-[#d2d2d2] ui-mt-8 ui-p-4">
-            <FormControl className="ui-relative ui-mb-6">
+        <div className="ui:max-w-[800px] ui:mx-auto">
+          <div className="ui:border ui:rounded ui:border-[#d2d2d2] ui:mt-8 ui:p-4">
+            <FormControl className="ui:relative ui:mb-6">
               <FormLabel id="labelPassword" htmlFor="password" required>
                 {t('account:form.label.password')}
               </FormLabel>
@@ -161,8 +161,8 @@ export default function ChangePassword(): JSX.Element {
                 </FormErrorMessage>
               )}
             </FormControl>
-            <div className="ui-grid ui-grid-cols-2 ui-gap-x-4">
-              <FormControl className="ui-relative ui-mb-6">
+            <div className="ui:grid ui:grid-cols-2 ui:gap-x-4">
+              <FormControl className="ui:relative ui:mb-6">
                 <FormLabel
                   id="labelNewPassword"
                   htmlFor="new_password"
@@ -184,7 +184,7 @@ export default function ChangePassword(): JSX.Element {
                 )}
               </FormControl>
 
-              <FormControl className="ui-relative ui-mb-6">
+              <FormControl className="ui:relative ui:mb-6">
                 <FormLabel
                   id="labelPasswordConfirmation"
                   htmlFor="password_confirmation"
@@ -208,10 +208,10 @@ export default function ChangePassword(): JSX.Element {
               </FormControl>
             </div>
           </div>
-          <div className="ui-flex ui-justify-end ui-mt-6 ui-gap-4">
+          <div className="ui:flex ui:justify-end ui:mt-6 ui:gap-4">
             <Button
               type="button"
-              className="ui-w-40 ui-h-10"
+              className="ui:w-40 ui:h-10"
               id="btnBack"
               variant="outline"
               onClick={() => router.back()}
@@ -221,7 +221,7 @@ export default function ChangePassword(): JSX.Element {
             <Button
               disabled={!isValid}
               type="submit"
-              className="ui-w-40 ui-h-10"
+              className="ui:w-40 ui:h-10"
               id="btnSave"
             >
               {t('common:save')}

@@ -92,16 +92,16 @@ const TransactionListPage: React.FC = () => {
       </TooltipModal>
       <div className="mt-6">
         <FilterFormRoot onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-grid ui-grid-cols-4 ui-gap-4">
+          <FilterFormBody className="ui:grid ui:grid-cols-4 ui:gap-4">
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui-flex ui-gap-2" />
-            <div className="ui-flex ui-space-x-3 ui-items-center">
+            <div className="ui:flex ui:gap-2" />
+            <div className="ui:flex ui:space-x-3 ui:items-center">
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
                 onClick={handleExport}
                 disabled={
                   !filter.query.healthcareId || filter.query.healthcareId === ''
@@ -113,14 +113,14 @@ const TransactionListPage: React.FC = () => {
               <Button
                 variant="subtle"
                 type="button"
-                leftIcon={<Reload className="ui-size-5" />}
+                leftIcon={<Reload className="ui:size-5" />}
                 onClick={filter.reset}
               >
                 {t('common:reset')}
               </Button>
               <FilterSubmitButton
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 text={t('common:search')}
                 onClick={() => setPagination({ page: 1 })}
               />
@@ -129,7 +129,7 @@ const TransactionListPage: React.FC = () => {
 
           {filter.renderActiveFilter()}
         </FilterFormRoot>
-        <div className="ui-grid ui-grid-cols-3 ui-gap-4 ui-my-5">
+        <div className="ui:grid ui:grid-cols-3 ui:gap-4 ui:my-5">
           <SummaryCard
             label={t('transaction:list.card.total_waste_in')}
             value={`${formatWasteBagWeight(
@@ -166,7 +166,7 @@ const TransactionListPage: React.FC = () => {
             } ${t('transaction:list.bags')})`}
           />
         </div>
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <TransactionTable
             isLoading={isLoadingTransaction}
             size={paginationTransaction.paginate}

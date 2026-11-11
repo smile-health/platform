@@ -80,7 +80,7 @@ export const columnsTreatmentLocation = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <ButtonActionTable
             id={original?.id}
             path={'/treatment-location'}
@@ -93,7 +93,7 @@ export const columnsTreatmentLocation = (
             }
             type="button"
             variant="subtle"
-            className="!ui-px-1.5 ui-text-danger-500"
+            className="ui:px-1.5! ui:text-danger-500"
           >
             {t('common:remove')}
           </Button>

@@ -43,16 +43,16 @@ const ReconciliationCreatePage = () => {
       />
       <FormProvider {...methods}>
         <form onSubmit={onSubmit}>
-          <div className="ui-flex ui-space-x-5">
+          <div className="ui:flex ui:space-x-5">
             <ReconciliationDetailForm isSuperAdmin={isSuperAdmin} />
             <ReconciliationMaterilSelectForm />
           </div>
           <ReconciliationTableForm />
-          <div className="ui-w-full ui-mt-5">
-            <div className="ui-flex ui-space-x-5 ui-justify-end">
+          <div className="ui:w-full ui:mt-5">
+            <div className="ui:flex ui:space-x-5 ui:justify-end">
               <Button
                 variant="outline"
-                className="ui-w-48"
+                className="ui:w-48"
                 type="button"
                 onClick={() => setOpenModalReset(true)}
                 disabled={isPending}
@@ -60,7 +60,7 @@ const ReconciliationCreatePage = () => {
                 Reset
               </Button>
               <Button
-                className="ui-w-48"
+                className="ui:w-48"
                 type="submit"
                 disabled={
                   !methods.watch().opname_stock_items ||

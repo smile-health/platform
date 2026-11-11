@@ -45,16 +45,16 @@ export const OrderCreateReturnBatchDropdownOtherActivities: React.FC<Props> = ({
   }
 
   return (
-    <div className="ui-space-y-6 ui-flex ui-flex-row ui-items-center">
-      <h6 className="ui-text-base ui-text-primary-800 ui-flex ui-flex-row ui-items-center ui-mt-6">
-        <span className="ui-mr-2">
+    <div className="ui:space-y-6 ui:flex ui:flex-row ui:items-center">
+      <h6 className="ui:text-base ui:text-primary-800 ui:flex ui:flex-row ui:items-center ui:mt-6">
+        <span className="ui:mr-2">
           <Plus />
         </span>
         {t('orderCreateReturn:drawer.take_stock_from_other_activities.label')}
       </h6>
       <ReactSelect
         key={order_items?.length}
-        className="ui-ml-2"
+        className="ui:ml-2"
         placeholder={t(
           'orderCreateReturn:drawer.take_stock_from_other_activities.placeholder'
         )}

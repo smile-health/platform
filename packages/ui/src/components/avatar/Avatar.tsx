@@ -42,22 +42,22 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
           {...props}
           ref={ref}
           className={cx(
-            'ui-block ui-rounded-full ui-bg-gray-400 ui-ring-2 ui-ring-white',
+            'ui:block ui:rounded-full ui:bg-gray-400 ui:ring-2 ui:ring-white',
             {
-              '-ui-mr-3': isGroup,
+              'ui:-mr-3': isGroup,
             },
             {
-              'ui-h-8 ui-w-8': size === 'xs',
-              'ui-h-10 ui-w-10': size === 'sm',
-              'ui-h-12 ui-w-12': size === 'md',
-              'ui-h-14 ui-w-14': size === 'lg',
-              'ui-h-16 ui-w-16': size === 'xl',
+              'ui:h-8 ui:w-8': size === 'xs',
+              'ui:h-10 ui:w-10': size === 'sm',
+              'ui:h-12 ui:w-12': size === 'md',
+              'ui:h-14 ui:w-14': size === 'lg',
+              'ui:h-16 ui:w-16': size === 'xl',
             }
           )}
         >
           <Slottable>{props.children}</Slottable>
           <AvatarPrimitive.Image
-            className="ui-h-full ui-w-full ui-object-cover"
+            className="ui:h-full ui:w-full ui:object-cover"
             style={{ borderRadius: 'inherit' }}
             src={src}
             alt={name}
@@ -66,13 +66,13 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
           {name ? (
             <AvatarPrimitive.Fallback
               className={cx(
-                'ui-flex ui-h-full ui-w-full ui-items-center ui-justify-center ui-font-medium ui-uppercase ui-text-white',
+                'ui:flex ui:h-full ui:w-full ui:items-center ui:justify-center ui:font-medium ui:uppercase ui:text-white',
                 {
-                  'ui-text-xs': size === 'xs',
-                  'ui-text-sm': size === 'sm',
-                  'ui-text-base': size === 'md',
-                  'ui-text-lg': size === 'lg',
-                  'ui-text-xl': size === 'xl',
+                  'ui:text-xs': size === 'xs',
+                  'ui:text-sm': size === 'sm',
+                  'ui:text-base': size === 'md',
+                  'ui:text-lg': size === 'lg',
+                  'ui:text-xl': size === 'xl',
                 }
               )}
               style={{ borderRadius: 'inherit', backgroundColor: color }}
@@ -81,16 +81,16 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
             </AvatarPrimitive.Fallback>
           ) : (
             <AvatarPrimitive.Fallback
-              className="ui-flex ui-h-full ui-w-full ui-items-center ui-justify-center ui-text-white"
+              className="ui:flex ui:h-full ui:w-full ui:items-center ui:justify-center ui:text-white"
               style={{ borderRadius: 'inherit' }}
             >
               <UserIcon
                 className={cx({
-                  'ui-h-5 ui-w-5': size === 'xs',
-                  'ui-h-6 ui-w-6': size === 'sm',
-                  'ui-h-8 ui-w-8': size === 'md',
-                  'ui-h-10 ui-w-10': size === 'lg',
-                  'ui-h-12 ui-w-12': size === 'xl',
+                  'ui:h-5 ui:w-5': size === 'xs',
+                  'ui:h-6 ui:w-6': size === 'sm',
+                  'ui:h-8 ui:w-8': size === 'md',
+                  'ui:h-10 ui:w-10': size === 'lg',
+                  'ui:h-12 ui:w-12': size === 'xl',
                 })}
               ></UserIcon>
             </AvatarPrimitive.Fallback>
@@ -130,28 +130,28 @@ export function AvatarMore({
     <AvatarPrimitive.Root asChild>
       <span
         className={cx(
-          'ui-inline-block ui-rounded-full ui-bg-gray-300 ui-ring-1 ui-ring-white',
+          'ui:inline-block ui:rounded-full ui:bg-gray-300 ui:ring-1 ui:ring-white',
           {
-            '-ui-mr-3': isGroup,
+            'ui:-mr-3': isGroup,
           },
           {
-            'ui-h-8 ui-w-8': size === 'xs',
-            'ui-h-10 ui-w-10': size === 'sm',
-            'ui-h-12 ui-w-12': size === 'md',
-            'ui-h-14 ui-w-14': size === 'lg',
-            'ui-h-16 ui-w-16': size === 'xl',
+            'ui:h-8 ui:w-8': size === 'xs',
+            'ui:h-10 ui:w-10': size === 'sm',
+            'ui:h-12 ui:w-12': size === 'md',
+            'ui:h-14 ui:w-14': size === 'lg',
+            'ui:h-16 ui:w-16': size === 'xl',
           }
         )}
       >
         <span
           className={cx(
-            'ui-flex ui-h-full ui-w-full ui-items-center ui-justify-center ui-text-gray-600',
+            'ui:flex ui:h-full ui:w-full ui:items-center ui:justify-center ui:text-gray-600',
             {
-              'ui-text-xs': size === 'xs',
-              'ui-text-sm': size === 'sm',
-              'ui-text-base': size === 'md',
-              'ui-text-lg': size === 'lg',
-              'ui-text-xl': size === 'xl',
+              'ui:text-xs': size === 'xs',
+              'ui:text-sm': size === 'sm',
+              'ui:text-base': size === 'md',
+              'ui:text-lg': size === 'lg',
+              'ui:text-xl': size === 'xl',
             }
           )}
           style={{ borderRadius: 'inherit' }}

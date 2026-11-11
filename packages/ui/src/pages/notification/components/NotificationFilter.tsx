@@ -40,11 +40,11 @@ export default function NotificationFilter({
 
   const renderButtonFilter = () => {
     return (
-      <div className="ui-flex ui-gap-2">
+      <div className="ui:flex ui:gap-2">
         <FilterResetButton onClick={handleReset} variant="subtle" />
         <FilterSubmitButton
           onClick={() => handleChangePage(1)}
-          className="ui-w-[202px]"
+          className="ui:w-[202px]"
           variant="outline"
           data-testid="btn-filter-manufacturer"
         />
@@ -54,7 +54,7 @@ export default function NotificationFilter({
 
   return (
     <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-      <FilterFormBody className="ui-grid-cols-4">
+      <FilterFormBody className="ui:grid-cols-4">
         {filter.renderField()}
       </FilterFormBody>
 

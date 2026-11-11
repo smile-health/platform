@@ -31,33 +31,33 @@ const DropdownNotification = () => {
   } = useNotification();
 
   return (
-    <div className="ui-relative" ref={ref}>
+    <div className="ui:relative" ref={ref}>
       <button
         id="trigger-notification"
-        className="hover:text-blue-700 relative ui-text-blue-800 ui-cursor-pointer"
+        className="hover:text-blue-700 relative ui:text-blue-800 ui:cursor-pointer"
         onClick={() => setShow((prev) => !prev)}
       >
-        <Bell className="ui-mt-3" />
+        <Bell className="ui:mt-3" />
         {count > 0 && (
           <div
-            className={`ui-absolute ui-flex ui-items-center ui-justify-center ui-h-5 ui-text-xs ui-text-white ui-bg-red-600 ui-rounded-full ui-left-0 ${
-              count < 10 ? 'ui-w-7' : 'ui-w-8'
-            } ui-top-[-4px]`}
+            className={`ui:absolute ui:flex ui:items-center ui:justify-center ui:h-5 ui:text-xs ui:text-white ui:bg-red-600 ui:rounded-full ui:left-0 ${
+              count < 10 ? 'ui:w-7' : 'ui:w-8'
+            } ui:top-[-4px]`}
           >
             {count > 99 ? '99+' : count}
           </div>
         )}
       </button>
       {show && (
-        <div className="ui-absolute ui-z-20 ui-bg-white ui-border ui-border-gray-300 ui-rounded-lg ui-shadow-xl ui-left-[-300px] ui-w-[25rem]">
-          <div className="ui-flex ui-justify-between ui-items-center ui-px-6 ui-py-2 ui-text-sm ui-border-b ui-border-gray-300 ui-h-[64px]">
+        <div className="ui:absolute ui:z-20 ui:bg-white ui:border ui:border-gray-300 ui:rounded-lg ui:shadow-xl ui:left-[-300px] ui:w-100">
+          <div className="ui:flex ui:justify-between ui:items-center ui:px-6 ui:py-2 ui:text-sm ui:border-b ui:border-gray-300 ui:h-[64px]">
             <div className="text-dark font-semibold">
               {t('notification.title')}
             </div>
             {count !== 0 && (
               <Button
                 variant="subtle"
-                className="ui-text-primary-500"
+                className="ui:text-primary-500"
                 onClick={handleMarkAllAsRead}
                 id="notification-read-all"
                 loading={isPendingRead || isPendingReadAll}
@@ -68,7 +68,7 @@ const DropdownNotification = () => {
               </Button>
             )}
             {isLoading && (
-              <div className="ui-text-gray-600">
+              <div className="ui:text-gray-600">
                 {t('notification.refreshing')}
               </div>
             )}
@@ -83,10 +83,10 @@ const DropdownNotification = () => {
               handleNotificationItemClick={handleNotificationItemClick}
             />
 
-            <div className="ui-flex ui-items-center ui-justify-between ui-px-3 ui-py-3 ui-text-sm ui-border-t ui-border-gray-300">
+            <div className="ui:flex ui:items-center ui:justify-between ui:px-3 ui:py-3 ui:text-sm ui:border-t ui:border-gray-300">
               <Button
                 variant="subtle"
-                className="ui-text-primary-500 ui-mx-auto"
+                className="ui:text-primary-500 ui:mx-auto"
                 onClick={handleSeeMore}
                 id="navbar-notification"
               >

@@ -22,7 +22,7 @@ const RightMenuNav: React.FC<Props> = (props) => {
     <RightMenu {...navProps} title={title}>
       {rNavChild.map((item) => (
         <Link
-          className={`${item.className} ui-text-left ui-block ui-text-primary-500 ui-cursor-pointer hover:ui-text-primary-700 hover:ui-bg-gray-100 ui-px-6 ui-py-1`}
+          className={`${item.className} ui:text-left ui:block ui:text-primary-500 ui:cursor-pointer ui:hover:text-primary-700 ui:hover:bg-gray-100 ui:px-6 ui:py-1`}
           id={`navbar-${item.link}`}
           key={`navbar-${item.link}`}
           href={router.getAsLink(item.link)}

@@ -27,7 +27,7 @@ export const createFilterLogbookGroupSchema = ({ t }: Params): UseFilter => {
       id: 'input-search',
       label: t('logbook:list.filter.search.label'),
       placeholder: t('logbook:list.filter.search.placeholder'),
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       defaultValue: '',
       maxLength: 255,
     },
@@ -43,7 +43,7 @@ export const createFilterLogbookGroupSchema = ({ t }: Params): UseFilter => {
         start: dayjs().toISOString(),
         end: dayjs().toISOString(),
       },
-      className: 'ui-w-full',
+      className: 'ui:w-full',
     },
     {
       id: 'select-province',
@@ -80,7 +80,7 @@ export const createFilterLogbookGroupSchema = ({ t }: Params): UseFilter => {
       id: 'select-healthcare-facility-name',
       type: 'select-async-paginate',
       name: 'healthcareId',
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       isMulti: false,
       label: t('logbook:list.filter.healthcare_facility_name.label'),
       placeholder: t(

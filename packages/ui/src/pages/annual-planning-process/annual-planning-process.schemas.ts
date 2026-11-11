@@ -27,7 +27,7 @@ export const createFilterSchema = ({
       loadOptions: loadProgramPlan,
       additional: { page: 1, key_value: 'year' },
       defaultValue: null,
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       required: true,
     },
     {
@@ -39,7 +39,7 @@ export const createFilterSchema = ({
       loadOptions: loadProvinces,
       additional: { page: 1 },
       defaultValue: defaultValueProvince,
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       disabled: !isSuperadmin,
       required: true,
     },
@@ -50,7 +50,7 @@ export const createFilterSchema = ({
       label: 'Status',
       placeholder: t('annualPlanningProcess:list.filter.status.placeholder'),
       options: optionsStatus(t),
-      className: 'ui-w-full',
+      className: 'ui:w-full',
       defaultValue: null,
     }
   ]

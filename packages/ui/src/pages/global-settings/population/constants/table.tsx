@@ -46,7 +46,7 @@ export const columnsListYearPopulation = ({
     cell: ({ row }) => (
       <div>
         <p>{row.original.user_updated_by.fullname}</p>
-        <p className="ui-uppercase">
+        <p className="ui:uppercase">
           {parseDateTime(row.original.updated_at, 'DD MMM YYYY HH:mm', lang)}
         </p>
       </div>
@@ -59,7 +59,7 @@ export const columnsListYearPopulation = ({
     maxSize: 40,
     cell: ({ row }) => {
       return (
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <Button
             asChild
             id="btn-link-population-detail"
@@ -100,9 +100,9 @@ export const columnsDetailPopulation = ({
     cell: ({ row }) => {
       if (row.original.entity.name) {
         return (
-          <div className="ui-space-y-1">
-            <p className="ui-font-bold">{row.original.entity.name}</p>
-            <p className="ui-text-[#737373] ui-truncate">
+          <div className="ui:space-y-1">
+            <p className="ui:font-bold">{row.original.entity.name}</p>
+            <p className="ui:text-neutral-500 ui:truncate">
               {row.original.entity.province}, {row.original.entity.regency}
             </p>
           </div>
@@ -111,7 +111,7 @@ export const columnsDetailPopulation = ({
 
       return (
         <div>
-          <p className="ui-font-bold">{row.original.entity.province}</p>
+          <p className="ui:font-bold">{row.original.entity.province}</p>
         </div>
       )
     },
@@ -132,7 +132,7 @@ export const columnsDetailPopulation = ({
       row.original.user_updated_at ? (
         <div>
           <p>{row.original.user_updated_by.fullname}</p>
-          <p className="ui-uppercase">
+          <p className="ui:uppercase">
             {parseDateTime(row.original.user_updated_at, 'DD/MM/YYYY HH:mm')}
           </p>
         </div>

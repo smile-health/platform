@@ -54,35 +54,35 @@ const ProgramPlanMarkAsFinalModal = () => {
       }}
     >
       <DialogCloseButton onClick={handleClose} />
-      <DialogHeader className="ui-text-center ui-text-xl">
-        <div className="ui-flex ui-flex-col ui-gap-2">
-          <h5 className="ui-font-semibold ui-text-dark-teal ui-text-xl">
+      <DialogHeader className="ui:text-center ui:text-xl">
+        <div className="ui:flex ui:flex-col ui:gap-2">
+          <h5 className="ui:font-semibold ui:text-dark-teal ui:text-xl">
             {t('common:confirmation')}
           </h5>
-          <h6 className="ui-font-normal ui-text-neutral-500 ui-text-base">
+          <h6 className="ui:font-normal ui:text-neutral-500 ui:text-base">
             {t('programPlan:confirmation_activation.description')}
           </h6>
         </div>
       </DialogHeader>
       <DialogContent>
-        <p className="ui-text-dark-teal ui-mb-2">
+        <p className="ui:text-dark-teal ui:mb-2">
           {t('programPlan:confirmation_activation.subdescription_top')}
         </p>
-        <div className="ui-mb-2">
+        <div className="ui:mb-2">
           {popUpDataRow?.status
             ? statusConverter(popUpDataRow.status)?.map((item, index) => (
                 <div
                   key={index?.toString()}
-                  className="ui-flex ui-items-center ui-gap-2 ui-mb-1"
+                  className="ui:flex ui:items-center ui:gap-2 ui:mb-1"
                 >
                   {item.status && <CheckCircleIcon />}
                   {!item.status && item.required && <CrossCircleIcon />}
                   {!item.status && !item.required && <JustCircleIcon />}
                   <span
                     className={cx(
-                      'ui-font-medium',
-                      item.status ? 'ui-text-green-700' : 'ui-text-red-600',
-                      !item.required && !item.status && 'ui-text-neutral-500'
+                      'ui:font-medium',
+                      item.status ? 'ui:text-green-700' : 'ui:text-red-600',
+                      !item.required && !item.status && 'ui:text-neutral-500'
                     )}
                   >
                     {t(
@@ -94,12 +94,12 @@ const ProgramPlanMarkAsFinalModal = () => {
               ))
             : null}
         </div>
-        <p className="ui-text-neutral-500">
+        <p className="ui:text-neutral-500">
           {t('programPlan:confirmation_activation.subdescription_bottom')}
         </p>
       </DialogContent>
-      <DialogFooter className="ui-justify-center">
-        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-w-full mx-auto">
+      <DialogFooter className="ui:justify-center">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-4 ui:w-full mx-auto">
           <Button
             id="btn_close_pop_up_form_program_plan"
             variant="default"

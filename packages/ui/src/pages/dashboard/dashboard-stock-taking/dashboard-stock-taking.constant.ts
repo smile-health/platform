@@ -34,18 +34,18 @@ export function getComplianceSummaryList(t: TFunction<'dashboardStockTaking'>) {
       title: t('column.entity.not_yet'),
       valueKey: 'not_yet',
       percentageKey: 'not_yet_percentage',
-      colorClass: 'ui-bg-red-600 ui-text-white',
+      colorClass: 'ui:bg-red-600 ui:text-white',
     },
     {
       title: t('column.entity.done'),
       valueKey: 'done',
       percentageKey: 'done_percentage',
-      colorClass: 'ui-bg-green-500 ui-text-white',
+      colorClass: 'ui:bg-green-500 ui:text-white',
     },
     {
       title: t('column.entity.total'),
       valueKey: 'entity_total',
-      colorClass: 'ui-bg-blue-900 ui-text-white',
+      colorClass: 'ui:bg-blue-900 ui:text-white',
     },
   ]
 }
@@ -55,28 +55,28 @@ export function getResultSummaryList(t: TFunction<'dashboardStockTaking'>) {
     {
       title: t('column.result.stock.taking'),
       valueKey: 'stock',
-      colorClass: 'ui-bg-green-500 ui-text-white',
+      colorClass: 'ui:bg-green-500 ui:text-white',
     },
     {
       title: t('column.result.stock.expired'),
       valueKey: 'exp_stock',
-      colorClass: 'ui-bg-red-600 ui-text-white',
+      colorClass: 'ui:bg-red-600 ui:text-white',
     },
     {
       title: t('column.result.stock.in_transit'),
       valueKey: 'stock_in_transit',
-      colorClass: 'ui-bg-yellow-500 ui-text-dark-blue',
+      colorClass: 'ui:bg-yellow-500 ui:text-dark-blue',
     },
     {
       title: t('column.result.stock.real'),
       valueKey: 'real_stock',
-      colorClass: 'ui-bg-sky-600 ui-text-white',
+      colorClass: 'ui:bg-sky-600 ui:text-white',
     },
     {
       title: t('column.result.difference'),
       valueKey: 'difference',
       percentageKey: 'difference_percentage',
-      colorClass: 'ui-bg-orange-600 ui-text-white',
+      colorClass: 'ui:bg-orange-600 ui:text-white',
     },
   ]
 }

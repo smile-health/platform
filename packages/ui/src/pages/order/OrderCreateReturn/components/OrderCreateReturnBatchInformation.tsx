@@ -28,7 +28,7 @@ export const OrderCreateReturnBatchInformation: React.FC<Props> = ({
 
   return (
     <Td id={`cell-${headers?.[1]?.id}`}>
-      <div className="ui-text-dark-blue">
+      <div className="ui:text-dark-blue">
         <strong>{material_stock?.batch_code ?? '-'}</strong>
       </div>
       <div>
@@ -46,11 +46,11 @@ export const OrderCreateReturnBatchInformation: React.FC<Props> = ({
           manufacturer: material_stock?.batch_manufacturer ?? '-',
         })}
       </div>
-      <div className="ui-flex ui-items-center">
+      <div className="ui:flex ui:items-center">
         {t('orderCreateReturn:drawer.table.column.batch_info.expired_date')}
         <span
-          className={cx('ui-text-sm', {
-            'ui-font-bold ui-text-red-500': isExpired,
+          className={cx('ui:text-sm', {
+            'ui:font-bold ui:text-red-500': isExpired,
           })}
         >
           {parseDateTime(

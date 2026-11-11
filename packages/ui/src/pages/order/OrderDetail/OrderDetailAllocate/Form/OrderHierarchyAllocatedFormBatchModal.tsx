@@ -124,8 +124,8 @@ const OrderHierarchyAllocatedFormBatchModal = () => {
 
         cell: ({ row }) => {
           return (
-            <div className="ui-flex ui-flex-col ui-justify-center">
-              <p className="ui-font-bold">
+            <div className="ui:flex ui:flex-col ui:justify-center">
+              <p className="ui:font-bold">
                 {row?.original?._stock_detail?.batch?.code ?? '-'}
               </p>
               <p>
@@ -212,7 +212,7 @@ const OrderHierarchyAllocatedFormBatchModal = () => {
                       }}
                     />
                     {error?.message && !isDisabled && (
-                      <FormErrorMessage className="ui-mt-2">
+                      <FormErrorMessage className="ui:mt-2">
                         {error?.message}
                       </FormErrorMessage>
                     )}
@@ -238,18 +238,18 @@ const OrderHierarchyAllocatedFormBatchModal = () => {
         label: t('common:save'),
       }}
     >
-      <div className="ui-flex ui-flex-rows ui-space-x-5">
-        <FormControl className="ui-space-y-1 ui-max-w-3/4">
+      <div className="ui:flex ui-flex-rows ui:space-x-5">
+        <FormControl className="ui:space-y-1 ui:max-w-3/4">
           <FormLabel className="text-sm">Material</FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold">
+          <div className="ui:text-dark-blue ui:font-bold">
             {allocateBatchFormSelectedRowMaterial}
           </div>
         </FormControl>
-        <FormControl className="ui-space-y-1 ui-w-1/4">
+        <FormControl className="ui:space-y-1 ui:w-1/4">
           <FormLabel className="text-sm">
             {t('orderDetail:data.activity')}
           </FormLabel>
-          <div className="ui-text-dark-blue ui-font-bold ui-flex ui-items-baseline ui-gap-1">
+          <div className="ui:text-dark-blue ui:font-bold ui:flex ui:items-baseline ui:gap-1">
             {allocateBatchFormSelectedRowActivity}
           </div>
         </FormControl>
@@ -259,7 +259,7 @@ const OrderHierarchyAllocatedFormBatchModal = () => {
         data={allocationInputs}
         columns={columnsBatchSchema}
         isSticky
-        className="ui-overflow-y-auto ui-max-h-[50vh] !ui-bg-white"
+        className="ui:overflow-y-auto ui:max-h-md ui:bg-white!"
       />
     </OrderDetailModal>
   )

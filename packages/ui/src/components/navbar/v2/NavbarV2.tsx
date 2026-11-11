@@ -7,8 +7,8 @@ import NavbarTransactions from './components/NavbarTransactions'
 
 const NavbarV2 = () => {
   return (
-    <div className="main__nav ui-bg-primary-500 ui-h-10">
-      <div className="ui-container ui-mx-auto ui-flex ui-items-center ui-justify-start ui-text-primary-contrast">
+    <div className="main__nav ui:bg-primary-500 ui:h-10">
+      <div className="ui:container ui:mx-auto ui:flex ui:items-center ui:justify-start ui:text-primary-contrast">
         <NavbarAnnual />
         <NavbarOrder />
         <NavbarTransactions />

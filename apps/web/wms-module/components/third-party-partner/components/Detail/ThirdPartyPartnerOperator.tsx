@@ -16,9 +16,9 @@ const ThirdPartyPartnerOperator: React.FC<PartnerOperatorProps> = ({
   const { t } = useTranslation(['common', 'thirdPartyPartner']);
 
   return (
-    <div className="ui-p-4 ui-mt-6 ui-border ui-border-neutral-300 ui-rounded ui-space-y-4">
-      <div className="ui-flex ui-justify-between ui-items-start ui-gap-4">
-        <h5 className="ui-font-bold ui-text-dark-blue">
+    <div className="ui:p-4 ui:mt-6 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4">
+      <div className="ui:flex ui:justify-between ui:items-start ui:gap-4">
+        <h5 className="ui:font-bold ui:text-dark-blue">
           {t('thirdPartyPartner:detail.operator_info')}
         </h5>
       </div>
@@ -26,7 +26,7 @@ const ThirdPartyPartnerOperator: React.FC<PartnerOperatorProps> = ({
         data={data}
         columns={columnsOperatorTable(t)}
         isLoading={isLoading}
-        className="ui-overflow-x-auto"
+        className="ui:overflow-x-auto"
         emptyDescription="No registered users available"
       />
     </div>

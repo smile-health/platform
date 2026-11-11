@@ -40,26 +40,26 @@ export default function DashboardFilter(props: Props) {
 
   return (
     <FilterFormRoot onSubmit={filter.handleSubmit}>
-      <FilterFormBody className="ui-grid-cols-4">
+      <FilterFormBody className="ui:grid-cols-4">
         {filter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
-        <div className="ui-flex ui-gap-2 ui-justify-end ui-ml-auto">
+        <div className="ui:flex ui:gap-2 ui:justify-end ui:ml-auto">
           <Button
             data-testid="btn-export"
             variant="subtle"
             type="button"
             onClick={onExport}
             loading={isLoadingExport}
-            leftIcon={<Export className="ui-size-5" />}
+            leftIcon={<Export className="ui:size-5" />}
           >
             {t('export')}
           </Button>
-          <span className="ui-h-full ui-w-px ui-bg-neutral-300" />
+          <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
           <FilterResetButton onClick={filter.reset} variant="subtle" />
           <FilterSubmitButton
             variant="outline"
-            className="ui-w-[202px]"
+            className="ui:w-[202px]"
             text={t('show_report')}
             onClick={onSubmit}
             disabled={isDisabledSubmit || isDisabled}

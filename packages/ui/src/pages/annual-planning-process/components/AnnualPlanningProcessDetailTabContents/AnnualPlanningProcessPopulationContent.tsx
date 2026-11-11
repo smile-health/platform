@@ -30,7 +30,7 @@ const AnnualPlanningProcessPopulationContent: React.FC<Props> = (props) => {
   )
 
   return (
-    <div className="ui-space-y-6 ui-mt-3">
+    <div className="ui:space-y-6 ui:mt-3">
       <Table
         withBorder
         rounded
@@ -41,14 +41,14 @@ const AnnualPlanningProcessPopulationContent: React.FC<Props> = (props) => {
         verticalAlignment="center"
         withColumnBorders
       >
-        <Thead className="ui-bg-slate-100">
+        <Thead className="ui:bg-slate-100">
           <Tr>
             <Th
               id="header-no"
               columnKey="header-no"
               key="header-no"
               rowSpan={2}
-              className="ui-w-[50px]"
+              className="ui:w-[50px]"
             >
               No
             </Th>
@@ -57,7 +57,7 @@ const AnnualPlanningProcessPopulationContent: React.FC<Props> = (props) => {
               columnKey="header-name"
               key="header-name"
               rowSpan={2}
-              className="ui-min-w-48"
+              className="ui:min-w-48"
             >
               {t('annualPlanningProcess:create.form.calculation_result.column.health_care_name')}
             </Th>
@@ -67,7 +67,7 @@ const AnnualPlanningProcessPopulationContent: React.FC<Props> = (props) => {
                 columnKey={x.key}
                 key={x.key}
                 colSpan={3}
-                className="ui-max-w-64 ui-font-semibold ui-text-center"
+                className="ui:max-w-64 ui:font-semibold ui:text-center"
               >
                 {x.header}
               </Th>
@@ -77,7 +77,7 @@ const AnnualPlanningProcessPopulationContent: React.FC<Props> = (props) => {
               columnKey="header-updated-by"
               key="header-updated-by"
               rowSpan={2}
-              className="ui-min-w-36 ui-text-center"
+              className="ui:min-w-36 ui:text-center"
             >
               {t('annualPlanningProcess:create.form.calculation_result.column.updated_by')}
             </Th>
@@ -90,7 +90,7 @@ const AnnualPlanningProcessPopulationContent: React.FC<Props> = (props) => {
                     id={inputColumn.key}
                     columnKey={inputColumn.key}
                     key={inputColumn.key}
-                    className={cx("ui-w-10 ui-font-semibold ui-border-r ui-text-center", targetGroup.className)}
+                    className={cx("ui:w-10 ui:font-semibold ui:border-r ui:text-center", targetGroup.className)}
                   >
                     {inputColumn.header}
                   </Th>
@@ -99,28 +99,28 @@ const AnnualPlanningProcessPopulationContent: React.FC<Props> = (props) => {
             ))}
           </Tr>
         </Thead>
-        <Tbody className="ui-bg-white ui-max-h-[620px]">
+        <Tbody className="ui:bg-white ui:max-h-[620px]">
           {data.map((healthCare, i) => (
             <Tr
               key={healthCare.id}
-              className="ui-text-sm ui-font-normal"
+              className="ui:text-sm ui:font-normal"
             >
-              <Td className="ui-content-start">{i + 1}</Td>
-              <Td className="ui-content-start">{healthCare.entity.name}</Td>
+              <Td className="ui:content-start">{i + 1}</Td>
+              <Td className="ui:content-start">{healthCare.entity.name}</Td>
 
               {columns.map((targetGroup, idx) => {
                 const population = healthCare.annual_need_populations?.find(hcTargetGroup => toSnakeCase(hcTargetGroup.target_group_name) === targetGroup.key)
 
                 return (
                   <Fragment key={`${targetGroup.key}-${idx}`}>
-                    <Td className="ui-content-start ui-text-center">{roundIfNeeded(population?.percentage || 0)}%</Td>
-                    <Td className="ui-content-start ui-text-center">{numberFormatter(population?.population, language)}</Td>
-                    <Td className="ui-content-start ui-text-center">{numberFormatter(population?.population_correction, language)}</Td>
+                    <Td className="ui:content-start ui:text-center">{roundIfNeeded(population?.percentage || 0)}%</Td>
+                    <Td className="ui:content-start ui:text-center">{numberFormatter(population?.population, language)}</Td>
+                    <Td className="ui:content-start ui:text-center">{numberFormatter(population?.population_correction, language)}</Td>
                   </Fragment>
                 )
               })}
 
-              <Td className="ui-content-start ui-flex ui-flex-col ui-gap">
+              <Td className="ui:content-start ui:flex ui:flex-col ui-gap">
                 <span>{healthCare.user_updated_by?.name || '-'}</span>
                 <span>{parseDateTime(healthCare.updated_at || '', 'DD/MM/YYYY HH:mm', language).toUpperCase()}</span>
               </Td>

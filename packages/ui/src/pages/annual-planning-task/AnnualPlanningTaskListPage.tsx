@@ -90,8 +90,8 @@ export default function AnnualPlanningTaskListPage() {
         />
       )}
 
-      <div className="ui-my-6 ui-flex ui-justify-between ui-items-center">
-        <h5 className="ui-font-bold ui-text-xl">{t('task:title')}</h5>
+      <div className="ui:my-6 ui:flex ui:justify-between ui:items-center">
+        <h5 className="ui:font-bold ui:text-xl">{t('task:title')}</h5>
         <AddTaskButton
           href={router.getAsLink(`/v5/program-plan/${programPlanId}/task/add`)}
         />
@@ -99,33 +99,33 @@ export default function AnnualPlanningTaskListPage() {
 
       <div className="mt-6 space-y-6">
         <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-          <FilterFormBody className="ui-flex ui-items-end ui-gap-4">
-            <div className="ui-grid ui-grid-cols-2 ui-w-full ui-gap-3">
+          <FilterFormBody className="ui:flex ui:items-end ui:gap-4">
+            <div className="ui:grid ui:grid-cols-2 ui:w-full ui:gap-3">
               {filter.renderField()}
             </div>
-            <div className="ui-space-x-3 ui-flex ui-mt-5">
+            <div className="ui:space-x-3 ui:flex ui:mt-5">
               <ImportTaskButton onClick={() => setShowImport(true)} />
               <Button
                 data-testid="btn-export"
                 variant="subtle"
                 type="button"
-                leftIcon={<Export className="ui-size-5" />}
+                leftIcon={<Export className="ui:size-5" />}
                 onClick={() => handleExport(filter.query)}
               >
                 {t('export')}
               </Button>
               <DownloadTemplateTaskButton onClick={() => downloadTemplate()} />
-              <span className="ui-h-auto ui-w-px ui-bg-neutral-300" />
+              <span className="ui:h-auto ui:w-px ui:bg-neutral-300" />
               <FilterResetButton variant="subtle" onClick={filter.reset} />
               <FilterSubmitButton
-                className="ui-w-[200px]"
+                className="ui:w-[200px]"
                 variant="outline"
                 onClick={() => handleChangePage(1)}
               />
             </div>
           </FilterFormBody>
         </FilterFormRoot>
-        <div className="ui-space-y-6 ui-my-5 ui-rounded">
+        <div className="ui:space-y-6 ui:my-5 ui:rounded">
           <TaskListTable
             data={dataListTask?.data || []}
             isLoading={isFetchingListTask}
@@ -136,7 +136,7 @@ export default function AnnualPlanningTaskListPage() {
             onClickDelete={handleDeleteButton}
           />
 
-          <PaginationContainer className="ui-mt-5">
+          <PaginationContainer className="ui:mt-5">
             <PaginationSelectLimit
               size={paginate}
               perPagesOptions={dataListTask?.list_pagination}

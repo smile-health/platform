@@ -44,7 +44,7 @@ export const useListTable = () => {
         size: 300,
         minSize: 300,
         meta: {
-          cellClassName: 'ui-content-start',
+          cellClassName: 'ui:content-start',
         },
         cell: ({
           row: {
@@ -75,26 +75,26 @@ export const useListTable = () => {
                 {
                   label: (
                     <p>
-                      <span className="ui-font-bold ui-text-dark-blue">
+                      <span className="ui:font-bold ui:text-dark-blue">
                         {serial_number}
                       </span>
                       {assetModelName}
                       <span>{manufactureName}</span>
                     </p>
                   ),
-                  className: 'ui-text-sm ui-font-normal ui-text-dark-blue',
+                  className: 'ui:text-sm ui:font-normal ui:text-dark-blue',
                 },
                 {
                   label: entity?.name ?? '',
                   className:
-                    'ui-text-sm ui-font-normal ui-text-dark-blue ui-my-1',
+                    'ui:text-sm ui:font-normal ui:text-dark-blue ui:my-1',
                 },
                 {
                   label:
                     provinceRegency.length > 1
                       ? provinceRegency.join(', ')
                       : provinceRegency[0],
-                  className: 'ui-text-xs ui-font-thin ui-text-gray-700',
+                  className: 'ui:text-xs ui:font-thin ui:text-gray-700',
                 },
               ]}
             />
@@ -119,7 +119,7 @@ export const useListTable = () => {
           )
         },
         meta: {
-          cellClassName: 'ui-content-start',
+          cellClassName: 'ui:content-start',
         },
       },
       {
@@ -131,7 +131,7 @@ export const useListTable = () => {
         minSize: 80,
         cell: ({ row }) => row.original?.device_status?.name ?? '-',
         meta: {
-          cellClassName: 'ui-content-start',
+          cellClassName: 'ui:content-start',
         },
       },
 
@@ -145,11 +145,11 @@ export const useListTable = () => {
         cell: ({ row }) => {
           const item = row?.original
           return (
-            <div className="ui-text-sm ui-mb-1">
-              <div className="ui-text-dark-blue ui-font-semibold">
+            <div className="ui:text-sm ui:mb-1">
+              <div className="ui:text-dark-blue ui:font-semibold">
                 {item?.updated_by?.name ?? '-'}
               </div>
-              <div className="ui-text-neutral-500">
+              <div className="ui:text-neutral-500">
                 {item?.updated_at
                   ? dayjs(item?.updated_at).format('DD MMM YYYY HH:mm')
                   : '-'}
@@ -158,7 +158,7 @@ export const useListTable = () => {
           )
         },
         meta: {
-          cellClassName: 'ui-content-start',
+          cellClassName: 'ui:content-start',
         },
       },
       {
@@ -170,7 +170,7 @@ export const useListTable = () => {
           const item = row?.original
 
           return (
-            <div className="ui-flex ui-gap-2 -ml-3">
+            <div className="ui:flex ui:gap-2 -ml-3">
               <Button
                 asChild
                 id="btn-link-asset-vendor-detail"
@@ -195,7 +195,7 @@ export const useListTable = () => {
           )
         },
         meta: {
-          cellClassName: 'ui-content-start',
+          cellClassName: 'ui:content-start',
         },
       },
     ],

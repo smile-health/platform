@@ -37,7 +37,7 @@ export default function OrderContainer({
       backButton={{ label: t('back'), onClick: handleClick, ...backButton }}
     >
       <Meta title={generateMetaTitle(metaTitle)} />
-      <div className="ui-mt-6">{children}</div>
+      <div className="ui:mt-6">{children}</div>
     </Container>
   )
 }

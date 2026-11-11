@@ -28,7 +28,7 @@ const TransactionDiscardInputQuantity: React.FC<Props> = (props) => {
 
   return is_open_vial ? (
     <Fragment>
-      <Td id={`cell-${columns[4].id}`} className="ui-content-start">
+      <Td id={`cell-${columns[4].id}`} className="ui:content-start">
         <Controller
           control={control}
           name={`details.${index}.open_vial` as keyof ItemTransactionDiscard}
@@ -57,7 +57,7 @@ const TransactionDiscardInputQuantity: React.FC<Props> = (props) => {
           )}
         />
       </Td>
-      <Td id={`cell-${columns[5].id}`} className="ui-content-start">
+      <Td id={`cell-${columns[5].id}`} className="ui:content-start">
         <Controller
           control={control}
           name={`details.${index}.close_vial` as keyof ItemTransactionDiscard}
@@ -87,7 +87,7 @@ const TransactionDiscardInputQuantity: React.FC<Props> = (props) => {
       </Td>
     </Fragment>
   ) : (
-    <Td id={`cell-${columns[4].id}`} className="ui-content-start">
+    <Td id={`cell-${columns[4].id}`} className="ui:content-start">
       <FormControl>
         <InputNumberV2
           id={`input-quantity-${index}`}

@@ -47,14 +47,14 @@ export default function DashboardMonthlyReportPage() {
   return (
     <Container title={t('title.monthly')} withLayout>
       <Meta title={generateMetaTitle(t('title.monthly'))} />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <DashboardReportFilter
           filter={filter}
           onSubmit={() => setEnabled(true)}
           onExport={onExport}
           onExportAll={onExportAll}
         />
-        <div className="ui-relative -ui-z-10">
+        <div className="ui:relative ui:-z-10">
           <DataTable
             isLoading={isLoading}
             data={data}

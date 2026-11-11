@@ -42,17 +42,17 @@ const AnnualPlanningProcessListMinMaxProvince: React.FC = () => {
   return (
     <Fragment>
       <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-        <FilterFormBody className="ui-grid-cols-3">
+        <FilterFormBody className="ui:grid-cols-3">
           {filter.renderField()}
         </FilterFormBody>
         <FilterFormFooter>
           <div />
-          <div className="ui-flex ui-gap-2">
-            <div className="ui-flex ui-gap-2">
+          <div className="ui:flex ui:gap-2">
+            <div className="ui:flex ui:gap-2">
               <FilterResetButton onClick={filter.reset} variant="subtle" />
               <FilterSubmitButton
                 onClick={() => setPagination({ page: 1 })}
-                className="ui-w-[220px]"
+                className="ui:w-[220px]"
                 variant="outline"
               />
             </div>
@@ -62,19 +62,19 @@ const AnnualPlanningProcessListMinMaxProvince: React.FC = () => {
       </FilterFormRoot>
 
       {!activateMinMaxDistrict.open ? (
-        <div className="ui-p-4 ui-flex ui-justify-between ui-items-center ui-rounded ui-bg-neutral-100 ui-border ui-border-neutral-300">
-          <div className="ui-space-y-2">
-            <p className="ui-text-sm ui-font-bold ui-text-neutral-500">
+        <div className="ui:p-4 ui:flex ui:justify-between ui:items-center ui:rounded ui:bg-neutral-100 ui:border ui:border-neutral-300">
+          <div className="ui:space-y-2">
+            <p className="ui:text-sm ui:font-bold ui:text-neutral-500">
               {t('annualPlanningProcess:list.min_max.status_activation')}
             </p>
-            <p className="ui-text-sm ui-text-neutral-700">
+            <p className="ui:text-sm ui:text-neutral-700">
               {t('annualPlanningProcess:list.min_max.status_min_max')}
               {' '}
               {programPlanYearName}
               {' '}
               {provinceName ?? '-'}
               {' '}:
-              <span className="ui-ml-2 ui-font-bold">
+              <span className="ui:ml-2 ui:font-bold">
                 {
                   datasourceProvince?.data.province_entity.min_max_status_province === MinMaxStatusProvinceRegency.ACTIVE ?
                     parseDateTime(datasourceProvince?.data?.province_entity?.activated_province_date || '', 'DD MMM YYYY HH:mm').toUpperCase() :
@@ -83,11 +83,11 @@ const AnnualPlanningProcessListMinMaxProvince: React.FC = () => {
               </span>
             </p>
           </div>
-          <div className="ui-flex ui-gap-6">
+          <div className="ui:flex ui:gap-6">
             {/* section min max regency */}
-            <p className="ui-text-sm ui-font-bold ui-text-primary-700">
+            <p className="ui:text-sm ui:font-bold ui:text-primary-700">
               {t('annualPlanningProcess:list.min_max_level.district')}
-              <span className="ui-ml-2">
+              <span className="ui:ml-2">
                 <Button
                   type="button"
                   variant="outline"
@@ -101,9 +101,9 @@ const AnnualPlanningProcessListMinMaxProvince: React.FC = () => {
             </p>
 
             {/* section min max province */}
-            <p className="ui-text-sm ui-font-bold ui-text-primary-700">
+            <p className="ui:text-sm ui:font-bold ui:text-primary-700">
               {t('annualPlanningProcess:list.min_max_level.province')}
-              <span className="ui-ml-2">
+              <span className="ui:ml-2">
                 <Button
                   type="button"
                   variant="outline"
@@ -118,27 +118,27 @@ const AnnualPlanningProcessListMinMaxProvince: React.FC = () => {
           </div>
         </div>
       ) : (
-        <div className="ui-p-4 ui-bg-primary-50 ui-flex ui-justify-between ui-items-center ui-rounded ui-border-neutral-300">
-          <div className="ui-space-y-2">
-            <p className="ui-text-sm ui-font-bold ui-text-neutral-500">
+        <div className="ui:p-4 ui:bg-primary-50 ui:flex ui:justify-between ui:items-center ui:rounded ui:border-neutral-300">
+          <div className="ui:space-y-2">
+            <p className="ui:text-sm ui:font-bold ui:text-neutral-500">
               {t('annualPlanningProcess:list.min_max.district_min_max_activation')}
             </p>
-            <p className="ui-text-sm ui-text-neutral-700">
+            <p className="ui:text-sm ui:text-neutral-700">
               {t('annualPlanningProcess:list.min_max.item_selected', { value: activateMinMaxDistrict.ids.length })}
             </p>
           </div>
-          <div className="ui-space-x-2">
+          <div className="ui:space-x-2">
             <Button
               type="button"
               variant="outline"
-              className="ui-min-w-44"
+              className="ui:min-w-44"
               onClick={() => setActivateMinMaxDistrict({ open: false, ids: [] })}
             >
               {t('common:cancel')}
             </Button>
             <Button
               type="button"
-              className="ui-min-w-44"
+              className="ui:min-w-44"
               onClick={() => handleActivateMinMaxDistrict()}
             >
               {t('annualPlanningProcess:list.min_max.activate_selected_item')}

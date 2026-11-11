@@ -55,7 +55,7 @@ export default function TreatmentLocationTable({
   }, []);
 
   return (
-    <div className="ui-space-y-6">
+    <div className="ui:space-y-6">
       <DataTable
         data={treatmentLocationDataSource?.data.data}
         columns={columnsTreatmentLocation(t, {

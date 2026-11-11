@@ -45,7 +45,7 @@ const LPLPOTableSchema = (t: TFunction<'lplpo'>, lang: string) => {
       accessorKey: 'budget_source',
       cell: ({ row }) => {
         return (
-          <div className="ui-flex ui-flex-col ui-space-y-1">
+          <div className="ui:flex ui:flex-col ui:space-y-1">
             <p>APBN: {row.original?.budget_source?.apbn ? t('yes') : '-'}</p>
             <p>Dak: {row.original?.budget_source?.dak ? t('yes') : '-'}</p>
             <p>

@@ -37,36 +37,36 @@ export function ProgramPocItem({
       onClick={onClick}
       {...(onClick && additionalProps)}
       className={cx(
-        'ui-flex ui-items-center gap-3',
+        'ui:flex ui:items-center gap-3',
         {
-          'ui-flex-col': direction === 'vertical',
-          'ui-flex-row': direction === 'horizontal',
+          'ui:flex-col': direction === 'vertical',
+          'ui:flex-row': direction === 'horizontal',
         },
         className?.wrapper
       )}
     >
       <div
         className={cx(
-          'ui-rounded ui-grid ui-place-items-center ui-w-10 ui-h-10',
+          'ui:rounded ui:grid ui:place-items-center ui:w-10 ui:h-10',
           WORKSPACE[key].bg,
           className?.logo,
-          { 'ui-bg-slate-200': disabled }
+          { 'ui:bg-slate-200': disabled }
         )}
       >
         <span
           className={cx(
-            'ui-font-medium',
+            'ui:font-medium',
             WORKSPACE[key].color,
             className?.label,
-            { 'ui-text-slate-300': disabled }
+            { 'ui:text-slate-300': disabled }
           )}
         >
           {WORKSPACE[key].label}
         </span>
       </div>
       <p
-        className={cx('ui-text-lg ui-font-bold', className?.title, {
-          'ui-text-neutral-500': disabled,
+        className={cx('ui:text-lg ui:font-bold', className?.title, {
+          'ui:text-neutral-500': disabled,
         })}
       >
         {data?.name}

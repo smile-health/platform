@@ -16,7 +16,7 @@ const AnnualPlanningStatusLabel = ({ status }: Props) => {
         rounded="full"
         color={statusMap[status].color}
         variant="outline"
-        className="ui-py-2"
+        className="ui:py-2"
       >
         {t(statusMap[status].label)}
       </Badge>

@@ -81,7 +81,7 @@ export default function DashboardStockTakingPage() {
         open={openInformation}
         setOpen={setOpenInformation}
       />
-      <div className="ui-space-y-6">
+      <div className="ui:space-y-6">
         <DashboardFilter
           filter={filter}
           isValidatingRequiredField
@@ -93,12 +93,12 @@ export default function DashboardStockTakingPage() {
           }}
         />
         <TabsRoot variant="pills" align="stretch" defaultValue="entity">
-          <TabsList className="ui-grid-cols-3 ui-mb-3">
+          <TabsList className="ui:grid-cols-3 ui:mb-3">
             {tabs.map((item) => (
               <TabsTrigger
                 key={item.id}
                 value={item.id}
-                buttonClassName="ui-justify-center"
+                buttonClassName="ui:justify-center"
                 onClick={() => {
                   setTab(item.id)
                   handleResetPagination()

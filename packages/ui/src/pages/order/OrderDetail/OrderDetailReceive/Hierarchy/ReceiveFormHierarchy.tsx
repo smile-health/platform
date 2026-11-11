@@ -227,7 +227,7 @@ export const ReceiveFormHierarchy = () => {
       enableShowHide
     >
       <FormProvider {...methods}>
-        <div className="ui-space-y-6">
+        <div className="ui:space-y-6">
           <ReceiveOrderItemsTableHierarchy
             onRowClick={handleRowClick}
             orderItems={order_items}
@@ -235,7 +235,7 @@ export const ReceiveFormHierarchy = () => {
             errors={errors}
           />
 
-          <div className="ui-space-y-6 ui-w-1/2">
+          <div className="ui:space-y-6 ui:w-1/2">
             <Controller
               name="fulfilled_at"
               control={control}
@@ -244,9 +244,9 @@ export const ReceiveFormHierarchy = () => {
                 fieldState: { error },
               }) => {
                 return (
-                  <FormControl className="ui-space-y-0">
-                    <div className="ui-space-y-1.5">
-                      <FormLabel className="ui-text-sm" required>
+                  <FormControl className="ui:space-y-0">
+                    <div className="ui:space-y-1.5">
+                      <FormLabel className="ui:text-sm" required>
                         {t('orderDetail:form.received_date.label')}
                       </FormLabel>
                       <DatePicker
@@ -280,15 +280,15 @@ export const ReceiveFormHierarchy = () => {
               name="comment"
               control={control}
               render={({ field, fieldState: { error } }) => (
-                <FormControl className="ui-space-y-0 ui-w-full">
-                  <div className="ui-space-y-1.5">
-                    <FormLabel className="ui-text-sm">
+                <FormControl className="ui:space-y-0 ui:w-full">
+                  <div className="ui:space-y-1.5">
+                    <FormLabel className="ui:text-sm">
                       {t('orderDetail:form.comment.label')}
                     </FormLabel>
                     <TextArea
                       {...field}
                       placeholder={`${t('orderDetail:form.comment.placeholder')}...`}
-                      className="ui-min-h-[150px] ui-text-sm"
+                      className="ui:min-h-[150px] ui:text-sm"
                       disabled={isLoading}
                       error={Boolean(error?.message)}
                     />
@@ -301,12 +301,12 @@ export const ReceiveFormHierarchy = () => {
             />
           </div>
 
-          <div className="ui-flex ui-justify-end ui-gap-2">
+          <div className="ui:flex ui:justify-end ui:gap-2">
             <Button
               type="submit"
               variant="outline"
               size="sm"
-              className="ui-min-w-[100px]"
+              className="ui:min-w-[100px]"
               disabled={isLoading || isPending}
               onClick={handleCancel}
             >
@@ -316,7 +316,7 @@ export const ReceiveFormHierarchy = () => {
               type="submit"
               variant="solid"
               size="sm"
-              className="ui-min-w-[100px]"
+              className="ui:min-w-[100px]"
               disabled={isLoading || isPending}
               onClick={handleSubmit(handleReceiveFormHierarchySubmit)}
             >

@@ -52,7 +52,7 @@ export default function DashboardRegencyChart({
       <DashboardBox.Content
         isLoading={isLoading}
         isEmpty={!data?.length}
-        className="ui-max-h-[500px] ui-overflow-y-auto"
+        className="ui:max-h-[500px] ui:overflow-y-auto"
       >
         <BarChart
           data={data}

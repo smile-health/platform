@@ -78,7 +78,7 @@ export const columnsHealthcareStorageLocation = (
     size: 160,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-2">
+        <div className="ui:flex ui:gap-2">
           <ButtonActionTable
             id={original?.id}
             path={'/healthcare-storage-location'}

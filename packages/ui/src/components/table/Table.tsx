@@ -58,7 +58,7 @@ export function TableEmpty({
   return empty ? (
     <tbody>
       <tr>
-        <td colSpan={colSpan} className={cx('ui-h-96 ui-w-full', className)}>
+        <td colSpan={colSpan} className={cx('ui:h-96 ui:w-full', className)}>
           {loading ? null : children}
         </td>
       </tr>
@@ -118,15 +118,15 @@ export function Th({
     <th
       {...props}
       className={cx(
-        'ui-px-2 ui-py-5',
-        'ui-text-left ui-text-sm ui-font-medium ui-text-gray-700',
-        'ui-border-b ui-border-gray-300',
+        'ui:px-2 ui:py-5',
+        'ui:text-left ui:text-sm ui:font-medium ui:text-gray-700',
+        'ui:border-b ui:border-gray-300',
         {
-          '[&:not(:last-child)]:ui-border-r': withColumnBorders,
+          'ui:not-last:border-r': withColumnBorders,
           'sticky': stickyHeader,
         },
         {
-          'ui-cursor-pointer hover:ui-bg-gray-50': sortable,
+          'ui:cursor-pointer ui:hover:bg-gray-50': sortable,
         },
         className
       )}
@@ -136,20 +136,20 @@ export function Th({
       }}
       onClick={toggleSort}
     >
-      <div className="ui-flex ui-items-center ui-justify-between ui-space-x-3">
-        <div className="ui-w-full">{children}</div>
+      <div className="ui:flex ui:items-center ui:justify-between ui:space-x-3">
+        <div className="ui:w-full">{children}</div>
         {sortable ? (
           <div>
             {sort?.column !== columnKey ? (
-              <ArrowsUpDownIcon className="ui-h-3.5 ui-w-3.5 ui-text-gray-400"></ArrowsUpDownIcon>
+              <ArrowsUpDownIcon className="ui:h-3.5 ui:w-3.5 ui:text-gray-400"></ArrowsUpDownIcon>
             ) : null}
 
             {sort?.column === columnKey && sort?.direction === 'asc' ? (
-              <ArrowUpIcon className="ui-h-3.5 ui-w-3.5"></ArrowUpIcon>
+              <ArrowUpIcon className="ui:h-3.5 ui:w-3.5"></ArrowUpIcon>
             ) : null}
 
             {sort?.column === columnKey && sort?.direction === 'desc' ? (
-              <ArrowDownIcon className="ui-h-3.5 ui-w-3.5"></ArrowDownIcon>
+              <ArrowDownIcon className="ui:h-3.5 ui:w-3.5"></ArrowDownIcon>
             ) : null}
           </div>
         ) : null}
@@ -168,17 +168,17 @@ export function Td({
     <td
       {...props}
       className={cx(
-        'ui-px-2 ui-py-3',
-        'ui-text-left ui-leading-tight ui-text-dark-blue',
-        'ui-border-t ui-border-gray-300 group-[:first-of-type]:ui-border-t-0 ',
+        'ui:px-2 ui:py-3',
+        'ui:text-left ui:leading-tight ui:text-dark-blue',
+        'ui:border-t ui:border-gray-300 ui:group-first-of-type:border-t-0 ',
         //selected style
-        'group-data-[selected=true]:first:ui-border-l-[3px] ',
-        'group-data-[selected=true]:first:ui-border-l-primary-500',
+        'ui:first:group-data-[selected=true]:border-l-[3px] ',
+        'ui:first:group-data-[selected=true]:border-l-primary-500',
         {
-          '[&:not(:last-child)]:ui-border-r': withColumnBorders,
-          'ui-align-top': verticalAlignment === 'top',
-          'ui-align-middle': verticalAlignment === 'center',
-          'ui-align-bottom': verticalAlignment === 'bottom',
+          'ui:not-last:border-r': withColumnBorders,
+          'ui:align-top': verticalAlignment === 'top',
+          'ui:align-middle': verticalAlignment === 'center',
+          'ui:align-bottom': verticalAlignment === 'bottom',
         },
         className
       )}
@@ -196,11 +196,11 @@ export function Tr({ children, selected, className, ...props }: TrProps) {
       {...props}
       data-selected={selected}
       className={cx(
-        'hover:ui-cursor-default ui-group',
+        'ui:hover:cursor-default ui:group',
         {
-          'hover:ui-bg-blue-50': hightlightOnHover,
-          'odd:ui-bg-gray-100': striped,
-          'ui-bg-primary-50 hover:ui-bg-primary-100': selected,
+          'ui:hover:bg-blue-50': hightlightOnHover,
+          'ui:odd:bg-gray-100': striped,
+          'ui:bg-primary-50 ui:hover:bg-primary-100': selected,
         },
         className
       )}
@@ -214,7 +214,7 @@ function Loading({ show }: { readonly show?: boolean }) {
   return (
     <AnimatePresence>
       {show ? (
-        <div className="ui-absolute ui-inset-0 ui-flex ui-justify-center">
+        <div className="ui:absolute ui:inset-0 ui:flex ui:justify-center">
           <motion.div
             initial={{
               opacity: 0,
@@ -228,9 +228,9 @@ function Loading({ show }: { readonly show?: boolean }) {
               transition: { duration: 0.15, ease: 'easeIn' },
             }}
             className={cx(
-              'ui-absolute ui-inset-0',
-              'ui-bg-white',
-              'ui-flex ui-h-full ui-w-full ui-justify-center'
+              'ui:absolute ui:inset-0',
+              'ui:bg-white',
+              'ui:flex ui:h-full ui:w-full ui:justify-center'
             )}
           ></motion.div>
           <motion.div
@@ -245,7 +245,7 @@ function Loading({ show }: { readonly show?: boolean }) {
               opacity: 0,
               transition: { duration: 0.15, ease: 'easeIn' },
             }}
-            className="ui-z-10 ui-my-auto ui-h-8 ui-w-8 ui-text-primary-500 ui-opacity-100"
+            className="ui:z-10 ui:my-auto ui:h-8 ui:w-8 ui:text-primary-500 ui:opacity-100"
           >
             <Spinner />
           </motion.div>
@@ -272,7 +272,7 @@ export function Thead({
 
   return (
     <TableCtx.Provider value={value}>
-      <thead {...props} className={cx('ui-bg-slate-100', className)}>
+      <thead {...props} className={cx('ui:bg-slate-100', className)}>
         {children}
       </thead>
     </TableCtx.Provider>
@@ -358,9 +358,9 @@ export function Table({
 
   if (stickyHeader && overflowXAuto) {
     return (
-      <div className="ui-border ui-border-red-300 ui-bg-red-50 ui-p-2">
-        <span className="ui-font-semibold">stickyHeader</span> and{' '}
-        <span className="ui-font-semibold">overflowXAuto</span> cannot true at
+      <div className="ui:border ui:border-red-300 ui:bg-red-50 ui:p-2">
+        <span className="ui:font-semibold">stickyHeader</span> and{' '}
+        <span className="ui:font-semibold">overflowXAuto</span> cannot true at
         the same time
       </div>
     )
@@ -368,9 +368,9 @@ export function Table({
 
   if (stickyHeader && rounded) {
     return (
-      <div className="ui-border ui-border-red-300 ui-bg-red-50 ui-p-2">
-        <span className="ui-font-semibold">stickyHeader</span> and{' '}
-        <span className="ui-font-semibold">rounded</span> cannot true at the
+      <div className="ui:border ui:border-red-300 ui:bg-red-50 ui:p-2">
+        <span className="ui:font-semibold">stickyHeader</span> and{' '}
+        <span className="ui:font-semibold">rounded</span> cannot true at the
         same time
       </div>
     )
@@ -378,21 +378,21 @@ export function Table({
 
   return (
     <TableCtx.Provider value={value}>
-      <div className="ui-relative ui-isolate ui-w-full">
+      <div className="ui:relative ui:isolate ui:w-full">
         <div
-          className={cx('ui-relative ui-w-full', {
-            'ui-overflow-x-auto': overflowXAuto,
-            'ui-border ui-border-gray-300': withBorder,
-            'ui-rounded-md': rounded,
+          className={cx('ui:relative ui:w-full', {
+            'ui:overflow-x-auto': overflowXAuto,
+            'ui:border ui:border-gray-300': withBorder,
+            'ui:rounded-md': rounded,
           })}
         >
           <table
             className={cx(
-              'ui-relative ui-w-full ui-tabular-nums',
-              'ui-border-separate ui-border-spacing-0',
+              'ui:relative ui:w-full ui:tabular-nums',
+              'ui:border-separate ui:border-spacing-0',
               {
-                'ui-table-fixed': layout === 'fixed',
-                'ui-table-auto': layout === 'auto',
+                'ui:table-fixed': layout === 'fixed',
+                'ui:table-auto': layout === 'auto',
               }
             )}
           >

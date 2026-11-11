@@ -100,27 +100,27 @@ export const transactionTypeListV2 = (
 
 export const TRANSACTION_TYPE_COLOR = {
   [TransactionType.Receipts]: {
-    className: 'ui-bg-sky-400 ui-text-white',
+    className: 'ui:bg-sky-400 ui:text-white',
     chart: '#38BDF8',
   },
   [TransactionType.Accept_Return]: {
-    className: 'ui-bg-cyan-950 ui-text-white',
+    className: 'ui:bg-cyan-950 ui:text-white',
     chart: '#083344',
   },
   [TransactionType.Issues]: {
-    className: 'ui-bg-yellow-500 ui-text-dark-blue',
+    className: 'ui:bg-yellow-500 ui:text-dark-blue',
     chart: '#EAB308',
   },
   [TransactionType.Return]: {
-    className: 'ui-bg-emerald-300 ui-text-dark-blue',
+    className: 'ui:bg-emerald-300 ui:text-dark-blue',
     chart: '#6EE7B7',
   },
   [TransactionType.Consumption]: {
-    className: 'ui-bg-blue-900 ui-text-white',
+    className: 'ui:bg-blue-900 ui:text-white',
     chart: '#1E3A8A',
   },
   [TransactionType.Discards]: {
-    className: 'ui-bg-red-600 ui-text-white',
+    className: 'ui:bg-red-600 ui:text-white',
     chart: '#DC2626',
   },
 }

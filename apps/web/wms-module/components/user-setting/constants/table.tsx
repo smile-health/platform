@@ -84,7 +84,7 @@ export const columnsUser = (
     size: 200,
     cell: ({ row: { original } }) => {
       return (
-        <div className="ui-flex ui-gap-0.5">
+        <div className="ui:flex ui:gap-0.5">
           <ButtonActionTable
             id={original?.id}
             path={'user-setting'}
@@ -97,7 +97,7 @@ export const columnsUser = (
             type="button"
             variant="subtle"
             color={original.is_active ? 'danger' : 'info'}
-            className="!ui-px-1.5"
+            className="ui:px-1.5!"
           >
             {original.is_active
               ? t('userSetting:confirmation.deactivate.button')

@@ -20,7 +20,7 @@ export function ButtonActionTableEdit({
       data-testid="btn-link-edit"
       size="sm"
       variant="subtle"
-      className="ui-px-1.5 ui-text-[#0069D2]"
+      className="ui:px-1.5 ui:text-[#0069D2]"
       type="button"
       onClick={() => {
         setUserOperatorStorage(data);

@@ -56,16 +56,16 @@ export default function RtmdStatusSection({
     <DashboardTemperatureMonitoringBox
       id="rtmd-status-chart"
       title={t('rtmd_status.title')}
-      info={<p className="ui-text-gray-500">{t('rtmd_status.info')}</p>}
+      info={<p className="ui:text-gray-500">{t('rtmd_status.info')}</p>}
       isLoading={isLoading}
       isEmpty={!items.length}
     >
       <div
-        className="ui-overflow-y-auto ui-w-full"
+        className="ui:overflow-y-auto ui:w-full"
         style={{ maxHeight: MIN_CHART_HEIGHT }}
       >
         <div
-          className="ui-w-full"
+          className="ui:w-full"
           style={{ height: chartHeight, minHeight: chartHeight }}
         >
           <StackedBarChart
@@ -107,24 +107,24 @@ export default function RtmdStatusSection({
           />
         </div>
       </div>
-      <div className="ui-flex ui-items-center ui-justify-center ui-gap-4 ui-mt-4 ui-relative ui-left-24">
-        <div className="ui-flex ui-items-center ui-gap-2">
+      <div className="ui:flex ui:items-center ui:justify-center ui:gap-4 ui:mt-4 ui:relative ui:left-24">
+        <div className="ui:flex ui:items-center ui:gap-2">
           <div
-            className="ui-w-4 ui-h-4 ui-rounded-full"
+            className="ui:w-4 ui:h-4 ui:rounded-full"
             style={{ backgroundColor: COLORS.online }}
           />
-          <p className="ui-text-sm ui-text-gray-500">Online</p>
+          <p className="ui:text-sm ui:text-gray-500">Online</p>
         </div>
-        <div className="ui-flex ui-items-center ui-gap-2">
+        <div className="ui:flex ui:items-center ui:gap-2">
           <div
-            className="ui-w-4 ui-h-4 ui-rounded-full"
+            className="ui:w-4 ui:h-4 ui:rounded-full"
             style={{ backgroundColor: COLORS.offline }}
           />
-          <p className="ui-text-sm ui-text-gray-500">Offline</p>
+          <p className="ui:text-sm ui:text-gray-500">Offline</p>
         </div>
       </div>
       {data?.lastUpdated && (
-        <p className="ui-text-xs ui-text-gray-500 ui-text-center ui-mt-4 ui-pb-2">
+        <p className="ui:text-xs ui:text-gray-500 ui:text-center ui:mt-4 ui:pb-2">
           {t('summary.last_updated_at', { time: data.lastUpdated })}
         </p>
       )}

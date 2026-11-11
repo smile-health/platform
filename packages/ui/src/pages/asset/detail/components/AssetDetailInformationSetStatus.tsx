@@ -22,8 +22,8 @@ const AssetDetailInformationSetStatus = () => {
   const language = i18n.language
   if (isChangeMode && hasPermission('asset-temperature-mutate'))
     return (
-      <div className="ui-flex ui-flex-col ui-gap-2 ui-w-2/4">
-        <form onSubmit={handleSubmit} className="ui-flex ui-flex-col ui-gap-2">
+      <div className="ui:flex ui:flex-col ui:gap-2 ui:w-2/4">
+        <form onSubmit={handleSubmit} className="ui:flex ui:flex-col ui:gap-2">
           <Controller
             name="working_status_id"
             control={control}
@@ -40,16 +40,16 @@ const AssetDetailInformationSetStatus = () => {
               />
             )}
           />
-          <div className="ui-flex ui-justify-start ui-items-center ui-gap-2">
+          <div className="ui:flex ui:justify-start ui:items-center ui:gap-2">
             <Button
               type="button"
               variant="outline"
-              className="ui-w-full"
+              className="ui:w-full"
               onClick={() => setIsChangeMode(false)}
             >
               {t('common:cancel')}
             </Button>
-            <Button type="submit" className="ui-w-full">
+            <Button type="submit" className="ui:w-full">
               {t('common:save')}
             </Button>
           </div>
@@ -57,19 +57,19 @@ const AssetDetailInformationSetStatus = () => {
       </div>
     )
   return (
-    <div className="ui-flex ui-flex-col ui-gap-2">
+    <div className="ui:flex ui:flex-col ui:gap-2">
       <AssetTitleBlock
         arrText={[
           {
             label: data?.asset_status?.name as string,
-            className: 'ui-text-sm ui-font-normal ui-text-primary-500',
+            className: 'ui:text-sm ui:font-normal ui:text-primary-500',
           },
           {
             label: dayjs(data?.updated_at)
               .locale(language)
               .format('DD MMM YYYY HH:mm')
               ?.toUpperCase(),
-            className: 'ui-text-sm ui-font-normal ui-text-gray-400 ui-my-1',
+            className: 'ui:text-sm ui:font-normal ui:text-gray-400 ui:my-1',
           },
         ]}
       />
@@ -77,7 +77,7 @@ const AssetDetailInformationSetStatus = () => {
         <Button
           type="button"
           variant="outline"
-          className="ui-w-fit"
+          className="ui:w-fit"
           onClick={() => setIsChangeMode(true)}
         >
           {t('asset:detail.change_status')}

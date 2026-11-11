@@ -79,7 +79,7 @@ const AssetInventoryDetailDeleteAssetButton = () => {
         onSubmit={onValid}
         methods={methods}
       >
-        <FormControl className="ui-mb-4">
+        <FormControl className="ui:mb-4">
           <FormLabel htmlFor="delete__asset__reason__textarea" required>
             {t('assetInventory:deletion.reason')}
           </FormLabel>
@@ -89,7 +89,7 @@ const AssetInventoryDetailDeleteAssetButton = () => {
             placeholder={t('assetInventory:deletion.reason_placeholder')}
           />
           {errors.reason && (
-            <p className="ui-text-red-500 ui-text-sm">
+            <p className="ui:text-red-500 ui:text-sm">
               {errors.reason.message}
             </p>
           )}
@@ -98,7 +98,7 @@ const AssetInventoryDetailDeleteAssetButton = () => {
       <Button
         variant="outline"
         color="danger"
-        className="ui-mb-4 ui-w-auto"
+        className="ui:mb-4 ui:w-auto"
         onClick={() => {
           setIsOpen(true)
           reset()

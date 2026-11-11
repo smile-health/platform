@@ -168,7 +168,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
       >
         <DialogCloseButton />
         <DialogHeader>
-          <h3 className="ui-text-center ui-text-[20px] ui-font-semibold">
+          <h3 className="ui:text-center ui:text-[20px] ui:font-semibold">
             {modalData === null
               ? t('entity:detail.customer_vendor.customer_add', {
                   type: entityCustomerConsumptionType(t, isConsumption),
@@ -178,8 +178,8 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                 })}
           </h3>
         </DialogHeader>
-        <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
-        <DialogContent className="ui-overflow-auto ui-my-[8px]">
+        <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
+        <DialogContent className="ui:overflow-auto ui:my-[8px]">
           <ModalConfirmation
             open={confirmationCloseModal}
             setOpen={setConfirmationCloseModal}
@@ -192,20 +192,20 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
             type="delete"
             onSubmit={() => setModal(false)}
           />
-          <div className="ui-flex ui-items-end ui-justify-between">
-            <div className="ui-flex ui-flex-col">
-              <h4 className="ui-text-[14px] ui-leading-[20px] ui-text-neutral-500">
+          <div className="ui:flex ui:items-end ui:justify-between">
+            <div className="ui:flex ui:flex-col">
+              <h4 className="ui:text-[14px] ui:leading-[20px] ui:text-neutral-500">
                 {t('common:form.entity.label')}:
               </h4>
-              <h5 className="ui-text-[16px] ui-leading-[20px] ui-text-[#0C3045] ui-font-bold">
+              <h5 className="ui:text-[16px] ui:leading-[20px] ui:text-dark-blue ui:font-bold">
                 {entity?.name}
               </h5>
             </div>
             {modalData === null ? (
-              <div className="ui-flex ui-justify-end ui-items-center ui-w-[325px]">
+              <div className="ui:flex ui:justify-end ui:items-center ui:w-[325px]">
                 <Button
                   variant="light"
-                  className="ui-mr-[16px] ui-p-0 ui-bg-transparent hover:!ui-bg-transparent"
+                  className="ui:mr-[16px] ui:p-0 ui:bg-transparent ui:hover:bg-transparent!"
                   onClick={() =>
                     setValue('customers', [
                       ...watch('customers'),
@@ -214,7 +214,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                   }
                   type="button"
                 >
-                  <div className="ui-mr-[4.16px]">
+                  <div className="ui:mr-[4.16px]">
                     <Plus />
                   </div>
                   {t('entity:detail.customer_vendor.add_customer')}
@@ -225,11 +225,11 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
           {inputFields.length > 0
             ? inputFields.map((item: TCustomerSelected, idx: number) => (
                 <div
-                  className="ui-my-[16px] ui-flex ui-justify-center ui-items-start"
+                  className="ui:my-[16px] ui:flex ui:justify-center ui:items-start"
                   key={idx?.toString()}
                 >
-                  <FormControl className="ui-mr-[16px] ui-w-full">
-                    <FormLabel className="ui-text-[14px] ui-leading-[20px]">
+                  <FormControl className="ui:mr-[16px] ui:w-full">
+                    <FormLabel className="ui:text-[14px] ui:leading-[20px]">
                       {t('entity:detail.customer_vendor.customer')}
                     </FormLabel>
                     <Controller
@@ -287,7 +287,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                       </FormErrorMessage>
                     )}
                   </FormControl>
-                  <FormControl className="ui-w-full">
+                  <FormControl className="ui:w-full">
                     <FormLabel>
                       {t('entity:detail.customer_vendor.activity')}
                     </FormLabel>
@@ -323,7 +323,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                     <Button
                       variant="light"
                       color="danger"
-                      className="ui-bg-transparent ui-p-0 ui-h-auto hover:!ui-bg-transparent ui-ml-[16px] ui-mt-[24px]"
+                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent! ui:ml-[16px] ui:mt-[24px]"
                       onClick={() =>
                         setValue(
                           'customers',
@@ -335,7 +335,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                       type="button"
                     >
                       {t('common:delete')}
-                      <div className="ui-ml-[4.16px] ui-rotate-45 ui-mt-1">
+                      <div className="ui:ml-[4.16px] ui:rotate-45 ui:mt-1">
                         <Plus />
                       </div>
                     </Button>
@@ -344,13 +344,13 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
               ))
             : null}
         </DialogContent>
-        <div className="ui-h-1 ui-border-t ui-border-neutral-300" />
+        <div className="ui:h-1 ui:border-t ui:border-neutral-300" />
         <DialogFooter>
-          <div className="ui-flex ui-justify-center ui-items-end ui-w-full ui-mb-[8px]">
+          <div className="ui:flex ui:justify-center ui:items-end ui:w-full ui:mb-[8px]">
             <Button
               variant="outline"
               onClick={handleClose}
-              className="ui-mr-[12px] ui-w-full"
+              className="ui:mr-[12px] ui:w-full"
               type="button"
               disabled={isProcessing}
             >
@@ -358,7 +358,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
             </Button>
             <Button
               variant="solid"
-              className="ui-w-full"
+              className="ui:w-full"
               type="button"
               onClick={handleSubmit}
               loading={isProcessing}

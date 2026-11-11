@@ -24,10 +24,10 @@ export default function DashboardDownloadFileCard(props: Props) {
   })
 
   return (
-    <div className="ui-flex ui-justify-between ui-items-center ui-gap-2 ui-p-4 ui-rounded ui-border ui-border-neutral-300">
-      <div className="ui-space-y-0.5">
+    <div className="ui:flex ui:justify-between ui:items-center ui:gap-2 ui:p-4 ui:rounded ui:border ui:border-neutral-300">
+      <div className="ui:space-y-0.5">
         <H5>{title || '-'}</H5>
-        <p className="ui-flex ui-item-center ui-gap-2 ui-text-gray-500 ui-text-[15px]">
+        <p className="ui:flex ui-item-center ui:gap-2 ui:text-gray-500 ui:text-[15px]">
           <span>{t('last_updated')}:</span>
           <span>{parseDateTime(updated_at)}</span>
         </p>
@@ -38,7 +38,7 @@ export default function DashboardDownloadFileCard(props: Props) {
         type="button"
         onClick={() => refetch()}
         disabled={isLoading || isFetching}
-        leftIcon={<Download className="ui-size-5" />}
+        leftIcon={<Download className="ui:size-5" />}
       >
         {t('download')}
       </Button>

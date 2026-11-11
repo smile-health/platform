@@ -46,12 +46,12 @@ const EntityFormInformation: React.FC<Props> = ({
   } = useFormContext<TFormData>()
 
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-mb-4 ui-font-bold">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:mb-4 ui:font-bold">
         {t('entity:form.information.title')}
       </div>
 
-      <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+      <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
         <FormControl>
           <FormLabel>{t('entity:satu_sehat_code')}</FormLabel>
           <InputNumberV2
@@ -105,7 +105,7 @@ const EntityFormInformation: React.FC<Props> = ({
             </FormErrorMessage>
           )}
         </FormControl>
-        <div className="ui-grid ui-grid-cols-2 ui-gap-x-6">
+        <div className="ui:grid ui:grid-cols-2 ui:gap-x-6">
           <FormControl>
             <FormLabel required>
               {t('entity:form.information.label.type')}
@@ -150,7 +150,7 @@ const EntityFormInformation: React.FC<Props> = ({
             )}
           </FormControl>
         </div>
-        {/* <div className="ui-grid ui-grid-cols-2 ui-gap-x-6">
+        {/* <div className="ui:grid ui:grid-cols-2 ui:gap-x-6">
           <FormControl>
             <FormLabel>{t('entity:form.information.label.hc')}</FormLabel>
             <RadioGroup>

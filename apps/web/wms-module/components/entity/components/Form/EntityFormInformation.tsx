@@ -10,8 +10,8 @@ const EntityFormInformation: React.FC = () => {
   const { t } = useTranslation(['entityWMS', 'common']);
 
   return (
-    <div className="ui-p-4 ui-border ui-rounded">
-      <div className="ui-grid ui-grid-cols-1 ui-gap-x-6 ui-gap-y-6">
+    <div className="ui:p-4 ui:border ui:rounded">
+      <div className="ui:grid ui:grid-cols-1 ui:gap-x-6 ui:gap-y-6">
         <FormControl>
           <FormLabel>
             {t('entityWMS:form.information.label.head_name')}
@@ -23,7 +23,7 @@ const EntityFormInformation: React.FC = () => {
         </FormControl>
         <FormControl>
           <FormLabel required>{t('entityWMS:form.gender.label')}</FormLabel>
-          <div className="ui-flex ui-items-center ui-gap-4">
+          <div className="ui:flex ui:items-center ui:gap-4">
             <Radio
               data-testid="radio-male"
               label={t('entityWMS:form.gender.male')}

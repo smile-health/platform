@@ -38,7 +38,7 @@ const DashboardAnnualCommitmentVsRealizationProvince: React.FC<Props> = ({
   return (
     <DashboardBox.Root id={downloadConfig.province.targetElementId}>
       <DashboardBox.Header bordered size="small">
-        <div className="ui-flex ui-justify-center ui-items-center ui-gap-1.5">
+        <div className="ui:flex ui:justify-center ui:items-center ui:gap-1.5">
           <h4>
             <strong>
               {data.title ??
@@ -47,7 +47,7 @@ const DashboardAnnualCommitmentVsRealizationProvince: React.FC<Props> = ({
           </h4>
 
           <button type="button" onClick={setInformation}>
-            <InformationCircleIcon className="ui-size-5" />
+            <InformationCircleIcon className="ui:size-5" />
           </button>
         </div>
       </DashboardBox.Header>
@@ -62,8 +62,8 @@ const DashboardAnnualCommitmentVsRealizationProvince: React.FC<Props> = ({
         {(view) => (
           <DashboardBox.Body>
             <DashboardBox.Content
-              className={cx('ui-relative ui-h-[840px]', {
-                'ui-h-[680px]': view === 'table',
+              className={cx('ui:relative ui:h-[840px]', {
+                'ui:h-[680px]': view === 'table',
               })}
               isLoading={isLoading}
               isEmpty={chartData.datasets.length === 0}
@@ -89,7 +89,7 @@ const DashboardAnnualCommitmentVsRealizationProvince: React.FC<Props> = ({
                   data={dataTable}
                   isLoading={isLoading}
                   columns={columns}
-                  className="ui-max-h-[560px]"
+                  className="ui:max-h-[560px]"
                 />
               )}
             </DashboardBox.Content>

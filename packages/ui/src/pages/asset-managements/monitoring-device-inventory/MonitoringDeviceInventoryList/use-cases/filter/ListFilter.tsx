@@ -15,21 +15,21 @@ export const ListFilter = () => {
 
   return (
     <FilterFormRoot collapsible onSubmit={filter.handleSubmit}>
-      <FilterFormBody className="ui-grid-cols-4">
+      <FilterFormBody className="ui:grid-cols-4">
         {filter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
         <div>
           <FilterExpandButton />
         </div>
-        <div className="ui-space-x-3 ui-gap-1 ui-flex ui-items-center">
+        <div className="ui:space-x-3 ui:gap-1 ui:flex ui:items-center">
           <ListExportButton />
-          <span className="ui-h-[24px] ui-w-px ui-bg-neutral-300" />
+          <span className="ui:h-[24px] ui:w-px ui:bg-neutral-300" />
           <FilterResetButton onClick={filter.reset} variant="subtle" />
           <FilterSubmitButton
             onClick={() => filter.handleSubmit()}
             variant="outline"
-            className="ui-w-56"
+            className="ui:w-56"
           />
         </div>
       </FilterFormFooter>
