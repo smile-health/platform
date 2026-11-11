@@ -1,5 +1,5 @@
 import { TPartnershipOperator } from '@/types/partnership-operator';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 export const columnsOperatorTable = (

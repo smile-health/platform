@@ -1,6 +1,6 @@
 import React, { Fragment, useMemo } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import { DataTable } from '#components/data-table'
 import { FormErrorMessage } from '#components/form-control'

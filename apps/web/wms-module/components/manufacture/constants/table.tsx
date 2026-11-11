@@ -3,7 +3,7 @@ import { getAssetTypeOptions } from '@/components/healthcare/utils/helper';
 import { TManufacture } from '@/types/manufacture';
 import { loggedAsAdmin } from '@/utils/getUserRole';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import dayjs from 'dayjs';
 import { TFunction } from 'i18next';
 

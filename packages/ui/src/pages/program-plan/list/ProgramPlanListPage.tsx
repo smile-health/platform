@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useFeatureIsOn } from '@growthbook/growthbook-react'
-import { SortingState } from '@tanstack/react-table'
+import { SortingState } from '#utils/table'
 import { Button } from '#components/button'
 import {
   FilterFormBody,

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react'
 import { PlusIcon } from '@heroicons/react/24/solid'
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { ColumnDef, Row } from '#utils/table'
 import { Button } from '#components/button'
 import { DataTable } from '#components/data-table'
 import { FormErrorMessage } from '#components/form-control'

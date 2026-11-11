@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import { ColumnSort } from '@tanstack/react-table';
+import { ColumnSort } from '@repo/ui/utils/table';
 
 import { getAssetType } from '@/services/asset-type';
 import { createFilterSchema } from '../schema/AssetTypeSchemaList';

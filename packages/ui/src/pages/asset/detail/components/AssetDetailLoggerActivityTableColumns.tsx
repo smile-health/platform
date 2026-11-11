@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { colorClass } from '#pages/asset/list/components/AssetDegreeManagement'
 import AssetTitleBlock from '#pages/asset/list/components/AssetTitleBlock'
 import { formatToCelcius } from '#utils/strings'

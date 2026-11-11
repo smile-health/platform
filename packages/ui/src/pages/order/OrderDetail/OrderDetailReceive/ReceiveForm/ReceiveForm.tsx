@@ -3,7 +3,7 @@ import { useParams } from 'next/navigation'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { parseDate } from '@internationalized/date'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { Row } from '@tanstack/react-table'
+import { Row } from '#utils/table'
 import { Button } from '#components/button'
 import { DatePicker } from '#components/date-picker'
 import {

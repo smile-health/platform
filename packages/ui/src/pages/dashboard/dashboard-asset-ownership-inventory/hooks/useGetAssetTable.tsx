@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Values } from 'nuqs'
 import { useTranslation } from 'react-i18next'
 

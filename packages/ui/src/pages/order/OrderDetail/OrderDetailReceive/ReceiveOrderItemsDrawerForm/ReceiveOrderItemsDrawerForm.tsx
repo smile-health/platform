@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { ColumnDef, Row } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import {
   FormControl,

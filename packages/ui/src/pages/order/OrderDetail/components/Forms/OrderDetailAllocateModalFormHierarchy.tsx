@@ -3,7 +3,7 @@ import { useParams } from 'next/navigation'
 import { PlusIcon } from '@heroicons/react/24/solid'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useQuery } from '@tanstack/react-query'
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { ColumnDef, Row } from '#utils/table'
 import { Button } from '#components/button'
 import { DataTable } from '#components/data-table'
 import {

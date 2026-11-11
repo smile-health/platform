@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { keepPreviousData, useMutation, useQuery } from '@tanstack/react-query'
-import { SortingState } from '@tanstack/react-table'
+import { SortingState } from '#utils/table'
 import { useFilter, UseFilter } from '#components/filter'
 import { PopupImportData } from '#components/modules/ModalImportV2'
 import { toast } from '#components/toast'

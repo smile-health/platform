@@ -3,7 +3,7 @@ import { THealthcare } from '@/types/healthcare';
 import { loggedAsAdmin } from '@/utils/getUserRole';
 import { Badge } from '@repo/ui/components/badge';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 import { getAssetStatusOptions, getAssetTypeOptions } from '../utils/helper';
 

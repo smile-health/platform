@@ -2,7 +2,7 @@ import { TLogbook } from '@/types/logbook';
 import { isFacilityAdmin, isSanitarian, loggedAsAdmin } from '@/utils/getUserRole';
 import { useFormatWasteBagWeight } from '@/utils/hooks/useFormatWeight';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import dayjs from 'dayjs';
 import { TFunction } from 'i18next';
 

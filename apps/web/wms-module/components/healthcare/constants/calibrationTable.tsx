@@ -1,5 +1,5 @@
 import { THFAssetActivity } from '@/types/hf-asset-activity';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 import dayjs from 'dayjs';
 

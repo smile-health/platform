@@ -3,7 +3,7 @@ import { formatAllowedVehicleTypes } from '@/components/waste-specification/util
 import { TPartnershipVehicle } from '@/types/partnership-vehicle';
 import { loggedAsAdmin } from '@/utils/getUserRole';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 type DataProps = {

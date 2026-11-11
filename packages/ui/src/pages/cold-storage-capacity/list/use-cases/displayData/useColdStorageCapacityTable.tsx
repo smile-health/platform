@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/solid'
-import { ColumnDef, SortingState } from '@tanstack/react-table'
+import { ColumnDef, SortingState } from '#utils/table'
 import {
   TooltipContent,
   TooltipRoot,

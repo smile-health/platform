@@ -1,4 +1,4 @@
-import { CellContext, ColumnDef } from '@tanstack/react-table'
+import { CellContext, ColumnDef } from '#utils/table'
 import { ButtonActionTable } from '#components/modules/ButtonActionTable'
 import { TMaterial, TMaterialList } from '#types/material'
 import { formatToCelcius } from '#utils/strings'

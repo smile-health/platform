@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { TFunction } from 'i18next'
 
 import { TCompliance, TResult } from './dashboard-stock-taking.type'

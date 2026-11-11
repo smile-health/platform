@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 
 import { thousandFormatter } from '../libs/asset-list.common'
 import AssetListContext from '../libs/asset-list.context'

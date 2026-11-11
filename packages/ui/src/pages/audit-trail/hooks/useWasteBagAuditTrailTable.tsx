@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import {
   listWasteBagAuditTrail,
   WasteBagAuditTrailItem,

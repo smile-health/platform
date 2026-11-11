@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { useParams, usePathname } from 'next/navigation'
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { ColumnDef, Row } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import cx from '#lib/cx'
 import { TCapacity } from '#services/asset-model'

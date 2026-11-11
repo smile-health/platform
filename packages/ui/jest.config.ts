@@ -180,8 +180,13 @@ const config: Config = {
   // testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
+  // @tanstack/react-table v9 dan dependensinya hanya rilis ESM, jadi ikut
+  // ditransform babel. Path pnpm: node_modules/.pnpm/@tanstack+x@v/node_modules/@tanstack/x.
+  transformIgnorePatterns: [
+    "/node_modules/(?!\\.pnpm/@tanstack\\+|@tanstack/)"
+  ],
   transform: {
-    "^.+\\.tsx?$": "babel-jest"
+    "^.+\\.[jt]sx?$": "babel-jest"
   }
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

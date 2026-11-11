@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Radio } from '#components/radio'
 import { Stock } from '#types/stock'
 import { useFormContext } from 'react-hook-form'

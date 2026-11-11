@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Checkbox } from '#components/checkbox'
 import { DataTable } from '#components/data-table'
 import { Radio } from '#components/radio'

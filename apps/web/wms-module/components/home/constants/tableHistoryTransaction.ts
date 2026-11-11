@@ -1,5 +1,5 @@
 import { THistoryTransactionWaste } from '@/types/homepage';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import dayjs from 'dayjs';
 import { TFunction } from 'i18next';
 

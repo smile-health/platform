@@ -5,7 +5,7 @@ import { TPartnership } from '@/types/partnership';
 import { loggedAsAdmin } from '@/utils/getUserRole';
 import { Badge } from '@repo/ui/components/badge';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import dayjs from 'dayjs';
 import { TFunction } from 'i18next';
 import { getProviderTypeOptions } from '../utils/helper';

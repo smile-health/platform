@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import Link from 'next/link'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import useSmileRouter from '#hooks/useSmileRouter'
 import { hasPermission } from '#shared/permission/index'

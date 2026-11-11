@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useInfiniteQuery } from '@tanstack/react-query'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { getMaterials, GetProgramMaterialsResponse } from '#services/material'
 import { TMaterial } from '#types/material'
 import { useTranslation } from 'react-i18next'

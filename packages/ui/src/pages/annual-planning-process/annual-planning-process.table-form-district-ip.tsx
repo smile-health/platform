@@ -1,4 +1,4 @@
-import { CellContext, ColumnDef } from "@tanstack/react-table"
+import { CellContext, ColumnDef } from "#utils/table"
 import {
   GetDetailAnnualPlanningProcessDistrictIPResponse,
   ListMaterialIP,

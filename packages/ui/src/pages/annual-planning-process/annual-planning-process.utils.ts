@@ -24,7 +24,7 @@ import {
   listGroupTarget,
   listMaterialIP
 } from "./annual-planning-process.services"
-import { ColumnDef } from "@tanstack/react-table"
+import { ColumnDef } from "#utils/table"
 import { numberFormatter } from "#utils/formatter"
 
 type Params = {

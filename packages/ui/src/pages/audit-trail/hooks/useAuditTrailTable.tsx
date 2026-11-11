@@ -1,6 +1,6 @@
 import React from 'react'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import useSmileRouter from '#hooks/useSmileRouter'
 import { listAuditLogs, TAuditLog } from '#services/audit-log'

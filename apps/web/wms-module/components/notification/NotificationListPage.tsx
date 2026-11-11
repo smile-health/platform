@@ -12,7 +12,7 @@ import {
 import { DataTable } from '@repo/ui/components/data-table';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { ColumnDef, Row } from '@tanstack/react-table';
+import { ColumnDef, Row } from '@repo/ui/utils/table';
 
 import { CommonType } from '@/types/common';
 import { TNotification } from '@/types/notification';

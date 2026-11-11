@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { TFunction } from 'i18next'
 
 import { ReconciliationItem } from '../reconciliation-detail.service'

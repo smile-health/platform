@@ -3,7 +3,7 @@ import { loggedAsAdmin } from '@/utils/getUserRole';
 import { Button } from '@repo/ui/components/button';
 import { DataTable } from '@repo/ui/components/data-table';
 import { InputNumberV2 } from '@repo/ui/components/input-number-v2';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
-import { SortingState } from '@tanstack/react-table'
+import { SortingState } from '#utils/table'
 import { useFilter, UseFilter } from '#components/filter'
 import { parseAsInteger, parseAsString, useQueryStates } from 'nuqs'
 import { useTranslation } from 'react-i18next'

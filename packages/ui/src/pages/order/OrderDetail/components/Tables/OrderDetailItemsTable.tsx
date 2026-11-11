@@ -1,4 +1,4 @@
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { ColumnDef, Row } from '#utils/table'
 import { Button } from '#components/button'
 import { DataTable } from '#components/data-table'
 import cx from '#lib/cx'

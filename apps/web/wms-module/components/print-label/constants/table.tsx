@@ -1,7 +1,7 @@
 import { TPrintLabel } from '@/types/print-label';
 import { SourceType } from '@/types/waste-source';
 import { isSanitarian, loggedAsAdmin } from '@/utils/getUserRole';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 import { ButtonActionTable } from '@/components/ButtonActionTable';
@@ -49,7 +49,7 @@ export const columnsPrintLabel = (
           return;
         }
         const totalSelected = Object.values(
-          table.getState().rowSelection
+          table.atoms.rowSelection.get()
         ).filter(Boolean).length;
         let remaining = MAX_PRINT_CHARACTERISTICS - totalSelected;
         for (const row of pageRows) {

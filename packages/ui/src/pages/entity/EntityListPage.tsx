@@ -7,7 +7,7 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query'
-import { functionalUpdate, SortingState } from '@tanstack/react-table'
+import { functionalUpdate, SortingState } from '#utils/table'
 import { Button } from '#components/button'
 import {
   FilterExpandButton,

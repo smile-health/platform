@@ -4,7 +4,7 @@ import { parseAsBoolean, parseAsInteger, parseAsString, useQueryStates } from 'n
 import { useTranslation } from 'react-i18next'
 
 import { useSetLoadingPopupStore } from '#hooks/useSetLoading'
-import { functionalUpdate, SortingState } from '@tanstack/react-table'
+import { functionalUpdate, SortingState } from '#utils/table'
 import { useMemo } from 'react'
 import { useFilter, UseFilter } from '#components/filter'
 import { createFilterSchema } from '../schemas/filter'

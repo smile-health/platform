@@ -2,7 +2,7 @@ import { ButtonActionTable } from '@/components/ButtonActionTable';
 import { TUser } from '@/types/user';
 import { Badge } from '@repo/ui/components/badge';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 import i18n from '@/locales/i18n';
 

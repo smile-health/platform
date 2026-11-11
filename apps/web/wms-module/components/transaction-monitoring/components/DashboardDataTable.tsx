@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { DataTable } from '@repo/ui/components/data-table';
 import {
   Pagination,

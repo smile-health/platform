@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react'
-import { Row } from '@tanstack/react-table'
+import { Row } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import {
   FormControl,

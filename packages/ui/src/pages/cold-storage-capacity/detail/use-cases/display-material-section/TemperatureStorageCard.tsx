@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react'
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
-import { CellContext, ColumnDef } from '@tanstack/react-table'
+import { CellContext, ColumnDef } from '#utils/table'
 import { DataTable } from '#components/data-table'
 import { RenderDetailValue } from '#components/modules/RenderDetailValue'
 import {

@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback, useMemo, useState } from 'react'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import { DataTable } from '#components/data-table'
 import { Radio } from '#components/radio'

@@ -1,6 +1,6 @@
 import { TWasteCharacteristicSummary } from '@/types/homepage';
 import { useFormatWasteBagWeight } from '@/utils/hooks/useFormatWeight';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import { TFunction } from 'i18next';
 
 export const ColumnsWasteCharacteristicsSummary = (

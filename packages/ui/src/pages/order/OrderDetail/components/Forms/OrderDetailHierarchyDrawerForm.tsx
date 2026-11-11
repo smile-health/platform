@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef } from '#utils/table'
 import { Alert } from '#components/alert'
 import { Button } from '#components/button'
 import { DataTable } from '#components/data-table'

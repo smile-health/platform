@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import { ColumnSort } from '@tanstack/react-table';
+import { ColumnSort } from '@repo/ui/utils/table';
 
 import { getWasteHierarchy } from '@/services/waste-hierarchy';
 import { getReactSelectValue } from '@repo/ui/utils/react-select';

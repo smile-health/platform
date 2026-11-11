@@ -2,7 +2,7 @@ import { TBast } from '@/types/bast';
 import { isFacilityAdmin } from '@/utils/getUserRole';
 import { Badge, BadgeColor } from '@repo/ui/components/badge';
 import { Button } from '@repo/ui/components/button';
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef } from '@repo/ui/utils/table';
 import dayjs from 'dayjs';
 import { TFunction } from 'i18next';
 import { mapBastStatus } from '../utils/helper';

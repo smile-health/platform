@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
-import { ColumnDef } from "@tanstack/react-table"
+import { ColumnDef } from "#utils/table"
 import { DataTable } from "#components/data-table"
 import { FormPopulationCorrectionContext } from "../context/ContextProvider"
 import { setColumnInformationPopulationAdjustment } from "../annual-planning-process.utils"

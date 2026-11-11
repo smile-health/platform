@@ -1,4 +1,4 @@
-import { ColumnDef } from "@tanstack/react-table"
+import { ColumnDef } from "#utils/table"
 import {
   ListInformationPopulationTarget,
   ListPopulationTargetHealthCare,

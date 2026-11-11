@@ -7,7 +7,7 @@ import { CommonType } from "#types/common";
 import { TEntities } from "#types/entity";
 import { useTranslation } from "react-i18next";
 
-import { SortingState } from "@tanstack/react-table";
+import { SortingState } from "#utils/table";
 
 import { DataTable } from "../../../components/data-table/DataTable";
 import { columns } from "../constants/table";

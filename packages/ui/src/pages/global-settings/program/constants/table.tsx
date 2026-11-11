@@ -3,7 +3,7 @@ import ActiveLabel from "#components/modules/ActiveLabel"
 import { ActivityData } from "#types/activity"
 import { TProgram } from "#types/program"
 import { parseDateTime } from "#utils/date"
-import { ColumnDef } from "@tanstack/react-table"
+import { ColumnDef } from "#utils/table"
 import { TFunction } from "i18next"
 import { PROTOCOL_NAME } from "./options"
 

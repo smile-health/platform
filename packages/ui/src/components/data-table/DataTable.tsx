@@ -14,17 +14,21 @@ import {
   ArrowUpIcon,
 } from '@heroicons/react/24/solid'
 import {
-  ColumnDef,
-  ExpandedState,
   flexRender,
-  getCoreRowModel,
-  getExpandedRowModel,
-  getSortedRowModel,
-  Row,
-  RowData,
-  SortingState,
-  useReactTable,
+  useTable,
+  type CellData,
+  type Row as TanstackRow,
+  type RowData,
+  type TableFeatures,
 } from '@tanstack/react-table'
+import {
+  appTableFeatures,
+  type ColumnDef,
+  type ExpandedState,
+  type Row,
+  type RowSelectionState,
+  type SortingState,
+} from '#utils/table'
 import { EmptyState } from '#components/empty-state'
 import cx from '#lib/cx'
 import { useTranslation } from 'react-i18next'
@@ -32,17 +36,21 @@ import { useTranslation } from 'react-i18next'
 import DataTableLoader from './DataTableLoader'
 
 declare module '@tanstack/react-table' {
-  interface ColumnMeta<TData extends RowData, TValue> {
+  interface ColumnMeta<
+    in out TFeatures extends TableFeatures,
+    in out TData extends RowData,
+    TValue extends CellData = CellData,
+  > {
     hidden?: boolean | null
     headerClassName?: string
     footerClassName?: string
-    cellClassName?: string | ((row: Row<TData>) => string)
+    cellClassName?: string | ((row: TanstackRow<TFeatures, TData>) => string)
     headerSubComponent?: React.ReactNode
-    rowSpan?: number | ((row: Row<TData>) => number)
+    rowSpan?: number | ((row: TanstackRow<TFeatures, TData>) => number)
   }
 }
 
-export type DataTableProps<Value> = {
+export type DataTableProps<Value extends RowData = any> = {
   columns: ColumnDef<Value>[]
   data?: Value[]
   isLoading?: boolean
@@ -118,7 +126,7 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
       stickyColumns = [],
       customEmptyComponent,
       getRowId,
-    }: DataTableProps<unknown>,
+    }: DataTableProps<any>,
     ref
   ) => {
     const { t } = useTranslation('common')
@@ -127,28 +135,30 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
 
     const memoizedFlexRender = useMemo(() => flexRender, [])
 
-    const table = useReactTable({
+    const table = useTable({
+      features: appTableFeatures,
       data,
       columns,
       state: {
         sorting,
         expanded,
-        rowSelection,
+        // v9 menyimpan baris terpilih sebagai Record<string, true>; nilai
+        // false dari pemanggil tetap dianggap tidak terpilih.
+        rowSelection: rowSelection as RowSelectionState | undefined,
       },
       manualSorting: true,
       sortDescFirst: false,
       getRowCanExpand: handleExpand,
       onExpandedChange: expandOptions?.single ? undefined : setExpanded,
-      getCoreRowModel: getCoreRowModel(),
-      getSortedRowModel: getSortedRowModel(),
-      getExpandedRowModel: getExpandedRowModel(),
       onSortingChange: setSorting,
       defaultColumn: {
         size: 0,
         cell: ({ getValue }) => getValue() ?? '-',
       },
       enableRowSelection: true,
-      onRowSelectionChange: setRowSelection,
+      onRowSelectionChange: setRowSelection as
+        | React.Dispatch<React.SetStateAction<RowSelectionState>>
+        | undefined,
       getRowId: getRowId
         ? (row: unknown, index: number) => getRowId(row, index)
         : (row: unknown) => (row as any).id?.toString(),

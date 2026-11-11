@@ -4,7 +4,7 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query'
-import { CellContext, ColumnDef, SortingState } from '@tanstack/react-table'
+import { CellContext, ColumnDef, SortingState } from '#utils/table'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { ButtonActionTable } from '#components/modules/ButtonActionTable'
 import useChangeStatus from '#hooks/useChangeStatus'

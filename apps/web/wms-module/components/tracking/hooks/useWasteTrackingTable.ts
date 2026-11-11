@@ -7,7 +7,7 @@ import { getUserRoleString } from '@/utils/getUserRole';
 import { UseFilter, useFilter } from '@repo/ui/components/filter';
 import { getReactSelectValue } from '@repo/ui/utils/react-select';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import { ColumnSort } from '@tanstack/react-table';
+import { ColumnSort } from '@repo/ui/utils/table';
 import { parseAsInteger, parseAsString, useQueryStates } from 'nuqs';
 import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
