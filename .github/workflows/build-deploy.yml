@@ -175,6 +175,11 @@ jobs:
           cp -r apps/wms-encore/. /tmp/wms-iso/
           rm -rf /tmp/wms-iso/node_modules /tmp/wms-iso/encore.gen /tmp/wms-iso/.encore
           cp apps/wms-encore/pnpm-lock.yaml /tmp/wms-iso/pnpm-lock.yaml
+          # The isolated install does not see the root pnpm-workspace.yaml, so
+          # carry over its minimumReleaseAgeExclude (pnpm 12 supply-chain policy).
+          awk '/^minimumReleaseAgeExclude:/{f=1;print;next} f&&/^  - /{print;next} {f=0}' \
+            pnpm-workspace.yaml > /tmp/wms-iso/pnpm-workspace.yaml
+          cat /tmp/wms-iso/pnpm-workspace.yaml
 
       - name: Install isolated dependencies
         working-directory: /tmp/wms-iso
