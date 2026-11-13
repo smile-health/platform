@@ -61,3 +61,5 @@ allowBuilds:
   "ssh2": true
   "unrs-resolver": true
   "pnpm": false
+minimumReleaseAgeExclude:
+  - encore.dev@1.58.9

@@ -1,8 +1,8 @@
-FROM node:24-alpine AS base
+FROM node:26-alpine AS base
 
 FROM base AS builder
 RUN apk update && apk add --no-cache libc6-compat jq python3 make g++ && rm -rf /var/cache/apk/*
-RUN npm install -g pnpm@12.18.0 turbo@2.11.10
+RUN npm install -g pnpm@12.20.0 turbo@2.11.11
 
 # NEXT_PUBLIC_* vars are inlined at build time by Next.js. They MUST be present
 # here (as ARG) so the image bakes the correct values. Values are supplied via

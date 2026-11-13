@@ -5,8 +5,9 @@ FROM oven/bun:1
 RUN apt-get update && \
     apt-get install -y --no-install-recommends jq wget curl ca-certificates && \
     update-ca-certificates && \
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash && \
+    curl -fsSL https://deb.nodesource.com/setup_26.x | bash && \
     apt-get install -y --no-install-recommends nodejs && \
+    node --version | grep -q '^v26\.' && \
     rm -rf /var/lib/apt/lists/* && \
     npm install -g pnpm@9.12.3
 
