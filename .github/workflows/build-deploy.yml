@@ -154,12 +154,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
 
       - name: Install Encore CLI
         run: |
           # Keep in step with the encore.dev version in apps/wms-encore/package.json.
-          curl -L https://encore.dev/install.sh | bash -s -- 1.58.8
+          curl -L https://encore.dev/install.sh | bash -s -- 1.58.9
           echo "$HOME/.encore/bin" >> "$GITHUB_PATH"
 
       # IMPORTANT: build wms-encore from an ISOLATED dir, not the monorepo root.
