@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { CalendarIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { DateValue } from '@internationalized/date'
 import cx from '#lib/cx'
-import { toIntlLocale } from '#utils/locale'
+import i18next from 'i18next'
+import { defaultPickerLocale, toIntlLocale } from '#utils/locale'
 import { AnimatePresence } from 'framer-motion'
 import { AriaDatePickerProps, I18nProvider, useDatePicker } from 'react-aria'
 import { useDatePickerState } from 'react-stately'
@@ -53,7 +54,7 @@ export function DatePicker(props: DatePickerProps) {
   }, [state.isOpen])
 
   return (
-    <I18nProvider locale={toIntlLocale(props.locale ?? 'en-UK')}>
+    <I18nProvider locale={toIntlLocale(props.locale ?? defaultPickerLocale(i18next.language))}>
       <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-start">
         <div
           {...groupProps}

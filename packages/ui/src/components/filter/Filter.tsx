@@ -44,7 +44,9 @@ import {
   UseFormSetValue,
   UseFormWatch,
 } from 'react-hook-form'
+import i18next from 'i18next'
 import { useTranslation } from 'react-i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 const parseISOString = (dateString: string): DateValue | null => {
   if (!dateString) return null
@@ -505,7 +507,7 @@ const SelectAsyncPaginateField = ({
   return (
     <FormControl key={field.name} className={field.className}>
       <FormLabel required={Boolean(field?.required)} htmlFor={field?.id}>
-        {field.label}
+        {getLocalizedStaticLabel(field.label, i18next.language)}
       </FormLabel>
       <Controller
         name={field.name}
@@ -766,7 +768,7 @@ export function useFilter(schema: UseFilter) {
         return (
           <FormControl key={field.name} className={field.className}>
             <FormLabel required={field?.required ?? false}>
-              {field.label}
+              {getLocalizedStaticLabel(field.label, i18next.language)}
             </FormLabel>
             <Controller
               name={field.name}
@@ -799,7 +801,7 @@ export function useFilter(schema: UseFilter) {
         return (
           <FormControl key={field.name} className={field.className}>
             <FormLabel required={field?.required ?? false}>
-              {field.label}
+              {getLocalizedStaticLabel(field.label, i18next.language)}
             </FormLabel>
             <Controller
               name={field.name}
@@ -833,7 +835,7 @@ export function useFilter(schema: UseFilter) {
         return (
           <FormControl key={field.name} className={field.className}>
             <FormLabel required={Boolean(field?.required)} htmlFor={field?.id}>
-              {field.label}
+              {getLocalizedStaticLabel(field.label, i18next.language)}
             </FormLabel>
             <Controller
               name={field.name}
@@ -916,7 +918,7 @@ export function useFilter(schema: UseFilter) {
               htmlFor={field.id}
               id={field.id + '-label'}
             >
-              {field.label}
+              {getLocalizedStaticLabel(field.label, i18next.language)}
             </FormLabel>
             <Controller
               name={field.name}
@@ -963,7 +965,7 @@ export function useFilter(schema: UseFilter) {
         return (
           <FormControl key={field.name} className={field.className}>
             <FormLabel required={field?.required ?? false}>
-              {field.label}
+              {getLocalizedStaticLabel(field.label, i18next.language)}
             </FormLabel>
             <Controller
               name={field.name}
@@ -1011,7 +1013,7 @@ export function useFilter(schema: UseFilter) {
         return (
           <FormControl key={field.name} className={field.className}>
             <FormLabel required={field?.required ?? false}>
-              {field.label}
+              {getLocalizedStaticLabel(field.label, i18next.language)}
             </FormLabel>
             <div className="ui:w-full ui:flex ui:items-center ui:gap-4 ui:h-10">
               {field.options.map((item) => {
@@ -1054,7 +1056,7 @@ export function useFilter(schema: UseFilter) {
         return (
           <FormControl key={field.name} className={field.className}>
             <FormLabel required={field?.required ?? false}>
-              {field.label}
+              {getLocalizedStaticLabel(field.label, i18next.language)}
             </FormLabel>
             <Controller
               name={field.name}
@@ -1091,7 +1093,7 @@ export function useFilter(schema: UseFilter) {
         return (
           <FormControl key={field.name} className={field.className}>
             <FormLabel required={field?.required ?? false}>
-              {field.label}
+              {getLocalizedStaticLabel(field.label, i18next.language)}
             </FormLabel>
             <Controller
               name={field.name}
@@ -1237,7 +1239,9 @@ export function useFilter(schema: UseFilter) {
 
                 return (
                   <Fragment key={key}>
-                    <span className="ui:font-semibold ui:me-1">{label}: </span>
+                    <span className="ui:font-semibold ui:me-1">
+                      {getLocalizedStaticLabel(label, i18next.language)}:{' '}
+                    </span>
                     <span>{displayValue}</span>
                     <span className="ui:last:hidden ui:mx-2">|</span>
                   </Fragment>

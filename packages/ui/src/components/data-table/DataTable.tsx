@@ -32,6 +32,7 @@ import {
 import { EmptyState } from '#components/empty-state'
 import cx from '#lib/cx'
 import { useTranslation } from 'react-i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 import DataTableLoader from './DataTableLoader'
 
@@ -129,7 +130,7 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
     }: DataTableProps<any>,
     ref
   ) => {
-    const { t } = useTranslation('common')
+    const { t, i18n } = useTranslation('common')
 
     const [expanded, setExpanded] = useState<ExpandedState>({})
 
@@ -314,10 +315,16 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
                           >
                             {header.isPlaceholder
                               ? null
-                              : flexRender(
-                                header.column.columnDef.header,
-                                header.getContext()
-                              )}
+                              : typeof header.column.columnDef.header ===
+                                  'string'
+                                ? getLocalizedStaticLabel(
+                                    header.column.columnDef.header,
+                                    i18n.language
+                                  )
+                                : flexRender(
+                                    header.column.columnDef.header,
+                                    header.getContext()
+                                  )}
                             {{
                               asc: <ArrowDownIcon />,
                               desc: <ArrowUpIcon />,

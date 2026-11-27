@@ -114,3 +114,49 @@ export function getLocalizedRoleName(
   if (!dictionary) return roleLabel
   return dictionary.byLabel[normalizeLabel(roleLabel)] ?? roleLabel
 }
+
+/**
+ * Label statis yang ditulis langsung di kode (header kolom `'No.'`, label
+ * filter `'Material'`, dst.), bukan lewat i18next. Dipakai terpusat di
+ * DataTable dan Filter supaya ratusan definisi kolom tidak perlu diubah satu
+ * per satu. Akhiran titik dua (`'Status :'`) dipertahankan.
+ */
+const STATIC_LABELS: Record<string, Record<string, string>> = {
+  ar: {
+    no: 'رقم',
+    si_no: 'رقم',
+    status: 'الحالة',
+    item: 'العنصر',
+    min: 'الحد الأدنى',
+    max: 'الحد الأقصى',
+    total: 'الإجمالي',
+    program: 'البرنامج',
+    material: 'المادة',
+    batch: 'الدفعة',
+    tag: 'الوسم',
+    name: 'الاسم',
+    phone: 'الهاتف',
+    email: 'البريد الإلكتروني',
+    action: 'إجراء',
+    quantity: 'الكمية',
+    qty: 'الكمية',
+    entity: 'الكيان',
+    activity: 'النشاط',
+    type: 'النوع',
+    date: 'التاريخ',
+  },
+}
+
+export function getLocalizedStaticLabel<T>(
+  label: T,
+  language?: string | null
+): T | string {
+  if (typeof label !== 'string' || !label) return label
+  const dictionary = STATIC_LABELS[baseLanguage(language)]
+  if (!dictionary) return label
+  const match = /^(.*?)(\s*:\s*)?$/.exec(label)
+  const core = match?.[1] ?? label
+  const suffix = match?.[2] ? ' :' : ''
+  const translated = dictionary[normalizeLabel(core)]
+  return translated ? `${translated}${suffix}` : label
+}

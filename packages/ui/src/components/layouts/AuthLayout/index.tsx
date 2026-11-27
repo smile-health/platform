@@ -60,7 +60,7 @@ const AuthLayout: React.FC<Props> = (props) => {
               })}
             >
               <Link id="redirect-login" href={`/${language}/v5/login`}>
-                Login
+                {t("login:login")}
               </Link>
             </div>
             <div className="text-gray-700">|</div>

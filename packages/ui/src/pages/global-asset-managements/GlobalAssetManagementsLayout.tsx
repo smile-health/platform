@@ -28,19 +28,21 @@ const GlobalAssetManagementsLayout: React.FC<TProps> = ({
   const tabs = useMemo(
     () => [
       {
-        label: t('tab.global_asset_managements.asset_inventory'),
+        label: t('tab.global_asset_managements.managements.tabs.asset_inventory'),
         url: `/${language}/v5/global-asset-managements/operational-asset-inventory`,
         hidden: false,
       },
       {
         label: t(
-          'tab.global_asset_managements.remote_temperature_monitoring_device'
+          'tab.global_asset_managements.managements.tabs.remote_temperature_monitoring_device'
         ),
         url: `/${language}/v5/global-asset-managements/monitoring-device-inventory`,
         hidden: !hasPermission('monitoring-device-inventory-global-view'),
       },
       {
-        label: t('tab.global_asset_managements.storage_temperature_monitoring'),
+        label: t(
+          'tab.global_asset_managements.managements.tabs.storage_temperature_monitoring.label'
+        ),
         url: `/${language}/v5/global-asset-managements/storage-temperature-monitoring`,
         hidden: !hasPermission('storage-temperature-monitoring-global-view'),
       },
