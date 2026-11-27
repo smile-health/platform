@@ -6,6 +6,7 @@ import Download from '#components/icons/Download'
 import ExcelFile from '#components/icons/ExcelFile'
 import { Color } from '#types/component'
 import { parseDateTime } from '#utils/date'
+import { getLocalizedProgramName } from '#utils/localized-name'
 import { useTranslation } from 'react-i18next'
 
 import { STATUS } from '../export-history-list.constant'
@@ -79,7 +80,9 @@ const ListExportFile = ({
               </Badge>
               <span className="ui:h-full ui:w-px ui:bg-neutral-300" />
               <div className="ui:text-xs ui:text-dark-blue ui:p-1">
-                {item?.program?.name ?? 'Global'}
+                {item?.program
+                  ? getLocalizedProgramName(item.program, language)
+                  : getLocalizedProgramName('Global', language)}
               </div>
             </div>
           </div>

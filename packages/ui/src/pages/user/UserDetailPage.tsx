@@ -26,7 +26,7 @@ import {
 
 const UserDetailPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
   usePermission(isGlobal ? 'user-global-view' : 'user-view')
-  const { t } = useTranslation(['common', 'user'])
+  const { t, i18n } = useTranslation(['common', 'user'])
   const params = useParams()
 
   const [userDetail, userHistory] = useQueries({
@@ -52,7 +52,7 @@ const UserDetailPage: FC<CommonType> = ({ isGlobal }): JSX.Element => {
     ],
   })
 
-  const detail = generateUserDetail(t, userDetail?.data)
+  const detail = generateUserDetail(t, userDetail?.data, i18n.language)
 
   useSetLoadingPopupStore(userDetail?.isFetching || userHistory?.isFetching)
 

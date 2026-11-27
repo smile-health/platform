@@ -21,6 +21,7 @@ import 'dayjs/locale/id'
 import 'dayjs/locale/en'
 
 import { BOOLEAN } from '#constants/common'
+import { getLocalizedProgramName } from '#utils/localized-name'
 
 import { TRANSACTION_TYPE } from '../../TransactionCreate/transaction-create.constant'
 
@@ -134,8 +135,8 @@ export const MainColumn = ({ t, locale, program }: TMainColumn) => {
 
         const transferStockDescription =
           Number(row.original?.change_qty) <= 0
-            ? `${t('common:from')} ${program?.name} (${row.original?.activity?.name}) ${t('common:to')} ${row.original?.companion_program?.name} (${row.original?.companion_activity?.name})`
-            : `${t('common:from')} ${row.original?.companion_program?.name} (${row.original?.companion_activity?.name}) ${t('common:to')} ${program?.name} (${row.original?.activity?.name})`
+            ? `${t('common:from')} ${getLocalizedProgramName(program, locale)} (${row.original?.activity?.name}) ${t('common:to')} ${getLocalizedProgramName(row.original?.companion_program, locale)} (${row.original?.companion_activity?.name})`
+            : `${t('common:from')} ${getLocalizedProgramName(row.original?.companion_program, locale)} (${row.original?.companion_activity?.name}) ${t('common:to')} ${getLocalizedProgramName(program, locale)} (${row.original?.activity?.name})`
 
         // Other transactions
         const otherTransactionType =

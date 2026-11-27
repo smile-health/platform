@@ -12,6 +12,7 @@ import useSmileRouter from '#hooks/useSmileRouter'
 import { listPlatformUsers, listUsers } from '#services/user'
 import { hasPermission, usePermission } from '#shared/permission/index'
 import { TUser } from '#types/user'
+import { getLocalizedRoleName } from '#utils/localized-name'
 import { getFullName } from '#utils/strings'
 import dayjs from 'dayjs'
 import { parseAsInteger, parseAsString, useQueryStates, Values } from 'nuqs'
@@ -29,7 +30,7 @@ export default function useUserTableTable({
   filter,
   isGlobal,
 }: UseUserTableTableParams) {
-  const { t } = useTranslation(['user', 'common'])
+  const { t, i18n } = useTranslation(['user', 'common'])
   const { isReady } = useSmileRouter()
   const isPermitted = usePermission(isGlobal ? 'user-global-view' : 'user-view')
   const queryClient = useQueryClient()
@@ -122,6 +123,8 @@ export default function useUserTableTable({
       accessorKey: 'role_label',
       size: 100,
       minSize: 100,
+      cell: ({ row }) =>
+        getLocalizedRoleName(row?.original?.role_label, i18n.language),
       enableSorting: true,
     },
     {

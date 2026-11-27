@@ -28,6 +28,7 @@ import { useTranslation } from "react-i18next";
 import LanguageChanger from "../LanguageChanger";
 import DropdownProgram from "./DropdownProgram";
 import NotificationInbox from "./NotificationInbox";
+import { getLocalizedProgramName } from "#utils/localized-name";
 
 const Header: React.FC = () => {
   const {
@@ -68,7 +69,9 @@ const Header: React.FC = () => {
         <div className="ui:flex ui:gap-4 ui:items-center">
           <DropdownProgram />
           <p className="ui:text-base font-bold">
-            {program?.activeProgram?.name ?? "SMILE"}
+            {program?.activeProgram
+              ? getLocalizedProgramName(program.activeProgram, language)
+              : "SMILE"}
           </p>
         </div>
         <div className="ui:flex ui:gap-6 ui:ps-4 ui:items-center">

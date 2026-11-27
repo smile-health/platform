@@ -5,6 +5,7 @@ import { parseDateTime } from '#utils/date'
 import { getUserStorage } from '#utils/storage/user'
 import { getEntityType } from '#utils/user'
 import { useTranslation } from 'react-i18next'
+import { getLocalizedRoleName } from '#utils/localized-name'
 
 export type FetchType = 'all' | 'profile'
 
@@ -56,7 +57,7 @@ export const useAccountManagement = () => {
       },
       {
         label: t('account:field.role'),
-        value: `${data?.user?.role_label ?? ''}`,
+        value: getLocalizedRoleName(data?.user?.role_label, i18n.language),
         id: 'labelRole',
       },
       {
