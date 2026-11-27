@@ -7,6 +7,7 @@ import { OptionType, ReactSelect } from '#components/react-select'
 import { PAGE_SIZE } from '#constants/common'
 import { ICursorPaginatedResponse } from '#types/cursor-pagination'
 import { numberFormatter } from '#utils/formatter'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 import { useTranslation } from 'react-i18next'
 
 import TransactionListCursorContext from '../helpers/transaction-list-cursor.context'
@@ -69,8 +70,8 @@ const TransactionListCursorPagination: React.FC<Props> = ({ data }) => {
             {isLoadingCount
               ? 'Loading...'
               : totalCountData
-                ? `Total ${numberFormatter(totalCountData, language)} data`
-                : 'Total 0 data'}
+                ? `${t('common:total_count')} ${numberFormatter(totalCountData, language)} ${getLocalizedStaticLabel('data', language)}`
+                : `${t('common:total_count')} 0 ${getLocalizedStaticLabel('data', language)}`}
           </span>
         </div>
       </PaginationContainer>

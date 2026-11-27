@@ -98,7 +98,7 @@ export const useAccountManagement = () => {
     title: t('account:title.info_login_device'),
     fields: [
       {
-        label: 'Status',
+        label: getLocalizedStaticLabel('Status', i18n.language),
         value:
           data?.user?.status || 0
             ? t('common:status.active')
