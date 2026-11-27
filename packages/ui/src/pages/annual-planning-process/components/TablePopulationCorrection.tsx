@@ -184,7 +184,7 @@ const TablePopulationCorrection: React.FC = () => {
                   id={inputColumn.key}
                   columnKey={inputColumn.key}
                   key={inputColumn.key}
-                  className={cx("ui:w-10 ui:font-semibold ui:border-r", targetGroup.className)}
+                  className={cx("ui:w-10 ui:font-semibold ui:border-e", targetGroup.className)}
                 >
                   {inputColumn.header}
                 </Th>

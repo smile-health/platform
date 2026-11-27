@@ -1,0 +1,96 @@
+{
+  "last_login_info": "آخر تسجيل دخول في {{info}}",
+  "via": "عبر {{device}}",
+  "information_updated": "تم تحديث المعلومات",
+  "see_changes": "عرض التغييرات",
+  "title": {
+    "edit_profile": "تعديل الملف الشخصي",
+    "edit_password": "تعديل كلمة المرور",
+    "profile_detail": "معلومات المستخدم",
+    "info_login_device": "معلومات نشاط المستخدم",
+    "entity": "الكيان",
+    "history_change_data": "سجل التغييرات",
+    "workspace_entity_info": "معلومات البرنامج والكيان",
+    "profile_title": "حسابي",
+    "main_info": "المعلومات الأساسية",
+    "additional_info": "معلومات إضافية"
+  },
+  "button": {
+    "edit_profile": "تعديل الملف الشخصي",
+    "edit_password": "تعديل كلمة المرور"
+  },
+  "change_history": {
+    "firstname": "الاسم الأول",
+    "lastname": "اسم العائلة",
+    "gender": "الجنس",
+    "phone_number": "رقم الهاتف",
+    "password": {
+      "label": "كلمة المرور",
+      "changed": "تم تحديث كلمة المرور الخاصة بك في {{date}}"
+    }
+  },
+  "form": {
+    "label": {
+      "mobile_phone": "رقم الهاتف",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور القديمة",
+      "new_password": "كلمة المرور الجديدة",
+      "password_confirmation": "تأكيد كلمة المرور الجديدة",
+      "firstname": "الاسم الأول",
+      "lastname": "اسم العائلة",
+      "gender": "الجنس",
+      "date_of_birth": "تاريخ الميلاد",
+      "address": "العنوان"
+    },
+    "placeholder": {
+      "mobile_phone": "رقم الهاتف",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور القديمة",
+      "new_password": "كلمة المرور الجديدة",
+      "password_confirmation": "تأكيد كلمة المرور الجديدة",
+      "firstname": "الاسم الأول",
+      "lastname": "اسم العائلة",
+      "gender": "الجنس",
+      "address": "أدخل العنوان"
+    },
+    "validation": {
+      "empty_field": "جميع الحقول مطلوبة. يرجى إدخال كلمة المرور الحالية وكلمة المرور الجديدة وتأكيد كلمة المرور",
+      "empty_old_password": "كلمة المرور القديمة مطلوبة",
+      "empty_new_password": "كلمة المرور الجديدة مطلوبة",
+      "empty_confirmation_password": "تأكيد كلمة المرور مطلوب",
+      "password_validation_text": "كلمة المرور: 8 أحرف أو أكثر، A-Z، a-z، 0-9، رمز، بدون مسافات.",
+      "password_confirmation_validation": "كلمة المرور الجديدة وتأكيدها غير متطابقين.",
+      "old_password_same_with_new": "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمة المرور الحالية",
+      "first_name_required": "الاسم الأول مطلوب",
+      "email_required": "البريد الإلكتروني مطلوب",
+      "email": "البريد الإلكتروني غير صالح",
+      "phone_number": "رقم الهاتف لا يقل عن 10 أحرف ويجب أن يبدأ بـ 08 أو 628"
+    },
+    "message": {
+      "change_profile_success": "تم تحديث بيانات الملف الشخصي بنجاح"
+    }
+  },
+  "field": {
+    "firstname": "الاسم الأول",
+    "lastname": "اسم العائلة",
+    "username": "اسم المستخدم",
+    "name": "الاسم",
+    "role": "الدور",
+    "gender": "الجنس",
+    "birth_date": "تاريخ الميلاد",
+    "phone_number": "رقم الهاتف",
+    "address": "العنوان",
+    "last_login": "آخر تسجيل دخول",
+    "last_device_access": "آخر جهاز تم الدخول منه",
+    "entity": {
+      "name": "الاسم",
+      "address": "العنوان",
+      "type": "النوع"
+    },
+    "workspace": {
+      "entity_name": "الكيان",
+      "entity_address": "عنوان الكيان",
+      "entity_type": "النوع"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "تفاصيل الالتزام السنوي"
+  },
+  "section": {
+    "detail": {
+      "title": "تفاصيل الالتزام السنوي"
+    },
+    "centralAllocation": {
+      "title": "التخصيص المركزي"
+    },
+    "buffer": {
+      "title": "الاحتياطي"
+    }
+  },
+  "field": {
+    "contract_number": "رقم العقد",
+    "contractDate": "تاريخ العقد",
+    "contract_end_date": "تاريخ انتهاء العقد",
+    "year": "السنة",
+    "supplier": "المورّد",
+    "information": "معلومات"
+  },
+  "table": {
+    "column": {
+      "no": "رقم",
+      "material": "المادة",
+      "materialName": "اسم المادة",
+      "provinceReceiver": "المحافظة المستلمة",
+      "numberVial": "العدد (قارورة/وحدة)",
+      "numberDose": "العدد (جرعة/وحدة)",
+      "action": "إجراء"
+    }
+  },
+  "button": {
+    "edit": "تعديل"
+  }
+}

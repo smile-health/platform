@@ -1,0 +1,72 @@
+{
+  "title": "لوحة معلومات التخلص",
+  "description": "لوحة معلومات التخلص هي تقرير يعرض معاملات التخلص مصنفة حسب سبب التخلص. القيمة المعروضة هي الكمية/عدد الجرعات المتراكمة لكل سبب خلال فترة معينة.",
+  "information": [
+    "<b>السبب:</b> سبب الإتلاف؛ لا يلزم اختياره إذا كنت تريد عرض جميع الأسباب."
+  ],
+  "tabs": {
+    "all": "نظرة عامة",
+    "entity": "الكيان",
+    "location": "المنطقة"
+  },
+  "form": {
+    "period": {
+      "label": "الفترة"
+    },
+    "range": {
+      "label": "نطاق التاريخ"
+    },
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط"
+    },
+    "material": {
+      "type": {
+        "label": "نوع المادة",
+        "placeholder": "اختر نوع المادة"
+      },
+      "level": {
+        "label": "مستوى مادة KFA",
+        "placeholder": "اختر مستوى مادة KFA"
+      },
+      "name": {
+        "label": "المادة",
+        "placeholder": "اختر المادة"
+      }
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "regency": {
+      "label": "المنطقة",
+      "placeholder": "اختر المديرية"
+    },
+    "health_facilities": {
+      "label": "المرافق الصحية",
+      "placeholder": "اختر المرافق الصحية"
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
+    },
+    "reason": {
+      "label": "السبب",
+      "placeholder": "اختر السبب"
+    }
+  },
+  "columns": {
+    "type": "النوع",
+    "entity": "الكيان",
+    "location": "الموقع"
+  },
+  "data": {
+    "dayly": "يومي",
+    "montly": "شهري",
+    "material_level": {
+      "active_subtance": "قالب المنتج"
+    }
+  },
+  "from_to": "من {{from}} إلى {{to}}",
+  "last_updated_at": "آخر تحديث في"
+}

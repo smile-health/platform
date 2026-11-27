@@ -53,7 +53,7 @@ const ListExportFile = ({
       className="ui:w-full ui:h-28 ui:bg-white ui:rounded ui:border ui:border-gray-300"
       key={`item-history-file-${index.toString()}`}
     >
-      <div className="ui:flex ui:pl-5 ui:py-5">
+      <div className="ui:flex ui:ps-5 ui:py-5">
         <div className="ui:flex ui:flex-row ui:space-x-5 ui:w-4/5">
           <div>
             <ExcelFile />
@@ -84,7 +84,7 @@ const ListExportFile = ({
             </div>
           </div>
         </div>
-        <div className="ui:w-1/5 ui:flex ui:justify-end ui:pr-5">
+        <div className="ui:w-1/5 ui:flex ui:justify-end ui:pe-5">
           <Exists useIt={item?.status === STATUS.DONE && !!item?.download_url}>
             <Button
               id={`download-link-file-${index.toString()}`}

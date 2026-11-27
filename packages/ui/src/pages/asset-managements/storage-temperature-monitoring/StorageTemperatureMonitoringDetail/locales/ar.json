@@ -1,0 +1,156 @@
+{
+  "page": {
+    "title": "تفاصيل درجة حرارة CCE",
+    "title_warehouse": "تفاصيل درجة حرارة المستودع"
+  },
+  "section": {
+    "device_info": {
+      "title": "معلومات الجهاز"
+    },
+    "operational_details": {
+      "title": "التفاصيل التشغيلية"
+    },
+    "entity": {
+      "title": "الكيان"
+    },
+    "budget": {
+      "title": "الميزانية"
+    },
+    "operational_asset_monitoring_device_relation": {
+      "title": "علاقة الأصول التشغيلية وجهاز المراقبة"
+    }
+  },
+  "button": {
+    "more_details": "مزيد من التفاصيل",
+    "change_status": "تغيير الحالة التشغيلية"
+  },
+  "modal": {
+    "change_status": {
+      "title": "تغيير الحالة التشغيلية",
+      "fields": {
+        "operational_status": {
+          "label": "الحالة التشغيلية",
+          "placeholder": "اختر حالة التشغيل"
+        }
+      },
+      "button": {
+        "cancel": "إلغاء",
+        "save": "تغيير"
+      }
+    },
+    "change_threshold": {
+      "title": "تأكيد التحذير",
+      "description": "هل أنت متأكد من رغبتك في تغيير درجة حرارة الحد هذه؟",
+      "warning": "إذا غيرت حد درجة الحرارة، فسيؤثر ذلك على حسابات لوحة معلومات توقعات السعة",
+      "button": {
+        "cancel": "إلغاء",
+        "yes": "نعم، أنا متأكد"
+      }
+    }
+  },
+  "message": {
+    "storage_temperature_monitoring": "مراقبة درجة حرارة التخزين",
+    "temperature_threshold": "حد درجة الحرارة"
+  },
+  "data": {
+    "asset_type": "نوع الأصل",
+    "budget_source": "مصدر الميزانية",
+    "budget_year": "سنة الميزانية",
+    "temperature_threshold": {
+      "label": "عتبة درجة الحرارة",
+      "minimum": "الأدنى",
+      "maximum": "الحد الأقصى",
+      "button": {
+        "change_threshold": "تغيير حد درجة الحرارة",
+        "cancel": "إلغاء",
+        "save": "حفظ التغييرات"
+      }
+    },
+    "humidity_threshold": {
+      "label": "عتبة الرطوبة",
+      "minimum": "الأدنى",
+      "maximum": "الحد الأقصى"
+    },
+    "operational_status": "الحالة التشغيلية",
+    "contact_person": "الشخص المسؤول {{ number }}",
+    "production_year": "سنة الإنتاج"
+  },
+  "relation_table": {
+    "title_cce": "درجة حرارة الأصل",
+    "title_warehouse": "درجة حرارة ورطوبة الأصل",
+    "columns": {
+      "description": {
+        "label": "الوصف"
+      },
+      "sensor": {
+        "label": "المستشعر"
+      },
+      "asset_temperature": {
+        "label": "درجة الحرارة",
+        "label_warehouse": "درجة الحرارة والرطوبة",
+        "temperature": "درجة الحرارة",
+        "humidity": "الرطوبة",
+        "description": "الوصف"
+      },
+      "connection_and_power": {
+        "label": "حالة الجهاز",
+        "connection_status": {
+          "online": "متصل",
+          "offline": "غير متصل"
+        },
+        "power_status": {
+          "connected": "متصل",
+          "disconnected": "غير متصل",
+          "on": "الطاقة مفعلة",
+          "off": "الطاقة متوقفة"
+        }
+      }
+    }
+  },
+  "logger_activity": {
+    "title": "نشاط مسجل درجة الحرارة",
+    "tabs": {
+      "temperature": "مراقبة درجة الحرارة",
+      "humidity": "مراقبة الرطوبة"
+    },
+    "export": {
+      "title": "نشاط مسجل {{ type }} - {{ device_information }}",
+      "type": {
+        "temperature": "درجة الحرارة",
+        "humidity": "الرطوبة"
+      }
+    },
+    "chart": {
+      "temperature": "درجة الحرارة",
+      "humidity": "الرطوبة",
+      "threshold": "حد {{ type }} ({{ metric }})",
+      "lower_threshold": "الحد الأدنى ({{ metric }})",
+      "upper_threshold": "الحد الأعلى ({{ metric }})"
+    },
+    "filters": {
+      "logger": {
+        "label": "مسجل البيانات",
+        "placeholder": "اختر المسجل"
+      },
+      "date_range": {
+        "label": "الفترة الزمنية",
+        "placeholder": "اختر نطاق التاريخ"
+      }
+    },
+    "button": {
+      "search": "بحث",
+      "export": "تصدير"
+    },
+    "activity_table": {
+      "columns": {
+        "date": "التاريخ",
+        "temperature": "درجة الحرارة (°C)",
+        "humidity": "الرطوبة (%)",
+        "cold_chain_status": "حالة معدات سلسلة التبريد",
+        "room_status": "حالة الغرفة",
+        "temperature_threshold": "عتبة درجة الحرارة",
+        "humidity_threshold": "عتبة الرطوبة"
+      }
+    }
+  }
+}

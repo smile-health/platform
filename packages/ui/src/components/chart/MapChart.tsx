@@ -254,7 +254,7 @@ export default function MapChart<T>({
 
       {showToolbox && (
         <div
-          className="ui:absolute ui:right-0 ui:bottom-10 ui:flex ui:flex-col ui:rounded-md ui:bg-white ui:divide-y ui:divide-[#EAEAEA] ui:shadow-xs ui:border ui:border-[#EAEAEA]/80
+          className="ui:absolute ui:end-0 ui:bottom-10 ui:flex ui:flex-col ui:rounded-md ui:bg-white ui:divide-y ui:divide-[#EAEAEA] ui:shadow-xs ui:border ui:border-[#EAEAEA]/80
   "
         >
           <button

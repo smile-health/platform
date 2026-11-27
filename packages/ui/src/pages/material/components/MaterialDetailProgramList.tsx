@@ -28,7 +28,7 @@ export default function MaterialDetailProgramList({
             className={{
               wrapper:
                 'ui:gap-4 ui:p-4 ui:rounded-lg ui:border ui:border-neutral-300',
-              title: 'ui:text-left'
+              title: 'ui:text-start'
             }}
             icon={getProgramIconUrl(item)}
           />

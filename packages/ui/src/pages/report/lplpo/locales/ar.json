@@ -1,0 +1,46 @@
+{
+  "title": "تقرير استخدام الأدوية ونموذج الطلب",
+  "form": {
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "regency": {
+      "label": "المنطقة",
+      "placeholder": "اختر المديرية"
+    },
+    "subdistrict": {
+      "label": "المنطقة الفرعية",
+      "placeholder": "اختر المنطقة الفرعية"
+    },
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط"
+    },
+    "entity": {
+      "label": "الكيان",
+      "placeholder": "اختر الكيان"
+    },
+    "month-year": {
+      "label": "الفترة",
+      "placeholder": "اختر الفترة"
+    },
+    "year": {
+      "label": "السنة",
+      "placeholder": "حدد السنة"
+    }
+  },
+  "export_all_entities": "تصدير جميع الكيانات",
+  "export_with_filter": "تصدير مع التصفية",
+  "column": {
+    "material": "معلومات المادة",
+    "unit": "الوحدة",
+    "opening_stock": "المخزون الافتتاحي",
+    "closing_stock": "المخزون الختامي",
+    "receive": "استلام",
+    "usage": "الاستخدام",
+    "budget_source": "مصدر الميزانية",
+    "description": "الوصف"
+  },
+  "yes": "نعم"
+}

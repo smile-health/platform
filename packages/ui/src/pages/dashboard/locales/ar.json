@@ -1,0 +1,23 @@
+{
+  "show_report": "عرض التقرير",
+  "all_regions": "جميع المناطق",
+  "export_as": "تصدير بصيغة {{format}}",
+  "empty": "لا توجد بيانات للعرض",
+  "close": "إغلاق",
+  "last_updated_at": "آخر تحديث في",
+  "sort": {
+    "asc": "تصاعدي",
+    "desc": "تنازلي"
+  },
+  "data": {
+    "entity_tag": {
+      "province": "مكتب الصحة الإقليمي",
+      "regency": "مكتب الصحة للمدينة/المديرية",
+      "primary_health_care": "المركز الصحي المجتمعي",
+      "hospital": "مستشفى"
+    },
+    "activity": {
+      "routine": "روتيني"
+    }
+  }
+}

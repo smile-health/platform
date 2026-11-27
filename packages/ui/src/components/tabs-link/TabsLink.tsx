@@ -47,7 +47,7 @@ export function TabsLinkTrigger({
       {
         'ui:border-b-[3px] ui:data-[state=active]:border-b-primary-500':
           orientation === 'horizontal',
-        'ui:border-r-[3px] ui:data-[state=active]:border-r-primary-500':
+        'ui:border-e-[3px] ui:data-[state=active]:border-e-primary-500':
           orientation === 'vertical',
         'ui:flex-1': grow,
       },
@@ -76,9 +76,9 @@ export function TabsLinkTrigger({
       {...props}
       className={variantStyle[variant]}
     >
-      {leftSection ? <div className="ui:mr-2"> {leftSection}</div> : null}
+      {leftSection ? <div className="ui:me-2"> {leftSection}</div> : null}
       {children}
-      {rightSection ? <div className="ui:ml-2">{rightSection}</div> : null}
+      {rightSection ? <div className="ui:ms-2">{rightSection}</div> : null}
     </Link>
   )
 }
@@ -100,11 +100,11 @@ export function TabsLinkList({
           'ui:justify-end': align === 'end',
           'ui:flex ui:max-w-full ui:border-gray-200': true,
           'ui:flex-row ui:border-b': orientation === 'horizontal',
-          'ui:flex-col ui:border-r': orientation === 'vertical',
+          'ui:flex-col ui:border-e': orientation === 'vertical',
         },
         variant === 'pills' && {
           'ui:mx-auto': align === 'center' && orientation === 'horizontal',
-          'ui:ml-auto': align === 'end' && orientation === 'horizontal',
+          'ui:ms-auto': align === 'end' && orientation === 'horizontal',
           'ui:inline-flex ui:border ui:border-zinc-300 ui:divide-zinc-300 ui:rounded ui:overflow-hidden': true,
           'ui:flex-row ui:divide-x': orientation === 'horizontal',
           'ui:flex-col ui:divide-y': orientation === 'vertical',

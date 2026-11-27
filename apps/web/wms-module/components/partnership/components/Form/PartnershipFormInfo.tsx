@@ -521,7 +521,7 @@ const PartnershipFormInfo: React.FC = () => {
                     type="button"
                     variant="outline"
                   >
-                    <span className="ui:mr-2">+</span>
+                    <span className="ui:me-2">+</span>
                     {t('partnership:list.button.add_specification')}
                   </Button>
                 </div>

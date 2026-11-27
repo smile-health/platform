@@ -24,7 +24,7 @@ export class EntityMaterialExcelModule {
     const programId = c.var.programId
     const language = c.var.language
     const isKFAEnabled = c.var.config?.material.is_hierarchy_enabled || false
-    const title = language === "en" ? "Entity Material" : "Material Entitas"
+    const title = language !== "id" ? "Entity Material" : "Material Entitas"
     const filename = `entity_material_${language.toLowerCase()}.xlsx`
     function notExistCondition(data) {
       return data?.length ? data : []

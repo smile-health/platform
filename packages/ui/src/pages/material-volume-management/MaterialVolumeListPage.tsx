@@ -95,7 +95,7 @@ const MaterialVolumeListPage: React.FC<CommonType> = ({ isGlobal }) => {
             {filter.renderField()}
           </FilterFormBody>
           <FilterFormFooter>
-            <div className="ui:flex ui:ml-auto ui:gap-2">
+            <div className="ui:flex ui:ms-auto ui:gap-2">
               <Button
                 id="btn-import"
                 variant="subtle"

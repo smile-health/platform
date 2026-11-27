@@ -1,0 +1,114 @@
+{
+  "title": {
+    "page": "لوحة معلومات المخزون",
+    "expired_date": "تاريخ الانتهاء",
+    "month": "الشهر",
+    "province": "المحافظة",
+    "regency": "المدينة",
+    "sort_by": "الفرز حسب ID {{type}}",
+    "stock": {
+      "number": "المخزون حسب العدد",
+      "by": "المخزون حسب {{title}}",
+      "month": "المخزون الختامي لكل دفعة"
+    },
+    "entity": {
+      "main": "الكيان",
+      "tag": "وسم الكيان",
+      "material": "كيان المادة",
+      "stock": "كيان المخزون"
+    }
+  },
+  "description": {
+    "stock": {
+      "remaining": "تُجمّع بيانات المخزون المتبقي المعروضة بناءً على {{title}}",
+      "in_transit": "تُجمّع بيانات المخزون قيد النقل المعروضة بناءً على {{title}}"
+    },
+    "information_month": "يعرض كمية المخزون الختامي لكل دفعة مادة بناءً على شهر آخر معاملة للدفعة. تمثل كل نقطة في الرسم البياني المخزون الختامي للدفعة في الشهر الذي تمت فيه آخر معاملة ضمن نطاق الفترة المحددة."
+  },
+  "form": {
+    "date": {
+      "periode": {
+        "start": {
+          "label": "بداية الفترة"
+        },
+        "end": {
+          "label": "نهاية الفترة"
+        }
+      },
+      "expired": {
+        "label": "تاريخ الانتهاء"
+      }
+    },
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط"
+    },
+    "material": {
+      "type": {
+        "label": "نوع المادة",
+        "placeholder": "اختر نوع المادة"
+      },
+      "level": {
+        "label": "مستوى مادة KFA",
+        "placeholder": "اختر مستوى مادة KFA"
+      },
+      "name": {
+        "label": "اسم المادة",
+        "placeholder": "اختر اسم المادة"
+      }
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "regency": {
+      "label": "المنطقة",
+      "placeholder": "اختر المديرية"
+    },
+    "health_facilities": {
+      "label": "المرافق الصحية",
+      "placeholder": "اختر المرافق الصحية"
+    },
+    "information_type": {
+      "label": "نوع المعلومات"
+    }
+  },
+  "data": {
+    "material_level": {
+      "trademark": "متغير المنتج"
+    },
+    "information_type": {
+      "remaining_stock": "المخزون المتبقي",
+      "in_transit_stock": "المخزون قيد النقل"
+    },
+    "default_activity": {
+      "routine": "روتيني",
+      "ori": "ORI"
+    }
+  },
+  "column": {
+    "province": "المحافظة",
+    "regency": "المدينة",
+    "activity": "النشاط",
+    "material": "اسم المادة",
+    "unit": "الوحدة",
+    "entity": {
+      "name": "اسم الكيان",
+      "tag": "وسم الكيان"
+    },
+    "batch": {
+      "code": "رمز الدفعة",
+      "expired": "تاريخ انتهاء صلاحية الدفعة"
+    },
+    "stock": {
+      "remaining": "إجمالي المخزون المتبقي",
+      "in_transit": "إجمالي المخزون قيد النقل",
+      "min": "الحد الأدنى للمخزون",
+      "max": "الحد الأقصى للمخزون"
+    }
+  }
+}

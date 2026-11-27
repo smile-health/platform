@@ -1,0 +1,91 @@
+{
+  "title": "قائمة المهام",
+  "add": "إضافة مهمة",
+  "list": {
+    "columns": {
+      "task_id": "ID المهمة",
+      "material_name": "اسم المادة",
+      "activity": "النشاط",
+      "national_ip": "IP الوطنية",
+      "monthly_distribution": "التوزيع الشهري",
+      "group_target": "المجموعة المستهدفة",
+      "number_of_doses": "عدد الجرعات",
+      "target_coverage": "التغطية المستهدفة"
+    },
+    "all_province": "كل المحافظات",
+    "all_month": "كل الأشهر"
+  },
+  "import": {
+    "description": "رفع ملف .xls أو .xlsx (بحد أقصى 10MB)",
+    "success": "تم استيراد المهمة بنجاح",
+    "error": "فشل استيراد المهمة"
+  },
+  "delete": {
+    "description": "هل أنت متأكد من أنك تريد حذف هذه المهمة؟",
+    "success": "تم حذف المهمة بنجاح",
+    "error": "فشل حذف المهمة"
+  },
+  "create": {
+    "success": "تمت إضافة المهمة بنجاح",
+    "error": "فشل إضافة المهمة"
+  },
+  "edit": {
+    "title": "تعديل المهمة",
+    "success": "تم تعديل المهمة بنجاح",
+    "error": "فشل تعديل المهمة"
+  },
+  "coverage": {
+    "title": "تفاصيل التغطية",
+    "province": {
+      "list": "قائمة المحافظات",
+      "placeholder": "البحث عن محافظة",
+      "name": "اسم المحافظة"
+    }
+  },
+  "form": {
+    "material_util_index": "مؤشر استخدام المواد",
+    "amount_of_giving": {
+      "title": "كمية الإعطاء",
+      "add": "إضافة كمية الإعطاء",
+      "edit": "تعديل كمية الإعطاء",
+      "invalid": "يجب أن تكون كمية الإعطاء 1 على الأقل",
+      "confirmation": {
+        "cancel": {
+          "title": "هل أنت متأكد من أنك تريد إلغاء كمية الإعطاء؟",
+          "description": "لن يتم حفظ كمية الإعطاء"
+        }
+      }
+    },
+    "national_ip": {
+      "label": "IP الوطنية",
+      "placeholder": "مثال: 1.00",
+      "invalid": "يجب أن تكون IP الوطنية رقمًا عشريًا بحد أقصى 3 منازل عشرية",
+      "should_not_exceed_sku": "يجب ألا تتجاوز IP الوطنية SKU",
+      "not_negative": "يجب ألا تكون IP الوطنية سالبة"
+    },
+    "monthly_distribution": {
+      "invalid": "يجب أن يكون التوزيع الشهري 1 على الأقل"
+    },
+    "select_all_month": "تحديد كل الأشهر",
+    "group_target": {
+      "add": "إضافة مجموعة مستهدفة",
+      "placeholder": "اختر مجموعة مستهدفة",
+      "edit": "تعديل مجموعة مستهدفة"
+    },
+    "number_of_doses": {
+      "placeholder": "أدخل عدد الجرعات",
+      "edit": "تعديل عدد الجرعات"
+    },
+    "coverage": {
+      "label": "التغطية",
+      "update": "تحديث التغطية",
+      "add": "إضافة تغطية",
+      "edit": "تعديل التغطية",
+      "placeholder": "يرجى إدخال الكمية",
+      "saved": "تم حفظ {{coverage}} من أصل {{total}} محافظة",
+      "target": {
+        "invalid": "أدخل نسبة مئوية من 1 إلى 100"
+      }
+    }
+  }
+}

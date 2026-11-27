@@ -281,7 +281,7 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                 })}
               >
                 {!createMode ? (
-                  <div className="ui:mr-[24px]">
+                  <div className="ui:me-[24px]">
                     <EntityDetailLabel
                       title={t('material:title.material')}
                       subTitle={modalData?.name}
@@ -448,7 +448,7 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                                   <Button
                                     id={`edit_${item?.activity?.id}`}
                                     variant="light"
-                                    className="ui:bg-transparent ui:p-0 ui:h-auto ui:mr-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
+                                    className="ui:bg-transparent ui:p-0 ui:h-auto ui:me-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
                                     type="button"
                                     disabled={entity?.status === BOOLEAN.FALSE}
                                     onClick={() => setEditData(item)}
@@ -505,7 +505,7 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                       variant="light"
                       type="button"
                       onClick={handleClose}
-                      className="ui:mr-[12px]"
+                      className="ui:me-[12px]"
                       disabled={onLoadingUpdateMaterialEntity}
                     >
                       {t('common:cancel')}

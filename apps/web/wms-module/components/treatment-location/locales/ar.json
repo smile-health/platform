@@ -1,0 +1,65 @@
+{
+  "list": {
+    "list": "موقع المعالجة",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "ابحث عن اسم الموقع"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "location_name": "اسم الموقع",
+      "latitude": "خط العرض",
+      "longitude": "خط الطول",
+      "address": "العنوان",
+      "province": "المحافظة",
+      "city": "المدينة",
+      "action": "إجراء"
+    },
+    "button": {
+      "add": "إضافة موقع",
+      "distance_limit": "تعيين حد المسافة"
+    }
+  },
+  "title": {
+    "create": "إنشاء موقع معالجة",
+    "edit": "تعديل موقع المعالجة"
+  },
+  "form": {
+    "location_name": {
+      "label": "اسم الموقع",
+      "placeholder": "أدخل اسم الموقع"
+    },
+    "latitude": {
+      "label": "خط العرض",
+      "placeholder": "أدخل خط العرض"
+    },
+    "longitude": {
+      "label": "خط الطول",
+      "placeholder": "أدخل خط الطول"
+    },
+    "address": {
+      "label": "العنوان",
+      "placeholder": "أدخل العنوان"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "city": {
+      "label": "المدينة",
+      "placeholder": "اختر المدينة"
+    },
+    "distance_limit": {
+      "label": "حد المسافة",
+      "placeholder": "أدخل حد المسافة (بالمتر)"
+    }
+  },
+  "information": {
+    "title": "موقع المعالجة",
+    "description": "يراقب موقع المعالجة بيانات إدارة النفايات ويديرها، بما في ذلك حالة الشراكة."
+  }
+}

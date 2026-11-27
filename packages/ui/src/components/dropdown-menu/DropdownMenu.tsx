@@ -243,7 +243,7 @@ export function DropdownMenuSubTrigger({
       {leftIcon ? <div>{leftIcon}</div> : null}
       <div className="ui:flex-1">{children}</div>
       <div className="ui:h-3.5 ui:w-3.5">
-        <ChevronRightIcon></ChevronRightIcon>
+        <ChevronRightIcon className="ui:rtl:-scale-x-100"></ChevronRightIcon>
       </div>
     </DropdownMenuPrimitive.SubTrigger>
   )

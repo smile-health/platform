@@ -1,0 +1,63 @@
+{
+  "title": {
+    "notification": "إشعار"
+  },
+  "button": {
+    "mark_all_as_read": "تحديد الكل كمقروء",
+    "contact_patient": "اتصل بالمريض",
+    "mark_as_finished": "تحديد كمكتمل",
+    "action": "إجراء",
+    "download": "تنزيل"
+  },
+  "filter": {
+    "notification_type": {
+      "label": "نوع الإشعار",
+      "placeholder": "اختر نوع الإشعار"
+    },
+    "program": {
+      "label": "البرنامج",
+      "placeholder": "اختر البرنامج",
+      "without_program": "بدون برنامج"
+    },
+    "health_center": {
+      "label": "مركز الرعاية الصحية الأولية",
+      "placeholder": "اختر مركز الرعاية الصحية الأولية"
+    },
+    "receive_date": {
+      "label": "تاريخ استلام الإشعار"
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
+    }
+  },
+  "modal": {
+    "title": {
+      "mark_all": "تحديد الكل كمقروء؟"
+    },
+    "description": {
+      "mark_all": "بالنقر على «نعم»، فإنك تقر بأن جميع الإشعارات ستُحدد كمقروءة."
+    }
+  },
+  "information": {
+    "title": "معلومات",
+    "description": "لن يسمح حظر الإشعارات باستلام إشعارات فورية في الوقت الفعلي. إذا كنت ترغب في تفعيل الإشعارات، يرجى إعداد ذلك يدويًا من إعدادات المتصفح.",
+    "button": {
+      "understand": "نعم، لقد فهمت"
+    }
+  },
+  "finishedVaccine": {
+    "description": "سيتم وضع علامة منتهية على تذكير التطعيم للمريض {{identityNumber}} في الموعد المجدول التالي. يرجى ملاحظة أن هذا الإجراء سيوقف التذكير.",
+    "description_with_next_schedule": "سيتم وضع علامة منتهية على تذكير التطعيم للمريض {{identityNumber}} في الموعد التالي <strong>({{nextSchedule}})</strong>. يرجى ملاحظة أن هذا الإجراء سيوقف التذكير.",
+    "form": {
+      "reason": {
+        "label": "السبب",
+        "placeholder": "اختر السبب",
+        "error": "السبب مطلوب"
+      }
+    },
+    "success": "اكتمل تطعيم هذا المريض",
+    "error": "حدث خطأ أثناء وضع علامة على المريض بأنه أكمل التطعيم",
+    "finished": "مكتمل"
+  }
+}

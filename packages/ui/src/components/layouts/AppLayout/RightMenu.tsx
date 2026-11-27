@@ -16,7 +16,7 @@ const RightMenu: React.FC<Props> = (props) => {
   useOnClickOutside(ref, () => setShow(false))
 
   return (
-    <div className="ui:relative ui:cursor-pointer ui:text-left ui:block ui:text-primary-surface ui:hover:bg-gray-100 ui:px-6 ui:py-1">
+    <div className="ui:relative ui:cursor-pointer ui:text-start ui:block ui:text-primary-surface ui:hover:bg-gray-100 ui:px-6 ui:py-1">
       <button
         {...props}
         id={`trigger-${title}`}
@@ -25,7 +25,7 @@ const RightMenu: React.FC<Props> = (props) => {
       >
         {title}{' '}
         <span className="ui:flex ui:items-center">
-          <ChevronRightIcon className="ui:h-4 ui:w-4 ui:text-primary-surface" />
+          <ChevronRightIcon className="ui:h-4 ui:w-4 ui:text-primary-surface ui:rtl:-scale-x-100" />
         </span>
       </button>
       {show ? (

@@ -1,0 +1,168 @@
+{
+  "title": {
+    "index": "إعدادات المستخدم",
+    "add": "إضافة مستخدم",
+    "edit": "تعديل مستخدم",
+    "list": {
+      "index": "قائمة المستخدمين",
+      "management": "إعدادات المستخدم"
+    },
+    "user": "المستخدم",
+    "detail": "تفاصيل المستخدم",
+    "main": "المعلومات الأساسية",
+    "additional": "معلومات إضافية",
+    "status": "حالة المستخدم",
+    "change_history": "سجل التغييرات",
+    "log": "معلومات نشاط المستخدم",
+    "entity": "معلومات الجهة"
+  },
+  "column": {
+    "username": "اسم المستخدم",
+    "fullname": "الاسم الكامل",
+    "role": "الدور",
+    "firstname": "الاسم الأول",
+    "lastname": "اسم العائلة",
+    "location": "الموقع",
+    "entity": {
+      "index": "الكيان",
+      "name": "اسم الكيان",
+      "address": "عنوان الكيان"
+    },
+    "mobile_phone": "رقم الهاتف",
+    "birthdate": "تاريخ الميلاد",
+    "gender": "الجنس",
+    "last": {
+      "login": "آخر تسجيل دخول",
+      "device": "آخر جهاز تم الدخول منه"
+    },
+    "status": "الحالة",
+    "action": "إجراء"
+  },
+  "form": {
+    "name": {
+      "placeholder": "بحث عن اسم المستخدم، الاسم الأول، اسم العائلة",
+      "label": "بحث"
+    },
+    "role": {
+      "label": "الدور",
+      "placeholder": "اختر الدور",
+      "validation": {
+        "required": "الدور مطلوب"
+      }
+    },
+    "wms_role": {
+      "label": "دور WMS",
+      "placeholder": "اختر دور WMS",
+      "validation": {
+        "required": "دور WMS مطلوب"
+      }
+    },
+    "primary_vendor": {
+      "label": "المورد الرئيسي",
+      "placeholder": "اختر المورد الأساسي"
+    },
+    "date": {
+      "label": "التاريخ"
+    },
+    "username": {
+      "label": "اسم المستخدم",
+      "placeholder": "أدخل اسم المستخدم",
+      "validation": {
+        "required": "اسم المستخدم مطلوب",
+        "invalid": "يمكن أن يتكون اسم المستخدم من الحروف والأرقام والنقاط والشرطات السفلية فقط."
+      }
+    },
+    "firstname": {
+      "label": "الاسم الأول",
+      "placeholder": "أدخل الاسم الأول",
+      "validation": {
+        "required": "الاسم الأول مطلوب"
+      }
+    },
+    "lastname": {
+      "label": "اسم العائلة",
+      "placeholder": "أدخل اسم العائلة"
+    },
+    "email": {
+      "placeholder": "أدخل البريد الإلكتروني",
+      "validation": {
+        "required": "البريد الإلكتروني مطلوب",
+        "invalid": "البريد الإلكتروني غير صالح"
+      },
+      "daily_recap_email": "استلام بريد إلكتروني بالملخص اليومي"
+    },
+    "password": {
+      "label": "كلمة المرور",
+      "placeholder": "أدخل كلمة المرور",
+      "validation": {
+        "required": "كلمة المرور مطلوبة",
+        "invalid": "يجب أن تحتوي كلمة المرور على حرف كبير واحد وحرف صغير واحد ورقم واحد ورمز خاص واحد على الأقل"
+      }
+    },
+    "password_confirmation": {
+      "label": "تأكيد كلمة المرور",
+      "placeholder": "أدخل تأكيد كلمة المرور",
+      "validation": {
+        "required": "تأكيد كلمة المرور مطلوب",
+        "match": "كلمة المرور غير متطابقة"
+      }
+    },
+    "manufacturer": {
+      "label": "مصنّع/مورد IoT",
+      "placeholder": "اختر مصنّع/مورد IoT",
+      "validation": {
+        "required": "مصنّع/مورد IoT مطلوب"
+      }
+    },
+    "address": {
+      "label": "العنوان",
+      "placeholder": "أدخل العنوان",
+      "other_label": "الموقع"
+    },
+    "mobile_phone": {
+      "label": "رقم الهاتف المحمول",
+      "placeholder": "أدخل رقم الهاتف المحمول"
+    },
+    "birthdate": {
+      "label": "تاريخ الميلاد",
+      "placeholder": "أدخل تاريخ الميلاد"
+    },
+    "gender": {
+      "label": "الجنس",
+      "male": "ذكر",
+      "female": "أنثى",
+      "validation": {
+        "required": "الجنس مطلوب"
+      }
+    },
+    "view_only": {
+      "label": "عرض فقط",
+      "disabled_information": "وضع العرض فقط غير متاح لـ Superadmin"
+    },
+    "entity": {
+      "program": "تصبح مساحة العمل متاحة بعد اختيار كيان.",
+      "validation": {
+        "required": "الكيان مطلوب"
+      }
+    }
+  },
+  "confirmation": {
+    "activate": {
+      "question": "هل أنت متأكد من أنك تريد تفعيل هذا؟؟"
+    },
+    "deactivate": {
+      "question": "هل أنت متأكد من أنك تريد إلغاء تفعيل هذا؟",
+      "description": "سيفقد هذا المستخدم الوصول إلى SMILE."
+    }
+  },
+  "action": {
+    "see_changes": "عرض التغييرات"
+  },
+  "history": {
+    "information": "تم تحديث المعلومات",
+    "add": "إضافة",
+    "changed": "تم التغيير إلى",
+    "removed": "تمت الإزالة",
+    "password": "تم تحديث كلمة المرور الخاصة بك في {{date}}"
+  }
+}

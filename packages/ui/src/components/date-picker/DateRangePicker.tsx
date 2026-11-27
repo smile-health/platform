@@ -5,6 +5,7 @@ import { CalendarIcon } from '@heroicons/react/24/outline'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { parseDate } from '@internationalized/date'
 import cx from '#lib/cx'
+import { toIntlLocale } from '#utils/locale'
 import dayjs from 'dayjs'
 import { AnimatePresence } from 'framer-motion'
 import { TFunction } from 'i18next'
@@ -173,7 +174,7 @@ function Preset({
   onClick: (item: Preset) => void
 }>) {
   return (
-    <div className="ui:border-r ui:border-gray-300 ui:p-2 ui:space-y-1">
+    <div className="ui:border-e ui:border-gray-300 ui:p-2 ui:space-y-1">
       {presets.map((item) => (
         <button
           id={item?.id}
@@ -181,7 +182,7 @@ function Preset({
           key={item.label}
           onClick={() => onClick(item)}
           className={cx(
-            'ui:w-full ui:text-sm ui:text-gray-700 ui:text-left ui:px-2 ui:py-1 rounded',
+            'ui:w-full ui:text-sm ui:text-gray-700 ui:text-start ui:px-2 ui:py-1 rounded',
             'ui:focus:outline-hidden ui:focus:ring-2 ui:focus:ring-blue-500/40',
             {
               'ui:bg-primary-500 ui:text-white ': selectedPreset === item.label,
@@ -264,15 +265,15 @@ export function DateRangePicker(
   }, [props.maxRange, props.value])
 
   return (
-    <I18nProvider locale={props.locale ?? 'en-UK'}>
-      <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-left">
+    <I18nProvider locale={toIntlLocale(props.locale ?? 'en-UK')}>
+      <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-start">
         <div
           {...groupProps}
           ref={ref}
           className={cx(
-            'ui:flex ui:items-center ui:justify-center ui:rounded ui:border ui:pr-1',
+            'ui:flex ui:items-center ui:justify-center ui:rounded ui:border ui:pe-1',
             'ui:h-10',
-            'ui:first:group-[.is-group]:rounded-l-none!',
+            'ui:first:group-[.is-group]:rounded-s-none!',
             'ui:focus-within:ring-2',
             {
               'ui:cursor-not-allowed ui:bg-gray-100 ui:opacity-75':

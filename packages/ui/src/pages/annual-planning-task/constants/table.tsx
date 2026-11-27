@@ -137,7 +137,7 @@ export const columnsListTask = ({
       ? [
         {
           header: () => (
-            <div className="ui:font-semibold ui:pl-3">
+            <div className="ui:font-semibold ui:ps-3">
               {t('common:action')}
             </div>
           ),

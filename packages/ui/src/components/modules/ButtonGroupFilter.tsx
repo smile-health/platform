@@ -92,7 +92,7 @@ export const ButtonWithDropdown: React.FC<ButtonWithDropdownProps> = ({
             <DropdownMenuItem key={item?.id} disabled={item?.disabled ?? false}>
               <div
                 id={item.id}
-                className="ui:w-full ui:text-left ui:h-full"
+                className="ui:w-full ui:text-start ui:h-full"
                 onClick={
                   isDownloadTemplate ? item.onDownloadTemplate : item.onClick
                 }

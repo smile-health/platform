@@ -124,7 +124,7 @@ export class AssetMonitoringDeviceModule {
     // EN: "Export Dashboard Logger DD-MM-YYYY HH_mm_ss_en.xlsx"
     // ID: "Ekspor Dasbor Logger DD-MM-YYYY HH_mm_ss_id.xlsx"
     const baseTitle =
-      language === "en" ? "Export Dashboard Logger" : "Ekspor Dasbor Logger"
+      language !== "id" ? "Export Dashboard Logger" : "Ekspor Dasbor Logger"
 
     const filename = `${baseTitle} ${timestamp}_${language || "id"}.xlsx`
 

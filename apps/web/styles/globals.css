@@ -33,7 +33,7 @@
   .sticky-column-1 {
     word-break: break-all;
     top: 0;
-    left: 0px;
+    inset-inline-start: 0px;
     position: sticky;
     z-index: 2;
   }
@@ -41,7 +41,7 @@
   .sticky-column-2 {
     word-break: break-all;
     top: 0;
-    left: 50px;
+    inset-inline-start: 50px;
     position: sticky;
     z-index: 2;
   }
@@ -49,28 +49,28 @@
   .sticky-column-3 {
     word-break: break-all;
     top: 0;
-    left: 291px;
+    inset-inline-start: 291px;
     position: sticky;
     z-index: 2;
   }
 
   .s-column-1 {
     word-break: break-all;
-    left: 0px;
+    inset-inline-start: 0px;
     position: sticky;
     z-index: 2;
   }
 
   .s-column-2 {
     word-break: break-all;
-    left: 50px;
+    inset-inline-start: 50px;
     position: sticky;
     z-index: 2;
   }
 
   .s-column-3 {
     word-break: break-all;
-    left: 292px;
+    inset-inline-start: 292px;
     position: sticky;
     z-index: 2;
   }

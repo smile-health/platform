@@ -207,7 +207,7 @@ const AssetManagementsAddDeviceRelation = ({
           <div className="ui:text-xl ui:font-semibold ui:text-dark-blue">
             {t('assetInventory:device_relation.title.form')}
           </div>
-          <ModalCloseButton className="ui:top-0 ui:right-0" />
+          <ModalCloseButton className="ui:top-0 ui:end-0" />
         </ModalHeader>
         <hr />
 

@@ -56,8 +56,8 @@ const ExportHistoryListPage = ({ isGlobal = true }: Readonly<CommonType>) => {
           </FilterFormFooter>
           {filter.renderActiveFilter()}
         </FilterFormRoot>
-        <div className="ui:w-full ui:bg-[#F5F5F4] ui:rounded ui:border ui:border-gray-300 ui:h-14 ui:pl-5 ui:pt-4">
-          <div className="ui:text-left ui:text-sm ui:text-neutral-500 ui:font-bold">
+        <div className="ui:w-full ui:bg-[#F5F5F4] ui:rounded ui:border ui:border-gray-300 ui:h-14 ui:ps-5 ui:pt-4">
+          <div className="ui:text-start ui:text-sm ui:text-neutral-500 ui:font-bold">
             {t('note')}
           </div>
         </div>

@@ -63,7 +63,7 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
           <Tr>
             {headers.map((header) => (
               <Th
-                className="ui:px-2 ui:py-5 ui:text-left ui:text-sm ui:text-gray-700 ui:border-b ui:border-gray-300 ui:font-semibold"
+                className="ui:px-2 ui:py-5 ui:text-start ui:text-sm ui:text-gray-700 ui:border-b ui:border-gray-300 ui:font-semibold"
                 key={header.id}
                 style={{
                   width: header?.size !== 0 ? `${header?.size}px` : 'auto',
@@ -112,7 +112,7 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
           color="primary"
           variant="outline"
           onClick={() => onReset()}
-          className="ui:mr-4 ui:w-40"
+          className="ui:me-4 ui:w-40"
         >
           Reset
         </Button>

@@ -1,0 +1,49 @@
+{
+  "list": {
+    "list": "إدارة أنواع الأصول",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "البحث عن نوع الأصل"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "name": "نوع الأصل",
+      "description": "الوصف",
+      "max_temperature": "عتبة درجة الحرارة القصوى (°C)",
+      "min_temperature": "عتبة درجة الحرارة الدنيا (°C)",
+      "updated_by": "حُدّث بواسطة",
+      "action": "إجراء"
+    },
+    "button": {
+      "add": "إضافة نوع أصل"
+    }
+  },
+  "title": {
+    "asset_type": "نوع الأصل",
+    "list": "قائمة أنواع الأصول",
+    "create": "نوع الأصل",
+    "edit": "تعديل نوع الأصل"
+  },
+  "form": {
+    "asset_type": {
+      "label": "نوع الأصل",
+      "placeholder": "أدخل اسم نوع الأصل"
+    },
+    "description": {
+      "label": "الوصف",
+      "placeholder": "أدخل الوصف"
+    },
+    "min_temperature": {
+      "label": "عتبة درجة الحرارة الدنيا (°C)",
+      "placeholder": "مثال: 10"
+    },
+    "max_temperature": {
+      "label": "عتبة درجة الحرارة القصوى (°C)",
+      "placeholder": "مثال: 20"
+    }
+  }
+}

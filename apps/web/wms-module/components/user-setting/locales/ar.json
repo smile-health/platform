@@ -1,0 +1,75 @@
+{
+  "title": {
+    "index": "إعدادات المستخدم",
+    "add": "إضافة مستخدم",
+    "edit": "تعديل مستخدم",
+    "list": {
+      "index": "قائمة المستخدمين",
+      "management": "إدارة المستخدمين"
+    },
+    "user": "المستخدم",
+    "detail": "تفاصيل المستخدم",
+    "details": "التفاصيل",
+    "status": "حالة المستخدم"
+  },
+  "column": {
+    "username": "اسم المستخدم",
+    "fullname": "الاسم الكامل",
+    "role": "الدور",
+    "firstname": "الاسم الأول",
+    "lastname": "اسم العائلة",
+    "location": "الموقع",
+    "email": "البريد الإلكتروني",
+    "entity": {
+      "index": "الكيان",
+      "name": "اسم الكيان",
+      "address": "عنوان الكيان",
+      "type": "النوع",
+      "tag": "الوسم"
+    },
+    "mobile_phone": "رقم الهاتف",
+    "birthdate": "تاريخ الميلاد",
+    "gender": "الجنس",
+    "view_only": "عرض فقط",
+    "last": {
+      "login": "آخر تسجيل دخول",
+      "device": "آخر جهاز تم الدخول منه"
+    },
+    "status": "الحالة",
+    "action": "إجراء"
+  },
+  "filter": {
+    "search": {
+      "label": "بحث",
+      "placeholder": "البحث عن اسم المستخدم"
+    },
+    "type": {
+      "label": "النوع",
+      "placeholder": "اختر النوع"
+    },
+    "role": {
+      "label": "الدور",
+      "placeholder": "اختر الدور"
+    },
+    "status": {
+      "label": "الحالة",
+      "placeholder": "اختر الحالة",
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "button": {
+      "search": "بحث"
+    }
+  },
+  "confirmation": {
+    "activate": {
+      "button": "تفعيل",
+      "question": "هل أنت متأكد من أنك تريد تفعيل هذا؟؟"
+    },
+    "deactivate": {
+      "button": "إلغاء التفعيل",
+      "question": "هل أنت متأكد من أنك تريد إلغاء تفعيل هذا؟",
+      "description": "سيفقد هذا المستخدم الوصول إلى SMILE."
+    }
+  }
+}

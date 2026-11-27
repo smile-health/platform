@@ -96,7 +96,7 @@ const StockOpnameModalAddBatch: React.FC<Props> = (props) => {
         portalContainer={modalRoot}
       >
         <ModalCloseButton onClick={handleClose} />
-        <ModalHeader border className="ui:text-center ui:pr-0">
+        <ModalHeader border className="ui:text-center ui:pe-0">
           <span className="ui:font-medium">
             {
               t('stockOpnameCreate:form.new_batch.title', {

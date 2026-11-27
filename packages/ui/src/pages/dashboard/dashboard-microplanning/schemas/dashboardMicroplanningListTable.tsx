@@ -70,7 +70,7 @@ function withRegionColumnMeta(meta?: any) {
         cellClassName: (row: any) =>
             row.original?.regionRowSpan === 0
                 ? 'ui:hidden'
-                : 'ui:text-left ui:font-semibold ui:align-middle',
+                : 'ui:text-start ui:font-semibold ui:align-middle',
     }
 }
 
@@ -78,7 +78,7 @@ function withTypeColumnMeta(meta?: any) {
     return {
         ...(meta ?? {}),
         headerClassName:
-            meta?.headerClassName ?? 'ui:text-left',
+            meta?.headerClassName ?? 'ui:text-start',
     }
 }
 

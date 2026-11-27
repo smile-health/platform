@@ -89,7 +89,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
   return (
     <DialogContent className="ui:p-0!">
       <div className="ui:flex ui:flex-row ui:border-t ui:border-[#D2D2D2]">
-        <div className="ui:w-56 ui:border-r ui:border-[#D2D2D2]">
+        <div className="ui:w-56 ui:border-e ui:border-[#D2D2D2]">
           <div className="ui:flex ui:flex-col">
             {data?.map((item, index) => (
               <div
@@ -112,7 +112,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
                 {index !== 0 ? (
                   <button
                     id={`btn-delete ${item.vaccination.patient_id}-${index.toString()}`}
-                    className={cx("ui:text-dark-teal ui:pr-3", {
+                    className={cx("ui:text-dark-teal ui:pe-3", {
                       'ui:text-danger-500': !!errors?.data?.[index] && selectedIndex !== index
                     })}
                     type="button"
@@ -132,7 +132,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
             {data[0]?.vaccination?.vaccine_method?.value === VACCINE_METHOD.INTRA_DERMAL && data.length < 5 ? (
               <Button
                 variant="subtle"
-                className="ui:mt-5 ui:pl-2"
+                className="ui:mt-5 ui:ps-2"
                 type="button"
                 onClick={() => {
                   setValue('data', addNewPatient(data))
@@ -191,14 +191,14 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
               <div className={cx(styleProtocol.container, { 'ui:bg-[#15803D]': validateFormVaccine() })}>
                 <p className={cx(styleProtocol.content, { 'ui:text-white': validateFormVaccine() })}>
                   {t('patient_identity.tab', { returnObjects: true })[0]}
-                  <span className='ui:ml-1'><CheckV2 /></span>
+                  <span className='ui:ms-1'><CheckV2 /></span>
                 </p>
               </div>
               {!!item.is_vaccine && (
                 <div className={cx(styleProtocol.container, { 'ui:bg-[#15803D]': validateFormIdentity() })}>
                   <p className={cx(styleProtocol.content, { 'ui:text-white': validateFormIdentity() })}>
                     {t('patient_identity.tab', { returnObjects: true })[1]}
-                    <span className='ui:ml-1'><CheckV2 /></span>
+                    <span className='ui:ms-1'><CheckV2 /></span>
                   </p>
                 </div>
               )}
@@ -206,7 +206,7 @@ const TransactionCreateConsumptionWithProtocol: React.FC<Props> = (props) => {
                 <div className={cx(styleProtocol.container, { 'ui:bg-[#15803D]': validateFormDiseasesHistory() })}>
                   <p className={cx(styleProtocol.content, { 'ui:text-white': validateFormDiseasesHistory() })}>
                     {t('patient_identity.tab', { returnObjects: true })[2]}
-                    <span className='ui:ml-1'><CheckV2 /></span>
+                    <span className='ui:ms-1'><CheckV2 /></span>
                   </p>
                 </div>
               )}

@@ -9,6 +9,7 @@ import {
 } from 'react-number-format'
 
 import { Input, InputProps } from '../input/Input'
+import { toIntlLocale } from '#utils/locale'
 
 type InputNumberV2Props = NumericFormatProps &
   InputProps & {
@@ -29,7 +30,7 @@ export const InputNumberV2 = ({
 
   const format = (numStr: number | string) => {
     if (numStr === '') return ''
-    return new Intl.NumberFormat(i18n.language, {
+    return new Intl.NumberFormat(toIntlLocale(i18n.language), {
       style: isPriceTag ? 'currency' : 'decimal',
       currency: process.env.CURRENCY ?? 'IDR',
       currencyDisplay,
@@ -37,7 +38,7 @@ export const InputNumberV2 = ({
     }).format(numStr as number)
   }
 
-  const decimalSeparator = new Intl.NumberFormat(i18n.language)
+  const decimalSeparator = new Intl.NumberFormat(toIntlLocale(i18n.language))
     .format(1.1)
     .replace(/[0-9]/g, '')
 

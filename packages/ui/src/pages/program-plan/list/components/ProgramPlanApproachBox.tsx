@@ -28,14 +28,14 @@ const ProgramPlanApproachBox = () => {
         <div className="ui:flex ui:flex-col ui:gap-2">
           <div className="ui:table">
             <div className="ui:table-row">
-              <div className="ui:table-cell ui:pb-1 ui:pr-4 ui:text-neutral-500 ui:w-96">
+              <div className="ui:table-cell ui:pb-1 ui:pe-4 ui:text-neutral-500 ui:w-96">
                 <ProgramPlanStatusCapsule
                   isFinale={detailProgramPlanData?.is_final as boolean}
                 />
               </div>
             </div>
             <div className="ui:table-row">
-              <div className="ui:table-cell ui:py-1 ui:pr-4 ui:text-neutral-500 ui:w-96">
+              <div className="ui:table-cell ui:py-1 ui:pe-4 ui:text-neutral-500 ui:w-96">
                 {t('programPlan:table.year_plan')}
               </div>
               <div className="ui:table-cell ui:py-1 ui:text-dark-teal">
@@ -43,7 +43,7 @@ const ProgramPlanApproachBox = () => {
               </div>
             </div>
             <div className="ui:table-row">
-              <div className="ui:table-cell ui:py-1 ui:pr-4 ui:text-neutral-500 ui:w-96">
+              <div className="ui:table-cell ui:py-1 ui:pe-4 ui:text-neutral-500 ui:w-96">
                 {t('programPlan:table.approach')}
               </div>
               <div className="ui:table-cell ui:py-1 ui:text-dark-teal">

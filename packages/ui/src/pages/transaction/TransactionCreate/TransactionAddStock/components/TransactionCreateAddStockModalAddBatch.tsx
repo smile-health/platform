@@ -74,7 +74,7 @@ const TransactionCreateAddStockModalAddBatch = ({
             setIsOpen?.(!isOpen)
           }}
         />
-        <ModalHeader border className="ui:text-center ui:pr-0">
+        <ModalHeader border className="ui:text-center ui:pe-0">
           <span className="ui:font-medium ui:text-xl ui:text-primary-800">
             {t('add_new_batch')}
           </span>

@@ -89,7 +89,7 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
                     </h2>
                     <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                       {getValueNumber(details?.total_qty || 0, language)}
-                      <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
+                      <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ms-1">
                         {`(min:${getValueNumber(details?.min, language)}, max:${getValueNumber(details?.max, language)})`}
                       </span>
                     </p>
@@ -221,7 +221,7 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
               <Button
                 variant="subtle"
                 type="button"
-                className="ui:mr-2"
+                className="ui:me-2"
                 onClick={handleReset}
                 leftIcon={<Reload />}
               >

@@ -41,15 +41,15 @@ export function Indicator({
           className={cx('ui:absolute ui:flex ui:leading-none', {
             'ui:right-1/2 ui:-translate-y-1/2 ui:translate-x-1/2':
               position === 'top-center',
-            'ui:left-0 ui:right-auto ui:-translate-x-1/2 ui:-translate-y-1/2 top-0 ':
+            'ui:start-0 ui:end-auto ui:-translate-x-1/2 ui:-translate-y-1/2 top-0 ':
               position === 'top-left',
-            'ui:left-auto ui:right-0 ui:-translate-y-1/2 ui:translate-x-1/2 top-0':
+            'ui:start-auto ui:end-0 ui:-translate-y-1/2 ui:translate-x-1/2 top-0':
               position === 'top-right',
             'ui:bottom-0 ui:right-1/2 ui:translate-x-1/2 ui:translate-y-1/2':
               position === 'bottom-center',
-            'ui:bottom-0 ui:left-0 ui:right-auto ui:-translate-x-1/2 ui:translate-y-1/2':
+            'ui:bottom-0 ui:start-0 ui:end-auto ui:-translate-x-1/2 ui:translate-y-1/2':
               position === 'bottom-left',
-            'ui:bottom-0 ui:left-auto ui:right-0 ui:translate-x-1/2 ui:translate-y-1/2':
+            'ui:bottom-0 ui:start-auto ui:end-0 ui:translate-x-1/2 ui:translate-y-1/2':
               position === 'bottom-right',
           })}
         >

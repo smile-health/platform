@@ -222,7 +222,7 @@ export const OrderDetailAllocateModalFormHierarchyCustomRow: React.FC<
     <div className="ui:bg-[#F6F6F7]! ui:w-full! ui:p-4!">
       <div className="ui:flex ui-items ui:justify-between ui:mb-4">
         <div className="ui:flex ui:mb-4">
-          <div className="ui:mr-1">
+          <div className="ui:me-1">
             {isMaterialBatch ? (
               <p>{t('orderDetail:table.trademark.column.batch_from')}</p>
             ) : (
@@ -253,7 +253,7 @@ export const OrderDetailAllocateModalFormHierarchyCustomRow: React.FC<
         />
         <Button
           variant="solid"
-          className="ui:ml-auto ui:my-4"
+          className="ui:ms-auto ui:my-4"
           onClick={handleSave}
         >
           {t('orderDetail:table.trademark.button.save')}

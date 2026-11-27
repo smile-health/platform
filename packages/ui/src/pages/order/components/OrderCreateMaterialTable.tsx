@@ -47,7 +47,7 @@ export default function OrderCreateMaterialTable<
   useSetLoadingPopupStore(isFetching)
 
   return (
-    <div className="ui:ml-6 ui:w-1/2 ui:h-full!">
+    <div className="ui:ms-6 ui:w-1/2 ui:h-full!">
       {showMaterialTable ? (
         <InfiniteScrollList
           id={`${id}-material-list`}

@@ -126,7 +126,7 @@ export function DrawerCloseButton() {
     <DialogPrimitive.Close asChild>
       <button
         className={cx(
-          'ui:absolute ui:right-2 ui:top-2 ui:rounded ui:p-0.5 ui:text-gray-800 ui:hover:bg-gray-200 ui:active:bg-gray-300'
+          'ui:absolute ui:end-2 ui:top-2 ui:rounded ui:p-0.5 ui:text-gray-800 ui:hover:bg-gray-200 ui:active:bg-gray-300'
         )}
       >
         <XMarkIcon className="ui:h-5 ui:w-5"></XMarkIcon>
@@ -194,8 +194,8 @@ export function Drawer({
       full: 'ui:w-full',
     },
     placement: {
-      left: 'ui:left-0',
-      right: 'ui:right-0',
+      left: 'ui:start-0',
+      right: 'ui:end-0',
       top: 'ui:top-0',
       bottom: 'ui:bottom-0',
     },
@@ -231,7 +231,7 @@ export function Drawer({
             >
               <div
                 className={cx(
-                  'ui:fixed ui:left-0 ui:top-0 ui:flex ui:w-screen ui:justify-center ui:overflow-y-auto z-10',
+                  'ui:fixed ui:start-0 ui:top-0 ui:flex ui:w-screen ui:justify-center ui:overflow-y-auto z-10',
                   drawerClassName
                 )}
               >

@@ -93,7 +93,7 @@ const NonProtocolVaccine: React.FC = () => {
                   onChange(e.target.value.toUpperCase())
                   handleChangePatientId()
                 }}
-                className='ui:rounded-r-none'
+                className='ui:rounded-e-none'
                 disabled={!vaccination?.identity_type}
               />
               <ButtonIcon
@@ -101,7 +101,7 @@ const NonProtocolVaccine: React.FC = () => {
                 onClick={() => handleSearchPatient()}
                 aria-label="search-patient"
                 size="lg"
-                className='ui:border-neutral-300 ui:rounded-l-none ui:bg-[#F5F5F4] ui:focus:border-primary-500 ui:focus:outline-hidden ui:focus:ring-primary-500/25'
+                className='ui:border-neutral-300 ui:rounded-s-none ui:bg-[#F5F5F4] ui:focus:border-primary-500 ui:focus:outline-hidden ui:focus:ring-primary-500/25'
               >
                 <MagnifyingGlassIcon className="ui:w-5 ui:h-5" strokeWidth={2} />
               </ButtonIcon>

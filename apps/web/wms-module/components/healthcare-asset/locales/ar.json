@@ -1,0 +1,68 @@
+{
+  "list": {
+    "list": "إدارة أصول الرعاية الصحية",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "البحث عن الرقم التسلسلي"
+      },
+      "working_status": {
+        "label": "الحالة التشغيلية",
+        "placeholder": "اختر حالة التشغيل"
+      },
+      "status": {
+        "label": "الحالة",
+        "placeholder": "اختر الحالة"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "asset_type": "نوع الأصل",
+      "manufacture": "الشركة المصنعة",
+      "model": "الطراز",
+      "asset_id": "ID الأصل",
+      "serial_number": "الرقم التسلسلي",
+      "asset_status": "الحالة",
+      "working_status": "الحالة التشغيلية",
+      "ownership_status": "حالة الملكية",
+      "ownership_qty": "الكمية المملوكة",
+      "action": "إجراء"
+    }
+  },
+  "title": {
+    "healthcare": "أصل رعاية صحية",
+    "list": "قائمة أصول الرعاية الصحية",
+    "create": "إنشاء أصل رعاية صحية",
+    "edit": "تعديل أصل رعاية صحية",
+    "detail": "تفاصيل أصل الرعاية الصحية"
+  },
+  "form": {
+    "dongle_id": {
+      "label": "IoT Dongle ID",
+      "placeholder": "أدخل IoT Dongle ID"
+    },
+    "error_dongle_id": "لم تتم مصادقة IoT ID. يُرجى طلب الموافقة من وزارة الصحة."
+  },
+  "asset_status": {
+    "OPERATIONAL": "يعمل",
+    "UNDER_MAINTAINENCE": "قيد الإصلاح",
+    "OUT_OF_SERVICE": "تالف",
+    "IDLE": "في وضع الاستعداد",
+    "NEED_REPAIR": "بحاجة إلى إصلاح",
+    "RETIRED": "تم التخلص منه"
+  },
+  "working_status": {
+    "function": "يعمل",
+    "standby": "في وضع الاستعداد",
+    "repair": "قيد الإصلاح",
+    "damaged": "تالف",
+    "need_repair": "بحاجة إلى إصلاح",
+    "disposed": "تم التخلص منه"
+  },
+  "modal": {
+    "title": "تحذير",
+    "description": "يوجد عدم تطابق، ID {{dongleId}} غير مطابق / فشل الإعداد. يُرجى التواصل مع المورد."
+  }
+}

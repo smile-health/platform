@@ -90,7 +90,7 @@ const AnnualPlanningProcessPopulationContent: React.FC<Props> = (props) => {
                     id={inputColumn.key}
                     columnKey={inputColumn.key}
                     key={inputColumn.key}
-                    className={cx("ui:w-10 ui:font-semibold ui:border-r ui:text-center", targetGroup.className)}
+                    className={cx("ui:w-10 ui:font-semibold ui:border-e ui:text-center", targetGroup.className)}
                   >
                     {inputColumn.header}
                   </Th>

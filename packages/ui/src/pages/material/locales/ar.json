@@ -1,0 +1,349 @@
+{
+  "list": {
+    "title": "إعدادات المواد",
+    "tab": {
+      "list": "قائمة الكيانات",
+      "create": "إضافة كيان"
+    },
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن مادة"
+      },
+      "activity": {
+        "label": "النشاط",
+        "placeholder": "اختر النشاط"
+      },
+      "hierarchical": {
+        "label": "هرمي"
+      },
+      "material_type": {
+        "label": "نوع المادة",
+        "placeholder": "اختر نوع المادة"
+      },
+      "material_level": {
+        "label": "مستوى المادة",
+        "placeholder": "اختر مستوى المادة",
+        "radio": {
+          "all": "الكل",
+          "active_substance": "قالب المنتج",
+          "trademark": "متغير المنتج",
+          "non_hierarchy": "غير هرمي"
+        }
+      },
+      "program": {
+        "label": "البرنامج",
+        "placeholder": "اختر البرنامج"
+      },
+      "without_program": "لا يوجد برنامج مطبّق",
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "material_name": "اسم المادة",
+      "material_type": "نوع المادة",
+      "material_subtype": "النوع الفرعي للمادة",
+      "updated_by": "تم التحديث بواسطة",
+      "managed_by_batch": "هل تُدار حسب الدفعة؟",
+      "activity_name": "اسم النشاط",
+      "min_temperature": "الحد الأدنى لدرجة الحرارة",
+      "max_temperature": "الحد الأقصى لدرجة الحرارة",
+      "action": "إجراء",
+      "material_level": {
+        "label": "مستوى المادة",
+        "kfa_93": "متغير المنتج",
+        "kfa_92": "قالب المنتج",
+        "non_hierarchy": "غير هرمي"
+      }
+    },
+    "options": {
+      "tag": "اختر الوسم",
+      "type": "اختر النوع"
+    },
+    "action": {
+      "activate": {
+        "title": "تفعيل"
+      },
+      "deactivate": {
+        "title": "إلغاء التفعيل"
+      }
+    },
+    "button": {
+      "add": "إضافة مادة"
+    }
+  },
+  "title": {
+    "material": "المادة",
+    "list": "قائمة المواد",
+    "create": "إضافة مادة",
+    "edit": "تعديل المادة"
+  },
+  "detail": {
+    "title": "تفاصيل المادة",
+    "active_substance": "قالب المنتج",
+    "active_substance_and_strength": "قالب المنتج",
+    "trademark": "متغير المنتج",
+    "packaging": "التغليف",
+    "name": "اسم المادة",
+    "level": "مستوى المادة",
+    "description": "الوصف",
+    "code": "رمز المادة",
+    "kfa_92_code": "رمز قالب المنتج",
+    "kfa_93_code": "رمز متغير منتج المادة",
+    "unit": {
+      "consumption": "وحدة الاستهلاك",
+      "distribution": "وحدة التوزيع",
+      "distribution_pieces": "عدد وحدات الاستهلاك لكل وحدة توزيع"
+    },
+    "retail": {
+      "price_min": "الحد الأدنى لسعر التجزئة",
+      "price_max": "الحد الأقصى لسعر التجزئة",
+      "validation": {
+        "max_greater_min": "لا يمكن أن يكون الحد الأقصى لسعر التجزئة أقل من الحد الأدنى لسعر التجزئة",
+        "min_greater_max": "لا يمكن أن يكون الحد الأدنى لسعر التجزئة أكبر من الحد الأقصى لسعر التجزئة"
+      }
+    },
+    "temperature": {
+      "sensitive": "حساس لدرجة الحرارة",
+      "min": "الحد الأدنى لدرجة الحرارة",
+      "max": "الحد الأقصى لدرجة الحرارة",
+      "validation": {
+        "max_greater_min": "لا يمكن أن تكون درجة الحرارة القصوى أقل من درجة الحرارة الدنيا",
+        "min_greater_max": "لا يمكن أن تكون درجة الحرارة الدنيا أكبر من درجة الحرارة القصوى"
+      }
+    },
+    "batch": "مُدار بواسطة الدفعة",
+    "manufacture": "الشركة المصنعة",
+    "manufactured": "مصنّع بواسطة",
+    "activity": "النشاط",
+    "material": {
+      "type": "نوع المادة",
+      "subtype": "النوع الفرعي للمادة",
+      "companion": "مادة مرافقة",
+      "vaccine": "مادة لقاح",
+      "sequence": "يتطلب تسلسل"
+    },
+    "patient": "المريض",
+    "stock": {
+      "adjust": "يمكن إضافة/خصم المخزون",
+      "entity": "كيانات إضافة/خصم المخزون",
+      "role": "أدوار إضافة/خصم المخزون"
+    },
+    "so_required": "مطلوب لجرد المخزون"
+  },
+  "action": {
+    "activate": {
+      "button": "تفعيل",
+      "confirmation": "هل أنت متأكد أنك تريد تفعيل هذا المنتج؟"
+    },
+    "deactivate": {
+      "button": "إلغاء التفعيل",
+      "confirmation": "هل أنت متأكد أنك تريد تعطيل هذا المنتج؟"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "قالب المنتج",
+    "trademark": "متغير المنتج",
+    "non_hierarchy": "غير هرمي"
+  },
+  "form": {
+    "title": "معلومات المادة",
+    "global_info": "معلومات عامة",
+    "material_name": {
+      "label": "اسم المادة",
+      "placeholder": "اسم المادة",
+      "validation": {
+        "required": "اسم المادة مطلوب"
+      }
+    },
+    "hierarchical": {
+      "label": "طريقة التصنيف",
+      "placeholder": "طريقة التصنيف",
+      "option": {
+        "yes": "KFA",
+        "no": "بدون تصنيف"
+      },
+      "validation": {
+        "required": "طريقة التصنيف مطلوبة"
+      }
+    },
+    "material_level": {
+      "label": "مستوى المادة",
+      "placeholder": "مستوى المادة",
+      "validation": {
+        "required": "مستوى المادة مطلوب"
+      },
+      "radio": {
+        "active_substance": "قالب المنتج",
+        "trademark": "متغير المنتج"
+      }
+    },
+    "material_active_substance": {
+      "label": "قالب منتج المادة",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "قالب منتج المادة مطلوب"
+      }
+    },
+    "kfa_93_code": {
+      "label": "رمز متغير منتج المادة",
+      "placeholder": "مثال: 93766587",
+      "validation": {
+        "required": "رمز العلامة التجارية للمادة مطلوب"
+      }
+    },
+    "kfa_92_code": {
+      "label": "رمز قالب منتج المادة",
+      "placeholder": "مثال: 92766587",
+      "validation": {
+        "required": "رمز قالب منتج المادة مطلوب"
+      }
+    },
+    "material_code": {
+      "label": "رمز المادة",
+      "placeholder": "مثال: 123ABC",
+      "validation": {
+        "required": "رمز المادة مطلوب"
+      }
+    },
+    "unit_of_consumption": {
+      "label": "وحدة الاستهلاك",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "وحدة الاستهلاك مطلوبة"
+      }
+    },
+    "unit_of_distribution": {
+      "label": "وحدة التوزيع",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "وحدة التوزيع مطلوبة"
+      }
+    },
+    "number_of_unit_consumption_per_unit_distribution": {
+      "label": "عدد الوحدات، الاستهلاك لكل وحدة توزيع",
+      "placeholder": "مثال: 1",
+      "validation": {
+        "required": "عدد الوحدات، الاستهلاك لكل وحدة توزيع مطلوب"
+      }
+    },
+    "minimum_retail_price": {
+      "label": "الحد الأدنى لسعر التجزئة",
+      "placeholder": "مثال: 1000",
+      "validation": {
+        "required": "الحد الأدنى لسعر التجزئة مطلوب"
+      }
+    },
+    "maximum_retail_price": {
+      "label": "الحد الأقصى لسعر التجزئة",
+      "placeholder": "مثال: 5000",
+      "validation": {
+        "required": "الحد الأقصى لسعر التجزئة مطلوب"
+      }
+    },
+    "temperature_sensitive": {
+      "label": "حساس لدرجة الحرارة",
+      "placeholder": "حساس لدرجة الحرارة",
+      "validation": {
+        "required": "حساس لدرجة الحرارة مطلوب"
+      }
+    },
+    "minimum_temperature": {
+      "label": "أدنى درجة حرارة",
+      "placeholder": "مثال: 5",
+      "validation": {
+        "numeric": "أدنى درجة حرارة يجب أن تكون رقمًا فقط"
+      }
+    },
+    "maximum_temperature": {
+      "label": "أقصى درجة حرارة",
+      "placeholder": "مثال: 15",
+      "validation": {
+        "numeric": "أقصى درجة حرارة يجب أن تكون رقمًا فقط",
+        "diff": "يجب أن تكون درجة الحرارة القصوى أكبر من درجة الحرارة الدنيا"
+      }
+    },
+    "material_type": {
+      "label": "نوع المادة",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "نوع المادة مطلوب"
+      }
+    },
+    "material_subtype": {
+      "label": "النوع الفرعي للمادة",
+      "placeholder": "اختر النوع الفرعي للمادة"
+    },
+    "managed_by_batch": {
+      "label": "يُدار حسب الدفعة؟",
+      "placeholder": "مُدار بواسطة الدفعة"
+    },
+    "description": {
+      "label": "الوصف",
+      "placeholder": "الوصف",
+      "validation": {
+        "required": "وصف المادة مطلوب"
+      }
+    },
+    "manufacture": {
+      "label": "الجهة المصنعة",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "الجهة المصنعة مطلوبة"
+      }
+    },
+    "activity": {
+      "label": "النشاط",
+      "description": "ستعرض الأنشطة التي تتطلب بيانات المريض خيار «التسلسل»",
+      "placeholder": "البحث عن نشاط",
+      "is_sequence": "التسلسل",
+      "requires_patient_data": "يتطلب بيانات المريض",
+      "validation": {
+        "required": "النشاط مطلوب"
+      },
+      "error": {
+        "not_found": "لم يتم العثور على النشاط"
+      }
+    },
+    "companion_material": {
+      "label": "مادة مرافقة",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "المادة المرافقة مطلوبة"
+      }
+    },
+    "add_remove_stock": {
+      "label": "إضافة/إزالة المخزون",
+      "validation": {
+        "required": "إضافة/إزالة المخزون مطلوبة"
+      }
+    },
+    "entity_type": {
+      "label": "نوع الكيان",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "نوع الكيان مطلوب"
+      }
+    },
+    "role": {
+      "label": "اختر الدور",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "الدور مطلوب"
+      }
+    },
+    "so_required": {
+      "label": "مطلوب لجرد المخزون"
+    }
+  },
+  "scroll_list": {
+    "title": "المادة",
+    "description": "يرجى اختيار الكيان ونوع المعاملة أولاً",
+    "column": {
+      "material_name": "اسم المادة",
+      "available_stock": "المخزون المتاح",
+      "current_stock": "المخزون الحالي"
+    }
+  }
+}

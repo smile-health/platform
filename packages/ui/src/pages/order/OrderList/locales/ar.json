@@ -1,0 +1,76 @@
+{
+  "title": "قائمة الطلبات",
+  "tab": {
+    "all": "الكل",
+    "vendor": "المرسل",
+    "customer": "المستلم"
+  },
+  "create": {
+    "title": "إنشاء جديد",
+    "order": "طلب",
+    "distribution": "التوزيع",
+    "return": "إرجاع",
+    "central": "التوزيع المركزي",
+    "relocation": "نقل الموقع"
+  },
+  "form": {
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط"
+    },
+    "date_range": {
+      "label": "النطاق الزمني"
+    },
+    "order_number": {
+      "label": "رقم الطلب",
+      "placeholder": "اكتب رقم الطلب"
+    },
+    "status": {
+      "label": "الحالة",
+      "placeholder": "اختر الحالة"
+    },
+    "delivery": {
+      "label": "نوع التسليم",
+      "placeholder": "اختر نوع التوصيل"
+    },
+    "type": {
+      "label": "نوع الطلب",
+      "placeholder": "اختر نوع الطلب"
+    },
+    "integration_type": {
+      "label": "نوع التكامل",
+      "placeholder": "اختر نوع التكامل"
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "district": {
+      "label": "المدينة/المنطقة",
+      "placeholder": "اختر المدينة/المنطقة"
+    },
+    "primary": {
+      "vendor": {
+        "label": "المورد الرئيسي",
+        "placeholder": "اختر المورد الأساسي"
+      },
+      "health_care": {
+        "label": "الرعاية الصحية الأولية",
+        "placeholder": "اختر مركز الرعاية الصحية الأولية"
+      }
+    }
+  },
+  "column": {
+    "order_number": "رقم الطلب",
+    "activity": "النشاط",
+    "vendor": "المرسل",
+    "created": "أُنشئ بواسطة",
+    "customer": "المستلم",
+    "device": "نوع الجهاز",
+    "action": "إجراء"
+  }
+}

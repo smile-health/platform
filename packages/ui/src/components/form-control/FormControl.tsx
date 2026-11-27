@@ -34,7 +34,7 @@ export function FormLabel({
       )}
     >
       {children}
-      {required ? <span className="ui:ml-1 ui:text-danger-500">*</span> : null}
+      {required ? <span className="ui:ms-1 ui:text-danger-500">*</span> : null}
     </label>
   )
 }

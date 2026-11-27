@@ -1,0 +1,44 @@
+{
+  "page": {
+    "title": "قائمة أجهزة المراقبة"
+  },
+  "filter": {
+    "serial_number": {
+      "label": "الرقم التسلسلي",
+      "placeholder": "البحث برقم التسلسل"
+    },
+    "manufacturer": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر المصنع"
+    },
+    "operational_status": {
+      "label": "الحالة التشغيلية للجهاز",
+      "placeholder": "اختر الحالة التشغيلية للجهاز"
+    },
+    "asset_relation": {
+      "label": "علاقة الأصل",
+      "placeholder": "اختر علاقة الأصل"
+    },
+    "device_status": {
+      "label": "حالة الجهاز",
+      "placeholder": "اختر حالة الجهاز"
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
+    },
+    "asset_model": {
+      "label": "طراز الأصل",
+      "placeholder": "اختر طراز الأصل"
+    }
+  },
+  "table": {
+    "title": "قائمة أجهزة المراقبة"
+  },
+  "button": {
+    "create": "إضافة جهاز مراقبة درجة الحرارة"
+  },
+  "message": {
+    "import_success": "تم استيراد بيانات جهاز مراقبة درجة الحرارة بنجاح"
+  }
+}

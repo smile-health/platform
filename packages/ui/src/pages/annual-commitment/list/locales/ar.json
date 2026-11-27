@@ -1,0 +1,43 @@
+{
+  "title": "الالتزام السنوي",
+  "table": {
+    "title": "قائمة الالتزامات السنوية",
+    "column": {
+      "no": "رقم",
+      "contract_number": "رقم العقد",
+      "year": "السنة",
+      "material": "المادة",
+      "supplier": "المورد",
+      "lastUpdatedAt": "آخر تحديث في",
+      "action": "إجراء"
+    }
+  },
+  "button": {
+    "create": "إضافة التزام سنوي",
+    "import": "استيراد",
+    "export": "تصدير",
+    "downloadTemplate": "تنزيل القالب"
+  },
+  "field": {
+    "contract_number": {
+      "label": "رقم العقد",
+      "placeholder": "اختر رقم العقد"
+    },
+    "year": {
+      "label": "السنة",
+      "placeholder": "اكتب للبحث"
+    },
+    "materialName": {
+      "label": "اسم المادة",
+      "placeholder": "اختر اسم المادة"
+    },
+    "supplier": {
+      "label": "المورد",
+      "placeholder": "اختر المورّد"
+    },
+    "provinceReceiver": {
+      "label": "المحافظة المستلمة",
+      "placeholder": "اختر المحافظة المستلمة"
+    }
+  }
+}

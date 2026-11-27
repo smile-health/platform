@@ -22,7 +22,7 @@ const TransactionReturnFromFacilityDetailDrawer = () => {
       sizeHeight="lg"
     >
       <Button
-        className="ui:absolute ui:right-2 ui:top-2 ui:rounded ui:text-gray-800 ui:outline-hidden ui:border-none"
+        className="ui:absolute ui:end-2 ui:top-2 ui:rounded ui:text-gray-800 ui:outline-hidden ui:border-none"
         onClick={() => setStockData(null)}
         variant="subtle"
         type="button"

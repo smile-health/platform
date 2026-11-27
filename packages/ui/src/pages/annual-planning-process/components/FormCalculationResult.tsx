@@ -58,7 +58,7 @@ const FormCalculationResult: React.FC = () => {
         onSubmit={handleSubmitConfirmation}
         title={t('common:confirmation')}
         description={descriptionConfirmation}
-        subDescriptionClassName="ui:text-left"
+        subDescriptionClassName="ui:text-start"
       />
 
       {dataDetail && (

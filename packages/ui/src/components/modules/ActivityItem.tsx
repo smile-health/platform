@@ -30,7 +30,7 @@ export function ActivityItem({
       )}
     >
       <p
-        className={cx('ui:text-lg ui:font-bold ui:ml-4', className?.title, {
+        className={cx('ui:text-lg ui:font-bold ui:ms-4', className?.title, {
           'ui:text-neutral-500': disabled,
         })}
       >

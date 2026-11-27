@@ -1,0 +1,407 @@
+{
+  "title": {
+    "request": "تفاصيل الطلب",
+    "distribution": "تفاصيل التوزيع",
+    "return": "تفاصيل الإرجاع",
+    "central_distribution": "تفاصيل التوزيع المركزي",
+    "relocation": "تفاصيل طلب النقل",
+    "allocate_request": "تخصيص الطلب",
+    "allocate_relocation": "تخصيص النقل",
+    "receive_order": "استلام الطلب",
+    "receive_distribution": "استلام التوزيع",
+    "receive_return": "استلام المرتجع",
+    "receive_central_distribution": "استلام التوزيع المركزي",
+    "receive_relocation": "استلام النقل"
+  },
+  "order_status": {
+    "title": "حالة الطلب"
+  },
+  "customer": {
+    "title": "المستلم"
+  },
+  "vendor": {
+    "title": "المرسل"
+  },
+  "details": {
+    "title": "التفاصيل"
+  },
+  "comment": {
+    "title": "تعليق"
+  },
+  "history": {
+    "title": "سجل الطلبات"
+  },
+  "modal": {
+    "hierarchy": {
+      "button": {
+        "show": "إظهار كمية الدفعة",
+        "hide": "إخفاء كمية الدفعة"
+      }
+    },
+    "add_item": {
+      "title": "إضافة عنصر",
+      "empty_data_title": "لا توجد بيانات متاحة",
+      "empty_data_desc": "هذه القائمة فارغة حالياً. يرجى اختيار المادة أولاً."
+    },
+    "edit_item": {
+      "title": "تعديل العنصر"
+    },
+    "cancel_order": {
+      "title": "إلغاء الطلب"
+    },
+    "validate_order": {
+      "title": "إلغاء الطلب"
+    },
+    "confirm_order": {
+      "title": "تأكيد الطلب",
+      "trademark_popup": {
+        "title": "مادة متغير المنتج",
+        "button": {
+          "save": "حفظ"
+        }
+      },
+      "product_template": "قالب المنتج"
+    },
+    "cancel_confirmation": {
+      "title": "إلغاء التأكيد",
+      "description": "متابعة لإلغاء التأكيد وجعل الطلب معلقاً.",
+      "submit_button": "نعم، متابعة إلغاء التأكيد"
+    },
+    "allocate": {
+      "title_batch": "إضافة كمية الدفعة",
+      "title_non_batch": "إضافة كمية",
+      "add_stock_from_other_activity": "أخذ المخزون من أنشطة أخرى"
+    },
+    "quantity_detail": {
+      "title": "تفاصيل الكمية",
+      "title_hierarchy": "تفاصيل كمية مادة متغير المنتج"
+    },
+    "ship_order": {
+      "title": "شحن الطلب"
+    },
+    "order_history_detail": {
+      "title": "تفاصيل سجل الطلبات"
+    },
+    "input_qty": "إدخال الكمية"
+  },
+  "drawer": {
+    "hierarchy": {
+      "allocate": {
+        "button": {
+          "add_trademark": "مادة متغير المنتج"
+        }
+      }
+    },
+    "validate_order": {
+      "title": "الطلب الذي تم التحقق منه"
+    },
+    "confirm_order": {
+      "title": "تأكيد الطلب"
+    },
+    "allocate": {
+      "title": "تخصيص الطلب"
+    },
+    "batch_list": {
+      "title": "متغير المنتج"
+    }
+  },
+  "info": {
+    "receive": "إذا كان عدد العناصر ورقم الدفعة غير متطابقين، فلا تنقر على استلام ويرجى الإبلاغ عنه إلى مكتب المساعدة"
+  },
+  "data": {
+    "customer_name": "اسم المستلم",
+    "address": "العنوان",
+    "required_by_date": "التاريخ المطلوب بحلول",
+    "vendor_name": "اسم المرسِل",
+    "delivery_number": "رقم DO",
+    "do_number": "رقم DO",
+    "request_number": "رقم الطلب",
+    "distribution_number": "رقم التوزيع",
+    "return_number": "رقم المرتجع",
+    "central_distribution_number": "رقم التسليم المركزي",
+    "relocation_number": "رقم طلب النقل",
+    "activity": "النشاط",
+    "stock_from_activity": "المخزون من النشاط",
+    "delivery_type": "نوع التسليم",
+    "contract_number": "رقم العقد",
+    "created_by": "أُنشئ بواسطة",
+    "created_at": "تاريخ الإنشاء",
+    "release_date": "تاريخ الإفراج",
+    "actual_shipment_date": "تاريخ الشحن الفعلي",
+    "actual_receipt_date": "تاريخ الاستلام الفعلي",
+    "submit_comment": "إرسال التعليق",
+    "status_at_posting": "الحالة عند الترحيل",
+    "batch_code": "رمز الدفعة",
+    "expired_date": "تاريخ الانتهاء",
+    "service_type": "نوع الخدمة",
+    "quantity": "الكمية"
+  },
+  "button": {
+    "letter_report": "خطاب الطلب",
+    "var_report": "تقرير استلام البضائع",
+    "batch_note": "مذكرة التخصيص",
+    "sbbk": "مذكرة التسليم",
+    "confirmation_note": "مذكرة التأكيد",
+    "view_shipment_detail": "عرض تفاصيل الشحنة",
+    "cancel_order": "إلغاء الطلب",
+    "cancel_confirmation": "إلغاء التأكيد",
+    "allocate": "تخصيص",
+    "ship_order": "شحن الطلب",
+    "confirm_order": "تأكيد الطلب",
+    "receive": "إرسال الاستلام",
+    "receive_order": "استلام الطلب",
+    "submit_comment": "إرسال التعليق",
+    "submit_validation": "إرسال التحقق",
+    "submit_confirmation": "إرسال التأكيد",
+    "submit_allocation": "إرسال التخصيص",
+    "quantity": "الكمية",
+    "batch_quantity": "كمية الدفعة",
+    "update_quantity": "تحديث الكمية",
+    "update_batch_quantity": "تحديث كمية الدفعة",
+    "validate": "تحقق",
+    "copy_history": "نسخ السجل",
+    "update_product_variant": "تحديث متغير المنتج"
+  },
+  "table": {
+    "title": {
+      "item": "عنصر الجدول"
+    },
+    "column": {
+      "si_number": "الرقم التسلسلي",
+      "material_name": "المادة",
+      "product_variant": "متغير المنتج",
+      "ordered": "المطلوب",
+      "validated": "تم التحقق",
+      "confirmed": "مؤكد",
+      "allocated": "مخصص",
+      "shipped": "تم الشحن",
+      "received": "تم الاستلام",
+      "total_available_stock": "إجمالي المخزون المتاح",
+      "available_stock": "المخزون المتاح",
+      "available_stock_at": "المخزون المتاح في {{ name }}",
+      "stock_on_hand": "المخزون الحالي",
+      "allocation": "التخصيص",
+      "batch_info": "معلومات الدفعة",
+      "batch_detail": "تفاصيل الدفعة",
+      "activity": "النشاط",
+      "quantity": "الكمية",
+      "total_quantity": "إجمالي الكمية",
+      "material_status": "حالة المادة",
+      "reason": "السبب",
+      "trademark_material": "مادة متغير المنتج"
+    },
+    "trademark": {
+      "batch": {
+        "production_date": "تاريخ الإنتاج : {{ date }}",
+        "expired_date": "تاريخ الانتهاء : {{ date }}",
+        "manufacturer": "المصنع : {{ name }}"
+      },
+      "column": {
+        "received_qty": {
+          "placeholder": "مثال: 100",
+          "validation": {
+            "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}"
+          }
+        },
+        "allocated_qty": {
+          "placeholder": "مثال: 100",
+          "validation": {
+            "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}",
+            "less_than": "يجب أن تكون الكمية أقل من {{value}}"
+          }
+        },
+        "batch_from": "الدفعة من",
+        "non_batch": "من غير دفعة",
+        "material_active_substance": "مادة قالب المنتج",
+        "stock_on_hand_at": "المخزون الحالي في {{ name }}",
+        "available_stock_at": "المخزون المتاح في {{ name }}",
+        "activity_name": "النشاط {{ activity_name }}",
+        "material_name": "المادة {{ material_name }} "
+      },
+      "validation": {
+        "min_qty": "يجب إدخال كمية لا تقل عن 1",
+        "required": "الكمية مطلوبة"
+      },
+      "button": {
+        "close": "إغلاق",
+        "save": "حفظ"
+      }
+    },
+    "view_product_variant": "عرض متغير المنتج",
+    "product_variant": "متغير المنتج",
+    "enter_product_variant_qty": "أدخل كمية متغير المنتج"
+  },
+  "form": {
+    "allocated_qty": {
+      "validation": {
+        "less_than": "يجب أن تكون الكمية أقل من {{value}}",
+        "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}",
+        "total_must_same_as_confirmed_qty": "يجب أن يساوي إجمالي الكمية المخصصة الكمية المؤكدة ({{value}})"
+      }
+    },
+    "received_qty": {
+      "placeholder": "مثال: 100",
+      "validation": {
+        "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}"
+      }
+    },
+    "material": {
+      "label": "إضافة مادة",
+      "placeholder": "اختر المادة",
+      "validation": {
+        "required": "المادة مطلوبة"
+      }
+    },
+    "letter_number": {
+      "label": "رقم الخطاب",
+      "placeholder": "أدخل رقم الخطاب",
+      "validation": {
+        "required": "لا يمكن أن يكون رقم الخطاب فارغًا"
+      }
+    },
+    "comment": {
+      "label": "تعليق",
+      "placeholder": "يرجى إدخال تعليق",
+      "validation": {
+        "required": "لا يمكن أن يكون التعليق فارغًا"
+      }
+    },
+    "ordered_qty": {
+      "label": "كمية الطلب",
+      "placeholder": "يرجى إدخال كمية الطلب",
+      "helper": "الكمية الموصى بها",
+      "validation": {
+        "zero": "يجب أن تكون الكمية أكبر من 0",
+        "required": "الكمية مطلوبة",
+        "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}",
+        "must_lesser_than_vendor_stock": "يجب أن تكون الكمية أقل من مخزون المورد {{value}}"
+      },
+      "button": {
+        "update_trademark_material": "تحديث مادة متغير المنتج",
+        "add_trademark_material": "مادة متغير المنتج"
+      }
+    },
+    "reason": {
+      "label": "السبب",
+      "placeholder": "اختر السبب",
+      "validation": {
+        "required": "السبب مطلوب"
+      }
+    },
+    "other_reason": {
+      "label": "سبب آخر",
+      "placeholder": "يرجى إدخال سبب آخر",
+      "validation": {
+        "required": "سبب آخر مطلوب"
+      }
+    },
+    "validated_qty": {
+      "placeholder": "يرجى إدخال الكمية",
+      "validation": {
+        "required": "الكمية مطلوبة",
+        "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}",
+        "max": "لا يمكن إدخال كمية أكبر من المخزون المتاح"
+      }
+    },
+    "confirmed_qty": {
+      "placeholder": "يرجى إدخال الكمية",
+      "validation": {
+        "required": "الكمية مطلوبة",
+        "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}",
+        "max": "لا يمكن إدخال كمية أكبر من المخزون المتاح"
+      }
+    },
+    "receive_qty": {
+      "placeholder": "يرجى إدخال الكمية",
+      "validation": {
+        "required": "الكمية مطلوبة",
+        "equal": "يجب أن تكون الكمية مساوية للكمية المشحونة، ({{ value }})"
+      }
+    },
+    "material_status": {
+      "label": "حالة المادة",
+      "placeholder": "اختر الحالة"
+    },
+    "allocations": {
+      "validation": {
+        "at_least_one": "يلزم تخصيص واحد على الأقل",
+        "is_match_with_confirmed_qty": "التخصيصات غير متطابقة"
+      }
+    },
+    "sales_ref": {
+      "label": "رقم المرجع",
+      "placeholder": "رقم المرجع",
+      "validation": {
+        "required": "رقم المرجع مطلوب"
+      }
+    },
+    "estimated_date": {
+      "label": "تاريخ الوصول المتوقع",
+      "placeholder": "تاريخ الوصول المتوقع",
+      "validation": {
+        "required": "تاريخ الوصول المتوقع مطلوب"
+      }
+    },
+    "taken_by_customer": {
+      "label": "هل استلم العميل؟",
+      "validation": {
+        "required": "الاستلام من قبل العميل مطلوب"
+      }
+    },
+    "actual_shipment_date": {
+      "label": "تاريخ الشحن الفعلي",
+      "placeholder": "تاريخ الشحن الفعلي",
+      "validation": {
+        "required": "تاريخ الشحن الفعلي مطلوب",
+        "max": "يجب أن يكون تاريخ الشحن الفعلي أقل من أو يساوي اليوم"
+      }
+    },
+    "received_date": {
+      "label": "تاريخ الاستلام",
+      "placeholder": "تاريخ الاستلام",
+      "validation": {
+        "required": "تاريخ الاستلام مطلوب",
+        "format": "تنسيق تاريخ الاستلام غير صالح.",
+        "future_date": "يجب أن يكون تاريخ الاستلام أقل من أو يساوي اليوم",
+        "past_date": "التاريخ المحدد بعيد جدًا عن تاريخ الشحن الفعلي."
+      }
+    }
+  },
+  "text": {
+    "zero_stock": "مخزون صفر"
+  },
+  "message": {
+    "add_item_success": "تمت إضافة الطلب بنجاح",
+    "add_item_failed": "فشلت إضافة الطلب",
+    "edit_item_success": "تم تعديل الطلب بنجاح",
+    "edit_item_failed": "فشل تعديل الطلب",
+    "comment_success": "تم إرسال التعليق بنجاح",
+    "comment_failed": "حدث خطأ أثناء إرسال التعليق",
+    "cancel_order_success": "تم إلغاء الطلب بنجاح",
+    "cancel_order_failed": "فشل إلغاء الطلب",
+    "validate_order_success": "تم التحقق من الطلب بنجاح",
+    "validate_order_failed": "فشل التحقق من الطلب",
+    "confirm_order_success": "تم تأكيد الطلب بنجاح",
+    "confirm_order_failed": "فشل تأكيد الطلب",
+    "cancel_confirmation_success": "تم إلغاء التأكيد بنجاح",
+    "cancel_confirmation_failed": "فشل إلغاء التأكيد",
+    "allocate_order_success": "تم تخصيص الطلب بنجاح",
+    "allocate_order_failed": "فشل تخصيص الطلب",
+    "ship_order_success": "تم شحن الطلب بنجاح",
+    "ship_order_failed": "فشل شحن الطلب",
+    "receive_order_success": "تم استلام الطلب بنجاح",
+    "receive_order_failed": "فشل استلام الطلب",
+    "status_not_eligible": "الحالة غير مؤهلة",
+    "status_already_fulfilled": "الحالة مستوفاة بالفعل",
+    "status_already_allocated": "الحالة مخصصة بالفعل"
+  },
+  "capacity_projection": {
+    "title": "توقع سعة التخزين البارد",
+    "projection_of_total_stock_volume": "توقع إجمالي حجم الطلبات (لتر)",
+    "storage_net_capacity": "صافي سعة التخزين البارد (لتر)",
+    "projection_of_percentage_used": "توقع نسبة استخدام السعة (%)",
+    "based_on_ordered_qty": "استنادًا إلى الكمية المطلوبة",
+    "based_on_confirmed_qty": "استنادًا إلى الكمية المؤكدة",
+    "based_on_allocated_qty": "استنادًا إلى الكمية المخصصة"
+  }
+}

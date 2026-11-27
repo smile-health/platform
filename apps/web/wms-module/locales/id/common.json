@@ -608,5 +608,11 @@
   },
   "setting_latlong": {
     "title": "Tutorial Menentukan Lintang dan Garis bujur"
+  },
+  "text_direction": {
+    "label": "Arah teks",
+    "auto": "Otomatis",
+    "ltr": "Kiri ke kanan",
+    "rtl": "Kanan ke kiri"
   }
 }

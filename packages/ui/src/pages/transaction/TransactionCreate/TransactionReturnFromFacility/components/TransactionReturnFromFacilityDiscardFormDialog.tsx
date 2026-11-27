@@ -110,7 +110,7 @@ const TransactionReturnFromFacilityDiscardFormDialog = () => {
         classNameOverlay="z-10"
       >
         <Button
-          className="ui:absolute ui:right-2 ui:top-2 ui:rounded ui:text-gray-800 ui:outline-hidden ui:border-none"
+          className="ui:absolute ui:end-2 ui:top-2 ui:rounded ui:text-gray-800 ui:outline-hidden ui:border-none"
           onClick={handleCancel}
           variant="subtle"
           type="button"

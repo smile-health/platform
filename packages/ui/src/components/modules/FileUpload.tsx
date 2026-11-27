@@ -57,7 +57,7 @@ const FileUpload: React.FC<Props> = ({
         </Button>
         <Button
           asChild
-          className="ui:border-r ui:border-y ui:rounded-s-none ui:border-gray-300 ui:grow ui:cursor-pointer ui:m-0 ui:text-sm ui:text-neutral-500 ui:justify-start ui:hover:bg-white!"
+          className="ui:border-e ui:border-y ui:rounded-s-none ui:border-gray-300 ui:grow ui:cursor-pointer ui:m-0 ui:text-sm ui:text-neutral-500 ui:justify-start ui:hover:bg-white!"
           variant="subtle"
         >
           <label htmlFor="fileUpload">{fileName}</label>

@@ -138,10 +138,10 @@ export const TooltipContent = React.forwardRef<
                     <div
                       className={cx(
                         'ui:absolute ui:h-2 ui:w-2 ui:rotate-45',
-                        'ui:left-0 ui:right-0 ui:ml-auto ui:mr-auto',
+                        'ui:start-0 ui:end-0 ui:ms-auto ui:me-auto',
                         {
                           'ui:top-[-4px] ui:bg-gray-800': color === 'dark',
-                          'ui:top-[-3.5px] ui:border-b ui:border-r ui:border-gray-300 ui:bg-white ui:shadow-sm':
+                          'ui:top-[-3.5px] ui:border-b ui:border-e ui:border-gray-300 ui:bg-white ui:shadow-sm':
                             color === 'light',
                         }
                       )}

@@ -1,0 +1,45 @@
+{
+  "list": {
+    "list": "معاملة التخلص من النفايات",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن رقم مجموعة النفايات"
+      },
+      "date_range": {
+        "label": "نطاق التاريخ",
+        "placeholder": "اختر نطاق التاريخ"
+      },
+      "healthcare_facility_name": {
+        "label": "اسم منشأة الرعاية الصحية",
+        "placeholder": "اختر اسم منشأة الرعاية الصحية"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "waste_group_number": "رقم مجموعة النفايات",
+      "healthcare_facility": "منشأة الرعاية الصحية",
+      "weight": "الوزن ({{ unit }})",
+      "third_party": "طرف ثالث",
+      "transport_officer": "مسؤول النقل",
+      "vehicle_number": "رقم المركبة",
+      "pickup_time": "وقت الاستلام",
+      "drop_time": "وقت الإيداع",
+      "process_time": "وقت المعالجة",
+      "landfill_time": "وقت الطمر",
+      "recycle_time": "وقت إعادة التدوير",
+      "action": "إجراء"
+    },
+    "column_detail": {
+      "waste_bag": "رقم كيس النفايات",
+      "waste_group": "رقم مجموعة النفايات",
+      "waste_characteristic": "النوع / المجموعة / خصائص النفايات",
+      "weight": "وزن النفايات ({{ unit }})"
+    }
+  },
+  "modal": {
+    "title": "مجموعة النفايات"
+  }
+}

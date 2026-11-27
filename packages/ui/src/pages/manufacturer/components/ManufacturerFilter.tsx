@@ -54,7 +54,7 @@ export default function ManufacturerFilter({
 
   const renderButtonFilter = () => {
     return (
-      <div className="ui:flex ui:ml-auto ui:gap-2">
+      <div className="ui:flex ui:ms-auto ui:gap-2">
         {isGlobal && (
           <>
             <Button

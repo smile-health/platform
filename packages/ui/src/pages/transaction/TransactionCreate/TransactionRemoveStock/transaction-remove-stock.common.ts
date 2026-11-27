@@ -4,6 +4,7 @@ import { StockDetailStock } from '#types/stock'
 import { TFunction } from 'i18next'
 
 import { CreateTransactionRemoveForm } from './transaction-remove-stock.type'
+import { toIntlLocale } from '#utils/locale'
 
 export const textGrouper = ({
   text1,
@@ -25,7 +26,7 @@ export const thousandFormatter = ({
   value: number
   locale: string
 }) => {
-  return new Intl.NumberFormat(locale).format(value) || ''
+  return new Intl.NumberFormat(toIntlLocale(locale)).format(value) || ''
 }
 
 export const defineMinSize = (

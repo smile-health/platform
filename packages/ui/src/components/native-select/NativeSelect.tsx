@@ -66,7 +66,7 @@ export const NativeSelect = React.forwardRef<
   return (
     <Root fullWidth={isGroup ? fullWidth : undefined}>
       {leftIcon ? (
-        <div className="ui:leading-1 ui:absolute ui:left-0 ui:top-0 ui:z-20 ui:flex ui:h-full ui:items-center ui:justify-center ui:px-2 ui:text-gray-700">
+        <div className="ui:leading-1 ui:absolute ui:start-0 ui:top-0 ui:z-20 ui:flex ui:h-full ui:items-center ui:justify-center ui:px-2 ui:text-gray-700">
           <div>{leftIcon}</div>
         </div>
       ) : null}
@@ -78,7 +78,7 @@ export const NativeSelect = React.forwardRef<
         disabled={disabled}
         className={cx(
           // base style
-          'ui:form-select ui:rounded ui:pr-10 ui:leading-tight ui:text-gray-800',
+          'ui:form-select ui:rounded ui:pe-10 ui:leading-tight ui:text-gray-800',
           'ui:py-0! ui:focus:border-primary-500 ui:focus:outline-hidden ui:focus:ring-primary-500/25',
 
           {
@@ -105,21 +105,21 @@ export const NativeSelect = React.forwardRef<
           {
             //add padding to left side when leftIcon is true
 
-            'ui:pl-8': size === 'sm' && leftIcon,
-            'ui:pl-9': size === 'md' && leftIcon,
-            'ui:pl-10': size === 'lg' && leftIcon,
-            'ui:pl-11': size === 'xl' && leftIcon,
+            'ui:ps-8': size === 'sm' && leftIcon,
+            'ui:ps-9': size === 'md' && leftIcon,
+            'ui:ps-10': size === 'lg' && leftIcon,
+            'ui:ps-11': size === 'xl' && leftIcon,
           },
 
           // group
           'ui:focus:group-[.is-group]:z-10',
-          'ui:first:group-[.is-group]:rounded-r-none!',
+          'ui:first:group-[.is-group]:rounded-e-none!',
           'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:rounded-none!',
-          'ui:last:group-[.is-group]:rounded-l-none!',
+          'ui:last:group-[.is-group]:rounded-s-none!',
 
-          'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:-mr-px!',
-          'ui:last:group-[.is-group]:-ml-px!',
-          'ui:first:group-[.is-group]:-mr-px!'
+          'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:-me-px!',
+          'ui:last:group-[.is-group]:-ms-px!',
+          'ui:first:group-[.is-group]:-me-px!'
         )}
       >
         {children}

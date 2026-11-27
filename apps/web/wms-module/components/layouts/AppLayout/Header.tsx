@@ -39,12 +39,12 @@ const Header: React.FC = () => {
 
   return (
     <div className="ui:flex ui:items-center ui:justify-between ui:px-4 ui:py-4 ui:mx-auto ui:border ui:border-neutral-200">
-      <div className="ui:flex ui:flex-row ui:*:not-first:ml-4 ui:*:not-first:border-l-2 ui:*:not-first:border-[#D9D9D9] ui:items-center">
+      <div className="ui:flex ui:flex-row ui:*:not-first:ms-4 ui:*:not-first:border-s-2 ui:*:not-first:border-[#D9D9D9] ui:items-center">
         <div className="ui:flex ui:gap-4 ui:items-center">
           <DropdownProgram />
           <p className="ui:text-base font-bold">{t('titleHeader')}</p>
         </div>
-        <div className="ui:flex ui:gap-6 ui:pl-4 ui:items-center">
+        <div className="ui:flex ui:gap-6 ui:ps-4 ui:items-center">
           <Image
             className="ui:h-7 ui:w-auto"
             src="/images/logo-smile.svg"
@@ -69,14 +69,14 @@ const Header: React.FC = () => {
           {user?.entity?.name && <p className="ui:text-base font-bold">{user.entity.name}</p>}
         </div>
       </div>
-      <div className="ui:flex ui:items-center ui:*:not-first:ml-4 ui:*:not-first:border-l-2 ui:*:not-first:border-[#D9D9D9]">
+      <div className="ui:flex ui:items-center ui:*:not-first:ms-4 ui:*:not-first:border-s-2 ui:*:not-first:border-[#D9D9D9]">
         <div className="ui:flex ui:items-center ui:gap-4">
           <NotificationInbox />
           <LanguageChanger />
           <WeightChanger />
         </div>
 
-        <div className="ui:flex ui:gap-4 ui:pl-4 ui:items-center">
+        <div className="ui:flex ui:gap-4 ui:ps-4 ui:items-center">
           <DropdownMenuRoot>
             <DropdownMenuTrigger>
               <button
@@ -84,7 +84,7 @@ const Header: React.FC = () => {
                 id="trigger-dropdown-header"
               >
                 <Avatar name={user?.username}></Avatar>
-                <div className="ui:min-w-[140px] ui:text-[#414042] ui:px-2 ui:py-1 ui:text-left">
+                <div className="ui:min-w-[140px] ui:text-[#414042] ui:px-2 ui:py-1 ui:text-start">
                   {user?.firstname} {user?.lastname}
                 </div>
                 <div className="ui:py-2">

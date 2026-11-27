@@ -19,7 +19,7 @@ export const SummaryCard: React.FC<SummaryCardProps> = ({
       <div className="ui:flex ui:flex-row ui:items-center">
         <p className="ui:text-2xl ui:font-bold ui:text-neutral-900">{value}</p>
         {description && (
-          <p className="ui:text-xl ui:font-bold ui:text-neutral-600 ui:ml-2">
+          <p className="ui:text-xl ui:font-bold ui:text-neutral-600 ui:ms-2">
             {description}
           </p>
         )}

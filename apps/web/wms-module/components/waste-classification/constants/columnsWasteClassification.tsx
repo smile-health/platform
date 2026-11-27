@@ -32,7 +32,7 @@ export const columnsWasteClassification = (
         rowSpan: (row) => row.original.typeRowSpan ?? 0,
         cellClassName: ({ original }) =>
           original.typeRowSpan
-            ? ' ui:border-r ui:border-gray-200'
+            ? ' ui:border-e ui:border-gray-200'
             : 'ui:hidden',
       },
       cell: ({ row }) =>
@@ -53,7 +53,7 @@ export const columnsWasteClassification = (
         rowSpan: (row) => row.original.typeRowSpan ?? 0,
         cellClassName: ({ original }) =>
           original.typeRowSpan
-            ? ' ui:border-r ui:border-gray-200'
+            ? ' ui:border-e ui:border-gray-200'
             : 'ui:hidden',
       },
       cell: ({ row }) =>
@@ -74,7 +74,7 @@ export const columnsWasteClassification = (
         rowSpan: (row) => row.original.groupRowSpan ?? 0,
         cellClassName: ({ original }) =>
           original.groupRowSpan
-            ? ' ui:border-r ui:border-gray-200'
+            ? ' ui:border-e ui:border-gray-200'
             : 'ui:hidden',
       },
       cell: ({ row }) =>
@@ -95,7 +95,7 @@ export const columnsWasteClassification = (
         rowSpan: (row) => row.original.groupRowSpan ?? 0,
         cellClassName: ({ original }) =>
           original.groupRowSpan
-            ? ' ui:border-r ui:border-gray-200'
+            ? ' ui:border-e ui:border-gray-200'
             : 'ui:hidden',
       },
       cell: ({ row }) =>
@@ -118,7 +118,7 @@ export const columnsWasteClassification = (
           : row.original.wasteCharacteristicsNameEn,
       meta: {
         cellClassName:
-          'font-medium text-gray-700 ui:border-r ui:border-gray-200',
+          'font-medium text-gray-700 ui:border-e ui:border-gray-200',
       },
     },
     {

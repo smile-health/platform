@@ -119,10 +119,10 @@ export function Th({
       {...props}
       className={cx(
         'ui:px-2 ui:py-5',
-        'ui:text-left ui:text-sm ui:font-medium ui:text-gray-700',
+        'ui:text-start ui:text-sm ui:font-medium ui:text-gray-700',
         'ui:border-b ui:border-gray-300',
         {
-          'ui:not-last:border-r': withColumnBorders,
+          'ui:not-last:border-e': withColumnBorders,
           'sticky': stickyHeader,
         },
         {
@@ -169,13 +169,13 @@ export function Td({
       {...props}
       className={cx(
         'ui:px-2 ui:py-3',
-        'ui:text-left ui:leading-tight ui:text-dark-blue',
+        'ui:text-start ui:leading-tight ui:text-dark-blue',
         'ui:border-t ui:border-gray-300 ui:group-first-of-type:border-t-0 ',
         //selected style
-        'ui:first:group-data-[selected=true]:border-l-[3px] ',
-        'ui:first:group-data-[selected=true]:border-l-primary-500',
+        'ui:first:group-data-[selected=true]:border-s-[3px] ',
+        'ui:first:group-data-[selected=true]:border-s-primary-500',
         {
-          'ui:not-last:border-r': withColumnBorders,
+          'ui:not-last:border-e': withColumnBorders,
           'ui:align-top': verticalAlignment === 'top',
           'ui:align-middle': verticalAlignment === 'center',
           'ui:align-bottom': verticalAlignment === 'bottom',

@@ -166,12 +166,12 @@ const EntityDetailMaterialManagementEditForm: React.FC<Props> = ({
             <Button
               id={`save_${getValues('id')}`}
               variant="light"
-              className="ui:bg-transparent ui:p-0 ui:h-auto ui:mr-[18px]  ui:hover:bg-transparent!"
+              className="ui:bg-transparent ui:p-0 ui:h-auto ui:me-[18px]  ui:hover:bg-transparent!"
               type="submit"
               loading={isLoading}
             >
               <div className="ui:flex ui:justify-center ui:items-center ui:text-[#004990]!">
-                <div className="ui:mr-[8px]">
+                <div className="ui:me-[8px]">
                   <CheckIcon className="h-4 w-4" />
                 </div>
                 {t('common:save')}
@@ -185,7 +185,7 @@ const EntityDetailMaterialManagementEditForm: React.FC<Props> = ({
               type="button"
               onClick={() => setEditData(null)}
             >
-              <div className="ui:ml-[4.16px] ui:rotate-45 ui:mt-1">
+              <div className="ui:ms-[4.16px] ui:rotate-45 ui:mt-1">
                 <Plus />
               </div>
             </Button>

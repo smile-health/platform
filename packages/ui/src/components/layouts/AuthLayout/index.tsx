@@ -310,7 +310,7 @@ const AuthLayout: React.FC<Props> = (props) => {
         </DialogHeader>
         <DialogContent>
           <div className="ui:p-5 ui:flex ui:flex-col ui:space-y-5 ui:h-80">
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div>
                 <div className="ui:font-bold ui:text-dark-blue">
                   {t("privacy_policy.sub_title_one")}
@@ -323,14 +323,14 @@ const AuthLayout: React.FC<Props> = (props) => {
                 {t("privacy_policy.desc_one")}
               </div>
             </div>
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div className="ui:font-bold ui:text-dark-blue">
                 {t("privacy_policy.sub_title_two")}
               </div>
               <div className="ui:text-neutral-500">
                 {t("privacy_policy.desc_two")}
               </div>
-              <div className="ui:ml-5 ui:text-neutral-500">
+              <div className="ui:ms-5 ui:text-neutral-500">
                 <ul className="ui:list-disc ui:space-y-1">
                   {(
                     t("privacy_policy.desc_two_list", {
@@ -342,14 +342,14 @@ const AuthLayout: React.FC<Props> = (props) => {
                 </ul>
               </div>
             </div>
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div className="ui:font-bold ui:text-dark-blue">
                 {t("privacy_policy.sub_title_three")}
               </div>
               <div className="ui:text-neutral-500">
                 {t("privacy_policy.desc_three")}
               </div>
-              <div className="ui:ml-5 ui:text-neutral-500">
+              <div className="ui:ms-5 ui:text-neutral-500">
                 <ul className="ui:list-disc ui:space-y-1">
                   {(
                     t("privacy_policy.desc_three_list", {
@@ -361,7 +361,7 @@ const AuthLayout: React.FC<Props> = (props) => {
                 </ul>
               </div>
             </div>
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div className="ui:font-bold ui:text-dark-blue">
                 {t("privacy_policy.sub_title_four")}
               </div>
@@ -369,7 +369,7 @@ const AuthLayout: React.FC<Props> = (props) => {
                 {t("privacy_policy.desc_four")}
               </div>
             </div>
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div className="ui:font-bold ui:text-dark-blue">
                 {t("privacy_policy.sub_title_five")}
               </div>
@@ -377,7 +377,7 @@ const AuthLayout: React.FC<Props> = (props) => {
                 {t("privacy_policy.desc_five")}
               </div>
             </div>
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div className="ui:font-bold ui:text-dark-blue">
                 {t("privacy_policy.sub_title_six")}
               </div>
@@ -385,7 +385,7 @@ const AuthLayout: React.FC<Props> = (props) => {
                 {t("privacy_policy.desc_six")}
               </div>
             </div>
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div className="ui:font-bold ui:text-dark-blue">
                 {t("privacy_policy.sub_title_seven")}
               </div>
@@ -393,7 +393,7 @@ const AuthLayout: React.FC<Props> = (props) => {
                 {t("privacy_policy.desc_seven")}
               </div>
             </div>
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div className="ui:font-bold ui:text-dark-blue">
                 {t("privacy_policy.sub_title_eight")}
               </div>
@@ -401,7 +401,7 @@ const AuthLayout: React.FC<Props> = (props) => {
                 {t("privacy_policy.desc_eight")}
               </div>
             </div>
-            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-left">
+            <div className="ui:flex ui:flex-col ui:space-y-5 ui:text-start">
               <div className="ui:font-bold ui:text-dark-blue">
                 {t("privacy_policy.sub_title_nine")}
               </div>

@@ -56,7 +56,7 @@ const ManualRequestItem: React.FC<ManualRequestItemProps> = ({
         </Badge>
       </div>
       <div className="ui:flex ui:items-center ui:justify-between ui:mb-2">
-        <div className="ui:text-sm ui:text-gray-700 ui:text-left ui:mb-2">
+        <div className="ui:text-sm ui:text-gray-700 ui:text-start ui:mb-2">
           {item?.entityName +
             ' ' +
             t('manualScale:list.by') +
@@ -69,7 +69,7 @@ const ManualRequestItem: React.FC<ManualRequestItemProps> = ({
         )}
       </div>
 
-      <div className="ui:flex ui:items-center ui:justify-between ui:text-sm ui:text-gray-700 ui:text-left ui:mb-2">
+      <div className="ui:flex ui:items-center ui:justify-between ui:text-sm ui:text-gray-700 ui:text-start ui:mb-2">
         <div className="ui:flex ui:items-center ui:justify-start ui:gap-2 ui:mt-2">
           <button
             type="button"

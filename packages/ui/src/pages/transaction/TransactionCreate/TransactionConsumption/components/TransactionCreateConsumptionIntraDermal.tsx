@@ -59,7 +59,7 @@ const TransactionCreateConsumptionIntraDermal = ({
         </div>
       </div>
       <div className="ui:flex ui:flex-row ui:border-t ui:border-[#D2D2D2]">
-        <div className="ui:w-56 ui:border-r ui:border-[#D2D2D2]">
+        <div className="ui:w-56 ui:border-e ui:border-[#D2D2D2]">
           <div className="ui:flex ui:flex-col">
             {data?.map((item, index) => (
               <div
@@ -77,7 +77,7 @@ const TransactionCreateConsumptionIntraDermal = ({
                 {index !== 0 ? (
                   <button
                     id={`btn-delete ${item.vaccination.patient_id}-${index.toString()}`}
-                    className="ui:text-dark-teal ui:pr-3"
+                    className="ui:text-dark-teal ui:pe-3"
                     type="button"
                     onClick={() => {
                       setValue('data', removePatient(index, data))
@@ -94,7 +94,7 @@ const TransactionCreateConsumptionIntraDermal = ({
             {data.length < 5 ? (
               <Button
                 variant="subtle"
-                className="ui:mt-5 ui:pl-2"
+                className="ui:mt-5 ui:ps-2"
                 type="button"
                 onClick={() => setValue('data', addNewPatient(data))}
                 id={`add-new-patient-batch-${indexItem}`}

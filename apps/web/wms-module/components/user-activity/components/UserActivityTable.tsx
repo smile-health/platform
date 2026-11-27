@@ -102,13 +102,13 @@ export default function UserActivityTable({ filter }: Props) {
             <Tr>
               <Th
                 rowSpan={2}
-                className="ui:px-4 ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:left-0 ui:z-5"
+                className="ui:px-4 ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:start-0 ui:z-5"
               >
                 {t('column.no')}
               </Th>
               <Th
                 rowSpan={2}
-                className="ui:px-10 ui:py-1 left-[51.5px] ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5"
+                className="ui:px-10 ui:py-1 start-[51.5px] ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5"
               >
                 {t('column.healthcare_facility')}
               </Th>
@@ -117,8 +117,8 @@ export default function UserActivityTable({ filter }: Props) {
                 className={cx(
                   'ui:px-8 ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5',
                   {
-                    'left-[202px]': language === 'en',
-                    'left-[197px]': language === 'id',
+                    'start-[202px]': language === 'en',
+                    'start-[197px]': language === 'id',
                   }
                 )}
               >
@@ -129,8 +129,8 @@ export default function UserActivityTable({ filter }: Props) {
                 className={cx(
                   'ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5',
                   {
-                    'left-[322px] ui:px-6': language === 'en',
-                    'left-[313px] ui:px-2': language === 'id',
+                    'start-[322px] ui:px-6': language === 'en',
+                    'start-[313px] ui:px-2': language === 'id',
                   }
                 )}
               >
@@ -145,10 +145,10 @@ export default function UserActivityTable({ filter }: Props) {
               <Th
                 rowSpan={2}
                 className={cx(
-                  'ui:px-2 ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-l ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5',
+                  'ui:px-2 ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-s ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5',
                   {
-                    'right-[297px]': language === 'en',
-                    'right-[283px]': language === 'id',
+                    'end-[297px]': language === 'en',
+                    'end-[283px]': language === 'id',
                   }
                 )}
               >
@@ -159,8 +159,8 @@ export default function UserActivityTable({ filter }: Props) {
                 className={cx(
                   'ui:px-2 ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5',
                   {
-                    'right-[229px]': language === 'en',
-                    'right-[221px]': language === 'id',
+                    'end-[229px]': language === 'en',
+                    'end-[221px]': language === 'id',
                   }
                 )}
               >
@@ -171,8 +171,8 @@ export default function UserActivityTable({ filter }: Props) {
                 className={cx(
                   'ui:px-2 ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5',
                   {
-                    'right-[165px]': language === 'en',
-                    'right-[157px]': language === 'id',
+                    'end-[165px]': language === 'en',
+                    'end-[157px]': language === 'id',
                   }
                 )}
               >
@@ -183,8 +183,8 @@ export default function UserActivityTable({ filter }: Props) {
                 className={cx(
                   'ui:px-2 ui:py-1 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-b ui:border-gray-300 ui:font-semibold ui:sticky ui:z-5',
                   {
-                    'right-[82px]': language === 'en',
-                    'right-[78px]': language === 'id',
+                    'end-[82px]': language === 'en',
+                    'end-[78px]': language === 'id',
                   }
                 )}
               >
@@ -192,7 +192,7 @@ export default function UserActivityTable({ filter }: Props) {
               </Th>
               <Th
                 rowSpan={2}
-                className="ui:px-2 ui:py-1 right-0 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-gray-300 ui:font-semibold ui:sticky ui:right-0 ui:z-5"
+                className="ui:px-2 ui:py-1 end-0 ui:bg-gray-100 ui:text-center ui:text-sm ui:border-gray-300 ui:font-semibold ui:sticky ui:end-0 ui:z-5"
               >
                 {t('column.frequency.average')}
               </Th>
@@ -217,19 +217,19 @@ export default function UserActivityTable({ filter }: Props) {
             {monitoringData.map((row, index) => {
               return (
                 <Tr key={`row-${row.entitas}-${index}`}>
-                  <Td className="ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:left-0 ui:z-10">
+                  <Td className="ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:start-0 ui:z-10">
                     <div className="font-medium">{index + 1}</div>
                   </Td>
 
-                  <Td className="ui:px-2 ui:py-2 left-[51.5px] ui:bg-white ui:align-top ui:text-left ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10">
+                  <Td className="ui:px-2 ui:py-2 start-[51.5px] ui:bg-white ui:align-top ui:text-start ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10">
                     <div className="font-medium">{row.entitas}</div>
                   </Td>
                   <Td
                     className={cx(
-                      'ui:px-2 ui:bg-white ui:align-top ui:text-left ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10',
+                      'ui:px-2 ui:bg-white ui:align-top ui:text-start ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10',
                       {
-                        'left-[202px]': language === 'en',
-                        'left-[197px]': language === 'id',
+                        'start-[202px]': language === 'en',
+                        'start-[197px]': language === 'id',
                       }
                     )}
                   >
@@ -237,10 +237,10 @@ export default function UserActivityTable({ filter }: Props) {
                   </Td>
                   <Td
                     className={cx(
-                      'ui:px-2 ui:py-2 ui:bg-white ui:align-top ui:text-left ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10',
+                      'ui:px-2 ui:py-2 ui:bg-white ui:align-top ui:text-start ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10',
                       {
-                        'left-[322px]': language === 'en',
-                        'left-[313px]': language === 'id',
+                        'start-[322px]': language === 'en',
+                        'start-[313px]': language === 'id',
                       }
                     )}
                   >
@@ -250,7 +250,7 @@ export default function UserActivityTable({ filter }: Props) {
                   {row?.days?.map((day, i) => (
                     <Td
                       key={`day-${row.id}-${i}`}
-                      className="ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 border-r border-gray-200 last:border-r-0"
+                      className="ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 border-e border-gray-200 last:border-e-0"
                       style={
                         day.isManualScale > 0
                           ? { backgroundColor: '#FFD700' }
@@ -263,10 +263,10 @@ export default function UserActivityTable({ filter }: Props) {
 
                   <Td
                     className={cx(
-                      'ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-l ui:border-gray-300 ui:sticky ui:z-10',
+                      'ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-s ui:border-gray-300 ui:sticky ui:z-10',
                       {
-                        'right-[297px]': language === 'en',
-                        'right-[283px]': language === 'id',
+                        'end-[297px]': language === 'en',
+                        'end-[283px]': language === 'id',
                       }
                     )}
                   >
@@ -277,8 +277,8 @@ export default function UserActivityTable({ filter }: Props) {
                     className={cx(
                       'ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10',
                       {
-                        'right-[229px]': language === 'en',
-                        'right-[221px]': language === 'id',
+                        'end-[229px]': language === 'en',
+                        'end-[221px]': language === 'id',
                       }
                     )}
                   >
@@ -291,8 +291,8 @@ export default function UserActivityTable({ filter }: Props) {
                     className={cx(
                       'ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10',
                       {
-                        'right-[165px]': language === 'en',
-                        'right-[157px]': language === 'id',
+                        'end-[165px]': language === 'en',
+                        'end-[157px]': language === 'id',
                       }
                     )}
                   >
@@ -305,14 +305,14 @@ export default function UserActivityTable({ filter }: Props) {
                     className={cx(
                       'ui:px-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:z-10',
                       {
-                        'right-[82px]': language === 'en',
-                        'right-[78px]': language === 'id',
+                        'end-[82px]': language === 'en',
+                        'end-[78px]': language === 'id',
                       }
                     )}
                   >
                     <div className="font-medium">{row.jumlahFrekuensi}</div>
                   </Td>
-                  <Td className="ui:px-0 right-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:right-0 ui:z-10">
+                  <Td className="ui:px-0 end-0 ui:py-2 ui:bg-white ui:align-top ui:text-center ui:leading-tight ui:text-sm i-border-t ui:border-gray-300 ui:sticky ui:end-0 ui:z-10">
                     <div className="font-medium">{row.rataRataFrekuensi}</div>
                   </Td>
                 </Tr>

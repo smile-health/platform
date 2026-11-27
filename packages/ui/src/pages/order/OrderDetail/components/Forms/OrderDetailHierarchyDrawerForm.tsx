@@ -244,7 +244,7 @@ export const OrderDetailHierachyDrawerForm = ({
                 handleValueByFormType(selectedMaterialStockData).total_qty,
                 language
               )}
-              <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
+              <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ms-1">
                 {minMax(
                   handleValueByFormType(selectedMaterialStockData).min,
                   handleValueByFormType(selectedMaterialStockData).max,
@@ -285,7 +285,7 @@ export const OrderDetailHierachyDrawerForm = ({
                 {errors?.children?.root?.message}
               </Alert>
             )}
-            <div className="ui:ml-auto ui:grid ui:grid-cols-2 ui:gap-5">
+            <div className="ui:ms-auto ui:grid ui:grid-cols-2 ui:gap-5">
               <Button
                 id={`reset-batch-w}`}
                 variant="subtle"

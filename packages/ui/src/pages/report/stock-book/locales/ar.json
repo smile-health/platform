@@ -1,0 +1,33 @@
+{
+  "title": {
+    "page": "تقرير دفتر المخزون"
+  },
+  "action": {
+    "export": "تصدير",
+    "export_all": "تصدير الكل"
+  },
+  "form": {
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط",
+      "required": "النشاط مطلوب"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة",
+      "required": "المحافظة مطلوبة"
+    },
+    "regency": {
+      "label": "المنطقة",
+      "placeholder": "اختر المديرية"
+    },
+    "health_facilities": {
+      "label": "المرافق الصحية",
+      "placeholder": "اختر المرافق الصحية"
+    },
+    "period": {
+      "label": "الفترة",
+      "placeholder": "اختر فترة الشهر والسنة"
+    }
+  }
+}

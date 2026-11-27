@@ -68,7 +68,7 @@ export default function DashboardInformation({
           )}
 
           {!!details?.length && listType === 'list' && (
-            <ul className="ui:list-disc ui:pl-6">
+            <ul className="ui:list-disc ui:ps-6">
               {details?.map((item) => (
                 <li key={item}>
                   <Trans

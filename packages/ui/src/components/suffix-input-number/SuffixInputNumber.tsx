@@ -18,9 +18,9 @@ export function SuffixInputNumber({
 }: SuffixInputNumberProps) {
   return (
     <div className="ui:relative ui:mt-2">
-      <div className="ui:absolute ui:right-0 ui-ui-h-full ui:rounded-r-sm ui:p-2 w-10">
+      <div className="ui:absolute ui:end-0 ui-ui-h-full ui:rounded-e-sm ui:p-2 w-10">
         <div className="ui:flex ui:h-full ui:w-full ui:items-center ui:justify-center">
-          <div className="ui:border-l ui:border-[#d2d2d2] ui:text-dark-teal ui:px-2">
+          <div className="ui:border-s ui:border-[#d2d2d2] ui:text-dark-teal ui:px-2">
             {mySuffix}
           </div>
         </div>
@@ -30,7 +30,7 @@ export function SuffixInputNumber({
         onChange={() => {}}
         type="text"
         className={cx(
-          'ui:rounded ui:border ui:w-full ui:border-gray-400 ui:py-2 ui:pl-4 ui:pr-10',
+          'ui:rounded ui:border ui:w-full ui:border-gray-400 ui:py-2 ui:ps-4 ui:pe-10',
           {
             'ui:border-[#d2d2d2]': props?.disabled,
           },

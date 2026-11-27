@@ -96,7 +96,7 @@ const EntityDetailMaterialManagementContent: React.FC<Props> = ({ entity }) => {
           )}
         </div>
         <div className="ui:flex ui:justify-end ui:items-center">
-          <div className="ui:mr-[18px] ui:w-[378.67px]">
+          <div className="ui:me-[18px] ui:w-[378.67px]">
             <InputSearch
               id="search_material_entity"
               placeholder={`${t('common:search')} ${t('material:form.material_name.label')?.toLowerCase()}`}
@@ -112,7 +112,7 @@ const EntityDetailMaterialManagementContent: React.FC<Props> = ({ entity }) => {
               variant="solid"
             >
               <div className="ui:flex ui:justify-center ui:items-center">
-                <div className="ui:mr-[4.16px]">
+                <div className="ui:me-[4.16px]">
                   <Plus />
                 </div>
                 {t('entity:detail.material_entity.add_relation')}

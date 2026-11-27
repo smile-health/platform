@@ -18,7 +18,7 @@ type CloseButtonProps = {
 }
 function CloseButton({ type = 'danger', onClick }: Readonly<CloseButtonProps>) {
   return (
-    <div className="ui:absolute ui:right-2.5 ui:top-2">
+    <div className="ui:absolute ui:end-2.5 ui:top-2">
       <button
         className={cx('ui:h-7 ui:w-7 ui:rounded ui:p-1 ui:transition-all', {
           'ui:text-warning-700 ui:hover:bg-warning-200 ui:active:bg-warning-300':
@@ -91,7 +91,7 @@ export function Alert({
   return (
     <div
       className={cx(
-        'ui:relative ui:flex ui:items-start ui:space-x-3 ui:rounded-r ui:px-3 ui:py-3 ',
+        'ui:relative ui:flex ui:items-start ui:space-x-3 ui:rounded-e ui:px-3 ui:py-3 ',
         {
           'ui:border-warning-500 ui:bg-warning-50': type === 'warning',
           'ui:border-danger-500 ui:bg-danger-50': type === 'danger',
@@ -100,8 +100,8 @@ export function Alert({
           'ui:border-gray-500 ui:bg-gray-100': type === 'neutral',
         },
         {
-          'ui:rounded-l': !withAccent,
-          'ui:border-l-2': withAccent,
+          'ui:rounded-s': !withAccent,
+          'ui:border-s-2': withAccent,
         },
         className
       )}

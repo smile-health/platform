@@ -47,7 +47,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <Root>
         {leftIcon ? (
-          <div className="ui:leading-1 ui:absolute ui:left-0 ui:top-0 ui:flex ui:h-full ui:items-center ui:justify-center ui:px-2 ui:text-gray-600">
+          <div className="ui:leading-1 ui:absolute ui:start-0 ui:top-0 ui:flex ui:h-full ui:items-center ui:justify-center ui:px-2 ui:text-gray-600">
             {leftIcon}
           </div>
         ) : null}
@@ -63,7 +63,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             'ui:focus:border-primary-500 ui:focus:outline-hidden ui:focus:ring-primary-500/25',
 
             //type="file"
-            'ui:py-0! ui:file:-ml-3 ui:file:mr-3 ui:file:h-full',
+            'ui:py-0! ui:file:-ms-3 ui:file:me-3 ui:file:h-full',
             'ui:file:px-4 ui:file:py-2',
             'ui:file:font-medium ui:file:leading-none ui:file:text-gray-700',
             'ui:file:border-0 ui:file:bg-gray-100 ui:file:ring-1 ui:file:ring-gray-300 ',
@@ -87,32 +87,32 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             },
             {
               //add padding to left side when leftIcon is true
-              'ui:pl-3': !leftIcon,
+              'ui:ps-3': !leftIcon,
 
-              'ui:pl-8': size === 'sm' && leftIcon,
-              'ui:pl-9': size === 'md' && leftIcon,
-              'ui:pl-10': size === 'lg' && leftIcon,
-              'ui:pl-11': size === 'xl' && leftIcon,
+              'ui:ps-8': size === 'sm' && leftIcon,
+              'ui:ps-9': size === 'md' && leftIcon,
+              'ui:ps-10': size === 'lg' && leftIcon,
+              'ui:ps-11': size === 'xl' && leftIcon,
 
               //add padding to right side when rightIcon is true
-              'ui:pr-3': !leftIcon,
-              'ui:pr-8': size === 'sm' && rightIcon,
-              'ui:pr-9': size === 'md' && rightIcon,
-              'ui:pr-10': size === 'lg' && rightIcon,
-              'ui:pr-11': size === 'xl' && rightIcon,
+              'ui:pe-3': !leftIcon,
+              'ui:pe-8': size === 'sm' && rightIcon,
+              'ui:pe-9': size === 'md' && rightIcon,
+              'ui:pe-10': size === 'lg' && rightIcon,
+              'ui:pe-11': size === 'xl' && rightIcon,
             },
             // group
             'ui:focus:group-[.is-group]:z-10',
-            'ui:first:group-[.is-group]:rounded-r-none!',
+            'ui:first:group-[.is-group]:rounded-e-none!',
             'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:rounded-none!',
-            'ui:last:group-[.is-group]:rounded-l-none!',
+            'ui:last:group-[.is-group]:rounded-s-none!',
 
             props.className
           )}
         />
 
         {rightIcon ? (
-          <div className="ui:leading-1 ui:absolute ui:right-0 ui:top-0 ui:z-10 ui:flex ui:h-full ui:items-center ui:justify-center ui:px-2 ui:text-gray-600">
+          <div className="ui:leading-1 ui:absolute ui:end-0 ui:top-0 ui:z-10 ui:flex ui:h-full ui:items-center ui:justify-center ui:px-2 ui:text-gray-600">
             {rightIcon}
           </div>
         ) : null}
@@ -125,8 +125,8 @@ export function InputLeftAddon({ children }: ChildrenProps) {
   return (
     <div
       className={cx(
-        'ui:leading-1 ui:flex ui:items-center ui:justify-center ui:rounded-l ui:text-gray-700',
-        'ui:border ui:border-r-0 ui:border-gray-300 ui:bg-gray-100 ui:px-3'
+        'ui:leading-1 ui:flex ui:items-center ui:justify-center ui:rounded-s ui:text-gray-700',
+        'ui:border ui:border-e-0 ui:border-gray-300 ui:bg-gray-100 ui:px-3'
       )}
     >
       {children}
@@ -138,8 +138,8 @@ export function InputRightAddon({ children }: ChildrenProps) {
   return (
     <div
       className={cx(
-        'ui:leading-1 ui:flex ui:items-center ui:justify-center ui:rounded-r ui:text-gray-700',
-        'ui:border ui:border-l-0 ui:border-gray-300 ui:bg-gray-100 ui:px-3'
+        'ui:leading-1 ui:flex ui:items-center ui:justify-center ui:rounded-e ui:text-gray-700',
+        'ui:border ui:border-s-0 ui:border-gray-300 ui:bg-gray-100 ui:px-3'
       )}
     >
       {children}

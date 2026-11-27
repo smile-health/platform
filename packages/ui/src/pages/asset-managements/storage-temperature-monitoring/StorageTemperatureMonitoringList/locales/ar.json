@@ -1,0 +1,63 @@
+{
+  "page": {
+    "title": "قائمة مراقبة درجة حرارة التخزين"
+  },
+  "filter": {
+    "search": {
+      "label": "بحث",
+      "placeholder": "البحث برقم التسلسل"
+    },
+    "asset_type": {
+      "label": "نوع الأصل",
+      "placeholder": "اختر نوع الأصل"
+    },
+    "manufacturer": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر المصنع"
+    },
+    "asset_relation": {
+      "label": "العلاقة",
+      "placeholder": "اختر العلاقة"
+    },
+    "operational_status": {
+      "label": "الحالة التشغيلية",
+      "placeholder": "اختر حالة التشغيل"
+    },
+    "device_status": {
+      "label": "حالة الجهاز",
+      "placeholder": "اختر حالة الجهاز"
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
+    },
+    "temperature_filter": {
+      "label": "مرشح درجة الحرارة",
+      "placeholder": "اختر مرشح درجة الحرارة"
+    },
+    "asset_model": {
+      "label": "طراز الأصل",
+      "placeholder": "اختر طراز الأصل"
+    }
+  },
+  "table": {
+    "title": "قائمة مراقبة درجة حرارة التخزين",
+    "column": {
+      "no": "رقم",
+      "asset_name": "اسم الأصل",
+      "asset_type": "نوع الأصل",
+      "temperature_humidity": "درجة الحرارة والرطوبة",
+      "temperature": "درجة الحرارة",
+      "connection_power": "الاتصال والطاقة",
+      "operational_status": "الحالة التشغيلية",
+      "not_related": "غير مرتبط بعد",
+      "not_detected": "غير مكتشف",
+      "device_status": "حالة الجهاز"
+    }
+  },
+  "temperature_status": {
+    "normal": "طبيعي",
+    "above_threshold": "أعلى من الحد",
+    "below_threshold": "أقل من الحد"
+  }
+}

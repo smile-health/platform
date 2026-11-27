@@ -9,8 +9,8 @@ import { numberFormatter } from "#utils/formatter"
 import ColumnPopulationAdjustment from "./components/ColumnPopulationAdjustment"
 import { isAllDataApproved } from "./annual-planning-process.utils"
 
-const headerClassName = 'ui:px-1 ui:py-4 ui:bg-neutral-100 ui:border-r ui:border-gray-300 ui:text-center'
-const cellClassName = (index: number) => `ui:border-r ui:border-gray-300 ui:text-center ${index > 0 ? 'ui:bg-primary-50/30' : ''}`
+const headerClassName = 'ui:px-1 ui:py-4 ui:bg-neutral-100 ui:border-e ui:border-gray-300 ui:text-center'
+const cellClassName = (index: number) => `ui:border-e ui:border-gray-300 ui:text-center ${index > 0 ? 'ui:bg-primary-50/30' : ''}`
 export const columnsInformationPopulationTarget = (
   language: string
 ): ColumnDef<ListInformationPopulationTarget>[] => [

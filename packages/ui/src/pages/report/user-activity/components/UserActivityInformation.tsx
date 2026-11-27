@@ -32,7 +32,7 @@ export default function UserActivityInformation({ open, setOpen }: Props) {
         </div>
         <div className="ui:space-y-1">
           <H5>{t('information.item.table.title')}</H5>
-          <ul className="ui:list-disc ui:pl-8">
+          <ul className="ui:list-disc ui:ps-8">
             {tableDescription?.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </div>

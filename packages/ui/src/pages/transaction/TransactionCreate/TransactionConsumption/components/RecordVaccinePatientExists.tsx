@@ -42,7 +42,7 @@ const RecordVaccinePatientExists = ({
             })}
           </p>
 
-          <ul className="ui:list-disc ui:pl-3 ui:m-0 ui:space-y-1">
+          <ul className="ui:list-disc ui:ps-3 ui:m-0 ui:space-y-1">
             {history.map((item, index) => (
               <li
                 key={`history-vaccine-${index.toString()}`}

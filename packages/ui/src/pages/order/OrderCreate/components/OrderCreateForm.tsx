@@ -202,7 +202,7 @@ export default function OrderCreateForm() {
             color="primary"
             variant="outline"
             onClick={() => setShowModalReset(true)}
-            className="ui:mr-4 ui:w-40"
+            className="ui:me-4 ui:w-40"
           >
             Reset
           </Button>

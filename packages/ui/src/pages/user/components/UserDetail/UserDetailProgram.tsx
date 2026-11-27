@@ -38,7 +38,7 @@ export default function UserDetailProgram({
               className={{
                 wrapper:
                   'ui:border ui:border-neutral-300 ui:rounded-lg ui:p-4 ui:gap-4 ui:cursor-default',
-                title: 'ui:text-base ui:text-left',
+                title: 'ui:text-base ui:text-start',
               }}
             />
           ))}

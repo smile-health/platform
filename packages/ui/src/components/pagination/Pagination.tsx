@@ -39,7 +39,7 @@ function Item({
       type="button"
       disabled={disabled || disabledWithoutOpacity}
       className={cx(
-        'ui:flex ui:items-center ui:justify-center ui:text-sm ui:focus:outline-hidden ui:first-of-type:rounded-l ui:last-of-type:rounded-r',
+        'ui:flex ui:items-center ui:justify-center ui:text-sm ui:focus:outline-hidden ui:first-of-type:rounded-s ui:last-of-type:rounded-e',
         'ui:border ui:border-neutral-300 ui:focus:border-primary-300 ui:focus:ring-2 ui:focus:ring-primary-500/25',
         'ui:focus:group-[.is-group]:z-10',
         'ui:min-w-8 ui:px-2.5 ui:h-10 ui:md:min-w-10',
@@ -222,7 +222,7 @@ export function PaginationInfo({
   const result = Intl.NumberFormat('en-US').format(total)
 
   return (
-    <p className="ui:mr-auto ui:ml-0 ui:text-sm ui:font-medium ui:leading-none ui:text-[#1D2939]">
+    <p className="ui:me-auto ui:ms-0 ui:text-sm ui:font-medium ui:leading-none ui:text-[#1D2939]">
       {isEmpty
         ? t('pagination.empty')
         : t('pagination.data', {
@@ -289,7 +289,7 @@ export function Pagination({
       >
         <div className="ui:flex ui:items-center ui:space-x-1 ui:px-2">
           <div>
-            <ChevronLeft />
+            <ChevronLeft className="ui:rtl:-scale-x-100" />
           </div>
           <div className="ui:hidden ui:md:block">
             {isId ? 'Sebelumnya' : 'Prev'}
@@ -335,7 +335,7 @@ export function Pagination({
           </div>
 
           <div>
-            <ChevronRight />
+            <ChevronRight className="ui:rtl:-scale-x-100" />
           </div>
         </div>
       </Item>

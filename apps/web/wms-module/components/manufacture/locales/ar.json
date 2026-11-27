@@ -1,0 +1,123 @@
+{
+  "list": {
+    "list": "إدارة أصول التصنيع",
+    "tab": {
+      "list": "قائمة الكيانات",
+      "create": "إضافة كيان"
+    },
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن طراز الأصل"
+      },
+      "asset_type": {
+        "label": "نوع الأصل",
+        "placeholder": "اختر نوع الأصل"
+      },
+      "manufacture": {
+        "label": "الشركة المصنعة",
+        "placeholder": "اختر الشركة المصنعة"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "asset_type": "نوع الأصل",
+      "manufacture": "الشركة المصنعة",
+      "asset_model": "طراز الأصل",
+      "description": "الوصف",
+      "updated_at": "تاريخ التحديث",
+      "updated_by": "حُدّث بواسطة",
+      "action": "إجراء"
+    },
+    "options": {
+      "tag": "اختر الوسم",
+      "type": "اختر النوع"
+    },
+    "action": {
+      "activate": {
+        "title": "تفعيل"
+      },
+      "deactivate": {
+        "title": "إلغاء التفعيل"
+      }
+    },
+    "button": {
+      "add": "إضافة أصل تصنيع"
+    }
+  },
+  "title": {
+    "manufacture": "أصل التصنيع",
+    "list": "قائمة أصول التصنيع",
+    "create": "أصل التصنيع",
+    "edit": "تعديل أصل التصنيع"
+  },
+  "detail": {
+    "title": "تفاصيل خصائص النفايات",
+    "waste_code": "رمز النفايات",
+    "waste_characteristic": "خاصية النفايات",
+    "waste_bag_color": "لون كيس النفايات",
+    "use_cold_storage": "استخدام التخزين البارد",
+    "cold_storage_max_processing": "الحد الأقصى لمدة التخزين البارد",
+    "temporary_storage_min_processing": "الحد الأدنى لمدة التخزين المؤقت",
+    "temporary_storage_max_processing": "الحد الأقصى لمدة التخزين المؤقت",
+    "internal_treatment": "المعالجة الداخلية",
+    "third_party_treatment": "المعالجة من طرف ثالث",
+    "vehicle_type": "نوع المركبة",
+    "storage_rule": "قاعدة التخزين",
+    "created_at": "تاريخ الإنشاء",
+    "created_by": "أُنشئ بواسطة",
+    "updated_at": "تاريخ التحديث",
+    "updated_by": "حُدّث بواسطة"
+  },
+  "action": {
+    "activate": {
+      "button": "تفعيل",
+      "confirmation": "هل أنت متأكد أنك تريد تفعيل هذا المنتج؟"
+    },
+    "deactivate": {
+      "button": "إلغاء التفعيل",
+      "confirmation": "هل أنت متأكد أنك تريد تعطيل هذا المنتج؟"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "قالب المنتج",
+    "trademark": "متغير المنتج",
+    "non_hierarchy": "غير هرمي"
+  },
+  "form": {
+    "asset_type": {
+      "label": "نوع الأصل",
+      "placeholder": "اختر نوع الأصل",
+      "validation": {
+        "required": "نوع الأصل مطلوب"
+      }
+    },
+    "manufacture": {
+      "label": "اسم الشركة المصنعة",
+      "placeholder": "اختر اسم الشركة المصنعة",
+      "validation": {
+        "required": "الشركة المصنعة مطلوبة"
+      },
+      "description": "يمكنك اختيار شركة مصنعة موجودة أو إنشاء شركة جديدة. اكتب اسم الشركة أولًا. إذا لم يتم العثور عليه، سيظهر خيار إنشاء 'الاسم المكتوب'."
+    },
+    "model": {
+      "label": "الطراز",
+      "placeholder": "أدخل الطراز"
+    },
+    "description": {
+      "label": "الوصف",
+      "placeholder": "أدخل الوصف"
+    }
+  },
+  "scroll_list": {
+    "title": "المادة",
+    "description": "يرجى اختيار الكيان ونوع المعاملة أولاً",
+    "column": {
+      "material_name": "اسم المادة",
+      "available_stock": "المخزون المتاح",
+      "current_stock": "المخزون الحالي"
+    }
+  }
+}

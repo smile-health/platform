@@ -137,7 +137,7 @@ export default function HomeTPAdmin() {
             ) && (
               <TabsTrigger
                 value={ProviderTypeTP.TRANSPORTER}
-                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
               >
                 {t('home:home_tp.tab.transport')}
               </TabsTrigger>
@@ -150,7 +150,7 @@ export default function HomeTPAdmin() {
                 <TabsTrigger
                   value={ProviderTypeTP.TREATMENT}
                   hidden={true}
-                  className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+                  className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
                 >
                   {t('home:home_tp.tab.treatment')}
                 </TabsTrigger>
@@ -158,7 +158,7 @@ export default function HomeTPAdmin() {
             {providerTypesArray.some((item) => item.includes('LANDFILL')) && (
               <TabsTrigger
                 value={ProviderTypeTP.LANDFILLER}
-                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
               >
                 {t('home:home_tp.tab.landfill')}
               </TabsTrigger>
@@ -166,7 +166,7 @@ export default function HomeTPAdmin() {
             {providerTypesArray.some((item) => item.includes('RECYCLER')) && (
               <TabsTrigger
                 value={ProviderTypeTP.RECYCLER}
-                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
               >
                 {t('home:home_tp.tab.recycle')}
               </TabsTrigger>
@@ -174,7 +174,7 @@ export default function HomeTPAdmin() {
             {providerTypesArray.includes('SPECIALIZED_TREATMENT_PROVIDER') && (
               <TabsTrigger
                 value={ProviderTypeTP.SPECIALIZED}
-                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
               >
                 {t('home:home_tp.tab.specialized')}
               </TabsTrigger>
@@ -182,7 +182,7 @@ export default function HomeTPAdmin() {
             {providerTypesArray.includes('TRANSPORTER_GOVERNMENT') && (
               <TabsTrigger
                 value={ProviderTypeTP.GOVERNMENT}
-                className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+                className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
               >
                 {t('home:home_tp.tab.government')}
               </TabsTrigger>
@@ -191,7 +191,7 @@ export default function HomeTPAdmin() {
               !providerTypesArray.includes('TRANSPORTER_GOVERNMENT') && (
                 <TabsTrigger
                   value={ProviderTypeTP.GOVERNMENT_WASTE_BANK}
-                  className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+                  className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
                 >
                   {t('home:home_tp.tab.waste_bank')}
                 </TabsTrigger>

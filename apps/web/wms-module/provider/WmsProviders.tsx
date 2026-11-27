@@ -16,6 +16,7 @@ import { Toaster } from 'react-hot-toast';
 import { I18nextProvider } from 'react-i18next';
 import { Provider as ReduxProvider } from 'react-redux';
 import { setAxiosLanguage } from '@/lib/axios';
+import { applyDirection } from '@repo/ui/utils/direction';
 import { growthbook, isGrowthbookEnabled } from '@/lib/growthbook';
 
 const queryClient = new QueryClient({
@@ -56,6 +57,7 @@ export function WmsProviders({
   useEffect(() => {
     i18n.changeLanguage(locale);
     setAxiosLanguage(locale);
+    applyDirection(locale);
 
     const handleStart = () => NProgress.start();
     const handleStop = () => NProgress.done();

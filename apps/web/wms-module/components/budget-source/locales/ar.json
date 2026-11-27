@@ -1,0 +1,40 @@
+{
+  "list": {
+    "list": "إدارة مصادر الميزانية",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن مصدر الميزانية"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "name": "مصدر الميزانية",
+      "description": "الوصف",
+      "updated_at": "تاريخ التحديث",
+      "updated_by": "حُدّث بواسطة",
+      "action": "إجراء"
+    },
+    "button": {
+      "add": "إضافة مصدر ميزانية"
+    }
+  },
+  "title": {
+    "budget_source": "مصدر الميزانية",
+    "list": "قائمة مصادر الميزانية",
+    "create": "مصدر الميزانية",
+    "edit": "تعديل مصدر الميزانية"
+  },
+  "form": {
+    "budget_source": {
+      "label": "مصدر الميزانية",
+      "placeholder": "أدخل مصدر الميزانية"
+    },
+    "description": {
+      "label": "الوصف",
+      "placeholder": "أدخل الوصف"
+    }
+  }
+}

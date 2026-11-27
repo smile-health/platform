@@ -52,7 +52,7 @@ export default function ReconciliationChart({ filter }: Props) {
   return (
     <div className="ui:relative">
       {!isLoading && (
-        <div className="ui:absolute ui:right-0 ui:flex ui:justify-end">
+        <div className="ui:absolute ui:end-0 ui:flex ui:justify-end">
           <DropdownMenuRoot>
             <DropdownMenuTrigger>
               <ButtonIcon size="lg" variant="default">

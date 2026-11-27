@@ -46,16 +46,16 @@ export default function StockOfMaterials() {
           <table className="ui:w-full ui:text-sm">
             <thead className="ui:sticky ui:top-0 ui:z-0">
               <tr className="ui:bg-gray-200 ui:text-dark-blue">
-                <th className="ui:py-3 ui:px-4 ui:text-left ui:font-semibold ui:w-12">
+                <th className="ui:py-3 ui:px-4 ui:text-start ui:font-semibold ui:w-12">
                   {t('section.stock_of_materials.column.no')}
                 </th>
-                <th className="ui:py-3 ui:px-4 ui:text-left ui:font-semibold">
+                <th className="ui:py-3 ui:px-4 ui:text-start ui:font-semibold">
                   {t('section.stock_of_materials.column.material_name')}
                 </th>
-                <th className="ui:py-3 ui:px-4 ui:text-right ui:font-semibold">
+                <th className="ui:py-3 ui:px-4 ui:text-end ui:font-semibold">
                   {t('section.stock_of_materials.column.stock_doses')}
                 </th>
-                <th className="ui:py-3 ui:px-4 ui:text-right ui:font-semibold">
+                <th className="ui:py-3 ui:px-4 ui:text-end ui:font-semibold">
                   {t('section.stock_of_materials.column.volume_litre')}
                 </th>
               </tr>
@@ -72,10 +72,10 @@ export default function StockOfMaterials() {
                   <td className="ui:py-3 ui:px-4 ui:text-gray-800">
                     {item.name}
                   </td>
-                  <td className="ui:py-3 ui:px-4 ui:text-right ui:text-gray-800">
+                  <td className="ui:py-3 ui:px-4 ui:text-end ui:text-gray-800">
                     {formatNumber(item.stock ?? 0)}
                   </td>
-                  <td className="ui:py-3 ui:px-4 ui:text-right ui:text-gray-800">
+                  <td className="ui:py-3 ui:px-4 ui:text-end ui:text-gray-800">
                     {formatDecimal(item.volume ?? 0)}
                   </td>
                 </tr>
@@ -87,10 +87,10 @@ export default function StockOfMaterials() {
                 <td className="ui:py-3 ui:px-4 ui:font-semibold ui:text-dark-blue">
                   {t('section.stock_of_materials.total')}
                 </td>
-                <td className="ui:py-3 ui:px-4 ui:text-right ui:font-semibold ui:text-dark-blue">
+                <td className="ui:py-3 ui:px-4 ui:text-end ui:font-semibold ui:text-dark-blue">
                   {formatNumber(totalStock)}
                 </td>
-                <td className="ui:py-3 ui:px-4 ui:text-right ui:font-semibold ui:text-dark-blue">
+                <td className="ui:py-3 ui:px-4 ui:text-end ui:font-semibold ui:text-dark-blue">
                   {formatDecimal(totalVolume)}
                 </td>
               </tr>

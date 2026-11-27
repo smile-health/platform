@@ -1,0 +1,44 @@
+{
+  "monitoring_device": "جهاز مراقبة درجة الحرارة",
+  "text": {
+    "online": "متصل",
+    "offline": "غير متصل"
+  },
+  "data": {
+    "asset_type": "نوع الأصل",
+    "temperature_threshold": "عتبة درجة الحرارة",
+    "asset_model_name": "اسم طراز الأصل",
+    "capacity": "السعة",
+    "manufacturer": "الشركة المصنعة",
+    "vendor": "المورّد",
+    "serial_number": "الرقم التسلسلي",
+    "production_year": "سنة الإنتاج",
+    "operational_status": "الحالة التشغيلية",
+    "entity": "الكيان",
+    "person_in_charge": "الشخص المسؤول",
+    "budget_year": "سنة الميزانية",
+    "budget_source": "مصدر الميزانية",
+    "communication_provider": "مزود الاتصالات",
+    "device_status": "حالة الجهاز"
+  },
+  "table": {
+    "column": {
+      "no": "رقم",
+      "asset_name": "اسم الأصل",
+      "device_status": "حالة الجهاز",
+      "operational_status": "الحالة التشغيلية",
+      "updated_by": "تم التحديث بواسطة",
+      "action": "إجراء",
+      "operational_asset_name": "اسم الأصل التشغيلي",
+      "sensor": "المستشعرات",
+      "asset_temperature": "درجة حرارة الأصل"
+    }
+  },
+  "field": {
+    "serial_number": {
+      "label": "الرقم التسلسلي",
+      "placeholder": "أدخل الرقم التسلسلي",
+      "maxLength": 255
+    }
+  }
+}

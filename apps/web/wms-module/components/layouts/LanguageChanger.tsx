@@ -9,6 +9,7 @@ import {
   DropdownMenuRoot,
   DropdownMenuTrigger,
 } from '@repo/ui/components/dropdown-menu';
+import DirectionToggle from '@repo/ui/components/layouts/DirectionToggle';
 
 const LanguageChanger: React.FC = () => {
   const router = useRouter();
@@ -54,6 +55,7 @@ const LanguageChanger: React.FC = () => {
             </div>
           </DropdownMenuItem>
         ))}
+        <DirectionToggle />
       </DropdownMenuContent>
     </DropdownMenuRoot>
   );

@@ -10,6 +10,7 @@ import {
   DropdownMenuRoot,
   DropdownMenuTrigger,
 } from '../dropdown-menu'
+import DirectionToggle from './DirectionToggle'
 
 const LanguageChanger: React.FC = () => {
   const router = useRouter()
@@ -72,6 +73,7 @@ const LanguageChanger: React.FC = () => {
             </div>
           </DropdownMenuItem>
         ))}
+        <DirectionToggle />
       </DropdownMenuContent>
     </DropdownMenuRoot>
   )

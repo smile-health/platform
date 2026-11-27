@@ -48,7 +48,7 @@ export const OrderCreateReturnBatchTableInformation: React.FC<Props> = ({
             order_items?.[indexRow]?.material_total_qty || 0,
             language
           )}
-          <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
+          <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ms-1">
             {minMax(
               order_items?.[indexRow]?.material_min || null,
               order_items?.[indexRow]?.material_max || null

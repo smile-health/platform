@@ -107,9 +107,9 @@ export const Switch = React.forwardRef<
         {labelInside && (
           <div
             className={cx(
-              'ui:inset-0 ui:flex ui:items-center ui:justify-between ui:font-medium ui:text-primary-surface ui:text-sm ui:order-2 ui:mr-1',
+              'ui:inset-0 ui:flex ui:items-center ui:justify-between ui:font-medium ui:text-primary-surface ui:text-sm ui:order-2 ui:me-1',
               {
-                'ui:text-primary-contrast ui:order-1 ui:mr-0': checked,
+                'ui:text-primary-contrast ui:order-1 ui:me-0': checked,
               }
             )}
           >

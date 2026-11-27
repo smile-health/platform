@@ -1,6 +1,8 @@
+import { toIntlLocale } from './locale'
+
 export function getCurrencySymbol(locale: string) {
   return (0)
-    .toLocaleString(locale, {
+    .toLocaleString(toIntlLocale(locale), {
       style: 'currency',
       currency: process.env.CURRENCY,
       minimumFractionDigits: 0,
@@ -20,14 +22,14 @@ export function numberFormatter(
     const minimumFractionDigits = 2
     const maximumFractionDigits = type === 'currency' ? 2 : 3
     return value
-      ? new Intl.NumberFormat(locale, {
+      ? new Intl.NumberFormat(toIntlLocale(locale), {
           minimumFractionDigits,
           maximumFractionDigits,
         }).format(value)
       : '0'
   }
 
-  return value ? new Intl.NumberFormat(locale).format(value) : '0'
+  return value ? new Intl.NumberFormat(toIntlLocale(locale)).format(value) : '0'
 }
 
 export function formatNumberShort(value: number, language = 'en') {

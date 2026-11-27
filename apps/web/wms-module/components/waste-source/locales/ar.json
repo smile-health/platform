@@ -1,0 +1,89 @@
+{
+  "list": {
+    "list": "مصدر النفايات",
+    "filter": {
+      "waste_source": {
+        "search": {
+          "label": "بحث",
+          "placeholder": "البحث عن مصدر النفايات"
+        },
+        "source_type": {
+          "label": "نوع المصدر",
+          "placeholder": "اختر نوع المصدر"
+        }
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "source_type": "نوع المصدر",
+      "waste_source": "مصدر النفايات",
+      "updated_at": "تاريخ التحديث",
+      "updated_by": "محدّث",
+      "action": "إجراء"
+    },
+    "action": {
+      "activate": {
+        "title": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل"
+      }
+    },
+    "button": {
+      "add_waste_source": "إضافة مصدر نفايات"
+    }
+  },
+  "title": {
+    "waste_source": "مصدر النفايات",
+    "list_waste_source": "قائمة مصادر النفايات",
+    "create_waste_source": "مصدر النفايات"
+  },
+  "action": {
+    "activate": {
+      "button": "تفعيل",
+      "confirmation": "هل أنت متأكد من رغبتك في تفعيل هذا المنتج؟"
+    },
+    "deactivate": {
+      "button": "تعطيل",
+      "confirmation": "هل أنت متأكد من رغبتك في تعطيل هذا المنتج؟"
+    }
+  },
+  "button": {},
+  "form": {
+    "source_type": {
+      "label": "نوع المصدر",
+      "placeholder": "اختر نوع المصدر"
+    },
+    "internal_waste_source": {
+      "label": "مصدر النفايات",
+      "placeholder": "أدخل مصدر النفايات"
+    },
+    "external_waste_source": {
+      "label": "اسم منشأة الرعاية الصحية",
+      "placeholder": "اختر المنشأة الصحية",
+      "placeholder_input": "أدخل المنشأة الصحية"
+    },
+    "internal_treatment_waste_source": {
+      "label": "مصدر النفايات",
+      "placeholder": "اختر مصدر النفايات"
+    },
+    "select_healthcare_facility": {
+      "label": "اختر المنشأة الصحية"
+    },
+    "input_healthcare_facility": {
+      "label": "إدخال منشأة الرعاية الصحية"
+    }
+  },
+  "scroll_list": {},
+  "source_type": {
+    "INTERNAL": "داخلي",
+    "EXTERNAL": "خارجي",
+    "INTERNAL_TREATMENT": "المعالجة الداخلية"
+  },
+  "waste_source_treatment": {
+    "PYROLYSIS": "الترميد/الانحلال الحراري",
+    "DISINFECTION": "التعقيم/التطهير"
+  }
+}

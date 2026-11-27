@@ -96,7 +96,7 @@ const CustomError: React.FC<Props> = ({
                   {t(`error.${currentError}.list.title`)}
                 </p>
                 <Trans>
-                  <ul className="ui:text-primary-700 ui:list-disc ui:ml-6">
+                  <ul className="ui:text-primary-700 ui:list-disc ui:ms-6">
                     {(() => {
                       // Falls back to an empty list instead of crashing if the current
                       // i18n language has no bundle loaded (returnObjects then hands back

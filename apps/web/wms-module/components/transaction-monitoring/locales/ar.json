@@ -1,0 +1,109 @@
+{
+  "title": {
+    "page": "لوحة مراقبة أكياس النفايات",
+    "month": "الشهر",
+    "province": "المحافظة",
+    "regency": "المدينة",
+    "total": "إجمالي أكياس النفايات ({{informationType}})",
+    "waste_bag_group": "أكياس النفايات حسب المجموعة ({{informationType}})",
+    "waste_bag_characteristic": "أكياس النفايات حسب الخاصية ({{informationType}})",
+    "trend_waste_bag_month": "اتجاه أكياس النفايات شهرياً ({{informationType}})",
+    "characteristic": "خاصية النفايات",
+    "by": "أكياس النفايات حسب {{title}} ({{informationType}})",
+    "sort": {
+      "id": "الفرز حسب {{type}} ID",
+      "name": "الفرز حسب اسم {{type}}",
+      "title": "الفرز حسب عنوان {{type}}"
+    },
+    "sort_province": "الفرز حسب ID المحافظة",
+    "entity": {
+      "main": "الكيان",
+      "group": "مجموعة نفايات الكيان",
+      "complete": "الكيان مكتمل"
+    }
+  },
+  "description": {
+    "information": "بيانات أكياس النفايات المعروضة مجمّعة بناءً على {{title}}"
+  },
+  "data": {
+    "information_type": {
+      "bag": "كيس",
+      "weight": "الوزن"
+    }
+  },
+  "column": {
+    "province": "المحافظة",
+    "regency": "المدينة",
+    "activity": "النشاط",
+    "material": "اسم المادة",
+    "manufacturer": "اسم المصنّع",
+    "vendor": "المرسل",
+    "customer": "المستلم",
+    "created_at": "تاريخ الإنشاء",
+    "transaction_type": "نوع المعاملة",
+    "unit": "الوحدة",
+    "total": "إجمالي أكياس النفايات",
+    "waste_group": "مجموعة النفايات",
+    "waste_characteristic": "النوع / المجموعة / خاصية النفايات",
+    "projection_waste_bag": "أكياس النفايات المتوقعة (شهر)",
+    "max_waste_bag": "الحد الأقصى لأكياس النفايات (شهر)",
+    "gap_waste_bag": "فجوة أكياس النفايات",
+    "entity": {
+      "tag": "وسم الكيان",
+      "id": "ID الكيان",
+      "name": "اسم الكيان"
+    },
+    "batch": {
+      "code": "رمز الدفعة",
+      "expired": "تاريخ انتهاء صلاحية الدفعة"
+    }
+  },
+  "filter": {
+    "date_range": {
+      "label": "نطاق التاريخ"
+    },
+    "waste_type": {
+      "label": "نوع النفايات",
+      "placeholder": "اختر نوع النفايات"
+    },
+    "waste_group": {
+      "label": "مجموعة النفايات",
+      "placeholder": "اختر مجموعة النفايات"
+    },
+    "waste_characteristic": {
+      "label": "خاصية النفايات",
+      "placeholder": "اختر خاصية النفايات"
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "regency": {
+      "label": "المنطقة",
+      "placeholder": "اختر المديرية"
+    },
+    "health_facilities": {
+      "label": "المرافق الصحية",
+      "placeholder": "اختر المرافق الصحية"
+    },
+    "information_type": {
+      "label": "نوع المعلومات"
+    }
+  },
+  "all_regions": "جميع المناطق",
+  "empty": "لا توجد بيانات",
+  "export_as": "تصدير كـ {{type}}",
+  "last_updated_at": "آخر تحديث في",
+  "sort": {
+    "asc": "تصاعدي",
+    "desc": "تنازلي"
+  },
+  "information": {
+    "title": "لوحة مراقبة أكياس النفايات",
+    "description": "تعرض لوحة معلومات مراقبة توليد النفايات بيانات توليد النفايات (كمية ونوع النفايات المنتجة) بشكل مرئي وتفاعلي وفي الوقت الفعلي استنادًا إلى الفترة الزمنية والموقع وفئة المصدر."
+  }
+}

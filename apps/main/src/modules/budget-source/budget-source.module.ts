@@ -177,7 +177,7 @@ export class BudgetSourceModule {
   }
 
   #getTranslation(language: string, en: string, id: string): string {
-    const translation: string = language === "en" ? en : id
+    const translation: string = language !== "id" ? en : id
     return translation
   }
 }

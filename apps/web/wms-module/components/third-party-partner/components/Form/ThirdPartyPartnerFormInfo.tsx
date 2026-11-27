@@ -517,7 +517,7 @@ const ThirdPartyPartnerFormInfo: React.FC = () => {
                       !wasteClassificationOption?.length
                     }
                   >
-                    <span className="ui:mr-2">+</span>
+                    <span className="ui:me-2">+</span>
                     {t('thirdPartyPartner:list.button.add_characteristic')}
                   </Button>
                 </div>

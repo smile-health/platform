@@ -27,7 +27,7 @@ import RightMenuNav from './RightMenuNav'
 const styleHover =
   'ui:hover:text-primary-300 ui:flex ui:flex-row ui:text-white ui:cursor-pointer ui:items-center ui:px-[2px]'
 const styleHoverChild =
-  'ui:text-left ui:block ui:text-primary-500 ui:cursor-pointer ui:hover:text-primary-700 ui:hover:bg-gray-100 ui:px-6 ui:py-1'
+  'ui:text-start ui:block ui:text-primary-500 ui:cursor-pointer ui:hover:text-primary-700 ui:hover:bg-gray-100 ui:px-6 ui:py-1'
 
 const Navbar: React.FC = () => {
   const router = useSmileRouter()
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
               <div className="ui:text-primary-contrast">
                 {t('menu.dashboard.title')}
               </div>
-              <div className="ui:py-1 ui:pl-2">
+              <div className="ui:py-1 ui:ps-2">
                 <ChevronDownIcon className="ui:h-3 ui:w-3 ui:text-primary-contrast" />
               </div>
             </div>
@@ -100,12 +100,12 @@ const Navbar: React.FC = () => {
             {
               link: '/v5/order',
               title: t('menu.order.item.list'),
-              className: 'ui:text-left',
+              className: 'ui:text-start',
             },
             {
               link: '/v5/ticketing-system',
               title: t('menu.order.item.ticketing'),
-              className: 'ui:text-left',
+              className: 'ui:text-start',
             },
           ]}
         />

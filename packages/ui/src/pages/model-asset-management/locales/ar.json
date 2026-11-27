@@ -1,0 +1,130 @@
+{
+  "list": {
+    "title": "إعدادات نموذج الأصل",
+    "list": "إعدادات نموذج الأصل",
+    "add": "إضافة نموذج أصل",
+    "status": "حالة نموذج الأصل",
+    "tab": {
+      "list": "قائمة نماذج الأصول",
+      "create": "إضافة نموذج أصل"
+    },
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن نموذج أصل"
+      },
+      "asset_type": {
+        "label": "نوع الأصل",
+        "placeholder": "اختر نوع الأصل"
+      },
+      "manufacturer": {
+        "label": "الشركة المصنعة",
+        "placeholder": "اختر المصنع"
+      },
+      "program": {
+        "label": "البرنامج",
+        "placeholder": "اختر البرنامج"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "name": "اسم طراز الأصل",
+      "type": "النوع: {{ type }}",
+      "manufacturer": "الشركة المصنعة: {{ manufacturer }}",
+      "workspace": "البرنامج",
+      "update_at": "تم التحديث في",
+      "update_by": "تم التحديث بواسطة",
+      "action": "إجراء",
+      "asset_gross_capacity": "السعة الإجمالية للأصل (لتر)",
+      "asset_netto_capacity": "السعة الصافية للأصل (لتر)",
+      "capacity": "{{ 1st_value }} السعة {{ 2nd_value }} "
+    },
+    "import": {
+      "model_asset_cce_with_pqs": "نموذج أصل مع PQS",
+      "model_asset_cce_without_pqs": "نموذج أصل بدون PQS",
+      "model_asset_non_cce": "نموذج أصل بدون CCE",
+      "model_asset_warehouse": "مستودع نموذج الأصل"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "إضافة نموذج أصل",
+      "detail": "تفاصيل نموذج الأصل",
+      "edit": "تعديل نموذج الأصل",
+      "capacity": "سعة نموذج الأصل"
+    },
+    "detail": {
+      "capacity": {
+        "header": "السعة",
+        "warning": "التغييرات غير مسموح بها. نموذج الأصل هذا مرتبط بالفعل بأصل.",
+        "header_pqs": "سعة WHO PQS",
+        "column": {
+          "gross_capacity": "السعة الإجمالية",
+          "net_capacity": "السعة الصافية",
+          "category": "الفئة"
+        }
+      },
+      "label": {
+        "name": "اسم طراز الأصل",
+        "type": "نوع الأصل",
+        "manufacturer": "الشركة المصنعة",
+        "gross_capacity": "السعة الإجمالية (لتر)",
+        "netto_capacity": "السعة الصافية (لتر)",
+        "last_updated_at": "آخر تحديث في",
+        "last_updated_by": "آخر تحديث بواسطة",
+        "pqs_code": "رمز PQS",
+        "is_capacity_required": "هل بيانات السعة مطلوبة؟",
+        "add_more": "إضافة سعة أخرى",
+        "asset_utilization": {
+          "label": "استخدام الأصل",
+          "is_warehouse": "مستودع",
+          "is_cce": "معدات سلسلة التبريد",
+          "other": "أصل عام"
+        }
+      },
+      "placeholder": {
+        "name": "مثال: آلة اختبار",
+        "type": "اختر النوع",
+        "manufacturer": "اختر المصنع",
+        "gross_capacity": "مثال: 3.14",
+        "netto_capacity": "مثال: 3.14",
+        "pqs_code": "اختر رمز PQS"
+      },
+      "validation": {
+        "gross_capacity": {
+          "greater_than": "يجب أن تكون السعة الإجمالية أكبر من السعة الصافية",
+          "min": "يجب أن تكون السعة الإجمالية أكبر من {{ min }}"
+        },
+        "net_capacity": {
+          "less_than": "يجب أن تكون السعة الصافية أقل من السعة الإجمالية",
+          "min": "يجب أن تكون السعة الصافية أكبر من {{ min }}"
+        },
+        "name": {
+          "duplicate": "اسم نموذج الأصل موجود بالفعل. لمواصلة الحفظ، اختر نوع أصل وشركة مصنعة مختلفين."
+        }
+      }
+    },
+    "program": {
+      "title": "البرامج",
+      "without_program": "لا يوجد برنامج مطبّق"
+    }
+  },
+  "detail": {
+    "title": "تفاصيل نموذج الأصل"
+  },
+  "action": {
+    "delete": {
+      "button": "حذف",
+      "confirmation": "هل أنت متأكد من أنك تريد حذف نموذج الأصل هذا؟",
+      "description": "لا يمكن التراجع عن العنصر المحذوف"
+    },
+    "activate": {
+      "confirmation": "هل أنت متأكد من أنك تريد تفعيل نموذج الأصل هذا؟"
+    },
+    "deactivate": {
+      "confirmation": "هل أنت متأكد من أنك تريد تعطيل نموذج الأصل هذا؟"
+    }
+  }
+}

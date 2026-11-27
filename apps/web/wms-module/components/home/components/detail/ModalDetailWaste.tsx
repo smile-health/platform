@@ -63,7 +63,7 @@ export const ModalDetailWaste: React.FC<ModalDetailWasteProps> = ({
         Detail
       </DialogHeader>
       <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
-        <div className="ui:grid ui:grid-cols-3 ui:gap-x-6 ui:gap-y-4 ui:text-left ui:mb-4">
+        <div className="ui:grid ui:grid-cols-3 ui:gap-x-6 ui:gap-y-4 ui:text-start ui:mb-4">
           {wasteDetail.provinceName && (
             <div>
               <p className="ui:text-sm ui:text-gray-500">
@@ -114,7 +114,7 @@ export const ModalDetailWaste: React.FC<ModalDetailWasteProps> = ({
           </div>
         </div>
 
-        <div className="ui:text-left ui:flex ui:flex-col ui:gap-3 ui:mt-4">
+        <div className="ui:text-start ui:flex ui:flex-col ui:gap-3 ui:mt-4">
           {isLoadingWasteCharateristicsSummary && (
             <Spinner className="ui:w-full ui:h-6" />
           )}

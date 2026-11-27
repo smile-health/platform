@@ -55,7 +55,7 @@ const AssetVendorListPage: React.FC<CommonType> = ({ isGlobal }) => {
 
   const buttonList = useMemo(() => {
     return (
-      <div className="ui:flex ui:gap-5 ui:ml-auto">
+      <div className="ui:flex ui:gap-5 ui:ms-auto">
         {isGlobal && (
           <Button
             id="btn-import"

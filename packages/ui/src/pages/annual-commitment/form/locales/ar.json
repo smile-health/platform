@@ -1,0 +1,75 @@
+{
+  "page": {
+    "title": {
+      "label": "الالتزام السنوي",
+      "create": "إضافة التزام سنوي",
+      "edit": "تعديل التزام سنوي"
+    }
+  },
+  "section": {
+    "detail": {
+      "title": "تفاصيل الالتزام السنوي"
+    },
+    "centralAllocation": {
+      "title": "التخصيص المركزي"
+    },
+    "buffer": {
+      "title": "الاحتياطي"
+    }
+  },
+  "field": {
+    "contract_number": {
+      "label": "رقم العقد",
+      "placeholder": "اختر رقم العقد"
+    },
+    "year": {
+      "label": "السنة",
+      "placeholder": "اختر السنة"
+    },
+    "contract_start_date": {
+      "label": "تاريخ بدء العقد",
+      "placeholder": "اختر التاريخ"
+    },
+    "contract_end_date": {
+      "label": "تاريخ انتهاء العقد",
+      "placeholder": "اختر التاريخ"
+    },
+    "supplier": {
+      "label": "المورد",
+      "placeholder": "اختر المورّد"
+    },
+    "description": {
+      "label": "الوصف",
+      "placeholder": "أدخل الوصف"
+    }
+  },
+  "table": {
+    "column": {
+      "no": "رقم",
+      "materialName": "اسم المادة",
+      "provinceReceiver": "المحافظة المستلمة",
+      "numberVial": "العدد (قارورة/وحدة)",
+      "numberDose": "العدد (جرعة/وحدة)",
+      "action": "إجراء"
+    },
+    "addMaterial": "إضافة مادة"
+  },
+  "button": {
+    "back": "رجوع",
+    "save": "حفظ",
+    "remove": "إزالة"
+  },
+  "validation": {
+    "provinces": "لا يمكن أن تكون المحافظة مطابقة لمحافظة مادة أخرى بالاسم نفسه",
+    "atLeastOneRequired": "يجب تعبئة التخصيص المركزي أو الاحتياطي على الأقل"
+  },
+  "option": {
+    "create": "إنشاء {{value}}"
+  },
+  "modal": {
+    "confirmNoMaterial": {
+      "title": "تأكيد",
+      "description": "هل أنت متأكد من رغبتك في الحفظ دون إدخال مادة؟"
+    }
+  }
+}

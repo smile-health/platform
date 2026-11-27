@@ -44,7 +44,7 @@ export default function DashboardFilter(props: Props) {
         {filter.renderField()}
       </FilterFormBody>
       <FilterFormFooter>
-        <div className="ui:flex ui:gap-2 ui:justify-end ui:ml-auto">
+        <div className="ui:flex ui:gap-2 ui:justify-end ui:ms-auto">
           <Button
             data-testid="btn-export"
             variant="subtle"

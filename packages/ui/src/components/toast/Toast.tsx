@@ -59,7 +59,7 @@ const base = ({
           className={cx(
             'ui:pointer-events-auto ui:relative',
             'ui:w-full ui:lg:w-[360px]',
-            'ui:rounded ui:py-3 ui:pl-3 ui:pr-9',
+            'ui:rounded ui:py-3 ui:ps-3 ui:pe-9',
             {
               'ui:bg-success-600 ui:text-white': status === 'success',
               'ui:bg-danger-600 ui:text-white': status === 'danger',
@@ -73,7 +73,7 @@ const base = ({
           )}
         >
           <div className="ui:flex">
-            <div className="ui:flex ui:justify-center ui:pr-2">
+            <div className="ui:flex ui:justify-center ui:pe-2">
               {status === 'success' ? (
                 <CheckCircleIcon className="ui:h-5 ui:w-5"></CheckCircleIcon>
               ) : null}
@@ -109,7 +109,7 @@ const base = ({
 
           <button
             className={cx(
-              'ui:absolute ui:right-1.5 ui:top-1.5 ui:rounded ui:p-0.5',
+              'ui:absolute ui:end-1.5 ui:top-1.5 ui:rounded ui:p-0.5',
               {
                 'ui:hover:bg-success-700 ui:active:bg-success-800':
                   status === 'success',

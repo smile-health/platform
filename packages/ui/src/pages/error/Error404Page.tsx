@@ -3,7 +3,7 @@ import CustomError from '#components/modules/CustomError'
 import { useLoadingPopupStore } from '#store/loading.store'
 import { useTranslation } from 'react-i18next'
 
-const SUPPORTED_LANGUAGES = ['en', 'id']
+const SUPPORTED_LANGUAGES = ['en', 'id', 'ar']
 
 const Error404Page: React.FC = () => {
   const { loadingPopup, setLoadingPopup } = useLoadingPopupStore()

@@ -101,7 +101,7 @@ const useMaterialVolumeTable = ({
                 value: v.value,
               })}
               labelClassName="ui:text-[#OC3045]"
-              valueClassName="ui:ml-1"
+              valueClassName="ui:ms-1"
             />
           </div>
         ))
@@ -136,7 +136,7 @@ const useMaterialVolumeTable = ({
       size: 123,
       minSize: 123,
       cell: ({ row }) => (
-        <div className="ui:flex ui:gap-2 -ml-3">
+        <div className="ui:flex ui:gap-2 -ms-3">
           <Button
             asChild
             id={`btn-link-material-volume-detail-${row.original.id}`}

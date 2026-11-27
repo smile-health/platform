@@ -1,0 +1,41 @@
+{
+  "list": {
+    "list": "الوزن اليدوي",
+    "by": "بواسطة",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن معاملة"
+      },
+      "healthcare_facility_name": {
+        "label": "منشأة الرعاية الصحية",
+        "placeholder": "اختر المنشأة الصحية"
+      },
+      "date_range": {
+        "label": "نطاق التاريخ",
+        "placeholder": "اختر نطاق التاريخ"
+      },
+      "status": {
+        "label": "الحالة",
+        "placeholder": "اختر الحالة"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "title": "الوزن اليدوي"
+    }
+  },
+  "manual_scale_status": {
+    "APPROVED": "معتمد",
+    "REJECTED": "مرفوض",
+    "PENDING": "قيد الانتظار",
+    "WAITING_FOR_APPROVAL": "بانتظار الموافقة",
+    "EXPIRED": "منتهي الصلاحية"
+  },
+  "information": {
+    "title": "الوزن اليدوي",
+    "description": "اعتماد الوزن اليدوي لمراجعة نتائج وزن النفايات والتحقق منها."
+  }
+}

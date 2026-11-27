@@ -1,0 +1,48 @@
+{
+  "title": {
+    "monthly": "تقرير شهري",
+    "yearly": "تقرير سنوي"
+  },
+  "form": {
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "regency": {
+      "label": "المنطقة",
+      "placeholder": "اختر المديرية"
+    },
+    "subdistrict": {
+      "label": "المنطقة الفرعية",
+      "placeholder": "اختر المنطقة الفرعية"
+    },
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط"
+    },
+    "entity": {
+      "label": "الكيان",
+      "placeholder": "اختر الكيان"
+    },
+    "month-year": {
+      "label": "الشهر والسنة",
+      "placeholder": "اختر الشهر والسنة"
+    },
+    "year": {
+      "label": "السنة",
+      "placeholder": "حدد السنة"
+    }
+  },
+  "export_all_entities": "تصدير جميع الكيانات",
+  "column": {
+    "vaccine": "اللقاحات/اللوجستيات",
+    "opening": "مخزون أول الشهر",
+    "acceptance": "الاستلام",
+    "stock": "عدد المخزون + الاستلام",
+    "usage": "الاستخدام",
+    "disposal": "التخلص",
+    "closing": "باقي اللوجستيات",
+    "total": "إجمالي التغطية",
+    "vaccine_ip": "لقاحات IP"
+  }
+}

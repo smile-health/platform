@@ -11,31 +11,31 @@ export const menuDashboardCovidChilds = (t: TFunction, isExist = true) => [
   // {
   //   link: '/dashboard/covid-19/simple',
   //   title: 'Transaksi Utama',
-  //   className: 'ui-hover:ui-bg-gray-200 ui:text-left',
+  //   className: 'ui-hover:ui-bg-gray-200 ui:text-start',
   //   isExist: false,
   // },
   {
     link: '/dashboard/covid-19/big-data',
     title: t('menu.dashboard.item.transaction.item.general'),
-    className: 'ui-hover:ui-bg-gray-200 ui:text-left',
+    className: 'ui-hover:ui-bg-gray-200 ui:text-start',
     isExist,
   },
   // {
   //   link: '/dashboard/covid-19/v2',
   //   title: 'Transaksi Detail V1',
-  //   className: 'ui-hover:ui-bg-gray-200 ui:text-left',
+  //   className: 'ui-hover:ui-bg-gray-200 ui:text-start',
   //   isExist: false,
   // },
   {
     link: '/dashboard/covid-19/v3/big-data',
     title: t('menu.dashboard.item.transaction.item.detail'),
-    className: 'ui-hover:ui-bg-gray-200 ui:text-left',
+    className: 'ui-hover:ui-bg-gray-200 ui:text-start',
     isExist,
   },
   {
     link: '/dashboard/cascade-transaction/big-data',
     title: 'Cascade',
-    className: 'ui-hover:ui-bg-gray-200 ui:text-left',
+    className: 'ui-hover:ui-bg-gray-200 ui:text-start',
     isExist,
   },
 ]
@@ -44,7 +44,7 @@ export const menuConsumedChilds = (t: TFunction) => [
   // {
   //   link: '/dashboard/consumed',
   //   title: 'Consumed SMILE',
-  //   className: 'ui-hover:bg-gray-200 ui:text-left ui:hidden',
+  //   className: 'ui-hover:bg-gray-200 ui:text-start ui:hidden',
   //   isExist: false,
   // },
 ]
@@ -55,37 +55,37 @@ export const menuDashboardChilds = (t: TFunction) => {
     // {
     //   link: '/dashboard/monev/big-data',
     //   title: t('menu.dashboard.item.in_transit'),
-    //   className: 'ui:text-left',
+    //   className: 'ui:text-start',
     //   isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     // },
     // {
     //   link: '/dashboard/asset-ownership',
     //   title: t('menu.dashboard.item.asset_ownership'),
-    //   className: 'ui:text-left',
+    //   className: 'ui:text-start',
     //   isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     // },
     {
       link: '/v5/dashboard/download',
       title: t('menu.dashboard.item.download'),
-      className: 'ui:text-left',
+      className: 'ui:text-start',
       isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     },
     // {
     //   link: '/dashboard/cold-storage-capacity',
     //   title: t('menu.dashboard.item.storage_capacity'),
-    //   className: 'ui:text-left',
+    //   className: 'ui:text-start',
     //   isExist: isDevelopment({ isAlsoStaging: true }),
     // },
     {
       link: '/v5/dashboard/transaction-monitoring',
       title: t('menu.dashboard.item.monitoring'),
-      className: 'ui:text-left',
+      className: 'ui:text-start',
       isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     },
     // {
     //   link: '/dashboard/planning',
     //   title: t('menu.dashboard.item.planning'),
-    //   className: 'ui:text-left',
+    //   className: 'ui:text-start',
     //   isExist:
     //     user?.role !== USER_ROLE.DISTRIBUTOR_COVID &&
     //     isDevelopment({ isAlsoStaging: false }),
@@ -93,19 +93,19 @@ export const menuDashboardChilds = (t: TFunction) => {
     {
       link: '/v5/dashboard/stock',
       title: t('menu.dashboard.item.stock'),
-      className: 'ui:text-left',
+      className: 'ui:text-start',
       isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     },
     {
       link: '/v5/dashboard/stock-taking',
       title: t('menu.dashboard.item.stock_taking'),
-      className: 'ui:text-left',
+      className: 'ui:text-start',
       isExist: user?.role !== USER_ROLE.DISTRIBUTOR_COVID,
     },
     // {
     //   link: '/smile-vs-smdv',
     //   title: 'SMILE VS SMDV',
-    //   className: 'ui:text-left',
+    //   className: 'ui:text-start',
     //   isExist:
     //     user?.role &&
     //     [
@@ -117,7 +117,7 @@ export const menuDashboardChilds = (t: TFunction) => {
     // {
     //   link: '/dashboard/compliance-transaction-input',
     //   title: t('menu.dashboard.item.compliance_transaction_input'),
-    //   className: 'ui:text-left',
+    //   className: 'ui:text-start',
     //   isExist:
     //     user?.role &&
     //     [
@@ -134,22 +134,22 @@ export const menuInventarisChilds = (t: TFunction) => [
   {
     link: '/v5/transaction',
     title: t('menu.inventory.item.transaction'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
   },
   {
     link: '/v5/stock',
     title: t('menu.inventory.item.stock.view'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
   },
   {
     link: '/v5/reconciliation',
     title: t('menu.inventory.item.reconciliation'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
   },
   {
     link: '/v5/stock-opname',
     title: t('menu.inventory.item.stock.opname'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
   },
 ]
 
@@ -157,17 +157,17 @@ export const menuExterminationChilds = (t: TFunction) => [
   {
     link: '/v5/stock-pemusnahan',
     title: t('menu.disposal.item.view'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
   },
   {
     link: '/v5/disposal-shipment',
     title: t('menu.disposal.item.distribution'),
-    className: 'text-left',
+    className: 'text-start',
   },
   {
     link: '/v5/self-disposal',
     title: t('menu.disposal.item.self'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
   },
 ]
 
@@ -296,37 +296,37 @@ export const menuSettingChilds = (t: TFunction) => {
     {
       link: '/account',
       title: t('menu.setting.item.account'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: true,
     },
     {
       link: '/v5/user',
       title: t('menu.setting.item.user'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: hasPermission('user-view'),
     },
     {
       link: '/v5/activity',
       title: t('menu.setting.item.activity'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: hasPermission('activity-view'),
     },
     {
       link: '/v5/entity',
       title: t('menu.setting.item.entity'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: hasPermission('entity-view'),
     },
     {
       link: '/v5/material',
       title: 'Material Data',
-      className: 'text-left',
+      className: 'text-start',
       isExist: hasPermission('material-view'),
     },
     {
       link: '/v5/model-asset-management',
       title: t('menu.setting.item.asset.model'),
-      className: 'text-left',
+      className: 'text-start',
       isExist:
         user?.role &&
         [USER_ROLE.SUPERADMIN, USER_ROLE.ADMIN].includes(user?.role),
@@ -334,7 +334,7 @@ export const menuSettingChilds = (t: TFunction) => {
     {
       link: '/v5/asset-type',
       title: t('menu.setting.item.asset.type'),
-      className: 'text-left',
+      className: 'text-start',
       isExist:
         user?.role &&
         [USER_ROLE.SUPERADMIN, USER_ROLE.ADMIN].includes(user?.role),
@@ -342,7 +342,7 @@ export const menuSettingChilds = (t: TFunction) => {
     {
       link: '/v5/material-volume-management',
       title: t('menu.setting.item.material_volume'),
-      className: 'text-left',
+      className: 'text-start',
       isExist:
         user?.role &&
         [USER_ROLE.SUPERADMIN, USER_ROLE.ADMIN].includes(user?.role),
@@ -350,13 +350,13 @@ export const menuSettingChilds = (t: TFunction) => {
     {
       link: '/v5/manufacturer',
       title: t('menu.setting.item.manufacturer'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: hasPermission('manufacturer-view'),
     },
     {
       link: '/communication-provider',
       title: t('menu.setting.item.communication_provider'),
-      className: 'text-left',
+      className: 'text-start',
       isExist:
         user?.role &&
         [USER_ROLE.SUPERADMIN, USER_ROLE.ADMIN].includes(user?.role),
@@ -364,7 +364,7 @@ export const menuSettingChilds = (t: TFunction) => {
     {
       link: '/v5/asset-vendor',
       title: t('menu.setting.item.asset.vendor'),
-      className: 'text-left',
+      className: 'text-start',
       isExist:
         user?.role &&
         [USER_ROLE.SUPERADMIN, USER_ROLE.ADMIN].includes(user?.role),
@@ -372,19 +372,19 @@ export const menuSettingChilds = (t: TFunction) => {
     {
       link: '/asset-management',
       title: t('menu.setting.item.temperature_device'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: user?.role && [USER_ROLE.SUPERADMIN].includes(user?.role),
     },
     {
       link: '/v5/budget-source',
       title: t('menu.setting.item.budget_source'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: hasPermission('budget-source-view'),
     },
     {
       link: '/v5/period-of-stock-taking',
       title: t('menu.setting.item.stocktacking_period'),
-      className: 'text-left',
+      className: 'text-start',
       isExist:
         user?.role &&
         [USER_ROLE.SUPERADMIN, USER_ROLE.ADMIN].includes(user?.role),
@@ -393,7 +393,7 @@ export const menuSettingChilds = (t: TFunction) => {
       variant: 'rightMenu',
       link: null,
       title: t('menu.setting.item.annual_planning.title'),
-      className: 'text-left',
+      className: 'text-start',
       isExist:
         user?.role &&
         [USER_ROLE.SUPERADMIN, USER_ROLE.ADMIN].includes(user?.role),
@@ -401,35 +401,35 @@ export const menuSettingChilds = (t: TFunction) => {
         {
           link: '/master-perencanaan-tahunan/sasaran',
           title: t('menu.setting.item.annual_planning.item.pusdatin_target'),
-          className: 'hover:bg-gray-200 text-left',
+          className: 'hover:bg-gray-200 text-start',
         },
         {
           link: '/master-perencanaan-tahunan/ip',
           title: t('menu.setting.item.annual_planning.item.national_ip'),
-          className: 'hover:bg-gray-200 text-left',
+          className: 'hover:bg-gray-200 text-start',
         },
         {
           link: '/master-perencanaan-tahunan/kelompok-sasaran',
           title: t('menu.setting.item.annual_planning.item.group_target'),
-          className: 'hover:bg-gray-200 text-left',
+          className: 'hover:bg-gray-200 text-start',
         },
         {
           link: '/master-perencanaan-tahunan/jumlah-pemberian',
           title: t('menu.setting.item.annual_planning.item.amount_of_giving'),
-          className: 'hover:bg-gray-200 text-left',
+          className: 'hover:bg-gray-200 text-start',
         },
       ],
     },
     {
       link: '/freeze-transaction',
       title: t('menu.setting.item.freeze_transaction'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: user?.role && [USER_ROLE.ADMIN_FREEZE].includes(user?.role),
     },
     {
       link: '/cold-chain-equipment',
       title: 'Cold Chain Equipment',
-      className: 'text-left',
+      className: 'text-start',
       isExist:
         user?.role &&
         [USER_ROLE.SUPERADMIN, USER_ROLE.ADMIN].includes(user?.role),
@@ -437,7 +437,7 @@ export const menuSettingChilds = (t: TFunction) => {
     {
       link: '/v5/entity-material-bulk',
       title: t('menu.setting.item.import_material_entity'),
-      className: 'text-left',
+      className: 'text-start',
       isExist: hasPermission('entity-mutate'),
     },
   ]
@@ -448,23 +448,23 @@ export const menuAssetChilds = (t: TFunction) => [
   {
     link: '/v5/asset',
     title: t('menu.asset.item.temperature'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
   },
   {
     link: '/v5/asset-inventory',
     title: t('menu.asset.item.inventory'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
   },
   {
     link: '/dashboard/cold-storage-capacity/v2',
     title: t('menu.asset.item.storage_capacity_dashboard'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
     isExist: isDevelopment({ isAlsoStaging: true }),
   },
   {
     link: '/capacity-annual-planning',
     title: t('menu.asset.item.capacity_annual_planning'),
-    className: 'ui:text-left',
+    className: 'ui:text-start',
     isExist: isDevelopment({ isAlsoStaging: true }),
   },
 ]

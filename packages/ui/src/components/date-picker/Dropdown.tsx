@@ -34,7 +34,7 @@ export function Dropdown({ label, open, setOpen, children }: DropdownProps) {
       </Button>
       <div
         hidden={!open}
-        className="ui:absolute ui:rounded ui:top-10 ui:right-0 ui:border ui:border-slate-200 ui:shadow-md ui:bg-white ui:w-full ui:z-10 ui:py-1 ui:max-h-72 ui:overflow-y-auto"
+        className="ui:absolute ui:rounded ui:top-10 ui:end-0 ui:border ui:border-slate-200 ui:shadow-md ui:bg-white ui:w-full ui:z-10 ui:py-1 ui:max-h-72 ui:overflow-y-auto"
       >
         {children}
       </div>
@@ -57,7 +57,7 @@ export function DropdownItem({
     <button
       onClick={onClick}
       className={cx(
-        'ui:block ui:w-full ui:px-2 ui:py-1 ui:hover:bg-primary-100 ui:text-left',
+        'ui:block ui:w-full ui:px-2 ui:py-1 ui:hover:bg-primary-100 ui:text-start',
         {
           'ui:bg-primary-500 ui:text-primary-contrast': isSelected,
         }

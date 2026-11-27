@@ -120,7 +120,7 @@ const EntityMaterialBulkFormMaterial: React.FC<Props> = ({ isMaterialHierarchy }
       <div className="ui:bg-gray-100 ui:py-[2px] ui:px-[10px] ui:rounded-2xl ui:w-max">
         <p className="ui:text-gray-700 ui:text-sm ui:font-medium">
           {t('entityMaterialBulk:export.form.result.material')}
-          <span className="ui:ml-1 ui:text-xs ui:font-medium ui:bg-gray-700 ui:rounded-[100px] ui:text-white ui:py-[2px] ui:px-2">
+          <span className="ui:ms-1 ui:text-xs ui:font-medium ui:bg-gray-700 ui:rounded-[100px] ui:text-white ui:py-[2px] ui:px-2">
             {materialDatasource?.total_item || 0}
           </span>
         </p>

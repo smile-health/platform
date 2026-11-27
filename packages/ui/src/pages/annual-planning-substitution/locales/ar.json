@@ -1,0 +1,30 @@
+{
+  "title": "قائمة الاستبدالات",
+  "material": "المادة",
+  "select_material": "اختر المادة",
+  "add_substitution": "إضافة استبدال",
+  "edit_substitution": "تعديل استبدال",
+  "substitute_material": "المادة البديلة",
+  "add_material": "إضافة مادة",
+  "actual_distribution_material": "مادة التوزيع الفعلية",
+  "select_actual_distribution_material": "اختر مادة التوزيع الفعلية",
+  "select_planned_material": "اختر المادة المخططة",
+  "table": {
+    "planned_material": "المادة المخططة",
+    "substitute_material": "المادة البديلة"
+  },
+  "deletion": {
+    "description": "هل أنت متأكد من حذف استبدال الخطة السنوية هذا؟",
+    "subdescription": "لا يمكن استرداد عمليات استبدال التخطيط السنوي المحذوفة."
+  },
+  "toast": {
+    "create_success": "تم إنشاء استبدال التخطيط السنوي بنجاح.",
+    "update_success": "تم تحديث استبدال التخطيط السنوي بنجاح.",
+    "delete_success": "تم حذف استبدال التخطيط السنوي بنجاح.",
+    "download_template_success": "تم تنزيل قالب استبدال التخطيط السنوي بنجاح.",
+    "download_template_error": "تعذر تنزيل قالب استبدال التخطيط السنوي.",
+    "import_success": "تم استيراد استبدال التخطيط السنوي بنجاح.",
+    "import_error": "تعذر استيراد استبدال التخطيط السنوي.",
+    "validation_error": "توجد أخطاء تحقق في الملف المستورد."
+  }
+}

@@ -53,7 +53,7 @@ export function AlertDialogCloseButton() {
   return (
     <AlertDialogPrimitive.Cancel asChild>
       <CloseButton
-        className={cx('ui:absolute ui:right-2 ui:top-2')}
+        className={cx('ui:absolute ui:end-2 ui:top-2')}
       ></CloseButton>
     </AlertDialogPrimitive.Cancel>
   )
@@ -91,7 +91,7 @@ export function AlertDialogContent({
 }>) {
   return (
     <div className="ui:px-4 ui:py-4">
-      <div className="ui:flex ui:flex-col ui:items-center ui:gap-3 ui:text-center ui:sm:flex-row ui:sm:items-start ui:sm:text-left">
+      <div className="ui:flex ui:flex-col ui:items-center ui:gap-3 ui:text-center ui:sm:flex-row ui:sm:items-start ui:sm:text-start">
         <IconSection></IconSection>
         <div>
           <AlertDialogPrimitive.Title className="ui:text-lg ui:font-semibold ui:leading-6 ui:text-gray-800">
@@ -152,7 +152,7 @@ export function AlertDialog(props: Readonly<AlertDialogProps>) {
                   className={cx(
                     'ui:relative ui:top-0',
                     'ui:w-11/12 ui:rounded-md ui:bg-white ui:shadow-xl ui:sm:w-4/5 ui:md:w-4/6 ui:lg:w-1/3',
-                    'ui:overflow-hidden ui:text-left'
+                    'ui:overflow-hidden ui:text-start'
                   )}
                 >
                   {props.children}

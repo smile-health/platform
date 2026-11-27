@@ -103,7 +103,7 @@ export const WasteCharacteristicModal = ({
 
   return (
     <Dialog open={showModal} onOpenChange={setShowModal} size="lg">
-      <DialogHeader className="ui:text-center ui:pr-0">
+      <DialogHeader className="ui:text-center ui:pe-0">
         <span className="ui:font-medium">
           {editIndex !== null
             ? t('thirdPartyPartner:list.button.edit_characteristic')

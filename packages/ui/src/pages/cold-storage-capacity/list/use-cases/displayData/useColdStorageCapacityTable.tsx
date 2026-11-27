@@ -95,7 +95,7 @@ const useColdStorageCapacityTable = () => {
         size: 200,
         minSize: 180,
         meta: {
-          cellClassName: 'ui:text-left',
+          cellClassName: 'ui:text-start',
         },
       },
       {
@@ -105,7 +105,7 @@ const useColdStorageCapacityTable = () => {
         size: 220,
         minSize: 200,
         meta: {
-          cellClassName: 'ui:text-left',
+          cellClassName: 'ui:text-start',
         },
         cell: ({ row }) => {
           const item = row.original
@@ -147,7 +147,7 @@ const useColdStorageCapacityTable = () => {
           )
         },
         meta: {
-          cellClassName: 'ui:text-left',
+          cellClassName: 'ui:text-start',
         },
       },
       {

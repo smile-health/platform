@@ -109,13 +109,13 @@ const WasteHierarchyListPage: React.FC = () => {
           <TabsList>
             <TabsTrigger
               value="waste_type"
-              className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+              className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
             >
               {t('wasteHierarchy:list.tab.waste_type')}
             </TabsTrigger>
             <TabsTrigger
               value="waste_group"
-              className="ui:flex ui:items-center ui:justify-center ui:border-r ui:border-gray-200 ui:rounded-r-none"
+              className="ui:flex ui:items-center ui:justify-center ui:border-e ui:border-gray-200 ui:rounded-e-none"
             >
               {t('wasteHierarchy:list.tab.waste_group')}
             </TabsTrigger>

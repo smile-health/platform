@@ -38,8 +38,8 @@ const BastDetailInfoModal: React.FC<BastDetailProps> = ({
       <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
         <div className="ui:p-4 ui:border ui:border-neutral-300 ui:rounded ui:space-y-4 ui:mb-4">
           <RenderDetailValue
-            labelsClassName="ui:text-left"
-            valuesClassName="ui:text-left"
+            labelsClassName="ui:text-start"
+            valuesClassName="ui:text-start"
             loading={isLoading}
             data={[
               {

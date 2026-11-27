@@ -74,7 +74,7 @@ const AnnualPlanningProcessListMinMaxProvince: React.FC = () => {
               {' '}
               {provinceName ?? '-'}
               {' '}:
-              <span className="ui:ml-2 ui:font-bold">
+              <span className="ui:ms-2 ui:font-bold">
                 {
                   datasourceProvince?.data.province_entity.min_max_status_province === MinMaxStatusProvinceRegency.ACTIVE ?
                     parseDateTime(datasourceProvince?.data?.province_entity?.activated_province_date || '', 'DD MMM YYYY HH:mm').toUpperCase() :
@@ -87,7 +87,7 @@ const AnnualPlanningProcessListMinMaxProvince: React.FC = () => {
             {/* section min max regency */}
             <p className="ui:text-sm ui:font-bold ui:text-primary-700">
               {t('annualPlanningProcess:list.min_max_level.district')}
-              <span className="ui:ml-2">
+              <span className="ui:ms-2">
                 <Button
                   type="button"
                   variant="outline"
@@ -103,7 +103,7 @@ const AnnualPlanningProcessListMinMaxProvince: React.FC = () => {
             {/* section min max province */}
             <p className="ui:text-sm ui:font-bold ui:text-primary-700">
               {t('annualPlanningProcess:list.min_max_level.province')}
-              <span className="ui:ml-2">
+              <span className="ui:ms-2">
                 <Button
                   type="button"
                   variant="outline"

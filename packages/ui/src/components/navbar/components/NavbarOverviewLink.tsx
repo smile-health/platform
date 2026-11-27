@@ -11,7 +11,7 @@ const NavbarOverviewLink = () => {
       >
         <div className="ui:text-dark-teal menu__overview ui:mt-2 ui:flex ui:cursor-pointer ui:items-center ui:justify-start ui:p-2">
           <div className="ui:h-full ui:w-full ui:text-lg">Overview</div>
-          <ChevronRight />
+          <ChevronRight className="ui:rtl:-scale-x-100" />
         </div>
       </Link>
 

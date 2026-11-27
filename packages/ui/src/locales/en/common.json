@@ -41,7 +41,12 @@
   "view_detail": "View Detail",
   "finish": "Finish",
   "form": {
-    "location_levels": ["province", "city", "subdistrict", "village"],
+    "location_levels": [
+      "province",
+      "city",
+      "subdistrict",
+      "village"
+    ],
     "province": {
       "label": "Province",
       "placeholder": "Select province"
@@ -597,5 +602,11 @@
     "loading": "Loading...",
     "error": "There was an error",
     "refreshing": "Refreshing..."
+  },
+  "text_direction": {
+    "label": "Direction",
+    "auto": "Auto",
+    "ltr": "Left to right",
+    "rtl": "Right to left"
   }
 }

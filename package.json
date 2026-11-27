@@ -14,7 +14,9 @@
     "test:coverage": "turbo run test:coverage --filter=@smile/smile-warehouse",
     "novu:import-workflows": "pnpm --filter @smile-health/lib novu:import-workflows",
     "docs:dev": "pnpm --filter docs dev",
-    "docs:build": "pnpm --filter docs build"
+    "docs:build": "pnpm --filter docs build",
+    "i18n:pull": "node scripts/i18n-pull.mjs",
+    "test:i18n-pull": "node --test scripts/i18n-pull.test.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

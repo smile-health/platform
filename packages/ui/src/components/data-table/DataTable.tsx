@@ -257,13 +257,13 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
                           colSpan={withColspan ? header.colSpan : 0}
                           data-testid={`${id}-header-${header.id}`}
                           className={cx(
-                            'ui:px-2 ui:py-5 ui:text-left ui:text-sm ui:text-dark-blue ui:border-b ui:border-gray-300 ui:font-semibold ui:space-y-1',
+                            'ui:px-2 ui:py-5 ui:text-start ui:text-sm ui:text-dark-blue ui:border-b ui:border-gray-300 ui:font-semibold ui:space-y-1',
                             {
                               'ui:hover:bg-gray-200 ui:cursor-pointer':
                                 sortable,
                             },
                             {
-                              'ui:border-r': withBorderRight,
+                              'ui:border-e': withBorderRight,
                             },
                             Boolean(stickyColumns.length) &&
                             !stickyColumns.includes(idx) &&
@@ -271,10 +271,10 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
                             '',
                             stickyColumns.includes(idx)
                               ? idx === 0
-                                ? 'ui:sticky ui:left-0 ui:z-20 ui:bg-slate-100'
+                                ? 'ui:sticky ui:start-0 ui:z-20 ui:bg-slate-100'
                                 : idx === stickyMap.lastIdx
-                                  ? 'ui:sticky ui:right-0 ui:z-20 ui:bg-slate-100'
-                                  : 'ui:sticky ui:left-0 ui:z-20 ui:bg-slate-100 '
+                                  ? 'ui:sticky ui:end-0 ui:z-20 ui:bg-slate-100'
+                                  : 'ui:sticky ui:start-0 ui:z-20 ui:bg-slate-100 '
                               : '',
                             header.column.columnDef.meta?.headerClassName
                           )}
@@ -389,13 +389,13 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
                               rowSpan={rowSpan}
                               className={cx(
                                 'ui:px-2 ui:py-3 ui:align-top',
-                                'ui:text-left ui:leading-tight ui:text-dark-blue ui:text-sm',
-                                'ui:first:group-data-[selected=true]:border-l-[3px] ui:first:group-data-[selected=true]:border-l-primary-500',
+                                'ui:text-start ui:leading-tight ui:text-dark-blue ui:text-sm',
+                                'ui:first:group-data-[selected=true]:border-s-[3px] ui:first:group-data-[selected=true]:border-s-primary-500',
                                 {
                                   'ui:border-b ui:border-gray-300': !isLastRow || (isLastRow && withFooter),
                                 },
                                 {
-                                  'ui:border-r': withBorderRight,
+                                  'ui:border-e': withBorderRight,
                                 },
                                 Boolean(stickyColumns.length) &&
                                 !stickyColumns.includes(idx) &&
@@ -403,10 +403,10 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
                                 '',
                                 stickyColumns.includes(idx)
                                   ? idx === 0
-                                    ? 'ui:sticky ui:left-0 ui:bg-white ui:z-20'
+                                    ? 'ui:sticky ui:start-0 ui:bg-white ui:z-20'
                                     : idx === row.getVisibleCells().length - 1
-                                      ? 'ui:sticky ui:right-0 ui:bg-white ui:z-20'
-                                      : 'ui:sticky ui:left-0 ui:bg-white ui:z-20'
+                                      ? 'ui:sticky ui:end-0 ui:bg-white ui:z-20'
+                                      : 'ui:sticky ui:start-0 ui:bg-white ui:z-20'
                                   : '',
                                 typeof cellClassName === 'function'
                                   ? cellClassName(row)
@@ -466,9 +466,9 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
                       <th
                         key={header.id}
                         className={cx(
-                          'ui:px-2 ui:py-5 ui:text-left ui:text-sm ui:text-dark-blue ui:border-b ui:border-gray-300 ui:font-semibold ui:space-y-1',
+                          'ui:px-2 ui:py-5 ui:text-start ui:text-sm ui:text-dark-blue ui:border-b ui:border-gray-300 ui:font-semibold ui:space-y-1',
                           {
-                            'ui:border-r': withBorderRight,
+                            'ui:border-e': withBorderRight,
                           },
                           Boolean(stickyColumns.length) &&
                           !stickyColumns.includes(idx) &&
@@ -476,10 +476,10 @@ export const DataTable = forwardRef<HTMLDivElement, DataTableProps<any>>(
                           '',
                           stickyColumns.includes(idx)
                             ? idx === 0
-                              ? 'ui:sticky ui:left-0 ui:z-20 ui:bg-slate-100'
+                              ? 'ui:sticky ui:start-0 ui:z-20 ui:bg-slate-100'
                               : idx === stickyMap.lastIdx
-                                ? 'ui:sticky ui:right-0 ui:z-20 ui:bg-slate-100'
-                                : 'ui:sticky ui:left-0 ui:z-20 ui:bg-slate-100 '
+                                ? 'ui:sticky ui:end-0 ui:z-20 ui:bg-slate-100'
+                                : 'ui:sticky ui:start-0 ui:z-20 ui:bg-slate-100 '
                             : '',
                           header.column.columnDef.meta?.footerClassName
                         )}

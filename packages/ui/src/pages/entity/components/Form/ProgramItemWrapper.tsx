@@ -59,7 +59,7 @@ const ProgramItemWrapper: React.FC<ProgramItemWrapperProps> = (props) => {
               wrapper: 'ui:gap-4 ui:flex-auto',
               title: 'ui:text-base',
               ...(disabled && {
-                title: 'ui:text-base ui:text-left',
+                title: 'ui:text-base ui:text-start',
               }),
             }}
             icon={getProgramIconUrl(item)}

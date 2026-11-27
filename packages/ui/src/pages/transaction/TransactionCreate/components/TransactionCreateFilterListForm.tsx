@@ -278,7 +278,7 @@ const TransactionCreateFilterListForm: React.FC = () => {
                 (item, index) =>
                   item?.existsIn?.includes(Number(transactionType)) && (
                     <Fragment key={index?.toString()}>
-                      <span className="ui:font-semibold mr-1">
+                      <span className="ui:font-semibold me-1">
                         {item?.label}:
                       </span>
                       {item?.value?.length > 20 ? (

@@ -221,7 +221,7 @@ export function ContextMenuSubTrigger({
       {leftIcon ? <div>{leftIcon}</div> : null}
       <div className="ui:flex-1">{props.children}</div>
       <div className="ui:h-3.5 ui:w-3.5">
-        <ChevronRightIcon />
+        <ChevronRightIcon className="ui:rtl:-scale-x-100" />
       </div>
     </ContextMenuPrimitive.SubTrigger>
   )

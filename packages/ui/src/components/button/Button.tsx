@@ -162,13 +162,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
       //button group
       'ui:focus:group-[.is-group]:z-10',
-      'ui:first:group-[.is-group]:rounded-r-none!',
+      'ui:first:group-[.is-group]:rounded-e-none!',
       'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:rounded-none!',
-      'ui:last:group-[.is-group]:rounded-l-none!',
+      'ui:last:group-[.is-group]:rounded-s-none!',
 
-      'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:-mr-px!',
-      'ui:last:group-[.is-group]:-ml-px!',
-      'ui:first:group-[.is-group]:-mr-px!',
+      'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:-me-px!',
+      'ui:last:group-[.is-group]:-ms-px!',
+      'ui:first:group-[.is-group]:-me-px!',
       className
     )
 
@@ -181,7 +181,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? (
           <Spinner
-            className={cx('ui:mr-2', {
+            className={cx('ui:me-2', {
               'ui:h-4 ui:w-4': size === 'sm',
               'ui:h-5 ui:w-5': size === 'md',
               'ui:h-6 ui:w-6': size === 'lg',
@@ -190,10 +190,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           ></Spinner>
         ) : null}
         {leftIcon && !loading ? (
-          <div className="ui:mr-2">{leftIcon}</div>
+          <div className="ui:me-2">{leftIcon}</div>
         ) : null}
         {children ? <Slottable>{children}</Slottable> : null}
-        {rightIcon ? <div className="ui:ml-2">{rightIcon}</div> : null}
+        {rightIcon ? <div className="ui:ms-2">{rightIcon}</div> : null}
       </Component>
     )
   }

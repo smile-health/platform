@@ -127,7 +127,7 @@ function Modal({
                 {...(modalProps as HTMLMotionProps<'div'>)}
                 className={cx(
                   'ui:fixed ui:mx-auto ui:flex ui:w-full ui:flex-col',
-                  'ui:bottom-0 ui:left-0 ui:right-0 ui:top-0',
+                  'ui:bottom-0 ui:start-0 ui:end-0 ui:top-0',
                   'ui:h-min ui:rounded-md ui:bg-white',
                   'ui:focus:outline-hidden ui:focus-visible:ring-3 ui:focus-visible:ring-purple-500/75',
                   {
@@ -221,7 +221,7 @@ export function ModalHeader({
     >
       <div
         className={cx(
-          'ui:pr-8 ui:text-lg ui:font-semibold ui:text-gray-800',
+          'ui:pe-8 ui:text-lg ui:font-semibold ui:text-gray-800',
           className
         )}
       >
@@ -282,7 +282,7 @@ export function ModalCloseButton({
     <CloseButton
       onClick={handleClick}
       id="dialogCloseButton"
-      className={cx('ui:absolute ui:right-2 ui:top-2 ui:z-10', className)}
+      className={cx('ui:absolute ui:end-2 ui:top-2 ui:z-10', className)}
     />
   )
 }

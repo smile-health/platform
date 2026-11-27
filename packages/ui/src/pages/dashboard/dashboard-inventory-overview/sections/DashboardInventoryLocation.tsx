@@ -80,7 +80,7 @@ export default function DashboardInventoryLocation({ onClick, filter }: Props) {
     >
       <DashboardBox.Header bordered>
         <H5>{t('title.location')}</H5>
-        <div className="ui:absolute ui:right-4 ui:top-1 ui:flex ui:gap-1 ui:ml-auto">
+        <div className="ui:absolute ui:end-4 ui:top-1 ui:flex ui:gap-1 ui:ms-auto">
           {map?.type !== 'entity' && (
             <ButtonIcon
               size="md"

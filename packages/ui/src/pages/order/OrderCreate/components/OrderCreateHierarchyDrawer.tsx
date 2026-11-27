@@ -110,7 +110,7 @@ const OrderCreateHierarchyBatchDrawer: React.FC<
                       order_items?.[indexRow]?.value?.total_qty ?? 0,
                       language
                     )}
-                    <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
+                    <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ms-1">
                       {minMax(
                         order_items?.[indexRow]?.value?.min ?? 0,
                         order_items?.[indexRow]?.value?.max ?? 0,

@@ -1,0 +1,56 @@
+{
+  "list": {
+    "list": "مركبة النقل",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "ابحث عن رقم المركبة"
+      },
+      "healthcare_partner": {
+        "label": "شريك المنشأة الصحية",
+        "placeholder": "اختر شريك المنشأة الصحية"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "vehicle_type ": "نوع المركبة",
+      "vehicle_number": "رقم المركبة",
+      "capacity": "السعة (كجم)",
+      "healthcare_consumer": "مستهلك المنشأة الصحية",
+      "action": "إجراء"
+    },
+    "button": {
+      "add": "إضافة مركبة شريك"
+    }
+  },
+  "title": {
+    "partnership_vehicle": "مركبة النقل",
+    "list": "قائمة مركبات النقل",
+    "create": "إنشاء مركبة نقل",
+    "edit": "تعديل مركبة نقل"
+  },
+  "form": {
+    "healthcare_consumer": {
+      "label": "مستهلك المنشأة الصحية",
+      "placeholder": "اختر مستهلك المنشأة الصحية"
+    },
+    "vehicle_number": {
+      "label": "رقم المركبة",
+      "placeholder": "أدخل رقم المركبة",
+      "validation": {
+        "duplicate": "رقم المركبة موجود بالفعل ضمن هذا الكيان.",
+        "invalid_format": "تنسيق رقم لوحة المركبة غير صالح"
+      }
+    },
+    "capacity": {
+      "label": "السعة (كجم)",
+      "placeholder": "أدخل السعة (كجم)"
+    },
+    "vehicle_type": {
+      "label": "نوع المركبة",
+      "placeholder": "أدخل نوع المركبة"
+    }
+  }
+}

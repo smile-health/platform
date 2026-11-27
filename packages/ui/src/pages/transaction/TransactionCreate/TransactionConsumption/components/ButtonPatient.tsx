@@ -53,7 +53,7 @@ function ButtonPatient({
         <div className="ui:flex">
           {children}
           {shouldShowIcon ? (
-            <span className="ui:pl-1 ui:pt-1">
+            <span className="ui:ps-1 ui:pt-1">
               <Information></Information>
             </span>
           ) : null}

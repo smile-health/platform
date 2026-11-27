@@ -1,0 +1,45 @@
+{
+  "list": {
+    "list": "محضر التسليم والاستلام",
+    "filter": {
+      "handover_document": {
+        "search": {
+          "label": "بحث",
+          "placeholder": "البحث في محضر التسليم والاستلام"
+        }
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "no_handover_document": "لا يوجد محضر تسليم واستلام",
+      "entity_name": "اسم الكيان",
+      "created_by": "أُنشئ بواسطة",
+      "handover_document": "محضر التسليم والاستلام",
+      "description": "الوصف",
+      "status": "الحالة",
+      "created_at": "تاريخ التقديم",
+      "material_name": "اسم المادة",
+      "qty": "الكمية",
+      "material_id": "ID المادة",
+      "action": "إجراء"
+    },
+    "action": {
+      "approve": "موافقة",
+      "reject": "رفض",
+      "description": "هل أنت متأكد من رغبتك في الموافقة على محضر التسليم والاستلام {{bast}} هذا؟"
+    }
+  },
+  "title": {
+    "handover_document": "محضر التسليم والاستلام",
+    "handover_document_list": "قائمة محاضر التسليم والاستلام",
+    "handover_document_detail": "تفاصيل محضر التسليم والاستلام",
+    "handover_document_approval": "الموافقة على محضر التسليم والاستلام"
+  },
+  "bast_status": {
+    "PENDING": "بانتظار الموافقة",
+    "APPROVED": "معتمد",
+    "REJECTED": "مرفوض"
+  }
+}

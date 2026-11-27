@@ -17,7 +17,7 @@ export default function ReactSelectNumericSearch<
       className="ui:min-w-0.5 ui:outline-0 ui:outline-hidden ui:p-0 ui:bg-transparent ui:cursor-default w-full border-0"
       style={{
         gridArea: '1 / 1',
-        marginLeft: '2px',
+        marginInlineStart: '2px',
       }}
       getInputRef={props.innerRef}
     />

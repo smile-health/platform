@@ -1,0 +1,150 @@
+{
+  "title": "إنشاء توزيع جديد",
+  "section": {
+    "detail": "تفاصيل الطلب",
+    "material": "المادة في {{form}}",
+    "distribution_table": "جدول التوزيع",
+    "batch": "قائمة الدفعات"
+  },
+  "info": {
+    "confirmation": {
+      "reset": "هل أنت متأكد من رغبتك في حذف البيانات المدخلة؟",
+      "submit": "هل أنت متأكد من رغبتك في حفظ هذه البيانات؟"
+    },
+    "material": {
+      "empty": "أكمل تفاصيل الطلب أولاً",
+      "available": "انقر على خانة الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول التوزيع أدناه"
+    },
+    "empty": {
+      "title": "لا توجد بيانات متاحة",
+      "description": {
+        "material": "هذه القائمة فارغة حاليًا. يرجى تحديد المواد.",
+        "stock": "هذه القائمة فارغة حاليًا. يرجى أخذ المخزون من أنشطة أخرى"
+      }
+    },
+    "message": {
+      "new_distribution": "توزيع جديد"
+    }
+  },
+  "action": {
+    "save": "حفظ",
+    "remove": "إزالة",
+    "quantity": {
+      "batch": {
+        "add": "كمية الدفعة",
+        "update": "تحديث كمية الدفعة"
+      },
+      "non_batch": {
+        "add": "الكمية",
+        "update": "تحديث الكمية"
+      }
+    }
+  },
+  "form": {
+    "vendor": {
+      "label": "المرسل",
+      "placeholder": "اختر المرسل",
+      "validation": {
+        "required": "المرسل مطلوب"
+      }
+    },
+    "customer": {
+      "label": "المستلم",
+      "placeholder": "اختر المستلم",
+      "validation": {
+        "required": "المستلم مطلوب"
+      }
+    },
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط",
+      "info": "الأنشطة المعروضة هي فقط الأنشطة التي لا تزال نشطة في هذا الكيان",
+      "other": "أخذ المخزون من أنشطة أخرى",
+      "validation": {
+        "required": "النشاط مطلوب"
+      }
+    },
+    "date": {
+      "label": "التاريخ المطلوب",
+      "validation": {
+        "invalid": "يجب أن يكون التاريخ اليوم أو لاحقًا"
+      }
+    },
+    "comment": {
+      "label": "تعليق",
+      "placeholder": "يرجى إدخال تعليق"
+    },
+    "material": {
+      "search": {
+        "placeholder": "بحث عن مادة"
+      },
+      "add": {
+        "placeholder": "إضافة مادة"
+      }
+    },
+    "status": {
+      "placeholder": "اختر الحالة"
+    },
+    "order_items": {
+      "validation": {
+        "required": "لم تختر أي مادة"
+      }
+    },
+    "batch": {
+      "validation": {
+        "required": "لا يمكن أن تكون بيانات الدفعة فارغة",
+        "empty": "لا يمكن أن تكون الكمية فارغة"
+      }
+    },
+    "ordered_qty": {
+      "placeholder": "أدخل الكمية",
+      "validation": {
+        "required": "الكمية مطلوبة",
+        "min": "يجب أن تكون الكمية الدنيا 0 على الأقل",
+        "multiple": "يجب أن تكون الكمية من مضاعفات {{value}}",
+        "max": "لا يمكن إدخال كمية أكبر من المخزون المتاح"
+      }
+    },
+    "order_stock_status": {
+      "validation": {
+        "required": "حالة المادة مطلوبة"
+      }
+    }
+  },
+  "column": {
+    "material": {
+      "name": "اسم المادة",
+      "info": "معلومات المادة",
+      "status": "حالة المادة"
+    },
+    "selection": "اختيار",
+    "stock": {
+      "activity": "المخزون في {{activity}}",
+      "available": "إجمالي المخزون المتاح",
+      "info": "معلومات المخزون"
+    },
+    "batch_info": "معلومات الدفعة",
+    "activity": "النشاط",
+    "quantity": "الكمية",
+    "action": "إجراء"
+  },
+  "label": {
+    "activity": "النشاط",
+    "stock": {
+      "on_hand": "المخزون الحالي",
+      "available": "المخزون المتاح",
+      "from_activity": "المخزون من النشاط"
+    },
+    "batch_code": "رمز الدفعة",
+    "manufacturer": "الشركة المصنعة",
+    "allocated": "المخصص",
+    "date": {
+      "expired": "تاريخ الانتهاء",
+      "production": "تاريخ الإنتاج"
+    },
+    "material_batch": {
+      "valid": "دفعة المادة",
+      "expired": "دفعة مادة منتهية الصلاحية"
+    }
+  }
+}

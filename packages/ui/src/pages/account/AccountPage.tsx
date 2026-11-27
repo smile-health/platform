@@ -98,7 +98,7 @@ export default function AccountPage(): JSX.Element {
                     wrapper:
                       'ui:border ui:border-neutral-300 ui:rounded-lg ui:p-4 ui:gap-4 ui:cursor-default!',
                     logo: 'ui:w-8 ui:h-8',
-                    title: 'ui:text-left'
+                    title: 'ui:text-start'
                   }}
                   icon={getProgramIconUrl(item)}
                   sizeIcon={32}

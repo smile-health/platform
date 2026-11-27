@@ -105,7 +105,7 @@ const CustomError: React.FC<Props> = ({
                 {t(`error.${currentError}.list.title`)}
               </p>
               <Trans>
-                <ul className="ui:text-primary-700 ui:list-disc ui:ml-6">
+                <ul className="ui:text-primary-700 ui:list-disc ui:ms-6">
                   {(
                     t(`error.${currentError}.list.content`, {
                       returnObjects: true,

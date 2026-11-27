@@ -1,0 +1,51 @@
+{
+  "title": {
+    "page": "نشاط التسوية",
+    "tab": {
+      "all": "الكل",
+      "entity": "حسب الجهة"
+    },
+    "chart": "تقرير نشاط المطابقة",
+    "yLabel": "إجمالي النشاط",
+    "xLabel": "الشهر"
+  },
+  "export": "تصدير",
+  "export_as": "تصدير كـ {{type}}",
+  "form": {
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط"
+    },
+    "period": {
+      "label": "الفترة",
+      "placeholder": "اختر فترة الشهر والسنة"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "regency": {
+      "label": "المنطقة",
+      "placeholder": "اختر المديرية"
+    },
+    "health_facilities": {
+      "label": "المرافق الصحية",
+      "placeholder": "اختر المرافق الصحية"
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
+    },
+    "created_data": {
+      "label": "تاريخ الإنشاء",
+      "placeholder": "اختر تاريخ الإنشاء"
+    }
+  },
+  "columns": {
+    "entity": "الكيان",
+    "frequency": {
+      "total": "إجمالي التكرار",
+      "average": "متوسط التكرار"
+    }
+  }
+}

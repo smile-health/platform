@@ -1,0 +1,198 @@
+{
+  "title": "المعاملة",
+  "transaction_list": "قائمة المعاملات",
+  "transaction_detail": "تفاصيل المعاملة",
+  "transaction_create": "إنشاء معاملة جديدة",
+  "filter": {
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختيار النشاط"
+    },
+    "material_type": {
+      "label": "نوع المادة",
+      "placeholder": "اختيار نوع المادة"
+    },
+    "material": {
+      "label": "المادة",
+      "placeholder": "اختيار المادة"
+    },
+    "transaction_type": {
+      "label": "نوع المعاملة",
+      "placeholder": "اختيار نوع المعاملة"
+    },
+    "reason": {
+      "label": "السبب",
+      "placeholder": "اختيار السبب"
+    },
+    "has_order": {
+      "label": "يوجد طلب",
+      "placeholder": "اختيار وجود طلب"
+    },
+    "order_type": {
+      "label": "نوع الطلب",
+      "placeholder": "اختيار نوع الطلب"
+    },
+    "entity_tag": {
+      "label": "وسم الكيان",
+      "placeholder": "اختيار وسم الكيان"
+    },
+    "primary_vendor": {
+      "label": "المورد الرئيسي",
+      "placeholder": "اختيار المورد الرئيسي"
+    },
+    "integrated_healthcare": {
+      "label": "الرعاية الصحية الأولية",
+      "placeholder": "اختيار مركز الرعاية الصحية الأولية"
+    },
+    "consumption_customer_tag": {
+      "label": "وسم مستلم الميل الأخير",
+      "placeholder": "اختيار وسم مستلم الميل الأخير"
+    },
+    "consumption_customer": {
+      "label": "مستلم الميل الأخير",
+      "placeholder": "اختيار مستلم الميل الأخير"
+    },
+    "material_kfa_level": {
+      "label": "مستوى مادة KFA",
+      "placeholder": "اختيار مستوى مادة KFA"
+    }
+  },
+  "order_number": "رقم الطلب",
+  "others": {
+    "active_substance_and_strength": "قالب المنتج"
+  },
+  "has_order_options": {
+    "yes": "يوجد طلب",
+    "no": "لا يوجد طلب"
+  },
+  "order_type_options": {
+    "order": "طلب",
+    "allocation": "التخصيص",
+    "return": "إرجاع",
+    "routine_allocation": "تخصيص روتيني"
+  },
+  "columns": {
+    "si_no": "رقم SI",
+    "entity_name": "اسم الكيان",
+    "material": "معلومات المادة",
+    "activity": "النشاط",
+    "opening_stock": "الرصيد الافتتاحي (جرعة/قطعة)",
+    "transaction_type": "نوع المعاملة",
+    "order_number": "رقم الطلب",
+    "quantity": "الكمية (جرعة/قطعة)",
+    "closing_stock": "الرصيد الختامي (جرعة/قطعة)",
+    "action": "إجراء",
+    "device_type": "الجهاز",
+    "mobile_phone": "الهاتف المحمول",
+    "web": "الويب",
+    "created_by": "أنشأه",
+    "view_batch": "عرض الدفعة",
+    "open_vial": "قارورة مفتوحة",
+    "close_vial": "قارورة مغلقة",
+    "stock_history": "سجل المخزون",
+    "created_at": "تاريخ الإنشاء"
+  },
+  "batch_columns": {
+    "material_name": "اسم المادة",
+    "batch_from": "الدفعة من",
+    "patient": "المريض",
+    "taken_from_activity_stock": "مأخوذ من مخزون النشاط",
+    "batch_code": "رمز الدفعة",
+    "expired_date": "تاريخ الانتهاء",
+    "production_date": "تاريخ الإنتاج",
+    "manufacturer": "الشركة المصنعة",
+    "actual_tranasction_date": "تاريخ المعاملة الفعلي",
+    "source_of_fund": "مصدر الميزانية",
+    "budget_year": "سنة الميزانية",
+    "price": "السعر",
+    "total_price": "السعر الإجمالي",
+    "view_patient": "عرض المريض"
+  },
+  "patient_columns": {
+    "patient_from": "المريض من رمز الدفعة",
+    "identity_type": "نوع الهوية",
+    "patient_id": "ID المريض",
+    "nik": "NIK",
+    "passport": "جواز السفر",
+    "vaccination_method": "طريقة التطعيم",
+    "vaccination_sequence": "تسلسل التطعيم"
+  },
+  "list_transaction_create": {
+    "dispatching": "الصرف",
+    "discard": "إتلاف",
+    "return_health_facilities": "إرجاع",
+    "add_stock": "إضافة مخزون",
+    "reduce_stock": "تقليل المخزون",
+    "cancellation_of_discard": "إلغاء الإتلاف",
+    "general_transaction": "معاملة عامة"
+  },
+  "detail": {
+    "vaccination": {
+      "title": "التطعيم",
+      "alert_updated_by": "تم تحديث هذه المعاملة بواسطة {{entityName}} في {{transactionDate}}",
+      "sequence": "التسلسل",
+      "age_at_vaccination": "العمر عند التطعيم",
+      "material_status": "حالة المادة",
+      "disease_history": "التاريخ المرضي",
+      "type": "النوع",
+      "method": "الطريقة"
+    },
+    "side_effect": {
+      "title": "سجل KIPI",
+      "reaction": "التفاعل",
+      "at": "الساعة",
+      "add": {
+        "title": "إضافة تقرير KIPI",
+        "button_add": "إضافة KIPI",
+        "reaction_type": {
+          "label": "التفاعل بعد التطعيم",
+          "placeholder": "اختيار التفاعل",
+          "error": "التفاعل بعد التطعيم مطلوب"
+        },
+        "other_reaction": {
+          "label": "تفاعل آخر",
+          "placeholder": "أدخل تفاعلًا آخر",
+          "error": "التفاعل الآخر مطلوب"
+        },
+        "actual_reaction_date": {
+          "label": "تاريخ التفاعل الفعلي",
+          "placeholder": "اختر التاريخ",
+          "error": {
+            "required": "تاريخ التفاعل الفعلي مطلوب",
+            "invalid": "يجب أن يكون تاريخ التفاعل الفعلي بين تاريخ التطعيم و30 يومًا بعد تاريخ التطعيم"
+          }
+        },
+        "success": "تمت إضافة تقرير KIPI بنجاح"
+      }
+    },
+    "patient_identity": {
+      "title": "هوية المريض",
+      "number": "رقم الهوية",
+      "nik": "NIK",
+      "passport": "جواز السفر",
+      "fullname": "الاسم الكامل",
+      "gender": "الجنس",
+      "date_of_birth": "تاريخ الميلاد",
+      "current_age": "العمر الحالي",
+      "status": "الحالة الزوجية",
+      "province": "المحافظة",
+      "regency": "المنطقة الإدارية",
+      "district": "القرية/المنطقة الفرعية",
+      "last_education": "آخر مؤهل تعليمي",
+      "occupation": "المهنة",
+      "religion": "الديانة",
+      "ethnicity": "العرق",
+      "phone_number": "رقم الهاتف",
+      "residential_address": "عنوان الإقامة",
+      "registered_address": "العنوان المسجل"
+    },
+    "disease_history": {
+      "title": "تاريخ المرض والوقاية",
+      "dengue": {
+        "has_dengue_question": "هل أصيب المريض بحمى الضنك من قبل؟",
+        "last_time_dengue_question": "متى كانت آخر مرة أصيب فيها المريض بحمى الضنك؟",
+        "has_vaccination_question": "هل تلقى المريض تطعيمًا لهذا المرض طوعًا من قبل؟"
+      }
+    }
+  }
+}

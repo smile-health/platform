@@ -46,7 +46,7 @@ export const HomeHFDetailModal: React.FC<HomeHFDetailModalProps> = ({
         {t('home:home_hf.modal.title')}
       </DialogHeader>
       <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
-        <div className="ui:grid ui:grid-cols-3 ui:gap-x-6 ui:gap-y-4 ui:text-left ui:mb-4">
+        <div className="ui:grid ui:grid-cols-3 ui:gap-x-6 ui:gap-y-4 ui:text-start ui:mb-4">
           <div>
             <p className="ui:text-sm ui:text-gray-500">
               {t('home:home_hf.column.waste_code')}
