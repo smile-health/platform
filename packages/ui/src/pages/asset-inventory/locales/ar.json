@@ -86,7 +86,7 @@
     "entity": "الكيان",
     "contact_person": {
       "label": "الشخص المسؤول {{ number }}",
-      "placeholder": "مثال: John Doe"
+      "placeholder": "مثال: محمد أحمد"
     },
     "phone_number": {
       "label": "رقم الهاتف {{ number }}",

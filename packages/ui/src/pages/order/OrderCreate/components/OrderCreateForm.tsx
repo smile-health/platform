@@ -204,7 +204,7 @@ export default function OrderCreateForm() {
             onClick={() => setShowModalReset(true)}
             className="ui:me-4 ui:w-40"
           >
-            Reset
+            {t('common:reset')}
           </Button>
         </div>
       </div>

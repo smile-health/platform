@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 
 const DropdownProgram = () => {
   const {
+    t,
     i18n: { language },
   } = useTranslation();
   const router = useRouter();
@@ -52,7 +53,7 @@ const DropdownProgram = () => {
               id="navbar-program"
               className="ui:text-blue-800"
             >
-              Back to Home
+              {t("common:back_to_home")}
             </Button>
           </div>
         </DrawerHeader>

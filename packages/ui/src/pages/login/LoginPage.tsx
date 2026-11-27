@@ -123,9 +123,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ isPoc } = {}) => {
     <AuthLayout>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl className="ui:mb-6">
-          <FormLabel required>Username</FormLabel>
+          <FormLabel required>{t('common:username')}</FormLabel>
           <Input
-            placeholder="Username"
+            placeholder={t('common:username')}
             {...register('username')}
             id="username"
           />

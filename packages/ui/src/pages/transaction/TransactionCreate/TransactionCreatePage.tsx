@@ -100,7 +100,7 @@ const TransactionCreatePage: React.FC<CommonType> = () => {
                   type="button"
                   onClick={() => setOpenModalReset(true)}
                 >
-                  Reset
+                  {t('common:reset')}
                 </Button>
                 <Button
                   className="ui:w-48"

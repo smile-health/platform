@@ -87,7 +87,7 @@ export const OrderDetailDrawer = ({
             disabled={disabled ?? isLoading}
             leftIcon={<Reload className="ui:size-5" />}
           >
-            Reset
+            {t('common:reset')}
           </Button>
           <Button
             id="btn-save-confirm-order"

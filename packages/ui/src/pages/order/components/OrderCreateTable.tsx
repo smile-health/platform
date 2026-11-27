@@ -130,7 +130,7 @@ export const OrderCreateTable = <T extends { order_items?: any[] }>({
           onClick={() => onReset()}
           className="ui:me-4 ui:w-40"
         >
-          Reset
+          {t('common:reset')}
         </Button>
       </div>
     </div>

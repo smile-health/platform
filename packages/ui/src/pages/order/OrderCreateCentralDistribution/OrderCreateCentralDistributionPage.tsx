@@ -120,7 +120,7 @@ export default function OrderCreateCentralDistributionPage() {
               }
               className="ui:w-52"
             >
-              Reset
+              {t('common:reset')}
             </Button>
             <Button
               id="btn-submit"
