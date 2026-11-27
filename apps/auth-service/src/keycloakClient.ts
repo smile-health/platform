@@ -10,6 +10,7 @@ class KeycloakClient {
   private readonly realm: string;
   private readonly clientId: string;
   private readonly clientSecret: string;
+  private readonly adminClientId: string;
   private readonly realmAdminUser: string;
   private readonly realmAdminPass: string;
   private readonly maxRoles: number;
@@ -21,6 +22,7 @@ class KeycloakClient {
     this.realm = config.realm;
     this.clientId = config.clientId;
     this.clientSecret = config.clientSecret;
+    this.adminClientId = config.adminClientId;
     this.realmAdminUser = config.realmAdminUser;
     this.realmAdminPass = config.realmAdminPass;
     this.maxRoles = 100;
@@ -48,7 +50,7 @@ class KeycloakClient {
       const response = await axios.post(
         `${this.serverUrl}/realms/${this.realm}/protocol/openid-connect/token`,
         new URLSearchParams({
-          client_id: this.clientId,
+          client_id: this.adminClientId,
           grant_type: "password",
           username: this.realmAdminUser,
           password: this.realmAdminPass,
