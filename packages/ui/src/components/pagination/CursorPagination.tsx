@@ -6,6 +6,7 @@ import { PaginationContainer } from '#components/pagination'
 import { OptionType, ReactSelect } from '#components/react-select'
 import { PAGE_SIZE } from '#constants/common'
 import { numberFormatter } from '#utils/formatter'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 import { useTranslation } from 'react-i18next'
 
 export type CursorPaginationState = {
@@ -52,9 +53,9 @@ const CursorPagination: React.FC<Props> = ({
       return 'Loading...'
     }
     if (totalCount) {
-      return `Total ${numberFormatter(totalCount, language)} ${showTotalLabel}`
+      return `${t('common:total_count')} ${numberFormatter(totalCount, language)} ${getLocalizedStaticLabel(showTotalLabel, language)}`
     }
-    return `Total 0 ${showTotalLabel}`
+    return `${t('common:total_count')} 0 ${getLocalizedStaticLabel(showTotalLabel, language)}`
   }
 
   const totalCountLabel = getTotalCountLabel()

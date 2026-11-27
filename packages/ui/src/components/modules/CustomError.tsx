@@ -67,6 +67,15 @@ const CustomError: React.FC<Props> = ({
     queryError === 'data' ? '404_data' : error
   ) as TListErrorCode
 
+  // Deskripsi kosong ('') di locale dianggap tidak ada oleh i18next sehingga
+  // t() mengembalikan key mentahnya; jangan tampilkan key itu.
+  const listDescriptionKey = `error.${currentError}.list.description`
+  const listDescriptionText = t(listDescriptionKey)
+  const listDescription =
+    listDescriptionText && listDescriptionText !== listDescriptionKey
+      ? listDescriptionText
+      : null
+
   const handleAction = () => {
     if (errorState[currentError].action === 'redirect')
       window.location.replace(`/${language}/v5/program`)
@@ -113,9 +122,9 @@ const CustomError: React.FC<Props> = ({
                   </ul>
                 </Trans>
               </div>
-              {t(`error.${currentError}.list.description`) && (
+              {listDescription && (
                 <p className="ui:text-base ui:text-primary-700">
-                  {t(`error.${currentError}.list.description`)}
+                  {listDescription}
                 </p>
               )}
               <Button

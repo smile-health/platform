@@ -530,7 +530,10 @@ const SelectAsyncPaginateField = ({
               multiSelectCounterStyle={field.multiSelectCounterStyle}
               multiSelectOptionStyle={field.multiSelectOptionStyle}
               showIndicator={field.showIndicator}
-              placeholder={field.placeholder}
+              placeholder={getLocalizedStaticLabel(
+                field.placeholder,
+                i18next.language
+              )}
               isSearchable={field.isSearchable}
               selectRef={ref}
               inputValue={inputValue}
@@ -789,7 +792,10 @@ export function useFilter(schema: UseFilter) {
                   }
                   value={value ?? ''}
                   ref={ref}
-                  placeholder={field.placeholder}
+                  placeholder={getLocalizedStaticLabel(
+                field.placeholder,
+                i18next.language
+              )}
                   maxLength={field.maxLength}
                 />
               )}
@@ -824,7 +830,10 @@ export function useFilter(schema: UseFilter) {
                   }
                   value={value ?? ''}
                   ref={ref}
-                  placeholder={field.placeholder}
+                  placeholder={getLocalizedStaticLabel(
+                field.placeholder,
+                i18next.language
+              )}
                 />
               )}
             />
@@ -856,7 +865,10 @@ export function useFilter(schema: UseFilter) {
                     ref={ref}
                     key={language}
                     isMulti={field.isMulti}
-                    placeholder={field.placeholder}
+                    placeholder={getLocalizedStaticLabel(
+                field.placeholder,
+                i18next.language
+              )}
                     menuPortalTarget={document.body}
                     disabled={
                       typeof field.disabled === 'function'
@@ -1103,7 +1115,10 @@ export function useFilter(schema: UseFilter) {
                   id={field.id}
                   minValue={field.minValue}
                   maxValue={field.maxValue}
-                  placeholder={field.placeholder}
+                  placeholder={getLocalizedStaticLabel(
+                field.placeholder,
+                i18next.language
+              )}
                   value={value}
                   onChange={onChange}
                   isClearable={field.clearable}

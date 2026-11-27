@@ -4,6 +4,8 @@ import React, { createContext, useContext, useMemo } from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import cx from '#lib/cx'
 import { ClassValue } from 'clsx'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export type TabsVariant = 'default' | 'pills'
 
@@ -72,7 +74,9 @@ export function TabsTrigger({
     <TabsPrimitive.Trigger {...props} asChild disabled={disabled}>
       <button className={variantStyle[variant]}>
         {leftSection ? <div className="ui:me-2"> {leftSection}</div> : null}
-        {children}
+        {typeof children === 'string'
+          ? getLocalizedStaticLabel(children, i18next.language)
+          : children}
         {rightSection ? <div className="ui:ms-2">{rightSection}</div> : null}
       </button>
     </TabsPrimitive.Trigger>
