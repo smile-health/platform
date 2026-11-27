@@ -81,7 +81,11 @@ export const useAccountManagement = () => {
         value: data?.user?.mobile_phone,
         id: 'labelMobilePhone',
       },
-      { label: 'Email', value: data?.user?.email, id: 'labelEmail' },
+      {
+        label: getLocalizedStaticLabel('Email', i18n.language),
+        value: data?.user?.email,
+        id: 'labelEmail',
+      },
       {
         label: t('account:field.address'),
         value: data?.user?.address,

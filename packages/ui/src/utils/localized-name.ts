@@ -145,6 +145,7 @@ const STATIC_LABELS: Record<string, Record<string, string>> = {
     type: 'النوع',
     date: 'التاريخ',
     data: 'بيانات',
+    normal: 'طبيعي',
   },
 }
 

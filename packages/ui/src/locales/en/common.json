@@ -611,5 +611,9 @@
   },
   "username": "Username",
   "back_to_home": "Back to Home",
-  "total_count": "Total"
+  "total_count": "Total",
+  "role_management": {
+    "title": "Role Management",
+    "placeholder": "Global Settings Role Page"
+  }
 }

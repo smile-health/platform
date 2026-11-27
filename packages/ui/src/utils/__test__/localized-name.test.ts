@@ -94,6 +94,8 @@ describe('getLocalizedStaticLabel', () => {
     expect(getLocalizedStaticLabel('SI.No', 'ar')).toBe('رقم')
     expect(getLocalizedStaticLabel('Material', 'ar')).toBe('المادة')
     expect(getLocalizedStaticLabel('Batch', 'ar')).toBe('الدفعة')
+    expect(getLocalizedStaticLabel('Normal', 'ar')).toBe('طبيعي')
+    expect(getLocalizedStaticLabel('Max', 'ar')).toBe('الحد الأقصى')
   })
 
   it('keeps a trailing colon', () => {
