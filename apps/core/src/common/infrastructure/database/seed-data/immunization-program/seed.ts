@@ -6,6 +6,12 @@ import {
   type DummyNode,
 } from "./dummy.js"
 import { mustGet, resolveIds } from "./id-resolver.js"
+import {
+  buildSeedUsers,
+  grantWorkspace,
+  syncKeycloakUsers,
+  upsertSeedUsers,
+} from "./users.js"
 import rawSnapshot from "./snapshot.json"
 
 /**
@@ -163,7 +169,7 @@ export async function seedImmunizationProgram(
     Date.UTC(end.getUTCFullYear(), end.getUTCMonth() - months + 1, 1)
   )
 
-  return database.transaction().execute(async (db) => {
+  const result = await database.transaction().execute(async (db) => {
     // ---------- user + workspace ----------
     const envUser = Number(process.env.SEED_USER_ID ?? 0)
     const user =
@@ -209,38 +215,30 @@ export async function seedImmunizationProgram(
     const wsId = Number(workspace.id)
     log(`workspace "${ws.key}" id=${wsId}, seed user id=${user}`)
 
-    // users that can open the sibling immunization program get access to this one too
-    const sibling = await db
-      .selectFrom("workspaces")
+    // every existing admin (Super Admin / Admin) gets access to this program
+    const adminRoles = await db
+      .selectFrom("roles")
       .select("id")
-      .where("key", "=", "immunization_beneficiaries")
-      .executeTakeFirst()
-    const granted = new Set(
-      (
-        await db
-          .selectFrom("user_workspaces")
-          .select("user_id")
-          .where("workspace_id", "=", wsId)
-          .execute()
-      ).map((r) => Number(r.user_id))
+      .where("name", "in", ["Super Admin", "Admin"])
+      .execute()
+    await grantWorkspace(
+      db,
+      wsId,
+      adminRoles.length
+        ? (
+            await db
+              .selectFrom("users")
+              .select("id")
+              .where("deleted_at", "is", null)
+              .where(
+                "role",
+                "in",
+                adminRoles.map((r) => Number(r.id))
+              )
+              .execute()
+          ).map((r) => Number(r.id))
+        : []
     )
-    const candidates = sibling
-      ? await db
-          .selectFrom("user_workspaces")
-          .select("user_id")
-          .where("workspace_id", "=", sibling.id)
-          .where("deleted_at", "is", null)
-          .execute()
-      : await db
-          .selectFrom("users")
-          .select("id as user_id")
-          .where("role", "=", 1)
-          .where("deleted_at", "is", null)
-          .execute()
-    const grants = [...new Set(candidates.map((r) => Number(r.user_id)))]
-      .filter((id) => !granted.has(id))
-      .map((user_id) => ({ user_id, workspace_id: wsId, status: 1 }))
-    await insertChunked(db, "user_workspaces", grants)
 
     // ---------- global lookups ----------
     const unitMap = await syncTable(
@@ -1018,6 +1016,32 @@ export async function seedImmunizationProgram(
     log(
       `dummy ${start.toISOString().slice(0, 10)}..${end.toISOString().slice(0, 10)}: ${JSON.stringify(dummy.summary)}`
     )
+    const users = await upsertSeedUsers(
+      db,
+      wsId,
+      buildSeedUsers(
+        snapshot.nodes.map((n: Row) => ({
+          entityId: mustGet(entityMap, n.entity_id, "entity"),
+          level: n.level,
+          name:
+            snapshot.entities.find((e: Row) => e.id === n.entity_id)?.name ??
+            "",
+        }))
+      ),
+      process.env.SEED_USER_PASSWORD
+    )
+    log(
+      `users: ${users.created} created, ${users.total} entity accounts for program ${wsId}`
+    )
     return { workspaceId: wsId, summary: dummy.summary }
   })
+  // Keycloak lives outside the database transaction
+  const kc = await syncKeycloakUsers(
+    database,
+    result.workspaceId,
+    process.env.SEED_USER_PASSWORD,
+    process.env.AUTH_URL,
+    log
+  )
+  return { ...result, keycloak: kc }
 }

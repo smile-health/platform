@@ -3,6 +3,7 @@ import {
   type DummyInput,
 } from "@/common/infrastructure/database/seed-data/immunization-program/dummy.js"
 import { resolveIds } from "@/common/infrastructure/database/seed-data/immunization-program/id-resolver.js"
+import { buildSeedUsers } from "@/common/infrastructure/database/seed-data/immunization-program/users.js"
 import { describe, expect, it } from "vitest"
 
 const BASE = 1_960_000_000
@@ -264,5 +265,49 @@ describe("resolveIds", () => {
         offset: 100,
       })
     ).toThrow(/taken/)
+  })
+})
+
+describe("buildSeedUsers", () => {
+  const users = buildSeedUsers([
+    { entityId: 8763, level: "kemenkes", name: "KEMENKES RI" },
+    { entityId: 10259, level: "provinsi", name: "DINKES PROV. JAWA TIMUR" },
+    { entityId: 5, level: "kabkota", name: "DINKES KAB. BOGOR" },
+    { entityId: 23, level: "kabkota", name: "DINKES KOTA BANDUNG" },
+    { entityId: 11627, level: "puskesmas", name: "PUSKESMAS KEMANG" },
+    { entityId: 99, level: "puskesmas", name: "Puskesmas  Kemang" },
+    {
+      entityId: 21995,
+      level: "lastmile",
+      name: "PUSKESMAS WARUROYOM DALAM GEDUNG",
+    },
+  ])
+
+  it("creates one prefixed account per stock-holding entity", () => {
+    expect(users.map((u) => u.username)).toEqual([
+      "imun_kemenkes",
+      "imun_prov_jawa_timur",
+      "imun_kab_bogor",
+      "imun_kota_bandung",
+      "imun_pkm_kemang",
+      "imun_pkm_kemang_99",
+    ])
+  })
+
+  it("maps roles by level and links the entity", () => {
+    expect(users.map((u) => u.roleName)).toEqual([
+      "Admin",
+      "Manager",
+      "Manager",
+      "Manager",
+      "Operator",
+      "Operator",
+    ])
+    expect(users[4]).toMatchObject({
+      entityId: 11627,
+      email: "imun_pkm_kemang@example.com",
+      lastname: "PUSKESMAS KEMANG",
+    })
+    for (const u of users) expect(u.username).toMatch(/^imun_[a-z0-9_]+$/)
   })
 })
