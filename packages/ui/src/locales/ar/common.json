@@ -611,5 +611,9 @@
   },
   "username": "اسم المستخدم",
   "back_to_home": "العودة إلى الرئيسية",
-  "total_count": "الإجمالي"
+  "total_count": "الإجمالي",
+  "role_management": {
+    "title": "إدارة الأدوار",
+    "placeholder": "صفحة إعدادات الأدوار"
+  }
 }

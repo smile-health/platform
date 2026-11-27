@@ -611,5 +611,9 @@
   },
   "username": "Username",
   "back_to_home": "Kembali ke Beranda",
-  "total_count": "Total"
+  "total_count": "Total",
+  "role_management": {
+    "title": "Manajemen Role",
+    "placeholder": "Halaman Role Pengaturan Global"
+  }
 }

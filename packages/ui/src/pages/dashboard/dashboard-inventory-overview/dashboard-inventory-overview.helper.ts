@@ -4,7 +4,8 @@ import { MAP_CODE_TO_SLUG } from '#constants/map'
 import { hasPermission } from '#shared/permission/index'
 import { removeEmptyObject } from '#utils/object'
 import { getReactSelectValue } from '#utils/react-select'
-import { TFunction } from 'i18next'
+import i18next, { TFunction } from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 import { UseFormSetValue } from 'react-hook-form'
 
 import {
@@ -240,7 +241,7 @@ export function handleTemperatureClick({
         value: 'below',
       },
       [DashboardInventoryType.Normal]: {
-        label: 'Normal',
+        label: getLocalizedStaticLabel('Normal', i18next.language),
         value: 'normal',
       },
     } as Record<DashboardInventoryType, OptionType>

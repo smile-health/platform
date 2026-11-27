@@ -12,6 +12,7 @@ import { parseDateTime } from '#utils/date'
 import { getProgramStorage } from '#utils/storage/program'
 import { generateMetaTitle } from '#utils/strings'
 import { useTranslation } from 'react-i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 import DashboardBox from '../components/DashboardBox'
 import DashboardFilter from '../components/DashboardFilter'
@@ -143,10 +144,11 @@ export default function DashboardInventoryOverviewPage() {
               <DashboardBox.Content className="ui:space-y-4">
                 <p className="ui:space-x-2 ui:text-center">
                   <span className="ui:text-xs">
-                    <strong>Status</strong>: {status}
+                    <strong>{getLocalizedStaticLabel('Status', language)}</strong>:{' '}
+                    {getLocalizedStaticLabel(status, language)}
                   </span>
                   <span className="ui:text-xs">
-                    <strong>Tag</strong>:{' '}
+                    <strong>{getLocalizedStaticLabel('Tag', language)}</strong>:{' '}
                     {filter?.query?.entity_tag?.label ?? t('all')}
                   </span>
                 </p>

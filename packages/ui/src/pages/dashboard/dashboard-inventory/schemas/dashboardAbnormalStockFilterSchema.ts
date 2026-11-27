@@ -1,6 +1,7 @@
 import { UseFilter } from '#components/filter'
 import { growthbook } from '#lib/growthbook'
-import { TFunction } from 'i18next'
+import i18next, { TFunction } from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 import { defaultEntityTags, EntityTag } from '../../dashboard.constant'
 import dashboardInventoryFilterSchema from './dashboardInventoryFilterSchema'
@@ -45,12 +46,12 @@ export default function dashboardAbnormalStockFilterSchema(
       isUsingReactQuery: false,
       isClearable: false,
       options: [
-        { value: 'min', label: '< Min' },
-        { value: 'max', label: '> Max' },
+        { value: 'min', label: `< ${getLocalizedStaticLabel('Min', i18next.language)}` },
+        { value: 'max', label: `> ${getLocalizedStaticLabel('Max', i18next.language)}` },
         { value: 'zero', label: t('data.stock.empty') },
       ],
       defaultValue: {
-        label: '> Max',
+        label: `> ${getLocalizedStaticLabel('Max', i18next.language)}`,
         value: 'max',
       },
     },
