@@ -7,6 +7,7 @@ import {
 } from "./dummy.js"
 import { mustGet, resolveIds } from "./id-resolver.js"
 import {
+  assertSeedPassword,
   buildSeedUsers,
   grantWorkspace,
   syncKeycloakUsers,
@@ -169,6 +170,8 @@ export async function seedImmunizationProgram(
     Date.UTC(end.getUTCFullYear(), end.getUTCMonth() - months + 1, 1)
   )
 
+  if (process.env.SEED_USER_PASSWORD)
+    assertSeedPassword(process.env.SEED_USER_PASSWORD)
   const result = await database.transaction().execute(async (db) => {
     // ---------- user + workspace ----------
     const envUser = Number(process.env.SEED_USER_ID ?? 0)
@@ -1041,7 +1044,8 @@ export async function seedImmunizationProgram(
     result.workspaceId,
     process.env.SEED_USER_PASSWORD,
     process.env.AUTH_URL,
-    log
+    log,
+    process.env.SEED_USER_RESET_PASSWORD === "1"
   )
   return { ...result, keycloak: kc }
 }

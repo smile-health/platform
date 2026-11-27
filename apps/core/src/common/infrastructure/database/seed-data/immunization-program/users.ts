@@ -159,19 +159,34 @@ export async function upsertSeedUsers(
  * deletes and recreates an existing Keycloak user with the same username/email,
  * so it must never be called for real accounts.
  */
+/** The web login form rejects passwords outside 8-20 characters before calling the API. */
+export const PASSWORD_MIN = 8
+export const PASSWORD_MAX = 20
+
+export function assertSeedPassword(password: string) {
+  if (password.length < PASSWORD_MIN || password.length > PASSWORD_MAX)
+    throw new Error(
+      `SEED_USER_PASSWORD must be ${PASSWORD_MIN}-${PASSWORD_MAX} characters (web login limit), got ${password.length}`
+    )
+}
+
 export async function syncKeycloakUsers(
   db: Db,
   workspaceId: number,
   password: string | undefined,
   authUrl: string | undefined,
-  log: (msg: string) => void
+  log: (msg: string) => void,
+  resetPassword = false
 ) {
   if (!password || !authUrl) {
     log(
       "keycloak: skipped (set SEED_USER_PASSWORD and AUTH_URL to create login accounts)"
     )
-    return { created: 0, skipped: true }
+    return { created: 0, reset: 0, skipped: true }
   }
+  assertSeedPassword(password)
+  const hash = resetPassword ? await bcrypt.hash(password, 10) : null
+  let reset = 0
   const users = await db
     .selectFrom("users as u")
     .innerJoin("roles as r", "r.id", "u.role")
@@ -193,7 +208,34 @@ export async function syncKeycloakUsers(
     if (!String(u.username).startsWith(SEED_USERNAME_PREFIX)) continue
     if (u.keycloak_uuid) {
       const found = await fetch(`${authUrl}/users/${u.keycloak_uuid}`)
-      if (found.ok) continue
+      if (found.ok) {
+        if (!resetPassword) continue
+        // PUT without attributes/roles only replaces the credential
+        const put = await fetch(`${authUrl}/users/${u.keycloak_uuid}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: u.username,
+            firstName: u.firstname,
+            lastName: u.lastname ?? undefined,
+            email: u.email,
+            credentials: [
+              { temporary: false, type: "password", value: password },
+            ],
+          }),
+        })
+        if (!put.ok)
+          throw new Error(
+            `keycloak: failed to reset password of ${u.username}: ${put.status}`
+          )
+        await db
+          .updateTable("users")
+          .set({ password: hash })
+          .where("id", "=", u.id)
+          .execute()
+        reset += 1
+        continue
+      }
     }
     const programs = (
       await db
@@ -237,7 +279,7 @@ export async function syncKeycloakUsers(
     created += 1
   }
   log(
-    `keycloak: ${created} account(s) created, ${users.length - created} already present`
+    `keycloak: ${created} account(s) created, ${reset} password(s) reset, ${users.length - created} already present`
   )
-  return { created, skipped: false }
+  return { created, reset, skipped: false }
 }

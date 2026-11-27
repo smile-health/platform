@@ -96,6 +96,15 @@ rantai tidak disimulasikan.
 - Role Operator hanya bisa login dari aplikasi mobile. Ini kebijakan auth-service,
   bukan bug seeder.
 
+- `SEED_USER_PASSWORD` wajib 8-20 karakter. Form login web menolak password di luar
+  rentang itu langsung di browser dengan pesan "Nama pengguna atau kata sandi tidak
+  valid", tanpa menghubungi server.
+- Untuk mengganti password akun seed yang sudah ada, tambahkan
+  `SEED_USER_RESET_PASSWORD=1`. Seeder akan memanggil `PUT /users/{id}` di auth-service
+  hanya dengan credential, lalu memperbarui hash di DB.
+
 ```bash
 SEED_USER_PASSWORD=... bunx kysely seed:run --specific 1795900000000_immunization_program_seed
+# ganti password akun imun_* yang sudah ada
+SEED_USER_PASSWORD=... SEED_USER_RESET_PASSWORD=1 bunx kysely seed:run --specific 1795900000000_immunization_program_seed
 ```

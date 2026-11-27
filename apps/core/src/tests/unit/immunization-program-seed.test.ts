@@ -3,7 +3,10 @@ import {
   type DummyInput,
 } from "@/common/infrastructure/database/seed-data/immunization-program/dummy.js"
 import { resolveIds } from "@/common/infrastructure/database/seed-data/immunization-program/id-resolver.js"
-import { buildSeedUsers } from "@/common/infrastructure/database/seed-data/immunization-program/users.js"
+import {
+  assertSeedPassword,
+  buildSeedUsers,
+} from "@/common/infrastructure/database/seed-data/immunization-program/users.js"
 import { describe, expect, it } from "vitest"
 
 const BASE = 1_960_000_000
@@ -309,5 +312,16 @@ describe("buildSeedUsers", () => {
       lastname: "PUSKESMAS KEMANG",
     })
     for (const u of users) expect(u.username).toMatch(/^imun_[a-z0-9_]+$/)
+  })
+})
+
+describe("assertSeedPassword", () => {
+  it("accepts 8-20 characters, the web login limit", () => {
+    expect(() => assertSeedPassword("a".repeat(8))).not.toThrow()
+    expect(() => assertSeedPassword("a".repeat(20))).not.toThrow()
+  })
+  it("rejects passwords the web login form would refuse", () => {
+    expect(() => assertSeedPassword("a".repeat(7))).toThrow(/8-20/)
+    expect(() => assertSeedPassword("a".repeat(24))).toThrow(/8-20/)
   })
 })
