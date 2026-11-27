@@ -1,6 +1,7 @@
 import {
   getLocalizedProgramName,
   getLocalizedRoleName,
+  getLocalizedStaticLabel,
   normalizeLabel,
 } from '#utils/localized-name'
 
@@ -84,5 +85,27 @@ describe('getLocalizedRoleName', () => {
     expect(getLocalizedRoleName(null, 'ar')).toBe('')
     expect(getLocalizedRoleName(undefined, 'ar')).toBe('')
     expect(getLocalizedRoleName('', 'ar')).toBe('')
+  })
+})
+
+describe('getLocalizedStaticLabel', () => {
+  it('translates hardcoded column and filter labels', () => {
+    expect(getLocalizedStaticLabel('No.', 'ar')).toBe('رقم')
+    expect(getLocalizedStaticLabel('SI.No', 'ar')).toBe('رقم')
+    expect(getLocalizedStaticLabel('Material', 'ar')).toBe('المادة')
+    expect(getLocalizedStaticLabel('Batch', 'ar')).toBe('الدفعة')
+  })
+
+  it('keeps a trailing colon', () => {
+    expect(getLocalizedStaticLabel('Status :', 'ar')).toBe('الحالة :')
+  })
+
+  it('leaves unknown labels, non-strings and other languages untouched', () => {
+    expect(getLocalizedStaticLabel('SKU', 'ar')).toBe('SKU')
+    expect(getLocalizedStaticLabel('Material', 'en')).toBe('Material')
+    expect(getLocalizedStaticLabel('Material', 'id')).toBe('Material')
+    const node = { type: 'span' }
+    expect(getLocalizedStaticLabel(node, 'ar')).toBe(node)
+    expect(getLocalizedStaticLabel(undefined, 'ar')).toBeUndefined()
   })
 })
