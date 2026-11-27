@@ -610,5 +610,6 @@
     "rtl": "Right to left"
   },
   "username": "Username",
-  "back_to_home": "Back to Home"
+  "back_to_home": "Back to Home",
+  "total_count": "Total"
 }

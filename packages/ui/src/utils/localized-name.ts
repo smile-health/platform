@@ -144,6 +144,7 @@ const STATIC_LABELS: Record<string, Record<string, string>> = {
     activity: 'النشاط',
     type: 'النوع',
     date: 'التاريخ',
+    data: 'بيانات',
   },
 }
 

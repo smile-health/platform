@@ -8,6 +8,7 @@ import {
   TabsLinkTrigger,
 } from '#components/tabs-link'
 import { useOnlineStatus } from '#hooks/useOnlineStatus'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 import useSmileRouter from '#hooks/useSmileRouter'
 import { FeatureName } from '#shared/permission/features/index'
 import { hasPermission } from '#shared/permission/index'
@@ -29,7 +30,7 @@ const tabs = (t: TFunction, lang: string): Tabs => [
     featureName: 'entity-global-view',
   },
   {
-    label: 'Program',
+    label: getLocalizedStaticLabel('Program', lang),
     url: `/${lang}/v5/global-settings/program`,
     featureName: 'program-global-view',
   },
@@ -40,7 +41,7 @@ const tabs = (t: TFunction, lang: string): Tabs => [
   },
   // { label: 'Role', url: `/${lang}/v5/global-settings/role` },
   {
-    label: 'Material',
+    label: getLocalizedStaticLabel('Material', lang),
     url: `/${lang}/v5/global-settings/material/data`,
     featureName: 'material-global-view',
     hasChildTab: true,

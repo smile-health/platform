@@ -4,7 +4,11 @@ import { initReactI18next } from "react-i18next";
 import en from "./en";
 import id from "./id";
 import ar from "./ar";
-import "../utils/dayjs-locale";
+import { registerDayjsLocales } from "../utils/dayjs-locale";
+
+// Dipanggil eksplisit: packages/ui ditandai sideEffects-free, jadi import
+// tanpa binding akan dibuang bundler.
+registerDayjsLocales();
 
 const resources = {
   en,

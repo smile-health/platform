@@ -5,7 +5,10 @@ import { parseDateTime } from '#utils/date'
 import { getUserStorage } from '#utils/storage/user'
 import { getEntityType } from '#utils/user'
 import { useTranslation } from 'react-i18next'
-import { getLocalizedRoleName } from '#utils/localized-name'
+import {
+  getLocalizedRoleName,
+  getLocalizedStaticLabel,
+} from '#utils/localized-name'
 
 export type FetchType = 'all' | 'profile'
 
@@ -133,7 +136,7 @@ export const useAccountManagement = () => {
         id: 'labelEntityType',
       },
       {
-        label: 'Tag',
+        label: getLocalizedStaticLabel('Tag', i18n.language),
         value:
           data?.user?.entity?.is_puskesmas === 1
             ? ' Puskesmas'

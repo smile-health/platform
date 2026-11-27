@@ -610,5 +610,6 @@
     "rtl": "Kanan ke kiri"
   },
   "username": "Username",
-  "back_to_home": "Kembali ke Beranda"
+  "back_to_home": "Kembali ke Beranda",
+  "total_count": "Total"
 }

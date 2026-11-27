@@ -1,5 +1,7 @@
 import dayjs from 'dayjs'
-import '../dayjs-locale'
+import { registerDayjsLocales } from '../dayjs-locale'
+
+registerDayjsLocales()
 
 describe('dayjs Arabic locale', () => {
   it('uses Arabic month names with Latin digits', () => {
