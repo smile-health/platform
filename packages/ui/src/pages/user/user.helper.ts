@@ -9,6 +9,7 @@ import { capitalize } from '#utils/strings'
 import { getDeviceLogin, getEntityType } from '#utils/user'
 import dayjs from 'dayjs'
 import { TFunction } from 'i18next'
+import { getLocalizedRoleName } from '#utils/localized-name'
 import { Values } from 'nuqs'
 
 import { USER_GENDER } from './user.constants'
@@ -70,7 +71,8 @@ export function getGender(t: TFunction<['common', 'user']>, gender: number) {
 
 export function generateUserDetail(
   t: TFunction<['common', 'user']>,
-  detail?: TUserDetail
+  detail?: TUserDetail,
+  language?: string
 ) {
   const roleLabel = userRoleList.find(
     (role) => role?.value === detail?.role
@@ -89,7 +91,9 @@ export function generateUserDetail(
       },
       {
         label: t('user:column.role'),
-        value: detail?.role_label ?? roleLabel ?? '-',
+        value:
+          getLocalizedRoleName(detail?.role_label ?? roleLabel, language) ||
+          '-',
       },
       {
         label: 'Email',

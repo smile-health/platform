@@ -2,7 +2,9 @@ import cx from '#lib/cx'
 import Image from 'next/image'
 import { TProgram } from '#types/program'
 import { getReadableTextColor } from '#utils/color'
+import { getLocalizedProgramName } from '#utils/localized-name'
 import { generateInitials } from '#utils/strings'
+import { useTranslation } from 'react-i18next'
 
 type ProgramItemLinkProps = Readonly<{
   id: string
@@ -34,6 +36,9 @@ export function ProgramItemLink({
   icon,
   sizeIcon = 64,
 }: ProgramItemLinkProps) {
+  const {
+    i18n: { language },
+  } = useTranslation()
   const setTextColor = (color?: string) => {
     if (!color) return 'ui:text-black'
 
@@ -91,7 +96,7 @@ export function ProgramItemLink({
           'ui:text-neutral-500': disabled,
         })}
       >
-        {data?.name}
+        {getLocalizedProgramName(data, language)}
       </p>
     </a>
   )

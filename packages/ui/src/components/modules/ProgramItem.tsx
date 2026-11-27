@@ -3,7 +3,9 @@ import Image from 'next/image'
 import cx from '#lib/cx'
 import { TProgram } from '#types/program'
 import { getReadableTextColor } from '#utils/color'
+import { getLocalizedProgramName } from '#utils/localized-name'
 import { generateInitials } from '#utils/strings'
+import { useTranslation } from 'react-i18next'
 
 type ProgramItemProps = Readonly<{
   id: string
@@ -31,6 +33,9 @@ export function ProgramItem({
   icon,
   sizeIcon = 40,
 }: ProgramItemProps) {
+  const {
+    i18n: { language },
+  } = useTranslation()
   const setTextColor = (color?: string) => {
     if (!color) return 'ui:text-black'
 
@@ -91,7 +96,7 @@ export function ProgramItem({
           'ui:text-neutral-500': disabled,
         })}
       >
-        {data?.name}
+        {getLocalizedProgramName(data, language)}
       </p>
     </button>
   )
