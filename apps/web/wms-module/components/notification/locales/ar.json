@@ -1,6 +1,6 @@
 {
   "title": {
-    "notification": "الإشعار"
+    "notification": "إشعار"
   },
   "info": {
     "request_accepted": "تم قبول الطلب",
@@ -10,12 +10,12 @@
   },
   "request": {
     "title": "الوزن اليدوي",
-    "description": "طلب وزن يدوي من {{name}} "
+    "description": "طلب وزن يدوي من {{name}}"
   },
   "button": {
-    "mark_all_as_read": "تعليم الكل كمقروء",
-    "contact_patient": "التواصل مع المريض",
-    "mark_as_finished": "تعليم كمنتهٍ",
+    "mark_all_as_read": "تحديد الكل كمقروء",
+    "contact_patient": "اتصل بالمريض",
+    "mark_as_finished": "تحديد كمكتمل",
     "action": "إجراء",
     "download": "تنزيل"
   },
@@ -25,7 +25,7 @@
       "placeholder": "اختر نوع الإشعار"
     },
     "program": {
-      "label": "برنامج",
+      "label": "البرنامج",
       "placeholder": "اختر البرنامج",
       "without_program": "بدون برنامج"
     },
@@ -37,113 +37,113 @@
       "label": "تاريخ استلام الإشعار"
     },
     "entity_tag": {
-      "label": "وسم المنشأة",
-      "placeholder": "اختر وسم المنشأة"
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
     }
   },
   "modal": {
     "title": {
-      "mark_all": "تعليم الكل كمقروء؟"
+      "mark_all": "تحديد الكل كمقروء؟"
     },
     "description": {
-      "mark_all": "بالنقر على نعم، فإنك تقر بأن جميع الإشعارات ستُعلَّم كمقروءة."
+      "mark_all": "بالنقر على «نعم»، فإنك تقر بأن جميع الإشعارات ستُحدد كمقروءة."
     }
   },
   "partnership.partnership_expired": {
     "title": "تذكير بانتهاء الشراكة",
-    "message": "ستنتهي اتفاقية الشراكة {{dayText}} بتاريخ {{expiryDate}}. يرجى المراجعة والتجديد إذا لزم الأمر."
+    "message": "سينتهي عقد الشراكة {{dayText}} بتاريخ {{expiryDate}}. يرجى المراجعة والتجديد إذا لزم الأمر."
   },
   "partnership.partnership_expired_exceed": {
-    "title": "تجاوز انتهاء الشراكة",
-    "message": "انتهت اتفاقية الشراكة في {{expiryDate}}."
+    "title": "انتهاء الشراكة",
+    "message": "انتهى عقد الشراكة بتاريخ {{expiryDate}}."
   },
   "partnership.partnership_created": {
     "title": "تم إنشاء شراكة جديدة",
-    "message": "تم إنشاء اتفاقية شراكة جديدة بين {{healthcareFacility}} و{{thirdParty}}."
+    "message": "تم إنشاء عقد شراكة جديد بين {{healthcareFacility}} و{{thirdParty}}."
   },
   "partnership.partnership_updated": {
     "title": "تم تحديث الشراكة",
-    "message": "تم تحديث اتفاقية الشراكة. يرجى التحقق من أحدث التفاصيل."
+    "message": "تم تحديث عقد الشراكة. يرجى التحقق من أحدث التفاصيل."
   },
   "partnership.partnership_compliance_alert": {
     "title": "تنبيه امتثال الشراكة",
-    "message": "لدى الاتفاقية مشكلات امتثال تتطلب المراجعة."
+    "message": "يواجه العقد مشكلات امتثال تتطلب المراجعة."
   },
   "waste_bag.waste_bag_residue_created": {
-    "title": "تم إنشاء كيس نفايات البقايا",
-    "message": "تم إنشاء كيس نفايات جديد للبقايا."
+    "title": "تم إنشاء كيس نفايات متبقية",
+    "message": "تم إنشاء كيس نفايات متبقية جديد."
   },
   "waste_bag.waste_bag_domestic_created": {
     "title": "تم إنشاء كيس نفايات منزلية",
     "message": "تم إنشاء كيس نفايات منزلية جديد."
   },
   "waste_bag.waste_bag_in_temporary_storage": {
-    "title": "نُقلت النفايات إلى التخزين المؤقت",
+    "title": "نقل النفايات إلى التخزين المؤقت",
     "message": "نُقل كيس النفايات إلى التخزين المؤقت."
   },
   "waste_bag.waste_bag_out_temporary_storage": {
-    "title": "أُزيلت النفايات من التخزين المؤقت",
+    "title": "إزالة النفايات من التخزين المؤقت",
     "message": "أُزيل كيس النفايات من التخزين المؤقت."
   },
   "waste_bag.waste_bag_temporary_storage_expired": {
     "title": "انتهت مدة التخزين المؤقت",
-    "message": "تجاوز كيس النفايات الحد الأقصى للمدة المسموح بها في التخزين المؤقت."
+    "message": "تجاوز كيس النفايات الحد الأقصى المسموح به لمدة البقاء في التخزين المؤقت."
   },
   "waste_bag.waste_bag_in_cold_storage": {
-    "title": "نُقلت النفايات إلى التخزين البارد",
+    "title": "نقل النفايات إلى التخزين البارد",
     "message": "نُقل كيس النفايات إلى التخزين البارد."
   },
   "waste_bag.waste_bag_out_cold_storage": {
-    "title": "أُزيلت النفايات من التخزين البارد",
+    "title": "إزالة النفايات من التخزين البارد",
     "message": "أُزيل كيس النفايات من التخزين البارد."
   },
   "waste_bag.waste_bag_cold_storage_expired": {
     "title": "انتهت مدة التخزين البارد",
-    "message": "تجاوز كيس النفايات الحد الأقصى للمدة المسموح بها في التخزين البارد."
+    "message": "تجاوز كيس النفايات الحد الأقصى المسموح به لمدة البقاء في التخزين البارد."
   },
   "waste_bag_group.waste_bag_group_in_temporary_storage": {
-    "title": "مجموعة النفايات في التخزين المؤقت",
-    "message": "تم وضع مجموعة النفايات في التخزين المؤقت."
+    "title": "دخول مجموعة النفايات إلى التخزين المؤقت",
+    "message": "وُضعت مجموعة النفايات في التخزين المؤقت."
   },
   "waste_bag_group.waste_bag_group_out_temporary_storage": {
     "title": "خروج مجموعة النفايات من التخزين المؤقت",
-    "message": "تمت إزالة مجموعة النفايات من التخزين المؤقت."
+    "message": "أُزيلت مجموعة النفايات من التخزين المؤقت."
   },
   "waste_bag_group.waste_bag_group_temporary_storage_expired": {
-    "title": "انتهاء صلاحية التخزين المؤقت لمجموعة النفايات",
-    "message": "تجاوزت مجموعة النفايات الحد الأقصى للمدة المسموح بها في التخزين المؤقت."
+    "title": "انتهاء مدة التخزين المؤقت لمجموعة النفايات",
+    "message": "تجاوزت مجموعة النفايات الحد الأقصى المسموح به لمدة البقاء في التخزين المؤقت."
   },
   "waste_bag_group.waste_bag_group_in_cold_storage": {
-    "title": "مجموعة النفايات في التخزين البارد",
-    "message": "تم وضع مجموعة النفايات في التخزين البارد."
+    "title": "دخول مجموعة النفايات إلى التخزين البارد",
+    "message": "وُضعت مجموعة النفايات في التخزين البارد."
   },
   "waste_bag_group.waste_bag_group_out_cold_storage": {
     "title": "خروج مجموعة النفايات من التخزين البارد",
-    "message": "تمت إزالة مجموعة النفايات من التخزين البارد."
+    "message": "أُزيلت مجموعة النفايات من التخزين البارد."
   },
   "waste_bag_group.waste_bag_group_cold_storage_expired": {
-    "title": "انتهاء صلاحية التخزين البارد لمجموعة النفايات",
-    "message": "تجاوزت مجموعة النفايات الحد الأقصى للمدة المسموح بها في التخزين البارد."
+    "title": "انتهاء مدة التخزين البارد لمجموعة النفايات",
+    "message": "تجاوزت مجموعة النفايات الحد الأقصى المسموح به لمدة البقاء في التخزين البارد."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_internal_landfill_in_process": {
-    "title": "الطمر الداخلي قيد التنفيذ",
-    "message": "تخضع مجموعة النفايات حاليًا للطمر الداخلي."
+    "title": "الدفن الداخلي قيد التنفيذ",
+    "message": "تخضع مجموعة النفايات حاليًا لعملية الدفن الداخلي."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_internal_landfilled": {
-    "title": "اكتمل الطمر الداخلي",
-    "message": "تم طمر مجموعة النفايات داخليًا بنجاح."
+    "title": "اكتمال الدفن الداخلي",
+    "message": "تم دفن مجموعة النفايات داخليًا بنجاح."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_incinerate_in_process": {
-    "title": "الترميد قيد التنفيذ",
-    "message": "تخضع مجموعة النفايات حاليًا للترميد."
+    "title": "الحرق قيد التنفيذ",
+    "message": "تخضع مجموعة النفايات حاليًا لعملية الحرق."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_incinerated": {
-    "title": "اكتمل الترميد",
-    "message": "تم ترميد مجموعة النفايات بنجاح."
+    "title": "اكتمال الحرق",
+    "message": "تم حرق مجموعة النفايات بنجاح."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_sterilise_in_process": {
     "title": "التعقيم قيد التنفيذ",
-    "message": "تخضع مجموعة النفايات حاليًا للتعقيم."
+    "message": "تخضع مجموعة النفايات حاليًا لعملية التعقيم."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_sterilised": {
     "title": "اكتمل التعقيم",
@@ -151,15 +151,15 @@
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled_in_process": {
     "title": "الطمر الخارجي قيد التنفيذ",
-    "message": "تخضع مجموعة النفايات حاليًا للطمر الخارجي."
+    "message": "تخضع مجموعة النفايات حالياً لعملية الطمر الخارجي."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled": {
     "title": "اكتمل الطمر الخارجي",
-    "message": "تم طمر مجموعة النفايات خارجيًا بنجاح."
+    "message": "تم طمر مجموعة النفايات خارجياً بنجاح."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_recycled_in_process": {
     "title": "إعادة التدوير قيد التنفيذ",
-    "message": "تخضع مجموعة النفايات حاليًا لإعادة التدوير."
+    "message": "تخضع مجموعة النفايات حالياً لعملية إعادة التدوير."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_recycled": {
     "title": "اكتملت إعادة التدوير",
@@ -167,15 +167,15 @@
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_disposed_in_process": {
     "title": "التخلص قيد التنفيذ",
-    "message": "تخضع مجموعة النفايات حاليًا للتخلص."
+    "message": "تخضع مجموعة النفايات حالياً لعملية التخلص."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_disposed": {
     "title": "اكتمل التخلص",
     "message": "تم التخلص من مجموعة النفايات بنجاح."
   },
   "waste_bag_group_transport.waste_bag_group_transport_follow_up": {
-    "title": "مطلوب متابعة النقل",
-    "message": "يُرجى متابعة حالة نقل مجموعة النفايات."
+    "title": "يلزم متابعة النقل",
+    "message": "يرجى متابعة حالة نقل مجموعة النفايات."
   },
   "waste_bag_group_transport.waste_bag_group_transport_handover": {
     "title": "اكتمل تسليم النفايات",
@@ -183,23 +183,23 @@
   },
   "waste_bag_group_transport.waste_bag_group_transport_pickup": {
     "title": "تمت جدولة استلام النفايات",
-    "message": "من المقرر أن يستلم الناقل مجموعة النفايات."
+    "message": "مجموعة النفايات مجدولة للاستلام من قبل الناقل."
   },
   "waste_bag_group_transport.waste_bag_group_handover_to_treatment": {
-    "title": "تسليم النفايات إلى جهة معالجة خارجية",
-    "message": "تم تسليم {{totalData}} مجموعة نفايات من قبل الناقل إلى طرف ثالث."
+    "title": "تسليم النفايات إلى المعالجة الخارجية",
+    "message": "تم تسليم {{totalData}} من مجموعات النفايات من قبل الناقل إلى طرف ثالث."
   },
   "waste_bag_group_treatment.waste_bag_group_treatment_receivment": {
     "title": "استلام النفايات من قبل منشأة المعالجة",
     "message": "تم استلام مجموعة النفايات من قبل منشأة المعالجة."
   },
   "waste_bag_treatment_group.waste_bag_treatment_group_end_status": {
-    "title": "اكتمال دورة حياة النفايات",
+    "title": "اكتملت دورة حياة النفايات",
     "message": "تمت عملية {{status}} لمجموعة النفايات بنجاح."
   },
   "manual_request.manual_request_created": {
-    "title": "تم إرسال طلب وزن يدوي",
-    "message": "تم إرسال طلب وزن يدوي."
+    "title": "تم إرسال طلب الوزن اليدوي",
+    "message": "تم إرسال طلب الوزن اليدوي."
   },
   "manual_request.manual_request_approved": {
     "title": "تمت الموافقة على طلب الوزن اليدوي",
@@ -218,28 +218,28 @@
     "message": "سينتهي ضمان الأصل {{assetName}} في {{expiryDate}}."
   },
   "asset.asset_calibration_due": {
-    "title": "موعد معايرة الأصل",
-    "message": "يتطلب الأصل {{assetName}} معايرة في {{calibrationDate}}."
+    "title": "استحقاق معايرة الأصل",
+    "message": "يحتاج الأصل {{assetName}} إلى المعايرة في {{calibrationDate}}."
   },
   "waste.waste_status_changed": {
     "title": "تم تحديث حالة النفايات",
-    "message": "تم تغيير حالة كيس النفايات من {{oldStatus}} إلى {{newStatus}}."
+    "message": "تغيرت حالة كيس النفايات من {{oldStatus}} إلى {{newStatus}}."
   },
   "waste.waste_accumulated_update": {
-    "title": "تحديث تراكم النفايات اليومي",
-    "message": "إجمالي النفايات المتراكمة التي تمت معالجتها اليوم: {{summaryData}}."
+    "title": "تحديث التراكم اليومي للنفايات",
+    "message": "إجمالي النفايات المتراكمة المعالجة اليوم: {{summaryData}}."
   },
   "bast.create_request": {
-    "title": "تم طلب رقم محضر التسليم",
-    "message": "رقم محضر التسليم {{bastNo}} جاهز للمراجعة."
+    "title": "تم طلب رقم BAST",
+    "message": "رقم BAST {{bastNo}} جاهز للمراجعة."
   },
   "waste_classification.deleted": {
     "title": "تم تعطيل تصنيف النفايات",
-    "message": "تم تعطيل تصنيف النفايات بالمعرف {{id}}"
+    "message": "تم تعطيل تصنيف النفايات بالمعرّف {{id}}"
   },
   "waste_hierarchy.deleted": {
-    "title": "تم تعطيل هرمية النفايات",
-    "message": "تم تعطيل هرمية النفايات بالمعرف {{id}}"
+    "title": "تم تعطيل التسلسل الهرمي للنفايات",
+    "message": "تم تعطيل التسلسل الهرمي للنفايات بالمعرّف {{id}}"
   },
   "waste_bag.waste_bag_in_external_temporary_storage": {
     "title": "نُقلت النفايات إلى التخزين المؤقت الخارجي",

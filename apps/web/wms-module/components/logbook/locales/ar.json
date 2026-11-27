@@ -4,7 +4,7 @@
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "ابحث عن رقم مجموعة النفايات"
+        "placeholder": "بحث عن رقم مجموعة النفايات"
       },
       "date_range": {
         "label": "نطاق التاريخ",
@@ -26,7 +26,7 @@
       "transport_officer": "مسؤول النقل",
       "vehicle_number": "رقم المركبة",
       "pickup_time": "وقت الاستلام",
-      "drop_time": "وقت الإنزال",
+      "drop_time": "وقت الإيداع",
       "process_time": "وقت المعالجة",
       "landfill_time": "وقت الطمر",
       "recycle_time": "وقت إعادة التدوير",

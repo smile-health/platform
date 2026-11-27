@@ -1,11 +1,11 @@
 {
-  "item": "العنصر/العناصر",
+  "item": "عنصر/عناصر",
   "action": "إجراء",
   "all": "الكل",
   "name": "الاسم",
   "address": "العنوان",
   "at": "في",
-  "on_for_date": "في",
+  "on_for_date": "على",
   "at_for_time": "الساعة",
   "attach_file": "إرفاق ملف",
   "back": "رجوع",
@@ -17,7 +17,7 @@
   "delete": "حذف",
   "remove": "إزالة",
   "approval": "موافقة",
-  "loading": "جارٍ التحميل",
+  "loading": "جار التحميل",
   "description": "الوصف",
   "detail": "التفاصيل",
   "download_template": "تنزيل القالب",
@@ -27,15 +27,15 @@
   "hours": "ساعات",
   "days": "أيام",
   "delete_confirmation": "هل أنت متأكد أنك تريد حذف هذه البيانات؟",
-  "delete_all_selected": "حذف كل المحدد",
-  "data_has_been_selected": "تم تحديد {{selectedRows}} من البيانات",
+  "delete_all_selected": "حذف جميع المحدد",
+  "data_has_been_selected": "تم تحديد {{selectedRows}} بيانات",
   "created_at": "تاريخ الإنشاء",
   "updated_at": "تاريخ التحديث",
-  "created_by": "أنشأه",
-  "updated_by": "حدّثه",
+  "created_by": "أُنشئ بواسطة",
+  "updated_by": "حُدّث بواسطة",
   "see_more": "عرض المزيد",
   "see_less": "عرض أقل",
-  "submit": "تقديم",
+  "submit": "إرسال",
   "example": "مثال",
   "send": "إرسال",
   "add_item": "إضافة عنصر",
@@ -55,44 +55,44 @@
     },
     "primary_health_care": {
       "label": "الرعاية الصحية الأولية",
-      "placeholder": "اختر الرعاية الصحية الأولية"
+      "placeholder": "اختر مركز الرعاية الصحية الأولية"
     },
     "village": {
       "label": "القرية",
       "placeholder": "اختر القرية"
     },
     "entity": {
-      "label": "المنشأة",
-      "placeholder": "اختر المنشأة"
+      "label": "الكيان",
+      "placeholder": "اختر الكيان"
     },
     "healthcare_facility_name": {
       "label": "اسم منشأة الرعاية الصحية",
-      "placeholder": "اختر اسم منشأة الرعاية الصحية"
+      "placeholder": "اختر اسم مرفق الرعاية الصحية"
     },
     "entity_type": {
-      "label": "نوع المنشأة",
-      "placeholder": "اختر نوع المنشأة"
+      "label": "نوع الكيان",
+      "placeholder": "اختر نوع الكيان"
     },
     "entity_tag": {
-      "label": "وسم المنشأة",
-      "placeholder": "اختر وسم المنشأة"
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
     },
     "integrated_healthcare": {
-      "label": "الرعاية الصحية المتكاملة",
-      "placeholder": "اختر الرعاية الصحية المتكاملة"
+      "label": "مركز الرعاية الصحية الأولية",
+      "placeholder": "اختر مركز الرعاية الصحية الأولية"
     },
     "program": {
       "title": "البرامج",
       "information": "لا يمكن التراجع عن البرامج المحددة (إلغاء تحديدها) بعد ربط البيانات",
       "no_program": "لا يوجد برنامج مطبّق",
       "placeholder": {
-        "name": "ابحث عن اسم البرنامج",
+        "name": "بحث عن اسم البرنامج",
         "select": "اختر البرامج"
       }
     },
     "date_range": {
-      "label": "النطاق الزمني",
-      "placeholder": "اختر النطاق الزمني"
+      "label": "نطاق التاريخ",
+      "placeholder": "اختر نطاق التاريخ"
     },
     "color": {
       "placeholder": "اختر لونًا"
@@ -111,8 +111,8 @@
     "numeric_cannot_negative": "لا يمكن أن تكون القيم سالبة",
     "message_invalid_date": "تنسيق التاريخ غير صالح، يرجى إدخال تاريخ صالح",
     "message_invalid_year": "سنة التاريخ غير صالحة، يرجى إدخال سنة صالحة",
-    "date_must_be_after_start_date": "يجب أن يكون تاريخ الانتهاء مساويًا لتاريخ البدء أو بعده",
-    "max_range_contract": "مدة العقد سنة واحدة كحد أقصى",
+    "date_must_be_after_start_date": "يجب أن يكون تاريخ الانتهاء مساويًا أو بعد تاريخ البدء",
+    "max_range_contract": "مدة العقد بحد أقصى سنة واحدة",
     "min_date_today": "لا يمكن أن يكون تاريخ انتهاء العقد أقل من تاريخ اليوم.",
     "email": "تنسيق البريد الإلكتروني غير صالح",
     "coordinate": "تنسيق غير صالح",
@@ -125,14 +125,14 @@
   },
   "import": "استيراد",
   "litre": "لتر",
-  "logistic": "لوجستي",
+  "logistic": "اللوجستيات",
   "message": {
     "common": {
       "error": "عذرًا، حدث خطأ. يرجى المحاولة مرة أخرى بعد لحظات"
     },
     "empty": {
       "title": "لا توجد بيانات متاحة",
-      "description": "هذه القائمة فارغة حاليًا. يرجى التواصل مع مكتب المساعدة لطلب إدخالات جديدة."
+      "description": "هذه القائمة فارغة حاليًا. يرجى الاتصال بمكتب المساعدة لطلب إدخالات جديدة."
     },
     "success": {
       "add": "تمت إضافة {{type}} بنجاح",
@@ -159,20 +159,20 @@
   "save": "حفظ",
   "reset": "إعادة تعيين",
   "search": "بحث",
-  "search_by": "البحث حسب",
+  "search_by": "البحث بواسطة",
   "select_activity": "اختر النشاط",
   "select_type": "اختر النوع",
   "status": {
     "active": "نشط",
     "inactive": "غير نشط",
     "activate": "تفعيل",
-    "deactivate": "إلغاء التفعيل",
+    "deactivate": "تعطيل",
     "success": "نجاح",
     "failed": "فشل"
   },
   "temperature": {
     "min": "الحد الأدنى لدرجة الحرارة",
-    "max": "الحد الأعلى لدرجة الحرارة"
+    "max": "الحد الأقصى لدرجة الحرارة"
   },
   "type": "النوع",
   "vaccine": "لقاح",
@@ -183,8 +183,8 @@
   "reject": "رفض",
   "selected": "محدد",
   "updated": {
-    "by": "تم التحديث بواسطة",
-    "at": "وقت التحديث"
+    "by": "حُدّث بواسطة",
+    "at": "تاريخ التحديث"
   },
   "expand_filter": {
     "hide": "إغلاق جميع عوامل التصفية",
@@ -200,19 +200,19 @@
     "empty": "عرض 0 من 0 نتيجة",
     "data": "عرض {{start}} إلى {{end}} من {{result}} نتيجة",
     "showing": "عرض",
-    "items_per_page": "عناصر لكل صفحة",
+    "items_per_page": "عنصر لكل صفحة",
     "previous": "السابق",
     "next": "التالي"
   },
   "show_report": "عرض التقرير",
   "tab": {
     "asset_type": "نوع الأصل",
-    "entity": "المنشأة",
+    "entity": "الكيان",
     "user": "المستخدم",
     "budget_source": "مصدر الميزانية",
     "manufacturer": "الشركة المصنعة",
     "model_asset_management": "طراز الأصل",
-    "asset_vendor": "مورد الأصل"
+    "asset_vendor": "مورّد الأصول"
   },
   "dropdown_setting": {
     "view_profile": "عرض الملف الشخصي",
@@ -224,87 +224,87 @@
     "title": "اختيار ملف",
     "placeholder": "لم يتم اختيار ملف",
     "file_size": "يجب أن يكون حجم الملف أقل من أو يساوي {{size}} MB",
-    "cannot_file_type": "نوع الملف غير مسموح"
+    "cannot_file_type": "نوع الملف غير مسموح به"
   },
   "error": {
     "403": {
       "title": "الوصول إلى هذه الصفحة محظور",
-      "description": "ليس لديك صلاحية للوصول إلى هذه الصفحة <strong>(خطأ 403).</strong>",
+      "description": "ليس لديك إذن للوصول إلى هذه الصفحة <strong>(403 Error).</strong>",
       "list": {
         "title": "يرجى تجربة ما يلي:",
         "description": "",
         "content": [
-          "تأكد من أنك أدخلت URL الصحيح.",
-          "تواصل مع مسؤول النظام لديك إذا كنت تعتقد أن هذا خطأ."
+          "تأكد من إدخال URL الصحيح.",
+          "اتصل بمسؤول النظام لديك إذا كنت تعتقد أن هذا خطأ."
         ]
       },
-      "button": "العودة إلى الرئيسية"
-    },
-    "404_pages": {
-      "title": "هذه الصفحة غير موجودة",
-      "description": "قد تكون الصفحة التي تبحث عنها قد أُزيلت أو أُعيدت تسميتها أو أنها غير متاحة مؤقتًا <strong>(خطأ 404).</strong>",
-      "list": {
-        "title": "يرجى تجربة ما يلي:",
-        "description": "",
-        "content": [
-          "تأكد من أنك أدخلت URL الصحيح.",
-          "استخدم قائمة التنقل للعودة إلى صفحة مألوفة."
-        ]
-      },
-      "button": "العودة إلى الرئيسية"
-    },
-    "404_data": {
-      "title": "هذه البيانات غير موجودة",
-      "description": "قد تكون البيانات التي تبحث عنها قد أُزيلت أو أنها غير متاحة مؤقتًا <strong>(خطأ 404).</strong>",
-      "list": {
-        "title": "يرجى تجربة ما يلي:",
-        "description": "",
-        "content": [
-          "تأكد من أنك أدخلت URL الصحيح.",
-          "استخدم قائمة التنقل للعودة إلى صفحة مألوفة."
-        ]
-      },
-      "button": "العودة إلى الرئيسية"
+      "button": "العودة إلى الصفحة الرئيسية"
     },
     "500": {
-      "title": "يواجه النظام خطأً داخليًا في الخادم",
-      "description": "حاليًا، لا يعمل النظام بشكل صحيح <strong>(خطأ 500).</strong> يعمل فريقنا بنشاط على إصلاحه.",
+      "title": "يواجه النظام خطأ في الخادم الداخلي",
+      "description": "حاليًا، لا يعمل النظام بشكل صحيح <strong>(500 Error).</strong> يعمل فريقنا بنشاط على إصلاح ذلك.",
       "list": {
         "title": "في هذه الأثناء، يمكنك تجربة:",
         "description": "شكرًا لتفهمكم وصبركم.",
         "content": [
           "<strong>أعد تحميل الصفحة</strong> عدة مرات.",
-          "<strong>حاول مرة أخرى</strong> بعد لحظات."
+          "<strong>حاول مرة أخرى</strong> بعد بضع لحظات."
         ]
       },
       "button": "إعادة التحميل"
     },
     "502": {
-      "title": "يواجه النظام خطأ بوابة غير صالحة",
+      "title": "يواجه النظام خطأ في البوابة",
       "description": "حاليًا، هناك مشكلة في الاتصال بين الخوادم <strong>(خطأ 502).</strong> يعمل فريقنا بنشاط على إصلاحها.",
       "list": {
         "title": "في هذه الأثناء، يمكنك تجربة:",
         "description": "شكرًا لتفهمكم وصبركم.",
         "content": [
           "<strong>أعد تحميل الصفحة</strong> عدة مرات.",
-          "<strong>حاول مرة أخرى</strong> بعد لحظات."
+          "<strong>حاول مرة أخرى</strong> بعد بضع لحظات."
         ]
       },
       "button": "إعادة التحميل"
     },
     "504": {
-      "title": "بلغ النظام طاقته القصوى",
-      "description": "حاليًا، يشهد النظام زيادة مفاجئة في الطلب، مما يجعل استرداد البيانات يستغرق وقتًا أطول من المعتاد <strong>(خطأ 504).</strong> يعمل فريقنا بنشاط على إصلاحه.",
+      "title": "وصل النظام إلى طاقته القصوى",
+      "description": "حاليًا، يشهد النظام زيادة في الطلب، مما يؤدي إلى استغراق استرجاع البيانات وقتًا أطول من المعتاد <strong>(خطأ 504).</strong> يعمل فريقنا بنشاط على إصلاحها.",
       "list": {
         "title": "في هذه الأثناء، يمكنك تجربة:",
         "description": "شكرًا لتفهمكم وصبركم.",
         "content": [
           "<strong>أعد تحميل الصفحة</strong> عدة مرات.",
-          "<strong>حاول مرة أخرى</strong> بعد لحظات.",
+          "<strong>حاول مرة أخرى</strong> بعد بضع لحظات.",
           "الوصول إلى ميزات أخرى."
         ]
       },
       "button": "إعادة التحميل"
+    },
+    "404_pages": {
+      "title": "هذه الصفحة غير موجودة",
+      "description": "قد تكون الصفحة التي تبحث عنها قد حُذفت أو أُعيدت تسميتها أو أنها غير متاحة مؤقتًا <strong>(404 Error).</strong>",
+      "list": {
+        "title": "يرجى تجربة ما يلي:",
+        "description": "",
+        "content": [
+          "تأكد من إدخال URL الصحيح.",
+          "استخدم قائمة التنقل للعودة إلى موقع مألوف."
+        ]
+      },
+      "button": "العودة إلى الصفحة الرئيسية"
+    },
+    "404_data": {
+      "title": "هذه البيانات غير موجودة",
+      "description": "قد تكون البيانات التي تبحث عنها قد حُذفت أو أنها غير متاحة مؤقتًا <strong>(404 Error).</strong>",
+      "list": {
+        "title": "يرجى تجربة ما يلي:",
+        "description": "",
+        "content": [
+          "تأكد من إدخال URL الصحيح.",
+          "استخدم قائمة التنقل للعودة إلى موقع مألوف."
+        ]
+      },
+      "button": "العودة إلى الصفحة الرئيسية"
     },
     "connection": {
       "title": "لم يتم العثور على اتصال بالإنترنت",
@@ -314,43 +314,43 @@
         "description": "",
         "content": [
           "تحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
-          "تحقق من إعدادات الشبكة في جهازك."
+          "تحقق من إعدادات شبكة جهازك."
         ]
       },
       "button": "إعادة التحميل"
     }
   },
   "modal_import_error": {
-    "title": "تعذر استيراد {{total}} صفًا",
+    "title": "فشل استيراد {{total}} من الصفوف",
     "description": "بعد إصلاح الخطأ، حاول استيراد الملف مرة أخرى.",
     "list": {
       "title": "الصف {{row}}"
     }
   },
   "loading_popup": {
-    "title": "يرجى الانتظار!",
-    "description": "تتم معالجة طلبك"
+    "title": "انتظر قليلًا!",
+    "description": "جارٍ معالجة طلبك"
   },
   "download_async_popup": {
-    "title": "تتم معالجة طلبك",
+    "title": "جارٍ معالجة طلبك",
     "description": "تحقق من جرس الإشعارات بانتظام",
     "action": "عرض سجل التصدير"
   },
   "modal_export_async_popup": {
-    "title": "تتم معالجة طلبك",
+    "title": "جارٍ معالجة طلبك",
     "description": "تحقق من سجل التصدير بانتظام",
     "action": "عرض سجل التصدير"
   },
   "up_to_abbr": "إلى",
   "programs": "البرامج",
-  "item_selected": "تم تحديد عنصر (عناصر)",
+  "item_selected": "عنصر/عناصر محددة",
   "order": {
     "type": {
       "order": "طلب",
-      "distribution": "توزيع",
+      "distribution": "التوزيع",
       "return": "إرجاع",
-      "central_distribution": "توزيع مركزي",
-      "relocation": "نقل"
+      "central_distribution": "التوزيع المركزي",
+      "relocation": "نقل الموقع"
     }
   },
   "date": {
@@ -362,16 +362,16 @@
         "year": "هذا العام"
       },
       "last": {
-        "days": "آخر {{day}} يومًا",
+        "days": "آخر {{day}} أيام",
         "month": "الشهر الماضي",
         "months": "آخر {{month}} أشهر",
-        "year": "العام الماضي"
+        "year": "السنة الماضية"
       }
     }
   },
   "menu": {
     "dashboard": {
-      "title": "لوحة التحكم",
+      "title": "لوحة المعلومات",
       "item": {
         "inventory_overview": "نظرة عامة على المخزون",
         "in_transit": "قيد النقل",
@@ -379,12 +379,12 @@
         "asset_ownership": "ملكية الأصول",
         "download": "تنزيل التقرير",
         "storage_capacity": "سعة التخزين",
-        "monitoring": "مراقبة المعاملات",
+        "monitoring": "متابعة المعاملات",
         "planning": "التخطيط",
         "stock": "المخزون",
-        "compliance_transaction_input": "امتثال إدخال المعاملات",
+        "compliance_transaction_input": "الالتزام بإدخال المعاملات",
         "transaction": {
-          "title": "المعاملات",
+          "title": "المعاملة",
           "item": {
             "general": "معاملة عامة",
             "detail": "تفاصيل المعاملة"
@@ -409,7 +409,7 @@
       }
     },
     "order": {
-      "title": "الطلبات",
+      "title": "طلب",
       "item": {
         "list": "قائمة الطلبات",
         "ticketing": "نظام التذاكر"
@@ -418,23 +418,23 @@
     "disposal": {
       "title": "الإتلاف",
       "item": {
-        "view": "عرض إجمالي الإتلاف",
-        "distribution": "شحنة الإتلاف",
-        "self": "إتلاف ذاتي"
+        "view": "عرض إجمالي المتلف",
+        "distribution": "شحنة التخلص",
+        "self": "التخلص الذاتي"
       }
     },
     "report": {
-      "title": "التقارير",
+      "title": "تقرير",
       "item": {
         "monthly": "تقرير شهري",
         "yearly": "تقرير سنوي",
-        "stock_book": "تقرير سجل المخزون",
+        "stock_book": "تقرير دفتر المخزون",
         "activity": {
           "title": "النشاط",
           "item": {
             "user": "نشاط المستخدم",
-            "immunization": "نشاط نقطة التحصين",
-            "count_transaction": "عدد المعاملات",
+            "immunization": "نشاط مركز التحصين",
+            "count_transaction": "عد المعاملات",
             "adjust_stock": "إضافة/إزالة المخزون",
             "reconciliation": "نشاط التسوية"
           }
@@ -442,27 +442,27 @@
         "inventory": {
           "title": "المخزون",
           "item": {
-            "supply_consumption": "التوريد والاستهلاك",
-            "discard": "الإتلاف",
+            "supply_consumption": "الإمداد والاستهلاك",
+            "discard": "إتلاف",
             "stock": {
               "abnormal": "مخزون غير طبيعي",
               "zero": "مخزون صفري",
               "filling": "تعبئة المخزون",
-              "availability": "توافر المخزون"
+              "availability": "توفر المخزون"
             }
           }
         },
         "order": {
-          "title": "الطلبات",
+          "title": "طلب",
           "item": {
-            "time": "زمن استجابة الطلب",
+            "time": "وقت استجابة الطلب",
             "difference": "فرق الطلب"
           }
         },
         "asset": {
-          "title": "الأصول",
+          "title": "الأصل",
           "item": {
-            "excursion": "انحراف الأصول"
+            "excursion": "انحراف درجة الحرارة"
           }
         },
         "planning": {
@@ -482,7 +482,7 @@
         "capacity_annual_planning": "السعة للتخطيط السنوي",
         "healthcare": "الرعاية الصحية",
         "healthcare_hf": "الرعاية الصحية",
-        "manufacture": "التصنيع"
+        "manufacture": "الشركة المصنعة"
       }
     },
     "setting": {
@@ -491,8 +491,8 @@
         "about": "حول",
         "user": "المستخدم",
         "activity": "النشاط",
-        "entity": "المنشأة",
-        "material_volume": "حجم المادة",
+        "entity": "الكيان",
+        "material_volume": "حجم المواد",
         "manufacturer": "الشركة المصنعة",
         "communication_provider": "مزود الاتصالات",
         "temperature_device": "جهاز مراقبة درجة الحرارة عن بُعد",
@@ -502,7 +502,7 @@
         "import_material_entity": "استيراد كيان المادة",
         "asset": {
           "model": "طراز الأصل",
-          "vendor": "مورّد الأصل",
+          "vendor": "مورّد الأصول",
           "type": "نوع الأصل"
         },
         "annual_planning": {
@@ -515,11 +515,11 @@
           }
         },
         "distance": "حد المسافة",
-        "waste_source_group": "مجموعة مصادر النفايات",
+        "waste_source_group": "مجموعة مصدر النفايات",
         "partnership": "الشراكة",
-        "healthcare_storage_location": "موقع تخزين الرعاية الصحية",
-        "treatment_location": "موقع العلاج",
-        "healthcare_partner": "شريك الرعاية الصحية",
+        "healthcare_storage_location": "موقع تخزين المنشأة الصحية",
+        "treatment_location": "موقع المعالجة",
+        "healthcare_partner": "شريك المنشأة الصحية",
         "third_party_partner": "شريك طرف ثالث",
         "transport_vehicle": "مركبة النقل",
         "user_operator": "المشغّل",
@@ -541,18 +541,18 @@
         "waste_disposal": "معاملة التخلص من النفايات",
         "logbook": "سجل",
         "user_activity": "نشاط المستخدم",
-        "transaction_monitoring": "لوحة معلومات مراقبة أكياس النفايات"
+        "transaction_monitoring": "لوحة مراقبة أكياس النفايات"
       }
     },
     "waste": {
       "title": "إدارة النفايات",
       "item": {
-        "waste_hierarchy": "هرمية النفايات",
+        "waste_hierarchy": "التسلسل الهرمي للنفايات",
         "waste_specification": "تصنيف النفايات",
         "waste_source": "مصدر النفايات",
         "print_label": "طباعة الملصق",
-        "manual_scale": "اعتماد الوزن اليدوي",
-        "bast": "وثيقة التسليم"
+        "manual_scale": "الموافقة على الوزن اليدوي",
+        "bast": "محضر التسليم والاستلام"
       }
     }
   },
@@ -560,7 +560,7 @@
     "title": "الإشعارات",
     "no_data": "لا توجد بيانات",
     "more": "عرض المزيد",
-    "mark_all_as_read": "تعيين الكل كمقروء",
+    "mark_all_as_read": "تحديد الكل كمقروء",
     "loading": "جارٍ التحميل...",
     "error": "حدث خطأ",
     "refreshing": "جارٍ التحديث..."
@@ -568,46 +568,46 @@
   "titleHeader": "إدارة النفايات",
   "waste_status": {
     "IN_TEMPORARY_STORAGE": "في التخزين المؤقت",
-    "IN_COLD_STORAGE": "في التخزين المبرد",
-    "INTERNAL_LANDFILLED": "مطمور داخليًا",
+    "IN_COLD_STORAGE": "في التخزين البارد",
+    "INTERNAL_LANDFILLED": "مدفون داخليًا",
     "INCINERATED": "مُحرَّق",
     "INCINERATION_IN_PROCESS": "الحرق قيد التنفيذ",
-    "STERILISED": "معقَّم",
+    "STERILISED": "مُعقَّم",
     "STERILIZATION_IN_PROCESS": "التعقيم قيد التنفيذ",
-    "IN_TRANSIT": "في الطريق",
-    "HANDOVER_TO_TREATMENT": "تسليم للمعالجة",
+    "IN_TRANSIT": "قيد النقل",
+    "HANDOVER_TO_TREATMENT": "تسليم إلى العلاج",
     "READY_FOR_TRANSPORT": "جاهز للنقل",
     "TRANSPORTATION_REQUEST_CREATED": "تم إنشاء طلب النقل",
     "READY_FOR_TREATMENT": "جاهز للمعالجة",
     "RECYCLED": "{{recycledEn}}",
     "LANDFILLED": "{{landfilledEn}}",
     "COLLECTED": "تم الجمع",
-    "DISPOSED": "تم التخلص",
+    "DISPOSED": "تم التخلص منه",
     "IN_THIRD_PARTY_STORAGE": "في تخزين طرف ثالث"
   },
   "asset_type": {
-    "COLD_STORAGE": "تخزين مبرد",
-    "INCINERATOR": "محرقة",
-    "AUTOCLAVE": "أوتوكلاف",
-    "SCALE": "ميزان"
+    "COLD_STORAGE": "التخزين البارد",
+    "INCINERATOR": "المحرقة",
+    "AUTOCLAVE": "الأوتوكلاف",
+    "SCALE": "الميزان"
   },
   "excel_filename": {
-    "logbook": "logbook",
-    "recap_characteristics": "recap-characteristics",
-    "recap_waste_source": "recap-waste-source",
-    "recap_waste_bag": "recap-waste-bag",
-    "waste_tracking_all": "waste-tracking-all",
-    "waste_disposal": "waste-disposal",
-    "user_activity": "user-activity",
-    "wastebag_monitoring_dashboard": "wastebag-monitoring-dashboard-{{typeInfo}}",
-    "partnership_vehicle": "transport-vehicle",
+    "logbook": "سجل",
+    "recap_characteristics": "ملخص-الخصائص",
+    "recap_waste_source": "ملخص-مصدر-النفايات",
+    "recap_waste_bag": "ملخص-كيس-النفايات",
+    "waste_tracking_all": "تتبع-جميع-النفايات",
+    "waste_disposal": "التخلص-من-النفايات",
+    "user_activity": "نشاط المستخدم",
+    "wastebag_monitoring_dashboard": "لوحة معلومات مراقبة أكياس النفايات - {{typeInfo}}",
+    "partnership_vehicle": "مركبة النقل",
     "params": {
-      "bag": "bag",
-      "weight": "weight"
+      "bag": "كيس",
+      "weight": "الوزن"
     }
   },
   "setting_latlong": {
-    "title": "دليل تحديد خطوط الطول والعرض"
+    "title": "دليل تحديد خط العرض وخط الطول"
   },
   "text_direction": {
     "label": "اتجاه النص",

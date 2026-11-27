@@ -4,7 +4,7 @@
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "ابحث عن مصدر الميزانية"
+        "placeholder": "بحث عن مصدر الميزانية"
       },
       "button": {
         "search": "بحث"
@@ -13,8 +13,8 @@
     "column": {
       "name": "مصدر الميزانية",
       "description": "الوصف",
-      "updated_at": "آخر تحديث",
-      "updated_by": "تم التحديث بواسطة",
+      "updated_at": "تاريخ التحديث",
+      "updated_by": "حُدّث بواسطة",
       "action": "إجراء"
     },
     "button": {

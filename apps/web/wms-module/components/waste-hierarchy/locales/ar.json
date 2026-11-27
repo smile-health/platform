@@ -10,7 +10,7 @@
       "waste_type": {
         "search": {
           "label": "بحث",
-          "placeholder": "البحث عن نوع النفايات"
+          "placeholder": "ابحث عن نوع النفايات"
         },
         "waste_type": {
           "label": "نوع النفايات",
@@ -20,7 +20,7 @@
       "waste_group": {
         "search": {
           "label": "بحث",
-          "placeholder": "البحث عن مجموعة النفايات"
+          "placeholder": "ابحث عن مجموعة النفايات"
         },
         "waste_group": {
           "label": "مجموعة النفايات",
@@ -30,7 +30,7 @@
       "waste_characteristic": {
         "search": {
           "label": "بحث",
-          "placeholder": "البحث عن خاصية النفايات"
+          "placeholder": "ابحث عن خاصية النفايات"
         }
       },
       "is_active": {
@@ -45,20 +45,20 @@
       "waste_type": "نوع النفايات",
       "waste_group": "مجموعة النفايات",
       "waste_characteristic": "خاصية النفايات",
-      "residue": "المتبقي",
+      "residue": "البقايا",
       "description": "الوصف",
       "status": "الحالة",
       "updated_at": "آخر تحديث",
-      "updated_by": "تم التحديث بواسطة",
+      "updated_by": "حُدّث بواسطة",
       "action": "إجراء",
       "is_active": {
-        "1": "نشط",
-        "0": "غير نشط"
+        "0": "غير نشط",
+        "1": "نشط"
       }
     },
     "action": {
       "activate": {
-        "title": "تنشيط"
+        "title": "تفعيل"
       },
       "deactivate": {
         "title": "تعطيل"
@@ -67,7 +67,7 @@
     "button": {
       "add_waste_type": "إضافة نوع نفايات",
       "add_waste_group": "إضافة مجموعة نفايات",
-      "add_waste_characteristic": "إضافة خاصية نفايات"
+      "add_waste_characteristic": "إضافة خاصية النفايات"
     }
   },
   "title": {
@@ -85,11 +85,11 @@
   "action": {
     "activate": {
       "button": "تفعيل",
-      "confirmation": "هل أنت متأكد من تفعيل هذا المنتج؟"
+      "confirmation": "هل أنت متأكد من رغبتك في تفعيل هذا المنتج؟"
     },
     "deactivate": {
       "button": "تعطيل",
-      "confirmation": "هل أنت متأكد من تعطيل هذا المنتج؟"
+      "confirmation": "هل أنت متأكد من رغبتك في تعطيل هذا المنتج؟"
     }
   },
   "button": {
@@ -100,17 +100,17 @@
   "form": {
     "waste_group": {
       "label": "مجموعة النفايات",
-      "placeholder": "أدخل مجموعة النفايات",
+      "placeholder": "إدخال مجموعة النفايات",
       "placeholder_select": "اختر مجموعة النفايات"
     },
     "waste_type": {
       "label": "نوع النفايات",
-      "placeholder": "أدخل نوع النفايات",
+      "placeholder": "إدخال نوع النفايات",
       "placeholder_select": "اختر نوع النفايات"
     },
     "waste_characteristic": {
       "label": "خاصية النفايات",
-      "placeholder": "أدخل خاصية النفايات"
+      "placeholder": "إدخال خاصية النفايات"
     },
     "status": {
       "label": "الحالة",
@@ -124,6 +124,6 @@
   },
   "information": {
     "title": "التسلسل الهرمي للنفايات",
-    "description": "يصنف التسلسل الهرمي للنفايات بيانات النفايات ويسجلها ويراقبها ويديرها حسب النوع والمجموعة والخصائص."
+    "description": "يصنف التسلسل الهرمي للنفايات بيانات النفايات ويسجلها ويراقبها ويديرها استنادًا إلى النوع والمجموعة والخصائص."
   }
 }

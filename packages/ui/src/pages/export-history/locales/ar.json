@@ -3,7 +3,7 @@
   "filter": {
     "search": {
       "label": "بحث",
-      "placeholder": "ابحث عن اسم الملف"
+      "placeholder": "البحث باسم الملف"
     },
     "request_date": {
       "label": "تاريخ الطلب"

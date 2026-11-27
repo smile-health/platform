@@ -5,15 +5,15 @@
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "البحث عن معاملة"
+        "placeholder": "بحث عن معاملة"
       },
       "healthcare_facility_name": {
-        "label": "المنشأة الصحية",
+        "label": "منشأة الرعاية الصحية",
         "placeholder": "اختر المنشأة الصحية"
       },
       "date_range": {
-        "label": "النطاق الزمني",
-        "placeholder": "اختر النطاق الزمني"
+        "label": "نطاق التاريخ",
+        "placeholder": "اختر نطاق التاريخ"
       },
       "status": {
         "label": "الحالة",
@@ -28,7 +28,7 @@
     }
   },
   "manual_scale_status": {
-    "APPROVED": "تمت الموافقة",
+    "APPROVED": "معتمد",
     "REJECTED": "مرفوض",
     "PENDING": "قيد الانتظار",
     "WAITING_FOR_APPROVAL": "بانتظار الموافقة",
@@ -36,6 +36,6 @@
   },
   "information": {
     "title": "الوزن اليدوي",
-    "description": "موافقة الوزن اليدوي لمراجعة نتائج وزن النفايات والتحقق منها."
+    "description": "اعتماد الوزن اليدوي لمراجعة نتائج وزن النفايات والتحقق منها."
   }
 }

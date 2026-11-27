@@ -8,9 +8,9 @@
   "create": "إضافة برنامج",
   "column": {
     "name": "الاسم",
-    "classification_material": "تصنيف المادة",
-    "updated_by": "تم التحديث بواسطة",
-    "updated_at": "وقت التحديث",
+    "classification_material": "تصنيف المواد",
+    "updated_by": "حُدّث بواسطة",
+    "updated_at": "تاريخ التحديث",
     "activity_name": "اسم النشاط",
     "activity_process": "عملية النشاط",
     "protocol": "البروتوكول"
@@ -21,8 +21,8 @@
       "placeholder": "اكتب اسم البرنامج"
     },
     "classification_material": {
-      "label": "تصنيف المادة",
-      "placeholder": "اختر تصنيف المادة"
+      "label": "تصنيف المواد",
+      "placeholder": "اختر تصنيف المواد"
     }
   },
   "form": {
@@ -34,22 +34,22 @@
       "key": "مفتاح البرنامج",
       "name": "اسم البرنامج",
       "description": "الوصف",
-      "classification_material": "تصنيف المادة",
+      "classification_material": "تصنيف المواد",
       "color": "لون البرنامج",
       "protocol": "البروتوكول"
     },
     "placeholder": {
-      "classification_material": "اختر تصنيف المادة",
-      "description": "أدخل وصفًا...",
-      "protocol": "ابحث عن بروتوكول"
+      "classification_material": "اختر تصنيف المواد",
+      "description": "أدخل وصفاً...",
+      "protocol": "بحث عن بروتوكول"
     },
     "error": {
-      "protocol": "يجب تحديد بروتوكول واحد على الأقل"
+      "protocol": "يجب اختيار بروتوكول واحد على الأقل"
     },
     "options": {
       "classification_material": {
         "hierarchy": "تصنيف KFA (هرمي)",
-        "non_hierarchy": "بدون تصنيف (غير هرمي)"
+        "non_hierarchy": "غير مصنف (غير هرمي)"
       },
       "activity_process": {
         "bottom_up": "من الأسفل إلى الأعلى",
@@ -69,7 +69,7 @@
     },
     "button": {
       "activate": "تفعيل",
-      "deactivate": "تعطيل"
+      "deactivate": "إلغاء التفعيل"
     },
     "tabs_title": {
       "detail": "التفاصيل",

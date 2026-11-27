@@ -1,10 +1,10 @@
 {
   "list": {
-    "list": "مشغّل المستخدم",
+    "list": "مستخدم مشغّل",
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "ابحث عن مشغّل"
+        "placeholder": "بحث عن مشغّل"
       },
       "button": {
         "search": "بحث"
@@ -12,7 +12,7 @@
     },
     "column": {
       "username": "اسم المستخدم",
-      "healthcare_facility_consumer": "مستهلك منشأة الرعاية الصحية",
+      "healthcare_facility_consumer": "مستهلك المنشأة الصحية",
       "action": "إجراء"
     },
     "button": {
@@ -20,17 +20,17 @@
     }
   },
   "title": {
-    "create": "إنشاء مشغّل المستخدم",
-    "edit": "تعديل مشغّل المستخدم"
+    "create": "إنشاء مستخدم مشغّل",
+    "edit": "تعديل مستخدم مشغّل"
   },
   "form": {
     "operator": {
       "label": "اختر اسم مستخدم المشغّل",
-      "placeholder": "اختر مشغّلاً"
+      "placeholder": "اختر المشغّل"
     },
     "healthcare_facility": {
-      "label": "اختر مستهلك منشأة الرعاية الصحية",
-      "placeholder": "اختر منشأة الرعاية الصحية"
+      "label": "اختر مستهلك المنشأة الصحية",
+      "placeholder": "اختر المنشأة الصحية"
     }
   }
 }

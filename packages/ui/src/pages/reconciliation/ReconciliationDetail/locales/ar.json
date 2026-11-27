@@ -9,9 +9,9 @@
     "column": {
       "description": "الوصف",
       "smile_qty": "SMILE",
-      "real_qty": "الفعلي",
+      "real_qty": "فعلي",
       "reason": "السبب",
-      "action": "الإجراء"
+      "action": "إجراء"
     }
   }
 }

@@ -1,17 +1,17 @@
 {
   "list": {
-    "list": "تتبعات النفايات",
+    "list": "تتبع النفايات",
     "waste_source": "ملخص حسب مصدر النفايات",
     "waste_bag": "ملخص حسب كيس النفايات",
     "waste_characteristic": "ملخص حسب خصائص النفايات",
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "ابحث عن رمز المعاملة"
+        "placeholder": "البحث عن رمز المعاملة"
       },
       "date_range": {
-        "label": "النطاق الزمني",
-        "placeholder": "اختر النطاق الزمني"
+        "label": "نطاق التاريخ",
+        "placeholder": "اختر نطاق التاريخ"
       },
       "healthcare_facility_name": {
         "label": "اسم منشأة الرعاية الصحية",
@@ -25,39 +25,39 @@
       "source_type": "نوع المصدر",
       "waste_source_name": "اسم مصدر النفايات",
       "total_waste_bag": "إجمالي أكياس النفايات",
-      "total_weight_in_kgs": "إجمالي الوزن ({{ unit }})"
+      "total_weight_in_kgs": "الوزن الإجمالي ({{ unit }})"
     },
     "column_waste_bag": {
       "waste_bag_code": "رمز كيس النفايات",
       "healthcare_facility": "منشأة الرعاية الصحية",
       "carrier": "الناقل",
-      "waste_treatment_facilitator": "ميسّر معالجة النفايات",
+      "waste_treatment_facilitator": "جهة معالجة النفايات",
       "waste_characteristic": "النوع / المجموعة / خصائص النفايات",
       "waste_source": "مصدر النفايات",
       "waste_in_date": "تاريخ دخول النفايات",
-      "storage_date_limit": "حد تاريخ التخزين (أيام)",
+      "storage_date_limit": "الحد الأقصى لتاريخ التخزين (أيام)",
       "status": "الحالة",
       "weight_kg": "الوزن ({{ unit }})",
-      "healthcare_facility_operator": "مشغل منشأة الرعاية الصحية",
+      "healthcare_facility_operator": "مشغّل منشأة الرعاية الصحية",
       "action": "إجراء"
     },
     "column_waste_characteristics": {
       "healthcare_facility": "منشأة الرعاية الصحية",
       "waste_characteristic": "النوع / المجموعة / خصائص النفايات",
-      "waste_action": "متابعة",
-      "total_weight": "إجمالي الوزن ({{ unit }})",
-      "average_weight": "متوسط الوزن اليومي ({{ unit }})",
-      "total_bag": "إجمالي الأكياس (جيب)",
-      "average_bag": "متوسط عدد الأكياس يوميًا (جيب)"
+      "waste_action": "المتابعة",
+      "total_weight": "الوزن الإجمالي ({{ unit }})",
+      "average_weight": "متوسط الوزن يوميًا ({{ unit }})",
+      "total_bag": "إجمالي الأكياس (كيس)",
+      "average_bag": "متوسط عدد الأكياس يوميًا (كيس)"
     },
-    "emptyDescription": "حدد نطاق التاريخ لتتبع النفايات"
+    "emptyDescription": "اختر نطاق تاريخ تتبع النفايات"
   },
   "modal": {
     "title": "سجل المعاملات",
     "info": {
       "transaction_code": "رمز المعاملة",
       "healthcare_facility": "اسم منشأة الرعاية الصحية",
-      "waste_characteristic": "خصائص النفايات"
+      "waste_characteristic": "خاصية النفايات"
     },
     "column": {
       "updated_status": "تاريخ تحديث الحالة",
@@ -67,6 +67,6 @@
   },
   "information": {
     "title": "معاملة التخلص من النفايات",
-    "description": "يتابع تتبع النفايات ويسجل بيانات مصدر النفايات، بما في ذلك إجمالي أكياس النفايات وإجمالي وزن النفايات."
+    "description": "يتابع تتبع النفايات ويسجّل بيانات مصدر النفايات، بما في ذلك إجمالي أكياس النفايات وإجمالي وزن النفايات."
   }
 }

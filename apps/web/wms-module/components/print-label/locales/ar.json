@@ -4,7 +4,7 @@
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "البحث عن مصدر النفايات / خصائص النفايات"
+        "placeholder": "البحث عن مصدر النفايات / خاصية النفايات"
       },
       "activity": {
         "label": "النشاط",
@@ -32,10 +32,10 @@
         }
       },
       "program": {
-        "label": "برنامج",
-        "placeholder": "اختر برنامج"
+        "label": "البرنامج",
+        "placeholder": "اختر البرنامج"
       },
-      "without_program": "لا يوجد برنامج مطبق",
+      "without_program": "لا يوجد برنامج مطبّق",
       "button": {
         "search": "بحث"
       }
@@ -46,15 +46,15 @@
       "waste_source_group": "مجموعة مصادر النفايات",
       "waste_source": "مصدر النفايات",
       "waste_classification": "تصنيف النفايات",
-      "waste_characteristic": "خصائص النفايات",
+      "waste_characteristic": "خاصية النفايات",
       "total_label": "إجمالي الملصقات",
-      "updated_at": "آخر تحديث",
-      "updated_by": "تم التحديث بواسطة",
+      "updated_at": "تاريخ التحديث",
+      "updated_by": "حُدّث بواسطة",
       "print": "طباعة",
       "action": "إجراء"
     },
     "options": {
-      "tag": "اختر علامة",
+      "tag": "اختر الوسم",
       "type": "اختر النوع"
     },
     "action": {
@@ -62,7 +62,7 @@
         "title": "تفعيل"
       },
       "deactivate": {
-        "title": "تعطيل"
+        "title": "إلغاء التفعيل"
       }
     },
     "button": {
@@ -71,42 +71,42 @@
   },
   "title": {
     "master_waste": "طباعة الملصق",
-    "list": "قائمة طباعة الملصقات",
+    "list": "قائمة ملصقات الطباعة",
     "create": "إنشاء ملصق طباعة",
-    "edit": "تعديل ملصق الطباعة"
+    "edit": "تعديل ملصق طباعة"
   },
   "detail": {
-    "title": "تفاصيل خاصية النفايات",
+    "title": "تفاصيل خصائص النفايات",
     "waste_code": "رمز النفايات",
     "waste_characteristic": "خاصية النفايات",
     "waste_bag_color": "لون كيس النفايات",
     "use_cold_storage": "استخدام التخزين البارد",
-    "cold_storage_max_processing": "الحد الأقصى لمدة المعالجة في التخزين البارد",
+    "cold_storage_max_processing": "أقصى مدة معالجة في التخزين البارد",
     "temporary_storage_min_processing": "الحد الأدنى لمدة المعالجة في التخزين المؤقت",
     "temporary_storage_max_processing": "الحد الأقصى لمدة المعالجة في التخزين المؤقت",
     "internal_treatment": "المعالجة الداخلية",
-    "third_party_treatment": "المعالجة بواسطة طرف ثالث",
+    "third_party_treatment": "المعالجة من طرف ثالث",
     "vehicle_type": "نوع المركبة",
     "storage_rule": "قاعدة التخزين",
     "created_at": "تاريخ الإنشاء",
-    "created_by": "تم الإنشاء بواسطة",
+    "created_by": "أُنشئ بواسطة",
     "updated_at": "تاريخ التحديث",
-    "updated_by": "تم التحديث بواسطة"
+    "updated_by": "حُدّث بواسطة"
   },
   "action": {
     "activate": {
-      "button": "تنشيط",
-      "confirmation": "هل أنت متأكد من أنك تريد تنشيط هذا المنتج؟"
+      "button": "تفعيل",
+      "confirmation": "هل أنت متأكد أنك تريد تفعيل هذا المنتج؟"
     },
     "deactivate": {
-      "button": "إلغاء التنشيط",
-      "confirmation": "هل أنت متأكد من أنك تريد إلغاء تنشيط هذا المنتج؟"
+      "button": "إلغاء التفعيل",
+      "confirmation": "هل أنت متأكد أنك تريد تعطيل هذا المنتج؟"
     }
   },
   "button": {
     "material_active_substance_and_strength": "قالب المنتج",
     "trademark": "متغير المنتج",
-    "non_hierarchy": "بدون تسلسل هرمي",
+    "non_hierarchy": "غير هرمي",
     "print": "طباعة الملصق",
     "explain_waste_classification": "شرح تصنيف النفايات"
   },
@@ -143,12 +143,12 @@
       "label": "خاصية النفايات",
       "placeholder": "اختر الخاصية",
       "validation": {
-        "required": "خاصية النفايات مطلوبة"
+        "required": "خصائص النفايات مطلوبة"
       }
     },
     "total_number": {
-      "label": "إجمالي العدد المطبوع",
-      "placeholder": "أدخل إجمالي العدد المطبوع",
+      "label": "إجمالي عدد النسخ المطبوعة",
+      "placeholder": "أدخل إجمالي عدد النسخ المطبوعة",
       "validation": {
         "required": "إجمالي العدد مطلوب"
       }
@@ -156,7 +156,7 @@
   },
   "scroll_list": {
     "title": "المادة",
-    "description": "يرجى اختيار المنشأة ونوع المعاملة أولاً",
+    "description": "يرجى اختيار الكيان ونوع المعاملة أولاً",
     "column": {
       "material_name": "اسم المادة",
       "available_stock": "المخزون المتاح",

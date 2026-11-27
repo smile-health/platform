@@ -11,13 +11,13 @@
       "title": "التفاصيل التشغيلية"
     },
     "entity": {
-      "title": "المنشأة"
+      "title": "الكيان"
     },
     "budget": {
       "title": "الميزانية"
     },
     "operational_asset_monitoring_device_relation": {
-      "title": "علاقة الأصل التشغيلي بجهاز المراقبة"
+      "title": "علاقة الأصول التشغيلية وجهاز المراقبة"
     }
   },
   "button": {
@@ -30,7 +30,7 @@
       "fields": {
         "operational_status": {
           "label": "الحالة التشغيلية",
-          "placeholder": "اختر الحالة التشغيلية"
+          "placeholder": "اختر حالة التشغيل"
         }
       },
       "button": {
@@ -41,7 +41,7 @@
     "change_threshold": {
       "title": "تأكيد التحذير",
       "description": "هل أنت متأكد من رغبتك في تغيير درجة حرارة الحد هذه؟",
-      "warning": "إذا غيّرت حد درجة الحرارة، فسيؤثر ذلك على حسابات لوحة معلومات توقعات السعة",
+      "warning": "إذا غيرت حد درجة الحرارة، فسيؤثر ذلك على حسابات لوحة معلومات توقعات السعة",
       "button": {
         "cancel": "إلغاء",
         "yes": "نعم، أنا متأكد"
@@ -57,9 +57,9 @@
     "budget_source": "مصدر الميزانية",
     "budget_year": "سنة الميزانية",
     "temperature_threshold": {
-      "label": "حد درجة الحرارة",
-      "minimum": "الحد الأدنى",
-      "maximum": "الحد الأعلى",
+      "label": "عتبة درجة الحرارة",
+      "minimum": "الأدنى",
+      "maximum": "الحد الأقصى",
       "button": {
         "change_threshold": "تغيير حد درجة الحرارة",
         "cancel": "إلغاء",
@@ -67,9 +67,9 @@
       }
     },
     "humidity_threshold": {
-      "label": "حد الرطوبة",
-      "minimum": "الحد الأدنى",
-      "maximum": "الحد الأعلى"
+      "label": "عتبة الرطوبة",
+      "minimum": "الأدنى",
+      "maximum": "الحد الأقصى"
     },
     "operational_status": "الحالة التشغيلية",
     "contact_person": "الشخص المسؤول {{ number }}",
@@ -77,7 +77,7 @@
   },
   "relation_table": {
     "title_cce": "درجة حرارة الأصل",
-    "title_warehouse": "درجة حرارة الأصل والرطوبة",
+    "title_warehouse": "درجة حرارة ورطوبة الأصل",
     "columns": {
       "description": {
         "label": "الوصف"
@@ -95,14 +95,14 @@
       "connection_and_power": {
         "label": "حالة الجهاز",
         "connection_status": {
-          "online": "متصل بالإنترنت",
-          "offline": "غير متصل بالإنترنت"
+          "online": "متصل",
+          "offline": "غير متصل"
         },
         "power_status": {
           "connected": "متصل",
           "disconnected": "غير متصل",
-          "on": "الطاقة مفعّلة",
-          "off": "الطاقة مطفأة"
+          "on": "الطاقة مفعلة",
+          "off": "الطاقة متوقفة"
         }
       }
     }
@@ -123,18 +123,18 @@
     "chart": {
       "temperature": "درجة الحرارة",
       "humidity": "الرطوبة",
-      "threshold": "عتبة {{ type }} ({{ metric }})",
-      "lower_threshold": "العتبة الدنيا ({{ metric }})",
-      "upper_threshold": "العتبة العليا ({{ metric }})"
+      "threshold": "حد {{ type }} ({{ metric }})",
+      "lower_threshold": "الحد الأدنى ({{ metric }})",
+      "upper_threshold": "الحد الأعلى ({{ metric }})"
     },
     "filters": {
       "logger": {
-        "label": "المسجل",
+        "label": "مسجل البيانات",
         "placeholder": "اختر المسجل"
       },
       "date_range": {
         "label": "الفترة الزمنية",
-        "placeholder": "اختر النطاق الزمني"
+        "placeholder": "اختر نطاق التاريخ"
       }
     },
     "button": {

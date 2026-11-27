@@ -1,9 +1,9 @@
 {
   "title": {
-    "reconciliation": "المطابقة",
+    "reconciliation": "التسوية",
     "tab": {
       "list": "القائمة",
-      "report": "التقرير"
+      "report": "تقرير"
     },
     "list": "قائمة المطابقة",
     "report": {
@@ -36,8 +36,8 @@
       "label": "تاريخ الإنشاء"
     },
     "entity_tag": {
-      "label": "وسم المنشأة",
-      "placeholder": "اختر وسم المنشأة"
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
     },
     "province": {
       "label": "المحافظة",
@@ -49,7 +49,7 @@
     },
     "primary_health_care": {
       "label": "الرعاية الصحية الأولية",
-      "placeholder": "اختر الرعاية الصحية الأولية"
+      "placeholder": "اختر مركز الرعاية الصحية الأولية"
     },
     "material_kfa_level": {
       "label": "مستوى KFA للمادة",
@@ -61,9 +61,9 @@
   "list": {
     "table": {
       "column": {
-        "no": "الرقم",
-        "entity": "المنشأة",
-        "entity_name": "اسم المنشأة",
+        "no": "رقم",
+        "entity": "الكيان",
+        "entity_name": "اسم الكيان",
         "material_info": "معلومات المادة",
         "activity": "النشاط",
         "period": "الفترة",
@@ -74,7 +74,7 @@
       "view_history": "عرض السجل",
       "from": "من",
       "to": "إلى",
-      "real": "الفعلي",
+      "real": "فعلي",
       "at": "في",
       "close": "إغلاق",
       "description": "الوصف",
@@ -85,22 +85,22 @@
     }
   },
   "create": {
-    "title_material_select": "المواد في {{entity_name}}",
-    "caption_choose_material": "انقر على زر الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول المطابقة أدناه",
+    "title_material_select": "المادة في {{entity_name}}",
+    "caption_choose_material": "انقر على زر الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول التسوية أدناه",
     "search_material": "بحث عن مادة",
     "material_name": "اسم المادة",
     "selection": "التحديد",
-    "reconciliation_detail": "تفاصيل المطابقة",
+    "reconciliation_detail": "تفاصيل التسوية",
     "entity": {
-      "label": "المنشأة",
-      "placeholder": "اختر المنشأة"
+      "label": "الكيان",
+      "placeholder": "اختر الكيان"
     },
     "activity": {
       "label": "النشاط",
       "placeholder": "اختر النشاط"
     },
     "table": {
-      "title": "جدول المطابقة",
+      "title": "جدول التسوية",
       "material_selected": "المادة المحددة"
     },
     "reset": "إعادة تعيين",
@@ -112,7 +112,7 @@
       "placeholder": "اختر السبب"
     },
     "action": {
-      "label": "الإجراء",
+      "label": "إجراء",
       "placeholder": "اختر الإجراء"
     },
     "add_new_reason": "إضافة سبب جديد",
@@ -120,7 +120,7 @@
     "save": "حفظ",
     "validation": {
       "required": "مطلوب",
-      "error_combination": "لا يجوز تكرار سبب الإجراء",
+      "error_combination": "يجب ألا يتكرر السبب والإجراء",
       "numeric_only": "أرقام فقط"
     },
     "reset_dialog": {
@@ -128,8 +128,8 @@
       "description": "هل أنت متأكد من حذف جميع البيانات المدخلة؟"
     },
     "change_dialog": {
-      "question_material": "هل أنت متأكد من رغبتك في تغيير المادة؟",
-      "question_detail": "هل أنت متأكد من رغبتك في تغيير هذا؟",
+      "question_material": "هل أنت متأكد من أنك تريد تغيير المادة؟",
+      "question_detail": "هل أنت متأكد من أنك تريد تغيير هذا؟",
       "description": "ستفقد جميع المعلومات التي أدخلتها في هذه المادة."
     }
   }

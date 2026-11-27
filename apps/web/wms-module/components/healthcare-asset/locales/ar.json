@@ -4,11 +4,11 @@
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "بحث بالرقم التسلسلي"
+        "placeholder": "البحث عن الرقم التسلسلي"
       },
       "working_status": {
         "label": "الحالة التشغيلية",
-        "placeholder": "اختر الحالة التشغيلية"
+        "placeholder": "اختر حالة التشغيل"
       },
       "status": {
         "label": "الحالة",
@@ -22,7 +22,7 @@
       "asset_type": "نوع الأصل",
       "manufacture": "الشركة المصنعة",
       "model": "الطراز",
-      "asset_id": "معرف الأصل",
+      "asset_id": "ID الأصل",
       "serial_number": "الرقم التسلسلي",
       "asset_status": "الحالة",
       "working_status": "الحالة التشغيلية",
@@ -36,33 +36,33 @@
     "list": "قائمة أصول الرعاية الصحية",
     "create": "إنشاء أصل رعاية صحية",
     "edit": "تعديل أصل رعاية صحية",
-    "detail": "تفاصيل أصل رعاية صحية"
+    "detail": "تفاصيل أصل الرعاية الصحية"
   },
   "form": {
     "dongle_id": {
-      "label": "معرف دونجل IoT",
-      "placeholder": "أدخل معرف دونجل IoT"
+      "label": "IoT Dongle ID",
+      "placeholder": "أدخل IoT Dongle ID"
     },
-    "error_dongle_id": "معرف IoT غير مصادق عليه. يرجى طلب الموافقة من وزارة الصحة."
+    "error_dongle_id": "لم تتم مصادقة IoT ID. يُرجى طلب الموافقة من وزارة الصحة."
   },
   "asset_status": {
     "OPERATIONAL": "يعمل",
-    "UNDER_MAINTAINENCE": "إصلاح",
+    "UNDER_MAINTAINENCE": "قيد الإصلاح",
     "OUT_OF_SERVICE": "تالف",
-    "IDLE": "احتياطي",
-    "NEED_REPAIR": "يحتاج إلى إصلاح",
-    "RETIRED": "مُستبعَد"
+    "IDLE": "في وضع الاستعداد",
+    "NEED_REPAIR": "بحاجة إلى إصلاح",
+    "RETIRED": "تم التخلص منه"
   },
   "working_status": {
     "function": "يعمل",
-    "standby": "احتياطي",
-    "repair": "إصلاح",
+    "standby": "في وضع الاستعداد",
+    "repair": "قيد الإصلاح",
     "damaged": "تالف",
-    "need_repair": "يحتاج إلى إصلاح",
-    "disposed": "مُستبعَد"
+    "need_repair": "بحاجة إلى إصلاح",
+    "disposed": "تم التخلص منه"
   },
   "modal": {
     "title": "تحذير",
-    "description": "يوجد عدم تطابق، المعرف {{dongleId}} لا يتطابق / فشلت الإعدادات. يرجى التواصل مع مزود الخدمة."
+    "description": "يوجد عدم تطابق، ID {{dongleId}} غير مطابق / فشل الإعداد. يُرجى التواصل مع المورد."
   }
 }

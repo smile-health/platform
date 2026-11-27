@@ -1,10 +1,10 @@
 {
   "list": {
-    "list": "إعداد ميزان النفايات",
+    "list": "إعدادات ميزان النفايات",
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "ابحث عن اسم المنشأة"
+        "placeholder": "البحث عن اسم الكيان"
       },
       "type": {
         "label": "النوع",
@@ -13,28 +13,28 @@
     },
     "button": {
       "search": "بحث",
-      "add_asset_dongle": "إضافة معرّف Dongle IoT"
+      "add_asset_dongle": "إضافة ID دونجل IoT"
     },
     "column": {
-      "entity_name": "اسم المنشأة",
+      "entity_name": "اسم الكيان",
       "location": "الموقع",
       "province": "المحافظة",
       "regency": "المنطقة",
-      "amount_of_dongle": "عدد Dongle IoT",
-      "dongle_id": "معرّف Dongle IoT",
+      "amount_of_dongle": "عدد دونجل IoT",
+      "dongle_id": "IoT Dongle ID",
       "created_at": "تاريخ الإنشاء",
       "action": "إجراء"
     }
   },
   "title": {
-    "list": "إعداد معرّف دونجل IoT",
-    "create": "إنشاء إعداد معرّف دونجل IoT",
-    "dongle_id": "معرّف دونجل IoT"
+    "list": "إعداد ID دونجل IoT",
+    "create": "إنشاء إعداد ID دونجل IoT",
+    "dongle_id": "IoT Dongle ID"
   },
   "form": {
     "dongle_id": {
-      "label": "معرّف دونجل IoT",
-      "placeholder": "أدخل معرّف دونجل IoT"
+      "label": "IoT Dongle ID",
+      "placeholder": "أدخل IoT Dongle ID"
     }
   }
 }

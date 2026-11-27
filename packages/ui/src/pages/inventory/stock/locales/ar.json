@@ -7,24 +7,24 @@
       "material_type": "نوع المادة",
       "material_hirearchy": "قالب المنتج",
       "expired_date": "تاريخ الانتهاء",
-      "entity": "المنشأة",
-      "entity_tag": "وسم المنشأة",
+      "entity": "الكيان",
+      "entity_tag": "وسم الكيان",
       "province": "المحافظة",
       "city": "المدينة/المنطقة",
       "primary_health_care": "الرعاية الصحية الأولية",
       "primary_vendor": "المورد الرئيسي"
     },
     "placeholder": {
-      "activity": "ابحث عن النشاط",
-      "material_type": "ابحث عن نوع المادة",
-      "material": "ابحث عن اسم المادة",
+      "activity": "البحث عن نشاط",
+      "material_type": "البحث عن نوع المادة",
+      "material": "البحث عن اسم المادة",
       "expired_date": "dd/mm/yyyy - dd/mm/yyyy",
-      "entity": "ابحث عن اسم المنشأة",
-      "entity_tag": "اختر وسم المنشأة",
+      "entity": "البحث عن اسم الكيان",
+      "entity_tag": "اختر وسم الكيان",
       "province": "اختر المحافظة",
       "city": "اختر المدينة/المنطقة",
-      "primary_health_care": "اختر الرعاية الصحية الأولية",
-      "primary_vendor": "اختر المورد الرئيسي",
+      "primary_health_care": "اختر مركز الرعاية الصحية الأولية",
+      "primary_vendor": "اختر المورد الأساسي",
       "batch": "اختر الدفعة"
     }
   },
@@ -37,13 +37,13 @@
     "column": {
       "material": {
         "material_hirearchy": "قالب المنتج",
-        "enitity_name": "اسم المنشأة",
+        "enitity_name": "اسم الكيان",
         "stock_on_hand": "المخزون الحالي",
-        "allocated": "المخصص",
+        "allocated": "مخصص",
         "available_stock": "المخزون المتاح",
         "in_transit": "قيد النقل",
         "action": "إجراء",
-        "updated_at": "آخر تحديث",
+        "updated_at": "تاريخ التحديث",
         "vial": [
           "{{value}} (قارورة مفتوحة)",
           "{{value}} (قارورة مغلقة)",
@@ -59,19 +59,19 @@
       "batch": {
         "info": "معلومات الدفعة",
         "stock_info": "معلومات المخزون",
-        "budget_info": "معلومات الموازنة",
+        "budget_info": "معلومات الميزانية",
         "production_date": "تاريخ الإنتاج: {{value}}",
-        "expired_date": "تاريخ الانتهاء: {{value}}",
-        "manufacturer": "الشركة المصنعة: {{value}}",
+        "expired_date": "تاريخ انتهاء الصلاحية: {{value}}",
+        "manufacturer": "المصنّع: {{value}}",
         "stock": {
-          "on_hand": "المخزون الفعلي: {{value}}",
+          "on_hand": "المخزون الحالي: {{value}}",
           "allocated": "المخصص: {{value}}",
           "available": "المخزون المتاح: {{value}}",
           "in_transit": "قيد النقل: {{value}}"
         }
       },
       "budget_source": {
-        "name": "مصدر الموازنة: {{value}}",
+        "name": "مصدر الميزانية: {{value}}",
         "price": "السعر ({{currency}}): {{value}}",
         "total_price": "السعر الإجمالي ({{currency}}): {{value}}"
       }
@@ -80,25 +80,25 @@
       "trademark": "عرض متغير المنتج",
       "batch": "عرض الدفعة",
       "activity": "عرض النشاط",
-      "budget_source": "عرض مصدر الموازنة",
+      "budget_source": "عرض مصدر الميزانية",
       "detail": "التفاصيل"
     }
   },
   "popup_batch": {
     "title": "تفاصيل الدفعة",
     "hierarchy": [
-      "المادة - قالب المنتج : {{material}}",
-      "دفعة من متغير المنتج - {{batch}}"
+      "المادة - قالب المنتج: {{material}}",
+      "دفعة متغير المنتج - {{batch}}"
     ],
-    "non_hierarchy": "النشاط {{activity}} والمادة {{material}}"
+    "non_hierarchy": "النشاط {{activity}} والمواد {{material}}"
   },
   "detail": {
     "title": "تفاصيل المخزون",
     "entity": {
-      "title": "المنشأة",
-      "name": "اسم المنشأة",
+      "title": "الكيان",
+      "name": "اسم الكيان",
       "address": "العنوان",
-      "updated_at": "آخر تحديث"
+      "updated_at": "تاريخ التحديث"
     },
     "material": {
       "name": [
@@ -106,8 +106,8 @@
         "اسم المادة"
       ],
       "stock": {
-        "on_hand": "المخزون الفعلي",
-        "allocated": "المخصص",
+        "on_hand": "المخزون الحالي",
+        "allocated": "مخصص",
         "available": "المخزون المتاح",
         "in_transit": "قيد النقل"
       }
@@ -118,7 +118,7 @@
     ],
     "drawer": {
       "title": [
-        "قائمة النشاط",
+        "قائمة الأنشطة",
         "قائمة الدفعات"
       ],
       "description": {

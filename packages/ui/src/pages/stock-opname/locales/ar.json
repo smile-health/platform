@@ -1,7 +1,7 @@
 {
-  "stock_opname": "الجرد",
-  "stock_opname_list": "قائمة الجرد",
-  "stock_opname_create": "إنشاء جرد",
+  "stock_opname": "جرد المخزون",
+  "stock_opname_list": "قائمة الجرد المخزني",
+  "stock_opname_create": "إنشاء جرد مخزني",
   "form": {
     "activity": {
       "label": "النشاط",
@@ -20,23 +20,23 @@
       "placeholder": "البحث حسب الدفعة"
     },
     "entity_tag": {
-      "label": "وسم المنشأة",
-      "placeholder": "اختر وسم المنشأة"
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
     },
     "stock_taking_period": {
       "label": "فترة الجرد",
       "placeholder": "اختر فترة الجرد",
-      "required": "فترة الجرد مطلوبة"
+      "required": "فترة الجرد المخزني مطلوبة"
     },
     "expired_date": {
       "label": "تاريخ الانتهاء",
-      "start": "الانتهاء من",
-      "end": "الانتهاء إلى"
+      "start": "تاريخ الانتهاء من",
+      "end": "تاريخ الانتهاء إلى"
     },
     "do_from": {
-      "label": "أمر التسليم من",
-      "start": "أمر التسليم من",
-      "end": "أمر التسليم إلى"
+      "label": "التنفيذ من",
+      "start": "التنفيذ من",
+      "end": "التنفيذ إلى"
     },
     "show_stock_zero": {
       "label": "إظهار المخزون الصفري"
@@ -55,11 +55,11 @@
     }
   },
   "columns": {
-    "entity_name": "اسم المنشأة",
+    "entity_name": "اسم الكيان",
     "material_name": "اسم المادة",
     "material_info": "معلومات المادة",
     "activity": "النشاط",
-    "batch": "دفعة",
+    "batch": "الدفعة",
     "expired_date": "تاريخ الانتهاء",
     "remaining_stock_in_smile": "المخزون المتبقي في SMILE",
     "stock_in_transit": "المخزون قيد النقل",
@@ -67,14 +67,14 @@
     "stock_taking_period": "الفترة",
     "compliance": "الامتثال",
     "stock_opname_new_has_opnamed": "تم الجرد",
-    "stock_opname_new_has_not_opnamed": "لم يتم بعد",
-    "do_at": "أمر التسليم في",
-    "created_by": "أنشئ بواسطة",
-    "last_stocktaken_by": "آخر من قام بالجرد"
+    "stock_opname_new_has_not_opnamed": "ليس بعد",
+    "do_at": "التنفيذ في",
+    "created_by": "أُنشئ بواسطة",
+    "last_stocktaken_by": "آخر جرد مخزني بواسطة"
   },
   "others": {
     "active_substance_and_strength": "قالب المنتج",
     "trademark": "متغير المنتج"
   },
-  "cut_off_time": "وقت إقفال المخزون"
+  "cut_off_time": "وقت إيقاف المخزون"
 }

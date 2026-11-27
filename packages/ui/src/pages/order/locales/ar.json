@@ -7,11 +7,11 @@
     "confirmed": "مؤكد",
     "allocated": "مخصص",
     "shipped": "تم الشحن",
-    "fulfilled": "تم التنفيذ",
+    "fulfilled": "مستوفى",
     "cancelled": "ملغى"
   },
   "reason": {
-    "dwindling_supplies": "نقص الإمدادات",
+    "dwindling_supplies": "إمدادات متناقصة",
     "population_increase": "زيادة السكان",
     "plague": "وباء",
     "supplies_sufficient": "الإمدادات كافية",
@@ -22,13 +22,13 @@
     "description": "لم يتم تحديد أي عناصر. يرجى مراجعة المواد المضافة والضغط على زر الحفظ في الدفعة لحفظ التغييرات."
   },
   "modal_companion": {
-    "title": "هل تريد المتابعة دون المواد المرافقة؟",
+    "title": "المتابعة دون مواد مرافقة؟",
     "description": "بالنقر على <bold>نعم</bold>، فإنك تقر بأنك تعالج هذه المادة دون المواد المرافقة التالية؟",
     "button": {
       "order": "نعم، متابعة"
     }
   },
   "placeholder": {
-    "search_material": "البحث عن مادة"
+    "search_material": "بحث عن مادة"
   }
 }

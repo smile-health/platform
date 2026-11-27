@@ -10,8 +10,8 @@
       "waste_characteristics_description": "وصف خصائص النفايات"
     },
     "message": {
-      "no_characteristics": "لم تُحدد أي خصائص.",
-      "no_data": "لا توجد مواصفات للنفايات متاحة."
+      "no_characteristics": "لا توجد خصائص محددة.",
+      "no_data": "لا توجد مواصفات نفايات متاحة."
     }
   }
 }

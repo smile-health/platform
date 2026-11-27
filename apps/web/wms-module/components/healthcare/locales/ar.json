@@ -2,8 +2,8 @@
   "list": {
     "list": "إدارة أصول الرعاية الصحية",
     "tab": {
-      "list": "قائمة المنشآت",
-      "create": "إضافة منشأة"
+      "list": "قائمة الكيانات",
+      "create": "إضافة كيان"
     },
     "filter": {
       "search": {
@@ -11,27 +11,27 @@
         "placeholder": "البحث عن الطراز"
       },
       "healthcare_facility": {
-        "label": "منشأة رعاية صحية",
-        "placeholder": "اختر منشأة رعاية صحية"
+        "label": "منشأة الرعاية الصحية",
+        "placeholder": "اختر المنشأة الصحية"
       },
       "asset_type": {
         "label": "نوع الأصل",
         "placeholder": "اختر نوع الأصل"
       },
       "manufacture": {
-        "label": "الجهة المصنعة",
-        "placeholder": "اختر الجهة المصنعة"
+        "label": "الشركة المصنعة",
+        "placeholder": "اختر الشركة المصنعة"
       },
       "button": {
         "search": "بحث"
       }
     },
     "column": {
-      "healthcare_facility": "منشأة رعاية صحية",
+      "healthcare_facility": "منشأة الرعاية الصحية",
       "asset_type": "نوع الأصل",
-      "manufacture": "الجهة المصنعة",
+      "manufacture": "الشركة المصنعة",
       "model": "الطراز",
-      "asset_id": "معرّف الأصل ID",
+      "asset_id": "ID الأصل",
       "sync_status": "مزامنة",
       "last_maintenance": "آخر صيانة",
       "last_calibration": "آخر معايرة",
@@ -51,14 +51,14 @@
       "calibration_end_date": "تاريخ انتهاء المعايرة"
     },
     "button": {
-      "add": "إضافة أصل رعاية صحية"
+      "add": "إضافة أصل صحي"
     }
   },
   "title": {
-    "healthcare": "أصل رعاية صحية",
-    "list": "قائمة أصول الرعاية الصحية",
-    "create": "إنشاء أصل رعاية صحية",
-    "edit": "تعديل أصل رعاية صحية"
+    "healthcare": "الأصل الصحي",
+    "list": "قائمة الأصول الصحية",
+    "create": "إنشاء أصل صحي",
+    "edit": "تعديل أصل صحي"
   },
   "title_asset_activity": {
     "maintenance": "نشاط الصيانة",
@@ -67,11 +67,11 @@
   "action": {
     "activate": {
       "button": "تفعيل",
-      "confirmation": "هل أنت متأكد من رغبتك في تفعيل هذا المنتج؟"
+      "confirmation": "هل أنت متأكد أنك تريد تفعيل هذا المنتج؟"
     },
     "deactivate": {
       "button": "إلغاء التفعيل",
-      "confirmation": "هل أنت متأكد من رغبتك في إلغاء تفعيل هذا المنتج؟"
+      "confirmation": "هل أنت متأكد أنك تريد تعطيل هذا المنتج؟"
     }
   },
   "button": {
@@ -80,10 +80,10 @@
   },
   "form": {
     "healthcare_facility": {
-      "label": "منشأة رعاية صحية",
-      "placeholder": "اختر منشأة رعاية صحية",
+      "label": "منشأة الرعاية الصحية",
+      "placeholder": "اختر المنشأة الصحية",
       "validation": {
-        "required": "منشأة الرعاية الصحية مطلوبة"
+        "required": "المنشأة الصحية مطلوبة"
       }
     },
     "asset_type": {
@@ -108,8 +108,8 @@
       }
     },
     "asset_id": {
-      "label": "معرّف الأصل ID",
-      "placeholder": "أدخل معرّف الأصل ID"
+      "label": "ID الأصل",
+      "placeholder": "أدخل ID الأصل"
     },
     "asset_status": {
       "label": "حالة الأصل",
@@ -150,7 +150,7 @@
     }
   },
   "detail": {
-    "title": "حول أصل الرعاية الصحية",
+    "title": "حول الأصل الصحي",
     "calibration_act": "نشاط المعايرة",
     "maintenance_act": "نشاط الصيانة"
   },
@@ -158,8 +158,8 @@
     "OPERATIONAL": "يعمل",
     "UNDER_MAINTAINENCE": "قيد الإصلاح",
     "OUT_OF_SERVICE": "تالف",
-    "IDLE": "احتياطي",
-    "NEED_REPAIR": "يحتاج إصلاح",
-    "RETIRED": "متخلص منه"
+    "IDLE": "في وضع الاستعداد",
+    "NEED_REPAIR": "بحاجة إلى إصلاح",
+    "RETIRED": "تم التخلص منه"
   }
 }

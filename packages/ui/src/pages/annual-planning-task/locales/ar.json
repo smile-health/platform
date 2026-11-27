@@ -6,14 +6,14 @@
       "task_id": "ID المهمة",
       "material_name": "اسم المادة",
       "activity": "النشاط",
-      "national_ip": "IP الوطني",
+      "national_ip": "IP الوطنية",
       "monthly_distribution": "التوزيع الشهري",
       "group_target": "المجموعة المستهدفة",
       "number_of_doses": "عدد الجرعات",
       "target_coverage": "التغطية المستهدفة"
     },
-    "all_province": "جميع المحافظات",
-    "all_month": "جميع الأشهر"
+    "all_province": "كل المحافظات",
+    "all_month": "كل الأشهر"
   },
   "import": {
     "description": "رفع ملف .xls أو .xlsx (بحد أقصى 10MB)",
@@ -21,7 +21,7 @@
     "error": "فشل استيراد المهمة"
   },
   "delete": {
-    "description": "هل أنت متأكد أنك تريد حذف هذه المهمة؟",
+    "description": "هل أنت متأكد من أنك تريد حذف هذه المهمة؟",
     "success": "تم حذف المهمة بنجاح",
     "error": "فشل حذف المهمة"
   },
@@ -43,7 +43,7 @@
     }
   },
   "form": {
-    "material_util_index": "مؤشر استخدام المادة",
+    "material_util_index": "مؤشر استخدام المواد",
     "amount_of_giving": {
       "title": "كمية الإعطاء",
       "add": "إضافة كمية الإعطاء",
@@ -57,23 +57,23 @@
       }
     },
     "national_ip": {
-      "label": "IP الوطني",
+      "label": "IP الوطنية",
       "placeholder": "مثال: 1.00",
-      "invalid": "يجب أن يكون IP الوطني رقمًا عشريًا بحد أقصى 3 منازل عشرية",
-      "should_not_exceed_sku": "يجب ألا يتجاوز IP الوطني SKU",
-      "not_negative": "يجب ألا يكون IP الوطني سالبًا"
+      "invalid": "يجب أن تكون IP الوطنية رقمًا عشريًا بحد أقصى 3 منازل عشرية",
+      "should_not_exceed_sku": "يجب ألا تتجاوز IP الوطنية SKU",
+      "not_negative": "يجب ألا تكون IP الوطنية سالبة"
     },
     "monthly_distribution": {
       "invalid": "يجب أن يكون التوزيع الشهري 1 على الأقل"
     },
-    "select_all_month": "تحديد جميع الأشهر",
+    "select_all_month": "تحديد كل الأشهر",
     "group_target": {
-      "add": "إضافة هدف المجموعة",
-      "placeholder": "تحديد هدف المجموعة",
-      "edit": "تعديل هدف المجموعة"
+      "add": "إضافة مجموعة مستهدفة",
+      "placeholder": "اختر مجموعة مستهدفة",
+      "edit": "تعديل مجموعة مستهدفة"
     },
     "number_of_doses": {
-      "placeholder": "أدخل الجرعات",
+      "placeholder": "أدخل عدد الجرعات",
       "edit": "تعديل عدد الجرعات"
     },
     "coverage": {
@@ -82,7 +82,7 @@
       "add": "إضافة تغطية",
       "edit": "تعديل التغطية",
       "placeholder": "يرجى إدخال الكمية",
-      "saved": "تم حفظ {{coverage}} من {{total}} محافظة",
+      "saved": "تم حفظ {{coverage}} من أصل {{total}} محافظة",
       "target": {
         "invalid": "أدخل نسبة مئوية من 1 إلى 100"
       }

@@ -10,7 +10,7 @@
     "material_name": "اسم المادة",
     "dimension": "أبعاد الصندوق (الطول × العرض × الارتفاع)",
     "last_updated_at": "آخر تحديث في",
-    "action": "الإجراء"
+    "action": "إجراء"
   },
   "detail": {
     "title": "تفاصيل حجم تغليف المادة",
@@ -21,17 +21,17 @@
           "material_name": "اسم المادة",
           "manufacturer": "الشركة المصنعة",
           "dose_per_unit": "الجرعة لكل قارورة/وحدة",
-          "unit_per_box": "وحدة لكل صندوق",
+          "unit_per_box": "الوحدات لكل صندوق",
           "last_updated_at": "آخر تحديث في",
-          "last_updated_by": "آخر تحديث"
+          "last_updated_by": "آخر تحديث بواسطة"
         }
       },
       "box_dimension": {
         "header": "أبعاد الصندوق الثانوي",
         "label": {
-          "length": "الطول (cm)",
-          "width": "العرض (cm)",
-          "height": "الارتفاع (cm)"
+          "length": "الطول (سم)",
+          "width": "العرض (سم)",
+          "height": "الارتفاع (سم)"
         }
       }
     }
@@ -45,7 +45,7 @@
       },
       "placeholder": {
         "material": "اختر المادة",
-        "manufacturer": "اختر الشركة المصنعة",
+        "manufacturer": "اختر المصنع",
         "material_type": "اختر نوع المادة"
       }
     },
@@ -58,9 +58,9 @@
         "length": "الطول",
         "width": "العرض",
         "height": "الارتفاع",
-        "cm": " {{value}} cm",
+        "cm": " {{value}} سم",
         "unit": " {{value}} وحدة",
-        "doses": " {{value}} جرعات"
+        "doses": " {{value}} جرعة"
       },
       "last_updated_at": "آخر تحديث في",
       "action": "إجراء"
@@ -69,7 +69,7 @@
   "action": {
     "delete": {
       "button": "حذف حجم تغليف المادة",
-      "confirmation": "هل أنت متأكد من رغبتك في حذف حجم تغليف المادة هذا؟"
+      "confirmation": "هل أنت متأكد من أنك تريد حذف حجم تغليف المادة هذا؟"
     }
   },
   "form": {
@@ -81,7 +81,7 @@
       }
     },
     "unit_per_box": {
-      "label": "وحدة لكل صندوق",
+      "label": "الوحدات لكل صندوق",
       "placeholder": "مثال: 10",
       "validation": {
         "required": "مطلوب"
@@ -105,22 +105,22 @@
       }
     },
     "box_length": {
-      "label": "الطول (cm)",
-      "placeholder": "مثال: 10.5cm",
+      "label": "الطول (سم)",
+      "placeholder": "مثال: 10.5 سم",
       "validation": {
         "required": "مطلوب"
       }
     },
     "box_width": {
-      "label": "العرض (cm)",
-      "placeholder": "مثال: 10.5cm",
+      "label": "العرض (سم)",
+      "placeholder": "مثال: 10.5 سم",
       "validation": {
         "required": "مطلوب"
       }
     },
     "box_height": {
-      "label": "الارتفاع (cm)",
-      "placeholder": "مثال: 10.5cm",
+      "label": "الارتفاع (سم)",
+      "placeholder": "مثال: 10.5 سم",
       "validation": {
         "required": "مطلوب"
       }

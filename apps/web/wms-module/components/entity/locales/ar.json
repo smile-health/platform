@@ -1,25 +1,25 @@
 {
   "global": {
-    "title": "إعداد المنشأة"
+    "title": "إعدادات الكيان"
   },
   "list": {
-    "status": "حالة المنشأة",
-    "list": "إعداد المنشأة",
+    "status": "حالة الكيان",
+    "list": "إعدادات الكيان",
     "tab": {
-      "list": "إعداد المنشأة",
-      "create": "إضافة منشأة"
+      "list": "إعدادات الكيان",
+      "create": "إضافة كيان"
     },
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "اكتب اسم المنشأة"
+        "placeholder": "اكتب اسم الكيان"
       },
       "type": {
         "label": "النوع",
         "placeholder": "اختر النوع"
       },
       "tag": {
-        "placeholder": "اختر العلامة"
+        "placeholder": "اختر الوسم"
       },
       "status": {
         "label": "الحالة",
@@ -32,7 +32,7 @@
       }
     },
     "column": {
-      "name": "اسم المنشأة",
+      "name": "اسم الكيان",
       "location": "الموقع",
       "province": "المحافظة",
       "city": "المدينة/المنطقة",
@@ -41,7 +41,7 @@
       "action": "إجراء"
     },
     "options": {
-      "tag": "اختر العلامة",
+      "tag": "اختر الوسم",
       "type": "اختر النوع"
     },
     "action": {
@@ -49,21 +49,21 @@
         "title": "تفعيل"
       },
       "deactivate": {
-        "title": "تعطيل"
+        "title": "إلغاء التفعيل"
       }
     }
   },
   "form": {
     "title": {
-      "add": "إضافة منشأة",
-      "detail": "تفاصيل المنشأة",
-      "edit": "تعديل المنشأة"
+      "add": "إضافة كيان",
+      "detail": "تفاصيل الكيان",
+      "edit": "تعديل الكيان"
     },
     "information": {
-      "title": "معلومات المنشأة",
+      "title": "معلومات الجهة",
       "label": {
-        "code": "رمز المنشأة",
-        "name": "اسم المنشأة",
+        "code": "رمز الكيان",
+        "name": "اسم الكيان",
         "type": "النوع",
         "vendor": "هل هو مُرسِل؟",
         "hc": "هل هي رعاية صحية أولية؟",
@@ -72,12 +72,12 @@
         "satu_sehat_code": "رمز SATUSEHAT",
         "head_name": "اسم المسؤول",
         "gender": "الجنس",
-        "email": "عنوان البريد الإلكتروني",
+        "email": "البريد الإلكتروني",
         "phone": "الهاتف"
       },
       "placeholder": {
-        "code": "رمز المنشأة",
-        "name": "اسم المنشأة",
+        "code": "رمز الكيان",
+        "name": "اسم الكيان",
         "type": "اختر النوع",
         "tag": "اختر الوسم",
         "head_name": "أدخل اسم المسؤول",
@@ -107,9 +107,9 @@
       "setup_data": "إعداد البيانات"
     },
     "programs": {
-      "description": "لا يمكن التراجع عن البرامج المحددة (إلغاء تحديدها) بعد حفظ البيانات",
-      "search": "ابحث عن اسم البرنامج",
-      "selected": "المحدد"
+      "description": "لا يمكن التراجع عن البرامج المحددة (إلغاء تحديدها) بمجرد حفظ البيانات",
+      "search": "البحث عن اسم البرنامج",
+      "selected": "محدد"
     },
     "users": {
       "search": "اسم المستخدم"
@@ -124,20 +124,20 @@
       "prev_end_date_required": "إذا كان لديك تاريخ بدء تالٍ، فيجب إدخال تاريخ الانتهاء السابق",
       "max_greater_than_min": "يجب أن تكون القيمة القصوى أكبر من القيمة الدنيا",
       "min_less_than_max": "يجب أن تكون القيمة الدنيا أقل من القيمة القصوى",
-      "insert_with_number": "يُرجى إدخال رقم",
-      "error_fetching_data": "حدث خطأ أثناء جلب البيانات"
+      "insert_with_number": "يرجى إدخال رقم",
+      "error_fetching_data": "خطأ في جلب البيانات"
     },
     "success": {
       "activity_implementation_time": "تم تحديث بيانات وقت تنفيذ النشاط بنجاح",
       "success_update_customer": "تم تحديث بيانات {{customerType}} بنجاح",
       "success_import_customer": "تم استيراد بيانات المستلم بنجاح",
       "success_delete_customer": "تم حذف بيانات المستلم بنجاح",
-      "success_update_material_entity": "تم تعديل علاقة بيانات منشأة المادة بنجاح",
-      "success_add_material_entity": "تمت إضافة علاقة بيانات منشأة المادة بنجاح",
-      "success_delete_material_entity": "تم حذف علاقة بيانات منشأة المادة بنجاح",
-      "save": "تم حفظ المنشأة بنجاح",
-      "update": "تم تحديث المنشأة بنجاح",
-      "import": "تم استيراد بيانات المنشأة بنجاح"
+      "success_update_material_entity": "تم تعديل علاقة بيانات مادة الكيان بنجاح",
+      "success_add_material_entity": "تمت إضافة علاقة بيانات مادة الكيان بنجاح",
+      "success_delete_material_entity": "تم حذف علاقة بيانات مادة الكيان بنجاح",
+      "save": "تم حفظ الكيان بنجاح",
+      "update": "تم تحديث الكيان بنجاح",
+      "import": "تم استيراد بيانات الكيان بنجاح"
     },
     "gender": {
       "label": "الجنس",
@@ -150,10 +150,10 @@
     }
   },
   "detail": {
-    "title": "تفاصيل المنشأة",
+    "title": "تفاصيل الكيان",
     "details": {
       "title": "التفاصيل",
-      "tag": "وسوم المنشأة",
+      "tag": "وسوم الكيان",
       "last_update": "آخر تحديث"
     },
     "users": {
@@ -164,7 +164,7 @@
       "detail": "التفاصيل",
       "activity_implementation_time": "وقت تنفيذ النشاط",
       "customer_vendor": "المستلم والمرسل",
-      "entity_material_activity_relation": "إدارة منشأة المادة"
+      "entity_material_activity_relation": "إدارة مواد الكيان"
     },
     "information": {
       "table_title": {
@@ -172,12 +172,12 @@
         "consumption_customer": "مستلم الميل الأخير",
         "vendor": "المرسل"
       },
-      "entity_type": "نوع المنشأة"
+      "entity_type": "نوع الكيان"
     },
     "additional": {
       "title": "تفاصيل إضافية",
-      "vendor": "هل هو مرسل",
-      "is_primary_health_care": "هل هي رعاية صحية أولية",
+      "vendor": "هل هو مُرسِل",
+      "is_primary_health_care": "هل رعاية صحية أولية",
       "asik": "تكامل ASIK"
     },
     "customer_vendor": {
@@ -187,64 +187,64 @@
       "add_customer": "إضافة مستلم",
       "customer_name": "اسم المستلم",
       "edit_activity": "تعديل النشاط",
-      "delete_confirmation": "هل أنت متأكد من رغبتك في حذف هذا المستلم؟",
-      "delete_description": "لا يمكن استعادة العنصر المحذوف",
+      "delete_confirmation": "هل أنت متأكد من حذف هذا المستلم؟",
+      "delete_description": "لا يمكن التراجع عن العنصر المحذوف",
       "edit_activity_on_customer": "تعديل النشاط على {{type}}",
-      "are_you_sure_discard_customer": "هل أنت متأكد من رغبتك في تجاهل إعدادات المستلم؟",
-      "your_change_will_not_saved": "ستُفقد تغييراتك إذا قمت بالإلغاء. هل تريد متابعة الإلغاء؟",
+      "are_you_sure_discard_customer": "هل أنت متأكد من تجاهل إعدادات المستلم؟",
+      "your_change_will_not_saved": "ستُفقد تغييراتك إذا ألغيت. هل تريد متابعة الإلغاء؟",
       "import_data_customer": "استيراد بيانات المستلم",
-      "vendor_name": "اسم المرسل",
-      "customer_cannot_same": "لا يمكن أن يكون المستلم هو نفسه",
+      "vendor_name": "اسم المرسِل",
+      "customer_cannot_same": "لا يمكن أن يكون المستلم نفسه",
       "select_customer": "اختر المستلم",
       "select_activity": "اختر النشاط"
     },
     "material_entity": {
-      "title": "إدارة كيانات المواد",
+      "title": "إدارة مواد الكيان",
       "add_relation": "إضافة علاقة",
-      "temp_min": "أدنى درجة حرارة",
-      "temp_max": "أعلى درجة حرارة",
+      "temp_min": "الحد الأدنى لدرجة الحرارة",
+      "temp_max": "الحد الأقصى لدرجة الحرارة",
       "view_details": "عرض التفاصيل",
-      "confirmation_ensure_save": "هل أنت متأكد من حفظ هذا؟",
+      "confirmation_ensure_save": "هل أنت متأكد من رغبتك في حفظ هذا؟",
       "edit_material_entity": "تعديل كيان المادة",
       "detail_of_material_on_activities": "تفاصيل كيان المادة",
       "consumption_rate": "معدل الاستهلاك",
       "retailer_price": "سعر التجزئة",
       "tax": "الضريبة",
       "min": "الحد الأدنى",
-      "max": "الحد الأعلى",
+      "max": "الحد الأقصى",
       "edit_data": "تعديل البيانات",
-      "delete_confirmation": "هل أنت متأكد من حذف كيان المادة هذا؟",
-      "delete_material_activity_warning": "لن تظهر المادة [{{materialName}}] ضمن النشاط [{{activityName}}] هنا",
+      "delete_confirmation": "هل أنت متأكد من رغبتك في حذف كيان المادة هذا؟",
+      "delete_material_activity_warning": "المادة [{{materialName}}] في النشاط [{{activityName}}] لن تظهر هنا",
       "edit_relation": "تعديل العلاقة",
       "go_to_material_bulk": "الانتقال إلى الإجراء الجماعي لكيان المادة",
       "select_material": "اختر المادة"
     },
     "partnership": {
       "thirdparty_transporter": "ناقل طرف ثالث",
-      "thirdparty_treatment": "معالجة طرف ثالث",
+      "thirdparty_treatment": "المعالجة من طرف ثالث",
       "thirdparty_landfill": "مكب نفايات طرف ثالث",
-      "thirdparty_recycler": "معيد تدوير طرف ثالث"
+      "thirdparty_recycler": "جهة إعادة تدوير طرف ثالث"
     }
   },
   "action": {
     "activate": {
       "button": "تفعيل",
-      "confirmation": "هل أنت متأكد من تفعيل هذا؟"
+      "confirmation": "هل أنت متأكد من رغبتك في تفعيل هذا؟"
     },
     "deactivate": {
       "button": "إلغاء التفعيل",
-      "confirmation": "هل أنت متأكد من إلغاء تفعيل هذا؟"
+      "confirmation": "هل أنت متأكد من رغبتك في تعطيل هذا؟"
     },
     "description": "وصف الإجراء أو مخاطره"
   },
   "message": {
-    "data_currently_empty": "هذه البيانات فارغة حالياً. يرجى إعدادها لاستكمال هذه البيانات."
+    "data_currently_empty": "هذه البيانات فارغة حالياً. يرجى الإعداد لإكمال هذه البيانات."
   },
   "import": {
-    "description": "ارفع ملف .xls أو .xlsx (بحد أقصى 10MB)"
+    "description": "رفع ملف .xls أو .xlsx (بحد أقصى 10MB)"
   },
   "information": {
     "title": "قائمة الكيانات",
-    "description": "تتيح إعدادات الكيانات إدارة بيانات الكيانات في النظام حسب الحاجة."
+    "description": "تدير إعدادات الكيان بيانات الكيان في النظام حسب الحاجة."
   }
 }

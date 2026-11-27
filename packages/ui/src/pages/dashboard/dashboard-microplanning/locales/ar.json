@@ -1,8 +1,8 @@
 {
   "title": {
-    "page": "لوحة التخطيط الدقيق",
+    "page": "لوحة معلومات التخطيط المصغر",
     "tabs": {
-      "province": "المقاطعة",
+      "province": "المحافظة",
       "regency": "المدينة",
       "subdistrict": "المنطقة الفرعية",
       "village": "القرية"
@@ -24,42 +24,42 @@
   },
   "subtitle": {
     "dashboard": {
-      "target-consumption-age": "يتم تجميع تكرار البيانات المعروض بناءً على العمر",
-      "target-consumption-vaccination": "يتم تجميع تكرار البيانات المعروض بناءً على التحصين",
+      "target-consumption-age": "يتم تجميع تكرار البيانات المعروضة بناءً على العمر",
+      "target-consumption-vaccination": "يتم تجميع تكرار البيانات المعروضة بناءً على التحصين",
       "distribution-coverage-achievement": "نسبة الاستهلاك مقسومة على الهدف",
-      "proportion-of-aefi": "يتم تجميع تكرار البيانات المعروض بناءً على الجنس",
+      "proportion-of-aefi": "يتم تجميع تكرار البيانات المعروضة بناءً على الجنس",
       "total-target": "يتم تجميع البيانات المعروضة بناءً على الفئة المستهدفة ومادة اللقاح"
     }
   },
   "data": {
     "region": "المنطقة",
-    "receipts": "الاستلامات",
+    "receipts": "الواردات",
     "target": "الهدف",
     "consumption": "الاستهلاك"
   },
   "column": {
     "age": "العمر",
-    "vaccine": "اللقاح",
+    "vaccine": "لقاح",
     "region": "المنطقة",
     "Bayi Baru Lahir": "مولود جديد",
     "Bayi Baru Lahir/Surviving Infant": "مولود جديد/رضيع على قيد الحياة",
     "Surviving Infant": "رضيع على قيد الحياة",
-    "Baduta": "أقل من عامين",
+    "Baduta": "الأطفال دون سن الثانية",
     "BIAS": "BIAS",
     "group": {
-      "< 24 hours": "< 24 ساعة",
-      "1 month old": "عمر شهر واحد",
-      "0-1 month old": "عمر 0-1 شهر",
-      "2 months old": "عمر شهرين",
-      "3 months old": "عمر 3 أشهر",
-      "4 months old": "عمر 4 أشهر",
-      "9 months old": "عمر 9 أشهر",
-      "10 months old": "عمر 10 أشهر",
-      "12 months old": "عمر 12 شهرًا",
-      "18 months old": "عمر 18 شهرًا",
-      "Usia 7 tahun (Kelas 1)": "العمر 7 سنوات (الصف 1)",
-      "Usia 8 tahun (Kelas 2)": "العمر 8 سنوات (الصف 2)",
-      "Usia 11 tahun (Kelas 5)": "العمر 11 سنة (الصف 5)"
+      "< 24 hours": "أقل من 24 ساعة",
+      "1 month old": "عمره شهر واحد",
+      "0-1 month old": "عمره من 0 إلى 1 شهر",
+      "2 months old": "عمره شهران",
+      "3 months old": "عمره 3 أشهر",
+      "4 months old": "عمره 4 أشهر",
+      "9 months old": "عمره 9 أشهر",
+      "10 months old": "عمره 10 أشهر",
+      "12 months old": "عمره 12 شهرًا",
+      "18 months old": "عمره 18 شهرًا",
+      "Usia 7 tahun (Kelas 1)": "العمر 7 (الصف 1)",
+      "Usia 8 tahun (Kelas 2)": "العمر 8 (الصف 2)",
+      "Usia 11 tahun (Kelas 5)": "العمر 11 (الصف 5)"
     }
   },
   "form": {
@@ -68,7 +68,7 @@
     },
     "target": {
       "group": {
-        "label": "الفئة المستهدفة",
+        "label": "المجموعة المستهدفة",
         "placeholder": "اختر الفئة المستهدفة"
       }
     },

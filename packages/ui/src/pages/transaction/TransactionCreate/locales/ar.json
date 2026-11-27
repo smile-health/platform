@@ -1,24 +1,24 @@
 {
-  "title": "حركة {{type}}",
-  "transaction_form": "نموذج الحركة",
-  "transaction_detail": "تفاصيل الحركة",
-  "select_activity": "اختيار النشاط",
+  "title": "معاملة {{type}}",
+  "transaction_form": "نموذج المعاملة",
+  "transaction_detail": "تفاصيل المعاملة",
+  "select_activity": "اختر النشاط",
   "placeholder_select_activity": "اختر النشاط",
-  "caption_activity": "الأنشطة المعروضة هي فقط الأنشطة التي لا تزال نشطة على هذه المنشأة",
-  "entity_name": "اسم المنشأة",
-  "select_entity": "اختر اسم المنشأة",
-  "transaction_type": "نوع الحركة",
-  "select_transaction_type": "اختر نوع الحركة",
-  "transaction_table": "جدول الحركة",
+  "caption_activity": "الأنشطة المعروضة هي فقط الأنشطة التي لا تزال نشطة في هذا الكيان",
+  "entity_name": "اسم الكيان",
+  "select_entity": "اختر اسم الجهة",
+  "transaction_type": "نوع المعاملة",
+  "select_transaction_type": "اختر نوع المعاملة",
+  "transaction_table": "جدول المعاملات",
   "send": "إرسال",
   "reset": "إعادة تعيين",
   "search_material": "بحث عن مادة",
-  "caption_choose_material": "انقر على مربع الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول الحركة أدناه",
+  "caption_choose_material": "انقر على خانة الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول المعاملات أدناه",
   "table": {
     "column": {
       "material_name": "اسم المادة",
       "activity": "النشاط",
-      "stock_on_hand": "المخزون الفعلي",
+      "stock_on_hand": "المخزون الموجود",
       "available_stock": "المخزون المتاح",
       "quantity": "الكمية",
       "action": "إجراء",
@@ -33,7 +33,7 @@
     }
   },
   "transaction_remove_stock": {
-    "title": "حركة تخفيض المخزون",
+    "title": "معاملة تقليل المخزون",
     "batch_list": "قائمة الدفعات",
     "material_detail": "تفاصيل المادة",
     "input_table": {
@@ -42,12 +42,12 @@
         "material": "المادة",
         "material_info": "معلومات المادة",
         "stock_info": "معلومات المخزون",
-        "stock_on_hand": "المخزون الفعلي",
+        "stock_on_hand": "المخزون الموجود",
         "available_stock": "المخزون المتاح",
         "quantity": "الكمية",
         "reason": "السبب",
         "action": "إجراء",
-        "batch": "دفعة",
+        "batch": "الدفعة",
         "other": "أخرى",
         "placeholder": {
           "reason": "اختر السبب",
@@ -65,7 +65,7 @@
         },
         "reset": "إعادة تعيين",
         "budget_source": "مصدر الميزانية",
-        "restricted_budget_source": "مصدر الميزانية المقيّد"
+        "restricted_budget_source": "مصدر ميزانية مقيّد"
       },
       "detail_column": {
         "batch_detail_from": "{{batchOrDetail}} من {{source}}",
@@ -73,9 +73,9 @@
         "batch_info": "معلومات الدفعة",
         "stock_info": "معلومات المخزون",
         "production_date": "تاريخ الإنتاج",
-        "manufacturer": "المُصنّع",
+        "manufacturer": "الشركة المصنعة",
         "expired_date": "تاريخ الانتهاء",
-        "allocated": "المخصص",
+        "allocated": "مخصص",
         "material_status": "حالة المادة",
         "placeholder": {
           "status": "اختر الحالة",
@@ -85,17 +85,17 @@
     }
   },
   "transaction_return_from_facility": {
-    "title_table": "إرجاع من الميل الأخير",
+    "title_table": "مرتجع من التوصيل النهائي",
     "batch_list": "قائمة الدفعات",
     "material_detail": "تفاصيل المادة",
     "take_stock_from_ohter_activities": "أخذ المخزون من أنشطة أخرى",
     "taken_from": "مأخوذ من",
     "transaction_date": "تاريخ المعاملة",
-    "taken_from_activity": "مأخوذ من نشاط",
+    "taken_from_activity": "مأخوذ من النشاط",
     "description_select_transaction": "اختر عامل تصفية لعرض المعاملات التي تريد إرجاعها",
     "description_consumption_table": "انقر على صف الجدول لتحديد المعاملات التي تريد إرجاعها",
     "patient_part": {
-      "patient_id": "معرّف المريض ID",
+      "patient_id": "ID المريض",
       "vaccination_sequence": "تسلسل التطعيم",
       "identity_type": "نوع الهوية",
       "phone_number": "رقم الهاتف",
@@ -111,7 +111,7 @@
         "material": "المادة",
         "material_info": "معلومات المادة",
         "stock_info": "معلومات المخزون",
-        "stock_on_hand": "المخزون الحالي",
+        "stock_on_hand": "المخزون الموجود",
         "available_stock": "المخزون المتاح",
         "quantity": "الكمية",
         "quantity_info": "معلومات الكمية",
@@ -123,24 +123,24 @@
         "number_or_returns_in_stock": "عدد المرتجعات في المخزون",
         "reason": "السبب",
         "action": "إجراء",
-        "batch": "دفعة",
+        "batch": "الدفعة",
         "patient_info": "معلومات المريض",
-        "stock_from_activity": "مخزون من النشاط",
+        "stock_from_activity": "المخزون من النشاط",
         "other": "أخرى",
-        "open_vial": "قنية مفتوحة",
-        "close_vial": "قنية مغلقة",
+        "open_vial": "قارورة مفتوحة",
+        "close_vial": "قارورة مغلقة",
         "placeholder": {
           "reason": "اختر سبب الإتلاف",
-          "other": "أدخل أخرى"
+          "other": "إدخال أخرى"
         },
         "validation": {
-          "max_input_qty": "لا يمكن أن يتجاوز {{input}} {{target}}",
-          "quantity_must_multiply": "{{target}} يجب أن يكون من مضاعفات {{number}}",
+          "max_input_qty": "لا يمكن أن يكون {{input}} أكثر من {{target}}",
+          "quantity_must_multiply": "يجب أن يكون {{target}} من مضاعفات {{number}}",
           "error_actual_date": "لا يمكن أن يكون التاريخ الفعلي أقل من اليوم",
-          "minimum_1": "يجب أن تكون الكمية أكبر من 0",
-          "cannot_more_than": "لا يمكن أن تتجاوز الكمية {{max}}",
+          "minimum_1": "يجب أن تكون الكمية أكثر من 0",
+          "cannot_more_than": "لا يمكن أن تكون الكمية أكثر من {{max}}",
           "must_less_than": "يجب أن تكون الكمية أقل من {{max}}",
-          "must_equal_open_vial": "يجب أن تساوي القنينات المفتوحة عدد القنينات المفتوحة المرتجعة"
+          "must_equal_open_vial": "يجب أن تكون القوارير المفتوحة مساوية لعدد القوارير المفتوحة المرتجعة"
         },
         "toast": {
           "success": {
@@ -155,15 +155,15 @@
         "batch_info": "معلومات الدفعة",
         "max_return": "الحد الأقصى للإرجاع",
         "return_amount": "كمية الإرجاع",
-        "close_vial": "قنية مغلقة",
-        "open_vial": "قنية مفتوحة",
+        "close_vial": "قارورة مغلقة",
+        "open_vial": "قارورة مفتوحة",
         "is_anything_discarded": "هل تم إتلاف أي شيء؟",
         "qty_discarded": "الكمية المتلفة",
-        "close_vial_discarded": "القنينات المغلقة المتلفة",
+        "close_vial_discarded": "القوارير المغلقة المتلفة",
         "discard_reason": "سبب الإتلاف",
         "number_of_returns_in_stock": "عدد المرتجعات في المخزون",
         "production_date": "تاريخ الإنتاج",
-        "manufacturer": "المصنّع",
+        "manufacturer": "الشركة المصنعة",
         "expired_date": "تاريخ الانتهاء",
         "allocated": "مخصص",
         "material_status": "حالة المادة",
@@ -182,13 +182,13 @@
       "validation": {
         "qty": {
           "unit": "يجب أن تكون الكمية من مضاعفات {{amount}}",
-          "amount": "يجب أن تكون الكمية أكبر من 0",
-          "max": "لا يمكن أن تتجاوز الكمية الحد الأقصى للإرجاع"
+          "amount": "يجب أن تكون الكمية أكثر من 0",
+          "max": "لا يمكن أن تكون الكمية أكثر من الحد الأقصى للإرجاع"
         },
-        "open_vial": "يجب أن تساوي القنينات المفتوحة عدد القنينات المفتوحة في المخزون",
-        "close_vial": "يجب أن تكون القنية المغلقة من مضاعفات {{value}}",
-        "qty_cannot_more_than": "لا يمكن أن تتجاوز الكمية {{value}}",
-        "close_vial_cannot_more_than": "لا يمكن أن تتجاوز القنية المغلقة {{value}}"
+        "open_vial": "يجب أن تكون القوارير المفتوحة مساوية لعدد القوارير المفتوحة في المخزون",
+        "close_vial": "يجب أن تكون القوارير المغلقة من مضاعفات {{value}}",
+        "qty_cannot_more_than": "لا يمكن أن تكون الكمية أكثر من {{value}}",
+        "close_vial_cannot_more_than": "لا يمكن أن تكون القوارير المغلقة أكثر من {{value}}"
       },
       "table": {
         "title": {
@@ -203,16 +203,16 @@
           "quantity": "الكمية",
           "material_status": "حالة المادة",
           "reason": "السبب",
-          "action": "الإجراء",
-          "open_vial": "فيال مفتوح",
-          "close_vial": "فيال مغلق",
-          "open_close_vial": "{{open}} (فيال مفتوح) {{close}} (فيال مغلق)"
+          "action": "إجراء",
+          "open_vial": "قارورة مفتوحة",
+          "close_vial": "قارورة مغلقة",
+          "open_close_vial": "{{open}} (قارورة مفتوحة) {{close}} (قارورة مغلقة)"
         },
         "description": {
           "stock": {
             "on_hand": [
-              "المخزون الموجود: {{value}}",
-              "المخزون الموجود"
+              "المخزون المتوفر: {{value}}",
+              "المخزون الحالي"
             ],
             "available": [
               "المخزون المتاح: {{value}}",
@@ -222,8 +222,8 @@
           },
           "batch": {
             "production_date": "تاريخ الإنتاج: {{value}}",
-            "manufacturer": "الشركة المصنعة: {{value}}",
-            "expired_date": "تاريخ الانتهاء: {{value}}",
+            "manufacturer": "المصنّع: {{value}}",
+            "expired_date": "تاريخ انتهاء الصلاحية: {{value}}",
             "code": "رمز الدفعة: {{value}}",
             "reason": "السبب: {{value}}"
           }
@@ -246,10 +246,10 @@
     "last_mile": "الميل الأخير",
     "receive": "استلام",
     "discard": "إتلاف",
-    "return_of_health_facilities": "إرجاع من الميل الأخير",
-    "open_vial_acceptance": "استلام الفيال المفتوح",
+    "return_of_health_facilities": "مرتجع من الميل الأخير",
+    "open_vial_acceptance": "قبول القارورة المفتوحة",
     "add_stock": "إضافة مخزون",
-    "remove_stock": "تخفيض المخزون",
+    "remove_stock": "تقليل المخزون",
     "cancellation_of_discard": "إلغاء الإتلاف",
     "transfer_stock": "نقل بين البرامج"
   },
@@ -258,7 +258,7 @@
     "table": {
       "discard": {
         "title": "جدول معاملات الإتلاف",
-        "description": "انقر على صف في الجدول لتحديد المعاملات التي تريد إلغاءها",
+        "description": "انقر على صف الجدول لتحديد المعاملات التي تريد إلغاءها",
         "column": {
           "transaction_date": "تاريخ المعاملة",
           "activity": "النشاط",
@@ -268,10 +268,10 @@
           "selection": "التحديد",
           "taken": "مأخوذ من: {{value}}",
           "taken_activity": "مأخوذ من النشاط",
-          "manufacture": "الشركة المصنعة: {{value}}",
-          "expired_date": "تاريخ الانتهاء: {{value}}",
+          "manufacture": "المصنّع: {{value}}",
+          "expired_date": "تاريخ انتهاء الصلاحية: {{value}}",
           "quantity_accumulation": "تراكم الكمية",
-          "action": "الإجراء",
+          "action": "إجراء",
           "detail": "التفاصيل",
           "remove": "إزالة"
         }
@@ -301,22 +301,22 @@
   "actual_last_mile_date": "التاريخ الفعلي للميل الأخير",
   "actual_return_date": "التاريخ الفعلي للإرجاع",
   "remove_dialog": {
-    "question_one": "هل أنت متأكد من رغبتك في إزالة هذا؟",
-    "question_two": "ستفقد جميع المعلومات التي أدخلتها في هذه المادة."
+    "question_one": "هل أنت متأكد أنك تريد إزالة هذا؟",
+    "question_two": "كل المعلومات التي أدخلتها في هذه المادة ستُفقد."
   },
   "reset_dialog": {
     "title": "تأكيد",
-    "description": "هل أنت متأكد من رغبتك في حذف جميع البيانات المدخلة؟"
+    "description": "هل أنت متأكد من حذف جميع البيانات المدخلة؟"
   },
-  "alert_save_batch": "لم يتم تحديد أي عنصر. يرجى مراجعة المادة المضافة والضغط على زر الحفظ في الدفعة لحفظ التغييرات.",
+  "alert_save_batch": "لا يوجد أي عنصر محدد. يرجى مراجعة المادة المضافة والضغط على زر الحفظ في الدفعة لحفظ التغييرات.",
   "transaction_transfer_stock": {
     "destination_program": {
       "label": "برنامج الوجهة",
-      "placeholder": "ابحث عن اسم البرنامج"
+      "placeholder": "البحث عن اسم البرنامج"
     },
     "table_material": {
-      "caption_table_material": "يرجى اختيار المنشأة وبرنامج الوجهة أولاً",
-      "warning": "ستظهر في القائمة فقط المواد المتاحة في كلا البرنامجين المحددين",
+      "caption_table_material": "يرجى اختيار الكيان وبرنامج الوجهة أولاً",
+      "warning": "لن تظهر في القائمة إلا المواد المتاحة في كلا البرنامجين المحددين",
       "material_name": "اسم المادة",
       "total_available_stock": "إجمالي المخزون المتاح",
       "selection": "التحديد"
@@ -332,7 +332,7 @@
       "available_stock": "المخزون المتاح",
       "quantity": "الكمية",
       "destination_activity": "نشاط الوجهة",
-      "action": "الإجراء"
+      "action": "إجراء"
     },
     "table_batch": {
       "batch_info": "معلومات {{type}}",
@@ -353,15 +353,15 @@
     "batch_code": "رمز الدفعة",
     "toast": {
       "success": {
-        "create": "تم حفظ النقل بين معاملات البرنامج بنجاح"
+        "create": "تم حفظ معاملة النقل بين البرامج بنجاح"
       }
     },
     "empty_material": "هذه القائمة فارغة حالياً. لا توجد مادة مؤهلة.",
-    "empty_program": "هذه القائمة فارغة حالياً. يرجى اختيار المنشأة.",
+    "empty_program": "هذه القائمة فارغة حالياً. يرجى اختيار الكيان.",
     "empty_transaction_table": "هذه القائمة فارغة حالياً. يرجى اختيار المادة.",
-    "empty_program_already_requested": "هذه القائمة فارغة حالياً. يرجى الاتصال بمكتب المساعدة لطلب إدخالات جديدة.",
+    "empty_program_already_requested": "هذه القائمة فارغة حاليًا. يرجى الاتصال بمكتب المساعدة لطلب إدخالات جديدة.",
     "no_data_found": "لا توجد بيانات",
-    "desc_acknowledge_one": "يرجى التأكد من أن برنامج الوجهة قد أقر هذا النقل",
+    "desc_acknowledge_one": "يرجى التأكد من أن برنامج الوجهة قد أقرّ هذا النقل",
     "desc_acknowledge_two": "هذا النقل معروف مسبقاً لدى جميع برامج الوجهة"
   },
   "save": "حفظ"

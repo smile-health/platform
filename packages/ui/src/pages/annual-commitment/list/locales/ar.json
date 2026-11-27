@@ -33,7 +33,7 @@
     },
     "supplier": {
       "label": "المورد",
-      "placeholder": "اختر المورد"
+      "placeholder": "اختر المورّد"
     },
     "provinceReceiver": {
       "label": "المحافظة المستلمة",

@@ -18,7 +18,7 @@
     "select_data_to_be_copied": "حدد البيانات المراد نسخها",
     "type": "النوع",
     "status": "الحالة",
-    "approach": "المنهج"
+    "approach": "النهج"
   },
   "placeholder": {
     "select_year": "حدد السنة",
@@ -26,38 +26,38 @@
     "select_previous_year": "حدد خطة البرنامج"
   },
   "tabs": {
-    "target_group": "الفئة المستهدفة",
+    "target_group": "المجموعة المستهدفة",
     "population": "عدد السكان",
     "task": "المهمة",
     "ratio": "النسبة",
     "substitution": "الاستبدال",
     "needs_calculation": "المهمة",
     "material_ratio": "النسبة",
-    "material_substitution": "استبدال المادة"
+    "material_substitution": "استبدال المواد"
   },
   "status": {
     "activate": "تفعيل",
     "deactivate": "تعطيل",
-    "target_group": "الفئة المستهدفة",
+    "target_group": "المجموعة المستهدفة",
     "population": "عدد السكان",
     "need_calculation": "المهمة",
     "material_ratio": "النسبة",
     "final": "نهائي",
     "draft": "مسودة",
     "mark_as_final": {
-      "label": "وضع علامة نهائي",
-      "confirmation": "هل أنت متأكد من وضع علامة نهائي على هذا؟"
+      "label": "تحديد كنهائي",
+      "confirmation": "هل أنت متأكد من رغبتك في تحديد هذا كنهائي؟"
     }
   },
-  "mark_as_final": "وضع علامة نهائي",
+  "mark_as_final": "تحديد كنهائي",
   "deactivate": "تعطيل",
   "activate": "تفعيل",
   "detail_and_configure": "التفاصيل والإعداد",
   "cannot_modify_final_plan": "لا يمكنك تعديل خطة نهائية.",
   "confirmation_activation": {
-    "description": "هل أنت متأكد من وضع علامة نهائي على هذا؟",
-    "subdescription_top": "يرجى التأكد من إكمال جميع البيانات المطلوبة أدناه قبل المتابعة.",
-    "subdescription_bottom": "لا يمكنك الضغط على `Yes` حتى تكتمل جميع البيانات المطلوبة."
+    "description": "هل أنت متأكد من رغبتك في تحديد هذا كنهائي؟",
+    "subdescription_top": "يرجى التأكد من استكمال جميع البيانات المطلوبة أدناه قبل المتابعة.",
+    "subdescription_bottom": "لا يمكنك الضغط على `نعم` حتى يتم استكمال جميع البيانات المطلوبة."
   },
   "use_data_from_prev_year": "استخدام بيانات من خطة برنامج أخرى",
   "required_when_using_data_from_prev_year": "مطلوب عند استخدام بيانات من خطة برنامج أخرى",
@@ -65,6 +65,6 @@
     "activate_success": "تم تفعيل خطة البرنامج بنجاح",
     "deactivate_success": "تم تعطيل خطة البرنامج بنجاح",
     "create": "تم إنشاء خطة البرنامج بنجاح",
-    "mark_as_final_success": "تم وضع علامة نهائي على خطة البرنامج بنجاح"
+    "mark_as_final_success": "تم تحديد خطة البرنامج كنهائية بنجاح"
   }
 }

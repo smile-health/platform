@@ -1,6 +1,6 @@
 {
   "list": {
-    "list": "شراكة",
+    "list": "الشراكة",
     "filter": {
       "search": {
         "label": "بحث",
@@ -22,7 +22,7 @@
       "partnership_type": "نوع الشراكة",
       "company_name": "اسم الشركة",
       "entitas_name": "اسم الكيان",
-      "entity_name": "اسم المنشأة",
+      "entity_name": "اسم الكيان",
       "contract_date": "تاريخ العقد",
       "contract_start_date": "تاريخ بدء العقد",
       "contract_end_date": "تاريخ انتهاء العقد",
@@ -31,7 +31,7 @@
       "pic_name": "اسم المسؤول",
       "phone_number": "رقم الهاتف",
       "position": "المنصب",
-      "price_kg": "السعر/kg",
+      "price_kg": "السعر/كجم",
       "province": "المحافظة",
       "city": "المدينة",
       "address": "العنوان",
@@ -53,7 +53,7 @@
     "column_vehicle": {
       "vehicle_type ": "نوع المركبة",
       "vehicle_number": "رقم المركبة",
-      "capacity": "السعة (kg)"
+      "capacity": "السعة (كجم)"
     },
     "column_operator": {
       "username ": "اسم المستخدم",
@@ -67,7 +67,7 @@
     "column_classification_partnership": {
       "waste_characteristics": "خاصية النفايات",
       "waste_code": "رمز KLHK",
-      "price": "السعر/kg",
+      "price": "السعر/كجم",
       "partnership_type": "نوع الشراكة",
       "contract_date": "تاريخ العقد",
       "contract_start_date": "تاريخ بدء العقد",
@@ -101,8 +101,8 @@
       "placeholder": "اختر مجموعة النفايات"
     },
     "waste_characteristic": {
-      "label": "خصائص النفايات",
-      "placeholder": "اختر الخصائص"
+      "label": "خاصية النفايات",
+      "placeholder": "اختر الخاصية"
     },
     "partnership_type": {
       "label": "نوع الشراكة",
@@ -117,8 +117,8 @@
       "placeholder": "اختر اسم الشركة"
     },
     "pic_name": {
-      "label": "اسم PIC",
-      "placeholder": "أدخل اسم PIC"
+      "label": "اسم المسؤول",
+      "placeholder": "أدخل اسم المسؤول"
     },
     "nib": {
       "label": "NIB",
@@ -133,8 +133,8 @@
       "placeholder": "أدخل المنصب"
     },
     "price_kg": {
-      "label": "السعر/كغ",
-      "placeholder": "أدخل السعر/كغ"
+      "label": "السعر/كجم",
+      "placeholder": "أدخل السعر/كجم"
     },
     "contract_date": {
       "label": "تاريخ العقد",
@@ -148,40 +148,40 @@
       "label": "حالة الشراكة",
       "placeholder": "اختر حالة الشراكة"
     },
-    "help_text_characteristic": "اتركه فارغًا لاختيار جميع الخصائص في هذه المجموعة"
+    "help_text_characteristic": "اتركه فارغًا لتحديد جميع الخصائص في هذه المجموعة"
   },
   "detail": {
-    "healthcare_info": "معلومات شراكة الرعاية الصحية",
-    "operator_info": "معلومات مشغّل الشريك",
-    "vehicle_info": "معلومات مركبات الشريك",
+    "healthcare_info": "معلومات شراكة المنشآت الصحية",
+    "operator_info": "معلومات مشغل الشريك",
+    "vehicle_info": "معلومات مركبة الشريك",
     "third_party_info": "معلومات شراكة الطرف الثالث",
     "classification_partnership_info": "معلومات الخصائص"
   },
   "status_partnership": {
-    "ACTIVE": "نشطة",
-    "SUSPENDED": "معلّقة",
+    "ACTIVE": "نشط",
+    "SUSPENDED": "موقوف",
     "PENDING": "قيد الانتظار",
-    "TERMINATED": "منتهية",
-    "EXPIRED": "منتهية الصلاحية"
+    "TERMINATED": "مُنهى",
+    "EXPIRED": "منتهي الصلاحية"
   },
   "status_partnership_info": {
-    "ACTIVE": "العقد نشط حاليًا",
-    "SUSPENDED": "العقد معلق مؤقتًا",
-    "PENDING": "العقد في انتظار الموافقة",
+    "ACTIVE": "العقد ساري حاليًا",
+    "SUSPENDED": "العقد موقوف مؤقتًا",
+    "PENDING": "العقد قيد الموافقة",
     "TERMINATED": "تم إنهاء العقد أو لم يتم تجديده",
     "EXPIRED": "انتهت فترة صلاحية العقد"
   },
   "provider_type": {
-    "TRANSPORTER": "الناقل فقط",
-    "TRANSPORTER_TREATMENT": "ناقل المعالجة",
-    "TRANSPORTER_LANDFILL": "ناقل مكب النفايات",
-    "TRANSPORTER_RECYCLER": "ناقل إعادة التدوير",
-    "SPECIALIZED_TREATMENT_PROVIDER": "ناقل متخصص",
-    "TRANSPORTER_GOVERNMENT": "ناقل حكومي",
-    "TRANSPORTER_GOVERNMENT_WASTE_BANK": "ناقل بنك النفايات الحكومي"
+    "TRANSPORTER": "نقل فقط",
+    "TRANSPORTER_TREATMENT": "نقل - معالجة",
+    "TRANSPORTER_LANDFILL": "نقل - طمر",
+    "TRANSPORTER_RECYCLER": "نقل - إعادة تدوير",
+    "SPECIALIZED_TREATMENT_PROVIDER": "نقل - معالجة متخصصة",
+    "TRANSPORTER_GOVERNMENT": "نقل حكومي",
+    "TRANSPORTER_GOVERNMENT_WASTE_BANK": "نقل حكومي - بنك نفايات"
   },
   "information": {
     "title": "الشراكة",
-    "description": "تراقب الشراكات بيانات الأطراف الثالثة التي تؤدي دورًا في إدارة النفايات وتديرها"
+    "description": "تراقب الشراكات وتدير بيانات الطرف الثالث التي تسهم في إدارة النفايات"
   }
 }

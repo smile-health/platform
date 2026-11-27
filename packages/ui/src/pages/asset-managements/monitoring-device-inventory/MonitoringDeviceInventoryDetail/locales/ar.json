@@ -1,6 +1,6 @@
 {
   "page": {
-    "title": "تفاصيل جهاز المراقبة"
+    "title": "تفاصيل جهاز مراقبة درجة الحرارة"
   },
   "section": {
     "device_info": {
@@ -10,29 +10,29 @@
       "title": "التفاصيل التشغيلية"
     },
     "entity": {
-      "title": "المنشأة"
+      "title": "الكيان"
     },
     "budget": {
       "title": "الميزانية"
     },
     "operational_asset_monitoring_device_relation": {
-      "title": "علاقة الأصل التشغيلي وجهاز المراقبة"
+      "title": "علاقة الأصول التشغيلية وجهاز المراقبة"
     }
   },
   "button": {
     "more_details": "مزيد من التفاصيل"
   },
   "modal": {
-    "delete_confirmation": "هل أنت متأكد من أنك تريد حذف هذا الجهاز؟"
+    "delete_confirmation": "هل أنت متأكد من رغبتك في حذف هذا الجهاز؟"
   },
   "data": {
     "asset_name": "اسم الأصل",
     "serial_number": "الرقم التسلسلي",
     "device_status": "حالة الجهاز",
     "operational_status": "الحالة التشغيلية",
-    "updated_by": "تم التحديث بواسطة",
+    "updated_by": "حُدّث بواسطة",
     "updated_at": "تاريخ التحديث",
-    "created_by": "تم الإنشاء بواسطة",
+    "created_by": "أُنشئ بواسطة",
     "created_at": "تاريخ الإنشاء"
   }
 }

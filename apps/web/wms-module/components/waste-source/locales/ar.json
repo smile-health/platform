@@ -5,7 +5,7 @@
       "waste_source": {
         "search": {
           "label": "بحث",
-          "placeholder": "ابحث عن مصدر النفايات"
+          "placeholder": "البحث عن مصدر النفايات"
         },
         "source_type": {
           "label": "نوع المصدر",
@@ -19,8 +19,8 @@
     "column": {
       "source_type": "نوع المصدر",
       "waste_source": "مصدر النفايات",
-      "updated_at": "آخر تحديث",
-      "updated_by": "المحدث",
+      "updated_at": "تاريخ التحديث",
+      "updated_by": "محدّث",
       "action": "إجراء"
     },
     "action": {
@@ -43,11 +43,11 @@
   "action": {
     "activate": {
       "button": "تفعيل",
-      "confirmation": "هل أنت متأكد من تفعيل هذا المنتج؟"
+      "confirmation": "هل أنت متأكد من رغبتك في تفعيل هذا المنتج؟"
     },
     "deactivate": {
       "button": "تعطيل",
-      "confirmation": "هل أنت متأكد من تعطيل هذا المنتج؟"
+      "confirmation": "هل أنت متأكد من رغبتك في تعطيل هذا المنتج؟"
     }
   },
   "button": {},
@@ -62,15 +62,15 @@
     },
     "external_waste_source": {
       "label": "اسم منشأة الرعاية الصحية",
-      "placeholder": "اختر منشأة الرعاية الصحية",
-      "placeholder_input": "أدخل منشأة الرعاية الصحية"
+      "placeholder": "اختر المنشأة الصحية",
+      "placeholder_input": "أدخل المنشأة الصحية"
     },
     "internal_treatment_waste_source": {
       "label": "مصدر النفايات",
       "placeholder": "اختر مصدر النفايات"
     },
     "select_healthcare_facility": {
-      "label": "اختيار منشأة الرعاية الصحية"
+      "label": "اختر المنشأة الصحية"
     },
     "input_healthcare_facility": {
       "label": "إدخال منشأة الرعاية الصحية"
@@ -80,10 +80,10 @@
   "source_type": {
     "INTERNAL": "داخلي",
     "EXTERNAL": "خارجي",
-    "INTERNAL_TREATMENT": "معالجة داخلية"
+    "INTERNAL_TREATMENT": "المعالجة الداخلية"
   },
   "waste_source_treatment": {
-    "PYROLYSIS": "الحرق/التحلل الحراري",
+    "PYROLYSIS": "الترميد/الانحلال الحراري",
     "DISINFECTION": "التعقيم/التطهير"
   }
 }

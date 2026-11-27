@@ -1,11 +1,11 @@
 {
   "list": {
-    "list": "محضر التسليم",
+    "list": "محضر التسليم والاستلام",
     "filter": {
       "handover_document": {
         "search": {
           "label": "بحث",
-          "placeholder": "ابحث عن محضر التسليم"
+          "placeholder": "البحث في محضر التسليم والاستلام"
         }
       },
       "button": {
@@ -13,32 +13,32 @@
       }
     },
     "column": {
-      "no_handover_document": "رقم محضر التسليم",
-      "entity_name": "اسم المنشأة",
-      "created_by": "أنشئ بواسطة",
-      "handover_document": "محضر التسليم",
+      "no_handover_document": "لا يوجد محضر تسليم واستلام",
+      "entity_name": "اسم الكيان",
+      "created_by": "أُنشئ بواسطة",
+      "handover_document": "محضر التسليم والاستلام",
       "description": "الوصف",
       "status": "الحالة",
       "created_at": "تاريخ التقديم",
       "material_name": "اسم المادة",
       "qty": "الكمية",
-      "material_id": "معرّف المادة",
+      "material_id": "ID المادة",
       "action": "إجراء"
     },
     "action": {
-      "approve": "اعتماد",
+      "approve": "موافقة",
       "reject": "رفض",
-      "description": "هل أنت متأكد من رغبتك في اعتماد محضر التسليم {{bast}}؟"
+      "description": "هل أنت متأكد من رغبتك في الموافقة على محضر التسليم والاستلام {{bast}} هذا؟"
     }
   },
   "title": {
-    "handover_document": "محضر التسليم",
-    "handover_document_list": "قائمة محاضر التسليم",
-    "handover_document_detail": "تفاصيل مستند التسليم",
-    "handover_document_approval": "اعتماد مستند التسليم"
+    "handover_document": "محضر التسليم والاستلام",
+    "handover_document_list": "قائمة محاضر التسليم والاستلام",
+    "handover_document_detail": "تفاصيل محضر التسليم والاستلام",
+    "handover_document_approval": "الموافقة على محضر التسليم والاستلام"
   },
   "bast_status": {
-    "PENDING": "بانتظار الاعتماد",
+    "PENDING": "بانتظار الموافقة",
     "APPROVED": "معتمد",
     "REJECTED": "مرفوض"
   }

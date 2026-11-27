@@ -6,55 +6,55 @@
   "filter": {
     "activity": {
       "label": "النشاط",
-      "placeholder": "اختر النشاط"
+      "placeholder": "اختيار النشاط"
     },
     "material_type": {
       "label": "نوع المادة",
-      "placeholder": "اختر نوع المادة"
+      "placeholder": "اختيار نوع المادة"
     },
     "material": {
       "label": "المادة",
-      "placeholder": "اختر المادة"
+      "placeholder": "اختيار المادة"
     },
     "transaction_type": {
       "label": "نوع المعاملة",
-      "placeholder": "اختر نوع المعاملة"
+      "placeholder": "اختيار نوع المعاملة"
     },
     "reason": {
       "label": "السبب",
-      "placeholder": "اختر السبب"
+      "placeholder": "اختيار السبب"
     },
     "has_order": {
-      "label": "لديه طلب",
-      "placeholder": "اختر حالة وجود طلب"
+      "label": "يوجد طلب",
+      "placeholder": "اختيار وجود طلب"
     },
     "order_type": {
       "label": "نوع الطلب",
-      "placeholder": "اختر نوع الطلب"
+      "placeholder": "اختيار نوع الطلب"
     },
     "entity_tag": {
-      "label": "وسم المنشأة",
-      "placeholder": "اختر وسم المنشأة"
+      "label": "وسم الكيان",
+      "placeholder": "اختيار وسم الكيان"
     },
     "primary_vendor": {
       "label": "المورد الرئيسي",
-      "placeholder": "اختر المورد الرئيسي"
+      "placeholder": "اختيار المورد الرئيسي"
     },
     "integrated_healthcare": {
       "label": "الرعاية الصحية الأولية",
-      "placeholder": "اختر الرعاية الصحية الأولية"
+      "placeholder": "اختيار مركز الرعاية الصحية الأولية"
     },
     "consumption_customer_tag": {
       "label": "وسم مستلم الميل الأخير",
-      "placeholder": "اختر وسم مستلم الميل الأخير"
+      "placeholder": "اختيار وسم مستلم الميل الأخير"
     },
     "consumption_customer": {
       "label": "مستلم الميل الأخير",
-      "placeholder": "اختر مستلم الميل الأخير"
+      "placeholder": "اختيار مستلم الميل الأخير"
     },
     "material_kfa_level": {
       "label": "مستوى مادة KFA",
-      "placeholder": "اختر مستوى مادة KFA"
+      "placeholder": "اختيار مستوى مادة KFA"
     }
   },
   "order_number": "رقم الطلب",
@@ -62,25 +62,25 @@
     "active_substance_and_strength": "قالب المنتج"
   },
   "has_order_options": {
-    "yes": "لديه طلب",
-    "no": "ليس لديه طلب"
+    "yes": "يوجد طلب",
+    "no": "لا يوجد طلب"
   },
   "order_type_options": {
     "order": "طلب",
-    "allocation": "تخصيص",
+    "allocation": "التخصيص",
     "return": "إرجاع",
     "routine_allocation": "تخصيص روتيني"
   },
   "columns": {
-    "si_no": "الرقم التسلسلي",
-    "entity_name": "اسم المنشأة",
+    "si_no": "رقم SI",
+    "entity_name": "اسم الكيان",
     "material": "معلومات المادة",
     "activity": "النشاط",
-    "opening_stock": "المخزون الافتتاحي (جرعة/قطعة)",
+    "opening_stock": "الرصيد الافتتاحي (جرعة/قطعة)",
     "transaction_type": "نوع المعاملة",
     "order_number": "رقم الطلب",
     "quantity": "الكمية (جرعة/قطعة)",
-    "closing_stock": "المخزون الختامي (جرعة/قطعة)",
+    "closing_stock": "الرصيد الختامي (جرعة/قطعة)",
     "action": "إجراء",
     "device_type": "الجهاز",
     "mobile_phone": "الهاتف المحمول",
@@ -94,7 +94,7 @@
   },
   "batch_columns": {
     "material_name": "اسم المادة",
-    "batch_from": "مصدر الدفعة",
+    "batch_from": "الدفعة من",
     "patient": "المريض",
     "taken_from_activity_stock": "مأخوذ من مخزون النشاط",
     "batch_code": "رمز الدفعة",
@@ -109,20 +109,20 @@
     "view_patient": "عرض المريض"
   },
   "patient_columns": {
-    "patient_from": "المريض حسب رمز الدفعة",
+    "patient_from": "المريض من رمز الدفعة",
     "identity_type": "نوع الهوية",
-    "patient_id": "معرّف المريض",
+    "patient_id": "ID المريض",
     "nik": "NIK",
     "passport": "جواز السفر",
     "vaccination_method": "طريقة التطعيم",
     "vaccination_sequence": "تسلسل التطعيم"
   },
   "list_transaction_create": {
-    "dispatching": "إرسال",
+    "dispatching": "الصرف",
     "discard": "إتلاف",
     "return_health_facilities": "إرجاع",
     "add_stock": "إضافة مخزون",
-    "reduce_stock": "تخفيض المخزون",
+    "reduce_stock": "تقليل المخزون",
     "cancellation_of_discard": "إلغاء الإتلاف",
     "general_transaction": "معاملة عامة"
   },
@@ -133,25 +133,25 @@
       "sequence": "التسلسل",
       "age_at_vaccination": "العمر عند التطعيم",
       "material_status": "حالة المادة",
-      "disease_history": "سجل المرض",
+      "disease_history": "التاريخ المرضي",
       "type": "النوع",
       "method": "الطريقة"
     },
     "side_effect": {
       "title": "سجل KIPI",
       "reaction": "التفاعل",
-      "at": "في",
+      "at": "الساعة",
       "add": {
         "title": "إضافة تقرير KIPI",
         "button_add": "إضافة KIPI",
         "reaction_type": {
           "label": "التفاعل بعد التطعيم",
-          "placeholder": "اختر التفاعل",
+          "placeholder": "اختيار التفاعل",
           "error": "التفاعل بعد التطعيم مطلوب"
         },
         "other_reaction": {
           "label": "تفاعل آخر",
-          "placeholder": "أدخل تفاعلاً آخر",
+          "placeholder": "أدخل تفاعلًا آخر",
           "error": "التفاعل الآخر مطلوب"
         },
         "actual_reaction_date": {
@@ -174,24 +174,24 @@
       "gender": "الجنس",
       "date_of_birth": "تاريخ الميلاد",
       "current_age": "العمر الحالي",
-      "status": "الحالة الاجتماعية",
+      "status": "الحالة الزوجية",
       "province": "المحافظة",
-      "regency": "المنطقة",
-      "district": "القرية/الدائرة",
+      "regency": "المنطقة الإدارية",
+      "district": "القرية/المنطقة الفرعية",
       "last_education": "آخر مؤهل تعليمي",
       "occupation": "المهنة",
       "religion": "الديانة",
       "ethnicity": "العرق",
       "phone_number": "رقم الهاتف",
-      "residential_address": "عنوان السكن",
+      "residential_address": "عنوان الإقامة",
       "registered_address": "العنوان المسجل"
     },
     "disease_history": {
-      "title": "سجل الأمراض والوقاية",
+      "title": "تاريخ المرض والوقاية",
       "dengue": {
         "has_dengue_question": "هل أصيب المريض بحمى الضنك من قبل؟",
-        "last_time_dengue_question": "متى كانت آخر إصابة للمريض بحمى الضنك؟",
-        "has_vaccination_question": "هل سبق أن تلقى المريض تطعيمًا طوعيًا لهذا المرض؟"
+        "last_time_dengue_question": "متى كانت آخر مرة أصيب فيها المريض بحمى الضنك؟",
+        "has_vaccination_question": "هل تلقى المريض تطعيمًا لهذا المرض طوعًا من قبل؟"
       }
     }
   }

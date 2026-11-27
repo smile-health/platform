@@ -8,11 +8,11 @@
     "edit_password": "تعديل كلمة المرور",
     "profile_detail": "معلومات المستخدم",
     "info_login_device": "معلومات نشاط المستخدم",
-    "entity": "المنشأة",
+    "entity": "الكيان",
     "history_change_data": "سجل التغييرات",
-    "workspace_entity_info": "معلومات البرنامج والمنشأة",
+    "workspace_entity_info": "معلومات البرنامج والكيان",
     "profile_title": "حسابي",
-    "main_info": "المعلومات الرئيسية",
+    "main_info": "المعلومات الأساسية",
     "additional_info": "معلومات إضافية"
   },
   "button": {
@@ -58,13 +58,13 @@
       "empty_old_password": "كلمة المرور القديمة مطلوبة",
       "empty_new_password": "كلمة المرور الجديدة مطلوبة",
       "empty_confirmation_password": "تأكيد كلمة المرور مطلوب",
-      "password_validation_text": "كلمة المرور: 8 أحرف على الأقل، A-Z، a-z، 0-9، رمز، بدون مسافات.",
-      "password_confirmation_validation": "كلمة المرور الجديدة وتأكيد كلمة المرور غير متطابقين.",
+      "password_validation_text": "كلمة المرور: 8 أحرف أو أكثر، A-Z، a-z، 0-9، رمز، بدون مسافات.",
+      "password_confirmation_validation": "كلمة المرور الجديدة وتأكيدها غير متطابقين.",
       "old_password_same_with_new": "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمة المرور الحالية",
       "first_name_required": "الاسم الأول مطلوب",
       "email_required": "البريد الإلكتروني مطلوب",
       "email": "البريد الإلكتروني غير صالح",
-      "phone_number": "يجب أن يتكون رقم الهاتف من 10 أرقام على الأقل وأن يبدأ بـ 08 أو 628"
+      "phone_number": "رقم الهاتف لا يقل عن 10 أحرف ويجب أن يبدأ بـ 08 أو 628"
     },
     "message": {
       "change_profile_success": "تم تحديث بيانات الملف الشخصي بنجاح"
@@ -81,15 +81,15 @@
     "phone_number": "رقم الهاتف",
     "address": "العنوان",
     "last_login": "آخر تسجيل دخول",
-    "last_device_access": "آخر وصول للجهاز",
+    "last_device_access": "آخر جهاز تم الدخول منه",
     "entity": {
       "name": "الاسم",
       "address": "العنوان",
       "type": "النوع"
     },
     "workspace": {
-      "entity_name": "المنشأة",
-      "entity_address": "عنوان المنشأة",
+      "entity_name": "الكيان",
+      "entity_address": "عنوان الكيان",
       "entity_type": "النوع"
     }
   }

@@ -1,14 +1,14 @@
 {
   "list": {
-    "list": "شريك رعاية صحية",
+    "list": "شريك المنشأة الصحية",
     "filter": {
       "search": {
         "label": "بحث",
         "placeholder": "ابحث عن حالة الشراكة"
       },
       "healthcare_partner": {
-        "label": "منشأة رعاية صحية",
-        "placeholder": "اختر منشأة رعاية صحية"
+        "label": "منشأة الرعاية الصحية",
+        "placeholder": "اختر المنشأة الصحية"
       },
       "partnership_status": {
         "label": "حالة الشراكة",
@@ -20,16 +20,16 @@
     },
     "column": {
       "partnership_type": "نوع الشراكة",
-      "healthcare_facility": "منشأة رعاية صحية",
+      "healthcare_facility": "منشأة الرعاية الصحية",
       "company_name": "اسم الشركة",
-      "entity_name": "اسم المنشأة",
+      "entity_name": "اسم الكيان",
       "contract_start_date": "تاريخ بدء العقد",
       "contract_end_date": "تاريخ انتهاء العقد",
       "partnership_status": "حالة الشراكة",
-      "pic_name": "اسم مسؤول الاتصال",
+      "pic_name": "اسم المسؤول",
       "phone_number": "رقم الهاتف",
       "position": "المنصب",
-      "price_kg": "السعر/Kg",
+      "price_kg": "السعر/كجم",
       "province": "المحافظة",
       "city": "المدينة",
       "address": "العنوان",
@@ -41,12 +41,12 @@
     }
   },
   "title": {
-    "partnership": "شريك الرعاية الصحية",
+    "partnership": "شريك المنشأة الصحية",
     "list": "قائمة شركاء الرعاية الصحية"
   },
   "form": {
     "is_same_company": {
-      "label": "هل هي نفس الشركة؟"
+      "label": "هل الشركة نفسها؟"
     },
     "partnership_type": {
       "label": "نوع الشراكة",
@@ -57,12 +57,12 @@
       "placeholder": "اختر اسم الشركة"
     },
     "healthcare_partner": {
-      "label": "مستهلك منشأة الرعاية الصحية",
-      "placeholder": "اختر منشأة الرعاية الصحية"
+      "label": "مستهلك المنشأة الصحية",
+      "placeholder": "اختر المنشأة الصحية"
     },
     "pic_name": {
-      "label": "اسم مسؤول الاتصال",
-      "placeholder": "أدخل اسم مسؤول الاتصال"
+      "label": "اسم المسؤول",
+      "placeholder": "أدخل اسم المسؤول"
     },
     "phone_number": {
       "label": "رقم الهاتف",
@@ -73,8 +73,8 @@
       "placeholder": "أدخل المنصب"
     },
     "price_kg": {
-      "label": "السعر/kg",
-      "placeholder": "أدخل السعر/kg"
+      "label": "السعر/كجم",
+      "placeholder": "أدخل السعر/كجم"
     },
     "contract_start_date": {
       "label": "تاريخ بدء العقد",
@@ -90,6 +90,6 @@
     }
   },
   "detail": {
-    "healthcare_partner_info": "معلومات منشأة الرعاية الصحية"
+    "healthcare_partner_info": "معلومات مرفق الرعاية الصحية"
   }
 }

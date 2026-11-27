@@ -8,10 +8,10 @@
   "create": {
     "title": "إنشاء جديد",
     "order": "طلب",
-    "distribution": "توزيع",
+    "distribution": "التوزيع",
     "return": "إرجاع",
-    "central": "توزيع مركزي",
-    "relocation": "نقل"
+    "central": "التوزيع المركزي",
+    "relocation": "نقل الموقع"
   },
   "form": {
     "activity": {
@@ -19,11 +19,11 @@
       "placeholder": "اختر النشاط"
     },
     "date_range": {
-      "label": "نطاق التاريخ"
+      "label": "النطاق الزمني"
     },
     "order_number": {
       "label": "رقم الطلب",
-      "placeholder": "أدخل رقم الطلب"
+      "placeholder": "اكتب رقم الطلب"
     },
     "status": {
       "label": "الحالة",
@@ -31,7 +31,7 @@
     },
     "delivery": {
       "label": "نوع التسليم",
-      "placeholder": "اختر نوع التسليم"
+      "placeholder": "اختر نوع التوصيل"
     },
     "type": {
       "label": "نوع الطلب",
@@ -42,8 +42,8 @@
       "placeholder": "اختر نوع التكامل"
     },
     "entity_tag": {
-      "label": "وسم المنشأة",
-      "placeholder": "اختر وسم المنشأة"
+      "label": "وسم الكيان",
+      "placeholder": "اختر وسم الكيان"
     },
     "province": {
       "label": "المحافظة",
@@ -55,12 +55,12 @@
     },
     "primary": {
       "vendor": {
-        "label": "المورد الأساسي",
+        "label": "المورد الرئيسي",
         "placeholder": "اختر المورد الأساسي"
       },
       "health_care": {
         "label": "الرعاية الصحية الأولية",
-        "placeholder": "اختر الرعاية الصحية الأولية"
+        "placeholder": "اختر مركز الرعاية الصحية الأولية"
       }
     }
   },
@@ -68,9 +68,9 @@
     "order_number": "رقم الطلب",
     "activity": "النشاط",
     "vendor": "المرسل",
-    "created": "تم الإنشاء بواسطة",
+    "created": "أُنشئ بواسطة",
     "customer": "المستلم",
     "device": "نوع الجهاز",
-    "action": "الإجراء"
+    "action": "إجراء"
   }
 }

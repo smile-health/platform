@@ -1,6 +1,6 @@
 {
   "title": {
-    "page": "تقرير سجل المخزون"
+    "page": "تقرير دفتر المخزون"
   },
   "action": {
     "export": "تصدير",
@@ -13,17 +13,17 @@
       "required": "النشاط مطلوب"
     },
     "province": {
-      "label": "المقاطعة",
-      "placeholder": "اختر المقاطعة",
-      "required": "المقاطعة مطلوبة"
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة",
+      "required": "المحافظة مطلوبة"
     },
     "regency": {
       "label": "المنطقة",
-      "placeholder": "اختر المنطقة"
+      "placeholder": "اختر المديرية"
     },
     "health_facilities": {
-      "label": "المنشآت الصحية",
-      "placeholder": "اختر المنشآت الصحية"
+      "label": "المرافق الصحية",
+      "placeholder": "اختر المرافق الصحية"
     },
     "period": {
       "label": "الفترة",

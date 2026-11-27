@@ -4,11 +4,11 @@
     "filter": {
       "search": {
         "label": "بحث",
-        "placeholder": "بحث عن رقم المركبة"
+        "placeholder": "ابحث عن رقم المركبة"
       },
       "healthcare_partner": {
-        "label": "شريك رعاية صحية",
-        "placeholder": "اختر شريك رعاية صحية"
+        "label": "شريك المنشأة الصحية",
+        "placeholder": "اختر شريك المنشأة الصحية"
       },
       "button": {
         "search": "بحث"
@@ -17,8 +17,8 @@
     "column": {
       "vehicle_type ": "نوع المركبة",
       "vehicle_number": "رقم المركبة",
-      "capacity": "السعة (Kg)",
-      "healthcare_consumer": "منشأة رعاية صحية مستهلكة",
+      "capacity": "السعة (كجم)",
+      "healthcare_consumer": "مستهلك المنشأة الصحية",
       "action": "إجراء"
     },
     "button": {
@@ -33,20 +33,20 @@
   },
   "form": {
     "healthcare_consumer": {
-      "label": "منشأة رعاية صحية مستهلكة",
-      "placeholder": "اختر منشأة رعاية صحية مستهلكة"
+      "label": "مستهلك المنشأة الصحية",
+      "placeholder": "اختر مستهلك المنشأة الصحية"
     },
     "vehicle_number": {
       "label": "رقم المركبة",
       "placeholder": "أدخل رقم المركبة",
       "validation": {
-        "duplicate": "رقم المركبة موجود بالفعل داخل هذه المنشأة.",
+        "duplicate": "رقم المركبة موجود بالفعل ضمن هذا الكيان.",
         "invalid_format": "تنسيق رقم لوحة المركبة غير صالح"
       }
     },
     "capacity": {
-      "label": "السعة (Kg)",
-      "placeholder": "أدخل السعة (Kg)"
+      "label": "السعة (كجم)",
+      "placeholder": "أدخل السعة (كجم)"
     },
     "vehicle_type": {
       "label": "نوع المركبة",

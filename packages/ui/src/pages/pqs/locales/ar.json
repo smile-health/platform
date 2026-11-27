@@ -1,7 +1,7 @@
 {
   "title": {
-    "pqs": "إعداد رمز PQS لمنظمة الصحة العالمية",
-    "list": "رمز PQS لمنظمة الصحة العالمية",
+    "pqs": "إعداد رمز WHO PQS",
+    "list": "رمز WHO PQS",
     "add": "إضافة رمز PQS",
     "detail": "تفاصيل رمز PQS",
     "edit": "تعديل رمز PQS"
@@ -11,7 +11,7 @@
     "section": {
       "detail": {
         "header": "التفاصيل",
-        "warning": "لا يُسمح بإجراء تغييرات. رمز PQS هذا مرتبط بالفعل بطراز أصل.",
+        "warning": "التغييرات غير مسموح بها. رمز PQS هذا مرتبط بالفعل بنموذج أصل.",
         "label": {
           "pqs_code": "رمز PQS",
           "pqs_type": "نوع PQS",
@@ -39,7 +39,7 @@
         "search": "بحث"
       },
       "placeholder": {
-        "search": "ابحث عن رمز PQS"
+        "search": "بحث عن رمز PQS"
       }
     },
     "column": {
@@ -54,7 +54,7 @@
   "action": {
     "delete": {
       "button": "حذف رمز PQS",
-      "confirmation": "هل أنت متأكد من حذف رمز PQS هذا؟"
+      "confirmation": "هل أنت متأكد من أنك تريد حذف رمز PQS هذا؟"
     }
   },
   "form": {

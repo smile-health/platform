@@ -1,8 +1,8 @@
 {
   "title": "النسبة",
   "add": "إضافة نسبة",
-  "add_material_ratio": "إضافة نسبة مادة",
-  "edit_material_ratio": "تعديل نسبة مادة",
+  "add_material_ratio": "إضافة نسبة المواد",
+  "edit_material_ratio": "تعديل نسبة المواد",
   "material_a": "المادة A",
   "material_b": "المادة B",
   "source_material": "المادة المصدر",
@@ -14,19 +14,19 @@
   "ratio_number": "رقم النسبة",
   "example_1": "مثال: 1",
   "toast": {
-    "create_success": "تم إنشاء نسبة المادة بنجاح",
-    "update_success": "تم تحديث نسبة المادة بنجاح",
-    "delete_success": "تم حذف نسبة المادة بنجاح"
+    "create_success": "تم إنشاء نسبة المواد بنجاح",
+    "update_success": "تم تحديث نسبة المواد بنجاح",
+    "delete_success": "تم حذف نسبة المواد بنجاح"
   },
   "material_ratio": "نسبة المادة",
   "import": {
-    "description": "ارفع ملف .xls أو .xlsx (بحد أقصى 10MB)",
-    "success": "تم استيراد نسبة المادة بنجاح",
-    "error": "فشل استيراد نسبة المادة"
+    "description": "رفع ملف .xls أو .xlsx (بحد أقصى 10MB)",
+    "success": "تم استيراد نسبة المواد بنجاح",
+    "error": "فشل استيراد نسبة المواد"
   },
   "delete": {
-    "description": "هل أنت متأكد من حذف نسبة المادة هذه؟",
-    "success": "تم حذف نسبة المادة بنجاح",
-    "error": "فشل حذف نسبة المادة"
+    "description": "هل أنت متأكد من حذف نسبة المواد هذه؟",
+    "success": "تم حذف نسبة المواد بنجاح",
+    "error": "فشل حذف نسبة المواد"
   }
 }
