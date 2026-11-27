@@ -5,6 +5,7 @@ import { CalendarIcon } from '@heroicons/react/24/outline'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { parseDate } from '@internationalized/date'
 import cx from '#lib/cx'
+import { toIntlLocale } from '#utils/locale'
 import dayjs from 'dayjs'
 import { AnimatePresence } from 'framer-motion'
 import { TFunction } from 'i18next'
@@ -264,7 +265,7 @@ export function DateRangePicker(
   }, [props.maxRange, props.value])
 
   return (
-    <I18nProvider locale={props.locale ?? 'en-UK'}>
+    <I18nProvider locale={toIntlLocale(props.locale ?? 'en-UK')}>
       <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-start">
         <div
           {...groupProps}

@@ -3,6 +3,7 @@ import { BOOLEAN } from '#constants/common'
 import dayjs from 'dayjs'
 
 import { CreateTransactionReturnFromFacilityForm } from './transaction-return-from-facility.type'
+import { toIntlLocale } from '#utils/locale'
 
 export const textGrouper = ({
   text1,
@@ -24,7 +25,7 @@ export const thousandFormatter = ({
   value: number
   locale: string
 }) => {
-  return new Intl.NumberFormat(locale).format(value) || ''
+  return new Intl.NumberFormat(toIntlLocale(locale)).format(value) || ''
 }
 
 export const formatDate = (

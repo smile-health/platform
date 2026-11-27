@@ -7,6 +7,7 @@ import 'dayjs/locale/id'
 import 'dayjs/locale/en'
 
 import { isObject } from '#utils/object'
+import { toIntlLocale } from '#utils/locale'
 
 export const processParams = ({
   params,
@@ -39,7 +40,7 @@ export const thousandFormatter = ({
   value: number
   locale: string
 }) => {
-  return new Intl.NumberFormat(locale).format(value) || ''
+  return new Intl.NumberFormat(toIntlLocale(locale)).format(value) || ''
 }
 
 export const processingEnableDisableStatus = (

@@ -10,6 +10,7 @@ import {
   ProgramPlanMaterialRatioResponse,
 } from '../../../program-plan/list/libs/program-plan-list.type'
 import { getProgramPlanMaterialRatios } from '../../services/program-plan-material-ratio.services'
+import { toIntlLocale } from '#utils/locale'
 
 type Filter = { page: number; paginate: number; materialId?: OptionType[] }
 
@@ -36,8 +37,8 @@ export const useProgramPlanRatioData = (filter: Filter) => {
     return (
       apiData?.data.map((item: ProgramPlanMaterialRatioItem, index: number) => {
         const locale = language === 'id' ? 'id-ID' : 'en-US'
-        const leftQty = Number(item.from_material_qty).toLocaleString(locale)
-        const rightQty = Number(item.to_material_qty).toLocaleString(locale)
+        const leftQty = Number(item.from_material_qty).toLocaleString(toIntlLocale(locale))
+        const rightQty = Number(item.to_material_qty).toLocaleString(toIntlLocale(locale))
 
         return {
           id: item.id,

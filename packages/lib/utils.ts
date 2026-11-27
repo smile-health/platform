@@ -259,7 +259,9 @@ export function formatPeriodName(
   language = "en"
 ): string | null {
   if (!month || !year) return null;
-  const formatter = new Intl.DateTimeFormat(language, {
+  // Arabic keeps Latin digits (BA-949).
+  const locale = language.split("-")[0] === "ar" ? "ar-u-nu-latn" : language;
+  const formatter = new Intl.DateTimeFormat(locale, {
     month: "long",
     year: "numeric",
   });
