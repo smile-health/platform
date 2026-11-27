@@ -142,7 +142,7 @@ export const InfiniteScrollList = <Schema, Value extends RowData>({
       )}
 
       {config.totalItems?.show && (
-        <div className={cx('ui:text-gray-500 ui:text-right')}>
+        <div className={cx('ui:text-gray-500 ui:text-end')}>
           <p>
             <strong className="ui:text-dark-blue ui:text-sm">
               {!isLoading ? (totalItems ?? 0) : '-'}

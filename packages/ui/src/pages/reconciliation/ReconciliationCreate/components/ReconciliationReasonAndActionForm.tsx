@@ -129,7 +129,7 @@ const ReconciliationReasonAndActionForm = ({
           </DialogHeader>
           <DialogContent className="ui:p-0! ui:overflow-hidden!">
             <div className="ui:flex ui:flex-row ui:border-t ui:border-[#D2D2D2]">
-              <div className="ui:w-64 ui:border-r ui:border-[#D2D2D2]">
+              <div className="ui:w-64 ui:border-e ui:border-[#D2D2D2]">
                 <div className="ui:flex ui:flex-col ui:max-h-[168px] ui:overflow-auto">
                   {data?.map((item, index) => (
                     <div
@@ -150,7 +150,7 @@ const ReconciliationReasonAndActionForm = ({
                       {index !== 0 ? (
                         <button
                           id={`btn-delete-reason-action-${index.toString()}`}
-                          className="ui:text-dark-teal ui:pr-3"
+                          className="ui:text-dark-teal ui:pe-3"
                           type="button"
                           onClick={() => removeReason(index)}
                         >

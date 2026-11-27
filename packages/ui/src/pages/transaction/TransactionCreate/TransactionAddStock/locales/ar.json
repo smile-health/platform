@@ -1,0 +1,78 @@
+{
+  "title": "المعاملة",
+  "transaction_form": "نموذج المعاملة",
+  "transaction_detail": "تفاصيل المعاملة",
+  "select_activity": "اختر النشاط",
+  "placeholder_select_activity": "اختر النشاط",
+  "caption_activity": "الأنشطة المعروضة هي فقط الأنشطة التي لا تزال نشطة على هذه المنشأة",
+  "entity_name": "اسم المنشأة",
+  "select_entity": "اختر اسم المنشأة",
+  "transaction_type": "نوع المعاملة",
+  "select_transaction_type": "اختر نوع المعاملة",
+  "transaction_table": "جدول المعاملات",
+  "send": "إرسال",
+  "reset": "إعادة تعيين",
+  "select_reason": "اختر السبب",
+  "enter_reason": "يرجى إدخال السبب",
+  "batch": "دفعة",
+  "detail": "التفاصيل",
+  "add_material": "إضافة مادة",
+  "cancel": "إلغاء",
+  "save": "حفظ",
+  "from": "من",
+  "select_status": "اختر الحالة",
+  "delete": "إزالة",
+  "max": "الحد الأقصى",
+  "close": "إغلاق",
+  "enter_qty": "يرجى إدخال الكمية",
+  "choose_manufacture": "اختر الشركة المصنعة",
+  "enter_batch_code": "يرجى إدخال رمز الدفعة",
+  "choose_budget_source": "اختر مصدر الموازنة",
+  "choose_budget_year": "اختر سنة الموازنة",
+  "enter_total_price": "يرجى إدخال السعر الإجمالي",
+  "caption_detail_batch": "قائمة {{type}}",
+  "info_purchase_price": "معلومة: أدخل الكمية والسعر الإجمالي لحساب السعر (السعر الإجمالي ÷ الكمية).",
+  "error_message_complete_data": "أكمل جميع البيانات",
+  "table": {
+    "column": {
+      "activity": "النشاط",
+      "stock_on_hand": "المخزون الحالي",
+      "available_stock": "المخزون المتاح",
+      "quantity": "الكمية",
+      "reason": "السبب",
+      "action": "الإجراء",
+      "batch_code": "رمز الدفعة",
+      "production_date": "تاريخ الإنتاج",
+      "manufacturer": "الشركة المصنعة",
+      "expired_date": "تاريخ الانتهاء",
+      "allocated": "المخصص",
+      "material_status": "حالة المادة",
+      "unit": "الوحدة",
+      "budget_source": "مصدر الموازنة",
+      "budget_year": "سنة الموازنة",
+      "total_price": "السعر الإجمالي",
+      "purchase_per_unit": "السعر",
+      "material_info": "معلومات المادة",
+      "stock_info": "معلومات المخزون",
+      "batch_info": "معلومات {{type}}",
+      "budget_info": "معلومات الموازنة",
+      "edit": "تعديل"
+    }
+  },
+  "validation": {
+    "quantity_must_multiply": "يجب أن تكون الكمية من مضاعفات {{number}}",
+    "required_materials": "لم تتم إضافة أي مواد بعد"
+  },
+  "currency": {
+    "IDR": "IDR"
+  },
+  "add_new_batch": "إضافة دفعة جديدة",
+  "error_production_date": "لا يمكن أن يكون تاريخ الإنتاج بعد اليوم",
+  "error_expired_date": "لا يمكن أن يكون تاريخ الانتهاء قبل اليوم",
+  "toast": {
+    "success": {
+      "create": "تم حفظ معاملة إضافة المخزون بنجاح"
+    }
+  },
+  "restricted": "مقيّد"
+}

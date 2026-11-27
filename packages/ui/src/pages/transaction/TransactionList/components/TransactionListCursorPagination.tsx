@@ -89,7 +89,7 @@ const TransactionListCursorPagination: React.FC<Props> = ({ data }) => {
         >
           <div className="ui:flex ui:items-center ui:space-x-1 ui:px-2">
             <div>
-              <ChevronLeft />
+              <ChevronLeft className="ui:rtl:-scale-x-100" />
             </div>
             <div className="ui:hidden ui:md:block">
               {t('common:pagination.previous')}
@@ -105,7 +105,7 @@ const TransactionListCursorPagination: React.FC<Props> = ({ data }) => {
           disabled={!nextCursor}
         >
           <div>
-            <ChevronRight />
+            <ChevronRight className="ui:rtl:-scale-x-100" />
           </div>
           <div className="ui:hidden ui:md:block">
             {t('common:pagination.next')}

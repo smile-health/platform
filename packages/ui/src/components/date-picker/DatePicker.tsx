@@ -53,12 +53,12 @@ export function DatePicker(props: DatePickerProps) {
 
   return (
     <I18nProvider locale={props.locale ?? 'en-UK'}>
-      <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-left">
+      <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-start">
         <div
           {...groupProps}
           ref={ref}
           className={cx(
-            'ui:flex ui:items-center ui:justify-center ui:rounded ui:border ui:pr-1',
+            'ui:flex ui:items-center ui:justify-center ui:rounded ui:border ui:pe-1',
             //size style
             {
               'ui:h-8 ui:text-sm': size === 'sm',

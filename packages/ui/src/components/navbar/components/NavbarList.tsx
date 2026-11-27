@@ -29,8 +29,8 @@ const NavbarList = forwardRef<HTMLButtonElement, NavbarListProps>(
         >
           <div className="ui:flex ui:items-center ui:justify-start">
             {title}
-            <div className="ui:ml-2">
-              <ChevronRight className="ui:w-4 ui:h-4 ui:rotate-90" />
+            <div className="ui:ms-2">
+              <ChevronRight className="ui:w-4 ui:h-4 ui:rotate-90 ui:rtl:-scale-x-100" />
             </div>
           </div>
         </button>

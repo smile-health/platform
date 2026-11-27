@@ -46,7 +46,7 @@ export default function OrderCreateReturnModalNeedRelation({
           {list.map((item, index) => (
             <li
               key={index}
-              className="ui:border ui:bg-[#F5F5F4] ui:border-neutral-300 ui:list-disc ui:list-inside ui:w-full ui:px-3 ui:py-1 ui:text-left"
+              className="ui:border ui:bg-[#F5F5F4] ui:border-neutral-300 ui:list-disc ui:list-inside ui:w-full ui:px-3 ui:py-1 ui:text-start"
             >
               {item}
             </li>

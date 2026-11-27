@@ -1,0 +1,132 @@
+{
+  "list": {
+    "title": "نوع الأصل",
+    "list": "إعدادات نوع الأصل",
+    "add": "إضافة نوع أصل",
+    "status": "حالة نوع الأصل",
+    "tab": {
+      "list": "قائمة أنواع الأصول",
+      "create": "إضافة نوع أصل"
+    },
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "ابحث عن نوع الأصل"
+      },
+      "program": {
+        "label": "برنامج",
+        "placeholder": "اختر برنامجًا"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "name": "اسم نوع الأصل",
+      "workspace": "برنامج",
+      "update_at": "تاريخ التحديث",
+      "update_by": "حُدّث بواسطة",
+      "action": "إجراء"
+    },
+    "import": {
+      "asset_type_cce": "معدات سلسلة التبريد",
+      "asset_type_warehouse": "مستودع"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "إضافة نوع أصل",
+      "detail": "تفاصيل نوع الأصل",
+      "edit": "تعديل نوع الأصل"
+    },
+    "detail": {
+      "header": {
+        "asset_utilization": "استخدام الأصل",
+        "warning": "لا يُسمح بالتغييرات. نوع الأصل هذا مرتبط بالفعل بطراز أصل.",
+        "detail": "التفاصيل"
+      },
+      "label": {
+        "name": "اسم نوع الأصل",
+        "description": "الوصف",
+        "last_updated_at": "آخر تحديث في",
+        "last_updated_by": "آخر تحديث بواسطة",
+        "is_cce_equipment": "هل هو CCE (معدات سلسلة التبريد)؟",
+        "is_warehouse": "هل هو مستودع؟",
+        "temperature_threshold": "حد درجة الحرارة",
+        "is_adjustable": "هل حد درجة الحرارة قابل للتعديل؟",
+        "humidity_threshold": {
+          "label": "حد الرطوبة",
+          "min_humidity": "أدنى رطوبة",
+          "max_humidity": "أقصى رطوبة"
+        }
+      },
+      "placeholder": {
+        "name": "اسم نوع الأصل",
+        "description": "الوصف",
+        "temp_treshold_min": "مثال: 10",
+        "temp_treshold_max": "مثال: 20"
+      },
+      "validation": {
+        "max_greater_min": "يجب أن تكون درجة الحرارة القصوى أقل من أو مساوية لدرجة الحرارة الدنيا",
+        "min_greater_max": "يجب أن تكون درجة الحرارة الدنيا أقل من أو تساوي درجة الحرارة العظمى"
+      },
+      "is_warehouse": {
+        "label": "هل هو مستودع؟",
+        "radio": {
+          "yes": "نعم",
+          "no": "لا"
+        }
+      },
+      "is_cce_equipment": {
+        "label": "هل هو CCE (معدات سلسلة التبريد)؟",
+        "radio": {
+          "yes": "نعم",
+          "no": "لا"
+        }
+      },
+      "temperature_threshold": {
+        "label": "عتبة درجة الحرارة",
+        "warning": "لا يمكن التراجع عن عتبة درجة الحرارة المحددة (إلغاء تحديدها) بعد الإرسال",
+        "column": {
+          "min_temperature": "الحد الأدنى لدرجة الحرارة",
+          "max_temperature": "الحد الأعلى لدرجة الحرارة"
+        }
+      },
+      "humidity_threshold": {
+        "label": "عتبة الرطوبة",
+        "warning": "لا يمكن التراجع عن عتبة الرطوبة المحددة (إلغاء تحديدها) بعد الإرسال",
+        "column": {
+          "min_humidity": "الحد الأدنى للرطوبة",
+          "max_humidity": "الحد الأعلى للرطوبة"
+        }
+      },
+      "is_adjustable": {
+        "label": "هل عتبة درجة الحرارة قابلة للتعديل؟",
+        "radio": {
+          "yes": "نعم",
+          "no": "لا"
+        }
+      }
+    },
+    "program": {
+      "title": "البرامج",
+      "without_program": "لم يتم تطبيق أي برنامج"
+    }
+  },
+  "detail": {
+    "title": "تفاصيل نوع الأصل"
+  },
+  "action": {
+    "delete": {
+      "button": "حذف",
+      "confirmation": "هل أنت متأكد من رغبتك في حذف نوع الأصل هذا؟",
+      "description": "لا يمكن استعادة العنصر المحذوف"
+    },
+    "activate": {
+      "confirmation": "هل أنت متأكد من رغبتك في تفعيل نوع الأصل هذا؟"
+    },
+    "deactivate": {
+      "confirmation": "هل أنت متأكد من رغبتك في إلغاء تفعيل نوع الأصل هذا؟"
+    }
+  }
+}

@@ -30,7 +30,7 @@ export default function ReconciliationListReasonAndAction({
           </div>
         ))}
       </div>
-      <div className="ui:text-left">
+      <div className="ui:text-start">
         <Button
           variant="subtle"
           color="primary"

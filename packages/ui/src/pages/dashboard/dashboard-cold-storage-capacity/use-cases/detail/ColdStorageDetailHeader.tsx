@@ -10,7 +10,7 @@ export function ColdStorageDetailHeader() {
 
   return (
     <DashboardBox.Header className="ui:bg-gray-100 ui:pt-6 ui:border-b ui:border-gray-300 ui:w-full">
-      <div className="ui:flex ui:items-start ui:justify-between ui:w-full ui:text-left">
+      <div className="ui:flex ui:items-start ui:justify-between ui:w-full ui:text-start">
         <div>
           <h3 className="ui:text-base ui:font-semibold">
             {t('section.details.title')}

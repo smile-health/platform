@@ -102,7 +102,7 @@ const EntityDetailCustomerVendorTemplateImporting: React.FC<Props> = ({
           onClick={() => downloadQuery.refetch()}
         >
           <div className="ui:flex ui:justify-between ui:items-center">
-            <div className="ui:mr-2">
+            <div className="ui:me-2">
               <Download />
             </div>
             {t('common:download_template')}
@@ -110,13 +110,13 @@ const EntityDetailCustomerVendorTemplateImporting: React.FC<Props> = ({
         </Button>
         <Button
           type="button"
-          className="ui:px-[18px] ui:ml-[16px]"
+          className="ui:px-[18px] ui:ms-[16px]"
           color="primary"
           disabled={entity?.status === BOOLEAN.FALSE}
           onClick={() => setShowImport(true)}
         >
           <div className="ui:flex ui:justify-between ui:items-center">
-            <div className="ui:mr-2">
+            <div className="ui:me-2">
               <UploadIcon />
             </div>
             {t('entity:detail.customer_vendor.import_data_customer')}

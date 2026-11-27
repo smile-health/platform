@@ -1,0 +1,109 @@
+{
+  "title": {
+    "page": "لوحة التخطيط الدقيق",
+    "tabs": {
+      "province": "المقاطعة",
+      "regency": "المدينة",
+      "subdistrict": "المنطقة الفرعية",
+      "village": "القرية"
+    },
+    "dashboard": {
+      "chart": {
+        "chart": "مخطط",
+        "target": "الهدف",
+        "consumption": "الاستهلاك"
+      },
+      "table": "جدول",
+      "appearance": "المظهر",
+      "target-consumption-age": "الهدف مقابل الاستهلاك",
+      "target-consumption-vaccination": "الهدف مقابل الفعلي",
+      "distribution-coverage-achievement": "توزيع تحقيق التغطية",
+      "proportion-of-aefi": "نسبة AEFI",
+      "total-target": "إجمالي الهدف"
+    }
+  },
+  "subtitle": {
+    "dashboard": {
+      "target-consumption-age": "يتم تجميع تكرار البيانات المعروض بناءً على العمر",
+      "target-consumption-vaccination": "يتم تجميع تكرار البيانات المعروض بناءً على التحصين",
+      "distribution-coverage-achievement": "نسبة الاستهلاك مقسومة على الهدف",
+      "proportion-of-aefi": "يتم تجميع تكرار البيانات المعروض بناءً على الجنس",
+      "total-target": "يتم تجميع البيانات المعروضة بناءً على الفئة المستهدفة ومادة اللقاح"
+    }
+  },
+  "data": {
+    "region": "المنطقة",
+    "receipts": "الاستلامات",
+    "target": "الهدف",
+    "consumption": "الاستهلاك"
+  },
+  "column": {
+    "age": "العمر",
+    "vaccine": "اللقاح",
+    "region": "المنطقة",
+    "Bayi Baru Lahir": "مولود جديد",
+    "Bayi Baru Lahir/Surviving Infant": "مولود جديد/رضيع على قيد الحياة",
+    "Surviving Infant": "رضيع على قيد الحياة",
+    "Baduta": "أقل من عامين",
+    "BIAS": "BIAS",
+    "group": {
+      "< 24 hours": "< 24 ساعة",
+      "1 month old": "عمر شهر واحد",
+      "0-1 month old": "عمر 0-1 شهر",
+      "2 months old": "عمر شهرين",
+      "3 months old": "عمر 3 أشهر",
+      "4 months old": "عمر 4 أشهر",
+      "9 months old": "عمر 9 أشهر",
+      "10 months old": "عمر 10 أشهر",
+      "12 months old": "عمر 12 شهرًا",
+      "18 months old": "عمر 18 شهرًا",
+      "Usia 7 tahun (Kelas 1)": "العمر 7 سنوات (الصف 1)",
+      "Usia 8 tahun (Kelas 2)": "العمر 8 سنوات (الصف 2)",
+      "Usia 11 tahun (Kelas 5)": "العمر 11 سنة (الصف 5)"
+    }
+  },
+  "form": {
+    "period": {
+      "label": "الفترة"
+    },
+    "target": {
+      "group": {
+        "label": "الفئة المستهدفة",
+        "placeholder": "اختر الفئة المستهدفة"
+      }
+    },
+    "gender": {
+      "label": "الجنس",
+      "placeholder": "اختر الجنس",
+      "options": {
+        "male": "ذكر",
+        "female": "أنثى"
+      }
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "city": {
+      "label": "المدينة",
+      "placeholder": "اختر المدينة"
+    },
+    "sub-district": {
+      "label": "المنطقة الفرعية",
+      "placeholder": "اختر المنطقة الفرعية"
+    },
+    "village": {
+      "label": "القرية",
+      "placeholder": "اختر القرية"
+    },
+    "material": {
+      "label": "المادة",
+      "placeholder": "اختر المادة"
+    },
+    "batch": {
+      "label": "الدفعة",
+      "placeholder": "اختر الدفعة"
+    }
+  },
+  "close": "إغلاق"
+}

@@ -167,7 +167,7 @@ export default function ProgramSelection({
                     sizeIcon={40}
                     className={{
                       wrapper: 'ui:gap-4',
-                      title: 'ui:text-left',
+                      title: 'ui:text-start',
                     }}
                   />
 

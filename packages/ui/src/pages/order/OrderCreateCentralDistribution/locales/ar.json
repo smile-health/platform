@@ -1,0 +1,220 @@
+{
+  "title": "إنشاء توزيع مركزي جديد",
+  "section": {
+    "detail": "تفاصيل الطلب",
+    "material": "المادة في {{form}}",
+    "distribution_table": "جدول التوزيع المركزي",
+    "batch": {
+      "list": "قائمة الدفعات",
+      "add": "إضافة دفعة جديدة",
+      "edit": "تعديل الدفعة"
+    }
+  },
+  "info": {
+    "confirmation": {
+      "reset": "هل أنت متأكد من رغبتك في حذف البيانات المدخلة؟",
+      "submit": "هل أنت متأكد من رغبتك في حفظ هذه البيانات؟"
+    },
+    "material": {
+      "empty": "أكمل تفاصيل الطلب أولاً",
+      "available": "انقر على مربع الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول التوزيع المركزي أدناه"
+    },
+    "empty": {
+      "title": "لا توجد بيانات متاحة",
+      "description": {
+        "material": "هذه القائمة فارغة حالياً. يرجى تحديد المواد.",
+        "batch": "هذه القائمة فارغة حالياً. يرجى إضافة دفعة جديدة"
+      }
+    },
+    "message": {
+      "new_distribution": "توزيع مركزي جديد"
+    }
+  },
+  "action": {
+    "save": "حفظ",
+    "remove": "إزالة",
+    "cancel": "إلغاء",
+    "edit": "تعديل",
+    "new_batch": "دفعة جديدة",
+    "quantity": {
+      "batch": {
+        "add": "دفعة",
+        "update": "تحديث الدفعة"
+      },
+      "non_batch": {
+        "add": "الكمية",
+        "update": "تحديث الكمية"
+      }
+    }
+  },
+  "form": {
+    "vendor": {
+      "label": "المرسل",
+      "placeholder": "اختر المرسل",
+      "validation": {
+        "required": "المرسل مطلوب"
+      }
+    },
+    "customer": {
+      "label": "المستلم",
+      "placeholder": "اختر المستلم",
+      "validation": {
+        "required": "المستلم مطلوب"
+      }
+    },
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط",
+      "info": "الأنشطة المعروضة هي فقط الأنشطة التي لا تزال نشطة في هذه المنشأة",
+      "validation": {
+        "required": "النشاط مطلوب"
+      }
+    },
+    "delivery": {
+      "label": "نوع التسليم",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "نوع التسليم مطلوب"
+      }
+    },
+    "date": {
+      "required": {
+        "label": "التاريخ المطلوب",
+        "validation": {
+          "invalid": "يجب أن يكون التاريخ اليوم أو لاحقًا"
+        }
+      },
+      "expired": {
+        "label": "تاريخ الانتهاء",
+        "validation": {
+          "required": "تاريخ الانتهاء مطلوب",
+          "expired_date_can_not_be_in_past": "لا يمكن أن يكون تاريخ الانتهاء قبل اليوم"
+        }
+      },
+      "production": {
+        "label": "تاريخ الإنتاج",
+        "validation": {
+          "required": "تاريخ الإنتاج مطلوب"
+        }
+      }
+    },
+    "do": {
+      "label": "رقم DO",
+      "placeholder": "أدخل رقم DO",
+      "validation": {
+        "required": "رقم DO مطلوب"
+      }
+    },
+    "po": {
+      "label": "رقم العقد",
+      "placeholder": "اكتب أو اختر من القائمة",
+      "validation": {
+        "required": "رقم العقد مطلوب"
+      }
+    },
+    "comment": {
+      "label": "تعليق",
+      "placeholder": "يرجى إدخال تعليق"
+    },
+    "material": {
+      "search": {
+        "placeholder": "البحث عن مادة"
+      },
+      "add": {
+        "placeholder": "إضافة مادة"
+      }
+    },
+    "order_items": {
+      "validation": {
+        "required": "لم تختر أي مادة"
+      }
+    },
+    "batch": {
+      "validation": {
+        "required": "لا يمكن أن تكون بيانات الدفعة فارغة"
+      },
+      "id": {
+        "label": "معرّف الدفعة (ID)",
+        "placeholder": "أدخل معرّف الدفعة (ID)",
+        "validation": {
+          "required": "معرّف الدفعة (ID) مطلوب"
+        }
+      }
+    },
+    "ordered_qty": {
+      "placeholder": "يرجى إدخال الكمية",
+      "validation": {
+        "required": "الكمية مطلوبة",
+        "min": "يجب ألا تقل الكمية عن 0",
+        "pieces": "يجب أن تكون الكمية من مضاعفات {{value}}"
+      }
+    },
+    "price": {
+      "total": {
+        "placeholder": "أدخل السعر الإجمالي"
+      },
+      "unit": {
+        "placeholder": "السعر/{{unit}}"
+      }
+    },
+    "manufacturer": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر الشركة المصنعة",
+      "validation": {
+        "required": "الشركة المصنعة مطلوبة"
+      }
+    },
+    "plan": {
+      "year": {
+        "label": "سنة الموازنة",
+        "placeholder": "اختر سنة الموازنة",
+        "validation": {
+          "required": "سنة الموازنة مطلوبة"
+        }
+      },
+      "source": {
+        "label": "مصدر الموازنة",
+        "placeholder": "اختر مصدر الموازنة",
+        "validation": {
+          "required": "مصدر الموازنة مطلوب"
+        }
+      }
+    }
+  },
+  "column": {
+    "material_name": "اسم المادة",
+    "selection": "التحديد",
+    "batch_info": "معلومات الدفعة",
+    "quantity": "الكمية",
+    "quantity_unit": "الكمية (الوحدة: {{unit}})",
+    "plan": {
+      "year": "سنة الموازنة",
+      "source": "مصدر الموازنة"
+    },
+    "price": {
+      "total": "السعر الإجمالي",
+      "unit": "السعر/{{unit}}"
+    },
+    "action": "الإجراء"
+  },
+  "label": {
+    "batch_code": "رمز الدفعة",
+    "manufacturer": "الشركة المصنعة",
+    "allocated": "المخصص",
+    "plan": {
+      "year": "سنة الموازنة",
+      "source": "مصدر الموازنة"
+    },
+    "date": {
+      "expired": "تاريخ الانتهاء",
+      "production": "تاريخ الإنتاج"
+    },
+    "option": {
+      "create": "إنشاء {{ value }}"
+    }
+  },
+  "validation": {
+    "batch_code_alread_exist": "ID الدفعة متاح بالفعل مع نفس الشركة المصنعة",
+    "manufacturer_alread_exist": "لا يمكن إضافة دفعة جديدة مع نفس الشركة المصنعة"
+  }
+}

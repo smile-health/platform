@@ -139,7 +139,7 @@ export function DashboardBoxConfig({
           </>
         )}
       </div>
-      <div className="ui:absolute ui:right-0 ui:flex ui:justify-end ui:items-center ui:gap-4">
+      <div className="ui:absolute ui:end-0 ui:flex ui:justify-end ui:items-center ui:gap-4">
         {sort?.show && (
           <ReactSelect
             data-testid="sort"

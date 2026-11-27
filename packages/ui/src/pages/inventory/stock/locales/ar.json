@@ -1,0 +1,136 @@
+{
+  "meta": "المخزون",
+  "title": "عرض المخزون",
+  "filter": {
+    "label": {
+      "activity": "النشاط",
+      "material_type": "نوع المادة",
+      "material_hirearchy": "قالب المنتج",
+      "expired_date": "تاريخ الانتهاء",
+      "entity": "المنشأة",
+      "entity_tag": "وسم المنشأة",
+      "province": "المحافظة",
+      "city": "المدينة/المنطقة",
+      "primary_health_care": "الرعاية الصحية الأولية",
+      "primary_vendor": "المورد الرئيسي"
+    },
+    "placeholder": {
+      "activity": "ابحث عن النشاط",
+      "material_type": "ابحث عن نوع المادة",
+      "material": "ابحث عن اسم المادة",
+      "expired_date": "dd/mm/yyyy - dd/mm/yyyy",
+      "entity": "ابحث عن اسم المنشأة",
+      "entity_tag": "اختر وسم المنشأة",
+      "province": "اختر المحافظة",
+      "city": "اختر المدينة/المنطقة",
+      "primary_health_care": "اختر الرعاية الصحية الأولية",
+      "primary_vendor": "اختر المورد الرئيسي",
+      "batch": "اختر الدفعة"
+    }
+  },
+  "table": {
+    "title": {
+      "trademark": "متغير المنتج",
+      "activity": "النشاط",
+      "budget_source": "مصدر ميزانية الدفعة {{name}}"
+    },
+    "column": {
+      "material": {
+        "material_hirearchy": "قالب المنتج",
+        "enitity_name": "اسم المنشأة",
+        "stock_on_hand": "المخزون الحالي",
+        "allocated": "المخصص",
+        "available_stock": "المخزون المتاح",
+        "in_transit": "قيد النقل",
+        "action": "إجراء",
+        "updated_at": "آخر تحديث",
+        "vial": [
+          "{{value}} (قارورة مفتوحة)",
+          "{{value}} (قارورة مغلقة)",
+          "{{value}} (قارورة مفتوحة)",
+          "{{value}} (قارورة مغلقة)"
+        ],
+        "open_vial": "قارورة مفتوحة",
+        "close_vial": "قارورة مغلقة"
+      },
+      "activity": {
+        "name": "النشاط"
+      },
+      "batch": {
+        "info": "معلومات الدفعة",
+        "stock_info": "معلومات المخزون",
+        "budget_info": "معلومات الموازنة",
+        "production_date": "تاريخ الإنتاج: {{value}}",
+        "expired_date": "تاريخ الانتهاء: {{value}}",
+        "manufacturer": "الشركة المصنعة: {{value}}",
+        "stock": {
+          "on_hand": "المخزون الفعلي: {{value}}",
+          "allocated": "المخصص: {{value}}",
+          "available": "المخزون المتاح: {{value}}",
+          "in_transit": "قيد النقل: {{value}}"
+        }
+      },
+      "budget_source": {
+        "name": "مصدر الموازنة: {{value}}",
+        "price": "السعر ({{currency}}): {{value}}",
+        "total_price": "السعر الإجمالي ({{currency}}): {{value}}"
+      }
+    },
+    "action": {
+      "trademark": "عرض متغير المنتج",
+      "batch": "عرض الدفعة",
+      "activity": "عرض النشاط",
+      "budget_source": "عرض مصدر الموازنة",
+      "detail": "التفاصيل"
+    }
+  },
+  "popup_batch": {
+    "title": "تفاصيل الدفعة",
+    "hierarchy": [
+      "المادة - قالب المنتج : {{material}}",
+      "دفعة من متغير المنتج - {{batch}}"
+    ],
+    "non_hierarchy": "النشاط {{activity}} والمادة {{material}}"
+  },
+  "detail": {
+    "title": "تفاصيل المخزون",
+    "entity": {
+      "title": "المنشأة",
+      "name": "اسم المنشأة",
+      "address": "العنوان",
+      "updated_at": "آخر تحديث"
+    },
+    "material": {
+      "name": [
+        "اسم المادة (قالب المنتج)",
+        "اسم المادة"
+      ],
+      "stock": {
+        "on_hand": "المخزون الفعلي",
+        "allocated": "المخصص",
+        "available": "المخزون المتاح",
+        "in_transit": "قيد النقل"
+      }
+    },
+    "title_table": [
+      "مادة متغير المنتج",
+      "النشاط"
+    ],
+    "drawer": {
+      "title": [
+        "قائمة النشاط",
+        "قائمة الدفعات"
+      ],
+      "description": {
+        "hiearchy": [
+          "قالب المنتج",
+          "متغير المنتج"
+        ],
+        "non_hiearchy": [
+          "النشاط",
+          "المادة"
+        ]
+      }
+    }
+  }
+}

@@ -109,7 +109,7 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
         <div className="ui:container ui:mx-auto ui:p-6 ui:min-h-[500px]">
           {backButton?.show && (
             <Button
-              leftIcon={<ArrowLeftIcon className="ui:h-5" />}
+              leftIcon={<ArrowLeftIcon className="ui:h-5 rtl:-scale-x-100" />}
               variant="subtle"
               onClick={handleClickBack}
             >

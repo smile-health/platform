@@ -40,7 +40,7 @@ const DropdownNotification = () => {
         <Bell className="ui:mt-3" />
         {count > 0 && (
           <div
-            className={`ui:absolute ui:flex ui:items-center ui:justify-center ui:h-5 ui:text-xs ui:text-white ui:bg-red-600 ui:rounded-full ui:left-0 ${
+            className={`ui:absolute ui:flex ui:items-center ui:justify-center ui:h-5 ui:text-xs ui:text-white ui:bg-red-600 ui:rounded-full ui:start-0 ${
               count < 10 ? 'ui:w-7' : 'ui:w-8'
             } ui:top-[-4px]`}
           >
@@ -49,7 +49,7 @@ const DropdownNotification = () => {
         )}
       </button>
       {show && (
-        <div className="ui:absolute ui:z-20 ui:bg-white ui:border ui:border-gray-300 ui:rounded-lg ui:shadow-xl ui:left-[-300px] ui:w-100">
+        <div className="ui:absolute ui:z-20 ui:bg-white ui:border ui:border-gray-300 ui:rounded-lg ui:shadow-xl ui:start-[-300px] ui:w-100">
           <div className="ui:flex ui:justify-between ui:items-center ui:px-6 ui:py-2 ui:text-sm ui:border-b ui:border-gray-300 ui:h-[64px]">
             <div className="text-dark font-semibold">
               {t('notification.title')}

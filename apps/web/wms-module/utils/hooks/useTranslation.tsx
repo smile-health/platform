@@ -3,7 +3,7 @@ import { LocaleContext } from '../context/localeContext';
 import { defaultLocale } from '../translations/config';
 import strings from '../translations/strings';
 
-type Locale = 'id' | 'en'; // Define the valid locales
+type Locale = 'id' | 'en' | 'ar'; // Define the valid locales
 
 interface TranslationStrings {
   [key: string]: string;
@@ -21,9 +21,9 @@ export default function useTranslation() {
   // Destructure and ensure default value for `locale`
   const { locale } = useContext(LocaleContext) || { locale: defaultLocale };
 
-  // Narrow `locale` type to 'id' | 'en' (fallback to defaultLocale if invalid)
+  // Narrow `locale` type to 'id' | 'en' | 'ar' (fallback to defaultLocale if invalid)
   const currentLocale: Locale =
-    locale === 'id' || locale === 'en' ? locale : defaultLocale;
+    locale === 'id' || locale === 'en' || locale === 'ar' ? locale : defaultLocale;
 
   function __(key: string): string {
     // Access the strings for the current locale, with a fallback if the key doesn't exist

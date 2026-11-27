@@ -1,0 +1,72 @@
+{
+  "list": {
+    "list": "تتبعات النفايات",
+    "waste_source": "ملخص حسب مصدر النفايات",
+    "waste_bag": "ملخص حسب كيس النفايات",
+    "waste_characteristic": "ملخص حسب خصائص النفايات",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "ابحث عن رمز المعاملة"
+      },
+      "date_range": {
+        "label": "النطاق الزمني",
+        "placeholder": "اختر النطاق الزمني"
+      },
+      "healthcare_facility_name": {
+        "label": "اسم منشأة الرعاية الصحية",
+        "placeholder": "اختر اسم منشأة الرعاية الصحية"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column_waste_source": {
+      "source_type": "نوع المصدر",
+      "waste_source_name": "اسم مصدر النفايات",
+      "total_waste_bag": "إجمالي أكياس النفايات",
+      "total_weight_in_kgs": "إجمالي الوزن ({{ unit }})"
+    },
+    "column_waste_bag": {
+      "waste_bag_code": "رمز كيس النفايات",
+      "healthcare_facility": "منشأة الرعاية الصحية",
+      "carrier": "الناقل",
+      "waste_treatment_facilitator": "ميسّر معالجة النفايات",
+      "waste_characteristic": "النوع / المجموعة / خصائص النفايات",
+      "waste_source": "مصدر النفايات",
+      "waste_in_date": "تاريخ دخول النفايات",
+      "storage_date_limit": "حد تاريخ التخزين (أيام)",
+      "status": "الحالة",
+      "weight_kg": "الوزن ({{ unit }})",
+      "healthcare_facility_operator": "مشغل منشأة الرعاية الصحية",
+      "action": "إجراء"
+    },
+    "column_waste_characteristics": {
+      "healthcare_facility": "منشأة الرعاية الصحية",
+      "waste_characteristic": "النوع / المجموعة / خصائص النفايات",
+      "waste_action": "متابعة",
+      "total_weight": "إجمالي الوزن ({{ unit }})",
+      "average_weight": "متوسط الوزن اليومي ({{ unit }})",
+      "total_bag": "إجمالي الأكياس (جيب)",
+      "average_bag": "متوسط عدد الأكياس يوميًا (جيب)"
+    },
+    "emptyDescription": "حدد نطاق التاريخ لتتبع النفايات"
+  },
+  "modal": {
+    "title": "سجل المعاملات",
+    "info": {
+      "transaction_code": "رمز المعاملة",
+      "healthcare_facility": "اسم منشأة الرعاية الصحية",
+      "waste_characteristic": "خصائص النفايات"
+    },
+    "column": {
+      "updated_status": "تاريخ تحديث الحالة",
+      "waste_action": "إجراء النفايات",
+      "waste_status": "حالة النفايات"
+    }
+  },
+  "information": {
+    "title": "معاملة التخلص من النفايات",
+    "description": "يتابع تتبع النفايات ويسجل بيانات مصدر النفايات، بما في ذلك إجمالي أكياس النفايات وإجمالي وزن النفايات."
+  }
+}

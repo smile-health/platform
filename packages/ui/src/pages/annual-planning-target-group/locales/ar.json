@@ -1,0 +1,57 @@
+{
+  "title": "الفئة المستهدفة",
+  "add": "إضافة فئة مستهدفة",
+  "edit": "تعديل الفئة المستهدفة",
+  "target_group": "الفئة المستهدفة",
+  "search_by_keyword": "البحث بالكلمة المفتاحية",
+  "message": {
+    "import_success": "تم استيراد بيانات الفئة المستهدفة بنجاح"
+  },
+  "toast": {
+    "create_and_activate_success": "تم إنشاء الفئة المستهدفة وتفعيلها بنجاح",
+    "create_success": "تم إنشاء الفئة المستهدفة بنجاح",
+    "update_and_activate_success": "تم تحديث الفئة المستهدفة وتفعيلها بنجاح",
+    "update_success": "تم تحديث الفئة المستهدفة بنجاح",
+    "activate_success": "تم تفعيل الفئة المستهدفة بنجاح",
+    "deactivate_success": "تم إلغاء تفعيل الفئة المستهدفة بنجاح",
+    "change_status_failed": "فشل تغيير حالة الفئة المستهدفة",
+    "delete_success": "تم حذف الفئة المستهدفة بنجاح"
+  },
+  "table": {
+    "target_group_name": "اسم الفئة المستهدفة",
+    "group_name": "اسم المجموعة",
+    "year": "السنة",
+    "type": "النوع",
+    "age": "العمر",
+    "status": "حالة البيانات",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "activate": "تفعيل",
+    "deactivate": "إلغاء التفعيل"
+  },
+  "add_target_group": "إضافة مجموعة مستهدفة",
+  "select_target_group": "اختيار مجموعة مستهدفة",
+  "age": "العمر",
+  "years": "سنة/سنوات",
+  "months": "شهر/أشهر",
+  "days": "يوم/أيام",
+  "from": "من",
+  "to": "إلى",
+  "from_to_age": "{{fromYear}} سنة {{fromMonth}} شهر {{fromDay}} يوم - {{toYear}} سنة {{toMonth}} شهر {{toDay}} يوم",
+  "from_to_forever_age": "{{fromYear}} سنة {{fromMonth}} شهر {{fromDay}} يوم - إلى الأبد",
+  "validation": {
+    "month_max": "لا يمكن أن يكون الشهر أكثر من 11، إذا أردت إدخال 12، فأدخل سنة واحدة فقط.",
+    "day_max": "لا يمكن أن يكون اليوم أكثر من 29، إذا أردت إدخال 30 أو 31، فأدخل شهرًا واحدًا فقط.",
+    "cannot_greater_than_to": "لا يمكن أن يكون «العمر من» أكبر من «العمر إلى»"
+  },
+  "confirmation_activation": {
+    "description": "هل أنت متأكد أنك تريد {{status}} هذه المجموعة المستهدفة؟",
+    "subdescription_activate": "ستظهر هذه المجموعة المستهدفة وستكون قابلة للاستخدام.",
+    "description_deactivate": "لن تظهر هذه المجموعة المستهدفة ولن تكون قابلة للاستخدام."
+  },
+  "confirmation_deletion": {
+    "description": "هل أنت متأكد أنك تريد حذف هذه المجموعة المستهدفة؟",
+    "subdescription": "لا يمكن التراجع عن هذا الإجراء."
+  },
+  "programs": "البرامج"
+}

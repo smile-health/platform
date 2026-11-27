@@ -133,7 +133,7 @@ const EntityMaterialManagementList: React.FC<Props> = ({
                     <Button
                       id={`view_details_${item?.material_id}`}
                       variant="light"
-                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:mr-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
+                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:me-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
                       type="button"
                       onClick={() => handleOpenMaterialActivityModal(item)}
                     >

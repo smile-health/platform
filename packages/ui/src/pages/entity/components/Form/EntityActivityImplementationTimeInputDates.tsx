@@ -245,7 +245,7 @@ const EntityActivityImplementationTimeInputDates: React.FC<Props> = ({
             }
             className="ui:w-fit"
           >
-            <Plus className="ui:w-4 ui:h-4 ui:mr-2" />
+            <Plus className="ui:w-4 ui:h-4 ui:me-2" />
             {t('common:add')}
           </Button>
         )}

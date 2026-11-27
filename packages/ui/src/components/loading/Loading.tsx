@@ -28,7 +28,7 @@ export const Loading = ({
   return (
     <div
       className={cx(props.className, {
-        'ui:bg-neutral-900/80 fixed left-0 top-0 z-50 h-full w-full ui:text-primary-contrast':
+        'ui:bg-neutral-900/80 fixed start-0 top-0 z-50 h-full w-full ui:text-primary-contrast':
           overlay,
       })}
     >

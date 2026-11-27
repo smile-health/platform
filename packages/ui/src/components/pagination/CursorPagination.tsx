@@ -104,7 +104,7 @@ const CursorPagination: React.FC<Props> = ({
           disabled={!prevCursor}
         >
           <div className="ui:flex ui:items-center ui:space-x-1 ui:px-2">
-            <ChevronLeft />
+            <ChevronLeft className="ui:rtl:-scale-x-100" />
             <div className="ui:hidden ui:md:block">
               {t('common:pagination.previous')}
             </div>
@@ -117,7 +117,7 @@ const CursorPagination: React.FC<Props> = ({
           onClick={() => onChangePagination({ cursor: nextCursor ?? null })}
           disabled={!nextCursor}
         >
-          <ChevronRight />
+          <ChevronRight className="ui:rtl:-scale-x-100" />
           <div className="ui:hidden ui:md:block">
             {t('common:pagination.next')}
           </div>

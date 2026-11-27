@@ -1,0 +1,187 @@
+{
+  "list": {
+    "list": "شراكة",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن رقم العقد"
+      },
+      "company_name": {
+        "label": "اسم الشركة",
+        "placeholder": "اختر اسم الشركة"
+      },
+      "waste_characteristic": {
+        "label": "الخاصية",
+        "placeholder": "اختر الخاصية"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "partnership_type": "نوع الشراكة",
+      "company_name": "اسم الشركة",
+      "entitas_name": "اسم الكيان",
+      "entity_name": "اسم المنشأة",
+      "contract_date": "تاريخ العقد",
+      "contract_start_date": "تاريخ بدء العقد",
+      "contract_end_date": "تاريخ انتهاء العقد",
+      "contract_id": "رقم العقد",
+      "partnership_status": "حالة الشراكة",
+      "pic_name": "اسم المسؤول",
+      "phone_number": "رقم الهاتف",
+      "position": "المنصب",
+      "price_kg": "السعر/kg",
+      "province": "المحافظة",
+      "city": "المدينة",
+      "address": "العنوان",
+      "latitude": "خط العرض",
+      "longitude": "خط الطول",
+      "waste_type": "نوع النفايات",
+      "waste_group": "مجموعة النفايات",
+      "waste_characteristic": "خاصية النفايات",
+      "last_updated": "آخر تحديث",
+      "waste_code": "رمز KLHK",
+      "nib": "NIB",
+      "action": "إجراء"
+    },
+    "column_third_party": {
+      "treatment_company ": "شركة المعالجة",
+      "landfill_company": "شركة مكب النفايات",
+      "recycle_company": "شركة إعادة التدوير"
+    },
+    "column_vehicle": {
+      "vehicle_type ": "نوع المركبة",
+      "vehicle_number": "رقم المركبة",
+      "capacity": "السعة (kg)"
+    },
+    "column_operator": {
+      "username ": "اسم المستخدم",
+      "name": "الاسم",
+      "role": "الدور",
+      "company_name": "اسم الشركة",
+      "company_type": "نوع الشركة",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف"
+    },
+    "column_classification_partnership": {
+      "waste_characteristics": "خاصية النفايات",
+      "waste_code": "رمز KLHK",
+      "price": "السعر/kg",
+      "partnership_type": "نوع الشراكة",
+      "contract_date": "تاريخ العقد",
+      "contract_start_date": "تاريخ بدء العقد",
+      "contract_end_date": "تاريخ انتهاء العقد",
+      "contract_id": "رقم العقد",
+      "partnership_status": "حالة الشراكة"
+    },
+    "button": {
+      "add": "إضافة شراكة",
+      "add_specification": "إضافة مواصفات النفايات",
+      "edit_specification": "تعديل مواصفات النفايات"
+    }
+  },
+  "title": {
+    "partnership": "الشراكة",
+    "list": "قائمة الشراكات",
+    "create": "إنشاء شراكة",
+    "edit": "تعديل الشراكة"
+  },
+  "form": {
+    "waste_specification": {
+      "label": "مواصفات النفايات",
+      "placeholder": "اختر مواصفات النفايات"
+    },
+    "waste_type": {
+      "label": "نوع النفايات",
+      "placeholder": "اختر نوع النفايات"
+    },
+    "waste_group": {
+      "label": "مجموعة النفايات",
+      "placeholder": "اختر مجموعة النفايات"
+    },
+    "waste_characteristic": {
+      "label": "خصائص النفايات",
+      "placeholder": "اختر الخصائص"
+    },
+    "partnership_type": {
+      "label": "نوع الشراكة",
+      "placeholder": "اختر نوع الشراكة"
+    },
+    "waste_category": {
+      "label": "فئة النفايات",
+      "placeholder": "اختر فئة النفايات"
+    },
+    "company_name": {
+      "label": "اسم الشركة",
+      "placeholder": "اختر اسم الشركة"
+    },
+    "pic_name": {
+      "label": "اسم PIC",
+      "placeholder": "أدخل اسم PIC"
+    },
+    "nib": {
+      "label": "NIB",
+      "placeholder": "NIB"
+    },
+    "phone_number": {
+      "label": "رقم الهاتف",
+      "placeholder": "أدخل رقم الهاتف"
+    },
+    "position": {
+      "label": "المنصب",
+      "placeholder": "أدخل المنصب"
+    },
+    "price_kg": {
+      "label": "السعر/كغ",
+      "placeholder": "أدخل السعر/كغ"
+    },
+    "contract_date": {
+      "label": "تاريخ العقد",
+      "placeholder": "أدخل تاريخ العقد"
+    },
+    "contract_id": {
+      "label": "رقم العقد",
+      "placeholder": "أدخل رقم العقد"
+    },
+    "partnership_status": {
+      "label": "حالة الشراكة",
+      "placeholder": "اختر حالة الشراكة"
+    },
+    "help_text_characteristic": "اتركه فارغًا لاختيار جميع الخصائص في هذه المجموعة"
+  },
+  "detail": {
+    "healthcare_info": "معلومات شراكة الرعاية الصحية",
+    "operator_info": "معلومات مشغّل الشريك",
+    "vehicle_info": "معلومات مركبات الشريك",
+    "third_party_info": "معلومات شراكة الطرف الثالث",
+    "classification_partnership_info": "معلومات الخصائص"
+  },
+  "status_partnership": {
+    "ACTIVE": "نشطة",
+    "SUSPENDED": "معلّقة",
+    "PENDING": "قيد الانتظار",
+    "TERMINATED": "منتهية",
+    "EXPIRED": "منتهية الصلاحية"
+  },
+  "status_partnership_info": {
+    "ACTIVE": "العقد نشط حاليًا",
+    "SUSPENDED": "العقد معلق مؤقتًا",
+    "PENDING": "العقد في انتظار الموافقة",
+    "TERMINATED": "تم إنهاء العقد أو لم يتم تجديده",
+    "EXPIRED": "انتهت فترة صلاحية العقد"
+  },
+  "provider_type": {
+    "TRANSPORTER": "الناقل فقط",
+    "TRANSPORTER_TREATMENT": "ناقل المعالجة",
+    "TRANSPORTER_LANDFILL": "ناقل مكب النفايات",
+    "TRANSPORTER_RECYCLER": "ناقل إعادة التدوير",
+    "SPECIALIZED_TREATMENT_PROVIDER": "ناقل متخصص",
+    "TRANSPORTER_GOVERNMENT": "ناقل حكومي",
+    "TRANSPORTER_GOVERNMENT_WASTE_BANK": "ناقل بنك النفايات الحكومي"
+  },
+  "information": {
+    "title": "الشراكة",
+    "description": "تراقب الشراكات بيانات الأطراف الثالثة التي تؤدي دورًا في إدارة النفايات وتديرها"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "list": {
+    "list": "إدارة أصول الرعاية الصحية",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث بالرقم التسلسلي"
+      },
+      "working_status": {
+        "label": "الحالة التشغيلية",
+        "placeholder": "اختر الحالة التشغيلية"
+      },
+      "status": {
+        "label": "الحالة",
+        "placeholder": "اختر الحالة"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "asset_type": "نوع الأصل",
+      "manufacture": "الشركة المصنعة",
+      "model": "الطراز",
+      "asset_id": "معرف الأصل",
+      "serial_number": "الرقم التسلسلي",
+      "asset_status": "الحالة",
+      "working_status": "الحالة التشغيلية",
+      "ownership_status": "حالة الملكية",
+      "ownership_qty": "الكمية المملوكة",
+      "action": "إجراء"
+    }
+  },
+  "title": {
+    "healthcare": "أصل رعاية صحية",
+    "list": "قائمة أصول الرعاية الصحية",
+    "create": "إنشاء أصل رعاية صحية",
+    "edit": "تعديل أصل رعاية صحية",
+    "detail": "تفاصيل أصل رعاية صحية"
+  },
+  "form": {
+    "dongle_id": {
+      "label": "معرف دونجل IoT",
+      "placeholder": "أدخل معرف دونجل IoT"
+    },
+    "error_dongle_id": "معرف IoT غير مصادق عليه. يرجى طلب الموافقة من وزارة الصحة."
+  },
+  "asset_status": {
+    "OPERATIONAL": "يعمل",
+    "UNDER_MAINTAINENCE": "إصلاح",
+    "OUT_OF_SERVICE": "تالف",
+    "IDLE": "احتياطي",
+    "NEED_REPAIR": "يحتاج إلى إصلاح",
+    "RETIRED": "مُستبعَد"
+  },
+  "working_status": {
+    "function": "يعمل",
+    "standby": "احتياطي",
+    "repair": "إصلاح",
+    "damaged": "تالف",
+    "need_repair": "يحتاج إلى إصلاح",
+    "disposed": "مُستبعَد"
+  },
+  "modal": {
+    "title": "تحذير",
+    "description": "يوجد عدم تطابق، المعرف {{dongleId}} لا يتطابق / فشلت الإعدادات. يرجى التواصل مع مزود الخدمة."
+  }
+}

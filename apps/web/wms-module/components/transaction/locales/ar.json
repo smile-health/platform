@@ -1,0 +1,69 @@
+{
+  "list": {
+    "list": "سجل المعاملات",
+    "logbook": "سجل المعاملات",
+    "bags": "الأكياس",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "ابحث عن معاملة"
+      },
+      "date_range": {
+        "label": "نطاق التاريخ",
+        "placeholder": "اختر نطاق التاريخ"
+      },
+      "healthcare_facility_name": {
+        "label": "اسم المنشأة الصحية",
+        "placeholder": "اختر اسم المنشأة الصحية"
+      },
+      "waste_group": {
+        "label": "مجموعة النفايات",
+        "placeholder": "اختر مجموعة النفايات"
+      },
+      "waste_type": {
+        "label": "نوع النفايات",
+        "placeholder": "اختر نوع النفايات"
+      },
+      "waste_characteristic": {
+        "label": "خصائص النفايات",
+        "placeholder": "اختر خصائص النفايات"
+      },
+      "waste_treatment": {
+        "label": "معالجة النفايات",
+        "placeholder": "اختر معالجة النفايات"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "waste_group_code": "رمز مجموعة النفايات",
+      "waste_code": "رمز النفايات",
+      "waste_bag_code": "رمز كيس النفايات",
+      "waste_characteristic": "النوع / المجموعة / خصائص النفايات",
+      "healthcare_facility": "منشأة رعاية صحية",
+      "waste_in_date": "تاريخ دخول النفايات",
+      "waste_source": "مصدر النفايات",
+      "waste_in_weight": "وزن النفايات الواردة ({{ unit }})",
+      "storage_date_limit": "الحد الأقصى للتخزين حتى التاريخ",
+      "waste_out_date": "تاريخ خروج النفايات",
+      "waste_out_weight": "وزن النفايات الخارجة ({{ unit }})",
+      "third_party": "الجهة المستقبِلة",
+      "manifest_number": "رقم المانيفست",
+      "remaining_waste_at_collection_place": "النفايات المتبقية في مكان الجمع ({{ unit }})",
+      "action": "إجراء"
+    },
+    "card": {
+      "total_kg": "إجمالي Kg",
+      "total_waste_bag": "إجمالي أكياس النفايات",
+      "total_waste_in": "إجمالي النفايات الواردة",
+      "total_waste_out": "إجمالي النفايات الخارجة",
+      "remaining_waste_at_collection_place": "النفايات المتبقية في مكان الجمع"
+    }
+  },
+  "information": {
+    "title": "سجل الحركات",
+    "description": "يسجّل سجل الحركات جميع الأنشطة والمعاملات وتغييرات البيانات التي تحدث في النظام زمنيًا وفي الوقت الفعلي في كل منشأة رعاية صحية.",
+    "sub_description": "بالنسبة لمستخدمي <bold>وزارة الصحة</bold> و<bold>الإدارات الصحية المحلية</bold> الذين يعملون كمنتجي نفايات، يمكنهم فقط عرض بيانات المعاملات المملوكة أو التي أنشأها كل مستخدم معني."
+  }
+}

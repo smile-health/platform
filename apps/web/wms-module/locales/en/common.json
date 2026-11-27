@@ -608,5 +608,11 @@
   },
   "setting_latlong": {
     "title": "Tutorial on Determining Latitude and Longitude"
+  },
+  "text_direction": {
+    "label": "Direction",
+    "auto": "Auto",
+    "ltr": "Left to right",
+    "rtl": "Right to left"
   }
 }

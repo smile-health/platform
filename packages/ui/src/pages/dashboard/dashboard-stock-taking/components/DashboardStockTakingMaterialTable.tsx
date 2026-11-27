@@ -66,10 +66,10 @@ export default function DashboardStockTakingMaterialTable({
       >
         <Thead>
           <Tr>
-            <Th rowSpan={2} className="ui:sticky ui:left-0 ui:bg-slate-100">
+            <Th rowSpan={2} className="ui:sticky ui:start-0 ui:bg-slate-100">
               No
             </Th>
-            <Th rowSpan={2} className="ui:sticky ui:left-9 ui:bg-slate-100">
+            <Th rowSpan={2} className="ui:sticky ui:start-9 ui:bg-slate-100">
               {t('column.entity.main')}
             </Th>
             {materials?.map((item) => (
@@ -92,7 +92,7 @@ export default function DashboardStockTakingMaterialTable({
               <Fragment key={item?.id}>
                 <Th className="ui:text-center">SMILE</Th>
                 <Th
-                  className={cx('ui:text-center ui:border-r', {
+                  className={cx('ui:text-center ui:border-e', {
                     'ui:border-gray-300': index === materials?.length - 1,
                   })}
                 >
@@ -105,10 +105,10 @@ export default function DashboardStockTakingMaterialTable({
         <Tbody>
           {table?.data?.map((item, index) => (
             <Tr key={item?.row}>
-              <Td className="ui:sticky ui:left-0 ui:bg-white">
+              <Td className="ui:sticky ui:start-0 ui:bg-white">
                 {(page - 1) * paginate + (index + 1)}
               </Td>
-              <Td className="ui:sticky ui:left-9 ui:bg-white ui:text-nowrap">
+              <Td className="ui:sticky ui:start-9 ui:bg-white ui:text-nowrap">
                 {item?.entity?.name}
               </Td>
 
@@ -127,7 +127,7 @@ export default function DashboardStockTakingMaterialTable({
                     >
                       <span>{formatNumber(item?.smile_stock)}</span>
                       {isMandatory && (
-                        <span className="ui:text-danger-600 ui:text-lg ui:ml-1">
+                        <span className="ui:text-danger-600 ui:text-lg ui:ms-1">
                           *
                         </span>
                       )}
@@ -140,7 +140,7 @@ export default function DashboardStockTakingMaterialTable({
                     >
                       <span>{formatNumber(item?.real_stock)}</span>
                       {isMandatory && (
-                        <span className="ui:text-danger-600 ui:text-lg ui:ml-1">
+                        <span className="ui:text-danger-600 ui:text-lg ui:ms-1">
                           *
                         </span>
                       )}

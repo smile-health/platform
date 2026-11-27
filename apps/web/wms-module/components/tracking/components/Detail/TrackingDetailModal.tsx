@@ -46,7 +46,7 @@ export const TrackingDetailModal: React.FC<TrackingDetailModalProps> = ({
         <p className="text-gray-500">{t('tracking:modal.title')}</p>
       </DialogHeader>
       <DialogContent className="ui:flex ui:flex-col ui:text-center ui:py-6 ui:border-y">
-        <div className="ui:grid ui:grid-cols-3 ui:gap-4 ui:text-left ui:mb-4">
+        <div className="ui:grid ui:grid-cols-3 ui:gap-4 ui:text-start ui:mb-4">
           <div>
             <p className="ui:text-sm ui:text-gray-500">
               {t('tracking:modal.info.transaction_code')}

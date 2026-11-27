@@ -156,12 +156,12 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ButtonProps>(
 
       //button group
       'ui:focus:group-[.is-group]:z-10',
-      'ui:first:group-[.is-group]:rounded-r-none!',
+      'ui:first:group-[.is-group]:rounded-e-none!',
       'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:rounded-none!',
-      'ui:last:group-[.is-group]:rounded-l-none!',
+      'ui:last:group-[.is-group]:rounded-s-none!',
 
-      'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:border-l-0!',
-      'ui:last:group-[.is-group]:border-l-0!',
+      'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:border-s-0!',
+      'ui:last:group-[.is-group]:border-s-0!',
       className
     )
 

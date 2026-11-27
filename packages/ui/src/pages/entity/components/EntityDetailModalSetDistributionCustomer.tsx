@@ -205,7 +205,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
               <div className="ui:flex ui:justify-end ui:items-center ui:w-[325px]">
                 <Button
                   variant="light"
-                  className="ui:mr-[16px] ui:p-0 ui:bg-transparent ui:hover:bg-transparent!"
+                  className="ui:me-[16px] ui:p-0 ui:bg-transparent ui:hover:bg-transparent!"
                   onClick={() =>
                     setValue('customers', [
                       ...watch('customers'),
@@ -214,7 +214,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                   }
                   type="button"
                 >
-                  <div className="ui:mr-[4.16px]">
+                  <div className="ui:me-[4.16px]">
                     <Plus />
                   </div>
                   {t('entity:detail.customer_vendor.add_customer')}
@@ -228,7 +228,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                   className="ui:my-[16px] ui:flex ui:justify-center ui:items-start"
                   key={idx?.toString()}
                 >
-                  <FormControl className="ui:mr-[16px] ui:w-full">
+                  <FormControl className="ui:me-[16px] ui:w-full">
                     <FormLabel className="ui:text-[14px] ui:leading-[20px]">
                       {t('entity:detail.customer_vendor.customer')}
                     </FormLabel>
@@ -323,7 +323,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                     <Button
                       variant="light"
                       color="danger"
-                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent! ui:ml-[16px] ui:mt-[24px]"
+                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent! ui:ms-[16px] ui:mt-[24px]"
                       onClick={() =>
                         setValue(
                           'customers',
@@ -335,7 +335,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
                       type="button"
                     >
                       {t('common:delete')}
-                      <div className="ui:ml-[4.16px] ui:rotate-45 ui:mt-1">
+                      <div className="ui:ms-[4.16px] ui:rotate-45 ui:mt-1">
                         <Plus />
                       </div>
                     </Button>
@@ -350,7 +350,7 @@ const EntityDetailModalSetDistributionCustomer: React.FC<Props> = ({
             <Button
               variant="outline"
               onClick={handleClose}
-              className="ui:mr-[12px] ui:w-full"
+              className="ui:me-[12px] ui:w-full"
               type="button"
               disabled={isProcessing}
             >

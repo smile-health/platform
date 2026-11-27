@@ -1,0 +1,159 @@
+{
+  "title": {
+    "index": "إعدادات المستخدم",
+    "add": "إضافة مستخدم",
+    "edit": "تعديل المستخدم",
+    "list": {
+      "index": "قائمة المستخدمين",
+      "management": "إدارة المستخدمين"
+    },
+    "user": "مستخدم",
+    "detail": "تفاصيل المستخدم",
+    "main": "المعلومات الرئيسية",
+    "additional": "معلومات إضافية",
+    "status": "حالة المستخدم",
+    "change_history": "سجل التغييرات",
+    "log": "معلومات نشاط المستخدم",
+    "entity": "معلومات المنشأة"
+  },
+  "column": {
+    "username": "اسم المستخدم",
+    "fullname": "الاسم الكامل",
+    "role": "الدور",
+    "firstname": "الاسم الأول",
+    "lastname": "اسم العائلة",
+    "location": "الموقع",
+    "entity": {
+      "index": "المنشأة",
+      "name": "اسم المنشأة",
+      "address": "عنوان المنشأة"
+    },
+    "mobile_phone": "رقم الهاتف",
+    "birthdate": "تاريخ الميلاد",
+    "gender": "الجنس",
+    "last": {
+      "login": "آخر تسجيل دخول",
+      "device": "آخر وصول للجهاز"
+    },
+    "status": "الحالة",
+    "action": "الإجراء"
+  },
+  "form": {
+    "name": {
+      "placeholder": "ابحث عن اسم المستخدم، الاسم الأول، اسم العائلة",
+      "label": "بحث"
+    },
+    "role": {
+      "label": "الدور",
+      "placeholder": "اختر الدور",
+      "validation": {
+        "required": "الدور مطلوب"
+      }
+    },
+    "primary_vendor": {
+      "label": "المورد الرئيسي",
+      "placeholder": "اختر المورد الرئيسي"
+    },
+    "date": {
+      "label": "التاريخ"
+    },
+    "username": {
+      "label": "اسم المستخدم",
+      "placeholder": "أدخل اسم المستخدم",
+      "validation": {
+        "required": "اسم المستخدم مطلوب",
+        "invalid": "لا يمكن أن يتكون اسم المستخدم إلا من الحروف والأرقام والنقاط والشرطات السفلية."
+      }
+    },
+    "firstname": {
+      "label": "الاسم الأول",
+      "placeholder": "أدخل الاسم الأول",
+      "validation": {
+        "required": "الاسم الأول مطلوب"
+      }
+    },
+    "lastname": {
+      "label": "اسم العائلة",
+      "placeholder": "أدخل اسم العائلة"
+    },
+    "email": {
+      "placeholder": "أدخل البريد الإلكتروني",
+      "validation": {
+        "required": "البريد الإلكتروني مطلوب",
+        "invalid": "البريد الإلكتروني غير صالح"
+      }
+    },
+    "password": {
+      "label": "كلمة المرور",
+      "placeholder": "أدخل كلمة المرور",
+      "validation": {
+        "required": "كلمة المرور مطلوبة",
+        "invalid": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل، وحرف صغير واحد، ورقم واحد، وحرف خاص واحد"
+      }
+    },
+    "password_confirmation": {
+      "label": "تأكيد كلمة المرور",
+      "placeholder": "أدخل تأكيد كلمة المرور",
+      "validation": {
+        "required": "تأكيد كلمة المرور مطلوب",
+        "match": "كلمة المرور غير متطابقة"
+      }
+    },
+    "manufacturer": {
+      "label": "الشركة المصنعة/مورّد IoT",
+      "placeholder": "اختر الشركة المصنعة/مورّد IoT",
+      "validation": {
+        "required": "الشركة المصنعة/مورّد IoT مطلوب"
+      }
+    },
+    "address": {
+      "label": "العنوان",
+      "placeholder": "أدخل العنوان",
+      "other_label": "الموقع"
+    },
+    "mobile_phone": {
+      "label": "رقم الهاتف المحمول",
+      "placeholder": "أدخل رقم الهاتف المحمول"
+    },
+    "birthdate": {
+      "label": "تاريخ الميلاد",
+      "placeholder": "أدخل تاريخ الميلاد"
+    },
+    "gender": {
+      "label": "الجنس",
+      "male": "ذكر",
+      "female": "أنثى",
+      "validation": {
+        "required": "الجنس مطلوب"
+      }
+    },
+    "view_only": {
+      "label": "عرض فقط"
+    },
+    "entity": {
+      "program": "تكون مساحة العمل متاحة بعد اختيار منشأة.",
+      "validation": {
+        "required": "المنشأة مطلوبة"
+      }
+    }
+  },
+  "confirmation": {
+    "activate": {
+      "question": "هل أنت متأكد من أنك تريد تفعيل هذا؟؟"
+    },
+    "deactivate": {
+      "question": "هل أنت متأكد من أنك تريد إلغاء تفعيل هذا؟",
+      "description": "سيفقد هذا المستخدم الوصول إلى SMILE."
+    }
+  },
+  "action": {
+    "see_changes": "عرض التغييرات"
+  },
+  "history": {
+    "information": "تم تحديث المعلومات",
+    "add": "إضافة",
+    "changed": "تم التغيير إلى",
+    "removed": "تمت الإزالة",
+    "password": "تم تحديث كلمة مرورك في {{date}}"
+  }
+}

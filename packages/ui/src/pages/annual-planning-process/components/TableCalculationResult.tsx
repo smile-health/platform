@@ -62,11 +62,11 @@ const TableCalculationResult: React.FC<Props> = (props) => {
           </Th>
         </Tr>
         <Tr>
-          <Th className="ui:w-48 ui:font-semibold ui:border-r">{t('annualPlanningProcess:create.form.calculation_result.column.one_year')}</Th>
-          <Th className="ui:w-48 ui:font-semibold ui:border-r">{t('annualPlanningProcess:create.form.calculation_result.column.one_month')}</Th>
-          <Th className="ui:w-48 ui:font-semibold ui:border-r">{t('annualPlanningProcess:create.form.calculation_result.column.one_week')}</Th>
-          <Th className="ui:w-48 ui:font-semibold ui:border-r">Min</Th>
-          <Th className="ui:w-48 ui:font-semibold ui:border-r">Max</Th>
+          <Th className="ui:w-48 ui:font-semibold ui:border-e">{t('annualPlanningProcess:create.form.calculation_result.column.one_year')}</Th>
+          <Th className="ui:w-48 ui:font-semibold ui:border-e">{t('annualPlanningProcess:create.form.calculation_result.column.one_month')}</Th>
+          <Th className="ui:w-48 ui:font-semibold ui:border-e">{t('annualPlanningProcess:create.form.calculation_result.column.one_week')}</Th>
+          <Th className="ui:w-48 ui:font-semibold ui:border-e">Min</Th>
+          <Th className="ui:w-48 ui:font-semibold ui:border-e">Max</Th>
         </Tr>
       </Thead>
       <Tbody>
@@ -75,8 +75,8 @@ const TableCalculationResult: React.FC<Props> = (props) => {
             key={item.id}
             className="ui:text-sm ui:font-normal"
           >
-            <Td className="ui:content-start ui:border-r-0!">{(pagination.page - 1) * pagination.paginate + (index + 1)}</Td>
-            <Td className="ui:content-start ui:border-r-0!">
+            <Td className="ui:content-start ui:border-e-0!">{(pagination.page - 1) * pagination.paginate + (index + 1)}</Td>
+            <Td className="ui:content-start ui:border-e-0!">
               <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
                 <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
                   {item.entity?.name ?? '-'}
@@ -86,7 +86,7 @@ const TableCalculationResult: React.FC<Props> = (props) => {
                 </p>
               </div>
             </Td>
-            <Td className="ui:content-start ui:border-r-0! ui:bg-primary-50">
+            <Td className="ui:content-start ui:border-e-0! ui:bg-primary-50">
               {materialSubtype === MaterialSubType.VACCINE ? (
                 <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
                   <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">
@@ -102,7 +102,7 @@ const TableCalculationResult: React.FC<Props> = (props) => {
                 </p>
               )}
             </Td>
-            <Td className="ui:content-start ui:border-r-0!">
+            <Td className="ui:content-start ui:border-e-0!">
               {materialSubtype === MaterialSubType.VACCINE ? (
                 <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
                   {!item.monthly_need.vial && !item.monthly_need.dosis ? '-' : (
@@ -122,7 +122,7 @@ const TableCalculationResult: React.FC<Props> = (props) => {
                 </p>
               )}
             </Td>
-            <Td className="ui:content-start ui:border-r-0!">
+            <Td className="ui:content-start ui:border-e-0!">
               {materialSubtype === MaterialSubType.VACCINE ? (
                 <div className="ui:flex ui:flex-col ui:gap-1 ui:justify-center">
                   {!item.weekly_need.vial && !item.weekly_need.dosis ? '-' : (
@@ -142,13 +142,13 @@ const TableCalculationResult: React.FC<Props> = (props) => {
                 </p>
               )}
             </Td>
-            <Td className="ui:content-start ui:border-r-0!">
+            <Td className="ui:content-start ui:border-e-0!">
               {numberFormatter(item.min || undefined, language)}
             </Td>
-            <Td className="ui:content-start ui:border-r-0!">
+            <Td className="ui:content-start ui:border-e-0!">
               {numberFormatter(item.max || undefined, language)}
             </Td>
-            <Td className="ui:content-start ui:border-r-0!">
+            <Td className="ui:content-start ui:border-e-0!">
               <div className="ui:flex ui:flex-col ui:gap-2 ui:justify-center">
                 {!!item.monthly_need.dosis && (
                   <p className="ui:mb-0 ui:text-sm ui:font-normal ui:text-primary-800">

@@ -469,7 +469,7 @@ const AllocateFormHierarcy = () => {
         list={needRelationData.list}
       />
 
-      <div className="ui:fixed ui:bottom-0 ui:left-0 ui:w-full ui:shadow-lg ui:bg-white ui:border-t ui:transition-all ui:transform ui:translate-y-0">
+      <div className="ui:fixed ui:bottom-0 ui:start-0 ui:w-full ui:shadow-lg ui:bg-white ui:border-t ui:transition-all ui:transform ui:translate-y-0">
         <div className="ui:container ui:mx-auto ui:flex ui:justify-end ui:items-center ui:py-4 ui:px-6 ui:gap-3">
           <Button
             key={'test'}

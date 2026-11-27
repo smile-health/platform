@@ -91,7 +91,7 @@ export const OrderDetailCapacityProjection = () => {
                           )}
                         </p>
                       </div>
-                      <div className="ui:border-r ui:border-gray-200"></div>
+                      <div className="ui:border-e ui:border-gray-200"></div>
                       <div>
                         <p className="ui:text-sm ui:font-medium ui:text-gray-500">
                           {t(
@@ -107,7 +107,7 @@ export const OrderDetailCapacityProjection = () => {
                           )}
                         </p>
                       </div>
-                      <div className="ui:border-r ui:border-gray-200"></div>
+                      <div className="ui:border-e ui:border-gray-200"></div>
                       <div>
                         <p className="ui:text-sm ui:font-medium ui:text-gray-500">
                           {t(

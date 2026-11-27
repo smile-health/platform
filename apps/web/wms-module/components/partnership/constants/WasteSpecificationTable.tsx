@@ -60,7 +60,7 @@ const PriceCell = ({
   return (
     <button
       type="button"
-      className="ui:w-full ui:text-left ui:cursor-pointer ui:border ui:border-gray-300 ui-hover:ui-border-blue-400 ui-hover:ui-bg-blue-50 ui:p-2 ui:rounded ui:transition-all ui:duration-200 ui:bg-transparent"
+      className="ui:w-full ui:text-start ui:cursor-pointer ui:border ui:border-gray-300 ui-hover:ui-border-blue-400 ui-hover:ui-bg-blue-50 ui:p-2 ui:rounded ui:transition-all ui:duration-200 ui:bg-transparent"
       onClick={() => onPriceUpdate && onPriceClick(index, currentPrice)}
       disabled={!onPriceUpdate}
       aria-label={`Edit price: ${getCurrencySymbol()} ${numberFormatter(

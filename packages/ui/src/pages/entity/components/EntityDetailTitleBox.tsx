@@ -29,7 +29,7 @@ const EntityDetailTitleBox: React.FC<Props> = ({
           {isEdit ? (
             <>
               <div className="ui:w-auto ui:flex ui:justify-end ui:items-center">
-                <div className="ui:mr-[16px]">
+                <div className="ui:me-[16px]">
                   <Button
                     id="btn__link__entity__cancel"
                     variant="outline"

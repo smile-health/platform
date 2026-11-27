@@ -1,0 +1,154 @@
+{
+  "title": "الصفحة الرئيسية",
+  "group": "المجموعة",
+  "home_superadmin": {
+    "filter": {
+      "date_range": {
+        "label": "النطاق الزمني"
+      },
+      "waste_type": {
+        "label": "نوع النفايات",
+        "placeholder": "اختر نوع النفايات"
+      },
+      "date_type": {
+        "label": "نوع التاريخ",
+        "placeholder": "اختر نوع التاريخ"
+      },
+      "healthcare_facility": {
+        "label": "اسم منشأة الرعاية الصحية",
+        "placeholder": "أدخل اسم منشأة الرعاية الصحية"
+      }
+    },
+    "column": {
+      "province": "المحافظة",
+      "total_transaction": "إجمالي المعاملات",
+      "city": "المدينة",
+      "healthcare_facility": "اسم منشأة الرعاية الصحية",
+      "total_weight": "إجمالي الوزن ({{ unit }})",
+      "view_detail_transaction": "عرض تفاصيل المعاملة",
+      "view_detail_district": "عرض تفاصيل المدينة/المنطقة",
+      "view_detail_healthcare": "عرض تفاصيل منشأة الرعاية الصحية",
+      "view_history": "عرض السجل",
+      "view_detail": "عرض التفاصيل",
+      "waste_type": "نوع النفايات",
+      "waste_weight": "وزن النفايات ({{ unit }})"
+    },
+    "column_transaction": {
+      "waste_group_number": "رقم مجموعة النفايات",
+      "waste_transporter": "ناقل النفايات",
+      "waste_treatment_facilitator": "جهة معالجة النفايات",
+      "waste_characteristic": "النوع / المجموعة / خصائص النفايات",
+      "waste_source": "مصدر النفايات",
+      "waste_in_date": "تاريخ دخول النفايات",
+      "storage_limit": "حد التخزين",
+      "last_follow_up": "آخر متابعة",
+      "waste_weight": "وزن النفايات ({{ unit }})",
+      "action": "إجراء"
+    },
+    "modal": {
+      "waste_status": "حالة النفايات",
+      "updated_status": "تاريخ تحديث الحالة"
+    },
+    "modal_waste_characteristics_summary": {
+      "waste_characteristic": "خصائص النفايات",
+      "waste_weight": "وزن النفايات ({{ unit }})"
+    }
+  },
+  "home_hf": {
+    "title": "ملخص المعاملات",
+    "modal": {
+      "title": "سجل المعاملات",
+      "waste_status": "حالة النفايات",
+      "updated_status": "تاريخ تحديث الحالة"
+    },
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن معاملة"
+      },
+      "waste_group": {
+        "label": "مجموعة النفايات",
+        "placeholder": "اختر مجموعة النفايات"
+      },
+      "waste_type": {
+        "label": "نوع النفايات",
+        "placeholder": "اختر نوع النفايات"
+      },
+      "waste_characteristic": {
+        "label": "خصائص النفايات",
+        "placeholder": "اختر خصائص النفايات"
+      },
+      "waste_status": {
+        "label": "حالة النفايات",
+        "placeholder": "اختر حالة النفايات"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "waste_group_number": "رقم مجموعة النفايات",
+      "waste_number": "رقم مجموعة النفايات",
+      "waste_code": "رقم كيس النفايات",
+      "waste_transporter": "ناقل النفايات",
+      "waste_treatment": "معالجة النفايات",
+      "waste_hierarchy": "النوع/المجموعة/خصائص النفايات",
+      "waste_source": "مصدر النفايات",
+      "waste_date": "تاريخ دخول النفايات",
+      "storage_date_limit": "الحد الأقصى للتخزين (أيام)",
+      "last_follow_up": "آخر متابعة",
+      "weight": "الوزن ({{ unit }})",
+      "action": "إجراء"
+    }
+  },
+  "home_tp": {
+    "filter": {
+      "date_range": {
+        "label": "النطاق الزمني"
+      },
+      "search": {
+        "label": "بحث",
+        "placeholder": "ابحث عن اسم المنشأة/رقم مجموعة النفايات/مسؤول النقل/رقم المركبة"
+      },
+      "healthcare_facility": {
+        "label": "اسم منشأة الرعاية الصحية",
+        "placeholder": "أدخل اسم منشأة الرعاية الصحية"
+      }
+    },
+    "transport_tab": {
+      "column": {
+        "entity_name": "اسم المنشأة",
+        "waste_group_number": "رقم مجموعة النفايات",
+        "waste_weight": "وزن النفايات ({{ unit }})",
+        "transport_officer": "مسؤول النقل",
+        "treatment_operator": "مشغل المعالجة",
+        "vehicle_number": "رقم المركبة",
+        "handover_time_to_transport": "وقت التسليم إلى {{ handover }}",
+        "action": "إجراء"
+      }
+    },
+    "recyle_tab": {
+      "column": {
+        "entity_name": "اسم المنشأة",
+        "waste_group_number": "رقم مجموعة النفايات",
+        "waste_weight": "وزن النفايات ({{ unit }})",
+        "transport_officer": "مسؤول النقل",
+        "vehicle_number": "رقم المركبة",
+        "manifest_number": "رقم البيان",
+        "handover_time_to_transport": "وقت التسليم إلى {{ handover }}",
+        "on_site_recyler": "معيد التدوير في الموقع",
+        "handover_time_to_recyle": "وقت التسليم لإعادة التدوير",
+        "action": "إجراء"
+      }
+    },
+    "tab": {
+      "transport": "النقل",
+      "recycle": "إعادة التدوير",
+      "landfill": "مكب النفايات",
+      "treatment": "المعالجة",
+      "government": "الحكومة",
+      "waste_bank": "بنك النفايات",
+      "specialized": "متخصص"
+    }
+  }
+}

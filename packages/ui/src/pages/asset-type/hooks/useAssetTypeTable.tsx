@@ -80,7 +80,7 @@ const useAssetTypeTable = ({
       minSize: 200,
       cell: ({ row }) => {
         return (
-          <div className="ui:flex ui:gap-2 -ml-3">
+          <div className="ui:flex ui:gap-2 -ms-3">
             <Button
               asChild
               id="btn-link-asset-type-detail"

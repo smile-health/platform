@@ -1,0 +1,158 @@
+{
+  "title": {
+    "page": "لوحة جرد ملكية الأصول",
+    "sub_title": "مراقبة فعّالة للأصول المملوكة للمنشأة المعنية فيما يتعلق بكميتها ووظائفها وما إلى ذلك.",
+    "expired_date": "تاريخ الانتهاء",
+    "month": "الشهر",
+    "province": "المحافظة",
+    "regency": "المدينة",
+    "sort_by": "فرز حسب ID {{type}}",
+    "total_asset": "إجمالي الأصول",
+    "asset_ownership_by_entity": {
+      "total": "إجمالي ملكية الأصول حسب {{type}}",
+      "detail": "تفاصيل ملكية الأصول حسب {{type}}"
+    },
+    "entity": {
+      "level": "مستوى المنشأة",
+      "tag": "وسم المنشأة"
+    },
+    "tabs": {
+      "all": "الكل",
+      "kemenkes": "Kemenkes",
+      "warehouse": "المستودع",
+      "province": "المحافظة",
+      "regency": "الوصاية",
+      "entity": "الرعاية الصحية الأولية",
+      "hospital": "RS/KKP/TNI/Polri"
+    }
+  },
+  "description": {
+    "stock": {
+      "remaining": "بيانات المخزون المتبقي المعروضة مجمّعة بناءً على {{title}}",
+      "in_transit": "بيانات المخزون قيد النقل المعروضة مجمّعة بناءً على {{title}}"
+    },
+    "information_month": "يعرض كمية المخزون الختامي لكل دفعة مادة بناءً على شهر آخر معاملة للدفعة. تمثل كل نقطة على الرسم البياني المخزون الختامي للدفعة في الشهر الذي تمت فيه آخر معاملة ضمن نطاق الفترة المحددة."
+  },
+  "form": {
+    "status": {
+      "label": "تمت إزالته بالفعل؟",
+      "yes": "نعم",
+      "no": "لا"
+    },
+    "ownership_status": {
+      "label": "حالة الملكية",
+      "placeholder": "اختر حالة الملكية",
+      "option": {
+        "owned": "مملوك",
+        "borrowed": "مستعار"
+      }
+    },
+    "power_availability": {
+      "label": "توفر الكهرباء (يوميًا)",
+      "placeholder": "اختر توفر الكهرباء (يوميًا)"
+    },
+    "communication_provider": {
+      "label": "مزود الاتصالات",
+      "placeholder": "اختر مزود الاتصالات"
+    },
+    "vendor": {
+      "label": "المورد",
+      "placeholder": "اختر المورد"
+    },
+    "capacity_data": {
+      "label": "بيانات السعة",
+      "placeholder": "اختر بيانات السعة",
+      "option": {
+        "exist": "موجود",
+        "not_exist": "غير موجود",
+        "need_clarification": "يحتاج إلى توضيح"
+      }
+    },
+    "budget_year": {
+      "label": "سنة الميزانية",
+      "placeholder": "اختر سنة الميزانية"
+    },
+    "asset_model": {
+      "label": "طراز الأصل",
+      "placeholder": "اختر طراز الأصل"
+    },
+    "asset_type": {
+      "label": "نوع الأصل",
+      "placeholder": "اختر نوع الأصل"
+    },
+    "working_status": {
+      "label": "حالة التشغيل",
+      "placeholder": "اختر حالة التشغيل"
+    },
+    "manufacture": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر الشركة المصنعة"
+    },
+    "production_year": {
+      "label": "سنة الإنتاج",
+      "placeholder": "اختر سنة الإنتاج"
+    },
+    "date": {
+      "periode": {
+        "start": {
+          "label": "تاريخ بدء الإدخال"
+        },
+        "end": {
+          "label": "تاريخ انتهاء الإدخال"
+        }
+      },
+      "expired": {
+        "label": "تاريخ الانتهاء"
+      }
+    },
+    "entity_tag": {
+      "label": "وسم المنشأة",
+      "placeholder": "اختر وسم المنشأة"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "regency": {
+      "label": "المدينة/المنطقة",
+      "placeholder": "اختر المدينة/المنطقة"
+    },
+    "health_facilities": {
+      "label": "الرعاية الصحية الأولية",
+      "placeholder": "اختر الرعاية الصحية الأولية"
+    },
+    "information_type": {
+      "label": "نوع المعلومات"
+    }
+  },
+  "data": {
+    "material_level": {
+      "trademark": "متغير المنتج"
+    },
+    "information_type": {
+      "remaining_stock": "المخزون المتبقي",
+      "in_transit_stock": "المخزون قيد النقل"
+    }
+  },
+  "column": {
+    "province": "المحافظة",
+    "regency": "المدينة",
+    "activity": "النشاط",
+    "material": "اسم المادة",
+    "unit": "الوحدة",
+    "entity": {
+      "name": "اسم المنشأة",
+      "tag": "وسم المنشأة"
+    },
+    "batch": {
+      "code": "رمز الدفعة",
+      "expired": "تاريخ انتهاء الدفعة"
+    },
+    "stock": {
+      "remaining": "إجمالي المخزون المتبقي",
+      "in_transit": "إجمالي قيد النقل",
+      "min": "الحد الأدنى للمخزون",
+      "max": "الحد الأقصى للمخزون"
+    }
+  }
+}

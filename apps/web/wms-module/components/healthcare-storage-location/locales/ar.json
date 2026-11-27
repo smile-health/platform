@@ -1,0 +1,60 @@
+{
+  "index": {
+    "title": "موقع تخزين الرعاية الصحية",
+    "edit": "تعديل موقع تخزين الرعاية الصحية"
+  },
+  "filter": {
+    "search": {
+      "label": "بحث",
+      "placeholder": "ابحث عن اسم الموقع"
+    }
+  },
+  "form": {
+    "facility_name": {
+      "label": "اسم المنشأة",
+      "placeholder": "أدخل اسم المنشأة"
+    },
+    "location_name": {
+      "label": "اسم الموقع",
+      "placeholder": "أدخل اسم الموقع"
+    },
+    "latitude": {
+      "label": "خط العرض",
+      "placeholder": "أدخل خط العرض"
+    },
+    "longitude": {
+      "label": "خط الطول",
+      "placeholder": "أدخل خط الطول"
+    },
+    "address": {
+      "label": "العنوان",
+      "placeholder": "أدخل العنوان"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "city": {
+      "label": "المدينة",
+      "placeholder": "اختر المدينة"
+    },
+    "distance_limit": {
+      "label": "الحد الأقصى للمسافة",
+      "placeholder": "أدخل الحد الأقصى للمسافة (بالمتر)"
+    }
+  },
+  "column": {
+    "facility_name": "اسم المنشأة",
+    "location_name": "اسم الموقع",
+    "latitude": "خط العرض",
+    "longitude": "خط الطول",
+    "address": "العنوان",
+    "province": "المحافظة",
+    "city": "المدينة",
+    "action": "إجراء"
+  },
+  "information": {
+    "title": "موقع تخزين النفايات الطبية",
+    "description": "تراقب مواقع تخزين النفايات وتدير بيانات مواقع التخزين المؤقتة للنفايات الطبية في منشآت الرعاية الصحية."
+  }
+}

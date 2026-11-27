@@ -29,7 +29,7 @@ export const columnsListProtocol = (
   },
   {
     header: () => (
-      <div className="ui:font-semibold ui:pl-3">{t('common:action')}</div>
+      <div className="ui:font-semibold ui:ps-3">{t('common:action')}</div>
     ),
     size: 130,
     maxSize: 200,
@@ -106,7 +106,7 @@ export const columnsListActivityMaterial = (
   },
   {
     header: () => (
-      <div className="ui:font-semibold ui:pl-3">{t('common:action')}</div>
+      <div className="ui:font-semibold ui:ps-3">{t('common:action')}</div>
     ),
     size: 130,
     maxSize: 200,

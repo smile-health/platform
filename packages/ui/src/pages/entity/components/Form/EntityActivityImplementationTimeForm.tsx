@@ -106,10 +106,10 @@ const ActivityField: React.FC<{
   return (
     <div className="ui:border ui:border-neutral-300 ui:rounded-md ui:p-4">
       <div className="ui:flex ui:justify-between ui:items-start ui:w-auto ui:text-base">
-        <div className="ui:w-64 ui:mr-4 ui:text-neutral-500 ui:text-base">
+        <div className="ui:w-64 ui:me-4 ui:text-neutral-500 ui:text-base">
           {field[0]?.name}
         </div>
-        <div className="ui:w-auto ui:mr-4">:</div>
+        <div className="ui:w-auto ui:me-4">:</div>
         <EntityActivityImplementationTimeInputDates
           id={field[0]?.id as number}
           idx={idx}

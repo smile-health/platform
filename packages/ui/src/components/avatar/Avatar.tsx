@@ -44,7 +44,7 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
           className={cx(
             'ui:block ui:rounded-full ui:bg-gray-400 ui:ring-2 ui:ring-white',
             {
-              'ui:-mr-3': isGroup,
+              'ui:-me-3': isGroup,
             },
             {
               'ui:h-8 ui:w-8': size === 'xs',
@@ -132,7 +132,7 @@ export function AvatarMore({
         className={cx(
           'ui:inline-block ui:rounded-full ui:bg-gray-300 ui:ring-1 ui:ring-white',
           {
-            'ui:-mr-3': isGroup,
+            'ui:-me-3': isGroup,
           },
           {
             'ui:h-8 ui:w-8': size === 'xs',

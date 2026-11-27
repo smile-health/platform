@@ -89,7 +89,7 @@ const InfiniteScrollContainer: React.FC<Props> = ({
       {/* Loading overlay - positioned based on scroll position */}
       {loading && (
         <div
-          className="ui:absolute ui:left-0 ui:right-0 ui:bg-white/40 ui:flex ui:justify-center ui:items-center ui:z-10"
+          className="ui:absolute ui:start-0 ui:end-0 ui:bg-white/40 ui:flex ui:justify-center ui:items-center ui:z-10"
           style={{
             top: scrollTop,
             height: containerHeight,

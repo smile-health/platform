@@ -51,10 +51,10 @@ export function SelectCountry({
       data-error={error}
       className={cx(
         'ui:relative ui:flex ui:self-stretch ui:items-center ui:p-2',
-        'ui:rounded ui:rounded-r-none',
+        'ui:rounded ui:rounded-e-none',
         'ui:bg-white ui:text-gray-800 ui:leading-tight',
         'ui:data-[error=true]:border ui:data-[error=true]:border-danger-500',
-        'ui:focus-within:border-primary-500 ui:focus-within:border-r ui:focus-within:outline-hidden ui:focus-within:ring-primary-500/25 ui:focus-within:ring-2 ui:focus-within:z-10',
+        'ui:focus-within:border-primary-500 ui:focus-within:border-e ui:focus-within:outline-hidden ui:focus-within:ring-primary-500/25 ui:focus-within:ring-2 ui:focus-within:z-10',
         {
           'ui:bg-gray-100 ui:opacity-75': disabled,
           'ui:h-8': size === 'sm',
@@ -73,17 +73,17 @@ export function SelectCountry({
         },
 
         // group
-        'ui:first:group-[.is-group]:rounded-r-none',
+        'ui:first:group-[.is-group]:rounded-e-none',
         'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:rounded-none',
-        'ui:last:group-[.is-group]:rounded-l-none',
+        'ui:last:group-[.is-group]:rounded-s-none',
 
-        'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:-mr-px',
-        'ui:last:group-[.is-group]:-ml-px',
-        'ui:first:group-[.is-group]:-mr-px',
+        'ui:[&:not(:first-child):not(:last-child)]:group-[.is-group]:-me-px',
+        'ui:last:group-[.is-group]:-ms-px',
+        'ui:first:group-[.is-group]:-me-px',
         {
-          'ui:first:group-[.is-group]:border-r ui:border-gray-300':
+          'ui:first:group-[.is-group]:border-e ui:border-gray-300':
             variant === 'filled',
-          'ui:last:group-[.is-group]:border-l ui:border-gray-300':
+          'ui:last:group-[.is-group]:border-s ui:border-gray-300':
             variant === 'filled',
           'ui:data-[error=true]:ring-danger-500/25 ui:group-[.is-group]:z-10':
             isFocused,

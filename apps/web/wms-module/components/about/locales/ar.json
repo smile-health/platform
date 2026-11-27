@@ -1,0 +1,65 @@
+{
+  "list": {
+    "list": "حول"
+  },
+  "title": {
+    "list": "معلومات",
+    "edit": "تعديل معلومات المنشأة"
+  },
+  "info": {
+    "title": "هذا النموذج مخصص فقط لتغيير البيانات الإضافية المتعلقة بالمنشآت المنتجة للنفايات",
+    "body": "لتغيير بيانات الحساب، يرجى الوصول إلى قائمة 'عرض الملف الشخصي' عبر الصفحة الرئيسية لـ SMILE"
+  },
+  "button": {
+    "edit": "تعديل"
+  },
+  "detail": {
+    "registration_code": "رمز تسجيل WMS",
+    "satu_sehat_code": "رمز SATUSEHAT",
+    "entity_name": "اسم المنشأة",
+    "entity_tag": "وسم المنشأة",
+    "head_name": "اسم الرئيس",
+    "gender": "الجنس",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "province": "المحافظة",
+    "city": "المدينة",
+    "address": "العنوان",
+    "latitude": "خط العرض",
+    "longitude": "خط الطول",
+    "nib": "NIB",
+    "last_updated": "آخر تحديث",
+    "total_bad_room": "عدد غرف النوم",
+    "percentage_bad_room": "نسبة استخدام غرف النوم (%)"
+  },
+  "form": {
+    "nib": {
+      "label": "NIB",
+      "placeholder": "أدخل NIB"
+    },
+    "head_name": {
+      "label": "اسم الرئيس",
+      "placeholder": "أدخل اسم الرئيس"
+    },
+    "gender": {
+      "label": "الجنس",
+      "placeholder": "أدخل الجنس"
+    },
+    "email": {
+      "label": "البريد الإلكتروني",
+      "placeholder": "أدخل البريد الإلكتروني"
+    },
+    "phone": {
+      "label": "الهاتف",
+      "placeholder": "أدخل الهاتف"
+    },
+    "total_bad_room": {
+      "label": "عدد غرف النوم",
+      "placeholder": "أدخل عدد غرف النوم"
+    },
+    "percentage_bad_room": {
+      "label": "نسبة استخدام غرف النوم (%)",
+      "placeholder": "أدخل نسبة استخدام غرف النوم"
+    }
+  }
+}

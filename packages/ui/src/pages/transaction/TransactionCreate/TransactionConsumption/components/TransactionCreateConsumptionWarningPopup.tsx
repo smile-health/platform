@@ -33,7 +33,7 @@ const TransactionCreateConsumptionWarningPopup: React.FC<Props> = (props) => {
       <DialogCloseButton />
       <DialogHeader
         className={
-          isDanger ? 'ui:text-left ui:text-xl' : 'ui:text-center ui:text-xl'
+          isDanger ? 'ui:text-start ui:text-xl' : 'ui:text-center ui:text-xl'
         }
       >
         {isDanger ? (
@@ -58,7 +58,7 @@ const TransactionCreateConsumptionWarningPopup: React.FC<Props> = (props) => {
         <p
           className={`${
             isDanger
-              ? 'ui:text-dark-blue ui:text-left'
+              ? 'ui:text-dark-blue ui:text-start'
               : 'ui:text-primary-800 ui:text-justify'
           } ui:text-base`}
           dangerouslySetInnerHTML={{ __html: description }}

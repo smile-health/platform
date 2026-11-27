@@ -34,7 +34,7 @@ const ScrollBar = React.forwardRef<
     className={cx(
       'ui:flex ui:touch-none ui:select-none ui:transition-opacity ui:duration-200 ui:data-[state=hidden]:opacity-0 ui:data-[state=visible]:opacity-90',
       orientation === 'vertical' &&
-        'ui:h-full ui:w-2 ui:border-l ui:border-l-transparent ui:p-px',
+        'ui:h-full ui:w-2 ui:border-s ui:border-s-transparent ui:p-px',
       orientation === 'horizontal' &&
         'ui:h-2 ui:flex-col ui:border-t ui:border-t-transparent ui:p-px',
       className

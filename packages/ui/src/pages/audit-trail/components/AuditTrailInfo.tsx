@@ -12,7 +12,7 @@ function InfoList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
       <div className="ui:font-semibold">{title}</div>
-      <ul className="ui:list-disc ui:space-y-0.5 ui:pl-5">
+      <ul className="ui:list-disc ui:space-y-0.5 ui:ps-5">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}

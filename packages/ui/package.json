@@ -18,6 +18,7 @@
     "#pages/*": "./src/pages/*.tsx",
     "#pages/locales/en/*": "./src/pages/*/locales/en.json",
     "#pages/locales/id/*": "./src/pages/*/locales/id.json",
+    "#pages/locales/ar/*": "./src/pages/*/locales/ar.json",
     "#services/*": "./src/services/*.ts",
     "#shared/*": "./src/shared/*.ts",
     "#store/*": "./src/store/*.ts",

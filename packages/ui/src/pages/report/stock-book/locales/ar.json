@@ -1,0 +1,33 @@
+{
+  "title": {
+    "page": "تقرير سجل المخزون"
+  },
+  "action": {
+    "export": "تصدير",
+    "export_all": "تصدير الكل"
+  },
+  "form": {
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط",
+      "required": "النشاط مطلوب"
+    },
+    "province": {
+      "label": "المقاطعة",
+      "placeholder": "اختر المقاطعة",
+      "required": "المقاطعة مطلوبة"
+    },
+    "regency": {
+      "label": "المنطقة",
+      "placeholder": "اختر المنطقة"
+    },
+    "health_facilities": {
+      "label": "المنشآت الصحية",
+      "placeholder": "اختر المنشآت الصحية"
+    },
+    "period": {
+      "label": "الفترة",
+      "placeholder": "اختر فترة الشهر والسنة"
+    }
+  }
+}

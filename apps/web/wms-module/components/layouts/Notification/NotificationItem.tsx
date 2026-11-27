@@ -61,10 +61,10 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
       })}
     >
       <div className="ui:flex ui:items-center ui:justify-between ui:mb-2">
-        <div className="ui-text-primary ui:text-sm ui:font-bold ui:text-left">
+        <div className="ui-text-primary ui:text-sm ui:font-bold ui:text-start">
           {item && translateNotification(item).title}
         </div>
-        <div className="ui:text-[10px] ui-text-semibold ui:text-right ui:text-gray-700">
+        <div className="ui:text-[10px] ui-text-semibold ui:text-end ui:text-gray-700">
           {!isToast ? (
             parseDateTime(item?.createdAt, 'DD/MMM/YYYY HH:mm')
               .toUpperCase()
@@ -80,15 +80,15 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
           )}
         </div>
       </div>
-      <div className="ui-text-dark ui:text-left ui:text-sm ui:mb-2">
+      <div className="ui-text-dark ui:text-start ui:text-sm ui:mb-2">
         {item && translateNotification(item).message}
       </div>
 
-      <div className="ui:text-xs ui:text-gray-700 ui:text-left ui:mb-2">
+      <div className="ui:text-xs ui:text-gray-700 ui:text-start ui:mb-2">
         {[item?.entityName, item?.userName].filter(Boolean).join(' • ')}
       </div>
 
-      <div className="ui:flex ui:items-center ui:justify-between ui:text-xs ui:text-gray-700 ui:text-left ui:mb-2">
+      <div className="ui:flex ui:items-center ui:justify-between ui:text-xs ui:text-gray-700 ui:text-start ui:mb-2">
         <div className="ui:flex ui:items-center ui:justify-start ui:gap-2 ui:mt-2">
           <button
             type="button"

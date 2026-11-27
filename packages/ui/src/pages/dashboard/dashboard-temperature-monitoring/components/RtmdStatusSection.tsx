@@ -107,7 +107,7 @@ export default function RtmdStatusSection({
           />
         </div>
       </div>
-      <div className="ui:flex ui:items-center ui:justify-center ui:gap-4 ui:mt-4 ui:relative ui:left-24">
+      <div className="ui:flex ui:items-center ui:justify-center ui:gap-4 ui:mt-4 ui:relative ui:start-24">
         <div className="ui:flex ui:items-center ui:gap-2">
           <div
             className="ui:w-4 ui:h-4 ui:rounded-full"

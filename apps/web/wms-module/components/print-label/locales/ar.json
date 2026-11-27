@@ -1,0 +1,174 @@
+{
+  "list": {
+    "list": "طباعة الملصق",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "البحث عن مصدر النفايات / خصائص النفايات"
+      },
+      "activity": {
+        "label": "النشاط",
+        "placeholder": "اختر النشاط"
+      },
+      "hierarchical": {
+        "label": "هرمي"
+      },
+      "source_type": {
+        "label": "نوع المصدر",
+        "placeholder": "اختر نوع المصدر"
+      },
+      "material_type": {
+        "label": "نوع المادة",
+        "placeholder": "اختر نوع المادة"
+      },
+      "material_level": {
+        "label": "مستوى المادة",
+        "placeholder": "اختر مستوى المادة",
+        "radio": {
+          "all": "الكل",
+          "active_substance": "قالب المنتج",
+          "trademark": "متغير المنتج",
+          "non_hierarchy": "غير هرمي"
+        }
+      },
+      "program": {
+        "label": "برنامج",
+        "placeholder": "اختر برنامج"
+      },
+      "without_program": "لا يوجد برنامج مطبق",
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "select": "اختر",
+      "source_type": "نوع المصدر",
+      "waste_source_group": "مجموعة مصادر النفايات",
+      "waste_source": "مصدر النفايات",
+      "waste_classification": "تصنيف النفايات",
+      "waste_characteristic": "خصائص النفايات",
+      "total_label": "إجمالي الملصقات",
+      "updated_at": "آخر تحديث",
+      "updated_by": "تم التحديث بواسطة",
+      "print": "طباعة",
+      "action": "إجراء"
+    },
+    "options": {
+      "tag": "اختر علامة",
+      "type": "اختر النوع"
+    },
+    "action": {
+      "activate": {
+        "title": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل"
+      }
+    },
+    "button": {
+      "add": "إضافة ملصق طباعة"
+    }
+  },
+  "title": {
+    "master_waste": "طباعة الملصق",
+    "list": "قائمة طباعة الملصقات",
+    "create": "إنشاء ملصق طباعة",
+    "edit": "تعديل ملصق الطباعة"
+  },
+  "detail": {
+    "title": "تفاصيل خاصية النفايات",
+    "waste_code": "رمز النفايات",
+    "waste_characteristic": "خاصية النفايات",
+    "waste_bag_color": "لون كيس النفايات",
+    "use_cold_storage": "استخدام التخزين البارد",
+    "cold_storage_max_processing": "الحد الأقصى لمدة المعالجة في التخزين البارد",
+    "temporary_storage_min_processing": "الحد الأدنى لمدة المعالجة في التخزين المؤقت",
+    "temporary_storage_max_processing": "الحد الأقصى لمدة المعالجة في التخزين المؤقت",
+    "internal_treatment": "المعالجة الداخلية",
+    "third_party_treatment": "المعالجة بواسطة طرف ثالث",
+    "vehicle_type": "نوع المركبة",
+    "storage_rule": "قاعدة التخزين",
+    "created_at": "تاريخ الإنشاء",
+    "created_by": "تم الإنشاء بواسطة",
+    "updated_at": "تاريخ التحديث",
+    "updated_by": "تم التحديث بواسطة"
+  },
+  "action": {
+    "activate": {
+      "button": "تنشيط",
+      "confirmation": "هل أنت متأكد من أنك تريد تنشيط هذا المنتج؟"
+    },
+    "deactivate": {
+      "button": "إلغاء التنشيط",
+      "confirmation": "هل أنت متأكد من أنك تريد إلغاء تنشيط هذا المنتج؟"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "قالب المنتج",
+    "trademark": "متغير المنتج",
+    "non_hierarchy": "بدون تسلسل هرمي",
+    "print": "طباعة الملصق",
+    "explain_waste_classification": "شرح تصنيف النفايات"
+  },
+  "form": {
+    "source_type": {
+      "label": "نوع المصدر",
+      "placeholder": "اختر نوع المصدر",
+      "validation": {
+        "required": "نوع المصدر مطلوب"
+      }
+    },
+    "waste_source": {
+      "label": "مصدر النفايات",
+      "placeholder": "اختر مصدر النفايات",
+      "validation": {
+        "required": "مصدر النفايات مطلوب"
+      }
+    },
+    "waste_type": {
+      "label": "نوع النفايات",
+      "placeholder": "اختر نوع النفايات",
+      "validation": {
+        "required": "نوع النفايات مطلوب"
+      }
+    },
+    "waste_group": {
+      "label": "مجموعة النفايات",
+      "placeholder": "اختر مجموعة النفايات",
+      "validation": {
+        "required": "مجموعة النفايات مطلوبة"
+      }
+    },
+    "waste_characteristic": {
+      "label": "خاصية النفايات",
+      "placeholder": "اختر الخاصية",
+      "validation": {
+        "required": "خاصية النفايات مطلوبة"
+      }
+    },
+    "total_number": {
+      "label": "إجمالي العدد المطبوع",
+      "placeholder": "أدخل إجمالي العدد المطبوع",
+      "validation": {
+        "required": "إجمالي العدد مطلوب"
+      }
+    }
+  },
+  "scroll_list": {
+    "title": "المادة",
+    "description": "يرجى اختيار المنشأة ونوع المعاملة أولاً",
+    "column": {
+      "material_name": "اسم المادة",
+      "available_stock": "المخزون المتاح",
+      "current_stock": "المخزون الحالي"
+    }
+  },
+  "modal": {
+    "confirmation": "تأكيد",
+    "description": "سيتم طباعة الورقة، يرجى لصقها في مكان يسهل رؤيته",
+    "copies": "عدد النسخ"
+  },
+  "message": {
+    "max_characteristics": "يمكنك طباعة {{max}} من خصائص النفايات كحد أقصى في المرة الواحدة."
+  }
+}

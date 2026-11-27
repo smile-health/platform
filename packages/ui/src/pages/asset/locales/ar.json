@@ -1,0 +1,55 @@
+{
+  "asset_temperature": "درجة حرارة الأصل",
+  "asset_temperature_list": "قائمة درجات حرارة الأصول",
+  "columns": {
+    "asset_name": "اسم الأصل",
+    "asset_type": "نوع الأصل",
+    "show_logger_temperature": "إظهار درجة حرارة المسجّل",
+    "manufacture": "التصنيع",
+    "relation": "العلاقة",
+    "working_status": "حالة التشغيل",
+    "entity_tag": "وسم المنشأة",
+    "temperature_filter": "عامل تصفية درجة الحرارة",
+    "asset_model": "طراز الأصل",
+    "temperature": "درجة الحرارة",
+    "view_temperature": "عرض درجة الحرارة",
+    "device_status": "حالة الجهاز",
+    "online": "متصل",
+    "offline": "غير متصل",
+    "connected": "موصول",
+    "disconnected": "غير موصول"
+  },
+  "asset_type_default": {
+    "vaccine_refrigerator": "ثلاجة لقاحات",
+    "cold_room": "غرفة تبريد",
+    "freezer": "مجمّد"
+  },
+  "relationship": {
+    "with_relation": "مع علاقة",
+    "without_relation": "بدون علاقة"
+  },
+  "temperature_logger": {
+    "normal": "طبيعي",
+    "above_maximum": "أعلى من الحد الأقصى",
+    "below_minimum": "أدنى من الحد الأدنى"
+  },
+  "asset_temperature_detail": "تفاصيل درجة حرارة الأصل",
+  "detail": {
+    "asset_type": "نوع الأصل",
+    "production_year": "سنة الإنتاج",
+    "maintainer": "المسؤول عن الصيانة",
+    "asset_status": "حالة الأصل",
+    "temperature_threshold": "حد درجة الحرارة",
+    "asset_temperature": "درجة حرارة الأصل",
+    "change_status": "تغيير الحالة",
+    "asset_logger_name": "اسم الأصل/المسجّل",
+    "asset_logger_relation": "علاقة الأصل بالمسجّل",
+    "sensor": "مستشعر",
+    "logger": "مسجل",
+    "from_date": "من التاريخ",
+    "to_date": "إلى التاريخ",
+    "date": "التاريخ",
+    "status": "الحالة",
+    "cold_chain_equipment_status": "حالة معدات سلسلة التبريد"
+  }
+}

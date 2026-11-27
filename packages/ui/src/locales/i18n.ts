@@ -3,10 +3,12 @@ import { initReactI18next } from "react-i18next";
 
 import en from "./en";
 import id from "./id";
+import ar from "./ar";
 
 const resources = {
   en,
   id,
+  ar,
 } as const;
 
 i18n

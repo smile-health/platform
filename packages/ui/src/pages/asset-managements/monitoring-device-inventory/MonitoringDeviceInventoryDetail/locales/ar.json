@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "تفاصيل جهاز المراقبة"
+  },
+  "section": {
+    "device_info": {
+      "title": "معلومات الجهاز"
+    },
+    "operational_details": {
+      "title": "التفاصيل التشغيلية"
+    },
+    "entity": {
+      "title": "المنشأة"
+    },
+    "budget": {
+      "title": "الميزانية"
+    },
+    "operational_asset_monitoring_device_relation": {
+      "title": "علاقة الأصل التشغيلي وجهاز المراقبة"
+    }
+  },
+  "button": {
+    "more_details": "مزيد من التفاصيل"
+  },
+  "modal": {
+    "delete_confirmation": "هل أنت متأكد من أنك تريد حذف هذا الجهاز؟"
+  },
+  "data": {
+    "asset_name": "اسم الأصل",
+    "serial_number": "الرقم التسلسلي",
+    "device_status": "حالة الجهاز",
+    "operational_status": "الحالة التشغيلية",
+    "updated_by": "تم التحديث بواسطة",
+    "updated_at": "تاريخ التحديث",
+    "created_by": "تم الإنشاء بواسطة",
+    "created_at": "تاريخ الإنشاء"
+  }
+}

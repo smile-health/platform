@@ -63,7 +63,7 @@ export const OrderDetailDrawer = ({
             variant="subtle"
             type="button"
             color="neutral"
-            className="ui:absolute ui:top-2 ui:right-2"
+            className="ui:absolute ui:top-2 ui:end-2"
             onClick={() => onClose()}
           >
             <XMark />

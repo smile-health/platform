@@ -1,0 +1,165 @@
+{
+  "list": {
+    "list": "إدارة أصول الرعاية الصحية",
+    "tab": {
+      "list": "قائمة المنشآت",
+      "create": "إضافة منشأة"
+    },
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "البحث عن الطراز"
+      },
+      "healthcare_facility": {
+        "label": "منشأة رعاية صحية",
+        "placeholder": "اختر منشأة رعاية صحية"
+      },
+      "asset_type": {
+        "label": "نوع الأصل",
+        "placeholder": "اختر نوع الأصل"
+      },
+      "manufacture": {
+        "label": "الجهة المصنعة",
+        "placeholder": "اختر الجهة المصنعة"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "healthcare_facility": "منشأة رعاية صحية",
+      "asset_type": "نوع الأصل",
+      "manufacture": "الجهة المصنعة",
+      "model": "الطراز",
+      "asset_id": "معرّف الأصل ID",
+      "sync_status": "مزامنة",
+      "last_maintenance": "آخر صيانة",
+      "last_calibration": "آخر معايرة",
+      "asset_status": "الحالة",
+      "year_production": "سنة الإنتاج",
+      "warranty_start": "تاريخ بدء الضمان",
+      "warranty_end": "تاريخ انتهاء الضمان",
+      "action": "إجراء"
+    },
+    "column_maintenance": {
+      "operator_name": "اسم المشغّل",
+      "maintenance_date": "تاريخ الصيانة"
+    },
+    "column_calibration": {
+      "operator_name": "اسم المشغّل",
+      "calibration_start_date": "تاريخ بدء المعايرة",
+      "calibration_end_date": "تاريخ انتهاء المعايرة"
+    },
+    "button": {
+      "add": "إضافة أصل رعاية صحية"
+    }
+  },
+  "title": {
+    "healthcare": "أصل رعاية صحية",
+    "list": "قائمة أصول الرعاية الصحية",
+    "create": "إنشاء أصل رعاية صحية",
+    "edit": "تعديل أصل رعاية صحية"
+  },
+  "title_asset_activity": {
+    "maintenance": "نشاط الصيانة",
+    "calibration": "نشاط المعايرة"
+  },
+  "action": {
+    "activate": {
+      "button": "تفعيل",
+      "confirmation": "هل أنت متأكد من رغبتك في تفعيل هذا المنتج؟"
+    },
+    "deactivate": {
+      "button": "إلغاء التفعيل",
+      "confirmation": "هل أنت متأكد من رغبتك في إلغاء تفعيل هذا المنتج؟"
+    }
+  },
+  "button": {
+    "add_maintenance": "إضافة صيانة",
+    "add_calibration": "إضافة معايرة"
+  },
+  "form": {
+    "healthcare_facility": {
+      "label": "منشأة رعاية صحية",
+      "placeholder": "اختر منشأة رعاية صحية",
+      "validation": {
+        "required": "منشأة الرعاية الصحية مطلوبة"
+      }
+    },
+    "asset_type": {
+      "label": "نوع الأصل",
+      "placeholder": "اختر نوع الأصل",
+      "validation": {
+        "required": "نوع الأصل مطلوب"
+      }
+    },
+    "manufacture": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر الشركة المصنعة",
+      "validation": {
+        "required": "الشركة المصنعة مطلوبة"
+      }
+    },
+    "model": {
+      "label": "الطراز",
+      "placeholder": "اختر الطراز",
+      "validation": {
+        "required": "الطراز مطلوب"
+      }
+    },
+    "asset_id": {
+      "label": "معرّف الأصل ID",
+      "placeholder": "أدخل معرّف الأصل ID"
+    },
+    "asset_status": {
+      "label": "حالة الأصل",
+      "placeholder": "أدخل حالة الأصل"
+    },
+    "sync": {
+      "label": "مزامنة"
+    },
+    "year_production": {
+      "label": "سنة الإنتاج",
+      "placeholder": "أدخل سنة الإنتاج (مثال: 2024)"
+    },
+    "warranty_start": {
+      "label": "تاريخ بدء الضمان",
+      "placeholder": "أدخل تاريخ بدء الضمان"
+    },
+    "warranty_end": {
+      "label": "تاريخ انتهاء الضمان",
+      "placeholder": "أدخل تاريخ انتهاء الضمان"
+    }
+  },
+  "form_asset_activity": {
+    "operator_name": {
+      "label": "اسم المشغّل",
+      "placeholder": "أدخل اسم المشغّل"
+    },
+    "calibration_start_date": {
+      "label": "تاريخ بدء المعايرة",
+      "placeholder": "اختر التاريخ"
+    },
+    "calibration_end_date": {
+      "label": "تاريخ انتهاء المعايرة",
+      "placeholder": "اختر التاريخ"
+    },
+    "maintenance_date": {
+      "label": "تاريخ الصيانة",
+      "placeholder": "اختر التاريخ"
+    }
+  },
+  "detail": {
+    "title": "حول أصل الرعاية الصحية",
+    "calibration_act": "نشاط المعايرة",
+    "maintenance_act": "نشاط الصيانة"
+  },
+  "asset_status": {
+    "OPERATIONAL": "يعمل",
+    "UNDER_MAINTAINENCE": "قيد الإصلاح",
+    "OUT_OF_SERVICE": "تالف",
+    "IDLE": "احتياطي",
+    "NEED_REPAIR": "يحتاج إصلاح",
+    "RETIRED": "متخلص منه"
+  }
+}

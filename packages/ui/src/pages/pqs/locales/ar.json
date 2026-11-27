@@ -1,0 +1,90 @@
+{
+  "title": {
+    "pqs": "إعداد رمز PQS لمنظمة الصحة العالمية",
+    "list": "رمز PQS لمنظمة الصحة العالمية",
+    "add": "إضافة رمز PQS",
+    "detail": "تفاصيل رمز PQS",
+    "edit": "تعديل رمز PQS"
+  },
+  "detail": {
+    "title": "تفاصيل رمز PQS",
+    "section": {
+      "detail": {
+        "header": "التفاصيل",
+        "warning": "لا يُسمح بإجراء تغييرات. رمز PQS هذا مرتبط بالفعل بطراز أصل.",
+        "label": {
+          "pqs_code": "رمز PQS",
+          "pqs_type": "نوع PQS",
+          "cceigat_desc": "وصف CCEIGAT",
+          "last_updated_at": "آخر تحديث في",
+          "last_updated_by": "آخر تحديث بواسطة"
+        }
+      },
+      "capacity": {
+        "header": "السعة حسب عتبة درجة الحرارة",
+        "label": {
+          "net_capacity": "السعة الصافية {{ temperature }}"
+        },
+        "column": {
+          "category": "الفئة",
+          "net_capacity": "السعة الصافية",
+          "litre": "{{ value }} لتر"
+        }
+      }
+    }
+  },
+  "list": {
+    "filter": {
+      "label": {
+        "search": "بحث"
+      },
+      "placeholder": {
+        "search": "ابحث عن رمز PQS"
+      }
+    },
+    "column": {
+      "pqs_code": "رمز PQS",
+      "net_capacity": {
+        "label": "السعة الصافية {{ temperature }}"
+      },
+      "last_updated_at": "آخر تحديث في",
+      "action": "إجراء"
+    }
+  },
+  "action": {
+    "delete": {
+      "button": "حذف رمز PQS",
+      "confirmation": "هل أنت متأكد من حذف رمز PQS هذا؟"
+    }
+  },
+  "form": {
+    "pqs_code": {
+      "label": "رمز PQS",
+      "placeholder": "اكتب رمز PQS",
+      "validation": {
+        "required": "مطلوب"
+      }
+    },
+    "pqs_type": {
+      "label": "نوع PQS",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "مطلوب"
+      }
+    },
+    "cceigat_desc": {
+      "label": "وصف CCEIGAT",
+      "placeholder": "اكتب للبحث",
+      "validation": {
+        "required": "مطلوب"
+      }
+    },
+    "capacity": {
+      "label": "السعة الصافية {{ temperature }}",
+      "placeholder": "مثال: 3,14",
+      "validation": {
+        "at_least_one_capacity_required": "املأ سعة واحدة على الأقل"
+      }
+    }
+  }
+}

@@ -115,7 +115,7 @@ export const WasteSpecificationModal = ({
 
   return (
     <Dialog open={showModal} onOpenChange={setShowModal} size="lg">
-      <DialogHeader className="ui:text-center ui:pr-0">
+      <DialogHeader className="ui:text-center ui:pe-0">
         <span className="ui:font-medium">
           {editIndex !== null
             ? t('partnership:list.button.edit_specification')

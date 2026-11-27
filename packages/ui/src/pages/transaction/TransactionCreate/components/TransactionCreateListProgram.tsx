@@ -97,7 +97,7 @@ const TransactionCreateListProgram = () => {
                       data={item}
                       className={{
                         wrapper: 'ui:gap-4',
-                        title: 'ui:text-left'
+                        title: 'ui:text-start'
                       }}
                       icon={getProgramIconUrl(item)}
                     />

@@ -41,7 +41,7 @@ export default function ActivityTable(props: ActivityTableProps) {
             <Th columnKey="name" className="ui:font-semibold">
               {t('activity:column.name')}
             </Th>
-            <Th columnKey="id" className="ui:w-40 ui:font-semibold ui:pl-5">
+            <Th columnKey="id" className="ui:w-40 ui:font-semibold ui:ps-5">
               {t('common:action')}
             </Th>
           </Tr>

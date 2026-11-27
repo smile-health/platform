@@ -7,6 +7,7 @@ import ExportAsyncPopup from '#components/modules/ExportAsyncPopup'
 import LoadingPopup from '#components/modules/LoadingPopup'
 import { setAxiosLanguage } from '#lib/axios'
 import { growthbook, isGrowthbookEnabled } from '#lib/growthbook'
+import { applyDirection } from '#utils/direction'
 import { Toaster } from 'react-hot-toast'
 import { I18nextProvider } from 'react-i18next'
 
@@ -34,6 +35,7 @@ export function Provider({
   useEffect(() => {
     i18n.changeLanguage(locale)
     setAxiosLanguage(locale)
+    applyDirection(locale)
   }, [locale])
 
   useEffect(() => {

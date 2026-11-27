@@ -1,0 +1,250 @@
+{
+  "global": {
+    "title": "إعداد المنشأة"
+  },
+  "list": {
+    "status": "حالة المنشأة",
+    "list": "إعداد المنشأة",
+    "tab": {
+      "list": "إعداد المنشأة",
+      "create": "إضافة منشأة"
+    },
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "اكتب اسم المنشأة"
+      },
+      "type": {
+        "label": "النوع",
+        "placeholder": "اختر النوع"
+      },
+      "tag": {
+        "placeholder": "اختر العلامة"
+      },
+      "status": {
+        "label": "الحالة",
+        "placeholder": "اختر الحالة",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "name": "اسم المنشأة",
+      "location": "الموقع",
+      "province": "المحافظة",
+      "city": "المدينة/المنطقة",
+      "status": "الحالة",
+      "satu_sehat_code": "رمز SATUSEHAT",
+      "action": "إجراء"
+    },
+    "options": {
+      "tag": "اختر العلامة",
+      "type": "اختر النوع"
+    },
+    "action": {
+      "activate": {
+        "title": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل"
+      }
+    }
+  },
+  "form": {
+    "title": {
+      "add": "إضافة منشأة",
+      "detail": "تفاصيل المنشأة",
+      "edit": "تعديل المنشأة"
+    },
+    "information": {
+      "title": "معلومات المنشأة",
+      "label": {
+        "code": "رمز المنشأة",
+        "name": "اسم المنشأة",
+        "type": "النوع",
+        "vendor": "هل هو مُرسِل؟",
+        "hc": "هل هي رعاية صحية أولية؟",
+        "asik": "تكامل ASIK؟",
+        "registration_code": "رمز التسجيل",
+        "satu_sehat_code": "رمز SATUSEHAT",
+        "head_name": "اسم المسؤول",
+        "gender": "الجنس",
+        "email": "عنوان البريد الإلكتروني",
+        "phone": "الهاتف"
+      },
+      "placeholder": {
+        "code": "رمز المنشأة",
+        "name": "اسم المنشأة",
+        "type": "اختر النوع",
+        "tag": "اختر الوسم",
+        "head_name": "أدخل اسم المسؤول",
+        "email": "أدخل عنوان البريد الإلكتروني"
+      }
+    },
+    "location": {
+      "title": "الموقع",
+      "label": {
+        "province": "المحافظة",
+        "city": "المدينة/المنطقة",
+        "district": "المنطقة الفرعية",
+        "subdistrict": "القرية",
+        "postal": "الرمز البريدي",
+        "address": "العنوان"
+      },
+      "placeholder": {
+        "select": "اختر"
+      }
+    },
+    "time": {
+      "title": "وقت تنفيذ النشاط",
+      "label": {
+        "start": "تاريخ البدء",
+        "end": "تاريخ الانتهاء"
+      },
+      "setup_data": "إعداد البيانات"
+    },
+    "programs": {
+      "description": "لا يمكن التراجع عن البرامج المحددة (إلغاء تحديدها) بعد حفظ البيانات",
+      "search": "ابحث عن اسم البرنامج",
+      "selected": "المحدد"
+    },
+    "users": {
+      "search": "اسم المستخدم"
+    },
+    "errors": {
+      "at_least_one_required": "تعذر حفظ البيانات. يرجى إدخال تاريخ بدء واحد على الأقل",
+      "invalid_date_format": "تنسيق التاريخ غير صالح",
+      "invalid_only_end_date": "يجب ملء تاريخ البدء إذا تم ملء تاريخ الانتهاء",
+      "invalid_end_date": "يجب أن يكون تاريخ الانتهاء أكبر من تاريخ البدء",
+      "invalid_start_date": "يجب أن يكون تاريخ البدء أقل من تاريخ الانتهاء",
+      "invalid_current_start_date": "يجب أن يكون تاريخ البدء أكبر من تاريخ الانتهاء السابق",
+      "prev_end_date_required": "إذا كان لديك تاريخ بدء تالٍ، فيجب إدخال تاريخ الانتهاء السابق",
+      "max_greater_than_min": "يجب أن تكون القيمة القصوى أكبر من القيمة الدنيا",
+      "min_less_than_max": "يجب أن تكون القيمة الدنيا أقل من القيمة القصوى",
+      "insert_with_number": "يُرجى إدخال رقم",
+      "error_fetching_data": "حدث خطأ أثناء جلب البيانات"
+    },
+    "success": {
+      "activity_implementation_time": "تم تحديث بيانات وقت تنفيذ النشاط بنجاح",
+      "success_update_customer": "تم تحديث بيانات {{customerType}} بنجاح",
+      "success_import_customer": "تم استيراد بيانات المستلم بنجاح",
+      "success_delete_customer": "تم حذف بيانات المستلم بنجاح",
+      "success_update_material_entity": "تم تعديل علاقة بيانات منشأة المادة بنجاح",
+      "success_add_material_entity": "تمت إضافة علاقة بيانات منشأة المادة بنجاح",
+      "success_delete_material_entity": "تم حذف علاقة بيانات منشأة المادة بنجاح",
+      "save": "تم حفظ المنشأة بنجاح",
+      "update": "تم تحديث المنشأة بنجاح",
+      "import": "تم استيراد بيانات المنشأة بنجاح"
+    },
+    "gender": {
+      "label": "الجنس",
+      "male": "ذكر",
+      "female": "أنثى"
+    },
+    "phone": {
+      "label": "رقم الهاتف",
+      "placeholder": "أدخل رقم الهاتف"
+    }
+  },
+  "detail": {
+    "title": "تفاصيل المنشأة",
+    "details": {
+      "title": "التفاصيل",
+      "tag": "وسوم المنشأة",
+      "last_update": "آخر تحديث"
+    },
+    "users": {
+      "title": "المستخدمون",
+      "placeholder": "البحث عن اسم المستخدم"
+    },
+    "tabs_title": {
+      "detail": "التفاصيل",
+      "activity_implementation_time": "وقت تنفيذ النشاط",
+      "customer_vendor": "المستلم والمرسل",
+      "entity_material_activity_relation": "إدارة منشأة المادة"
+    },
+    "information": {
+      "table_title": {
+        "distribution_customer": "مستلم التوزيع",
+        "consumption_customer": "مستلم الميل الأخير",
+        "vendor": "المرسل"
+      },
+      "entity_type": "نوع المنشأة"
+    },
+    "additional": {
+      "title": "تفاصيل إضافية",
+      "vendor": "هل هو مرسل",
+      "is_primary_health_care": "هل هي رعاية صحية أولية",
+      "asik": "تكامل ASIK"
+    },
+    "customer_vendor": {
+      "customer_add": "إضافة {{type}}",
+      "activity": "النشاط",
+      "customer": "المستلم",
+      "add_customer": "إضافة مستلم",
+      "customer_name": "اسم المستلم",
+      "edit_activity": "تعديل النشاط",
+      "delete_confirmation": "هل أنت متأكد من رغبتك في حذف هذا المستلم؟",
+      "delete_description": "لا يمكن استعادة العنصر المحذوف",
+      "edit_activity_on_customer": "تعديل النشاط على {{type}}",
+      "are_you_sure_discard_customer": "هل أنت متأكد من رغبتك في تجاهل إعدادات المستلم؟",
+      "your_change_will_not_saved": "ستُفقد تغييراتك إذا قمت بالإلغاء. هل تريد متابعة الإلغاء؟",
+      "import_data_customer": "استيراد بيانات المستلم",
+      "vendor_name": "اسم المرسل",
+      "customer_cannot_same": "لا يمكن أن يكون المستلم هو نفسه",
+      "select_customer": "اختر المستلم",
+      "select_activity": "اختر النشاط"
+    },
+    "material_entity": {
+      "title": "إدارة كيانات المواد",
+      "add_relation": "إضافة علاقة",
+      "temp_min": "أدنى درجة حرارة",
+      "temp_max": "أعلى درجة حرارة",
+      "view_details": "عرض التفاصيل",
+      "confirmation_ensure_save": "هل أنت متأكد من حفظ هذا؟",
+      "edit_material_entity": "تعديل كيان المادة",
+      "detail_of_material_on_activities": "تفاصيل كيان المادة",
+      "consumption_rate": "معدل الاستهلاك",
+      "retailer_price": "سعر التجزئة",
+      "tax": "الضريبة",
+      "min": "الحد الأدنى",
+      "max": "الحد الأعلى",
+      "edit_data": "تعديل البيانات",
+      "delete_confirmation": "هل أنت متأكد من حذف كيان المادة هذا؟",
+      "delete_material_activity_warning": "لن تظهر المادة [{{materialName}}] ضمن النشاط [{{activityName}}] هنا",
+      "edit_relation": "تعديل العلاقة",
+      "go_to_material_bulk": "الانتقال إلى الإجراء الجماعي لكيان المادة",
+      "select_material": "اختر المادة"
+    },
+    "partnership": {
+      "thirdparty_transporter": "ناقل طرف ثالث",
+      "thirdparty_treatment": "معالجة طرف ثالث",
+      "thirdparty_landfill": "مكب نفايات طرف ثالث",
+      "thirdparty_recycler": "معيد تدوير طرف ثالث"
+    }
+  },
+  "action": {
+    "activate": {
+      "button": "تفعيل",
+      "confirmation": "هل أنت متأكد من تفعيل هذا؟"
+    },
+    "deactivate": {
+      "button": "إلغاء التفعيل",
+      "confirmation": "هل أنت متأكد من إلغاء تفعيل هذا؟"
+    },
+    "description": "وصف الإجراء أو مخاطره"
+  },
+  "message": {
+    "data_currently_empty": "هذه البيانات فارغة حالياً. يرجى إعدادها لاستكمال هذه البيانات."
+  },
+  "import": {
+    "description": "ارفع ملف .xls أو .xlsx (بحد أقصى 10MB)"
+  },
+  "information": {
+    "title": "قائمة الكيانات",
+    "description": "تتيح إعدادات الكيانات إدارة بيانات الكيانات في النظام حسب الحاجة."
+  }
+}

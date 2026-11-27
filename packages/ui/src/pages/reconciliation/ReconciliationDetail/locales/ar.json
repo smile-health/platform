@@ -1,0 +1,17 @@
+{
+  "reconciliation_period": {
+    "title": "فترة المطابقة",
+    "from": "من",
+    "to": "إلى"
+  },
+  "list": {
+    "title": "تفاصيل المطابقة",
+    "column": {
+      "description": "الوصف",
+      "smile_qty": "SMILE",
+      "real_qty": "الفعلي",
+      "reason": "السبب",
+      "action": "الإجراء"
+    }
+  }
+}

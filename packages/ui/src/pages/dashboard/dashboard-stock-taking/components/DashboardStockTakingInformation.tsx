@@ -34,7 +34,7 @@ export default function DashboardStockTakingInformation({
         <p>{t('information.description')}</p>
         <div className="ui:space-y-1">
           <H5>{t('information.item.title')}</H5>
-          <ul className="ui:list-disc ui:pl-8">
+          <ul className="ui:list-disc ui:ps-8">
             {tableDescription?.map((item) => (
               <li key={item}>
                 <Trans

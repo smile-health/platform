@@ -19,7 +19,7 @@ const IconBox: React.FC<IconBoxProps> = ({
   return (
     <div className="flex items-center justify-start">
       <div className={className}>{icon}</div>
-      <span className={`${className} ui:ml-2`}>{text}</span>
+      <span className={`${className} ui:ms-2`}>{text}</span>
     </div>
   )
 }

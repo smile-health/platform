@@ -1,0 +1,70 @@
+{
+  "title": "خطة البرنامج",
+  "list_program_plan": "قائمة خطط البرامج",
+  "add_program_plan": "إضافة خطة برنامج",
+  "edit_program_plan": "تعديل خطة برنامج",
+  "delete_program_plan": "حذف خطة برنامج",
+  "program_plan_name": "اسم خطة البرنامج",
+  "confirm": "تأكيد",
+  "optional": "اختياري",
+  "message": {
+    "import_success": "تم استيراد خطط البرامج بنجاح",
+    "successfully_created": "تم إنشاء خطة البرنامج بنجاح"
+  },
+  "table": {
+    "year": "السنة",
+    "year_plan": "خطة السنة",
+    "previous_year": "خطة البرنامج",
+    "select_data_to_be_copied": "حدد البيانات المراد نسخها",
+    "type": "النوع",
+    "status": "الحالة",
+    "approach": "المنهج"
+  },
+  "placeholder": {
+    "select_year": "حدد السنة",
+    "select_year_plan": "حدد خطة السنة",
+    "select_previous_year": "حدد خطة البرنامج"
+  },
+  "tabs": {
+    "target_group": "الفئة المستهدفة",
+    "population": "عدد السكان",
+    "task": "المهمة",
+    "ratio": "النسبة",
+    "substitution": "الاستبدال",
+    "needs_calculation": "المهمة",
+    "material_ratio": "النسبة",
+    "material_substitution": "استبدال المادة"
+  },
+  "status": {
+    "activate": "تفعيل",
+    "deactivate": "تعطيل",
+    "target_group": "الفئة المستهدفة",
+    "population": "عدد السكان",
+    "need_calculation": "المهمة",
+    "material_ratio": "النسبة",
+    "final": "نهائي",
+    "draft": "مسودة",
+    "mark_as_final": {
+      "label": "وضع علامة نهائي",
+      "confirmation": "هل أنت متأكد من وضع علامة نهائي على هذا؟"
+    }
+  },
+  "mark_as_final": "وضع علامة نهائي",
+  "deactivate": "تعطيل",
+  "activate": "تفعيل",
+  "detail_and_configure": "التفاصيل والإعداد",
+  "cannot_modify_final_plan": "لا يمكنك تعديل خطة نهائية.",
+  "confirmation_activation": {
+    "description": "هل أنت متأكد من وضع علامة نهائي على هذا؟",
+    "subdescription_top": "يرجى التأكد من إكمال جميع البيانات المطلوبة أدناه قبل المتابعة.",
+    "subdescription_bottom": "لا يمكنك الضغط على `Yes` حتى تكتمل جميع البيانات المطلوبة."
+  },
+  "use_data_from_prev_year": "استخدام بيانات من خطة برنامج أخرى",
+  "required_when_using_data_from_prev_year": "مطلوب عند استخدام بيانات من خطة برنامج أخرى",
+  "toast": {
+    "activate_success": "تم تفعيل خطة البرنامج بنجاح",
+    "deactivate_success": "تم تعطيل خطة البرنامج بنجاح",
+    "create": "تم إنشاء خطة البرنامج بنجاح",
+    "mark_as_final_success": "تم وضع علامة نهائي على خطة البرنامج بنجاح"
+  }
+}

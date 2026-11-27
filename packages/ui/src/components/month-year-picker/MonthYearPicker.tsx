@@ -213,7 +213,7 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
             onClick={() => setViewYear((y) => Math.max(minYear, y - 1))}
             disabled={isPrevDisabled}
           >
-            <ChevronLeftIcon className="ui:size-4 ui:text-gray-600" />
+            <ChevronLeftIcon className="ui:size-4 ui:text-gray-600 ui:rtl:-scale-x-100" />
           </ButtonIcon>
 
           <ReactSelect
@@ -235,7 +235,7 @@ export const MonthYearPicker: React.FC<MonthYearPickerProps> = ({
             onClick={() => setViewYear((y) => Math.min(maxYear, y + 1))}
             disabled={isNextDisabled}
           >
-            <ChevronRightIcon className="ui:size-4 ui:text-gray-600" />
+            <ChevronRightIcon className="ui:size-4 ui:text-gray-600 ui:rtl:-scale-x-100" />
           </ButtonIcon>
         </div>
 

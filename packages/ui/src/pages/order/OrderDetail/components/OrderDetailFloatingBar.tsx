@@ -122,7 +122,7 @@ export const OrderDetailFloatingBar = () => {
   return (
     <div
       className={cx(
-        'ui:fixed ui:bottom-0 ui:left-0 ui:w-full ui:shadow-lg ui:bg-white ui:border-t ui:transition-all ui:transform',
+        'ui:fixed ui:bottom-0 ui:start-0 ui:w-full ui:shadow-lg ui:bg-white ui:border-t ui:transition-all ui:transform',
         {
           'ui:translate-y-full': !isShowFloatingBar,
           'ui:translate-y-0': isShowFloatingBar,

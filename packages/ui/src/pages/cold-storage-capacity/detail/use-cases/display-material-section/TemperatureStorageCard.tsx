@@ -73,7 +73,7 @@ export default function TemperatureStorageCard({
         size: 100,
         cell: ({ row }) => row.index + 1,
         meta: {
-          cellClassName: 'ui:text-left',
+          cellClassName: 'ui:text-start',
         },
       },
       {

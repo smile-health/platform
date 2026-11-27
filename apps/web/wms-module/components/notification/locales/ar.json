@@ -1,0 +1,248 @@
+{
+  "title": {
+    "notification": "الإشعار"
+  },
+  "info": {
+    "request_accepted": "تم قبول الطلب",
+    "request_accepted_desc": "تم قبول طلب الوزن اليدوي من {{name}}",
+    "request_rejected": "تم رفض الطلب",
+    "request_rejected_desc": "تم رفض طلب الوزن اليدوي من {{name}}"
+  },
+  "request": {
+    "title": "الوزن اليدوي",
+    "description": "طلب وزن يدوي من {{name}} "
+  },
+  "button": {
+    "mark_all_as_read": "تعليم الكل كمقروء",
+    "contact_patient": "التواصل مع المريض",
+    "mark_as_finished": "تعليم كمنتهٍ",
+    "action": "إجراء",
+    "download": "تنزيل"
+  },
+  "filter": {
+    "notification_type": {
+      "label": "نوع الإشعار",
+      "placeholder": "اختر نوع الإشعار"
+    },
+    "program": {
+      "label": "برنامج",
+      "placeholder": "اختر البرنامج",
+      "without_program": "بدون برنامج"
+    },
+    "health_center": {
+      "label": "مركز الرعاية الصحية الأولية",
+      "placeholder": "اختر مركز الرعاية الصحية الأولية"
+    },
+    "receive_date": {
+      "label": "تاريخ استلام الإشعار"
+    },
+    "entity_tag": {
+      "label": "وسم المنشأة",
+      "placeholder": "اختر وسم المنشأة"
+    }
+  },
+  "modal": {
+    "title": {
+      "mark_all": "تعليم الكل كمقروء؟"
+    },
+    "description": {
+      "mark_all": "بالنقر على نعم، فإنك تقر بأن جميع الإشعارات ستُعلَّم كمقروءة."
+    }
+  },
+  "partnership.partnership_expired": {
+    "title": "تذكير بانتهاء الشراكة",
+    "message": "ستنتهي اتفاقية الشراكة {{dayText}} بتاريخ {{expiryDate}}. يرجى المراجعة والتجديد إذا لزم الأمر."
+  },
+  "partnership.partnership_expired_exceed": {
+    "title": "تجاوز انتهاء الشراكة",
+    "message": "انتهت اتفاقية الشراكة في {{expiryDate}}."
+  },
+  "partnership.partnership_created": {
+    "title": "تم إنشاء شراكة جديدة",
+    "message": "تم إنشاء اتفاقية شراكة جديدة بين {{healthcareFacility}} و{{thirdParty}}."
+  },
+  "partnership.partnership_updated": {
+    "title": "تم تحديث الشراكة",
+    "message": "تم تحديث اتفاقية الشراكة. يرجى التحقق من أحدث التفاصيل."
+  },
+  "partnership.partnership_compliance_alert": {
+    "title": "تنبيه امتثال الشراكة",
+    "message": "لدى الاتفاقية مشكلات امتثال تتطلب المراجعة."
+  },
+  "waste_bag.waste_bag_residue_created": {
+    "title": "تم إنشاء كيس نفايات البقايا",
+    "message": "تم إنشاء كيس نفايات جديد للبقايا."
+  },
+  "waste_bag.waste_bag_domestic_created": {
+    "title": "تم إنشاء كيس نفايات منزلية",
+    "message": "تم إنشاء كيس نفايات منزلية جديد."
+  },
+  "waste_bag.waste_bag_in_temporary_storage": {
+    "title": "نُقلت النفايات إلى التخزين المؤقت",
+    "message": "نُقل كيس النفايات إلى التخزين المؤقت."
+  },
+  "waste_bag.waste_bag_out_temporary_storage": {
+    "title": "أُزيلت النفايات من التخزين المؤقت",
+    "message": "أُزيل كيس النفايات من التخزين المؤقت."
+  },
+  "waste_bag.waste_bag_temporary_storage_expired": {
+    "title": "انتهت مدة التخزين المؤقت",
+    "message": "تجاوز كيس النفايات الحد الأقصى للمدة المسموح بها في التخزين المؤقت."
+  },
+  "waste_bag.waste_bag_in_cold_storage": {
+    "title": "نُقلت النفايات إلى التخزين البارد",
+    "message": "نُقل كيس النفايات إلى التخزين البارد."
+  },
+  "waste_bag.waste_bag_out_cold_storage": {
+    "title": "أُزيلت النفايات من التخزين البارد",
+    "message": "أُزيل كيس النفايات من التخزين البارد."
+  },
+  "waste_bag.waste_bag_cold_storage_expired": {
+    "title": "انتهت مدة التخزين البارد",
+    "message": "تجاوز كيس النفايات الحد الأقصى للمدة المسموح بها في التخزين البارد."
+  },
+  "waste_bag_group.waste_bag_group_in_temporary_storage": {
+    "title": "مجموعة النفايات في التخزين المؤقت",
+    "message": "تم وضع مجموعة النفايات في التخزين المؤقت."
+  },
+  "waste_bag_group.waste_bag_group_out_temporary_storage": {
+    "title": "خروج مجموعة النفايات من التخزين المؤقت",
+    "message": "تمت إزالة مجموعة النفايات من التخزين المؤقت."
+  },
+  "waste_bag_group.waste_bag_group_temporary_storage_expired": {
+    "title": "انتهاء صلاحية التخزين المؤقت لمجموعة النفايات",
+    "message": "تجاوزت مجموعة النفايات الحد الأقصى للمدة المسموح بها في التخزين المؤقت."
+  },
+  "waste_bag_group.waste_bag_group_in_cold_storage": {
+    "title": "مجموعة النفايات في التخزين البارد",
+    "message": "تم وضع مجموعة النفايات في التخزين البارد."
+  },
+  "waste_bag_group.waste_bag_group_out_cold_storage": {
+    "title": "خروج مجموعة النفايات من التخزين البارد",
+    "message": "تمت إزالة مجموعة النفايات من التخزين البارد."
+  },
+  "waste_bag_group.waste_bag_group_cold_storage_expired": {
+    "title": "انتهاء صلاحية التخزين البارد لمجموعة النفايات",
+    "message": "تجاوزت مجموعة النفايات الحد الأقصى للمدة المسموح بها في التخزين البارد."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_internal_landfill_in_process": {
+    "title": "الطمر الداخلي قيد التنفيذ",
+    "message": "تخضع مجموعة النفايات حاليًا للطمر الداخلي."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_internal_landfilled": {
+    "title": "اكتمل الطمر الداخلي",
+    "message": "تم طمر مجموعة النفايات داخليًا بنجاح."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_incinerate_in_process": {
+    "title": "الترميد قيد التنفيذ",
+    "message": "تخضع مجموعة النفايات حاليًا للترميد."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_incinerated": {
+    "title": "اكتمل الترميد",
+    "message": "تم ترميد مجموعة النفايات بنجاح."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_sterilise_in_process": {
+    "title": "التعقيم قيد التنفيذ",
+    "message": "تخضع مجموعة النفايات حاليًا للتعقيم."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_sterilised": {
+    "title": "اكتمل التعقيم",
+    "message": "تم تعقيم مجموعة النفايات بنجاح."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled_in_process": {
+    "title": "الطمر الخارجي قيد التنفيذ",
+    "message": "تخضع مجموعة النفايات حاليًا للطمر الخارجي."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_external_landfilled": {
+    "title": "اكتمل الطمر الخارجي",
+    "message": "تم طمر مجموعة النفايات خارجيًا بنجاح."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_recycled_in_process": {
+    "title": "إعادة التدوير قيد التنفيذ",
+    "message": "تخضع مجموعة النفايات حاليًا لإعادة التدوير."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_recycled": {
+    "title": "اكتملت إعادة التدوير",
+    "message": "تمت إعادة تدوير مجموعة النفايات بنجاح."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_disposed_in_process": {
+    "title": "التخلص قيد التنفيذ",
+    "message": "تخضع مجموعة النفايات حاليًا للتخلص."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_disposed": {
+    "title": "اكتمل التخلص",
+    "message": "تم التخلص من مجموعة النفايات بنجاح."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_follow_up": {
+    "title": "مطلوب متابعة النقل",
+    "message": "يُرجى متابعة حالة نقل مجموعة النفايات."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_handover": {
+    "title": "اكتمل تسليم النفايات",
+    "message": "تم تسليم مجموعة النفايات إلى {{vehicleNumber}}."
+  },
+  "waste_bag_group_transport.waste_bag_group_transport_pickup": {
+    "title": "تمت جدولة استلام النفايات",
+    "message": "من المقرر أن يستلم الناقل مجموعة النفايات."
+  },
+  "waste_bag_group_transport.waste_bag_group_handover_to_treatment": {
+    "title": "تسليم النفايات إلى جهة معالجة خارجية",
+    "message": "تم تسليم {{totalData}} مجموعة نفايات من قبل الناقل إلى طرف ثالث."
+  },
+  "waste_bag_group_treatment.waste_bag_group_treatment_receivment": {
+    "title": "استلام النفايات من قبل منشأة المعالجة",
+    "message": "تم استلام مجموعة النفايات من قبل منشأة المعالجة."
+  },
+  "waste_bag_treatment_group.waste_bag_treatment_group_end_status": {
+    "title": "اكتمال دورة حياة النفايات",
+    "message": "تمت عملية {{status}} لمجموعة النفايات بنجاح."
+  },
+  "manual_request.manual_request_created": {
+    "title": "تم إرسال طلب وزن يدوي",
+    "message": "تم إرسال طلب وزن يدوي."
+  },
+  "manual_request.manual_request_approved": {
+    "title": "تمت الموافقة على طلب الوزن اليدوي",
+    "message": "تمت الموافقة على طلب الوزن اليدوي من قبل {{name}}."
+  },
+  "manual_request.manual_request_rejected": {
+    "title": "تم رفض طلب الوزن اليدوي",
+    "message": "تم رفض طلب الوزن اليدوي من قبل {{name}}."
+  },
+  "asset.asset_inactive": {
+    "title": "تم اكتشاف أصل غير نشط",
+    "message": "الأصل {{assetName}} غير نشط حالياً. يرجى التحقق من حالته."
+  },
+  "asset.asset_warranty_expired": {
+    "title": "تذكير بانتهاء ضمان الأصل",
+    "message": "سينتهي ضمان الأصل {{assetName}} في {{expiryDate}}."
+  },
+  "asset.asset_calibration_due": {
+    "title": "موعد معايرة الأصل",
+    "message": "يتطلب الأصل {{assetName}} معايرة في {{calibrationDate}}."
+  },
+  "waste.waste_status_changed": {
+    "title": "تم تحديث حالة النفايات",
+    "message": "تم تغيير حالة كيس النفايات من {{oldStatus}} إلى {{newStatus}}."
+  },
+  "waste.waste_accumulated_update": {
+    "title": "تحديث تراكم النفايات اليومي",
+    "message": "إجمالي النفايات المتراكمة التي تمت معالجتها اليوم: {{summaryData}}."
+  },
+  "bast.create_request": {
+    "title": "تم طلب رقم محضر التسليم",
+    "message": "رقم محضر التسليم {{bastNo}} جاهز للمراجعة."
+  },
+  "waste_classification.deleted": {
+    "title": "تم تعطيل تصنيف النفايات",
+    "message": "تم تعطيل تصنيف النفايات بالمعرف {{id}}"
+  },
+  "waste_hierarchy.deleted": {
+    "title": "تم تعطيل هرمية النفايات",
+    "message": "تم تعطيل هرمية النفايات بالمعرف {{id}}"
+  },
+  "waste_bag.waste_bag_in_external_temporary_storage": {
+    "title": "نُقلت النفايات إلى التخزين المؤقت الخارجي",
+    "message": "تم نقل مجموعة النفايات إلى التخزين المؤقت الخارجي"
+  }
+}

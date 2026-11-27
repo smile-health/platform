@@ -1,0 +1,79 @@
+{
+  "title": {
+    "list": "إعدادات البرنامج",
+    "create": "إضافة برنامج",
+    "edit": "تعديل برنامج",
+    "detail": "تفاصيل البرنامج"
+  },
+  "create": "إضافة برنامج",
+  "column": {
+    "name": "الاسم",
+    "classification_material": "تصنيف المادة",
+    "updated_by": "تم التحديث بواسطة",
+    "updated_at": "وقت التحديث",
+    "activity_name": "اسم النشاط",
+    "activity_process": "عملية النشاط",
+    "protocol": "البروتوكول"
+  },
+  "filter": {
+    "search": {
+      "label": "بحث",
+      "placeholder": "اكتب اسم البرنامج"
+    },
+    "classification_material": {
+      "label": "تصنيف المادة",
+      "placeholder": "اختر تصنيف المادة"
+    }
+  },
+  "form": {
+    "success": {
+      "create": "تم إنشاء البرنامج بنجاح",
+      "update": "تم تحديث البرنامج بنجاح"
+    },
+    "label": {
+      "key": "مفتاح البرنامج",
+      "name": "اسم البرنامج",
+      "description": "الوصف",
+      "classification_material": "تصنيف المادة",
+      "color": "لون البرنامج",
+      "protocol": "البروتوكول"
+    },
+    "placeholder": {
+      "classification_material": "اختر تصنيف المادة",
+      "description": "أدخل وصفًا...",
+      "protocol": "ابحث عن بروتوكول"
+    },
+    "error": {
+      "protocol": "يجب تحديد بروتوكول واحد على الأقل"
+    },
+    "options": {
+      "classification_material": {
+        "hierarchy": "تصنيف KFA (هرمي)",
+        "non_hierarchy": "بدون تصنيف (غير هرمي)"
+      },
+      "activity_process": {
+        "bottom_up": "من الأسفل إلى الأعلى",
+        "top_down": "من الأعلى إلى الأسفل"
+      },
+      "protocol": {
+        "default": "افتراضي",
+        "custom": "داء الكلب",
+        "dengue": "حمى الضنك"
+      }
+    }
+  },
+  "details": {
+    "title": {
+      "detail": "التفاصيل",
+      "activity": "قائمة الأنشطة"
+    },
+    "button": {
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "tabs_title": {
+      "detail": "التفاصيل",
+      "activity": "النشاط"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "list": {
+    "list": "محضر التسليم",
+    "filter": {
+      "handover_document": {
+        "search": {
+          "label": "بحث",
+          "placeholder": "ابحث عن محضر التسليم"
+        }
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "no_handover_document": "رقم محضر التسليم",
+      "entity_name": "اسم المنشأة",
+      "created_by": "أنشئ بواسطة",
+      "handover_document": "محضر التسليم",
+      "description": "الوصف",
+      "status": "الحالة",
+      "created_at": "تاريخ التقديم",
+      "material_name": "اسم المادة",
+      "qty": "الكمية",
+      "material_id": "معرّف المادة",
+      "action": "إجراء"
+    },
+    "action": {
+      "approve": "اعتماد",
+      "reject": "رفض",
+      "description": "هل أنت متأكد من رغبتك في اعتماد محضر التسليم {{bast}}؟"
+    }
+  },
+  "title": {
+    "handover_document": "محضر التسليم",
+    "handover_document_list": "قائمة محاضر التسليم",
+    "handover_document_detail": "تفاصيل مستند التسليم",
+    "handover_document_approval": "اعتماد مستند التسليم"
+  },
+  "bast_status": {
+    "PENDING": "بانتظار الاعتماد",
+    "APPROVED": "معتمد",
+    "REJECTED": "مرفوض"
+  }
+}

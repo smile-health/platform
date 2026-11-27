@@ -64,7 +64,7 @@ function DateSegment({
       className={cx(
         'ui:box-content ui:leading-none ui:outline-hidden group ',
         'ui:py-1 ui:focus:bg-primary-500 ui:focus:text-primary-contrast',
-        'ui:text-right ui:text-sm ui:tabular-nums',
+        'ui:text-end ui:text-sm ui:tabular-nums',
         {
           'ui:text-gray-500!': !segment.isEditable || segment.isPlaceholder,
           'ui:text-gray-800': segment.isEditable,

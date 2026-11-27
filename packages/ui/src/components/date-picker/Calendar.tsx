@@ -86,7 +86,7 @@ export function Calendar<T extends DateValue>(
     >
       <div className="ui:mb-5 ui:flex ui:items-center ui:justify-between ui:space-x-1">
         <CalendarButton {...prevButtonProps} id={`${props.id}-prev-button`}>
-          <ChevronLeftIcon className="ui:h-4 ui:w-4 ui:text-gray-600"></ChevronLeftIcon>
+          <ChevronLeftIcon className="ui:h-4 ui:w-4 ui:text-gray-600 ui:rtl:-scale-x-100"></ChevronLeftIcon>
         </CalendarButton>
         <div className="ui:flex ui:flex-1 ui:items-center ui:justify-center ui:text-sm ui:font-medium ui:text-gray-800 ui:gap-1">
           <NativeSelect
@@ -119,7 +119,7 @@ export function Calendar<T extends DateValue>(
           </NativeSelect>
         </div>
         <CalendarButton {...nextButtonProps} id={`${props.id}-next-button`}>
-          <ChevronRightIcon className="ui:h-4 ui:w-4 ui:text-gray-600"></ChevronRightIcon>
+          <ChevronRightIcon className="ui:h-4 ui:w-4 ui:text-gray-600 ui:rtl:-scale-x-100"></ChevronRightIcon>
         </CalendarButton>
       </div>
       <CalendarGrid state={state} id={props.id} />

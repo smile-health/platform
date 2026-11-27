@@ -1,0 +1,130 @@
+{
+  "list": {
+    "title": "إعدادات طراز الأصل",
+    "list": "إعدادات طراز الأصل",
+    "add": "إضافة طراز أصل",
+    "status": "حالة طراز الأصل",
+    "tab": {
+      "list": "قائمة طرازات الأصول",
+      "create": "إضافة طراز أصل"
+    },
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث عن طراز أصل"
+      },
+      "asset_type": {
+        "label": "نوع الأصل",
+        "placeholder": "اختر نوع الأصل"
+      },
+      "manufacturer": {
+        "label": "الشركة المصنعة",
+        "placeholder": "اختر الشركة المصنعة"
+      },
+      "program": {
+        "label": "البرنامج",
+        "placeholder": "اختر البرنامج"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "name": "اسم طراز الأصل",
+      "type": "النوع: {{ type }}",
+      "manufacturer": "الشركة المصنعة: {{ manufacturer }}",
+      "workspace": "البرنامج",
+      "update_at": "آخر تحديث",
+      "update_by": "تم التحديث بواسطة",
+      "action": "إجراء",
+      "asset_gross_capacity": "السعة الإجمالية للأصل (لتر)",
+      "asset_netto_capacity": "السعة الصافية للأصل (لتر)",
+      "capacity": "{{ 1st_value }} السعة {{ 2nd_value }} "
+    },
+    "import": {
+      "model_asset_cce_with_pqs": "طراز الأصل مع PQS",
+      "model_asset_cce_without_pqs": "طراز الأصل بدون PQS",
+      "model_asset_non_cce": "طراز الأصل بدون CCE",
+      "model_asset_warehouse": "طراز الأصل للمستودع"
+    }
+  },
+  "form": {
+    "title": {
+      "add": "إضافة طراز أصل",
+      "detail": "تفاصيل طراز الأصل",
+      "edit": "تعديل طراز الأصل",
+      "capacity": "سعة طراز الأصل"
+    },
+    "detail": {
+      "capacity": {
+        "header": "السعة",
+        "warning": "لا يُسمح بالتغييرات. طراز الأصل هذا مرتبط بالفعل بأصل.",
+        "header_pqs": "سعة WHO PQS",
+        "column": {
+          "gross_capacity": "السعة الإجمالية",
+          "net_capacity": "السعة الصافية",
+          "category": "الفئة"
+        }
+      },
+      "label": {
+        "name": "اسم طراز الأصل",
+        "type": "نوع الأصل",
+        "manufacturer": "الشركة المصنعة",
+        "gross_capacity": "السعة الإجمالية (لتر)",
+        "netto_capacity": "السعة الصافية (لتر)",
+        "last_updated_at": "آخر تحديث في",
+        "last_updated_by": "آخر تحديث بواسطة",
+        "pqs_code": "رمز PQS",
+        "is_capacity_required": "هل بيانات السعة مطلوبة؟",
+        "add_more": "إضافة سعة أخرى",
+        "asset_utilization": {
+          "label": "استخدام الأصل",
+          "is_warehouse": "المستودع",
+          "is_cce": "معدات سلسلة التبريد",
+          "other": "أصل عام"
+        }
+      },
+      "placeholder": {
+        "name": "مثال: آلة اختبار",
+        "type": "اختر النوع",
+        "manufacturer": "اختر الشركة المصنعة",
+        "gross_capacity": "مثال: 3.14",
+        "netto_capacity": "مثال: 3.14",
+        "pqs_code": "اختر رمز PQS"
+      },
+      "validation": {
+        "gross_capacity": {
+          "greater_than": "يجب أن تكون السعة الإجمالية أكبر من السعة الصافية",
+          "min": "يجب أن تكون السعة الإجمالية أكبر من {{ min }}"
+        },
+        "net_capacity": {
+          "less_than": "يجب أن تكون السعة الصافية أقل من السعة الإجمالية",
+          "min": "يجب أن تكون السعة الصافية أكبر من {{ min }}"
+        },
+        "name": {
+          "duplicate": "اسم طراز الأصل موجود بالفعل. لمواصلة الحفظ، اختر نوع أصل وشركة مصنعة مختلفين."
+        }
+      }
+    },
+    "program": {
+      "title": "البرامج",
+      "without_program": "لا يوجد برنامج مطبّق"
+    }
+  },
+  "detail": {
+    "title": "تفاصيل طراز الأصل"
+  },
+  "action": {
+    "delete": {
+      "button": "حذف",
+      "confirmation": "هل أنت متأكد من رغبتك في حذف طراز الأصل هذا؟",
+      "description": "لا يمكن استعادة العنصر المحذوف"
+    },
+    "activate": {
+      "confirmation": "هل أنت متأكد من رغبتك في تنشيط طراز الأصل هذا؟"
+    },
+    "deactivate": {
+      "confirmation": "هل أنت متأكد من رغبتك في إلغاء تنشيط طراز الأصل هذا؟"
+    }
+  }
+}

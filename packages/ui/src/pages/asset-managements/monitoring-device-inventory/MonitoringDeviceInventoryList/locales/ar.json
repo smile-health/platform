@@ -1,0 +1,44 @@
+{
+  "page": {
+    "title": "قائمة أجهزة المراقبة"
+  },
+  "filter": {
+    "serial_number": {
+      "label": "الرقم التسلسلي",
+      "placeholder": "ابحث حسب الرقم التسلسلي"
+    },
+    "manufacturer": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر الشركة المصنعة"
+    },
+    "operational_status": {
+      "label": "حالة تشغيل الجهاز",
+      "placeholder": "اختر حالة تشغيل الجهاز"
+    },
+    "asset_relation": {
+      "label": "علاقة الأصل",
+      "placeholder": "اختر علاقة الأصل"
+    },
+    "device_status": {
+      "label": "حالة الجهاز",
+      "placeholder": "اختر حالة الجهاز"
+    },
+    "entity_tag": {
+      "label": "وسم المنشأة",
+      "placeholder": "اختر وسم المنشأة"
+    },
+    "asset_model": {
+      "label": "طراز الأصل",
+      "placeholder": "اختر طراز الأصل"
+    }
+  },
+  "table": {
+    "title": "قائمة أجهزة المراقبة"
+  },
+  "button": {
+    "create": "إضافة جهاز مراقبة"
+  },
+  "message": {
+    "import_success": "تم استيراد بيانات جهاز المراقبة بنجاح"
+  }
+}

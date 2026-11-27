@@ -119,7 +119,7 @@ export const InputNumber = React.forwardRef<HTMLInputElement, InputNumberProps>(
               'ui:w-full ui:border-none ui:focus:outline-hidden ui:focus:ring-0 ui:disabled:bg-gray-100 ui:disabled:opacity-75 ',
               {
                 'ui:px-3': !icon,
-                'ui:pl-0 ui:pr-3': icon,
+                'ui:ps-0 ui:pe-3': icon,
               },
               {
                 'ui:text-sm': size === 'sm',
@@ -133,7 +133,7 @@ export const InputNumber = React.forwardRef<HTMLInputElement, InputNumberProps>(
           />
           {hideStepper ? null : (
             <div
-              className={`ui:flex ui:flex-col ui:border-l ui:border-inherit`}
+              className={`ui:flex ui:flex-col ui:border-s ui:border-inherit`}
             >
               <Button {...incrementButtonProps}>
                 <ChevronUpIcon

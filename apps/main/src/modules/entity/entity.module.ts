@@ -245,7 +245,7 @@ export class EntityModule extends BaseModule {
 
   async getTemplate(c: Context) {
     const language = c.var.language
-    const title = language === "en" ? "Entity" : "Entitas"
+    const title = language !== "id" ? "Entity" : "Entitas"
     const filename = `entity_${language.toLowerCase()}.xlsx`
     const excelTemplate = new EntityTemplate()
     excelTemplate.setTitle(`${title} Template`)

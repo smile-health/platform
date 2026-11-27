@@ -1,0 +1,165 @@
+{
+  "title": {
+    "form": "تفاصيل الطلب",
+    "list": "جدول الطلب",
+    "material_in": "المواد الواردة",
+    "meta": "نموذج الطلب",
+    "create": "إنشاء إرجاع جديد",
+    "new_return": "إرجاع"
+  },
+  "form": {
+    "customer_id": {
+      "label": "المستلم",
+      "placeholder": "اختر المستلم"
+    },
+    "activity_id": {
+      "label": "اختر النشاط",
+      "placeholder": "اختر النشاط",
+      "activity_entity_relation_info": "الأنشطة المعروضة هي فقط الأنشطة التي لا تزال نشطة في هذه المنشأة"
+    },
+    "vendor_id": {
+      "label": "المرسل",
+      "placeholder": "اختر المرسل"
+    },
+    "required_date": {
+      "label": "تاريخ الإرجاع",
+      "placeholder": "اختر التاريخ"
+    },
+    "order_comment": {
+      "label": "تعليق",
+      "placeholder": "يرجى إدخال تعليق"
+    },
+    "search": {
+      "placeholder": "ابحث عن مادة"
+    }
+  },
+  "material_table": {
+    "click_to_select": "انقر على مربع الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول الإرجاع أدناه",
+    "complete_detail_transaction": "أكمل تفاصيل المعاملة أولاً"
+  },
+  "list": {
+    "selected": {
+      "column": {
+        "activity": "النشاط : {{activity}}",
+        "material_info": "معلومات المادة",
+        "stock_info": {
+          "label": "معلومات المخزون",
+          "stock_on_hand": "المخزون الحالي : {{stock_on_hand}}",
+          "available_stock": "المخزون المتاح : {{available_stock}}",
+          "min": "الحد الأدنى : {{value}}",
+          "max": "الحد الأقصى : {{value}}"
+        },
+        "quantity": {
+          "label": "الكمية",
+          "button": {
+            "batch": {
+              "qty": "كمية الدفعة",
+              "update": "تحديث الدفعة"
+            },
+            "non_batch": {
+              "qty": "الكمية",
+              "update": "تحديث الكمية"
+            }
+          },
+          "recommendation": "الموصى به {{value}}",
+          "input": "أدخل الكمية حسب الموصى به",
+          "error": {
+            "zero": "يجب أن تكون الكمية أكبر من 0",
+            "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}",
+            "required": "الكمية مطلوبة"
+          },
+          "detail": {
+            "batch_code": "رمز الدفعة : {{ code }}",
+            "expired_date": "تاريخ الانتهاء : {{ date }}",
+            "stock_from_activity": "المخزون من النشاط : {{ activity }}",
+            "qty": "الكمية : {{ value }}"
+          }
+        },
+        "add_material": "إضافة مادة",
+        "reason": {
+          "placeholder": "اختر السبب"
+        },
+        "other_reason": {
+          "placeholder": "أدخل السبب"
+        },
+        "action": {
+          "label": "إجراء",
+          "remove": "إزالة"
+        }
+      }
+    },
+    "material": {
+      "column": {
+        "material_name": "اسم المادة",
+        "available_stock": "إجمالي المخزون المتاح",
+        "stock_on_activity": "المخزون في {{activity_name}}",
+        "selection": "اختيار"
+      }
+    }
+  },
+  "button": {
+    "send": "إرسال",
+    "reset": "إعادة تعيين"
+  },
+  "modal": {
+    "companion": {
+      "title": "هل تريد إنشاء الطلب بدون مواد مرافقة؟",
+      "description": "بالنقر على «نعم»، فإنك تقر بأنك تطلب هذه المادة دون المواد المرافقة التالية؟",
+      "button": {
+        "order": "نعم، متابعة الطلب"
+      }
+    },
+    "reset": {
+      "title": "تأكيد",
+      "description": "هل أنت متأكد أنك تريد حذف جميع البيانات المعبأة؟"
+    },
+    "save": {
+      "title": "تأكيد",
+      "description": "هل أنت متأكد أنك تريد حفظ هذه البيانات؟"
+    }
+  },
+  "drawer": {
+    "header": "قائمة الدفعات",
+    "stock_on_hand": "المخزون الفعلي",
+    "available_stock": "المخزون المتاح",
+    "take_stock_from_other_activities": {
+      "label": "أخذ المخزون من الأنشطة الأخرى:",
+      "placeholder": "اختر النشاط"
+    },
+    "table": {
+      "valid_material": "دفعة المادة",
+      "expired_material": "دفعة مادة منتهية الصلاحية",
+      "column": {
+        "batch_info": {
+          "label": "معلومات الدفعة",
+          "production_date": "تاريخ الإنتاج: {{date}}",
+          "manufacturer": "الشركة المصنعة: {{manufacturer}}",
+          "expired_date": "تاريخ انتهاء الصلاحية:"
+        },
+        "stock_info": {
+          "label": "معلومات المخزون",
+          "stock_on_hand": "المخزون الفعلي: {{value}}",
+          "available_stock": "المخزون المتاح: {{value}}",
+          "allocated": "المخصص: {{value}}"
+        },
+        "activity": {
+          "label": "النشاط"
+        },
+        "quantity": {
+          "label": "الكمية",
+          "placeholder": "أدخل الكمية",
+          "validation": {
+            "max": "لا يمكن إدخال كمية أكبر من المخزون المتاح",
+            "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}"
+          }
+        },
+        "material_status": {
+          "label": "حالة المادة",
+          "placeholder": "اختر الحالة"
+        }
+      },
+      "validation": "لم يتم تحديد أي عنصر. يرجى مراجعة المادة المضافة والضغط على زر الحفظ في الدفعة لحفظ التغييرات.",
+      "empty": "هذه القائمة فارغة حاليًا. يرجى أخذ المخزون من الأنشطة الأخرى."
+    }
+  }
+}

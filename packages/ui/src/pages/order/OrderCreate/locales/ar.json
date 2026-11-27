@@ -1,0 +1,111 @@
+{
+  "title": {
+    "form": "تفاصيل الطلب",
+    "list": "جدول الطلب",
+    "material_in": "مادة واردة",
+    "meta": "نموذج الطلب",
+    "create": "إنشاء طلب جديد",
+    "new_order": "طلب جديد"
+  },
+  "form": {
+    "customer_id": {
+      "label": "المستلم",
+      "placeholder": "اختر المستلم"
+    },
+    "activity_id": {
+      "label": "اختر النشاط",
+      "placeholder": "اختر النشاط",
+      "activity_entity_relation_info": "الأنشطة المعروضة هي فقط الأنشطة التي لا تزال نشطة في هذه المنشأة"
+    },
+    "vendor_id": {
+      "label": "المرسل",
+      "placeholder": "اختر المرسل"
+    },
+    "required_date": {
+      "label": "التاريخ المطلوب",
+      "placeholder": "اختر التاريخ"
+    },
+    "order_comment": {
+      "label": "تعليق",
+      "placeholder": "يرجى إدخال تعليق"
+    },
+    "search": {
+      "placeholder": "ابحث عن مادة"
+    }
+  },
+  "material_table": {
+    "click_to_select": "انقر على مربع الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول الطلب أدناه",
+    "complete_detail_transaction": "أكمل تفاصيل المعاملة أولاً"
+  },
+  "list": {
+    "selected": {
+      "column": {
+        "activity": "النشاط",
+        "material_info": {
+          "label": "المادة",
+          "activity": "النشاط: {{activity}}"
+        },
+        "stock_on_hand": "المخزون الفعلي",
+        "stock_available": {
+          "label": "المخزون المتاح"
+        },
+        "quantity": {
+          "label": "الكمية",
+          "recommendation": "الموصى به {{value}}",
+          "input": "أدخل الكمية حسب التوصية",
+          "error": {
+            "zero": "يجب أن تكون الكمية أكبر من 0",
+            "multiply": "يجب أن تكون الكمية من مضاعفات {{value}}",
+            "required": "الكمية مطلوبة"
+          },
+          "detail": {
+            "material_name": "المادة : {{name}}",
+            "qty": "الكمية : {{value}}"
+          }
+        },
+        "add_material": "إضافة مادة",
+        "reason": {
+          "label": "السبب",
+          "placeholder": "اختر السبب"
+        },
+        "other_reason": {
+          "placeholder": "أدخل السبب"
+        },
+        "action": "إجراء"
+      }
+    },
+    "material": {
+      "column": {
+        "material_name": "اسم المادة",
+        "available_stock": "إجمالي المخزون المتاح",
+        "stock_on_activity": "المخزون في {{activity_name}}",
+        "selection": "تحديد"
+      }
+    }
+  },
+  "button": {
+    "send": "إرسال",
+    "reset": "إعادة تعيين",
+    "trademark": {
+      "add": "مادة متغير المنتج",
+      "update": "تحديث مادة متغير المنتج"
+    }
+  },
+  "modal": {
+    "reset": {
+      "title": "تأكيد",
+      "description": "هل أنت متأكد من رغبتك في حذف جميع البيانات المدخلة؟"
+    },
+    "save": {
+      "title": "تأكيد",
+      "description": "هل أنت متأكد من رغبتك في حفظ هذه البيانات؟"
+    }
+  },
+  "drawer": {
+    "header": "مادة متغير المنتج",
+    "stock_on_hand": "المخزون الفعلي",
+    "available_stock": "المخزون المتاح",
+    "min": "الحد الأدنى",
+    "max": "الحد الأقصى"
+  }
+}

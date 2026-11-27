@@ -1,0 +1,123 @@
+{
+  "page": {
+    "title_create": "إنشاء مراقبة جهاز",
+    "title_edit": "تعديل مراقبة جهاز"
+  },
+  "section": {
+    "asset_specification": {
+      "title": "مواصفات الأصل"
+    },
+    "operational_status": {
+      "title": "الحالة التشغيلية"
+    },
+    "entity": {
+      "title": "المنشأة"
+    },
+    "budget": {
+      "title": "الميزانية"
+    }
+  },
+  "field": {
+    "asset_type": {
+      "label": "نوع الأصل",
+      "placeholder": "المراقبة عن بُعد لدرجة الحرارة",
+      "validation": {
+        "required": "نوع الأصل مطلوب"
+      }
+    },
+    "asset_model": {
+      "label": "طراز الأصل",
+      "placeholder": "اختر طراز الأصل",
+      "validation": {
+        "required": "طراز الأصل مطلوب"
+      }
+    },
+    "manufacturer": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر الشركة المصنعة",
+      "validation": {
+        "required": "الشركة المصنعة مطلوبة"
+      }
+    },
+    "vendor": {
+      "label": "المورد",
+      "placeholder": "اختر المورد",
+      "validation": {
+        "required": "المورد مطلوب"
+      }
+    },
+    "communication_provider": {
+      "label": "مزود الاتصالات",
+      "placeholder": "اختر مزود الاتصالات",
+      "validation": {
+        "required": "مزود الاتصالات مطلوب"
+      }
+    },
+    "serial_number": {
+      "label": "الرقم التسلسلي",
+      "placeholder": "الرقم التسلسلي",
+      "validation": {
+        "required": "الرقم التسلسلي مطلوب",
+        "max": "لا يجوز أن يتجاوز الرقم التسلسلي 255 حرفًا"
+      }
+    },
+    "production_year": {
+      "label": "سنة الإنتاج",
+      "placeholder": "اختر سنة الإنتاج",
+      "validation": {
+        "required": "سنة الإنتاج مطلوبة",
+        "max": "لا يمكن أن تكون سنة الإنتاج في المستقبل",
+        "production_year_must_be_less_than_budget_year": "يجب أن تكون سنة الإنتاج أقل من سنة الميزانية"
+      }
+    },
+    "operational_status": {
+      "label": "الحالة التشغيلية",
+      "placeholder": "اختر الحالة التشغيلية",
+      "validation": {
+        "required": "الحالة التشغيلية مطلوبة"
+      }
+    },
+    "entity": {
+      "label": "المنشأة",
+      "placeholder": "اختر المنشأة",
+      "validation": {
+        "required": "المنشأة مطلوبة"
+      }
+    },
+    "contact_person": {
+      "label": "الشخص المسؤول {{number}}",
+      "placeholder": "اختر الشخص المسؤول",
+      "validation": {
+        "required": "الشخص المسؤول مطلوب"
+      }
+    },
+    "phone_number": {
+      "label": "رقم الهاتف {{number}}",
+      "placeholder": "أدخل رقم الهاتف",
+      "validation": {
+        "required": "رقم الهاتف مطلوب"
+      }
+    },
+    "budget_year": {
+      "label": "سنة الموازنة",
+      "placeholder": "اختر سنة الموازنة",
+      "validation": {
+        "required": "سنة الموازنة مطلوبة",
+        "budget_year_must_be_greater_than_production_year": "يجب أن تكون سنة الموازنة أكبر من سنة الإنتاج"
+      }
+    },
+    "budget_source": {
+      "label": "مصدر الموازنة",
+      "placeholder": "اختر مصدر الموازنة",
+      "validation": {
+        "required": "مصدر الموازنة مطلوب"
+      }
+    }
+  },
+  "api": {
+    "create_success": "تم إنشاء مراقبة الجهاز بنجاح",
+    "update_success": "تم تحديث مراقبة الجهاز بنجاح",
+    "create_failed": "فشل إنشاء مراقبة الجهاز",
+    "update_failed": "فشل تحديث مراقبة الجهاز"
+  }
+}

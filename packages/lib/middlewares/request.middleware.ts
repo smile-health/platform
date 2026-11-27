@@ -18,7 +18,7 @@ export class RequestMiddleware {
   async #setLanguage(c: Context) {
     let language: string =
       c.req.header("accept-language")?.toLowerCase() ?? "en";
-    const allowedLanguage: Array<string> = ["en", "id"];
+    const allowedLanguage: Array<string> = ["en", "id", "ar"];
     const isAllowed = allowedLanguage.some((lang) => lang === language);
     if (!isAllowed) {
       language = "en";

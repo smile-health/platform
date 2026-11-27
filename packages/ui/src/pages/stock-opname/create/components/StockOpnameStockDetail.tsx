@@ -343,7 +343,7 @@ const StockOpnameStockDetail: React.FC<Props> = (props) => {
                 <Button
                   variant="subtle"
                   type="button"
-                  className="ui:mr-2"
+                  className="ui:me-2"
                   onClick={handleReset}
                   leftIcon={<Reload />}
                 >

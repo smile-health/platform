@@ -43,7 +43,7 @@ const DropdownNav: React.FC<Props> = ({
       <DropdownMenuTrigger>
         <div className={className} id={`trigger-${title}`}>
           <div className="ui:text-primary-contrast">{title}</div>
-          <div className="ui:py-1 ui:pl-2">
+          <div className="ui:py-1 ui:ps-2">
             <ChevronDownIcon className="ui:h-3 ui:w-3 ui:text-primary-contrast" />
           </div>
         </div>
@@ -63,7 +63,7 @@ const DropdownNav: React.FC<Props> = ({
             }
             return (
               <Link
-                className={`${item.className} ui:text-left ui:block ui:text-primary-surface ui:cursor-pointer ui:hover:bg-gray-100 ui:px-6 ui:py-1`}
+                className={`${item.className} ui:text-start ui:block ui:text-primary-surface ui:cursor-pointer ui:hover:bg-gray-100 ui:px-6 ui:py-1`}
                 id={`navbar-${item.link}`}
                 key={`navbar-${item.link}`}
                 href={router.getAsLink(item.link ?? '')}

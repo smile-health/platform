@@ -207,7 +207,7 @@ export function DashboardBoxConfig({
               )}
             </div>
           ))}
-        <div className="ui:absolute ui:right-0 ui:flex ui:justify-end ui:items-center ui:gap-4">
+        <div className="ui:absolute ui:end-0 ui:flex ui:justify-end ui:items-center ui:gap-4">
           {sort?.show && (
             <ReactSelect
               data-testid="sort"
@@ -326,7 +326,7 @@ export function DashboardBoxInfoModal({
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="ui:ml-2"
+        className="ui:ms-2"
         aria-label="Info"
       >
         <InformationCircleIcon className="ui:size-5 ui:text-neutral-500 ui:fill-dark-blue" />

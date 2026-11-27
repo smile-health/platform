@@ -1,0 +1,313 @@
+{
+  "title": "المعاملة",
+  "transaction_form": "نموذج المعاملة",
+  "transaction_detail": "تفاصيل المعاملة",
+  "select_activity": "اختر النشاط",
+  "placeholder_select_activity": "اختر النشاط",
+  "caption_activity": "الأنشطة المعروضة هي فقط الأنشطة التي لا تزال نشطة في هذه المنشأة",
+  "entity_name": "اسم المنشأة",
+  "select_entity": "اختر اسم المنشأة",
+  "transaction_type": "نوع المعاملة",
+  "select_transaction_type": "اختر نوع المعاملة",
+  "transaction_table": "جدول المعاملات",
+  "send": "إرسال",
+  "reset": "إعادة تعيين",
+  "select_reason": "اختر السبب",
+  "enter_reason": "يرجى إدخال السبب",
+  "batch": "دفعة",
+  "detail": "التفاصيل",
+  "add_material": "إضافة مادة",
+  "cancel": "إلغاء",
+  "save": "حفظ",
+  "from": "من",
+  "select_status": "اختر الحالة",
+  "delete": "إزالة",
+  "max": "الحد الأقصى",
+  "close": "إغلاق",
+  "enter_qty": "يرجى إدخال الكمية",
+  "caption_detail_batch": "قائمة {{type}}",
+  "table": {
+    "column": {
+      "activity": "النشاط",
+      "stock_on_hand": "المخزون الموجود",
+      "available_stock": "المخزون المتاح",
+      "quantity": "الكمية",
+      "reason": "السبب",
+      "action": "إجراء",
+      "batch_code": "رمز الدفعة",
+      "production_date": "تاريخ الإنتاج",
+      "manufacturer": "الشركة المصنعة",
+      "expired_date": "تاريخ الانتهاء",
+      "allocated": "المخصص",
+      "material_status": "حالة المادة",
+      "unit": "الوحدة",
+      "budget_source": "مصدر الميزانية",
+      "budget_year": "سنة الميزانية",
+      "total_price": "السعر الإجمالي",
+      "purchase_per_unit": "سعر الشراء",
+      "material_info": "معلومات المادة",
+      "stock_info": "معلومات المخزون",
+      "batch_info": "معلومات {{type}}",
+      "budget_info": "معلومات الميزانية",
+      "edit": "تعديل",
+      "vaccine_type": {
+        "label": "نوع التطعيم",
+        "placeholder": "اختر النوع"
+      },
+      "method": {
+        "label": "الطريقة",
+        "placeholder": "اختر الطريقة"
+      },
+      "type": "النوع",
+      "transactions": "المعاملات"
+    },
+    "button": {
+      "vaccination_patient": "التطعيم والمريض"
+    },
+    "content": {
+      "dengue": {
+        "gender": "الجنس",
+        "birthdate": "تاريخ الميلاد",
+        "had_dengue_fever_before": "أصيب بحمى الضنك سابقًا",
+        "history": "تاريخ الأمراض",
+        "reaction": [
+          "التفاعل",
+          "التفاعل (أخرى)"
+        ]
+      }
+    }
+  },
+  "patient_identity": {
+    "label": "بيانات التطعيم والمريض",
+    "description": "يرجى إكمال جميع نماذج المريض",
+    "tab": [
+      "التطعيم",
+      "الهوية",
+      "تاريخ الأمراض"
+    ],
+    "form_completion": "اكتمال النموذج",
+    "patient": "المريض {{counter}}",
+    "add_new_patient": "إضافة مريض جديد",
+    "identity_type": {
+      "label": "نوع الهوية",
+      "placeholder": "اختر نوع الهوية"
+    },
+    "patient_id": {
+      "label": "رقم الهوية",
+      "placeholder": "يرجى إدخال رقم الهوية"
+    },
+    "phone_number": "رقم الهاتف",
+    "vaccination_sequence": {
+      "label": "تسلسل التطعيم",
+      "placeholder": "اختر التسلسل"
+    },
+    "sequence": "التسلسل",
+    "warning_exist": "بيانات المريض متاحة في SMILE.",
+    "warning_unmatch_method": "أضف مريضًا آخر بنوع {{type}} وبطريقة الحقن داخل الأدمة",
+    "warning_unmatch_method_new_patient": "نوع التطعيم والطريقة غير صحيحين",
+    "reaction_id": {
+      "label": "التفاعل بعد التطعيم",
+      "placeholder": "اختر التفاعل بعد التطعيم"
+    },
+    "other_reaction": {
+      "label": "تفاعل آخر",
+      "placeholder": "يرجى إدخال تفاعل آخر"
+    },
+    "dose": [
+      "جرعة",
+      "الجرعة"
+    ],
+    "dengue_sequence": [
+      "الجرعة 1",
+      "الجرعة 2"
+    ],
+    "identity": {
+      "generate_from_nik": "بيانات الهوية بناءً على NIK",
+      "full_name": {
+        "label": "الاسم الكامل",
+        "placeholder": "اكتب اسمك الكامل"
+      },
+      "gender": {
+        "label": "الجنس",
+        "placeholder": "اختر الجنس",
+        "options": [
+          "ذكر",
+          "أنثى"
+        ]
+      },
+      "birth_date": {
+        "label": "تاريخ الميلاد",
+        "placeholder": "اختر تاريخ الميلاد"
+      },
+      "status": {
+        "label": "الحالة",
+        "placeholder": "اختر الحالة"
+      },
+      "last_education": {
+        "label": "آخر مستوى تعليمي",
+        "placeholder": "اختر آخر مستوى تعليمي"
+      },
+      "work": {
+        "label": "المهنة",
+        "placeholder": "اختر المهنة"
+      },
+      "religion": {
+        "label": "الديانة",
+        "placeholder": "اختر الديانة"
+      },
+      "ethnic": {
+        "label": "المجموعة العرقية",
+        "placeholder": "اختر المجموعة العرقية"
+      },
+      "phone_number": {
+        "label": "رقم الهاتف",
+        "placeholder": "أدخل رقم الهاتف"
+      },
+      "province": {
+        "label": "المحافظة",
+        "placeholder": "اختر المحافظة"
+      },
+      "district": {
+        "label": "المدينة/المنطقة",
+        "placeholder": "اختر المدينة/المنطقة"
+      },
+      "registered_address": {
+        "label": "العنوان المسجل الكامل",
+        "placeholder": "يرجى إدخال العنوان المسجل الكامل"
+      },
+      "is_matched_address": {
+        "label": "عنوان السكن يطابق العنوان المسجل",
+        "placeholder": "يرجى إدخال عنوان السكن المطابق للعنوان المسجل"
+      },
+      "residential_address_description": {
+        "label": "عنوان السكن الكامل",
+        "placeholder": "يرجى إدخال عنوان السكن"
+      },
+      "marital_status": [
+        "أعزب",
+        "متزوج",
+        "مطلق",
+        "أرمل"
+      ]
+    },
+    "history_medical": {
+      "is_dengue_before": {
+        "label": "هل سبق أن أُصيب المريض بحمى الضنك من قبل؟",
+        "options": [
+          "نعم",
+          "لا"
+        ]
+      },
+      "dengue_received_vaccine": {
+        "label": "هل سبق أن تلقى المريض لقاحًا لحمى الضنك بشكل مستقل؟",
+        "options": [
+          "نعم",
+          "لا"
+        ]
+      },
+      "month": [
+        "يناير",
+        "فبراير",
+        "مارس",
+        "أبريل",
+        "مايو",
+        "يونيو",
+        "يوليو",
+        "أغسطس",
+        "سبتمبر",
+        "أكتوبر",
+        "نوفمبر",
+        "ديسمبر"
+      ],
+      "last_dengue_diagnosis": {
+        "label": "متى كانت آخر إصابة بحمى الضنك؟",
+        "placeholder": [
+          "الشهر",
+          "السنة"
+        ]
+      }
+    },
+    "patient_has_record": {
+      "vaccination": "تم تسجيل المريض الحامل لـ NIK {{patient_no}} بأن لديه بيانات تطعيم:"
+    },
+    "warning_skip_sequence": {
+      "description": "المريض صاحب {{identity_type}} <strong>{{patient_id}}</strong> لم تُسجّل له بعد بيانات التطعيم {{next_sequence}}. هل أنت متأكد من رغبتك في اختيار تسلسل التطعيم {{skip_sequence}}؟"
+    },
+    "warning_duplicate_sequence": {
+      "description": "تم تسجيل بيانات التطعيم {{sequence}} للمريض الحامل لـ NIK <strong>{{patient_id}}</strong>. هل أنت متأكد من رغبتك في إدراج معاملة {{sequence}}؟"
+    },
+    "at": "في"
+  },
+  "validation": {
+    "quantity_must_multiply": "يجب أن تكون الكمية من مضاعفات {{number}}",
+    "required_materials": "لم تُضف أي مواد بعد",
+    "max_qty": "لا يمكن أن تتجاوز الكمية المخزون المتاح",
+    "min_qty": "يجب أن تكون الكمية أكبر من 0",
+    "max_qty_rabies": "لا يمكن أن تتجاوز الكمية {{number}}",
+    "min_qty_rabies": "لا يمكن أن تكون الكمية أقل من {{number}}",
+    "patient_id": "يجب أن يكون معرّف المريض رقمًا مكوّنًا من 16 رقمًا",
+    "required": "مطلوب",
+    "phone_min": "رقم الهاتف من 8 أحرف على الأقل",
+    "phone_max": "رقم الهاتف حتى 15 حرفًا",
+    "uniq_patient_id": "معرّف المريض مستخدم بالفعل",
+    "max_open_vial_qty": "لا يمكن أن تتجاوز الكمية مخزون القارورة المفتوحة المتاح",
+    "max_close_vial_qty": "لا يمكن أن تتجاوز الكمية مخزون القارورة المغلقة المتاح",
+    "generate_nik": {
+      "month_not_valid": "الشهر غير صالح في NIK",
+      "date_not_valid": "التاريخ غير صالح في NIK",
+      "birth_date_not_valid": "تاريخ الميلاد غير صالح في NIK"
+    },
+    "close_qty_supporting_text": "استخدم القارورة المغلقة بعد استخدام جميع القوارير المفتوحة بالكامل",
+    "open_vial_still_available": "لا تزال هناك قوارير مفتوحة متبقية. يرجى استخدامها قبل إضافة قارورة مغلقة",
+    "history_medical": "يجب ألا يكون تاريخ سجل المرض بعد التاريخ الحالي"
+  },
+  "currency": {
+    "IDR": "IDR"
+  },
+  "error_actual_date": "لا يمكن أن يكون تاريخ المرحلة الأخيرة أقل من اليوم",
+  "take_stock_from_others_activities": "أخذ المخزون من أنشطة أخرى:",
+  "error_message_complete_data": "أكمل جميع البيانات",
+  "toast": {
+    "success": {
+      "create": "تم حفظ معاملة المرحلة الأخيرة بنجاح"
+    }
+  },
+  "nik": "رقم الهوية الإندونيسي",
+  "non_nik": "رقم هوية غير وطني",
+  "add": "إضافة",
+  "completed_sequence": {
+    "confirmation": "تأكيد",
+    "second_title": {
+      "dengue": "لم يتم تسجيل بيانات التطعيم {{dose}} للمريض {{patient_no}}. يرجى إكمال البيانات أدناه."
+    },
+    "description": {
+      "rabies": "رقم الهوية الذي أدخلته بترتيب خاطئ. أضف بيانات تاريخ التطعيم إذا كان تسلسل التطعيم المُدخل صحيحًا"
+    },
+    "validation": {
+      "date_sequence_not_valid": "تسلسل تاريخ غير صالح",
+      "date_not_valid": "تاريخ غير صالح",
+      "more_than_actual_date": "لا يمكن أن يكون التاريخ الأول أكبر من التاريخ الفعلي للمرحلة الأخيرة",
+      "less_then_previous_date": "لا يمكن أن يكون التاريخ أصغر من التاريخ السابق"
+    },
+    "error": {
+      "date_sequence_empty": "يرجى إكمال تاريخ التلقيح السابق للمتابعة."
+    },
+    "information": {
+      "label": {
+        "entity": "موقع التلقيح"
+      },
+      "placeholder": {
+        "date": "تاريخ التلقيح {{dose}}",
+        "entity": "موقع التلقيح لـ {{dose}}"
+      },
+      "current": "الحركة الحالية",
+      "missing": "تأكيد تاريخ التلقيح المسجل ",
+      "dose": [
+        "الجرعة الأولى",
+        "الجرعة الثانية"
+      ]
+    }
+  },
+  "open_vial": "فتح القارورة",
+  "close_vial": "إغلاق القارورة"
+}

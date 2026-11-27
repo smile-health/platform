@@ -23,7 +23,7 @@ export function InputTime(props: InputTimeProps) {
   const { fieldProps } = useTimeField(props, state, ref)
   const allError = state.isInvalid || props.error
   return (
-    <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-left">
+    <div className="ui:relative ui:flex ui:w-full ui:flex-col ui:text-start">
       <div
         {...fieldProps}
         ref={ref}

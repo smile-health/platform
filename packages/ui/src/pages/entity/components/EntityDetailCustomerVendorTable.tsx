@@ -158,7 +158,7 @@ export const columnCustomer = ({
         <div className="ui:flex ui:justify-start ui:items-center">
           <Button
             variant="light"
-            className="ui:bg-transparent ui:p-0 ui:h-auto ui:mr-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
+            className="ui:bg-transparent ui:p-0 ui:h-auto ui:me-[18px] ui:text-[#0069D2] ui:hover:bg-transparent!"
             type="button"
             disabled={deletingCustomer || entity?.status === BOOLEAN.FALSE}
             onClick={() =>

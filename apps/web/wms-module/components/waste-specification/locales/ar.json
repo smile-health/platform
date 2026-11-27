@@ -1,0 +1,208 @@
+{
+  "list": {
+    "list": "مواصفات النفايات",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "أدخل كلمة مفتاحية"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "waste_code": "رمز النفايات",
+      "waste_type": "نوع النفايات",
+      "waste_group": "مجموعة النفايات",
+      "waste_characteristic": "خاصية النفايات",
+      "multiple_transporters": "أكثر من طرف ثالث واحد",
+      "use_cold_storage": "استخدام التخزين البارد",
+      "internal_treatment": "معالجة داخلية",
+      "external_treatment": "معالجة خارجية",
+      "vehicle_type": "نوع المركبة",
+      "updated_at": "تاريخ التحديث",
+      "updated_by": "تم التحديث بواسطة",
+      "action": "إجراء"
+    },
+    "options": {
+      "tag": "اختر وسمًا",
+      "type": "اختر النوع"
+    },
+    "action": {
+      "activate": {
+        "title": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل"
+      }
+    }
+  },
+  "title": {
+    "waste_specification": "مواصفات النفايات",
+    "list": "قائمة مواصفات النفايات",
+    "create": "مواصفات النفايات",
+    "edit": "تعديل مواصفات النفايات"
+  },
+  "detail": {
+    "title": "تفاصيل مواصفات النفايات",
+    "waste_code": "رمز النفايات",
+    "waste_type": "نوع النفايات",
+    "waste_group": "مجموعة النفايات",
+    "waste_characteristic": "خاصية النفايات",
+    "waste_bag_color": "لون كيس النفايات",
+    "minimum_decay_time_process": "الحد الأدنى لمدة عملية التحلل",
+    "multiple_transporters": "أكثر من طرف ثالث واحد",
+    "use_cold_storage": "استخدام التخزين البارد",
+    "cold_storage_max_processing": "الحد الأقصى لمدة التخزين البارد",
+    "temporary_storage_max_processing": "الحد الأقصى لمدة التخزين المؤقت",
+    "internal_treatment": "معالجة داخلية",
+    "external_treatment": "معالجة طرف ثالث",
+    "vehicle_type": "نوع المركبة",
+    "created_at": "تاريخ الإنشاء",
+    "created_by": "أنشأه",
+    "updated_at": "تاريخ التحديث",
+    "updated_by": "حدّثه"
+  },
+  "action": {
+    "activate": {
+      "button": "تفعيل",
+      "confirmation": "هل أنت متأكد من رغبتك في تفعيل هذا المنتج؟"
+    },
+    "deactivate": {
+      "button": "إلغاء التفعيل",
+      "confirmation": "هل أنت متأكد من رغبتك في إلغاء تفعيل هذا المنتج؟"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "قالب المنتج",
+    "trademark": "متغير المنتج",
+    "non_hierarchy": "بدون تسلسل هرمي"
+  },
+  "form": {
+    "waste_type": {
+      "label": "نوع النفايات",
+      "placeholder": "اختر نوع النفايات",
+      "validation": {
+        "required": "نوع النفايات مطلوب"
+      }
+    },
+    "waste_group": {
+      "label": "مجموعة النفايات",
+      "placeholder": "اختر مجموعة النفايات",
+      "validation": {
+        "required": "مجموعة النفايات مطلوبة"
+      }
+    },
+    "waste_characteristic": {
+      "label": "خاصية النفايات",
+      "placeholder": "اختر الخاصية",
+      "validation": {
+        "required": "خاصية النفايات مطلوبة"
+      }
+    },
+    "waste_code": {
+      "label": "رمز النفايات",
+      "placeholder": "أدخل رمز النفايات"
+    },
+    "waste_bag_color": {
+      "label": "لون كيس النفايات",
+      "placeholder": "اختر لون كيس النفايات",
+      "validation": {
+        "required": "كيس النفايات مطلوب"
+      }
+    },
+    "use_cold_storage": {
+      "label": "استخدام التخزين البارد",
+      "validation": {
+        "required": "تحديد استخدام التخزين البارد مطلوب"
+      }
+    },
+    "multiple_transporters": {
+      "label": "أكثر من طرف ثالث واحد"
+    },
+    "storage_rule": {
+      "label": "قاعدة التخزين",
+      "placeholder": "أدخل قاعدة التخزين"
+    },
+    "cold_storage_max_processing_type": {
+      "label": "الحد الأقصى لمدة التخزين البارد (أيام)"
+    },
+    "cold_storage_max_processing_time": {
+      "placeholder": "أدخل الحد الأقصى لمعالجة التخزين البارد"
+    },
+    "temporary_storage_min_processing_type": {
+      "label": "الحد الأدنى لمدة التخزين المؤقت"
+    },
+    "temporary_storage_min_processing_time": {
+      "placeholder": "أدخل الحد الأدنى لمعالجة التخزين المؤقت"
+    },
+    "temporary_storage_max_processing_type": {
+      "label": "الحد الأقصى لمدة التخزين المؤقت (أيام)"
+    },
+    "minimum_decay_time_process": {
+      "label": "الحد الأدنى لمدة عملية التحلل (أيام)",
+      "placeholder": "أدخل الحد الأدنى لمدة عملية التحلل"
+    },
+    "temporary_storage_max_processing_time": {
+      "placeholder": "أدخل الحد الأقصى لمعالجة التخزين المؤقت"
+    },
+    "waste_internal_treatment": {
+      "label": "المعالجة الداخلية للنفايات",
+      "placeholder": "اختر المعالجة الداخلية"
+    },
+    "waste_external_treatment": {
+      "label": "المعالجة الخارجية للنفايات",
+      "placeholder": "اختر المعالجة الخارجية",
+      "transport_auto_selected": "يتم اختيار النقل تلقائيًا عند اختيار المعالجة أو إعادة التدوير أو الطمر",
+      "validation": {
+        "required": "المعالجة الخارجية للنفايات مطلوبة"
+      }
+    },
+    "vehicle_type": {
+      "label": "نوع المركبة",
+      "placeholder": "اختر نوع المركبة",
+      "validation": {
+        "required": "نوع المركبة مطلوب"
+      }
+    }
+  },
+  "master_waste_create": "إضافة مواصفات النفايات",
+  "internal_treatment": {
+    "PYROLYSIS": "الحرق/الانحلال الحراري",
+    "DISINFECTION": "التعقيم/التطهير",
+    "INTERNAL_LANDFILL": "مكب النفايات"
+  },
+  "external_treatment": {
+    "TRANSPORTER_TREATMENT": "النقل - المعالجة",
+    "TRANSPORTER_LANDFILL": "النقل - مكب النفايات",
+    "TRANSPORTER_RECYCLER": "النقل - إعادة التدوير",
+    "SPECIALIZED_TREATMENT_PROVIDER": "معالجة متخصصة",
+    "TRANSPORTER_GOVERNMENT": "النقل - حكومي",
+    "TRANSPORTER_GOVERNMENT_WASTE_BANK": "النقل - بنك نفايات حكومي"
+  },
+  "waste_bag_color": {
+    "BLACK": "أسود",
+    "GRAY": "رمادي",
+    "PURPLE": "بنفسجي",
+    "BROWN": "بني",
+    "RED": "أحمر",
+    "YELLOW": "أصفر",
+    "NONE": "لا شيء"
+  },
+  "vehicle_type": {
+    "BOX_TRUCK": "شاحنة صندوقية",
+    "REFRIGERATED_BOX_TRUCK": "شاحنة صندوقية مبردة",
+    "OPEN_BODY_TRUCK": "شاحنة مفتوحة الجسم",
+    "TANKER": "صهريج",
+    "HAZARDOUS_MATERIAL_TRUCK": "شاحنة مواد خطرة",
+    "RADIOACTIVE_MATERIAL_TRUCK": "شاحنة مواد مشعة",
+    "FLATBED_TRUCK": "شاحنة مسطحة",
+    "LOADER_TRUCK": "شاحنة تحميل",
+    "TRAILER": "مقطورة",
+    "VAN": "عربة نقل صغيرة"
+  },
+  "information": {
+    "title": "مواصفات النفايات",
+    "description": "تسجّل مواصفات النفايات بيانات تصنيف/مواصفات النفايات وتراقبها وتديرها استنادًا إلى النوع والمجموعة والخصائص وطرق التخزين والمعالجة."
+  }
+}

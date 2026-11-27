@@ -96,8 +96,8 @@ export function CalendarCell({
         className={cx('ui:h-8 ui:w-8 ui:outline-hidden ui:group', {
           'ui:bg-primary-100': isSelected,
           'ui:hidden!': isOutsideVisibleRange || isOutsideMonth,
-          'ui:rounded-l': isRoundedLeft,
-          'ui:rounded-r': isRoundedRight,
+          'ui:rounded-s': isRoundedLeft,
+          'ui:rounded-e': isRoundedRight,
         })}
       >
         <div

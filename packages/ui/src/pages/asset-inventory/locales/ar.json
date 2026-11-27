@@ -1,0 +1,318 @@
+{
+  "asset_inventory": "جرد الأصول",
+  "asset_inventory_list": "قائمة الأصول التشغيلية",
+  "deactivate": "تعطيل",
+  "activate": "تنشيط",
+  "create_inventory_asset": "إضافة أصل تشغيلي",
+  "create": "إنشاء",
+  "working_status": {
+    "unsubscribed": "غير مشترك",
+    "not_used": "غير مستخدم",
+    "defrosting": "إزالة التجميد",
+    "unrepairable": "غير قابل للإصلاح",
+    "damaged": "تالف",
+    "repair": "إصلاح",
+    "standby": "وضع الاستعداد",
+    "function": "يعمل",
+    "need_repair": "بحاجة إلى إصلاح"
+  },
+  "form": {
+    "title": {
+      "program": "برنامج",
+      "asset_specifications": "مواصفات الأصل",
+      "working_status": "حالة التشغيل",
+      "entity": "المنشأة",
+      "ownership": "الملكية",
+      "budget": "الميزانية",
+      "electricity": "الكهرباء",
+      "warranty": "الضمان",
+      "calibration": "المعايرة",
+      "maintenance": "الصيانة"
+    },
+    "validation": {
+      "group_validation": "يرجى إكمال جميع الحقول في هذا القسم",
+      "not_same": "يجب ألا يكون {{ field_1 }} مطابقًا لـ {{ field_2 }}.",
+      "must_be_higher_or_same": "يجب أن يكون {{ field_1 }} أعلى من {{ field_2 }} أو مساويًا له.",
+      "must_be_lower_or_same": "يجب أن يكون {{ field_1 }} أدنى من {{ field_2 }} أو مساويًا له."
+    },
+    "information": {
+      "other_option": {
+        "title": "إذا اخترت خيار «أخرى»...",
+        "description": " مترابطة. إذا اخترت خيار «أخرى» لأي من الثلاثة، فسيتم تعيين الخيارات الثلاثة جميعها إلى «أخرى».",
+        "no_model": "لا يحتوي نوع الأصل هذا على طراز أصل بعد. يرجى التواصل مع المسؤول لإضافة طراز أصل إلى البيانات الأساسية أولاً.",
+        "and": "و"
+      },
+      "serial_number": {
+        "title": "إذا كان نوع الأصل مستودعًا..",
+        "description": "فاملأ الرقم التسلسلي برقم IMB/PBG/رقم آخر مطابق لبيانات المستودع."
+      },
+      "program": {
+        "title": "اختر فقط البرامج التي تستخدم هذا الأصل فعليًا",
+        "description": "لا تُعد البرامج المرتبطة بمنشأتك تلقائيًا من البرامج التي تستخدم الأصل."
+      }
+    }
+  },
+  "columns": {
+    "related_program": {
+      "label": "مرتبط بالبرنامج",
+      "placeholder": "اختر البرنامج"
+    },
+    "pqs_code": "رمز PQS",
+    "other_option": "({{ option }} آخر)",
+    "asset_name": "اسم الأصل",
+    "asset_type": {
+      "label": "نوع الأصل",
+      "placeholder": "اختر نوع الأصل"
+    },
+    "temperature_threshold": "حد درجة الحرارة",
+    "humidity_threshold": "حد الرطوبة",
+    "other_asset_type": "نوع أصل آخر",
+    "other_temperature_threshold": "حد درجة حرارة آخر",
+    "production_year": "سنة الإنتاج",
+    "manufacture": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر الشركة المصنعة"
+    },
+    "other_manufacture": "شركة مصنعة أخرى",
+    "relation": {
+      "label": "العلاقة",
+      "placeholder": "اختر العلاقة"
+    },
+    "working_status": {
+      "label": "الحالة التشغيلية",
+      "placeholder": "اختر الحالة التشغيلية"
+    },
+    "entity_tag": "وسم المنشأة",
+    "entity": "المنشأة",
+    "contact_person": {
+      "label": "الشخص المسؤول {{ number }}",
+      "placeholder": "مثال: John Doe"
+    },
+    "phone_number": {
+      "label": "رقم الهاتف {{ number }}",
+      "placeholder": "مثال: 081234567890"
+    },
+    "temperature_filter": "تصفية درجة الحرارة",
+    "vendor": "المرسل",
+    "smile_vendor": "طرف ثالث",
+    "communication_provider": "مزود الاتصالات",
+    "asset_model": "طراز الأصل",
+    "asset_model_name": "اسم طراز الأصل",
+    "other_asset_model": "طراز أصل آخر",
+    "temperature": "درجة الحرارة",
+    "view_temperature": "عرض درجة الحرارة",
+    "device_status": "حالة الجهاز",
+    "online": "متصل",
+    "offline": "غير متصل",
+    "connected": "موصّل",
+    "disconnected": "غير موصّل",
+    "done": "منجز",
+    "not_yet": "ليس بعد",
+    "verified": "تم التحقق",
+    "capacity": "السعة",
+    "netto_capacity": "السعة الصافية {{temperature}}",
+    "serial_number": "الرقم التسلسلي",
+    "owned_amount": {
+      "label": "كمية {{ type }}",
+      "placeholder": "مثال: 10",
+      "type": {
+        "owned": "مملوك",
+        "borrowed": "مستعار"
+      }
+    },
+    "electricity": "وقت توفر الكهرباء (يوميًا)",
+    "own_status": "حالة الملكية",
+    "borrowed_from": "مستعار من",
+    "borrowed_from_others": "مستعار من جهات أخرى",
+    "maintainers": "مسؤولو الصيانة",
+    "budget_year": "سنة الموازنة",
+    "budget_source": "مصدر الموازنة",
+    "other_budget_source": "مصدر موازنة آخر",
+    "asset_temperature": "درجة حرارة الأصل",
+    "asset_status": "حالة التشغيل",
+    "ownership_qty": "كمية الملكية",
+    "electricity_available": "الكهرباء متوفرة",
+    "status": {
+      "label": "الحالة",
+      "placeholder": "اختر الحالة"
+    },
+    "warranty": {
+      "start_date": "تاريخ بداية الضمان",
+      "end_date": "تاريخ انتهاء الضمان"
+    },
+    "calibration": {
+      "last_calibration_date": "تاريخ آخر معايرة",
+      "schedule": {
+        "label": "جدول المعايرة",
+        "placeholder": "اختر جدول المعايرة"
+      }
+    },
+    "maintenance": {
+      "last_maintenance_date": "تاريخ آخر صيانة",
+      "schedule": {
+        "label": "جدول الصيانة",
+        "placeholder": "اختر جدول الصيانة"
+      }
+    }
+  },
+  "asset_type_default": {
+    "vaccine_refrigerator": "ثلاجة لقاحات",
+    "cold_room": "غرفة تبريد",
+    "freezer": "مجمّد"
+  },
+  "relationship": {
+    "with_relation": "مع علاقة",
+    "without_relation": "دون علاقة"
+  },
+  "ownership": {
+    "owned": "مملوك",
+    "borrowed": "مستعار",
+    "status": "الحالة"
+  },
+  "temperature_logger": {
+    "normal": "طبيعي",
+    "above_maximum": "أعلى من الحد الأقصى",
+    "below_minimum": "أقل من الحد الأدنى",
+    "maximum": "الحد الأقصى",
+    "minimum": "الحد الأدنى",
+    "min": "الأدنى",
+    "max": "الأعلى"
+  },
+  "humidity_logger": {
+    "normal": "طبيعي",
+    "above_maximum": "أعلى من الحد الأعلى",
+    "below_minimum": "أقل من الحد الأدنى",
+    "maximum": "الحد الأعلى",
+    "minimum": "الحد الأدنى",
+    "min": "الأدنى",
+    "max": "الأعلى"
+  },
+  "capacity": {
+    "button": "سعة طراز الأصل",
+    "netto_capacity": "السعة الصافية",
+    "gross_capacity": "السعة الإجمالية",
+    "litres": "لتر"
+  },
+  "deletion": {
+    "delete_confirmation": "هل أنت متأكد من حذف هذا الأصل؟",
+    "delete": "نعم، أنا متأكد من الحذف",
+    "reason": "السبب",
+    "reason_placeholder": "اكتب السبب هنا"
+  },
+  "asset_inventory_detail": "تفاصيل الأصل التشغيلي",
+  "detail": {
+    "asset_type": "نوع الأصل",
+    "production_year": "سنة الإنتاج",
+    "maintainer": "المسؤول عن الصيانة",
+    "asset_status": "حالة الأصل",
+    "temperature_threshold": "حد درجة الحرارة",
+    "humidity_threshold": "حد الرطوبة",
+    "asset_inventory": "درجة حرارة الأصل",
+    "change_status": "تغيير الحالة",
+    "asset_logger_name": "اسم الأصل/المسجل",
+    "asset_logger_relation": "علاقة الأصل بالمسجل",
+    "sensor": "مستشعر",
+    "logger": "المسجل",
+    "from_date": "من تاريخ",
+    "to_date": "إلى تاريخ",
+    "date": "التاريخ",
+    "status": "الحالة",
+    "cold_chain_equipment_status": "حالة معدات سلسلة التبريد",
+    "pqs_code": "رمز PQS",
+    "net_capacity": "السعة الصافية {{ temperature }}",
+    "more_details": "مزيد من التفاصيل"
+  },
+  "disable_confirmation": "هل أنت متأكد من تعطيل هذا الأصل؟",
+  "toast": {
+    "change_status_success": "تم تغيير حالة الأصل بنجاح",
+    "change_status_failed": "فشل تغيير حالة الأصل",
+    "create_success": "تم إنشاء جرد الأصول بنجاح",
+    "create_failed": "فشل إنشاء جرد الأصول",
+    "update_success": "تم تحديث جرد الأصول بنجاح",
+    "update_failed": "فشل تحديث جرد الأصول",
+    "delete_success": "تم حذف جرد الأصول بنجاح",
+    "delete_failed": "فشل حذف جرد الأصول"
+  },
+  "type_to_search": "اكتب للبحث",
+  "input_qty": "يرجى إدخال الكمية",
+  "back_to_detail": "العودة إلى تفاصيل جرد الأصول",
+  "add_another_option": "إضافة خيار آخر",
+  "other_inputs": {
+    "other_asset_temperature_threshold": "حد درجة حرارة آخر",
+    "other_asset_capacity": "سعة أخرى",
+    "other_asset_type": "نوع أصل آخر",
+    "other_manufacture": "شركة مصنعة أخرى",
+    "other_asset_model": "طراز أصل آخر",
+    "other_budget_source": "مصدر ميزانية آخر",
+    "asset_type_name": "اسم نوع الأصل",
+    "minimum_temperature": "الحد الأدنى لدرجة الحرارة",
+    "maximum_temperature": "الحد الأعلى لدرجة الحرارة",
+    "manufacture_name": "اسم الشركة المصنعة",
+    "asset_model_name": "اسم طراز الأصل",
+    "gross_capacity": "السعة الإجمالية",
+    "netto_capacity": "السعة الصافية",
+    "budget_source_name": "اسم مصدر الميزانية",
+    "cannot_more_than": "لا يمكن أن يزيد عن {{max}}",
+    "cannot_less_than": "لا يمكن أن يقل عن {{min}}",
+    "must_more_than": "يجب أن يزيد عن {{min}}",
+    "borrowed_from_entity_name": "اسم المنشأة"
+  },
+  "add_relation_asset_logger": "إضافة علاقة مسجّل الأصل",
+  "input_sensor": "أدخل عدد المستشعرات (1 إلى 10)",
+  "relation": {
+    "delete_relation_confirmation": "هل أنت متأكد من حذف هذه العلاقة؟",
+    "yes_sure": "نعم، أنا متأكد",
+    "toast": {
+      "success_delete": "تم حذف العلاقة بنجاح",
+      "failed_delete": "فشل حذف العلاقة",
+      "success_create": "تم إنشاء العلاقة بنجاح",
+      "create_failed": "فشل إنشاء العلاقة"
+    },
+    "sensor_1_10": "لا يمكن تعبئته إلا بأرقام من 1 إلى 10"
+  },
+  "filter": {
+    "primary_health_care": {
+      "label": "الرعاية الصحية الأولية",
+      "placeholder": "اختر الرعاية الصحية الأولية"
+    }
+  },
+  "device_relation": {
+    "title": {
+      "label": "علاقة جهاز مراقبة الأصل",
+      "table": "علاقة الأصل التشغيلي وجهاز المراقبة",
+      "form": "إضافة علاقة"
+    },
+    "form": {
+      "asset_type": {
+        "label": "نوع الأصل",
+        "placeholder": "اختر نوع الأصل"
+      },
+      "sensor": {
+        "label": "المستشعر",
+        "placeholder": "اختر المستشعر"
+      },
+      "monitoring_device_name": {
+        "label": "اسم جهاز المراقبة",
+        "placeholder": "اختر جهاز المراقبة"
+      },
+      "description": {
+        "label": "الوصف",
+        "placeholder": "الوصف"
+      }
+    },
+    "table": {
+      "no": "الرقم",
+      "name": "الاسم",
+      "sensor": "المستشعر",
+      "asset_type": "نوع الأصل",
+      "asset_temperature": "درجة حرارة الأصل",
+      "action": "إجراء",
+      "description": "الوصف"
+    },
+    "button": {
+      "add": "إضافة علاقة",
+      "remove_relation": "إزالة العلاقة",
+      "save_relation": "حفظ العلاقة"
+    }
+  }
+}

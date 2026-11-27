@@ -1,0 +1,129 @@
+{
+  "list": {
+    "list": "التسلسل الهرمي للنفايات",
+    "tab": {
+      "waste_type": "نوع النفايات",
+      "waste_group": "مجموعة النفايات",
+      "waste_characteristic": "خاصية النفايات"
+    },
+    "filter": {
+      "waste_type": {
+        "search": {
+          "label": "بحث",
+          "placeholder": "البحث عن نوع النفايات"
+        },
+        "waste_type": {
+          "label": "نوع النفايات",
+          "placeholder": "اختر نوع النفايات"
+        }
+      },
+      "waste_group": {
+        "search": {
+          "label": "بحث",
+          "placeholder": "البحث عن مجموعة النفايات"
+        },
+        "waste_group": {
+          "label": "مجموعة النفايات",
+          "placeholder": "اختر مجموعة النفايات"
+        }
+      },
+      "waste_characteristic": {
+        "search": {
+          "label": "بحث",
+          "placeholder": "البحث عن خاصية النفايات"
+        }
+      },
+      "is_active": {
+        "label": "الحالة",
+        "placeholder": "اختر الحالة"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "waste_type": "نوع النفايات",
+      "waste_group": "مجموعة النفايات",
+      "waste_characteristic": "خاصية النفايات",
+      "residue": "المتبقي",
+      "description": "الوصف",
+      "status": "الحالة",
+      "updated_at": "آخر تحديث",
+      "updated_by": "تم التحديث بواسطة",
+      "action": "إجراء",
+      "is_active": {
+        "1": "نشط",
+        "0": "غير نشط"
+      }
+    },
+    "action": {
+      "activate": {
+        "title": "تنشيط"
+      },
+      "deactivate": {
+        "title": "تعطيل"
+      }
+    },
+    "button": {
+      "add_waste_type": "إضافة نوع نفايات",
+      "add_waste_group": "إضافة مجموعة نفايات",
+      "add_waste_characteristic": "إضافة خاصية نفايات"
+    }
+  },
+  "title": {
+    "waste_type": "نوع النفايات",
+    "waste_group": "مجموعة النفايات",
+    "waste_characteristic": "خاصية النفايات",
+    "list_waste_type": "قائمة أنواع النفايات",
+    "list_waste_group": "قائمة مجموعات النفايات",
+    "list_waste_characteristic": "قائمة خصائص النفايات",
+    "create_waste_type": "نوع النفايات",
+    "create_waste_group": "مجموعة النفايات",
+    "create_waste_characteristic": "خاصية النفايات",
+    "explain_waste_classification": "شرح تصنيف النفايات"
+  },
+  "action": {
+    "activate": {
+      "button": "تفعيل",
+      "confirmation": "هل أنت متأكد من تفعيل هذا المنتج؟"
+    },
+    "deactivate": {
+      "button": "تعطيل",
+      "confirmation": "هل أنت متأكد من تعطيل هذا المنتج؟"
+    }
+  },
+  "button": {
+    "material_active_substance_and_strength": "قالب المنتج",
+    "trademark": "متغير المنتج",
+    "non_hierarchy": "غير هرمي"
+  },
+  "form": {
+    "waste_group": {
+      "label": "مجموعة النفايات",
+      "placeholder": "أدخل مجموعة النفايات",
+      "placeholder_select": "اختر مجموعة النفايات"
+    },
+    "waste_type": {
+      "label": "نوع النفايات",
+      "placeholder": "أدخل نوع النفايات",
+      "placeholder_select": "اختر نوع النفايات"
+    },
+    "waste_characteristic": {
+      "label": "خاصية النفايات",
+      "placeholder": "أدخل خاصية النفايات"
+    },
+    "status": {
+      "label": "الحالة",
+      "active": "نشط",
+      "non_active": "غير نشط"
+    },
+    "description": {
+      "label": "الوصف",
+      "placeholder": "أدخل الوصف"
+    }
+  },
+  "information": {
+    "title": "التسلسل الهرمي للنفايات",
+    "description": "يصنف التسلسل الهرمي للنفايات بيانات النفايات ويسجلها ويراقبها ويديرها حسب النوع والمجموعة والخصائص."
+  }
+}

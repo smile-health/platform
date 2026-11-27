@@ -88,7 +88,7 @@ export const OrderDetailModalV2 = ({
               {description}
             </div>
           )}
-          <ModalCloseButton className="ui:top-0 ui:right-0" />
+          <ModalCloseButton className="ui:top-0 ui:end-0" />
         </ModalHeader>
 
         {children && (

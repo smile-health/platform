@@ -41,7 +41,12 @@
   "view_detail": "Lihat Detail",
   "finish": "Selesai",
   "form": {
-    "location_levels": ["province", "city", "subdistrict", "village"],
+    "location_levels": [
+      "province",
+      "city",
+      "subdistrict",
+      "village"
+    ],
     "province": {
       "label": "Provinsi",
       "placeholder": "Pilih provinsi"
@@ -597,5 +602,11 @@
     "loading": "Memuat...",
     "error": "Ada kesalahan",
     "refreshing": "Menyegarkan..."
+  },
+  "text_direction": {
+    "label": "Arah teks",
+    "auto": "Otomatis",
+    "ltr": "Kiri ke kanan",
+    "rtl": "Kanan ke kiri"
   }
 }

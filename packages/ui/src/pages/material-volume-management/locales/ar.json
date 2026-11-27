@@ -1,0 +1,129 @@
+{
+  "title": {
+    "material_volume": "إعداد حجم تغليف المادة",
+    "list": "قائمة أحجام تغليف المواد",
+    "add": "إضافة حجم تغليف مادة",
+    "detail": "تفاصيل حجم تغليف المادة",
+    "edit": "تعديل حجم تغليف المادة"
+  },
+  "column": {
+    "material_name": "اسم المادة",
+    "dimension": "أبعاد الصندوق (الطول × العرض × الارتفاع)",
+    "last_updated_at": "آخر تحديث في",
+    "action": "الإجراء"
+  },
+  "detail": {
+    "title": "تفاصيل حجم تغليف المادة",
+    "section": {
+      "detail": {
+        "header": "التفاصيل",
+        "label": {
+          "material_name": "اسم المادة",
+          "manufacturer": "الشركة المصنعة",
+          "dose_per_unit": "الجرعة لكل قارورة/وحدة",
+          "unit_per_box": "وحدة لكل صندوق",
+          "last_updated_at": "آخر تحديث في",
+          "last_updated_by": "آخر تحديث"
+        }
+      },
+      "box_dimension": {
+        "header": "أبعاد الصندوق الثانوي",
+        "label": {
+          "length": "الطول (cm)",
+          "width": "العرض (cm)",
+          "height": "الارتفاع (cm)"
+        }
+      }
+    }
+  },
+  "list": {
+    "filter": {
+      "label": {
+        "material": "المادة",
+        "manufacturer": "الشركة المصنعة",
+        "material_type": "نوع المادة"
+      },
+      "placeholder": {
+        "material": "اختر المادة",
+        "manufacturer": "اختر الشركة المصنعة",
+        "material_type": "اختر نوع المادة"
+      }
+    },
+    "column": {
+      "material_name": "اسم المادة",
+      "manufacturer_name": "الشركة المصنعة",
+      "material_type": "نوع المادة",
+      "box_dimension": {
+        "label": "أبعاد الصندوق الثانوي",
+        "length": "الطول",
+        "width": "العرض",
+        "height": "الارتفاع",
+        "cm": " {{value}} cm",
+        "unit": " {{value}} وحدة",
+        "doses": " {{value}} جرعات"
+      },
+      "last_updated_at": "آخر تحديث في",
+      "action": "إجراء"
+    }
+  },
+  "action": {
+    "delete": {
+      "button": "حذف حجم تغليف المادة",
+      "confirmation": "هل أنت متأكد من رغبتك في حذف حجم تغليف المادة هذا؟"
+    }
+  },
+  "form": {
+    "material": {
+      "label": "اسم المادة",
+      "placeholder": "اختر اسم المادة",
+      "validation": {
+        "required": "مطلوب"
+      }
+    },
+    "unit_per_box": {
+      "label": "وحدة لكل صندوق",
+      "placeholder": "مثال: 10",
+      "validation": {
+        "required": "مطلوب"
+      }
+    },
+    "pieces_per_unit": {
+      "label": "الجرعة لكل قارورة/وحدة",
+      "placeholder": "اختر المادة"
+    },
+    "dimension": {
+      "label": "أبعاد الصندوق (الطول × العرض × الارتفاع)"
+    },
+    "dose_per_vial_unit": {
+      "label": "الجرعة لكل قارورة/وحدة"
+    },
+    "manufacturer": {
+      "label": "الشركة المصنعة",
+      "placeholder": "اختر الشركة المصنعة",
+      "validation": {
+        "required": "مطلوب"
+      }
+    },
+    "box_length": {
+      "label": "الطول (cm)",
+      "placeholder": "مثال: 10.5cm",
+      "validation": {
+        "required": "مطلوب"
+      }
+    },
+    "box_width": {
+      "label": "العرض (cm)",
+      "placeholder": "مثال: 10.5cm",
+      "validation": {
+        "required": "مطلوب"
+      }
+    },
+    "box_height": {
+      "label": "الارتفاع (cm)",
+      "placeholder": "مثال: 10.5cm",
+      "validation": {
+        "required": "مطلوب"
+      }
+    }
+  }
+}

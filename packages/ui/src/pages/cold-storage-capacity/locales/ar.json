@@ -1,0 +1,130 @@
+{
+  "title": "سعة التخزين البارد",
+  "info": {
+    "colorCoding": "يتم تمثيل استخدام سعة التخزين البارد بالألوان: الأصفر لأقل من 20%، والأخضر من 20% إلى 80%، والأحمر لأكثر من 80%."
+  },
+  "detail": {
+    "title": "تفاصيل سعة التخزين البارد",
+    "program": {
+      "label": "البرنامج",
+      "placeholder": "اختر البرنامج"
+    },
+    "headerInfo": {
+      "entityName": "اسم المنشأة",
+      "program": "البرنامج"
+    },
+    "realCapacity": {
+      "title": "إجمالي السعة الفعلية",
+      "totalVolumeStock": "إجمالي حجم المخزون (لتر)",
+      "assetNetoCapacity": "صافي سعة الأصل (لتر)",
+      "usedPercentage": "النسبة المستخدمة"
+    },
+    "projectedCapacity": {
+      "title": "إجمالي السعة المتوقعة بناءً على القيمة القصوى",
+      "totalStockVolume": "توقع إجمالي حجم المخزون (لتر)",
+      "assetNettoCapacity": "توقع صافي سعة الأصل (لتر)",
+      "percentageUsed": "توقع النسبة المستخدمة (لتر)"
+    },
+    "warning": {
+      "message": "إذا تجاوزت النسبة المستخدمة 100%، يرجى التحقق منها مع المنشأة المعنية."
+    },
+    "material": {
+      "title": "المادة",
+      "subtitle": "مخزّن في الثلاجة"
+    },
+    "temperatureStorage": {
+      "assetName": "اسم الأصل",
+      "capacity": "السعة",
+      "temperature": "درجة الحرارة",
+      "totalVolumeStock": "إجمالي حجم المخزون (لتر)",
+      "assetNetoCapacity": "صافي سعة الأصل (لتر)",
+      "usedPercentage": "النسبة المستخدمة",
+      "table": {
+        "no": "الرقم",
+        "material": "المادة",
+        "stockDose": "المخزون (جرعة)",
+        "stockVial": "المخزون (قارورة)",
+        "stockBox": "المخزون (علبة)",
+        "stockVolume": "حجم المخزون (ل)",
+        "maxFillBox": "يمكن ملؤها بالحد الأقصى بواحدة من المواد (علبة)",
+        "maxDose": "الحد الأقصى للجرعات",
+        "orderRecommendation": "توصيات الطلب بناءً على الحد الأقصى (الجرعة)",
+        "stockQuantityProjection": "توقعات كمية المخزون",
+        "tooltip": "تُورَّد هذه المادة من أكثر من مصنّع. قد يستخدم كل مصنّع أنواع تغليف وأحجام جرعات وطرق حساب سعة مختلفة. يطبّق النظام الحساب استنادًا إلى الدفعة المسجلة حاليًا في المخزون."
+      },
+      "emptyState": {
+        "title": "لم يتم العثور على مخازن درجات الحرارة",
+        "description": "لا توجد مخازن درجات حرارة متاحة لهذه المنشأة."
+      }
+    }
+  },
+  "table": {
+    "title": "قائمة سعة التخزين البارد",
+    "column": {
+      "no": "الرقم",
+      "entityName": "اسم المنشأة",
+      "totalUtilizationVolume": "إجمالي حجم الاستخدام (لتر)",
+      "coldStorageNetCapacity": "صافي سعة التخزين البارد (لتر)",
+      "capacityUtilization": "نسبة استغلال السعة (%)",
+      "action": "إجراء"
+    }
+  },
+  "field": {
+    "capacityStatus": {
+      "label": "حالة السعة",
+      "placeholder": "حدد حالة السعة"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "حدد المحافظة"
+    },
+    "cityDistrict": {
+      "label": "المدينة/المنطقة",
+      "placeholder": "حدد المدينة/المنطقة"
+    },
+    "healthFacility": {
+      "label": "المنشأة الصحية",
+      "placeholder": "حدد المنشأة الصحية"
+    },
+    "entityTag": {
+      "label": "وسم المنشأة",
+      "placeholder": "حدد وسم المنشأة"
+    },
+    "period": {
+      "label": "الفترة",
+      "placeholder": "حدد الفترة"
+    },
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "حدد النشاط"
+    },
+    "materialType": {
+      "label": "نوع المادة",
+      "placeholder": "حدد نوع المادة"
+    },
+    "materialName": {
+      "label": "اسم المادة",
+      "placeholder": "حدد اسم المادة"
+    },
+    "batch": {
+      "label": "الدفعة",
+      "placeholder": "حدد الدفعة"
+    },
+    "expiredDate": {
+      "label": "تاريخ الانتهاء",
+      "placeholder": "حدد تاريخ الانتهاء"
+    }
+  },
+  "button": {
+    "export": "تصدير",
+    "reset": "إعادة تعيين",
+    "showReport": "عرض التقرير",
+    "detail": "التفاصيل"
+  },
+  "tooltip": {
+    "capacityWarning": "إذا تجاوزت النسبة المستخدمة 100%، يرجى التحقق منها مع المنشأة المعنية."
+  },
+  "activeFilter": {
+    "filteredAt": "تمت التصفية في"
+  }
+}

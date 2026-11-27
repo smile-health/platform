@@ -128,7 +128,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                 <div className="ui:flex ui:justify-end ui:items-center ui:w-[325px]">
                   <Button
                     variant="light"
-                    className="ui:mr-[16px] ui:p-0 ui:bg-transparent ui:hover:bg-transparent!"
+                    className="ui:me-[16px] ui:p-0 ui:bg-transparent ui:hover:bg-transparent!"
                     onClick={() =>
                       setValue('amount_of_giving', [
                         ...watch('amount_of_giving'),
@@ -142,7 +142,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                     }
                     type="button"
                   >
-                    <div className="ui:mr-[4.16px]">
+                    <div className="ui:me-[4.16px]">
                       <Plus />
                     </div>
                     {t('task:form.group_target.add')}
@@ -156,7 +156,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                   className="ui:my-[16px] ui:flex ui:justify-center ui:items-start ui:border-t ui:border-neutral-300 ui:pt-4 ui:px-4"
                   key={item.id}
                 >
-                  <FormControl className="ui:mr-[16px] ui:w-full">
+                  <FormControl className="ui:me-[16px] ui:w-full">
                     <FormLabel>{t('task:list.columns.group_target')}</FormLabel>
                     <Controller
                       name={`amount_of_giving.${idx}.group_target`}
@@ -189,7 +189,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                       </FormErrorMessage>
                     )}
                   </FormControl>
-                  <FormControl className="ui:mr-[16px] ui:w-full">
+                  <FormControl className="ui:me-[16px] ui:w-full">
                     <FormLabel>
                       {t('task:list.columns.number_of_doses')}
                     </FormLabel>
@@ -259,7 +259,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                     <Button
                       variant="light"
                       color="danger"
-                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent! ui:ml-4 ui:mt-[28px]"
+                      className="ui:bg-transparent ui:p-0 ui:h-auto ui:hover:bg-transparent! ui:ms-4 ui:mt-[28px]"
                       onClick={() => {
                         setValue(
                           'amount_of_giving',
@@ -272,7 +272,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
                       type="button"
                     >
                       {t('common:delete')}
-                      <div className="ui:ml-[4.16px] ui:rotate-45 ui:mt-1">
+                      <div className="ui:ms-[4.16px] ui:rotate-45 ui:mt-1">
                         <Plus />
                       </div>
                     </Button>
@@ -296,7 +296,7 @@ const AmountOfGivingModal: React.FC<Props> = ({
               <Button
                 variant="outline"
                 onClick={handleClose}
-                className="ui:mr-[12px] ui:w-full"
+                className="ui:me-[12px] ui:w-full"
                 type="button"
               >
                 {t('common:cancel')}

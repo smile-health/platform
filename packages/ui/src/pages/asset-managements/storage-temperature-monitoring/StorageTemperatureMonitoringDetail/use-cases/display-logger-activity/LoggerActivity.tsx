@@ -141,7 +141,7 @@ export const LoggerActivity = () => {
             />
           </FormControl>
         </div>
-        <div className="ui:flex ui:flex-row ui:items-center ui:mt-5 ui:justify-end ui:space-x-2 ui:col-span-1 ui:right-0">
+        <div className="ui:flex ui:flex-row ui:items-center ui:mt-5 ui:justify-end ui:space-x-2 ui:col-span-1 ui:end-0">
           <Button
             variant="subtle"
             className="ui:w-32"

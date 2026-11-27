@@ -1237,7 +1237,7 @@ export function useFilter(schema: UseFilter) {
 
                 return (
                   <Fragment key={key}>
-                    <span className="ui:font-semibold ui:mr-1">{label}: </span>
+                    <span className="ui:font-semibold ui:me-1">{label}: </span>
                     <span>{displayValue}</span>
                     <span className="ui:last:hidden ui:mx-2">|</span>
                   </Fragment>

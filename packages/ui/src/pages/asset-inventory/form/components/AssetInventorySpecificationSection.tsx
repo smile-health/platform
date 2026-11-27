@@ -291,7 +291,7 @@ export const AssetInventorySpecificationSection = ({
         </FormLabel>
         <div className="ui:border ui:rounded ui-border-grey-200 ui:py-3 ui:px-4 ui:bg-slate-100">
           <div className="ui:flex ui:flex-row ui:items-center ui:mb-1">
-            <InformationCircleIcon className="ui:h-5 ui:w-5 ui-text-grey-500 ui:inline-block ui:mr-1 ui:font-bold" />
+            <InformationCircleIcon className="ui:h-5 ui:w-5 ui-text-grey-500 ui:inline-block ui:me-1 ui:font-bold" />
             <p className="ui:text-xs ui:font-bold">
               {t('form.information.serial_number.title')}
             </p>

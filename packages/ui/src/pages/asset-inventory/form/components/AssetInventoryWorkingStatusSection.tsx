@@ -32,7 +32,7 @@ export const AssetInventoryWorkingStatusSection = ({
         <div className="ui:font-bold ui-text-primary ui:text-dark-blue">
           {t('assetInventory:form.title.working_status')}
         </div>
-        <div className="ui:ml-auto">
+        <div className="ui:ms-auto">
           {watch('asset_status')?.value && (
             <Badge
               key={language}

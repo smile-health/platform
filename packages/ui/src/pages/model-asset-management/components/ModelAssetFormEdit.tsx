@@ -162,7 +162,7 @@ const ModelAssetFormEdit = ({
             )}
             {isNameDuplicate && (
               <div className="ui:border ui:rounded ui-border-grey-200 ui:py-3 ui:px-4 ui:bg-slate-100 ui:mb-6 ui:flex ui:flex-row">
-                <ExclamationCircleIcon className="ui:h-5 ui:w-5 ui-text-grey-500 ui:inline-block ui:mr-2 ui:font-bold" />
+                <ExclamationCircleIcon className="ui:h-5 ui:w-5 ui-text-grey-500 ui:inline-block ui:me-2 ui:font-bold" />
                 <p className="ui:text-sm">
                   {t('form.detail.validation.name.duplicate')}
                 </p>
@@ -353,7 +353,7 @@ const ModelAssetFormEdit = ({
                     />
                     <FormLabel
                       htmlFor="select-manufacturer"
-                      className="ui:ml-2 ui:text-dark-blue"
+                      className="ui:ms-2 ui:text-dark-blue"
                     >
                       {t('form.detail.label.is_capacity_required')}
                     </FormLabel>

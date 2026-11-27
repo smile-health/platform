@@ -1,0 +1,95 @@
+{
+  "list": {
+    "list": "شريك رعاية صحية",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "ابحث عن حالة الشراكة"
+      },
+      "healthcare_partner": {
+        "label": "منشأة رعاية صحية",
+        "placeholder": "اختر منشأة رعاية صحية"
+      },
+      "partnership_status": {
+        "label": "حالة الشراكة",
+        "placeholder": "اختر حالة الشراكة"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "partnership_type": "نوع الشراكة",
+      "healthcare_facility": "منشأة رعاية صحية",
+      "company_name": "اسم الشركة",
+      "entity_name": "اسم المنشأة",
+      "contract_start_date": "تاريخ بدء العقد",
+      "contract_end_date": "تاريخ انتهاء العقد",
+      "partnership_status": "حالة الشراكة",
+      "pic_name": "اسم مسؤول الاتصال",
+      "phone_number": "رقم الهاتف",
+      "position": "المنصب",
+      "price_kg": "السعر/Kg",
+      "province": "المحافظة",
+      "city": "المدينة",
+      "address": "العنوان",
+      "latitude": "خط العرض",
+      "longitude": "خط الطول",
+      "last_updated": "آخر تحديث",
+      "waste_characteristic": "خاصية النفايات",
+      "action": "إجراء"
+    }
+  },
+  "title": {
+    "partnership": "شريك الرعاية الصحية",
+    "list": "قائمة شركاء الرعاية الصحية"
+  },
+  "form": {
+    "is_same_company": {
+      "label": "هل هي نفس الشركة؟"
+    },
+    "partnership_type": {
+      "label": "نوع الشراكة",
+      "placeholder": "اختر نوع الشراكة"
+    },
+    "company_name": {
+      "label": "اسم الشركة",
+      "placeholder": "اختر اسم الشركة"
+    },
+    "healthcare_partner": {
+      "label": "مستهلك منشأة الرعاية الصحية",
+      "placeholder": "اختر منشأة الرعاية الصحية"
+    },
+    "pic_name": {
+      "label": "اسم مسؤول الاتصال",
+      "placeholder": "أدخل اسم مسؤول الاتصال"
+    },
+    "phone_number": {
+      "label": "رقم الهاتف",
+      "placeholder": "أدخل رقم الهاتف"
+    },
+    "position": {
+      "label": "المنصب",
+      "placeholder": "أدخل المنصب"
+    },
+    "price_kg": {
+      "label": "السعر/kg",
+      "placeholder": "أدخل السعر/kg"
+    },
+    "contract_start_date": {
+      "label": "تاريخ بدء العقد",
+      "placeholder": "أدخل تاريخ بدء العقد"
+    },
+    "contract_end_date": {
+      "label": "تاريخ انتهاء العقد",
+      "placeholder": "أدخل تاريخ انتهاء العقد"
+    },
+    "partnership_status": {
+      "label": "حالة الشراكة",
+      "placeholder": "اختر حالة الشراكة"
+    }
+  },
+  "detail": {
+    "healthcare_partner_info": "معلومات منشأة الرعاية الصحية"
+  }
+}

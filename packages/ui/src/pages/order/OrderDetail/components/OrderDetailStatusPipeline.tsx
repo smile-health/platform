@@ -85,7 +85,7 @@ export const OrderDetailStatusPipeline = () => {
 
       {data && (
         <>
-          <div className="ui:absolute ui:-z-10 ui:left-0 ui:top-[15px] ui:h-[1.25px] ui:w-full ui:bg-gray-300" />
+          <div className="ui:absolute ui:-z-10 ui:start-0 ui:top-[15px] ui:h-[1.25px] ui:w-full ui:bg-gray-300" />
 
           {orderStatusList
             .filter((statusItem) => getStatusVisibility(statusItem.value))

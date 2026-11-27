@@ -85,7 +85,7 @@ export const OrderDetailModal = ({
               {description}
             </div>
           )}
-          <DialogCloseButton className="ui:top-0 ui:right-0" />
+          <DialogCloseButton className="ui:top-0 ui:end-0" />
         </DialogHeader>
 
         {children && (

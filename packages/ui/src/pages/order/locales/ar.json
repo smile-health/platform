@@ -1,0 +1,34 @@
+{
+  "back": "العودة إلى القائمة",
+  "close": "إغلاق",
+  "status": {
+    "draft": "مسودة",
+    "pending": "قيد الانتظار",
+    "confirmed": "مؤكد",
+    "allocated": "مخصص",
+    "shipped": "تم الشحن",
+    "fulfilled": "تم التنفيذ",
+    "cancelled": "ملغى"
+  },
+  "reason": {
+    "dwindling_supplies": "نقص الإمدادات",
+    "population_increase": "زيادة السكان",
+    "plague": "وباء",
+    "supplies_sufficient": "الإمدادات كافية",
+    "others": "أخرى"
+  },
+  "batch_warning": {
+    "title": "تأكيد",
+    "description": "لم يتم تحديد أي عناصر. يرجى مراجعة المواد المضافة والضغط على زر الحفظ في الدفعة لحفظ التغييرات."
+  },
+  "modal_companion": {
+    "title": "هل تريد المتابعة دون المواد المرافقة؟",
+    "description": "بالنقر على <bold>نعم</bold>، فإنك تقر بأنك تعالج هذه المادة دون المواد المرافقة التالية؟",
+    "button": {
+      "order": "نعم، متابعة"
+    }
+  },
+  "placeholder": {
+    "search_material": "البحث عن مادة"
+  }
+}

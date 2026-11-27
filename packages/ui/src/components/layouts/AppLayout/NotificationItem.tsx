@@ -93,7 +93,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
               className="ui:text-xs"
             >
               <Whatsapp />
-              <span className="ui:text-xs ui:ml-2">
+              <span className="ui:text-xs ui:ms-2">
                 {t('button.contact_patient')}
               </span>
             </Button>
@@ -123,11 +123,11 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
         {item?.data?.show_finished_label ? (
           <FlagFinishedNotificationVaccine />
         ) : (
-          <div className="ui-text-primary ui:text-sm ui:font-bold ui:text-left">
+          <div className="ui-text-primary ui:text-sm ui:font-bold ui:text-start">
             {item?.type?.title ?? item?.title}
           </div>
         )}
-        <div className="ui:text-[10px] ui-text-semibold ui:text-gray-700 ui:text-right">
+        <div className="ui:text-[10px] ui-text-semibold ui:text-gray-700 ui:text-end">
           {!isToast ? (
             parseDateTime(item?.created_at, 'DD/MMM/YYYY HH:mm')
               .toUpperCase()
@@ -144,12 +144,12 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
         </div>
       </div>
       {item?.data?.show_finished_label && (
-        <div className="ui-text-primary ui:text-sm ui:font-bold ui:text-left">
+        <div className="ui-text-primary ui:text-sm ui:font-bold ui:text-start">
           {item?.type?.title ?? item?.title}
         </div>
       )}
       <div
-        className="ui-text-dark ui:text-left ui:text-sm"
+        className="ui-text-dark ui:text-start ui:text-sm"
         dangerouslySetInnerHTML={{
           __html:
             (item?.action_url ?? '')
@@ -157,7 +157,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
               : item?.message || '',
         }}
       />
-      <div className="ui:text-xs ui:text-gray-700 ui:text-left">
+      <div className="ui:text-xs ui:text-gray-700 ui:text-start">
         {[
           item?.entity?.name,
           item?.user?.username,
@@ -166,7 +166,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
           .filter(Boolean)
           .join(' • ')}
       </div>
-      <div className="ui:flex ui:items-center ui:justify-between ui:text-xs ui:text-gray-700 ui:text-left">
+      <div className="ui:flex ui:items-center ui:justify-between ui:text-xs ui:text-gray-700 ui:text-start">
         <div className="ui:flex ui:items-center ui:justify-start ui:gap-2 ui:mt-2">
           {isToast && (
             <div className="ui:text-[10px] ui-text-semibold ui:text-gray-700">

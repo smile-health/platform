@@ -1,0 +1,130 @@
+{
+  "list": {
+    "list": "شريك طرف ثالث",
+    "filter": {
+      "search": {
+        "label": "بحث",
+        "placeholder": "بحث برقم العقد"
+      },
+      "healthcare_partner": {
+        "label": "شريك الرعاية الصحية",
+        "placeholder": "اختر شريك الرعاية الصحية"
+      },
+      "third_party_patner": {
+        "label": "شريك طرف ثالث",
+        "placeholder": "اختر شريك طرف ثالث"
+      },
+      "button": {
+        "search": "بحث"
+      }
+    },
+    "column": {
+      "partnership_type": "نوع الشراكة",
+      "third_party_name": "اسم شريك الطرف الثالث",
+      "healthcare_partner": "شريك الرعاية الصحية",
+      "company_name": "اسم الشركة",
+      "healthcare_facility": "منشأة الرعاية الصحية المستهلكة",
+      "entity_name": "اسم الجهة",
+      "contract_date": "تاريخ العقد",
+      "contract_start_date": "تاريخ بدء العقد",
+      "contract_end_date": "تاريخ انتهاء العقد",
+      "contract_id": "رقم العقد",
+      "partnership_status": "حالة الشراكة",
+      "pic_name": "اسم الشخص المسؤول",
+      "phone_number": "رقم الهاتف",
+      "position": "المنصب",
+      "price_kg": "السعر/Kg",
+      "province": "المقاطعة",
+      "city": "المدينة",
+      "address": "العنوان",
+      "latitude": "خط العرض",
+      "longitude": "خط الطول",
+      "last_updated": "آخر تحديث",
+      "waste_characteristic": "خاصية النفايات",
+      "nib": "NIB",
+      "action": "إجراء"
+    },
+    "column_operator": {
+      "username ": "اسم المستخدم",
+      "name": "الاسم",
+      "role": "الدور",
+      "company_name": "اسم الشركة",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف"
+    },
+    "button": {
+      "add": "إضافة شراكة",
+      "add_characteristic": "إضافة خاصية نفايات",
+      "edit_characteristic": "تعديل خاصية النفايات"
+    }
+  },
+  "title": {
+    "partnership": "شريك طرف ثالث",
+    "list": "قائمة شركاء الطرف الثالث",
+    "create": "إنشاء شريك طرف ثالث",
+    "edit": "تعديل شريك الطرف الثالث"
+  },
+  "form": {
+    "is_same_company": {
+      "label": "هل هي نفس الشركة؟"
+    },
+    "partnership_type": {
+      "label": "نوع الشراكة",
+      "placeholder": "اختر نوع الشراكة"
+    },
+    "company_name": {
+      "label": "اسم الشركة",
+      "placeholder": "اختر اسم الشركة"
+    },
+    "healthcare_partner": {
+      "label": "منشأة الرعاية الصحية المستهلكة",
+      "placeholder": "اختر منشأة الرعاية الصحية"
+    },
+    "pic_name": {
+      "label": "اسم الشخص المسؤول",
+      "placeholder": "أدخل اسم الشخص المسؤول"
+    },
+    "phone_number": {
+      "label": "رقم الهاتف",
+      "placeholder": "أدخل رقم الهاتف"
+    },
+    "position": {
+      "label": "المنصب",
+      "placeholder": "أدخل المنصب"
+    },
+    "nib": {
+      "label": "NIB",
+      "placeholder": "NIB"
+    },
+    "price_kg": {
+      "label": "السعر/Kg",
+      "placeholder": "أدخل السعر/Kg"
+    },
+    "contract_date": {
+      "label": "تاريخ العقد",
+      "placeholder": "أدخل تاريخ العقد"
+    },
+    "contract_id": {
+      "label": "رقم العقد",
+      "placeholder": "أدخل رقم العقد"
+    },
+    "partnership_status": {
+      "label": "حالة الشراكة",
+      "placeholder": "اختر حالة الشراكة"
+    },
+    "waste_characteristic": {
+      "label": "خاصية النفايات",
+      "placeholder": "اختر الخاصية"
+    }
+  },
+  "detail": {
+    "third_party_info": "معلومات شراكة الطرف الثالث",
+    "operator_info": "معلومات مشغّل الشريك"
+  },
+  "classification_info": "لا تظهر خصائص النفايات إذا كان نوع الشراكة هو ناقل - معالج/ناقل - مودع/ناقل - مستخدم",
+  "provider_type": {
+    "LANDFILLER": "مكب نفايات",
+    "TREATMENT": "معالجة",
+    "RECYCLER": "معيد التدوير"
+  }
+}

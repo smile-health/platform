@@ -1,0 +1,136 @@
+{
+  "title": {
+    "reconciliation": "المطابقة",
+    "tab": {
+      "list": "القائمة",
+      "report": "التقرير"
+    },
+    "list": "قائمة المطابقة",
+    "report": {
+      "reconciliation_activity": "تقرير المطابقة"
+    },
+    "create": {
+      "reconciliation": "إضافة مطابقة"
+    },
+    "history": {
+      "reconciliation": "عرض السجل"
+    }
+  },
+  "filter": {
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط"
+    },
+    "material": {
+      "label": "المادة",
+      "placeholder": "اختر المادة"
+    },
+    "material_type": {
+      "label": "نوع المادة",
+      "placeholder": "اختر نوع المادة"
+    },
+    "period": {
+      "label": "الفترة"
+    },
+    "created_date": {
+      "label": "تاريخ الإنشاء"
+    },
+    "entity_tag": {
+      "label": "وسم المنشأة",
+      "placeholder": "اختر وسم المنشأة"
+    },
+    "province": {
+      "label": "المحافظة",
+      "placeholder": "اختر المحافظة"
+    },
+    "city": {
+      "label": "المدينة/المنطقة",
+      "placeholder": "اختر المدينة/المنطقة"
+    },
+    "primary_health_care": {
+      "label": "الرعاية الصحية الأولية",
+      "placeholder": "اختر الرعاية الصحية الأولية"
+    },
+    "material_kfa_level": {
+      "label": "مستوى KFA للمادة",
+      "placeholder": "اختر مستوى KFA للمادة"
+    },
+    "search": "بحث",
+    "export": "تصدير"
+  },
+  "list": {
+    "table": {
+      "column": {
+        "no": "الرقم",
+        "entity": "المنشأة",
+        "entity_name": "اسم المنشأة",
+        "material_info": "معلومات المادة",
+        "activity": "النشاط",
+        "period": "الفترة",
+        "remaining_stock": "المخزون المتبقي",
+        "created_by": "أنشأه",
+        "action": "إجراء"
+      },
+      "view_history": "عرض السجل",
+      "from": "من",
+      "to": "إلى",
+      "real": "الفعلي",
+      "at": "في",
+      "close": "إغلاق",
+      "description": "الوصف",
+      "reason_action": "السبب والإجراء",
+      "reason": "السبب",
+      "action": "إجراء",
+      "add_reconciliation": "إضافة مطابقة"
+    }
+  },
+  "create": {
+    "title_material_select": "المواد في {{entity_name}}",
+    "caption_choose_material": "انقر على زر الاختيار لتحديد المادة. ستظهر المادة المحددة في جدول المطابقة أدناه",
+    "search_material": "بحث عن مادة",
+    "material_name": "اسم المادة",
+    "selection": "التحديد",
+    "reconciliation_detail": "تفاصيل المطابقة",
+    "entity": {
+      "label": "المنشأة",
+      "placeholder": "اختر المنشأة"
+    },
+    "activity": {
+      "label": "النشاط",
+      "placeholder": "اختر النشاط"
+    },
+    "table": {
+      "title": "جدول المطابقة",
+      "material_selected": "المادة المحددة"
+    },
+    "reset": "إعادة تعيين",
+    "send": "إرسال",
+    "real_placeholder": "يرجى إدخال الكمية",
+    "add": "إضافة",
+    "reason": {
+      "label": "السبب",
+      "placeholder": "اختر السبب"
+    },
+    "action": {
+      "label": "الإجراء",
+      "placeholder": "اختر الإجراء"
+    },
+    "add_new_reason": "إضافة سبب جديد",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "validation": {
+      "required": "مطلوب",
+      "error_combination": "لا يجوز تكرار سبب الإجراء",
+      "numeric_only": "أرقام فقط"
+    },
+    "reset_dialog": {
+      "title": "تأكيد",
+      "description": "هل أنت متأكد من حذف جميع البيانات المدخلة؟"
+    },
+    "change_dialog": {
+      "question_material": "هل أنت متأكد من رغبتك في تغيير المادة؟",
+      "question_detail": "هل أنت متأكد من رغبتك في تغيير هذا؟",
+      "description": "ستفقد جميع المعلومات التي أدخلتها في هذه المادة."
+    }
+  }
+}

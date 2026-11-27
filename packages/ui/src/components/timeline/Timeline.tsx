@@ -49,8 +49,8 @@ export function TimelineItem({ children }: CommonProps) {
     <div
       className={cx(
         'ui-timeline ui:relative ui:mb-5 ui:flex ui:space-x-3',
-        'ui:before:-bottom-5 ui:before:left-4 ui:before:top-0 before:absolute',
-        'ui:before:border-l-2 ui:before:border-gray-300 ui:last:before:border-transparent'
+        'ui:before:-bottom-5 ui:before:start-4 ui:before:top-0 before:absolute',
+        'ui:before:border-s-2 ui:before:border-gray-300 ui:last:before:border-transparent'
       )}
     >
       {children}

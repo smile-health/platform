@@ -100,7 +100,7 @@ const TransactionCreateAddStockTableDetail: React.FC<ModalBatchDetail> = ({
                   </h2>
                   <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                     {numberFormatter(item?.on_hand_stock, language)}
-                    <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
+                    <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ms-1">
                       min: {numberFormatter(item?.min, language)}, {t('max')} :{' '}
                       {numberFormatter(item?.max, language)}
                     </span>

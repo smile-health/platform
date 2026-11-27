@@ -1,0 +1,17 @@
+{
+  "list": {
+    "list": "شرح تصنيف النفايات",
+    "column": {
+      "waste_type": "نوع النفايات",
+      "waste_type_description": "وصف نوع النفايات",
+      "waste_group": "مجموعة النفايات",
+      "waste_group_description": "وصف مجموعة النفايات",
+      "waste_characteristics": "خصائص النفايات",
+      "waste_characteristics_description": "وصف خصائص النفايات"
+    },
+    "message": {
+      "no_characteristics": "لم تُحدد أي خصائص.",
+      "no_data": "لا توجد مواصفات للنفايات متاحة."
+    }
+  }
+}

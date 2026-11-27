@@ -1,0 +1,56 @@
+{
+  "title": {
+    "activity": "النشاط",
+    "settings": "إعدادات النشاط",
+    "list": "قائمة الأنشطة",
+    "create": "إضافة نشاط",
+    "edit": "تعديل النشاط",
+    "information": "تفاصيل النشاط",
+    "search": "بحث عن نشاط"
+  },
+  "column": {
+    "name": "اسم النشاط",
+    "activity_process": "عملية النشاط",
+    "protocol": "البروتوكول"
+  },
+  "action": {
+    "delete": {
+      "button": "حذف النشاط",
+      "confirmation": "هل أنت متأكد من رغبتك في حذف هذا النشاط؟",
+      "description": "لا يمكن استعادة العنصر المحذوف"
+    },
+    "status": {
+      "confirmation": [
+        "هل أنت متأكد من رغبتك في تفعيل هذا؟",
+        "هل أنت متأكد من رغبتك في تعطيل هذا؟"
+      ],
+      "description": "لن تتمكن من استخدام هذا النشاط كمعاملة أو كمخزون",
+      "success": {
+        "activate": "تم تنشيط النشاط بنجاح",
+        "deactivate": "تم إلغاء تنشيط النشاط بنجاح"
+      }
+    }
+  },
+  "form": {
+    "name": {
+      "label": "اسم النشاط",
+      "placeholder": "اسم النشاط",
+      "validation": {
+        "required": "اسم النشاط مطلوب"
+      }
+    },
+    "process": {
+      "label": "عملية النشاط",
+      "validation": {
+        "required": "عملية النشاط مطلوبة"
+      }
+    },
+    "protocol": {
+      "label": "البروتوكول",
+      "placeholder": "اختر البروتوكول"
+    },
+    "is_final_distribution": {
+      "label": "التوزيع النهائي"
+    }
+  }
+}

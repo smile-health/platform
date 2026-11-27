@@ -29,7 +29,7 @@ const Item = ({ children, link }: { children: ReactNode; link: string }) => {
   return (
     <Link
       id={`navbar-${link}`}
-      className="ui:text-left ui:block ui:cursor-pointer ui:py-1 ui:text-black ui:hover:text-primary-surface"
+      className="ui:text-start ui:block ui:cursor-pointer ui:py-1 ui:text-black ui:hover:text-primary-surface"
       href={router.getAsLink(link)}
     >
       {children}
@@ -48,7 +48,7 @@ const ItemLink = ({
 
   if (!link) {
     return (
-      <button className="ui:text-left ui:block ui:cursor-pointer ui:py-1 ui-active:ui-outline-none ui-focus:ui-outline-none">
+      <button className="ui:text-start ui:block ui:cursor-pointer ui:py-1 ui-active:ui-outline-none ui-focus:ui-outline-none">
         {children}
       </button>
     )
@@ -57,7 +57,7 @@ const ItemLink = ({
   return (
     <Link
       id={`navbar-${link}`}
-      className="ui:text-left ui:block ui:cursor-pointer ui:py-1 ui-active:ui-outline-none ui-focus:ui-outline-none ui:hover:text-primary-surface"
+      className="ui:text-start ui:block ui:cursor-pointer ui:py-1 ui-active:ui-outline-none ui-focus:ui-outline-none ui:hover:text-primary-surface"
       href={router.getAsLink(link)}
     >
       {children}
@@ -73,7 +73,7 @@ const ReportNav: React.FC<{ className?: string }> = ({ className }) => {
       <DropdownMenuTrigger>
         <div className={className} id="trigger-Laporan">
           <div className="ui:text-primary-contrast">{t('menu.report.title')}</div>
-          <div className="ui:py-1 ui:pl-2">
+          <div className="ui:py-1 ui:ps-2">
             <ChevronDownIcon className="ui:h-3 ui:w-3 ui:text-primary-contrast" />
           </div>
         </div>

@@ -194,7 +194,7 @@ const TransactionCreateConsumptionDetail: React.FC<Props> = ({
               <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                 {numberFormatter(items?.[idRow]?.on_hand_stock, language)}
 
-                <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ml-1">
+                <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ms-1">
                   min: {numberFormatter(items?.[idRow]?.min, language)},{' '}
                   {t('max')} : {numberFormatter(items?.[idRow]?.max, language)}
                 </span>

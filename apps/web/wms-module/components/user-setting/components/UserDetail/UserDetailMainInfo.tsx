@@ -29,8 +29,8 @@ export default function UserDetailMainInfo(props: UserDetailMainInfoProps) {
           : t('filter.status.inactive')}
       </Badge>
       <RenderDetailValue
-        labelsClassName="ui:text-left"
-        valuesClassName="ui:text-left"
+        labelsClassName="ui:text-start"
+        valuesClassName="ui:text-start"
         loading={isLoading}
         data={[
           {

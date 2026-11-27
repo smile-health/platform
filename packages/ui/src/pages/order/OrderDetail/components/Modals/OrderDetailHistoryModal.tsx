@@ -66,7 +66,7 @@ export const OrderDetailHistoryModal = ({
       }}
     >
       <div className="ui:space-y-6 relative">
-        <div className="ui:right-0 ui:top-0 ui:absolute">
+        <div className="ui:end-0 ui:top-0 ui:absolute">
           <Button variant="outline" color="primary" onClick={handleCopyHistory}>
             {t('orderDetail:button.copy_history')}
           </Button>
