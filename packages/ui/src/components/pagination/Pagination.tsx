@@ -266,10 +266,7 @@ export function Pagination({
   totalPages,
   disabled,
 }: Readonly<PaginationProps>) {
-  const {
-    i18n: { language },
-  } = useTranslation()
-  const isId = language === 'id'
+  const { t } = useTranslation()
   const { range, setPage, next, previous, active } = usePagination({
     currentPage,
     siblings,
@@ -292,7 +289,7 @@ export function Pagination({
             <ChevronLeft className="ui:rtl:-scale-x-100" />
           </div>
           <div className="ui:hidden ui:md:block">
-            {isId ? 'Sebelumnya' : 'Prev'}
+            {t('common:pagination.previous')}
           </div>
         </div>
       </Item>
@@ -331,7 +328,7 @@ export function Pagination({
       >
         <div className="ui:flex ui:items-center ui:space-x-1 ui:px-2">
           <div className="ui:hidden ui:md:block">
-            {isId ? 'Selanjutnya' : 'Next'}
+            {t('common:pagination.next')}
           </div>
 
           <div>

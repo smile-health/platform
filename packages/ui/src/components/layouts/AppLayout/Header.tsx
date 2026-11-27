@@ -28,7 +28,10 @@ import { useTranslation } from "react-i18next";
 import LanguageChanger from "../LanguageChanger";
 import DropdownProgram from "./DropdownProgram";
 import NotificationInbox from "./NotificationInbox";
-import { getLocalizedProgramName } from "#utils/localized-name";
+import {
+  getLocalizedProgramName,
+  getLocalizedRoleName,
+} from "#utils/localized-name";
 
 const Header: React.FC = () => {
   const {
@@ -140,7 +143,8 @@ const Header: React.FC = () => {
                   ></Avatar>
                 )}
                 <div className="ui:min-w-[140px] ui-tex-[#414042] px-2 py-1 text-start">
-                  {user?.firstname ?? ""} {user?.lastname ?? ""}
+                  {getLocalizedRoleName(user?.firstname, language)}{" "}
+                  {user?.lastname ?? ""}
                 </div>
                 <div className="py-2">
                   <img src="/images/ic-expand-more.png" alt="expand-icon" />

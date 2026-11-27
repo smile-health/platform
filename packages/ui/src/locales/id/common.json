@@ -608,5 +608,7 @@
     "auto": "Otomatis",
     "ltr": "Kiri ke kanan",
     "rtl": "Kanan ke kiri"
-  }
+  },
+  "username": "Username",
+  "back_to_home": "Kembali ke Beranda"
 }

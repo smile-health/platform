@@ -608,5 +608,7 @@
     "auto": "Auto",
     "ltr": "Left to right",
     "rtl": "Right to left"
-  }
+  },
+  "username": "Username",
+  "back_to_home": "Back to Home"
 }

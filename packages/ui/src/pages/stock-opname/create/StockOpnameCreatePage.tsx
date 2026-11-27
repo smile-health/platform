@@ -116,7 +116,7 @@ const StockOpnameCreatePage: React.FC = () => {
                   type="button"
                   onClick={() => setOpenModalReset(true)}
                 >
-                  Reset
+                  {t('common:reset')}
                 </Button>
                 <Button
                   className="ui:w-48"

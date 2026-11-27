@@ -57,7 +57,7 @@ const ReconciliationCreatePage = () => {
                 onClick={() => setOpenModalReset(true)}
                 disabled={isPending}
               >
-                Reset
+                {t('common:reset')}
               </Button>
               <Button
                 className="ui:w-48"

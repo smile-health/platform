@@ -130,7 +130,7 @@ export default function OrderCreateDistributionDetailBatch({
             onClick={handleReset}
             leftIcon={<Reload className="ui:size-5" />}
           >
-            Reset
+            {t('common:reset')}
           </Button>
           <Button
             id="btn-save-batch"

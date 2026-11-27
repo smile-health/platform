@@ -188,6 +188,7 @@ export function FilterResetButton({
   disabled?: boolean
   id?: string
 }>) {
+  const { t } = useTranslation(['common'])
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     onClick?.(event)
     // Remove focus to hide the border shadow after clicking
@@ -205,7 +206,7 @@ export function FilterResetButton({
       leftIcon={<Reload className="ui:size-5" />}
       className="ui:[&.ui-focus-none]:ring-0! ui:[&.ui-focus-none]:ring-transparent! ui:[&.ui-focus-none]:outline-hidden! ui:[&.ui-focus-none]:shadow-none!"
     >
-      Reset
+      {t('common:reset')}
     </Button>
   )
 }
