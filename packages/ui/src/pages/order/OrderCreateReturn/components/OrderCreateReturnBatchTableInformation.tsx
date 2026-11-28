@@ -3,6 +3,8 @@ import { numberFormatter } from '#utils/formatter'
 import { useTranslation } from 'react-i18next'
 
 import { OrderItem } from '../order-create-return.type'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type Props = {
   order_items: OrderItem[]
@@ -21,8 +23,8 @@ export const OrderCreateReturnBatchTableInformation: React.FC<Props> = ({
   const minMax = (min: number | null, max: number | null) => {
     return min || max
       ? `(${[
-          min && `min: ${numberFormatter(min, language)}`,
-          max && `max : ${numberFormatter(max, language)}`,
+          min && `${getLocalizedStaticLabel('min', i18next.language)}: ${numberFormatter(min, language)}`,
+          max && `${getLocalizedStaticLabel('max', i18next.language)}: ${numberFormatter(max, language)}`,
         ]
           .filter(Boolean)
           .join(', ')})`

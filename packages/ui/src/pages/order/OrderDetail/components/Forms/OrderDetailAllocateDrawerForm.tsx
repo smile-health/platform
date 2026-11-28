@@ -17,6 +17,8 @@ import {
   OrderDetailMappedOrderItem,
 } from '../../order-detail.type'
 import { OrderDetailDrawer } from '../OrderDetailDrawer'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type OrderDetailAllocateDrawerFormProps = {
   values: OrderDetailAllocateFormValues['order_items']
@@ -51,7 +53,7 @@ export const OrderDetailAllocateDrawerForm = ({
       <div className="ui:space-y-1">
         <div>{numberFormatter(stock?.total_available_qty, i18n.language)}</div>
         <div className="ui:text-gray-500">
-          (min: {numberFormatter(stock?.min, i18n.language)} | max:{' '}
+          ({getLocalizedStaticLabel('min', i18next.language)}: {numberFormatter(stock?.min, i18n.language)} | {getLocalizedStaticLabel('max', i18next.language)}:{' '}
           {numberFormatter(stock?.max, i18n.language)}),{' '}
           {t('orderDetail:table.column.stock_on_hand').toLowerCase()}:{' '}
           {numberFormatter(stock?.total_qty, i18n.language)}

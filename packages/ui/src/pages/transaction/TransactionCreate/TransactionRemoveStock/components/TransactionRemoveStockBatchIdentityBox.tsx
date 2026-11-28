@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next'
 
 import { thousandFormatter } from '../transaction-remove-stock.common'
 import TransactionRemoveStockContext from '../transaction-remove-stock.context'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 const FieldBox = ({
   title,
@@ -35,9 +37,9 @@ const TransactionRemoveStockBatchIdentityBox = () => {
     })
 
   const minMax = (min: number, max: number) => {
-    if (min <= 0 && max > 0) return `(max: ${format(max)})`
-    if (max <= 0 && min > 0) return `(min:${format(min)})`
-    if (min > 0 && max > 0) return `(min:${format(min)}, max: ${format(max)})`
+    if (min <= 0 && max > 0) return `(${getLocalizedStaticLabel('max', i18next.language)}: ${format(max)})`
+    if (max <= 0 && min > 0) return `(${getLocalizedStaticLabel('min', i18next.language)}: ${format(min)})`
+    if (min > 0 && max > 0) return `(${getLocalizedStaticLabel('min', i18next.language)}: ${format(min)}, ${getLocalizedStaticLabel('max', i18next.language)}: ${format(max)})`
     return ''
   }
 

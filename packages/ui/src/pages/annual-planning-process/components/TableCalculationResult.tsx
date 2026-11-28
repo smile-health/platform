@@ -16,6 +16,8 @@ import { parseDateTime } from "#utils/date"
 import { DataCalculationResult } from "../annual-planning-process.types"
 import { useTranslation } from "react-i18next"
 import { MaterialSubType } from "../annual-planning-process.constants"
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type Props = {
   data: DataCalculationResult[]
@@ -65,8 +67,12 @@ const TableCalculationResult: React.FC<Props> = (props) => {
           <Th className="ui:w-48 ui:font-semibold ui:border-e">{t('annualPlanningProcess:create.form.calculation_result.column.one_year')}</Th>
           <Th className="ui:w-48 ui:font-semibold ui:border-e">{t('annualPlanningProcess:create.form.calculation_result.column.one_month')}</Th>
           <Th className="ui:w-48 ui:font-semibold ui:border-e">{t('annualPlanningProcess:create.form.calculation_result.column.one_week')}</Th>
-          <Th className="ui:w-48 ui:font-semibold ui:border-e">Min</Th>
-          <Th className="ui:w-48 ui:font-semibold ui:border-e">Max</Th>
+          <Th className="ui:w-48 ui:font-semibold ui:border-e">
+            {getLocalizedStaticLabel('Min', i18next.language)}
+          </Th>
+          <Th className="ui:w-48 ui:font-semibold ui:border-e">
+            {getLocalizedStaticLabel('Max', i18next.language)}
+          </Th>
         </Tr>
       </Thead>
       <Tbody>

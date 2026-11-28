@@ -2,6 +2,8 @@ import { Stock } from '#types/stock'
 import { numberFormatter } from '#utils/formatter'
 
 import { MaterialChildren } from '../order-create.type'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export const mapStocks = (data?: Stock[]) =>
   data?.map((item) => ({
@@ -76,8 +78,8 @@ export const minMax = (min: number, max: number, language: string) => {
   const isNumber = typeof min === 'number' && typeof max === 'number'
   return isNumber
     ? `(${[
-        `min: ${numberFormatter(min, language)}`,
-        `max : ${numberFormatter(max, language)}`,
+        `${getLocalizedStaticLabel('min', i18next.language)}: ${numberFormatter(min, language)}`,
+        `${getLocalizedStaticLabel('max', i18next.language)}: ${numberFormatter(max, language)}`,
       ].join(', ')})`
     : null
 }

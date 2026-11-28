@@ -21,6 +21,8 @@ import {
 } from '../order-create-distribution.type'
 import OrderCreateDistributionOtherActivity from './OrderCreateDistributionOtherActivity'
 import OrderCreateDistributionTableBatch from './OrderCreateDistributionTableBatch'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type Props = TDrawerQuantity & {
   activity: OptionType | null
@@ -104,7 +106,7 @@ export default function OrderCreateDistributionDetailBatch({
                 <p className="ui:flex ui:items-center ui:gap-1">
                   <strong>{formatNumber(data?.total_qty)}</strong>
                   <span className="ui:text-neutral-500">
-                    (min: {min}, max: {max})
+                    ({getLocalizedStaticLabel('min', i18next.language)}: {min}, {getLocalizedStaticLabel('max', i18next.language)}: {max})
                   </span>
                 </p>
               </div>

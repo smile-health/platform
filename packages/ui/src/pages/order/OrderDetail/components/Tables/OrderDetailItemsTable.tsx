@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next'
 import { OrderStatusEnum } from '../../../order.constant'
 import useOrderDetailStore from '../../order-detail.store'
 import { OrderDetailItem, OrderDetailStock } from '../../order-detail.type'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 const { Pending, Allocated, Shipped, Fulfilled } = OrderStatusEnum
 
@@ -48,7 +50,7 @@ export const OrderDetailItemsTable = () => {
           {numberFormatter(stockCustomer?.total_available_qty, i18n.language)}
         </div>
         <div className="ui:text-gray-600">
-          (min: {numberFormatter(stockCustomer?.min, i18n.language)} | max:{' '}
+          ({getLocalizedStaticLabel('min', i18next.language)}: {numberFormatter(stockCustomer?.min, i18n.language)} | {getLocalizedStaticLabel('max', i18next.language)}:{' '}
           {numberFormatter(stockCustomer?.max, i18n.language)})
         </div>
       </div>

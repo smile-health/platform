@@ -15,6 +15,8 @@ import { getValueNumber } from '../transaction-discard.helper'
 import TransactionDiscardTableDetail from './TransactionDiscardTableDetail'
 import TransactionDiscardStockSelected from './TransactionDiscardStockSelected'
 import { DiscardItem } from '../transaction-discard.type'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 const TransactionDiscardTable: React.FC = () => {
   const {
@@ -123,7 +125,7 @@ const TransactionDiscardTable: React.FC = () => {
                     }
                   </p>
                   <p className="ui:text-neutral-500 ui:text-sm">
-                    {`(min: ${getValueNumber(item.min, language)}, max: ${getValueNumber(item.max, language)})`}
+                    {`(${getLocalizedStaticLabel('min', i18next.language)}: ${getValueNumber(item.min, language)}, ${getLocalizedStaticLabel('max', i18next.language)}: ${getValueNumber(item.max, language)})`}
                   </p>
                 </Td>
                 <Td

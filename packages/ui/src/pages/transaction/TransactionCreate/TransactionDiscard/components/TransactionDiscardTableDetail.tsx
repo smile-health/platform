@@ -17,6 +17,8 @@ import { useTransactionDiscardTableDetail } from "../hooks/useTransactionDiscard
 import { getValueNumber } from "../transaction-discard.helper"
 import { parseDateTime } from "#utils/date"
 import Reload from "#components/icons/Reload"
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type Props = {
   open: boolean
@@ -90,7 +92,7 @@ const TransactionDiscardTableDetail: React.FC<Props> = (props) => {
                     <p className="ui:font-bold ui:text-primary-800 ui:mb-1">
                       {getValueNumber(details?.total_qty || 0, language)}
                       <span className="ui:text-neutral-500 ui:text-xs ui:font-normal ui:ms-1">
-                        {`(min:${getValueNumber(details?.min, language)}, max:${getValueNumber(details?.max, language)})`}
+                        {`(${getLocalizedStaticLabel('min', i18next.language)}: ${getValueNumber(details?.min, language)}, max:${getValueNumber(details?.max, language)})`}
                       </span>
                     </p>
                   </div>

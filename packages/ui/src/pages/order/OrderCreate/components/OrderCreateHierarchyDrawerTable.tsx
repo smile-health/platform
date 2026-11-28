@@ -8,6 +8,8 @@ import { Controller, useFormContext } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 import { MappedMaterialData, MaterialChildren } from '../order-create.type'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export type OrderCreateHierarchyDrawerTableProps = {
   headers: {
@@ -88,7 +90,7 @@ export const OrderCreateHierarchyDrawerTable = ({
                   <p
                     className="ui:text-neutral-500 ui:text-sm"
                     id={`cell-${headers?.[2]?.id}-min_max`}
-                  >{`(min: ${numberFormatter(stock?.min ?? 0, language)}, max: ${numberFormatter(stock?.max ?? 0, language)})`}</p>
+                  >{`(${getLocalizedStaticLabel('min', i18next.language)}: ${numberFormatter(stock?.min ?? 0, language)}, ${getLocalizedStaticLabel('max', i18next.language)}: ${numberFormatter(stock?.max ?? 0, language)})`}</p>
                 </div>
               </Td>
               <Td id={`cell-${headers?.[4]?.id}`}>

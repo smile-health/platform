@@ -11,6 +11,8 @@ import { DETAIL_STOCK_INDEX } from '../../constant/stock-detail.constant'
 import { columnsDetail } from '../../constant/table'
 import { useStockDetailPageModalTableDetail } from '../../hooks/useStockDetailPageModalTableDetail'
 import StockModalTableDetail from '../StockModalTableDetail'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type Props = {
   data?: Stock
@@ -91,8 +93,8 @@ const StockDetailPageMaterial: React.FC<Props> = (props) => {
               label: t('detail.material.stock.in_transit'),
               value: numberFormatter(data?.total_in_transit_qty || 0, language),
             },
-            { label: 'Min', value: numberFormatter(data?.min || 0, language) },
-            { label: 'Max', value: numberFormatter(data?.max || 0, language) },
+            { label: getLocalizedStaticLabel('Min', i18next.language), value: numberFormatter(data?.min || 0, language) },
+            { label: getLocalizedStaticLabel('Max', i18next.language), value: numberFormatter(data?.max || 0, language) },
           ]}
         />
 

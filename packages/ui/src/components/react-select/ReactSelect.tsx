@@ -12,6 +12,8 @@ import {
   ReactSelectCustomOptionCheckbox,
 } from './ReactSelectCustomOption'
 import ReactSelectInputSearch from './ReactSelectInputSearch'
+import i18next from 'i18next'
+import { localizeOptionLabel } from '#utils/localized-name'
 import { getStyles } from './style'
 
 export type ReactSelectProps = Omit<
@@ -43,6 +45,10 @@ export const ReactSelect = React.forwardRef<any, ReactSelectProps>(function Reac
   return (
     <Select
       {...props}
+      formatOptionLabel={
+        props.formatOptionLabel ??
+        ((option: any) => localizeOptionLabel(option, i18next.language))
+      }
       ref={ref}
       isDisabled={props.disabled}
       inputId={props?.inputId ?? `${props?.id}-input`}

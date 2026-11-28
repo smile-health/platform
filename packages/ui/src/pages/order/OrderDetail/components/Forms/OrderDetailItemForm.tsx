@@ -26,6 +26,7 @@ import { numberFormatter } from '#utils/formatter'
 import { AxiosError } from 'axios'
 import { Controller, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 import { OrderReasonEnum, OrderTypeEnum } from '../../../order.constant'
 import { loadReasons } from '../../../OrderCreate/order-create.service'
@@ -403,12 +404,12 @@ export const OrderDetailItemForm = () => {
                     i18n.language
                   )}
                   <div className="ui:text-gray-500 ui:font-normal ui:text-xs ui:relative ui:bottom-0.5">
-                    (min:
+                    ({getLocalizedStaticLabel('min', i18n.language)}:{' '}
                     {numberFormatter(
                       selectedMaterialStockData?.min ?? stockCustomer?.min,
                       i18n.language
                     )}
-                    , max:
+                    , {getLocalizedStaticLabel('max', i18n.language)}:{' '}
                     {numberFormatter(
                       selectedMaterialStockData?.max ?? stockCustomer?.max,
                       i18n.language

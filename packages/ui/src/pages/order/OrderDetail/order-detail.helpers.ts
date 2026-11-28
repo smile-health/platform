@@ -1,4 +1,6 @@
 import { numberFormatter } from '#utils/formatter'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export const countRecommenedStockFormula = (
   max: number = 0,
@@ -19,8 +21,8 @@ export const minMax = (
 ) => {
   return min || max
     ? `(${[
-        min && `min: ${numberFormatter(min, language)}`,
-        max && `max : ${numberFormatter(max, language)}`,
+        min && `${getLocalizedStaticLabel('min', i18next.language)}: ${numberFormatter(min, language)}`,
+        max && `${getLocalizedStaticLabel('max', i18next.language)}: ${numberFormatter(max, language)}`,
       ]
         .filter(Boolean)
         .join(', ')})`

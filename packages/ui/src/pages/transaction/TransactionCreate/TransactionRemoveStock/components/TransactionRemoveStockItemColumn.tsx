@@ -19,6 +19,8 @@ import { CreateTransactionRemoveForm } from '../transaction-remove-stock.type'
 
 import 'dayjs/locale/id'
 import 'dayjs/locale/en'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export type TColumn = {
   t: TFunction<['transactionCreate', 'common']>
@@ -148,11 +150,11 @@ export const MainColumn = ({
               },
               {
                 label: textGrouper({
-                  text1: `(min: ${thousandFormatter({
+                  text1: `(${getLocalizedStaticLabel('min', i18next.language)}: ${thousandFormatter({
                     value: Number(row.original.min),
                     locale,
                   })}`,
-                  text2: `max: ${thousandFormatter({
+                  text2: `${getLocalizedStaticLabel('max', i18next.language)}: ${thousandFormatter({
                     value: Number(row.original.max),
                     locale,
                   })})`,

@@ -1,4 +1,5 @@
 import {
+  getLocalizedActivityName,
   getLocalizedProgramName,
   getLocalizedRoleName,
   getLocalizedStaticLabel,
@@ -109,5 +110,30 @@ describe('getLocalizedStaticLabel', () => {
     const node = { type: 'span' }
     expect(getLocalizedStaticLabel(node, 'ar')).toBe(node)
     expect(getLocalizedStaticLabel(undefined, 'ar')).toBeUndefined()
+  })
+})
+
+describe('getLocalizedActivityName', () => {
+  it('translates demo activity names by label', () => {
+    expect(getLocalizedActivityName('Malaria - Rutin', 'ar')).toBe('الملاريا - روتيني')
+    expect(getLocalizedActivityName('ORI/Crash Program', 'ar')).toBe(
+      'الاستجابة لتفشي المرض / برنامج مكثف'
+    )
+    expect(getLocalizedActivityName('Lanjutan & Khusus', 'ar')).toBe('المتابعة والخاص')
+    expect(getLocalizedActivityName('COVID-19', 'ar')).toBe('كوفيد-19')
+  })
+
+  it('keeps unknown names, non-strings and other languages', () => {
+    expect(getLocalizedActivityName('Aktivitas Baru', 'ar')).toBe('Aktivitas Baru')
+    expect(getLocalizedActivityName('Rutin', 'id')).toBe('Rutin')
+    expect(getLocalizedActivityName(undefined, 'ar')).toBeUndefined()
+  })
+})
+
+describe('min/max labels', () => {
+  it('translates lowercase min and max', () => {
+    expect(getLocalizedStaticLabel('min', 'ar')).toBe('الحد الأدنى')
+    expect(getLocalizedStaticLabel('max', 'ar')).toBe('الحد الأقصى')
+    expect(getLocalizedStaticLabel('min', 'en')).toBe('min')
   })
 })

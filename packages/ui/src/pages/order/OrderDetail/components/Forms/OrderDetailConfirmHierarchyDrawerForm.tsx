@@ -18,6 +18,8 @@ import {
 } from '../../order-detail.type'
 import { OrderDetailDrawer } from '../OrderDetailDrawer'
 import { OrderDetailConfirmHierarchyChildrenModalForm } from './OrderDetailConfirmHierarchyChildrenModalForm'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type OrderDetailConfirmHierarchyDrawerFormProps = {
   isLoading?: boolean
@@ -191,7 +193,7 @@ export const OrderDetailConfirmHierarchyDrawerForm = ({
                 )}
               </div>
               <div className="ui:text-gray-500">
-                (min: {numberFormatter(stockVendor?.min, i18n.language)} | max:{' '}
+                ({getLocalizedStaticLabel('min', i18next.language)}: {numberFormatter(stockVendor?.min, i18n.language)} | {getLocalizedStaticLabel('max', i18next.language)}:{' '}
                 {numberFormatter(stockVendor?.max, i18n.language)})
               </div>
             </div>

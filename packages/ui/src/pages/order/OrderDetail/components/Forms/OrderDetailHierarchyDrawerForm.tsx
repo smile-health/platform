@@ -19,6 +19,8 @@ import { orderDetailHierarchyChildrenFormSchema } from '../../order-detail-hiera
 import { minMax } from '../../order-detail.helpers'
 import useOrderDetailStore from '../../order-detail.store'
 import { OrderDetailChildren, OrderDetailItem } from '../../order-detail.type'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type OrderDetailHierarchyDrawerFormProps = {
   values?: { children?: OrderDetailChildren[] }
@@ -109,7 +111,7 @@ export const OrderDetailHierachyDrawerForm = ({
             <div>
               <div>{numberFormatter(customerStock?.total_qty, language)}</div>
               <div className="ui:text-neutral-500 ui:text-sm">
-                {`(min: ${numberFormatter(customerStock?.min || 0, language)}, max: ${numberFormatter(customerStock?.max || 0, language)})`}
+                {`(${getLocalizedStaticLabel('min', i18next.language)}: ${numberFormatter(customerStock?.min || 0, language)}, ${getLocalizedStaticLabel('max', i18next.language)}: ${numberFormatter(customerStock?.max || 0, language)})`}
               </div>
             </div>
           )
