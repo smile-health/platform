@@ -4,7 +4,10 @@ import { Button } from '#components/button'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { isViewOnly } from '#utils/user'
 import i18next, { TFunction } from 'i18next'
-import { getLocalizedActivityName } from '#utils/localized-name'
+import {
+  getLocalizedActivityName,
+  getLocalizedStaticLabel,
+} from '#utils/localized-name'
 
 import { ActivityTableProps, DetailActivityResponse } from './activity.type'
 import { getProtocolName } from './utils/helper'
@@ -32,8 +35,8 @@ export const columns = (
     accessorKey: 'activity_process',
     cell: ({ row: { original: { is_ordered_sales, is_ordered_purchase } } }) => {
       const result = [
-        is_ordered_sales && 'Top Down',
-        is_ordered_purchase && 'Bottom Up'
+        is_ordered_sales && getLocalizedStaticLabel('Top Down', i18next.language),
+        is_ordered_purchase && getLocalizedStaticLabel('Bottom Up', i18next.language)
       ].filter(Boolean).join(', ') || '-';
       
       return result
@@ -42,7 +45,8 @@ export const columns = (
   {
     header: t('activity:column.protocol'),
     accessorKey: 'protocol',
-    cell: ({ row: { original: { protocol } } }) => getProtocolName(protocol)
+    cell: ({ row: { original: { protocol } } }) =>
+      getLocalizedStaticLabel(getProtocolName(protocol), i18next.language)
   },
   {
     header: 'Status',
@@ -66,7 +70,9 @@ export const columns = (
             size="sm"
             variant="subtle"
           >
-            <Link href={setLink(`/v5/activity/${original?.id}`)}>Detail</Link>
+            <Link href={setLink(`/v5/activity/${original?.id}`)}>
+              {t('common:detail')}
+            </Link>
           </Button>
           {!isViewOnly() && (
             <Button

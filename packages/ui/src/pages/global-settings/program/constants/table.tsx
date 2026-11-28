@@ -5,7 +5,11 @@ import { TProgram } from "#types/program"
 import { parseDateTime } from "#utils/date"
 import { ColumnDef } from "#utils/table"
 import i18next, { TFunction } from "i18next"
-import { getLocalizedActivityName } from "#utils/localized-name"
+import {
+  getLocalizedActivityName,
+  getLocalizedProgramName,
+  getLocalizedStaticLabel,
+} from "#utils/localized-name"
 import { PROTOCOL_NAME } from "./options"
 
 type ColumnProps = {
@@ -27,6 +31,8 @@ export const columns = ({ t, handleAction, page = 1, size = 10 }: ColumnProps): 
     accessorKey: 'name',
     enableSorting: true,
     minSize: 200,
+    cell: ({ row: { original } }) =>
+      getLocalizedProgramName(original, i18next.language),
   },
   {
     header: t('programGlobalSettings:column.classification_material'),
@@ -100,8 +106,8 @@ export const columnsActivity = ({ t, handleAction, page, size }: ColumnProps & {
     accessorKey: 'activity_process',
     cell: ({ row: { original: { is_ordered_sales, is_ordered_purchase } } }) => {
       const result = [
-        is_ordered_sales && 'Top Down',
-        is_ordered_purchase && 'Bottom Up'
+        is_ordered_sales && getLocalizedStaticLabel('Top Down', i18next.language),
+        is_ordered_purchase && getLocalizedStaticLabel('Bottom Up', i18next.language)
       ].filter(Boolean).join(', ') || '-';
 
       return result
