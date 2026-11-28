@@ -18,6 +18,8 @@ import { useTranslation } from 'react-i18next'
 
 import { ActivityFormProps } from '../activity.type'
 import { useActivityCreateEdit } from '../hooks/useActivityCreateEdit'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export default function ActivityForm({
   isEdit,
@@ -62,8 +64,8 @@ export default function ActivityForm({
           <FormControl>
             <FormLabel required>{t('activity:form.process.label')}</FormLabel>
             <div className="ui:flex ui:gap-4">
-              <Checkbox {...register('is_ordered_sales')} label="Top Down" />
-              <Checkbox {...register('is_ordered_purchase')} label="Bottom Up" />
+              <Checkbox {...register('is_ordered_sales')} label={getLocalizedStaticLabel('Top Down', i18next.language)} />
+              <Checkbox {...register('is_ordered_purchase')} label={getLocalizedStaticLabel('Bottom Up', i18next.language)} />
             </div>
             <FormErrorMessage>
               {errors?.is_ordered_sales?.message ??

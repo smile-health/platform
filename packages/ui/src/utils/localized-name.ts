@@ -146,6 +146,11 @@ const STATIC_LABELS: Record<string, Record<string, string>> = {
     date: 'التاريخ',
     data: 'بيانات',
     normal: 'طبيعي',
+    top_down: 'من الأعلى إلى الأسفل',
+    bottom_up: 'من الأسفل إلى الأعلى',
+    default: 'افتراضي',
+    rabies: 'داء الكلب',
+    dengue: 'حمى الضنك',
   },
 }
 

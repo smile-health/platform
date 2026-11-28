@@ -1,5 +1,6 @@
 import { ActivityData } from '#types/activity'
-import { TFunction } from 'i18next'
+import i18next, { TFunction } from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export const getProtocolName = (protocol?: string) => {
   let name = '-'
@@ -18,11 +19,14 @@ export const generateDetail = (t: TFunction<'activity'>, detail?: ActivityData) 
     },
     {
       label: t('form.process.label'),
-      value: `${detail?.is_ordered_sales ? 'Bottom Up' : ''} ${detail?.is_ordered_sales && detail?.is_ordered_purchase ? ', ' : ''} ${detail?.is_ordered_purchase ? 'Top Down' : ''}`,
+      value: `${detail?.is_ordered_sales ? getLocalizedStaticLabel('Bottom Up', i18next.language) : ''} ${detail?.is_ordered_sales && detail?.is_ordered_purchase ? ', ' : ''} ${detail?.is_ordered_purchase ? getLocalizedStaticLabel('Top Down', i18next.language) : ''}`,
     },
     {
       label: t('form.protocol.label'),
-      value: getProtocolName(detail?.protocol),
+      value: getLocalizedStaticLabel(
+        getProtocolName(detail?.protocol),
+        i18next.language
+      ),
     },
     {
       label: "Distribusi Akhir",
