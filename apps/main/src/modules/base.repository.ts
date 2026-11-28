@@ -15,6 +15,12 @@ export abstract class BaseRepository<TableName extends keyof DB & string> {
   ) {}
 
   async find(c: Context, where: Partial<Record<keyof DB[TableName], any>>) {
+    // `IN ()` adalah SQL tidak valid; filter list kosong berarti tidak ada
+    // baris yang cocok.
+    if (Object.values(where).some((v) => v instanceof Array && v.length === 0)) {
+      return []
+    }
+
     let query = c.var.trx
       .selectFrom(this.tableName as keyof DB)
       .selectAll(this.tableName)
