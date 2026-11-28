@@ -2,6 +2,10 @@ import { Context } from "hono"
 import { v7 as uuidv7 } from "uuid"
 import { sql } from "kysely"
 import { BaseRepository } from "../../base.repository.js"
+import {
+  LOCATION_LEVEL,
+  locationAncestorId,
+} from "@/common/utils/location-path.utils.js"
 import { sanitizeStockUpdateValues } from "@/common/utils/stock-sanitizer.utils.js"
 import {
   AddOrderCommentShipDTO,
@@ -388,10 +392,17 @@ export class OrderStatusShipRepository extends BaseRepository<"ws_orders"> {
     }
 
     return await c.var.trx
-      .selectFrom("ws_entities")
-      .select(["id", "name", "entity_tag_id", "province_id", "regency_id"])
-      .where("id", "in", ids)
-      .where("program_id", "=", programId)
+      .selectFrom("ws_entities as we")
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
+      .select([
+        "we.id",
+        "we.name",
+        "we.entity_tag_id",
+        locationAncestorId("loc", LOCATION_LEVEL.PROVINCE).as("province_id"),
+        locationAncestorId("loc", LOCATION_LEVEL.REGENCY).as("regency_id"),
+      ])
+      .where("we.id", "in", ids)
+      .where("we.program_id", "=", programId)
       .execute()
   }
 

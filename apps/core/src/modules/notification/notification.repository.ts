@@ -8,6 +8,10 @@ import {
 import { Context } from "hono"
 import { Selectable, sql, SelectQueryBuilder } from "kysely"
 import { NotificationDatabase } from "@/common/infrastructure/database/types/index.js"
+import {
+  LOCATION_LEVEL,
+  locationAncestorId,
+} from "@/common/utils/location-path.utils.js"
 
 type UserEntityAttributes = {
   id: number
@@ -308,18 +312,21 @@ export class NotificationRepository {
     if (ids.length === 0) return []
 
     return await c.var.trx
-      .selectFrom("ws_entities")
+      .selectFrom("ws_entities as we")
+      .leftJoin("locations as loc", "loc.id", "we.location_id")
       .select([
-        "id",
-        "name",
-        "province_id",
-        "regency_id",
-        "sub_district_id",
-        "type",
-        "is_puskesmas",
-        "entity_tag_id",
+        "we.id",
+        "we.name",
+        locationAncestorId("loc", LOCATION_LEVEL.PROVINCE).as("province_id"),
+        locationAncestorId("loc", LOCATION_LEVEL.REGENCY).as("regency_id"),
+        locationAncestorId("loc", LOCATION_LEVEL.SUB_DISTRICT).as(
+          "sub_district_id"
+        ),
+        "we.type",
+        "we.is_puskesmas",
+        "we.entity_tag_id",
       ])
-      .where("global_id", "in", ids)
+      .where("we.global_id", "in", ids)
       .execute()
   }
 
@@ -393,64 +400,67 @@ export class NotificationRepository {
     }
   }
 
+  // Entitas yang berada tepat di level provinsi/kabupaten (bukan di bawahnya)
+  // ditentukan dari kedalaman locations.level, pengganti cek kolom lama
+  // regency_id/sub_district_id/village_id IS NULL di ws_entities.
   async getEntityByProvince(c: Context, provinceIds: string[]) {
+    if (provinceIds.length === 0) return []
+
+    const provinceId = locationAncestorId("loc", LOCATION_LEVEL.PROVINCE)
+
     return await c.var.trx
-      .selectFrom("ws_entities")
-      .select(["id"])
+      .selectFrom("ws_entities as we")
+      .innerJoin("locations as loc", "loc.id", "we.location_id")
+      .select(["we.id"])
+      .where(provinceId, "in", provinceIds)
       .where((eb) =>
         eb.or([
           eb.and([
-            eb("province_id", "in", provinceIds),
-            eb("regency_id", "is", null),
-            eb("sub_district_id", "is", null),
-            eb("village_id", "is", null),
-            eb("type", "=", 1),
-            eb("is_puskesmas", "=", 0),
+            eb("loc.level", "=", LOCATION_LEVEL.PROVINCE),
+            eb("we.type", "=", 1),
+            eb("we.is_puskesmas", "=", 0),
           ]),
           eb.and([
-            eb("province_id", "in", provinceIds),
-            eb("sub_district_id", "is", null),
-            eb("village_id", "is", null),
-            eb("type", "=", 2),
-            eb("is_puskesmas", "=", 0),
+            eb("loc.level", "<=", LOCATION_LEVEL.REGENCY),
+            eb("we.type", "=", 2),
+            eb("we.is_puskesmas", "=", 0),
           ]),
           eb.and([
-            eb("province_id", "in", provinceIds),
-            eb("village_id", "is", null),
-            eb("type", "=", 3),
-            eb("is_puskesmas", "=", 1),
+            eb("loc.level", "<=", LOCATION_LEVEL.SUB_DISTRICT),
+            eb("we.type", "=", 3),
+            eb("we.is_puskesmas", "=", 1),
           ]),
         ])
       )
-      .where("deleted_at", "is", null)
+      .where("we.deleted_at", "is", null)
       .execute()
   }
 
   async getEntityByRegency(c: Context, regencyIds: string[]) {
+    if (regencyIds.length === 0) return []
+
+    const regencyId = locationAncestorId("loc", LOCATION_LEVEL.REGENCY)
+
     return await c.var.trx
-      .selectFrom("ws_entities")
-      .select(["id"])
+      .selectFrom("ws_entities as we")
+      .innerJoin("locations as loc", "loc.id", "we.location_id")
+      .select(["we.id"])
+      .where(regencyId, "in", regencyIds)
       .where((eb) =>
         eb.or([
           eb.and([
-            eb("regency_id", "in", regencyIds),
-            eb.or([
-              eb("sub_district_id", "is", null),
-              eb("sub_district_id", "=", ""),
-            ]),
-            eb.or([eb("village_id", "is", null), eb("village_id", "=", "")]),
-            eb("type", "=", 2),
-            eb("is_puskesmas", "=", 0),
+            eb("loc.level", "=", LOCATION_LEVEL.REGENCY),
+            eb("we.type", "=", 2),
+            eb("we.is_puskesmas", "=", 0),
           ]),
           eb.and([
-            eb("regency_id", "in", regencyIds),
-            eb.or([eb("village_id", "is", null), eb("village_id", "=", "")]),
-            eb("type", "=", 3),
-            eb("is_puskesmas", "=", 1),
+            eb("loc.level", "<=", LOCATION_LEVEL.SUB_DISTRICT),
+            eb("we.type", "=", 3),
+            eb("we.is_puskesmas", "=", 1),
           ]),
         ])
       )
-      .where("deleted_at", "is", null)
+      .where("we.deleted_at", "is", null)
       .execute()
   }
 

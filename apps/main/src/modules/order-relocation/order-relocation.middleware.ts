@@ -57,7 +57,11 @@ export class OrderRelocationMiddleware {
           orderReasonExist,
           parentAndChildrenMaterials,
         ] = await Promise.all([
-          this.entityRepo.find(c, { id: [data.customer_id, data.vendor_id] }),
+          this.repo.getWsEntitiesWithLocationByIds(
+            c,
+            [data.customer_id, data.vendor_id],
+            programId
+          ),
           this.materialRepo.find(c, { id: materialIds }),
           this.orderReasonRepo.find(c, { id: orderReasonIds }),
           childrenMaterialIds.length > 0
