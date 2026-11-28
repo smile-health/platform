@@ -3,6 +3,8 @@ import { StockTransaction, Transaction } from '#types/transaction'
 import { useTranslation } from 'react-i18next'
 
 import { generateBatchSchema } from '../helpers/transaction-list.detail'
+import i18next from 'i18next'
+import { getLocalizedActivityName } from '#utils/localized-name'
 
 const TransactionListBatchBox = ({
   transaction,
@@ -20,7 +22,10 @@ const TransactionListBatchBox = ({
     <div className="ui:p-3 ui:bg-stone-100">
       <h6 className="ui:font-bold ui:text-sm ui:text-dark-blue">
         {t('transactionList:batch_columns.taken_from_activity_stock')}{' '}
-        {stock?.activity?.name ?? transaction.activity_name ?? ''}
+        {getLocalizedActivityName(
+          stock?.activity?.name ?? transaction.activity_name ?? '',
+          i18next.language
+        )}
       </h6>
       <div className="ui:space-y-1 ui:mt-1">
         {batchSchema.map(

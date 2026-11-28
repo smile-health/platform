@@ -4,7 +4,8 @@ import { ActivityData } from "#types/activity"
 import { TProgram } from "#types/program"
 import { parseDateTime } from "#utils/date"
 import { ColumnDef } from "#utils/table"
-import { TFunction } from "i18next"
+import i18next, { TFunction } from "i18next"
+import { getLocalizedActivityName } from "#utils/localized-name"
 import { PROTOCOL_NAME } from "./options"
 
 type ColumnProps = {
@@ -91,6 +92,8 @@ export const columnsActivity = ({ t, handleAction, page, size }: ColumnProps & {
     header: t('programGlobalSettings:column.activity_name'),
     accessorKey: 'name',
     enableSorting: true,
+    cell: ({ getValue }) =>
+      getLocalizedActivityName(getValue() as string, i18next.language),
   },
   {
     header: t('programGlobalSettings:column.activity_process'),

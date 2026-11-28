@@ -5,7 +5,8 @@ import { BOOLEAN } from '#constants/common'
 import { DetailStock, Stock, StockDetailStock } from '#types/stock'
 import { parseDateTime } from '#utils/date'
 import { getBackgroundStock, numberFormatter } from '#utils/formatter'
-import { TFunction } from 'i18next'
+import i18next, { TFunction } from 'i18next'
+import { getLocalizedActivityName } from '#utils/localized-name'
 
 import StockTitleBlock from '../component/StockTitleBlock'
 
@@ -240,6 +241,8 @@ export const columnsDetail = ({
         {
           header: t('table.column.activity.name'),
           accessorKey: 'activity.name',
+          cell: ({ getValue }: CellContext<DetailStock, unknown>) =>
+            getLocalizedActivityName(getValue() as string, i18next.language),
           meta: {
             cellClassName: ({ original }: { original: DetailStock }) =>
               isHierarchical
@@ -412,7 +415,8 @@ export const columnsBatch = ({
             row: {
               original: { activity },
             },
-          }: CellContext<StockDetailStock, unknown>) => activity?.name || '-',
+          }: CellContext<StockDetailStock, unknown>) =>
+            getLocalizedActivityName(activity?.name, i18next.language) || '-',
           minSize: 150,
           meta: {
             cellClassName: 'ui:text-dark-blue',

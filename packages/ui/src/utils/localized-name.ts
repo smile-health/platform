@@ -162,3 +162,56 @@ export function getLocalizedStaticLabel<T>(
   const translated = dictionary[normalizeLabel(core)]
   return translated ? `${translated}${suffix}` : label
 }
+
+/**
+ * Nama aktivitas (`ws_activities.name`) juga data backend. Dicocokkan lewat
+ * label saja karena `code` tidak unik (mis. `ori` dipakai "ORI" dan
+ * "ORI/Crash Program").
+ */
+const ACTIVITY_NAMES: Record<string, Record<string, string>> = {
+  ar: {
+    malaria_rutin: 'الملاريا - روتيني',
+    malaria_mbs: 'الملاريا - الفحص الجماعي والعلاج (MBS)',
+    tb_program: 'السل - البرنامج',
+    hiv_program: 'فيروس نقص المناعة البشرية - البرنامج',
+    obat_pkd: 'الأدوية - الخدمات الصحية الأساسية (PKD)',
+    tb_so: 'السل الحساس للأدوية (SO)',
+    tb_ro: 'السل المقاوم للأدوية (RO)',
+    tb_tpt: 'السل - العلاج الوقائي (TPT)',
+    tb_non_oat: 'السل - غير الأدوية المضادة للسل',
+    rutin: 'روتيني',
+    bias: 'التحصين المدرسي (BIAS)',
+    ori: 'الاستجابة لتفشي المرض (ORI)',
+    ori_crash_program: 'الاستجابة لتفشي المرض / برنامج مكثف',
+    kampanye: 'حملة',
+    covid_19: 'كوفيد-19',
+    bian: 'شهر التحصين الوطني (BIAN)',
+    lanjutan_khusus: 'المتابعة والخاص',
+    rabies: 'داء الكلب',
+    pd3i: 'الأمراض التي يمكن الوقاية منها بالتحصين (PD3I)',
+  },
+}
+
+export function getLocalizedActivityName<T>(
+  name: T,
+  language?: string | null
+): T | string {
+  if (typeof name !== 'string' || !name) return name
+  const dictionary = ACTIVITY_NAMES[baseLanguage(language)]
+  if (!dictionary) return name
+  return dictionary[normalizeLabel(name)] ?? name
+}
+
+/**
+ * formatOptionLabel bawaan ReactSelect: label opsi yang cocok dengan nama
+ * aktivitas ditampilkan versi bahasa aktif. Nilai opsi tidak berubah.
+ */
+export function localizeOptionLabel(
+  option: { label?: unknown } | null | undefined,
+  language?: string | null
+) {
+  const label = option?.label
+  return typeof label === 'string'
+    ? getLocalizedActivityName(label, language)
+    : (label as any)
+}

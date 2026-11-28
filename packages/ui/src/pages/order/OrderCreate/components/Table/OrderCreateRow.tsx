@@ -12,6 +12,8 @@ import { useTranslation } from 'react-i18next'
 import { columnsOrderCreateTableHeader } from '../../constants/table'
 import { loadReasons } from '../../order-create.service'
 import { MappedMaterialData, TOrderCreateForm } from '../../order-create.type'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type OrderCreateRowProps = {
   index: number
@@ -143,7 +145,7 @@ export const OrderCreateRow: React.FC<OrderCreateRowProps> = ({
           <p
             className="ui:text-neutral-500 ui:text-sm"
             id={`cell-${headers?.[2]?.id}-min_max`}
-          >{`(min: ${numberFormatter(item?.value?.min || 0, language)}, max: ${numberFormatter(item?.value?.max || 0, language)})`}</p>
+          >{`(${getLocalizedStaticLabel('min', i18next.language)}: ${numberFormatter(item?.value?.min || 0, language)}, ${getLocalizedStaticLabel('max', i18next.language)}: ${numberFormatter(item?.value?.max || 0, language)})`}</p>
         </div>
       </Td>
       <Td className="ui:align-top" id={`cell-${headers?.[3]?.id}`}>

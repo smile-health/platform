@@ -32,6 +32,8 @@ import {
   OrderDetailAllocateFormValuesOrderItemAllocation,
 } from '../../order-detail.type'
 import { OrderDetailModal } from '../OrderDetailModal'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export type OrderDetailAllocateModalFormValues =
   OrderDetailAllocateFormValuesOrderItem
@@ -390,9 +392,9 @@ export const OrderDetailAllocateModalForm = ({
               i18n.language
             )}
             <div className="ui:text-gray-500 ui:font-normal ui:text-xs ui:relative ui:bottom-0.5">
-              (min:{' '}
+              ({getLocalizedStaticLabel('min', i18next.language)}:{' '}
               {numberFormatter(selectedRowCustomerStock?.min, i18n.language)} ,
-              max:{' '}
+              {getLocalizedStaticLabel('max', i18next.language)}:{' '}
               {numberFormatter(selectedRowCustomerStock?.max, i18n.language)})
             </div>
           </div>
@@ -409,9 +411,9 @@ export const OrderDetailAllocateModalForm = ({
                 i18n.language
               )}
               <div className="ui:text-gray-500 ui:font-normal ui:text-xs ui:relative ui:bottom-0.5">
-                (min:{' '}
+                ({getLocalizedStaticLabel('min', i18next.language)}:{' '}
                 {numberFormatter(selectedRowVendorStock?.min, i18n.language)} ,
-                max:{' '}
+                {getLocalizedStaticLabel('max', i18next.language)}:{' '}
                 {numberFormatter(selectedRowVendorStock?.max, i18n.language)}),{' '}
                 {t('orderDetail:table.column.stock_on_hand')}:{' '}
                 {numberFormatter(

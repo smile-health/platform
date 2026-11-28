@@ -12,6 +12,8 @@ import {
 } from '../../../asset-managements.types'
 import { useStorageTemperatureMonitoringDetail } from '../StorageTemperatureMonitoringDetailContext'
 import ThresholdTable from '../use-cases/update-threshold/ThresholdTable'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export const DeviceDetailInfo = () => {
   const {
@@ -78,7 +80,7 @@ export const DeviceDetailInfo = () => {
         metric: string
       ) => (
         <span className="ui:font-bold ui:text-dark-teal">
-          (Min: {min} {metric}) - (Max: {max} {metric})
+          ({getLocalizedStaticLabel('Min', i18next.language)}: {min} {metric}) - ({getLocalizedStaticLabel('Max', i18next.language)}: {max} {metric})
         </span>
       )
       const otherInformation = (

@@ -19,6 +19,8 @@ import {
   TOrderFormItemsValues,
   TOrderFormValues,
 } from './order-create-distribution.type'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type TableMaterialColumnsParams = {
   t: TFunction<'orderDistribution'>
@@ -162,7 +164,7 @@ export function tableFormColumns({
               {formatNumber(original?.total_available_qty)}
             </p>
             <p className="ui:text-neutral-500">
-              (min: {min}, max: {max})
+              ({getLocalizedStaticLabel('min', i18next.language)}: {min}, {getLocalizedStaticLabel('max', i18next.language)}: {max})
             </p>
           </>
         )

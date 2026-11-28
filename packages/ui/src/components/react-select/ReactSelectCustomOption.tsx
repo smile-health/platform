@@ -1,5 +1,7 @@
 import { Checkbox } from "#components/checkbox";
 import cx from "#lib/cx";
+import { getLocalizedActivityName } from "#utils/localized-name";
+import i18next from "i18next";
 import { components, DropdownIndicatorProps, GroupBase, OptionProps } from "react-select";
 
 export function ReactSelectCustomOption<
@@ -19,7 +21,7 @@ export function ReactSelectCustomOption<
 
   return (
     <components.Option {...props} innerProps={innerProps}>
-      {label}
+      {getLocalizedActivityName(label, i18next.language)}
     </components.Option>
   )
 }
@@ -41,7 +43,11 @@ export function ReactSelectCustomOptionCheckbox<
 
   return (
     <components.Option {...props} innerProps={innerProps}>
-      <Checkbox checked={isSelected} label={label} readOnly />
+      <Checkbox
+        checked={isSelected}
+        label={getLocalizedActivityName(label, i18next.language)}
+        readOnly
+      />
     </components.Option>
   )
 }

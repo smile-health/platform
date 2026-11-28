@@ -18,6 +18,8 @@ import {
   UpdateOrderStatusToPendingFromDraftResponseError,
 } from '../../order-detail.type'
 import { OrderDetailDrawer } from '../OrderDetailDrawer'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 type OrderDetailValidateDrawerFormProps = {
   errors?: UpdateOrderStatusToPendingFromDraftResponseError
@@ -121,8 +123,8 @@ export const OrderDetailValidateDrawerForm = ({
                     )}
                   </div>
                   <div className="ui:text-gray-500">
-                    (min: {numberFormatter(stockCustomer?.min, i18n.language)} |
-                    max: {numberFormatter(stockCustomer?.max, i18n.language)})
+                    ({getLocalizedStaticLabel('min', i18next.language)}: {numberFormatter(stockCustomer?.min, i18n.language)} |
+                    {getLocalizedStaticLabel('max', i18next.language)}: {numberFormatter(stockCustomer?.max, i18n.language)})
                   </div>
                 </div>
               )

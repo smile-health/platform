@@ -51,6 +51,8 @@ import { updateMaterialEntitySchema } from '../schema/EntitySchemaForm'
 import EntityDetailMaterialManagementContext from '../utils/entity-detail-material-management-context'
 import EntityDetailLabel from './EntityDetailLabel'
 import EntityDetailMaterialManagementEditForm from './Form/EntityDetailMaterialManagementEditForm'
+import i18next from 'i18next'
+import { getLocalizedActivityName } from '#utils/localized-name'
 
 type Props = {
   open: boolean
@@ -411,7 +413,12 @@ const EntityDetailModalMaterialOnActivities: React.FC<Props> = ({
                             />
                           ) : (
                             <Tr>
-                              <Td>{item?.activity?.name || '-'}</Td>
+                              <Td>
+                                {getLocalizedActivityName(
+                                  item?.activity?.name,
+                                  i18next.language
+                                ) || '-'}
+                              </Td>
                               <Td>
                                 {item?.min === null
                                   ? '-'

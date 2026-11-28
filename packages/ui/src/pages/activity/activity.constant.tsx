@@ -3,7 +3,8 @@ import { ColumnDef } from '#utils/table'
 import { Button } from '#components/button'
 import ActiveLabel from '#components/modules/ActiveLabel'
 import { isViewOnly } from '#utils/user'
-import { TFunction } from 'i18next'
+import i18next, { TFunction } from 'i18next'
+import { getLocalizedActivityName } from '#utils/localized-name'
 
 import { ActivityTableProps, DetailActivityResponse } from './activity.type'
 import { getProtocolName } from './utils/helper'
@@ -23,6 +24,8 @@ export const columns = (
     header: t('activity:column.name'),
     accessorKey: 'name',
     enableSorting: true,
+    cell: ({ getValue }) =>
+      getLocalizedActivityName(getValue() as string, i18next.language),
   },
   {
     header: t('activity:column.activity_process'),

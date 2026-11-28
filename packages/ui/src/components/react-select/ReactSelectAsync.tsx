@@ -15,6 +15,8 @@ import {
 import ReactSelectInputSearch from './ReactSelectInputSearch'
 import ReactSelectNumericSearch from './ReactSelectNumericSearch'
 import { getStyles } from './style'
+import i18next from 'i18next'
+import { localizeOptionLabel } from '#utils/localized-name'
 
 export type OptionType<T = any> = {
   value: T
@@ -66,6 +68,10 @@ export const ReactSelectAsync: WithAsyncPaginateType = ({
   return (
     <AsyncPaginate
       {...(props as any)}
+      formatOptionLabel={
+        (props as any).formatOptionLabel ??
+        ((option: any) => localizeOptionLabel(option, i18next.language))
+      }
       instanceId={id}
       onInputChange={props?.onInputChange}
       isDisabled={props.disabled}

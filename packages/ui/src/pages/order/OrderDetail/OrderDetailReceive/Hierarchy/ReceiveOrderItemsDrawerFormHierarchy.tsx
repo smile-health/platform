@@ -28,6 +28,8 @@ import {
   OrderDetailStock,
 } from '../../order-detail.type'
 import { ReceiveOrderItemsModalFormHierarchyValues } from './ReceiveOrderItemsModalFormHierarchy'
+import i18next from 'i18next'
+import { getLocalizedStaticLabel } from '#utils/localized-name'
 
 export type ReceiveOrderItemStocks = {
   stock_id: number
@@ -449,12 +451,12 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
             )}
             <span className="ui:text-gray-500 ui:font-normal ui:text-sm">
               {' '}
-              (min:{' '}
+              ({getLocalizedStaticLabel('min', i18next.language)}:{' '}
               {numberFormatter(
                 orderItem?._order_item?.stock_customer?.min,
                 i18n.language
               )}
-              , max:{' '}
+              , {getLocalizedStaticLabel('max', i18next.language)}:{' '}
               {numberFormatter(
                 orderItem?._order_item?.stock_customer?.max || 0,
                 i18n.language
@@ -476,9 +478,9 @@ export const ReceiveOrderItemsDrawerFormHierarchy = ({
             )}
             <span className="ui:text-gray-500 ui:font-normal ui:text-sm">
               {' '}
-              (min:{' '}
+              ({getLocalizedStaticLabel('min', i18next.language)}:{' '}
               {numberFormatter(orderItem?._vendor_stock?.min, i18n.language)},
-              max:{' '}
+              {getLocalizedStaticLabel('max', i18next.language)}:{' '}
               {numberFormatter(
                 orderItem?._vendor_stock?.max || 0,
                 i18n.language

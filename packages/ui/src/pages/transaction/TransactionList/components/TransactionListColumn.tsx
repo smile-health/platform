@@ -21,7 +21,10 @@ import 'dayjs/locale/id'
 import 'dayjs/locale/en'
 
 import { BOOLEAN } from '#constants/common'
-import { getLocalizedProgramName } from '#utils/localized-name'
+import {
+  getLocalizedActivityName,
+  getLocalizedProgramName,
+} from '#utils/localized-name'
 
 import { TRANSACTION_TYPE } from '../../TransactionCreate/transaction-create.constant'
 
@@ -135,8 +138,8 @@ export const MainColumn = ({ t, locale, program }: TMainColumn) => {
 
         const transferStockDescription =
           Number(row.original?.change_qty) <= 0
-            ? `${t('common:from')} ${getLocalizedProgramName(program, locale)} (${row.original?.activity?.name}) ${t('common:to')} ${getLocalizedProgramName(row.original?.companion_program, locale)} (${row.original?.companion_activity?.name})`
-            : `${t('common:from')} ${getLocalizedProgramName(row.original?.companion_program, locale)} (${row.original?.companion_activity?.name}) ${t('common:to')} ${getLocalizedProgramName(program, locale)} (${row.original?.activity?.name})`
+            ? `${t('common:from')} ${getLocalizedProgramName(program, locale)} (${getLocalizedActivityName(row.original?.activity?.name, locale)}) ${t('common:to')} ${getLocalizedProgramName(row.original?.companion_program, locale)} (${getLocalizedActivityName(row.original?.companion_activity?.name, locale)})`
+            : `${t('common:from')} ${getLocalizedProgramName(row.original?.companion_program, locale)} (${getLocalizedActivityName(row.original?.companion_activity?.name, locale)}) ${t('common:to')} ${getLocalizedProgramName(program, locale)} (${getLocalizedActivityName(row.original?.activity?.name, locale)})`
 
         // Other transactions
         const otherTransactionType =
@@ -152,14 +155,14 @@ export const MainColumn = ({ t, locale, program }: TMainColumn) => {
               {
                 firstLabel:
                   row.original?.customer?.name && shouldHaveCustomer
-                    ? `${toOrFromLabel} ${row.original?.customer?.name} (${row.original?.activity?.name})`
+                    ? `${toOrFromLabel} ${row.original?.customer?.name} (${getLocalizedActivityName(row.original?.activity?.name, locale)})`
                     : '',
                 firstClassName: 'ui:text-dark-blue ui:text-sm',
               },
               {
                 firstLabel:
                   row.original?.customer?.name && shouldHaveVendor
-                    ? `${toOrFromLabel} ${row.original?.vendor?.name} (${row.original?.activity?.name})`
+                    ? `${toOrFromLabel} ${row.original?.vendor?.name} (${getLocalizedActivityName(row.original?.activity?.name, locale)})`
                     : '',
                 firstClassName: 'ui:text-dark-blue ui:text-sm',
               },
@@ -169,7 +172,7 @@ export const MainColumn = ({ t, locale, program }: TMainColumn) => {
                       row.original?.other_reason ??
                       row.original?.transaction_reason?.title ??
                       ''
-                    } (${row.original?.activity?.name})`
+                    } (${getLocalizedActivityName(row.original?.activity?.name, locale)})`
                   : '',
                 firstClassName: 'ui:text-dark-blue ui:text-sm',
               },
@@ -390,7 +393,7 @@ const moreDetails = ({ t, locale, data }: TMoreDetail) => [
   {
     label: t('transactionList:batch_columns.taken_from_activity_stock'),
     accessorKey: 'activity',
-    value: data?.activity?.name,
+    value: getLocalizedActivityName(data?.activity?.name, locale),
   },
   {
     label: t('transactionList:batch_columns.batch_code'),

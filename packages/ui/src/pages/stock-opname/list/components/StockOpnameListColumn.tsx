@@ -14,6 +14,8 @@ import StockOpnameTitleBlock from './StockOpnameTitleBlock'
 
 import 'dayjs/locale/id'
 import 'dayjs/locale/en'
+import i18next from 'i18next'
+import { getLocalizedActivityName } from '#utils/localized-name'
 
 export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
   const schema: Array<ColumnDef<TStockOpnameData>> = [
@@ -116,7 +118,9 @@ export const mainColumn = ({ t, locale }: TStockOpnameMainColumn) => {
     {
       header: t('stockOpname:columns.activity'),
       accessorKey: 'activity',
-      cell: ({ row }) => row.original?.activity?.name ?? '-',
+      cell: ({ row }) =>
+        getLocalizedActivityName(row.original?.activity?.name, i18next.language) ??
+        '-',
     },
     {
       header: t('stockOpname:columns.remaining_stock_in_smile'),
